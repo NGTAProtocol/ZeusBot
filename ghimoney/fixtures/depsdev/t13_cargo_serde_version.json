@@ -1,0 +1,23 @@
+{
+  "status": 200,
+  "body": {
+    "versionKey": {"system": "CARGO", "name": "serde", "version": "1.0.203"},
+    "publishedAt": "2024-05-25T17:43:56Z",
+    "isDefault": false,
+    "isDeprecated": false,
+    "deprecatedReason": "",
+    "licenses": ["Apache-2.0 OR MIT"],
+    "advisoryKeys": [],
+    "links": [
+      {"label": "SOURCE_REPO", "url": "https://github.com/serde-rs/serde"},
+      {"label": "HOMEPAGE", "url": "https://serde.rs"},
+      {"label": "DOCUMENTATION", "url": "https://docs.rs/serde"}
+    ],
+    "slsaProvenances": [],
+    "attestations": [],
+    "registries": ["https://crates.io/"],
+    "relatedProjects": [
+      {"projectKey": {"id": "github.com/serde-rs/serde"}, "relationProvenance": "UNVERIFIED_METADATA", "relationType": "SOURCE_REPO"}
+    ]
+  }
+}

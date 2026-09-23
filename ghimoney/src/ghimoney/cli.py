@@ -7,6 +7,15 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from ghimoney.canonical import canonical_json
+from ghimoney.depsdev_evidence import build_dependency_evidence, package_id
+from ghimoney.depsdev_ingestion import (
+    ECOSYSTEMS,
+    DepsDevIngestionError,
+    DepsDevIngestor,
+    validate_ecosystem,
+    validate_package,
+)
 from ghimoney.engine import analyze
 from ghimoney.evidence import parse_ts, project_identity
 from ghimoney.ingestion import GitHubIngestor, IngestionError, validate_target
@@ -64,6 +73,57 @@ def cmd_analyze(args) -> int:
     return 0
 
 
+def cmd_dependency_evidence(args) -> int:
+    """T-19: Dependency Evidence from deps.dev. Standalone from `analyze`
+    (D-03 v2: this does not compute an Impact Score, and is not wired into
+    engine.analyze -- T-20 is not started)."""
+    validate_ecosystem(args.ecosystem)
+    validate_package(args.name, args.version)
+    methodology = load_methodology(args.config)
+    target = f"{args.ecosystem}:{args.name}@{args.version}"
+    store = SnapshotStore(args.db)
+    try:
+        if args.snapshot_file:
+            snap = Snapshot.load(args.snapshot_file)
+        elif args.offline:
+            snap = store.latest(target)
+            if snap is None:
+                raise DepsDevIngestionError(
+                    f"no cached snapshot for {target} and --offline was given")
+        else:
+            print(f"fetching {target} from deps.dev", file=sys.stderr)
+            snap = DepsDevIngestor().fetch(args.ecosystem, args.name, args.version)
+            store.save(snap)
+        if snap.target.lower() != target.lower():
+            raise DepsDevIngestionError(
+                f"snapshot {snap.snapshot_id} is for {snap.target}, not {target}")
+        evidence = build_dependency_evidence(snap, args.ecosystem, args.name, args.version,
+                                             methodology)
+    finally:
+        store.close()
+
+    pkg_id = package_id(args.ecosystem, args.name, args.version)
+    out_dir = Path(args.out) / pkg_id.replace("/", "__") / snap.snapshot_id
+    out_dir.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "format": "ghimoney-dependency-evidence/1",
+        "package": {"ecosystem": args.ecosystem, "name": args.name, "version": args.version,
+                    "package_id": pkg_id},
+        "source": {"snapshot_id": snap.snapshot_id, "snapshot_hash": snap.snapshot_hash,
+                  "as_of": snap.as_of, "source": snap.source, "api_version": snap.api_version},
+        "evidence": [e.model_dump(mode="json") for e in evidence],
+        "note": "Dependency Evidence only: not scored, not wired into the Impact Engine "
+                "(T-20 not started, D-03 v2).",
+    }
+    json_path = out_dir / "dependency_evidence.json"
+    json_path.write_text(canonical_json(payload, indent=2) + "\n", encoding="utf-8")
+    for e in evidence:
+        value = f" = {e.raw_value!r}" if e.availability.value == "VERIFIED" else ""
+        print(f"{e.metric}: {e.availability.value}{value}")
+    print(f"wrote {json_path}")
+    return 0
+
+
 def cmd_export_snapshot(args) -> int:
     store = SnapshotStore(args.db)
     try:
@@ -97,6 +157,17 @@ def build_parser() -> argparse.ArgumentParser:
     e.add_argument("snapshot_id")
     e.add_argument("path")
     e.set_defaults(func=cmd_export_snapshot)
+
+    d = sub.add_parser("dependency-evidence",
+                       help="fetch Dependency Evidence for a package from deps.dev (T-19)")
+    d.add_argument("ecosystem", choices=sorted(ECOSYSTEMS))
+    d.add_argument("name", help="package name")
+    d.add_argument("version", help="package version")
+    d.add_argument("--config", help="methodology config (default: config/scoring.yaml)")
+    d.add_argument("--out", default="reports", help="output directory")
+    d.add_argument("--offline", action="store_true", help="never call the API")
+    d.add_argument("--snapshot-file", help="use a snapshot JSON file instead of fetching")
+    d.set_defaults(func=cmd_dependency_evidence)
     return parser
 
 
@@ -104,7 +175,7 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         return args.func(args)
-    except IngestionError as exc:
+    except (IngestionError, DepsDevIngestionError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
 

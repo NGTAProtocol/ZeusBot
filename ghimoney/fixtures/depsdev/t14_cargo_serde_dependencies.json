@@ -1,0 +1,25 @@
+{
+  "status": 200,
+  "body": {
+    "nodes": [
+      {"versionKey": {"system": "CARGO", "name": "serde", "version": "1.0.203"}, "bundled": false, "relation": "SELF", "errors": []},
+      {"versionKey": {"system": "CARGO", "name": "proc-macro2", "version": "1.0.107"}, "bundled": false, "relation": "INDIRECT", "errors": []},
+      {"versionKey": {"system": "CARGO", "name": "quote", "version": "1.0.47"}, "bundled": false, "relation": "INDIRECT", "errors": []},
+      {"versionKey": {"system": "CARGO", "name": "serde_derive", "version": "1.0.203"}, "bundled": false, "relation": "DIRECT", "errors": []},
+      {"versionKey": {"system": "CARGO", "name": "syn", "version": "2.0.56"}, "bundled": false, "relation": "INDIRECT", "errors": []},
+      {"versionKey": {"system": "CARGO", "name": "unicode-ident", "version": "1.0.26"}, "bundled": false, "relation": "INDIRECT", "errors": []}
+    ],
+    "edges": [
+      {"fromNode": 0, "toNode": 3, "requirement": "=1.0.203"},
+      {"fromNode": 1, "toNode": 5, "requirement": "^1.0"},
+      {"fromNode": 2, "toNode": 1, "requirement": "^1.0.80"},
+      {"fromNode": 3, "toNode": 1, "requirement": "^1.0.74"},
+      {"fromNode": 3, "toNode": 2, "requirement": "^1.0.35"},
+      {"fromNode": 3, "toNode": 4, "requirement": "^2.0.46"},
+      {"fromNode": 4, "toNode": 1, "requirement": "^1.0.75"},
+      {"fromNode": 4, "toNode": 2, "requirement": "^1.0.35"},
+      {"fromNode": 4, "toNode": 5, "requirement": "^1"}
+    ],
+    "error": ""
+  }
+}

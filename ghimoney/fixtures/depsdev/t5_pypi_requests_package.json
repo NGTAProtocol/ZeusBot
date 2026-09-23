@@ -1,0 +1,11 @@
+{
+  "status": 200,
+  "body": {
+    "packageKey": {"system": "PYPI", "name": "requests"},
+    "versions": [
+      {"versionKey": {"system": "PYPI", "name": "requests", "version": "2.31.0"}, "publishedAt": "2023-05-22T15:12:42Z", "isDefault": false, "isDeprecated": false, "deprecatedReason": ""},
+      {"versionKey": {"system": "PYPI", "name": "requests", "version": "2.32.0"}, "publishedAt": "2024-05-20T16:08:19Z", "isDefault": false, "isDeprecated": true, "deprecatedReason": "Yanked due to conflicts with CVE-2024-35195 mitigation"},
+      {"versionKey": {"system": "PYPI", "name": "requests", "version": "2.34.2"}, "publishedAt": "2026-05-14T19:25:26Z", "isDefault": true, "isDeprecated": false, "deprecatedReason": ""}
+    ]
+  }
+}

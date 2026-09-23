@@ -1,0 +1,10 @@
+{
+  "status": 200,
+  "body": {
+    "packageKey": {"system": "GO", "name": "github.com/pkg/errors"},
+    "versions": [
+      {"versionKey": {"system": "GO", "name": "github.com/pkg/errors", "version": "v0.9.1"}, "publishedAt": "2020-01-14T19:47:44Z", "isDefault": true, "isDeprecated": false, "deprecatedReason": ""},
+      {"versionKey": {"system": "GO", "name": "github.com/pkg/errors", "version": "v0.8.1"}, "publishedAt": "2019-01-03T06:52:24Z", "isDefault": false, "isDeprecated": false, "deprecatedReason": ""}
+    ]
+  }
+}

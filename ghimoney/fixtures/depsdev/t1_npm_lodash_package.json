@@ -1,0 +1,11 @@
+{
+  "status": 200,
+  "body": {
+    "packageKey": {"system": "NPM", "name": "lodash"},
+    "versions": [
+      {"versionKey": {"system": "NPM", "name": "lodash", "version": "4.17.21"}, "publishedAt": "2021-02-20T15:42:16Z", "isDefault": false, "isDeprecated": false, "deprecatedReason": ""},
+      {"versionKey": {"system": "NPM", "name": "lodash", "version": "4.18.0"}, "publishedAt": "2026-03-31T18:18:42Z", "isDefault": false, "isDeprecated": true, "deprecatedReason": "Bad release. Please use lodash@4.17.21 instead."},
+      {"versionKey": {"system": "NPM", "name": "lodash", "version": "4.18.1"}, "publishedAt": "2026-04-01T21:01:20Z", "isDefault": true, "isDeprecated": false, "deprecatedReason": ""}
+    ]
+  }
+}
