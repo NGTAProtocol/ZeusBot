@@ -25,9 +25,10 @@ Stati: `DONE` · `PARTIAL` · `BLOCKED` · `TODO`
 | T-15 | Red-team iniziale | DONE | T-13 | `tests/test_redteam.py`, THREAT_MODEL.md |
 | T-16 | Risolvere il conflitto D-11 | DONE | approvazione | **Opzione 1 approvata e confermata 2026-09-23.** V0.1 è completo senza Impact Score finale su repository reali; limitazione metodologica dichiarata, non un fallimento. Vincoli in DECISIONS.md: niente deps.dev non verificata (D-03), niente punteggi parziali spacciati per Impact Score (test `test_no_partial_score_is_ever_reported_as_impact`) |
 | T-17 | Conferma dei parametri D-02 ("dimensioni principali") | DONE | approvazione | **Confermato 2026-09-23 (due volte)**: Adoption e Dependency, peso iniziale 25% ciascuna, max 1 mancante; entrambe mancanti → `INSUFFICIENT_EVIDENCE`. Aggiunto il campo esplicito `impact.renormalization_reason` (motivo del ricalcolo, punto 6d della conferma) — estensione del formato di report, non della metodologia |
-| T-18 | Verificare deps.dev (disponibilità, affidabilità, qualità dei dati, copertura, provenance, stabilità API, riproducibilità, rate limits) | TODO | T-14 | Prerequisito per qualsiasi aggiornamento di D-03. **Non iniziare l'integrazione prima di questa verifica** — vincolo esplicito confermato 2026-09-23 |
-| T-19 | Implementazione Dependency evidence | TODO | T-18 | Solo dopo un esito positivo di T-18 e un aggiornamento formale di D-03 |
-| T-20 | Impact Score completo | TODO | T-19 | Solo quando Adoption o Dependency hanno una fonte verificata e la Coverage può superare il 60% |
+| T-18 | Verificare deps.dev — analisi documentale (disponibilità, affidabilità, qualità dei dati, copertura, provenance, stabilità API, riproducibilità, rate limits) | **DONE / COMPLETED** | — | `docs/DEPS_DEV_EVALUATION.md` pubblicato (15 sezioni). Conclusione: APPROVED WITH CONDITIONS. Nessuna riga di codice toccata |
+| T-19A | Verifica empirica di deps.dev (analisi soltanto, nessuna integrazione) | **DONE / COMPLETED** | T-18 | `docs/DEPS_DEV_EMPIRICAL_VERIFICATION.md` pubblicato. 16 richieste HTTP reali tramite Firecrawl (EMPIRICAL VERIFICATION VIA THIRD-PARTY NETWORK INFRASTRUCTURE, `*.deps.dev` bloccato da questa sessione). Confermato empiricamente: Go privo del dependency graph risolto (HTTP 404), riproducibilità byte-identica su richiesta ripetuta. Conclusione: VERIFIED FOR NEXT DECISION. Nessuna riga di codice toccata |
+| **T-19** | **Implementazione Dependency Evidence** (modulo deps.dev, ingestion, evidence, provenance) | **TODO — prossimo task operativo** | T-18 (DONE), T-19A (DONE), D-03 v2 (APPROVATA CON CONDIZIONI) | Rispettare le 7 condizioni obbligatorie di D-03 v2: copertura differenziata per ecosistema (Go = `NOT_AVAILABLE`, mai zero), preservazione della provenance (incluso `UNVERIFIED_METADATA`), riproducibilità tramite snapshot, classificazione esplicita degli errori (`NOT_AVAILABLE`/`UNKNOWN`/`INSUFFICIENT_EVIDENCE`/`ERROR`, mai 404→0), nessun rate limit inventato, attribuzione/licenza rispettata. **Non iniziato: nessun codice scritto, `config/scoring.yaml` invariato** |
+| **T-20** | **Full Impact Score** (Dependency evidence integrata nello scoring; possibile aggiornamento pesi/soglie) | **TODO — bloccato da T-19** | T-19 | Solo quando Adoption o Dependency hanno una fonte verificata e la Coverage può superare il 60%. Richiede una nuova `methodology_version` (non `GHIM-IMPACT-0.1`) e una nuova batteria di test (T-21). **Non avviato** |
 | T-21 | Nuova batteria di test + regression test + red-team | TODO | T-20 | Sulla metodologia aggiornata (nuova `methodology_version`) |
 | T-22 | Validazione su repository reali diversificati | TODO | T-21 | ≥ 10 repository di categorie diverse (§48) |
 
@@ -51,15 +52,16 @@ Stati: `DONE` · `PARTIAL` · `BLOCKED` · `TODO`
 | N | Documentato | ✅ |
 | O | Red-team iniziale | ✅ |
 
-## Sequenza operativa approvata verso l'Impact Score completo (D-11, confermata 2026-09-23)
+## Sequenza operativa approvata verso l'Impact Score completo (D-11, confermata 2026-09-23; D-03 formalizzata 2026-09-23)
 
 ```
-V0.1 (qui, COMPLETO)
-  → validazione reale (T-14)
-  → verifica deps.dev (T-18)
-  → eventuale aggiornamento D-03
-  → implementazione Dependency evidence (T-19)
-  → Impact Score completo (T-20)
+V0.1 (COMPLETO)
+  → validazione reale (T-14, bloccato dall'ambiente)
+  → verifica deps.dev — analisi documentale (T-18, DONE)
+  → verifica empirica deps.dev (T-19A, DONE)
+  → D-03 formalizzata: deps.dev approvato con condizioni (DONE, 2026-09-23)
+  → implementazione Dependency evidence (T-19, PROSSIMO TASK, non iniziato)
+  → Full Impact Score (T-20, bloccato da T-19)
   → nuova batteria di test (T-21)
   → regression test (T-21)
   → red-team (T-21)
@@ -67,6 +69,12 @@ V0.1 (qui, COMPLETO)
 ```
 
 Nessun passo successivo inizia prima che il precedente sia chiuso. Le regole di D-02/D-03 non vengono modificate per ottenere artificialmente un Impact Score.
+
+**Stato al 2026-09-23 dopo la formalizzazione di D-03:**
+- T-18 = COMPLETED
+- T-19A = COMPLETED
+- T-19 = TODO, prossimo task operativo (implementazione Dependency Evidence). Non iniziato: nessun codice scritto.
+- T-20 = TODO, bloccato da T-19 (Full Impact Score). Non avviato.
 
 ## Dopo v0.1 (roadmap §66, non iniziati)
 Dependency Graph → AI Auditor → Human Review → Community Signal → Challenge → Funding Simulator → Milestone Monitoring → Project Credential → Smart Contracts → Testnet → Security Audit → Economic Validation → Mainnet → GHIM Token.

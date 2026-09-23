@@ -35,12 +35,35 @@ Registro delle decisioni (Directive v6.0 §54). Le decisioni critiche sono appro
 - **Implementazione del punto 6d (motivo del ricalcolo):** nuovo campo `impact.renormalization_reason` (stringa, popolato solo quando `weights_renormalized` è vero), reso in Markdown come sezione "Reason for recalculation". Non è un cambio di metodologia (nessun peso, ancora o soglia modificata): resta `GHIM-IMPACT-0.1`, è un'estensione del formato di report per trasparenza. Testato in `test_report_always_shows_weights_and_recalculation_reason`.
 - **Date / Version:** 2026-09-23 / GHIM-IMPACT-0.1 (report format esteso, stessa metodologia)
 
-## D-03 — V0.1 solo GitHub ✅ APPROVATA, NON MODIFICARE ANCORA (confermato 2026-09-23)
+## D-03 (2026-09-23, versione 1) — V0.1 solo GitHub ✅ APPROVATA
 - **Decision:** unica fonte la GitHub REST API. Adoption e Dependency sono `NOT_AVAILABLE`, mai zero.
 - **Consequences:** Coverage massima raggiungibile in v0.1 = 50% (vedi D-11).
 - **Vincolo esplicito (ribadito 2026-09-23):** NON aggiungere deps.dev, né alcuna seconda fonte, finché non è verificata sotto il profilo di:
   disponibilità · affidabilità · qualità dei dati · copertura · provenance · stabilità dell'API · riproducibilità · limiti e rate limits.
 - **Date / Version:** 2026-09-23 / GHIM-IMPACT-0.1
+- **Superata da:** D-03 (2026-09-23, versione 2), sotto. Questa voce resta nella cronologia e non viene cancellata.
+
+## D-03 (2026-09-23, versione 2) — deps.dev approvato come futura fonte secondaria per Dependency Evidence ✅ APPROVATA CON CONDIZIONI
+- **Decision:** deps.dev è approvato come futura fonte secondaria per Dependency Evidence, con copertura differenziata per ecosistema. L'integrazione è subordinata alla preservazione della provenance, alla gestione esplicita dei dati mancanti/non disponibili, alla riproducibilità tramite snapshot e alla verifica dei termini applicabili. Go non dispone del dependency graph risolto verificato per npm/PyPI/Maven/Cargo e non deve essere trattato come zero. **La decisione non modifica ancora il metodo di scoring né autorizza il Full Impact Score.**
+- **Context:** verifiche T-18 (`docs/DEPS_DEV_EVALUATION.md`) e T-19A (`docs/DEPS_DEV_EMPIRICAL_VERIFICATION.md`), entrambe COMPLETED.
+- **Questa decisione NON autorizza ancora:**
+  - l'implementazione del modulo deps.dev;
+  - la modifica di `config/scoring.yaml`;
+  - la modifica dei pesi;
+  - il calcolo del Full Impact Score;
+  - la chiusura di T-19;
+  - l'avvio di T-20.
+
+  T-19 è il successivo task di implementazione (vedi TASKS.md).
+- **Condizioni obbligatorie per l'integrazione futura:**
+  1. **Ecosistemi — copertura differenziata.** Verificata empiricamente per il dependency graph risolto: npm, PyPI, Maven, Cargo. **Go non dispone dello stesso dependency graph risolto** (verificato in T-19A: `GetDependencies` risponde HTTP 404 "dependencies not found" per un package Go reale, mentre risponde 200 con un grafo popolato per gli altri quattro ecosistemi). Go deve essere rappresentato come `NOT_AVAILABLE`, **mai** come `0` né come evidenza negativa. Non assumere che la copertura futura di altri ecosistemi non ancora verificati sia equivalente.
+  2. **Provenance.** Ogni Dependency Evidence deve mantenere la propria provenance. Una relazione classificata da deps.dev come `UNVERIFIED_METADATA` (osservata in T-19A su ogni package testato, per il collegamento a un repository) non deve essere trasformata da GHIMONEY in una relazione verificata: deve mantenere esplicitamente il proprio stato di verifica.
+  3. **Riproducibilità.** Le risposte deps.dev devono poter essere congelate in snapshot. L'architettura futura deve consentire almeno: endpoint, timestamp, ecosistema, package/project identifier, versione, API version, HTTP status, response body, fingerprint/hash, provenance, metodologia/versione GHIMONEY. Il calcolo futuro deve usare lo snapshot, non una risposta live successiva — lo stesso principio già applicato a GitHub (`ghimoney/src/ghimoney/snapshot.py`).
+  4. **Errori.** Un HTTP 404 non deve essere interpretato automaticamente come Dependency = 0. Gli errori API devono essere classificati esplicitamente, distinguendo almeno `NOT_AVAILABLE`, `UNKNOWN`, `INSUFFICIENT_EVIDENCE`, `ERROR` secondo il significato effettivo del caso (es. il 404 di Go su `GetDependencies` è `NOT_AVAILABLE` per limite strutturale della fonte, non un errore generico né uno zero).
+  5. **Rate limit.** Il rate limit numerico resta `UNKNOWN`. Non va inventato un limite. L'assenza di errori nelle 16 richieste di T-19A non equivale all'assenza di rate limit. Il futuro ingestion module dovrà essere progettato senza dipendere da un numero di rate limit non verificato.
+  6. **Termini e licenze.** La verifica integrale dei Google API Terms of Service non è stata completata (bloccati dalla policy di rete di questo ambiente sia in T-18 sia in T-19A). Non si dichiarano quindi i termini completamente verificati. La futura implementazione dovrà mantenere l'attribuzione richiesta dai dati generati da deps.dev (CC-BY 4.0, da T-18) e rispettare i termini applicabili alle fonti sottostanti.
+  7. **Metodo di verifica empirica T-19A.** La verifica empirica di T-19A è stata eseguita tramite richieste HTTP reali effettuate attraverso Firecrawl, perché l'ambiente di questa sessione blocca `*.deps.dev`. Si classifica correttamente come **"EMPIRICAL VERIFICATION VIA THIRD-PARTY NETWORK INFRASTRUCTURE"**: non è una simulazione (i dati osservati sono reali, incluse le risposte HTTP effettive del servizio), e non è nemmeno una verifica diretta dall'ambiente GHIMONEY. Le limitazioni già documentate in `docs/DEPS_DEV_EMPIRICAL_VERIFICATION.md` (header HTTP non osservabili, rate limit numerico non verificabile, ToS non letto per intero) restano valide e non sono superate da questa decisione.
+- **Date / Version:** 2026-09-23 / GHIM-IMPACT-0.1 (nessuna modifica alla metodologia)
 
 ## D-04 — Confidence, Coverage, Risk come metriche indipendenti ✅ APPROVATA CON CONDIZIONE
 - **Decision:** tre funzioni separate (`compute_coverage`, `compute_confidence`, `assess_risk`), ciascuna testata e versionata con la metodologia. Nessuna modifica l'Impact Score.
