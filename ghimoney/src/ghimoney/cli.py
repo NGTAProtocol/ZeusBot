@@ -8,6 +8,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from ghimoney.canonical import canonical_json
+from ghimoney.depsdev_dependents_evidence import build_dependents_evidence
+from ghimoney.depsdev_dependents_ingestion import DependentsIngestor
 from ghimoney.depsdev_evidence import build_dependency_evidence, package_id
 from ghimoney.depsdev_ingestion import (
     ECOSYSTEMS,
@@ -49,6 +51,46 @@ def _resolve_snapshot(args, store: SnapshotStore, methodology) -> Snapshot:
     return snap
 
 
+def _parse_package_ref(ref: str) -> tuple[str, str, str]:
+    """Parses "ecosystem:name@version" (e.g. "npm:@babel/core@7.20.0").
+    Split on the first ":" then the LAST "@", since a scoped npm name
+    itself starts with "@"."""
+    if ":" not in ref or "@" not in ref.split(":", 1)[1]:
+        raise DepsDevIngestionError(
+            f"invalid package reference {ref!r}: expected ecosystem:name@version")
+    ecosystem, rest = ref.split(":", 1)
+    name, version = rest.rsplit("@", 1)
+    return ecosystem, name, version
+
+
+def _resolve_dependents_evidence(args, store: SnapshotStore, methodology):
+    """T-20, D-12: the ONLY evidence allowed to feed the "dependency"
+    dimension. Requires the caller to explicitly name the package
+    (--dependents ecosystem:name@version): GHIMONEY does not correlate a
+    GitHub project to a registry package automatically -- that mapping is
+    not defined by any decision and is not guessed here."""
+    ecosystem, name, version = _parse_package_ref(args.dependents)
+    validate_ecosystem(ecosystem)
+    validate_package(name, version)
+    target = f"{ecosystem}:{name}@{version}"
+    if args.dependents_snapshot_file:
+        snap = Snapshot.load(args.dependents_snapshot_file)
+    elif args.offline:
+        snap = store.latest(target)
+        if snap is None:
+            raise DepsDevIngestionError(
+                f"no cached dependents snapshot for {target} and --offline was given")
+    else:
+        print(f"fetching dependents for {target} from deps.dev "
+              "(v3alpha, EXPERIMENTAL SOURCE)", file=sys.stderr)
+        snap = DependentsIngestor().fetch(ecosystem, name, version)
+        store.save(snap)
+    if snap.target.lower() != target.lower():
+        raise DepsDevIngestionError(
+            f"dependents snapshot {snap.snapshot_id} is for {snap.target}, not {target}")
+    return build_dependents_evidence(snap, ecosystem, name, version, methodology)
+
+
 def cmd_analyze(args) -> int:
     validate_target(args.target)
     methodology = load_methodology(args.config)
@@ -60,7 +102,9 @@ def cmd_analyze(args) -> int:
                                  f"not {args.target}")
         identity = project_identity(snap)
         store.record_name("github", identity.forge_repo_id, identity.full_name, snap.as_of)
-        report = analyze(snap, methodology)
+        extra_evidence = (_resolve_dependents_evidence(args, store, methodology)
+                          if args.dependents else None)
+        report = analyze(snap, methodology, extra_evidence=extra_evidence)
     finally:
         store.close()
     out_dir = Path(args.out) / identity.full_name.replace("/", "__") / snap.snapshot_id
@@ -74,9 +118,10 @@ def cmd_analyze(args) -> int:
 
 
 def cmd_dependency_evidence(args) -> int:
-    """T-19: Dependency Evidence from deps.dev. Standalone from `analyze`
-    (D-03 v2: this does not compute an Impact Score, and is not wired into
-    engine.analyze -- T-20 is not started)."""
+    """T-19: Dependency Evidence from deps.dev (outgoing dependencies).
+    Standalone from `analyze`: per D-12, this never feeds the Impact
+    Engine's "dependency" dimension, which measures dependents instead
+    (see cmd_analyze's --dependents option, T-20)."""
     validate_ecosystem(args.ecosystem)
     validate_package(args.name, args.version)
     methodology = load_methodology(args.config)
@@ -112,8 +157,8 @@ def cmd_dependency_evidence(args) -> int:
         "source": {"snapshot_id": snap.snapshot_id, "snapshot_hash": snap.snapshot_hash,
                   "as_of": snap.as_of, "source": snap.source, "api_version": snap.api_version},
         "evidence": [e.model_dump(mode="json") for e in evidence],
-        "note": "Dependency Evidence only: not scored, not wired into the Impact Engine "
-                "(T-20 not started, D-03 v2).",
+        "note": "Outgoing Dependency Evidence only: not scored, does not feed the Impact "
+                "Engine's 'dependency' dimension, which measures dependents instead (D-12).",
     }
     json_path = out_dir / "dependency_evidence.json"
     json_path.write_text(canonical_json(payload, indent=2) + "\n", encoding="utf-8")
@@ -151,6 +196,12 @@ def build_parser() -> argparse.ArgumentParser:
     a.add_argument("--offline", action="store_true", help="never call the API")
     a.add_argument("--snapshot", help="re-analyze a stored snapshot id")
     a.add_argument("--snapshot-file", help="analyze a snapshot JSON file")
+    a.add_argument("--dependents", metavar="ECOSYSTEM:NAME@VERSION",
+                   help="score the 'dependency' dimension from this package's dependents "
+                        "(T-20, D-12; deps.dev GetDependents, v3alpha EXPERIMENTAL SOURCE). "
+                        "GHIMONEY does not auto-detect a project's package: name it explicitly.")
+    a.add_argument("--dependents-snapshot-file",
+                   help="use a dependents snapshot JSON file instead of fetching")
     a.set_defaults(func=cmd_analyze)
 
     e = sub.add_parser("export-snapshot", help="export a stored snapshot to JSON")

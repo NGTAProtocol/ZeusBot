@@ -28,7 +28,7 @@ def test_cli_dependency_evidence_offline_npm(tmp_path):
     by_metric = {e["metric"]: e for e in payload["evidence"]}
     assert by_metric["dependency.resolved_graph_direct_count"]["raw_value"] == 31
     assert by_metric["dependency.resolved_graph_direct_count"]["normalized_value"] is None
-    assert "not wired into the Impact Engine" in payload["note"]
+    assert "does not feed the Impact Engine's 'dependency' dimension" in payload["note"]
 
 
 def test_cli_dependency_evidence_offline_go_never_reports_zero(tmp_path):

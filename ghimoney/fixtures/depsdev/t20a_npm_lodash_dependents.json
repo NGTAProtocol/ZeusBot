@@ -1,0 +1,4 @@
+{
+  "status": 200,
+  "body": {"dependentCount": 22623, "directDependentCount": 7092, "indirectDependentCount": 16154}
+}

@@ -32,3 +32,9 @@ Every other file is the complete, unmodified real body from its T-19A test.
 | `t13_cargo_serde_version.json` | T13 | `GET /v3/systems/cargo/packages/serde/versions/1.0.203` |
 | `t14_cargo_serde_dependencies.json` | T14 | `GET .../serde/versions/1.0.203:dependencies` |
 | `t15_npm_nonexistent_404.json` | T15 | `GET .../packages/this-package-does-not-exist-ghimoney-test-12345` → 404 |
+| `t20a_npm_lodash_dependents.json` | T20A | `GET /v3alpha/systems/npm/packages/lodash/versions/4.17.21:dependents` |
+| `t20a_pypi_requests_dependents.json` | T20A | `GET /v3alpha/systems/pypi/packages/requests/versions/2.31.0:dependents` |
+| `t20a_maven_guava_dependents.json` | T20A | `GET /v3alpha/systems/maven/packages/com.google.guava%3Aguava/versions/32.1.3-jre:dependents` |
+| `t20a_cargo_serde_dependents.json` | T20A | `GET /v3alpha/systems/cargo/packages/serde/versions/1.0.203:dependents` |
+| `t20a_go_pkgerrors_dependents_404.json` | T20A | `GET .../go/.../pkg%2Ferrors/versions/v0.9.1:dependents` → 404 "dependents not found" |
+| `t20a_npm_nonexistent_dependents_404.json` | T20A | `GET .../this-package-does-not-exist-ghimoney-test-12345/...:dependents` → 404 "dependents not found" (same message as the Go structural gap, hence ambiguous by body alone) |

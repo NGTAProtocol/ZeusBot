@@ -8,6 +8,7 @@ from ghimoney import __version__
 from ghimoney.canonical import sha256_json
 from ghimoney.evidence import build_evidence, project_identity
 from ghimoney.methodology import Methodology
+from ghimoney.models import EvidenceRecord
 from ghimoney.risk import assess_risk
 from ghimoney.scoring import compute_confidence, compute_coverage, compute_impact, score_dimensions
 from ghimoney.snapshot import Snapshot
@@ -15,9 +16,16 @@ from ghimoney.snapshot import Snapshot
 REPORT_FORMAT = "ghimoney-report/1"
 
 
-def analyze(snap: Snapshot, m: Methodology) -> dict[str, Any]:
+def analyze(snap: Snapshot, m: Methodology,
+           extra_evidence: list[EvidenceRecord] | None = None) -> dict[str, Any]:
+    """`extra_evidence` (T-20, D-12) lets a caller attach evidence from a
+    second source -- today, only dependents evidence for the "dependency"
+    dimension (depsdev_dependents_evidence.build_dependents_evidence).
+    T-19's outgoing-dependency evidence must never be passed here (D-12)."""
     identity = project_identity(snap)
     evidence = build_evidence(snap, m, identity)
+    if extra_evidence:
+        evidence = evidence + list(extra_evidence)
     dimensions = score_dimensions(evidence, m)
     coverage = compute_coverage(dimensions)
     impact = compute_impact(dimensions, coverage, m)
@@ -48,7 +56,7 @@ def analyze(snap: Snapshot, m: Methodology) -> dict[str, Any]:
         "dimensions": [d.model_dump(mode="json") for d in dimensions],
         "evidence": [e.model_dump(mode="json") for e in evidence],
         "roles": {
-            "ai": "not used in GHIM-IMPACT-0.1",
+            "ai": f"not used in {m.methodology_version}",
             "human_review": "not performed: provisional, unreviewed result",
             "funding": "none: methodology 0.x results are never used for funding",
         },

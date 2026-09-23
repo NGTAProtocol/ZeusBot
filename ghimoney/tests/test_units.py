@@ -64,14 +64,23 @@ def _raw_config():
 
 
 def test_methodology_loads_and_is_versioned(methodology):
-    assert methodology.methodology_version == "GHIM-IMPACT-0.1"
+    assert methodology.methodology_version == "GHIM-IMPACT-0.2"
     assert len(methodology.config_hash) == 64
 
 
-def test_adoption_and_dependency_have_no_metrics(methodology):
-    # D-03: v0.1 is GitHub only; these dimensions must be NOT_AVAILABLE, never scored.
+def test_adoption_has_no_metrics(methodology):
+    # D-03: v0.1 is GitHub only; adoption has no verified source and must
+    # stay NOT_AVAILABLE, never scored.
     assert methodology.metrics_of("adoption") == {}
-    assert methodology.metrics_of("dependency") == {}
+
+
+def test_dependency_has_exactly_the_dependents_metric(methodology):
+    # D-12/T-20: "dependency" is scored only from dependents evidence
+    # (depsdev_dependents_evidence.py); T-19's outgoing-dependency evidence
+    # must never appear here.
+    metrics = methodology.metrics_of("dependency")
+    assert set(metrics) == {"dependents_total_count"}
+    assert metrics["dependents_total_count"].weight == 1.0
 
 
 def test_popularity_is_never_a_scored_metric(methodology):
@@ -190,7 +199,7 @@ def test_evidence_has_provenance(snapshot, methodology):
         assert e.provenance.request_keys, e.metric
         assert len(e.provenance.response_hashes) == len(e.provenance.endpoints)
         assert e.as_of == snapshot.as_of
-        assert e.methodology_version == "GHIM-IMPACT-0.1"
+        assert e.methodology_version == "GHIM-IMPACT-0.2"
         if e.availability is Availability.VERIFIED:
             assert e.confidence is not None
         else:

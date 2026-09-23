@@ -4,8 +4,8 @@
 # scientifically validated value. Changing any value that affects results
 # requires a new methodology_version (Directive §44, Rule 9).
 
-methodology_version: GHIM-IMPACT-0.1
-config_version: "0.1.0"
+methodology_version: GHIM-IMPACT-0.2
+config_version: "0.2.0"
 
 # ---------------------------------------------------------------------------
 # Dimensions (Directive §10). Weights sum to 1.0.
@@ -54,8 +54,24 @@ aggregation:
 # Anchors are declared hypotheses: the value at which a metric saturates.
 # ---------------------------------------------------------------------------
 metrics:
-  # Adoption and Dependency: NOT_AVAILABLE in v0.1 (decision D-03).
-  # They have no metrics here on purpose; they must never default to zero.
+  # Adoption: still NOT_AVAILABLE (decision D-03). No metric here on
+  # purpose; it must never default to zero.
+
+  # Dependency (decision D-12, T-20A): measures dependents (how much the
+  # ecosystem depends on the project), not the project's own outgoing
+  # dependencies (T-19, kept deliberately separate and unscored).
+  # EXPERIMENTAL SOURCE: deps.dev GetDependents is v3alpha, not v3 stable
+  # (T-20A). Covers npm/pypi/maven/cargo; NOT_AVAILABLE for Go (verified
+  # empirically on two real packages, T-20A).
+  # Anchor is a HYPOTHESIS: observed real dependent counts in T-20A ranged
+  # from 68 (a small-but-real crate) to 22,623 (a very popular npm package);
+  # 1000 is a starting order-of-magnitude guess, not validated (Directive
+  # §48).
+  dependents_total_count:
+    dimension: dependency
+    weight: 1.0
+    normalization: log_saturating
+    anchor: 1000
 
   commits_last_365d:
     dimension: maintenance

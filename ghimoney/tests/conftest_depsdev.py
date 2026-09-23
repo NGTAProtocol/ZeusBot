@@ -28,3 +28,14 @@ def make_depsdev_snapshot(ecosystem: str, pkg_name: str, version: str,
     responses = {key: response_from_fixture(fixture) for key, fixture in keyed_fixtures.items()}
     return Snapshot(target=f"{ecosystem}:{pkg_name}@{version}", source="deps-dev-api-v3",
                     as_of=AS_OF, api_version="v3", responses=responses)
+
+
+def make_dependents_snapshot(ecosystem: str, pkg_name: str, version: str,
+                             **keyed_fixtures: str) -> Snapshot:
+    """Same as make_depsdev_snapshot, but shaped as
+    depsdev_dependents_ingestion.DependentsIngestor.fetch() would build it
+    (v3alpha, T-20)."""
+    responses = {key: response_from_fixture(fixture) for key, fixture in keyed_fixtures.items()}
+    return Snapshot(target=f"{ecosystem}:{pkg_name}@{version}",
+                    source="deps-dev-api-v3alpha-dependents", as_of=AS_OF,
+                    api_version="v3alpha", responses=responses)
