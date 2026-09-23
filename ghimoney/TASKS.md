@@ -28,7 +28,8 @@ Stati: `DONE` · `PARTIAL` · `BLOCKED` · `TODO`
 | T-18 | Verificare deps.dev — analisi documentale (disponibilità, affidabilità, qualità dei dati, copertura, provenance, stabilità API, riproducibilità, rate limits) | **DONE / COMPLETED** | — | `docs/DEPS_DEV_EVALUATION.md` pubblicato (15 sezioni). Conclusione: APPROVED WITH CONDITIONS. Nessuna riga di codice toccata |
 | T-19A | Verifica empirica di deps.dev (analisi soltanto, nessuna integrazione) | **DONE / COMPLETED** | T-18 | `docs/DEPS_DEV_EMPIRICAL_VERIFICATION.md` pubblicato. 16 richieste HTTP reali tramite Firecrawl (EMPIRICAL VERIFICATION VIA THIRD-PARTY NETWORK INFRASTRUCTURE, `*.deps.dev` bloccato da questa sessione). Confermato empiricamente: Go privo del dependency graph risolto (HTTP 404), riproducibilità byte-identica su richiesta ripetuta. Conclusione: VERIFIED FOR NEXT DECISION. Nessuna riga di codice toccata |
 | **T-19** | **Implementazione Dependency Evidence** (modulo deps.dev, ingestion, evidence, provenance) | **DONE / COMPLETED** | T-18 (DONE), T-19A (DONE), D-03 v2 (APPROVATA CON CONDIZIONI) | `depsdev_ingestion.py` + `depsdev_evidence.py` + CLI `dependency-evidence`. Rispettate le 7 condizioni di D-03 v2: Go = `NOT_AVAILABLE` sul grafo risolto, mai zero (test dedicato); provenance preservata (`UNVERIFIED_METADATA` non letto/riscritto); riproducibilità tramite snapshot (nessuna chiamata live nel calcolo dell'evidenza); errori classificati esplicitamente (404 mai → 0, distinto da absence/transport/rate-limit); nessun rate limit inventato (nessun retry, nessuna soglia numerica assunta). 34 nuovi test (98 totali), tutti con fixture reali di T-19A o mock, nessuna dipendenza dalla rete. **Non wired in `engine.analyze()`: `config/scoring.yaml` invariato, nessun Impact Score prodotto** |
-| **T-20** | **Full Impact Score** (Dependency evidence integrata nello scoring; possibile aggiornamento pesi/soglie) | **TODO — bloccato da T-19, non iniziato** | T-19 (DONE) | Solo quando Adoption o Dependency hanno una fonte verificata e la Coverage può superare il 60%. Richiede una nuova `methodology_version` (non `GHIM-IMPACT-0.1`) e una nuova batteria di test (T-21). **Non avviato: nessuna riga di codice tocca `config/scoring.yaml`, i pesi o `engine.py`** |
+| T-19B | Audit semantico: la Dependency Evidence di T-19 (dependencies uscenti) è compatibile con la dimensione "Dependency" (dependents)? | **DONE / COMPLETED** | T-19 | **Incoerenza confermata e risolta con D-12**: "Dependency" nell'Impact Engine misura i dependents, non le dependencies uscenti. T-19 resta valido come Dependency Evidence strutturale separata, non collegata alla dimensione. Nessun codice toccato |
+| **T-20** | **Full Impact Score** (dependents integrati nello scoring per la dimensione Dependency) | **TODO — sbloccato concettualmente da D-12, non iniziato** | T-19B (DONE), D-12 (DEFINITIVA) | **Ambiguità di semantica risolta (D-12): la fonte T-19 non alimenta questo task.** Prima di implementare serve una fonte di dependents verificata (es. deps.dev `GetDependents`, oggi v3alpha/non verificata) con lo stesso percorso di verifica documentale + empirica già seguito per T-18/T-19A, poi una decisione D-03-style dedicata. Richiede una nuova `methodology_version` (non `GHIM-IMPACT-0.1`) e una nuova batteria di test (T-21). **Non avviato: nessuna riga di codice tocca `config/scoring.yaml`, i pesi, D-02 o `engine.py`** |
 | T-21 | Nuova batteria di test + regression test + red-team | TODO | T-20 | Sulla metodologia aggiornata (nuova `methodology_version`) |
 | T-22 | Validazione su repository reali diversificati | TODO | T-21 | ≥ 10 repository di categorie diverse (§48) |
 
@@ -60,8 +61,11 @@ V0.1 (COMPLETO)
   → verifica deps.dev — analisi documentale (T-18, DONE)
   → verifica empirica deps.dev (T-19A, DONE)
   → D-03 formalizzata: deps.dev approvato con condizioni (DONE, 2026-09-23)
-  → implementazione Dependency evidence (T-19, PROSSIMO TASK, non iniziato)
-  → Full Impact Score (T-20, bloccato da T-19)
+  → implementazione Dependency evidence (T-19, DONE, strutturale/dependencies uscenti)
+  → audit semantico Dependency Evidence vs dimensione Dependency (T-19B, DONE)
+  → D-12: Dependency = dependents, non dependencies uscenti (DEFINITIVA)
+  → verifica di una fonte di dependents (da fare, prerequisito reale di T-20)
+  → Full Impact Score (T-20, sbloccato concettualmente, non iniziato)
   → nuova batteria di test (T-21)
   → regression test (T-21)
   → red-team (T-21)
@@ -74,7 +78,8 @@ Nessun passo successivo inizia prima che il precedente sia chiuso. Le regole di 
 - T-18 = COMPLETED
 - T-19A = COMPLETED
 - T-19 = **DONE** (implementazione Dependency Evidence via deps.dev, standalone, non wired nello scoring).
-- T-20 = TODO, bloccato da T-19 (Full Impact Score). Non avviato: nessuna riga di codice tocca `config/scoring.yaml`, i pesi o `engine.py`.
+- T-19B = **DONE** (audit semantico: incoerenza confermata e risolta con D-12 — "Dependency" = dependents, T-19 non la alimenta).
+- T-20 = TODO, sbloccato concettualmente da D-12 ma **non iniziato**: serve prima una fonte di dependents verificata. Nessuna riga di codice tocca `config/scoring.yaml`, i pesi, D-02 o `engine.py`.
 
 ## Dopo v0.1 (roadmap §66, non iniziati)
 Dependency Graph → AI Auditor → Human Review → Community Signal → Challenge → Funding Simulator → Milestone Monitoring → Project Credential → Smart Contracts → Testnet → Security Audit → Economic Validation → Mainnet → GHIM Token.

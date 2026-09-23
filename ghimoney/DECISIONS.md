@@ -109,3 +109,16 @@ Registro delle decisioni (Directive v6.0 §54). Le decisioni critiche sono appro
   ```
   Nessun passo inizia prima che il precedente sia chiuso (vedi TASKS.md).
 - **Date / Version:** 2026-09-23 / GHIM-IMPACT-0.1
+
+## D-12 — Semantica della dimensione "Dependency": dependents, non dependencies ✅ DECISIONE DEFINITIVA (2026-09-23)
+- **Context:** durante l'audit metodologico richiesto prima di T-20, è emersa un'incoerenza: la dimensione "Dependency" dell'Impact Engine, per come descritta nella Directive originale e nella lettura fattane in `docs/ARCHITECTURE_AUDIT.md` (§8 "DEPENDENCY GRAPH ANALYSIS", CF-3), misura **quanti altri progetti dipendono da questo progetto** (dependents, direzione entrante) — un segnale di portata nell'ecosistema, concettualmente vicino ad Adoption. La Dependency Evidence prodotta da T-19 (`depsdev_evidence.py`, via deps.dev `GetDependencies`/`GetRequirements`) misura invece **da cosa dipende questo progetto** (dependencies uscenti, direzione opposta). Collegare le due cose avrebbe silenziosamente ridefinito cosa la dimensione "Dependency" rappresenta, senza una decisione esplicita.
+- **Decision: DEFINITIVA.** "Dependency" nell'Impact Engine misura quanto l'ecosistema dipende dal progetto: si basa sui **dependents** del progetto (chi dipende da esso), non sulle sue dependencies uscenti.
+- **Conseguenza immediata:** le dependencies uscenti raccolte da T-19 **non alimentano e non alimenteranno** la dimensione "Dependency" dell'Impact Score, in nessuna forma.
+- **T-19 resta valido**, come pipeline separata di **Dependency Evidence strutturale** (dependencies uscenti, provenance, riproducibilità tramite snapshot) — un dato utile in sé (es. per un futuro segnale di complessità/rischio delle dipendenze), semplicemente non equivalente alla dimensione "Dependency" dell'Impact Score e non collegato ad essa.
+- **Cosa questa decisione NON fa:**
+  - non modifica `config/scoring.yaml` (nessuna metrica aggiunta, nessun peso o soglia toccato — hash MD5 verificato invariato);
+  - non modifica D-02;
+  - non implementa T-20 (nessun codice scritto, nessuna formula o ancora scelta per i dependents);
+  - non introduce una nuova fonte dati.
+- **Cosa serve prima di poter davvero implementare T-20:** una fonte verificata per i dependents (es. `GetDependents` di deps.dev, oggi solo in v3alpha e non verificato — vedi `docs/DEPS_DEV_EVALUATION.md` §6/§13), con lo stesso percorso già seguito per le altre fonti: verifica documentale, verifica empirica, poi una decisione D-03-style dedicata prima di qualsiasi implementazione. Questa decisione **non** approva quella fonte: si limita a chiarire cosa la dimensione "Dependency" deve misurare quando una fonte adeguata esisterà.
+- **Date / Version:** 2026-09-23 / GHIM-IMPACT-0.1 (nessuna modifica alla metodologia; solo chiarimento semantico registrato)
