@@ -1,0 +1,573 @@
+{
+  "confidence": {
+    "adjusted": 0.838,
+    "base": 0.838,
+    "risk_adjustment_factor": 1.0
+  },
+  "coverage": {
+    "missing_dimensions": [
+      "adoption",
+      "dependency"
+    ],
+    "observable_dimensions": [
+      "maintenance",
+      "quality",
+      "security",
+      "community"
+    ],
+    "value": 0.5
+  },
+  "dimensions": [
+    {
+      "availability": "NOT_AVAILABLE",
+      "confidence": null,
+      "dimension": "adoption",
+      "metric_coverage": 0.0,
+      "metrics_missing": [],
+      "metrics_used": [],
+      "score": null,
+      "weight": 0.25
+    },
+    {
+      "availability": "NOT_AVAILABLE",
+      "confidence": null,
+      "dimension": "dependency",
+      "metric_coverage": 0.0,
+      "metrics_missing": [],
+      "metrics_used": [],
+      "score": null,
+      "weight": 0.25
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.86,
+      "dimension": "maintenance",
+      "metric_coverage": 1.0,
+      "metrics_missing": [],
+      "metrics_used": [
+        "commits_last_365d",
+        "days_since_last_commit",
+        "releases_last_365d"
+      ],
+      "score": 78.7102,
+      "weight": 0.15
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "dimension": "quality",
+      "metric_coverage": 1.0,
+      "metrics_missing": [],
+      "metrics_used": [
+        "ci_workflows_present",
+        "community_profile_files"
+      ],
+      "score": 83.335,
+      "weight": 0.15
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "dimension": "security",
+      "metric_coverage": 1.0,
+      "metrics_missing": [],
+      "metrics_used": [
+        "security_policy_present"
+      ],
+      "score": 100.0,
+      "weight": 0.1
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "dimension": "community",
+      "metric_coverage": 1.0,
+      "metrics_missing": [],
+      "metrics_used": [
+        "distinct_authors_last_365d",
+        "total_contributors"
+      ],
+      "score": 58.6591,
+      "weight": 0.1
+    }
+  ],
+  "evidence": [
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-f868587a0e37b824",
+      "evidence_kind": "presence_check",
+      "method": "boolean",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "ci_workflows_present",
+      "normalized_value": 100.0,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/workflows"
+        ],
+        "request_keys": [
+          "workflows"
+        ],
+        "response_hashes": [
+          "3d650b7ba2e053596b14eb5fc3b0bbeeff22cc38a0b20ea22798b59a6e85d687"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": true
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-ea6b1cd550c68248",
+      "evidence_kind": "direct_count",
+      "method": "log_saturating(anchor=500)",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "commits_last_365d",
+      "normalized_value": 77.1448,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/commits_window"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "0b0a7ed1706014774f468efb5d93a0c321e958898b2b1e2f08958cf85776e958"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 120
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-9aa6722acd48a101",
+      "evidence_kind": "derived",
+      "method": "fraction",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "community_profile_files",
+      "normalized_value": 66.67,
+      "note": "present: readme, license, contributing, issue_template",
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/community_profile"
+        ],
+        "request_keys": [
+          "community_profile"
+        ],
+        "response_hashes": [
+          "57cfb95ec3b9fbb918b6476383997294789f77f957a6eb83c37e63448fce989b"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0.6667
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-dca06f578487a6de",
+      "evidence_kind": "derived",
+      "method": "log_decay(anchor=365)",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "days_since_last_commit",
+      "normalized_value": 88.257,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/latest_commit"
+        ],
+        "request_keys": [
+          "latest_commit"
+        ],
+        "response_hashes": [
+          "d666f58275033faca1709e5c75a3d3b596850b7c7281fbf4de66e861735a942a"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 1.0
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-6e416593bb617b57",
+      "evidence_kind": "direct_count",
+      "method": "log_saturating(anchor=50)",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "distinct_authors_last_365d",
+      "normalized_value": 55.8831,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/commits_window"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "0b0a7ed1706014774f468efb5d93a0c321e958898b2b1e2f08958cf85776e958"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 8
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-fdf15ff336644bbf",
+      "evidence_kind": "direct_count",
+      "method": "log_saturating(anchor=12)",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "releases_last_365d",
+      "normalized_value": 62.7474,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/releases"
+        ],
+        "request_keys": [
+          "releases"
+        ],
+        "response_hashes": [
+          "0bdf8b250148b560bfbdc3c06d46a29b7388641ce34feff03a8d2fc7203efa46"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 4
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-cf1feef28b4d7512",
+      "evidence_kind": "presence_check",
+      "method": "boolean",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "security_policy_present",
+      "normalized_value": 100.0,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/security_policy:SECURITY.md",
+          "/synthetic/security_policy:.github/SECURITY.md",
+          "/synthetic/security_policy:docs/SECURITY.md"
+        ],
+        "request_keys": [
+          "security_policy:SECURITY.md",
+          "security_policy:.github/SECURITY.md",
+          "security_policy:docs/SECURITY.md"
+        ],
+        "response_hashes": [
+          "34c699ddbc5038fab8cefcb970d7fc948d5c7e07ea6a17b596f10bbe47a3f3a0",
+          "8fd54eee4277f1327015cc0bcaed8a878bf44d1804364cd5d93dfab9e2d1a5af",
+          "8fd54eee4277f1327015cc0bcaed8a878bf44d1804364cd5d93dfab9e2d1a5af"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": true
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-33ee34df81ee0f11",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "signal.forks_count",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/repo"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "0c57d41941f094f44596a6a8e27daecf837eabba66bcfd69419eea83204c4884"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 90
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-3c0dc0e3c57dddb8",
+      "evidence_kind": "derived",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "signal.max_commit_window_share",
+      "normalized_value": null,
+      "note": "window of 7 days",
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/commits_window"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "0b0a7ed1706014774f468efb5d93a0c321e958898b2b1e2f08958cf85776e958"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0.025
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-ae5a0c05cd93ce3f",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "signal.published_security_advisories",
+      "normalized_value": null,
+      "note": "recorded only: advisories show a disclosure process as much as a weakness",
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/security_advisories"
+        ],
+        "request_keys": [
+          "security_advisories"
+        ],
+        "response_hashes": [
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-3aca48c1d7ad87a7",
+      "evidence_kind": "derived",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "signal.repository_age_days",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/repo"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "0c57d41941f094f44596a6a8e27daecf837eabba66bcfd69419eea83204c4884"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 1500.0
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-3d08d4240aa4348c",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "signal.stargazers_count",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/repo"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "0c57d41941f094f44596a6a8e27daecf837eabba66bcfd69419eea83204c4884"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 850
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-d9f67d11772d4b89",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "signal.subscribers_count",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/repo"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "0c57d41941f094f44596a6a8e27daecf837eabba66bcfd69419eea83204c4884"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 30
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-d01d47fc3a1ec30e",
+      "evidence_kind": "derived",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "signal.top_author_share_last_365d",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/commits_window"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "0b0a7ed1706014774f468efb5d93a0c321e958898b2b1e2f08958cf85776e958"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0.125
+    },
+    {
+      "as_of": "2026-09-01T00:00:00Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-52c33ab71fbb1929",
+      "evidence_kind": "direct_count",
+      "method": "log_saturating(anchor=200)",
+      "methodology_version": "GHIM-IMPACT-0.1",
+      "metric": "total_contributors",
+      "normalized_value": 61.4352,
+      "note": null,
+      "project_id": "ghp-cd07179b43356c0f",
+      "provenance": {
+        "endpoints": [
+          "/synthetic/contributors"
+        ],
+        "request_keys": [
+          "contributors"
+        ],
+        "response_hashes": [
+          "b42018815045c48045a911a219d6333ef4dc86ae543fba2fbeb4ef6e8d7f8af8"
+        ],
+        "retrieved_at": "2026-09-01T00:00:00Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 25
+    }
+  ],
+  "format": "ghimoney-report/1",
+  "impact": {
+    "effective_weights": {},
+    "missing_dimensions": [
+      "adoption",
+      "dependency"
+    ],
+    "original_weights": {
+      "adoption": 0.25,
+      "community": 0.1,
+      "dependency": 0.25,
+      "maintenance": 0.15,
+      "quality": 0.15,
+      "security": 0.1
+    },
+    "reasons": [
+      "coverage 0.50 below minimum 0.60",
+      "2 core dimension(s) missing (adoption, dependency), maximum 1"
+    ],
+    "score": null,
+    "status": "INSUFFICIENT_EVIDENCE",
+    "weights_renormalized": false
+  },
+  "methodology": {
+    "config_hash": "cede23aedae8dd9ec033c9c9c3041466907988477b0e1f2826fbc7dae179351c",
+    "config_version": "0.1.0",
+    "methodology_version": "GHIM-IMPACT-0.1",
+    "weights_are_hypotheses": true
+  },
+  "project": {
+    "forge": "github",
+    "forge_node_id": "R_synthetic",
+    "forge_repo_id": 424242,
+    "full_name": "synthetic/library",
+    "is_archived": false,
+    "is_fork": false,
+    "project_id": "ghp-cd07179b43356c0f"
+  },
+  "report_hash": "f907f0a9036c351acf4f79aa726193717717157ef7863752bf9958bb239d06e9",
+  "risk": {
+    "checks_evaluated": [
+      "popularity_vs_contributors",
+      "young_and_popular",
+      "commit_burst",
+      "author_concentration",
+      "repository_is_fork"
+    ],
+    "checks_not_evaluated": [],
+    "level": "LOW",
+    "signals": []
+  },
+  "roles": {
+    "ai": "not used in GHIM-IMPACT-0.1",
+    "funding": "none: methodology 0.x results are never used for funding",
+    "human_review": "not performed: provisional, unreviewed result"
+  },
+  "source": {
+    "as_of": "2026-09-01T00:00:00Z",
+    "snapshot_hash": "4ed2bc4e0e2a78d36f229b3df9bbd49ea1fd2326d2e03ed86851d944558b83d1",
+    "snapshot_id": "4ed2bc4e0e2a78d3",
+    "source_versions": {
+      "github-rest-api": "2022-11-28"
+    },
+    "synthetic": true
+  },
+  "tool_version": "0.1.0"
+}

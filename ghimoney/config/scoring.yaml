@@ -1,0 +1,156 @@
+# GHIMONEY Impact Engine methodology configuration.
+#
+# Every number in this file is a HYPOTHESIS (Directive v6.0 §10), not a
+# scientifically validated value. Changing any value that affects results
+# requires a new methodology_version (Directive §44, Rule 9).
+
+methodology_version: GHIM-IMPACT-0.1
+config_version: "0.1.0"
+
+# ---------------------------------------------------------------------------
+# Dimensions (Directive §10). Weights sum to 1.0.
+# ---------------------------------------------------------------------------
+dimensions:
+  adoption:
+    weight: 0.25
+    core: true
+  dependency:
+    weight: 0.25
+    core: true
+  maintenance:
+    weight: 0.15
+    core: false
+  quality:
+    weight: 0.15
+    core: false
+  security:
+    weight: 0.10
+    core: false
+  community:
+    weight: 0.10
+    core: false
+
+# ---------------------------------------------------------------------------
+# Aggregation rules (decision D-02).
+# ---------------------------------------------------------------------------
+aggregation:
+  # Coverage below this -> INSUFFICIENT_EVIDENCE, no final Impact Score.
+  min_coverage: 0.60
+  # Fewer observable dimensions than this -> INSUFFICIENT_EVIDENCE.
+  min_observable_dimensions: 2
+  # More missing core dimensions than this -> INSUFFICIENT_EVIDENCE.
+  # HYPOTHESIS pending approval: "core" = the two 25% dimensions.
+  max_missing_core_dimensions: 1
+  # A dimension is observable only if at least this share of its internal
+  # metric weight is available.
+  min_dimension_metric_coverage: 0.50
+
+# ---------------------------------------------------------------------------
+# Metrics (decisions D-01, D-03, D-04). Normalization is logarithmic:
+#   log_saturating: score = 100 * min(1, ln(1+x) / ln(1+anchor))
+#   log_decay:      score = 100 * max(0, 1 - ln(1+x) / ln(1+anchor))
+#   fraction:       score = 100 * x          (x already in [0, 1])
+#   boolean:        score = 100 if x else 0
+# Anchors are declared hypotheses: the value at which a metric saturates.
+# ---------------------------------------------------------------------------
+metrics:
+  # Adoption and Dependency: NOT_AVAILABLE in v0.1 (decision D-03).
+  # They have no metrics here on purpose; they must never default to zero.
+
+  commits_last_365d:
+    dimension: maintenance
+    weight: 0.4
+    normalization: log_saturating
+    anchor: 500
+  days_since_last_commit:
+    dimension: maintenance
+    weight: 0.4
+    normalization: log_decay
+    anchor: 365
+  releases_last_365d:
+    dimension: maintenance
+    weight: 0.2
+    normalization: log_saturating
+    anchor: 12
+
+  community_profile_files:
+    dimension: quality
+    weight: 0.5
+    normalization: fraction
+  ci_workflows_present:
+    dimension: quality
+    weight: 0.5
+    normalization: boolean
+
+  security_policy_present:
+    dimension: security
+    weight: 1.0
+    normalization: boolean
+
+  distinct_authors_last_365d:
+    dimension: community
+    weight: 0.5
+    normalization: log_saturating
+    anchor: 50
+  total_contributors:
+    dimension: community
+    weight: 0.5
+    normalization: log_saturating
+    anchor: 200
+
+# ---------------------------------------------------------------------------
+# Evidence confidence by evidence kind (decision D-04). Hypotheses.
+# ---------------------------------------------------------------------------
+confidence:
+  evidence_kind:
+    direct_count: 0.90        # count returned directly by the API
+    lower_bound: 0.60         # count truncated by pagination limits
+    presence_check: 0.80      # file / feature found
+    absence_check: 0.60       # file / feature not found (may exist elsewhere)
+    derived: 0.80             # computed from other API data (e.g. dates)
+  # Risk adjusts reported confidence, never the Impact Score. Both the base
+  # and the adjusted value are reported.
+  risk_adjustment:
+    LOW: 1.00
+    MEDIUM: 0.90
+    HIGH: 0.70
+    CRITICAL: 0.50
+
+# ---------------------------------------------------------------------------
+# Risk signals (decision D-04). A signal is an ANOMALY, never proof of fraud
+# (Rules 10, 11). Thresholds are hypotheses.
+# ---------------------------------------------------------------------------
+risk:
+  popularity_vs_contributors:
+    level: MEDIUM
+    min_stars: 500
+    max_contributors: 2
+  young_and_popular:
+    level: MEDIUM
+    max_age_days: 90
+    min_stars: 1000
+  commit_burst:
+    level: MEDIUM
+    min_commits: 50
+    window_days: 7
+    max_window_share: 0.50
+  author_concentration:
+    level: LOW
+    min_commits: 20
+    max_top_author_share: 0.90
+  repository_is_fork:
+    level: MEDIUM
+
+# ---------------------------------------------------------------------------
+# Ingestion limits (GitHub REST API).
+# ---------------------------------------------------------------------------
+ingestion:
+  window_days: 365
+  per_page: 100
+  max_pages_commits: 10
+  max_pages_contributors: 5
+  max_pages_releases: 3
+  security_policy_paths:
+    - SECURITY.md
+    - .github/SECURITY.md
+    - docs/SECURITY.md
