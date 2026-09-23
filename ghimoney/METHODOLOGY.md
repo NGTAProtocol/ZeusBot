@@ -62,7 +62,7 @@ Oltre l'ancora non c'è guadagno.
    - meno di 2 dimensioni osservabili, oppure
    - più di 1 dimensione principale (Adoption, Dependency) mancante.
 
-   Altrimenti: Σ (peso effettivo × punteggio), con peso effettivo = peso ÷ Σ pesi osservabili. Il report riporta `original_weights`, `effective_weights`, `weights_renormalized` e `missing_dimensions`.
+   Altrimenti: Σ (peso effettivo × punteggio), con peso effettivo = peso ÷ Σ pesi osservabili. Il report mostra sempre, come richiesto dalla conferma di D-02: `original_weights` (pesi originali), `effective_weights` (pesi ricalcolati), `missing_dimensions` (dimensioni mancanti) e `renormalization_reason` (motivo del ricalcolo, in linguaggio naturale, popolato solo quando `weights_renormalized` è vero).
 
 ## 6. Confidence (D-04)
 

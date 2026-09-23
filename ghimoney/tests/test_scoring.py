@@ -7,6 +7,7 @@ import pytest
 from conftest import make_snapshot
 from ghimoney.engine import analyze
 from ghimoney.models import Availability, DimensionResult, ImpactStatus, RiskLevel
+from ghimoney.report import render_markdown
 from ghimoney.scoring import compute_confidence, compute_coverage, compute_impact
 
 
@@ -35,6 +36,7 @@ def test_full_coverage_is_plain_weighted_sum(methodology):
     assert cov.value == pytest.approx(1.0)
     assert imp.status is ImpactStatus.SCORED
     assert imp.weights_renormalized is False
+    assert imp.renormalization_reason is None
     expected = .25 * 80 + .25 * 70 + .15 * 60 + .15 * 50 + .10 * 40 + .10 * 30
     assert imp.score == pytest.approx(expected)
 
@@ -48,6 +50,8 @@ def test_coverage_below_threshold_gives_no_score(methodology):
 
 
 def test_renormalization_is_declared(methodology):
+    # D-02 (confirmed): report must always show original weights, recalculated
+    # weights, missing dimensions, and the reason for recalculation.
     d = dims(**{**ALL, "community": None})  # coverage 0.90
     cov = compute_coverage(d)
     imp = compute_impact(d, cov, methodology)
@@ -57,14 +61,25 @@ def test_renormalization_is_declared(methodology):
     assert imp.original_weights["adoption"] == .25
     assert imp.effective_weights["adoption"] == pytest.approx(.25 / .90)
     assert sum(imp.effective_weights.values()) == pytest.approx(1.0)
+    assert imp.renormalization_reason is not None
+    assert "community" in imp.renormalization_reason
 
 
 def test_both_core_dimensions_missing_blocks_score(methodology):
-    # Coverage 0.5 fails too, but the core rule must be reported on its own.
+    # D-02 (confirmed): if both Adoption and Dependency are missing -> INSUFFICIENT_EVIDENCE.
     d = dims(maintenance=95, quality=95, security=95, community=95)
     imp = compute_impact(d, compute_coverage(d), methodology)
     assert imp.status is ImpactStatus.INSUFFICIENT_EVIDENCE
+    assert imp.score is None
     assert any("core" in r for r in imp.reasons)
+
+
+def test_one_core_dimension_missing_is_allowed(methodology):
+    # D-02 (confirmed): at most one of the two core dimensions may be missing.
+    d = dims(**{**ALL, "dependency": None})  # coverage 0.75, adoption present
+    imp = compute_impact(d, compute_coverage(d), methodology)
+    assert imp.status is ImpactStatus.SCORED
+    assert imp.missing_dimensions == ["dependency"]
 
 
 def test_single_observable_dimension_blocks_score(methodology):
@@ -111,6 +126,49 @@ def test_v01_real_sources_always_insufficient(methodology):
     # Dimension-level scores remain visible for transparency.
     assert all(d["score"] is not None for d in report["dimensions"]
                if d["dimension"] not in ("adoption", "dependency"))
+
+
+def _stub_report(imp, cov, conf, risk, dims_list):
+    # Minimal dict with the shape engine.analyze() produces, for testing
+    # report.py's rendering of the D-02 fields in isolation. Real repositories
+    # never reach SCORED-with-renormalization in v0.1 (D-11): adoption and
+    # dependency have no approved metrics (D-03), so they are always missing
+    # and always exceed max_missing_core_dimensions. This stub exercises the
+    # rendering path with synthetic dimension results instead.
+    return {
+        "project": {"full_name": "stub/project", "project_id": "ghp-stub", "forge_repo_id": 1},
+        "methodology": {"methodology_version": "GHIM-IMPACT-0.1", "config_version": "0.1.0",
+                        "config_hash": "stub", "weights_are_hypotheses": True},
+        "source": {"snapshot_id": "stub", "snapshot_hash": "stub", "as_of": "2026-01-01T00:00:00Z",
+                   "source_versions": {"stub": "1"}, "synthetic": True},
+        "impact": imp.model_dump(mode="json"),
+        "coverage": cov.model_dump(mode="json"),
+        "confidence": conf.model_dump(mode="json"),
+        "risk": risk.model_dump(mode="json"),
+        "dimensions": [d.model_dump(mode="json") for d in dims_list],
+        "evidence": [],
+        "report_hash": "stub",
+    }
+
+
+def test_report_always_shows_weights_and_recalculation_reason(methodology):
+    # D-02 (confirmed): the report must always show original weights,
+    # recalculated weights, missing dimensions and the reason for recalculation.
+    from ghimoney.models import RiskResult
+
+    d = dims(**{**ALL, "community": None})
+    cov = compute_coverage(d)
+    imp = compute_impact(d, cov, methodology)
+    conf = compute_confidence(d, RiskLevel.LOW, methodology)
+    risk = RiskResult(level=RiskLevel.LOW, signals=[], checks_evaluated=[])
+    assert imp.status is ImpactStatus.SCORED
+    assert imp.weights_renormalized is True
+
+    md = render_markdown(_stub_report(imp, cov, conf, risk, d))
+    assert "Original weight" in md and "Recalculated weight" in md
+    assert "Missing dimensions" in md and "community" in md
+    assert "Reason for recalculation" in md
+    assert imp.renormalization_reason in md
 
 
 def test_no_partial_score_is_ever_reported_as_impact(methodology):

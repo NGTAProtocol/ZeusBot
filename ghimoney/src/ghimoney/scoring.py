@@ -87,17 +87,26 @@ def compute_impact(dims: list[DimensionResult], coverage: CoverageResult,
         return ImpactResult(
             status=ImpactStatus.INSUFFICIENT_EVIDENCE, score=None, reasons=reasons,
             original_weights=original, effective_weights={}, weights_renormalized=False,
-            missing_dimensions=coverage.missing_dimensions)
+            renormalization_reason=None, missing_dimensions=coverage.missing_dimensions)
 
     total = sum(d.weight for d in observable)
     effective = {d.dimension: d.weight / total for d in observable}
+    renormalized = bool(coverage.missing_dimensions)
+    reason = None
+    if renormalized:
+        reason = (f"weights recalculated over the {len(observable)} observable dimension(s) "
+                  f"because {', '.join(coverage.missing_dimensions)} "
+                  f"{'is' if len(coverage.missing_dimensions) == 1 else 'are'} missing "
+                  f"(coverage {coverage.value:.2f} >= minimum {agg.min_coverage:.2f}, "
+                  "within the allowed missing-dimension limits)")
     return ImpactResult(
         status=ImpactStatus.SCORED,
         score=sum(effective[d.dimension] * d.score for d in observable),
         reasons=[],
         original_weights=original,
         effective_weights=effective,
-        weights_renormalized=bool(coverage.missing_dimensions),
+        weights_renormalized=renormalized,
+        renormalization_reason=reason,
         missing_dimensions=coverage.missing_dimensions,
     )
 

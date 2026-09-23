@@ -83,6 +83,7 @@ class ImpactResult(Frozen):
     original_weights: dict[str, float]
     effective_weights: dict[str, float]
     weights_renormalized: bool
+    renormalization_reason: str | None
     missing_dimensions: list[str]
 
 

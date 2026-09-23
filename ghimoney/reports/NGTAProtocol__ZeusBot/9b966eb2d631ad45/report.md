@@ -20,7 +20,7 @@ Impact, Coverage, Confidence and Risk are independent outputs: Coverage, Confide
 
 ## Dimensions
 
-| Dimension | Weight | Effective weight | Status | Score | Metric coverage | Confidence |
+| Dimension | Original weight | Recalculated weight | Status | Score | Metric coverage | Confidence |
 |---|---|---|---|---|---|---|
 | adoption | 25% | — | NOT_AVAILABLE | — | 0% | — |
 | dependency | 25% | — | NOT_AVAILABLE | — | 0% | — |
@@ -29,7 +29,7 @@ Impact, Coverage, Confidence and Risk are independent outputs: Coverage, Confide
 | security | 10% | — | VERIFIED | 0.0 | 100% | 60% |
 | community | 10% | — | VERIFIED | 15.3 | 100% | 90% |
 
-Missing dimensions: adoption, dependency. Missing dimensions are not counted as zero.
+**Missing dimensions:** adoption, dependency. Missing dimensions are not counted as zero.
 
 ## Risk
 
@@ -63,6 +63,6 @@ A risk signal is an anomaly to be reviewed, not evidence of fraud.
 - Methodology: `GHIM-IMPACT-0.1`, config `0.1.0`, hash `cede23aedae8dd9ec033c9c9c3041466907988477b0e1f2826fbc7dae179351c`
 - Snapshot: `9b966eb2d631ad45` as of 2026-09-23T11:15:16Z, hash `9b966eb2d631ad45e492a5097122bf8bcb75e1fd323b143205d6595942f36b5f`
 - Sources: github-rest-api (2022-11-28)
-- Report hash: `d7db9d0caee52f5691ccbee5f2dd4e626bcea2963c584a8e4faeb4e394dcfae5`
+- Report hash: `b96ebbb2e328ef778154225359b5e367aba50a7c228b6614ea4b6bcbee444958`
 
 Same snapshot + same methodology + same configuration produce the same report.

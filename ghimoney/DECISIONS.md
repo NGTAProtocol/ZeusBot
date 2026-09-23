@@ -21,21 +21,25 @@ Registro delle decisioni (Directive v6.0 §54). Le decisioni critiche sono appro
 - **Consequences:** le ancore sono arbitrarie finché non esiste un corpus reale (§48). Oltre l'ancora non c'è guadagno: questo limita anche la manipolazione (vedi test red-team).
 - **Date / Version:** 2026-09-23 / GHIM-IMPACT-0.1
 
-## D-02 — Aggregazione con dati mancanti ✅ APPROVATA CON MODIFICHE, PARAMETRI CONFERMATI
-- **Decision:**
-  - Coverage < 60% → `INSUFFICIENT_EVIDENCE`, nessun Impact Score finale.
-  - Coverage ≥ 60% → pesi ricalcolati solo tra le dimensioni misurabili; il report mostra dimensioni mancanti, pesi originali e pesi effettivi.
-  - Nessun ricalcolo se resta osservabile una sola dimensione (`min_observable_dimensions: 2`).
-  - Nessun ricalcolo se manca una parte eccessiva delle dimensioni principali (`max_missing_core_dimensions: 1`).
+## D-02 — Aggregazione con dati mancanti ✅ CONFERMATA (2026-09-23, seconda conferma)
+- **Decision (regole confermate testualmente):**
+  1. Coverage < 60% → `INSUFFICIENT_EVIDENCE`.
+  2. Devono essere osservabili almeno 2 dimensioni (`min_observable_dimensions: 2`).
+  3. Al massimo una delle due dimensioni principali (Adoption, Dependency) può essere mancante (`max_missing_core_dimensions: 1`).
+  4. Se **entrambe** Adoption e Dependency sono mancanti → `INSUFFICIENT_EVIDENCE`.
+  5. Quando il ricalcolo è consentito, i pesi si ricalcolano **esclusivamente** sulle dimensioni disponibili.
+  6. Il report deve mostrare **sempre**: (a) pesi originali, (b) pesi ricalcolati, (c) dimensioni mancanti, (d) motivo del ricalcolo.
 - **Context:** Regola 3 vs somma pesata fissa (audit CF-2).
+- **Dimensioni principali (confermato):** Adoption e Dependency, entrambe con peso iniziale del 25%.
 - **Consequences:** vedi **D-11** (risolto: Opzione 1 approvata).
-- **Parametri: CONFERMATI il 2026-09-23.** "Dimensioni principali" = Adoption e Dependency (le due al 25%), con al massimo 1 mancante (`core: true` in `config/scoring.yaml`, `max_missing_core_dimensions: 1`). Nessuna modifica al codice necessaria (T-17 chiuso).
-- **Date / Version:** 2026-09-23 / GHIM-IMPACT-0.1
+- **Implementazione del punto 6d (motivo del ricalcolo):** nuovo campo `impact.renormalization_reason` (stringa, popolato solo quando `weights_renormalized` è vero), reso in Markdown come sezione "Reason for recalculation". Non è un cambio di metodologia (nessun peso, ancora o soglia modificata): resta `GHIM-IMPACT-0.1`, è un'estensione del formato di report per trasparenza. Testato in `test_report_always_shows_weights_and_recalculation_reason`.
+- **Date / Version:** 2026-09-23 / GHIM-IMPACT-0.1 (report format esteso, stessa metodologia)
 
-## D-03 — V0.1 solo GitHub ✅ APPROVATA
-- **Decision:** unica fonte la GitHub REST API. Adoption e Dependency sono `NOT_AVAILABLE`, mai zero. deps.dev entra solo dopo una verifica di qualità e affidabilità.
+## D-03 — V0.1 solo GitHub ✅ APPROVATA, NON MODIFICARE ANCORA (confermato 2026-09-23)
+- **Decision:** unica fonte la GitHub REST API. Adoption e Dependency sono `NOT_AVAILABLE`, mai zero.
 - **Consequences:** Coverage massima raggiungibile in v0.1 = 50% (vedi D-11).
-- **Vincolo esplicito (confermato 2026-09-23):** NON aggiungere deps.dev, né alcuna seconda fonte, finché non è stata verificata (copertura, affidabilità, termini d'uso, stabilità dell'API). L'aggiunta di una fonte non verificata a "IMPACT_ENGINE_V0.1" non è consentita.
+- **Vincolo esplicito (ribadito 2026-09-23):** NON aggiungere deps.dev, né alcuna seconda fonte, finché non è verificata sotto il profilo di:
+  disponibilità · affidabilità · qualità dei dati · copertura · provenance · stabilità dell'API · riproducibilità · limiti e rate limits.
 - **Date / Version:** 2026-09-23 / GHIM-IMPACT-0.1
 
 ## D-04 — Confidence, Coverage, Risk come metriche indipendenti ✅ APPROVATA CON CONDIZIONE
@@ -61,15 +65,24 @@ Registro delle decisioni (Directive v6.0 §54). Le decisioni critiche sono appro
 - **Metodologie 0.x scritte dal fondatore.** Le metodologie `0.x` sono scritte dal fondatore (con l'assistente), non sono vincolanti e **nessun risultato 0.x sarà mai usato per un finanziamento**. La prima metodologia usata per fondi reali (1.0) richiede review esterna e un processo di governance (Regole 13 e 14, audit §18).
 - **Date:** 2026-09-23
 
-## D-11 — D-02 + D-03 impediscono qualsiasi Impact Score in v0.1 ✅ APPROVATA OPZIONE 1
-- **Context:** con sola GitHub (D-03), Adoption (25%) e Dependency (25%) sono sempre mancanti. La Coverage massima è quindi 50% < 60%, e mancano entrambe le dimensioni principali. **Ogni repository reale ottiene `INSUFFICIENT_EVIDENCE`.** Il criterio di accettazione §73-C ("Produce Impact Score") non è soddisfacibile senza cambiare una delle due decisioni.
-- **Alternatives considerate:**
-  1. accettare v0.1 senza Impact Score finale, in attesa di una seconda fonte verificata;
-  2. anticipare deps.dev (dopo verifica) per coprire Dependency;
-  3. pubblicare un "Partial Impact (GitHub-observable)" etichettato come non comparabile.
-- **Decision: OPZIONE 1 APPROVATA.** v0.1 resta senza Impact Score finale su repository reali. Questa è una limitazione metodologica dichiarata, non un fallimento tecnico: Impact, Confidence, Coverage e Risk restano corretti e testati; manca solo la seconda fonte per le dimensioni principali.
-- **Vincoli espliciti che ne derivano:**
-  - **NON aggiungere deps.dev** (o altra fonte) finché non è stata verificata — vedi D-03.
-  - **NON pubblicare punteggi parziali come Impact Score.** Nessun "Partial Impact", "GitHub-observable score" o simile deve mai apparire nel campo `impact.score` o essere presentato come Impact Score. I punteggi per dimensione (Maintenance, Quality, Security, Community) restano visibili nel report solo come tali, mai aggregati in sostituzione dell'Impact.
-- **Sequenza approvata:** V0.1 → validazione reale → verifica deps.dev → D-03 aggiornata → Impact Score completo → nuova batteria di test.
+## D-11 — D-02 + D-03 impediscono qualsiasi Impact Score in v0.1 ✅ APPROVATA OPZIONE 1 (confermata, definizione di "completo" chiarita)
+- **Context:** con sola GitHub (D-03), Adoption (25%) e Dependency (25%) sono sempre mancanti. La Coverage massima è quindi 50% < 60%, e mancano entrambe le dimensioni principali. **Ogni repository reale ottiene `INSUFFICIENT_EVIDENCE`.**
+- **Decision: OPZIONE 1 APPROVATA.** V0.1 può essere considerato **completo** anche senza Impact Score finale sui repository reali, quando le evidenze disponibili non superano le soglie metodologiche definite (D-02). Non è un bug: è una limitazione metodologica deliberata e documentata. **Le regole non devono essere modificate per ottenere artificialmente un Impact Score.**
+- **V0.1 deve produrre comunque, ed è verificato che produca:**
+  1. punteggi delle singole dimensioni osservabili (`report["dimensions"]`);
+  2. Coverage (`report["coverage"]`);
+  3. Confidence (`report["confidence"]`);
+  4. Risk (`report["risk"]`);
+  5. stato `INSUFFICIENT_EVIDENCE` quando applicabile, con i motivi (`impact.reasons`);
+  6. report JSON e Markdown completamente tracciabili e riproducibili (hash di config, snapshot e report; determinismo testato anche tra processi).
+- **Vincolo assoluto:** NON pubblicare un "punteggio parziale" come Impact Score. Nessun "Partial Impact", "GitHub-observable score" o simile può mai apparire nel campo `impact.score` o essere presentato come Impact Score. Testato in `test_no_partial_score_is_ever_reported_as_impact`.
+- **Obiettivo prioritario dichiarato:** meglio nessun punteggio che un punteggio apparentemente preciso basato su evidenze insufficienti.
+- **Sequenza operativa approvata:**
+  ```
+  V0.1 → validazione reale → verifica deps.dev → eventuale aggiornamento D-03
+       → implementazione Dependency evidence → Impact Score completo
+       → nuova batteria di test → regression test → red-team
+       → validazione su repository reali diversificati
+  ```
+  Nessun passo inizia prima che il precedente sia chiuso (vedi TASKS.md).
 - **Date / Version:** 2026-09-23 / GHIM-IMPACT-0.1

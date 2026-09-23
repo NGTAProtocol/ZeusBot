@@ -69,7 +69,8 @@ def render_markdown(r: dict[str, Any]) -> str:
 
     w("## Dimensions")
     w("")
-    w("| Dimension | Weight | Effective weight | Status | Score | Metric coverage | Confidence |")
+    w("| Dimension | Original weight | Recalculated weight | Status | Score | "
+      "Metric coverage | Confidence |")
     w("|---|---|---|---|---|---|---|")
     for d in r["dimensions"]:
         eff = imp["effective_weights"].get(d["dimension"])
@@ -77,8 +78,11 @@ def render_markdown(r: dict[str, Any]) -> str:
           f"{_fmt(d['score'])} | {_pct(d['metric_coverage'])} | {_pct(d['confidence'])} |")
     w("")
     if imp["missing_dimensions"]:
-        w(f"Missing dimensions: {', '.join(imp['missing_dimensions'])}. "
+        w(f"**Missing dimensions:** {', '.join(imp['missing_dimensions'])}. "
           "Missing dimensions are not counted as zero.")
+        w("")
+    if imp["weights_renormalized"]:
+        w(f"**Reason for recalculation:** {imp['renormalization_reason']}")
         w("")
 
     w("## Risk")

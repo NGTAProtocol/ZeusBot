@@ -523,6 +523,7 @@
       "coverage 0.50 below minimum 0.60",
       "2 core dimension(s) missing (adoption, dependency), maximum 1"
     ],
+    "renormalization_reason": null,
     "score": null,
     "status": "INSUFFICIENT_EVIDENCE",
     "weights_renormalized": false
@@ -542,7 +543,7 @@
     "is_fork": false,
     "project_id": "ghp-cd07179b43356c0f"
   },
-  "report_hash": "f907f0a9036c351acf4f79aa726193717717157ef7863752bf9958bb239d06e9",
+  "report_hash": "c96ac8ebd7f1b178cf5d26ee50d357d1265e4b295092df2d6e130f4fc642f9b6",
   "risk": {
     "checks_evaluated": [
       "popularity_vs_contributors",
