@@ -102,7 +102,7 @@ Livello complessivo = massimo tra i segnali (LOW se nessuno). I controlli non va
 
 ## 9. Limiti noti di GHIM-IMPACT-0.1
 
-1. **Nessun Impact Score finale per repository reali**: Coverage massima 50% (vedi DECISIONS D-11).
+1. **Nessun Impact Score finale per repository reali**: Coverage massima 50%. Limitazione metodologica dichiarata e approvata (DECISIONS D-11, Opzione 1), non un fallimento tecnico. Si chiude con una seconda fonte dati verificata per Adoption/Dependency (vedi TASKS T-18).
 2. **Solo GitHub**: progetti su GitLab, Codeberg o altre forge sono esclusi per costruzione (bias di piattaforma, §63).
 3. **Quality** misura l'igiene del progetto (file di community, CI), non la qualità del codice.
 4. **Security** misura solo la presenza di una security policy, non la sicurezza del software.

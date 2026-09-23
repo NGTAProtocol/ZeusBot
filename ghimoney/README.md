@@ -46,7 +46,7 @@ Unit, integration, golden, determinismo (anche tra processi), regressione e red-
 
 | File | Contenuto |
 |---|---|
-| [DECISIONS.md](DECISIONS.md) | Decisioni approvate e aperte (**D-11 in attesa**) |
+| [DECISIONS.md](DECISIONS.md) | Decisioni approvate (D-01…D-11); nessuna in attesa |
 | [METHODOLOGY.md](METHODOLOGY.md) | Formule, pesi, normalizzazione, limiti |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Componenti, confini, flussi |
 | [THREAT_MODEL.md](THREAT_MODEL.md) | Minacce e stato delle mitigazioni |

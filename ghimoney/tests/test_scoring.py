@@ -111,3 +111,15 @@ def test_v01_real_sources_always_insufficient(methodology):
     # Dimension-level scores remain visible for transparency.
     assert all(d["score"] is not None for d in report["dimensions"]
                if d["dimension"] not in ("adoption", "dependency"))
+
+
+def test_no_partial_score_is_ever_reported_as_impact(methodology):
+    """D-11 (Option 1, approved): a per-dimension or partial result must never
+    surface as impact.score. With GitHub-only sources (D-03) every real
+    repository is INSUFFICIENT_EVIDENCE, and that must stay a null score,
+    never a "Partial Impact" substitute."""
+    for snap in (make_snapshot(), make_snapshot({"community_profile": None}),
+                make_snapshot(repo_fields={"stargazers_count": 50_000})):
+        report = analyze(snap, methodology)
+        assert report["impact"]["status"] == "INSUFFICIENT_EVIDENCE"
+        assert report["impact"]["score"] is None

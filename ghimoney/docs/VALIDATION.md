@@ -32,5 +32,5 @@ Categorie da coprire (§48): piccole librerie, librerie molto usate, framework, 
 
 ## Scoperte finora
 
-1. **Conflitto D-11:** con D-02 + D-03, nessun repository reale può ottenere un Impact Score finale.
+1. **D-11 (approvata, Opzione 1):** con D-02 + D-03, nessun repository reale può ottenere un Impact Score finale. Limitazione metodologica dichiarata, non un fallimento tecnico. Si chiude solo dopo T-18 (verifica di deps.dev) e un aggiornamento di D-03.
 2. **Bug trovato dal test golden e corretto prima del commit:** i file della community profile restituiti come oggetto vuoto venivano contati come assenti.
