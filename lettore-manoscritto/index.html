@@ -85,7 +85,13 @@
     max-height: 55vh; overflow-y: auto;
     font-family: system-ui, -apple-system, sans-serif;
   }
-  #pannello-note h2 { font-size: 15px; margin: 4px 0 8px; color: var(--tenue); font-weight: 600; }
+  .testa-note { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 4px 0 8px; }
+  #pannello-note h2 { font-size: 15px; margin: 0; color: var(--tenue); font-weight: 600; }
+  #scarica-note {
+    min-height: 44px; padding: 0 16px; border-radius: 10px; border: none;
+    background: var(--accento); color: var(--accento-testo); font-size: 15px; font-weight: 600;
+  }
+  #scarica-note:disabled { opacity: .4; }
   #lista-note { list-style: none; margin: 0; padding: 0; }
   #lista-note li {
     display: flex; align-items: stretch; gap: 8px;
@@ -179,7 +185,10 @@
     <label for="file" id="etichetta-file" class="pulsante">Carica</label>
   </div>
   <section id="pannello-note" hidden aria-label="Note vocali">
-    <h2>Note</h2>
+    <div class="testa-note">
+      <h2>Note</h2>
+      <button id="scarica-note" type="button" disabled>⬇ Scarica note</button>
+    </div>
     <ul id="lista-note"></ul>
     <p id="nessuna-nota" class="nessuna-nota">Nessuna nota. Premi “Prendi nota” durante la lettura per registrarne una.</p>
   </section>
@@ -208,12 +217,14 @@
 const LIB_MAMMOTH = 'https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js';
 const LIB_PDF = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js';
 const LIB_PDF_WORKER = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+const LIB_JSPDF = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js';
+const LIB_JSZIP = 'https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js';
 
 const $ = (s) => document.querySelector(s);
 const el = {
   titolo: $('#titolo'), file: $('#file'), etichettaFile: $('#etichetta-file'),
   apriNote: $('#apri-note'), pannelloNote: $('#pannello-note'),
-  listaNote: $('#lista-note'), nessunaNota: $('#nessuna-nota'),
+  listaNote: $('#lista-note'), nessunaNota: $('#nessuna-nota'), scaricaNote: $('#scarica-note'),
   testo: $('#testo'), vuoto: $('#vuoto'),
   messaggio: $('#messaggio'), stato: $('#stato'),
   play: $('#play'), stop: $('#stop'), nota: $('#nota'),
@@ -779,6 +790,7 @@ function mostraNote() {
   }
   el.listaNote.replaceChildren(frammento);
   el.nessunaNota.hidden = note.length > 0;
+  el.scaricaNote.disabled = note.length === 0 || scaricamento;
   segnaParagrafiConNota();
 }
 
@@ -790,6 +802,114 @@ function segnaParagrafiConNota() {
 function apriPannelloNote(apri) {
   el.pannelloNote.hidden = !apri;
   el.apriNote.setAttribute('aria-expanded', String(apri));
+}
+
+/* ---------------- Scarica note ---------------- */
+let scaricamento = false;
+
+function estensioneAudio(tipo) {
+  if (/mp4|m4a|aac/.test(tipo)) return 'm4a';
+  if (/ogg/.test(tipo)) return 'ogg';
+  if (/mpeg|mp3/.test(tipo)) return 'mp3';
+  if (/wav/.test(tipo)) return 'wav';
+  return 'webm';
+}
+
+// I caratteri standard del PDF coprono solo l'alfabeto latino occidentale.
+const perPdf = (t) => t.normalize('NFC').replace(/[^\x20-\x7e\xa0-\xff‘’“”…–—€]/g, '?');
+
+function creaPdf(elenco) {
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF({ unit: 'mm', format: 'a4' });
+  const margine = 18, larghezza = 210 - margine * 2, fondo = 297 - margine;
+  let y = margine;
+  const scrivi = (testo, { dimensione = 11, stile = 'normal', colore = 20, dopo = 2 } = {}) => {
+    pdf.setFont('times', stile);
+    pdf.setFontSize(dimensione);
+    pdf.setTextColor(colore);
+    const altezzaRiga = dimensione * 0.42;
+    for (const riga of pdf.splitTextToSize(perPdf(testo), larghezza)) {
+      if (y + altezzaRiga > fondo) { pdf.addPage(); y = margine; }
+      pdf.text(riga, margine, y + altezzaRiga * 0.8);
+      y += altezzaRiga;
+    }
+    y += dopo;
+  };
+
+  scrivi(`Note sul manoscritto: ${nomeFile || 'senza titolo'}`, { dimensione: 17, stile: 'bold', dopo: 1 });
+  scrivi(`Esportate il ${formatoData.format(Date.now())} · ${elenco.length} ${elenco.length === 1 ? 'nota' : 'note'}`,
+    { dimensione: 10, colore: 100, dopo: 6 });
+
+  for (const { nota, numero, fileAudio } of elenco) {
+    if (y + 30 > fondo) { pdf.addPage(); y = margine; }
+    pdf.setDrawColor(200);
+    pdf.line(margine, y, 210 - margine, y);
+    y += 5;
+    scrivi(`Nota ${numero} · Paragrafo ${nota.paragrafo + 1} di ${paragrafi.length}`, { dimensione: 13, stile: 'bold', dopo: 1 });
+    scrivi(`${formatoData.format(nota.data)} · Audio: ${fileAudio}`, { dimensione: 10, colore: 100, dopo: 3 });
+    scrivi(paragrafi[nota.paragrafo] || '', { stile: 'italic', colore: 60, dopo: 7 });
+  }
+  return pdf.output('blob');
+}
+
+function scaricaFile(blob, nome) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = nome;
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
+}
+
+async function scaricaNote() {
+  if (!note.length || scaricamento) return;
+  scaricamento = true;
+  mostraNote();
+  info('Preparazione del file con le note…');
+  try {
+    try { await Promise.all([caricaScript(LIB_JSPDF), caricaScript(LIB_JSZIP)]); }
+    catch { throw new ErroreUtente('Impossibile caricare i componenti per creare il file. Controlla la connessione a internet e riprova.'); }
+
+    const cifre = String(note.length).length < 2 ? 2 : String(note.length).length;
+    const elenco = [...note]
+      .sort((a, b) => a.paragrafo - b.paragrafo || a.data - b.data)
+      .map((nota, i) => {
+        const numero = String(i + 1).padStart(cifre, '0');
+        return { nota, numero: i + 1, fileAudio: `nota-${numero}-paragrafo-${nota.paragrafo + 1}.${estensioneAudio(nota.tipo)}` };
+      });
+
+    const base = (nomeFile.replace(/\.[^.]+$/, '') || 'manoscritto').replace(/[\\/:*?"<>|]+/g, '_').trim();
+    const oggi = new Date().toISOString().slice(0, 10);
+    const zip = new window.JSZip();
+    zip.file(`Note - ${base}.pdf`, creaPdf(elenco));
+    const cartella = zip.folder('audio');
+    for (const { nota, fileAudio } of elenco) cartella.file(fileAudio, nota.audio);
+    const archivio = await zip.generateAsync({ type: 'blob' });
+    scaricaFile(archivio, `Note - ${base} - ${oggi}.zip`);
+    info('File scaricato: contiene il PDF con l’elenco delle note e gli audio.');
+  } catch (e) {
+    errore(e instanceof ErroreUtente ? e.message : 'Non è stato possibile creare il file con le note.');
+    return;
+  } finally {
+    scaricamento = false;
+    mostraNote();
+  }
+
+  // Lascia al download il tempo di partire prima della domanda.
+  setTimeout(async () => {
+    if (!confirm('Le note sono state scaricate. Vuoi eliminarle dall’app?')) return;
+    fermaAudioNota();
+    if (memoriaOk) {
+      try { await memoria.svuotaNote(); }
+      catch { return errore('Non è stato possibile eliminare le note dall’app.'); }
+    }
+    note = [];
+    mostraNote();
+    aggiornaUI();
+    info('Note eliminate dall’app.');
+  }, 800);
 }
 
 /* ---------------- Eventi ---------------- */
@@ -804,6 +924,7 @@ el.file.addEventListener('change', async () => {
   el.file.value = '';
   await caricaFile(file);
 });
+el.scaricaNote.addEventListener('click', scaricaNote);
 el.apriNote.addEventListener('click', () => apriPannelloNote(el.pannelloNote.hidden));
 el.messaggio.querySelector('button').addEventListener('click', nascondiMessaggio);
 window.addEventListener('pagehide', () => {
