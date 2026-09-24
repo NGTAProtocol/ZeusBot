@@ -1,0 +1,580 @@
+{
+  "confidence": {
+    "adjusted": 0.7714,
+    "base": 0.7714,
+    "risk_adjustment_factor": 1.0
+  },
+  "coverage": {
+    "missing_dimensions": [
+      "adoption",
+      "dependency",
+      "maintenance"
+    ],
+    "observable_dimensions": [
+      "quality",
+      "security",
+      "community"
+    ],
+    "value": 0.35
+  },
+  "dimensions": [
+    {
+      "availability": "NOT_AVAILABLE",
+      "confidence": null,
+      "dimension": "adoption",
+      "metric_coverage": 0.0,
+      "metrics_missing": [],
+      "metrics_used": [],
+      "score": null,
+      "weight": 0.25
+    },
+    {
+      "availability": "INSUFFICIENT_EVIDENCE",
+      "confidence": null,
+      "dimension": "dependency",
+      "metric_coverage": 0.0,
+      "metrics_missing": [
+        "dependents_total_count"
+      ],
+      "metrics_used": [],
+      "score": null,
+      "weight": 0.25
+    },
+    {
+      "availability": "INSUFFICIENT_EVIDENCE",
+      "confidence": null,
+      "dimension": "maintenance",
+      "metric_coverage": 0.4,
+      "metrics_missing": [
+        "days_since_last_commit",
+        "releases_last_365d"
+      ],
+      "metrics_used": [
+        "commits_last_365d"
+      ],
+      "score": null,
+      "weight": 0.15
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "dimension": "quality",
+      "metric_coverage": 0.5,
+      "metrics_missing": [
+        "ci_workflows_present"
+      ],
+      "metrics_used": [
+        "community_profile_files"
+      ],
+      "score": 0.0,
+      "weight": 0.15
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.6,
+      "dimension": "security",
+      "metric_coverage": 1.0,
+      "metrics_missing": [],
+      "metrics_used": [
+        "security_policy_present"
+      ],
+      "score": 0.0,
+      "weight": 0.1
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "dimension": "community",
+      "metric_coverage": 1.0,
+      "metrics_missing": [],
+      "metrics_used": [
+        "distinct_authors_last_365d",
+        "total_contributors"
+      ],
+      "score": 0.0,
+      "weight": 0.1
+    }
+  ],
+  "evidence": [
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "UNKNOWN",
+      "confidence": null,
+      "evidence_id": "ev-032a98882c520dce",
+      "evidence_kind": null,
+      "method": "boolean",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "ci_workflows_present",
+      "normalized_value": null,
+      "note": "no GitHub Actions workflows: CI may run on another service, so absence is not evidence of no CI",
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/actions/workflows?per_page=1"
+        ],
+        "request_keys": [
+          "workflows"
+        ],
+        "response_hashes": [
+          "51da78a4f28ec83978198558b5be95ebec25c44ab19561c168a975e203f0a785"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": null
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-ff40eedec81a590b",
+      "evidence_kind": "direct_count",
+      "method": "log_saturating(anchor=500)",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "commits_last_365d",
+      "normalized_value": 0.0,
+      "note": "empty repository",
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/commits?per_page=100&since=2025-09-24T16:05:04Z&until=2026-09-24T16:05:04Z"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "1bede88f4cb16dbf19e3070d76bd5d3f40e85365c383651b691bf92c97e46bd5"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-fd852649cdb08182",
+      "evidence_kind": "derived",
+      "method": "fraction",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "community_profile_files",
+      "normalized_value": 0.0,
+      "note": "present: none",
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/community/profile"
+        ],
+        "request_keys": [
+          "community_profile"
+        ],
+        "response_hashes": [
+          "7dc16e41b3c4b260323eaab8566479e97eb63d6957b41060df6be2eafe3f4b1f"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0.0
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "NOT_APPLICABLE",
+      "confidence": null,
+      "evidence_id": "ev-7d23ba442f666a9d",
+      "evidence_kind": null,
+      "method": "log_decay(anchor=365)",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "days_since_last_commit",
+      "normalized_value": null,
+      "note": "empty repository: no commit exists",
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/commits?per_page=1"
+        ],
+        "request_keys": [
+          "latest_commit"
+        ],
+        "response_hashes": [
+          "1bede88f4cb16dbf19e3070d76bd5d3f40e85365c383651b691bf92c97e46bd5"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": null
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-a646c86e3cd84ae2",
+      "evidence_kind": "direct_count",
+      "method": "log_saturating(anchor=50)",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "distinct_authors_last_365d",
+      "normalized_value": 0.0,
+      "note": null,
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/commits?per_page=100&since=2025-09-24T16:05:04Z&until=2026-09-24T16:05:04Z"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "1bede88f4cb16dbf19e3070d76bd5d3f40e85365c383651b691bf92c97e46bd5"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "UNKNOWN",
+      "confidence": null,
+      "evidence_id": "ev-b670d90ec46896dc",
+      "evidence_kind": null,
+      "method": "log_saturating(anchor=12)",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "releases_last_365d",
+      "normalized_value": null,
+      "note": "no GitHub Releases: the project may release through tags or package registries, so absence is not evidence of zero releases",
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/releases?per_page=100"
+        ],
+        "request_keys": [
+          "releases"
+        ],
+        "response_hashes": [
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": null
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "VERIFIED",
+      "confidence": 0.6,
+      "evidence_id": "ev-5f7dac60fa6d3eaf",
+      "evidence_kind": "absence_check",
+      "method": "boolean",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "security_policy_present",
+      "normalized_value": 0.0,
+      "note": "no SECURITY.md in: SECURITY.md, .github/SECURITY.md, docs/SECURITY.md",
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/contents/SECURITY.md",
+          "/repos/NGTAProtocol/Roadmemo/contents/.github/SECURITY.md",
+          "/repos/NGTAProtocol/Roadmemo/contents/docs/SECURITY.md"
+        ],
+        "request_keys": [
+          "security_policy:SECURITY.md",
+          "security_policy:.github/SECURITY.md",
+          "security_policy:docs/SECURITY.md"
+        ],
+        "response_hashes": [
+          "3176e83b95728ef4a3023927da956ada9b154f3cdf7ea77d93a4c8d552097ed6",
+          "3176e83b95728ef4a3023927da956ada9b154f3cdf7ea77d93a4c8d552097ed6",
+          "3176e83b95728ef4a3023927da956ada9b154f3cdf7ea77d93a4c8d552097ed6"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": false
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-8061e0b95f0adf9a",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.forks_count",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "98d30880a18b6420a8ce16f8c75308be6487ac55a66f63d4827a43275f624dfb"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "NOT_APPLICABLE",
+      "confidence": null,
+      "evidence_id": "ev-4e0f381a2bf84a9d",
+      "evidence_kind": null,
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.max_commit_window_share",
+      "normalized_value": null,
+      "note": "no commits in window",
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/commits?per_page=100&since=2025-09-24T16:05:04Z&until=2026-09-24T16:05:04Z"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "1bede88f4cb16dbf19e3070d76bd5d3f40e85365c383651b691bf92c97e46bd5"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": null
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-546acf9d9872c454",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.published_security_advisories",
+      "normalized_value": null,
+      "note": "recorded only: advisories show a disclosure process as much as a weakness",
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/security-advisories?per_page=100"
+        ],
+        "request_keys": [
+          "security_advisories"
+        ],
+        "response_hashes": [
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-f7bea8faf7dc437d",
+      "evidence_kind": "derived",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.repository_age_days",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "98d30880a18b6420a8ce16f8c75308be6487ac55a66f63d4827a43275f624dfb"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 66.92
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-2424d30850665a7c",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.stargazers_count",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "98d30880a18b6420a8ce16f8c75308be6487ac55a66f63d4827a43275f624dfb"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-32244528d8a2d370",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.subscribers_count",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "98d30880a18b6420a8ce16f8c75308be6487ac55a66f63d4827a43275f624dfb"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "NOT_APPLICABLE",
+      "confidence": null,
+      "evidence_id": "ev-81c556961922cb97",
+      "evidence_kind": null,
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.top_author_share_last_365d",
+      "normalized_value": null,
+      "note": "no commits in window",
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/commits?per_page=100&since=2025-09-24T16:05:04Z&until=2026-09-24T16:05:04Z"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "1bede88f4cb16dbf19e3070d76bd5d3f40e85365c383651b691bf92c97e46bd5"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": null
+    },
+    {
+      "as_of": "2026-09-24T16:05:04Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-348e5f86e199ec47",
+      "evidence_kind": "direct_count",
+      "method": "log_saturating(anchor=200)",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "total_contributors",
+      "normalized_value": 0.0,
+      "note": "empty repository",
+      "project_id": "ghp-839ec4726f0897b8",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/Roadmemo/contributors?per_page=100"
+        ],
+        "request_keys": [
+          "contributors"
+        ],
+        "response_hashes": [
+          "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        ],
+        "retrieved_at": "2026-09-24T16:05:04Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    }
+  ],
+  "format": "ghimoney-report/1",
+  "impact": {
+    "effective_weights": {},
+    "missing_dimensions": [
+      "adoption",
+      "dependency",
+      "maintenance"
+    ],
+    "original_weights": {
+      "adoption": 0.25,
+      "community": 0.1,
+      "dependency": 0.25,
+      "maintenance": 0.15,
+      "quality": 0.15,
+      "security": 0.1
+    },
+    "reasons": [
+      "coverage 0.35 below minimum 0.60",
+      "2 core dimension(s) missing (adoption, dependency), maximum 1"
+    ],
+    "renormalization_reason": null,
+    "score": null,
+    "status": "INSUFFICIENT_EVIDENCE",
+    "weights_renormalized": false
+  },
+  "methodology": {
+    "config_hash": "a33b51b0fb7c95b552f52066a379be6b3adf1491577d6eaed2c0e5246a6303df",
+    "config_version": "0.2.0",
+    "methodology_version": "GHIM-IMPACT-0.2",
+    "weights_are_hypotheses": true
+  },
+  "project": {
+    "forge": "github",
+    "forge_node_id": "R_kgDOTdbTUw",
+    "forge_repo_id": 1305924435,
+    "full_name": "NGTAProtocol/Roadmemo",
+    "is_archived": false,
+    "is_fork": false,
+    "project_id": "ghp-839ec4726f0897b8"
+  },
+  "report_hash": "e5acb8ca4fec0a0105e3ff270d71e725776916272481dacbf530c09423544770",
+  "risk": {
+    "checks_evaluated": [
+      "popularity_vs_contributors",
+      "young_and_popular",
+      "repository_is_fork"
+    ],
+    "checks_not_evaluated": [
+      "commit_burst",
+      "author_concentration"
+    ],
+    "level": "LOW",
+    "signals": []
+  },
+  "roles": {
+    "ai": "not used in GHIM-IMPACT-0.2",
+    "funding": "none: methodology 0.x results are never used for funding",
+    "human_review": "not performed: provisional, unreviewed result"
+  },
+  "source": {
+    "as_of": "2026-09-24T16:05:04Z",
+    "snapshot_hash": "673bfbc551c97708a501bd9f1542781689db86a5820b097db3f8c1066f26d76d",
+    "snapshot_id": "673bfbc551c97708",
+    "source_versions": {
+      "github-rest-api": "2022-11-28"
+    },
+    "synthetic": false
+  },
+  "tool_version": "0.1.0"
+}

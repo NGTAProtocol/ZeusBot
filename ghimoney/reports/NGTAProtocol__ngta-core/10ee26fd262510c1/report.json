@@ -1,0 +1,578 @@
+{
+  "confidence": {
+    "adjusted": 0.795,
+    "base": 0.795,
+    "risk_adjustment_factor": 1.0
+  },
+  "coverage": {
+    "missing_dimensions": [
+      "adoption",
+      "dependency"
+    ],
+    "observable_dimensions": [
+      "maintenance",
+      "quality",
+      "security",
+      "community"
+    ],
+    "value": 0.5
+  },
+  "dimensions": [
+    {
+      "availability": "NOT_AVAILABLE",
+      "confidence": null,
+      "dimension": "adoption",
+      "metric_coverage": 0.0,
+      "metrics_missing": [],
+      "metrics_used": [],
+      "score": null,
+      "weight": 0.25
+    },
+    {
+      "availability": "INSUFFICIENT_EVIDENCE",
+      "confidence": null,
+      "dimension": "dependency",
+      "metric_coverage": 0.0,
+      "metrics_missing": [
+        "dependents_total_count"
+      ],
+      "metrics_used": [],
+      "score": null,
+      "weight": 0.25
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.85,
+      "dimension": "maintenance",
+      "metric_coverage": 0.8,
+      "metrics_missing": [
+        "releases_last_365d"
+      ],
+      "metrics_used": [
+        "commits_last_365d",
+        "days_since_last_commit"
+      ],
+      "score": 17.3235,
+      "weight": 0.15
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "dimension": "quality",
+      "metric_coverage": 0.5,
+      "metrics_missing": [
+        "ci_workflows_present"
+      ],
+      "metrics_used": [
+        "community_profile_files"
+      ],
+      "score": 16.67,
+      "weight": 0.15
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.6,
+      "dimension": "security",
+      "metric_coverage": 1.0,
+      "metrics_missing": [],
+      "metrics_used": [
+        "security_policy_present"
+      ],
+      "score": 0.0,
+      "weight": 0.1
+    },
+    {
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "dimension": "community",
+      "metric_coverage": 1.0,
+      "metrics_missing": [],
+      "metrics_used": [
+        "distinct_authors_last_365d",
+        "total_contributors"
+      ],
+      "score": 15.3496,
+      "weight": 0.1
+    }
+  ],
+  "evidence": [
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "UNKNOWN",
+      "confidence": null,
+      "evidence_id": "ev-ebebfb21eae0fa35",
+      "evidence_kind": null,
+      "method": "boolean",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "ci_workflows_present",
+      "normalized_value": null,
+      "note": "no GitHub Actions workflows: CI may run on another service, so absence is not evidence of no CI",
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/actions/workflows?per_page=1"
+        ],
+        "request_keys": [
+          "workflows"
+        ],
+        "response_hashes": [
+          "51da78a4f28ec83978198558b5be95ebec25c44ab19561c168a975e203f0a785"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": null
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-3322abbfc47ec232",
+      "evidence_kind": "direct_count",
+      "method": "log_saturating(anchor=500)",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "commits_last_365d",
+      "normalized_value": 17.6722,
+      "note": null,
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/commits?per_page=100&since=2025-09-24T16:05:09Z&until=2026-09-24T16:05:09Z"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "5e4f62dbea23b4365a0b23da428c52be6297023ab5d0d9c11231503950a6660b"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 2
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-7f0bbf4e6970965b",
+      "evidence_kind": "derived",
+      "method": "fraction",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "community_profile_files",
+      "normalized_value": 16.67,
+      "note": "present: readme",
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/community/profile"
+        ],
+        "request_keys": [
+          "community_profile"
+        ],
+        "response_hashes": [
+          "1d38b397aa1d11830d2f6ba2be5c7cbfca9e669db51b75bf4e250972e4eb1562"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0.1667
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-b5f10814c5251056",
+      "evidence_kind": "derived",
+      "method": "log_decay(anchor=365)",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "days_since_last_commit",
+      "normalized_value": 16.9748,
+      "note": null,
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/commits?per_page=1"
+        ],
+        "request_keys": [
+          "latest_commit"
+        ],
+        "response_hashes": [
+          "647a4c925761b286f03fe184e4373d19bb10c2ac5be6a17f8248c9aa5910d957"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 133.38
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-309aef8cdb375c95",
+      "evidence_kind": "direct_count",
+      "method": "log_saturating(anchor=50)",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "distinct_authors_last_365d",
+      "normalized_value": 17.6291,
+      "note": null,
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/commits?per_page=100&since=2025-09-24T16:05:09Z&until=2026-09-24T16:05:09Z"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "5e4f62dbea23b4365a0b23da428c52be6297023ab5d0d9c11231503950a6660b"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 1
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "UNKNOWN",
+      "confidence": null,
+      "evidence_id": "ev-13aa8edffef963f4",
+      "evidence_kind": null,
+      "method": "log_saturating(anchor=12)",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "releases_last_365d",
+      "normalized_value": null,
+      "note": "no GitHub Releases: the project may release through tags or package registries, so absence is not evidence of zero releases",
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/releases?per_page=100"
+        ],
+        "request_keys": [
+          "releases"
+        ],
+        "response_hashes": [
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": null
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.6,
+      "evidence_id": "ev-1c12308fc6679352",
+      "evidence_kind": "absence_check",
+      "method": "boolean",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "security_policy_present",
+      "normalized_value": 0.0,
+      "note": "no SECURITY.md in: SECURITY.md, .github/SECURITY.md, docs/SECURITY.md",
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/contents/SECURITY.md",
+          "/repos/NGTAProtocol/ngta-core/contents/.github/SECURITY.md",
+          "/repos/NGTAProtocol/ngta-core/contents/docs/SECURITY.md"
+        ],
+        "request_keys": [
+          "security_policy:SECURITY.md",
+          "security_policy:.github/SECURITY.md",
+          "security_policy:docs/SECURITY.md"
+        ],
+        "response_hashes": [
+          "5edc6e18953d5db5551ee308d07a35ec84212a67718d328f86d29b88d1f7cef6",
+          "5edc6e18953d5db5551ee308d07a35ec84212a67718d328f86d29b88d1f7cef6",
+          "5edc6e18953d5db5551ee308d07a35ec84212a67718d328f86d29b88d1f7cef6"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": false
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-72bf0d7e628013d5",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.forks_count",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "174f6515c4aaa67f06638d2f28e4e5c2b894984537dc70fb06a1b823fb77004d"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-04ac3ce1e5613c68",
+      "evidence_kind": "derived",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.max_commit_window_share",
+      "normalized_value": null,
+      "note": "window of 7 days",
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/commits?per_page=100&since=2025-09-24T16:05:09Z&until=2026-09-24T16:05:09Z"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "5e4f62dbea23b4365a0b23da428c52be6297023ab5d0d9c11231503950a6660b"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 1.0
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "NOT_AVAILABLE",
+      "confidence": null,
+      "evidence_id": "ev-d7fb261fbf4f928e",
+      "evidence_kind": null,
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.published_security_advisories",
+      "normalized_value": null,
+      "note": "source request 'security_advisories' unavailable (HTTP 404)",
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/security-advisories?per_page=100"
+        ],
+        "request_keys": [
+          "security_advisories"
+        ],
+        "response_hashes": [
+          "36789a61d08a37c6de3a8cae2d19e442bdffd41e233c8874affc9140e8ce1725"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": null
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-46ebf87c110bdea9",
+      "evidence_kind": "derived",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.repository_age_days",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "174f6515c4aaa67f06638d2f28e4e5c2b894984537dc70fb06a1b823fb77004d"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 133.4
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-8d7bbf8074334875",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.stargazers_count",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "174f6515c4aaa67f06638d2f28e4e5c2b894984537dc70fb06a1b823fb77004d"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-e1ff600b87eaa65f",
+      "evidence_kind": "direct_count",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.subscribers_count",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core"
+        ],
+        "request_keys": [
+          "repo"
+        ],
+        "response_hashes": [
+          "174f6515c4aaa67f06638d2f28e4e5c2b894984537dc70fb06a1b823fb77004d"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 0
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.8,
+      "evidence_id": "ev-2d94ef954693c362",
+      "evidence_kind": "derived",
+      "method": "signal: recorded, not scored",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "signal.top_author_share_last_365d",
+      "normalized_value": null,
+      "note": null,
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/commits?per_page=100&since=2025-09-24T16:05:09Z&until=2026-09-24T16:05:09Z"
+        ],
+        "request_keys": [
+          "commits_window"
+        ],
+        "response_hashes": [
+          "5e4f62dbea23b4365a0b23da428c52be6297023ab5d0d9c11231503950a6660b"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 1.0
+    },
+    {
+      "as_of": "2026-09-24T16:05:09Z",
+      "availability": "VERIFIED",
+      "confidence": 0.9,
+      "evidence_id": "ev-a54a5b19ff24f0c6",
+      "evidence_kind": "direct_count",
+      "method": "log_saturating(anchor=200)",
+      "methodology_version": "GHIM-IMPACT-0.2",
+      "metric": "total_contributors",
+      "normalized_value": 13.0701,
+      "note": null,
+      "project_id": "ghp-e85c186c94aebdfb",
+      "provenance": {
+        "endpoints": [
+          "/repos/NGTAProtocol/ngta-core/contributors?per_page=100"
+        ],
+        "request_keys": [
+          "contributors"
+        ],
+        "response_hashes": [
+          "bf41c4edc17fd1d0ca9d37e33f085173202b986c11882a619f8a5919573680b6"
+        ],
+        "retrieved_at": "2026-09-24T16:05:09Z",
+        "source": "github-rest-api"
+      },
+      "raw_value": 1
+    }
+  ],
+  "format": "ghimoney-report/1",
+  "impact": {
+    "effective_weights": {},
+    "missing_dimensions": [
+      "adoption",
+      "dependency"
+    ],
+    "original_weights": {
+      "adoption": 0.25,
+      "community": 0.1,
+      "dependency": 0.25,
+      "maintenance": 0.15,
+      "quality": 0.15,
+      "security": 0.1
+    },
+    "reasons": [
+      "coverage 0.50 below minimum 0.60",
+      "2 core dimension(s) missing (adoption, dependency), maximum 1"
+    ],
+    "renormalization_reason": null,
+    "score": null,
+    "status": "INSUFFICIENT_EVIDENCE",
+    "weights_renormalized": false
+  },
+  "methodology": {
+    "config_hash": "a33b51b0fb7c95b552f52066a379be6b3adf1491577d6eaed2c0e5246a6303df",
+    "config_version": "0.2.0",
+    "methodology_version": "GHIM-IMPACT-0.2",
+    "weights_are_hypotheses": true
+  },
+  "project": {
+    "forge": "github",
+    "forge_node_id": "R_kgDOSdGFzg",
+    "forge_repo_id": 1238468046,
+    "full_name": "NGTAProtocol/ngta-core",
+    "is_archived": false,
+    "is_fork": false,
+    "project_id": "ghp-e85c186c94aebdfb"
+  },
+  "report_hash": "6069749ecedbddf3d3217a99b710cdb1ae80594af43837c240c4171ccfc75e6a",
+  "risk": {
+    "checks_evaluated": [
+      "popularity_vs_contributors",
+      "young_and_popular",
+      "commit_burst",
+      "author_concentration",
+      "repository_is_fork"
+    ],
+    "checks_not_evaluated": [],
+    "level": "LOW",
+    "signals": []
+  },
+  "roles": {
+    "ai": "not used in GHIM-IMPACT-0.2",
+    "funding": "none: methodology 0.x results are never used for funding",
+    "human_review": "not performed: provisional, unreviewed result"
+  },
+  "source": {
+    "as_of": "2026-09-24T16:05:09Z",
+    "snapshot_hash": "10ee26fd262510c1009252558111ea392f5d954629ae4d93386495748e22cb0b",
+    "snapshot_id": "10ee26fd262510c1",
+    "source_versions": {
+      "github-rest-api": "2022-11-28"
+    },
+    "synthetic": false
+  },
+  "tool_version": "0.1.0"
+}
