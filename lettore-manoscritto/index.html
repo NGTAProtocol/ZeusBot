@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Lettore di manoscritti</title>
+<style>
+  :root {
+    --bg: #faf8f4;
+    --superficie: #ffffff;
+    --testo: #1f1d1a;
+    --tenue: #6b665e;
+    --linea: #e4dfd6;
+    --accento: #2f5d8a;
+    --accento-testo: #ffffff;
+    --evidenza: #fff0bf;
+    --evidenza-bordo: #d9a400;
+    --rec: #c0392b;
+    --errore-bg: #fdecea;
+    --errore-testo: #8a1c14;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161513;
+      --superficie: #1f1e1b;
+      --testo: #e9e5de;
+      --tenue: #a19b92;
+      --linea: #33312d;
+      --accento: #86b4e3;
+      --accento-testo: #0d1620;
+      --evidenza: #3b3219;
+      --evidenza-bordo: #d4a92a;
+      --rec: #f0604f;
+      --errore-bg: #3d1f1c;
+      --errore-testo: #ffb4a9;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--testo);
+    font: 19px/1.65 Georgia, "Iowan Old Style", "Times New Roman", serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  button, label.pulsante { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  button { cursor: pointer; }
+  button:disabled { cursor: default; }
+
+  /* Intestazione */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--linea);
+    padding-top: env(safe-area-inset-top);
+  }
+  .barra {
+    max-width: 760px; margin: 0 auto;
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px;
+  }
+  .barra h1 {
+    flex: 1; min-width: 0; margin: 0;
+    font: 600 16px/1.3 system-ui, -apple-system, sans-serif;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .pulsante-piccolo, label.pulsante {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 40px; padding: 0 14px;
+    border: 1px solid var(--linea); border-radius: 10px;
+    background: var(--superficie); color: var(--testo);
+    font-size: 15px; font-weight: 500; white-space: nowrap;
+  }
+  label.pulsante { cursor: pointer; }
+  label.pulsante.disabilitato { opacity: .5; pointer-events: none; }
+  #file { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  #file:focus-visible + label { outline: 2px solid var(--accento); outline-offset: 2px; }
+
+  /* Pannello note */
+  #pannello-note {
+    max-width: 760px; margin: 0 auto;
+    padding: 0 16px 12px;
+    max-height: 55vh; overflow-y: auto;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  #pannello-note h2 { font-size: 15px; margin: 4px 0 8px; color: var(--tenue); font-weight: 600; }
+  #lista-note { list-style: none; margin: 0; padding: 0; }
+  #lista-note li {
+    display: flex; align-items: stretch; gap: 8px;
+    padding: 8px 0; border-top: 1px solid var(--linea);
+  }
+  .salta {
+    flex: 1; min-width: 0; text-align: left;
+    background: none; border: none; color: var(--testo); padding: 4px 0;
+  }
+  .salta .meta { display: block; font-size: 13px; color: var(--tenue); }
+  .salta .estratto {
+    display: block; font-size: 15px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .azione {
+    flex: none; min-width: 48px; min-height: 48px;
+    border: 1px solid var(--linea); border-radius: 10px;
+    background: var(--superficie); color: var(--testo); font-size: 18px;
+  }
+  .azione.elimina { color: var(--rec); }
+  .azione[aria-pressed="true"] { background: var(--accento); color: var(--accento-testo); border-color: var(--accento); }
+  .nessuna-nota { color: var(--tenue); font-size: 15px; margin: 4px 0 0; }
+
+  /* Testo */
+  main {
+    max-width: 760px; margin: 0 auto;
+    padding: 16px 16px calc(190px + env(safe-area-inset-bottom));
+  }
+  #testo p {
+    margin: 0 0 .9em; padding: 6px 12px;
+    border-left: 3px solid transparent; border-radius: 6px;
+    scroll-margin: 120px 0 200px;
+    transition: background-color .25s;
+  }
+  #testo p.con-nota { border-left-color: var(--accento); }
+  #testo p.corrente { background: var(--evidenza); border-left-color: var(--evidenza-bordo); }
+  .vuoto {
+    text-align: center; color: var(--tenue);
+    font: 16px/1.5 system-ui, -apple-system, sans-serif;
+    padding: 56px 8px;
+  }
+
+  /* Comandi in basso */
+  footer {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: var(--superficie);
+    border-top: 1px solid var(--linea);
+    padding: 10px 12px calc(12px + env(safe-area-inset-bottom));
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .contenitore { max-width: 760px; margin: 0 auto; }
+  #messaggio {
+    display: flex; align-items: flex-start; gap: 8px;
+    margin-bottom: 8px; padding: 8px 10px; border-radius: 10px;
+    background: var(--bg); border: 1px solid var(--linea); font-size: 15px;
+  }
+  #messaggio.errore { background: var(--errore-bg); color: var(--errore-testo); border-color: transparent; }
+  #messaggio span { flex: 1; }
+  #messaggio button { background: none; border: none; color: inherit; font-size: 20px; line-height: 1; padding: 0 4px; }
+  #stato { text-align: center; color: var(--tenue); font-size: 14px; min-height: 1.4em; margin-bottom: 8px; }
+  .pulsanti { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 10px; }
+  .pulsanti button {
+    min-height: 68px; border-radius: 16px; border: 2px solid transparent;
+    font-size: 17px; font-weight: 700; letter-spacing: .02em;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .pulsanti .icona { font-size: 22px; line-height: 1; }
+  #play { background: var(--accento); color: var(--accento-testo); }
+  #play[aria-pressed="true"] { background: var(--superficie); color: var(--accento); border-color: var(--accento); }
+  #stop { background: var(--bg); color: var(--testo); border-color: var(--linea); }
+  #nota { background: var(--bg); color: var(--rec); border-color: var(--rec); }
+  #nota.registra { background: var(--rec); color: #fff; animation: pulsa 1.4s ease-in-out infinite; }
+  .pulsanti button:disabled { opacity: .4; animation: none; }
+  .pulsanti button:not(:disabled):active { transform: scale(.97); }
+  @keyframes pulsa { 50% { opacity: .75; } }
+  @media (prefers-reduced-motion: reduce) {
+    #nota.registra { animation: none; }
+    #testo p { transition: none; }
+  }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="barra">
+    <h1 id="titolo">Lettore di manoscritti</h1>
+    <button id="apri-note" class="pulsante-piccolo" aria-expanded="false" aria-controls="pannello-note" hidden>Note (0)</button>
+    <input type="file" id="file" accept=".txt,.docx,.pdf,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+    <label for="file" id="etichetta-file" class="pulsante">Carica</label>
+  </div>
+  <section id="pannello-note" hidden aria-label="Note vocali">
+    <h2>Note</h2>
+    <ul id="lista-note"></ul>
+    <p id="nessuna-nota" class="nessuna-nota">Nessuna nota. Premi “Prendi nota” durante la lettura per registrarne una.</p>
+  </section>
+</header>
+
+<main>
+  <div id="testo"></div>
+  <p id="vuoto" class="vuoto">Carica un manoscritto (.txt, .docx o .pdf) per iniziare l’ascolto.</p>
+</main>
+
+<footer>
+  <div class="contenitore">
+    <div id="messaggio" role="alert" hidden><span></span><button type="button" aria-label="Chiudi messaggio">×</button></div>
+    <div id="stato" aria-live="polite"></div>
+    <div class="pulsanti">
+      <button id="play" type="button" aria-pressed="false"><span class="icona" aria-hidden="true">▶</span>PLAY</button>
+      <button id="stop" type="button"><span class="icona" aria-hidden="true">■</span>STOP</button>
+      <button id="nota" type="button"><span class="icona" aria-hidden="true">●</span><span class="etichetta">PRENDI NOTA</span></button>
+    </div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+const LIB_MAMMOTH = 'https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js';
+const LIB_PDF = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js';
+const LIB_PDF_WORKER = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+
+const $ = (s) => document.querySelector(s);
+const el = {
+  titolo: $('#titolo'), file: $('#file'), etichettaFile: $('#etichetta-file'),
+  apriNote: $('#apri-note'), pannelloNote: $('#pannello-note'),
+  listaNote: $('#lista-note'), nessunaNota: $('#nessuna-nota'),
+  testo: $('#testo'), vuoto: $('#vuoto'),
+  messaggio: $('#messaggio'), stato: $('#stato'),
+  play: $('#play'), stop: $('#stop'), nota: $('#nota'),
+};
+
+/* ---------------- Stato ---------------- */
+let paragrafi = [];
+let nomeFile = '';
+let pos = 0;             // paragrafo corrente
+let frase = 0;           // porzione del paragrafo corrente (ripresa nella stessa sessione)
+let stato = 'fermo';     // 'fermo' | 'lettura' | 'registrazione'
+let generazione = 0;     // invalida i callback della sintesi dopo stop/salti
+let enunciato = null;    // riferimento tenuto per evitare che Chrome lo perda
+let voce = null;
+let avvisoVoceMostrato = false;
+let note = [];
+let avvioMic = false;
+let registratore = null, flusso = null;
+let audioNota = null, audioNotaId = null, audioNotaUrl = null;
+let memoriaOk = true;
+
+const tts = 'speechSynthesis' in window ? window.speechSynthesis : null;
+
+class ErroreUtente extends Error {}
+
+/* ---------------- IndexedDB ---------------- */
+let dbPromessa = null;
+function apriDB() {
+  if (!dbPromessa) {
+    dbPromessa = new Promise((ok, ko) => {
+      if (!('indexedDB' in window)) return ko(new Error('IndexedDB non disponibile'));
+      const r = indexedDB.open('lettore-manoscritto', 1);
+      r.onupgradeneeded = () => {
+        r.result.createObjectStore('dati');
+        r.result.createObjectStore('note', { keyPath: 'id', autoIncrement: true });
+      };
+      r.onsuccess = () => ok(r.result);
+      r.onerror = () => ko(r.error);
+    });
+  }
+  return dbPromessa;
+}
+async function transazione(negozio, modo, fn) {
+  const db = await apriDB();
+  return new Promise((ok, ko) => {
+    const t = db.transaction(negozio, modo);
+    const req = fn(t.objectStore(negozio));
+    t.oncomplete = () => ok(req ? req.result : undefined);
+    t.onerror = () => ko(t.error);
+    t.onabort = () => ko(t.error);
+  });
+}
+const memoria = {
+  leggi: (k) => transazione('dati', 'readonly', (s) => s.get(k)),
+  scrivi: (k, v) => transazione('dati', 'readwrite', (s) => s.put(v, k)),
+  tutteLeNote: () => transazione('note', 'readonly', (s) => s.getAll()),
+  aggiungiNota: (n) => transazione('note', 'readwrite', (s) => s.add(n)),
+  eliminaNota: (id) => transazione('note', 'readwrite', (s) => s.delete(id)),
+  svuotaNote: () => transazione('note', 'readwrite', (s) => s.clear()),
+};
+
+function salvaPosizione() {
+  if (!memoriaOk || !paragrafi.length) return;
+  memoria.scrivi('posizione', pos).catch(() => {});
+}
+
+/* ---------------- Messaggi ---------------- */
+let timerMessaggio;
+function mostraMessaggio(testo, tipo = 'info') {
+  el.messaggio.querySelector('span').textContent = testo;
+  el.messaggio.className = tipo;
+  el.messaggio.hidden = false;
+  clearTimeout(timerMessaggio);
+  timerMessaggio = setTimeout(nascondiMessaggio, tipo === 'errore' ? 10000 : 4000);
+}
+function nascondiMessaggio() { el.messaggio.hidden = true; }
+const errore = (t) => mostraMessaggio(t, 'errore');
+const info = (t) => mostraMessaggio(t, 'info');
+
+/* ---------------- Interfaccia ---------------- */
+function aggiornaUI() {
+  const caricato = paragrafi.length > 0;
+  const registra = stato === 'registrazione';
+
+  el.play.disabled = !caricato || registra || avvioMic;
+  el.play.setAttribute('aria-pressed', String(stato === 'lettura'));
+  el.stop.disabled = stato === 'fermo' || avvioMic;
+  el.nota.disabled = !caricato || avvioMic;
+  el.nota.classList.toggle('registra', registra);
+  el.nota.querySelector('.etichetta').textContent = registra ? 'FERMA NOTA' : 'PRENDI NOTA';
+
+  el.file.disabled = registra || avvioMic;
+  el.etichettaFile.classList.toggle('disabilitato', el.file.disabled);
+
+  el.titolo.textContent = nomeFile || 'Lettore di manoscritti';
+  el.vuoto.hidden = caricato;
+  el.apriNote.hidden = !caricato;
+  el.apriNote.textContent = `Note (${note.length})`;
+
+  let testoStato = '';
+  if (caricato) {
+    const dove = `Paragrafo ${pos + 1} di ${paragrafi.length}`;
+    if (avvioMic) testoStato = 'Attivazione del microfono…';
+    else if (registra) testoStato = `● Registrazione nota · ${dove}`;
+    else if (stato === 'lettura') testoStato = `In lettura · ${dove}`;
+    else testoStato = `In pausa · ${dove}`;
+  }
+  el.stato.textContent = testoStato;
+}
+
+function mostraTesto() {
+  const frammento = document.createDocumentFragment();
+  paragrafi.forEach((t, i) => {
+    const p = document.createElement('p');
+    p.textContent = t;
+    p.dataset.i = i;
+    frammento.append(p);
+  });
+  el.testo.replaceChildren(frammento);
+  segnaParagrafiConNota();
+}
+
+function evidenzia(i, animato = true) {
+  el.testo.querySelector('p.corrente')?.classList.remove('corrente');
+  const p = el.testo.children[i];
+  if (!p) return;
+  p.classList.add('corrente');
+  const riduci = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  p.scrollIntoView({ block: 'center', behavior: animato && !riduci ? 'smooth' : 'auto' });
+}
+
+/* ---------------- Estrazione del testo ---------------- */
+const scriptCaricati = {};
+function caricaScript(src) {
+  if (!scriptCaricati[src]) {
+    scriptCaricati[src] = new Promise((ok, ko) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = ok;
+      s.onerror = () => { delete scriptCaricati[src]; s.remove(); ko(new Error('script')); };
+      document.head.append(s);
+    });
+  }
+  return scriptCaricati[src];
+}
+async function caricaLibreria(src, formato) {
+  try { await caricaScript(src); }
+  catch { throw new ErroreUtente(`Impossibile caricare il componente per leggere i file ${formato}. Controlla la connessione a internet e riprova.`); }
+}
+
+// Divide il testo in paragrafi. Con `righeSingole`, se il testo non ha righe vuote
+// ogni riga è considerata un paragrafo (caso tipico dei .txt).
+function dividi(testo, righeSingole = false) {
+  testo = testo.replace(/\r\n?/g, '\n').replace(/ /g, ' ');
+  const separatore = righeSingole && !/\n[ \t]*\n/.test(testo) ? /\n/ : /\n[ \t]*\n/;
+  return testo.split(separatore)
+    .map((p) => p.replace(/(\p{L})-\n(?=\p{Ll})/gu, '$1').replace(/\s+/g, ' ').trim())
+    .filter((p) => /[\p{L}\p{N}]/u.test(p));
+}
+
+async function testoDaTxt(file) {
+  const dati = await file.arrayBuffer();
+  try { return dividi(new TextDecoder('utf-8', { fatal: true }).decode(dati), true); }
+  catch { return dividi(new TextDecoder('windows-1252').decode(dati), true); }
+}
+
+async function testoDaDocx(file) {
+  await caricaLibreria(LIB_MAMMOTH, '.docx');
+  let risultato;
+  try { risultato = await window.mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() }); }
+  catch { throw new ErroreUtente('Il file .docx non è leggibile: potrebbe essere danneggiato o in un altro formato (ad esempio il vecchio .doc).'); }
+  return dividi(risultato.value);
+}
+
+async function testoDaPdf(file) {
+  await caricaLibreria(LIB_PDF, '.pdf');
+  const pdfjs = window.pdfjsLib;
+  pdfjs.GlobalWorkerOptions.workerSrc = LIB_PDF_WORKER;
+
+  let doc;
+  try { doc = await pdfjs.getDocument({ data: await file.arrayBuffer() }).promise; }
+  catch (e) {
+    if (e && e.name === 'PasswordException') throw new ErroreUtente('Il PDF è protetto da password e non può essere letto.');
+    throw new ErroreUtente('Il file PDF non è leggibile: potrebbe essere danneggiato.');
+  }
+
+  // Ricostruisce le righe dalle coordinate, poi individua i paragrafi da
+  // spaziatura verticale maggiore del normale o rientro della prima riga.
+  const righe = [];
+  for (let n = 1; n <= doc.numPages; n++) {
+    const pagina = await doc.getPage(n);
+    const { items } = await pagina.getTextContent();
+    const righePagina = [];
+    let riga = null;
+    for (const it of items) {
+      if (typeof it.str !== 'string') continue;
+      const x = it.transform[4], y = it.transform[5];
+      const altezza = Math.abs(it.transform[3]) || it.height || 10;
+      if (!riga || Math.abs(y - riga.y) > altezza * 0.4) {
+        if (!it.str.trim()) continue;
+        riga = { y, x, h: altezza, testo: '', fine: null };
+        righePagina.push(riga);
+      }
+      if (riga.testo && riga.fine !== null && x - riga.fine > riga.h * 0.15
+          && !/\s$/.test(riga.testo) && !/^\s/.test(it.str)) riga.testo += ' ';
+      riga.testo += it.str;
+      riga.fine = x + (it.width || 0);
+    }
+    const valide = righePagina
+      .map((r) => ({ ...r, testo: r.testo.trim() }))
+      .filter((r) => r.testo && !/^[\s\-–—]*\d+[\s\-–—]*$/.test(r.testo)); // salta i numeri di pagina
+    if (!valide.length) continue;
+
+    const salti = [];
+    for (let i = 1; i < valide.length; i++) salti.push(valide[i - 1].y - valide[i].y);
+    const positivi = salti.filter((s) => s > 0).sort((a, b) => a - b);
+    const saltoTipico = positivi.length ? positivi[Math.floor(positivi.length / 2)] : 0;
+    const margine = Math.min(...valide.map((r) => r.x));
+
+    valide.forEach((r, i) => {
+      const rientro = r.x - margine > r.h * 0.8;
+      let nuovo;
+      if (i === 0) {
+        const precedente = righe[righe.length - 1];
+        nuovo = !precedente || rientro || /[.!?…:»"”]$/.test(precedente.testo);
+      } else {
+        const salto = salti[i - 1];
+        nuovo = rientro || salto <= 0 || (saltoTipico > 0 && salto > saltoTipico * 1.4);
+      }
+      righe.push({ testo: r.testo, nuovo });
+    });
+  }
+  const testo = righe.map((r, i) => (i && r.nuovo ? '\n\n' : '\n') + r.testo).join('');
+  const risultato = dividi(testo);
+  if (!risultato.length) throw new ErroreUtente('Il PDF non contiene testo leggibile: potrebbe essere una scansione (immagini di pagine).');
+  return risultato;
+}
+
+async function caricaFile(file) {
+  if (!file) return;
+  const estensione = (file.name.split('.').pop() || '').toLowerCase();
+  const lettori = { txt: testoDaTxt, docx: testoDaDocx, pdf: testoDaPdf };
+  if (!lettori[estensione]) return errore('Formato non supportato. Usa un file .txt, .docx o .pdf.');
+  if (note.length && !confirm('Caricando un nuovo manoscritto le note attuali verranno eliminate. Continuare?')) return;
+
+  ferma();
+  fermaAudioNota();
+  el.stato.textContent = 'Lettura del file…';
+
+  let nuovi;
+  try { nuovi = await lettori[estensione](file); }
+  catch (e) {
+    aggiornaUI();
+    return errore(e instanceof ErroreUtente ? e.message : 'Impossibile leggere il file.');
+  }
+  if (!nuovi.length) { aggiornaUI(); return errore('Il file non contiene testo leggibile.'); }
+
+  paragrafi = nuovi;
+  nomeFile = file.name;
+  pos = 0; frase = 0;
+  note = [];
+  mostraTesto();
+  mostraNote();
+  window.scrollTo(0, 0);
+  aggiornaUI();
+
+  if (memoriaOk) {
+    try {
+      await memoria.svuotaNote();
+      await memoria.scrivi('manoscritto', { nome: nomeFile, paragrafi });
+      await memoria.scrivi('posizione', 0);
+    } catch {
+      errore('Manoscritto caricato, ma non è stato possibile salvarlo nella memoria del browser.');
+      return;
+    }
+  }
+  info(`Caricato: ${paragrafi.length} paragrafi.`);
+}
+
+/* ---------------- Sintesi vocale ---------------- */
+function scegliVoce() {
+  if (!tts) return;
+  const voci = tts.getVoices();
+  const lingua = (v) => v.lang.replace('_', '-').toLowerCase();
+  voce = voci.find((v) => lingua(v) === 'it-it' && v.localService)
+      || voci.find((v) => lingua(v) === 'it-it')
+      || voci.find((v) => lingua(v).startsWith('it'))
+      || null;
+}
+
+// Divide un paragrafo in porzioni brevi: alcuni browser interrompono gli enunciati lunghi.
+function porzioni(testo) {
+  const frasi = testo.match(/[^.!?…;:]+[.!?…;:]*[»"”’)\]]*\s*/g) || [testo];
+  const out = [];
+  let corrente = '';
+  for (const f of frasi) {
+    if (corrente && (corrente + f).length > 220) { out.push(corrente.trim()); corrente = ''; }
+    corrente += f;
+  }
+  if (corrente.trim()) out.push(corrente.trim());
+  return out.flatMap((p) => (p.length <= 300 ? [p] : p.match(/.{1,250}(?:\s|$)|\S+/g).map((s) => s.trim()).filter(Boolean)));
+}
+
+function leggi() {
+  if (!tts) return errore('Questo browser non supporta la sintesi vocale. Prova con Chrome, Safari o Edge.');
+  if (!paragrafi.length || stato === 'registrazione') return;
+
+  if (!voce) scegliVoce();
+  if (!voce && !avvisoVoceMostrato && tts.getVoices().length) {
+    avvisoVoceMostrato = true;
+    errore('Voce italiana non disponibile su questo dispositivo: verrà usata la voce predefinita. Puoi installare una voce italiana nelle impostazioni di sintesi vocale del sistema.');
+  }
+
+  fermaAudioNota();
+  const g = ++generazione;
+  if (tts.speaking || tts.pending) tts.cancel();
+  tts.resume();
+  stato = 'lettura';
+  aggiornaUI();
+  leggiParagrafo(g);
+}
+
+function leggiParagrafo(g) {
+  if (g !== generazione) return;
+  if (pos >= paragrafi.length) return fineManoscritto();
+  evidenzia(pos);
+  salvaPosizione();
+  aggiornaUI();
+  const parti = porzioni(paragrafi[pos]);
+  if (frase >= parti.length) frase = 0;
+  leggiPorzione(g, parti);
+}
+
+function leggiPorzione(g, parti) {
+  if (g !== generazione) return;
+  if (frase >= parti.length) { frase = 0; pos++; return leggiParagrafo(g); }
+
+  const u = new SpeechSynthesisUtterance(parti[frase]);
+  u.lang = 'it-IT';
+  if (voce) u.voice = voce;
+  u.onend = () => {
+    if (g !== generazione) return;
+    frase++;
+    leggiPorzione(g, parti);
+  };
+  u.onerror = (e) => {
+    if (g !== generazione || e.error === 'interrupted' || e.error === 'canceled') return;
+    ferma();
+    if (e.error === 'language-unavailable' || e.error === 'voice-unavailable') {
+      errore('Voce italiana non disponibile. Installa una voce italiana nelle impostazioni di sintesi vocale del sistema.');
+    } else if (e.error === 'not-allowed') {
+      errore('Il browser ha bloccato la lettura. Premi di nuovo PLAY.');
+    } else {
+      errore('Errore della sintesi vocale. Premi PLAY per riprovare.');
+    }
+  };
+  enunciato = u;
+  tts.speak(u);
+}
+
+function ferma() {
+  generazione++;
+  enunciato = null;
+  if (tts && (tts.speaking || tts.pending)) tts.cancel();
+  if (stato === 'lettura') stato = 'fermo';
+  salvaPosizione();
+  aggiornaUI();
+}
+
+function fineManoscritto() {
+  generazione++;
+  stato = 'fermo';
+  pos = 0; frase = 0;
+  salvaPosizione();
+  el.testo.querySelector('p.corrente')?.classList.remove('corrente');
+  aggiornaUI();
+  info('Fine del manoscritto. Premi PLAY per ricominciare dall’inizio.');
+}
+
+function saltaA(i) {
+  if (stato === 'registrazione') return;
+  const eraInLettura = stato === 'lettura';
+  ferma();
+  pos = i; frase = 0;
+  salvaPosizione();
+  apriPannelloNote(false);
+  evidenzia(i);
+  if (eraInLettura) leggi(); else aggiornaUI();
+}
+
+/* ---------------- Note vocali ---------------- */
+function messaggioMicrofono(e) {
+  switch (e && e.name) {
+    case 'NotAllowedError':
+    case 'SecurityError':
+      return 'Accesso al microfono negato. Consentilo nelle impostazioni del browser per registrare le note.';
+    case 'NotFoundError':
+    case 'OverconstrainedError':
+      return 'Nessun microfono trovato su questo dispositivo.';
+    case 'NotReadableError':
+    case 'AbortError':
+      return 'Il microfono è occupato o non disponibile. Chiudi le altre app che lo usano e riprova.';
+    default:
+      return 'Impossibile avviare la registrazione.';
+  }
+}
+
+function chiudiFlusso() {
+  flusso?.getTracks().forEach((t) => t.stop());
+  flusso = null;
+}
+
+async function premiNota() {
+  if (stato === 'registrazione') return terminaNota(true);
+  if (!paragrafi.length || avvioMic) return;
+
+  if (!window.isSecureContext) return errore('La registrazione delle note richiede una connessione sicura (https).');
+  if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
+    return errore('Questo browser non supporta la registrazione audio.');
+  }
+
+  const eraInLettura = stato === 'lettura';
+  ferma();
+  fermaAudioNota();
+  const paragrafoNota = pos;
+
+  avvioMic = true;
+  aggiornaUI();
+  try {
+    flusso = await navigator.mediaDevices.getUserMedia({ audio: true });
+  } catch (e) {
+    avvioMic = false;
+    errore(messaggioMicrofono(e));
+    if (eraInLettura) leggi(); else aggiornaUI();
+    return;
+  }
+
+  const tipo = ['audio/webm;codecs=opus', 'audio/mp4', 'audio/webm', 'audio/ogg;codecs=opus']
+    .find((t) => MediaRecorder.isTypeSupported?.(t));
+  let rec;
+  try {
+    rec = new MediaRecorder(flusso, tipo ? { mimeType: tipo } : undefined);
+  } catch {
+    chiudiFlusso();
+    avvioMic = false;
+    errore('Impossibile avviare la registrazione su questo browser.');
+    if (eraInLettura) leggi(); else aggiornaUI();
+    return;
+  }
+
+  const blocchi = [];
+  rec.ondataavailable = (e) => { if (e.data && e.data.size) blocchi.push(e.data); };
+  rec.onstop = () => salvaNota(blocchi, rec.mimeType || tipo || '', paragrafoNota);
+  rec.onerror = () => errore('Errore durante la registrazione.');
+  registratore = rec;
+  rec.start();
+
+  avvioMic = false;
+  stato = 'registrazione';
+  aggiornaUI();
+}
+
+function terminaNota(riprendi) {
+  if (registratore && registratore.state !== 'inactive') registratore.stop();
+  registratore = null;
+  chiudiFlusso();
+  stato = 'fermo';
+  if (riprendi) leggi(); else aggiornaUI();
+}
+
+async function salvaNota(blocchi, tipo, paragrafo) {
+  const audio = new Blob(blocchi, { type: tipo || blocchi[0]?.type || 'audio/webm' });
+  if (!audio.size) return errore('La registrazione è vuota: nota non salvata.');
+
+  const nota = { paragrafo, data: Date.now(), tipo: audio.type, audio: await audio.arrayBuffer() };
+  if (memoriaOk) {
+    try { nota.id = await memoria.aggiungiNota(nota); }
+    catch { errore('Non è stato possibile salvare la nota nella memoria del browser.'); }
+  }
+  if (nota.id === undefined) nota.id = -Date.now(); // solo in sessione
+  note.push(nota);
+  mostraNote();
+  aggiornaUI();
+  info(`Nota salvata sul paragrafo ${paragrafo + 1}.`);
+}
+
+function fermaAudioNota() {
+  if (audioNota) { audioNota.pause(); audioNota = null; }
+  if (audioNotaUrl) { URL.revokeObjectURL(audioNotaUrl); audioNotaUrl = null; }
+  if (audioNotaId !== null) { audioNotaId = null; mostraNote(); }
+}
+
+function ascoltaNota(nota) {
+  if (audioNotaId === nota.id) return fermaAudioNota();
+  if (stato === 'registrazione') return;
+  fermaAudioNota();
+  if (stato === 'lettura') ferma();
+
+  audioNotaUrl = URL.createObjectURL(new Blob([nota.audio], { type: nota.tipo }));
+  audioNota = new Audio(audioNotaUrl);
+  audioNotaId = nota.id;
+  audioNota.onended = fermaAudioNota;
+  audioNota.onerror = () => { fermaAudioNota(); errore('Questa nota non può essere riprodotta su questo dispositivo.'); };
+  audioNota.play().catch((e) => {
+    if (e.name === 'AbortError') return;
+    fermaAudioNota();
+    errore('Impossibile riprodurre la nota.');
+  });
+  mostraNote();
+}
+
+async function eliminaNota(nota) {
+  if (!confirm(`Eliminare la nota sul paragrafo ${nota.paragrafo + 1}?`)) return;
+  if (audioNotaId === nota.id) fermaAudioNota();
+  if (memoriaOk && nota.id > 0) {
+    try { await memoria.eliminaNota(nota.id); }
+    catch { return errore('Non è stato possibile eliminare la nota.'); }
+  }
+  note = note.filter((n) => n.id !== nota.id);
+  mostraNote();
+  aggiornaUI();
+}
+
+const formatoData = new Intl.DateTimeFormat('it-IT', { dateStyle: 'short', timeStyle: 'short' });
+
+function mostraNote() {
+  const ordinate = [...note].sort((a, b) => a.paragrafo - b.paragrafo || a.data - b.data);
+  const frammento = document.createDocumentFragment();
+  for (const n of ordinate) {
+    const li = document.createElement('li');
+
+    const salta = document.createElement('button');
+    salta.type = 'button';
+    salta.className = 'salta';
+    salta.title = 'Vai a questo punto del testo';
+    const meta = document.createElement('span');
+    meta.className = 'meta';
+    meta.textContent = `Paragrafo ${n.paragrafo + 1} · ${formatoData.format(n.data)}`;
+    const estratto = document.createElement('span');
+    estratto.className = 'estratto';
+    estratto.textContent = paragrafi[n.paragrafo] || '';
+    salta.append(meta, estratto);
+    salta.onclick = () => saltaA(Math.min(n.paragrafo, paragrafi.length - 1));
+
+    const ascolta = document.createElement('button');
+    ascolta.type = 'button';
+    ascolta.className = 'azione';
+    const inAscolto = audioNotaId === n.id;
+    ascolta.textContent = inAscolto ? '■' : '▶';
+    ascolta.setAttribute('aria-pressed', String(inAscolto));
+    ascolta.setAttribute('aria-label', inAscolto ? 'Ferma ascolto' : 'Ascolta nota');
+    ascolta.onclick = () => ascoltaNota(n);
+
+    const elimina = document.createElement('button');
+    elimina.type = 'button';
+    elimina.className = 'azione elimina';
+    elimina.textContent = '✕';
+    elimina.setAttribute('aria-label', 'Elimina nota');
+    elimina.onclick = () => eliminaNota(n);
+
+    li.append(salta, ascolta, elimina);
+    frammento.append(li);
+  }
+  el.listaNote.replaceChildren(frammento);
+  el.nessunaNota.hidden = note.length > 0;
+  segnaParagrafiConNota();
+}
+
+function segnaParagrafiConNota() {
+  const conNota = new Set(note.map((n) => n.paragrafo));
+  for (const p of el.testo.children) p.classList.toggle('con-nota', conNota.has(Number(p.dataset.i)));
+}
+
+function apriPannelloNote(apri) {
+  el.pannelloNote.hidden = !apri;
+  el.apriNote.setAttribute('aria-expanded', String(apri));
+}
+
+/* ---------------- Eventi ---------------- */
+el.play.addEventListener('click', () => { if (stato !== 'lettura') leggi(); });
+el.stop.addEventListener('click', () => {
+  if (stato === 'registrazione') terminaNota(false);
+  else ferma();
+});
+el.nota.addEventListener('click', premiNota);
+el.file.addEventListener('change', async () => {
+  const file = el.file.files[0];
+  el.file.value = '';
+  await caricaFile(file);
+});
+el.apriNote.addEventListener('click', () => apriPannelloNote(el.pannelloNote.hidden));
+el.messaggio.querySelector('button').addEventListener('click', nascondiMessaggio);
+window.addEventListener('pagehide', () => {
+  salvaPosizione();
+  if (tts) tts.cancel();
+});
+
+/* ---------------- Avvio ---------------- */
+(async function avvio() {
+  if (tts) {
+    scegliVoce();
+    if (tts.addEventListener) tts.addEventListener('voiceschanged', scegliVoce);
+    else tts.onvoiceschanged = scegliVoce;
+    tts.cancel(); // alcuni browser continuano a parlare dopo il ricaricamento della pagina
+  } else {
+    errore('Questo browser non supporta la sintesi vocale. Prova con Chrome, Safari o Edge.');
+  }
+
+  try {
+    const salvato = await memoria.leggi('manoscritto');
+    if (salvato && salvato.paragrafi?.length) {
+      paragrafi = salvato.paragrafi;
+      nomeFile = salvato.nome || '';
+      pos = Math.min(Math.max(0, (await memoria.leggi('posizione')) || 0), paragrafi.length - 1);
+      note = (await memoria.tutteLeNote()) || [];
+      mostraTesto();
+      mostraNote();
+      if (pos > 0) evidenzia(pos, false);
+    }
+  } catch {
+    memoriaOk = false;
+    errore('La memoria del browser non è disponibile: manoscritto, posizione e note non verranno salvati.');
+  }
+  aggiornaUI();
+})();
+</script>
+</body>
+</html>
