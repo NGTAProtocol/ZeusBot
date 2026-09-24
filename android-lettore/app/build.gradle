@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.application'
+}
+
+// La pagina dell'app è la stessa della versione web: viene copiata negli asset a ogni build.
+def cartellaWeb = layout.buildDirectory.dir('generated/web')
+def copiaWeb = tasks.register('copiaWeb', Copy) {
+    from(rootProject.file('../lettore-manoscritto')) { include 'index.html' }
+    into cartellaWeb
+}
+
+android {
+    namespace 'it.lettore.manoscritti'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'it.lettore.manoscritti'
+        minSdk 26
+        targetSdk 34
+        versionCode((System.getenv('GITHUB_RUN_NUMBER') ?: '1').toInteger())
+        versionName "1.0.${System.getenv('GITHUB_RUN_NUMBER') ?: '0'}"
+    }
+
+    // Chiave fissa: permette di installare gli aggiornamenti sopra la versione precedente
+    // senza disinstallare (e quindi senza perdere manoscritto e note).
+    signingConfigs {
+        release {
+            storeFile rootProject.file('lettore.jks')
+            storePassword 'lettore-manoscritti'
+            keyAlias 'lettore'
+            keyPassword 'lettore-manoscritti'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets {
+        main.assets.srcDirs += cartellaWeb
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+tasks.named('preBuild') { dependsOn copiaWeb }

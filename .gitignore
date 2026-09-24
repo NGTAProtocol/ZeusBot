@@ -4,3 +4,7 @@ __pycache__/
 .pytest_cache/
 .ghimoney/
 .venv/
+android-lettore/.gradle/
+android-lettore/build/
+android-lettore/app/build/
+android-lettore/local.properties

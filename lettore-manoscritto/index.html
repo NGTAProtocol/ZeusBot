@@ -298,6 +298,45 @@ let impostazioni = { chiave: '', voce: 'Kore', usaVoce: true };
 let geminiSospeso = false;  // dopo un errore si continua con la voce del dispositivo
 let attesaVoce = false;
 
+// Nell'app Android la WebView non ha la sintesi vocale: si usa quella del telefono.
+if (window.AndroidApp) {
+  const inCorso = new Map();
+  let contatore = 0;
+  window.__ttsEvento = (id, tipo) => {
+    const u = inCorso.get(id);
+    if (!u) return;
+    inCorso.delete(id);
+    if (tipo === 'end') u.onend?.();
+    else u.onerror?.({ error: tipo });
+  };
+  window.SpeechSynthesisUtterance = function (text) { this.text = text; };
+  Object.defineProperty(window, 'speechSynthesis', {
+    configurable: true,
+    value: {
+      get speaking() { return inCorso.size > 0; },
+      pending: false,
+      getVoices() {
+        const stato = window.AndroidApp.ttsStato();
+        if (stato === 0) return [{ lang: 'it-IT', name: 'Android', localService: true }];
+        return stato === 1 ? [{ lang: 'en-US', name: 'Android', localService: true }] : [];
+      },
+      speak(u) {
+        const id = `u${++contatore}`;
+        inCorso.set(id, u);
+        window.AndroidApp.parla(u.text, id);
+      },
+      cancel() {
+        const interrotti = [...inCorso.values()];
+        inCorso.clear();
+        window.AndroidApp.ferma();
+        interrotti.forEach((u) => u.onerror?.({ error: 'interrupted' }));
+      },
+      resume() {},
+      addEventListener() {},
+    },
+  });
+}
+
 const tts = 'speechSynthesis' in window ? window.speechSynthesis : null;
 
 class ErroreUtente extends Error {}
@@ -942,7 +981,12 @@ function creaPdf(elenco) {
   return pdf.output('blob');
 }
 
-function scaricaFile(blob, nome) {
+async function scaricaFile(blob, nome) {
+  if (window.AndroidApp) {
+    const esito = window.AndroidApp.salvaFile(await byteInBase64(await blob.arrayBuffer()), nome, blob.type || 'application/zip');
+    if (esito) throw new ErroreUtente(esito);
+    return;
+  }
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
@@ -986,9 +1030,9 @@ async function scaricaNote() {
     const cartella = zip.folder('audio');
     for (const { nota, fileAudio } of elenco) cartella.file(fileAudio, nota.audio);
     const archivio = await zip.generateAsync({ type: 'blob' });
-    scaricaFile(archivio, `Note - ${base} - ${oggi}.zip`);
+    await scaricaFile(archivio, `Note - ${base} - ${oggi}.zip`);
     if (trascrizioniFallite) errore(`File scaricato, ma ${trascrizioniFallite} ${trascrizioniFallite === 1 ? 'nota non è stata trascritta' : 'note non sono state trascritte'}: nel PDF c’è il riferimento al file audio.`);
-    else info('File scaricato: contiene il PDF con le note e gli audio.');
+    else info(`File scaricato${window.AndroidApp ? ' nella cartella Download' : ''}: contiene il PDF con le note e gli audio.`);
   } catch (e) {
     errore(e instanceof ErroreUtente ? e.message : 'Non è stato possibile creare il file con le note.');
     return;

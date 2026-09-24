@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sfondo">#FAF8F4</color>
+    <color name="icona_sfondo">#2F5D8A</color>
+    <bool name="barra_chiara">true</bool>
+</resources>
