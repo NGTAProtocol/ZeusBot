@@ -114,6 +114,36 @@
   .azione.elimina { color: var(--rec); }
   .azione[aria-pressed="true"] { background: var(--accento); color: var(--accento-testo); border-color: var(--accento); }
   .nessuna-nota { color: var(--tenue); font-size: 15px; margin: 4px 0 0; }
+  .salta .trascrizione {
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    font-size: 15px; margin: 2px 0;
+  }
+  .salta .trascrizione.attesa { color: var(--tenue); font-style: italic; }
+  .salta .estratto { color: var(--tenue); }
+
+  /* Pannello Gemini */
+  #pannello-gemini {
+    max-width: 760px; margin: 0 auto; padding: 0 16px 14px;
+    max-height: 70vh; overflow-y: auto;
+    font: 15px/1.45 system-ui, -apple-system, sans-serif;
+  }
+  #pannello-gemini h2 { font-size: 15px; margin: 4px 0 10px; color: var(--tenue); font-weight: 600; }
+  .campo { display: block; margin-bottom: 12px; }
+  .campo > span { display: block; font-weight: 600; margin-bottom: 4px; }
+  .campo input[type="password"], .campo select {
+    width: 100%; min-height: 44px; padding: 8px 10px; font-size: 16px;
+    border: 1px solid var(--linea); border-radius: 10px;
+    background: var(--superficie); color: var(--testo);
+  }
+  .spunta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; min-height: 44px; }
+  .spunta input { width: 22px; height: 22px; accent-color: var(--accento); }
+  #prova-voce {
+    min-height: 44px; padding: 0 16px; border-radius: 10px; border: none;
+    background: var(--accento); color: var(--accento-testo); font-size: 15px; font-weight: 600;
+  }
+  #prova-voce:disabled { opacity: .5; }
+  .avvertenza { color: var(--tenue); font-size: 13px; margin: 12px 0 0; }
+  #pannello-gemini a { color: var(--accento); }
 
   /* Testo */
   main {
@@ -180,10 +210,26 @@
 <header>
   <div class="barra">
     <h1 id="titolo">Lettore di manoscritti</h1>
+    <button id="apri-gemini" class="pulsante-piccolo" aria-expanded="false" aria-controls="pannello-gemini">Gemini</button>
     <button id="apri-note" class="pulsante-piccolo" aria-expanded="false" aria-controls="pannello-note" hidden>Note (0)</button>
     <input type="file" id="file" accept=".txt,.docx,.pdf,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
     <label for="file" id="etichetta-file" class="pulsante">Carica</label>
   </div>
+  <section id="pannello-gemini" hidden aria-label="Impostazioni Gemini">
+    <h2>Gemini · voce e trascrizione delle note</h2>
+    <label class="campo">
+      <span>Chiave API di Gemini</span>
+      <input type="password" id="chiave-gemini" autocomplete="off" spellcheck="false" placeholder="Incolla qui la chiave">
+    </label>
+    <p class="avvertenza" style="margin:-6px 0 12px">Non hai una chiave? Creala gratis su <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google AI Studio</a>.</p>
+    <label class="spunta"><input type="checkbox" id="usa-voce-gemini" checked> Leggi il manoscritto con la voce di Gemini</label>
+    <label class="campo">
+      <span>Voce</span>
+      <select id="voce-gemini"></select>
+    </label>
+    <button id="prova-voce" type="button">▶ Prova voce</button>
+    <p class="avvertenza">Con la chiave inserita, le note vocali vengono anche trascritte in testo e le trascrizioni finiscono nel PDF. La chiave resta salvata solo su questo dispositivo. Il testo del manoscritto e le note vengono inviati a Google per essere letti e trascritti.</p>
+  </section>
   <section id="pannello-note" hidden aria-label="Note vocali">
     <div class="testa-note">
       <h2>Note</h2>
@@ -228,6 +274,9 @@ const el = {
   testo: $('#testo'), vuoto: $('#vuoto'),
   messaggio: $('#messaggio'), stato: $('#stato'),
   play: $('#play'), stop: $('#stop'), nota: $('#nota'),
+  apriGemini: $('#apri-gemini'), pannelloGemini: $('#pannello-gemini'),
+  chiaveGemini: $('#chiave-gemini'), usaVoceGemini: $('#usa-voce-gemini'),
+  voceGemini: $('#voce-gemini'), provaVoce: $('#prova-voce'),
 };
 
 /* ---------------- Stato ---------------- */
@@ -245,6 +294,9 @@ let avvioMic = false;
 let registratore = null, flusso = null;
 let audioNota = null, audioNotaId = null, audioNotaUrl = null;
 let memoriaOk = true;
+let impostazioni = { chiave: '', voce: 'Kore', usaVoce: true };
+let geminiSospeso = false;  // dopo un errore si continua con la voce del dispositivo
+let attesaVoce = false;
 
 const tts = 'speechSynthesis' in window ? window.speechSynthesis : null;
 
@@ -282,6 +334,7 @@ const memoria = {
   scrivi: (k, v) => transazione('dati', 'readwrite', (s) => s.put(v, k)),
   tutteLeNote: () => transazione('note', 'readonly', (s) => s.getAll()),
   aggiungiNota: (n) => transazione('note', 'readwrite', (s) => s.add(n)),
+  aggiornaNota: (n) => transazione('note', 'readwrite', (s) => s.put(n)),
   eliminaNota: (id) => transazione('note', 'readwrite', (s) => s.delete(id)),
   svuotaNote: () => transazione('note', 'readwrite', (s) => s.clear()),
 };
@@ -329,7 +382,7 @@ function aggiornaUI() {
     const dove = `Paragrafo ${pos + 1} di ${paragrafi.length}`;
     if (avvioMic) testoStato = 'Attivazione del microfono…';
     else if (registra) testoStato = `● Registrazione nota · ${dove}`;
-    else if (stato === 'lettura') testoStato = `In lettura · ${dove}`;
+    else if (stato === 'lettura') testoStato = attesaVoce ? `Preparazione della voce… · ${dove}` : `In lettura · ${dove}`;
     else testoStato = `In pausa · ${dove}`;
   }
   el.stato.textContent = testoStato;
@@ -528,20 +581,24 @@ function porzioni(testo) {
   return out.flatMap((p) => (p.length <= 300 ? [p] : p.match(/.{1,250}(?:\s|$)|\S+/g).map((s) => s.trim()).filter(Boolean)));
 }
 
-function leggi() {
-  if (!tts) return errore('Questo browser non supporta la sintesi vocale. Prova con Chrome, Safari o Edge.');
-  if (!paragrafi.length || stato === 'registrazione') return;
-
+function avvisaSenzaVoceItaliana() {
   if (!voce) scegliVoce();
   if (!voce && !avvisoVoceMostrato && tts.getVoices().length) {
     avvisoVoceMostrato = true;
     errore('Voce italiana non disponibile su questo dispositivo: verrà usata la voce predefinita. Puoi installare una voce italiana nelle impostazioni di sintesi vocale del sistema.');
   }
+}
+
+function leggi() {
+  if (!paragrafi.length || stato === 'registrazione') return;
+  if (usaGemini()) preparaContestoAudio();
+  else if (!tts) return errore('Questo browser non supporta la sintesi vocale. Prova con Chrome, Safari o Edge, oppure attiva la voce di Gemini.');
+  else avvisaSenzaVoceItaliana();
 
   fermaAudioNota();
   const g = ++generazione;
-  if (tts.speaking || tts.pending) tts.cancel();
-  tts.resume();
+  if (tts && (tts.speaking || tts.pending)) tts.cancel();
+  tts?.resume();
   stato = 'lettura';
   aggiornaUI();
   leggiParagrafo(g);
@@ -553,6 +610,15 @@ function leggiParagrafo(g) {
   evidenzia(pos);
   salvaPosizione();
   aggiornaUI();
+  if (usaGemini()) {
+    const parti = porzioniGemini(paragrafi[pos]);
+    if (frase >= parti.length) frase = 0;
+    return leggiPorzioneGemini(g, parti);
+  }
+  if (!tts) {
+    ferma();
+    return errore('Questo browser non ha una voce di sistema da usare al posto di Gemini.');
+  }
   const parti = porzioni(paragrafi[pos]);
   if (frase >= parti.length) frase = 0;
   leggiPorzione(g, parti);
@@ -588,6 +654,8 @@ function leggiPorzione(g, parti) {
 function ferma() {
   generazione++;
   enunciato = null;
+  fermaSorgente();
+  attesaVoce = false;
   if (tts && (tts.speaking || tts.pending)) tts.cancel();
   if (stato === 'lettura') stato = 'fermo';
   salvaPosizione();
@@ -709,6 +777,7 @@ async function salvaNota(blocchi, tipo, paragrafo) {
   mostraNote();
   aggiornaUI();
   info(`Nota salvata sul paragrafo ${paragrafo + 1}.`);
+  accodaTrascrizione(nota).catch((e) => errore(`Trascrizione della nota non riuscita: ${e.message}`));
 }
 
 function fermaAudioNota() {
@@ -766,7 +835,13 @@ function mostraNote() {
     const estratto = document.createElement('span');
     estratto.className = 'estratto';
     estratto.textContent = paragrafi[n.paragrafo] || '';
-    salta.append(meta, estratto);
+    const trascrizione = document.createElement('span');
+    trascrizione.className = 'trascrizione';
+    if (n.trascrizione) trascrizione.textContent = `“${n.trascrizione}”`;
+    else if (trascrizioniInCorso.has(n.id)) { trascrizione.textContent = 'Trascrizione in corso…'; trascrizione.classList.add('attesa'); }
+    else if (n.erroreTrascrizione) { trascrizione.textContent = 'Trascrizione non riuscita: verrà ritentata al download.'; trascrizione.classList.add('attesa'); }
+    else trascrizione.hidden = true;
+    salta.append(meta, trascrizione, estratto);
     salta.onclick = () => saltaA(Math.min(n.paragrafo, paragrafi.length - 1));
 
     const ascolta = document.createElement('button');
@@ -800,8 +875,20 @@ function segnaParagrafiConNota() {
 }
 
 function apriPannelloNote(apri) {
+  if (apri) apriPannelloGemini(false);
   el.pannelloNote.hidden = !apri;
   el.apriNote.setAttribute('aria-expanded', String(apri));
+}
+
+function apriPannelloGemini(apri) {
+  if (apri) {
+    apriPannelloNote(false);
+    el.chiaveGemini.value = impostazioni.chiave;
+    el.usaVoceGemini.checked = impostazioni.usaVoce;
+    el.voceGemini.value = impostazioni.voce;
+  }
+  el.pannelloGemini.hidden = !apri;
+  el.apriGemini.setAttribute('aria-expanded', String(apri));
 }
 
 /* ---------------- Scarica note ---------------- */
@@ -847,7 +934,10 @@ function creaPdf(elenco) {
     y += 5;
     scrivi(`Nota ${numero} · Paragrafo ${nota.paragrafo + 1} di ${paragrafi.length}`, { dimensione: 13, stile: 'bold', dopo: 1 });
     scrivi(`${formatoData.format(nota.data)} · Audio: ${fileAudio}`, { dimensione: 10, colore: 100, dopo: 3 });
-    scrivi(paragrafi[nota.paragrafo] || '', { stile: 'italic', colore: 60, dopo: 7 });
+    scrivi(nota.trascrizione || '(Trascrizione non disponibile: ascolta il file audio.)',
+      { dimensione: 12, colore: nota.trascrizione ? 20 : 110, stile: nota.trascrizione ? 'normal' : 'italic', dopo: 3 });
+    scrivi('Testo del paragrafo:', { dimensione: 9, colore: 120, dopo: 0.5 });
+    scrivi(paragrafi[nota.paragrafo] || '', { dimensione: 10, stile: 'italic', colore: 70, dopo: 7 });
   }
   return pdf.output('blob');
 }
@@ -872,6 +962,15 @@ async function scaricaNote() {
     try { await Promise.all([caricaScript(LIB_JSPDF), caricaScript(LIB_JSZIP)]); }
     catch { throw new ErroreUtente('Impossibile caricare i componenti per creare il file. Controlla la connessione a internet e riprova.'); }
 
+    let trascrizioniFallite = 0;
+    if (geminiConfigurato()) {
+      const mancanti = note.filter((n) => !n.trascrizione);
+      for (let i = 0; i < mancanti.length; i++) {
+        info(`Trascrizione delle note con Gemini: ${i + 1} di ${mancanti.length}…`);
+        try { await accodaTrascrizione(mancanti[i]); } catch { trascrizioniFallite++; }
+      }
+    }
+
     const cifre = String(note.length).length < 2 ? 2 : String(note.length).length;
     const elenco = [...note]
       .sort((a, b) => a.paragrafo - b.paragrafo || a.data - b.data)
@@ -888,7 +987,8 @@ async function scaricaNote() {
     for (const { nota, fileAudio } of elenco) cartella.file(fileAudio, nota.audio);
     const archivio = await zip.generateAsync({ type: 'blob' });
     scaricaFile(archivio, `Note - ${base} - ${oggi}.zip`);
-    info('File scaricato: contiene il PDF con l’elenco delle note e gli audio.');
+    if (trascrizioniFallite) errore(`File scaricato, ma ${trascrizioniFallite} ${trascrizioniFallite === 1 ? 'nota non è stata trascritta' : 'note non sono state trascritte'}: nel PDF c’è il riferimento al file audio.`);
+    else info('File scaricato: contiene il PDF con le note e gli audio.');
   } catch (e) {
     errore(e instanceof ErroreUtente ? e.message : 'Non è stato possibile creare il file con le note.');
     return;
@@ -912,6 +1012,322 @@ async function scaricaNote() {
   }, 800);
 }
 
+/* ---------------- Gemini ---------------- */
+const GEMINI_API = 'https://generativelanguage.googleapis.com/v1beta/';
+const VOCI_GEMINI = [
+  ['Kore', 'Kore · donna, sicura'],
+  ['Aoede', 'Aoede · donna, ariosa'],
+  ['Leda', 'Leda · donna, giovanile'],
+  ['Achernar', 'Achernar · donna, morbida'],
+  ['Sulafat', 'Sulafat · donna, calda'],
+  ['Charon', 'Charon · uomo, chiara'],
+  ['Orus', 'Orus · uomo, decisa'],
+  ['Algieba', 'Algieba · uomo, morbida'],
+  ['Iapetus', 'Iapetus · uomo, limpida'],
+  ['Puck', 'Puck · uomo, vivace'],
+];
+const PROMPT_VOCE = 'Read the following Italian text aloud in natural Italian, with the calm and expressive tone of an audiobook narrator. Read only the text:\n\n';
+const PROMPT_TRASCRIZIONE = 'Trascrivi fedelmente questa nota vocale in italiano, con la punteggiatura corretta. Rispondi solo con il testo trascritto, senza commenti. Se non si sente nessuna parola rispondi: [nessun parlato]';
+
+class ErroreGemini extends Error {
+  constructor(messaggio, codice = 0, altroModello = false) { super(messaggio); this.codice = codice; this.altroModello = altroModello; }
+}
+
+const geminiConfigurato = () => !!impostazioni.chiave;
+const usaGemini = () => geminiConfigurato() && impostazioni.usaVoce && !geminiSospeso
+  && !!(window.AudioContext || window.webkitAudioContext);
+
+async function richiestaGemini(percorso, corpo) {
+  let r;
+  try {
+    r = await fetch(GEMINI_API + percorso, {
+      method: corpo ? 'POST' : 'GET',
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': impostazioni.chiave },
+      body: corpo ? JSON.stringify(corpo) : undefined,
+    });
+  } catch {
+    throw new ErroreGemini('Gemini non è raggiungibile: controlla la connessione a internet.');
+  }
+  if (r.ok) return r.json();
+  let dettaglio = '';
+  try { dettaglio = (await r.json()).error?.message || ''; } catch {}
+  if (/api key/i.test(dettaglio) || r.status === 401 || r.status === 403) {
+    throw new ErroreGemini('La chiave API di Gemini non è valida o non ha i permessi necessari.', r.status);
+  }
+  if (r.status === 429) throw new ErroreGemini('Hai raggiunto il limite di utilizzo di Gemini. Riprova più tardi.', 429);
+  if (r.status >= 500) throw new ErroreGemini('Gemini non è disponibile in questo momento.', r.status);
+  throw new ErroreGemini(`Errore di Gemini${dettaglio ? `: ${dettaglio}` : '.'}`, r.status, r.status === 400 || r.status === 404);
+}
+
+// I nomi dei modelli cambiano spesso: si sceglie tra quelli davvero disponibili per la chiave.
+let modelliPromessa = null;
+function elencoModelli() {
+  if (!modelliPromessa) {
+    modelliPromessa = richiestaGemini('models?pageSize=1000').then((r) =>
+      (r.models || []).filter((m) => (m.supportedGenerationMethods || []).includes('generateContent')).map((m) => m.name));
+    modelliPromessa.catch(() => { modelliPromessa = null; });
+  }
+  return modelliPromessa;
+}
+const versioneModello = (n) => parseFloat((n.match(/gemini-(\d+(?:\.\d+)?)/) || [])[1] || 0);
+const ordinaModelli = (l) => l.sort((a, b) => versioneModello(b) - versioneModello(a)
+  || /lite/.test(a) - /lite/.test(b) || /preview|exp/.test(a) - /preview|exp/.test(b) || a.length - b.length);
+
+async function modelliVoce() {
+  const nomi = (await elencoModelli()).filter((n) => /tts/.test(n));
+  const preferiti = ordinaModelli(nomi.filter((n) => !/pro/.test(n))).concat(ordinaModelli(nomi.filter((n) => /pro/.test(n))));
+  return [...new Set([...preferiti, 'models/gemini-3.1-flash-tts-preview', 'models/gemini-2.5-flash-preview-tts'])].slice(0, 4);
+}
+async function modelloTesto() {
+  const nomi = await elencoModelli();
+  if (nomi.includes('models/gemini-flash-latest')) return 'models/gemini-flash-latest';
+  const adatti = nomi.filter((n) => /^models\/gemini-[\d.]+-flash/.test(n) && !/tts|image|live|audio|thinking|embedding|robotics|computer/.test(n));
+  return ordinaModelli(adatti)[0] || 'models/gemini-2.5-flash';
+}
+
+function base64InByte(b64) {
+  const s = atob(b64);
+  const out = new Uint8Array(s.length);
+  for (let i = 0; i < s.length; i++) out[i] = s.charCodeAt(i);
+  return out;
+}
+const byteInBase64 = (dati) => new Promise((ok, ko) => {
+  const fr = new FileReader();
+  fr.onload = () => ok(String(fr.result).split(',')[1] || '');
+  fr.onerror = () => ko(fr.error);
+  fr.readAsDataURL(new Blob([dati]));
+});
+
+/* Voce */
+let contestoAudio = null, sorgente = null, modelloVoceOk = null;
+const cacheVoce = new Map();
+
+function preparaContestoAudio() {
+  if (!contestoAudio) {
+    const C = window.AudioContext || window.webkitAudioContext;
+    if (!C) return;
+    contestoAudio = new C();
+  }
+  if (contestoAudio.state === 'suspended') contestoAudio.resume().catch(() => {});
+}
+
+function fermaSorgente() {
+  if (!sorgente) return;
+  sorgente.onended = null;
+  try { sorgente.stop(); } catch {}
+  sorgente = null;
+}
+
+function suona(buffer, allaFine) {
+  fermaSorgente();
+  const s = contestoAudio.createBufferSource();
+  s.buffer = buffer;
+  s.connect(contestoAudio.destination);
+  s.onended = () => { if (sorgente === s) { sorgente = null; allaFine(); } };
+  sorgente = s;
+  s.start();
+}
+
+async function sintetizzaCon(modello, testo) {
+  const r = await richiestaGemini(`${modello}:generateContent`, {
+    contents: [{ parts: [{ text: PROMPT_VOCE + testo }] }],
+    generationConfig: {
+      responseModalities: ['AUDIO'],
+      speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: impostazioni.voce } } },
+    },
+  });
+  const parte = (r.candidates?.[0]?.content?.parts || []).find((p) => p.inlineData?.data);
+  if (!parte) throw new ErroreGemini('Gemini non ha restituito l’audio.', 0, true);
+  const byte = base64InByte(parte.inlineData.data);
+  const tipo = parte.inlineData.mimeType || '';
+  if (!contestoAudio) preparaContestoAudio();
+  if (/wav|mpeg|mp3|ogg/.test(tipo) || String.fromCharCode(...byte.slice(0, 4)) === 'RIFF') {
+    return contestoAudio.decodeAudioData(byte.buffer.slice(0));
+  }
+  // PCM 16 bit little-endian mono (formato predefinito di Gemini)
+  const frequenza = Number((tipo.match(/rate=(\d+)/) || [])[1]) || 24000;
+  const campioni = byte.length >> 1;
+  const vista = new DataView(byte.buffer);
+  const buffer = contestoAudio.createBuffer(1, Math.max(1, campioni), frequenza);
+  const canale = buffer.getChannelData(0);
+  for (let i = 0; i < campioni; i++) canale[i] = vista.getInt16(i * 2, true) / 32768;
+  return buffer;
+}
+
+async function sintetizza(testo) {
+  const candidati = modelloVoceOk ? [modelloVoceOk] : await modelliVoce();
+  let ultimo;
+  for (const m of candidati) {
+    try {
+      const buffer = await sintetizzaCon(m, testo);
+      modelloVoceOk = m;
+      return buffer;
+    } catch (e) {
+      ultimo = e;
+      if (!(e instanceof ErroreGemini && e.altroModello)) throw e;
+    }
+  }
+  throw ultimo;
+}
+
+// Porzioni più lunghe per Gemini: meno richieste e intonazione più naturale.
+function porzioniGemini(testo) {
+  const out = [];
+  let c = '';
+  for (const p of porzioni(testo)) {
+    if (c && (c + ' ' + p).length > 900) { out.push(c); c = ''; }
+    c = c ? `${c} ${p}` : p;
+  }
+  if (c) out.push(c);
+  return out;
+}
+
+const chiaveCache = (p, f) => `${impostazioni.voce}|${p}|${f}`;
+function audioPorzione(p, f) {
+  const k = chiaveCache(p, f);
+  if (!cacheVoce.has(k)) {
+    const promessa = sintetizza(porzioniGemini(paragrafi[p])[f]);
+    promessa.catch(() => cacheVoce.delete(k));
+    cacheVoce.set(k, promessa);
+  }
+  return cacheVoce.get(k);
+}
+function porzioneSuccessiva(p, f) {
+  if (f + 1 < porzioniGemini(paragrafi[p]).length) return [p, f + 1];
+  return p + 1 < paragrafi.length ? [p + 1, 0] : null;
+}
+
+async function leggiPorzioneGemini(g, parti) {
+  if (g !== generazione) return;
+  if (frase >= parti.length) { frase = 0; pos++; return leggiParagrafo(g); }
+
+  const p = pos, f = frase;
+  attesaVoce = !cacheVoce.has(chiaveCache(p, f));
+  if (attesaVoce) aggiornaUI();
+  let buffer;
+  try {
+    buffer = await audioPorzione(p, f);
+  } catch (e) {
+    if (g !== generazione) return;
+    attesaVoce = false;
+    geminiSospeso = true;
+    errore(`${e.message} Continuo con la voce del dispositivo.`);
+    return leggiParagrafo(g);
+  }
+  if (g !== generazione) return;
+  attesaVoce = false;
+  aggiornaUI();
+
+  // Tiene in memoria solo la porzione attuale e prepara la successiva mentre questa viene letta.
+  const successiva = porzioneSuccessiva(p, f);
+  const tenere = new Set([chiaveCache(p, f), successiva && chiaveCache(...successiva)]);
+  for (const k of cacheVoce.keys()) if (!tenere.has(k)) cacheVoce.delete(k);
+  if (successiva) audioPorzione(...successiva).catch(() => {});
+
+  suona(buffer, () => {
+    if (g !== generazione) return;
+    frase++;
+    leggiPorzioneGemini(g, parti);
+  });
+}
+
+async function provaVoce() {
+  if (!geminiConfigurato()) return errore('Inserisci prima la chiave API di Gemini.');
+  if (stato === 'registrazione') return;
+  ferma();
+  fermaAudioNota();
+  preparaContestoAudio();
+  const g = generazione;
+  el.provaVoce.disabled = true;
+  el.provaVoce.textContent = 'Attendi…';
+  try {
+    const buffer = await sintetizza('Buongiorno. Questa è la voce che leggerà il tuo manoscritto.');
+    if (g === generazione) suona(buffer, () => {});
+  } catch (e) {
+    errore(e.message);
+  } finally {
+    el.provaVoce.disabled = false;
+    el.provaVoce.textContent = '▶ Prova voce';
+  }
+}
+
+/* Trascrizione delle note */
+const trascrizioniInCorso = new Map();
+let codaTrascrizioni = Promise.resolve();
+
+// Converte la nota in WAV mono a 16 kHz: formato accettato da Gemini su ogni browser.
+async function inWav(audio) {
+  const C = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+  const decodificato = await new C(1, 16000, 16000).decodeAudioData(audio.slice(0));
+  const n = decodificato.length, canali = decodificato.numberOfChannels, frequenza = decodificato.sampleRate;
+  const mono = new Float32Array(n);
+  for (let c = 0; c < canali; c++) {
+    const d = decodificato.getChannelData(c);
+    for (let i = 0; i < n; i++) mono[i] += d[i] / canali;
+  }
+  const v = new DataView(new ArrayBuffer(44 + n * 2));
+  const testo = (o, t) => { for (let i = 0; i < t.length; i++) v.setUint8(o + i, t.charCodeAt(i)); };
+  testo(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); testo(8, 'WAVE');
+  testo(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, frequenza, true); v.setUint32(28, frequenza * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
+  testo(36, 'data'); v.setUint32(40, n * 2, true);
+  for (let i = 0; i < n; i++) v.setInt16(44 + i * 2, Math.max(-1, Math.min(1, mono[i])) * 0x7fff, true);
+  return v.buffer;
+}
+
+async function trascrivi(nota) {
+  if (nota.trascrizione || !note.includes(nota)) return;
+  let dati = nota.audio, tipo = (nota.tipo || 'audio/webm').split(';')[0];
+  try { dati = await inWav(nota.audio); tipo = 'audio/wav'; } catch {}
+  const r = await richiestaGemini(`${await modelloTesto()}:generateContent`, {
+    contents: [{ parts: [{ inlineData: { mimeType: tipo, data: await byteInBase64(dati) } }, { text: PROMPT_TRASCRIZIONE }] }],
+  });
+  const testo = (r.candidates?.[0]?.content?.parts || []).map((p) => p.text || '').join('').trim();
+  if (!testo) throw new ErroreGemini('Gemini non ha restituito una trascrizione.');
+  nota.trascrizione = testo;
+  delete nota.erroreTrascrizione;
+  if (memoriaOk && nota.id > 0 && note.includes(nota)) await memoria.aggiornaNota(nota).catch(() => {});
+}
+
+function accodaTrascrizione(nota) {
+  if (!geminiConfigurato() || nota.trascrizione) return Promise.resolve();
+  if (trascrizioniInCorso.has(nota.id)) return trascrizioniInCorso.get(nota.id);
+  const promessa = codaTrascrizioni.then(() => trascrivi(nota));
+  codaTrascrizioni = promessa.catch(() => {});
+  trascrizioniInCorso.set(nota.id, promessa);
+  promessa
+    .catch(() => { nota.erroreTrascrizione = true; })
+    .finally(() => { trascrizioniInCorso.delete(nota.id); mostraNote(); });
+  mostraNote();
+  return promessa;
+}
+
+/* Impostazioni */
+async function salvaImpostazioni() {
+  const chiavePrima = impostazioni.chiave;
+  impostazioni = {
+    chiave: el.chiaveGemini.value.trim(),
+    voce: el.voceGemini.value,
+    usaVoce: el.usaVoceGemini.checked,
+  };
+  geminiSospeso = false;
+  cacheVoce.clear();
+  if (memoriaOk) memoria.scrivi('gemini', impostazioni).catch(() => {});
+
+  if (impostazioni.chiave !== chiavePrima) {
+    modelliPromessa = null;
+    modelloVoceOk = null;
+    if (!impostazioni.chiave) return info('Gemini disattivato: verrà usata la voce del dispositivo.');
+    try {
+      await elencoModelli();
+      info('Chiave valida: Gemini è attivo.');
+      note.filter((n) => !n.trascrizione).forEach((n) => accodaTrascrizione(n).catch(() => {}));
+    } catch (e) {
+      errore(e.message);
+    }
+  }
+}
+
 /* ---------------- Eventi ---------------- */
 el.play.addEventListener('click', () => { if (stato !== 'lettura') leggi(); });
 el.stop.addEventListener('click', () => {
@@ -925,11 +1341,16 @@ el.file.addEventListener('change', async () => {
   await caricaFile(file);
 });
 el.scaricaNote.addEventListener('click', scaricaNote);
+el.apriGemini.addEventListener('click', () => apriPannelloGemini(el.pannelloGemini.hidden));
+for (const campo of [el.chiaveGemini, el.voceGemini, el.usaVoceGemini]) campo.addEventListener('change', salvaImpostazioni);
+el.provaVoce.addEventListener('click', provaVoce);
+for (const [nome, etichetta] of VOCI_GEMINI) el.voceGemini.append(new Option(etichetta, nome));
 el.apriNote.addEventListener('click', () => apriPannelloNote(el.pannelloNote.hidden));
 el.messaggio.querySelector('button').addEventListener('click', nascondiMessaggio);
 window.addEventListener('pagehide', () => {
   salvaPosizione();
   if (tts) tts.cancel();
+  fermaSorgente();
 });
 
 /* ---------------- Avvio ---------------- */
@@ -939,11 +1360,11 @@ window.addEventListener('pagehide', () => {
     if (tts.addEventListener) tts.addEventListener('voiceschanged', scegliVoce);
     else tts.onvoiceschanged = scegliVoce;
     tts.cancel(); // alcuni browser continuano a parlare dopo il ricaricamento della pagina
-  } else {
-    errore('Questo browser non supporta la sintesi vocale. Prova con Chrome, Safari o Edge.');
   }
 
   try {
+    const salvate = await memoria.leggi('gemini');
+    if (salvate) impostazioni = { ...impostazioni, ...salvate };
     const salvato = await memoria.leggi('manoscritto');
     if (salvato && salvato.paragrafi?.length) {
       paragrafi = salvato.paragrafi;
