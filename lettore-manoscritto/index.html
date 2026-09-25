@@ -137,11 +137,13 @@
   }
   .spunta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; min-height: 44px; }
   .spunta input { width: 22px; height: 22px; accent-color: var(--accento); }
-  #prova-voce {
+  #pannello-gemini h2.sezione { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--linea); }
+  #aggiungi-voci { margin-left: 6px; }
+  .prova {
     min-height: 44px; padding: 0 16px; border-radius: 10px; border: none;
     background: var(--accento); color: var(--accento-testo); font-size: 15px; font-weight: 600;
   }
-  #prova-voce:disabled { opacity: .5; }
+  .prova:disabled { opacity: .5; }
   .avvertenza { color: var(--tenue); font-size: 13px; margin: 12px 0 0; }
   #pannello-gemini a { color: var(--accento); }
 
@@ -210,13 +212,21 @@
 <header>
   <div class="barra">
     <h1 id="titolo">Lettore di manoscritti</h1>
-    <button id="apri-gemini" class="pulsante-piccolo" aria-expanded="false" aria-controls="pannello-gemini">Gemini</button>
+    <button id="apri-gemini" class="pulsante-piccolo" aria-expanded="false" aria-controls="pannello-gemini">Voce</button>
     <button id="apri-note" class="pulsante-piccolo" aria-expanded="false" aria-controls="pannello-note" hidden>Note (0)</button>
     <input type="file" id="file" accept=".txt,.docx,.pdf,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
     <label for="file" id="etichetta-file" class="pulsante">Carica</label>
   </div>
-  <section id="pannello-gemini" hidden aria-label="Impostazioni Gemini">
-    <h2>Gemini · voce e trascrizione delle note</h2>
+  <section id="pannello-gemini" hidden aria-label="Impostazioni della voce">
+    <h2>Voce del telefono (gratis)</h2>
+    <label class="campo">
+      <span>Voce</span>
+      <select id="voce-dispositivo"></select>
+    </label>
+    <button id="prova-dispositivo" type="button" class="prova">▶ Prova voce</button>
+    <button id="aggiungi-voci" type="button" class="pulsante-piccolo" hidden>+ Scarica altre voci</button>
+    <p id="suggerimento-voci" class="avvertenza"></p>
+    <h2 class="sezione">Gemini (facoltativo) · voce più naturale e trascrizione delle note</h2>
     <label class="campo">
       <span>Chiave API di Gemini</span>
       <input type="password" id="chiave-gemini" autocomplete="off" spellcheck="false" placeholder="Incolla qui la chiave">
@@ -227,7 +237,7 @@
       <span>Voce</span>
       <select id="voce-gemini"></select>
     </label>
-    <button id="prova-voce" type="button">▶ Prova voce</button>
+    <button id="prova-voce" type="button" class="prova">▶ Prova voce Gemini</button>
     <p class="avvertenza">Con la chiave inserita, le note vocali vengono anche trascritte in testo e le trascrizioni finiscono nel PDF. La chiave resta salvata solo su questo dispositivo. Il testo del manoscritto e le note vengono inviati a Google per essere letti e trascritti.</p>
   </section>
   <section id="pannello-note" hidden aria-label="Note vocali">
@@ -277,6 +287,8 @@ const el = {
   apriGemini: $('#apri-gemini'), pannelloGemini: $('#pannello-gemini'),
   chiaveGemini: $('#chiave-gemini'), usaVoceGemini: $('#usa-voce-gemini'),
   voceGemini: $('#voce-gemini'), provaVoce: $('#prova-voce'),
+  voceDispositivo: $('#voce-dispositivo'), provaDispositivo: $('#prova-dispositivo'),
+  aggiungiVoci: $('#aggiungi-voci'), suggerimentoVoci: $('#suggerimento-voci'),
 };
 
 /* ---------------- Stato ---------------- */
@@ -294,7 +306,7 @@ let avvioMic = false;
 let registratore = null, flusso = null;
 let audioNota = null, audioNotaId = null, audioNotaUrl = null;
 let memoriaOk = true;
-let impostazioni = { chiave: '', voce: 'Kore', usaVoce: true };
+let impostazioni = { chiave: '', voce: 'Kore', usaVoce: true, voceDispositivo: '' };
 let geminiSospeso = false;  // dopo un errore si continua con la voce del dispositivo
 let attesaVoce = false;
 
@@ -317,13 +329,19 @@ if (window.AndroidApp) {
       pending: false,
       getVoices() {
         const stato = window.AndroidApp.ttsStato();
-        if (stato === 0) return [{ lang: 'it-IT', name: 'Android', localService: true }];
+        if (stato === 0) {
+          let voci = [];
+          try { voci = JSON.parse(window.AndroidApp.voci() || '[]'); } catch {}
+          return voci.length
+            ? voci.map((v) => ({ name: v.nome, voiceURI: v.nome, lang: 'it-IT', localService: !v.rete }))
+            : [{ name: '', voiceURI: '', lang: 'it-IT', localService: true }];
+        }
         return stato === 1 ? [{ lang: 'en-US', name: 'Android', localService: true }] : [];
       },
       speak(u) {
         const id = `u${++contatore}`;
         inCorso.set(id, u);
-        window.AndroidApp.parla(u.text, id);
+        window.AndroidApp.parla(u.text, id, (u.voice && u.voice.name) || '');
       },
       cancel() {
         const interrotti = [...inCorso.values()];
@@ -332,7 +350,8 @@ if (window.AndroidApp) {
         interrotti.forEach((u) => u.onerror?.({ error: 'interrupted' }));
       },
       resume() {},
-      addEventListener() {},
+      // L'app avvisa quando le voci cambiano (motore pronto, voci appena installate).
+      addEventListener(tipo, fn) { if (tipo === 'voiceschanged') window.__vociCambiate = fn; },
     },
   });
 }
@@ -601,7 +620,9 @@ function scegliVoce() {
   if (!tts) return;
   const voci = tts.getVoices();
   const lingua = (v) => v.lang.replace('_', '-').toLowerCase();
-  voce = voci.find((v) => lingua(v) === 'it-it' && v.localService)
+  const scelta = impostazioni.voceDispositivo;
+  voce = (scelta && voci.find((v) => (v.voiceURI || v.name) === scelta))
+      || voci.find((v) => lingua(v) === 'it-it' && v.localService)
       || voci.find((v) => lingua(v) === 'it-it')
       || voci.find((v) => lingua(v).startsWith('it'))
       || null;
@@ -925,6 +946,7 @@ function apriPannelloGemini(apri) {
     el.chiaveGemini.value = impostazioni.chiave;
     el.usaVoceGemini.checked = impostazioni.usaVoce;
     el.voceGemini.value = impostazioni.voce;
+    elencaVociDispositivo();
   }
   el.pannelloGemini.hidden = !apri;
   el.apriGemini.setAttribute('aria-expanded', String(apri));
@@ -1346,6 +1368,54 @@ function accodaTrascrizione(nota) {
   return promessa;
 }
 
+/* Voci del dispositivo */
+const lingueVoce = (v) => v.lang.replace('_', '-').toLowerCase();
+
+function etichettaVoce(v) {
+  const google = v.name.match(/^it-it-x-(\w+)-(local|network)$/i);
+  if (google) return `Google ${google[1].toUpperCase()} · ${google[2].toLowerCase() === 'local' ? 'sul telefono' : 'online'}`;
+  if (!v.name) return 'Voce italiana del telefono';
+  return v.localService === false ? `${v.name} · online` : v.name;
+}
+
+function elencaVociDispositivo() {
+  const sel = el.voceDispositivo;
+  const voci = tts ? tts.getVoices() : [];
+  const italiane = voci.filter((v) => lingueVoce(v).startsWith('it') && (v.voiceURI || v.name))
+    .sort((a, b) => (b.localService !== false) - (a.localService !== false) || etichettaVoce(a).localeCompare(etichettaVoce(b)));
+  sel.replaceChildren(new Option('Automatica', ''));
+  for (const v of italiane) sel.append(new Option(etichettaVoce(v), v.voiceURI || v.name));
+  sel.value = italiane.some((v) => (v.voiceURI || v.name) === impostazioni.voceDispositivo) ? impostazioni.voceDispositivo : '';
+  sel.disabled = !tts;
+  el.provaDispositivo.disabled = !tts;
+
+  const android = !!window.AndroidApp?.apriImpostazioniVoce;
+  el.aggiungiVoci.hidden = !android;
+  let testo;
+  if (!tts) testo = 'Questo dispositivo non ha voci di sistema: usa Gemini.';
+  else if (!italiane.length) testo = 'Non ci sono voci italiane installate. ';
+  else testo = `${italiane.length} ${italiane.length === 1 ? 'voce italiana disponibile' : 'voci italiane disponibili'}. `;
+  if (tts) {
+    testo += android
+      ? 'Per averne altre tocca “Scarica altre voci”: Motore di sintesi vocale Google → Installa dati vocali → Italiano, e scegli una voce.'
+      : 'Le voci dipendono dal dispositivo e dal browser: su computer, Microsoft Edge offre voci italiane molto naturali (Isabella, Elsa, Diego).';
+  }
+  el.suggerimentoVoci.textContent = testo;
+}
+
+function provaVoceDispositivo() {
+  if (!tts || stato === 'registrazione') return;
+  ferma();
+  fermaAudioNota();
+  scegliVoce();
+  const u = new SpeechSynthesisUtterance('Buongiorno. Questa è la voce che leggerà il tuo manoscritto.');
+  u.lang = 'it-IT';
+  if (voce) u.voice = voce;
+  u.onerror = (e) => { if (e.error !== 'interrupted' && e.error !== 'canceled') errore('Questa voce non funziona: prova a sceglierne un’altra.'); };
+  enunciato = u;
+  tts.speak(u);
+}
+
 /* Impostazioni */
 async function salvaImpostazioni() {
   const chiavePrima = impostazioni.chiave;
@@ -1353,7 +1423,9 @@ async function salvaImpostazioni() {
     chiave: el.chiaveGemini.value.trim(),
     voce: el.voceGemini.value,
     usaVoce: el.usaVoceGemini.checked,
+    voceDispositivo: el.voceDispositivo.value,
   };
+  scegliVoce();
   geminiSospeso = false;
   cacheVoce.clear();
   if (memoriaOk) memoria.scrivi('gemini', impostazioni).catch(() => {});
@@ -1388,6 +1460,9 @@ el.scaricaNote.addEventListener('click', scaricaNote);
 el.apriGemini.addEventListener('click', () => apriPannelloGemini(el.pannelloGemini.hidden));
 for (const campo of [el.chiaveGemini, el.voceGemini, el.usaVoceGemini]) campo.addEventListener('change', salvaImpostazioni);
 el.provaVoce.addEventListener('click', provaVoce);
+el.voceDispositivo.addEventListener('change', salvaImpostazioni);
+el.provaDispositivo.addEventListener('click', provaVoceDispositivo);
+el.aggiungiVoci.addEventListener('click', () => window.AndroidApp?.apriImpostazioniVoce());
 for (const [nome, etichetta] of VOCI_GEMINI) el.voceGemini.append(new Option(etichetta, nome));
 el.apriNote.addEventListener('click', () => apriPannelloNote(el.pannelloNote.hidden));
 el.messaggio.querySelector('button').addEventListener('click', nascondiMessaggio);
@@ -1401,14 +1476,19 @@ window.addEventListener('pagehide', () => {
 (async function avvio() {
   if (tts) {
     scegliVoce();
-    if (tts.addEventListener) tts.addEventListener('voiceschanged', scegliVoce);
-    else tts.onvoiceschanged = scegliVoce;
+    const vociCambiate = () => {
+      scegliVoce();
+      if (!el.pannelloGemini.hidden) elencaVociDispositivo();
+    };
+    if (tts.addEventListener) tts.addEventListener('voiceschanged', vociCambiate);
+    else tts.onvoiceschanged = vociCambiate;
     tts.cancel(); // alcuni browser continuano a parlare dopo il ricaricamento della pagina
   }
 
   try {
     const salvate = await memoria.leggi('gemini');
     if (salvate) impostazioni = { ...impostazioni, ...salvate };
+    scegliVoce();
     const salvato = await memoria.leggi('manoscritto');
     if (salvato && salvato.paragrafi?.length) {
       paragrafi = salvato.paragrafi;

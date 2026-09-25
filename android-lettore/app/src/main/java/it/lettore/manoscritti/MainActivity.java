@@ -13,6 +13,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
+import android.speech.tts.Voice;
 import android.util.Base64;
 import android.webkit.JavascriptInterface;
 import android.webkit.PermissionRequest;
@@ -24,6 +25,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -47,6 +51,7 @@ public class MainActivity extends Activity {
     private WebView webView;
     private TextToSpeech tts;
     private volatile int statoTts = -1; // -1 in avvio, 0 pronta, 1 senza italiano, 2 non disponibile
+    private String voceAttuale = "";
     private ValueCallback<Uri[]> sceltaFile;
     private PermissionRequest richiestaMicrofono;
 
@@ -73,6 +78,7 @@ public class MainActivity extends Activity {
             if (stato != TextToSpeech.SUCCESS) { statoTts = 2; return; }
             int lingua = tts.setLanguage(Locale.ITALY);
             statoTts = (lingua == TextToSpeech.LANG_MISSING_DATA || lingua == TextToSpeech.LANG_NOT_SUPPORTED) ? 1 : 0;
+            avvisaVociCambiate();
         });
         tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
             @Override public void onStart(String id) {}
@@ -83,6 +89,17 @@ public class MainActivity extends Activity {
 
         if (savedInstanceState != null) webView.restoreState(savedInstanceState);
         else webView.loadUrl(INDIRIZZO);
+    }
+
+    private void avvisaVociCambiate() {
+        runOnUiThread(() -> webView.evaluateJavascript("window.__vociCambiate && window.__vociCambiate()", null));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Al ritorno dalle impostazioni potrebbero esserci voci nuove.
+        if (statoTts >= 0) avvisaVociCambiate();
     }
 
     private void evento(String id, String tipo) {
@@ -191,8 +208,9 @@ public class MainActivity extends Activity {
         public int ttsStato() { return statoTts; }
 
         @JavascriptInterface
-        public void parla(String testo, String id) {
+        public void parla(String testo, String id, String nomeVoce) {
             if (statoTts == 2) { evento(id, "synthesis-failed"); return; }
+            usaVoce(nomeVoce == null ? "" : nomeVoce);
             Bundle parametri = new Bundle();
             if (tts.speak(testo, TextToSpeech.QUEUE_ADD, parametri, id) != TextToSpeech.SUCCESS) {
                 evento(id, "synthesis-failed");
@@ -201,6 +219,33 @@ public class MainActivity extends Activity {
 
         @JavascriptInterface
         public void ferma() { if (tts != null) tts.stop(); }
+
+        /** Voci italiane installate, come JSON: [{"nome": "...", "rete": false}, ...]. */
+        @JavascriptInterface
+        public String voci() {
+            JSONArray elenco = new JSONArray();
+            try {
+                if (statoTts < 0 || tts.getVoices() == null) return elenco.toString();
+                for (Voice v : tts.getVoices()) {
+                    if (!"it".equals(v.getLocale().getLanguage())) continue;
+                    if (v.getFeatures() != null && v.getFeatures().contains(TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED)) continue;
+                    elenco.put(new JSONObject().put("nome", v.getName()).put("rete", v.isNetworkConnectionRequired()));
+                }
+            } catch (Exception ignorata) {}
+            return elenco.toString();
+        }
+
+        /** Apre le impostazioni di sintesi vocale del telefono, dove si installano altre voci. */
+        @JavascriptInterface
+        public void apriImpostazioniVoce() {
+            runOnUiThread(() -> {
+                try {
+                    startActivity(new Intent("com.android.settings.TTS_SETTINGS"));
+                } catch (Exception e) {
+                    try { startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS)); } catch (Exception ignorata) {}
+                }
+            });
+        }
 
         /** Salva un file in Download. Restituisce "" se va bene, altrimenti il messaggio d'errore. */
         @JavascriptInterface
@@ -231,6 +276,18 @@ public class MainActivity extends Activity {
                 return "Impossibile salvare il file: " + e.getMessage();
             }
         }
+    }
+
+    private void usaVoce(String nome) {
+        if (nome.equals(voceAttuale)) return;
+        voceAttuale = nome;
+        if (nome.isEmpty()) { tts.setLanguage(Locale.ITALY); return; }
+        try {
+            for (Voice v : tts.getVoices()) {
+                if (v.getName().equals(nome)) { tts.setVoice(v); return; }
+            }
+        } catch (Exception ignorata) {}
+        tts.setLanguage(Locale.ITALY);
     }
 
     @Override
