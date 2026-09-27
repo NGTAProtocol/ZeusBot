@@ -35,7 +35,7 @@
 - Tommaso: fonte involontaria su Osiride e Cicimarra, per Dalia e il pool.
 
 ## Nodi ancora aperti
-1. **Ordine della seconda cresta: manuale contro cronologia.** Il manuale v2 dice: escalation, poi golpe, poi liberazione di Laura. La cronologia v4 dice: liberazione, golpe, poi calma apparente, poi escalation. Con la cronologia, golpe e liberazione cadono prima della "calma apparente" e la seconda cresta parte solo con l'escalation. Proposta: seguire la cronologia (le date tornano) e correggere il manuale: la prima onda si chiude con Laura e il golpe; la calma apparente viene dopo; la seconda cresta parte con escalation e legge d'emergenza.
+1. **Ordine della seconda cresta: manuale contro cronologia.** Il manuale (anche nella v3) dice: escalation, poi golpe, poi liberazione di Laura. La cronologia v4 dice: liberazione, golpe, poi calma apparente, poi escalation. Con la cronologia, golpe e liberazione cadono prima della "calma apparente" e la seconda cresta parte solo con l'escalation. Proposta: seguire la cronologia (le date tornano) e correggere il manuale: la prima onda si chiude con Laura e il golpe; la calma apparente viene dopo; la seconda cresta parte con escalation e legge d'emergenza.
 2. **Chi guida la task force della legge d'emergenza?** Proposta: De Biasi. Le sue squadre mettono le bombe e poi lui riceve il fascicolo che le indaga.
 3. **Frasi superate nella bibbia v4** (nei file già corrette): la sezione "La liberazione" parla ancora di "unico istante" per la crepa; la sezione "Morte" di Kurgan cita Bertola e un punto di rottura "da fissare"; AV System ha una strage "ancora da collocare"; De Stefano ha ancora la sezione doppia "ancora da definire"; "nessun punto aperto".
 4. **Regola su persone e cariche reali, CIA compresa:** ancora "da confermare in via definitiva".
@@ -65,3 +65,4 @@
 - 2026-09-27 — Manuale di stile v2: eccezione del prologo, curva aggiornata, sette POV, tic di Kurgan, De Stefano, Tommaso.
 - 2026-09-27 — Integrata la bibbia v3: età, terza strage (Brescia), attribuzione di stragi ed escalation, CIA, doppio tradimento e morte di Adorisio, POV, prologo, finale.
 - 2026-09-27 — Integrata la bibbia v4: due crepe, Laura prima del golpe, clonazione della chiavetta, origine del pool, legge d'emergenza di Cicimarra, prezzo di De Stefano, linea di Tommaso.
+- 2026-09-27 — Manuale di stile v3: due crepe confermate, la seconda è il punto emotivo più alto del romanzo.

@@ -29,7 +29,11 @@ La bibbia fissa una voce mista: registro (c) per Giorgi, registro (a) per tutti 
 - **Analogie di sistema**, sempre motivate dalla sua formazione: fisica dei sistemi complessi, teoria del controllo, ingegneria del rischio. Mai decorazione colta: ogni analogia illumina una decisione o un'emozione che Giorgi non si permette di nominare.
 - **Distanza emotiva sintattica:** frasi più lunghe del registro (a), subordinate che costruiscono ragionamento anziché azione. Un uomo che *pensa* invece di *agire*, anche in crisi.
 - **Dosaggio (vincolo editoriale):** mai più di un capitolo di seguito in registro (c).
-- **La crepa nel registro:** quando il controllo di Giorgi cede davvero (la scoperta del tradimento di Adorisio nei suoi confronti; il momento in cui gli viene comunicata la sparizione forzata) la sintassi fredda può incrinarsi per **una frase soltanto**, breve, quasi del registro (a). È l'unico punto in cui i due registri si toccano.
+- **Le due crepe nel registro (confermate come due, non una):**
+  1. la scoperta del tradimento di Adorisio su Laura: rabbia trattenuta, Giorgi resta nel pieno del potere;
+  2. la comunicazione della sparizione forzata orchestrata da Osiride: non più rabbia ma resa totale.
+
+  In entrambi i casi la sintassi fredda si incrina per **una frase soltanto**, breve, quasi del registro (a), senza abbandonare la voce del personaggio. Sono gli unici due punti in cui i registri si toccano. **La seconda deve pesare più della prima: è il punto emotivamente più alto dell'intero romanzo.**
 
 ---
 

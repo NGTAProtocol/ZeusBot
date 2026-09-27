@@ -16,3 +16,4 @@ Controlli aggiuntivi dalla bibbia:
 - [ ] Nessuna persona reale riconoscibile
 - [ ] Il tic del personaggio-POV è riconoscibile nelle prime righe
 - [ ] Non è il secondo capitolo di fila in registro (c)
+- [ ] Nei capitoli di Giorgi il registro si incrina solo nelle due crepe previste (Adorisio; sparizione forzata), per una frase
