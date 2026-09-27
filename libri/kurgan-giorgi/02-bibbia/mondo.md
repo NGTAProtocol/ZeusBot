@@ -1,7 +1,7 @@
 # Mondo
 
 ## AV System (il fondo)
-Fondo guidato da Giorgi, torre di vetro a Porta Nuova, Milano, 22° piano. Ha orchestrato tre attentati (Padova, Mestre, un terzo da collocare) per manovrare lo spread: vendite allo scoperto sui titoli di Stato, assicurazioni contro il default, opzioni ribassiste sulle banche.
+Fondo guidato da Giorgi, torre di vetro a Porta Nuova, Milano, 22° piano. Ha orchestrato tre attentati (Padova, Brescia, Mestre), eseguiti da Kurgan come ultimo lavoro per Giorgi, per manovrare lo spread: vendite allo scoperto sui titoli di Stato, assicurazioni contro il default, opzioni ribassiste sulle banche.
 
 ## Osiride
 Organizzazione segreta parastatale, parallela e superiore alla massoneria tradizionale, ispirata storicamente alla P2.
@@ -21,7 +21,8 @@ Organizzazione paramilitare e territoriale creata dal generale De Biasi sui rest
 
 ## Lo Stato
 - Servizi segreti militari: procurano il dossier, favoriscono l'unificazione, sorvegliano Flora (De Stefano), eliminano Kurgan con Osiride, colpiscono Dalia.
-- Lo Stato mette un arsenale nazionale a disposizione di Giorgi contro Kurgan, "conoscendo il vero scopo dell'operazione".
+- **Il fronte che arma Giorgi contro Kurgan:** non "lo Stato" nel suo complesso, ma i servizi segreti militari, un nucleo ristretto del governo e la **CIA**, coinvolta per la minaccia geopolitica (un attore armato da Russia, Cina e Iran contro un paese NATO/UE). Sanno tutti che solo Giorgi può fermarlo. Delle stragi preferiscono non sapere: ignoranza voluta, non subita.
+- **Servizi deviati di De Biasi:** per conto di Osiride compiono l'escalation contro infrastrutture e autostrade.
 - Il pool di magistrati (Flora, Calabrese, Cataldo).
 
 ## Oggetti chiave

@@ -19,7 +19,7 @@
 1. La violenza sui minori resta sempre fuori scena: il rapimento di Laura e il passato di Dalia si raccontano per conseguenze, mai descritti.
 2. Le scene intime restano fuori scena o appena accennate.
 3. Nessun elemento soprannaturale. La dottrina di Osiride è credo e mitologia interna dell'organizzazione, mai verità storica affermata dal narratore.
-4. Nessuna persona reale riconoscibile: tutti i personaggi sono inventati, anche quelli che ricoprono cariche reali (cardinale, presidente della Cassazione, senatore, generali). Organizzazioni e aziende del romanzo sono inventate (Osiride, AV System, Casal Fascio); massoneria e P2 restano sfondo storico, senza attribuzioni a persone reali.
+4. **Persone reali, mai:** nessun nome di politico, magistrato, funzionario o agente reale, storico o contemporaneo. Cariche e istituzioni reali (Corte di Cassazione, servizi segreti, ruoli di governo, CIA) si nominano solo genericamente. Osiride, AV System e Casal Fascio sono inventati; massoneria e P2 restano sfondo storico. (Regola da confermare in via definitiva.)
 5. Luoghi reali, eventi reinventati: niente dettagli che richiamino stragi o crolli reali (Bologna, ponte Morandi, ecc.).
 6. Registro (c) per i capitoli di Giorgi, (a) per tutti gli altri.
 7. Il tema del controllo va rispecchiato in ogni sottotrama.

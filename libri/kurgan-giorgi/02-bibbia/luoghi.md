@@ -12,13 +12,13 @@ Luoghi reali, eventi reinventati.
 ## Napoli — Vomero
 Infanzia di Kurgan.
 
-## Serbia
-Il servizio militare di Kurgan e l'uccisione dei tre ufficiali.
+## Kosovo (1998–99)
+La guerra di Kurgan nell'esercito serbo e l'uccisione dei tre ufficiali.
 
 ## Luoghi delle stragi
 - Padova, mercato coperto (prima strage).
 - Mestre, stazione (seconda strage, 21 morti).
-- Terza strage: da definire.
+- Brescia, pullman di pendolari (seconda strage, C4).
 - Escalation: poli logistici di Genova e Taranto; autostrade A1 (Piacenza, Roma) e A14 (Pescara, Forlì).
 
 ## Impero di Kurgan

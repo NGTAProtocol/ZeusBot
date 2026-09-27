@@ -3,7 +3,7 @@
 - **Titolo:** Il padre del mostro
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
-- **Fase attuale:** bibbia completa integrata (versione 2); voce scelta.
+- **Fase attuale:** bibbia v3 integrata; voce scelta; manuale di stile adottato.
 - **Prossimo passo:** sciogliere i nodi qui sotto, poi Fase 1 (mercato) e Fase 2 (architettura e piano parole).
 
 ## Decisioni prese
@@ -15,37 +15,36 @@
 - Kurgan muore a metà romanzo a Cattolica; Giorgi sparisce a Peschiera del Garda; Elena tiene la terza copia del dossier; Bertola prepara il sequel.
 - La protagonista magistrata ora è Flora Notarangelo (Campobasso, 35 anni), non più Filomena Lattarulo.
 
-## Nodi da sciogliere (incongruenze nella bibbia v2)
-1. **Finale di Giorgi.** Le note dicono che il romanzo si chiude con Giorgi "indebolito ma vivo e ancora al potere", ma il finale lo fa sparire, sacrificato da Osiride e inaccessibile. Vivo sì; al potere no. Quale delle due?
-2. **Chi esegue le stragi.** La cronologia mette la ribellione di Kurgan (punto 6) prima delle stragi di Padova e Mestre (punto 7). Se Kurgan era il braccio operativo e si è già ribellato, chi mette le bombe? E chi mette quelle dell'escalation (Genova, Taranto, autostrade)?
-3. **Età di Kurgan e guerra serba.** 43 anni oggi significa nato intorno al 1983: troppo giovane per le guerre jugoslave degli anni '90. Serve un'altra guerra o operazione (Kosovo?), un'età più alta o un anno di ambientazione diverso.
-4. **Età di Dalia.** Kurgan la sfrutta "da quando era bambina", ma lui prima era nell'esercito serbo e poi ha fatto carriera nella Camorra. Con 43 anni per lui, Dalia deve essere abbastanza giovane (intorno ai 28–30) perché le date tornino. La prima bibbia le dava 36 anni.
-5. **Lo Stato che arma Giorgi.** Lo Stato gli mette a disposizione un arsenale "conoscendo il vero scopo dell'operazione", mentre Osiride vuole spodestare lo Stato e Giorgi ha orchestrato le stragi. Chi, nello Stato, sa cosa?
-6. **Punti aperti "nessuno".** La bibbia dice che non ci sono punti aperti, ma lascia aperti: la terza strage; la voce 18 della cronologia ("finale da definire", poi definito altrove); cosa costa a De Stefano il suo ruolo (la sezione è duplicata); l'archivio di Flora; i punti di vista per parte.
-7. **"Cattolica, non Brescia".** La nota corregge Brescia, che però non compare in nessun'altra parte della bibbia. Va ignorata?
-8. **Posizione dell'apertura in cronologia.** Le dimissioni arrivano dopo la ribellione di Kurgan: il lettore apre il libro a crisi già in corso. È voluto? La struttura in parti va ripensata: la vecchia (rapimento a fine Parte II, scontro finale nella III) non regge con Kurgan morto a metà.
-9. **Domanda morale di Flora.** Nella prima bibbia l'archivio segreto costruito con relazioni calcolate la rendeva lo specchio di Giorgi. Nella v2 non c'è più. Si abbandona?
-10. **Regola su logge e organizzazioni reali.** La prima bibbia la escludeva; la v2 usa massoneria, P2 come ispirazione e cariche reali (cardinale, presidente della Cassazione, senatore). Ho aggiornato la regola: cariche reali ammesse, persone sempre inventate.
+## Nodi risolti dalla bibbia v3
+- Finale: Giorgi vivo, nascosto, **fuori dal potere**.
+- Stragi (Padova, Brescia, Mestre) = ultimo lavoro di Kurgan per Giorgi; ribellione subito dopo. Escalation = squadre deviate di De Biasi per Osiride, dopo Cattolica; De Biasi in scena prima di Cattolica.
+- Kurgan 48 anni (Kosovo 1998–99, Napoli 2000); Dalia 35 anni (sfruttata dal 2005).
+- Chi arma Giorgi: servizi militari, nucleo ristretto del governo, CIA; ignoranza voluta sulle stragi.
+- Terza strage: pullman di pendolari a Brescia, C4.
+- Adorisio tradisce anche Giorgi (ritarda Laura), guida il golpe e muore.
+- POV: sette, Adorisio senza capitoli; De Stefano in capitoli rari; tic per Kurgan, De Stefano, Tommaso.
+- Apertura = prologo corale di 800–1.000 parole.
 
-## Nodi dal manuale di stile
-11. **Adorisio tradisce anche Giorgi?** Il manuale (2.2) cita "la scoperta del tradimento di Adorisio nei suoi confronti" come crepa di Giorgi; nella bibbia Adorisio tradisce Kurgan ed è comprato da Giorgi. Se tradisce anche Giorgi, è la risposta al suo destino dopo Bertola.
-12. **Quando avviene l'escalation.** Il manuale mette l'attacco alle infrastrutture nella prima cresta (prima di Cattolica); la bibbia lo presenta come risposta al pool e all'elenco, che il manuale colloca dopo Cattolica. Prima o dopo?
-13. **Quanti e quali POV.** Il manuale parla di "sette punti di vista" ma ne elenca sei gruppi (Giorgi, Kurgan/Adorisio, Dalia, Flora/De Stefano, Elena, Tommaso Vela). Adorisio ha capitoli suoi? E De Stefano?
-14. **Apertura e capitoli brevi.** L'apertura corale scritta è di circa 370 parole, sotto il minimo di 1.800: diventa un prologo (motivazione strutturale) o va sviluppata in capitolo? I "capitoli brevi" della seconda cresta vanno intesi vicino alle 1.800 parole?
-15. **Tic mancanti.** Il manuale ne dà per Dalia, Flora ed Elena. Proposte: Kurgan pensa per rapporti di forza e distanze fisiche (chi è armato, dove sono le uscite); De Stefano per rapporti e depistaggi, cioè ciò che dirà e a chi; Tommaso per numeri e orari.
+## Nodi ancora aperti (incongruenze nella bibbia v3)
+1. **La "crepa" di Giorgi: una o due?** La bibbia dice che quella con Adorisio è "l'unico istante del romanzo" in cui il registro si incrina (e la cronologia la chiama "prima crepa"). Il manuale di stile ne prevede anche una seconda, quando gli viene comunicata la sparizione forzata.
+2. **Rapimento di Laura assente dalla cronologia.** Deve stare prima di Cattolica, circa due anni dopo l'unificazione, cioè circa 18 mesi dopo la ribellione. Quindi la prima metà del romanzo copre almeno un anno e mezzo. L'ho inserito come punto 7b.
+3. **Liberazione di Laura prima o dopo il golpe?** La cronologia mette il golpe (punto 14) prima della liberazione (15). Ma Laura resta ostaggio un mese e mezzo dopo Cattolica, e il golpe avviene due mesi dopo. Le date indicano liberazione prima, golpe dopo.
+4. **Quando Elena clona la chiavetta.** Nella scheda lo fa dopo la confidenza di Giorgi, con le password ottenute spiandolo, quindi prima della rivelazione di Dalia. Nella cronologia (punto 20) lo fa dopo.
+5. **Da cosa nasce il pool.** La bibbia dice che il pool nasce in risposta a un'ondata di attentati contro "stazioni, metropolitane, porti, raffinerie". Ma porti e infrastrutture sono colpiti *in risposta* al pool, e metropolitane e raffinerie non compaiono mai. Proposta: il pool nasce dopo le tre stragi (mercato, pullman, stazione).
+6. **A cosa serve l'escalation contro il pool.** Far saltare autostrade e porti come ferma tre magistrati? Serve un meccanismo: pretesto per leggi d'emergenza che trasferiscono le indagini, o per commissariare il pool, o per spostare l'attenzione pubblica.
+7. **Frasi superate rimaste nella bibbia v3** (le ho già corrette nei file): la sezione "Morte" di Kurgan che parla di "Bertola" e di "punto di rottura da fissare"; la sezione duplicata di De Stefano ("ancora da definire"); "nessun punto aperto".
+8. **CIA:** è un'istituzione reale che agisce nel romanzo. Rientra nella regola "cariche reali genericamente, persone mai", ma è un passo in più rispetto a Cassazione e servizi italiani: da confermare insieme alla regola.
 
 ## Da definire (dettagli)
-- Terza strage (luogo).
 - Voce e tratti di Flora; il suo ufficio e la sede del pool.
-- Età e origini di De Stefano; cosa gli costa il doppio gioco.
+- Età e origini di De Stefano; cosa gli costa il doppio gioco (la bibbia v3 lo lascia ancora aperto).
 - Cognome di Dalia (Esposito?), la sua testata, lo scandalo "di anni prima", da quanto vede Giorgi.
 - Il generale del dossier: è De Biasi o un altro?
-- Destino di Adorisio dopo Bertola.
-- Ruolo di Tommaso Vela dopo l'apertura.
+- Ruolo di Tommaso Vela dopo il prologo (ora ha POV a rotazione piena: serve una sua linea narrativa).
 - Luoghi: prigionia di Laura, scuola di Laura, nascondiglio della chiavetta, basi di Kurgan.
 - Confermare dalla prima bibbia: laurea in Fisica e Wing Chun di Giorgi; alberghi di Ginevra e Londra.
 - Idea di controllo (due formulazioni in `02-bibbia/idea-di-controllo.md`).
-- Punti di vista per parte.
+- Distribuzione dei POV per parte (Fase 2).
 
 ## Elementi della prima bibbia non ripresi (archiviati, recuperabili)
 - Filomena Lattarulo, barese, PM a Milano, "Donna Filomena", archivio segreto costruito con relazioni calcolate.
@@ -58,3 +57,4 @@
 - 2026-09-26 — Creato il progetto, bibbia v1, prova di voce in tre versioni.
 - 2026-09-27 — Integrata la bibbia v2 dell'autore: titolo, voce mista, nuovo cast, organizzazioni, cronologia, finale.
 - 2026-09-27 — Adottato il manuale di stile; checklist di capitolo e modello di capitolo aggiornati; posizionamento in `01-mercato/mercato.md`.
+- 2026-09-27 — Integrata la bibbia v3: età, terza strage (Brescia), attribuzione di stragi ed escalation, CIA, doppio tradimento e morte di Adorisio, POV, prologo, finale.

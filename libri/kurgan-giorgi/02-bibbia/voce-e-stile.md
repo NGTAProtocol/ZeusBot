@@ -16,6 +16,15 @@ Riferimento: le prove (a) e (c) in [05-revisioni/prova-voce.md](../05-revisioni/
 - 4–5 POV al massimo ogni 10 capitoli; intestazioni con personaggio, luogo, data/ora.
 - Tic dei POV: Dalia per associazioni sensoriali; Flora per fascicoli e sequenze logiche; Elena per calcoli pratici, mai sfoghi.
 
+## Punti di vista (bibbia v3)
+- A rotazione piena: Giorgi (c), Kurgan, Dalia, Flora, Elena, Tommaso Vela (a).
+- In capitoli rari: Carlo De Stefano (a).
+- **Adorisio non ha capitoli propri**, così il suo doppio tradimento resta una sorpresa.
+- Tic: Kurgan per rapporti di forza e distanze fisiche; De Stefano pensa a cosa dirà e a chi; Tommaso per numeri e orari; Dalia, Flora ed Elena come nel manuale.
+
+## Prologo
+L'apertura è un **prologo corale di 800–1.000 parole**, deroga motivata alla lunghezza dei capitoli: dimissioni a Roma, strage di Mestre, sala operativa a Milano, scoperta di Tommaso.
+
 ## Regole
 - Terza persona, passato.
 - Violenza concreta ma mai compiaciuta; sui minori sempre fuori scena.

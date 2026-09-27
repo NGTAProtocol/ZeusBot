@@ -1,6 +1,7 @@
-# Vito Kurgan — 43 anni
+# Vito Kurgan — 48 anni
 
 **Registro dei suoi capitoli:** (a).
+**Tic di pensiero:** pensa per rapporti di forza e distanze fisiche: chi è armato, dove sono le uscite.
 
 ## Identità
 - Ruolo: la creatura che smette di obbedire.
@@ -8,19 +9,19 @@
 - Aspetto: 1,98 m, corporatura massiccia.
 
 ## Passato militare
-Serve nell'esercito serbo. Congedato senza onore dopo aver ucciso tre alti ufficiali le cui decisioni, secondo lui, avrebbero fatto morire i suoi uomini. Per questo i suoi uomini gli sono ferocemente fedeli: non per paura, per rispetto quasi tribale.
+A vent'anni combatte in **Kosovo (1998–99)** nell'esercito serbo. Congedato senza onore dopo aver ucciso tre alti ufficiali le cui decisioni, secondo lui, avrebbero fatto morire i suoi uomini. Per questo i suoi uomini gli sono ferocemente fedeli: non per paura, per rispetto quasi tribale.
 
 ## Ascesa criminale
-- Tornato a Napoli: risse di strada, notato dalla Camorra per forza, tecnica e carisma. Killer freddo e infallibile.
+- Tornato a Napoli intorno al **2000**: risse di strada, notato dalla Camorra per forza, tecnica e carisma. Killer freddo e infallibile.
 - Impero personale con basi sotterranee e strutture segrete.
 - Flotta di **20 petroliere** basata a **Civitavecchia**: pilastro economico e logistico, leva con le potenze straniere.
 - Controlla la costa tirrenica e l'arco ionico; **Gioia Tauro** già suo; punta all'ex porto Evergreen di **Taranto**.
-- Prostituzione ad alto livello: sfrutta Dalia da quando era minorenne, trattandola come proprietà, con anni di violenze. Ma, intuitane l'intelligenza, le paga gli studi fino alla laurea in giornalismo.
+- Prostituzione ad alto livello: sfrutta Dalia dal **2005 circa** (lui 27 anni, lei poco più che bambina), trattandola come proprietà, con anni di violenze. Ma, intuitane l'intelligenza, le paga gli studi fino alla laurea in giornalismo.
 
 ## Il patto con Giorgi e la ribellione
 - Riceve da Giorgi (tramite i servizi segreti militari) la gestione dell'unificazione Camorra/'Ndrangheta.
 - L'"unificazione" è in realtà una **decapitazione**: i servizi russi gli danno le posizioni dei capi 'ndranghetisti, che un raid simultaneo con droni elimina tutti.
-- Sei mesi dopo l'unificazione si ribella a Giorgi, ripetendo lo schema dei tre ufficiali: rifiuta di essere strumento sacrificabile in un piano che ritiene pericoloso per i suoi uomini.
+- Le tre stragi (Padova, Brescia, Mestre) sono il suo **ultimo lavoro per Giorgi**. Subito dopo, sei mesi dopo l'unificazione, si ribella apertamente, ripetendo lo schema dei tre ufficiali: rifiuta di essere strumento sacrificabile in un piano che ritiene pericoloso per i suoi uomini.
 
 ## Il piano geopolitico
 - Sostenuto da **Russia, Cina e Iran**: droni e armamenti avanzati in cambio di informazioni militari riservate (a Russia e Cina) e dati su questioni nucleari passate (all'Iran).

@@ -2,11 +2,11 @@
 
 **Registro dei suoi capitoli:** (a).
 **Tic di pensiero (manuale di stile):** Pensa per associazioni sensoriali: il corpo come merce, ora riconquistato.
-Cognome: nella prima bibbia "Esposito" (da confermare). Età: da definire (vedi nodi in `stato.md`).
+**35 anni.** Cognome: nella prima bibbia "Esposito" (da confermare).
 
 ## Identità
 - Donna transgender; giornalista/analista finanziaria, laureata in giornalismo.
-- Sfruttata da Kurgan da quando era minorenne nella prostituzione d'alto livello: una proprietà, una macchina per fare soldi, anni di violenze. Kurgan le ha però pagato gli studi: la sua carriera esiste grazie a lui.
+- Sfruttata da Kurgan dal 2005 circa, quando era poco più che bambina, nella prostituzione d'alto livello: una proprietà, una macchina per fare soldi, anni di violenze. Kurgan le ha però pagato gli studi: la sua carriera esiste grazie a lui.
 
 **Regola di scrittura:** il passato di Dalia da minorenne esiste solo come ricordo e conseguenza, mai descritto. Nessuna scena, nessun dettaglio.
 
@@ -25,7 +25,6 @@ Giorgi, informato del suo legame con Kurgan, la avvicina e usa il proprio "vizio
 Rompe il ciclo del controllo: è l'unica che sceglie di perdere tutto pur di smettere di essere uno strumento.
 
 ## Da definire
-- Età.
 - Cosa ha fatto "anni prima" (lo scandalo usato dai servizi).
 - Nome della testata (inventata).
 - Da quanti anni vede Giorgi.
