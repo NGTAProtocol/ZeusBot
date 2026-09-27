@@ -1,7 +1,7 @@
 # Vito Kurgan — 48 anni
 
 **Registro dei suoi capitoli:** (a).
-**Tic di pensiero:** pensa per rapporti di forza e distanze fisiche: chi è armato, dove sono le uscite.
+**Tic di pensiero:** pensa per calcoli di forza e lealtà, in termini militari: chi protegge chi, chi rompe un patto.
 
 ## Identità
 - Ruolo: la creatura che smette di obbedire.

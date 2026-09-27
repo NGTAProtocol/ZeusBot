@@ -26,9 +26,9 @@
 - Apertura = prologo corale di 800–1.000 parole.
 
 ## Nodi ancora aperti (incongruenze nella bibbia v3)
-1. **La "crepa" di Giorgi: una o due?** La bibbia dice che quella con Adorisio è "l'unico istante del romanzo" in cui il registro si incrina (e la cronologia la chiama "prima crepa"). Il manuale di stile ne prevede anche una seconda, quando gli viene comunicata la sparizione forzata.
+1. **La "crepa" di Giorgi: una o due?** Il manuale v2 conferma due momenti (tradimento di Adorisio e comunicazione della sparizione forzata), ma lo chiama "l'unico punto" in cui i registri si toccano; la bibbia v3 dice che quella con Adorisio è "l'unico istante del romanzo". Proposta: due crepe, una frase ciascuna, e "unico" si riferisce al tipo di deroga, non al numero.
 2. **Rapimento di Laura assente dalla cronologia.** Deve stare prima di Cattolica, circa due anni dopo l'unificazione, cioè circa 18 mesi dopo la ribellione. Quindi la prima metà del romanzo copre almeno un anno e mezzo. L'ho inserito come punto 7b.
-3. **Liberazione di Laura prima o dopo il golpe?** La cronologia mette il golpe (punto 14) prima della liberazione (15). Ma Laura resta ostaggio un mese e mezzo dopo Cattolica, e il golpe avviene due mesi dopo. Le date indicano liberazione prima, golpe dopo.
+3. **Liberazione di Laura prima o dopo il golpe?** Il manuale v2 conferma l'ordine della cronologia: prima il golpe, poi la liberazione. Ma le date della bibbia (Laura liberata un mese e mezzo dopo Cattolica, golpe due mesi dopo) dicono il contrario. Proposta: Adorisio tiene Laura come leva anche durante il golpe, e la bambina viene liberata dai reparti speciali subito dopo, a circa due mesi da Cattolica. Si corregge solo il "mese e mezzo".
 4. **Quando Elena clona la chiavetta.** Nella scheda lo fa dopo la confidenza di Giorgi, con le password ottenute spiandolo, quindi prima della rivelazione di Dalia. Nella cronologia (punto 20) lo fa dopo.
 5. **Da cosa nasce il pool.** La bibbia dice che il pool nasce in risposta a un'ondata di attentati contro "stazioni, metropolitane, porti, raffinerie". Ma porti e infrastrutture sono colpiti *in risposta* al pool, e metropolitane e raffinerie non compaiono mai. Proposta: il pool nasce dopo le tre stragi (mercato, pullman, stazione).
 6. **A cosa serve l'escalation contro il pool.** Far saltare autostrade e porti come ferma tre magistrati? Serve un meccanismo: pretesto per leggi d'emergenza che trasferiscono le indagini, o per commissariare il pool, o per spostare l'attenzione pubblica.
@@ -57,4 +57,5 @@
 - 2026-09-26 — Creato il progetto, bibbia v1, prova di voce in tre versioni.
 - 2026-09-27 — Integrata la bibbia v2 dell'autore: titolo, voce mista, nuovo cast, organizzazioni, cronologia, finale.
 - 2026-09-27 — Adottato il manuale di stile; checklist di capitolo e modello di capitolo aggiornati; posizionamento in `01-mercato/mercato.md`.
+- 2026-09-27 — Manuale di stile v2: eccezione del prologo, curva aggiornata, sette POV, tic di Kurgan, De Stefano, Tommaso.
 - 2026-09-27 — Integrata la bibbia v3: età, terza strage (Brescia), attribuzione di stragi ed escalation, CIA, doppio tradimento e morte di Adorisio, POV, prologo, finale.

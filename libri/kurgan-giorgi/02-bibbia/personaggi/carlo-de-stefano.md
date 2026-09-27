@@ -1,7 +1,7 @@
 # Colonnello Carlo De Stefano
 
 **Registro dei suoi capitoli:** (a), in capitoli rari.
-**Tic di pensiero:** pensa a cosa dirà e a chi.
+**Tic di pensiero:** doppio binario. Ogni informazione valutata su due piani: cosa riferire ai servizi, cosa nascondere per proteggere Flora.
 
 ## Identità
 Colonnello collegato ai servizi segreti militari. Incaricato di seguire e sorvegliare Flora Notarangelo, per la sua storia di indagini pericolose per il sistema. Se ne innamora, molto prima della nascita del pool.

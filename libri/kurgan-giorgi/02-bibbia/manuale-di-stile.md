@@ -42,6 +42,8 @@ Tre requisiti non negoziabili, per ogni capitolo e ogni punto di vista:
 
 **Lunghezza:** 1.800–3.000 parole. Sotto 1.500 il capitolo rischia di essere un frammento; oltre 3.500 va quasi sempre spezzato in due punti di vista o due momenti.
 
+**Eccezione esplicita, il prologo:** l'apertura è un **prologo corale di 800–1.000 parole**, più breve per motivazione strutturale: si muove rapido tra i quattro fuochi (Roma, la strage, la sala operativa del fondo, la scoperta di Tommaso Vela) senza il respiro di un capitolo a punto di vista singolo.
+
 ---
 
 ## 4. La curva di tensione: doppia cresta
@@ -49,9 +51,9 @@ Tre requisiti non negoziabili, per ogni capitolo e ogni punto di vista:
 Diagnosi dal precedente principale del genere: i lettori di *Romanzo criminale* segnalano un calo nel terzo finale, dedicato allo smantellamento dell'organizzazione dopo l'apice.
 
 Regola: non una campana con coda lunga, ma una **doppia cresta**.
-- **Prima cresta:** escalation terroristica e finanziaria (stragi, crollo dello spread, attacco alle infrastrutture). Culmina con la morte di Kurgan a Cattolica.
-- **Minimo apparente, non reale:** dopo Cattolica il lettore deve credere che la tensione si allenti (Bertola e Casal Fascio si insediano, l'ordine sembra tornare). Intanto partono, a bassa voce, le tre linee della seconda cresta: il rapimento di Laura (in corso o appena scoperto), il pool verso l'elenco dei 60 affiliati, lo scoprirsi di Elena.
-- **Seconda cresta:** convergenza finale (l'indagine che rischia di esplodere, la liberazione di Laura, la sparizione orchestrata di Giorgi), con **più capitoli brevi e serrati**, non uno o due lunghi.
+- **Prima cresta:** le tre stragi (Padova, Brescia, Mestre), ultimo lavoro di Kurgan per Giorgi; il crollo dello spread; la ribellione immediata di Kurgan; fino alla sua morte nella trappola di Cattolica.
+- **Calma apparente, non reale:** dopo Cattolica il lettore deve credere che la tensione si allenti (Bertola e Casal Fascio si insediano, l'ordine sembra tornare). Intanto avanzano, a bassa voce: il ritardo calcolato di Adorisio su Laura, il pool verso l'elenco dei 60, lo scoprirsi progressivo di Elena.
+- **Seconda cresta:** è il pool, avvicinandosi all'elenco, a far ripartire la tensione. Le squadre di De Biasi rispondono per conto di Osiride con gli attacchi a infrastrutture e autostrade. Seguono il golpe fallito di Adorisio, la liberazione di Laura, la convergenza verso la sparizione orchestrata di Giorgi. **Più capitoli brevi e serrati**, non uno o due lunghi.
 
 **Verifica in editing:** contare i capitoli per fase. Target 45%–55% tra fase 1 (fino a Cattolica) e fase 2. Se la fase 2 ha meno della metà dei capitoli della fase 1 è frettolosa; se ne ha il doppio è la coda lenta.
 
@@ -66,11 +68,18 @@ Regola: non una campana con coda lunga, ma una **doppia cresta**.
 ---
 
 ## 6. Gestione del cast corale
+Sette punti di vista: **Giorgi, Kurgan, Dalia, Flora, Elena, Tommaso Vela** a rotazione piena, più **De Stefano** in capitoli rari. **Adorisio non ha capitoli propri**: il suo doppio tradimento (di Kurgan, poi di Giorgi) resta una sorpresa. Il rischio principale è la dispersione dell'attenzione.
+
 - **Non più di 4–5 punti di vista diversi ogni 10 capitoli.** La sequenza dei POV segue la tensione più alta, non uno schema a rotazione rigido.
 - **Un tic sintattico riconoscibile per ogni POV**, oltre al registro:
   - **Dalia** pensa per associazioni sensoriali (il corpo come merce, ora riconquistato).
   - **Flora** pensa per fascicoli e sequenze logiche.
-  - **Elena** pensa per calcoli pratici, mai per sfoghi: la sua freddezza è nel non concedersi mai una frase di puro sentimento.
+  - **Elena** pensa per calcoli pratici, mai per sfoghi: non si concede mai una frase di puro sentimento.
+  - **Kurgan** pensa per calcoli di forza e lealtà: ogni situazione in termini militari, chi protegge chi, chi rompe un patto.
+  - **De Stefano** pensa su doppio binario: ogni informazione valutata subito su due piani, cosa riferire ai servizi e cosa nascondere per proteggere Flora.
+  - **Tommaso Vela** pensa per numeri e sequenze: anche la paura diventa una verifica incrociata di dati.
+
+  Così il lettore riconosce il punto di vista dalle prime righe, anche senza intestazione.
 - **Intestazioni di capitolo** (nome del personaggio, luogo, data/ora): ammesse e consigliate.
 
 ---

@@ -12,7 +12,7 @@ Riferimento: le prove (a) e (c) in [05-revisioni/prova-voce.md](../05-revisioni/
 - Registro (a): frasi brevi, passato remoto o imperfetto (presente al massimo una frase per capitolo), dettaglio concreto invece di aggettivo, dialogo funzionale, paragrafi di 2–4 frasi.
 - Registro (c): analogie di sistema motivate, sintassi più lunga e ragionativa; mai due capitoli (c) di fila; una sola frase di "crepa" nei momenti di cedimento.
 - Ogni capitolo: innesco nelle prime tre righe, un solo motore di conflitto, chiusura non risolutiva, 1.800–3.000 parole.
-- Curva a doppia cresta (Cattolica e la convergenza finale), equilibrio 45–55% dei capitoli tra le due fasi.
+- Curva a doppia cresta: prima cresta dalle stragi a Cattolica; calma apparente; seconda cresta innescata dal pool (escalation, golpe, Laura, sparizione di Giorgi). Equilibrio 45–55% dei capitoli tra le due fasi.
 - 4–5 POV al massimo ogni 10 capitoli; intestazioni con personaggio, luogo, data/ora.
 - Tic dei POV: Dalia per associazioni sensoriali; Flora per fascicoli e sequenze logiche; Elena per calcoli pratici, mai sfoghi.
 
@@ -20,7 +20,7 @@ Riferimento: le prove (a) e (c) in [05-revisioni/prova-voce.md](../05-revisioni/
 - A rotazione piena: Giorgi (c), Kurgan, Dalia, Flora, Elena, Tommaso Vela (a).
 - In capitoli rari: Carlo De Stefano (a).
 - **Adorisio non ha capitoli propri**, così il suo doppio tradimento resta una sorpresa.
-- Tic: Kurgan per rapporti di forza e distanze fisiche; De Stefano pensa a cosa dirà e a chi; Tommaso per numeri e orari; Dalia, Flora ed Elena come nel manuale.
+- Tic: Kurgan per calcoli di forza e lealtà; De Stefano su doppio binario (servizi / Flora); Tommaso per numeri e sequenze; Dalia, Flora ed Elena come nel manuale.
 
 ## Prologo
 L'apertura è un **prologo corale di 800–1.000 parole**, deroga motivata alla lunghezza dei capitoli: dimissioni a Roma, strage di Mestre, sala operativa a Milano, scoperta di Tommaso.
