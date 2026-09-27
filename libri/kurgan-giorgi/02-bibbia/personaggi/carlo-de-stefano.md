@@ -2,7 +2,7 @@
 
 ## Dati anagrafici
 - **Nome:** colonnello Carlo De Stefano
-- **Età:** [DA DEFINIRE]
+- **Età:** 42 anni
 - **Provenienza:** [DA DEFINIRE]
 - Colonnello collegato ai servizi segreti militari (UCSM).
 
@@ -34,6 +34,7 @@ L'uomo dei servizi incaricato di sorvegliare Flora che se ne innamora e la prote
 - Pensa su **doppio binario**: ogni informazione valutata subito su due piani paralleli, cosa riferire ai servizi e cosa nascondere per proteggere Flora.
 
 ## Dettagli fisici/di caratterizzazione da fissare
-- Età, origini, aspetto: [DA DEFINIRE]
+- **Aspetto (fissato):** portamento militare, sguardo sempre vigile.
+- Origini: [DA DEFINIRE]
 - Quando Flora scopre il doppio gioco: [DA DEFINIRE]
 - Se l'amore è ricambiato: [DA DEFINIRE]

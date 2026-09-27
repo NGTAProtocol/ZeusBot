@@ -13,10 +13,10 @@ Lo sguardo dall'interno del fondo: scopre per primo che dietro la chiusura dello
 [DA DEFINIRE] (la bibbia non stabilisce nulla del suo passato prima del prologo).
 
 ## Motivazioni e ferite
-- **Cosa vuole:** [DA DEFINIRE]
+- **Cosa vuole:** dimostrare il proprio valore in un ambiente che crede meritocratico.
 - **Cosa teme:** esporsi. Non cerca attivamente la verità, per prudenza e per paura.
 - **Cosa nasconde:** di aver aperto senza autorizzazione il registro delle esecuzioni; le anomalie contabili che continua a notare.
-- **Ferita:** [DA DEFINIRE]
+- **Ferita:** scoprire, pian piano, che il sistema in cui ha investito la propria integrità è marcio dall'interno. Un'illusione infranta, non un trauma pregresso.
 
 ## Relazioni chiave
 - **Alfredo Giorgi:** il capo al piano più alto; Tommaso scopre il suo nome nel registro.
@@ -33,6 +33,6 @@ Lo sguardo dall'interno del fondo: scopre per primo che dietro la chiusura dello
 - Pensa per **numeri e sequenze**: anche la paura diventa una verifica incrociata di dati.
 
 ## Dettagli fisici/di caratterizzazione da fissare
-- Aspetto fisico: [DA DEFINIRE] (nella bozza: camicia bianca, mani sudate).
+- **Aspetto (fissato):** giovane, occhiali, energia nervosa.
 - Chi intercetta o filtra le sue scoperte: [DA DEFINIRE]
 - Il suo destino finale: [DA DEFINIRE]

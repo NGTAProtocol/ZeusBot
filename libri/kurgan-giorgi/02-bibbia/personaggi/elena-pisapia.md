@@ -2,7 +2,7 @@
 
 ## Dati anagrafici
 - **Nome:** Elena Pisapia, moglie di Alfredo Giorgi
-- **Età:** [DA DEFINIRE]
+- **Età:** 45 anni
 - **Provenienza:** [DA DEFINIRE]
 - **Figli:** Fabrizio (15 anni), Cesare (13), Laura (7).
 
@@ -35,6 +35,7 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - Pensa per **calcoli pratici**, mai per sfoghi: la sua freddezza è nel non concedersi mai una frase di puro sentimento.
 
 ## Dettagli fisici/di caratterizzazione da fissare
-- Età, aspetto, provenienza: [DA DEFINIRE]
+- **Aspetto (fissato):** elegante, deliberatamente anonima in pubblico.
+- Provenienza: [DA DEFINIRE]
 - Dove custodisce la chiavetta clonata: [DA DEFINIRE]
 - Dove "si mette al sicuro": [DA DEFINIRE]

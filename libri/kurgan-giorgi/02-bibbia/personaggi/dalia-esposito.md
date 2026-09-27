@@ -17,20 +17,21 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 ## Motivazioni e ferite
 - **Cosa vuole:** liberarsi dal ciclo di sfruttamento; dire la verità sulle stragi e su AV System.
 - **Cosa teme:** [DA DEFINIRE]
-- **Cosa nasconde:** la relazione con Giorgi; ciò che gli ha rivelato su Kurgan; ciò che ha fatto "anni prima", che i servizi useranno contro di lei [DA DEFINIRE: cosa].
+- **Cosa nasconde:** la relazione con Giorgi; ciò che gli ha rivelato su Kurgan; lo scandalo del passato: negli anni sotto Kurgan è stata costretta a falsificare o coprire un documento o una fonte per proteggere un cliente potente del giro criminale.
 - **Ferita:** gli anni sotto Kurgan; poi la scoperta di aver ripetuto, con un uomo più elegante, lo stesso schema.
 
 ## Relazioni chiave
 - **Vito Kurgan:** padrone e aguzzino, ma anche colui che le ha pagato gli studi. Alla sua morte prova sollievo puro, nessun lutto.
 - **Alfredo Giorgi:** relazione nata come manipolazione di lui, diventata amore reciproco. Quando scopre che lui ha usato le sue informazioni per eliminare Kurgan, capisce di essere stata usata di nuovo. Lo colpisce due volte: con lo scoop e con le prove mandate a Elena.
 - **Elena Pisapia:** non si sono mai conosciute; Dalia compare nei messaggi di Giorgi come "una donna" qualunque. Dalia le recapita filmati e registrazioni dei festini di Giorgi con altre donne trans (alcol, non droghe): quindici anni di tradimento.
+- **Una delle due guardie del corpo di Giorgi:** coltivata da Dalia come fonte, con metodo puramente giornalistico (non romantico), senza che capisse la portata di ciò che le passava. È così che ottiene filmati e registrazioni dei festini.
 - **Tommaso Vela:** le sue scoperte sui flussi di Osiride e Cicimarra arrivano a lei, filtrate o intercettate.
 
 ## Arco narrativo
 - **Inizio:** amante di Giorgi, custode involontaria di informazioni su Kurgan.
 - **Svolta:** morte di Kurgan, sollievo. Poi il **risveglio**: Giorgi l'ha usata come Kurgan.
-- **Scelta:** pubblica lo scoop sulle stragi calcolate e sul ruolo di AV System: giornalismo, vendetta, liberazione.
-- **Prezzo:** i servizi rendono pubblico qualcosa che lei ha fatto anni prima; si dimette dalla testata; quasi tutti i giornali nazionali la denigrano. Recapita a Elena il materiale sul tradimento.
+- **Scelta:** giornalista finanziaria del quotidiano **Il Meridiano**, pubblica lo scoop sulle stragi calcolate e sul ruolo di AV System: giornalismo, vendetta, liberazione.
+- **Prezzo:** i servizi riesumano l'episodio del documento falsificato e lo presentano come disonestà professionale, senza mai rivelare la coercizione subita; si dimette da **Il Meridiano**; quasi tutti i giornali nazionali la denigrano. Recapita a Elena il materiale sul tradimento.
 - **Fine:** viva, isolata, distrutta professionalmente. Recuperabile nel sequel.
 
 ## Tic di voce/pensiero (POV)
@@ -38,8 +39,8 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - Pensa per **associazioni sensoriali**: il corpo come merce, ora riconquistato.
 
 ## Dettagli fisici/di caratterizzazione da fissare
-- Aspetto fisico: [DA DEFINIRE]
-- Nome della testata (inventata): [DA DEFINIRE]
-- Lo scandalo di "anni prima": [DA DEFINIRE]
+- **Aspetto (fissato):** alta, portamento fiero e composto.
+- **Testata:** *Il Meridiano*, quotidiano inventato.
+- Quale documento o fonte ha falsificato, e per quale cliente: [DA DEFINIRE]
 - Da quanti anni vede Giorgi: [DA DEFINIRE]
-- Come e quando ha ottenuto filmati e registrazioni dei festini: [DA DEFINIRE]
+- Quale delle due guardie diventa sua fonte, e quando: [DA DEFINIRE]

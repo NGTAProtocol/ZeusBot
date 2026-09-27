@@ -9,7 +9,7 @@
 Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere lo spread, crea Kurgan come braccio operativo e finisce a sua volta sacrificato da un potere più grande di lui.
 
 ## Backstory
-- Educazione rigorosamente cattolica; studi al **Collegio di San Clemente**, il più esclusivo della Chiesa.
+- Educazione rigorosamente cattolica; studi al **Collegio di San Clemente**, il più esclusivo della Chiesa, dove si laurea in **fisica nucleare**: è questa formazione a giustificare il suo pensiero per analogie di sistema (registro c).
 - Preparato fin da bambino a un ruolo di comando, non per caso ma come progetto deliberato di **Osiride**. Capacità gestionali e psicologiche fuori dal comune, notate presto.
 - Entra giovane nella **Loggia del Compasso**, dove oggi ricopre uno dei gradi più alti. Appartiene anche a Osiride, organizzazione segreta parastatale più profonda, erede della Loggia Ombra.
 - **Il dossier:** un generale dell'esercito che lavorava per i servizi segreti militari gli mette a disposizione anni di dati su politici, magistrati e figure chiave (punti deboli, punti di forza, assetto familiare). Due copie su chiavette USB criptate con sicurezza tipo blockchain: una nascosta da Giorgi, l'altra al cardinale Salvarani.
@@ -22,7 +22,7 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - **Cosa vuole:** controllare il sistema — mercati, Stato, organizzazioni criminali, famiglia — e portare a termine il progetto di Osiride: spodestare lo Stato e trasferire il potere reale alla rete.
 - **Cosa teme:** [DA DEFINIRE] (la bibbia mostra ciò che perde, non ciò che teme dichiaratamente).
 - **Cosa nasconde:** il ruolo nelle stragi; l'appartenenza a Osiride; la doppia vita con le donne trans; l'innamoramento reale per Dalia, nato da una manipolazione calcolata; il dossier; la verità sul rapimento di Laura, che tace anche a Elena.
-- **Ferita:** [DA DEFINIRE]
+- **Ferita:** è stato letteralmente progettato da Osiride fin da bambino per essere il contenitore del loro piano; non gli è mai stato permesso di essere altro. L'unica parte di sé che l'organizzazione non ha disegnato è l'attrazione per le donne transgender: nasconderla per tutta la vita è la sua ferita più profonda, perché l'unica cosa autenticamente sua è anche l'unica che deve seppellire.
 
 ## Relazioni chiave
 - **Vito Kurgan:** la sua creatura. Specchi deformati: entrambi giustificano il sacrificio altrui con "protezione" o "necessità superiore", Kurgan con violenza diretta, Giorgi con freddezza a distanza. Da strumento a ribelle, poi a bersaglio che Giorgi fa eliminare a Riva Salmara.
@@ -46,8 +46,8 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Due sole crepe, di una frase ciascuna, quasi registro (a): Adorisio su Laura; la sparizione forzata (più forte).
 
 ## Dettagli fisici/di caratterizzazione da fissare
-- Aspetto fisico: [DA DEFINIRE] (la prima bibbia diceva "fisico asciutto e nervoso": da confermare).
-- Laurea in Fisica nucleare e pratica del Wing Chun: presenti solo nella prima bibbia, [DA DEFINIRE] se restano. La fisica giustificherebbe il registro (c).
+- **Aspetto (fissato):** asciutto, controllato, capelli grigi, vestito con cura maniacale: nulla in lui è lasciato al caso, nemmeno l'abbigliamento.
+- Laurea in fisica nucleare (fissata). Wing Chun: presente solo nella prima bibbia, [DA DEFINIRE] se resta.
 - Città in cui vive con la famiglia: [DA DEFINIRE]
 - Nomi delle due guardie del corpo: [DA DEFINIRE]
 - Dove nasconde la chiavetta: [DA DEFINIRE]

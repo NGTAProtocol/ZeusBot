@@ -2,7 +2,7 @@
 
 ## Dati anagrafici
 - **Nome:** Luigi Bertola
-- **Età:** [DA DEFINIRE]
+- **Età:** 50 anni
 - **Provenienza:** [DA DEFINIRE]
 
 ## Ruolo nella trama
@@ -13,10 +13,10 @@ La prossima creatura: l'uomo fidato di Giorgi, in realtà informatore dell'élit
 - In realtà informatore dell'élite fin dall'inizio del suo rapporto con Giorgi.
 
 ## Motivazioni e ferite
-- **Cosa vuole:** [DA DEFINIRE] (la bibbia gli dà il potere, non un desiderio dichiarato).
-- **Cosa teme:** [DA DEFINIRE]
+- **Cosa vuole:** potere legittimo dopo 13 anni di lealtà nascosta e invisibile. Casal Fascio è la sua ricompensa.
+- **Cosa teme:** che la sua doppia fedeltà venga scoperta; e (presagio per il sequel) che Giorgi, anche da nascosto, possa ancora smascherarlo.
 - **Cosa nasconde:** di essere un informatore dell'élite.
-- **Ferita:** [DA DEFINIRE]
+- **Ferita:** 13 anni di lealtà invisibile, mai riconosciuta.
 
 ## Relazioni chiave
 - **Alfredo Giorgi:** 13 anni di fiducia apparente; lo tradisce da sempre. Nel sequel metterà sotto scacco la sua eredità.
@@ -31,5 +31,5 @@ La prossima creatura: l'uomo fidato di Giorgi, in realtà informatore dell'élit
 - **Fine:** sopravvive e consolida il potere. Lasciato in sospeso per il sequel.
 
 ## Dettagli fisici/di caratterizzazione da fissare
-- Età, aspetto, provenienza, voce: [DA DEFINIRE]
+- Aspetto, provenienza, voce: [DA DEFINIRE]
 - Per quale élite fa l'informatore (Osiride? un livello diverso?): [DA DEFINIRE]

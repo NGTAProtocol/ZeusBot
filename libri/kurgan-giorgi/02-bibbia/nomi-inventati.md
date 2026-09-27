@@ -50,6 +50,11 @@ Regola dell'autore: **tutto inventato, niente di vero.** Ogni nome qui sotto è 
 | Forza di polizia militare (De Stefano) | **Guardia Territoriale** |
 | Parlamento, Senato, governo | solo funzioni generiche (capo del governo, senatore, Parlamento), nessun nome proprio |
 
+## Stampa
+| Ruolo | Nome inventato |
+|---|---|
+| Quotidiano di Dalia | **Il Meridiano** (scelto dall'autore; da verificare che non coincida con una testata reale) |
+
 ## Riferimenti storici e religiosi
 | Ruolo | Nome inventato |
 |---|---|

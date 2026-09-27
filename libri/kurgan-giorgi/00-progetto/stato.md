@@ -36,9 +36,12 @@
 
 ## Nodi ancora aperti
 1. **Ordine della seconda cresta: manuale contro cronologia.** Il manuale (anche nella v3) dice: escalation, poi golpe, poi liberazione di Laura. La cronologia v4 dice: liberazione, golpe, poi calma apparente, poi escalation. Con la cronologia, golpe e liberazione cadono prima della "calma apparente" e la seconda cresta parte solo con l'escalation. Proposta: seguire la cronologia (le date tornano) e correggere il manuale: la prima onda si chiude con Laura e il golpe; la calma apparente viene dopo; la seconda cresta parte con escalation e legge d'emergenza.
-2. **Chi guida la task force della legge d'emergenza?** Proposta: De Biasi. Le sue squadre mettono le bombe e poi lui riceve il fascicolo che le indaga.
+2. ~~Chi guida la task force~~ **Risolto (bibbia v5):** De Biasi sul campo, Cicimarra copertura politica.
 3. **Frasi superate nella bibbia v4** (nei file già corrette): la sezione "La liberazione" parla ancora di "unico istante" per la crepa; la sezione "Morte" di Kurgan cita Bertola e un punto di rottura "da fissare"; AV System ha una strage "ancora da collocare"; De Stefano ha ancora la sezione doppia "ancora da definire"; "nessun punto aperto".
 4. **Regola su persone e cariche reali, Servizio Atlantico compresa:** ancora "da confermare in via definitiva".
+
+## Integrato dalla bibbia v5
+Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 62, Salvarani 68); aspetto di Giorgi, Dalia, Flora, De Stefano, Elena, Tommaso; laurea in fisica nucleare di Giorgi; ferite e motivazioni di Giorgi, Kurgan, Bertola, Adorisio, De Biasi, Tommaso, Cicimarra; *Il Meridiano*; lo scandalo di Dalia; la guardia del corpo come fonte; nessuna fase intermedia tra Kurgan e Bertola; De Biasi senza nome a Riva Salmara.
 
 ## Da definire (dettagli)
 - Voce e tratti di Flora; il suo ufficio e la sede del pool.
@@ -67,3 +70,4 @@
 - 2026-09-27 — Integrata la bibbia v4: due crepe, Laura prima del golpe, clonazione della chiavetta, origine del pool, legge d'emergenza di Cicimarra, prezzo di De Stefano, linea di Tommaso.
 - 2026-09-27 — Manuale di stile v3: due crepe confermate, la seconda è il punto emotivo più alto del romanzo.
 - 2026-09-27 — Decisione dell'autore: tutto inventato, niente di vero. Creato il registro dei nomi inventati e sostituiti tutti i riferimenti reali nella bibbia e nel manuale.
+- 2026-09-27 — Bibbia v5 integrata nelle schede personaggio (età, aspetto, ferite, motivazioni, De Biasi alla guida della task force).

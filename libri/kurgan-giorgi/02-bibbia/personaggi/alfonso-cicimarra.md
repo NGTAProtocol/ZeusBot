@@ -2,7 +2,7 @@
 
 ## Dati anagrafici
 - **Nome:** senatore Alfonso Cicimarra
-- **Età:** [DA DEFINIRE]
+- **Età:** 62 anni
 - **Provenienza:** [DA DEFINIRE]
 - Senatore, membro di Osiride.
 
@@ -13,10 +13,10 @@ Il braccio istituzionale di Osiride: trasforma le bombe in una legge che toglie 
 [DA DEFINIRE] (la bibbia non stabilisce nulla del suo passato).
 
 ## Motivazioni e ferite
-- **Cosa vuole:** proteggere Osiride e l'elenco dei 60 per via istituzionale.
-- **Cosa teme:** [DA DEFINIRE]
+- **Cosa vuole:** ambizioni ministeriali: una carriera politica che Osiride gli garantisce in cambio di fedeltà. Per questo protegge Osiride e l'elenco dei 60 per via istituzionale.
+- **Cosa teme:** l'irrilevanza, essere dimenticato dopo decenni di compromessi silenziosi.
 - **Cosa nasconde:** l'appartenenza a Osiride; i flussi di denaro che Tommaso scopre dentro AV System.
-- **Ferita:** [DA DEFINIRE]
+- **Ferita:** decenni di compromessi silenziosi.
 
 ## Relazioni chiave
 - **Osiride / Salvarani:** membro; custode della chiavetta di Giorgi dopo la sparizione.
@@ -25,9 +25,9 @@ Il braccio istituzionale di Osiride: trasforma le bombe in una legge che toglie 
 - **Elena Pisapia:** Cicimarra crede di avere l'unica copia di Giorgi; non sa che Elena l'ha clonata.
 
 ## Arco narrativo
-- **Sviluppo:** dopo l'escalation di De Biasi promuove in Parlamento una **legge d'emergenza antiterrorismo** che accorpa le indagini sulla criminalità organizzata sotto una task force nazionale a guida militare, con la copertura della "sicurezza nazionale".
+- **Sviluppo:** dà copertura politica in Parlamento alla task force guidata sul campo da De Biasi. Dopo l'escalation di De Biasi promuove in Parlamento una **legge d'emergenza antiterrorismo** che accorpa le indagini sulla criminalità organizzata sotto una task force nazionale a guida militare, con la copertura della "sicurezza nazionale".
 - **Fine:** dopo la sparizione di Giorgi riceve la sua chiavetta; Osiride crede così di controllare entrambe le copie ufficiali (l'altra è di Salvarani). In sospeso per il sequel.
 
 ## Dettagli fisici/di caratterizzazione da fissare
-- Età, aspetto, voce, partito o schieramento (inventato): [DA DEFINIRE]
+- Aspetto, voce, partito o schieramento (inventato): [DA DEFINIRE]
 - Se la legge d'emergenza passa del tutto e quali effetti concreti ha sul pool: [DA DEFINIRE]

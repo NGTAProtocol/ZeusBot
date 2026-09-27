@@ -18,9 +18,9 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 
 ## Motivazioni e ferite
 - **Cosa vuole:** spodestare lo Stato, prenderne possesso, autoproclamarsi dittatore e fondare una nuova nazione. Non essere mai più strumento sacrificabile.
-- **Cosa teme:** [DA DEFINIRE] (implicito nella bibbia: essere usato e sacrificato come i suoi uomini dagli ufficiali).
+- **Cosa teme:** essere strumento sacrificabile di una catena di comando, lui o i suoi uomini.
 - **Cosa nasconde:** il sostegno di Kaliria, Tianmar e Parsàn; lo scambio di informazioni militari e nucleari; il rapimento di Laura, tenuto segreto anche ai suoi uomini più vicini.
-- **Ferita:** [DA DEFINIRE] (la bibbia fissa il fatto dei tre ufficiali, non la ferita interiore).
+- **Ferita:** aver ucciso i tre ufficiali per proteggere i suoi uomini lo ha reso per sempre incapace di fidarsi di qualunque catena di comando sopra di lui. Da lì l'ossessione per la lealtà personale diretta, mai mediata da un'istituzione: la stessa logica che lo porta a ribellarsi a Giorgi quando ne percepisce il piano come un tradimento dei suoi uomini.
 
 ## Relazioni chiave
 - **Alfredo Giorgi:** il creatore. Obbedisce fino alle tre stragi, poi si ribella ripetendo lo schema dei tre ufficiali. Gli rapisce la figlia. Giorgi lo fa uccidere.

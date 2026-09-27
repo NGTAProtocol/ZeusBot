@@ -2,7 +2,7 @@
 
 ## Dati anagrafici
 - **Nome:** cardinale Emilio Salvarani
-- **Età:** [DA DEFINIRE]
+- **Età:** 68 anni
 - **Provenienza:** [DA DEFINIRE]
 - Cardinale, membro di Osiride.
 
@@ -30,5 +30,5 @@ Il volto del potere sopra Giorgi: il maestro che lo ha formato e che alla fine l
 - **Fine:** crede di controllare entrambe le copie ufficiali; non sa della terza copia di Elena. In sospeso per il sequel.
 
 ## Dettagli fisici/di caratterizzazione da fissare
-- Età, aspetto, sede, voce: [DA DEFINIRE]
+- Aspetto, sede, voce: [DA DEFINIRE]
 - Quante volte appare in scena: [DA DEFINIRE]

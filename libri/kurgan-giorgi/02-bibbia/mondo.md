@@ -23,7 +23,7 @@ Organizzazione paramilitare e territoriale creata dal generale De Biasi sui rest
 - Servizi segreti militari: procurano il dossier, favoriscono l'unificazione, sorvegliano Flora (De Stefano), eliminano Kurgan con Osiride, colpiscono Dalia.
 - **Il fronte che arma Giorgi contro Kurgan:** non "lo Stato" nel suo complesso, ma i servizi segreti militari, un nucleo ristretto del governo e il **Servizio Atlantico**, coinvolta per la minaccia geopolitica (un attore armato da Kaliria, Tianmar e Parsàn contro un paese dell'Alleanza Occidentale). Sanno tutti che solo Giorgi può fermarlo. Delle stragi preferiscono non sapere: ignoranza voluta, non subita.
 - **Servizi deviati di De Biasi:** per conto di Osiride compiono l'escalation contro infrastrutture e autostrade.
-- **La legge d'emergenza antiterrorismo:** promossa dal senatore Cicimarra dopo l'escalation. Accorpa le indagini sulla criminalità organizzata sotto una nuova task force nazionale a guida militare e rischia di togliere il fascicolo al pool proprio vicino all'elenco dei 60. Osiride agisce per via istituzionale, come con l'archiviazione in Corte Suprema di Revisione.
+- **La legge d'emergenza antiterrorismo:** promossa dal senatore Cicimarra dopo l'escalation. Accorpa le indagini sulla criminalità organizzata sotto una nuova task force nazionale a guida militare e rischia di togliere il fascicolo al pool proprio vicino all'elenco dei 60. **Sul campo la guida De Biasi**, con Cicimarra come copertura politica: le sue squadre mettono le bombe, la sua task force riceve il fascicolo che le indaga. Osiride agisce per via istituzionale, come con l'archiviazione in Corte Suprema di Revisione.
 - Il pool di magistrati (Flora, Calabrese, Cataldo).
 
 ## Oggetti chiave

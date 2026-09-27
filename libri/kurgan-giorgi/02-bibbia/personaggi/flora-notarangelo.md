@@ -37,7 +37,7 @@ La magistrata che segue la fusione delle mafie fino a Osiride: la giustizia a cu
 - Pensa per **fascicoli e sequenze logiche**: mentalità da magistrato.
 
 ## Dettagli fisici/di caratterizzazione da fissare
-- Aspetto fisico: [DA DEFINIRE]
+- **Aspetto (fissato):** minuta, movimenti rapidi, occhi segnati dalla stanchezza.
 - Voce e modo di parlare: [DA DEFINIRE]
 - Ufficio di appartenenza e sede del pool: [DA DEFINIRE]
 - Il suo archivio (materiale della prima inchiesta): [DA DEFINIRE]
