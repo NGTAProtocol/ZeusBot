@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 2 (Giorgi, registro c). Scritti: prologo e capitolo 1. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 3 (Kurgan). Scritti: prologo, capitoli 1–2. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -90,3 +90,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-27 — Fase 1: mercato e posizionamento, libri di confronto verificati, lettore, editori, rischi, quarta di copertina di prova.
 - 2026-09-27 — Fase 2: architettura in quattro parti, 53 capitoli + prologo, 117.300 parole, sequenza dei punti di vista verificata.
 - 2026-09-27 — Stesura: prologo (823 parole) e capitolo 1 (2.217 parole) in `04-manoscritto/`; calendario interno fissato.
+- 2026-09-27 — Capitolo 2 (Giorgi, registro c, 2.354 parole): l'ordine di eliminare i tre esecutori, il rifiuto di Kurgan.
