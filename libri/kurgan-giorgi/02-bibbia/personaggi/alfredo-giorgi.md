@@ -50,3 +50,10 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Laurea in fisica nucleare (fissata). Wing Chun: presente solo nella prima bibbia, [DA DEFINIRE] se resta.
 - Città in cui vive con la famiglia: [DA DEFINIRE]
 - Nomi delle due guardie del corpo: [DA DEFINIRE]
+
+## Fissato nei capitoli 2, 6 e 8
+- **I due orologi.** Dieci anni fa comprò due orologi d'acciaio identici (quadrante bianco, numeri romani): uno per Kurgan, uno per sé. Una settimana dopo la notte del rifiuto gli uomini di Kurgan gli hanno rimandato il suo in una busta imbottita, con la corona estratta e le lancette ferme all'una e dieci. Giorgi tiene i due orologi nello stesso cassetto della scrivania e da allora non porta più nemmeno il proprio (a Dalia dice: «Si è fermato»).
+- Primo incontro con Kurgan: dieci anni fa, ristorante vuoto sul lungomare di Partenia; Kurgan aveva 38 anni e toccò solo il pane. «Mio padre non mi ha mai regalato niente.» Una mano sulla spalla: l'unico contatto fisico in dieci anni.
+- Nota a margine nel fascicolo di Kurgan, di un funzionario dei servizi: «Non perde mai uomini. Preferisce perdere il lavoro.»
+- Kurgan lo chiama «dottore». Salvarani lo chiama «Alfredo».
+- Piano contro Kurgan esposto a Salvarani: isolamento economico, taglio dei clienti, pressione doganale, tempo. Salvarani: «È il piano di un uomo che crede che l'altro abbia bisogno di soldi.»

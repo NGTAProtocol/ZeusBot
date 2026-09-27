@@ -29,6 +29,7 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - Giovedì 4 dicembre: capitolo 4 (la riga 1.147).
 - Martedì 9 dicembre: capitolo 6 (Dalia e Giorgi, stanza 512).
 - Sabato 20 dicembre: capitolo 7 (primo incontro con Rastegar). Consegna dei primi cinque droni fissata al 16 gennaio, di notte, a Punta Saline.
+- Martedì 6 gennaio (Epifania): capitolo 8 (Giorgi da Salvarani).
 
 Le intestazioni dei capitoli usano questo calendario ("Tommaso — Merania, 13 novembre"), mai "Mese 18".
 
@@ -82,7 +83,7 @@ Corale, registro (a) · Albaterra, Marcena, Merania · Giorno 0 · Il governo ca
 
 **7. Kurgan** · centro commerciale sulla statale per Porto Clodio · 20 dicembre · Primo incontro con Rastegar, da solo come sempre: dati nucleari in cambio di droni → Rastegar vuole di più. Adorisio aspetta fuori. · **Chiusura:** la data di consegna dei droni. · 2.500
 
-**8. Giorgi (c)** · Vaticano, appartamento di Salvarani · Mese 2 · Deve rassicurare Osiride → Salvarani gli ricorda la dottrina e il dossier. *Flashback:* il primo incontro con Kurgan, quasi un padre. *(Fissato nei cap. 2–3: dieci anni prima, di sera, in un ristorante vuoto sul lungomare di Partenia; Giorgi gli regala un orologio d'acciaio con i numeri romani e gli dice «il mondo è una macchina, io so dove mettere le mani, tu hai le mani giuste».)* · **Chiusura:** "Ogni creatura torna al suo creatore. O lo divora." · 2.500
+**8. Giorgi (c)** · Vaticano, appartamento di Salvarani · 6 gennaio · Deve rassicurare Osiride → Salvarani gli ricorda la dottrina e il dossier. *Flashback:* il primo incontro con Kurgan, quasi un padre. *(Fissato nei cap. 2–3: dieci anni prima, di sera, in un ristorante vuoto sul lungomare di Partenia; Giorgi gli regala un orologio d'acciaio con i numeri romani e gli dice «il mondo è una macchina, io so dove mettere le mani, tu hai le mani giuste».)* · **Chiusura:** "Ogni creatura torna al suo creatore. O lo divora." · 2.500
 
 **9. Flora** · Albaterra · Mese 3 · Seguire i soldi delle stragi → i conti portano all'estero e si fermano; De Stefano le passa una pista vera. Calabrese riceve la prima lettera anonima. · **Chiusura:** nella lettera c'è l'indirizzo di sua moglie. · 2.300
 

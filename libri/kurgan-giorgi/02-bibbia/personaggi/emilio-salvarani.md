@@ -32,3 +32,11 @@ Il volto del potere sopra Giorgi: il maestro che lo ha formato e che alla fine l
 ## Dettagli fisici/di caratterizzazione da fissare
 - Aspetto, sede, voce: [DA DEFINIRE]
 - Quante volte appare in scena: [DA DEFINIRE]
+
+## Fissato nel capitolo 8
+- Appartamento dentro le mura vaticane: studio freddo (niente riscaldamento alto, «il caldo addormenta»), divano di velluto verde, finestre su un cortile con le guardie svizzere. Beve da quarant'anni un tè cinese affumicato.
+- Mani da vecchio, deformate dall'artrite; occhi chiarissimi e immobili. Fu professore di meccanica statistica di Giorgi al secondo anno.
+- **Il codice della terza tazza:** una tazza capovolta sul vassoio indica una questione da decidere. Il 6 gennaio la questione è Giorgi.
+- Custodisce la seconda chiavetta in un astuccio di pelle scura, in un cassetto dello scrittoio non chiuso a chiave.
+- Conosce Flora: «Tre anni fa ci è costata un favore del presidente della Corte e undici minuti di camera di consiglio.»
+- Sa dell'orologio rimandato a Giorgi: un'informazione che avevano solo Giorgi e Bertola.

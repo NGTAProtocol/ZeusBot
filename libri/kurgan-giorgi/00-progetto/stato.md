@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 8 (Giorgi e Salvarani). Scritti: prologo, capitoli 1–7. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 9 (Flora). Scritti: prologo, capitoli 1–8. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -96,3 +96,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-27 — Capitolo 5 (Flora, circa 2.020 parole): nasce il pool; Calabrese diffidente, Cataldo e lo schema; la telefonata di De Stefano.
 - 2026-09-27 — Capitolo 6 (Dalia, circa 2.050 parole): la stanza 512, il pezzo tagliato, Kurgan che sa, la domanda finale di Giorgi.
 - 2026-09-27 — Capitolo 7 (Kurgan, circa 2.120 parole): Rastegar è l'uomo del molo; busta sulle navi di quindici anni prima; cinque droni e una banchina; 16 gennaio.
+- 2026-09-27 — Capitolo 8 (Giorgi, registro c, circa 2.100 parole): Salvarani, la terza tazza, i due orologi, il primo incontro a Partenia, il dossier, la dottrina.

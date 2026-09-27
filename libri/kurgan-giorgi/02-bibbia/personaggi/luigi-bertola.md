@@ -33,3 +33,6 @@ La prossima creatura: l'uomo fidato di Giorgi, in realtà informatore dell'élit
 ## Dettagli fisici/di caratterizzazione da fissare
 - Aspetto, provenienza, voce: [DA DEFINIRE]
 - Per quale élite fa l'informatore (Osiride? un livello diverso?): [DA DEFINIRE]
+
+## Fissato nel capitolo 8
+- Prima apparizione (citato): accompagna Giorgi da tredici anni; ha ritirato lui in portineria la busta con l'orologio rimandato da Kurgan. Oltre a Giorgi è l'unico a saperlo, e Salvarani lo sa: è il primo seme del suo ruolo di informatore.
