@@ -24,6 +24,8 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - Lunedì 20 ottobre, ore 7.20: strage del pullman di Morenna.
 - **Mercoledì 12 novembre (giorno 0):** ore 10.52 strage della stazione di Marcena (21 morti); ore 11.51 dimissioni del governo; ore 12.07 chiusura dello short a 700 punti.
 - Giovedì 13 novembre: capitolo 1.
+- Venerdì 14 novembre: capitolo 3 (la cisterna).
+- Giovedì 4 dicembre: capitolo 4 (la riga 1.147).
 
 Le intestazioni dei capitoli usano questo calendario ("Tommaso — Merania, 13 novembre"), mai "Mese 18".
 
@@ -69,7 +71,7 @@ Corale, registro (a) · Albaterra, Marcena, Merania · Giorno 0 · Il governo ca
 
 **3. Kurgan** · Partenia, base sotterranea · Giorno 2 · Deve spiegare ai suoi uomini la rottura senza perderne nessuno → uno dei capi chiede chi li proteggerà adesso. *Flashback:* la guerra del Drenak, i tre ufficiali. · **Chiusura:** Kurgan compone il numero che un uomo gli aveva dato un anno prima sul molo di Porto Clodio, «se un giorno vorrà lavorare da solo», e che non aveva mai composto. · 2.600
 
-**4. Tommaso** · Merania · Settimana 3 · Vuole dimenticare e fare carriera → nei conti trova un bonifico a una fondazione che non dovrebbe esistere. · **Chiusura:** copia il file su una chiavetta e non sa ancora perché. · 2.200
+**4. Tommaso** · Merania · 4 dicembre · Vuole dimenticare e fare carriera → nei conti trova un bonifico a una fondazione che non dovrebbe esistere. · **Chiusura:** copia il file su una chiavetta e non sa ancora perché. · 2.200
 
 **5. Flora** · Albaterra (sede del pool, proposta) · Mese 1 · Nasce il pool dopo le tre stragi: vuole portarci l'inchiesta insabbiata dalla Cassazione → Calabrese e Cataldo hanno già le stesse carte, e non si fidano di lei. · **Chiusura:** De Stefano la chiama: "Ho saputo del pool." Lei non gli ha detto niente. · 2.400
 
