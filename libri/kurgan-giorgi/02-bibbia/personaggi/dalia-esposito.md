@@ -44,3 +44,11 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - Identità del cliente e del caso di corruzione: [DA DEFINIRE]
 - Da quanti anni vede Giorgi: [DA DEFINIRE]
 - Nome della guardia: [DA DEFINIRE]
+
+## Fissato nel capitolo 6
+- Vede Giorgi da **sei anni**, sempre nella stanza 512 di un albergo di Merania. Si sono conosciuti a un convegno: lui le chiese un parere su un'emissione di obbligazioni e ascoltò la risposta fino in fondo. La prima volta le chiese «Posso?» prima di sfiorarle la mano.
+- **Kurgan sa di loro dall'inizio.** Sei anni fa, in macchina sotto la redazione: «Il finanziere, eh? Bene. Tienilo contento.» Da allora non ne hanno più parlato. Per Kurgan è una proprietà nel letto di un uomo utile. Dalia non ha mai detto a Giorgi che Kurgan sa.
+- Il martedì sera non beve. Due telefoni in borsa.
+- Il suo pezzo su *Il Meridiano* di giovedì 4 dicembre sulle posizioni al ribasso chiuse al picco è stato tagliato dal direttore.
+- Le guardie di Giorgi: **Ferri**, il più anziano (60 anni, sapone da caserma), e **Nicola**, il più giovane (scarpe consumate, debiti: «pago venerdì»), futura fonte.
+- Quello che ha raccontato di Kurgan in sei anni: chiama la domenica sera, prende sempre le scale, non dorme mai due notti nello stesso letto, mangia solo cibo cucinato davanti a lui.

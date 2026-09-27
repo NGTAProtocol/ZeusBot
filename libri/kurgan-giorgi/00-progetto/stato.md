@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 6 (Dalia). Scritti: prologo, capitoli 1–5. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 7 (Kurgan, primo incontro con Rastegar). Scritti: prologo, capitoli 1–6. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -94,3 +94,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-27 — Capitolo 3 (Kurgan, 2.266 parole): la cisterna sotto Monte Marzio, il Drenak, i tre esecutori messi in salvo, le navi tolte al dottore, il numero.
 - 2026-09-27 — Capitolo 4 (Tommaso, circa 1.970 parole): spostato alle riconciliazioni, la riga 1.147, la Fondazione Civitas Perennis, la chiavetta.
 - 2026-09-27 — Capitolo 5 (Flora, circa 2.020 parole): nasce il pool; Calabrese diffidente, Cataldo e lo schema; la telefonata di De Stefano.
+- 2026-09-27 — Capitolo 6 (Dalia, circa 2.050 parole): la stanza 512, il pezzo tagliato, Kurgan che sa, la domanda finale di Giorgi.

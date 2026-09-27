@@ -42,3 +42,8 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 - 1,98 m, corporatura massiccia (fissato).
 - Viso, voce, modo di parlare: [DA DEFINIRE]
 - Posizione delle basi sotterranee: [DA DEFINIRE]
+
+## Fissato nei capitoli 3 e 6
+- Sa della relazione tra Dalia e Giorgi da sei anni e la considera un investimento («Tienilo contento»). Non le ha mai chiesto niente di Giorgi. Sottovaluta quanto Giorgi abbia estratto e ignora che sia diventato amore.
+- Abitudini: chiama Dalia la domenica sera; prende sempre le scale; non dorme mai due notti nello stesso letto; mangia solo cibo cucinato davanti a lui; dopobarba all'arancia, tabacco scuro.
+- Ha lasciato sul tavolo della cisterna l'orologio regalato dal dottore.

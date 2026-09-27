@@ -27,6 +27,7 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - Venerdì 14 novembre: capitolo 3 (la cisterna).
 - Martedì 25 novembre: capitolo 5 (nasce il pool; la lettura torna indietro di nove giorni rispetto al capitolo 4).
 - Giovedì 4 dicembre: capitolo 4 (la riga 1.147).
+- Martedì 9 dicembre: capitolo 6 (Dalia e Giorgi, stanza 512).
 
 Le intestazioni dei capitoli usano questo calendario ("Tommaso — Merania, 13 novembre"), mai "Mese 18".
 
@@ -76,7 +77,7 @@ Corale, registro (a) · Albaterra, Marcena, Merania · Giorno 0 · Il governo ca
 
 **5. Flora** · Albaterra, Direzione nazionale antimafia · 25 novembre · Nasce il pool dopo le tre stragi: vuole portarci l'inchiesta insabbiata dalla Cassazione → Calabrese e Cataldo hanno già le stesse carte, e non si fidano di lei. · **Chiusura:** De Stefano la chiama: "Ho saputo del pool." Lei non gli ha detto niente. · 2.400
 
-**6. Dalia** · Merania, albergo · Mese 1 · Vuole un'ora fuori da tutto con Giorgi → lui le chiede di Kurgan con una delicatezza nuova. Semina: la guardia del corpo più giovane. · **Chiusura:** Giorgi le chiede dove dorme Kurgan quando non vuole essere trovato. · 2.400
+**6. Dalia** · Merania, albergo, stanza 512 · 9 dicembre · Vuole un'ora fuori da tutto con Giorgi → lui le chiede di Kurgan con una delicatezza nuova. Semina: la guardia del corpo più giovane. · **Chiusura:** Giorgi le chiede dove dorme Kurgan quando non vuole essere trovato. · 2.400
 
 **7. Kurgan** · centro commerciale, periferia di Porto Clodio · Mese 2 · Primo incontro con Rastegar, da solo come sempre: dati nucleari in cambio di droni → Rastegar vuole di più. Adorisio aspetta fuori. · **Chiusura:** la data di consegna dei droni. · 2.500
 
@@ -86,7 +87,7 @@ Corale, registro (a) · Albaterra, Marcena, Merania · Giorno 0 · Il governo ca
 
 **10. Kurgan** · fast food lungo la costa · Mese 5 · Incontro con Volkov: il prezzo della decapitazione della Serrana è ancora da pagare. *Flashback:* la notte dei droni. · **Chiusura:** Kurgan pronuncia per la prima volta la parola "nazione". · 2.500
 
-**11. Dalia** · Partenia, Monte Marzio · Mese 7 · Kurgan la convoca: lei vuole uscirne indenne → lui le mostra il nuovo arsenale come si mostra una proprietà. Il passato solo come ricordo, fuori scena. · **Chiusura:** lui le chiede se "il finanziere" la tratta bene. Non sa di loro? · 2.400
+**11. Dalia** · Partenia, Monte Marzio · Mese 7 · Kurgan la convoca: lei vuole uscirne indenne → lui le mostra il nuovo arsenale come si mostra una proprietà. Il passato solo come ricordo, fuori scena. · **Chiusura:** lui le chiede se "il finanziere" la tratta bene. *(Fissato al cap. 6: Kurgan sa di loro da sei anni e lo considera un investimento: «Tienilo contento». Sottovaluta quanto Giorgi abbia estratto e ignora che sia diventato amore. La domanda è di un padrone che controlla una proprietà, non di uno che scopre qualcosa.)* · 2.400
 
 **12. Giorgi (c)** · Merania, casa Giorgi · Mese 12 · Vuole contenere Kurgan senza sporcarsi → Kurgan cresce: armi straniere, porti. Nasce il fronte che lo armerà (servizi, governo, CIA). La famiglia vista da lui: Laura, la scuola delle suore. · **Chiusura:** l'autista di Laura segnala un'auto che non conosce. · 2.500
 
