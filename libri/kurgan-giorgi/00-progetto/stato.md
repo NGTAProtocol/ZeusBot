@@ -5,7 +5,6 @@
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
 - **Prossimo passo:** Fase 1 (mercato), poi Fase 2 (architettura e piano parole).
-- **Prossimo passo:** sciogliere i nodi qui sotto, poi Fase 1 (mercato) e Fase 2 (architettura e piano parole).
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
