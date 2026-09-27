@@ -4,7 +4,7 @@
 |---|---|---|
 | 0 | Bibbia | Fatta (v2 dell'autore, integrata) |
 | 3 | Prova di voce (anticipata) | Fatta: voce mista, (c) per Giorgi, (a) per gli altri |
-| 1 | Mercato e posizionamento | Da fare |
+| 1 | Mercato e posizionamento | Fatta (`01-mercato/mercato.md`) |
 | 2 | Architettura e piano parole | Da fare, dopo i nodi in `stato.md` |
 | 4 | Stesura | — |
 | 5 | Revisione | — |
