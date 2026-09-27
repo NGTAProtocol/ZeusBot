@@ -1,28 +1,43 @@
 # Luoghi
 
-## Napoli — Quartieri Spagnoli
-- Funzione: origine di Kurgan e di Dalia; l'infanzia in cui Vito non era ancora un mostro.
-- Flashback di Parte I; ritorno possibile in Parte III.
+Luoghi reali, eventi reinventati.
 
 ## Milano
-- Sede italiana della megacorporazione e del fondo; la Procura dove lavora Filomena.
-- Alberghi della doppia vita di Giorgi con Dalia.
-- Luogo dell'apertura: il giorno delle dimissioni del governo.
+- Porta Nuova: torre di vetro, 22° piano, sala operativa di AV System (apertura).
+- Alberghi degli incontri di Giorgi (Milano, e forse Ginevra e Londra dalla prima bibbia: da confermare).
 
-## Ginevra e Londra
-- Alberghi degli incontri tra Giorgi e Dalia; sedi dell'élite.
+## Roma
+- Le dimissioni del presidente del Consiglio (apertura). Ambienti vaticani (Salvarani, formazione di Giorgi).
 
-## Gorizia – Nova Gorica
-- Confine aperto, rotta balcanica; comando provinciale dei Carabinieri guidato dal colonnello.
-- **Casinò Adria** (inventato), Nova Gorica: lavanderia dei soldi di Kurgan.
+## Napoli — Vomero
+Infanzia di Kurgan.
 
-## Porto di Trieste
-- Vicino a Gorizia; ingresso di armi e cocaina via canali balcanici.
+## Serbia
+Il servizio militare di Kurgan e l'uccisione dei tre ufficiali.
 
-## Balcani (Croazia)
-- Radici del padre di Kurgan; mercenari, armi, cocaina.
+## Luoghi delle stragi
+- Padova, mercato coperto (prima strage).
+- Mestre, stazione (seconda strage, 21 morti).
+- Terza strage: da definire.
+- Escalation: poli logistici di Genova e Taranto; autostrade A1 (Piacenza, Roma) e A14 (Pescara, Forlì).
 
-## DA DEFINIRE
-- Luogo dello scontro finale.
-- Luogo della prigionia della bambina.
-- Dove Filomena custodisce il suo archivio segreto.
+## Impero di Kurgan
+Civitavecchia (petroliere), Gioia Tauro, ex porto Evergreen di Taranto; basi sotterranee (da collocare).
+
+## Cattolica
+Ristorante imbottito di esplosivo, 13.30: la morte di Kurgan.
+
+## Campobasso
+Città di Flora; il comando provinciale dei Carabinieri negato a De Stefano.
+
+## Peschiera del Garda
+Il lago, la barca, l'esplosione inscenata: la sparizione di Giorgi.
+
+## Luoghi degli incontri con gli agenti stranieri
+Alberghi, centri commerciali, grandi ristoranti, un McDonald's.
+
+## Da definire
+- Dove viene tenuta Laura.
+- La scuola di Laura (città).
+- Sede del pool.
+- Dove Giorgi nasconde la chiavetta.

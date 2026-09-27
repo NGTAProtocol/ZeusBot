@@ -1,48 +1,30 @@
-# Dalia Esposito
+# Dalia
+
+**Registro dei suoi capitoli:** (a).
+Cognome: nella prima bibbia "Esposito" (da confermare). Età: da definire (vedi nodi in `stato.md`).
 
 ## Identità
-- Ruolo nella storia: cuore emotivo del romanzo, divisa tra Giorgi e Kurgan.
-- Età / origini: 36 anni, donna trans cresciuta nei Quartieri Spagnoli. A vent'anni a Milano.
-- Aspetto: elegante.
+- Donna transgender; giornalista/analista finanziaria, laureata in giornalismo.
+- Sfruttata da Kurgan da quando era minorenne nella prostituzione d'alto livello: una proprietà, una macchina per fare soldi, anni di violenze. Kurgan le ha però pagato gli studi: la sua carriera esiste grazie a lui.
 
-## Maschera pubblica
-Elegante, colta, ironica. Ha lasciato giurisprudenza a metà.
+**Regola di scrittura:** il passato di Dalia da minorenne esiste solo come ricordo e conseguenza, mai descritto. Nessuna scena, nessun dettaglio.
 
-## Vita nascosta
-Da sei anni vede Giorgi negli alberghi (Milano, Ginevra, Londra); è diventata custode dei suoi segreti.
-
-## Desiderio
-DA DEFINIRE — deve avere un obiettivo suo, che non dipenda né da Giorgi né da Kurgan.
-
-## Bisogno
-DA DEFINIRE.
-
-## Ferita
-DA DEFINIRE (legata all'infanzia nei Quartieri?).
-
-## Menzogna in cui crede
-DA DEFINIRE.
-
-## Difetto / debolezza
-DA DEFINIRE.
-
-## Voce
-Ironica, colta; il napoletano riaffiora con Vito.
-
-## Relazioni chiave
-- **Kurgan:** da ragazzina Vito la difendeva; è il suo unico legame con un'infanzia in cui lui non era ancora un mostro.
-- **Giorgi:** sei anni di incontri; custode dei suoi segreti.
-- **Filomena:** prima giudicata "l'amante di un criminale in giacca", poi riconosciuta come l'unica che ha rischiato tutto per la verità.
+## Con Giorgi
+Giorgi, informato del suo legame con Kurgan, la avvicina e usa il proprio "vizio" come copertura per estrarle informazioni sull'organizzazione (basi, sotterranei, catena di comando). Incontri saltuari in albergo, protetti da due guardie del corpo. Con il tempo l'amore diventa reale e reciproco.
 
 ## Arco
-- II: Kurgan scopre lei e il segreto di Giorgi.
-- III: l'unica con accesso a entrambi; scelta decisiva nel climax.
+1. **Sollievo:** alla morte di Kurgan non prova lutto. Si è tolta di dosso un uomo pericolosissimo.
+2. **Risveglio:** scopre che Giorgi ha usato ciò che lei gli ha detto per eliminare Kurgan. Ha ripetuto, con un uomo più elegante, lo stesso schema di sfruttamento.
+3. **La scelta:** pubblica la verità sulle stragi calcolate e sul ruolo di AV System. Giornalismo, vendetta e liberazione insieme.
+4. **Il colpo a Giorgi:** recapita a Elena filmati e registrazioni di Giorgi con altre donne trans in festini (alcol, non droghe): quindici anni di tradimento.
+5. **La ritorsione:** i servizi rendono pubblico qualcosa che lei ha fatto anni prima; deve dimettersi dalla testata; quasi tutti i giornali nazionali la denigrano.
+6. **Fine:** viva, isolata, distrutta professionalmente. Recuperabile per il sequel.
 
-## Vincoli
-- Non esiste solo come segreto di Giorgi o leva per Kurgan.
-- Evitare la sua morte come "sacrificio" narrativo.
+## Tema
+Rompe il ciclo del controllo: è l'unica che sceglie di perdere tutto pur di smettere di essere uno strumento.
 
-## DA DEFINIRE
-- Obiettivo personale.
-- La scelta decisiva nel climax.
-- Ferita, bisogno, menzogna, difetto.
+## Da definire
+- Età.
+- Cosa ha fatto "anni prima" (lo scandalo usato dai servizi).
+- Nome della testata (inventata).
+- Da quanti anni vede Giorgi.

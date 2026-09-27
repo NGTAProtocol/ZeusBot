@@ -1,52 +1,42 @@
-# Vito Kurgan
+# Vito Kurgan — 43 anni
+
+**Registro dei suoi capitoli:** (a).
 
 ## Identità
-- Ruolo nella storia: la creatura. Antagonista.
-- Origini: padre marinaio croato, madre napoletana; cresciuto nei Quartieri Spagnoli. Ricercato dall'Interpol.
-- Aspetto: 2,20 m, corporatura mastodontica, forza devastante.
+- Ruolo: la creatura che smette di obbedire.
+- Origini: nato al **Vomero**, Napoli; padre serbo che aveva combattuto in guerra, madre napoletana.
+- Aspetto: 1,98 m, corporatura massiccia.
 
-## Maschera pubblica
-Calmo e affascinante quando ha il controllo.
+## Passato militare
+Serve nell'esercito serbo. Congedato senza onore dopo aver ucciso tre alti ufficiali le cui decisioni, secondo lui, avrebbero fatto morire i suoi uomini. Per questo i suoi uomini gli sono ferocemente fedeli: non per paura, per rispetto quasi tribale.
 
-## Vita nascosta
-Psicopatia "a doppio stato": furia cieca quando viene contraddetto. Cocaina da dieci anni, ora fuori controllo.
+## Ascesa criminale
+- Tornato a Napoli: risse di strada, notato dalla Camorra per forza, tecnica e carisma. Killer freddo e infallibile.
+- Impero personale con basi sotterranee e strutture segrete.
+- Flotta di **20 petroliere** basata a **Civitavecchia**: pilastro economico e logistico, leva con le potenze straniere.
+- Controlla la costa tirrenica e l'arco ionico; **Gioia Tauro** già suo; punta all'ex porto Evergreen di **Taranto**.
+- Prostituzione ad alto livello: sfrutta Dalia da quando era minorenne, trattandola come proprietà, con anni di violenze. Ma, intuitane l'intelligenza, le paga gli studi fino alla laurea in giornalismo.
 
-## Desiderio (ciò che vuole)
-Non obbedire più a nessuno. Il potere che Giorgi gli ha prestato, tenuto per sé. (Da precisare.)
+## Il patto con Giorgi e la ribellione
+- Riceve da Giorgi (tramite i servizi segreti militari) la gestione dell'unificazione Camorra/'Ndrangheta.
+- L'"unificazione" è in realtà una **decapitazione**: i servizi russi gli danno le posizioni dei capi 'ndranghetisti, che un raid simultaneo con droni elimina tutti.
+- Sei mesi dopo l'unificazione si ribella a Giorgi, ripetendo lo schema dei tre ufficiali: rifiuta di essere strumento sacrificabile in un piano che ritiene pericoloso per i suoi uomini.
 
-## Bisogno
-DA DEFINIRE (ipotesi: il ragazzo che difendeva Dalia; un legame che non sia possesso).
+## Il piano geopolitico
+- Sostenuto da **Russia, Cina e Iran**: droni e armamenti avanzati in cambio di informazioni militari riservate (a Russia e Cina) e dati su questioni nucleari passate (all'Iran).
+- Obiettivo: spodestare lo Stato italiano, autoproclamarsi dittatore, fondare una nuova nazione. Speculare a Osiride: potere dichiarato e militare contro potere occulto.
+- Incontra i tre agenti 3–4 volte in tutto (Rastegar due volte), sempre in luoghi banali e affollati.
 
-## Ferita
-DA DEFINIRE (infanzia nei Quartieri, il padre marinaio assente?).
+## Rapimento di Laura
+Fa monitorare la bambina e la fa prelevare all'uscita da scuola. Tiene il rapimento segreto anche ai suoi uomini più vicini.
+
+## Morte (a metà romanzo)
+Tradito da Fedele Adorisio: attirato a un finto appuntamento con Rastegar in un ristorante di **Cattolica**, alle 13.30. Il ristorante è imbottito di esplosivo; Osiride e servizi appostati, con tiratori scelti. Muore nell'esplosione.
 
 ## Menzogna in cui crede
-DA DEFINIRE (ipotesi: "Chi mi ha creato non può distruggermi").
-
-## Difetto / debolezza
-Cocaina fuori controllo: rabbia, paranoia verso i suoi, cuore sotto sforzo. La rete di Giorgi conosce i canali da cui arriva.
-
-## Potere
-- Genio strategico.
-- Ha unito Mafia e Camorra in un unico sindacato (fusione incompleta, nemici interni, alleanze che scricchiolano: il potere gli costa).
-- Forza paramilitare di mercenari ed ex forze speciali.
-- Canali verso i Balcani legati alle radici croate: armi, mercenari, cocaina via Gorizia/Nova Gorica e porto di Trieste.
-
-## Voce
-Calma, seduzione, pause. Quando si spezza, frasi che non finiscono. (Dialetto napoletano: dosaggio DA DEFINIRE.)
+Che la lealtà dei suoi uomini lo protegga. (Proposta: è proprio il suo uomo più leale a consegnarlo.)
 
 ## Relazioni chiave
-- **Giorgi:** quasi un padre; il creatore da cui si è emancipato.
-- **Dalia:** da ragazzina la difendeva; è il suo unico legame con un'infanzia in cui non era ancora un mostro.
-- **Filomena:** la rispetta perché non ha paura di lui.
-- **Il colonnello:** una proprietà; registra ogni favore.
-
-## Arco
-- I: origini e primo incontro con Giorgi (flashback).
-- II: rottura con Giorgi; scopre Dalia e il segreto; rapisce la figlia di Giorgi.
-- III: scontro finale.
-
-## DA DEFINIRE
-- Età.
-- Ferita, bisogno, menzogna.
-- Se muore o viene sacrificato dall'élite.
+- **Giorgi:** il padre da cui si emancipa.
+- **Dalia:** proprietà. Nessuna eccezione nel trattamento.
+- **Adorisio:** uomo di fiducia, amato e stimato. Il traditore.

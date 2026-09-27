@@ -1,23 +1,31 @@
 # Mondo
 
-## L'operazione
-L'élite finanziaria internazionale ha bisogno di un'Italia in crisi: stragi, paura, governo che cade, spread alle stelle. Obiettivo: comprare banche, infrastrutture e aziende pubbliche a prezzo di saldo. Giorgi è il terminale in Italia; Kurgan era il detonatore.
+## AV System (il fondo)
+Fondo guidato da Giorgi, torre di vetro a Porta Nuova, Milano, 22° piano. Ha orchestrato tre attentati (Padova, Mestre, un terzo da collocare) per manovrare lo spread: vendite allo scoperto sui titoli di Stato, assicurazioni contro il default, opzioni ribassiste sulle banche.
 
-## La megacorporazione di Giorgi
-- Megacorporazione finanziaria globale, nome inventato: **DA DEFINIRE** (proposte provvisorie: Aldenor Capital, Veltra Holdings, Norhaven Partners — da verificare che non esistano).
-- Il fondo con sede a Milano che scommette sul crollo dei titoli di Stato italiani.
+## Osiride
+Organizzazione segreta parastatale, parallela e superiore alla massoneria tradizionale, ispirata storicamente alla P2.
+- **Dottrina interna** (credo dei membri, non verità del narratore): il potere non muore, si trasforma e rinasce, dagli antichi egizi in poi. Secondo loro l'Impero romano non cadde ma si trasferì nel Papato.
+- **Progetto:** ripetere l'operazione nell'Italia di oggi: crisi finanziarie, terrorismo calcolato e criminalità unificata per spodestare lo Stato e trasferire il potere reale alla rete.
+- **Membri noti:** Alfredo Giorgi (alto grado); cardinale Emilio Salvarani; il presidente della Corte di Cassazione; senatore Alfonso Cicimarra. L'elenco del pool conta circa 60 affiliati (industriali, farmacisti, finanzieri, banchieri, generali, ammiragli).
+- **Le "forze pontificie"** del nuovo ordine: promesse ad Adorisio come comandante supremo.
 
-## Il sindacato di Kurgan
-- Unione di Mafia e Camorra in un unico sindacato. Fusione incompleta: nemici interni, alleanze che scricchiolano; il potere gli costa.
-- Forza paramilitare di mercenari ed ex forze speciali.
-- Canali balcanici: armi, mercenari, cocaina via Gorizia/Nova Gorica e porto di Trieste.
-- Riciclaggio al Casinò Adria (inventato), Nova Gorica.
-- La rete di Giorgi conosce i canali da cui arriva la cocaina di Kurgan.
+## Camorra e 'Ndrangheta "unificate"
+Presentata come unificazione, in realtà è una decapitazione: i servizi russi forniscono le posizioni dei capi 'ndranghetisti, un raid simultaneo con droni li elimina, Kurgan prende il controllo senza trattare clan per clan.
+
+## L'impero di Kurgan
+Basi sotterranee e strutture segrete; 20 petroliere a Civitavecchia; costa tirrenica e arco ionico; Gioia Tauro; mira all'ex porto Evergreen di Taranto; armi e droni da Russia, Cina, Iran.
+
+## Casal Fascio
+Organizzazione paramilitare e territoriale creata dal generale De Biasi sui resti di quella di Kurgan. Al comando: Luigi Bertola.
 
 ## Lo Stato
-- Procura di Milano (Filomena), Carabinieri (il colonnello, comando provinciale di Gorizia).
-- Nessuna istituzione, partito, loggia o persona reale riconoscibile.
+- Servizi segreti militari: procurano il dossier, favoriscono l'unificazione, sorvegliano Flora (De Stefano), eliminano Kurgan con Osiride, colpiscono Dalia.
+- Lo Stato mette un arsenale nazionale a disposizione di Giorgi contro Kurgan, "conoscendo il vero scopo dell'operazione".
+- Il pool di magistrati (Flora, Calabrese, Cataldo).
 
-## Regole
-- Nessun elemento soprannaturale; niente culto segreto con sacrifici.
-- Tutti i nomi di aziende, casinò, fondi e istituzioni private sono inventati.
+## Oggetti chiave
+- **Il dossier:** anni di dati dei servizi militari su politici, magistrati e figure chiave (debolezze, forze, famiglie). Due chiavette criptate con sicurezza tipo blockchain: Giorgi (poi Cicimarra) e Salvarani. **Terza copia segreta: Elena.**
+- **L'elenco dei 60 affiliati di Osiride:** frutto del pool; il cuore del climax.
+- **L'archivio di Flora:** il materiale della prima inchiesta insabbiata.
+- **Il materiale del tradimento:** filmati e registrazioni di Giorgi nei festini; Dalia lo recapita a Elena.

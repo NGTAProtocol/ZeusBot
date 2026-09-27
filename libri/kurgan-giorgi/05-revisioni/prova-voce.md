@@ -1,5 +1,7 @@
 # Prova di voce — scena d'apertura
 
+> **Scelta dell'autore:** voce mista. Registro (c) per i capitoli di Alfredo Giorgi, registro (a) per tutti gli altri. L'apertura corale segue la (a).
+
 Stessa scena, stessi fatti, tre voci. Terza persona, passato. Circa 400 parole ciascuna.
 Il giorno delle dimissioni del governo; in TV l'ultima strage; a Milano un fondo guadagna miliardi scommettendo sul crollo dell'Italia. Ultima riga: chi ha premuto il tasto è Giorgi.
 

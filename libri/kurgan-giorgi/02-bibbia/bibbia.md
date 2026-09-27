@@ -1,33 +1,25 @@
-# Bibbia — kurgan-giorgi
+# Bibbia — Il padre del mostro
 
-- **Titolo:** DA SCEGLIERE
+- **Titolo:** Il padre del mostro
 - **Autore:** Felice Faraone
 - **Genere:** thriller geopolitico / noir d'azione, Italia contemporanea
-- **Lunghezza (proposta):** 100.000–110.000 parole, tre parti — da confermare in Fase 2
+- **Lunghezza:** 110.000–120.000 parole, circa 400–420 pagine
+- **Concept:** un tycoon finanziario italiano orchestra attentati per manipolare i mercati e destabilizzare il governo, usando un ex militare criminale come braccio operativo, finché la creatura non smette di obbedire al suo creatore.
 
-## Titoli in esame
-- La creatura
-- Il prezzo del caos
-- Saldi di Stato
-- L'ultimo tasto
-- Chi ha creato il mostro
-
-Proposte aggiuntive:
-- **Allo scoperto** — "vendere allo scoperto" è la scommessa di Giorgi sul crollo dell'Italia; ma allo scoperto finiscono anche tutti: la doppia vita di Giorgi, l'archivio di Filomena, il segreto di Dalia, il tradimento del colonnello. Un titolo, due livelli.
-- **Il padre del mostro** — dice il tema (creatore contro creatura) senza spiegarlo; mette Giorgi al centro e rende Kurgan una conseguenza.
-- **Punto critico** — la lente di Giorgi, fisico: il punto in cui un sistema cambia stato e non torna indietro. È anche il momento in cui la creatura smette di obbedire.
-
-## Indice della bibbia
-- [Idea di controllo](idea-di-controllo.md)
-- [Trama](trama.md)
+## Indice
+- [Idea di controllo e tema](idea-di-controllo.md)
+- [Trama, cronologia e finale](trama.md)
 - [Voce e stile](voce-e-stile.md)
+- [Mondo: organizzazioni e oggetti chiave](mondo.md)
 - [Luoghi](luoghi.md)
-- [Mondo](mondo.md)
-- Personaggi: [Filomena Lattarulo](personaggi/filomena-lattarulo.md) · [Vito Kurgan](personaggi/vito-kurgan.md) · [Alfredo Giorgi](personaggi/alfredo-giorgi.md) · [Dalia Esposito](personaggi/dalia-esposito.md) · [Il colonnello](personaggi/il-colonnello.md) · [Famiglia Giorgi](personaggi/famiglia-giorgi.md) · [Il volto dell'élite](personaggi/volto-elite.md)
+- Personaggi principali: [Alfredo Giorgi](personaggi/alfredo-giorgi.md) · [Vito Kurgan](personaggi/vito-kurgan.md) · [Dalia](personaggi/dalia-esposito.md) · [Flora Notarangelo](personaggi/flora-notarangelo.md) · [Carlo De Stefano](personaggi/carlo-de-stefano.md) · [Elena Pisapia](personaggi/elena-pisapia.md)
+- Secondari: [Luigi Bertola](personaggi/luigi-bertola.md) · [Fedele Adorisio](personaggi/fedele-adorisio.md) · [Emilio Salvarani](personaggi/emilio-salvarani.md) · [Francesco De Biasi](personaggi/francesco-de-biasi.md) · [Tommaso Vela](personaggi/tommaso-vela.md) · [Pool: Calabrese e Cataldo](personaggi/pool-calabrese-cataldo.md) · [Agenti stranieri](personaggi/agenti-stranieri.md) · [Comprimari](personaggi/comprimari.md)
 
-## Regole invalicabili
-1. La violenza sui minori resta sempre fuori scena.
-2. Le scene intime restano fuori scena o appena accennate: si mostrano le conseguenze, non l'atto.
-3. Nessun elemento soprannaturale.
-4. Niente culto segreto con sacrifici (scartato).
-5. Nessun legame con organizzazioni, partiti, logge o persone reali riconoscibili: aziende, casinò, fondi e istituzioni private sono inventati.
+## Regole di scrittura
+1. La violenza sui minori resta sempre fuori scena: il rapimento di Laura e il passato di Dalia si raccontano per conseguenze, mai descritti.
+2. Le scene intime restano fuori scena o appena accennate.
+3. Nessun elemento soprannaturale. La dottrina di Osiride è credo e mitologia interna dell'organizzazione, mai verità storica affermata dal narratore.
+4. Nessuna persona reale riconoscibile: tutti i personaggi sono inventati, anche quelli che ricoprono cariche reali (cardinale, presidente della Cassazione, senatore, generali). Organizzazioni e aziende del romanzo sono inventate (Osiride, AV System, Casal Fascio); massoneria e P2 restano sfondo storico, senza attribuzioni a persone reali.
+5. Luoghi reali, eventi reinventati: niente dettagli che richiamino stragi o crolli reali (Bologna, ponte Morandi, ecc.).
+6. Registro (c) per i capitoli di Giorgi, (a) per tutti gli altri.
+7. Il tema del controllo va rispecchiato in ogni sottotrama.
