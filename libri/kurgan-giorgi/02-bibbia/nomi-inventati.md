@@ -21,7 +21,7 @@
 | Autostrada nord-sud | **la Dorsale** (bombe a **Padèra** e **Albaterra**) |
 | Autostrada costiera est | **la Litoranea** (bombe ad **Aterno Marina** e **Ronchedo**) |
 | Costa sotto il controllo di Kurgan | costa occidentale e arco meridionale |
-| Città svizzera della cassetta di sicurezza di Giorgi (Lugano nella bibbia) | **Cadrasca** |
+| Città svizzera della cassetta di sicurezza di Giorgi | **Cadrasca** (confermata nella bibbia v7) |
 | Alberghi della doppia vita (all'estero, prima bibbia) | **Valdhof**, **Kingsmere** |
 | Luogo degli incontri con gli agenti | un fast food di catena (nessun marchio) |
 
@@ -44,7 +44,7 @@
 ## Stampa
 | Ruolo | Nome |
 |---|---|
-| Quotidiano di Dalia | **Il Meridiano** (scelto dall'autore; da verificare che non coincida con una testata reale) |
+| Quotidiano di Dalia | **Il Meridiano** (scelto dall'autore; controllo legale pre-pubblicazione per escludere coincidenze con testate reali) |
 
 ## Reali (nominati per nome)
 Italia, Vaticano e università vaticane, CIA, NATO/UE, Corte di Cassazione, Carabinieri, servizi segreti militari, Parlamento e Senato, massoneria, P2 (come ispirazione storica di Osiride), Impero romano e Papato (nella dottrina interna di Osiride).

@@ -56,8 +56,11 @@ Diagnosi dal precedente principale del genere: i lettori di *Romanzo criminale* 
 
 Regola: non una campana con coda lunga, ma una **doppia cresta**.
 - **Prima cresta:** le tre stragi (Valcerna, Morenna, Marcena), ultimo lavoro di Kurgan per Giorgi; il crollo dello spread; la ribellione immediata di Kurgan; fino alla sua morte nella trappola di Riva Salmara.
-- **Calma apparente, non reale:** dopo Riva Salmara il lettore deve credere che la tensione si allenti (Bertola e Casal Fascio si insediano, l'ordine sembra tornare). Intanto avanzano, a bassa voce: il ritardo calcolato di Adorisio su Laura, il pool verso l'elenco dei 60, lo scoprirsi progressivo di Elena.
-- **Seconda cresta:** è il pool, avvicinandosi all'elenco, a far ripartire la tensione. Le squadre di De Biasi rispondono per conto di Osiride con gli attacchi a infrastrutture e autostrade. Seguono il golpe fallito di Adorisio, la liberazione di Laura, la convergenza verso la sparizione orchestrata di Giorgi. **Più capitoli brevi e serrati**, non uno o due lunghi.
+- **Coda della prima onda:** subito dopo Riva Salmara De Biasi insedia Bertola a capo di Casal Fascio; Adorisio trova Laura ma ritarda la consegna (prima crepa di Giorgi); Laura viene liberata (circa un mese e mezzo dopo); il golpe di Adorisio fallisce (circa due mesi dopo). Scosse di assestamento, non un nuovo picco.
+- **Calma apparente, non reale:** dopo il golpe il lettore deve credere che la tensione si allenti (Casal Fascio consolidato, l'ordine sembra tornare). Intanto avanzano, a bassa voce: il pool verso l'elenco dei 60, Tommaso che passa i dati, lo scoprirsi progressivo di Elena.
+- **Seconda cresta:** è il pool, avvicinandosi all'elenco, a far ripartire la tensione. Le squadre di De Biasi rispondono per conto di Osiride con gli attacchi a infrastrutture e autostrade; la legge d'emergenza di Cicimarra rischia di togliere il fascicolo al pool. Seguono lo scoop di Dalia e la ritorsione, il materiale recapitato a Elena, la convergenza verso la sparizione orchestrata di Giorgi (seconda crepa). **Più capitoli brevi e serrati**, non uno o due lunghi.
+
+*(Ordine allineato alla cronologia della bibbia v7.)*
 
 **Verifica in editing:** contare i capitoli per fase. Target 45%–55% tra fase 1 (fino a Riva Salmara) e fase 2. Se la fase 2 ha meno della metà dei capitoli della fase 1 è frettolosa; se ne ha il doppio è la coda lenta.
 

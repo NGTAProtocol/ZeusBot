@@ -3,7 +3,8 @@
 - **Titolo:** Il padre del mostro
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
-- **Fase attuale:** bibbia v4 integrata; voce scelta; manuale di stile adottato.
+- **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
+- **Prossimo passo:** Fase 1 (mercato), poi Fase 2 (architettura e piano parole).
 - **Prossimo passo:** sciogliere i nodi qui sotto, poi Fase 1 (mercato) e Fase 2 (architettura e piano parole).
 
 ## Decisioni prese
@@ -34,11 +35,16 @@
 - De Stefano: il prezzo è relazionale, è Flora a scoprire il doppio gioco.
 - Tommaso: fonte involontaria su Osiride e Cicimarra, per Dalia e il pool.
 
-## Nodi ancora aperti
-1. **Ordine dopo Riva Salmara: manuale contro cronologia.** Il manuale (sezione 4) dice: escalation, poi golpe, poi liberazione di Laura. La cronologia della bibbia dice: Laura, golpe, calma apparente, poi escalation. Proposta: seguire la cronologia e correggere il manuale. In attesa di risposta.
-2. **Roma inventata, ma Vaticano e Impero romano reali.** Con la regola v6 le città restano inventate (la capitale è Albaterra), ma Vaticano, università vaticane e Impero romano sono reali, e il Vaticano sta dentro Roma. Tre strade: (a) accettare la stonatura; (b) fare di Roma l'unica città reale; (c) non nominare mai la città del Vaticano.
-3. **Lugano → Cadrasca.** La bibbia v6 mette la cassetta di Giorgi a Lugano, città reale; per la regola "città inventate" l'ho chiamata Cadrasca. Da confermare.
-4. **Frasi superate nella bibbia v6** (nei file già sistemate): Tommaso ha due paragrafi "Linea narrativa" (vale il primo, più nuovo); la nota sulle autostrade parla ancora di "nomi di luoghi reali"; De Stefano "scoperto" da Flora contro "intuisce senza prova definitiva" (ho seguito il secondo); "nessun punto aperto".
+## Nodi strutturali: chiusi (bibbia v7)
+- **Ordine dopo Riva Salmara:** manuale riallineato alla cronologia della bibbia (coda della prima onda con Laura e golpe, poi calma apparente, poi seconda cresta con escalation e legge d'emergenza).
+- **Cadrasca** confermata per la cassetta di Giorgi.
+- Restano solo dettagli decidibili in stesura (comparse, voci minori, nome del generale del dossier) e il controllo legale su *Il Meridiano*.
+
+## Scelta di default da confermare
+- **Roma / Vaticano:** la capitale resta Albaterra; Vaticano, università vaticane e Impero romano sono nominati senza mai collocarli in una città. Se preferisci Roma reale, basta dirlo.
+
+## Frasi superate nella bibbia v7 (nei file già sistemate)
+Titolo "La morte di Kurgan a Cattolica"; la sezione "Morte" di Kurgan che cita Bertola; Laura "vicino a Gioia Tauro" (= Punta Saline); i due paragrafi "Linea narrativa" di Tommaso; la nota sulle autostrade che parla di "luoghi reali"; nella struttura e nella cronologia restano Roma, Milano, Mestre, Padova, Brescia ecc. (nei file: nomi del registro).
 
 ## Risolto dalla bibbia v6
 - Regola definitiva: Italia e istituzioni reali (Vaticano, CIA, Cassazione, Carabinieri, servizi), persone reali mai, città, mafie e potenze straniere inventate. Ripristinati ovunque i nomi reali delle istituzioni; aggiornati regole, manuale e registro.
@@ -80,3 +86,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-27 — Decisione dell'autore: tutto inventato, niente di vero. Creato il registro dei nomi inventati e sostituiti tutti i riferimenti reali nella bibbia e nel manuale.
 - 2026-09-27 — Bibbia v5 integrata nelle schede personaggio (età, aspetto, ferite, motivazioni, De Biasi alla guida della task force).
 - 2026-09-27 — Bibbia v6: nuova regola sui nomi (Italia e istituzioni reali, città/mafie/potenze inventate), istituzioni reali ripristinate; Tommaso, De Stefano, De Biasi, Dalia, Elena, nascondigli e prigionia di Laura.
+- 2026-09-27 — Bibbia v7: nodi chiusi, Cadrasca confermata, manuale riallineato alla cronologia.
