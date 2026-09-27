@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 10 (Kurgan e Volkov). Scritti: prologo, capitoli 1–9. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 11 (Dalia e Kurgan). Scritti: prologo, capitoli 1–10. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -98,3 +98,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-27 — Capitolo 7 (Kurgan, circa 2.120 parole): Rastegar è l'uomo del molo; busta sulle navi di quindici anni prima; cinque droni e una banchina; 16 gennaio.
 - 2026-09-27 — Capitolo 8 (Giorgi, registro c, circa 2.100 parole): Salvarani, la terza tazza, i due orologi, il primo incontro a Partenia, il dossier, la dottrina.
 - 2026-09-27 — Capitolo 9 (Flora, circa 1.960 parole): Valdhof, la pista troppo precisa di De Stefano, la lettera a Calabrese.
+- 2026-09-27 — Capitolo 10 (Kurgan, circa 2.040 parole): Volkov è l'uomo biondo di maggio; dieci petroliere e le carte NATO; niente esclusiva; «Una nazione.»

@@ -12,3 +12,9 @@ Tre agenti in contatto diretto con Kurgan (e con Adorisio prima del tradimento).
 - **Prezzo:** la busta vale cinque droni senza istruttori (Kurgan ne chiedeva venti con istruttori). Per gli altri quindici Rastegar vuole una banchina a Punta Saline tre notti al mese, senza registri, e «una busta più recente» sulle vendite del governo ai vicini di Parsàn. Kurgan concede la banchina, rinvia la seconda busta.
 - Rastegar sa degli «amici del nord» che fornirono i droni di maggio (legati al dottore) e della petroliera con i tre esecutori.
 - Primi cinque droni: 16 gennaio, di notte, a Punta Saline, «su una nave che non esiste».
+
+## Fissato nel capitolo 10
+- **Volkov è l'uomo biondo del capannone di maggio.** Quella notte fingeva di parlare solo inglese; parla un italiano senza accento. Fumava sigarette sottili bianche. Stretta di mano di tre secondi esatti. Si muove con una copertura (un furgone con i vetri oscurati, una macchina grigia, due uomini al distributore): «Lei conta le uscite, io conto gli uomini.»
+- **La notte di maggio:** capannone dietro il porto di Partenia; mappa di Serrania con undici puntini; il primo colpito alle 2.14, l'ultimo alle 2.53; il dottore in vivavoce, che alla fine dice «Bene». Il prezzo promesso dal dottore a Kaliria: tre cose, una sola pagata.
+- **Rinegoziazione (7 febbraio):** Kaliria vuole le venti petroliere di Kurgan per vendere sotto altro nome un carburante che non può vendere con il proprio, e le carte dei rifornimenti delle navi NATO nel porto del sud. Kurgan concede dieci navi su venti e le carte una volta al mese, attraverso un intermediario che non sa nulla di nessuno. Rifiuta l'esclusiva chiesta da Kaliria (che sa della banchina concessa a Parsàn): «Nessuno ha l'esclusiva su di me.»
+- Volkov: «Senza di noi i suoi cinque giocattoli restano cinque. Con noi possono diventare cinquanta.»

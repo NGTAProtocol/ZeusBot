@@ -51,3 +51,8 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 ## Fissato nel capitolo 7
 - La notte di maggio vista da Kurgan: un capannone dietro il porto di Partenia, uno schermo, un uomo biondo del nord che parlava solo inglese; undici puntini spenti in quaranta minuti. Gli «amici del nord» erano del dottore, non suoi: è una delle ragioni per cui cerca un'alleanza propria.
 - Non porta più l'orologio, ma continua a guardarsi il polso. Non si alza mai per primo da un tavolo.
+
+## Fissato nel capitolo 10
+- Il 7 febbraio pronuncia per la prima volta la parola «nazione»: non un porto né una provincia, ma un posto dove i suoi uomini (quelli del Drenak, i ragazzi dei vicoli, i sei della Serrana) non debbano più chiedere il permesso a una carta firmata lontano. «Non bastava strappare le carte. Bisognava essere quello che le scriveva.»
+- A Partenia lo chiamavano lo straniero, nel Drenak l'italiano.
+- I cinque droni di Parsàn sono in casse nel magazzino del molo nord di Punta Saline; Adorisio li studia con i ragazzi della Serrana su un manuale in una lingua che nessuno sa leggere.

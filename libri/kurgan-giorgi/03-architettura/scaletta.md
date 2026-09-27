@@ -31,6 +31,7 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - Sabato 20 dicembre: capitolo 7 (primo incontro con Rastegar). Consegna dei primi cinque droni fissata al 16 gennaio, di notte, a Punta Saline.
 - Martedì 6 gennaio (Epifania): capitolo 8 (Giorgi da Salvarani).
 - Giovedì 22 gennaio: capitolo 9 (la pista di De Stefano; la lettera a Calabrese).
+- Sabato 7 febbraio: capitolo 10 (Kurgan e Volkov; la parola «nazione»).
 
 Le intestazioni dei capitoli usano questo calendario ("Tommaso — Merania, 13 novembre"), mai "Mese 18".
 
@@ -88,7 +89,7 @@ Corale, registro (a) · Albaterra, Marcena, Merania · Giorno 0 · Il governo ca
 
 **9. Flora** · Albaterra · 22 gennaio · Seguire i soldi delle stragi → i conti portano all'estero e si fermano; De Stefano le passa una pista vera. Calabrese riceve la prima lettera anonima. · **Chiusura:** nella lettera c'è l'indirizzo di sua moglie. · 2.300
 
-**10. Kurgan** · fast food lungo la costa · Mese 5 · Incontro con Volkov: il prezzo della decapitazione della Serrana è ancora da pagare. *Flashback:* la notte dei droni. · **Chiusura:** Kurgan pronuncia per la prima volta la parola "nazione". · 2.500
+**10. Kurgan** · fast food sulla statale costiera tra Partenia e Punta Saline · 7 febbraio · Incontro con Volkov: il prezzo della decapitazione della Serrana è ancora da pagare. *Flashback:* la notte dei droni. · **Chiusura:** Kurgan pronuncia per la prima volta la parola "nazione". · 2.500
 
 **11. Dalia** · Partenia, Monte Marzio · Mese 7 · Kurgan la convoca: lei vuole uscirne indenne → lui le mostra il nuovo arsenale come si mostra una proprietà. Il passato solo come ricordo, fuori scena. · **Chiusura:** lui le chiede se "il finanziere" la tratta bene. *(Fissato al cap. 6: Kurgan sa di loro da sei anni e lo considera un investimento: «Tienilo contento». Sottovaluta quanto Giorgi abbia estratto e ignora che sia diventato amore. La domanda è di un padrone che controlla una proprietà, non di uno che scopre qualcosa.)* · 2.400
 
