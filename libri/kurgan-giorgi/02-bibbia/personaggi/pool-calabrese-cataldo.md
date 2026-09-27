@@ -11,3 +11,8 @@ Nasce come risposta dello Stato alle **tre stragi** (Valcerna, Morenna, Marcena)
 - Considerato il subordinato dei tre, meno incisivo.
 - Osiride lo tiene sotto controllo, ma con minore attenzione.
 - (Proposta: proprio perché sottovalutato, come Elena, potrebbe avere un peso inatteso. Da decidere.)
+
+## Fissato nel capitolo 5
+- Il pool nasce martedì 25 novembre alla Direzione nazionale antimafia di Albaterra, con decreto del procuratore nazionale firmato alle 7.00.
+- **Calabrese:** Direzione distrettuale di Partenia, 41 anni, fede nuova che si gira intorno al dito; indagine aperta da tre anni su carburante e navi tra Partenia e Porto Clodio. Telefona alla moglie: «Chiudi a chiave.»
+- **Cataldo:** Procura di Tarassa, il più giovane; fa schemi su un portablocco. Due anni prima gli fu negato l'arresto di un funzionario della dogana di Punta Saline. Custodisce in un armadio i frammenti di un drone militare sequestrati a Serrania dopo la notte di maggio: il ministero disse che se ne sarebbe occupato, e non venne nessuno.

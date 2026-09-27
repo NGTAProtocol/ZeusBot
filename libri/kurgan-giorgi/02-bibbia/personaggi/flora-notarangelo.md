@@ -41,3 +41,8 @@ La magistrata che segue la fusione delle mafie fino a Osiride: la giustizia a cu
 - Voce e modo di parlare: [DA DEFINIRE]
 - Ufficio di appartenenza e sede del pool: [DA DEFINIRE]
 - Il suo archivio (materiale della prima inchiesta): [DA DEFINIRE]
+
+## Fissato nel capitolo 5
+- Il fascicolo archiviato: tre anni di lavoro, intercettazioni, conti, due collaboratori. Camera di consiglio in Cassazione: undici minuti. Dopo l'archiviazione, un collaboratore trovato impiccato nel carcere di Tarassa, l'altro ritratta con una lettera scritta a macchina.
+- Conosce De Stefano da due anni: cenano una volta al mese; lui dice di lavorare "per il ministero".
+- La madre la chiama ogni sera alle 21.15.

@@ -25,6 +25,7 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - **Mercoledì 12 novembre (giorno 0):** ore 10.52 strage della stazione di Marcena (21 morti); ore 11.51 dimissioni del governo; ore 12.07 chiusura dello short a 700 punti.
 - Giovedì 13 novembre: capitolo 1.
 - Venerdì 14 novembre: capitolo 3 (la cisterna).
+- Martedì 25 novembre: capitolo 5 (nasce il pool; la lettura torna indietro di nove giorni rispetto al capitolo 4).
 - Giovedì 4 dicembre: capitolo 4 (la riga 1.147).
 
 Le intestazioni dei capitoli usano questo calendario ("Tommaso — Merania, 13 novembre"), mai "Mese 18".
@@ -73,7 +74,7 @@ Corale, registro (a) · Albaterra, Marcena, Merania · Giorno 0 · Il governo ca
 
 **4. Tommaso** · Merania · 4 dicembre · Vuole dimenticare e fare carriera → nei conti trova un bonifico a una fondazione che non dovrebbe esistere. · **Chiusura:** copia il file su una chiavetta e non sa ancora perché. · 2.200
 
-**5. Flora** · Albaterra (sede del pool, proposta) · Mese 1 · Nasce il pool dopo le tre stragi: vuole portarci l'inchiesta insabbiata dalla Cassazione → Calabrese e Cataldo hanno già le stesse carte, e non si fidano di lei. · **Chiusura:** De Stefano la chiama: "Ho saputo del pool." Lei non gli ha detto niente. · 2.400
+**5. Flora** · Albaterra, Direzione nazionale antimafia · 25 novembre · Nasce il pool dopo le tre stragi: vuole portarci l'inchiesta insabbiata dalla Cassazione → Calabrese e Cataldo hanno già le stesse carte, e non si fidano di lei. · **Chiusura:** De Stefano la chiama: "Ho saputo del pool." Lei non gli ha detto niente. · 2.400
 
 **6. Dalia** · Merania, albergo · Mese 1 · Vuole un'ora fuori da tutto con Giorgi → lui le chiede di Kurgan con una delicatezza nuova. Semina: la guardia del corpo più giovane. · **Chiusura:** Giorgi le chiede dove dorme Kurgan quando non vuole essere trovato. · 2.400
 
