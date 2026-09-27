@@ -1,6 +1,7 @@
 # Elena Pisapia — moglie di Alfredo Giorgi
 
 **Registro dei suoi capitoli (se ne ha):** (a).
+**Tic di pensiero (manuale di stile):** Pensa per calcoli pratici, mai per sfoghi: non si concede mai una frase di puro sentimento.
 
 ## Figli
 Fabrizio (15 anni), Cesare (13), **Laura** (7).

@@ -9,7 +9,7 @@
 ## Indice
 - [Idea di controllo e tema](idea-di-controllo.md)
 - [Trama, cronologia e finale](trama.md)
-- [Voce e stile](voce-e-stile.md)
+- [Voce e stile](voce-e-stile.md) · [Manuale di stile](manuale-di-stile.md)
 - [Mondo: organizzazioni e oggetti chiave](mondo.md)
 - [Luoghi](luoghi.md)
 - Personaggi principali: [Alfredo Giorgi](personaggi/alfredo-giorgi.md) · [Vito Kurgan](personaggi/vito-kurgan.md) · [Dalia](personaggi/dalia-esposito.md) · [Flora Notarangelo](personaggi/flora-notarangelo.md) · [Carlo De Stefano](personaggi/carlo-de-stefano.md) · [Elena Pisapia](personaggi/elena-pisapia.md)

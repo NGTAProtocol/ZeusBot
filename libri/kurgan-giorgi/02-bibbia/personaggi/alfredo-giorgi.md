@@ -1,6 +1,7 @@
 # Alfredo Giorgi — 53 anni
 
 **Registro dei suoi capitoli:** (c), freddo e lucido, con analogie dalla fisica e dai sistemi complessi (punti critici, cambi di stato, attrito, rumore di sistema).
+**Crepa:** una sola frase breve, quasi registro (a), nei momenti in cui il controllo cede davvero. Mai due capitoli (c) di fila.
 
 ## Identità
 - Ruolo: il "padre del mostro". Vertice di **AV System**, il fondo che ha orchestrato le stragi per far esplodere lo spread e guadagnare con vendite allo scoperto sui titoli di Stato, assicurazioni contro il default e opzioni ribassiste sulle banche.

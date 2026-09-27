@@ -1,6 +1,7 @@
 # Flora Notarangelo — 35 anni
 
 **Registro dei suoi capitoli:** (a). (Nella prima bibbia si chiamava Filomena Lattarulo, barese: sostituita.)
+**Tic di pensiero (manuale di stile):** Pensa per fascicoli e sequenze logiche (mentalità da magistrato).
 
 ## Identità
 - Pubblico ministero. Originaria di **Campobasso**.

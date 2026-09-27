@@ -1,6 +1,7 @@
 # Dalia
 
 **Registro dei suoi capitoli:** (a).
+**Tic di pensiero (manuale di stile):** Pensa per associazioni sensoriali: il corpo come merce, ora riconquistato.
 Cognome: nella prima bibbia "Esposito" (da confermare). Età: da definire (vedi nodi in `stato.md`).
 
 ## Identità

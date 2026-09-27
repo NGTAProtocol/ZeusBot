@@ -10,7 +10,8 @@
 - Titolo: *Il padre del mostro*.
 - Voce mista: registro (c) per i capitoli di Giorgi, (a) per tutti gli altri. Terza persona, passato.
 - Tema: il controllo.
-- Lunghezza: 110.000–120.000 parole (circa 400–420 pagine).
+- Lunghezza: 110.000–120.000 parole (circa 400–420 pagine); capitoli 1.800–3.000 parole, quindi circa 45–55 capitoli.
+- Manuale di stile adottato (`02-bibbia/manuale-di-stile.md`): doppia cresta con Cattolica al centro, equilibrio 45–55% dei capitoli, 4–5 POV ogni 10 capitoli, intestazioni di capitolo, checklist in `05-revisioni/checklist-capitolo.md`.
 - Kurgan muore a metà romanzo a Cattolica; Giorgi sparisce a Peschiera del Garda; Elena tiene la terza copia del dossier; Bertola prepara il sequel.
 - La protagonista magistrata ora è Flora Notarangelo (Campobasso, 35 anni), non più Filomena Lattarulo.
 
@@ -25,6 +26,13 @@
 8. **Posizione dell'apertura in cronologia.** Le dimissioni arrivano dopo la ribellione di Kurgan: il lettore apre il libro a crisi già in corso. È voluto? La struttura in parti va ripensata: la vecchia (rapimento a fine Parte II, scontro finale nella III) non regge con Kurgan morto a metà.
 9. **Domanda morale di Flora.** Nella prima bibbia l'archivio segreto costruito con relazioni calcolate la rendeva lo specchio di Giorgi. Nella v2 non c'è più. Si abbandona?
 10. **Regola su logge e organizzazioni reali.** La prima bibbia la escludeva; la v2 usa massoneria, P2 come ispirazione e cariche reali (cardinale, presidente della Cassazione, senatore). Ho aggiornato la regola: cariche reali ammesse, persone sempre inventate.
+
+## Nodi dal manuale di stile
+11. **Adorisio tradisce anche Giorgi?** Il manuale (2.2) cita "la scoperta del tradimento di Adorisio nei suoi confronti" come crepa di Giorgi; nella bibbia Adorisio tradisce Kurgan ed è comprato da Giorgi. Se tradisce anche Giorgi, è la risposta al suo destino dopo Bertola.
+12. **Quando avviene l'escalation.** Il manuale mette l'attacco alle infrastrutture nella prima cresta (prima di Cattolica); la bibbia lo presenta come risposta al pool e all'elenco, che il manuale colloca dopo Cattolica. Prima o dopo?
+13. **Quanti e quali POV.** Il manuale parla di "sette punti di vista" ma ne elenca sei gruppi (Giorgi, Kurgan/Adorisio, Dalia, Flora/De Stefano, Elena, Tommaso Vela). Adorisio ha capitoli suoi? E De Stefano?
+14. **Apertura e capitoli brevi.** L'apertura corale scritta è di circa 370 parole, sotto il minimo di 1.800: diventa un prologo (motivazione strutturale) o va sviluppata in capitolo? I "capitoli brevi" della seconda cresta vanno intesi vicino alle 1.800 parole?
+15. **Tic mancanti.** Il manuale ne dà per Dalia, Flora ed Elena. Proposte: Kurgan pensa per rapporti di forza e distanze fisiche (chi è armato, dove sono le uscite); De Stefano per rapporti e depistaggi, cioè ciò che dirà e a chi; Tommaso per numeri e orari.
 
 ## Da definire (dettagli)
 - Terza strage (luogo).
@@ -49,3 +57,4 @@
 ## Registro
 - 2026-09-26 — Creato il progetto, bibbia v1, prova di voce in tre versioni.
 - 2026-09-27 — Integrata la bibbia v2 dell'autore: titolo, voce mista, nuovo cast, organizzazioni, cronologia, finale.
+- 2026-09-27 — Adottato il manuale di stile; checklist di capitolo e modello di capitolo aggiornati; posizionamento in `01-mercato/mercato.md`.
