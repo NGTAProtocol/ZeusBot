@@ -47,3 +47,7 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 - Sa della relazione tra Dalia e Giorgi da sei anni e la considera un investimento («Tienilo contento»). Non le ha mai chiesto niente di Giorgi. Sottovaluta quanto Giorgi abbia estratto e ignora che sia diventato amore.
 - Abitudini: chiama Dalia la domenica sera; prende sempre le scale; non dorme mai due notti nello stesso letto; mangia solo cibo cucinato davanti a lui; dopobarba all'arancia, tabacco scuro.
 - Ha lasciato sul tavolo della cisterna l'orologio regalato dal dottore.
+
+## Fissato nel capitolo 7
+- La notte di maggio vista da Kurgan: un capannone dietro il porto di Partenia, uno schermo, un uomo biondo del nord che parlava solo inglese; undici puntini spenti in quaranta minuti. Gli «amici del nord» erano del dottore, non suoi: è una delle ragioni per cui cerca un'alleanza propria.
+- Non porta più l'orologio, ma continua a guardarsi il polso. Non si alza mai per primo da un tavolo.
