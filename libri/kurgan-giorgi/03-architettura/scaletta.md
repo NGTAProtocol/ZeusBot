@@ -67,7 +67,7 @@ Corale, registro (a) · Albaterra, Marcena, Merania · Giorno 0 · Il governo ca
 
 **2. Giorgi (c)** · Merania, attico · Giorno 0, sera · Vuole chiudere il ciclo dell'operazione e dare a Kurgan l'ordine successivo → Kurgan rifiuta: i suoi uomini non moriranno per i numeri di un fondo. · **Chiusura:** Giorgi capisce che il sistema ha appena cambiato stato. · 2.500
 
-**3. Kurgan** · Partenia, base sotterranea · Giorno 2 · Deve spiegare ai suoi uomini la rottura senza perderne nessuno → uno dei capi chiede chi li proteggerà adesso. *Flashback:* la guerra del Drenak, i tre ufficiali. · **Chiusura:** Kurgan compone un numero che non usa da un anno. · 2.600
+**3. Kurgan** · Partenia, base sotterranea · Giorno 2 · Deve spiegare ai suoi uomini la rottura senza perderne nessuno → uno dei capi chiede chi li proteggerà adesso. *Flashback:* la guerra del Drenak, i tre ufficiali. · **Chiusura:** Kurgan compone il numero che un uomo gli aveva dato un anno prima sul molo di Porto Clodio, «se un giorno vorrà lavorare da solo», e che non aveva mai composto. · 2.600
 
 **4. Tommaso** · Merania · Settimana 3 · Vuole dimenticare e fare carriera → nei conti trova un bonifico a una fondazione che non dovrebbe esistere. · **Chiusura:** copia il file su una chiavetta e non sa ancora perché. · 2.200
 
@@ -77,7 +77,7 @@ Corale, registro (a) · Albaterra, Marcena, Merania · Giorno 0 · Il governo ca
 
 **7. Kurgan** · centro commerciale, periferia di Porto Clodio · Mese 2 · Primo incontro con Rastegar, da solo come sempre: dati nucleari in cambio di droni → Rastegar vuole di più. Adorisio aspetta fuori. · **Chiusura:** la data di consegna dei droni. · 2.500
 
-**8. Giorgi (c)** · Vaticano, appartamento di Salvarani · Mese 2 · Deve rassicurare Osiride → Salvarani gli ricorda la dottrina e il dossier. *Flashback:* il primo incontro con Kurgan, quasi un padre. · **Chiusura:** "Ogni creatura torna al suo creatore. O lo divora." · 2.500
+**8. Giorgi (c)** · Vaticano, appartamento di Salvarani · Mese 2 · Deve rassicurare Osiride → Salvarani gli ricorda la dottrina e il dossier. *Flashback:* il primo incontro con Kurgan, quasi un padre. *(Fissato nei cap. 2–3: dieci anni prima, di sera, in un ristorante vuoto sul lungomare di Partenia; Giorgi gli regala un orologio d'acciaio con i numeri romani e gli dice «il mondo è una macchina, io so dove mettere le mani, tu hai le mani giuste».)* · **Chiusura:** "Ogni creatura torna al suo creatore. O lo divora." · 2.500
 
 **9. Flora** · Albaterra · Mese 3 · Seguire i soldi delle stragi → i conti portano all'estero e si fermano; De Stefano le passa una pista vera. Calabrese riceve la prima lettera anonima. · **Chiusura:** nella lettera c'è l'indirizzo di sua moglie. · 2.300
 
