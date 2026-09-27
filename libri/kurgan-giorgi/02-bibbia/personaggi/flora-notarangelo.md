@@ -14,14 +14,15 @@ Indaga sull'unificazione di Camorra e 'Ndrangheta, resa possibile da Kurgan graz
 La prima inchiesta viene insabbiata dalla **Corte di Cassazione** per un cavillo (decadenza dei termini). Dietro c'è la pressione del presidente della Corte, membro di Osiride, sugli altri votanti.
 
 ## Il pool
-Dopo l'ondata di attentati contro obiettivi strategici (stazioni, metropolitane, porti, raffinerie), nasce un pool di tre magistrati: Flora, **Gerardo Calabrese** e **Zaccaria Cataldo**. Indagavano separatamente sulla stessa materia, arrivando alle stesse conclusioni.
+Dopo le **tre stragi** (Padova, Brescia, Mestre) nasce un pool di tre magistrati: Flora, **Gerardo Calabrese** e **Zaccaria Cataldo**. Indagavano separatamente sulla stessa materia, arrivando alle stesse conclusioni.
 - Il pool arriva a un **elenco di circa 60 affiliati di Osiride** (industriali, farmacisti, finanzieri, banchieri, generali, ammiragli): è il cuore del climax, alla pari (o più) delle chiavette.
 
 ## Desiderio
 Portare alla luce la fusione e chi l'ha voluta.
 
 ## Relazioni chiave
-- **Carlo De Stefano:** incaricato di sorvegliarla, se ne innamora e la protegge tradendo in silenzio i servizi.
+- **Carlo De Stefano:** incaricato di sorvegliarla, se ne innamora e la protegge tradendo in silenzio i servizi. È **Flora** a scoprire il suo doppio gioco: le sue indicazioni non tornano con quello che lei sa per conto suo. Deve decidere se fidarsi ancora di lui.
+- **La legge d'emergenza** di Cicimarra rischia di toglierle il fascicolo proprio vicino all'elenco: la giustizia sottratta per la seconda volta, stavolta per via legislativa.
 - **Calabrese e Cataldo:** colleghi del pool.
 
 ## Finale

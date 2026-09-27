@@ -3,7 +3,7 @@
 - **Titolo:** Il padre del mostro
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
-- **Fase attuale:** bibbia v3 integrata; voce scelta; manuale di stile adottato.
+- **Fase attuale:** bibbia v4 integrata; voce scelta; manuale di stile adottato.
 - **Prossimo passo:** sciogliere i nodi qui sotto, poi Fase 1 (mercato) e Fase 2 (architettura e piano parole).
 
 ## Decisioni prese
@@ -25,22 +25,27 @@
 - POV: sette, Adorisio senza capitoli; De Stefano in capitoli rari; tic per Kurgan, De Stefano, Tommaso.
 - Apertura = prologo corale di 800–1.000 parole.
 
-## Nodi ancora aperti (incongruenze nella bibbia v3)
-1. **La "crepa" di Giorgi: una o due?** Il manuale v2 conferma due momenti (tradimento di Adorisio e comunicazione della sparizione forzata), ma lo chiama "l'unico punto" in cui i registri si toccano; la bibbia v3 dice che quella con Adorisio è "l'unico istante del romanzo". Proposta: due crepe, una frase ciascuna, e "unico" si riferisce al tipo di deroga, non al numero.
-2. **Rapimento di Laura assente dalla cronologia.** Deve stare prima di Cattolica, circa due anni dopo l'unificazione, cioè circa 18 mesi dopo la ribellione. Quindi la prima metà del romanzo copre almeno un anno e mezzo. L'ho inserito come punto 7b.
-3. **Liberazione di Laura prima o dopo il golpe?** Il manuale v2 conferma l'ordine della cronologia: prima il golpe, poi la liberazione. Ma le date della bibbia (Laura liberata un mese e mezzo dopo Cattolica, golpe due mesi dopo) dicono il contrario. Proposta: Adorisio tiene Laura come leva anche durante il golpe, e la bambina viene liberata dai reparti speciali subito dopo, a circa due mesi da Cattolica. Si corregge solo il "mese e mezzo".
-4. **Quando Elena clona la chiavetta.** Nella scheda lo fa dopo la confidenza di Giorgi, con le password ottenute spiandolo, quindi prima della rivelazione di Dalia. Nella cronologia (punto 20) lo fa dopo.
-5. **Da cosa nasce il pool.** La bibbia dice che il pool nasce in risposta a un'ondata di attentati contro "stazioni, metropolitane, porti, raffinerie". Ma porti e infrastrutture sono colpiti *in risposta* al pool, e metropolitane e raffinerie non compaiono mai. Proposta: il pool nasce dopo le tre stragi (mercato, pullman, stazione).
-6. **A cosa serve l'escalation contro il pool.** Far saltare autostrade e porti come ferma tre magistrati? Serve un meccanismo: pretesto per leggi d'emergenza che trasferiscono le indagini, o per commissariare il pool, o per spostare l'attenzione pubblica.
-7. **Frasi superate rimaste nella bibbia v3** (le ho già corrette nei file): la sezione "Morte" di Kurgan che parla di "Bertola" e di "punto di rottura da fissare"; la sezione duplicata di De Stefano ("ancora da definire"); "nessun punto aperto".
-8. **CIA:** è un'istituzione reale che agisce nel romanzo. Rientra nella regola "cariche reali genericamente, persone mai", ma è un passo in più rispetto a Cassazione e servizi italiani: da confermare insieme alla regola.
+## Nodi risolti dalla bibbia v4
+- Due crepe di Giorgi: Adorisio (rabbia trattenuta) e sparizione forzata (resa totale).
+- Laura liberata prima del golpe (un mese e mezzo e due mesi dopo Cattolica).
+- Elena clona la chiavetta prima della rivelazione di Dalia.
+- Il pool nasce dopo le tre stragi.
+- L'escalation serve alla legge d'emergenza di Cicimarra: task force militare che rischia di togliere il fascicolo al pool.
+- De Stefano: il prezzo è relazionale, è Flora a scoprire il doppio gioco.
+- Tommaso: fonte involontaria su Osiride e Cicimarra, per Dalia e il pool.
+
+## Nodi ancora aperti
+1. **Ordine della seconda cresta: manuale contro cronologia.** Il manuale v2 dice: escalation, poi golpe, poi liberazione di Laura. La cronologia v4 dice: liberazione, golpe, poi calma apparente, poi escalation. Con la cronologia, golpe e liberazione cadono prima della "calma apparente" e la seconda cresta parte solo con l'escalation. Proposta: seguire la cronologia (le date tornano) e correggere il manuale: la prima onda si chiude con Laura e il golpe; la calma apparente viene dopo; la seconda cresta parte con escalation e legge d'emergenza.
+2. **Chi guida la task force della legge d'emergenza?** Proposta: De Biasi. Le sue squadre mettono le bombe e poi lui riceve il fascicolo che le indaga.
+3. **Frasi superate nella bibbia v4** (nei file già corrette): la sezione "La liberazione" parla ancora di "unico istante" per la crepa; la sezione "Morte" di Kurgan cita Bertola e un punto di rottura "da fissare"; AV System ha una strage "ancora da collocare"; De Stefano ha ancora la sezione doppia "ancora da definire"; "nessun punto aperto".
+4. **Regola su persone e cariche reali, CIA compresa:** ancora "da confermare in via definitiva".
 
 ## Da definire (dettagli)
 - Voce e tratti di Flora; il suo ufficio e la sede del pool.
-- Età e origini di De Stefano; cosa gli costa il doppio gioco (la bibbia v3 lo lascia ancora aperto).
+- Età e origini di De Stefano; quando Flora scopre il suo doppio gioco e come finisce tra loro.
 - Cognome di Dalia (Esposito?), la sua testata, lo scandalo "di anni prima", da quanto vede Giorgi.
 - Il generale del dossier: è De Biasi o un altro?
-- Ruolo di Tommaso Vela dopo il prologo (ora ha POV a rotazione piena: serve una sua linea narrativa).
+- Tommaso: come le sue scoperte arrivano a Dalia e al pool; quando si espone.
 - Luoghi: prigionia di Laura, scuola di Laura, nascondiglio della chiavetta, basi di Kurgan.
 - Confermare dalla prima bibbia: laurea in Fisica e Wing Chun di Giorgi; alberghi di Ginevra e Londra.
 - Idea di controllo (due formulazioni in `02-bibbia/idea-di-controllo.md`).
@@ -59,3 +64,4 @@
 - 2026-09-27 — Adottato il manuale di stile; checklist di capitolo e modello di capitolo aggiornati; posizionamento in `01-mercato/mercato.md`.
 - 2026-09-27 — Manuale di stile v2: eccezione del prologo, curva aggiornata, sette POV, tic di Kurgan, De Stefano, Tommaso.
 - 2026-09-27 — Integrata la bibbia v3: età, terza strage (Brescia), attribuzione di stragi ed escalation, CIA, doppio tradimento e morte di Adorisio, POV, prologo, finale.
+- 2026-09-27 — Integrata la bibbia v4: due crepe, Laura prima del golpe, clonazione della chiavetta, origine del pool, legge d'emergenza di Cicimarra, prezzo di De Stefano, linea di Tommaso.

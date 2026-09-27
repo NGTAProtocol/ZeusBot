@@ -1,5 +1,7 @@
 # Il pool: Gerardo Calabrese e Zaccaria Cataldo
 
+Nasce come risposta dello Stato alle **tre stragi** (Padova, Brescia, Mestre). Flora, Calabrese e Cataldo indagavano separatamente sulla stessa materia, arrivando alle stesse conclusioni.
+
 ## Gerardo Calabrese
 - Magistrato. Sposato da due anni, senza figli.
 - Con Flora, la vera mente pericolosa del pool.

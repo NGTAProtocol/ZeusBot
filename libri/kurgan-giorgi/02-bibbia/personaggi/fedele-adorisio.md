@@ -7,7 +7,7 @@
 - Primo incarico: ritrovare Laura. Non sapeva nulla del rapimento.
 
 ## Il secondo tradimento (contro Giorgi)
-Trova Laura **prima di quanto dichiara** e ritarda di proposito la consegna per alzare il prezzo con Giorgi. Quando Giorgi lo scopre: la sua crepa.
+Trova Laura **prima di quanto dichiara** e ritarda di proposito la consegna per alzare il prezzo con Giorgi. Quando Giorgi lo scopre: la **prima delle due crepe** di Giorgi.
 
 ## La fine
 Quando il comando di Casal Fascio va a Bertola, non lo accetta. Guida il golpe dei quattro ex alti funzionari di Kurgan e **muore nello scontro** con i reparti speciali.

@@ -1,7 +1,9 @@
 # Alfredo Giorgi — 53 anni
 
 **Registro dei suoi capitoli:** (c), freddo e lucido, con analogie dalla fisica e dai sistemi complessi (punti critici, cambi di stato, attrito, rumore di sistema).
-**Crepa:** una sola frase breve, quasi registro (a), quando scopre che Adorisio ha ritardato di proposito la liberazione di Laura. Mai due capitoli (c) di fila.
+**Due crepe**, una frase breve ciascuna, quasi registro (a):
+1. quando scopre che Adorisio ha ritardato di proposito la consegna di Laura: rabbia trattenuta, ancora nel pieno del potere;
+2. quando gli comunicano la sparizione forzata decisa da Osiride: resa totale, si scopre pedina sacrificabile. Mai due capitoli (c) di fila.
 
 ## Identità
 - Ruolo: il "padre del mostro". Vertice di **AV System**, il fondo che ha orchestrato le stragi per far esplodere lo spread e guadagnare con vendite allo scoperto sui titoli di Stato, assicurazioni contro il default e opzioni ribassiste sulle banche.
@@ -43,5 +45,6 @@ Il segreto; l'ipocrisia; l'innamoramento reale per Dalia, nato da una manipolazi
 - Perde il controllo di Kurgan; Laura viene rapita.
 - Le tre stragi (Padova, Brescia, Mestre) sono l'ultimo lavoro che Kurgan fa per lui.
 - Fa uccidere Kurgan a Cattolica tramite Adorisio; recupera Laura.
-- Scopre il ritardo di Adorisio: la crepa.
+- Scopre il ritardo di Adorisio: prima crepa.
+- Gli comunicano la sparizione forzata: seconda crepa.
 - Finale: Osiride ne inscena la morte (esplosione della barca a Peschiera del Garda); un sommozzatore lo preleva sott'acqua. **Vivo, nascosto, fuori dal potere**: pedina sacrificabile, pronto a riemergere dall'esterno nel sequel.

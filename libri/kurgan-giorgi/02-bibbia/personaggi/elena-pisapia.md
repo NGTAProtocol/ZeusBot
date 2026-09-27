@@ -13,7 +13,7 @@ Giorgi non le dice nulla: per lei la bambina è semplicemente scomparsa. Pensa a
 Prima di ogni prova è convinta che il marito la tradisca con altre donne (non sa delle donne trans). Lo spia, ne ottiene le password. Il nome di Dalia compare nei suoi messaggi, ma per Elena è "una donna" qualunque.
 
 ## La chiavetta
-Una sera Giorgi le confida che nella sua chiavetta ci sono segreti capaci di spostare gli equilibri mondiali. Con le password la **clona**. Nessuno lo sa, nemmeno Osiride: possiede una terza copia del dossier.
+Una sera Giorgi le confida che nella sua chiavetta ci sono segreti capaci di spostare gli equilibri mondiali. Con le password la **clona**, già sospettosa, **prima** della rivelazione di Dalia. Nessuno lo sa, nemmeno Osiride: possiede una terza copia del dossier.
 
 ## La rivelazione
 Dalia le recapita filmati e registrazioni: quindici anni di tradimento. Elena non affronta Giorgi, non fa scenate. Gelo strategico: si mette al sicuro nell'ombra e finge di non sapere, consapevole di quanti vorrebbero quel materiale.
