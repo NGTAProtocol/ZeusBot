@@ -10,7 +10,7 @@ Colonnello collegato ai servizi segreti militari. Incaricato di seguire e sorveg
 Resta nei servizi (copertura e accesso). Quando teme per la vita di Flora, la protegge con un tradimento silenzioso e chirurgico: dà ai servizi e a Osiride indicazioni depistanti su di lei (non palesemente false, ma abbastanza lontane dal vero da metterla al sicuro) e le passa informazioni dall'interno. Non viene mai scoperto dall'apparato.
 
 ## Ferita
-Chiede il comando provinciale dei Carabinieri di **Campobasso**, la città di Flora, per starle vicino legittimamente. I servizi glielo negano: troppo prezioso dov'è. Il diniego alimenta il suo risentimento verso l'apparato.
+Chiede il comando provinciale della Guardia Territoriale di **Rocca Sannella**, la città di Flora, per starle vicino legittimamente. I servizi glielo negano: troppo prezioso dov'è. Il diniego alimenta il suo risentimento verso l'apparato.
 
 ## Il prezzo del doppio gioco
 Non è Osiride a scoprirlo, ma **Flora**: le sue indicazioni depistanti non tornano con ciò che lei sa per conto suo. Il costo non è professionale (non viene bruciato, non perde la copertura) ma **relazionale**: rischia di perdere la fiducia della donna che sta proteggendo, proprio perché lei intuisce che gioca su due tavoli.

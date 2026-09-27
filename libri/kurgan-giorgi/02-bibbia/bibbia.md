@@ -11,15 +11,15 @@
 - [Trama, cronologia e finale](trama.md)
 - [Voce e stile](voce-e-stile.md) · [Manuale di stile](manuale-di-stile.md)
 - [Mondo: organizzazioni e oggetti chiave](mondo.md)
-- [Luoghi](luoghi.md)
+- [Luoghi](luoghi.md) · [Registro dei nomi inventati](nomi-inventati.md)
 - Personaggi principali: [Alfredo Giorgi](personaggi/alfredo-giorgi.md) · [Vito Kurgan](personaggi/vito-kurgan.md) · [Dalia](personaggi/dalia-esposito.md) · [Flora Notarangelo](personaggi/flora-notarangelo.md) · [Carlo De Stefano](personaggi/carlo-de-stefano.md) · [Elena Pisapia](personaggi/elena-pisapia.md)
-- Secondari: [Luigi Bertola](personaggi/luigi-bertola.md) · [Fedele Adorisio](personaggi/fedele-adorisio.md) · [Emilio Salvarani](personaggi/emilio-salvarani.md) · [Francesco De Biasi](personaggi/francesco-de-biasi.md) · [Tommaso Vela](personaggi/tommaso-vela.md) · [Pool: Calabrese e Cataldo](personaggi/pool-calabrese-cataldo.md) · [Agenti stranieri](personaggi/agenti-stranieri.md) · [Comprimari](personaggi/comprimari.md)
+- Secondari: [Luigi Bertola](personaggi/luigi-bertola.md) · [Fedele Adorisio](personaggi/fedele-adorisio.md) · [Emilio Salvarani](personaggi/emilio-salvarani.md) · [Francesco De Biasi](personaggi/francesco-de-biasi.md) · [Tommaso Vela](personaggi/tommaso-vela.md) · [Pool: Calabrese e Cataldo](personaggi/pool-serrano-cataldo.md) · [Agenti stranieri](personaggi/agenti-stranieri.md) · [Comprimari](personaggi/comprimari.md)
 
 ## Regole di scrittura
 1. La violenza sui minori resta sempre fuori scena: il rapimento di Laura e il passato di Dalia si raccontano per conseguenze, mai descritti.
 2. Le scene intime restano fuori scena o appena accennate.
 3. Nessun elemento soprannaturale. La dottrina di Osiride è credo e mitologia interna dell'organizzazione, mai verità storica affermata dal narratore.
-4. **Persone reali, mai:** nessun nome di politico, magistrato, funzionario o agente reale, storico o contemporaneo. Cariche e istituzioni reali (Corte di Cassazione, servizi segreti, ruoli di governo, CIA) si nominano solo genericamente. Osiride, AV System e Casal Fascio sono inventati; massoneria e P2 restano sfondo storico. (Regola da confermare in via definitiva.)
-5. Luoghi reali, eventi reinventati: niente dettagli che richiamino stragi o crolli reali (Bologna, ponte Morandi, ecc.).
+4. **Tutto inventato, niente di vero:** persone, città e luoghi, istituzioni e agenzie, paesi stranieri, riferimenti storici e religiosi sono frutto dell'immaginazione. Nessun nome reale. Registro completo in [nomi-inventati.md](nomi-inventati.md).
+5. Nessun dettaglio che richiami stragi, crolli o scandali reali, nemmeno indirettamente.
 6. Registro (c) per i capitoli di Giorgi, (a) per tutti gli altri.
 7. Il tema del controllo va rispecchiato in ogni sottotrama.

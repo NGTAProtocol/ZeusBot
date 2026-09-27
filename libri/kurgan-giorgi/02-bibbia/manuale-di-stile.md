@@ -46,7 +46,7 @@ Tre requisiti non negoziabili, per ogni capitolo e ogni punto di vista:
 
 **Lunghezza:** 1.800–3.000 parole. Sotto 1.500 il capitolo rischia di essere un frammento; oltre 3.500 va quasi sempre spezzato in due punti di vista o due momenti.
 
-**Eccezione esplicita, il prologo:** l'apertura è un **prologo corale di 800–1.000 parole**, più breve per motivazione strutturale: si muove rapido tra i quattro fuochi (Roma, la strage, la sala operativa del fondo, la scoperta di Tommaso Vela) senza il respiro di un capitolo a punto di vista singolo.
+**Eccezione esplicita, il prologo:** l'apertura è un **prologo corale di 800–1.000 parole**, più breve per motivazione strutturale: si muove rapido tra i quattro fuochi (Albaterra, la strage, la sala operativa del fondo, la scoperta di Tommaso Vela) senza il respiro di un capitolo a punto di vista singolo.
 
 ---
 
@@ -55,17 +55,17 @@ Tre requisiti non negoziabili, per ogni capitolo e ogni punto di vista:
 Diagnosi dal precedente principale del genere: i lettori di *Romanzo criminale* segnalano un calo nel terzo finale, dedicato allo smantellamento dell'organizzazione dopo l'apice.
 
 Regola: non una campana con coda lunga, ma una **doppia cresta**.
-- **Prima cresta:** le tre stragi (Padova, Brescia, Mestre), ultimo lavoro di Kurgan per Giorgi; il crollo dello spread; la ribellione immediata di Kurgan; fino alla sua morte nella trappola di Cattolica.
-- **Calma apparente, non reale:** dopo Cattolica il lettore deve credere che la tensione si allenti (Bertola e Casal Fascio si insediano, l'ordine sembra tornare). Intanto avanzano, a bassa voce: il ritardo calcolato di Adorisio su Laura, il pool verso l'elenco dei 60, lo scoprirsi progressivo di Elena.
+- **Prima cresta:** le tre stragi (Valcerna, Morenna, Marcena), ultimo lavoro di Kurgan per Giorgi; il crollo dello spread; la ribellione immediata di Kurgan; fino alla sua morte nella trappola di Riva Salmara.
+- **Calma apparente, non reale:** dopo Riva Salmara il lettore deve credere che la tensione si allenti (Bertola e Casal Fascio si insediano, l'ordine sembra tornare). Intanto avanzano, a bassa voce: il ritardo calcolato di Adorisio su Laura, il pool verso l'elenco dei 60, lo scoprirsi progressivo di Elena.
 - **Seconda cresta:** è il pool, avvicinandosi all'elenco, a far ripartire la tensione. Le squadre di De Biasi rispondono per conto di Osiride con gli attacchi a infrastrutture e autostrade. Seguono il golpe fallito di Adorisio, la liberazione di Laura, la convergenza verso la sparizione orchestrata di Giorgi. **Più capitoli brevi e serrati**, non uno o due lunghi.
 
-**Verifica in editing:** contare i capitoli per fase. Target 45%–55% tra fase 1 (fino a Cattolica) e fase 2. Se la fase 2 ha meno della metà dei capitoli della fase 1 è frettolosa; se ne ha il doppio è la coda lenta.
+**Verifica in editing:** contare i capitoli per fase. Target 45%–55% tra fase 1 (fino a Riva Salmara) e fase 2. Se la fase 2 ha meno della metà dei capitoli della fase 1 è frettolosa; se ne ha il doppio è la coda lenta.
 
 ---
 
 ## 5. Verosimiglianza come tecnica
 - **Precisione procedurale:** PM, servizi, fondi agiscono con terminologia corretta e sequenza plausibile, anche se sintetizzata; mai vaga.
-- **Luogo reale, evento inventato:** Mestre, Padova, Cattolica, Peschiera del Garda, Campobasso sono reali; ciò che vi accade è inventato. Vale per tutto il romanzo.
+- **Tutto inventato, niente di vero (decisione dell'autore):** persone, luoghi, città, istituzioni, agenzie, paesi stranieri e riferimenti storici o religiosi sono frutto dell'immaginazione. I nomi sono nel [registro dei nomi inventati](nomi-inventati.md). La verosimiglianza viene dalla precisione dei dettagli e dalla coerenza interna, non dal riconoscimento di luoghi reali.
 - **Cifre plausibili nell'ordine di grandezza:** spread, somme, vittime. Un errore di scala rompe il patto più di qualunque libertà di trama.
 - **Osiride:** la dottrina resta sempre voce di un personaggio o di un documento interno, mai affermazione del narratore.
 

@@ -6,7 +6,7 @@ Ogni personaggio principale crede di controllare qualcosa e scopre, a modo suo, 
 | Personaggio | Crede di controllare | Come si rompe |
 |---|---|---|
 | Giorgi | mercati, Kurgan, Dalia, la famiglia | la creatura si ribella; Osiride lo fa sparire |
-| Kurgan | i suoi uomini, la 'Ndrangheta decapitata | il suo uomo più fidato lo consegna |
+| Kurgan | i suoi uomini, la Serrana decapitata | il suo uomo più fidato lo consegna |
 | Elena | la propria sopravvivenza | (è l'unica a conservarlo: tiene il detonatore) |
 | Dalia | niente: è sempre stata controllata | rompe il ciclo, a costo di tutto |
 | Flora | la giustizia | le viene sottratta dall'alto, due volte |

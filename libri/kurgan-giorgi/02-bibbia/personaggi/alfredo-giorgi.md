@@ -7,21 +7,21 @@
 
 ## Identità
 - Ruolo: il "padre del mostro". Vertice di **AV System**, il fondo che ha orchestrato le stragi per far esplodere lo spread e guadagnare con vendite allo scoperto sui titoli di Stato, assicurazioni contro il default e opzioni ribassiste sulle banche.
-- Formazione: educazione rigorosamente cattolica, studi nelle migliori università vaticane. Preparato fin da bambino a un ruolo di comando: non per caso, ma come progetto deliberato di Osiride. Capacità gestionali e psicologiche fuori dal comune, notate presto.
+- Formazione: educazione rigorosamente cattolica, studi al Collegio di San Clemente, il più esclusivo della Chiesa. Preparato fin da bambino a un ruolo di comando: non per caso, ma come progetto deliberato di Osiride. Capacità gestionali e psicologiche fuori dal comune, notate presto.
 - Aspetto: fisico asciutto e nervoso. (Dalla prima bibbia, da confermare: laurea in Fisica nucleare, Wing Chun.)
 
 ## Maschera pubblica
 Uomo di potere, cattolico, sposato con Elena Pisapia, tre figli. Controllore assoluto.
 
 ## Vita nascosta
-- **Massoneria:** entra giovane; oggi ricopre uno dei gradi più alti.
+- **Loggia del Compasso:** entra giovane; oggi ricopre uno dei gradi più alti.
 - **Osiride:** membro di alto grado dell'organizzazione segreta parastatale (vedi `mondo.md`).
 - **Il segreto personale:** frequenta donne transgender in incontri privati, protetti da due guardie del corpo fidate, da circa 15 anni (da subito dopo il concepimento di Fabrizio). È così che conosce Dalia.
 
 ## Potere
 - **Il dossier:** un generale dei servizi segreti militari gli consegna anni di dati su politici, magistrati e figure chiave (punti deboli, punti di forza, famiglie). Due copie criptate su chiavette USB con sicurezza tipo blockchain: una nascosta da Giorgi, l'altra al cardinale Emilio Salvarani.
-- **L'unificazione:** tramite i servizi segreti militari ottiene l'unificazione di Camorra e 'Ndrangheta, affidata a Kurgan, che crede di poter controllare.
-- **Contro Kurgan:** è l'unico che lo conosce e ne prevede le mosse. Usa un arsenale di livello nazionale e militare messo a disposizione dai servizi segreti militari, da un nucleo ristretto del governo e dalla CIA. Delle stragi, questo fronte preferisce non sapere.
+- **L'unificazione:** tramite i servizi segreti militari ottiene l'unificazione di Fratellanza e Serrana, affidata a Kurgan, che crede di poter controllare.
+- **Contro Kurgan:** è l'unico che lo conosce e ne prevede le mosse. Usa un arsenale di livello nazionale e militare messo a disposizione dai servizi segreti militari, da un nucleo ristretto del governo e dal Servizio Atlantico. Delle stragi, questo fronte preferisce non sapere.
 
 ## Desiderio
 Controllare il sistema: mercati, Stato, organizzazioni criminali, famiglia.
@@ -43,8 +43,8 @@ Il segreto; l'ipocrisia; l'innamoramento reale per Dalia, nato da una manipolazi
 ## Arco
 - Apertura: autorizza la chiusura delle posizioni a 700 punti di spread.
 - Perde il controllo di Kurgan; Laura viene rapita.
-- Le tre stragi (Padova, Brescia, Mestre) sono l'ultimo lavoro che Kurgan fa per lui.
-- Fa uccidere Kurgan a Cattolica tramite Adorisio; recupera Laura.
+- Le tre stragi (Valcerna, Morenna, Marcena) sono l'ultimo lavoro che Kurgan fa per lui.
+- Fa uccidere Kurgan a Riva Salmara tramite Adorisio; recupera Laura.
 - Scopre il ritardo di Adorisio: prima crepa.
 - Gli comunicano la sparizione forzata: seconda crepa.
-- Finale: Osiride ne inscena la morte (esplosione della barca a Peschiera del Garda); un sommozzatore lo preleva sott'acqua. **Vivo, nascosto, fuori dal potere**: pedina sacrificabile, pronto a riemergere dall'esterno nel sequel.
+- Finale: Osiride ne inscena la morte (esplosione della barca a Castelvaro, sul lago di Varo); un sommozzatore lo preleva sott'acqua. **Vivo, nascosto, fuori dal potere**: pedina sacrificabile, pronto a riemergere dall'esterno nel sequel.

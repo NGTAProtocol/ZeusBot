@@ -1,40 +1,40 @@
 # Luoghi
 
-Luoghi reali, eventi reinventati.
+Tutti i luoghi sono inventati. Registro in [nomi-inventati.md](nomi-inventati.md).
 
-## Milano
-- Porta Nuova: torre di vetro, 22° piano, sala operativa di AV System (apertura).
-- Alberghi degli incontri di Giorgi (Milano, e forse Ginevra e Londra dalla prima bibbia: da confermare).
+## Merania
+- Porta Vetra: torre di vetro, 22° piano, sala operativa di AV System (apertura).
+- Alberghi degli incontri di Giorgi (Merania, e forse Valdhof e Kingsmere dalla prima bibbia: da confermare).
 
-## Roma
-- Le dimissioni del presidente del Consiglio (apertura). Ambienti vaticani (Salvarani, formazione di Giorgi).
+## Albaterra
+- Le dimissioni del presidente del Consiglio (apertura). Ambienti ecclesiastici (Salvarani, formazione di Giorgi).
 
-## Napoli — Vomero
+## Partenia — Monte Marzio
 Infanzia di Kurgan.
 
-## Kosovo (1998–99)
-La guerra di Kurgan nell'esercito serbo e l'uccisione dei tre ufficiali.
+## Drenak (1998–99)
+La guerra di Kurgan nell'esercito varnio e l'uccisione dei tre ufficiali.
 
 ## Luoghi delle stragi
-- Padova, mercato coperto (prima strage).
-- Mestre, stazione (seconda strage, 21 morti).
-- Brescia, pullman di pendolari (seconda strage, C4).
-- Escalation: poli logistici di Genova e Taranto; autostrade A1 (Piacenza, Roma) e A14 (Pescara, Forlì).
+- Valcerna, mercato coperto (prima strage).
+- Marcena, stazione (seconda strage, 21 morti).
+- Morenna, pullman di pendolari (seconda strage, C4).
+- Escalation: poli logistici di Portofosco e Tarassa; autostrade: Dorsale (Padèra, Albaterra) e Litoranea (Aterno Marina, Ronchedo).
 
 ## Impero di Kurgan
-Civitavecchia (petroliere), Gioia Tauro, ex porto Evergreen di Taranto; basi sotterranee (da collocare).
+Porto Clodio (petroliere), Punta Saline, ex terminal Oriens di Tarassa; basi sotterranee (da collocare).
 
-## Cattolica
+## Riva Salmara
 Ristorante imbottito di esplosivo, 13.30: la morte di Kurgan.
 
-## Campobasso
-Città di Flora; il comando provinciale dei Carabinieri negato a De Stefano.
+## Rocca Sannella
+Città di Flora; il comando provinciale della Guardia Territoriale negato a De Stefano.
 
-## Peschiera del Garda
+## Castelvaro, sul lago di Varo
 Il lago, la barca, l'esplosione inscenata: la sparizione di Giorgi.
 
 ## Luoghi degli incontri con gli agenti stranieri
-Alberghi, centri commerciali, grandi ristoranti, un McDonald's.
+Alberghi, centri commerciali, grandi ristoranti, un fast food di catena.
 
 ## Da definire
 - Dove viene tenuta Laura.
