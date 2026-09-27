@@ -17,6 +17,16 @@
 
 **Tempo del racconto:** circa due anni e tre mesi, dal giorno delle dimissioni (giorno 0) alla sparizione di Giorgi. Le intestazioni di capitolo portano la data relativa ("Giorno 0", "Mese 18") o la data reale, da decidere.
 
+## Calendario interno (fissato con il prologo)
+Anno mai nominato; giorni della settimana coerenti tra loro.
+- Lunedì 29 settembre: AV System alza i limiti di rischio e apre le posizioni.
+- Giovedì 2 ottobre, ore 9: strage del mercato coperto di Valcerna.
+- Lunedì 20 ottobre, ore 7.20: strage del pullman di Morenna.
+- **Mercoledì 12 novembre (giorno 0):** ore 10.52 strage della stazione di Marcena (21 morti); ore 11.51 dimissioni del governo; ore 12.07 chiusura dello short a 700 punti.
+- Giovedì 13 novembre: capitolo 1.
+
+Le intestazioni dei capitoli usano questo calendario ("Tommaso — Merania, 13 novembre"), mai "Mese 18".
+
 ## 2. Punti di vista
 
 | POV | Registro | Capitoli | Totale |
