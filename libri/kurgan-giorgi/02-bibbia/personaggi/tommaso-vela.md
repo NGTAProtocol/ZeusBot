@@ -2,15 +2,15 @@
 
 ## Dati anagrafici
 - **Nome:** Tommaso Vela
-- **Età:** 32 anni (dalla bozza del prologo; [DA DEFINIRE] se confermata)
+- **Età:** 29 anni
 - **Provenienza:** [DA DEFINIRE]
-- Giovane analista di AV System.
+- Giovane analista di AV System, laureato in economia/finanza.
 
 ## Ruolo nella trama
 Lo sguardo dall'interno del fondo: scopre per primo che dietro la chiusura dello short c'è Giorgi e diventa, senza volerlo, la fonte che porta a Osiride e a Cicimarra.
 
 ## Backstory
-[DA DEFINIRE] (la bibbia non stabilisce nulla del suo passato prima del prologo).
+Laureato in economia/finanza, entrato da poco in AV System, orgoglioso di far parte di un ambiente che crede meritocratico.
 
 ## Motivazioni e ferite
 - **Cosa vuole:** dimostrare il proprio valore in un ambiente che crede meritocratico.
@@ -20,13 +20,15 @@ Lo sguardo dall'interno del fondo: scopre per primo che dietro la chiusura dello
 
 ## Relazioni chiave
 - **Alfredo Giorgi:** il capo al piano più alto; Tommaso scopre il suo nome nel registro.
-- **Dalia e il pool:** ricevono le sue scoperte, filtrate o intercettate, senza che lui si esponga fino a tardi.
+- **Il pool:** riceve i suoi dati dalla casella di whistleblowing cifrata.
+- **Dalia:** riceve lo stesso materiale tramite un contatto comune nel mondo finanziario.
+- **Flora:** alla fine le si consegna come testimone chiave.
 - **Senatore Cicimarra / Osiride:** i flussi di denaro anomali portano a loro.
 
 ## Arco narrativo
 - **Inizio (prologo):** apre il registro delle esecuzioni senza autorizzazione e scopre che a chiudere le posizioni short a 700 punti è stato personalmente Giorgi.
-- **Sviluppo:** dall'interno continua a notare anomalie contabili che portano a flussi di denaro collegati a Osiride e a Cicimarra. Diventa una **fonte involontaria** per Dalia e/o il pool.
-- **Fine:** si espone "tardi nella trama" [DA DEFINIRE: come, quando, con quali conseguenze].
+- **Sviluppo:** dall'interno continua a notare anomalie contabili che portano a flussi di denaro collegati a Osiride e a Cicimarra. Invia in forma anonima i dati a una **casella di whistleblowing cifrata**, sapendo che è monitorata dagli inquirenti. Per una fuga parallela lo stesso materiale arriva a **Dalia**, tramite un contatto comune nel mondo finanziario. Diventa fonte involontaria per entrambi i fronti, pool e giornalismo.
+- **Fine:** si espone solo verso la fine, quando l'organizzazione rischia di risalire alla fonte della fuga: **si consegna a Flora** e diventa testimone chiave. Finisce **sotto protezione**: vivo, con la vita professionale e personale compromessa. Recuperabile nel sequel.
 
 ## Tic di voce/pensiero (POV)
 - Registro (a).
@@ -34,5 +36,4 @@ Lo sguardo dall'interno del fondo: scopre per primo che dietro la chiusura dello
 
 ## Dettagli fisici/di caratterizzazione da fissare
 - **Aspetto (fissato):** giovane, occhiali, energia nervosa.
-- Chi intercetta o filtra le sue scoperte: [DA DEFINIRE]
-- Il suo destino finale: [DA DEFINIRE]
+- Chi è il contatto comune con Dalia: [DA DEFINIRE]

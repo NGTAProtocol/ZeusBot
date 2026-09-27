@@ -65,7 +65,7 @@ Regola: non una campana con coda lunga, ma una **doppia cresta**.
 
 ## 5. Verosimiglianza come tecnica
 - **Precisione procedurale:** PM, servizi, fondi agiscono con terminologia corretta e sequenza plausibile, anche se sintetizzata; mai vaga.
-- **Tutto inventato, niente di vero (decisione dell'autore):** persone, luoghi, città, istituzioni, agenzie, paesi stranieri e riferimenti storici o religiosi sono frutto dell'immaginazione. I nomi sono nel [registro dei nomi inventati](nomi-inventati.md). La verosimiglianza viene dalla precisione dei dettagli e dalla coerenza interna, non dal riconoscimento di luoghi reali.
+- **Italia e istituzioni reali, luoghi inventati:** il Paese e le istituzioni sono reali (Vaticano, CIA, Corte di Cassazione, Carabinieri, servizi segreti); città, mafie e potenze straniere sono inventate ([registro](nomi-inventati.md)); persone reali mai. La verosimiglianza viene dalla precisione procedurale e dalla coerenza interna.
 - **Cifre plausibili nell'ordine di grandezza:** spread, somme, vittime. Un errore di scala rompe il patto più di qualunque libertà di trama.
 - **Osiride:** la dottrina resta sempre voce di un personaggio o di un documento interno, mai affermazione del narratore.
 

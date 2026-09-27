@@ -1,13 +1,13 @@
 # Luoghi
 
-Tutti i luoghi sono inventati. Registro in [nomi-inventati.md](nomi-inventati.md).
+Il Paese è l'Italia; città e luoghi sono inventati. Registro in [nomi-inventati.md](nomi-inventati.md).
 
 ## Merania
 - Porta Vetra: torre di vetro, 22° piano, sala operativa di AV System (apertura).
 - Alberghi degli incontri di Giorgi (Merania, e forse Valdhof e Kingsmere dalla prima bibbia: da confermare).
 
 ## Albaterra
-- Le dimissioni del presidente del Consiglio (apertura). Ambienti ecclesiastici (Salvarani, formazione di Giorgi).
+- Le dimissioni del presidente del Consiglio (apertura). Ambienti vaticani (Salvarani, formazione di Giorgi).
 
 ## Partenia — Monte Marzio
 Infanzia di Kurgan.
@@ -28,7 +28,7 @@ Porto Clodio (petroliere), Punta Saline, ex terminal Oriens di Tarassa; basi sot
 Ristorante imbottito di esplosivo, 13.30: la morte di Kurgan.
 
 ## Rocca Sannella
-Città di Flora; il comando provinciale della Guardia Territoriale negato a De Stefano.
+Città di Flora; il comando provinciale dei Carabinieri negato a De Stefano.
 
 ## Castelvaro, sul lago di Varo
 Il lago, la barca, l'esplosione inscenata: la sparizione di Giorgi.
@@ -37,7 +37,10 @@ Il lago, la barca, l'esplosione inscenata: la sparizione di Giorgi.
 Alberghi, centri commerciali, grandi ristoranti, un fast food di catena.
 
 ## Da definire
-- Dove viene tenuta Laura.
 - La scuola di Laura (città).
 - Sede del pool.
-- Dove Giorgi nasconde la chiavetta.
+
+## Nascondigli e prigionie
+- Villa isolata vicino a **Punta Saline**: prigionia di Laura.
+- **Cadrasca** (Svizzera): cassetta di sicurezza di Giorgi, sotto falso nome.
+- Banca non controllata da Giorgi: cassetta di sicurezza di Elena, a nome da nubile.

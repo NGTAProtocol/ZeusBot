@@ -31,7 +31,7 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 
 ## Arco narrativo
 - **Inizio:** esegue le tre stragi per Giorgi; subito dopo, sei mesi dopo l'unificazione, si ribella apertamente.
-- **Sviluppo:** si arma con Kaliria, Tianmar e Parsàn in cambio di informazioni militari (a Kaliria e Tianmar) e di dati su questioni nucleari passate (a Parsàn). Circa 18 mesi dopo la ribellione fa monitorare e rapire Laura all'uscita da scuola.
+- **Sviluppo:** si arma con Kaliria, Tianmar e Parsàn in cambio di informazioni militari (a Kaliria e Tianmar) e di dati su questioni nucleari passate (a Parsàn). Circa 18 mesi dopo la ribellione fa monitorare e rapire Laura all'uscita da scuola; la fa tenere in una **villa isolata vicino a Punta Saline**, protetta dalla sua rete portuale.
 - **Fine (metà romanzo):** Adorisio lo attira a un finto appuntamento con Rastegar in un ristorante di **Riva Salmara**, alle 13.30. Il ristorante è imbottito di esplosivo; Osiride e i servizi sorvegliano i dintorni con tiratori scelti. Muore nell'esplosione. Chiude la prima cresta.
 
 ## Tic di voce/pensiero (POV)
@@ -42,4 +42,3 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 - 1,98 m, corporatura massiccia (fissato).
 - Viso, voce, modo di parlare: [DA DEFINIRE]
 - Posizione delle basi sotterranee: [DA DEFINIRE]
-- Luogo della prigionia di Laura: [DA DEFINIRE]

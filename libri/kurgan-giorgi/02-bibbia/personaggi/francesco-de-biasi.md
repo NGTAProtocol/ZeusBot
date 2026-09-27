@@ -31,7 +31,7 @@ Il militare che fa il lavoro sporco di Osiride dopo Kurgan: crea Casal Fascio, l
 - **Sviluppo:** dopo la morte di Kurgan convoca i suoi ex sottoposti in una riunione segreta e fonda **Casal Fascio** con Bertola al comando. Guida i reparti speciali che sventano il golpe di Adorisio.
 - **Seconda cresta:** le sue squadre colpiscono i poli logistici di Portofosco e Tarassa e piazzano quattro bombe sulla Dorsale (Padèra, Albaterra) e sulla Litoranea (Aterno Marina, Ronchedo): arterie bloccate circa 40 giorni, solo due feriti.
 - **Legge d'emergenza:** guida sul campo la task force nazionale nata dalla legge, con Cicimarra come copertura politica in Parlamento. Le sue squadre mettono le bombe; la sua task force riceve il fascicolo che le indaga.
-- **Fine:** [DA DEFINIRE]
+- **Fine:** non viene mai scoperto. Resta al potere, **indenne**: uno dei pochi personaggi che escono dal romanzo del tutto illesi. Presenza latente e minacciosa per il sequel.
 
 ## Dettagli fisici/di caratterizzazione da fissare
 - Aspetto, voce: [DA DEFINIRE]

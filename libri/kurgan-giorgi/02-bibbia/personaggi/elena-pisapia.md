@@ -26,7 +26,7 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 
 ## Arco narrativo
 - **Inizio:** moglie sospettosa, finge normalità.
-- **Sviluppo:** la sparizione di Laura, l'angoscia senza risposte. Con le password ottenute spiando il marito **clona la chiavetta**, prima della rivelazione di Dalia. Nessuno lo sa, nemmeno Osiride.
+- **Sviluppo:** la sparizione di Laura, l'angoscia senza risposte. Con le password ottenute spiando il marito **clona la chiavetta**, prima della rivelazione di Dalia. Custodisce la copia in una **cassetta di sicurezza intestata al proprio nome da nubile**, in una banca diversa da quelle controllate dal marito. Nessuno lo sa, nemmeno Osiride.
 - **Rivelazione:** riceve da Dalia il materiale. Gelo strategico: si mette al sicuro nell'ombra, senza rivelare a Giorgi di sapere. Copertura calcolata, non ingenuità.
 - **Fine:** non gioca la sua carta nel climax. Resta una riserva silenziosa con la terza copia del dossier e le prove del tradimento. Una delle uniche due persone, con Flora, a sospettare che Giorgi sia vivo. Chiave del sequel.
 
@@ -36,6 +36,5 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 
 ## Dettagli fisici/di caratterizzazione da fissare
 - **Aspetto (fissato):** elegante, deliberatamente anonima in pubblico.
-- Provenienza: [DA DEFINIRE]
-- Dove custodisce la chiavetta clonata: [DA DEFINIRE]
+- Provenienza, nome da nubile: [DA DEFINIRE]
 - Dove "si mette al sicuro": [DA DEFINIRE]

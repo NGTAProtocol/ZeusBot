@@ -19,7 +19,7 @@
 1. La violenza sui minori resta sempre fuori scena: il rapimento di Laura e il passato di Dalia si raccontano per conseguenze, mai descritti.
 2. Le scene intime restano fuori scena o appena accennate.
 3. Nessun elemento soprannaturale. La dottrina di Osiride è credo e mitologia interna dell'organizzazione, mai verità storica affermata dal narratore.
-4. **Tutto inventato, niente di vero:** persone, città e luoghi, istituzioni e agenzie, paesi stranieri, riferimenti storici e religiosi sono frutto dell'immaginazione. Nessun nome reale. Registro completo in [nomi-inventati.md](nomi-inventati.md).
+4. **Regola sui nomi (confermata in via definitiva, bibbia v6):** il Paese è reale (Italia). Le istituzioni reali si nominano per nome dove serve (Vaticano, CIA, Corte di Cassazione, Carabinieri, servizi segreti). **Persone reali, mai:** nessun nome di politico, magistrato, funzionario o agente reale, storico o contemporaneo. **Città, mafie e potenze straniere sono inventate**, secondo il [registro dei nomi inventati](nomi-inventati.md).
 5. Nessun dettaglio che richiami stragi, crolli o scandali reali, nemmeno indirettamente.
 6. Registro (c) per i capitoli di Giorgi, (a) per tutti gli altri.
 7. Il tema del controllo va rispecchiato in ogni sottotrama.

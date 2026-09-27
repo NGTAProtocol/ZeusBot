@@ -10,7 +10,7 @@
 Il volto del potere sopra Giorgi: il maestro che lo ha formato e che alla fine lo sacrifica.
 
 ## Backstory
-- Ex insegnante di Giorgi al **Collegio di San Clemente**.
+- Ex insegnante di Giorgi alle **università vaticane**.
 - Membro di Osiride; custode della seconda chiavetta del dossier.
 
 ## Motivazioni e ferite

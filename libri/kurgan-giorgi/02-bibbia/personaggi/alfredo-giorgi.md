@@ -9,10 +9,10 @@
 Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere lo spread, crea Kurgan come braccio operativo e finisce a sua volta sacrificato da un potere più grande di lui.
 
 ## Backstory
-- Educazione rigorosamente cattolica; studi al **Collegio di San Clemente**, il più esclusivo della Chiesa, dove si laurea in **fisica nucleare**: è questa formazione a giustificare il suo pensiero per analogie di sistema (registro c).
+- Educazione rigorosamente cattolica; studi nelle migliori **università vaticane**, dove si laurea in **fisica nucleare**: è questa formazione a giustificare il suo pensiero per analogie di sistema (registro c).
 - Preparato fin da bambino a un ruolo di comando, non per caso ma come progetto deliberato di **Osiride**. Capacità gestionali e psicologiche fuori dal comune, notate presto.
-- Entra giovane nella **Loggia del Compasso**, dove oggi ricopre uno dei gradi più alti. Appartiene anche a Osiride, organizzazione segreta parastatale più profonda, erede della Loggia Ombra.
-- **Il dossier:** un generale dell'esercito che lavorava per i servizi segreti militari gli mette a disposizione anni di dati su politici, magistrati e figure chiave (punti deboli, punti di forza, assetto familiare). Due copie su chiavette USB criptate con sicurezza tipo blockchain: una nascosta da Giorgi, l'altra al cardinale Salvarani.
+- Entra giovane nella **massoneria**, dove oggi ricopre uno dei gradi più alti. Appartiene anche a Osiride, organizzazione segreta parastatale più profonda, ispirata storicamente alla P2.
+- **Il dossier:** un generale dell'esercito che lavorava per i servizi segreti militari gli mette a disposizione anni di dati su politici, magistrati e figure chiave (punti deboli, punti di forza, assetto familiare). Due copie su chiavette USB criptate con sicurezza tipo blockchain: una di Giorgi, in una **cassetta di sicurezza a Cadrasca, in Svizzera, sotto falso nome**, l'altra al cardinale Salvarani.
 - Tramite i servizi segreti militari ottiene l'unificazione di **Fratellanza** e **Serrana** e la affida a Kurgan, convinto di controllarle attraverso di lui.
 - Vertice di **AV System**, torre di vetro a Porta Vetra, Merania, 22° piano.
 - **Il segreto personale:** da circa 15 anni (da subito dopo il concepimento di Fabrizio) frequenta donne transgender in incontri privati, protetti da due guardie del corpo fidate. È così che conosce Dalia.
@@ -31,8 +31,8 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - **Laura:** rapita da Kurgan; Giorgi usa l'arsenale messo a sua disposizione e poi Adorisio per riaverla.
 - **Fedele Adorisio:** lo seduce con la promessa di diventare comandante supremo delle forze pontificie del nuovo ordine di Osiride; ne compra il tradimento contro Kurgan. Poi Adorisio tradisce anche lui, ritardando la consegna di Laura.
 - **Luigi Bertola:** il suo fidato da 13 anni, in realtà informatore dell'élite fin dall'inizio.
-- **Cardinale Emilio Salvarani:** suo ex insegnante al Collegio di San Clemente; alla fine decide la sua sparizione.
-- **Il fronte che lo arma:** servizi segreti militari, un nucleo ristretto del governo e il Servizio Atlantico gli mettono a disposizione un arsenale contro Kurgan; delle stragi preferiscono non sapere.
+- **Cardinale Emilio Salvarani:** suo ex insegnante alle università vaticane; alla fine decide la sua sparizione.
+- **Il fronte che lo arma:** servizi segreti militari, un nucleo ristretto del governo e la CIA gli mettono a disposizione un arsenale contro Kurgan; delle stragi preferiscono non sapere.
 
 ## Arco narrativo
 - **Inizio (prologo):** autorizza la chiusura delle posizioni short a 700 punti di spread, dopo le tre stragi di Valcerna, Morenna e Marcena, ultimo lavoro di Kurgan per lui.
@@ -50,4 +50,3 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Laurea in fisica nucleare (fissata). Wing Chun: presente solo nella prima bibbia, [DA DEFINIRE] se resta.
 - Città in cui vive con la famiglia: [DA DEFINIRE]
 - Nomi delle due guardie del corpo: [DA DEFINIRE]
-- Dove nasconde la chiavetta: [DA DEFINIRE]

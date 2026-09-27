@@ -19,7 +19,7 @@
 - Finale: Giorgi vivo, nascosto, **fuori dal potere**.
 - Stragi (Valcerna, Morenna, Marcena) = ultimo lavoro di Kurgan per Giorgi; ribellione subito dopo. Escalation = squadre deviate di De Biasi per Osiride, dopo Riva Salmara; De Biasi in scena prima di Riva Salmara.
 - Kurgan 48 anni (Drenak 1998–99, Partenia 2000); Dalia 35 anni (sfruttata dal 2005).
-- Chi arma Giorgi: servizi militari, nucleo ristretto del governo, Servizio Atlantico; ignoranza voluta sulle stragi.
+- Chi arma Giorgi: servizi militari, nucleo ristretto del governo, CIA; ignoranza voluta sulle stragi.
 - Terza strage: pullman di pendolari a Morenna, C4.
 - Adorisio tradisce anche Giorgi (ritarda Laura), guida il golpe e muore.
 - POV: sette, Adorisio senza capitoli; De Stefano in capitoli rari; tic per Kurgan, De Stefano, Tommaso.
@@ -35,10 +35,18 @@
 - Tommaso: fonte involontaria su Osiride e Cicimarra, per Dalia e il pool.
 
 ## Nodi ancora aperti
-1. **Ordine della seconda cresta: manuale contro cronologia.** Il manuale (anche nella v3) dice: escalation, poi golpe, poi liberazione di Laura. La cronologia v4 dice: liberazione, golpe, poi calma apparente, poi escalation. Con la cronologia, golpe e liberazione cadono prima della "calma apparente" e la seconda cresta parte solo con l'escalation. Proposta: seguire la cronologia (le date tornano) e correggere il manuale: la prima onda si chiude con Laura e il golpe; la calma apparente viene dopo; la seconda cresta parte con escalation e legge d'emergenza.
-2. ~~Chi guida la task force~~ **Risolto (bibbia v5):** De Biasi sul campo, Cicimarra copertura politica.
-3. **Frasi superate nella bibbia v4** (nei file già corrette): la sezione "La liberazione" parla ancora di "unico istante" per la crepa; la sezione "Morte" di Kurgan cita Bertola e un punto di rottura "da fissare"; AV System ha una strage "ancora da collocare"; De Stefano ha ancora la sezione doppia "ancora da definire"; "nessun punto aperto".
-4. **Regola su persone e cariche reali, Servizio Atlantico compresa:** ancora "da confermare in via definitiva".
+1. **Ordine dopo Riva Salmara: manuale contro cronologia.** Il manuale (sezione 4) dice: escalation, poi golpe, poi liberazione di Laura. La cronologia della bibbia dice: Laura, golpe, calma apparente, poi escalation. Proposta: seguire la cronologia e correggere il manuale. In attesa di risposta.
+2. **Roma inventata, ma Vaticano e Impero romano reali.** Con la regola v6 le città restano inventate (la capitale è Albaterra), ma Vaticano, università vaticane e Impero romano sono reali, e il Vaticano sta dentro Roma. Tre strade: (a) accettare la stonatura; (b) fare di Roma l'unica città reale; (c) non nominare mai la città del Vaticano.
+3. **Lugano → Cadrasca.** La bibbia v6 mette la cassetta di Giorgi a Lugano, città reale; per la regola "città inventate" l'ho chiamata Cadrasca. Da confermare.
+4. **Frasi superate nella bibbia v6** (nei file già sistemate): Tommaso ha due paragrafi "Linea narrativa" (vale il primo, più nuovo); la nota sulle autostrade parla ancora di "nomi di luoghi reali"; De Stefano "scoperto" da Flora contro "intuisce senza prova definitiva" (ho seguito il secondo); "nessun punto aperto".
+
+## Risolto dalla bibbia v6
+- Regola definitiva: Italia e istituzioni reali (Vaticano, CIA, Cassazione, Carabinieri, servizi), persone reali mai, città, mafie e potenze straniere inventate. Ripristinati ovunque i nomi reali delle istituzioni; aggiornati regole, manuale e registro.
+- Tommaso: 29 anni, laureato in economia/finanza; whistleblowing cifrato, contatto comune con Dalia; si consegna a Flora, testimone sotto protezione.
+- De Stefano e Flora: amore ricambiato mai dichiarato; restano insieme in equilibrio fragile; lei intuisce senza prova.
+- De Biasi: mai scoperto, illeso.
+- Dalia: fonte falsificata in un dossier per un cliente coinvolto in corruzione; la guardia più giovane e vulnerabile come fonte.
+- Elena: cassetta di sicurezza a nome da nubile. Giorgi: cassetta a Cadrasca sotto falso nome. Laura: villa vicino a Punta Saline.
 
 ## Integrato dalla bibbia v5
 Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 62, Salvarani 68); aspetto di Giorgi, Dalia, Flora, De Stefano, Elena, Tommaso; laurea in fisica nucleare di Giorgi; ferite e motivazioni di Giorgi, Kurgan, Bertola, Adorisio, De Biasi, Tommaso, Cicimarra; *Il Meridiano*; lo scandalo di Dalia; la guardia del corpo come fonte; nessuna fase intermedia tra Kurgan e Bertola; De Biasi senza nome a Riva Salmara.
@@ -71,3 +79,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-27 — Manuale di stile v3: due crepe confermate, la seconda è il punto emotivo più alto del romanzo.
 - 2026-09-27 — Decisione dell'autore: tutto inventato, niente di vero. Creato il registro dei nomi inventati e sostituiti tutti i riferimenti reali nella bibbia e nel manuale.
 - 2026-09-27 — Bibbia v5 integrata nelle schede personaggio (età, aspetto, ferite, motivazioni, De Biasi alla guida della task force).
+- 2026-09-27 — Bibbia v6: nuova regola sui nomi (Italia e istituzioni reali, città/mafie/potenze inventate), istituzioni reali ripristinate; Tommaso, De Stefano, De Biasi, Dalia, Elena, nascondigli e prigionia di Laura.

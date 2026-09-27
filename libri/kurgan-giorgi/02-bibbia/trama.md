@@ -29,7 +29,7 @@ Opera delle **squadre di servizi deviati del generale De Biasi, per conto di Osi
 Adorisio gli fa credere di dover incontrare Rastegar, da solo come sempre, in un ristorante di Riva Salmara alle 13.30. Il ristorante è imbottito di esplosivo; Osiride e i servizi sorvegliano i dintorni con tiratori scelti. L'esplosione lo uccide.
 
 ## Il rapimento di Laura
-Laura, 7 anni, frequenta una scuola cattolica prestigiosa gestita da suore; un autista le fa da bodyguard. All'uscita da scuola un furgone e due auto: l'autista viene neutralizzato, la bambina incappucciata e portata via. Dopo la morte di Kurgan resta ostaggio ancora un mese e mezzo. Adorisio, comprato da Giorgi, la trova prima di quanto dichiara e ritarda la consegna per alzare il prezzo: quando Giorgi lo scopre, è la sua prima crepa. Elena non saprà mai la verità.
+Laura, 7 anni, frequenta una scuola cattolica prestigiosa gestita da suore; un autista le fa da bodyguard. All'uscita da scuola un furgone e due auto: l'autista viene neutralizzato, la bambina incappucciata e portata via, poi tenuta in una villa isolata vicino a Punta Saline, protetta dalla rete portuale di Kurgan. Dopo la morte di Kurgan resta ostaggio ancora un mese e mezzo. Adorisio, comprato da Giorgi, la trova prima di quanto dichiara e ritarda la consegna per alzare il prezzo: quando Giorgi lo scopre, è la sua prima crepa. Elena non saprà mai la verità.
 
 ## Il finale
 - Giorgi chiude il romanzo **vivo, nascosto e fuori dal potere**.
@@ -40,7 +40,7 @@ Laura, 7 anni, frequenta una scuola cattolica prestigiosa gestita da suore; un a
 - Bertola e Casal Fascio si consolidano. Verso il sequel.
 
 ## Cronologia (bibbia v4)
-1. Formazione di Giorgi: Collegio di San Clemente, Loggia del Compasso, Osiride; il dossier dal generale.
+1. Formazione di Giorgi: università vaticane, massoneria, Osiride; il dossier dal generale.
 2. Kurgan: Monte Marzio; Drenak (1998–99); congedo disonorevole; Partenia (2000); ascesa; sfruttamento di Dalia dal 2005.
 3. Giorgi conosce Dalia; la relazione calcolata diventa amore.
 4. Unificazione Fratellanza/Serrana affidata a Kurgan (in realtà decapitazione con droni kaliriani).
