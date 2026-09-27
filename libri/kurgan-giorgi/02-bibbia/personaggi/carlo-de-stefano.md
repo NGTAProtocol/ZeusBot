@@ -37,3 +37,8 @@ L'uomo dei servizi incaricato di sorvegliare Flora che se ne innamora e la prote
 - **Aspetto (fissato):** portamento militare, sguardo sempre vigile.
 - Origini: [DA DEFINIRE]
 - In quale momento Flora comincia a intuire il doppio gioco: [DA DEFINIRE]
+
+## Fissato nei capitoli 5 e 9
+- Due anni di cene con Flora, una al mese, sempre nello stesso ristorante di Rocca Sannella, al tavolo in fondo. Lui arriva da Albaterra in macchina (due ore e mezza) e riparte la notte stessa. Non è mai salito da lei. Alla macchina si ferma sempre a mezzo metro da lei.
+- Si siede con le spalle al muro e la vista sulla porta; si alza quando lei entra; prima di attraversare guarda la strada a destra e a sinistra. Cicatrice bianca sul dorso della mano sinistra, mai spiegata.
+- **La pista del 22 gennaio:** sa di Valdhof, sa che la Consob ha mandato dati per giorno e non per secondo, e le suggerisce di chiedere i dati di regolamento del 12 novembre, 12.00–12.10: alle 12.07 trentuno conti chiudono nello stesso secondo, attraverso un solo intermediario di regolamento a Merania. È vera, e troppo precisa: non può venire dalla rogatoria. «Tre mesi, in questo momento, sono tanti. Per voi tre.»

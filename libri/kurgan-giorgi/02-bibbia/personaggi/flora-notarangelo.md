@@ -46,3 +46,7 @@ La magistrata che segue la fusione delle mafie fino a Osiride: la giustizia a cu
 - Il fascicolo archiviato: tre anni di lavoro, intercettazioni, conti, due collaboratori. Camera di consiglio in Cassazione: undici minuti. Dopo l'archiviazione, un collaboratore trovato impiccato nel carcere di Tarassa, l'altro ritratta con una lettera scritta a macchina.
 - Conosce De Stefano da due anni: cenano una volta al mese; lui dice di lavorare "per il ministero".
 - La madre la chiama ogni sera alle 21.15.
+
+## Fissato nel capitolo 9
+- Tiene in borsa, nella tasca con la cerniera, un foglio piegato in quattro: le due possibili fonti della pista di De Stefano, la prima numerata («uno»: la rogatoria passata dal ministero), la seconda senza numero (dati che nessuno poteva avere).
+- Per la prima volta dice a Calabrese una cosa vera per una ragione diversa da quella vera.
