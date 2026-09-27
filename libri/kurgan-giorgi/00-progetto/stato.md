@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** Fase 2 (architettura e piano parole). Fase 1 fatta: `01-mercato/mercato.md`.
+- **Prossimo passo:** decisioni aperte della scaletta, poi stesura (prologo e capitolo 1). Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -88,3 +88,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-27 — Bibbia v7: nodi chiusi, Cadrasca confermata, manuale riallineato alla cronologia.
 - 2026-09-27 — Manuale di stile v4: calma apparente con Laura, golpe e pool; sezione 5 sulla coerenza della geografia inventata.
 - 2026-09-27 — Fase 1: mercato e posizionamento, libri di confronto verificati, lettore, editori, rischi, quarta di copertina di prova.
+- 2026-09-27 — Fase 2: architettura in quattro parti, 53 capitoli + prologo, 117.300 parole, sequenza dei punti di vista verificata.
