@@ -56,11 +56,8 @@ Diagnosi dal precedente principale del genere: i lettori di *Romanzo criminale* 
 
 Regola: non una campana con coda lunga, ma una **doppia cresta**.
 - **Prima cresta:** le tre stragi (Valcerna, Morenna, Marcena), ultimo lavoro di Kurgan per Giorgi; il crollo dello spread; la ribellione immediata di Kurgan; fino alla sua morte nella trappola di Riva Salmara.
-- **Coda della prima onda:** subito dopo Riva Salmara De Biasi insedia Bertola a capo di Casal Fascio; Adorisio trova Laura ma ritarda la consegna (prima crepa di Giorgi); Laura viene liberata (circa un mese e mezzo dopo); il golpe di Adorisio fallisce (circa due mesi dopo). Scosse di assestamento, non un nuovo picco.
-- **Calma apparente, non reale:** dopo il golpe il lettore deve credere che la tensione si allenti (Casal Fascio consolidato, l'ordine sembra tornare). Intanto avanzano, a bassa voce: il pool verso l'elenco dei 60, Tommaso che passa i dati, lo scoprirsi progressivo di Elena.
-- **Seconda cresta:** è il pool, avvicinandosi all'elenco, a far ripartire la tensione. Le squadre di De Biasi rispondono per conto di Osiride con gli attacchi a infrastrutture e autostrade; la legge d'emergenza di Cicimarra rischia di togliere il fascicolo al pool. Seguono lo scoop di Dalia e la ritorsione, il materiale recapitato a Elena, la convergenza verso la sparizione orchestrata di Giorgi (seconda crepa). **Più capitoli brevi e serrati**, non uno o due lunghi.
-
-*(Ordine allineato alla cronologia della bibbia v7.)*
+- **Calma apparente, non reale:** subito dopo la morte di Kurgan il lettore deve credere che la tensione si allenti. Ma è qui che si concentrano, in rapida successione e a bassa voce, gli eventi che chiudono i conti del primo arco: il ritardo calcolato di Adorisio su Laura (prima crepa di Giorgi), la sua liberazione (circa un mese e mezzo dopo), il golpe fallito di Adorisio contro Bertola (circa due mesi dopo) con la sua morte nello scontro, e l'avanzamento silenzioso del pool verso l'elenco dei 60.
+- **Seconda cresta:** è il pool, avvicinandosi all'elenco, a far ripartire la tensione. Le squadre di De Biasi rispondono per conto di Osiride con gli attacchi a infrastrutture e autostrade, seguiti dalla legge d'emergenza che rischia di togliere il fascicolo al pool. Da qui la convergenza finale verso la sparizione orchestrata di Giorgi. **Più capitoli brevi e serrati**, non uno o due lunghi, per evitare l'effetto "coda esplicativa".
 
 **Verifica in editing:** contare i capitoli per fase. Target 45%–55% tra fase 1 (fino a Riva Salmara) e fase 2. Se la fase 2 ha meno della metà dei capitoli della fase 1 è frettolosa; se ne ha il doppio è la coda lenta.
 
@@ -68,7 +65,7 @@ Regola: non una campana con coda lunga, ma una **doppia cresta**.
 
 ## 5. Verosimiglianza come tecnica
 - **Precisione procedurale:** PM, servizi, fondi agiscono con terminologia corretta e sequenza plausibile, anche se sintetizzata; mai vaga.
-- **Italia e istituzioni reali, luoghi inventati:** il Paese e le istituzioni sono reali (Vaticano, CIA, Corte di Cassazione, Carabinieri, servizi segreti); città, mafie e potenze straniere sono inventate ([registro](nomi-inventati.md)); persone reali mai. La verosimiglianza viene dalla precisione procedurale e dalla coerenza interna.
+- **Ancoraggio geografico coerente, evento inventato:** con il [registro dei nomi inventati](nomi-inventati.md) completo (Albaterra, Merania, Partenia, Riva Salmara, Castelvaro, Rocca Sannella e gli altri), la verosimiglianza non passa più da luoghi reali ma dalla **coerenza interna** della geografia inventata: distanze plausibili, dettagli urbanistici credibili, un mondo che si comporta come se esistesse davvero. Dettaglio concreto, anche con un nome di fantasia, invece di atmosfera vaga. Restano reali il Paese e le istituzioni (Vaticano, CIA, Corte di Cassazione, Carabinieri, servizi segreti); persone reali mai.
 - **Cifre plausibili nell'ordine di grandezza:** spread, somme, vittime. Un errore di scala rompe il patto più di qualunque libertà di trama.
 - **Osiride:** la dottrina resta sempre voce di un personaggio o di un documento interno, mai affermazione del narratore.
 

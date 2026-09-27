@@ -86,3 +86,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-27 — Bibbia v5 integrata nelle schede personaggio (età, aspetto, ferite, motivazioni, De Biasi alla guida della task force).
 - 2026-09-27 — Bibbia v6: nuova regola sui nomi (Italia e istituzioni reali, città/mafie/potenze inventate), istituzioni reali ripristinate; Tommaso, De Stefano, De Biasi, Dalia, Elena, nascondigli e prigionia di Laura.
 - 2026-09-27 — Bibbia v7: nodi chiusi, Cadrasca confermata, manuale riallineato alla cronologia.
+- 2026-09-27 — Manuale di stile v4: calma apparente con Laura, golpe e pool; sezione 5 sulla coerenza della geografia inventata.
