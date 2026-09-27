@@ -1,22 +1,40 @@
-# Elena Pisapia — moglie di Alfredo Giorgi
+# Elena Pisapia
 
-**Registro dei suoi capitoli (se ne ha):** (a).
-**Tic di pensiero (manuale di stile):** Pensa per calcoli pratici, mai per sfoghi: non si concede mai una frase di puro sentimento.
+## Dati anagrafici
+- **Nome:** Elena Pisapia, moglie di Alfredo Giorgi
+- **Età:** [DA DEFINIRE]
+- **Provenienza:** [DA DEFINIRE]
+- **Figli:** Fabrizio (15 anni), Cesare (13), Laura (7).
 
-## Figli
-Fabrizio (15 anni), Cesare (13), **Laura** (7).
+## Ruolo nella trama
+La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo di non sapere, possiede una terza copia segreta del dossier e diventa il detonatore del sequel.
 
-## La sparizione di Laura
-Giorgi non le dice nulla: per lei la bambina è semplicemente scomparsa. Pensa a tutto: traffico di organi, riscatto. Aspetta una richiesta che non arriva. Il matrimonio si incrina, lei finge normalità. Non saprà mai la verità sul rapimento.
+## Backstory
+- Sposata con Giorgi. Il tradimento del marito con Dalia e con altre donne trans va avanti da subito dopo il concepimento di Fabrizio, quindi da circa 15 anni.
+- Non sa delle donne trans, ma è convinta che il marito frequenti altre donne. Lo spia, e così ottiene le sue password. Il nome di Dalia compare nei messaggi di lui, ma per lei è "una donna" qualunque.
 
-## Il sospetto
-Prima di ogni prova è convinta che il marito la tradisca con altre donne (non sa delle donne trans). Lo spia, ne ottiene le password. Il nome di Dalia compare nei suoi messaggi, ma per Elena è "una donna" qualunque.
+## Motivazioni e ferite
+- **Cosa vuole:** sapere la verità (su Laura, sul marito); mettersi al sicuro.
+- **Cosa teme:** le persone interessate al materiale che possiede: Osiride, servizi segreti, stampa, inquirenti.
+- **Cosa nasconde:** la chiavetta clonata; di aver spiato il marito; poi, di sapere tutto del tradimento.
+- **Ferita:** la sparizione di Laura senza spiegazioni; quindici anni di tradimento.
 
-## La chiavetta
-Una sera Giorgi le confida che nella sua chiavetta ci sono segreti capaci di spostare gli equilibri mondiali. Con le password la **clona**, già sospettosa, **prima** della rivelazione di Dalia. Nessuno lo sa, nemmeno Osiride: possiede una terza copia del dossier.
+## Relazioni chiave
+- **Alfredo Giorgi:** durante la sparizione di Laura il rapporto si incrina, anche se lei finge normalità. Una sera lui le confida che la chiavetta contiene segreti capaci di spostare gli equilibri mondiali. Dopo la rivelazione non lo affronta: finge di non sapere.
+- **Laura:** per lei è semplicemente scomparsa. Pensa a traffico di organi, a un riscatto; aspetta invano una richiesta. Non saprà mai la verità sul rapimento.
+- **Dalia:** non la conosce; le recapita filmati e registrazioni del tradimento.
 
-## La rivelazione
-Dalia le recapita filmati e registrazioni: quindici anni di tradimento. Elena non affronta Giorgi, non fa scenate. Gelo strategico: si mette al sicuro nell'ombra e finge di non sapere, consapevole di quanti vorrebbero quel materiale.
+## Arco narrativo
+- **Inizio:** moglie sospettosa, finge normalità.
+- **Sviluppo:** la sparizione di Laura, l'angoscia senza risposte. Con le password ottenute spiando il marito **clona la chiavetta**, prima della rivelazione di Dalia. Nessuno lo sa, nemmeno Osiride.
+- **Rivelazione:** riceve da Dalia il materiale. Gelo strategico: si mette al sicuro nell'ombra, senza rivelare a Giorgi di sapere. Copertura calcolata, non ingenuità.
+- **Fine:** non gioca la sua carta nel climax. Resta una riserva silenziosa con la terza copia del dossier e le prove del tradimento. Una delle uniche due persone, con Flora, a sospettare che Giorgi sia vivo. Chiave del sequel.
 
-## Funzione
-La persona più pericolosa e sottovalutata del romanzo. Non gioca la sua carta nel climax: resta una riserva silenziosa, il detonatore del sequel.
+## Tic di voce/pensiero (POV)
+- Registro (a).
+- Pensa per **calcoli pratici**, mai per sfoghi: la sua freddezza è nel non concedersi mai una frase di puro sentimento.
+
+## Dettagli fisici/di caratterizzazione da fissare
+- Età, aspetto, provenienza: [DA DEFINIRE]
+- Dove custodisce la chiavetta clonata: [DA DEFINIRE]
+- Dove "si mette al sicuro": [DA DEFINIRE]

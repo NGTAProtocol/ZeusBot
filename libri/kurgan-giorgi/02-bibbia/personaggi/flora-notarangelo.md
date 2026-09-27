@@ -1,35 +1,44 @@
-# Flora Notarangelo — 35 anni
+# Flora Notarangelo
 
-**Registro dei suoi capitoli:** (a). (Nella prima bibbia si chiamava Filomena Lattarulo, barese: sostituita.)
-**Tic di pensiero (manuale di stile):** Pensa per fascicoli e sequenze logiche (mentalità da magistrato).
+## Dati anagrafici
+- **Nome:** Flora Notarangelo
+- **Età:** 35 anni
+- **Provenienza:** Rocca Sannella
+- Pubblico ministero. Ufficio e sede: [DA DEFINIRE]
 
-## Identità
-- Pubblico ministero. Originaria di **Rocca Sannella**.
-- Procura / ufficio di appartenenza: da definire.
+## Ruolo nella trama
+La magistrata che segue la fusione delle mafie fino a Osiride: la giustizia a cui il sistema sottrae il fascicolo due volte, e l'unica che non crede alla morte di Giorgi.
 
-## L'indagine
-Indaga sull'unificazione di Fratellanza e Serrana, resa possibile da Kurgan grazie all'intervento di Giorgi presso i servizi segreti militari.
+## Backstory
+- Indaga sull'unificazione di Fratellanza e Serrana, resa possibile da Kurgan grazie all'intervento di Giorgi presso i servizi segreti militari.
+- La sua prima inchiesta viene insabbiata dalla **Corte Suprema di Revisione** per un cavillo (decadenza dei termini). Dietro c'è la pressione del presidente della Corte, membro di Osiride, sugli altri votanti.
 
-## Ferita
-La prima inchiesta viene insabbiata dalla **Corte Suprema di Revisione** per un cavillo (decadenza dei termini). Dietro c'è la pressione del presidente della Corte, membro di Osiride, sugli altri votanti.
-
-## Il pool
-Dopo le **tre stragi** (Valcerna, Morenna, Marcena) nasce un pool di tre magistrati: Flora, **Gerardo Calabrese** e **Zaccaria Cataldo**. Indagavano separatamente sulla stessa materia, arrivando alle stesse conclusioni.
-- Il pool arriva a un **elenco di circa 60 affiliati di Osiride** (industriali, farmacisti, finanzieri, banchieri, generali, ammiragli): è il cuore del climax, alla pari (o più) delle chiavette.
-
-## Desiderio
-Portare alla luce la fusione e chi l'ha voluta.
+## Motivazioni e ferite
+- **Cosa vuole:** portare alla luce la fusione delle mafie e chi l'ha voluta; arrivare all'elenco degli affiliati di Osiride.
+- **Cosa teme:** [DA DEFINIRE]
+- **Cosa nasconde:** [DA DEFINIRE]
+- **Ferita:** l'inchiesta insabbiata dall'alto.
 
 ## Relazioni chiave
-- **Carlo De Stefano:** incaricato di sorvegliarla, se ne innamora e la protegge tradendo in silenzio i servizi. È **Flora** a scoprire il suo doppio gioco: le sue indicazioni non tornano con quello che lei sa per conto suo. Deve decidere se fidarsi ancora di lui.
-- **La legge d'emergenza** di Cicimarra rischia di toglierle il fascicolo proprio vicino all'elenco: la giustizia sottratta per la seconda volta, stavolta per via legislativa.
-- **Calabrese e Cataldo:** colleghi del pool.
+- **Gerardo Calabrese e Zaccaria Cataldo:** colleghi del pool. Indagavano separatamente sulla stessa materia, arrivando alle stesse conclusioni. Calabrese è con lei la mente pericolosa del pool; Cataldo è considerato il subordinato.
+- **Carlo De Stefano:** incaricato di sorvegliarla, se ne innamora e la protegge tradendo in silenzio i servizi. È Flora a scoprire il suo doppio gioco: le sue indicazioni non tornano con ciò che lei sa per conto suo. Deve decidere se fidarsi ancora di lui.
+- **Tommaso Vela:** le sue scoperte arrivano al pool, filtrate o intercettate.
+- **Osiride / Cicimarra:** la legge d'emergenza del senatore rischia di toglierle il fascicolo.
+- **Giorgi:** conosce troppo bene lui e Osiride per credere alla sua morte.
 
-## Finale
-Non crede alla morte di Giorgi: il corpo non è mai stato trovato. La sua indagine resta viva (aggancio per il sequel).
+## Arco narrativo
+- **Inizio:** l'inchiesta sull'unificazione è già stata insabbiata.
+- **Sviluppo:** dopo le tre stragi nasce il pool con Calabrese e Cataldo. Il pool avanza verso un elenco di circa **60 affiliati di Osiride** (industriali, farmacisti, finanzieri, banchieri, generali, ammiragli).
+- **Seconda cresta:** l'escalation contro infrastrutture e autostrade giustifica la **legge d'emergenza** di Cicimarra, che accorpa le indagini sotto una task force nazionale a guida militare e rischia di spossessare il pool proprio vicino all'elenco. Scopre il doppio gioco di De Stefano.
+- **Fine:** resta scettica sulla morte di Giorgi: il corpo non è mai stato trovato. La sua indagine resta viva. Aggancio per il sequel.
 
-## Da definire
-- Ufficio di appartenenza e sede del pool.
-- Voce e tratti personali (i tratti della vecchia Filomena, come le frasi corte e le domande precise, restano validi?).
-- Il suo "archivio" e se sa dell'amore di De Stefano.
-- Il tema del controllo nel suo arco: la giustizia che le viene sottratta.
+## Tic di voce/pensiero (POV)
+- Registro (a).
+- Pensa per **fascicoli e sequenze logiche**: mentalità da magistrato.
+
+## Dettagli fisici/di caratterizzazione da fissare
+- Aspetto fisico: [DA DEFINIRE]
+- Voce e modo di parlare: [DA DEFINIRE]
+- Ufficio di appartenenza e sede del pool: [DA DEFINIRE]
+- Il suo archivio (materiale della prima inchiesta): [DA DEFINIRE]
+- Se ricambia l'amore di De Stefano e come finisce tra loro: [DA DEFINIRE]

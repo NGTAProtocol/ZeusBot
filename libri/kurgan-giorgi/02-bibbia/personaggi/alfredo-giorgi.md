@@ -1,50 +1,53 @@
-# Alfredo Giorgi — 53 anni
+# Alfredo Giorgi
 
-**Registro dei suoi capitoli:** (c), freddo e lucido, con analogie dalla fisica e dai sistemi complessi (punti critici, cambi di stato, attrito, rumore di sistema).
-**Due crepe**, una frase breve ciascuna, quasi registro (a):
-1. quando scopre che Adorisio ha ritardato di proposito la consegna di Laura: rabbia trattenuta, ancora nel pieno del potere;
-2. quando gli comunicano la sparizione forzata decisa da Osiride: resa totale, si scopre pedina sacrificabile. Mai due capitoli (c) di fila.
+## Dati anagrafici
+- **Nome:** Alfredo Giorgi
+- **Età:** 53 anni
+- **Luogo di nascita / provenienza:** [DA DEFINIRE]
 
-## Identità
-- Ruolo: il "padre del mostro". Vertice di **AV System**, il fondo che ha orchestrato le stragi per far esplodere lo spread e guadagnare con vendite allo scoperto sui titoli di Stato, assicurazioni contro il default e opzioni ribassiste sulle banche.
-- Formazione: educazione rigorosamente cattolica, studi al Collegio di San Clemente, il più esclusivo della Chiesa. Preparato fin da bambino a un ruolo di comando: non per caso, ma come progetto deliberato di Osiride. Capacità gestionali e psicologiche fuori dal comune, notate presto.
-- Aspetto: fisico asciutto e nervoso. (Dalla prima bibbia, da confermare: laurea in Fisica nucleare, Wing Chun.)
+## Ruolo nella trama
+Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere lo spread, crea Kurgan come braccio operativo e finisce a sua volta sacrificato da un potere più grande di lui.
 
-## Maschera pubblica
-Uomo di potere, cattolico, sposato con Elena Pisapia, tre figli. Controllore assoluto.
+## Backstory
+- Educazione rigorosamente cattolica; studi al **Collegio di San Clemente**, il più esclusivo della Chiesa.
+- Preparato fin da bambino a un ruolo di comando, non per caso ma come progetto deliberato di **Osiride**. Capacità gestionali e psicologiche fuori dal comune, notate presto.
+- Entra giovane nella **Loggia del Compasso**, dove oggi ricopre uno dei gradi più alti. Appartiene anche a Osiride, organizzazione segreta parastatale più profonda, erede della Loggia Ombra.
+- **Il dossier:** un generale dell'esercito che lavorava per i servizi segreti militari gli mette a disposizione anni di dati su politici, magistrati e figure chiave (punti deboli, punti di forza, assetto familiare). Due copie su chiavette USB criptate con sicurezza tipo blockchain: una nascosta da Giorgi, l'altra al cardinale Salvarani.
+- Tramite i servizi segreti militari ottiene l'unificazione di **Fratellanza** e **Serrana** e la affida a Kurgan, convinto di controllarle attraverso di lui.
+- Vertice di **AV System**, torre di vetro a Porta Vetra, Merania, 22° piano.
+- **Il segreto personale:** da circa 15 anni (da subito dopo il concepimento di Fabrizio) frequenta donne transgender in incontri privati, protetti da due guardie del corpo fidate. È così che conosce Dalia.
+- Sposato con Elena Pisapia; tre figli: Fabrizio (15), Cesare (13), Laura (7).
 
-## Vita nascosta
-- **Loggia del Compasso:** entra giovane; oggi ricopre uno dei gradi più alti.
-- **Osiride:** membro di alto grado dell'organizzazione segreta parastatale (vedi `mondo.md`).
-- **Il segreto personale:** frequenta donne transgender in incontri privati, protetti da due guardie del corpo fidate, da circa 15 anni (da subito dopo il concepimento di Fabrizio). È così che conosce Dalia.
-
-## Potere
-- **Il dossier:** un generale dei servizi segreti militari gli consegna anni di dati su politici, magistrati e figure chiave (punti deboli, punti di forza, famiglie). Due copie criptate su chiavette USB con sicurezza tipo blockchain: una nascosta da Giorgi, l'altra al cardinale Emilio Salvarani.
-- **L'unificazione:** tramite i servizi segreti militari ottiene l'unificazione di Fratellanza e Serrana, affidata a Kurgan, che crede di poter controllare.
-- **Contro Kurgan:** è l'unico che lo conosce e ne prevede le mosse. Usa un arsenale di livello nazionale e militare messo a disposizione dai servizi segreti militari, da un nucleo ristretto del governo e dal Servizio Atlantico. Delle stragi, questo fronte preferisce non sapere.
-
-## Desiderio
-Controllare il sistema: mercati, Stato, organizzazioni criminali, famiglia.
-
-## Menzogna in cui crede
-Che il caos sia un sistema leggibile e governabile.
-
-## Difetto / debolezza
-Il segreto; l'ipocrisia; l'innamoramento reale per Dalia, nato da una manipolazione calcolata.
+## Motivazioni e ferite
+- **Cosa vuole:** controllare il sistema — mercati, Stato, organizzazioni criminali, famiglia — e portare a termine il progetto di Osiride: spodestare lo Stato e trasferire il potere reale alla rete.
+- **Cosa teme:** [DA DEFINIRE] (la bibbia mostra ciò che perde, non ciò che teme dichiaratamente).
+- **Cosa nasconde:** il ruolo nelle stragi; l'appartenenza a Osiride; la doppia vita con le donne trans; l'innamoramento reale per Dalia, nato da una manipolazione calcolata; il dossier; la verità sul rapimento di Laura, che tace anche a Elena.
+- **Ferita:** [DA DEFINIRE]
 
 ## Relazioni chiave
-- **Kurgan:** la sua creatura. Specchio deformato: entrambi giustificano il sacrificio delle vite altrui con la "protezione" o la "necessità superiore". Kurgan con violenza diretta, Giorgi con freddezza a distanza.
-- **Dalia:** avvicinata per estrarre informazioni su Kurgan; ne resta affascinato, mente e corpo; l'amore diventa reale e reciproco. Usa comunque le sue informazioni per eliminare Kurgan.
-- **Elena:** moglie tradita da 15 anni; le confida una sera che la chiavetta contiene segreti capaci di spostare gli equilibri mondiali.
-- **Bertola:** fidato da 13 anni; in realtà informatore dell'élite fin dall'inizio.
-- **Adorisio:** lo seduce con la promessa di diventare comandante supremo delle forze pontificie del nuovo ordine di Osiride; ne compra il tradimento. Poi Adorisio tradisce anche lui, ritardando la liberazione di Laura.
-- **Salvarani:** ex insegnante; alla fine decide la sua sparizione.
+- **Vito Kurgan:** la sua creatura. Specchi deformati: entrambi giustificano il sacrificio altrui con "protezione" o "necessità superiore", Kurgan con violenza diretta, Giorgi con freddezza a distanza. Da strumento a ribelle, poi a bersaglio che Giorgi fa eliminare a Riva Salmara.
+- **Dalia:** avvicinata per estrarre informazioni sull'organizzazione di Kurgan; la manipolazione diventa amore reale e reciproco. Usa comunque ciò che lei gli ha detto per eliminare Kurgan. Lei lo scopre, pubblica lo scoop e manda a Elena le prove del tradimento.
+- **Elena Pisapia:** moglie tradita da 15 anni. Le confida che la chiavetta contiene segreti capaci di spostare gli equilibri mondiali; lei la clona. Durante la sparizione di Laura il matrimonio si incrina.
+- **Laura:** rapita da Kurgan; Giorgi usa l'arsenale messo a sua disposizione e poi Adorisio per riaverla.
+- **Fedele Adorisio:** lo seduce con la promessa di diventare comandante supremo delle forze pontificie del nuovo ordine di Osiride; ne compra il tradimento contro Kurgan. Poi Adorisio tradisce anche lui, ritardando la consegna di Laura.
+- **Luigi Bertola:** il suo fidato da 13 anni, in realtà informatore dell'élite fin dall'inizio.
+- **Cardinale Emilio Salvarani:** suo ex insegnante al Collegio di San Clemente; alla fine decide la sua sparizione.
+- **Il fronte che lo arma:** servizi segreti militari, un nucleo ristretto del governo e il Servizio Atlantico gli mettono a disposizione un arsenale contro Kurgan; delle stragi preferiscono non sapere.
 
-## Arco
-- Apertura: autorizza la chiusura delle posizioni a 700 punti di spread.
-- Perde il controllo di Kurgan; Laura viene rapita.
-- Le tre stragi (Valcerna, Morenna, Marcena) sono l'ultimo lavoro che Kurgan fa per lui.
-- Fa uccidere Kurgan a Riva Salmara tramite Adorisio; recupera Laura.
-- Scopre il ritardo di Adorisio: prima crepa.
-- Gli comunicano la sparizione forzata: seconda crepa.
-- Finale: Osiride ne inscena la morte (esplosione della barca a Castelvaro, sul lago di Varo); un sommozzatore lo preleva sott'acqua. **Vivo, nascosto, fuori dal potere**: pedina sacrificabile, pronto a riemergere dall'esterno nel sequel.
+## Arco narrativo
+- **Inizio (prologo):** autorizza la chiusura delle posizioni short a 700 punti di spread, dopo le tre stragi di Valcerna, Morenna e Marcena, ultimo lavoro di Kurgan per lui.
+- **Sviluppo:** Kurgan si ribella; circa 18 mesi dopo gli rapisce Laura. Giorgi fa uccidere Kurgan a Riva Salmara grazie al tradimento di Adorisio. Scopre che Adorisio ha ritardato di proposito la consegna di Laura: **prima crepa** (rabbia trattenuta, ancora nel pieno del potere). Laura viene liberata.
+- **Crollo:** lo scoop di Dalia, il pool vicino all'elenco dei 60. Salvarani, per conto di Osiride, decide che se catturato potrebbe parlare. La comunicazione della sparizione forzata è la **seconda crepa**: resa totale, il punto emotivo più alto del romanzo.
+- **Fine:** esplosione inscenata della sua barca a Castelvaro, sul lago di Varo, con altre vittime reali; un sommozzatore lo preleva sott'acqua. Corpo mai ritrovato. **Vivo, nascosto, fuori dal potere.** Lasciato in sospeso per il sequel: Bertola metterà sotto scacco la sua eredità, e lui potrà riemergere dall'esterno.
+
+## Tic di voce/pensiero (POV)
+- Registro (c): freddo, lucido, distaccato; analogie di sistema motivate dalla sua formazione (punti critici, cambi di stato, attrito, rumore di sistema); frasi più lunghe, con subordinate che costruiscono ragionamento. Un uomo che pensa invece di agire, anche in crisi.
+- Mai due capitoli (c) di fila.
+- Due sole crepe, di una frase ciascuna, quasi registro (a): Adorisio su Laura; la sparizione forzata (più forte).
+
+## Dettagli fisici/di caratterizzazione da fissare
+- Aspetto fisico: [DA DEFINIRE] (la prima bibbia diceva "fisico asciutto e nervoso": da confermare).
+- Laurea in Fisica nucleare e pratica del Wing Chun: presenti solo nella prima bibbia, [DA DEFINIRE] se restano. La fisica giustificherebbe il registro (c).
+- Città in cui vive con la famiglia: [DA DEFINIRE]
+- Nomi delle due guardie del corpo: [DA DEFINIRE]
+- Dove nasconde la chiavetta: [DA DEFINIRE]

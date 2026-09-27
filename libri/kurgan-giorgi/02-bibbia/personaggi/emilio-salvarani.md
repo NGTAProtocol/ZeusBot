@@ -1,9 +1,34 @@
-# Cardinale Emilio Salvarani
+# Emilio Salvarani
 
-- Membro di Osiride; ex insegnante di Giorgi al Collegio di San Clemente.
-- Custode della seconda chiavetta del dossier.
-- Il "volto dell'élite" sopra Giorgi: quando l'elenco dei 60 affiliati rischia di venire alla luce, decide che Giorgi, se catturato, potrebbe parlare. Orchestra la sua sparizione (Castelvaro, sul lago di Varo).
+## Dati anagrafici
+- **Nome:** cardinale Emilio Salvarani
+- **Età:** [DA DEFINIRE]
+- **Provenienza:** [DA DEFINIRE]
+- Cardinale, membro di Osiride.
 
-## Da definire
-- Aspetto, età, sede, voce.
-- Quante volte appare in scena.
+## Ruolo nella trama
+Il volto del potere sopra Giorgi: il maestro che lo ha formato e che alla fine lo sacrifica.
+
+## Backstory
+- Ex insegnante di Giorgi al **Collegio di San Clemente**.
+- Membro di Osiride; custode della seconda chiavetta del dossier.
+
+## Motivazioni e ferite
+- **Cosa vuole:** la sopravvivenza di Osiride e della sua rete.
+- **Cosa teme:** che Giorgi, se catturato, parli sotto pressioni di cui l'organizzazione non può prevedere la resistenza.
+- **Cosa nasconde:** l'appartenenza a Osiride; la chiavetta; la regia della sparizione di Giorgi.
+- **Ferita:** [DA DEFINIRE]
+
+## Relazioni chiave
+- **Alfredo Giorgi:** suo allievo, formato per comandare; alla fine lo fa sparire.
+- **Senatore Cicimarra:** l'altro custode di una copia ufficiale del dossier dopo la sparizione di Giorgi.
+- **Osiride:** agisce per suo conto.
+
+## Arco narrativo
+- **Sviluppo:** custode silenzioso della seconda chiavetta.
+- **Climax:** con l'elenco dei 60 a rischio, decide per conto di Osiride che Giorgi deve sparire. Orchestra l'esplosione inscenata della barca a Castelvaro, sul lago di Varo.
+- **Fine:** crede di controllare entrambe le copie ufficiali; non sa della terza copia di Elena. In sospeso per il sequel.
+
+## Dettagli fisici/di caratterizzazione da fissare
+- Età, aspetto, sede, voce: [DA DEFINIRE]
+- Quante volte appare in scena: [DA DEFINIRE]
