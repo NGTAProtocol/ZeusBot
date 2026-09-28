@@ -57,6 +57,10 @@ Ogni traccia lasciata nel testo va pagata o chiusa di proposito. Per ciascuna: d
 - **Flora mente a Calabrese** (cap. 20): «Non ancora» su Valdhof. Cataldo non gli ha mostrato la busta. Il pool, da quella sera, è «due persone e mezza». Da riprendere al cap. 27 (Calabrese vuole lasciare il pool).
 - **Carlo e la costa** (cap. 20): «La settimana prossima stai lontana dalla costa.» Non chiede quale bambina, né come lei lo sappia: sa senza dire. Ha richiesto lunedì il comando della caserma di Rocca Sannella; risposta: «dopo l'estate, quest'estate c'è molto da fare». Flora mette tutto nel «cassetto di Carlo», che per la prima volta non si chiude. Nessun sospetto di doppio gioco ancora; il «registro di Merania» resta al cap. 31.
 
+- **Bertola al cap. 21:** sa della bomba due ore prima di Giorgi, «dal generale, ma non è una cosa del generale». Osiride lo usa come canale per la prova. Giorgi lo registra come punto in una serie e **non segue il filo** («Seguire quel filo avrebbe significato tagliarlo»). Bertola: «Io faccio quello che dice lei, dottore. L'ho sempre fatto.» Giorgi non lo legge come informatore: la rivelazione resta al sequel.
+- **Il ristorante di Riva Salmara** (cap. 21): sul lungomare, tavoli all'aperto sotto un pergolato, sala interna da venti coperti, due uscite, cucina su un vicolo; scelto dagli uomini del generale perché fosse normale, con clienti e camerieri veri e un proprietario ignaro. La carica è sotto la cucina; uomini sui tetti di fronte. Il piano originale di cattura: quattro uomini del generale ai tavoli, il corridoio dei bagni di sei metri, un'iniezione, un furgone nel vicolo, una casa a quaranta chilometri.
+- **Il foglio del 31 maggio con «vivo» sottolineato due volte** (cap. 21): Giorgi non lo cancella («le misure si archiviano, con la data»). Possibile oggetto per il cap. 26 («Lei mi aveva detto vivo») o per il 29.
+
 ## Indizi su De Stefano (tetto: quattro in tutto)
 Ogni indizio regge da solo; insieme fanno un conto. Non superare quattro.
 1. **Cap. 9** — la pista troppo precisa: 31 conti, le 12.07, un intermediario di Merania. Dati che nessuno poteva avere.

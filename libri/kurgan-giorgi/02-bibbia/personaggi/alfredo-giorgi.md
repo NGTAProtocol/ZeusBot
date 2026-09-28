@@ -77,3 +77,11 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - **Progetta una cattura:** «Mi serve lui. Vivo.» Usa il pattern di Rastegar dato da Dalia; il messaggio con il nome del contabile deve arrivare dall'interno. Sa che Kurgan catturato non parlerebbe («sistema non osservabile»): è una scommessa lunga, e lo dice per primo. Davanti al fronte dice per la prima volta «mia figlia».
 - Individua la variabile interna dalla mappa dei servizi (nel nucleo da quindici anni, non nato nel nucleo, legge libri, scavalcato nella fiducia da uomini più giovani); offerta mandata attraverso un avvocato di Partenia. Alle 23.52: «Sì. Vivo.» Giorgi: «È la stessa condizione che ho posto io.»
 - Registra che solo lui ha detto «vivo». Alle otto chiama casa: Elena chiude senza salutare, per la prima volta in diciassette anni.
+
+## Fissato nel capitolo 21 (lunedì 28 giugno, notte, sala sicura)
+- Verifica il piano di cattura variabile per variabile (luogo, pattern, invito, cattura, condizione «vivo»); unica debolezza nota: Kurgan potrebbe non parlare mai.
+- Alle 23.14 Bertola gli dice che la cattura è diventata una carica sotto la cucina, con uomini sui tetti; stima dei civili «tre, quattro», nessun bambino. Giorgi legge la notizia come **una prova del supervisore** (controllo gerarchico: il supervisore sostituisce il regolatore; la terza tazza del 6 gennaio).
+- Esamina e scarta la terza via (un rinvio). Tre ragioni fredde per non fermare: Osiride lo isolerebbe; con Kurgan morto la variabile diventa l'uomo più informato di quel mondo e troverà la bambina; Kurgan catturato non parlerebbe. Nessuna delle tre contiene i quattro.
+- Posa il telefono alle 23.51, schermo in giù, e non lo tocca più fino all'alba. Nessuna crepa.
+- Eco rovesciata del cap. 2: «Conoscere le equazioni non era il contrario di non conoscerle. Era soltanto il modo più preciso di lasciarle andare.»
+- Porta la chiavetta nella tasca interna della giacca, accanto al disegno di Laura: «l'ultima moneta».

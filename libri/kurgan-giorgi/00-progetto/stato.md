@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 21 (Giorgi, registro c, lunedì 28 giugno notte; fonte Bertola). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–20. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 22 (Dalia, secondo scaletta). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–21. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -121,3 +121,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-28 — Capitolo 19 (Elena, circa 2.330 parole): il telefono del comodino, Dalia la donna del martedì, il 28 maggio, le tre versioni, «Sì» sa chi è stato, la chiavetta, «Nocciolo1207».
 - 2026-09-28 — Correzioni al cap. 19 (password cambiata dopo ogni affare, lettura dalle dita, motivo per mostrare la chiavetta, pagella di Fabrizio e orale di Cesare); mappa della chiavetta in `semi.md`; bibbia e scheda Elena (sa del responsabile senza nome; clonazione come leva e assicurazione).
 - 2026-09-28 — Capitolo 20 (Flora, circa 2.240 parole): Valdhof respinta, il 9 marzo e il 14 marzo, via dei Cordai 14, «Non ancora» a Calabrese, Porto Clodio martedì, «stai lontana dalla costa». «Perché?» Non rispose.
+- 2026-09-28 — Verifica una tantum della scaletta 22–30: nessuna contraddizione con le regole fissate (ora solo al 23; De Biasi senza nome al 24 e con nome al 26; Adorisio nominato solo dal 26, dopo il tradimento; niente Laura prigioniera; civili non contraddetti; prima crepa al 29). Unica correzione: la chiusura del 21.
+- 2026-09-28 — Capitolo 21 (Giorgi, registro c, circa 2.260 parole): il piano verificato, Bertola alle 23.14, il supervisore e il regolatore, il pulsante di arresto, la terza via scartata, tre ragioni fredde, il telefono posato alle 23.51. «Domani, a pranzo, il sistema avrebbe cambiato stato.»

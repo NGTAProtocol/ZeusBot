@@ -36,3 +36,8 @@ La prossima creatura: l'uomo fidato di Giorgi, in realtà informatore dell'élit
 
 ## Fissato nel capitolo 8
 - Prima apparizione (citato): accompagna Giorgi da tredici anni; ha ritirato lui in portineria la busta con l'orologio rimandato da Kurgan. Oltre a Giorgi è l'unico a saperlo, e Salvarani lo sa: è il primo seme del suo ruolo di informatore.
+
+## Fissato nel capitolo 21
+- Porta a Giorgi, alle 23.14 del 28 giugno, la notizia della bomba: gli è stata data alle nove di sera, «dal generale, ma non è una cosa del generale», con l'ordine di dirla stasera e a lui solo. Dà la stima dei civili: «tre, quattro».
+- A Giorgi che gli chiede che cosa farebbe: «Io faccio quello che dice lei, dottore. L'ho sempre fatto.» Passa la notte sulla panca del corridoio fuori dalla sala sicura.
+- Giorgi registra che ha saputo prima di lui e sceglie di non seguire il filo.
