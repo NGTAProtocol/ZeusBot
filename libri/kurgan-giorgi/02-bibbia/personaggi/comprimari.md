@@ -62,3 +62,8 @@
 - **Il ragazzo della Serrana**: il più giovane dei sei; legge i manuali meglio degli altri; turno di notte alla banchina; riceve il foglietto da un uomo dell'equipaggio.
 - **Carrese**: procurò a Kurgan da marzo le carte della seconda busta tramite un doganiere di Porto Clodio con un figlio malato. Ospita Kurgan in una casa vicino al porto.
 - **Rocco** scatta contro il ragazzo della Serrana; il Biondo lo ferma.
+
+## Fissato nel capitolo 19
+- **La madre di Elena**: crede alla versione di Giorgi (Laura in un collegio estivo sul lago, in Svizzera, con i cavalli; niente telefono). Scrive a Giorgi «come sta Elena?».
+- **Fabrizio**: quindici anni e un mese; esami tra dieci giorni; chiede alla madre se ha scoperto qualcosa, lei dice di no.
+- **Cesare**: vuole mandare un disegno a Laura «dai nonni».

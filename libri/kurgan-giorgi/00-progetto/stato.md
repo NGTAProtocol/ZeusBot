@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 19 (Elena, secondo scaletta). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–18. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 20 (Flora, sabato 26 giugno; paga Valdhof). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–19. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -117,3 +117,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-28 — Capitolo 17 (Giorgi, registro c, circa 2.430 parole): la sala sicura, il rivelatore che disturba il nocciolo, 36 porte, niente trattativa, «Mi serve lui. Vivo.», il sistema non osservabile, la variabile interna, «Sì. Vivo.»
 - 2026-09-28 — Scaletta corretta: chiusura del 18 senza luogo né ora (invito legato alla seconda busta, tre mani); al 24 luogo e ora arrivano in apertura. Calendario: 16 giugno (18), 26 (20), 28 notte (21), martedì 29 giugno 13.30 Riva Salmara (23–24).
 - 2026-09-28 — Capitolo 18 (Kurgan, circa 2.430 parole): Chen sulla terrazza, Rastegar al buffet dei farmacisti, dieci droni e cinque trattenuti, la seconda busta come debito, Onorato contro i serrani, il foglietto passato da tre mani: «Il contabile vuole la busta. E presto.»
+- 2026-09-28 — Passo 0: il foglietto del 18 è la trappola (fuga dal doganiere di Porto Clodio, Carrese sospetto senza colpa); ristorante del 18 distinto da quello del primo incontro (il locale chiuso, oggi gelateria); semi su Adorisio e «una cosa sua», Rastegar e la casa dei guardiani.
+- 2026-09-28 — Capitolo 19 (Elena, circa 2.330 parole): il telefono del comodino, Dalia la donna del martedì, il 28 maggio, le tre versioni, «Sì» sa chi è stato, la chiavetta, «Nocciolo1207».

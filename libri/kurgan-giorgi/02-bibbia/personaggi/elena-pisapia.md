@@ -53,3 +53,12 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - Alle 1.45 chiama il 112 dal giardino, non parla, chiude; quando la richiamano dice di aver sbagliato numero. Calcolo: «Delle ore si potevano perdere. Laura no.» **Traccia da pagare nella Parte III:** la chiamata resta registrata; la ritrova Giorgi o i servizi che sorvegliano la casa (da decidere).
 - Ipotesi: riscatto; l'altra ipotesi («se non è per soldi») non la scrive. Non sa che è stato Kurgan; nessuno pronuncia il suo nome davanti a lei.
 - Una sorella (mai nominata); i nonni (la «nonna» chiamata da Fabrizio).
+
+## Fissato nel capitolo 19 (domenica 20 giugno)
+- Il codice del telefono di Giorgi è la data del loro matrimonio al contrario (visto due anni prima, riflesso nel vetro del forno). Legge il telefono del comodino alle 5.48, mentre lui dorme.
+- Nessun messaggio parla di Laura: conclude che di Laura lui scrive da un altro telefono.
+- Trova **«Dalia»**, senza cognome: sei anni di «Stasera?» il martedì verso le dieci; il primo messaggio «Grazie per il parere. Posso offrirle un caffè?»; il «Tutto bene?» di maggio dell'anno prima; il «Stasera. Alle otto. Solita stanza.» di venerdì 28 maggio, la sera in cui lui aveva detto di dormire in ufficio. La prende per «una donna del martedì», una delle tante.
+- Seconda lista, sulla ricevuta della farmacia con la matita per gli occhi, nel portafoglio accanto allo scontrino del 19 maggio. Aggiunge le tre versioni: suore «con il papà», Cesare «dai nonni», sua madre «un collegio sul lago in Svizzera, con i cavalli».
+- Giorgi le ammette di sapere chi è stato («Sì»), senza nome: «Se lo dico alla polizia, lui lo sa prima di sera.» Elena deduce: un uomo, che Alfredo conosce bene, forse con qualcuno nella polizia.
+- Dice di no a Fabrizio («Hai scoperto qualcosa?»).
+- All'una di notte Giorgi le mostra la chiavetta grigia con il cordino nero: «Nomi. Conti. Chi ha fatto che cosa, e per chi.» «Tu non sai niente.» Nei prossimi giorni potrebbe non tornare a casa. Lei legge nel riflesso della vetrata la password: **Nocciolo1207** (12 tasti). Non sa che cosa significhi 12.07. **La clonazione non avviene qui** (cap. 28: il cassetto delle chiavi).

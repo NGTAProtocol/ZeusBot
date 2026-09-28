@@ -29,11 +29,19 @@ Ogni traccia lasciata nel testo va pagata o chiusa di proposito. Per ciascuna: d
 - **Bertola conosce le decisioni di Osiride** (cap. 21): è lui a portare a Giorgi la notizia della bomba. Giorgi lo registra, come la busta ritirata del cap. 8, e sceglie di non seguire il filo perché Bertola gli serve: la sua versione dell'ignoranza voluta del governo. Conferma al cap. 26, quando De Biasi insedia Bertola.
 
 - **Idea per il 24:** Adorisio accompagna Kurgan a Riva Salmara e resta in auto con il libro, come al cap. 7. **Da decidere.**
-- **Il foglietto del 17 giugno** (cap. 18): «La mia gente è pronta a leggere. Il contabile vuole la busta. E presto.» Carta di blocco d'albergo, nessuna firma, luogo e ora assenti. Passato per tre mani (ragazzo della Serrana ← un uomo dell'equipaggio; Carrese; Adorisio). **Da decidere** se è davvero di Rastegar (che il giorno prima aveva detto «Le farò sapere io dove») o già il primo passo della trappola, che sfrutta la seconda busta. Kurgan non indaga: chiedere a un uomo di dimostrare la lealtà è offenderlo.
+- **Il foglietto del 17 giugno** (cap. 18): «La mia gente è pronta a leggere. Il contabile vuole la busta. E presto.» **Deciso: è la trappola, non Rastegar.** Chi l'ha costruito sapeva della seconda busta: la fuga passa dal **doganiere di Porto Clodio con il figlio malato** (la fonte delle carte procurate da Carrese), costretto dai servizi a dire che cosa Kurgan aveva chiesto e per chi. **Carrese resta un sospetto visibile, senza colpa.** Al cap. 24 Kurgan ricorda la discrepanza con «entro l'estate, le farò sapere io dove» e la spiega con la fretta di un contabile che vuole la busta.
 - **La seconda busta** (cap. 7, 18): le carte sulle vendite del governo ai vicini di Parsàn. Kurgan le ha da marzo, procurate da Carrese tramite un doganiere di Porto Clodio con un figlio malato. Non le dà per tenere Rastegar legato da un debito (cinque droni trattenuti). Rastegar: «entro l'estate». È l'esca naturale di Riva Salmara.
-- **Rastegar e la banchina / casa dei guardiani:** **evitato di proposito al cap. 18** (nessun cenno; la casa è a mezz'ora dal molo). Resta aperto per dopo Riva Salmara.
+- **Rastegar e la casa dei guardiani:** evitato di proposito al cap. 18. **Da decidere prima del 24:** i suoi uomini alla banchina scoprono la bambina? Che cosa fa Parsàn dopo la morte di Kurgan (la banchina, i cinque droni trattenuti, la busta mai consegnata)?
 - **Kurgan ai suoi: «Ho una cosa sua che gli impedisce di mandarli»** (cap. 18): allusione a Laura detta a nove uomini, senza spiegazione. Nessuno fa domande. Da tenere presente per Tanino e per la variabile (fino al 26 Adorisio non sa del rapimento: la frase non basta a saperlo).
 - **Tensioni nel sindacato** (cap. 18): Onorato vuole le navi libere «entro settembre», altrimenti porta i suoi altrove; un terzo dei soldi della banchina passa ai suoi, a spese dei serrani. Il serrano anziano ricorda il conto. Possibile radice del golpe di Adorisio (i quattro ex alti funzionari).
+
+- **Adorisio ha sentito «una cosa sua»** (cap. 18): era tra i nove nel magazzino. Al cap. 26, quando Giorgi gli affida Laura, deve fingere di non sapere niente del rapimento (e davvero non sa che cosa fosse «la cosa»: può averlo intuito solo dopo).
+- **Il ristorante del lungomare** (cap. 3, 8, 18): verificato che **non è lo stesso**. Il primo incontro fu in un locale piccolo in fondo alla passeggiata, chiuso da tempo (oggi una gelateria con l'insegna al neon, cap. 18); Chen sta nel ristorante più grande, in prima fila sulla terrazza. L'eco dei «dieci minuti di anticipo» è voluta.
+
+- **La password Nocciolo1207** (cap. 19): Elena la legge nel riflesso della vetrata. Il lettore riconosce il 12.07 del prologo; Elena no. Serve alla clonazione (cap. 28). **Nocciolo** è la parola di Giorgi (il nocciolo del reattore).
+- **Le tre versioni su Laura** (cap. 19): suore, Cesare, la madre di Elena (collegio in Svizzera). Da tenere coerenti nei capitoli di Elena fino al ritorno di Laura.
+- **«Sì», sa chi è stato** (cap. 19): Elena sa che Giorgi conosce il rapitore e non lo dice alla polizia. Seme per il 23 e per il 28.
+- **Il numero con il prefisso di Partenia** (cap. 19): due chiamate perse di notte sul telefono del comodino. È l'avvocato? Da decidere (se sì, l'avvocato ha anche quel numero: altro motivo per il suo destino).
 
 ## Decise
 

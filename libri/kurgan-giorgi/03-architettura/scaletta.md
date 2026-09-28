@@ -34,6 +34,7 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - Sabato 7 febbraio: capitolo 10 (Kurgan e Volkov; la parola «nazione»).
 - Domenica 17 maggio: capitolo 11 (Dalia a Monte Marzio, un anno esatto dalla notte dei droni).
 - **Anno seguente.** Martedì 11 maggio: capitolo 12 (il fronte ad Albaterra; la berlina grigia davanti alla scuola). Diciotto mesi dopo la ribellione. Il rapimento (capitoli 13–14) va collocato pochi giorni dopo, a metà–fine maggio, prima della chiusura delle scuole. Le intestazioni dei capitoli di quest'anno portano «dell'anno seguente» almeno al primo cambio d'anno.
+- Domenica 20 giugno: capitolo 19 (Elena legge il telefono; la chiavetta; «Nocciolo1207»).
 - Mercoledì 16 giugno: capitolo 18 (Chen, Rastegar, il sindacato; all'alba del 17 il foglietto del contabile). Sabato 26 giugno: capitolo 20. Lunedì 28 giugno, notte: capitolo 21. **Martedì 29 giugno, 13.30: Riva Salmara** (capitoli 23–24).
 - Lunedì 31 maggio: capitolo 17 (la sala sicura; la variabile accetta alle 23.52).
 - Giovedì 27 maggio: capitolo 15 (Oddone chiama Flora; allegato 37). Venerdì 28 maggio: capitolo 16 (Dalia e Giorgi nella 512, fuori dal giorno fisso).
@@ -139,7 +140,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **18. Kurgan** · Partenia (terrazza del grande ristorante sul lungomare, poi buffet di un convegno all'albergo della stazione); Punta Saline (magazzino del molo nord) · mercoledì 16 giugno, fino all'alba del 17 · Incontra Chen, poi Rastegar per la seconda volta: i droni arrivano (dieci per la banchina; cinque trattenuti per la seconda busta) → tensioni nel sindacato (Onorato contro i serrani). · **Chiusura (corretta):** un invito generico legato alla seconda busta rinviata al cap. 7, *«La mia gente è pronta a leggere. Il contabile vuole la busta. E presto.»* Nessun luogo, nessuna ora. Il foglietto passa per tre mani con lo stesso peso (il ragazzo della Serrana, Carrese, Adorisio); chi lo abbia originato resta ambiguo. · 2.500
 
-**19. Elena** · Merania · Mese 19 · Vuole sapere cosa sa il marito → spia il telefono: trova "Dalia" e la prende per una donna qualunque. Giorgi, una sera, le parla della chiavetta. · **Chiusura:** Elena memorizza una password. · 2.400
+**19. Elena** · Merania, casa Giorgi · domenica 20 giugno (dall'alba all'una di notte) · Vuole sapere cosa sa il marito → spia il telefono: trova "Dalia" e la prende per una donna qualunque. Giorgi, una sera, le parla della chiavetta. · **Chiusura:** Elena memorizza una password. · 2.400
 
 **20. Flora** · Rocca Sannella · fine giugno (sabato 26 giugno proposto) · *(Paga la scadenza di Valdhof: vedi `00-progetto/semi.md`.)* · Torna a casa per un fine settimana → De Stefano le chiede di stare lontana dalla costa quella settimana. Primo segnale ambiguo. · **Chiusura:** "Perché?" Lui non risponde. · 2.300
 
