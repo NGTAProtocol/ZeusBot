@@ -50,3 +50,12 @@ La magistrata che segue la fusione delle mafie fino a Osiride: la giustizia a cu
 ## Fissato nel capitolo 9
 - Tiene in borsa, nella tasca con la cerniera, un foglio piegato in quattro: le due possibili fonti della pista di De Stefano, la prima numerata («uno»: la rogatoria passata dal ministero), la seconda senza numero (dati che nessuno poteva avere).
 - Per la prima volta dice a Calabrese una cosa vera per una ragione diversa da quella vera.
+
+## Fissato nel capitolo 15 (giovedì 27 maggio)
+- **Oddone:** lo conosce dalla relazione di servizio sulla traduzione del primo collaboratore a Tarassa («Se mi portano a Tarassa sono morto»), mai arrivata in procura; dopo il funerale le arrivò per posta una fotocopia anonima con il numero di Oddone a matita. La tiene in una busta senza scritte nel cassetto della scrivania.
+- Sa: il rapimento di Laura Giorgi (19 maggio, via dei Tintori), il fascicolo in via riservata a un ufficio di Albaterra che non è una procura, la bugia della madre superiora, che il padre è Alfredo Giorgi, finanziere di Merania «con il palazzo di vetro». Nessuna iscrizione nel registro generale di Merania.
+- **Non sa:** AV System, Porta Vetra, il rapporto Giorgi–Kurgan, chi ha preso la bambina.
+- Nel fascicolo archiviato: i soldi dell'unificazione passati per la flotta di Porto Clodio (punto sette della richiesta di proroga); le navi in leasing dalla **Clodia Navi**, controllata dalla **Finanziaria Lanterna** (43 partecipazioni, 9 consiglieri). Allegato 37, cartellina verde, visura di quattro anni prima: «Giorgi Alfredo», consigliere non esecutivo da undici anni; a matita, allora: «irrilevante — da rivedere». I collaboratori parlavano di un «dottore», «quello che mette i soldi», senza nome.
+- Nel pool: vota contro di lei due a uno (Calabrese e Cataldo); il foglio va «in un cassetto, senza protocollo». Lei lo tiene in borsa, nella tasca con la cerniera, accanto al foglio di gennaio.
+- Il procuratore nazionale (66 anni, quinto piano, finestre sul fiume, non fa sedere nessuno per due minuti) la convoca alle 12.40: la telefonata al registro di Merania gli è arrivata in tre ore e quaranta. «La rifaccia quando avrà una carta da mostrarmi. Non una voce.»
+- La Consob ha risposto in autunno: i conti delle 12.07 si perdono in altrettante fiduciarie di Valdhof; una seconda rogatoria tornata con metà pagine annerite; risposta del giudice di Valdhof attesa tra un mese.

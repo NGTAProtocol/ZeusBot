@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 15 (Flora, fine maggio – inizio giugno; fonte il maresciallo Oddone). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–14. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 16 (Dalia, secondo scaletta). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–15. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -108,7 +108,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-28 — Precisazioni dopo il cap. 14: regola delle intestazioni nel manuale («dell'anno seguente» solo dopo un salto d'anno o se la data sembra tornare indietro); denuncia non cancellata ma «in via riservata», fascicolo ai servizi, maresciallo Oddone (cap. 14 ora circa 2.570 parole); tre esecutori allineati (cap. 3: Tanino parte con il Biondo e Rocco; cap. 13: loro rientrano in autunno, lui a marzo); Tanino strada di Adorisio verso Laura (cap. 29).
 
 ## Tracce aperte da pagare
-- **Chiamata al 112 di Elena (19–20 maggio, 1.45, «ho sbagliato numero»):** registrata. La ritrova nella Parte III Giorgi o i servizi che sorvegliano la casa. Da decidere chi e in quale capitolo.
-- **Maresciallo Oddone:** ha visto il fascicolo del rapimento finire in via riservata; fonte di Flora al cap. 15. Resta un problema per il sistema.
-- **Tanino:** cedimento piccolo verso Adorisio dopo Riva Salmara (un'informazione o una porta aperta); spiega il ritardo scoperto al cap. 29.
-- **Rastegar e la banchina di Punta Saline:** vicina alla casa dei guardiani; da usare o evitare di proposito (possibile attrito al cap. 18).
+- Spostate in `00-progetto/semi.md`.
+- 2026-09-28 — Capitolo 15 (Flora, circa 2.260 parole): Oddone chiama da un bar (la relazione di Tarassa); il sequestro che non esiste nel registro di Merania; il pool vota due contro uno; il procuratore nazionale lo sa in tre ore e quaranta; allegato 37, la Finanziaria Lanterna, «Giorgi Alfredo — irrilevante, da rivedere». Strada (a) annotata in scaletta.

@@ -39,3 +39,10 @@
 - **La madre superiora** (settant'anni, crocifisso d'argento): sei minuti a porta chiusa con Giorgi, poi dice alle madri che è stato un tentativo di rapina all'autista e che Laura «è già con il suo papà».
 - **Suor Agnese** telefona a Elena alle 16.19.
 - **Bertola** porta Giorgi alla scuola (16.47) e passa la notte in macchina davanti al cancello di casa.
+
+## Fissato nel capitolo 15
+- **Maresciallo Oddone** (stazione del centro di Merania): anni prima scortò il primo collaboratore di Flora a Tarassa e scrisse nella relazione la frase «Se mi portano a Tarassa sono morto»; la relazione sparì. Chiama Flora da un bar, ogni volta da un telefono diverso. Il capitano gli ha detto che la bambina è «in un posto sicuro» e di non occuparsene più. Non l'ha detto a nessuno, nemmeno alla moglie. Di Elena ricorda: «Non piangeva. Contava.»
+- **Il procuratore nazionale antimafia** (senza nome): 66 anni; ha firmato il decreto del pool. Lo informa il procuratore di Merania.
+- **Calabrese** esce alle 15.30 ogni giovedì (lo studio della moglie).
+- **Cataldo**: blocco a righe, tre matite temperate in fila; «A me nessuno mi guarda. È comodo, a volte.»
+- **La madre di Flora** a Rocca Sannella: chiama alle 21.15; il vicino ha potato il fico troppo presto.
