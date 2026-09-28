@@ -65,5 +65,5 @@
 
 ## Fissato nel capitolo 19
 - **La madre di Elena**: crede alla versione di Giorgi (Laura in un collegio estivo sul lago, in Svizzera, con i cavalli; niente telefono). Scrive a Giorgi «come sta Elena?».
-- **Fabrizio**: quindici anni e un mese; esami tra dieci giorni; chiede alla madre se ha scoperto qualcosa, lei dice di no.
-- **Cesare**: vuole mandare un disegno a Laura «dai nonni».
+- **Fabrizio**: quindici anni e un mese; pagella arrivata la settimana prima con due insufficienze mai prese; chiede alla madre se ha scoperto qualcosa, lei dice di no.
+- **Cesare**: tredici anni, terza media; orale dell'esame martedì 22 giugno; da una settimana disegna invece di ripassare; vuole mandare un disegno a Laura «dai nonni».

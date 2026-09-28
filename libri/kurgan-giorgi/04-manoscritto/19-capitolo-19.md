@@ -82,7 +82,7 @@ Alle dieci, mentre Alfredo era al telefono in giardino, Fabrizio scese in cucina
 
 «Hai scoperto qualcosa?» chiese, a voce bassa.
 
-Elena stava asciugando un bicchiere. Continuò ad asciugarlo. Fece il conto: quindici anni, un segreto già addosso, una scuola da finire tra dieci giorni con gli esami. Una seconda cosa da portare, adesso, sarebbe stata troppo. E una madre che si confidava con il figlio sul padre, una volta, lo faceva per sempre. Non voleva cominciare adesso, in una cucina, con un bicchiere in mano.
+Elena stava asciugando un bicchiere. Continuò ad asciugarlo. Fece il conto: quindici anni, un segreto già addosso, una pagella arrivata la settimana prima con due insufficienze che non aveva mai preso. Una seconda cosa da portare, adesso, sarebbe stata troppo. E una madre che si confidava con il figlio sul padre, una volta, lo faceva per sempre. Non voleva cominciare adesso, in una cucina, con un bicchiere in mano.
 
 «No» disse.
 
@@ -104,7 +104,7 @@ A pranzo Cesare chiese se potevano andare a trovare Laura dai nonni, visto che e
 
 Fabrizio posò la forchetta. Guardò il padre, poi la madre. Elena gli restituì lo sguardo e scosse la testa, di un millimetro. Fabrizio riprese la forchetta. Aveva quindici anni e un mese, e da un mese mangiava come un adulto che sa una cosa e deve fingere di non saperla.
 
-«Allora le mando un disegno» disse Cesare.
+«Allora le mando un disegno» disse Cesare. Martedì aveva l'orale dell'esame di terza media, e da una settimana disegnava invece di ripassare.
 
 «Mandale un disegno» disse Alfredo.
 
@@ -200,7 +200,7 @@ Elena tenne le mani intorno alla tazza. La camomilla era troppo calda. Non la po
 
 «Perché me lo dici?»
 
-«Perché se mi succede qualcosa verranno a cercarla. Persone che ti diranno di essere miei amici, e che ti porteranno fiori. Tu non sai dov'è. Tu non sai che esiste. Tu non sai niente.»
+«Perché se mi succede qualcosa verranno a cercarla. Persone che ti diranno di essere miei amici, e che ti porteranno fiori. Stava in un posto lontano, dove nessuno poteva toccarla. Da un mese sta qui, perché mi serviva vicina. Da domani non ci sarà più.» Si fermò. «Se non torno, qualcuno deve sapere che c'era. Non che cosa c'è dentro. Che c'era. Per il resto, tu non sai dov'è. Tu non sai che esiste. Tu non sai niente.»
 
 «Io non so niente» ripeté Elena.
 
@@ -210,13 +210,15 @@ Lo disse con sollievo, come se lei avesse superato un esame. Poi si voltò verso
 
 Elena non guardò lo schermo. Guardò la vetrata.
 
-Nella vetrata nera c'era lui, di spalle, piegato sulla tastiera, e c'erano le sue mani, rovesciate, chiare, vicine alla lampada. Elena contò i tasti come contava i gradini delle scale quando portava Laura a letto in braccio. Uno per uno, a voce bassa dentro la testa.
+Nella vetrata nera c'era lui, di spalle, piegato sulla tastiera, e c'erano le sue mani, rovesciate, chiare, vicine alla lampada. Le lettere non si vedevano: si vedevano le dita. Ed Elena quella tastiera la conosceva a memoria, perché il portatile era lo stesso modello che lui le aveva regalato due Natali prima, e su cui lei scriveva ogni sera la lista della spesa senza guardare i tasti. Sapeva dove cadeva ogni dito. Contò i tasti come contava i gradini delle scale quando portava Laura a letto in braccio. Uno per uno, a voce bassa dentro la testa.
 
 Una lettera maiuscola, il mignolo sinistro sul tasto delle maiuscole. Poi sette lettere, veloci, con tutte e due le mani. Poi quattro tasti sulla fila dei numeri, lenti, uno alla volta, come faceva chi digitava un numero che aveva un significato.
 
 Dodici tasti. Invio.
 
-Le lettere le vide rovesciate e non le lesse tutte, ma bastavano. Le ricompose come si ricomponeva una parola crociata, con le caselle che si incrociano. Una N maiuscola. Due c. Una parola che conosceva, che aveva a che fare con la frutta, con il centro delle cose, con quello che si buttava dopo aver mangiato una pesca. Poi i numeri, che vide meglio perché lui li aveva battuti piano: uno, due, zero, sette.
+Una volta, anni prima, a cena con dei soci, Alfredo aveva raccontato ridendo che cambiava tutte le sue password dopo ogni affare importante, come altri cambiavano la cravatta dopo una vittoria. Elena se n'era ricordata per anni senza motivo. Adesso il motivo c'era: quella parola doveva essere nata dopo qualcosa che per lui contava.
+
+Le lettere le ricompose dalla posizione delle dita, una alla volta, e non tutte le furono chiare, ma bastavano. Le ricompose come si ricomponeva una parola crociata, con le caselle che si incrociavano. Una N maiuscola, il mignolo e l'indice destro. Due c di seguito, lo stesso dito due volte. Una parola che conosceva, che aveva a che fare con la frutta, con il centro delle cose, con quello che si buttava dopo aver mangiato una pesca. Poi i numeri, che vide meglio perché lui li aveva battuti piano: uno, due, zero, sette.
 
 Alfredo richiuse il portatile a metà, tolse la chiavetta, se la mise in tasca.
 

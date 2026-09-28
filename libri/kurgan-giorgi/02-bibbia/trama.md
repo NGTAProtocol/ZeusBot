@@ -56,7 +56,7 @@ Laura, 7 anni, frequenta una scuola cattolica prestigiosa gestita da suore; un a
 13. Golpe di Adorisio contro Bertola (circa due mesi dopo Riva Salmara); Adorisio muore.
 14. Calma apparente: il pool, nato dopo le tre stragi, avanza verso l'elenco dei 60.
 15. **Seconda cresta:** le squadre di De Biasi colpiscono Portofosco, Tarassa, Dorsale e Litoranea; il Parlamento approva la legge d'emergenza di Cicimarra.
-16. Elena, già sospettosa, clona la chiavetta di Giorgi.
+16. Elena, già sospettosa, clona la chiavetta di Giorgi (cap. 28). Sa che il marito conosce il rapitore, senza nome né movente (cap. 19). Due ragioni: leva per Laura e assicurazione.
 17. Dalia scopre di essere stata usata.
 18. Dalia pubblica lo scoop.
 19. Ritorsione dei servizi contro Dalia.

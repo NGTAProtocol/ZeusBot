@@ -38,10 +38,19 @@ Ogni traccia lasciata nel testo va pagata o chiusa di proposito. Per ciascuna: d
 - **Adorisio ha sentito «una cosa sua»** (cap. 18): era tra i nove nel magazzino. Al cap. 26, quando Giorgi gli affida Laura, deve fingere di non sapere niente del rapimento (e davvero non sa che cosa fosse «la cosa»: può averlo intuito solo dopo).
 - **Il ristorante del lungomare** (cap. 3, 8, 18): verificato che **non è lo stesso**. Il primo incontro fu in un locale piccolo in fondo alla passeggiata, chiuso da tempo (oggi una gelateria con l'insegna al neon, cap. 18); Chen sta nel ristorante più grande, in prima fila sulla terrazza. L'eco dei «dieci minuti di anticipo» è voluta.
 
-- **La password Nocciolo1207** (cap. 19): Elena la legge nel riflesso della vetrata. Il lettore riconosce il 12.07 del prologo; Elena no. Serve alla clonazione (cap. 28). **Nocciolo** è la parola di Giorgi (il nocciolo del reattore).
+- **La password Nocciolo1207** (cap. 19): il lettore riconosce il 12.07 del prologo; Elena no. **Giustificata nel testo:** Giorgi cambia le password dopo ogni affare importante (lo raccontò ridendo a una cena); quindi è nata dopo il 12 novembre. **Metodo di lettura:** Elena non vede le lettere, vede le dita riflesse nella vetrata; conosce a memoria la tastiera perché ha lo stesso modello di portatile (regalo di due Natali prima); ricompone le lettere dalla posizione delle dita e dalla parola che riconosce. **Stesso metodo al cap. 28:** Elena prova la parola ricostruita sul proprio portatile, gemello di quello di Giorgi, inserendo la chiavetta presa dal cassetto; la clonazione avviene lì.
+- **Mappa degli spostamenti della chiavetta di Giorgi:**
+  1. Prima del rapimento: **cassetta di sicurezza di Cadrasca**, sotto falso nome (bibbia).
+  2. Dopo il 19 maggio: Giorgi la ritira e la porta a casa, nello studio di Merania, «perché mi serviva vicina»: è l'ultima moneta per Laura, se tutto il resto fallisce (da spendere con il fronte o con Osiride).
+  3. Domenica 20 giugno (cap. 19): la verifica sul portatile, la mostra a Elena, dice «Da domani non ci sarà più». Lunedì 21 la porta con sé (sala sicura di Porta Vetra) per la settimana di Riva Salmara.
+  4. Dopo Riva Salmara: la riporta a casa, nel **cassetto dove tiene le chiavi** (da fissare al cap. 26 o 28 con una riga), perché Porta Vetra, dopo il 29 giugno, è il primo posto dove chiunque la cercherebbe.
+  5. Cap. 28: Elena apre il cassetto e la clona (terza copia, poi nella sua cassetta a nome da nubile).
+  6. Dopo: Giorgi la rimette a Cadrasca; alla sparizione passa a Cicimarra (bibbia). Da decidere quando torna in Svizzera.
+- **Perché Giorgi la mostra a Elena** (cap. 19): motivo leggibile nel testo: sta per fare una cosa rischiosa e «se non torno, qualcuno deve sapere che c'era. Non che cosa c'è dentro. Che c'era.» Un'assicurazione umana fuori da Osiride, che poi gli si rivolterà contro.
+- **La frase «segreti che spostano gli equilibri»** (bibbia): **è già nel testo**, al cap. 19, in parafrasi: «Cose che, se escono tutte insieme, spostano più di un governo. In questo Paese e fuori.» Non serve ripeterla.
 - **Le tre versioni su Laura** (cap. 19): suore, Cesare, la madre di Elena (collegio in Svizzera). Da tenere coerenti nei capitoli di Elena fino al ritorno di Laura.
 - **«Sì», sa chi è stato** (cap. 19): Elena sa che Giorgi conosce il rapitore e non lo dice alla polizia. Seme per il 23 e per il 28.
-- **Il numero con il prefisso di Partenia** (cap. 19): due chiamate perse di notte sul telefono del comodino. È l'avvocato? Da decidere (se sì, l'avvocato ha anche quel numero: altro motivo per il suo destino).
+- **Il numero con il prefisso di Partenia** (cap. 19): due chiamate perse di notte sul telefono del comodino. **Deciso: è l'avvocato di Partenia** (cap. 17). Il suo numero compare anche sul telefono che Elena conosce: altro motivo per il suo destino.
 
 ## Decise
 
