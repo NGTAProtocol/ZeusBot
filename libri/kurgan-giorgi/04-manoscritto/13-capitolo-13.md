@@ -24,7 +24,7 @@ Kurgan guardò il muro davanti a sé. Una carta nautica della costa, ingiallita,
 
 Non era una domanda. La voce esitò lo stesso.
 
-«Una settimana fa, forse. Abbiamo fatto come ha detto lei. La grigia l'abbiamo rimandata su e siamo passati al bar di fronte, a piedi. Da lì non ci vede nessuno.»
+«Una settimana fa, forse. Abbiamo fatto come ha detto lei. La grigia l'abbiamo rimandata su e siamo passati al bar di fronte, a piedi.»
 
 «Oggi l'autista dove si è messo?»
 
@@ -148,8 +148,6 @@ Gli tornò in mente Rastegar, al centro commerciale, a dicembre, con l'albero di
 
 Aveva ragione. Era per questo che il posto era giusto. Davanti a una scuola di suore, all'uscita, con le madri sul marciapiede e i bambini che correvano, nessuno avrebbe tirato fuori una pistola. Né i suoi, né l'autista, né i due della station. L'autista aveva un'arma sotto la giacca: Kurgan lo sapeva e contava proprio su questo. Un uomo così, in mezzo ai bambini, non sparava. Tutto doveva durare meno di un minuto. L'autista a terra, vivo. La bambina in macchina. Nessun colpo.
 
-Lo pensò con la precisione con cui pensava le cose che dovevano riuscire.
-
 Poi, per un istante, pensò un'altra cosa.
 
 Rivide la valle nel Drenak. La radio, le quattro del pomeriggio, la voce calma del capitano. Tre uomini seduti a mangiare in un posto di comando, a cento chilometri dalla carta che avevano firmato. Tre uomini che avevano deciso di mettere dentro una guerra gente che non l'aveva scelta, perché il conto, visto da lontano, tornava. Lui era tornato indietro lungo il fosso, da solo, e aveva chiuso quel conto.
@@ -176,7 +174,7 @@ La finestra si chiudeva. Aspettare voleva dire perderla. Il dottore aveva sempre
 
 Pensò a chi mandare con i due di fuori. Serviva un terzo, uno che guidasse la macchina del cambio sulla Litoranea e non facesse domande. Uno che avesse già fatto una cosa grande senza chiedere perché.
 
-Tanino. Ventisette anni adesso. Il pullman di Morenna, la colazione alla fermata dopo. Le medicine per la madre, la sera della cisterna. Tanino non avrebbe saputo chi c'era in macchina fino a quando non l'avesse visto. E dopo, non avrebbe parlato. Non per paura. Perché era Tanino.
+Tanino. Ventisette anni adesso. Il pullman di Morenna, la colazione alla fermata dopo. Le medicine per la madre, la sera della cisterna. Era partito quella notte stessa su una nave, e per un anno aveva visto soltanto porti stranieri. A marzo la madre aveva smesso di alzarsi dal letto, e Kurgan l'aveva fatto rientrare di notte da Punta Saline e le aveva pagato una clinica sulla collina. Da allora Tanino lavorava al molo e la domenica andava a trovarla. Tanino non avrebbe saputo chi c'era in macchina fino a quando non l'avesse visto. E dopo, non avrebbe parlato. Non per paura. Perché era Tanino.
 
 Kurgan strappò il foglio in quattro, poi in otto. Lo portò al lavandino in fondo alla stanza, ci diede fuoco con l'accendino e guardò la carta diventare nera e arricciarsi. Aprì il rubinetto. La cenere girò due volte intorno allo scarico e sparì.
 

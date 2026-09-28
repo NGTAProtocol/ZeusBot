@@ -41,6 +41,6 @@ Alberghi, centri commerciali, grandi ristoranti, un fast food di catena.
 - Sede del pool.
 
 ## Nascondigli e prigionie
-- Villa isolata vicino a **Punta Saline**: prigionia di Laura.
+- Vecchia casa di guardiani ai margini delle saline, vicino a **Punta Saline** (a mezz'ora dal molo nord; muri spessi, una sola strada): prigionia di Laura. Vicina alla banchina del molo nord concessa a Rastegar tre notti al mese.
 - **Cadrasca** (Svizzera): cassetta di sicurezza di Giorgi, sotto falso nome.
 - Banca non controllata da Giorgi: cassetta di sicurezza di Elena, a nome da nubile.

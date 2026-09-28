@@ -15,7 +15,7 @@
 | Sparizione di Giorgi | **Castelvaro**, sul **lago di Varo** |
 | Città di Flora | **Rocca Sannella** |
 | Porto delle 20 petroliere | **Porto Clodio** |
-| Porto già controllato da Kurgan; villa della prigionia di Laura | **Punta Saline** |
+| Porto già controllato da Kurgan; casa dei guardiani delle saline, prigionia di Laura | **Punta Saline** |
 | Porto a cui punta Kurgan | **Tarassa**, ex terminal **Oriens** |
 | Polo logistico colpito (nord-ovest) | **Portofosco** |
 | Autostrada nord-sud | **la Dorsale** (bombe a **Padèra** e **Albaterra**) |

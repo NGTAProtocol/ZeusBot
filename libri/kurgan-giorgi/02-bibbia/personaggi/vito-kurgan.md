@@ -31,7 +31,7 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 
 ## Arco narrativo
 - **Inizio:** esegue le tre stragi per Giorgi; subito dopo, sei mesi dopo l'unificazione, si ribella apertamente.
-- **Sviluppo:** si arma con Kaliria, Tianmar e Parsàn in cambio di informazioni militari (a Kaliria e Tianmar) e di dati su questioni nucleari passate (a Parsàn). Circa 18 mesi dopo la ribellione fa monitorare e rapire Laura all'uscita da scuola; la fa tenere in una **villa isolata vicino a Punta Saline**, protetta dalla sua rete portuale.
+- **Sviluppo:** si arma con Kaliria, Tianmar e Parsàn in cambio di informazioni militari (a Kaliria e Tianmar) e di dati su questioni nucleari passate (a Parsàn). Circa 18 mesi dopo la ribellione fa monitorare e rapire Laura all'uscita da scuola; la fa tenere in una **vecchia casa di guardiani ai margini delle saline vicino a Punta Saline**, protetta dalla sua rete portuale.
 - **Fine (metà romanzo):** Adorisio lo attira a un finto appuntamento con Rastegar in un ristorante di **Riva Salmara**, alle 13.30. Il ristorante è imbottito di esplosivo; Osiride e i servizi sorvegliano i dintorni con tiratori scelti. Muore nell'esplosione. Chiude la prima cresta.
 
 ## Tic di voce/pensiero (POV)
@@ -72,3 +72,14 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 - Luogo di prigionia: vecchia casa di guardiani ai margini delle saline, a mezz'ora dal molo, muri spessi, una sola strada; sistemata da due uomini della rete portuale convinti che servisse a nascondere lui. Nessun dettaglio ulteriore.
 - Terzo uomo per il cambio macchina sulla Litoranea: Tanino (27 anni), che non saprà chi c'è in macchina fino a quando non la vedrà.
 - Brucia il foglio dei conti nel lavandino. Continua a guardarsi il polso vuoto.
+
+## Conteggio droni per capitolo
+| Cap. | Data | Droni | Fonte |
+|---|---|---|---|
+| 7 | 20 dicembre | 5 promessi da Parsàn (Kurgan ne chiedeva 20) | accordo con Rastegar |
+| 10 | 7 febbraio | 5, in casse nel magazzino del molo nord di Punta Saline | consegna di Parsàn del 16 gennaio |
+| 11 | 17 maggio | 11 montati sotto la villa di Monte Marzio, altre casse in arrivo | Dalia li vede |
+| 12 | 11 maggio (anno seguente) | 42 stimati per difetto dai servizi; Giorgi sa che sono di più | rapporto dei servizi |
+| 13 | 18 maggio (anno seguente) | 58 sotto la villa, più 8 casse arrivate la sera («pompe idrauliche») | conto di Kurgan |
+
+Crescita da 11 a 58: i cinque di Parsàn, i quindici legati alla banchina di Punta Saline, i rifornimenti di Kaliria.
