@@ -52,3 +52,10 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - Il suo pezzo su *Il Meridiano* di giovedì 4 dicembre sulle posizioni al ribasso chiuse al picco è stato tagliato dal direttore.
 - Le guardie di Giorgi: **Ferri**, il più anziano (60 anni, sapone da caserma), e **Nicola**, il più giovane (scarpe consumate, debiti: «pago venerdì»), futura fonte.
 - Quello che ha raccontato di Kurgan in sei anni: chiama la domenica sera, prende sempre le scale, non dorme mai due notti nello stesso letto, mangia solo cibo cucinato davanti a lui.
+
+## Fissato nel capitolo 11
+- A dicembre, alla domanda di Giorgi su dove dorme Kurgan, aveva risposto: «Non lo so. In un posto diverso ogni notte.» Il 17 maggio scopre la villa di Monte Marzio (cancello verde, muro di buganvillea, stanza sotterranea con i droni) e decide di tenerselo per sé.
+- Vito le chiede di scrivere, un giorno, «la storia vera»: «Ti ho fatto studiare per questo.» Lei: «Mi hai fatto studiare perché costavo di più con una laurea.» Lui ride: «Anche per quello.»
+- Aveva raccontato ad Alfredo, tre anni prima, che Vito mangia solo cibo cucinato davanti a lui.
+- Il telefono di Alfredo vibra nella casa di Vito («Tutto bene?»), di domenica, fuori da ogni accordo: lei toglie la batteria, come le aveva insegnato Vito. Non sa come Alfredo sapesse che doveva chiederlo.
+- Adorisio le dà del lei da quindici anni.

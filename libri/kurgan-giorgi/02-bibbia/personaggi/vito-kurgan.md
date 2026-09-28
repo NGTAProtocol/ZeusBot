@@ -56,3 +56,8 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 - Il 7 febbraio pronuncia per la prima volta la parola «nazione»: non un porto né una provincia, ma un posto dove i suoi uomini (quelli del Drenak, i ragazzi dei vicoli, i sei della Serrana) non debbano più chiedere il permesso a una carta firmata lontano. «Non bastava strappare le carte. Bisognava essere quello che le scriveva.»
 - A Partenia lo chiamavano lo straniero, nel Drenak l'italiano.
 - I cinque droni di Parsàn sono in casse nel magazzino del molo nord di Punta Saline; Adorisio li studia con i ragazzi della Serrana su un manuale in una lingua che nessuno sa leggere.
+
+## Fissato nel capitolo 11
+- **Villa di Monte Marzio:** cima della collina, cancello verde, muro di tre metri coperto di buganvillea, limoni, piscina coperta, pergolato. Sotto la cucina, dietro una porta blindata, venti gradini portano a una stanza bianca con i droni: undici montati il 17 maggio, altre casse in arrivo. A febbraio erano cinque a Punta Saline.
+- Sei mesi senza chiamare Dalia (da metà novembre), poi la convoca il 17 maggio, un anno esatto dalla notte dei droni: «Adesso il telefono ce l'ho io.»
+- Le promette «un posto vero, non una stanza d'albergo»: sa dell'albergo da sei anni.
