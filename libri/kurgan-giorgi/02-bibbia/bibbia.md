@@ -23,3 +23,6 @@
 5. Nessun dettaglio che richiami stragi, crolli o scandali reali, nemmeno indirettamente.
 6. Registro (c) per i capitoli di Giorgi, (a) per tutti gli altri.
 7. Il tema del controllo va rispecchiato in ogni sottotrama.
+
+## Decisione (B) sulla morte di Kurgan
+Giorgi non fa uccidere Kurgan: **lo lascia uccidere**. Progetta una cattura, per sapere dov'è Laura; Osiride e i servizi (De Biasi sul tetto) la trasformano in una trappola esplosiva a Riva Salmara. Il supervisore sostituisce il regolatore (la terza tazza, cap. 8). Adorisio crede a una cattura e non sa della bomba. Dalia ha dato il pattern di Rastegar credendo che servisse a prenderlo vivo. Giorgi, avvertito la notte prima (cap. 21), non ferma niente per tre ragioni fredde: l'esposizione a Osiride, la strada interna per Laura, la certezza che Kurgan catturato non parlerebbe. Tema: l'omissione calcolata, la stessa del governo che preferisce non sapere delle stragi. Il peso ricade sulla prima crepa (cap. 29): sa di aver scelto lui.

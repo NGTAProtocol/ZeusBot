@@ -23,7 +23,7 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 - **Ferita:** aver ucciso i tre ufficiali per proteggere i suoi uomini lo ha reso per sempre incapace di fidarsi di qualunque catena di comando sopra di lui. Da lì l'ossessione per la lealtà personale diretta, mai mediata da un'istituzione: la stessa logica che lo porta a ribellarsi a Giorgi quando ne percepisce il piano come un tradimento dei suoi uomini.
 
 ## Relazioni chiave
-- **Alfredo Giorgi:** il creatore. Obbedisce fino alle tre stragi, poi si ribella ripetendo lo schema dei tre ufficiali. Gli rapisce la figlia. Giorgi lo fa uccidere.
+- **Alfredo Giorgi:** il creatore. Obbedisce fino alle tre stragi, poi si ribella ripetendo lo schema dei tre ufficiali. Gli rapisce la figlia. Giorgi progetta di catturarlo vivo; Osiride e i servizi trasformano la cattura in una bomba, e Giorgi lo lascia uccidere.
 - **Dalia:** proprietà, sfruttata e picchiata per anni, senza eccezioni nel trattamento; eppure è lui ad averle pagato gli studi.
 - **Fedele Adorisio:** il suo uomo di fiducia, amato e stimato. È lui a consegnarlo a Giorgi.
 - **Gli agenti stranieri:** Dmitri Volkov (Kaliria), Li Wei Chen (Tianmar), Hossein Rastegar (Parsàn, il referente più diretto, incontrato sempre da solo). In tutto 3–4 incontri, Rastegar due volte, in luoghi pubblici e banali (alberghi, centri commerciali, grandi ristoranti, un fast food).
@@ -32,7 +32,7 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 ## Arco narrativo
 - **Inizio:** esegue le tre stragi per Giorgi; subito dopo, sei mesi dopo l'unificazione, si ribella apertamente.
 - **Sviluppo:** si arma con Kaliria, Tianmar e Parsàn in cambio di informazioni militari (a Kaliria e Tianmar) e di dati su questioni nucleari passate (a Parsàn). Circa 18 mesi dopo la ribellione fa monitorare e rapire Laura all'uscita da scuola; la fa tenere in una **vecchia casa di guardiani ai margini delle saline vicino a Punta Saline**, protetta dalla sua rete portuale.
-- **Fine (metà romanzo):** Adorisio lo attira a un finto appuntamento con Rastegar in un ristorante di **Riva Salmara**, alle 13.30. Il ristorante è imbottito di esplosivo; Osiride e i servizi sorvegliano i dintorni con tiratori scelti. Muore nell'esplosione. Chiude la prima cresta.
+- **Fine (metà romanzo):** Adorisio lo attira a un finto appuntamento con Rastegar in un ristorante di **Riva Salmara**, alle 13.30. Giorgi ha progettato una cattura; Osiride e i servizi la trasformano in una trappola: il ristorante è imbottito di esplosivo e tiratori scelti sorvegliano i dintorni (De Biasi sul tetto). Muore nell'esplosione. Chiude la prima cresta.
 
 ## Tic di voce/pensiero (POV)
 - Registro (a).

@@ -34,6 +34,7 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - Sabato 7 febbraio: capitolo 10 (Kurgan e Volkov; la parola «nazione»).
 - Domenica 17 maggio: capitolo 11 (Dalia a Monte Marzio, un anno esatto dalla notte dei droni).
 - **Anno seguente.** Martedì 11 maggio: capitolo 12 (il fronte ad Albaterra; la berlina grigia davanti alla scuola). Diciotto mesi dopo la ribellione. Il rapimento (capitoli 13–14) va collocato pochi giorni dopo, a metà–fine maggio, prima della chiusura delle scuole. Le intestazioni dei capitoli di quest'anno portano «dell'anno seguente» almeno al primo cambio d'anno.
+- Lunedì 31 maggio: capitolo 17 (la sala sicura; la variabile accetta alle 23.52).
 - Giovedì 27 maggio: capitolo 15 (Oddone chiama Flora; allegato 37). Venerdì 28 maggio: capitolo 16 (Dalia e Giorgi nella 512, fuori dal giorno fisso).
 - Martedì 18 maggio (anno seguente), notte: capitolo 13 (Kurgan a Punta Saline decide il rapimento). Mercoledì 19 maggio, uscita da scuola: il rapimento di Laura (capitolo 14, Elena).
 
@@ -133,7 +134,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **16. Dalia** · Merania, albergo, stanza 512 · venerdì 28 maggio · Giorgi è diverso, vuole dettagli precisi: le abitudini di Kurgan, gli incontri da solo → lei risponde senza sapere di Laura. · **Chiusura:** Giorgi dice "grazie" in un modo che lei non gli ha mai sentito. · 2.400
 
-**17. Giorgi (c)** · Merania, sala sicura · Mese 18 · Mobilita l'arsenale (servizi, governo, CIA) per riavere Laura → la bambina è introvabile; resta "la variabile interna" (Adorisio, mai nominato). · **Chiusura:** la variabile accetta. · 2.500
+**17. Giorgi (c)** · Merania, sala sicura (secondo piano interrato di Porta Vetra) · lunedì 31 maggio · Mobilita l'arsenale (servizi, governo, CIA) per riavere Laura → la bambina è introvabile; il fronte offre un raid sull'area (36 ville) e rifiuta la trattativa; resta "la variabile interna" (Adorisio, mai nominato). **Giorgi progetta una cattura, non un'esecuzione:** il pattern di Rastegar da Dalia, un messaggio con il nome del contabile portato dall'interno. Sa che è una scommessa lunga (Kurgan catturato non parlerebbe). Seme: attorno al tavolo solo lui dice «vivo». · **Chiusura:** la variabile accetta, con una condizione: «vivo». · 2.500
 
 **18. Kurgan** · grande ristorante sul lungomare, poi albergo · Mese 19 · Incontra Chen, poi Rastegar per la seconda volta: i droni arrivano → tensioni nel sindacato. · **Chiusura:** Adorisio: "Rastegar vuole vederti a Riva Salmara, alle 13.30. Da solo, come sempre." · 2.500
 
@@ -141,7 +142,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **20. Flora** · Rocca Sannella · fine giugno (sabato 26 giugno proposto) · *(Paga la scadenza di Valdhof: vedi `00-progetto/semi.md`.)* · Torna a casa per un fine settimana → De Stefano le chiede di stare lontana dalla costa quella settimana. Primo segnale ambiguo. · **Chiusura:** "Perché?" Lui non risponde. · 2.300
 
-**21. Giorgi (c)** · Merania · Mese 19, la notte prima · Verifica il sistema, variabile per variabile → potrebbe fermare tutto. Non lo fa. · **Chiusura:** "Alle 13.30 il sistema avrebbe cambiato stato." · 2.300
+**21. Giorgi (c)** · Merania · Mese 19, la notte prima · Verifica il sistema, variabile per variabile → **scopre che la cattura è diventata una bomba** (fonte proposta: Bertola, ancora «il fedele»; è una prova di Osiride per vedere se Giorgi ferma tutto; eco della busta ritirata del cap. 8) → potrebbe fermare tutto. Non lo fa, per tre ragioni fredde: opporsi lo esporrebbe a Osiride; la strada per Laura passa comunque dall'interno (Tanino); Kurgan catturato non parlerebbe mai. Nessuna crepa. **Non scrivere prima della decisione sui civili del ristorante (`semi.md`).** · **Chiusura:** "Alle 13.30 il sistema avrebbe cambiato stato." · 2.300
 
 **22. Dalia** · Merania · Mese 19 · Aspetta Giorgi → lui annulla l'incontro per la prima volta in anni. · **Chiusura:** Dalia ripensa a quello che gli ha detto su Rastegar. · 2.200
 

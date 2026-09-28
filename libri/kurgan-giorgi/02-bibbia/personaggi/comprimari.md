@@ -50,3 +50,8 @@
 ## Fissato nel capitolo 16
 - **Nicola** (guardia giovane di Giorgi): scarpe nuove; al quinto piano da solo; rivela a Dalia i cambiamenti dal 19 maggio («Io non le ho detto niente, signora»). Seme della fonte.
 - **Ferri**: dal 19 maggio sempre con Giorgi.
+
+## Fissato nel capitolo 17
+- **Il tecnico dei servizi**: giovane, portatile collegato allo schermo della sala sicura; abbassa lo schermo «per non vedere».
+- **L'avvocato di Partenia**: «difende mezza costa»; tramite tra Giorgi e la variabile per una cifra a sei zeri, senza sapere tra chi; chiama alle 23.52 dopo un bicchiere di troppo.
+- **Il sottosegretario** apre la cartellina di pelle per la prima volta; «Il governo non può»: un terminal dato a un uomo armato da potenze ostili farebbe cadere un altro governo.

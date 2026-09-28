@@ -25,13 +25,19 @@ Il doppio traditore: consegna Kurgan a Giorgi, poi tradisce anche Giorgi su Laur
 - **Rastegar:** il suo nome è l'esca della trappola di Riva Salmara.
 
 ## Dopo Riva Salmara: nessuna fase intermedia
-De Biasi installa Bertola a capo di Casal Fascio subito dopo la morte di Kurgan, senza passare da Adorisio. Adorisio resta un subordinato con un incarico personale datogli da Giorgi (ritrovare Laura), parallelo e separato dall'ascesa di Bertola. È l'essere stato scavalcato, nonostante il ruolo decisivo nell'eliminare Kurgan, a scatenare il risentimento e infine il golpe.
+De Biasi installa Bertola a capo di Casal Fascio subito dopo la morte di Kurgan, senza passare da Adorisio. Adorisio resta un subordinato con un incarico personale datogli da Giorgi (ritrovare Laura), parallelo e separato dall'ascesa di Bertola. È l'essere stato scavalcato, nonostante il ruolo decisivo nel consegnare Kurgan, a scatenare il risentimento e infine il golpe.
+
+**Decisione (B):** Adorisio **crede a una cattura e non sa della bomba**. Consegna Kurgan convinto che resterà vivo; a Riva Salmara scopre di essere stato usato anche lui. È la seconda radice del ritardo su Laura (cap. 29: alza il prezzo perché è stato ingannato) e del golpe contro Bertola (ingannato, poi scavalcato). Le righe «consegna Kurgan» restano vere: lo consegna, senza sapere che cosa lo aspetta.
 
 ## Arco narrativo
 - **Inizio:** braccio destro di Kurgan.
-- **Primo tradimento:** attira Kurgan a un finto appuntamento con Rastegar in un ristorante di **Riva Salmara**, alle 13.30. Kurgan muore nell'esplosione.
+- **Primo tradimento:** attira Kurgan a un finto appuntamento con Rastegar in un ristorante di **Riva Salmara**, alle 13.30, convinto di consegnarlo per una cattura. Kurgan muore nell'esplosione, che Adorisio non conosceva.
 - **Secondo tradimento:** incaricato da Giorgi di ritrovare Laura (non sapeva nulla del rapimento, tenuto segreto da Kurgan), la trova prima di quanto dichiara e ritarda la consegna per estorcere condizioni migliori. Giorgi lo scopre: prima crepa di Giorgi.
 - **Fine:** quando il comando di Casal Fascio va a Bertola non lo accetta. Guida il golpe dei quattro ex alti funzionari di Kurgan, circa due mesi dopo Riva Salmara, e **muore nello scontro** con i reparti speciali.
 
 ## Dettagli fisici/di caratterizzazione da fissare
 - Aspetto, voce: [DA DEFINIRE]
+
+## Fissato nel capitolo 17 (senza nome)
+- Nei capitoli di Giorgi è «la variabile interna». Profilo dalla mappa dei servizi: nel nucleo da quindici anni, non nato nel nucleo, un'altra montagna e un'altra lingua, legge libri, negli ultimi mesi scavalcato nella fiducia di Kurgan da uomini più giovani e più rumorosi.
+- Riceve l'offerta attraverso un avvocato di Partenia. Risponde il 31 maggio alle 23.52: «Sì», con una condizione: **Kurgan consegnato vivo, o niente.**
