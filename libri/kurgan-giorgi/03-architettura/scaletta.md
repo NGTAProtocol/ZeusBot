@@ -78,7 +78,7 @@ Corale, registro (a) · Albaterra, Marcena, Merania · Giorno 0 · Il governo ca
 
 **2. Giorgi (c)** · Merania, attico · Giorno 0, sera · Vuole chiudere il ciclo dell'operazione e dare a Kurgan l'ordine successivo → Kurgan rifiuta: i suoi uomini non moriranno per i numeri di un fondo. · **Chiusura:** Giorgi capisce che il sistema ha appena cambiato stato. · 2.500
 
-**3. Kurgan** · Partenia, base sotterranea · Giorno 2 · Deve spiegare ai suoi uomini la rottura senza perderne nessuno → uno dei capi chiede chi li proteggerà adesso. *Flashback:* la guerra del Drenak, i tre ufficiali. · **Chiusura:** Kurgan compone il numero che un uomo gli aveva dato un anno prima sul molo di Porto Clodio, «se un giorno vorrà lavorare da solo», e che non aveva mai composto. · 2.600
+**3. Kurgan** · Partenia, base sotterranea · Giorno 2 · Deve spiegare ai suoi uomini la rottura senza perderne nessuno → uno dei capi chiede chi li proteggerà adesso. *Flashback:* la guerra del Drenak, i tre ufficiali. · **Chiusura:** Kurgan compone il numero che un uomo gli aveva dato un anno prima sul molo di Porto Clodio, «se un giorno vorrà lavorare da solo», e che non aveva mai composto. *(Fissato: i tre esecutori — Tanino, Morenna; il Biondo, Valcerna; Rocco, Marcena — partono quella notte su una petroliera; al 20 dicembre sono ancora in mare, cap. 7. Il Biondo e Rocco rientrano in autunno dell'anno dopo, quando il dottore non può più toccarli; Tanino resta a bordo fino a marzo dell'anno seguente, cap. 13.)* · 2.600
 
 **4. Tommaso** · Merania · 4 dicembre · Vuole dimenticare e fare carriera → nei conti trova un bonifico a una fondazione che non dovrebbe esistere. · **Chiusura:** copia il file su una chiavetta e non sa ancora perché. · 2.200
 
@@ -128,7 +128,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **14. Elena** · Merania · mercoledì 19 maggio dell'anno seguente, giorno del rapimento · Il giorno comincia normale → la telefonata della scuola, l'autista a terra. Tutto fuori scena: lo scopre dopo. Giorgi non chiama la polizia. · **Chiusura:** nessuna richiesta di riscatto. Il telefono resta muto. · 2.500
 
-**15. Flora** · Albaterra · Mese 18 · Il pool lavora sul flusso delle stragi → una voce: la figlia di un grande finanziere è sparita e nessuno la cerca. · **Chiusura:** il nome del finanziere è Giorgi, lo stesso che compare nelle sue carte. · 2.300
+**15. Flora** · Albaterra · fine maggio – inizio giugno · Il pool lavora sul flusso delle stragi → una voce: la figlia di un grande finanziere è sparita e nessuno la cerca. *(Fonte: il maresciallo Oddone, stazione del centro di Merania, che ha preso le dichiarazioni e ha visto il fascicolo passare «in via riservata» ai servizi. Non De Stefano.)* · **Chiusura:** il nome del finanziere è Giorgi, lo stesso che compare nelle sue carte. · 2.300
 
 **16. Dalia** · Merania, albergo · Mese 18 · Giorgi è diverso, vuole dettagli precisi: le abitudini di Kurgan, gli incontri da solo → lei risponde senza sapere di Laura. · **Chiusura:** Giorgi dice "grazie" in un modo che lei non gli ha mai sentito. · 2.400
 
@@ -158,7 +158,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **28. Elena** · Merania · Mese 20 · Laura è ancora via: vuole una risposta → Giorgi le dice solo "torna presto". Il matrimonio si incrina, lei finge. · **Chiusura:** Elena apre il cassetto dove lui tiene le chiavi. · 2.100
 
-**29. Giorgi (c)** · Merania / Punta Saline · Mese 20 · Laura torna → dalle intercettazioni scopre che Adorisio l'aveva trovata settimane prima. **Prima crepa.** · **Chiusura:** Laura non parla; lui non sa cosa dirle. · 2.300
+**29. Giorgi (c)** · Merania / Punta Saline · Mese 20 · Laura torna → dalle intercettazioni scopre che Adorisio l'aveva trovata settimane prima. *(Strada concreta: Tanino, che sa dov'è la casa dei guardiani; con la madre nella clinica pagata da Kurgan può cedere solo in piccolo — un'informazione, una porta lasciata aperta.)* **Prima crepa.** · **Chiusura:** Laura non parla; lui non sa cosa dirle. · 2.300
 
 **30. Dalia** · Merania, redazione del *Meridiano* · Mese 20 · Da giornalista finanziaria incrocia le date delle stragi con le posizioni al ribasso → le mancano le prove interne. · **Chiusura:** lo schema coincide al minuto. · 2.200
 

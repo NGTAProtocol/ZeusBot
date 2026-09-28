@@ -146,7 +146,7 @@ Kurgan si alzò di nuovo, andò verso di lui e gli mise una mano sulla nuca. Tan
 
 Kurgan questo lo sapeva. Lo sapeva e non lo pensava. C'erano cose che un uomo nella sua posizione doveva sapere senza pensarle, come sapeva dov'era la sicura di un'arma senza guardarla.
 
-«Stanotte parti» gli disse. «Tua madre la guardiamo noi.»
+«Stanotte parti» gli disse. «Con il Biondo e con Rocco. Tua madre la guardiamo noi.»
 
 Tanino fece sì con la testa. Aveva gli occhi lucidi. Non chiese perché.
 

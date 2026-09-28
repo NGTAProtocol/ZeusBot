@@ -84,7 +84,7 @@ Sette punti di vista: **Giorgi, Kurgan, Dalia, Flora, Elena, Tommaso Vela** a ro
   - **Tommaso Vela** pensa per numeri e sequenze: anche la paura diventa una verifica incrociata di dati.
 
   Così il lettore riconosce il punto di vista dalle prime righe, anche senza intestazione.
-- **Intestazioni di capitolo** (nome del personaggio, luogo, data/ora): ammesse e consigliate.
+- **Intestazioni di capitolo** (nome del personaggio, luogo, data/ora): ammesse e consigliate. Forma: *Nome — Luogo, giorno mese*, mai l'anno. La formula «dell'anno seguente» si aggiunge solo al primo capitolo dopo un salto d'anno, o quando la data sembrerebbe tornare indietro rispetto al capitolo precedente; negli altri casi si omette.
 
 ---
 

@@ -110,9 +110,21 @@ Non la abbracciò. Le prese il polso, come si prendeva il polso a qualcuno per s
 
 «Lo so. Ci penso io.»
 
-Andò verso la pattuglia. Elena lo guardò parlare con il maresciallo, un uomo grosso con il taccuino aperto. Il maresciallo scuoteva la testa. Alfredo fece una telefonata di meno di un minuto, poi passò il telefono al maresciallo. Il maresciallo ascoltò, si mise quasi sull'attenti senza accorgersene, disse due volte *sissignore* e restituì il telefono. Chiuse il taccuino.
+Andò verso la pattuglia. Elena lo guardò parlare con il maresciallo, un uomo grosso con il taccuino aperto. Il maresciallo scuoteva la testa. Alfredo fece una telefonata di meno di un minuto, poi passò il telefono al maresciallo. Il maresciallo ascoltò, si mise quasi sull'attenti senza accorgersene, disse due volte *sissignore*. Poi disse una terza cosa, più lunga, che non era *sissignore*, e restituì il telefono.
 
-Alle 17.12 la pattuglia se ne andò. Alle 17.20 se ne andò l'ambulanza, senza Sergio: aveva firmato un foglio e si era rifiutato di salire. Alle 17.25 la madre superiora uscì dall'ufficio dove Alfredo era rimasto con lei a porta chiusa per sei minuti, e si fermò in cima ai gradini del cortile.
+Venne verso Elena con il taccuino ancora aperto.
+
+«Maresciallo Oddone, signora. Stazione del centro.» Aveva la voce di chi si scusa senza sapere di cosa. «Io le dichiarazioni le devo prendere. L'autista, le suore, chi ha visto il furgone. Una bambina portata via davanti a trenta persone non la posso scrivere come un incidente stradale.»
+
+«E poi?»
+
+«Poi il fascicolo non resta a me. Va in via riservata. Mi hanno detto a chi.» Guardò Alfredo, a dieci metri, di spalle. «Lei lo sapeva, che funziona così?»
+
+«No» disse Elena.
+
+Il maresciallo annuì, come se quella risposta gli servisse per qualcosa. Prese le dichiarazioni di Sergio e delle due suore giovani in dodici minuti, scrivendo in piedi sul cofano della pattuglia. Poi chiuse il taccuino.
+
+Alle 17.31 la pattuglia se ne andò. Alle 17.33 se ne andò l'ambulanza, senza Sergio: aveva firmato un foglio e si era rifiutato di salire. Alle 17.40 la madre superiora uscì dall'ufficio dove Alfredo era rimasto con lei a porta chiusa per sei minuti, e si fermò in cima ai gradini del cortile.
 
 Parlò alle madri rimaste. Disse che c'era stato un tentativo di rapina all'autista della famiglia Giorgi. Disse che l'autista stava bene. Disse che la piccola Laura, grazie a Dio, era già con il suo papà.
 
@@ -234,7 +246,7 @@ Elena lo guardò salire le scale. Poi riprese lo scontrino e, sotto la lista, a 
 
 *«Lo so», prima che parlassi io.*
 
-*Niente denuncia. Il maresciallo sull'attenti.*
+*Il maresciallo sull'attenti. La denuncia «in via riservata». Mi hanno detto a chi.*
 
 *La madre superiora: sei minuti, poi la bugia.*
 

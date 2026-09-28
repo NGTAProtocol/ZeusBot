@@ -45,11 +45,11 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 ## Fissato nel capitolo 14 (primo capitolo suo, 19 maggio)
 - Alle 16.19 è in un negozio a comprare il vestito bianco per il saggio di sabato; aspetta lo scontrino prima di uscire. Scrive le liste sul retro dello scontrino e lo tiene nel portafoglio, dietro la carta d'identità, «dove Alfredo non guardava mai».
 - Giorgi risponde al secondo squillo (di solito ne lascia quattro) e dice «Lo so» prima che lei parli.
-- Registra le anomalie in una seconda colonna senza titolo, sette righe: la berlina grigia dell'11 («Lui lo sapeva»); la seconda macchina da mercoledì 12 («Non me l'ha detto»); «Lo so»; niente denuncia e il maresciallo sull'attenti; la madre superiora e la bugia; un telefono che non conosce; «Chiameranno» detto troppo presto. È il seme dello spionaggio.
+- Registra le anomalie in una seconda colonna senza titolo, sette righe: la berlina grigia dell'11 («Lui lo sapeva»); la seconda macchina da mercoledì 12 («Non me l'ha detto»); «Lo so»; il maresciallo sull'attenti e la denuncia «in via riservata» («Mi hanno detto a chi»); la madre superiora e la bugia; un telefono che non conosce; «Chiameranno» detto troppo presto. È il seme dello spionaggio.
 - Vede Giorgi parlare su un secondo telefono che non conosce (il ritrovamento vero resta al cap. 23).
 - Conosce conti che Giorgi crede lei ignori.
 - Prepara una borsa per Laura (otto cose: pigiama, calze di lana, coniglio di pezza, spazzolino, tuta, foglio della canzone, cambio di biancheria) e la mette vicino alla porta. Appende il vestito bianco nell'armadio di Laura.
 - Dice la verità a Fabrizio (che ha chiamato la nonna): «L'hanno presa davanti a scuola.» A Cesare la versione dei nonni; Fabrizio promette di non dirglielo.
-- Alle 1.45 chiama il 112 dal giardino, non parla, chiude; quando la richiamano dice di aver sbagliato numero. Calcolo: «Delle ore si potevano perdere. Laura no.»
+- Alle 1.45 chiama il 112 dal giardino, non parla, chiude; quando la richiamano dice di aver sbagliato numero. Calcolo: «Delle ore si potevano perdere. Laura no.» **Traccia da pagare nella Parte III:** la chiamata resta registrata; la ritrova Giorgi o i servizi che sorvegliano la casa (da decidere).
 - Ipotesi: riscatto; l'altra ipotesi («se non è per soldi») non la scrive. Non sa che è stato Kurgan; nessuno pronuncia il suo nome davanti a lei.
 - Una sorella (mai nominata); i nonni (la «nonna» chiamata da Fabrizio).

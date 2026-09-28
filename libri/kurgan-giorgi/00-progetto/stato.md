@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 15 (secondo scaletta). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–14. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 15 (Flora, fine maggio – inizio giugno; fonte il maresciallo Oddone). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–14. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -105,3 +105,10 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-28 — Capitolo 13 (Kurgan, circa 2.370 parole, apre la Parte II): Punta Saline, 18 maggio dell'anno seguente; i due di fuori della berlina grigia, la seconda macchina di Giorgi, la Finanza sulle petroliere, Adorisio tenuto fuori, la linea dei tre ufficiali, «Domani, all'uscita da scuola.»
 - 2026-09-28 — Continuità: ritorno di Tanino spiegato nel cap. 13 (madre malata, clinica pagata da Kurgan); prigionia di Laura nella casa dei guardiani delle saline in bibbia e schede; nodo Rastegar/banchina annotato; conteggio droni per capitolo nella scheda di Kurgan.
 - 2026-09-28 — Capitolo 14 (Elena, circa 2.430 parole): suor Agnese alle 16.19, il racconto di Sergio, la station bloccata dal camioncino, il maresciallo sull'attenti, la bugia della madre superiora, la borsa per Laura, la seconda colonna, il 112 senza parole. Il telefono resta muto.
+- 2026-09-28 — Precisazioni dopo il cap. 14: regola delle intestazioni nel manuale («dell'anno seguente» solo dopo un salto d'anno o se la data sembra tornare indietro); denuncia non cancellata ma «in via riservata», fascicolo ai servizi, maresciallo Oddone (cap. 14 ora circa 2.570 parole); tre esecutori allineati (cap. 3: Tanino parte con il Biondo e Rocco; cap. 13: loro rientrano in autunno, lui a marzo); Tanino strada di Adorisio verso Laura (cap. 29).
+
+## Tracce aperte da pagare
+- **Chiamata al 112 di Elena (19–20 maggio, 1.45, «ho sbagliato numero»):** registrata. La ritrova nella Parte III Giorgi o i servizi che sorvegliano la casa. Da decidere chi e in quale capitolo.
+- **Maresciallo Oddone:** ha visto il fascicolo del rapimento finire in via riservata; fonte di Flora al cap. 15. Resta un problema per il sistema.
+- **Tanino:** cedimento piccolo verso Adorisio dopo Riva Salmara (un'informazione o una porta aperta); spiega il ritardo scoperto al cap. 29.
+- **Rastegar e la banchina di Punta Saline:** vicina alla casa dei guardiani; da usare o evitare di proposito (possibile attrito al cap. 18).

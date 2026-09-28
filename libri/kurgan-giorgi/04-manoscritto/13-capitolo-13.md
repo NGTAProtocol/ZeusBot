@@ -76,8 +76,6 @@ Versò. Si sedette sulla cassa che faceva da seconda sedia. Aveva le mani sporch
 
 «Le casse nuove sono arrivate stasera» disse. «Otto. Sulla bolla c'è scritto pompe idrauliche. Domattina le porto su a Monte Marzio. I ragazzi della Serrana hanno finito di tradurre il manuale, più o meno. Una pagina l'hanno capita al contrario, e un motore ha fatto il giro del pergolato e si è piantato nei limoni.»
 
-Kurgan sorrise appena. Adorisio lo vide e sorrise anche lui.
-
 «E la Finanza?» chiese Kurgan.
 
 «Oggi due volte. Una la mattina, una alle sei. Sempre sulla *Silvana*. Il comandante dice che gli hanno aperto anche la cassetta del pronto soccorso.» Adorisio bevve. «Vito, questi non cercano niente. Questi vogliono farci sapere che possono venire.»
@@ -174,7 +172,7 @@ La finestra si chiudeva. Aspettare voleva dire perderla. Il dottore aveva sempre
 
 Pensò a chi mandare con i due di fuori. Serviva un terzo, uno che guidasse la macchina del cambio sulla Litoranea e non facesse domande. Uno che avesse già fatto una cosa grande senza chiedere perché.
 
-Tanino. Ventisette anni adesso. Il pullman di Morenna, la colazione alla fermata dopo. Le medicine per la madre, la sera della cisterna. Era partito quella notte stessa su una nave, e per un anno aveva visto soltanto porti stranieri. A marzo la madre aveva smesso di alzarsi dal letto, e Kurgan l'aveva fatto rientrare di notte da Punta Saline e le aveva pagato una clinica sulla collina. Da allora Tanino lavorava al molo e la domenica andava a trovarla. Tanino non avrebbe saputo chi c'era in macchina fino a quando non l'avesse visto. E dopo, non avrebbe parlato. Non per paura. Perché era Tanino.
+Tanino. Ventisette anni adesso. Il pullman di Morenna, la colazione alla fermata dopo. Le medicine per la madre, la sera della cisterna. Era partito quella notte stessa su una petroliera, con il Biondo e Rocco. Loro due erano rientrati in autunno, quando il dottore non poteva più toccarli; lui era rimasto a bordo. A marzo la madre aveva smesso di alzarsi dal letto, e Kurgan l'aveva fatto sbarcare di notte a Punta Saline e le aveva pagato una clinica sulla collina. Da allora Tanino lavorava al molo e la domenica andava a trovarla. Tanino non avrebbe saputo chi c'era in macchina fino a quando non l'avesse visto. E dopo, non avrebbe parlato. Non per paura. Perché era Tanino.
 
 Kurgan strappò il foglio in quattro, poi in otto. Lo portò al lavandino in fondo alla stanza, ci diede fuoco con l'accendino e guardò la carta diventare nera e arricciarsi. Aprì il rubinetto. La cenere girò due volte intorno allo scarico e sparì.
 
