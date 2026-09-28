@@ -59,3 +59,12 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - Aveva raccontato ad Alfredo, tre anni prima, che Vito mangia solo cibo cucinato davanti a lui.
 - Il telefono di Alfredo vibra nella casa di Vito («Tutto bene?»), di domenica, fuori da ogni accordo: lei toglie la batteria, come le aveva insegnato Vito. Non sa come Alfredo sapesse che doveva chiederlo.
 - Adorisio le dà del lei da quindici anni.
+
+## Fissato nel capitolo 16 (venerdì 28 maggio, stanza 512)
+- Giorgi le scrive un venerdì alle 14.06, senza punto interrogativo: «Stasera. Alle otto. Solita stanza.» (Di solito il martedì alle dieci: «Stasera?»)
+- Nicola, con scarpe nuove, le dice che dal 19 Giorgi dorme in ufficio due notti su tre, che Ferri non lo lascia mai, che ci sono due macchine nuove e un uomo con un telefono diverso ogni giorno. Lei tiene la data.
+- Non si toccano. Giorgi vuole le abitudini di Kurgan «intere». Lei dà: le cose già note, non si siede mai con le spalle a una porta, non si alza mai per primo, «chi arriva secondo se ne va secondo». E **Rastegar**: «il contabile», magro, mani da contabile; con lui Vito va sempre da solo, in mezzo alla gente, all'ora di pranzo («in mezzo alla gente nessuno spara»); si fida di lui perché «il contabile gli doveva un fratello».
+- Dall'estate precedente Vito è tornato a chiamarla la domenica e le racconta pezzi «perché un giorno le scrivi». Ultima chiamata: domenica 16 maggio (stanco, la Finanza sulle navi). Domenica 23 non ha chiamato.
+- **Seconda bugia:** Giorgi le ricorda i tre giorni di maggio dell'anno prima e il «Tutto bene?»; lei dice di essere stata in un albergo sul porto di Partenia e tace Monte Marzio (per proteggere i suoi uomini). Lui: «Va bene», troppo in fretta.
+- Giorgi le vieta di avvertire Vito o cambiare qualcosa: «Allora si farà male qualcuno che non c'entra niente. Qualcuno che non ha mai scelto niente di tutto questo.» Lei capisce di essere diventata «un pezzo». Vede nella tasca interna della giacca l'angolo di un foglio piegato in quattro con un segno di pennarello rosso.
+- Giorgi le dice «Ho paura». Vede un terzo telefono che non conosceva. Non dice «martedì». Chiusura: «Grazie», detto piano e troppo a lungo.

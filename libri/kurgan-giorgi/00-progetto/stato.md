@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 16 (Dalia, secondo scaletta). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–15. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 17 (Giorgi, registro c, secondo scaletta). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–16. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -110,3 +110,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 ## Tracce aperte da pagare
 - Spostate in `00-progetto/semi.md`.
 - 2026-09-28 — Capitolo 15 (Flora, circa 2.260 parole): Oddone chiama da un bar (la relazione di Tarassa); il sequestro che non esiste nel registro di Merania; il pool vota due contro uno; il procuratore nazionale lo sa in tre ore e quaranta; allegato 37, la Finanziaria Lanterna, «Giorgi Alfredo — irrilevante, da rivedere». Strada (a) annotata in scaletta.
+- 2026-09-28 — Passo 0: intermediario di Merania = Lanieri Custodia (broker terzo, AV System a monte); 3 ore e 40 = catena istituzionale più ascolto, nessuna talpa; risposta di Valdhof nel cap. 20; Bertola e il 112 confermati in `semi.md`.
+- 2026-09-28 — Capitolo 16 (Dalia, circa 2.330 parole): il venerdì che non esisteva, Nicola, le abitudini «intere», Rastegar il contabile, la seconda bugia su Monte Marzio, «qualcuno che non c'entra niente», «Grazie».

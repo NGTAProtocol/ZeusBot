@@ -83,3 +83,6 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 | 13 | 18 maggio (anno seguente) | 58 sotto la villa, più 8 casse arrivate la sera («pompe idrauliche») | conto di Kurgan |
 
 Crescita da 11 a 58: i cinque di Parsàn, i quindici legati alla banchina di Punta Saline, i rifornimenti di Kaliria.
+
+## Fissato nel capitolo 16 (riferito da Dalia)
+- Dall'estate dell'anno prima richiama Dalia la domenica e le racconta pezzi della sua storia «perché un giorno le scrivi»: tra questi il nome di Rastegar, «il contabile», e la regola degli incontri da solo in mezzo alla gente all'ora di pranzo. Ultima chiamata domenica 16 maggio; il 23 non chiama.

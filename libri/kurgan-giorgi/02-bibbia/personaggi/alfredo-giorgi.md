@@ -64,3 +64,8 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - **Nascita del fronte (11 maggio, Albaterra):** un generale dei servizi militari (in civile, non nominato), un giovane sottosegretario, un uomo della CIA che si presenta come consigliere commerciale di un'ambasciata alleata. «Il passato non ci interessa, dottor Giorgi. Ci interessa chi lo arma adesso.» Giorgi esce con tre numeri di telefono e un'autorizzazione che non esiste su nessuna carta.
 - **Il messaggio a Dalia del 17 maggio precedente:** lo mandò dopo che i servizi gli avevano segnalato una donna alta prelevata alla stazione di Partenia da un'auto di Kurgan. Lei rispose due giorni dopo: «Sì. Scusa. Ero via.» Lui non le ha mai chiesto dove fosse stata. Non sa se quella domanda fosse «una carezza o una misura».
 - Tiene il disegno di Laura (la famiglia davanti a casa; lui un po' distante, gli altri per mano) nella tasca interna della giacca.
+
+## Fissato nel capitolo 16 (visto da Dalia, 28 maggio)
+- Dal 19 maggio dorme in ufficio due notti su tre; barba di due giorni, camicia non cambiata, maniche arrotolate storte; Ferri sempre con lui.
+- Chiede a Dalia le abitudini di Kurgan e ottiene il nome di Rastegar e la regola degli incontri da solo all'ora di pranzo. Sa dei tre giorni di Dalia a maggio dell'anno prima; accetta la bugia dell'albergo sul porto («Va bene»).
+- Porta nella tasca interna della giacca il disegno di Laura (cap. 12). Non le dice niente del rapimento. «Ho paura» (detto a Dalia; non è una crepa del registro c: il capitolo è di Dalia).

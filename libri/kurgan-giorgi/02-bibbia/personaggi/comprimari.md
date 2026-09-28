@@ -46,3 +46,7 @@
 - **Calabrese** esce alle 15.30 ogni giovedì (lo studio della moglie).
 - **Cataldo**: blocco a righe, tre matite temperate in fila; «A me nessuno mi guarda. È comodo, a volte.»
 - **La madre di Flora** a Rocca Sannella: chiama alle 21.15; il vicino ha potato il fico troppo presto.
+
+## Fissato nel capitolo 16
+- **Nicola** (guardia giovane di Giorgi): scarpe nuove; al quinto piano da solo; rivela a Dalia i cambiamenti dal 19 maggio («Io non le ho detto niente, signora»). Seme della fonte.
+- **Ferri**: dal 19 maggio sempre con Giorgi.
