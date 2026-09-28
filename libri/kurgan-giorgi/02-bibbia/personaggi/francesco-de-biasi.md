@@ -35,3 +35,6 @@ Il militare che fa il lavoro sporco di Osiride dopo Kurgan: crea Casal Fascio, l
 
 ## Dettagli fisici/di caratterizzazione da fissare
 - Aspetto, voce: [DA DEFINIRE]
+
+## Distinzione
+- Non è il generale del capitolo 12 (analista prossimo alla pensione, al tavolo del fronte ufficiale). De Biasi resta fuori da quel tavolo e compare senza nome al capitolo 24.

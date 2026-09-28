@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 13 (Kurgan, Parte II). Scritti: prologo e Parte I completa (capitoli 1–12). Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 14 (Elena, il rapimento). Scritti: prologo, Parte I (capitoli 1–12), capitolo 13. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -101,3 +101,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-27 — Capitolo 10 (Kurgan, circa 2.040 parole): Volkov è l'uomo biondo di maggio; dieci petroliere e le carte NATO; niente esclusiva; «Una nazione.»
 - 2026-09-28 — Capitolo 11 (Dalia, circa 1.900 parole): Monte Marzio, la stanza dei droni, «Ti ho fatto studiare per questo», il telefono di Alfredo, «Il finanziere ti tratta bene?».
 - 2026-09-28 — Capitolo 12 (Giorgi, registro c, circa 2.000 parole): il reattore verso la massa critica, il fronte con servizi, governo e CIA, «Tutto bene?», la berlina grigia. Chiusa la Parte I.
+- 2026-09-28 — Passo 0: il generale del fronte (cap. 12) reso distinguibile da De Biasi (analista a fine carriera, mai al comando, occhiali al cordino); conteggi della Parte I in scaletta (−14% sul target); regola ±5% dal capitolo 13.
+- 2026-09-28 — Capitolo 13 (Kurgan, circa 2.370 parole, apre la Parte II): Punta Saline, 18 maggio dell'anno seguente; i due di fuori della berlina grigia, la seconda macchina di Giorgi, la Finanza sulle petroliere, Adorisio tenuto fuori, la linea dei tre ufficiali, «Domani, all'uscita da scuola.»

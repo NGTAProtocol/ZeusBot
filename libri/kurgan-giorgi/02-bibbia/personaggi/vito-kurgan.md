@@ -61,3 +61,14 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 - **Villa di Monte Marzio:** cima della collina, cancello verde, muro di tre metri coperto di buganvillea, limoni, piscina coperta, pergolato. Sotto la cucina, dietro una porta blindata, venti gradini portano a una stanza bianca con i droni: undici montati il 17 maggio, altre casse in arrivo. A febbraio erano cinque a Punta Saline.
 - Sei mesi senza chiamare Dalia (da metà novembre), poi la convoca il 17 maggio, un anno esatto dalla notte dei droni: «Adesso il telefono ce l'ho io.»
 - Le promette «un posto vero, non una stanza d'albergo»: sa dell'albergo da sei anni.
+
+## Fissato nel capitolo 13
+- Martedì 18 maggio dell'anno seguente, notte, ufficio sopra il magazzino del molo nord di Punta Saline (finestre sulle gru e sulle saline; carta nautica al muro): decide il rapimento di Laura per il giorno dopo, all'uscita da scuola.
+- Sorveglianza: due uomini «di fuori», accento del nord, pagati a giornata tramite un sensale del porto di Porto Clodio; credono di seguire un finanziere indebitato. Erano loro nella berlina grigia (mai dichiarato nel testo): dopo essere stati notati dall'autista sono passati al bar di fronte alla scuola, a piedi. Telefono della tabaccheria di Porto Clodio; loro chiamano due volte, lui una.
+- Da mercoledì 12 maggio Giorgi ha messo una seconda macchina (station scura, due uomini) dietro l'autista. Da una settimana la Guardia di Finanza sale quasi ogni giorno sulle petroliere di Porto Clodio (la *Silvana*); il capitano del porto prende ancora i soldi ma non lo guarda in faccia: Kurgan legge dietro il dottore lo Stato e «amici più grandi del governo».
+- Conti di forza: 240 uomini, 60 suoi davvero; 58 droni sotto la villa di Monte Marzio più otto casse arrivate il 18 («pompe idrauliche»).
+- Logica: il rapimento come garanzia che fermi la guerra, «meno morti di qualunque altra mossa». Regola: *Nessuno la tocca* (scritta e cancellata). Consegna: niente armi in mano, nessuno spara, l'autista a terra vivo. Rovescia la frase di Rastegar («Nessuno spara in mezzo ai bambini») in regola operativa.
+- Un istante sulla linea dei tre ufficiali del Drenak («mettere dentro una guerra gente che non l'aveva scelta»), poi il pensiero «ripiegato come si rimetteva la sicura». Seconda ragione del segreto: i suoi uomini seguono quello che era tornato indietro lungo il fosso, non seguirebbero questo.
+- Luogo di prigionia: vecchia casa di guardiani ai margini delle saline, a mezz'ora dal molo, muri spessi, una sola strada; sistemata da due uomini della rete portuale convinti che servisse a nascondere lui. Nessun dettaglio ulteriore.
+- Terzo uomo per il cambio macchina sulla Litoranea: Tanino (27 anni), che non saprà chi c'è in macchina fino a quando non la vedrà.
+- Brucia il foglio dei conti nel lavandino. Continua a guardarsi il polso vuoto.
