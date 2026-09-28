@@ -19,8 +19,10 @@ Tre agenti in contatto diretto con Kurgan (e con Adorisio prima del tradimento).
 - **Rinegoziazione (7 febbraio):** Kaliria vuole le venti petroliere di Kurgan per vendere sotto altro nome un carburante che non può vendere con il proprio, e le carte dei rifornimenti delle navi NATO nel porto del sud. Kurgan concede dieci navi su venti e le carte una volta al mese, attraverso un intermediario che non sa nulla di nessuno. Rifiuta l'esclusiva chiesta da Kaliria (che sa della banchina concessa a Parsàn): «Nessuno ha l'esclusiva su di me.»
 - Volkov: «Senza di noi i suoi cinque giocattoli restano cinque. Con noi possono diventare cinquanta.»
 
-## Nodo aperto (dopo il capitolo 13)
-- La prigionia di Laura è in una vecchia casa di guardiani ai margini delle saline, vicina alla banchina del molo nord che Rastegar usa tre notti al mese senza registri. Rastegar ha detto a Kurgan «Nessuno spara in mezzo ai bambini» (cap. 7). **Da usare o evitare di proposito:** se i suoi uomini o lui stesso vengono a sapere della bambina a poca distanza dalla banchina, la sua regola può scontrarsi con l'alleanza (possibile attrito nel secondo incontro, cap. 18). Se si evita, la casa va tenuta fuori dal raggio della banchina in modo esplicito.
+## Rastegar e la casa dei guardiani (deciso)
+- **Rastegar non scopre Laura.** La casa dei guardiani è sul lato delle saline opposto alla banchina del molo nord, fuori vista.
+- **Rastegar è assente da Riva Salmara:** il suo nome è solo l'esca (il foglietto del 17 giugno è della trappola).
+- **Dopo il cap. 24** Parsàn sospende le notti alla banchina di Punta Saline e ritira i suoi uomini. I cinque droni trattenuti e la seconda busta mai consegnata restano sospesi. Il filo resta per il sequel.
 
 ## Fissato nel capitolo 18 (16 giugno)
 - **Chen:** arriva dieci minuti prima («preferisco arrivare quando ci sono ancora molte uscite»); italiano scolastico, consonanti al loro posto; acqua frizzante, due bicchieri capovolti. Non dà niente adesso: vuole essere il primo a usare Tarassa, per i container («cose che non sono ancora state inventate»). Chiede se Kurgan tratterà con il vecchio socio: «Tutti hanno qualcosa da trattare. La differenza è chi lo sa.» Sa delle 41 salite della Finanza in trenta giorni.

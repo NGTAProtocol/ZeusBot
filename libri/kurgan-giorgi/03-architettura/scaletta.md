@@ -35,6 +35,7 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - Domenica 17 maggio: capitolo 11 (Dalia a Monte Marzio, un anno esatto dalla notte dei droni).
 - **Anno seguente.** Martedì 11 maggio: capitolo 12 (il fronte ad Albaterra; la berlina grigia davanti alla scuola). Diciotto mesi dopo la ribellione. Il rapimento (capitoli 13–14) va collocato pochi giorni dopo, a metà–fine maggio, prima della chiusura delle scuole. Le intestazioni dei capitoli di quest'anno portano «dell'anno seguente» almeno al primo cambio d'anno.
 - Domenica 20 giugno: capitolo 19 (Elena legge il telefono; la chiavetta; «Nocciolo1207»).
+- Martedì 29 giugno: capitolo 22 (Dalia; 10.02 «Stasera?», 12.10 Nicola disdice, 12.41 la chiusura), capitolo 23 (Elena, all'alba), capitolo 24 (Riva Salmara, a pranzo).
 - Lunedì 28 giugno, 23.14–23.58: capitolo 21 (sala sicura; Bertola porta la notizia della bomba).
 - Mercoledì 16 giugno: capitolo 18 (Chen, Rastegar, il sindacato; all'alba del 17 il foglietto del contabile). Sabato 26 giugno: capitolo 20. Lunedì 28 giugno, notte: capitolo 21. **Martedì 29 giugno, 13.30: Riva Salmara** (capitoli 23–24).
 - Lunedì 31 maggio: capitolo 17 (la sala sicura; la variabile accetta alle 23.52).
@@ -147,7 +148,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **21. Giorgi (c)** · Merania · lunedì 28 giugno, notte · Verifica il sistema, variabile per variabile → **scopre che la cattura è diventata una bomba** (fonte proposta: Bertola, ancora «il fedele»; è una prova di Osiride per vedere se Giorgi ferma tutto; eco della busta ritirata del cap. 8) → potrebbe fermare tutto. Non lo fa, per tre ragioni fredde: opporsi lo esporrebbe a Osiride; la strada per Laura passa comunque dall'interno (Tanino); Kurgan catturato non parlerebbe mai. Nessuna crepa. Bertola dà la stima dei civili, «tre, quattro» (il numero vero è quattro: due del personale, due clienti, nessun bambino, mai descritti). Giorgi registra che Bertola conosce le decisioni di Osiride e sceglie di non seguire il filo, perché Bertola gli serve. De Biasi non nominato. · **Chiusura (corretta):** "Domani, a pranzo, il sistema avrebbe cambiato stato." L'ora (13.30) resta al cap. 23. Eco rovesciata del cap. 2: là non conosceva più le equazioni, qui le conosce tutte e le lascia andare. Gesto: posa il telefono alle 23.51 e non lo tocca più fino all'alba. · 2.300
 
-**22. Dalia** · Merania · Mese 19 · Aspetta Giorgi → lui annulla l'incontro per la prima volta in anni. · **Chiusura:** Dalia ripensa a quello che gli ha detto su Rastegar. · 2.200
+**22. Dalia** · Merania, redazione del *Meridiano* · martedì 29 giugno, dalle 10.02 alle 12.41 · Aspetta Giorgi → lui annulla l'incontro per la prima volta in anni. · **Chiusura:** Dalia ripensa a quello che gli ha detto su Rastegar. · 2.200
 
 **23. Elena** · Merania · martedì 29 giugno, mattina · Giorgi esce all'alba, vestito come per un funerale → Elena trova il secondo telefono. · **Chiusura:** un messaggio: "13.30". · 2.200
 

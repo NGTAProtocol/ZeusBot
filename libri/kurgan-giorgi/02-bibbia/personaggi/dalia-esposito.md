@@ -68,3 +68,11 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - **Seconda bugia:** Giorgi le ricorda i tre giorni di maggio dell'anno prima e il «Tutto bene?»; lei dice di essere stata in un albergo sul porto di Partenia e tace Monte Marzio (per proteggere i suoi uomini). Lui: «Va bene», troppo in fretta.
 - Giorgi le vieta di avvertire Vito o cambiare qualcosa: «Allora si farà male qualcuno che non c'entra niente. Qualcuno che non ha mai scelto niente di tutto questo.» Lei capisce di essere diventata «un pezzo». Vede nella tasca interna della giacca l'angolo di un foglio piegato in quattro con un segno di pennarello rosso.
 - Giorgi le dice «Ho paura». Vede un terzo telefono che non conosceva. Non dice «martedì». Chiusura: «Grazie», detto piano e troppo a lungo.
+
+## Fissato nel capitolo 22 (martedì 29 giugno, redazione del Meridiano)
+- Terzo piano, aria condizionata rotta da venerdì; il caporedattore (dopobarba al sandalo) le chiede trenta righe sui titoli di Stato «senza ipotesi» e la chiama per cognome, Esposito; Sandro della cronaca (sapone al limone, sigaretta spenta male) la invita da Ettore per le alici.
+- Alle 10.02 «Stasera?», risponde «Sì». Vestito blu di lino appeso per la sera. La frase preparata: «Dimmi soltanto se è vivo, quando hai finito.»
+- Domenica 27 alle 22.10 Vito l'aveva chiamata: «Questa settimana vedo il contabile.» Nessun giorno né luogo.
+- Alle 11.40 scrive «Stasera ti devo chiedere una cosa»: letto, nessuna risposta. Alle 12.10 Nicola, sul fisso della redazione: «Stasera no. Ha disdetto la stanza.» Il telefono di Giorgi non è raggiungibile; il portiere conferma la disdetta delle 11.55, notte pagata, «non riaffittarla».
+- Conto: ha protetto la casa (Monte Marzio) e ha dato l'uomo. Scrive «Vito, questa settimana non» e lo cancella lettera per lettera; chiude il telefono nel cassetto a chiave.
+- Chiusura alle 12.41: ripensa alle proprie parole della 512, «Con lui va da solo. Sempre. In mezzo alla gente. All'ora di pranzo.» Non sa della bomba, né del luogo, né dell'ora.

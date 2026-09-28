@@ -69,7 +69,7 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 - Conti di forza: 240 uomini, 60 suoi davvero; 58 droni sotto la villa di Monte Marzio più otto casse arrivate il 18 («pompe idrauliche»).
 - Logica: il rapimento come garanzia che fermi la guerra, «meno morti di qualunque altra mossa». Regola: *Nessuno la tocca* (scritta e cancellata). Consegna: niente armi in mano, nessuno spara, l'autista a terra vivo. Rovescia la frase di Rastegar («Nessuno spara in mezzo ai bambini») in regola operativa.
 - Un istante sulla linea dei tre ufficiali del Drenak («mettere dentro una guerra gente che non l'aveva scelta»), poi il pensiero «ripiegato come si rimetteva la sicura». Seconda ragione del segreto: i suoi uomini seguono quello che era tornato indietro lungo il fosso, non seguirebbero questo.
-- Luogo di prigionia: vecchia casa di guardiani ai margini delle saline, a mezz'ora dal molo, muri spessi, una sola strada; sistemata da due uomini della rete portuale convinti che servisse a nascondere lui. Nessun dettaglio ulteriore.
+- Luogo di prigionia: vecchia casa di guardiani ai margini delle saline, a mezz'ora dal molo, muri spessi, una sola strada, **sul lato delle saline opposto alla banchina di Rastegar, fuori vista**; sistemata da due uomini della rete portuale convinti che servisse a nascondere lui. Nessun dettaglio ulteriore. Rastegar non ne sa niente.
 - Terzo uomo per il cambio macchina sulla Litoranea: Tanino (27 anni), che non saprà chi c'è in macchina fino a quando non la vedrà.
 - Brucia il foglio dei conti nel lavandino. Continua a guardarsi il polso vuoto.
 

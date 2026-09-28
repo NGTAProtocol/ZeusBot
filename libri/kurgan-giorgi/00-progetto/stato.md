@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 22 (Dalia, secondo scaletta). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–21. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 23 (Elena, martedì 29 giugno all'alba; il secondo telefono, «13.30»). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–22. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -123,3 +123,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-28 — Capitolo 20 (Flora, circa 2.240 parole): Valdhof respinta, il 9 marzo e il 14 marzo, via dei Cordai 14, «Non ancora» a Calabrese, Porto Clodio martedì, «stai lontana dalla costa». «Perché?» Non rispose.
 - 2026-09-28 — Verifica una tantum della scaletta 22–30: nessuna contraddizione con le regole fissate (ora solo al 23; De Biasi senza nome al 24 e con nome al 26; Adorisio nominato solo dal 26, dopo il tradimento; niente Laura prigioniera; civili non contraddetti; prima crepa al 29). Unica correzione: la chiusura del 21.
 - 2026-09-28 — Capitolo 21 (Giorgi, registro c, circa 2.260 parole): il piano verificato, Bertola alle 23.14, il supervisore e il regolatore, il pulsante di arresto, la terza via scartata, tre ragioni fredde, il telefono posato alle 23.51. «Domani, a pranzo, il sistema avrebbe cambiato stato.»
+- 2026-09-28 — Passo 0: eco dei «quattro» intenzionale (pagamento al 49); il generale del 21 reso esplicitamente l'analista del 12; foglio «vivo» per il 26; Rastegar non scopre Laura (casa sul lato opposto delle saline), assente da Riva Salmara, Parsàn si ritira dopo il 24 (luoghi, schede Rastegar e Kurgan).
+- 2026-09-28 — Capitolo 22 (Dalia, circa 2.130 parole): il «Stasera?» delle 10.02, la telefonata di Vito della domenica, Nicola che disdice, la 512 pagata e vuota, il messaggio cancellato lettera per lettera, le 12.41: «In mezzo alla gente. All'ora di pranzo.»

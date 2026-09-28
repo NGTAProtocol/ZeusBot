@@ -73,3 +73,8 @@
 - **Calabrese**: al mare con la famiglia; chiede di Valdhof, Flora gli dice «Non ancora».
 - **La madre di Flora**: il vicino ha tagliato anche il limone; chiama alle 21.15 anche quando Flora è a Rocca Sannella; per la prima volta invita Carlo a pranzo («Dicono sempre così, i primi tre anni»).
 - **Lo studio notarile di via dei Cordai 14, terzo piano, Albaterra**: studio associato, due notai (uno in pensione da un anno); 43 sedi legali.
+
+## Fissato nel capitolo 22
+- **Nicola**: telefona a Dalia sul fisso della redazione alle 12.10 del 29 giugno per disdire; aggiunge, non richiesto, che Giorgi è uscito presto con il vestito scuro delle cerimonie e che Ferri gli ha chiesto se andava a un funerale. «Io non le ho detto niente. Come sempre.»
+- **Il portiere di giorno dell'albergo** della 512: riconosce Dalia dalla voce.
+- **Sandro** (cronaca, *Il Meridiano*) e **il caporedattore** (occhiali, dopobarba al sandalo).

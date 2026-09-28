@@ -30,13 +30,13 @@ Bertola non si sedette. Restò in piedi dall'altra parte del tavolo, con le mani
 
 «Chi?»
 
-«Il generale. Ma non è una cosa del generale.» Bertola scelse le parole una per una, come si sceglievano i sassi per attraversare un torrente. «Domani non c'è nessuna squadra ai tavoli. Non c'è nessun furgone nel vicolo. C'è una carica. Sotto la cucina. E uomini sui tetti di fronte, per chi dovesse uscire.»
+«Il generale. Quello degli occhiali con il cordino. Ma non è una cosa sua.» Bertola scelse le parole una per una, come si sceglievano i sassi per attraversare un torrente. «Domani non c'è nessuna squadra ai tavoli. Non c'è nessun furgone nel vicolo. C'è una carica. Sotto la cucina. E uomini sui tetti di fronte, per chi dovesse uscire.»
 
 Giorgi non si mosse. Nella sala l'unico rumore era l'aria della griglia.
 
 «Chi l'ha deciso?»
 
-«Più in alto del generale. Il generale l'ha saputo sabato. Io stasera alle nove.»
+«Più in alto di lui. Il generale l'ha saputo sabato, a cose fatte. Io stasera alle nove.»
 
 «Quanti ci saranno, dentro, all'ora di pranzo?»
 
