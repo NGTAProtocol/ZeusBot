@@ -81,8 +81,16 @@ La creatura che smette di obbedire al suo creatore: il braccio operativo di Gior
 | 11 | 17 maggio | 11 montati sotto la villa di Monte Marzio, altre casse in arrivo | Dalia li vede |
 | 12 | 11 maggio (anno seguente) | 42 stimati per difetto dai servizi; Giorgi sa che sono di più | rapporto dei servizi |
 | 13 | 18 maggio (anno seguente) | 58 sotto la villa, più 8 casse arrivate la sera («pompe idrauliche») | conto di Kurgan |
+| 18 | 14–16 giugno | +10 da Parsàn alla banchina (5 trattenuti per la seconda busta): circa 76 in tutto | Rastegar, cap. 18 |
 
 Crescita da 11 a 58: i cinque di Parsàn, i quindici legati alla banchina di Punta Saline, i rifornimenti di Kaliria.
 
 ## Fissato nel capitolo 16 (riferito da Dalia)
 - Dall'estate dell'anno prima richiama Dalia la domenica e le racconta pezzi della sua storia «perché un giorno le scrivi»: tra questi il nome di Rastegar, «il contabile», e la regola degli incontri da solo in mezzo alla gente all'ora di pranzo. Ultima chiamata domenica 16 maggio; il 23 non chiama.
+
+## Fissato nel capitolo 18 (16–17 giugno)
+- Chen alle 11 sulla terrazza del grande ristorante del lungomare di Partenia (tre uscite; due uomini di Chen al bancone). Rastegar all'1.15 al buffet di un convegno di farmacisti all'albergo della stazione (cinque uscite).
+- Droni: lunedì 14 giugno, di notte, alla banchina, arrivano **dieci** apparecchi di Parsàn in casse «attrezzature agricole»; gli altri cinque Rastegar li trattiene per la seconda busta. Kurgan ha la seconda busta da marzo e non la dà: «Se gliela do, non mi deve più niente.» Tratta gli alleati come i suoi uomini: legati da un debito.
+- Riunione nel magazzino del molo nord (nove uomini): Onorato, Carrese, Adorisio, il Biondo, Rocco, Tanino, il serrano anziano e il ragazzo della Serrana. Kurgan dà un terzo dei soldi della banchina a Onorato. Ai suoi dice: «Ho una cosa sua che gli impedisce di mandarli.»
+- Dorme in una casa di Carrese vicino al porto (letto di ferro, crocifisso storto). All'alba del 17, sulla scala, il foglietto del contabile passato da tre mani. Non chiede chi l'abbia toccato per primo.
+- Tanino guida per lui da quando è tornato; la domenica va alla clinica, il mercoledì porta alla madre i giornali dei cruciverba.

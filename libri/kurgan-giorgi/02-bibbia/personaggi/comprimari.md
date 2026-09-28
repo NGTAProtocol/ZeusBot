@@ -55,3 +55,10 @@
 - **Il tecnico dei servizi**: giovane, portatile collegato allo schermo della sala sicura; abbassa lo schermo «per non vedere».
 - **L'avvocato di Partenia**: «difende mezza costa»; tramite tra Giorgi e la variabile per una cifra a sei zeri, senza sapere tra chi; chiama alle 23.52 dopo un bicchiere di troppo.
 - **Il sottosegretario** apre la cartellina di pelle per la prima volta; «Il governo non può»: un terminal dato a un uomo armato da potenze ostili farebbe cadere un altro governo.
+
+## Fissato nel capitolo 18
+- **Onorato**: parla sempre per primo quando deve dire ciò che gli altri pensano; non si toglie il cappello; quaranta uomini; vuole le navi libere entro settembre («non è un tradimento, è la fame»). Ottiene un terzo dei soldi della banchina.
+- **Il serrano anziano** (uno dei sei): accento di montagna; «Il portiere lo facciamo noi»; perde un terzo della banchina e se ne ricorda.
+- **Il ragazzo della Serrana**: il più giovane dei sei; legge i manuali meglio degli altri; turno di notte alla banchina; riceve il foglietto da un uomo dell'equipaggio.
+- **Carrese**: procurò a Kurgan da marzo le carte della seconda busta tramite un doganiere di Porto Clodio con un figlio malato. Ospita Kurgan in una casa vicino al porto.
+- **Rocco** scatta contro il ragazzo della Serrana; il Biondo lo ferma.

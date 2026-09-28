@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 18 (Kurgan, secondo scaletta). Il 21 attende la decisione sui civili del ristorante. Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–17. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 19 (Elena, secondo scaletta). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–18. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -115,3 +115,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-28 — Passo 0 prima del cap. 17: Lanieri → Lanteri Custodia (Lanieri è un marchio reale); controllo unico dei nomi societari in `semi.md`; cap. 16 allineato (Giorgi «a casa passa quando può»; il disegno di Laura con il tetto rosso a pennarello); studio notarile di Albaterra unificato con quello delle 31 fiduciarie (pagamento al 34); Monte Marzio risolto (i servizi conoscono solo un'area). **Capitolo 17 non scritto:** l'ipotesi «Giorgi vuole Kurgan vivo» contraddice bibbia (trama, schede Giorgi e Kurgan: «Giorgi lo fa uccidere») e scaletta (cap. 17 «la variabile accetta», cap. 21 «potrebbe fermare tutto. Non lo fa»). In attesa di scelta.
 - 2026-09-28 — Decisione (B): Giorgi non fa uccidere Kurgan, lo lascia uccidere. Aggiornati bibbia, trama, schede di Giorgi, Kurgan, Adorisio (crede alla cattura, non sa della bomba); scaletta 17 e 21 (fonte proposta Bertola; tre ragioni; nessuna crepa).
 - 2026-09-28 — Capitolo 17 (Giorgi, registro c, circa 2.430 parole): la sala sicura, il rivelatore che disturba il nocciolo, 36 porte, niente trattativa, «Mi serve lui. Vivo.», il sistema non osservabile, la variabile interna, «Sì. Vivo.»
+- 2026-09-28 — Scaletta corretta: chiusura del 18 senza luogo né ora (invito legato alla seconda busta, tre mani); al 24 luogo e ora arrivano in apertura. Calendario: 16 giugno (18), 26 (20), 28 notte (21), martedì 29 giugno 13.30 Riva Salmara (23–24).
+- 2026-09-28 — Capitolo 18 (Kurgan, circa 2.430 parole): Chen sulla terrazza, Rastegar al buffet dei farmacisti, dieci droni e cinque trattenuti, la seconda busta come debito, Onorato contro i serrani, il foglietto passato da tre mani: «Il contabile vuole la busta. E presto.»

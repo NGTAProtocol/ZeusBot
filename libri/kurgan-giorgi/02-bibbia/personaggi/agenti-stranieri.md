@@ -21,3 +21,7 @@ Tre agenti in contatto diretto con Kurgan (e con Adorisio prima del tradimento).
 
 ## Nodo aperto (dopo il capitolo 13)
 - La prigionia di Laura è in una vecchia casa di guardiani ai margini delle saline, vicina alla banchina del molo nord che Rastegar usa tre notti al mese senza registri. Rastegar ha detto a Kurgan «Nessuno spara in mezzo ai bambini» (cap. 7). **Da usare o evitare di proposito:** se i suoi uomini o lui stesso vengono a sapere della bambina a poca distanza dalla banchina, la sua regola può scontrarsi con l'alleanza (possibile attrito nel secondo incontro, cap. 18). Se si evita, la casa va tenuta fuori dal raggio della banchina in modo esplicito.
+
+## Fissato nel capitolo 18 (16 giugno)
+- **Chen:** arriva dieci minuti prima («preferisco arrivare quando ci sono ancora molte uscite»); italiano scolastico, consonanti al loro posto; acqua frizzante, due bicchieri capovolti. Non dà niente adesso: vuole essere il primo a usare Tarassa, per i container («cose che non sono ancora state inventate»). Chiede se Kurgan tratterà con il vecchio socio: «Tutti hanno qualcosa da trattare. La differenza è chi lo sa.» Sa delle 41 salite della Finanza in trenta giorni.
+- **Rastegar (secondo incontro vero):** buffet di un convegno di farmacisti, cartellino con un nome falso. Dieci droni consegnati lunedì 14 alla banchina, cinque trattenuti per la seconda busta; il suo governo la vuole «entro l'estate». «Ci rivediamo. Da solo, come sempre. Le farò sapere io dove.» Non parla di Riva Salmara.

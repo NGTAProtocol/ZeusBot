@@ -23,6 +23,7 @@
 | Polo logistico colpito (nord-ovest) | **Portofosco** |
 | Autostrada nord-sud | **la Dorsale** (bombe a **Padèra** e **Albaterra**) |
 | Autostrada costiera est | **la Litoranea** (bombe ad **Aterno Marina** e **Ronchedo**) |
+| Cittadina sulla Litoranea (officina delle targhe rubate per il furgone del rapimento, cap. 17; poi bomba, Parte IV) | **Aterno Marina** |
 | Costa sotto il controllo di Kurgan | costa occidentale e arco meridionale |
 | Città svizzera della cassetta di sicurezza di Giorgi | **Cadrasca** (confermata nella bibbia v7) |
 | Alberghi della doppia vita (all'estero, prima bibbia) | **Valdhof**, **Kingsmere** |

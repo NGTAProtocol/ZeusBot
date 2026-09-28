@@ -34,6 +34,7 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - Sabato 7 febbraio: capitolo 10 (Kurgan e Volkov; la parola «nazione»).
 - Domenica 17 maggio: capitolo 11 (Dalia a Monte Marzio, un anno esatto dalla notte dei droni).
 - **Anno seguente.** Martedì 11 maggio: capitolo 12 (il fronte ad Albaterra; la berlina grigia davanti alla scuola). Diciotto mesi dopo la ribellione. Il rapimento (capitoli 13–14) va collocato pochi giorni dopo, a metà–fine maggio, prima della chiusura delle scuole. Le intestazioni dei capitoli di quest'anno portano «dell'anno seguente» almeno al primo cambio d'anno.
+- Mercoledì 16 giugno: capitolo 18 (Chen, Rastegar, il sindacato; all'alba del 17 il foglietto del contabile). Sabato 26 giugno: capitolo 20. Lunedì 28 giugno, notte: capitolo 21. **Martedì 29 giugno, 13.30: Riva Salmara** (capitoli 23–24).
 - Lunedì 31 maggio: capitolo 17 (la sala sicura; la variabile accetta alle 23.52).
 - Giovedì 27 maggio: capitolo 15 (Oddone chiama Flora; allegato 37). Venerdì 28 maggio: capitolo 16 (Dalia e Giorgi nella 512, fuori dal giorno fisso).
 - Martedì 18 maggio (anno seguente), notte: capitolo 13 (Kurgan a Punta Saline decide il rapimento). Mercoledì 19 maggio, uscita da scuola: il rapimento di Laura (capitolo 14, Elena).
@@ -136,19 +137,19 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **17. Giorgi (c)** · Merania, sala sicura (secondo piano interrato di Porta Vetra) · lunedì 31 maggio · Mobilita l'arsenale (servizi, governo, CIA) per riavere Laura → la bambina è introvabile; il fronte offre un raid sull'area (36 ville) e rifiuta la trattativa; resta "la variabile interna" (Adorisio, mai nominato). **Giorgi progetta una cattura, non un'esecuzione:** il pattern di Rastegar da Dalia, un messaggio con il nome del contabile portato dall'interno. Sa che è una scommessa lunga (Kurgan catturato non parlerebbe). Seme: attorno al tavolo solo lui dice «vivo». · **Chiusura:** la variabile accetta, con una condizione: «vivo». · 2.500
 
-**18. Kurgan** · grande ristorante sul lungomare, poi albergo · Mese 19 · Incontra Chen, poi Rastegar per la seconda volta: i droni arrivano → tensioni nel sindacato. · **Chiusura:** Adorisio: "Rastegar vuole vederti a Riva Salmara, alle 13.30. Da solo, come sempre." · 2.500
+**18. Kurgan** · Partenia (terrazza del grande ristorante sul lungomare, poi buffet di un convegno all'albergo della stazione); Punta Saline (magazzino del molo nord) · mercoledì 16 giugno, fino all'alba del 17 · Incontra Chen, poi Rastegar per la seconda volta: i droni arrivano (dieci per la banchina; cinque trattenuti per la seconda busta) → tensioni nel sindacato (Onorato contro i serrani). · **Chiusura (corretta):** un invito generico legato alla seconda busta rinviata al cap. 7, *«La mia gente è pronta a leggere. Il contabile vuole la busta. E presto.»* Nessun luogo, nessuna ora. Il foglietto passa per tre mani con lo stesso peso (il ragazzo della Serrana, Carrese, Adorisio); chi lo abbia originato resta ambiguo. · 2.500
 
 **19. Elena** · Merania · Mese 19 · Vuole sapere cosa sa il marito → spia il telefono: trova "Dalia" e la prende per una donna qualunque. Giorgi, una sera, le parla della chiavetta. · **Chiusura:** Elena memorizza una password. · 2.400
 
 **20. Flora** · Rocca Sannella · fine giugno (sabato 26 giugno proposto) · *(Paga la scadenza di Valdhof: vedi `00-progetto/semi.md`.)* · Torna a casa per un fine settimana → De Stefano le chiede di stare lontana dalla costa quella settimana. Primo segnale ambiguo. · **Chiusura:** "Perché?" Lui non risponde. · 2.300
 
-**21. Giorgi (c)** · Merania · Mese 19, la notte prima · Verifica il sistema, variabile per variabile → **scopre che la cattura è diventata una bomba** (fonte proposta: Bertola, ancora «il fedele»; è una prova di Osiride per vedere se Giorgi ferma tutto; eco della busta ritirata del cap. 8) → potrebbe fermare tutto. Non lo fa, per tre ragioni fredde: opporsi lo esporrebbe a Osiride; la strada per Laura passa comunque dall'interno (Tanino); Kurgan catturato non parlerebbe mai. Nessuna crepa. **Non scrivere prima della decisione sui civili del ristorante (`semi.md`).** · **Chiusura:** "Alle 13.30 il sistema avrebbe cambiato stato." · 2.300
+**21. Giorgi (c)** · Merania · lunedì 28 giugno, notte · Verifica il sistema, variabile per variabile → **scopre che la cattura è diventata una bomba** (fonte proposta: Bertola, ancora «il fedele»; è una prova di Osiride per vedere se Giorgi ferma tutto; eco della busta ritirata del cap. 8) → potrebbe fermare tutto. Non lo fa, per tre ragioni fredde: opporsi lo esporrebbe a Osiride; la strada per Laura passa comunque dall'interno (Tanino); Kurgan catturato non parlerebbe mai. Nessuna crepa. Bertola dà la stima dei civili, «tre, quattro» (il numero vero è quattro: due del personale, due clienti, nessun bambino, mai descritti). Giorgi registra che Bertola conosce le decisioni di Osiride e sceglie di non seguire il filo, perché Bertola gli serve. De Biasi non nominato. · **Chiusura:** "Alle 13.30 il sistema avrebbe cambiato stato." · 2.300
 
 **22. Dalia** · Merania · Mese 19 · Aspetta Giorgi → lui annulla l'incontro per la prima volta in anni. · **Chiusura:** Dalia ripensa a quello che gli ha detto su Rastegar. · 2.200
 
-**23. Elena** · Merania · Mese 19, mattina · Giorgi esce all'alba, vestito come per un funerale → Elena trova il secondo telefono. · **Chiusura:** un messaggio: "13.30". · 2.200
+**23. Elena** · Merania · martedì 29 giugno, mattina · Giorgi esce all'alba, vestito come per un funerale → Elena trova il secondo telefono. · **Chiusura:** un messaggio: "13.30". · 2.200
 
-**24. Kurgan** · Riva Salmara · Mese 19, 13.30 · Arriva da solo; conta uscite, tetti, uomini → sul tetto di fronte un uomo che non conosce (De Biasi, senza nome). · **Chiusura:** l'esplosione. · 2.400
+**24. Kurgan** · Riva Salmara · martedì 29 giugno, 13.30 · *(Apertura: luogo e ora arrivano a Kurgan per il canale abituale del contabile, con preavviso breve, un giorno o meno. Il lettore li conosce già: il luogo dal 21, l'ora dal 23.)* Arriva da solo; conta uscite, tetti, uomini → sul tetto di fronte un uomo che non conosce (De Biasi, senza nome). · **Chiusura:** l'esplosione. · 2.400
 
 ### PARTE III — CALMA APPARENTE
 
