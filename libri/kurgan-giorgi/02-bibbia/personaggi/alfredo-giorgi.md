@@ -57,3 +57,10 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Nota a margine nel fascicolo di Kurgan, di un funzionario dei servizi: «Non perde mai uomini. Preferisce perdere il lavoro.»
 - Kurgan lo chiama «dottore». Salvarani lo chiama «Alfredo».
 - Piano contro Kurgan esposto a Salvarani: isolamento economico, taglio dei clienti, pressione doganale, tempo. Salvarani: «È il piano di un uomo che crede che l'altro abbia bisogno di soldi.»
+
+## Fissato nel capitolo 12
+- **Contenimento di Kurgan (diciotto mesi):** «barre di controllo» economiche (clienti tagliati, banche che chiedono documenti, dogane di Punta Saline e Porto Clodio). I ricavi di Kurgan si dimezzano, ma Giorgi lo ha trattato come un sistema chiuso: Kurgan ha aperto le pareti (carburante di Kaliria, banchina di Parsàn, carte NATO) e si avvicina alla massa critica.
+- Rapporto dei servizi dell'11 maggio: 42 droni stimati per difetto; posizione di Kurgan sconosciuta («non trascorre mai due notti consecutive nello stesso luogo»).
+- **Nascita del fronte (11 maggio, Albaterra):** un generale dei servizi militari (in civile, non nominato), un giovane sottosegretario, un uomo della CIA che si presenta come consigliere commerciale di un'ambasciata alleata. «Il passato non ci interessa, dottor Giorgi. Ci interessa chi lo arma adesso.» Giorgi esce con tre numeri di telefono e un'autorizzazione che non esiste su nessuna carta.
+- **Il messaggio a Dalia del 17 maggio precedente:** lo mandò dopo che i servizi gli avevano segnalato una donna alta prelevata alla stazione di Partenia da un'auto di Kurgan. Lei rispose due giorni dopo: «Sì. Scusa. Ero via.» Lui non le ha mai chiesto dove fosse stata. Non sa se quella domanda fosse «una carezza o una misura».
+- Tiene il disegno di Laura (la famiglia davanti a casa; lui un po' distante, gli altri per mano) nella tasca interna della giacca.

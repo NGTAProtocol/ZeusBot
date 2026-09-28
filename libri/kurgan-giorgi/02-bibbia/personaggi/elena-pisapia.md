@@ -38,3 +38,6 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - **Aspetto (fissato):** elegante, deliberatamente anonima in pubblico.
 - Provenienza, nome da nubile: [DA DEFINIRE]
 - Dove "si mette al sicuro": [DA DEFINIRE]
+
+## Fissato nel capitolo 12
+- Una mattina di maggio Giorgi nota per la prima volta il telefono di Elena a faccia in giù accanto alla tazza.

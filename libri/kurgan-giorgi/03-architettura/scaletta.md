@@ -33,6 +33,7 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - Giovedì 22 gennaio: capitolo 9 (la pista di De Stefano; la lettera a Calabrese).
 - Sabato 7 febbraio: capitolo 10 (Kurgan e Volkov; la parola «nazione»).
 - Domenica 17 maggio: capitolo 11 (Dalia a Monte Marzio, un anno esatto dalla notte dei droni).
+- **Anno seguente.** Martedì 11 maggio: capitolo 12 (il fronte ad Albaterra; la berlina grigia davanti alla scuola). Diciotto mesi dopo la ribellione. Il rapimento (capitoli 13–14) va collocato pochi giorni dopo, a metà–fine maggio, prima della chiusura delle scuole. Le intestazioni dei capitoli di quest'anno portano «dell'anno seguente» almeno al primo cambio d'anno.
 
 Le intestazioni dei capitoli usano questo calendario ("Tommaso — Merania, 13 novembre"), mai "Mese 18".
 
@@ -94,13 +95,13 @@ Corale, registro (a) · Albaterra, Marcena, Merania · Giorno 0 · Il governo ca
 
 **11. Dalia** · Partenia, Monte Marzio · 17 maggio · Kurgan la convoca: lei vuole uscirne indenne → lui le mostra il nuovo arsenale come si mostra una proprietà. Il passato solo come ricordo, fuori scena. · **Chiusura:** lui le chiede se "il finanziere" la tratta bene. *(Fissato al cap. 6: Kurgan sa di loro da sei anni e lo considera un investimento: «Tienilo contento». Sottovaluta quanto Giorgi abbia estratto e ignora che sia diventato amore. La domanda è di un padrone che controlla una proprietà, non di uno che scopre qualcosa.)* · 2.400
 
-**12. Giorgi (c)** · Merania, casa Giorgi · Mese 12 · Vuole contenere Kurgan senza sporcarsi → Kurgan cresce: armi straniere, porti. Nasce il fronte che lo armerà (servizi, governo, CIA). La famiglia vista da lui: Laura, la scuola delle suore. · **Chiusura:** l'autista di Laura segnala un'auto che non conosce. · 2.500
+**12. Giorgi (c)** · Merania, casa Giorgi; Albaterra · 11 maggio dell'anno seguente · Vuole contenere Kurgan senza sporcarsi → Kurgan cresce: armi straniere, porti. Nasce il fronte che lo armerà (servizi, governo, CIA). La famiglia vista da lui: Laura, la scuola delle suore. · **Chiusura:** l'autista di Laura segnala un'auto che non conosce. · 2.500
 
 ### PARTE II — LA FIGLIA
 
-**13. Kurgan** · Punta Saline · Mese 18 · Decide di colpire Giorgi dove non ha difese → deve tenere il piano segreto anche ai suoi uomini più vicini. · **Chiusura:** "Domani, all'uscita da scuola." · 2.300
+**13. Kurgan** · Punta Saline · metà maggio dell'anno seguente · Decide di colpire Giorgi dove non ha difese → deve tenere il piano segreto anche ai suoi uomini più vicini. · **Chiusura:** "Domani, all'uscita da scuola." · 2.300
 
-**14. Elena** · Merania · Mese 18, giorno del rapimento · Il giorno comincia normale → la telefonata della scuola, l'autista a terra. Tutto fuori scena: lo scopre dopo. Giorgi non chiama la polizia. · **Chiusura:** nessuna richiesta di riscatto. Il telefono resta muto. · 2.500
+**14. Elena** · Merania · fine maggio dell'anno seguente, giorno del rapimento · Il giorno comincia normale → la telefonata della scuola, l'autista a terra. Tutto fuori scena: lo scopre dopo. Giorgi non chiama la polizia. · **Chiusura:** nessuna richiesta di riscatto. Il telefono resta muto. · 2.500
 
 **15. Flora** · Albaterra · Mese 18 · Il pool lavora sul flusso delle stragi → una voce: la figlia di un grande finanziere è sparita e nessuno la cerca. · **Chiusura:** il nome del finanziere è Giorgi, lo stesso che compare nelle sue carte. · 2.300
 

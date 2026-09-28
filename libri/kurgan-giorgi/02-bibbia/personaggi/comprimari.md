@@ -6,3 +6,8 @@
 - **Le due guardie del corpo di Giorgi:** complici degli incontri segreti. La più giovane e vulnerabile, con problemi personali ed economici, diventa fonte di Dalia. (Nomi da definire.)
 - **L'autista-bodyguard di Laura:** neutralizzato durante il rapimento.
 - **I quattro ex funzionari di Kurgan:** autori del golpe fallito contro Bertola.
+
+## Fissati nel capitolo 12
+- **Laura (7 anni):** divisa della scuola delle suore (gonna blu a pieghe, camicetta bianca, cardigan con lo stemma); scende le scale tenendosi con due mani; suor Agnese la mette davanti al coro «perché è piccola»; canta una canzone sulla Madonna e sul mare, sbagliando la terza strofa. Dorme con la luce del corridoio accesa (cap. 2).
+- **Fabrizio:** cuffie al collo, beve il latte in piedi. **Cesare:** sempre in ritardo, zaino aperto.
+- **Sergio:** autista-guardia del corpo di Laura da quattro anni, pistola sotto la giacca. L'11 maggio segnala una berlina grigia con targa di fuori davanti alla scuola, tre volte in una settimana.
