@@ -57,6 +57,15 @@ Ogni traccia lasciata nel testo va pagata o chiusa di proposito. Per ciascuna: d
 - **Flora mente a Calabrese** (cap. 20): «Non ancora» su Valdhof. Cataldo non gli ha mostrato la busta. Il pool, da quella sera, è «due persone e mezza». Da riprendere al cap. 27 (Calabrese vuole lasciare il pool).
 - **Carlo e la costa** (cap. 20): «La settimana prossima stai lontana dalla costa.» Non chiede quale bambina, né come lei lo sappia: sa senza dire. Ha richiesto lunedì il comando della caserma di Rocca Sannella; risposta: «dopo l'estate, quest'estate c'è molto da fare». Flora mette tutto nel «cassetto di Carlo», che per la prima volta non si chiude. Nessun sospetto di doppio gioco ancora; il «registro di Merania» resta al cap. 31.
 
+## Indizi su De Stefano (tetto: quattro in tutto)
+Ogni indizio regge da solo; insieme fanno un conto. Non superare quattro.
+1. **Cap. 9** — la pista troppo precisa: 31 conti, le 12.07, un intermediario di Merania. Dati che nessuno poteva avere.
+2. **Cap. 20** — «La settimana prossima stai lontana dalla costa.» E non chiede nulla della bambina di Merania.
+3. **Cap. 31** — il «registro di Merania»: un riferimento a una ricerca che Flora non gli ha mai detto.
+4. **(Libero, da usare con parsimonia.)**
+- **Ipotesi da confermare al cap. 27:** Flora va davvero a Porto Clodio martedì 29 (sul Tirreno); alla capitaneria sente la notizia della bomba di Riva Salmara (sull'Adriatico) e collega l'avvertimento di Carlo. È il suo primo vero «non torna»: da lì sospetta senza prove, come vuole la bibbia, e i suoi capitoli successivi (35 e 45 nella proposta) hanno tensione.
+- **La richiesta di comando a Rocca Sannella** (cap. 20): Carlo l'ha rifatta lunedì 21 giugno; «ne parliamo dopo l'estate». **Da pagare più avanti:** i servizi gliela negano di nuovo perché è troppo prezioso dov'è (bibbia). Il rifiuto alimenta il risentimento verso l'apparato e il tradimento silenzioso.
+
 ## Decise
 
 - **I civili del ristorante di Riva Salmara** (cap. 21, 24, 25, 41). **Deciso:** quattro vittime, **mai descritte**: due del personale, due clienti. **Nessun bambino** (la linea dei bambini è quella che Kurgan attraversa al 13: qui serve un contrasto, non una ripetizione). Il ristorante deve superare il conteggio di Kurgan (uscite, persone, guardie): normale, non affollato, un giorno feriale a pranzo. Al cap. 21 la fonte dà a Giorgi la stima «tre, quattro»; il numero vero è quattro; i nomi compaiono solo nel notiziario che Dalia legge al cap. 25. **Il cap. 21 è sbloccato.**

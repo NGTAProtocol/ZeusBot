@@ -22,10 +22,16 @@ La guerra di Kurgan nell'esercito varnio e l'uccisione dei tre ufficiali.
 - Escalation: poli logistici di Portofosco e Tarassa; autostrade: Dorsale (Padèra, Albaterra) e Litoranea (Aterno Marina, Ronchedo).
 
 ## Impero di Kurgan
-Porto Clodio (petroliere), Punta Saline, ex terminal Oriens di Tarassa; basi sotterranee (da collocare).
+Porto Clodio (petroliere) sulla **costa tirrenica**; Punta Saline, sul Tirreno meridionale (l'arco meridionale di Kurgan); ex terminal Oriens di Tarassa; basi sotterranee (da collocare).
 
 ## Riva Salmara
-Ristorante imbottito di esplosivo, 13.30: la morte di Kurgan.
+Sulla **costa adriatica**. Ristorante imbottito di esplosivo, martedì 29 giugno, a pranzo (13.30): la morte di Kurgan.
+
+## Geografia delle coste (fissata dopo il cap. 20)
+- **Tirreno (costa occidentale):** Partenia, Porto Clodio, Punta Saline (Tirreno meridionale). È la costa di Kurgan.
+- **Adriatico (costa orientale):** Riva Salmara; la Litoranea corre lungo questa costa (Aterno Marina, Ronchedo).
+- Merania è nell'interno, al nord. Rocca Sannella è nell'interno, a due ore e mezza da Albaterra e a tre ore da Porto Clodio.
+- Il «stai lontana dalla costa» di Carlo (cap. 20) non nomina nessuna delle due: è voluto. Flora pensa al Tirreno (Porto Clodio); la bomba sarà sull'Adriatico.
 
 ## Rocca Sannella
 Città di Flora; il comando provinciale dei Carabinieri negato a De Stefano.
