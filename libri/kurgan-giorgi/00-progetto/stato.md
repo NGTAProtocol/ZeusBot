@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 23 (Elena, martedì 29 giugno all'alba; il secondo telefono, «13.30»). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–22. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 24 (Kurgan, Riva Salmara, martedì 29 giugno a pranzo). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–23. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -121,7 +121,9 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-28 — Capitolo 19 (Elena, circa 2.330 parole): il telefono del comodino, Dalia la donna del martedì, il 28 maggio, le tre versioni, «Sì» sa chi è stato, la chiavetta, «Nocciolo1207».
 - 2026-09-28 — Correzioni al cap. 19 (password cambiata dopo ogni affare, lettura dalle dita, motivo per mostrare la chiavetta, pagella di Fabrizio e orale di Cesare); mappa della chiavetta in `semi.md`; bibbia e scheda Elena (sa del responsabile senza nome; clonazione come leva e assicurazione).
 - 2026-09-28 — Capitolo 20 (Flora, circa 2.240 parole): Valdhof respinta, il 9 marzo e il 14 marzo, via dei Cordai 14, «Non ancora» a Calabrese, Porto Clodio martedì, «stai lontana dalla costa». «Perché?» Non rispose.
-- 2026-09-28 — Verifica una tantum della scaletta 22–30: nessuna contraddizione con le regole fissate (ora solo al 23; De Biasi senza nome al 24 e con nome al 26; Adorisio nominato solo dal 26, dopo il tradimento; niente Laura prigioniera; civili non contraddetti; prima crepa al 29). Unica correzione: la chiusura del 21.
+- 2026-09-28 — Verifica una tantum della scaletta 22–30: nessuna contraddizione con le regole fissate (ora solo al 23, ora 22 dopo lo scambio; De Biasi senza nome al 24 e con nome al 26; Adorisio nominato solo dal 26, dopo il tradimento; niente Laura prigioniera; civili non contraddetti; prima crepa al 29). Unica correzione: la chiusura del 21.
 - 2026-09-28 — Capitolo 21 (Giorgi, registro c, circa 2.260 parole): il piano verificato, Bertola alle 23.14, il supervisore e il regolatore, il pulsante di arresto, la terza via scartata, tre ragioni fredde, il telefono posato alle 23.51. «Domani, a pranzo, il sistema avrebbe cambiato stato.»
 - 2026-09-28 — Passo 0: eco dei «quattro» intenzionale (pagamento al 49); il generale del 21 reso esplicitamente l'analista del 12; foglio «vivo» per il 26; Rastegar non scopre Laura (casa sul lato opposto delle saline), assente da Riva Salmara, Parsàn si ritira dopo il 24 (luoghi, schede Rastegar e Kurgan).
-- 2026-09-28 — Capitolo 22 (Dalia, circa 2.130 parole): il «Stasera?» delle 10.02, la telefonata di Vito della domenica, Nicola che disdice, la 512 pagata e vuota, il messaggio cancellato lettera per lettera, le 12.41: «In mezzo alla gente. All'ora di pranzo.»
+- 2026-09-28 — Capitolo 22, poi rinumerato 23 (Dalia, circa 2.130 parole): il «Stasera?» delle 10.02, la telefonata di Vito della domenica, Nicola che disdice, la 512 pagata e vuota, il messaggio cancellato lettera per lettera, le 12.41: «In mezzo alla gente. All'ora di pranzo.»
+- 2026-09-28 — Scambio dei capitoli 22 e 23: Elena (alba) diventa il 22, Dalia (10.02–12.41) il 23; file rinominato, riferimenti aggiornati in scaletta, semi, schede, stato. Nel 23: «sei settimane»; Sandro → Pietro.
+- 2026-09-28 — Capitolo 22 (Elena, circa 2.170 parole): i fari alle 5.38, il vestito del funerale del padre, la notifica delle 03.12, «Anche per Laura», il telefono che non risponde, le 13.30 cercate e buttate, Cesare a casa. In fondo alla lista: «13.30.»

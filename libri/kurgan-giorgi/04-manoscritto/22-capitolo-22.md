@@ -1,157 +1,185 @@
 ## 22
 
-*Dalia — Merania, 29 giugno*
+*Elena — Merania, 29 giugno*
 
-Il messaggio arrivò alle 10.02 di martedì, come arrivava da sei anni, e Dalia lo lesse con un sollievo che la fece vergognare.
+Alle 5.38 i fari di una macchina passarono sul soffitto della camera da letto, da sinistra a destra, e si fermarono a metà.
 
-*Stasera?*
+Elena era sveglia. Da quarantuno giorni si svegliava alle cinque senza sveglia, come se il corpo avesse deciso da solo un turno di guardia. Contò: il motore che si spegneva, una portiera, due portiere, il cancello elettrico che ronzava. Passi sulla ghiaia. Due uomini, uno pesante e uno leggero. Il pesante si fermò davanti alla porta. Il leggero entrò.
 
-Il punto interrogativo c'era. Dopo il venerdì senza punto interrogativo, dopo un mese in cui i martedì erano passati vuoti, uno dopo l'altro, come stazioni in cui il treno non si fermava, il punto interrogativo era tornato al suo posto. Dalia rispose prima di pensarci.
+Alfredo non aveva dormito a casa. Aveva chiamato alle otto della sera prima: *resto in ufficio*. Elena aveva detto *va bene* e aveva messo in frigorifero il piatto che aveva preparato per lui, coperto con la pellicola, come da quarantuno giorni.
 
-*Sì.*
-
-Poi posò il secondo telefono nel cassetto della scrivania, sotto le cartelle dei bilanci, e rimase un momento con la mano sul legno. Il legno era tiepido. Nella redazione del *Meridiano* l'aria condizionata si era rotta il venerdì prima, e da quattro giorni il terzo piano sapeva di carta calda, di caffè bruciato nella macchinetta del corridoio e del dopobarba al sandalo del caporedattore, che con il caldo si allargava per tutta la stanza.
-
-Stasera. Alle otto, nella 512. Gli avrebbe chiesto quello che non gli aveva chiesto il 28 maggio.
-
-Quella mattina, prima di uscire, aveva scelto il vestito per la sera senza sapere se ci sarebbe stata una sera. Uno blu, di lino, che si stropicciava appena ci si sedeva e che Alfredo diceva di preferire proprio per quello: perché sembrava un vestito che aveva vissuto una giornata. L'aveva appeso all'anta dell'armadio, con la gruccia di legno, e aveva messo sul letto la borsa piccola, quella da sera, con dentro solo il rossetto e le chiavi. Poi aveva preso il caffè in piedi, alla finestra, con il sapore amaro che le restava sul palato mentre scendeva le scale, e si era detta la frase che avrebbe usato. L'aveva provata tre volte, sottovoce, sul pianerottolo. *Dimmi soltanto se è vivo, quando hai finito.*
-
-Non era la frase giusta. Non esisteva, la frase giusta. Ma era la più corta, e le frasi corte erano le più difficili da eludere.
+Sentì la porta di casa chiudersi piano, i suoi passi sulle scale, uno ogni due gradini. Non accese la luce. Si tirò su a sedere contro la testiera del letto e aspettò che la porta della camera si aprisse.
 
 ---
 
-Da un mese se lo ripeteva, la domanda, come si ripeteva una frase in una lingua che non si parlava bene.
+Lui entrò senza accendere la luce anche lui. Nella penombra grigia Elena vide che aveva la camicia del giorno prima, sbottonata al collo, e la giacca sul braccio. Si fermò quando la vide seduta.
 
-Quello che ti ho detto di Vito. Del contabile. Del da solo, in mezzo alla gente, all'ora di pranzo. A che cosa serve?
+«Ti ho svegliata.»
 
-Non l'aveva fatta, quella sera, perché lui le aveva chiesto di fidarsi una volta senza sapere perché, e lei si era fidata. E perché lui aveva detto *ho paura*, e nessun uomo le aveva mai detto una cosa del genere senza volerne in cambio un'altra.
+«No.»
 
-Poi, a casa, sotto la doccia, con l'acqua così calda da farle diventare rossa la pelle delle spalle, aveva capito che cosa le restava in bocca di quella sera. Un sapore di ferro, come quando da ragazza si mordeva l'interno della guancia per non dire una cosa. Lui le aveva chiesto le abitudini di un uomo. Le abitudini servivano a una cosa sola: a sapere dove sarebbe stato un uomo quando non se lo aspettava.
+Alfredo annuì. Posò la giacca sulla poltrona, con cura, piegata lungo le cuciture. Poi aprì l'armadio.
 
-Si era detta, per un mese, la cosa più ragionevole. Alfredo voleva prenderlo. Fermarlo. Chiudere quello che c'era tra loro in una stanza, con degli avvocati, con qualcuno che parlava piano. Alfredo non era un uomo che sparava. Alfredo era un uomo che firmava.
+Elena lo guardò scegliere. Non scelse. Andò dritto alla fodera di plastica grigia in fondo all'anta, quella che non si apriva quasi mai, e tirò giù la cerniera. Il vestito scuro. Quello di lana fredda, blu così scuro da sembrare nero, che si era fatto fare per il funerale del padre di lei, tre anni prima. Lo aveva rimesso due volte, da allora: per il funerale di un socio e per una messa in Vaticano. Elena teneva il conto delle volte che suo marito si vestiva di scuro, come teneva il conto di tutto.
 
-Ma la frase ragionevole aveva un sapore anche lei, e il sapore era quello del ferro.
+Tre volte in tre anni. Questa era la quarta.
 
----
+«Dove vai?»
 
-Domenica sera Vito aveva chiamato. Per la prima volta dopo cinque settimane.
+«A lavorare.»
 
-Lei era in cucina, con le finestre aperte sul cortile e l'odore dei gelsomini del terzo piano che scendeva a ondate. Il telefono aveva vibrato sul marmo alle 22.10. Dalia aveva guardato il nome, e aveva sentito le mani fare quello che facevano sempre, da vent'anni: asciugarsi da sole sul grembiule prima ancora che lei decidesse di rispondere.
+«Con quel vestito.»
 
-*Rispondi come sempre. Ridi come sempre.* Così le aveva detto Alfredo.
+«È l'unico che ho pulito qui.»
 
-Aveva risposto come sempre. Vito era stanco e contento insieme, come la sera del sedici maggio. Le aveva parlato della Finanza, delle navi, di un vecchio dei suoi che voleva i soldi prima di settembre. Poi, verso la fine, con quella voce bassa che le arrivava nello stomaco prima che nelle orecchie, le aveva detto una cosa per la sua storia vera.
-
-*Questa settimana vedo il contabile. Gli porto una cosa che aspetta da dicembre. Scrivilo, un giorno: il contabile ha aspettato sei mesi, e io l'ho fatto aspettare apposta.*
-
-Aveva riso. Lei aveva riso con lui, come sempre. Poi aveva chiuso, e aveva lavato una tazza che era già pulita, due volte.
-
-Questa settimana.
-
-Non le aveva detto il giorno, né il posto. Non glieli diceva mai. Ma le aveva detto la settimana, e la settimana era questa, e Alfredo, un mese prima, le aveva chiesto proprio del contabile.
-
-Dalia sapeva fare i conti, anche se li faceva con il corpo prima che con la testa. Aveva passato la notte a farli, sveglia, con le lenzuola che si attaccavano alla pelle. E la notte le aveva dato un risultato solo: stasera, nella 512, doveva chiedere. E se la risposta era quella che temeva, doveva decidere se telefonare a Vito prima che fosse troppo tardi.
-
-*Allora si farà male qualcuno che non c'entra niente.*
-
-Non sapeva chi. Sapeva soltanto che Alfredo non diceva mai una frase senza avere già il nome della persona a cui si riferiva.
+Nell'armadio c'erano sette vestiti, tutti puliti, tutti appesi con la stessa distanza tra una gruccia e l'altra, perché li appendeva lei. Elena non lo disse. Lo aggiunse alla lista che aveva cominciato a fare nella testa appena i fari erano passati sul soffitto.
 
 ---
 
-Alle undici il caporedattore la chiamò nella sua stanza. Voleva un pezzo sui rendimenti dei titoli di Stato, trenta righe, entro le quattro, e voleva che non ci fosse dentro nessuna ipotesi.
+Lui andò in bagno. Lasciò la porta socchiusa. Elena sentì l'acqua della doccia, e contò anche quella: quattro minuti. Da diciassette anni Alfredo faceva docce da quattro minuti, anche la domenica, come se ci fosse sempre qualcuno che lo aspettava fuori dalla porta.
 
-«Nessuna?»
+Prima di entrare aveva svuotato le tasche sul cassettone. Lo faceva ogni sera, nello stesso ordine, e lo aveva fatto anche adesso, all'alba, per abitudine: il portafoglio, le chiavi della macchina che non guidava più da mesi, il telefono che lei conosceva. E un altro.
 
-«Nessuna. I numeri e basta. Quello che si vede.» Il caporedattore la guardò sopra gli occhiali. «Tu vedi sempre anche quello che non si vede, Esposito. È un talento. Oggi non mi serve.»
+Nero. Senza marca. Più piccolo dell'altro, con un angolo scheggiato.
 
-Dalia tornò al suo posto e aprì il file dei rendimenti, e per un'ora lavorò davvero, perché i numeri erano l'unica cosa, quella mattina, che non avevano un odore.
+Elena lo aveva visto tre volte. In macchina, il 19 maggio, al semaforo di piazza del Mercato. In giardino, una domenica di giugno, all'orecchio di lui che misurava la siepe a passi. E adesso, sul cassettone di noce, accanto al portafoglio, a un metro e mezzo dal suo letto.
 
-Alle 11.40 non resistette. Riaprì il cassetto e scrisse sul secondo telefono, sotto il suo *Sì*:
+La doccia scorreva. Elena scostò il lenzuolo.
 
-*Stasera ti devo chiedere una cosa.*
+Non lo prese in mano. Si alzò, fece due passi a piedi nudi sul parquet, si chinò sul cassettone come ci si chinava su una culla, e guardò.
 
-Il messaggio partì. Due minuti dopo, accanto, comparve la parola *letto*. Nessuna risposta. Dalia guardò lo schermo finché non si spense, poi lo riaccese, poi lo lasciò spegnere di nuovo. In sei anni Alfredo non aveva mai letto un suo messaggio senza rispondere. A volte rispondeva con una parola sola. Ma rispondeva.
+Lo schermo era spento. Elena aspettò. Contò i secondi, come aveva contato i respiri di lui la domenica di giugno in cui aveva letto l'altro telefono. Venti. Quaranta. La doccia scorreva. Al cinquantaduesimo secondo lo schermo si accese da solo, per un avviso di batteria scarica, e sotto l'avviso c'era la riga di una notifica rimasta lì dalla notte.
 
-Accanto a lei Sandro, quello della cronaca, si stirò sulla sedia con un rumore di vertebre.
+Un messaggio. Nessun nome sopra, soltanto un numero che finiva con tre zeri. L'orario di arrivo: 03.12.
 
-«Andiamo giù da Ettore? Oggi ha le alici.»
+Il testo era corto. Tanto corto che la notifica lo mostrava per intero.
 
-«Non ho fame.»
+*13.30*
 
-«Tu non hai mai fame alle dodici. Alle tre sì, e allora mangi i cracker del distributore.» Sandro rise, si infilò la giacca sulla camicia bagnata di sudore. «Ti porto su un caffè.»
+Nient'altro. Quattro cifre e un punto.
 
-Lo guardò andare verso l'ascensore. Aveva un odore di sapone al limone e di sigaretta spenta male. Dalia pensò, senza volerlo, che la città intera, tra poco, si sarebbe seduta a tavola, e che nessuno ci faceva caso, perché era la cosa più normale del mondo.
+Lo schermo si spense di nuovo.
 
-Alle 12.10 squillò il telefono fisso della sua scrivania.
+Elena restò china. Fece il conto in fretta, con l'acqua che scorreva ancora. Il suo telefono era sul comodino, dall'altra parte del letto: sei passi per andare, sei per tornare, il tempo di sbloccarlo, di fotografare uno schermo che si era già spento. Toccare quello nero per riaccenderlo voleva dire lasciare un'impronta su un vetro che lui puliva ogni sera con il fazzoletto, e forse un segno sul registro del telefono stesso, uno di quelli che un uomo come Alfredo sapeva leggere. Quattro cifre non valevano quel rischio. Quattro cifre si potevano ricordare.
 
-Nessuno la chiamava mai sul fisso.
+La doccia si fermò.
 
-«Signora? Sono Nicola.»
-
-La voce era bassa, con un rumore di traffico dietro. Dalia sentì il sudore diventare freddo sulla schiena, dove la camicetta aderiva alla sedia. Sulla scrivania il caffè del mattino, lasciato a metà, aveva fatto una pellicola scura sul bordo della tazza.
-
-«Il dottore mi ha chiesto di avvisarla. Stasera no. Ha disdetto la stanza.» Una pausa. «Mi ha detto di dirle che le scrive lui. Poi.»
-
-«Dov'è il dottore?»
-
-«Non lo so, signora. È uscito stamattina presto. Io sono rimasto a Merania.» Un clacson, lontano. Poi Nicola aggiunse una cosa che non gli era stata chiesta, con la voce di chi la tiene in bocca da ore. «Aveva il vestito scuro. Quello che mette solo alle cerimonie. Ferri gli ha chiesto se andava a un funerale, e lui non ha risposto.» Una pausa. «Io non le ho detto niente. Come sempre.»
-
-«Come sempre» disse Dalia.
-
-Nicola chiuse. Dalia rimase con la cornetta in mano, a sentire il tono di libero, che aveva un suono sottile e continuo come il fischio di una teiera dimenticata sul fuoco.
-
-In sei anni Alfredo non aveva mai annullato. Aveva scritto *Non posso*, qualche volta, la mattina stessa, con il punto interrogativo di lei ancora caldo. Ma una volta detto sì, il sì restava. Era la cosa che Dalia aveva amato per prima di lui, prima ancora di amare lui: che le sue parole, una volta dette, non si muovevano.
-
-Questa si era mossa. E non l'aveva mossa lui. L'aveva mossa attraverso un altro, un ragazzo con le scarpe nuove e i debiti, come si faceva spostare un mobile da un facchino.
-
-Compose il numero di Alfredo sul secondo telefono. Una voce registrata di donna le disse, in due lingue, che l'utente non era raggiungibile. Riprovò. La stessa voce, con le stesse pause.
-
-Chiamò l'albergo. Il portiere di giorno la conosceva dalla voce, anche se non l'aveva mai vista in faccia.
-
-«La 512 per stasera» disse Dalia. «È stata disdetta?»
-
-«Sì, signora. Alle 11.55. Dalla solita persona.» Il portiere esitò. «Ha pagato comunque la notte. Ha detto di non riaffittarla.»
-
-Ha detto di non riaffittarla. Dalia ringraziò e chiuse. Una stanza pagata e vuota. Come si teneva un posto a tavola per qualcuno che non sarebbe arrivato.
+Elena tornò al letto con due passi, si rimise a sedere contro la testiera, tirò il lenzuolo sulle gambe. Quando Alfredo uscì dal bagno con l'asciugamano intorno ai fianchi e il viso rasato a metà, lei guardava la finestra.
 
 ---
 
-Aprì il cassetto. Il secondo telefono era lì, sotto le cartelle. Nessun messaggio nuovo. Il *Sì* delle 10.02 era ancora l'ultima riga, sotto il suo *Stasera?*, e adesso sembrava una parola rimasta sul tavolo dopo che tutti si erano alzati.
+Si vestì davanti a lei, in silenzio. La camicia bianca, nuova, con le pieghe della confezione ancora visibili sul petto. I gemelli d'argento di suo padre, quelli che lei gli aveva regalato il giorno del funerale perché nessun altro li avrebbe portati. La cravatta scura, annodata senza guardarsi allo specchio. Il vestito.
 
-Scorse la rubrica fino alla V.
+Poi riprese le cose dal cassettone, nell'ordine inverso. Il portafoglio nella tasca posteriore. Il telefono che lei conosceva nella tasca destra della giacca. Il telefono nero nella tasca interna, a sinistra, contro il petto.
 
-Il numero di Vito era lì, senza nome, soltanto una lettera. Il pollice ci rimase sopra. Sentiva sotto il polpastrello il vetro liscio e un po' unto, e sotto il vetro il calore della batteria, come la pelle di un animale che dorme.
+Prima di chiudere la giacca si toccò la tasca interna con due dita. Una volta. Poi una seconda, come per controllare che quello che c'era dentro ci fosse ancora. Il telefono non era l'unica cosa, in quella tasca. Elena lo capì dalla forma: sotto la stoffa c'era un rilievo piccolo e duro, e uno piatto, come un foglio piegato.
 
-Una telefonata. *Vito, questa settimana non vedere nessuno.* Nient'altro. Lui avrebbe chiesto perché. Lei non avrebbe saputo rispondere. E lui, che in vent'anni le aveva insegnato che una domanda senza risposta era sempre una risposta, avrebbe capito da dove veniva l'avvertimento. Da una stanza d'albergo. Da un uomo che lei aveva tenuto contento per sei anni, come le era stato ordinato, e che forse aveva finito per tenere contenta lei.
+«Stasera non so se torno» disse lui.
 
-C'era anche un conto che non aveva mai fatto, e lo fece adesso, con la mano sul cassetto chiuso a metà. Un mese prima, nella 512, aveva tenuto per sé Monte Marzio. Il cancello verde, i limoni, i venti gradini sotto la cucina. Li aveva tenuti per proteggere i ragazzi che dormivano lassù, quelli che la chiamavano *signora*. E per tenerli, aveva dato l'altra cosa. La più piccola, le era sembrata. Un nome, un'abitudine, un'ora del giorno.
+«Non lo sai mai.»
 
-La casa l'aveva protetta. L'uomo no.
+«Stasera meno del solito.»
 
-Sentì in bocca, per un istante, un sapore che non sentiva da anni: arancia amara e tabacco scuro, il dopobarba di una macchina ferma sotto una redazione, sei anni prima, con il motore acceso. Lo cacciò via deglutendo, come si ingoiava un sorso d'acqua troppo fredda.
+Elena lo guardò. Alla luce che adesso entrava dalla finestra, bianca, senza colore, suo marito sembrava un uomo che andava a una cerimonia in cui avrebbe dovuto parlare, e che non aveva preparato il discorso.
 
-E poi c'era l'altra cosa. La frase di Alfredo, con la manica della giacca per terra e gli occhi chiusi per un secondo. *Qualcuno che non ha mai scelto niente di tutto questo.*
+«È per Laura?»
 
-Aprì la finestra dei messaggi, sotto la V. Scrisse con un dito solo, lettera per lettera.
+Alfredo si fermò con la mano sul bottone della giacca.
 
-*Vito, questa settimana non*
+«Oggi è un giorno in cui possono cambiare molte cose.»
 
-Si fermò. Guardò le parole. Avevano l'aspetto delle cose che non si potevano ritirare: nere, ordinate, pronte. Bastava una parola in più e il tasto verde.
+«Per Laura.»
 
-Le cancellò all'indietro, una lettera alla volta, come si toglieva un cerotto piano per non strappare la pelle. La *n*, la *o*, la *n*. Lo spazio. *Settimana*. *Questa*. La virgola. Il nome.
+«Anche per Laura.»
 
-Il campo tornò bianco.
+*Anche.* Elena mise la parola in fila con le altre. Da un mese, da quando in giardino le aveva detto che sapeva chi era stato, ogni frase di lui su Laura aveva una parola in più o una in meno. Mai quella giusta.
 
-Dalia tolse il pollice dallo schermo. Chiuse il telefono nel cassetto. Girò la chiave.
+«Alfredo. Se oggi succede qualcosa, a me chi lo dice?»
 
-Poi si alzò e andò alla finestra in fondo alla redazione, l'unica che si apriva. Sotto, la strada era bianca di sole. Un fattorino in motorino aspettava al semaforo con una scatola di pizze legata dietro, e l'odore del pomodoro cotto salì fino al terzo piano, insieme al gas di scarico e a un profumo di tigli che veniva da un viale che non si vedeva.
+Lui ci pensò. Lei lo vide pensare, lo vide fare il conto, come lo faceva davanti ai bilanci.
 
-Sandro tornò con due caffè in bicchieri di carta e ne posò uno sulla sua scrivania, vuota. Dalia lo sentì dalla finestra: il clic del coperchio di plastica, il suo passo che si allontanava. Non si voltò.
+«Te lo dico io» disse. «Stasera, o domani.»
 
-Era l'ora in cui la città cominciava a mangiare.
+«E se non puoi?»
 
-Dalia guardò l'orologio sopra la porta del caporedattore. Le 12.41. Le lancette erano nere, grosse, un po' storte sul quadrante, come quelle di una scuola.
+Non rispose. Si chinò, le baciò la fronte, vicino all'attaccatura dei capelli. La bocca era fredda per l'acqua della doccia e sapeva di dentifricio alla menta. Poi uscì.
 
-Ripensò alle parole che aveva detto un mese prima, nella 512, con il pollice su un filo tirato del velluto. Le ripensò una per una, come si ripassavano i gradini di una scala al buio.
+---
 
-*Con lui va da solo. Sempre. In mezzo alla gente. All'ora di pranzo.*
+Elena si alzò e andò alla finestra, dietro la tenda.
+
+Nel vialetto c'era la macchina scura, con il motore acceso. Al cancello c'era Nicola, la guardia giovane, con le mani dietro la schiena. Alla portiera posteriore c'era Ferri, quello anziano, che la teneva aperta. Quando Alfredo arrivò alla macchina, Ferri disse qualcosa. Elena non sentì le parole. Vide soltanto Ferri che indicava il vestito con un piccolo gesto del mento, e Alfredo che non rispondeva e saliva.
+
+La portiera si chiuse. La macchina fece manovra sulla ghiaia, con i fari ancora accesi anche se non servivano più, e uscì dal cancello. Nicola lo richiuse, guardò la strada e poi, per un istante, alzò gli occhi verso le finestre del primo piano. Elena non si mosse da dietro la tenda. Non seppe se l'avesse vista. Lui abbassò la testa, si passò una mano sulla nuca come chi ha dormito poco, e rientrò nella guardiola.
+
+Erano le 6.07.
+
+In corridoio una porta si aprì di qualche centimetro. Fabrizio, in maglietta, con i capelli schiacciati da una parte. Guardò la madre, dietro la tenda, e la madre guardò lui.
+
+«Era papà?»
+
+«Sì. È già ripartito.»
+
+«Con il vestito del nonno?»
+
+Elena non sapeva che Fabrizio l'avesse visto. Non sapeva nemmeno che Fabrizio sapesse quale fosse, il vestito del nonno. Si accorse di aver sottovalutato suo figlio, e lo registrò come registrava tutto: un errore di calcolo, da correggere.
+
+«Torna a dormire. È presto.»
+
+Fabrizio restò ancora un momento sulla porta. Poi la richiuse, piano, senza farla scattare.
+
+---
+
+Chiamò il telefono che conosceva. Squillò due volte, poi la voce di lui, registrata anni prima, chiese di lasciare un messaggio. Elena chiuse senza lasciarlo. Riprovò dopo un minuto: la stessa voce, lo stesso tono, come se l'uomo registrato non fosse lo stesso che le aveva appena baciato la fronte.
+
+Pensò di seguirlo. Lo pensò per il tempo di contare le ragioni per non farlo. La macchina di lei era in garage, e il garage si apriva con lo stesso cancello che Nicola aveva appena richiuso. La macchina di lui aveva sei minuti di vantaggio. Ferri guidava in un modo che lei conosceva: veloce sui rettilinei, lento agli incroci, con gli occhi più sullo specchietto che sulla strada. L'avrebbe vista dopo due semafori. E poi che cosa avrebbe fatto? Avrebbe accostato dietro di lui davanti a un ufficio, a una chiesa, a un aeroporto, in camicia da notte e cardigan?
+
+Non lo seguì. Scrisse la ragione anche di questo, più tardi, in fondo a un'altra lista: *non si segue un uomo che ha una scorta.*
+
+Elena scese in cucina. Mise su il caffè. Mentre la macchinetta cominciava a borbottare, prese il portafoglio dalla borsa e tirò fuori le due liste che teneva dietro la carta d'identità: lo scontrino del 19 maggio e la ricevuta della farmacia del 20 giugno. Le spiegò sul piano di marmo, una accanto all'altra.
+
+Sul retro della ricevuta c'era ancora spazio. Prese la matita per gli occhi dal cassetto delle posate, dove l'aveva lasciata la settimana prima, e scrisse.
+
+*29 giugno.*
+
+*5.38 arriva. 6.07 riparte. Non ha dormito qui.*
+
+*Il vestito scuro. La quarta volta in tre anni. Le altre tre: papà, un socio, il Vaticano. Sempre qualcuno che non c'è più, o Dio.*
+
+*«Stasera non so se torno. Meno del solito.»*
+
+*«Anche per Laura.» Anche.*
+
+*Tasca interna sinistra, toccata due volte. Il telefono nero. Una cosa piccola e dura. Un foglio.*
+
+*Ferri gli ha chiesto qualcosa sul vestito. Lui non ha risposto.*
+
+Si fermò con la matita sospesa. La caffettiera sbuffò, e l'odore del caffè riempì la cucina, forte, bruciato ai bordi, perché aveva lasciato il fuoco troppo alto. Elena non lo spense.
+
+Rilesse le sette righe. Non volevano dire niente. Come quelle del 19 maggio, come quelle del 20 giugno. Ognuna, da sola, era una cosa che una moglie avrebbe potuto spiegare in cento modi. Tutte insieme, somigliavano a un uomo che usciva di casa all'alba per andare a vedere succedere qualcosa che aveva deciso lui.
+
+Ne mancava una. L'unica che non aveva bisogno di essere spiegata perché non spiegava niente. Un orario. Né un giorno, né un luogo, né un nome. Quattro cifre arrivate di notte su un telefono che non doveva esistere.
+
+Aprì il portatile sul tavolo della cucina, accanto alle liste. Fece quello che avrebbe fatto per qualsiasi orario scritto da qualche parte: cercò che cosa succedeva alle 13.30 di quel martedì.
+
+Tre voli in partenza dall'aeroporto di Merania: uno per Albaterra, uno per una capitale del nord, uno per un'isola. Un treno veloce per Albaterra alle 13.28, che non era 13.30. Un'udienza in tribunale che un giornale online annunciava per quel pomeriggio, senza orario. Una conferenza stampa di un ministro, alle 13.00. Scrisse tutto, riga per riga, su un foglio a quadretti strappato dal quaderno di Cesare. Poi lo guardò. Erano sette righe che non avevano niente a che fare l'una con l'altra, e nessuna aveva a che fare con suo marito vestito di scuro. Un orario, da solo, era come una chiave senza la porta: poteva aprire qualunque cosa, e quindi niente.
+
+Accartocciò il foglio a quadretti e lo buttò nel secchio, sotto i fondi del caffè. Non era una cosa da tenere. Era una cosa da non aver mai cercato.
+
+Alle sette e mezza scese Cesare, con i capelli bagnati, e chiese se poteva andare al mare con due compagni, adesso che l'esame era finito. Il padre di uno dei due li avrebbe portati, andata e ritorno in giornata.
+
+«Oggi no» disse Elena.
+
+«Perché oggi no?»
+
+Non aveva una ragione. Aveva quattro cifre e un vestito scuro.
+
+«Perché oggi resti a casa. Domani ne parliamo.»
+
+Cesare la guardò come si guardava un adulto che ha deciso una cosa ingiusta senza spiegarla, e se ne andò a mangiare i cereali davanti alla televisione. Elena lo lasciò fare. Contò anche quello: la prima volta, da quando Laura non c'era, che teneva in casa un figlio senza sapere da che cosa lo stava proteggendo.
+
+Alle otto meno un quarto, con la casa piena del rumore della televisione, riprese la matita per gli occhi.
+
+Elena la scrisse in fondo, staccata dalle altre, come si scriveva il totale sotto una colonna di cui non si conoscevano ancora gli addendi.
+
+*13.30.*

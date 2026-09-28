@@ -74,7 +74,12 @@
 - **La madre di Flora**: il vicino ha tagliato anche il limone; chiama alle 21.15 anche quando Flora è a Rocca Sannella; per la prima volta invita Carlo a pranzo («Dicono sempre così, i primi tre anni»).
 - **Lo studio notarile di via dei Cordai 14, terzo piano, Albaterra**: studio associato, due notai (uno in pensione da un anno); 43 sedi legali.
 
-## Fissato nel capitolo 22
+## Fissato nel capitolo 23 (Dalia)
 - **Nicola**: telefona a Dalia sul fisso della redazione alle 12.10 del 29 giugno per disdire; aggiunge, non richiesto, che Giorgi è uscito presto con il vestito scuro delle cerimonie e che Ferri gli ha chiesto se andava a un funerale. «Io non le ho detto niente. Come sempre.»
 - **Il portiere di giorno dell'albergo** della 512: riconosce Dalia dalla voce.
-- **Sandro** (cronaca, *Il Meridiano*) e **il caporedattore** (occhiali, dopobarba al sandalo).
+- **Pietro** (cronaca, *Il Meridiano*) e **il caporedattore** (occhiali, dopobarba al sandalo).
+
+## Fissato nel capitolo 22 (Elena)
+- **Il padre di Elena**: morto tre anni prima; per il suo funerale Giorgi si fece fare il vestito scuro; Elena regalò a Giorgi i gemelli d'argento del padre.
+- **Cesare**: l'esame di terza media è finito; vuole andare al mare con due compagni il 29, Elena gli dice di no.
+- **Nicola** al cancello, **Ferri** alla portiera (indica il vestito con il mento; Giorgi non risponde).

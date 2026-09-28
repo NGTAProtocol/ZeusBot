@@ -46,7 +46,7 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - Alle 16.19 è in un negozio a comprare il vestito bianco per il saggio di sabato; aspetta lo scontrino prima di uscire. Scrive le liste sul retro dello scontrino e lo tiene nel portafoglio, dietro la carta d'identità, «dove Alfredo non guardava mai».
 - Giorgi risponde al secondo squillo (di solito ne lascia quattro) e dice «Lo so» prima che lei parli.
 - Registra le anomalie in una seconda colonna senza titolo, sette righe: la berlina grigia dell'11 («Lui lo sapeva»); la seconda macchina da mercoledì 12 («Non me l'ha detto»); «Lo so»; il maresciallo sull'attenti e la denuncia «in via riservata» («Mi hanno detto a chi»); la madre superiora e la bugia; un telefono che non conosce; «Chiameranno» detto troppo presto. È il seme dello spionaggio.
-- Vede Giorgi parlare su un secondo telefono che non conosce (il ritrovamento vero resta al cap. 23).
+- Vede Giorgi parlare su un secondo telefono che non conosce (il ritrovamento vero resta al cap. 22).
 - Conosce conti che Giorgi crede lei ignori.
 - Prepara una borsa per Laura (otto cose: pigiama, calze di lana, coniglio di pezza, spazzolino, tuta, foglio della canzone, cambio di biancheria) e la mette vicino alla porta. Appende il vestito bianco nell'armadio di Laura.
 - Dice la verità a Fabrizio (che ha chiamato la nonna): «L'hanno presa davanti a scuola.» A Cesare la versione dei nonni; Fabrizio promette di non dirglielo.
@@ -62,3 +62,12 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - Giorgi le ammette di sapere chi è stato («Sì»), senza nome: «Se lo dico alla polizia, lui lo sa prima di sera.» Elena deduce: un uomo, che Alfredo conosce bene, forse con qualcuno nella polizia.
 - Dice di no a Fabrizio («Hai scoperto qualcosa?»).
 - All'una di notte Giorgi le mostra la chiavetta grigia con il cordino nero: «Nomi. Conti. Chi ha fatto che cosa, e per chi.» «Tu non sai niente.» Nei prossimi giorni potrebbe non tornare a casa. Lei legge la password dalle dita riflesse nella vetrata (conosce a memoria la tastiera: ha lo stesso modello di portatile): **Nocciolo1207** (12 tasti). Ricorda che Giorgi cambia le password dopo ogni affare importante. Non sa che cosa significhi 12.07. **La clonazione non avviene qui** (cap. 28: il cassetto delle chiavi).
+
+## Fissato nel capitolo 22 (martedì 29 giugno, all'alba)
+- Da quarantuno giorni si sveglia alle cinque senza sveglia. Giorgi arriva alle 5.38 (i fari sul soffitto), riparte alle 6.07; non ha dormito a casa.
+- Il **vestito scuro** (lana fredda, blu quasi nero) fatto per il funerale del padre di Elena, tre anni prima; rimesso per il funerale di un socio e per una messa in Vaticano. Questa è la quarta volta. I gemelli d'argento del padre di Elena.
+- Sul cassettone il telefono nero senza marca (angolo scheggiato): per un avviso di batteria lo schermo si accende e mostra una notifica delle **03.12**, da un numero che finisce con tre zeri, testo **«13.30»**. Elena non lo tocca.
+- Giorgi si tocca due volte la tasca interna sinistra: il telefono nero, «una cosa piccola e dura», un foglio. «Stasera non so se torno. Meno del solito.» «Anche per Laura.» «Te lo dico io. Stasera, o domani.»
+- Non lo segue («non si segue un uomo che ha una scorta»). Cerca che cosa succede alle 13.30 (voli, un treno delle 13.28, un'udienza, una conferenza stampa) e butta il foglio. Tiene Cesare a casa senza ragione.
+- Terza lista sulla ricevuta della farmacia: sette righe, poi, staccato in fondo, «13.30». Non lo lega a niente.
+- Fabrizio riconosce «il vestito del nonno»: Elena si accorge di averlo sottovalutato.

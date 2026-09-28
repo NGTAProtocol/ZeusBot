@@ -35,7 +35,7 @@ Anno mai nominato; giorni della settimana coerenti tra loro.
 - Domenica 17 maggio: capitolo 11 (Dalia a Monte Marzio, un anno esatto dalla notte dei droni).
 - **Anno seguente.** Martedì 11 maggio: capitolo 12 (il fronte ad Albaterra; la berlina grigia davanti alla scuola). Diciotto mesi dopo la ribellione. Il rapimento (capitoli 13–14) va collocato pochi giorni dopo, a metà–fine maggio, prima della chiusura delle scuole. Le intestazioni dei capitoli di quest'anno portano «dell'anno seguente» almeno al primo cambio d'anno.
 - Domenica 20 giugno: capitolo 19 (Elena legge il telefono; la chiavetta; «Nocciolo1207»).
-- Martedì 29 giugno: capitolo 22 (Dalia; 10.02 «Stasera?», 12.10 Nicola disdice, 12.41 la chiusura), capitolo 23 (Elena, all'alba), capitolo 24 (Riva Salmara, a pranzo).
+- Martedì 29 giugno: capitolo 22 (Elena, all'alba), capitolo 23 (Dalia; 10.02 «Stasera?», 12.10 Nicola disdice, 12.41 la chiusura), capitolo 24 (Riva Salmara, a pranzo).
 - Lunedì 28 giugno, 23.14–23.58: capitolo 21 (sala sicura; Bertola porta la notizia della bomba).
 - Mercoledì 16 giugno: capitolo 18 (Chen, Rastegar, il sindacato; all'alba del 17 il foglietto del contabile). Sabato 26 giugno: capitolo 20. Lunedì 28 giugno, notte: capitolo 21. **Martedì 29 giugno, 13.30: Riva Salmara** (capitoli 23–24).
 - Lunedì 31 maggio: capitolo 17 (la sala sicura; la variabile accetta alle 23.52).
@@ -50,8 +50,8 @@ Le intestazioni dei capitoli usano questo calendario ("Tommaso — Merania, 13 n
 |---|---|---|---|
 | Alfredo Giorgi | (c) | 2, 8, 12, 17, 21, 26, 29, 33, 37, 42, 49, 51 | 12 |
 | Flora Notarangelo | (a) | 5, 9, 15, 20, 27, 31, 36, 39, 44, 50, 52 | 11 |
-| Dalia | (a) | 6, 11, 16, 22, 25, 30, 41, 43, 46 | 9 |
-| Elena Pisapia | (a) | 14, 19, 23, 28, 32, 40, 47, 53 | 8 |
+| Dalia | (a) | 6, 11, 16, 23, 25, 30, 41, 43, 46 | 9 |
+| Elena Pisapia | (a) | 14, 19, 22, 28, 32, 40, 47, 53 | 8 |
 | Vito Kurgan | (a) | 3, 7, 10, 13, 18, 24 | 6 |
 | Tommaso Vela | (a) | 1, 4, 34, 38, 48 (+ prologo) | 5 |
 | Carlo De Stefano | (a), rari | 35, 45 | 2 |
@@ -146,13 +146,13 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **20. Flora** · Rocca Sannella · sabato 26 giugno · *(Motore unico: Flora vuole il punto che si possa toccare — il registro navale della capitaneria di Porto Clodio, martedì 29, da sola → Valdhof respinge, il notaio di via dei Cordai è dietro un protocollo, mente a Calabrese, e Carlo le chiede di stare lontana dalla costa.)* · *(Paga la scadenza di Valdhof: vedi `00-progetto/semi.md`.)* · Torna a casa per un fine settimana → De Stefano le chiede di stare lontana dalla costa quella settimana. Primo segnale ambiguo. · **Chiusura:** "Perché?" Lui non risponde. · 2.300
 
-**21. Giorgi (c)** · Merania · lunedì 28 giugno, notte · Verifica il sistema, variabile per variabile → **scopre che la cattura è diventata una bomba** (fonte proposta: Bertola, ancora «il fedele»; è una prova di Osiride per vedere se Giorgi ferma tutto; eco della busta ritirata del cap. 8) → potrebbe fermare tutto. Non lo fa, per tre ragioni fredde: opporsi lo esporrebbe a Osiride; la strada per Laura passa comunque dall'interno (Tanino); Kurgan catturato non parlerebbe mai. Nessuna crepa. Bertola dà la stima dei civili, «tre, quattro» (il numero vero è quattro: due del personale, due clienti, nessun bambino, mai descritti). Giorgi registra che Bertola conosce le decisioni di Osiride e sceglie di non seguire il filo, perché Bertola gli serve. De Biasi non nominato. · **Chiusura (corretta):** "Domani, a pranzo, il sistema avrebbe cambiato stato." L'ora (13.30) resta al cap. 23. Eco rovesciata del cap. 2: là non conosceva più le equazioni, qui le conosce tutte e le lascia andare. Gesto: posa il telefono alle 23.51 e non lo tocca più fino all'alba. · 2.300
+**21. Giorgi (c)** · Merania · lunedì 28 giugno, notte · Verifica il sistema, variabile per variabile → **scopre che la cattura è diventata una bomba** (fonte proposta: Bertola, ancora «il fedele»; è una prova di Osiride per vedere se Giorgi ferma tutto; eco della busta ritirata del cap. 8) → potrebbe fermare tutto. Non lo fa, per tre ragioni fredde: opporsi lo esporrebbe a Osiride; la strada per Laura passa comunque dall'interno (Tanino); Kurgan catturato non parlerebbe mai. Nessuna crepa. Bertola dà la stima dei civili, «tre, quattro» (il numero vero è quattro: due del personale, due clienti, nessun bambino, mai descritti). Giorgi registra che Bertola conosce le decisioni di Osiride e sceglie di non seguire il filo, perché Bertola gli serve. De Biasi non nominato. · **Chiusura (corretta):** "Domani, a pranzo, il sistema avrebbe cambiato stato." L'ora (13.30) resta al cap. 22. Eco rovesciata del cap. 2: là non conosceva più le equazioni, qui le conosce tutte e le lascia andare. Gesto: posa il telefono alle 23.51 e non lo tocca più fino all'alba. · 2.300
 
-**22. Dalia** · Merania, redazione del *Meridiano* · martedì 29 giugno, dalle 10.02 alle 12.41 · Aspetta Giorgi → lui annulla l'incontro per la prima volta in anni. · **Chiusura:** Dalia ripensa a quello che gli ha detto su Rastegar. · 2.200
+**22. Elena** · Merania, casa Giorgi · martedì 29 giugno, all'alba · Giorgi esce all'alba, vestito come per un funerale → Elena trova il secondo telefono. · **Chiusura:** un messaggio: "13.30". · 2.200
 
-**23. Elena** · Merania · martedì 29 giugno, mattina · Giorgi esce all'alba, vestito come per un funerale → Elena trova il secondo telefono. · **Chiusura:** un messaggio: "13.30". · 2.200
+**23. Dalia** · Merania, redazione del *Meridiano* · martedì 29 giugno, dalle 10.02 alle 12.41 · Aspetta Giorgi → lui annulla l'incontro per la prima volta in anni. · **Chiusura:** Dalia ripensa a quello che gli ha detto su Rastegar. · 2.200
 
-**24. Kurgan** · Riva Salmara · martedì 29 giugno, 13.30 · *(Apertura: luogo e ora arrivano a Kurgan per il canale abituale del contabile, con preavviso breve, un giorno o meno. Il lettore li conosce già: il luogo dal 21, l'ora dal 23.)* Arriva da solo; conta uscite, tetti, uomini → sul tetto di fronte un uomo che non conosce (De Biasi, senza nome). · **Chiusura:** l'esplosione. · 2.400
+**24. Kurgan** · Riva Salmara · martedì 29 giugno, 13.30 · *(Apertura: luogo e ora arrivano a Kurgan per il canale abituale del contabile, con preavviso breve, un giorno o meno. Il lettore li conosce già: il luogo dal 21, l'ora dal 22.)* Arriva da solo; conta uscite, tetti, uomini → sul tetto di fronte un uomo che non conosce (De Biasi, senza nome). · **Chiusura:** l'esplosione. · 2.400
 
 ### PARTE III — CALMA APPARENTE
 
