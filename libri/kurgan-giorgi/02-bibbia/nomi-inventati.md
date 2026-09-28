@@ -15,7 +15,7 @@
 | Sparizione di Giorgi | **Castelvaro**, sul **lago di Varo** |
 | Città di Flora | **Rocca Sannella** |
 | Porto delle 20 petroliere | **Porto Clodio** |
-| Intermediario di regolamento di Merania dei 31 conti delle 12.07 (broker terzo; AV System a monte) | **Lanieri Custodia** |
+| Intermediario di regolamento di Merania dei 31 conti delle 12.07 (broker terzo; AV System a monte) | **Lanteri Custodia** |
 | Società di leasing delle venti petroliere di Porto Clodio | **Clodia Navi** |
 | Finanziaria di Merania che controlla la Clodia Navi (Giorgi consigliere non esecutivo) | **Finanziaria Lanterna** |
 | Porto già controllato da Kurgan; casa dei guardiani delle saline, prigionia di Laura | **Punta Saline** |

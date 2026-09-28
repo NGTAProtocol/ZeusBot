@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 17 (Giorgi, registro c, secondo scaletta). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–16. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 17 (Giorgi, registro c) — **sospeso** in attesa della decisione sul nodo «perché Giorgi uccide l'unico uomo che sa dov'è Laura» (vedi registro, 28 settembre). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–16. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -110,5 +110,6 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 ## Tracce aperte da pagare
 - Spostate in `00-progetto/semi.md`.
 - 2026-09-28 — Capitolo 15 (Flora, circa 2.260 parole): Oddone chiama da un bar (la relazione di Tarassa); il sequestro che non esiste nel registro di Merania; il pool vota due contro uno; il procuratore nazionale lo sa in tre ore e quaranta; allegato 37, la Finanziaria Lanterna, «Giorgi Alfredo — irrilevante, da rivedere». Strada (a) annotata in scaletta.
-- 2026-09-28 — Passo 0: intermediario di Merania = Lanieri Custodia (broker terzo, AV System a monte); 3 ore e 40 = catena istituzionale più ascolto, nessuna talpa; risposta di Valdhof nel cap. 20; Bertola e il 112 confermati in `semi.md`.
+- 2026-09-28 — Passo 0: intermediario di Merania = Lanteri Custodia (broker terzo, AV System a monte); 3 ore e 40 = catena istituzionale più ascolto, nessuna talpa; risposta di Valdhof nel cap. 20; Bertola e il 112 confermati in `semi.md`.
 - 2026-09-28 — Capitolo 16 (Dalia, circa 2.330 parole): il venerdì che non esisteva, Nicola, le abitudini «intere», Rastegar il contabile, la seconda bugia su Monte Marzio, «qualcuno che non c'entra niente», «Grazie».
+- 2026-09-28 — Passo 0 prima del cap. 17: Lanieri → Lanteri Custodia (Lanieri è un marchio reale); controllo unico dei nomi societari in `semi.md`; cap. 16 allineato (Giorgi «a casa passa quando può»; il disegno di Laura con il tetto rosso a pennarello); studio notarile di Albaterra unificato con quello delle 31 fiduciarie (pagamento al 34); Monte Marzio risolto (i servizi conoscono solo un'area). **Capitolo 17 non scritto:** l'ipotesi «Giorgi vuole Kurgan vivo» contraddice bibbia (trama, schede Giorgi e Kurgan: «Giorgi lo fa uccidere») e scaletta (cap. 17 «la variabile accetta», cap. 21 «potrebbe fermare tutto. Non lo fa»). In attesa di scelta.

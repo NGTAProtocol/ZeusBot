@@ -66,6 +66,6 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Tiene il disegno di Laura (la famiglia davanti a casa; lui un po' distante, gli altri per mano) nella tasca interna della giacca.
 
 ## Fissato nel capitolo 16 (visto da Dalia, 28 maggio)
-- Dal 19 maggio dorme in ufficio due notti su tre; barba di due giorni, camicia non cambiata, maniche arrotolate storte; Ferri sempre con lui.
+- Dal 19 maggio dorme in ufficio due notti su tre e rientra a casa a tratti (la prima notte, il 19, è a casa: cap. 14); barba di due giorni, camicia non cambiata, maniche arrotolate storte; Ferri sempre con lui.
 - Chiede a Dalia le abitudini di Kurgan e ottiene il nome di Rastegar e la regola degli incontri da solo all'ora di pranzo. Sa dei tre giorni di Dalia a maggio dell'anno prima; accetta la bugia dell'albergo sul porto («Va bene»).
 - Porta nella tasca interna della giacca il disegno di Laura (cap. 12). Non le dice niente del rapimento. «Ho paura» (detto a Dalia; non è una crepa del registro c: il capitolo è di Dalia).
