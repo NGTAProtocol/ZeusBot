@@ -67,3 +67,9 @@
 - **La madre di Elena**: crede alla versione di Giorgi (Laura in un collegio estivo sul lago, in Svizzera, con i cavalli; niente telefono). Scrive a Giorgi «come sta Elena?».
 - **Fabrizio**: quindici anni e un mese; pagella arrivata la settimana prima con due insufficienze mai prese; chiede alla madre se ha scoperto qualcosa, lei dice di no.
 - **Cesare**: tredici anni, terza media; orale dell'esame martedì 22 giugno; da una settimana disegna invece di ripassare; vuole mandare un disegno a Laura «dai nonni».
+
+## Fissato nel capitolo 20
+- **Cataldo**: chiama Flora dal telefono di casa (radio con il calcio); non ha mostrato la risposta di Valdhof a Calabrese: «Io non ho moglie. Io posso guardare le carte.»
+- **Calabrese**: al mare con la famiglia; chiede di Valdhof, Flora gli dice «Non ancora».
+- **La madre di Flora**: il vicino ha tagliato anche il limone; chiama alle 21.15 anche quando Flora è a Rocca Sannella; per la prima volta invita Carlo a pranzo («Dicono sempre così, i primi tre anni»).
+- **Lo studio notarile di via dei Cordai 14, terzo piano, Albaterra**: studio associato, due notai (uno in pensione da un anno); 43 sedi legali.

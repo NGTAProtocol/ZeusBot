@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 20 (Flora, sabato 26 giugno; paga Valdhof). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–19. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 21 (Giorgi, registro c, lunedì 28 giugno notte; fonte Bertola). Scritti: prologo, Parte I (capitoli 1–12), capitoli 13–20. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -119,3 +119,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-28 — Capitolo 18 (Kurgan, circa 2.430 parole): Chen sulla terrazza, Rastegar al buffet dei farmacisti, dieci droni e cinque trattenuti, la seconda busta come debito, Onorato contro i serrani, il foglietto passato da tre mani: «Il contabile vuole la busta. E presto.»
 - 2026-09-28 — Passo 0: il foglietto del 18 è la trappola (fuga dal doganiere di Porto Clodio, Carrese sospetto senza colpa); ristorante del 18 distinto da quello del primo incontro (il locale chiuso, oggi gelateria); semi su Adorisio e «una cosa sua», Rastegar e la casa dei guardiani.
 - 2026-09-28 — Capitolo 19 (Elena, circa 2.330 parole): il telefono del comodino, Dalia la donna del martedì, il 28 maggio, le tre versioni, «Sì» sa chi è stato, la chiavetta, «Nocciolo1207».
+- 2026-09-28 — Correzioni al cap. 19 (password cambiata dopo ogni affare, lettura dalle dita, motivo per mostrare la chiavetta, pagella di Fabrizio e orale di Cesare); mappa della chiavetta in `semi.md`; bibbia e scheda Elena (sa del responsabile senza nome; clonazione come leva e assicurazione).
+- 2026-09-28 — Capitolo 20 (Flora, circa 2.240 parole): Valdhof respinta, il 9 marzo e il 14 marzo, via dei Cordai 14, «Non ancora» a Calabrese, Porto Clodio martedì, «stai lontana dalla costa». «Perché?» Non rispose.

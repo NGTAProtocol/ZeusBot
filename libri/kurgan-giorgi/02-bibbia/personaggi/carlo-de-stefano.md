@@ -42,3 +42,9 @@ L'uomo dei servizi incaricato di sorvegliare Flora che se ne innamora e la prote
 - Due anni di cene con Flora, una al mese, sempre nello stesso ristorante di Rocca Sannella, al tavolo in fondo. Lui arriva da Albaterra in macchina (due ore e mezza) e riparte la notte stessa. Non è mai salito da lei. Alla macchina si ferma sempre a mezzo metro da lei.
 - Si siede con le spalle al muro e la vista sulla porta; si alza quando lei entra; prima di attraversare guarda la strada a destra e a sinistra. Cicatrice bianca sul dorso della mano sinistra, mai spiegata.
 - **La pista del 22 gennaio:** sa di Valdhof, sa che la Consob ha mandato dati per giorno e non per secondo, e le suggerisce di chiedere i dati di regolamento del 12 novembre, 12.00–12.10: alle 12.07 trentuno conti chiudono nello stesso secondo, attraverso un solo intermediario di regolamento a Merania. È vera, e troppo precisa: non può venire dalla rogatoria. «Tre mesi, in questo momento, sono tanti. Per voi tre.»
+
+## Fissato nel capitolo 20 (26 giugno)
+- Sa della bambina di Merania: quando Flora ne parla non fa nessuna delle tre domande naturali («Lo so che non puoi parlarne»). Flora lo registra senza sospettare.
+- Ha richiesto lunedì 21 giugno il comando della caserma dei Carabinieri di Rocca Sannella (il comandante va in pensione a settembre): «ne parleremo dopo l'estate, quest'estate c'è molto da fare».
+- Alla macchina: «La settimana prossima stai lontana dalla costa.» Non sa di Porto Clodio. Alla domanda «Perché?» guarda la strada a destra e a sinistra e non risponde.
+- La madre di Flora lo invita a pranzo per la prima volta (melanzane); lui rifiuta, riparte la notte stessa. Ride per la terza volta in tre anni.
