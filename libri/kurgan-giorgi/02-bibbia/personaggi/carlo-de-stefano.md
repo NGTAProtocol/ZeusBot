@@ -67,3 +67,9 @@ L'uomo dei servizi incaricato di sorvegliare Flora che se ne innamora e la prote
 ## Fissato nel capitolo 44 (visto da Flora, 22 dicembre)
 - Per la prima volta sale da lei, ad Albaterra, alle 0.20; resta sul pianerottolo. Avverte: task force alle 7 (urgenza dichiarata alle 22); «Non tenere niente qui. Le carte di Partenia. Quelle che ti ha dato Calabrese ad agosto.» (**Quarto indizio**: conosce una frase detta solo nell'ufficio del pool.)
 - Riceve da Flora «Da Cataldo»; non risponde. Il colonnello della task force non cerca altrove.
+
+## Fissato nel capitolo 45 (giovedì 23 dicembre, ultimo capitolo suo)
+- Cancella il messaggio «Da Cataldo». Dal capo reparto: la sua colonna «da riferire» è vuota. Manda i servizi al bagagliaio della macchina di Flora nel cortile della madre a Rocca Sannella («il più plausibile e il più vuoto»). Seconda bugia guardando negli occhi, questa volta su un luogo, controllabile in una notte.
+- Alla domanda sulla notte del 21 risponde con una verità parziale (in macchina sotto casa sua, fino alle due, scriveva).
+- Brucia nel lavandino il foglio a quadretti con le due colonne vere. Bilocale al quarto piano in un quartiere dove nessuno si conosce; lavandino d'acciaio con un graffio lungo; fiammiferi di legno lunghi. Foto di sfondo del telefono: un mare grigio.
+- Resta a rischio, non scoperto.
