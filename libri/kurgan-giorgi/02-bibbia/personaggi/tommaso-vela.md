@@ -56,3 +56,5 @@ Laureato in economia/finanza, entrato da poco in AV System, orgoglioso di far pa
 - Vede per la prima volta il nome **Ardesia Custodia** (nota di commissione del venerdì 12 novembre: trentuno conti, sei minuti prima della chiusura). Ricorda che le scritture contabili si conservano dieci anni (Martina, il primo giorno) e recupera la nota del 12 novembre di due anni prima: **12.07.04, AGIORGI**. Esporta le due note alle 9.47 con la causale del manuale. SRV-ADM07 le visualizza alle 11.02.
 - Appuntamento scritto su un foglietto giallo per venerdì 19 novembre, 13.30, con il compagno di master.
 - **Nodo delle 12.07: risolto.**
+
+- **Cap. 42 (senza comparire):** Giorgi, dalle domande del Meridiano, deduce che la fonte sta nell'archivio delle riconciliazioni e ricorda di aver fatto spostare lì, due anni prima, il ragazzo che aveva aperto il registro. La sicurezza interna avrà un nome entro la mattina del 16.
