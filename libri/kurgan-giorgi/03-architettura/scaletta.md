@@ -204,7 +204,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **46. Dalia** · Merania · martedì 28 dicembre (Mese 25) · La ritorsione: la fonte falsificata anni prima, presentata come frode → dimissioni, gogna. · **Chiusura:** spedisce a Elena il filmato avuto dalla guardia del corpo. · 1.900 *(Scritto: il giornale concorrente pubblica bozza e dichiarazione falsa di nove anni prima; Pietro; dimissioni in tre righe; la gogna in televisione; la madre al telefono; Nicola porta undici file; busta imbottita «Pisapia Elena», senza mittente, al corriere della stazione alle 7 del 29.)*
 
-**47. Elena** · Merania · Mese 25 · Riceve il materiale: quindici anni → gelo, nessuna scenata. · **Chiusura:** a cena sorride al marito. · 1.900
+**47. Elena** · Merania · mercoledì 29 dicembre (Mese 25) · Riceve il materiale: quindici anni → gelo, nessuna scenata. · **Chiusura:** a cena sorride al marito. · 1.900 *(Scritto: la busta «Pisapia Elena» alle 15.40; undici file guardati sul vecchio portatile di Fabrizio; il più vecchio del 4 giugno di quindici anni prima, il giorno dopo l'apertura della cassetta di Cadrasca; i quattro mittenti possibili; la chiavetta nera nella tasca con la cerniera, accanto alla chiave n. 87; a cena, «Come le faceva tua madre», il sorriso.)*
 
 **48. Tommaso** · Merania → Albaterra · Mese 26 · *(Nodo urgente: chiude il pericolo aperto al 42; vedi semi.md.)* · Il fondo risale alla fuga di dati → si consegna a Flora, testimone chiave. · **Chiusura:** la porta dell'appartamento protetto si chiude alle sue spalle. · 1.900
 
