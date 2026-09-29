@@ -178,7 +178,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **34. Tommaso** · Merania · giovedì 16 settembre · Le anomalie portano a Cicimarra → manda i dati alla casella di whistleblowing cifrata; un contatto comune li fa arrivare anche a Dalia. · **Chiusura:** qualcuno ha scaricato lo stesso file dal server interno. · 2.200 *(Scritto: fattura 11 della Sestante con la nota spese allegata per errore; le date delle fatture due giorni prima degli interventi di Cicimarra; l'emendamento di marzo; invio alla piattaforma cifrata dell'Autorità nazionale anticorruzione dalla biblioteca; copia al vecchio compagno di master per il Meridiano; SRV-ADM07 alle 16.02.)*
 
-**35. De Stefano** (raro) · Albaterra · lunedì 27 settembre · I servizi gli chiedono dove sarà Flora → lui depista. Il comando di Rocca Sannella gli è negato. · **Chiusura:** per la prima volta mente al suo superiore guardandolo negli occhi. · 2.200
+**35. De Stefano** (raro) · Albaterra · lunedì 27 settembre · I servizi gli chiedono dove sarà Flora → lui depista. Il comando di Rocca Sannella gli è negato. · **Chiusura:** per la prima volta mente al suo superiore guardandolo negli occhi. · 2.200 *(Scritto: la lettera di diniego e la richiesta alla Banca d'Italia sullo stesso tavolo; «dove sarà»; la bugia sul fine settimana del 9 ottobre; il messaggio sulle melanzane.)*
 
 **36. Flora** · Albaterra · martedì 5 ottobre · Arrivano i dati anonimi: venti nomi, tra cui il presidente della Cassazione → capisce chi insabbiò la sua prima inchiesta. · **Chiusura:** "Ne mancano quaranta." · 2.300
 
