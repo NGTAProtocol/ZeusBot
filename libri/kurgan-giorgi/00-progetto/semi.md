@@ -113,6 +113,15 @@ Ogni traccia lasciata nel testo va pagata o chiusa di proposito. Per ciascuna: d
   - **La matita dell'albergo di Cadrasca** nel cassetto (quindici anni prima): Elena non ricorda come fosse orientata e non la tocca. Eco silenziosa per il cap. 32 (l'estratto di una banca di Cadrasca). Da non spiegare prima.
   - **Nessun riferimento** a Dalia, a Kurgan, alla bomba, a Riva Salmara; nessuna lettura della copia.
 
+- **Cap. 29, fissato:**
+  - **Pagati:** il ritardo di Adorisio (bibbia); la strada di Tanino (cap. 13, scheda); il termine del 23 luglio scritto sul foglio del 31 maggio (cap. 26). Conto in una riga: trovata il 18 luglio, promessa per il 23, consegnata il 10 agosto: diciotto giorni oltre il termine, ventitré dall'«aspettiamo». **Prima crepa:** «Li aveva pagati lei.»
+  - **La via della scoperta:** Tanino consegna Laura alle 5.53 al terzo chilometro della strada delle saline («Ha detto che lei capisce. Lui non viene»); Giorgi si chiede perché proprio l'autista; per abitudine («dopo ogni consegna si ricostruiva la catena») chiede al generale analista le trascrizioni della linea di Tanino, sotto ascolto di routine dopo Riva Salmara. Undici pagine: la retta della clinica pagata da un conto nuovo dal 14 luglio («uno che mi ha chiesto una strada, mamma»); pagina sette, 18 luglio, 22.47, voce con accento serrano: «Non la spostate. Non la toccate… Aspettiamo… Finché lo dico io.»
+  - **Il secondo prezzo** (fuori scena, 29 luglio): tramite l'avvocato di Partenia Adorisio chiede «spese impreviste» e il posto nell'ordine «per iscritto». Giorgi paga una seconda partita e scrive **una lettera di quattro righe senza nomi, di suo pugno, ora in un cassetto di Partenia**. **Seme nuovo:** dove finisce quella lettera dopo la morte di Adorisio (cap. 33)? Da decidere.
+  - **De Biasi sa** che Giorgi ha chiesto la linea di un autista (la richiesta passa da un ufficio non del generale analista). Copertura di Giorgi: «un vecchio debito di Kurgan con una clinica». Il generale non ci crede. Seme per il 33 (De Biasi «teneva già sotto controllo» Adorisio e i golpisti: bibbia).
+  - **Confronto con Adorisio rinviato:** all'avvocato Giorgi dice «sono soddisfatto… ne riparleremo». Il valore di Adorisio «cambiato di segno». Le trascrizioni finiscono nel distruttore.
+  - **Laura (conseguenze, mai l'atto):** coperta grigia non sua; il coniglio di pezza dalla borsa di Elena (ottantatré giorni accanto alla porta); guarda la maniglia finché il padre non rientra in macchina; al telefono con la madre, dopo quattro minuti, dice una sola parola: «Sì»; non vuole la luce spenta; chiede se la porta di casa si chiude a chiave e la gira lei, due volte. Chiusura: la mano del padre aperta sul lenzuolo, lei non la prende e non si allontana.
+  - **Elena** fa «l'inventario» di Laura con le mani; **non chiede chi**. Non sa nulla oltre il ritorno.
+
 ## Indizi su De Stefano (tetto: quattro in tutto)
 Ogni indizio regge da solo; insieme fanno un conto. Non superare quattro.
 1. **Cap. 9** — la pista troppo precisa: 31 conti, le 12.07, un intermediario di Merania. Dati che nessuno poteva avere.
