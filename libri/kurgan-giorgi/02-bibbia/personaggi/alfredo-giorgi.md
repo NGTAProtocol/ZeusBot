@@ -105,3 +105,7 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - All'avvocato: «Gli dica che sono soddisfatto. Gli dica che ne riparleremo.» Il confronto rinviato: «un conto che si chiudeva in fretta si chiudeva male.»
 - Il foglio del 31 maggio (vivo; venerdì 23 luglio) torna nella tasca interna accanto al disegno; non ci scrive altro.
 - Con Laura: nessuna parola regge; lascia la mano aperta sul lenzuolo.
+
+## Fissato nel capitolo 32 (dall'estratto letto da Elena)
+- Cassetta di sicurezza in una banca privata di Cadrasca sotto un nome falso (nato a Merania nel suo stesso anno e mese), aperta il 3 giugno di quindici anni prima (il «convegno» di tre giorni). Accessi rari; uno il 14 novembre dell'anno prima alle 10.05; l'ultimo venerdì 21 maggio alle 11.40. Parte alle cinque di mattina, rientra alle undici di sera: «torna presto».
+- Giovedì 26 agosto parte per Albaterra («torno domenica», «una cosa di lavoro»).
