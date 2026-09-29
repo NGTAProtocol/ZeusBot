@@ -15,7 +15,9 @@
 
 **Equilibrio tra le due fasi (manuale, sezione 4):** fase 1 (prologo e capitoli 1–24) = 24 capitoli, 45%; fase 2 (capitoli 25–53) = 29 capitoli, 55%. In parole le due fasi pesano quasi uguale (58.300 contro 59.000): la seconda ha più capitoli, e più brevi, come chiede il manuale.
 
-**Tempo del racconto:** circa due anni e tre mesi, dal giorno delle dimissioni (giorno 0) alla sparizione di Giorgi. Le intestazioni di capitolo portano la data relativa ("Giorno 0", "Mese 18") o la data reale, da decidere.
+**Tempo del racconto:** circa due anni e tre mesi, dal giorno delle dimissioni (giorno 0, mercoledì 12 novembre) alla sparizione di Giorgi. Le intestazioni portano sempre la data reale.
+
+**Corrispondenza «Mese N» → calendario (fissata alla fine della Parte II).** «Mese N» è l'intervallo che comincia il 12 del mese N mesi dopo il 12 novembre del giorno 0 e finisce l'11 del mese successivo. Mese 0 = 12 novembre–11 dicembre; Mese 6 = 12 maggio–11 giugno dell'anno dopo; **Mese 18 = 12 maggio–11 giugno dell'anno seguente** (capitoli 13–17); **Mese 19 = 12 giugno–11 luglio** (18–24); Mese 20 = 12 luglio–11 agosto; Mese 21 = 12 agosto–11 settembre; Mese 22 = 12 settembre–11 ottobre; Mese 23 = 12 ottobre–11 novembre; Mese 24 = 12 novembre–11 dicembre; Mese 25 = 12 dicembre–11 gennaio del terzo anno; Mese 26 = 12 gennaio–11 febbraio. **Dalla Parte III le date si scrivono solo con il calendario reale**; le etichette «Mese N» restanti (Parte IV) si convertono con questa tabella quando si arriva ai capitoli.
 
 ## Calendario interno (fissato con il prologo)
 Anno mai nominato; giorni della settimana coerenti tra loro.
@@ -156,31 +158,31 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 ### PARTE III — CALMA APPARENTE
 
-**25. Dalia** · Merania · Mese 19 · La notizia della morte di Kurgan: sollievo puro → il dettaglio "da solo, come sempre" le torna in mente. · **Chiusura:** non chiama Giorgi. · 2.200
+**25. Dalia** · Merania · martedì 29 giugno, sera · La notizia della morte di Kurgan: sollievo puro → il dettaglio "da solo, come sempre" le torna in mente. · **Chiusura:** non chiama Giorgi. · 2.200
 
-**26. Giorgi (c)** · Albaterra · Mese 19 · Il passaggio di potere: De Biasi (ora con nome) insedia Bertola a capo di Casal Fascio → Adorisio scavalcato; Giorgi gli affida Laura e una grossa somma. · **Chiusura:** "Mi dia tre settimane." · 2.300
+**26. Giorgi (c)** · Albaterra · venerdì 2 luglio · Il passaggio di potere: De Biasi (ora con nome) insedia Bertola a capo di Casal Fascio → Adorisio scavalcato; Giorgi gli affida Laura e una grossa somma. · **Chiusura:** "Mi dia tre settimane." · 2.300
 
-**27. Flora** · Albaterra · Mese 19 · La versione ufficiale su Riva Salmara → non le torna niente. Calabrese vuole lasciare il pool per la moglie. · **Chiusura:** Cataldo, il sottovalutato, porta un foglio che nessuno aveva letto. · 2.200
+**27. Flora** · Porto Clodio (29 giugno, da confermare), poi Albaterra · lunedì 5 luglio · La versione ufficiale su Riva Salmara → non le torna niente. Calabrese vuole lasciare il pool per la moglie. · **Chiusura:** Cataldo, il sottovalutato, porta un foglio che nessuno aveva letto. · 2.200
 
-**28. Elena** · Merania · Mese 20 · Laura è ancora via: vuole una risposta → Giorgi le dice solo "torna presto". Il matrimonio si incrina, lei finge. · **Chiusura:** Elena apre il cassetto dove lui tiene le chiavi. · 2.100
+**28. Elena** · Merania · domenica 25 luglio · Laura è ancora via: vuole una risposta → Giorgi le dice solo "torna presto". Il matrimonio si incrina, lei finge. · **Chiusura:** Elena apre il cassetto dove lui tiene le chiavi. · 2.100
 
-**29. Giorgi (c)** · Merania / Punta Saline · Mese 20 · Laura torna → dalle intercettazioni scopre che Adorisio l'aveva trovata settimane prima. *(Strada concreta: Tanino, che sa dov'è la casa dei guardiani; con la madre nella clinica pagata da Kurgan può cedere solo in piccolo — un'informazione, una porta lasciata aperta.)* **Prima crepa.** · **Chiusura:** Laura non parla; lui non sa cosa dirle. · 2.300
+**29. Giorgi (c)** · Merania / Punta Saline · martedì 10 agosto (sei settimane dopo Riva Salmara) · Laura torna → dalle intercettazioni scopre che Adorisio l'aveva trovata settimane prima. *(Strada concreta: Tanino, che sa dov'è la casa dei guardiani; con la madre nella clinica pagata da Kurgan può cedere solo in piccolo — un'informazione, una porta lasciata aperta.)* **Prima crepa.** · **Chiusura:** Laura non parla; lui non sa cosa dirle. · 2.300
 
-**30. Dalia** · Merania, redazione del *Meridiano* · Mese 20 · Da giornalista finanziaria incrocia le date delle stragi con le posizioni al ribasso → le mancano le prove interne. · **Chiusura:** lo schema coincide al minuto. · 2.200
+**30. Dalia** · Merania, redazione del *Meridiano* · mercoledì 18 agosto · Da giornalista finanziaria incrocia le date delle stragi con le posizioni al ribasso → le mancano le prove interne. · **Chiusura:** lo schema coincide al minuto. · 2.200
 
-**31. Flora** · Albaterra · Mese 20 · L'elenco comincia: i primi nomi di Osiride → le informazioni di De Stefano non tornano con quello che sa. · **Chiusura:** Flora non gli dice cosa ha trovato. · 2.200
+**31. Flora** · Albaterra · lunedì 23 agosto · L'elenco comincia: i primi nomi di Osiride → le informazioni di De Stefano non tornano con quello che sa. · **Chiusura:** Flora non gli dice cosa ha trovato. · 2.200
 
-**32. Elena** · Merania · Mese 21 · Laura è a casa ma non è più la stessa (conseguenze, mai l'atto) → Elena decide di sapere cosa c'è nella chiavetta. · **Chiusura:** trova un estratto di una banca di Cadrasca. · 2.100
+**32. Elena** · Merania · venerdì 27 agosto · Laura è a casa ma non è più la stessa (conseguenze, mai l'atto) → Elena decide di sapere cosa c'è nella chiavetta. · **Chiusura:** trova un estratto di una banca di Cadrasca. · 2.100
 
-**33. Giorgi (c)** · Merania · Mese 21 · Il golpe di Adorisio contro Bertola, seguito a distanza → i reparti speciali di De Biasi lo stroncano; Adorisio muore. · **Chiusura:** il sistema si è corretto da solo; Giorgi non se ne rallegra. · 2.200
+**33. Giorgi (c)** · Merania · notte tra domenica 29 e lunedì 30 agosto (circa due mesi dopo Riva Salmara) · Il golpe di Adorisio contro Bertola, seguito a distanza → i reparti speciali di De Biasi lo stroncano; Adorisio muore. *(Qui si paga il 112 di Elena: Bertola, salvato dal golpe e ormai a capo di Casal Fascio, lo fa affiorare davanti a Giorgi come una carta che tiene in mano — un'allusione su Elena, non una rivelazione. Riserva: cap. 32.)* · **Chiusura:** il sistema si è corretto da solo; Giorgi non se ne rallegra. · 2.200
 
-**34. Tommaso** · Merania · Mese 22 · Le anomalie portano a Cicimarra → manda i dati alla casella di whistleblowing cifrata; un contatto comune li fa arrivare anche a Dalia. · **Chiusura:** qualcuno ha scaricato lo stesso file dal server interno. · 2.200
+**34. Tommaso** · Merania · giovedì 16 settembre · Le anomalie portano a Cicimarra → manda i dati alla casella di whistleblowing cifrata; un contatto comune li fa arrivare anche a Dalia. · **Chiusura:** qualcuno ha scaricato lo stesso file dal server interno. · 2.200
 
-**35. De Stefano** (raro) · Albaterra · Mese 22 · I servizi gli chiedono dove sarà Flora → lui depista. Il comando di Rocca Sannella gli è negato. · **Chiusura:** per la prima volta mente al suo superiore guardandolo negli occhi. · 2.200
+**35. De Stefano** (raro) · Albaterra · lunedì 27 settembre · I servizi gli chiedono dove sarà Flora → lui depista. Il comando di Rocca Sannella gli è negato. · **Chiusura:** per la prima volta mente al suo superiore guardandolo negli occhi. · 2.200
 
-**36. Flora** · Albaterra · Mese 22 · Arrivano i dati anonimi: venti nomi, tra cui il presidente della Cassazione → capisce chi insabbiò la sua prima inchiesta. · **Chiusura:** "Ne mancano quaranta." · 2.300
+**36. Flora** · Albaterra · martedì 5 ottobre · Arrivano i dati anonimi: venti nomi, tra cui il presidente della Cassazione → capisce chi insabbiò la sua prima inchiesta. · **Chiusura:** "Ne mancano quaranta." · 2.300
 
-**37. Giorgi (c)** · Vaticano · Mese 23 · Salvarani e Cicimarra: il pool è vicino all'elenco → Giorgi è chiamato a votare una risposta. · **Chiusura:** "Serve un'emergenza." · 2.200
+**37. Giorgi (c)** · Vaticano · mercoledì 20 ottobre · Salvarani e Cicimarra: il pool è vicino all'elenco → Giorgi è chiamato a votare una risposta. · **Chiusura:** "Serve un'emergenza." · 2.200
 
 ### PARTE IV — IL PADRE DEL MOSTRO
 

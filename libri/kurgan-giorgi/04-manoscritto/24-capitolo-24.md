@@ -46,7 +46,7 @@ Tanino alla guida, perché guidava in silenzio e sapeva aspettare. Rocco con lui
 
 Adorisio aveva detto va bene. Carrese aveva detto va bene. Tanino non aveva detto niente, aveva preso le chiavi. Quattro uomini, quel mattino, sapevano che Vito andava a vedere il contabile. Cinque, con il ragazzo che aveva portato il foglietto. Kurgan li aveva contati tutti, perché contava sempre, e non ne aveva trovato uno di troppo.
 
-La busta l'aveva presa dal cassetto chiuso dell'ufficio sopra il magazzino, dove stava da marzo. Una busta gialla come quella di dicembre, più spessa. Le carte del doganiere di Porto Clodio: navi, date, carichi, nomi di società che il governo usava per vendere ai vicini di Parsàn quello che non avrebbe dovuto vendere. Per sei mesi era stata un debito, il filo con cui teneva legato il contabile. Adesso, nella tasca interna della giacca, contro il petto, pesava in un altro modo. Pesava come pesavano le cose che si era deciso di dare via.
+La busta l'aveva presa dal cassetto chiuso dell'ufficio sopra il magazzino, dove stava da marzo. Una busta gialla come quella di dicembre. Dentro non c'era carta: il doganiere aveva fotografato tutto, di notte, e le fotografie stavano su una scheda di memoria grande come un'unghia, fissata con il nastro adesivo a un cartoncino bianco. Le carte del doganiere di Porto Clodio: navi, date, carichi, nomi di società che il governo usava per vendere ai vicini di Parsàn quello che non avrebbe dovuto vendere. Per sei mesi era stata un debito, il filo con cui teneva legato il contabile. Adesso, nella tasca interna della giacca, contro il petto, pesava in un altro modo. Pesava come pesavano le cose che si era deciso di dare via.
 
 In macchina Rocco aveva parlato per la prima ora, come faceva sempre quando aveva paura di annoiarsi. Della festa del Biondo sulla barca, a maggio: cinquant'anni, il vino di Onorato, il Biondo che a mezzanotte si era buttato in mare vestito e ne era uscito con un polpo in mano. Kurgan non c'era andato. Rocco glielo aveva raccontato tre volte, da allora, e ogni volta il polpo era più grosso. Kurgan lo aveva lasciato parlare. Rocco era suo fino alla morte, e un uomo così aveva il diritto di raccontare la stessa storia tutte le volte che voleva.
 
@@ -96,7 +96,7 @@ Contò tutto quello che stava sopra: le uscite, gli uomini, i tetti, le finestre
 
 Il conto tornava. Un ristorante normale, in un martedì normale, con la gente che mangiava. Il contabile aveva scelto bene, come sempre.
 
-Prima di attraversare si toccò la tasca interna. La busta c'era. Pensò per un momento al doganiere di Porto Clodio, quello con il figlio malato, che per tre mesi aveva fotocopiato carte di notte senza chiedere a chi servissero. Carrese lo pagava bene, e il figlio aveva avuto la sua operazione in una clinica del nord. Un uomo così non parlava. Aveva troppo da perdere, e tutto quello che aveva da perdere glielo aveva dato Vito.
+Prima di attraversare si toccò la tasca interna. La busta c'era. Pensò per un momento al doganiere di Porto Clodio, quello con il figlio malato, che per tre mesi aveva fotografato carte di notte senza chiedere a chi servissero. Carrese lo pagava bene, e il figlio aveva avuto la sua operazione in una clinica del nord. Un uomo così non parlava. Aveva troppo da perdere, e tutto quello che aveva da perdere glielo aveva dato Vito.
 
 Attraversò la strada.
 

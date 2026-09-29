@@ -97,7 +97,7 @@ Crescita da 11 a 58: i cinque di Parsàn, i quindici legati alla banchina di Pun
 
 ## Fissato nel capitolo 24 (martedì 29 giugno, Riva Salmara, Adriatico)
 - Foglietto alle 5.10 nella casa di Carrese; spiega la fretta del contabile con la scadenza del governo di Parsàn («entro l'estate» → «questa settimana» → «oggi» in tredici giorni).
-- Porta la seconda busta (le carte del doganiere di Porto Clodio) nella tasca interna: non più un debito, ma una cosa decisa di dare via.
+- Porta la seconda busta nella tasca interna (dentro, una scheda di memoria con le fotografie delle carte del doganiere di Porto Clodio; brucia con lui nell'esplosione): non più un debito, ma una cosa decisa di dare via.
 - Pensa a Laura una volta sola, vicino a un casello: «la carta era dove doveva essere»; nessuna decisione.
 - Riconosce come unica frase non pesata della settimana l'aver detto a Dalia «questa settimana vedo il contabile».
 - Non chiama Rastegar per verificare (sarebbe offenderlo). Conta uscite, uomini, tetti, finestre; non conta ciò che sta sotto il pavimento della cucina.

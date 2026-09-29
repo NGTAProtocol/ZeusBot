@@ -4,7 +4,7 @@ Ogni traccia lasciata nel testo va pagata o chiusa di proposito. Per ciascuna: d
 
 ## Aperte
 
-- **La chiamata al 112 di Elena** (cap. 14; notte tra il 19 e il 20 maggio, 1.45, dal giardino; «ho sbagliato numero», la centrale richiama dopo venti secondi). **Decisione confermata:** la ritrova **Bertola** nel controllo di sicurezza di casa Giorgi (tabulati del cellulare di Elena) e **non la riferisce né a Giorgi né a Osiride**. La tiene come carta personale, non per pietà. **Bertola non sa nulla della chiavetta.** Pagamento: **Parte III**.
+- **La chiamata al 112 di Elena** (cap. 14; notte tra il 19 e il 20 maggio, 1.45, dal giardino; «ho sbagliato numero», la centrale richiama dopo venti secondi). **Decisione confermata:** la ritrova **Bertola** nel controllo di sicurezza di casa Giorgi (tabulati del cellulare di Elena) e **non la riferisce né a Giorgi né a Osiride**. La tiene come carta personale, non per pietà. **Bertola non sa nulla della chiavetta.** **Pagamento: cap. 33** (Giorgi, il golpe): Bertola la fa affiorare davanti a Giorgi come una carta che tiene in mano (un'allusione, non una rivelazione: sa qualcosa di Elena e lo lascia capire). Riserva: cap. 32 (Elena).
 - **Il maresciallo Oddone** (cap. 14–15): ha preso le dichiarazioni e ha visto il fascicolo del rapimento finire «in via riservata» ai servizi; ha avvertito Flora. Resta un problema per il sistema: chi ha trasmesso il fascicolo sa che lui l'ha scritto. Da decidere se e quando il sistema se ne accorge.
 - **La telefonata di Flora al registro generale di Merania** (cap. 15; il procuratore nazionale lo sa in 3 ore e 40). **Deciso: nessuna talpa nel pool.** Catena istituzionale più ascolto: i servizi, trasmettendo il fascicolo in via riservata, hanno chiesto alla procura di Merania di segnalare qualunque richiesta sul 19 maggio; la cancelleria segnala al procuratore di Merania, che chiama il procuratore nazionale. Flora ha chiamato dal telefono fisso del pool, già ascoltato (cap. 9): chi ascolta lo sa anche per quella via. La telefonata di Oddone, da un bar al cellulare personale di Flora, **non è intercettata**: Oddone per ora è coperto. **Pagamento:** cap. 20, De Stefano sa della ricerca (motiva in parte il suo «stai lontana dalla costa», senza dirlo); cap. 31, De Stefano lascia cadere un riferimento al registro di Merania che Flora non gli ha mai detto: è una delle informazioni che «non tornano con quello che sa».
 - **Allegato 37, Finanziaria Lanterna / Clodia Navi** (cap. 15): Flora ha il nome Giorgi legato alle petroliere dell'unificazione. Nessuna carta ancora: il procuratore vuole «una carta, non una voce». Da riprendere nei capitoli di Flora (27, 31).
@@ -76,9 +76,7 @@ Ogni traccia lasciata nel testo va pagata o chiusa di proposito. Per ciascuna: d
 - **L'ultima scelta di Kurgan** (cap. 24): calcola l'uscita migliore (la cucina, senza tetti sopra il vicolo) e si alza per primo da un tavolo, per la prima volta in vita sua. Poi il pavimento della cucina si solleva. Nessun corpo descritto.
 
 - **Fili senza capitolo di pagamento (controllo di fine Parte II):**
-  - **Chiamata al 112** (cap. 14): Bertola la ritrova nella Parte III, ma il capitolo non è fissato. Proposta: cap. 33 (Giorgi, il golpe) o un'eco al cap. 32 (Elena).
   - **Chiavetta, passo 4 e 6:** la riga che la riporta nel cassetto delle chiavi (26 o 28) e il ritorno a Cadrasca non sono ancora fissati.
-  - **La seconda busta di Kurgan** (cap. 24): era nella tasca interna della giacca, a Riva Salmara. Nessuno la raccoglie sulla scena e la scaletta non la fa riapparire. Da decidere.
 
 ## Indizi su De Stefano (tetto: quattro in tutto)
 Ogni indizio regge da solo; insieme fanno un conto. Non superare quattro.
@@ -90,6 +88,8 @@ Ogni indizio regge da solo; insieme fanno un conto. Non superare quattro.
 - **La richiesta di comando a Rocca Sannella** (cap. 20): Carlo l'ha rifatta lunedì 21 giugno; «ne parliamo dopo l'estate». **Pagamento: cap. 35** (De Stefano, «Il comando di Rocca Sannella gli è negato»): i servizi gliela negano di nuovo perché è troppo prezioso dov'è (bibbia). Il rifiuto alimenta il risentimento verso l'apparato e il tradimento silenzioso.
 
 ## Decise
+
+- **La seconda busta di Kurgan** (cap. 24). **Decisa: brucia nell'esplosione.** Conteneva una scheda di memoria con le fotografie delle carte del doganiere (non carta), fissata a un cartoncino, nella tasca interna della giacca di Kurgan, a quattro metri dalla carica: distrutta con lui. Nessuno la raccoglie, nessuno la eredita. Rastegar non la riceverà mai: è una delle due ragioni del ritiro di Parsàn dalla banchina (scheda agenti stranieri).
 
 - **Rastegar e la casa dei guardiani** (cap. 7, 12, 13, 18). **Deciso:** Rastegar **non scopre Laura**; la casa è sul lato delle saline opposto alla banchina, fuori vista (`luoghi.md`). Rastegar è **assente da Riva Salmara**: il suo nome è solo l'esca. **Dopo il cap. 24** Parsàn sospende le notti alla banchina e ritira i suoi; cinque droni trattenuti e seconda busta restano sospesi. Filo per il sequel.
 

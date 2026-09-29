@@ -22,7 +22,7 @@ Tre agenti in contatto diretto con Kurgan (e con Adorisio prima del tradimento).
 ## Rastegar e la casa dei guardiani (deciso)
 - **Rastegar non scopre Laura.** La casa dei guardiani è sul lato delle saline opposto alla banchina del molo nord, fuori vista.
 - **Rastegar è assente da Riva Salmara:** il suo nome è solo l'esca (il foglietto del 17 giugno è della trappola).
-- **Dopo il cap. 24** Parsàn sospende le notti alla banchina di Punta Saline e ritira i suoi uomini. I cinque droni trattenuti e la seconda busta mai consegnata restano sospesi. Il filo resta per il sequel.
+- **Dopo il cap. 24** Parsàn sospende le notti alla banchina di Punta Saline e ritira i suoi uomini, per due ragioni: la prudenza dopo la morte di Kurgan (e il suo nome usato come esca) e **la perdita della seconda busta**, bruciata con Kurgan nell'esplosione (una scheda di memoria con le fotografie delle carte del doganiere). Non c'è più niente da aspettare a Punta Saline. I cinque droni trattenuti restano a Parsàn. Il filo resta per il sequel.
 
 ## Fissato nel capitolo 18 (16 giugno)
 - **Chen:** arriva dieci minuti prima («preferisco arrivare quando ci sono ancora molte uscite»); italiano scolastico, consonanti al loro posto; acqua frizzante, due bicchieri capovolti. Non dà niente adesso: vuole essere il primo a usare Tarassa, per i container («cose che non sono ancora state inventate»). Chiede se Kurgan tratterà con il vecchio socio: «Tutti hanno qualcosa da trattare. La differenza è chi lo sa.» Sa delle 41 salite della Finanza in trenta giorni.

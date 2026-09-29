@@ -87,5 +87,5 @@
 ## Fissato nel capitolo 24
 - **Rocco**: racconta per la terza volta la festa del Biondo sulla barca (a mezzanotte il Biondo si butta in mare vestito ed esce con un polpo, ogni volta più grosso). Aspetta in macchina con la pistola sotto la giacca; «se non torno entro un'ora, entra Rocco».
 - **Tanino**: guida cinque ore in silenzio, mani alle dieci e dieci; da maggio parla ancora meno (Kurgan lo attribuisce alla madre).
-- **Il doganiere di Porto Clodio**: tre mesi di fotocopie notturne per Carrese; il figlio operato in una clinica del nord con i soldi di Kurgan. (È da lui che passa la fuga: vedi `semi.md`.)
+- **Il doganiere di Porto Clodio**: tre mesi di fotografie notturne per Carrese (su una scheda di memoria); il figlio operato in una clinica del nord con i soldi di Kurgan. (È da lui che passa la fuga: vedi `semi.md`.)
 - **Luca Ferrante** del prologo e dei capitoli 1 e 4 è stato rinominato **Andrea Gatti**.
