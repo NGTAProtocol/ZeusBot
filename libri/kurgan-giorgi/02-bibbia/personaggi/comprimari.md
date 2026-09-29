@@ -66,6 +66,8 @@
 ## Fissato nel capitolo 19
 - **La madre di Elena**: crede alla versione di Giorgi (Laura in un collegio estivo sul lago, in Svizzera, con i cavalli; niente telefono). Scrive a Giorgi «come sta Elena?».
 - **Fabrizio**: quindici anni e un mese; pagella arrivata la settimana prima con due insufficienze mai prese; chiede alla madre se ha scoperto qualcosa, lei dice di no.
+- **Fabrizio** (cap. 28): all'1.29 di notte scende a bere l'acqua (in piedi, come il latte) e vede il cordino nero che pende dal portatile della madre, due o tre secondi. «Buonanotte, mamma.» Non chiede. Seme aperto.
+- **Cesare** (cap. 28): ha chiesto perché la madre mettesse il piatto di Laura «se Laura è dai nonni»; va in piscina con un amico.
 - **Cesare**: tredici anni, terza media; orale dell'esame martedì 22 giugno; da una settimana disegna invece di ripassare; vuole mandare un disegno a Laura «dai nonni».
 
 ## Fissato nel capitolo 20
