@@ -94,3 +94,9 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - «Due su tre» scritto e cancellato; curve e «12 novembre ?» chiuse nel cassetto a chiave. **Nessuna decisione**: un rimando.
 - Il secondo telefono spento nel cassetto della redazione da inizio luglio; sette martedì senza «Stasera?».
 - Giura di non fare a nessuno quello che è stato fatto a lei; con Nicola rinvia.
+
+## Fissato nel capitolo 41 (mercoledì 15 dicembre)
+- Riceve dal compagno di master di Tommaso due chiavette; apre solo «12 NOVEMBRE». Tre su tre: 12.07.04, AGIORGI, trentuno conti; e il 12 novembre di quest'anno prima delle autostrade. Certezza.
+- Il risveglio: Vito esecutore, Alfredo sopra; le sue parole della 512 hanno ucciso Vito; «Lo stesso schema. Un altro vestito.»
+- Riaccende il secondo telefono: tre messaggi di Alfredo senza risposta; toglie la batteria; il telefono non torna nel cassetto.
+- Scrive «Tre su tre» (tre pagine, niente di sé). Al direttore: «Domattina lo pubblichiamo.»
