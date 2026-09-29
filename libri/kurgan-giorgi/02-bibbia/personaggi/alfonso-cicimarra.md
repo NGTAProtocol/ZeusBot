@@ -35,3 +35,6 @@ Il braccio istituzionale di Osiride: trasforma le bombe in una legge che toglie 
 ## Fissato nel capitolo 34 (visto da Tommaso)
 - In televisione dalla caduta del governo, sempre in piedi davanti a una bandiera, cravatta blu. Relatore in primavera del decreto «Misure urgenti per la stabilità dei mercati»: il suo emendamento lascia settimanale la comunicazione alla Consob delle posizioni corte.
 - Commissione Finanze del Senato. La Sestante Relazioni Istituzionali (fornitore di AV System) paga le sue spese (albergo ad Albaterra, cene, autista, fiori per l'anniversario di matrimonio): nove fatture su undici due giorni prima di un suo intervento.
+
+## Fissato nel capitolo 36
+- Nel comitato scientifico (venti nomi pubblici) dell'istituto dal nome latino di via dei Cordai 14. Flora lo conosce ora per nome, dalla segnalazione anonima e dallo statuto.
