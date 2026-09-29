@@ -38,3 +38,7 @@ Il braccio istituzionale di Osiride: trasforma le bombe in una legge che toglie 
 
 ## Fissato nel capitolo 36
 - Nel comitato scientifico (venti nomi pubblici) dell'istituto dal nome latino di via dei Cordai 14. Flora lo conosce ora per nome, dalla segnalazione anonima e dallo statuto.
+
+## Fissato nel capitolo 37 (20 ottobre, Vaticano)
+- Prima scena con Salvarani e Giorgi. 62 anni, capelli tinti di castano, acqua di colonia, si alza mezzo secondo prima del necessario, stringe la mano con due mani; parla «come in aula». Allude all'emendamento di marzo come a un favore.
+- Espone le tre possibilità; ha il testo della legge: dodici articoli, task force nazionale a comando unico con un generale (letta da De Biasi). «Il Parlamento vota quello che ha paura di non votare.»
