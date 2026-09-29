@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 33 (Giorgi, notte tra domenica 29 e lunedì 30 agosto: il golpe di Adorisio; il 112 di Elena; la lettera distrutta). Scritti: prologo, capitoli 1–32. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 34 (Tommaso, giovedì 16 settembre: le anomalie portano a Cicimarra; la casella di whistleblowing). Scritti: prologo, capitoli 1–33. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -144,3 +144,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Capitolo 31 (Flora, 2.172 parole): il plico di via dei Cordai, tre fiducianti e il banchiere della Lanterna, «nessuno fa fatica per caso», Calabrese resta e lascia Partenia, non firma, la richiesta alla Banca d'Italia, il pranzo con Carlo e il registro di Merania. «Niente. Carte vecchie. Agosto.»
 - 2026-09-29 — Passo 0: verificato il terzo indizio (registro di Merania) contro i cap. 9, 15 e 20: regge. Richiesta alla Banca d'Italia segnata come possibile innesco, non risolto.
 - 2026-09-29 — Capitolo 32 (Elena, 2.045 parole): la lista dei diciassette giorni, «Devo?», la seconda colonna, le nove sigle, B1 per errore («persone. Con le famiglie»), K1 e la cassetta di Cadrasca (3 giugno, 14 novembre, 21 maggio 11.40), la matita, il primo «presto». Aspetta le 3.10 sul pavimento del corridoio.
+- 2026-09-29 — Passo 0: cap. 32 verificato (l'11.40 è l'accesso in banca, il «presto» è della sera; il 14 novembre cade due giorni dopo il giorno 0): nessuna modifica.
+- 2026-09-29 — Capitolo 33 (Giorgi, 2.120 parole): l'avviso delle 23.52, il sistema che si corregge da solo, il numero non chiamato, Elena all'1.30, De Biasi alle 2.41 (undici minuti, due morti, due arresti, «Lo abbiamo notato»), la lettera bruciata, Bertola alle 5.10 e il 112, la radio delle 6.30. Nessuna crepa. Non se ne rallegra.
