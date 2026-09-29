@@ -62,6 +62,7 @@
 - **Il sottosegretario** apre la cartellina di pelle per la prima volta; «Il governo non può»: un terminal dato a un uomo armato da potenze ostili farebbe cadere un altro governo.
 
 ## Fissato nel capitolo 18
+- **Golpe, cap. 33:** **Onorato** (arrestato con il cappello in testa) e **Carrese** (arrestato piangendo) consegnati ai Carabinieri; **il serrano anziano** muore con Adorisio.
 - **Onorato**: parla sempre per primo quando deve dire ciò che gli altri pensano; non si toglie il cappello; quaranta uomini; vuole le navi libere entro settembre («non è un tradimento, è la fame»). Ottiene un terzo dei soldi della banchina.
 - **Il serrano anziano** (uno dei sei): accento di montagna; «Il portiere lo facciamo noi»; perde un terzo della banchina e se ne ricorda.
 - **Il ragazzo della Serrana**: il più giovane dei sei; legge i manuali meglio degli altri; turno di notte alla banchina; riceve il foglietto da un uomo dell'equipaggio.
