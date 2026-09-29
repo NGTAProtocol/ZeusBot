@@ -170,7 +170,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **30. Dalia** · Merania, redazione del *Meridiano* · mercoledì 18 agosto · *(Corretto, opzione a.)* Trenta righe di routine sulle vendite allo scoperto di agosto → il confronto con le date delle stragi le si forma sotto gli occhi quasi per riflesso: **due date su tre coincidono all'ora** (Valcerna, Morenna); la terza (Marcena) resta sepolta nel rumore del giorno delle dimissioni → senza prove interne non può scriverlo. Nessuna decisione. · **Chiusura:** chiude le curve nel cassetto, sotto il secondo telefono: un rimando, non una scelta. · 2.200
 
-**31. Flora** · Albaterra · lunedì 23 agosto · L'elenco comincia: i primi nomi di Osiride → le informazioni di De Stefano non tornano con quello che sa. · *(Qui si scioglie anche «Calabrese resta o parte», lasciato aperto al 27, insieme al terzo indizio su De Stefano.)* · **Chiusura:** Flora non gli dice cosa ha trovato. · 2.200
+**31. Flora** · Albaterra · lunedì 23 agosto · L'elenco comincia: i primi nomi di Osiride → le informazioni di De Stefano non tornano con quello che sa. · *(Qui si scioglie anche «Calabrese resta o parte», lasciato aperto al 27, insieme al terzo indizio su De Stefano. **Scritto:** i primi tre nomi sono i fiducianti delle 31 fiduciarie del 9 marzo; Calabrese resta, lascia Partenia e non firma; il registro di Merania a pranzo.)* · **Chiusura:** Flora non gli dice cosa ha trovato. · 2.200
 
 **32. Elena** · Merania · venerdì 27 agosto · Laura è a casa ma non è più la stessa (conseguenze, mai l'atto) → Elena decide di sapere cosa c'è nella chiavetta. · **Chiusura:** trova un estratto di una banca di Cadrasca. · 2.100
 
