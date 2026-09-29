@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 38 (Tommaso, apre la Parte IV «Il padre del mostro»: le bombe sulla Dorsale, il fondo di nuovo posizionato; risolvere qui i dati completi delle 12.07). Scritti: prologo, capitoli 1–37. Parte III chiusa. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 39 (Flora, Mese 24: Portofosco, Tarassa, Dorsale, Litoranea; Cicimarra presenta la legge d'emergenza; trenta giorni). Scritti: prologo, capitoli 1–38. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -151,3 +151,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Capitolo 35 (De Stefano, 2.175 parole): i due fogli sul tavolo, il diniego, «troppo utile dov'è», le due colonne, «non sono mai salito da lei», «dove sarà», il registro di Merania come errore, la bugia sul 9 ottobre guardando negli occhi, il messaggio sulle melanzane. «Davvero?»
 - 2026-09-29 — Capitolo 36 (Flora, 2.220 parole): il plico dell'Autorità anticorruzione, via dei Cordai 14, la Sestante e Cicimarra, Cataldo e la mano giovane, le credenziali e Calabrese che firma, la verifica delle 11.20, i 42 atti e i 38 gusci, lo statuto (2 marzo, art. 7 sessanta soci), i venti del comitato, il numero uno e il decreto di assegnazione, il procuratore («lo teniamo in due»). «Ne mancano quaranta.»
 - 2026-09-29 — Capitolo 37 (Giorgi, 2.163 parole, chiude la Parte III): quattro tazze, Cicimarra attuatore, «non lo sappiamo», il foglio di sessanta righe e la riga quarantuno, la Sestante come prezzo, le tre possibilità, la legge dei dodici articoli, la quarta tazza come prova, un'emergenza di cose e non di persone. «Serve un'emergenza.»
+- 2026-09-29 — Correzione di calendario: il giorno 0 cade due anni prima dei cap. 12–38; corretti «l'anno prima», «dieci mesi», «l'anno scorso» nei cap. 16, 30, 32, 34, 35, 37 (e ritirata la conclusione sbagliata del Passo 0 del 33 sul 14 novembre).
+- 2026-09-29 — Capitolo 38 (Tommaso, 1.850 parole, apre la Parte IV): la radio delle 5.41 e le quattro bombe, Portofosco e Tarassa, la fermata di Marcena, la nota della Ardesia del 12 novembre, trentuno conti, i dieci anni delle scritture contabili, 12.07.04 AGIORGI, l'esportazione delle 9.47, SRV-ADM07 alle 11.02, il foglietto giallo. «Il fondo sapeva.»
