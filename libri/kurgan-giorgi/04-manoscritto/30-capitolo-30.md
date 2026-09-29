@@ -12,7 +12,7 @@ Compilò la tabella. Le banche, le percentuali, i fondi che avevano notificato. 
 
 Fu per confrontare agosto con qualcosa che aprì la seconda finestra.
 
-Non lo decise. Le mani lo fecero da sole, come facevano da sole le cose che avevano fatto tante volte. Il terminale del giornale teneva la storia intera, giorno per giorno, ora per ora. Per un confronto serviva un mese di tensione. Il mese di tensione più vicino, nella memoria di chiunque, era l'autunno.
+Non lo decise. Le mani lo fecero da sole, come facevano da sole le cose che avevano fatto tante volte. Il terminale del giornale teneva la storia intera, giorno per giorno, ora per ora. Per un confronto serviva un mese di tensione. Il mese di tensione più vicino, nella memoria di chiunque, era l'autunno di due anni prima.
 
 Scrisse le date senza guardare il calendario. Le sapeva.
 
@@ -20,7 +20,7 @@ Scrisse le date senza guardare il calendario. Le sapeva.
 
 ---
 
-A dicembre aveva scritto un pezzo su quell'autunno. Il direttore l'aveva tagliato un giovedì sera, alle undici, con una telefonata di due minuti. Non per i numeri. I numeri erano giusti. Per l'ipotesi, aveva detto. *Il Meridiano non fa ipotesi sui mercati, Esposito. Le fanno i mercati.*
+Due anni prima, a dicembre, aveva scritto un pezzo su quell'autunno. Il direttore l'aveva tagliato un giovedì sera, alle undici, con una telefonata di due minuti. Non per i numeri. I numeri erano giusti. Per l'ipotesi, aveva detto. *Il Meridiano non fa ipotesi sui mercati, Esposito. Le fanno i mercati.*
 
 Il pezzo diceva una cosa semplice. Che qualcuno, il 12 novembre, aveva chiuso posizioni al ribasso enormi nel momento esatto del picco. Che era stato bravo, o fortunato. Che il mercato era pieno di gente brava e fortunata.
 
@@ -100,9 +100,9 @@ Pietro passò alle due e mezza con la sigaretta spenta dietro l'orecchio e l'odo
 
 Pietro si chinò un poco. Era un cronista, non leggeva le curve. Ma leggeva le facce, e Dalia lo vide leggere la sua.
 
-«Ottobre di quest'anno o ottobre dell'anno scorso?»
+«Ottobre di quest'anno?»
 
-«Ottobre scorso.»
+«Di due anni fa.»
 
 «Il mercato di Valcerna.» Pietro si tolse la sigaretta da dietro l'orecchio e la rigirò tra le dita. «Tu a ottobre eri qui, davanti ai numeri. Io ero sul posto. Sai che cosa mi ricordo? L'odore. Frutta e plastica bruciata.» Rimise la sigaretta dietro l'orecchio. «Stai scrivendo qualcosa?»
 
