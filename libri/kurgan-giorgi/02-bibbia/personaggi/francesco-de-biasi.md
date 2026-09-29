@@ -45,3 +45,6 @@ Il militare che fa il lavoro sporco di Osiride dopo Kurgan: crea Casal Fascio, l
 
 ## Fissato nel capitolo 24 (senza nome)
 - Visto da Kurgan sul secondo tetto del lungomare di Riva Salmara, tra i panni stesi: camicia chiara con le maniche arrotolate, capelli grigi tagliati cortissimi, mani dietro la schiena, immobile. «L'immobilità degli uomini che non dovevano fare niente, perché qualcun altro l'avrebbe fatto quando l'avessero detto loro.»
+
+## Fissato nel capitolo 33
+- Sa del golpe in anticipo (ascolto da luglio, rafforzato dalla richiesta di Giorgi sulla linea di Tanino). Fa uscire Bertola dal retro e mette i reparti nel casale: undici minuti. Consegna Onorato e Carrese ai Carabinieri; «I nostri non esistono». Chiama Giorgi alle 2.41 da un'auto in movimento. «È il vantaggio dei golpe che falliscono. Rendono stabili i governi che volevano rovesciare.» «Lo abbiamo notato.» Chiede se Adorisio avesse chiesto qualcosa a Giorgi; non insiste.
