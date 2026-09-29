@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 43 (Dalia, giovedì 16 dicembre: lo scoop esce alle 6.00; la prima chiamata è di un numero dei servizi). Scritti: prologo, capitoli 1–42. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 44 (Flora, Mese 25: lo scoop e i dati, il pool accelera; la task force viene a prendere il fascicolo; De Stefano l'avverte in tempo; Flora capisce il doppio gioco e decide di fidarsi, per ora). Scritti: prologo, capitoli 1–43. **Nodo urgente Tommaso: chiudere al 48.** Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -158,3 +158,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Capitolo 40 (Elena, 1.845 parole): la chiavetta da undici euro e novanta, la torre accanto al telegiornale, «Se vengono qui», i quattro secondi di Alfredo, la banca da pensionati, Fabrizio («Io non ho visto niente»), «Saggio» cancellato, la cassetta 87 a nome Pisapia, undici macchine. «Può tenerla. Non può usarla.»
 - 2026-09-29 — Capitolo 41 (Dalia, 1.961 parole): le due chiavette, «12 NOVEMBRE», tre su tre al secondo, la fine di una visione, il risveglio, il secondo telefono e i tre messaggi, Pietro, «Tre su tre», il direttore. «Domattina lo pubblichiamo.» Data spostata al 15 dicembre per la catena 41–42–43.
 - 2026-09-29 — Capitolo 42 (Giorgi, 1.835 parole): 161 voti alle 19.42, undici più della stima, il regime, la fila tolta, Salvarani alle 20.15, le domande del Meridiano alle 21.38, rumore e perdita, il ragazzo spostato tre piani più in basso, la correzione che può avere come oggetto lui, «Dalia Esposito». «Conosceva quel nome.» Nessuna crepa.
+- 2026-09-29 — Passo 0: nodo urgente su Tommaso aperto in semi.md (Giorgi a un passo dal nome); verificato che il quinto capitolo di Tommaso (48) affronta il pericolo; annotate le tre cose da risolvere lì.
+- 2026-09-29 — Capitolo 43 (Dalia, 1.745 parole): 6.01 «Complimenti per l'articolo», l'edicola, «Tre su tre» in prima pagina, cento chiamate, il vedovo di Valcerna, AV System, Ardesia, Consob, la diffida, «come stavo», il caporedattore, l'uomo del bar e il dopobarba in ascensore, Nicola, Pietro e il taccuino. «La prima chiamata del giorno era partita da un numero dei servizi.»
