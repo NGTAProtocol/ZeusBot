@@ -41,3 +41,7 @@ La prossima creatura: l'uomo fidato di Giorgi, in realtà informatore dell'élit
 - Porta a Giorgi, alle 23.14 del 28 giugno, la notizia della bomba: gli è stata data alle nove di sera, «dal generale, ma non è una cosa del generale», con l'ordine di dirla stasera e a lui solo. Dà la stima dei civili: «tre, quattro».
 - A Giorgi che gli chiede che cosa farebbe: «Io faccio quello che dice lei, dottore. L'ho sempre fatto.» Passa la notte sulla panca del corridoio fuori dalla sala sicura.
 - Giorgi registra che ha saputo prima di lui e sceglie di non seguire il filo.
+
+## Fissato nel capitolo 26 (venerdì 2 luglio)
+- Scelto da De Biasi per il comando degli uomini di Kurgan («Ha la calma che serve… Ci ha lavorato per lei tredici anni»). Risponde «Sissignore» guardando De Biasi, non Giorgi: secondo punto della serie dopo il cap. 21.
+- Al casale di Casal Fascio stringe le mani agli uomini a uno a uno, sulla soglia accanto a De Biasi. Adorisio non gliela stringe. Per Adorisio è «il suo autista».
