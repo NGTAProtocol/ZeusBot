@@ -24,7 +24,7 @@ Salvarani versò il tè. Tre tazze. La quarta restò capovolta.
 
 Cicimarra bevve un sorso, lo trattenne in bocca un momento di troppo, e lo inghiottì con la faccia di chi aveva deciso di non commentare.
 
-«Il suo fondo ha lavorato bene, l'anno scorso, dottore» disse, con un sorriso che voleva essere cordiale. «Ne parlano tutti, a Merania. Con ammirazione.»
+«Il suo fondo ha lavorato bene, due anni fa, dottore» disse, con un sorriso che voleva essere cordiale. «Ne parlano tutti, a Merania. Con ammirazione.»
 
 «Il mio fondo ha lavorato come doveva.»
 
@@ -112,7 +112,7 @@ Fece il conto, come lo faceva sempre.
 
 Il trasferimento era lento, e la lentezza era un rischio: otto mesi erano abbastanza per leggere sessanta righe. La legge era veloce, ma aveva bisogno di un Parlamento spaventato. Un Parlamento si spaventava in un modo solo. Non con le parole di un senatore davanti a una bandiera. Con i fatti. Con qualcosa che i telegiornali mostrassero ogni sera per settimane, fino a quando la paura non fosse diventata una domanda, e la domanda una richiesta di ordine.
 
-Lo sapeva meglio di chiunque in quella stanza. Tre volte, un anno prima, aveva visto un Paese spaventarsi a comando. Aveva misurato quanto costava ogni punto di paura sui mercati, e l'aveva venduto.
+Lo sapeva meglio di chiunque in quella stanza. Tre volte, due anni prima, aveva visto un Paese spaventarsi a comando. Aveva misurato quanto costava ogni punto di paura sui mercati, e l'aveva venduto.
 
 Ma quelle tre volte c'erano stati dei teli bianchi. Diciannove, poi venti, poi ventuno.
 
