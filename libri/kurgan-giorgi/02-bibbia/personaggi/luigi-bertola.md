@@ -45,3 +45,7 @@ La prossima creatura: l'uomo fidato di Giorgi, in realtà informatore dell'élit
 ## Fissato nel capitolo 26 (venerdì 2 luglio)
 - Scelto da De Biasi per il comando degli uomini di Kurgan («Ha la calma che serve… Ci ha lavorato per lei tredici anni»). Risponde «Sissignore» guardando De Biasi, non Giorgi: secondo punto della serie dopo il cap. 21.
 - Al casale di Casal Fascio stringe le mani agli uomini a uno a uno, sulla soglia accanto a De Biasi. Adorisio non gliela stringe. Per Adorisio è «il suo autista».
+
+## Fissato nel capitolo 33 (notte tra il 29 e il 30 agosto)
+- Da luglio convoca a Casal Fascio i capi dei porti una domenica al mese, alle 23. Fatto uscire da De Biasi dal retro alle 23.30; sopravvive senza combattere. «Da domani non ha più nessuno che gli discute un ordine» (De Biasi).
+- Alle 5.10 chiama Giorgi: non aspetta più che parli lui per primo. Ha «le orecchie» di Kurgan e del generale. **Allusione al 112 di Elena** («numeri corti, dal giardino… Io l'ho messo da parte»): una carta mostrata e non spesa.
