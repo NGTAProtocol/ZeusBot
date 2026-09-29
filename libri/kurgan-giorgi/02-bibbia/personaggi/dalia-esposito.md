@@ -100,3 +100,8 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - Il risveglio: Vito esecutore, Alfredo sopra; le sue parole della 512 hanno ucciso Vito; «Lo stesso schema. Un altro vestito.»
 - Riaccende il secondo telefono: tre messaggi di Alfredo senza risposta; toglie la batteria; il telefono non torna nel cassetto.
 - Scrive «Tre su tre» (tre pagine, niente di sé). Al direttore: «Domattina lo pubblichiamo.»
+
+## Fissato nel capitolo 43 (giovedì 16 dicembre)
+- Tre ore di sonno, maglione grigio pesante; all'edicola della stazione alle 6.12 compra tre copie (l'inchiostro umido sul cappotto).
+- Oltre cento chiamate; rifiuta le televisioni; scrive un secondo pezzo sulle reazioni, con i numeri.
+- La chiamata delle 6.01 da un numero dei servizi (riconosciuto da Pietro la sera). Messaggi di Nicola. Per la prima volta in sei anni non riesce a immaginare la faccia di Alfredo.
