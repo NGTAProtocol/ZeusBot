@@ -196,7 +196,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **42. Giorgi (c)** · Albaterra · mercoledì 15 dicembre, sera (Mese 25) · La legge passa: il sistema è di nuovo sotto controllo → Il Meridiano chiama per un commento. · **Chiusura:** Giorgi riconosce il nome della giornalista. · 1.900 *(Scritto: il Senato converte il decreto alle 19.42, 161 favorevoli; il regime; Salvarani alle 20.15; alle 21.38 le domande del Meridiano lette dal responsabile della comunicazione; la fonte interna dedotta come probabilità; la risposta dettata; «Dalia Esposito». Chiusura: «Conosceva quel nome.» Nessuna crepa.)*
 
-**43. Dalia** · Merania · Mese 25 · Lo scoop esce alle 6.00 → il telefono squilla senza sosta. · **Chiusura:** la prima chiamata è di un numero dei servizi. · 1.800
+**43. Dalia** · Merania · giovedì 16 dicembre (Mese 25) · Lo scoop esce alle 6.00 → il telefono squilla senza sosta. · **Chiusura:** la prima chiamata è di un numero dei servizi. · 1.800 *(Scritto: alle 6.01 «Buongiorno, dottoressa Esposito. Complimenti per l'articolo»; l'edicola della stazione; comunicato di AV System, Ardesia, Consob, diffida; le quattro telefonate al direttore; Nicola; Pietro riconosce il numero dal taccuino di giudiziaria.)*
 
 **44. Flora** · Albaterra · Mese 25 · Lo scoop e i dati: il pool accelera → la task force viene a prendere il fascicolo; De Stefano l'avverte in tempo. · **Chiusura:** Flora capisce che lui gioca su due tavoli. Decide di fidarsi, per ora. · 2.000
 
@@ -206,7 +206,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **47. Elena** · Merania · Mese 25 · Riceve il materiale: quindici anni → gelo, nessuna scenata. · **Chiusura:** a cena sorride al marito. · 1.900
 
-**48. Tommaso** · Merania → Albaterra · Mese 26 · Il fondo risale alla fuga di dati → si consegna a Flora, testimone chiave. · **Chiusura:** la porta dell'appartamento protetto si chiude alle sue spalle. · 1.900
+**48. Tommaso** · Merania → Albaterra · Mese 26 · *(Nodo urgente: chiude il pericolo aperto al 42; vedi semi.md.)* · Il fondo risale alla fuga di dati → si consegna a Flora, testimone chiave. · **Chiusura:** la porta dell'appartamento protetto si chiude alle sue spalle. · 1.900
 
 **49. Giorgi (c)** · Vaticano · Mese 26 · Salvarani gli comunica la decisione di Osiride → **seconda crepa**, la resa totale. · **Chiusura:** accetta l'invito a pesca. · 2.000
 
