@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 40 (Elena, Mese 24: il deposito della copia nella cassetta a nome da nubile; «può tenerla, ma non usarla»). Scritti: prologo, capitoli 1–39. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 41 (Dalia, Mese 24: i dati di Tommaso chiudono la terza data al minuto; il risveglio; «Domattina lo pubblichiamo»). Scritti: prologo, capitoli 1–40. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -155,3 +155,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Capitolo 38 (Tommaso, 1.850 parole, apre la Parte IV): la radio delle 5.41 e le quattro bombe, Portofosco e Tarassa, la fermata di Marcena, la nota della Ardesia del 12 novembre, trentuno conti, i dieci anni delle scritture contabili, 12.07.04 AGIORGI, l'esportazione delle 9.47, SRV-ADM07 alle 11.02, il foglietto giallo. «Il fondo sapeva.»
 - 2026-09-29 — Passo 0: verificate le date di Portofosco e Tarassa (stesso anno del presente, dopo Riva Salmara): nessuna correzione.
 - 2026-09-29 — Capitolo 39 (Flora, 1.943 parole): l'art. 7 cerchiato, il decreto delle 23.40, De Biasi comandante, la colonna delle date, l'ipotesi del Parlamento, il procuratore («il più connesso d'Italia»), Cicimarra relatore, il giudice dal 13, la festa del 9 ottobre, la lista dei trenta giorni, Porto Clodio lunedì 29. «Ne possiamo usare diciannove.»
+- 2026-09-29 — Capitolo 40 (Elena, 1.845 parole): la chiavetta da undici euro e novanta, la torre accanto al telegiornale, «Se vengono qui», i quattro secondi di Alfredo, la banca da pensionati, Fabrizio («Io non ho visto niente»), «Saggio» cancellato, la cassetta 87 a nome Pisapia, undici macchine. «Può tenerla. Non può usarla.»
