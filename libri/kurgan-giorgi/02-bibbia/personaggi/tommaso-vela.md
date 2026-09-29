@@ -45,3 +45,5 @@ Laureato in economia/finanza, entrato da poco in AV System, orgoglioso di far pa
 - Dà una copia al vecchio compagno di master (analista, banca d'affari straniera) perché arrivi a una giornalista del Meridiano di cui non vuole sapere il nome. «C'è qualcuno che ti segue?» «Non lo so.»
 - Mente a Martina sul pranzo. Alle 17.52 scopre il download di SRV-ADM07 delle 16.02, solo sul suo file.
 - **Contatto comune con Dalia: fissato** (vedi semi.md). Non si espone ancora.
+- **SRV-ADM07 (deciso dopo il cap. 34):** è la **sicurezza interna di AV System**. Il rischio per Tommaso cresce perché il controllo è vicino, non lontano: sta nell'edificio, conosce il suo codice e i suoi orari, e può revocargli un accesso o convocarlo senza passare da nessun altro.
+- **Nodo aperto per il cap. 38:** i dati interni completi delle 12.07 (per ora solo a memoria: «AGIORGI, 12.07.04»).
