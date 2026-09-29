@@ -109,3 +109,10 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 ## Fissato nel capitolo 32 (dall'estratto letto da Elena)
 - Cassetta di sicurezza in una banca privata di Cadrasca sotto un nome falso (nato a Merania nel suo stesso anno e mese), aperta il 3 giugno di quindici anni prima (il «convegno» di tre giorni). Accessi rari; uno il 14 novembre dell'anno prima alle 10.05; l'ultimo venerdì 21 maggio alle 11.40. Parte alle cinque di mattina, rientra alle undici di sera: «torna presto».
 - Giovedì 26 agosto parte per Albaterra («torno domenica», «una cosa di lavoro»).
+
+## Fissato nel capitolo 33 (notte tra il 29 e il 30 agosto, Merania)
+- Rientrato alle 21 come promesso. Avvisato alle 23.52 dal generale analista («non chiamare nessuno»). Tiene sullo schermo il numero dell'avvocato di Partenia per trenta secondi e non chiama: il silenzio «costava soltanto una cosa che aveva smesso di mettere nei conti a fine giugno».
+- Elena all'1.30 nello studio; lui: «Lavoro.» «Sono tornato.»
+- De Biasi alle 2.41 (resoconto); Bertola alle 5.10 (l'allusione al 112, di cui Giorgi non sapeva nulla: la capisce in tre secondi).
+- Analogie: il sistema che si corregge da solo non ha più bisogno di un regolatore; l'equilibrio instabile del pollice sul vetro; il componente che, sotto carico pieno, cambia tolleranza (Bertola). Adorisio nella colonna dei vantaggi; nell'altra «non c'era una grandezza». Nessuna crepa.
+- Chiusura: non se ne rallegra; Laura dorme nel letto di Elena con la luce accesa.
