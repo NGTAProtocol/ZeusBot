@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 36 (Flora, martedì 5 ottobre: arrivano i dati anonimi, venti nomi, il presidente della Cassazione). Scritti: prologo, capitoli 1–35. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 37 (Giorgi, mercoledì 20 ottobre, Vaticano: Salvarani e Cicimarra, «Serve un'emergenza»). Scritti: prologo, capitoli 1–36. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -149,3 +149,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Capitolo 34 (Tommaso, 2.158 parole): la fattura 11 della Sestante e la nota spese, Cicimarra, Martina, il premio mai toccato, la biblioteca e la colonna delle date, l'emendamento, il primo invio alla piattaforma anticorruzione, il compagno di master e il Meridiano, SRV-ADM07 alle 16.02. Registro: Sestante Relazioni Istituzionali.
 - 2026-09-29 — Passo 0: SRV-ADM07 = sicurezza interna di AV System (semi, scheda Tommaso); nodo 12.07 confermato aperto per il 38.
 - 2026-09-29 — Capitolo 35 (De Stefano, 2.175 parole): i due fogli sul tavolo, il diniego, «troppo utile dov'è», le due colonne, «non sono mai salito da lei», «dove sarà», il registro di Merania come errore, la bugia sul 9 ottobre guardando negli occhi, il messaggio sulle melanzane. «Davvero?»
+- 2026-09-29 — Capitolo 36 (Flora, 2.220 parole): il plico dell'Autorità anticorruzione, via dei Cordai 14, la Sestante e Cicimarra, Cataldo e la mano giovane, le credenziali e Calabrese che firma, la verifica delle 11.20, i 42 atti e i 38 gusci, lo statuto (2 marzo, art. 7 sessanta soci), i venti del comitato, il numero uno e il decreto di assegnazione, il procuratore («lo teniamo in due»). «Ne mancano quaranta.»
