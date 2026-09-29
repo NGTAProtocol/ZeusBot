@@ -182,7 +182,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **36. Flora** · Albaterra · martedì 5 ottobre · Arrivano i dati anonimi: venti nomi, tra cui il presidente della Cassazione → capisce chi insabbiò la sua prima inchiesta. · **Chiusura:** "Ne mancano quaranta." · 2.300 *(Scritto: i «dati anonimi» sono la segnalazione di Tommaso del 16 settembre, trasmessa dall'Autorità nazionale anticorruzione alla Direzione nazionale «per competenza»; i venti nomi escono dall'incrocio di Flora: statuto dell'istituto dal nome latino in via dei Cordai 14, art. 7 «sessanta soci fondatori», art. 9 comitato scientifico di venti. Il «60» è dedotto dallo statuto, non da Osiride.)*
 
-**37. Giorgi (c)** · Vaticano · mercoledì 20 ottobre · Salvarani e Cicimarra: il pool è vicino all'elenco → Giorgi è chiamato a votare una risposta. · **Chiusura:** "Serve un'emergenza." · 2.200
+**37. Giorgi (c)** · Vaticano · mercoledì 20 ottobre · Salvarani e Cicimarra: il pool è vicino all'elenco → Giorgi è chiamato a votare una risposta. · **Chiusura:** "Serve un'emergenza." · 2.200 *(Scritto: quattro tazze, la quarta capovolta; Cicimarra attuatore; il foglio di sessanta righe nell'armadio del notaio, Giorgi alla riga quarantuno; tre possibilità, una tolta da Salvarani; Giorgi vota progettando un'emergenza di cose, non di persone, e la frase finale è sua. Fine della Parte III.)*
 
 ### PARTE IV — IL PADRE DEL MOSTRO
 
