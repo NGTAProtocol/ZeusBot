@@ -40,3 +40,7 @@ Il volto del potere sopra Giorgi: il maestro che lo ha formato e che alla fine l
 - Custodisce la seconda chiavetta in un astuccio di pelle scura, in un cassetto dello scrittoio non chiuso a chiave.
 - Conosce Flora: «Tre anni fa ci è costata un favore del presidente della Corte e undici minuti di camera di consiglio.»
 - Sa dell'orologio rimandato a Giorgi: un'informazione che avevano solo Giorgi e Bertola.
+
+## Fissato nel capitolo 37 (20 ottobre)
+- Riceve insieme Giorgi e Cicimarra: quattro tazze, la quarta capovolta. «Non lo sappiamo» (prima volta in trent'anni). Il foglio di sessanta righe dal notaio di via dei Cordai; ha scritto lui la riga quarantuno, di Giorgi, undici anni fa.
+- Toglie l'opzione dell'eliminazione di Flora («Un magistrato morto è un magistrato che vince… Questo Paese perdona tutto, tranne i martiri»). Vota «di sentire» Giorgi: «Tu conosci la paura. L'hai misurata, l'hai comprata e l'hai venduta.»
