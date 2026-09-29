@@ -44,3 +44,6 @@ Il volto del potere sopra Giorgi: il maestro che lo ha formato e che alla fine l
 ## Fissato nel capitolo 37 (20 ottobre)
 - Riceve insieme Giorgi e Cicimarra: quattro tazze, la quarta capovolta. «Non lo sappiamo» (prima volta in trent'anni). Il foglio di sessanta righe dal notaio di via dei Cordai; ha scritto lui la riga quarantuno, di Giorgi, undici anni fa.
 - Toglie l'opzione dell'eliminazione di Flora («Un magistrato morto è un magistrato che vince… Questo Paese perdona tutto, tranne i martiri»). Vota «di sentire» Giorgi: «Tu conosci la paura. L'hai misurata, l'hai comprata e l'hai venduta.»
+
+## Fissato nel capitolo 42 (15 dicembre, 20.15, al telefono)
+- Chiama Giorgi dopo il voto (non chiama mai): «È andata come avevi detto tu… Un uomo che ha ragione su una cosa così grande diventa un uomo di cui ci si ricorda. Cerca di ricordartelo anche tu.» «Dormi. Te lo sei guadagnato.»
