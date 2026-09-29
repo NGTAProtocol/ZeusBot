@@ -125,3 +125,10 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 
 ## Fissato nel capitolo 41 (dal telefono di Dalia)
 - Dopo Riva Salmara scrive a Dalia tre volte senza risposta: mercoledì 30 giugno, 23.10, «Come stai?»; martedì 12 ottobre e martedì 9 novembre, alle 10.02, «Stasera?».
+
+## Fissato nel capitolo 42 (mercoledì 15 dicembre, sera, Albaterra)
+- Appartamento della società al terzo piano di un palazzo del centro, a quattrocento metri dal Senato; Ferri in macchina.
+- Legge la conversione del decreto come **regime** («un regolatore che, per la prima volta da molto tempo, poteva restare fermo»); nessun trionfo.
+- Salvarani gli telefona (fatto raro): il complimento come misura.
+- Le domande del Meridiano: distingue rumore (fuori) e **perdita** (dentro); deduce l'archivio delle riconciliazioni e il ragazzo spostato due anni prima, senza nome. Detta la risposta.
+- Considera per la prima volta che la correzione del sistema possa avere come oggetto lui. Riconosce il nome: Dalia Esposito. Nessuna crepa.
