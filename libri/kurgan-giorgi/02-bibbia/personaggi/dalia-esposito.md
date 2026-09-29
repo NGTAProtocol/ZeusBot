@@ -84,3 +84,13 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - Pietro (cronaca) le chiede della sua vecchia inchiesta sui porti: lei nega di aver mai incrociato Kurgan. «Pare che l'aspettassero.»
 - La testimone del pergolato dice «da solo»: Dalia riconosce le sue parole della 512. Il dubbio si affaccia, non la certezza.
 - Scrive «lo sapevi» a Giorgi e cancella; compone il numero e non chiama; spegne il secondo telefono e lo posa a faccia in giù. Non chiama Alfredo.
+
+## Fissato nel capitolo 30 (mercoledì 18 agosto, redazione)
+- Trenta righe di routine sulle vendite allo scoperto di agosto (tabella Consob), chieste dal caporedattore «per le sei». Cardigan grigio sulla sedia tutto l'anno; l'aria condizionata ora funziona e fa troppo freddo.
+- Il pezzo del 4 dicembre fu tagliato dal direttore con una telefonata di due minuti: «Il Meridiano non fa ipotesi sui mercati, Esposito. Le fanno i mercati.» Diceva solo il picco del 12 novembre.
+- Il 2 ottobre alle 9.30 era in metropolitana (il vagone pieno di telefoni che vibravano «come uno sciame»).
+- Incrocia per riflesso: due date su tre dentro l'ora; la terza sepolta nel rumore del 12 novembre. Cerca di smentirsi (venti curve di controllo). Senza registri interni non può scriverlo.
+- Il sapore di ferro in bocca (come nel cap. 23).
+- «Due su tre» scritto e cancellato; curve e «12 novembre ?» chiuse nel cassetto a chiave. **Nessuna decisione**: un rimando.
+- Il secondo telefono spento nel cassetto della redazione da inizio luglio; sette martedì senza «Stasera?».
+- Giura di non fare a nessuno quello che è stato fatto a lei; con Nicola rinvia.
