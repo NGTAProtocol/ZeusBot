@@ -117,7 +117,7 @@ Quindici anni prima Alfredo era andato a Cadrasca per un convegno. Tre giorni, a
 
 Rimise la matita in fondo al cassetto, a sinistra. Con la punta verso di lei, come l'aveva trovata.
 
-Tornò al tavolo. Scorse la tabella degli accessi. Pochi. Uno ogni due o tre anni. Una riga era di novembre dell'anno prima, il 14, alle 10.05. Elena non sapeva che cosa fosse successo a novembre dell'anno prima. Ricordava soltanto un autunno in cui Alfredo aveva dormito poco e aveva comprato a tutti e tre i figli un regalo senza motivo. Scrisse la data lo stesso, a margine. Poi l'ultima riga.
+Tornò al tavolo. Scorse la tabella degli accessi. Pochi. Uno ogni due o tre anni. Una riga era di novembre di due anni prima, il 14, alle 10.05. Elena non sapeva che cosa fosse successo a novembre di due anni prima. Ricordava soltanto un autunno in cui Alfredo aveva dormito poco e aveva comprato a tutti e tre i figli un regalo senza motivo. Scrisse la data lo stesso, a margine. Poi l'ultima riga.
 
 *21 maggio. 11.40.*
 
