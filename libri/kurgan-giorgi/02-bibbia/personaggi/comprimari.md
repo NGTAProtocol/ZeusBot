@@ -50,6 +50,8 @@
 - **La madre di Flora** a Rocca Sannella: chiama alle 21.15; il vicino ha potato il fico troppo presto.
 
 ## Fissato nel capitolo 16
+- **Nicola** (cap. 30): chiama Dalia sul primo telefono il 18 agosto alle 18.15, «non è per il dottore»: una cosa sua, «anche» soldi, «non solo». Lei rinvia. Non ancora fonte attiva.
+- **Pietro** (cap. 30): vede la curva di Valcerna sullo schermo di Dalia; era sul posto a ottobre («frutta e plastica bruciata»); scommesse sul ciclismo; offre le alici da Ettore.
 - **Nicola** (guardia giovane di Giorgi): scarpe nuove; al quinto piano da solo; rivela a Dalia i cambiamenti dal 19 maggio («Io non le ho detto niente, signora»). Seme della fonte.
 - **Ferri**: dal 19 maggio sempre con Giorgi.
 
