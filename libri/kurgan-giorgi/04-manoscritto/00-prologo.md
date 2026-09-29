@@ -24,7 +24,7 @@ La sala operativa di AV System era silenziosa. I televisori appesi al soffitto a
 
 Tommaso Vela aveva ventinove anni e le mani sudate. Le asciugò sui pantaloni. Guardava il rendimento del decennale salire a scatti, e ogni scatto era un numero che sapeva già leggere.
 
-Alla scrivania accanto Luca Ferrante masticava il tappo di una penna. «Quanto facciamo?» chiese, a nessuno in particolare. Nessuno rispose. Qualcuno abbassò lo sguardo sulla tastiera, come se la domanda fosse una parolaccia.
+Alla scrivania accanto Andrea Gatti masticava il tappo di una penna. «Quanto facciamo?» chiese, a nessuno in particolare. Nessuno rispose. Qualcuno abbassò lo sguardo sulla tastiera, come se la domanda fosse una parolaccia.
 
 Sei settimane prima il capo del desk aveva alzato i limiti di rischio. Di lunedì. Il giovedì era saltato il mercato di Valcerna. Tommaso aveva messo in fila le due date una volta sola, di notte, e poi aveva smesso.
 
@@ -54,7 +54,7 @@ La donna con lo zaino non era più nell'inquadratura. Al suo posto c'era un gior
 
 Alle 12.07 lo spread toccò settecento punti.
 
-L'ordine partì. In quattro secondi le posizioni sparirono dagli schermi, una dopo l'altra, come le luci di un palazzo spente un piano alla volta. Il silenzio della sala cambiò qualità. Diventò sollievo. Luca Ferrante si tolse la penna di bocca e rise piano, come in chiesa.
+L'ordine partì. In quattro secondi le posizioni sparirono dagli schermi, una dopo l'altra, come le luci di un palazzo spente un piano alla volta. Il silenzio della sala cambiò qualità. Diventò sollievo. Andrea Gatti si tolse la penna di bocca e rise piano, come in chiesa.
 
 Tommaso aprì il registro delle esecuzioni.
 

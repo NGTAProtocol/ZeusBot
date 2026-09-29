@@ -54,17 +54,17 @@ Se lo vedeva lui, lo vedeva chiunque stesse più in alto di lui. E più in alto 
 
 ---
 
-Luca Ferrante arrivò alle 8.20 con gli occhiali da sole e la stessa camicia del giorno prima.
+Andrea Gatti arrivò alle 8.20 con gli occhiali da sole e la stessa camicia del giorno prima.
 
 «Dove sei sparito ieri sera?»
 
 «A casa.»
 
-«Ti sei perso Merlo che piangeva.» Luca si lasciò cadere sulla sedia. «Piangeva davvero. Ha detto che in diciassette anni non aveva mai visto una giornata così.»
+«Ti sei perso Merlo che piangeva.» Andrea si lasciò cadere sulla sedia. «Piangeva davvero. Ha detto che in diciassette anni non aveva mai visto una giornata così.»
 
 «Nessuno l'ha mai vista.»
 
-Luca lo guardò da sopra gli occhiali. Poi decise di non capire. «Hai letto la mail?»
+Andrea lo guardò da sopra gli occhiali. Poi decise di non capire. «Hai letto la mail?»
 
 «Quale mail?»
 
@@ -74,7 +74,7 @@ Tommaso aprì la posta. La mail era arrivata alle 6.31, firmata dalla direzione,
 
 Disciplina e riservatezza. Nell'ordine.
 
-«Luca. Mi fai un favore?»
+«Andrea. Mi fai un favore?»
 
 «Dipende.»
 
@@ -84,11 +84,11 @@ Disciplina e riservatezza. Nell'ordine.
 
 «Quello del controllo di gestione.»
 
-Era una bugia piccola e precisa, di quelle che riuscivano bene a Tommaso perché assomigliavano a un numero. Luca scrollò le spalle, si tolse gli occhiali, digitò il percorso con due dita.
+Era una bugia piccola e precisa, di quelle che riuscivano bene a Tommaso perché assomigliavano a un numero. Andrea scrollò le spalle, si tolse gli occhiali, digitò il percorso con due dita.
 
 La cartella si aprì.
 
-Righe grigie. Il carattere monospaziato. Luca scorreva verso l'alto, verso la mattina. «Che orario ti serve?»
+Righe grigie. Il carattere monospaziato. Andrea scorreva verso l'alto, verso la mattina. «Che orario ti serve?»
 
 «Lascia stare. Me lo ricordo.»
 
@@ -96,9 +96,9 @@ Righe grigie. Il carattere monospaziato. Luca scorreva verso l'alto, verso la ma
 
 «Per sicurezza.»
 
-Luca chiuse la finestra e lo guardò come si guardava uno che non aveva dormito. Tommaso non aveva dormito, infatti. Lo sapevano tutti e due.
+Andrea chiuse la finestra e lo guardò come si guardava uno che non aveva dormito. Tommaso non aveva dormito, infatti. Lo sapevano tutti e due.
 
-Quindi non era la cartella. Luca poteva entrare. Il sistema aveva detto di no a lui solo.
+Quindi non era la cartella. Andrea poteva entrare. Il sistema aveva detto di no a lui solo.
 
 ---
 
@@ -118,7 +118,7 @@ Quando alzò lo sguardo, Merlo stava guardando lui.
 
 Durò meno di un secondo. Forse era una coincidenza. Merlo guardava tutti, uno per uno, come facevano quelli che avevano imparato a parlare in pubblico da un corso. Tommaso contò quanto tempo restava su ciascuno. Uno, due. Uno, due. Su di lui, uno, due, tre.
 
-Poi Merlo passò a Luca.
+Poi Merlo passò a Andrea.
 
 «Domande?»
 
@@ -182,7 +182,7 @@ Era giovane, con un cordino blu al collo e un tablet sotto il braccio. Sorrideva
 
 «Da quando ci sono io.» Tese la mano. «Venti minuti e glielo riporto.»
 
-Tommaso guardò la scrivania di Luca. Il portatile di Luca era aperto, acceso, con la posta in primo piano. Guardò quella dopo, e quella dopo ancora. Nessun tecnico.
+Tommaso guardò la scrivania di Andrea. Il portatile di Andrea era aperto, acceso, con la posta in primo piano. Guardò quella dopo, e quella dopo ancora. Nessun tecnico.
 
 «Solo il mio?»
 
@@ -220,13 +220,13 @@ Alle 15.40 arrivò un'altra mail di sopra, a tutta la società. Il consiglio di 
 
 Nessuno in sala la commentò.
 
-Alle 16.30 Luca si alzò per il caffè. Chiese se voleva qualcosa. Tommaso disse di no. Guardò Luca allontanarsi fino agli ascensori e contò i secondi che ci metteva. Quaranta. Poi le porte si chiusero.
+Alle 16.30 Andrea si alzò per il caffè. Chiese se voleva qualcosa. Tommaso disse di no. Guardò Andrea allontanarsi fino agli ascensori e contò i secondi che ci metteva. Quaranta. Poi le porte si chiusero.
 
 Pensò che poteva ancora non essere niente. Un aggiornamento di sicurezza mirato, un errore di un tecnico, un controllo a campione dopo una giornata eccezionale. Dava a ciascuna ipotesi una probabilità, e le probabilità non arrivavano mai a cento. Mancava sempre qualcosa. Mancava sempre lo stesso pezzo.
 
 Il pezzo era una persona che, di notte, aveva guardato chi aveva aperto quel registro.
 
-Alle 16.47 Luca tornò. Non aveva il caffè.
+Alle 16.47 Andrea tornò. Non aveva il caffè.
 
 Si sedette, girò la sedia verso di lui e abbassò la voce, anche se nessuno era abbastanza vicino da sentire.
 
@@ -234,6 +234,6 @@ Si sedette, girò la sedia verso di lui e abbassò la voce, anche se nessuno era
 
 «Niente. Perché?»
 
-Luca guardò verso gli ascensori, poi di nuovo lui.
+Andrea guardò verso gli ascensori, poi di nuovo lui.
 
 «Di sopra hanno chiesto il tuo nome.»

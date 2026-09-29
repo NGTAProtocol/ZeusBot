@@ -22,7 +22,7 @@ Tommaso aveva ringraziato. Aveva contato quante volte lei aveva detto la parola 
 
 Nessuno gli aveva chiesto del registro. Nessuno aveva nominato il tecnico, il portatile, i ventitré minuti. Era stato promosso, in un certo senso. Stipendio uguale, scrivania più piccola, una finestra che dava sul cortile interno invece che sulla città. Tre piani più in basso di prima.
 
-Luca gli aveva scritto un messaggio, la prima sera: *Hai fatto carriera?* Tommaso aveva risposto con una faccina. Non avevano più pranzato insieme.
+Andrea gli aveva scritto un messaggio, la prima sera: *Hai fatto carriera?* Tommaso aveva risposto con una faccina. Non avevano più pranzato insieme.
 
 Il premio straordinario era arrivato il 27 novembre, in anticipo. Tommaso aveva guardato la cifra sull'estratto conto per un tempo che non aveva misurato. Era più di quanto guadagnava in otto mesi. Non l'aveva detto a sua madre. Non l'aveva detto a nessuno. Non l'aveva toccata.
 

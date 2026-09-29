@@ -59,12 +59,12 @@ La magistrata che segue la fusione delle mafie fino a Osiride: la giustizia a cu
 - Nel pool: vota contro di lei due a uno (Calabrese e Cataldo); il foglio va «in un cassetto, senza protocollo». Lei lo tiene in borsa, nella tasca con la cerniera, accanto al foglio di gennaio.
 - Il procuratore nazionale (66 anni, quinto piano, finestre sul fiume, non fa sedere nessuno per due minuti) la convoca alle 12.40: la telefonata al registro di Merania gli è arrivata in tre ore e quaranta. «La rifaccia quando avrà una carta da mostrarmi. Non una voce.»
 - La Consob ha risposto in autunno: i conti delle 12.07 si perdono in altrettante fiduciarie di Valdhof; una seconda rogatoria tornata con metà pagine annerite; risposta del giudice di Valdhof attesa tra un mese.
-- **Precisazione (dopo il cap. 15):** l'«intermediario di regolamento di Merania» della pista di De Stefano (cap. 9) è un broker terzo, la **Lanteri Custodia**, che Flora conosce dai dati Consob. AV System sta a monte e dà gli ordini attraverso Lanteri: **Flora non lo sa**.
+- **Precisazione (dopo il cap. 15):** l'«intermediario di regolamento di Merania» della pista di De Stefano (cap. 9) è un broker terzo, la **Ardesia Custodia**, che Flora conosce dai dati Consob. AV System sta a monte e dà gli ordini attraverso Ardesia: **Flora non lo sa**.
 
 ## Fissato nel capitolo 20 (sabato 26 giugno, Rocca Sannella)
 - Casa della madre: camera di quando aveva quindici anni, scrivania sotto la finestra, codici del primo anno. Sgrana le fave.
 - Valdhof (da Cataldo, 10.40): respinta; pagina 26: 31 fiduciarie costituite il 9 marzo di undici anni fa, stesso studio di Valdhof, su mandato di uno studio notarile di Albaterra, via dei Cordai 14, terzo piano. Nomina di Giorgi nella Lanterna: 14 marzo. «Cinque giorni — coincidenza? Un giudice direbbe di sì.»
-- Sequenza in cinque punti (12.07 e Lanteri; fiduciarie; 9 marzo; allegato 37; la bambina). Tre fogli nella tasca con la cerniera.
+- Sequenza in cinque punti (12.07 e Ardesia; fiduciarie; 9 marzo; allegato 37; la bambina). Tre fogli nella tasca con la cerniera.
 - Il notaio di via dei Cordai: studio associato, due notai, pulito. 43 sedi legali; ne vede tre. Rinuncia alla richiesta con credenziali per non lasciare traccia.
 - Decide un giorno di ferie per martedì 29: capitaneria di porto di Porto Clodio, registro navale della Clodia Navi, da sola. Non lo dice a nessuno.
 - Dice «Non ancora» a Calabrese su Valdhof: una cosa falsa per una ragione che le sembra vera.

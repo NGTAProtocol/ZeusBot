@@ -36,7 +36,7 @@ Nella tasca con la cerniera c'erano due fogli piegati in quattro. Quello di genn
 
 Poi fece quello che faceva sempre. Mise in ordine.
 
-Uno. Il 12 novembre, alle 12.07, trentuno conti chiudono nello stesso secondo, attraverso la Lanteri Custodia, intermediario di regolamento, Merania.
+Uno. Il 12 novembre, alle 12.07, trentuno conti chiudono nello stesso secondo, attraverso la Ardesia Custodia, intermediario di regolamento, Merania.
 
 Due. I trentuno conti finiscono in trentuno fiduciarie di Valdhof.
 

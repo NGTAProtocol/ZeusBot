@@ -38,3 +38,6 @@ Il militare che fa il lavoro sporco di Osiride dopo Kurgan: crea Casal Fascio, l
 
 ## Distinzione
 - Non è il generale del capitolo 12 (analista prossimo alla pensione, al tavolo del fronte ufficiale). De Biasi resta fuori da quel tavolo e compare senza nome al capitolo 24.
+
+## Fissato nel capitolo 24 (senza nome)
+- Visto da Kurgan sul secondo tetto del lungomare di Riva Salmara, tra i panni stesi: camicia chiara con le maniche arrotolate, capelli grigi tagliati cortissimi, mani dietro la schiena, immobile. «L'immobilità degli uomini che non dovevano fare niente, perché qualcun altro l'avrebbe fatto quando l'avessero detto loro.»

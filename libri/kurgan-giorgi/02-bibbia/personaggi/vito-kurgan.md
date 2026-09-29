@@ -94,3 +94,11 @@ Crescita da 11 a 58: i cinque di Parsàn, i quindici legati alla banchina di Pun
 - Riunione nel magazzino del molo nord (nove uomini): Onorato, Carrese, Adorisio, il Biondo, Rocco, Tanino, il serrano anziano e il ragazzo della Serrana. Kurgan dà un terzo dei soldi della banchina a Onorato. Ai suoi dice: «Ho una cosa sua che gli impedisce di mandarli.»
 - Dorme in una casa di Carrese vicino al porto (letto di ferro, crocifisso storto). All'alba del 17, sulla scala, il foglietto del contabile passato da tre mani. Non chiede chi l'abbia toccato per primo.
 - Tanino guida per lui da quando è tornato; la domenica va alla clinica, il mercoledì porta alla madre i giornali dei cruciverba.
+
+## Fissato nel capitolo 24 (martedì 29 giugno, Riva Salmara, Adriatico)
+- Foglietto alle 5.10 nella casa di Carrese; spiega la fretta del contabile con la scadenza del governo di Parsàn («entro l'estate» → «questa settimana» → «oggi» in tredici giorni).
+- Porta la seconda busta (le carte del doganiere di Porto Clodio) nella tasca interna: non più un debito, ma una cosa decisa di dare via.
+- Pensa a Laura una volta sola, vicino a un casello: «la carta era dove doveva essere»; nessuna decisione.
+- Riconosce come unica frase non pesata della settimana l'aver detto a Dalia «questa settimana vedo il contabile».
+- Non chiama Rastegar per verificare (sarebbe offenderlo). Conta uscite, uomini, tetti, finestre; non conta ciò che sta sotto il pavimento della cucina.
+- Vede sul tetto un uomo che non conosce; calcola l'uscita dalla cucina; si alza per primo da un tavolo, per la prima volta. Muore nell'esplosione (fuori scena, nessun corpo descritto). Non sa chi l'ha tradito.

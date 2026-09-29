@@ -83,3 +83,9 @@
 - **Il padre di Elena**: morto tre anni prima; per il suo funerale Giorgi si fece fare il vestito scuro; Elena regalò a Giorgi i gemelli d'argento del padre.
 - **Cesare**: l'esame di terza media è finito; vuole andare al mare con due compagni il 29, Elena gli dice di no.
 - **Nicola** al cancello, **Ferri** alla portiera (indica il vestito con il mento; Giorgi non risponde).
+
+## Fissato nel capitolo 24
+- **Rocco**: racconta per la terza volta la festa del Biondo sulla barca (a mezzanotte il Biondo si butta in mare vestito ed esce con un polpo, ogni volta più grosso). Aspetta in macchina con la pistola sotto la giacca; «se non torno entro un'ora, entra Rocco».
+- **Tanino**: guida cinque ore in silenzio, mani alle dieci e dieci; da maggio parla ancora meno (Kurgan lo attribuisce alla madre).
+- **Il doganiere di Porto Clodio**: tre mesi di fotocopie notturne per Carrese; il figlio operato in una clinica del nord con i soldi di Kurgan. (È da lui che passa la fuga: vedi `semi.md`.)
+- **Luca Ferrante** del prologo e dei capitoli 1 e 4 è stato rinominato **Andrea Gatti**.
