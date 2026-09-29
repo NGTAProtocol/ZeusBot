@@ -48,3 +48,7 @@ L'uomo dei servizi incaricato di sorvegliare Flora che se ne innamora e la prote
 - Ha richiesto lunedì 21 giugno il comando della caserma dei Carabinieri di Rocca Sannella (il comandante va in pensione a settembre): «ne parleremo dopo l'estate, quest'estate c'è molto da fare».
 - Alla macchina: «La settimana prossima stai lontana dalla costa.» Non sa di Porto Clodio. Alla domanda «Perché?» guarda la strada a destra e a sinistra e non risponde.
 - La madre di Flora lo invita a pranzo per la prima volta (melanzane); lui rifiuta, riparte la notte stessa. Ride per la terza volta in tre anni.
+
+## Fissato nel capitolo 31 (lunedì 23 agosto, visto da Flora)
+- Pranzo ad Albaterra, trattoria dietro il palazzo di giustizia; camicia azzurra. Il comando di Rocca Sannella: «L'estate è finita. Non mi hanno ancora detto niente.» Ride per la quarta volta in tre anni.
+- **Terzo indizio:** «Te l'ha detto anche il registro di Merania, a maggio.» Flora non gliel'aveva mai detto. Chiede del pool; lei risponde «Niente».
