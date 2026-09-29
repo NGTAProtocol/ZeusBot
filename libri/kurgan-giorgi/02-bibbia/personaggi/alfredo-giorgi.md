@@ -116,3 +116,9 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - De Biasi alle 2.41 (resoconto); Bertola alle 5.10 (l'allusione al 112, di cui Giorgi non sapeva nulla: la capisce in tre secondi).
 - Analogie: il sistema che si corregge da solo non ha più bisogno di un regolatore; l'equilibrio instabile del pollice sul vetro; il componente che, sotto carico pieno, cambia tolleranza (Bertola). Adorisio nella colonna dei vantaggi; nell'altra «non c'era una grandezza». Nessuna crepa.
 - Chiusura: non se ne rallegra; Laura dorme nel letto di Elena con la luce accesa.
+
+## Fissato nel capitolo 37 (mercoledì 20 ottobre, Vaticano)
+- Legge la riunione come un ulteriore livello di controllo; Cicimarra è l'**attuatore**. Firmò undici anni fa in via dei Cordai: **riga quarantuno** del foglio di sessanta.
+- Aveva chiesto lui l'emendamento di marzo; la Sestante è «il prezzo di un attuatore».
+- Pensa a Flora senza averla mai vista: stesso metodo del suo («un avversario così… si fermava togliendogli la fila»).
+- Vota progettando un'emergenza di cose, non di persone, con De Biasi come esecutore. Gira la quarta tazza. «Serve un'emergenza.» Nessuna crepa.
