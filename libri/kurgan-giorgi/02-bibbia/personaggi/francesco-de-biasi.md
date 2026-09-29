@@ -39,5 +39,9 @@ Il militare che fa il lavoro sporco di Osiride dopo Kurgan: crea Casal Fascio, l
 ## Distinzione
 - Non è il generale del capitolo 12 (analista prossimo alla pensione, al tavolo del fronte ufficiale). De Biasi resta fuori da quel tavolo e compare senza nome al capitolo 24.
 
+## Fissato nel capitolo 26 (con nome)
+- Presentato dal generale analista, venerdì 2 luglio alle 10.40, nell'ufficio senza targhe del quarto piano ad Albaterra: «Da oggi coordina la fase successiva.» Scottatura fresca sul collo, capelli grigi cortissimi, maniche arrotolate due volte, mani dietro la schiena, parla in piedi senza appunti. Giorgi lo collega ai tetti di Riva Salmara dalla scottatura (inferenza, non prova); Adorisio dal tempo verbale («quando siamo entrati»).
+- Sceglie Bertola per Casal Fascio («Ha la calma che serve… Ci ha lavorato per lei tredici anni»). Convoca la riunione al casale abbandonato di Casal Fascio, trenta chilometri da Albaterra.
+
 ## Fissato nel capitolo 24 (senza nome)
 - Visto da Kurgan sul secondo tetto del lungomare di Riva Salmara, tra i panni stesi: camicia chiara con le maniche arrotolate, capelli grigi tagliati cortissimi, mani dietro la schiena, immobile. «L'immobilità degli uomini che non dovevano fare niente, perché qualcun altro l'avrebbe fatto quando l'avessero detto loro.»
