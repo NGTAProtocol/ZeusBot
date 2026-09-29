@@ -200,7 +200,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **44. Flora** · Albaterra · mercoledì 22 dicembre (Mese 25) · Lo scoop e i dati: il pool accelera → la task force viene a prendere il fascicolo; De Stefano l'avverte in tempo. · **Chiusura:** Flora capisce che lui gioca su due tavoli. Decide di fidarsi, per ora. · 2.000 *(Scritto: Carlo sale per la prima volta alle 0.20 e avverte: la task force viene alle 7, quaranta ore prima, e «non tenere niente qui, le carte di Calabrese»; quarto indizio → certezza senza confronto; le carte da Cataldo; Porto Clodio riferito; «Da Cataldo» mandato a Carlo; il colonnello alle 7, ventisei faldoni; nessuno cerca «altrove». Chiusura: «quella notte aveva scelto il suo.»)*
 
-**45. De Stefano** (raro) · Albaterra · Mese 25 · Deve indicare ai servizi dove sono le carte → le manda nel posto sbagliato. · **Chiusura:** brucia il suo rapporto nel lavandino. · 1.800
+**45. De Stefano** (raro, ultimo suo) · Albaterra · giovedì 23 dicembre (Mese 25) · Deve indicare ai servizi dove sono le carte → le manda nel posto sbagliato. · **Chiusura:** brucia il suo rapporto nel lavandino. · 1.800 *(Scritto: cancella «Da Cataldo»; il capo reparto chiede dove sono le copie di Partenia e di Porto Clodio; Carlo dice «Nella macchina», nel cortile della madre di Flora a Rocca Sannella per Natale; «Dov'era la notte tra il 21 e il 22?» «In macchina, sotto casa mia, fino alle due. Scrivevo»; relazione protocollata alle 10.12; brucia nel lavandino il foglio a quadretti con le due colonne vere.)*
 
 **46. Dalia** · Merania · Mese 25 · La ritorsione: la fonte falsificata anni prima, presentata come frode → dimissioni, gogna. · **Chiusura:** spedisce a Elena il filmato avuto dalla guardia del corpo. · 1.900
 
