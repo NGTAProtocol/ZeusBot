@@ -107,7 +107,7 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Con Laura: nessuna parola regge; lascia la mano aperta sul lenzuolo.
 
 ## Fissato nel capitolo 32 (dall'estratto letto da Elena)
-- Cassetta di sicurezza in una banca privata di Cadrasca sotto un nome falso (nato a Merania nel suo stesso anno e mese), aperta il 3 giugno di quindici anni prima (il «convegno» di tre giorni). Accessi rari; uno il 14 novembre dell'anno prima alle 10.05; l'ultimo venerdì 21 maggio alle 11.40. Parte alle cinque di mattina, rientra alle undici di sera: «torna presto».
+- Cassetta di sicurezza in una banca privata di Cadrasca sotto un nome falso (nato a Merania nel suo stesso anno e mese), aperta il 3 giugno di quindici anni prima (il «convegno» di tre giorni). Accessi rari; uno il 14 novembre di due anni prima (due giorni dopo il giorno 0) alle 10.05; l'ultimo venerdì 21 maggio alle 11.40. Parte alle cinque di mattina, rientra alle undici di sera: «torna presto».
 - Giovedì 26 agosto parte per Albaterra («torno domenica», «una cosa di lavoro»).
 
 ## Fissato nel capitolo 33 (notte tra il 29 e il 30 agosto, Merania)
