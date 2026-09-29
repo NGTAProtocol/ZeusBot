@@ -76,7 +76,7 @@ Era vero. Era la cosa più vera che potesse dire, ed era scelta apposta perché 
 
 Carlo sentì la frase entrargli nel petto come l'aria fredda di una stanza chiusa. Non cambiò espressione. Aveva vent'anni di pratica.
 
-«Le linee del pool le ascoltiamo da novembre» aggiunse il capo reparto, come se leggesse un inventario. «Il fisso, le due segreterie. Ma la dottoressa parla poco, al fisso. Il resto lo sa lei meglio di noi.»
+«Le linee del pool le ascoltiamo dal primo giorno, da due anni» aggiunse il capo reparto, come se leggesse un inventario. «Il fisso, le due segreterie. Ma la dottoressa parla poco, al fisso. Il resto lo sa lei meglio di noi.»
 
 Carlo registrò la frase. Il fisso sì, il cellulare di Flora no. Lo sapeva già: era una delle cose che teneva nella seconda colonna da mesi. Tutto quello che Flora diceva al telefono personale, le sere alle 21.15 con sua madre, restava fuori dalle orecchie di quella palazzina. Restava soltanto nelle sue.
 
