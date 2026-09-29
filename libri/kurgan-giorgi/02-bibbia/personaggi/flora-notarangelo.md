@@ -99,3 +99,10 @@ Il sospetto su De Stefano cresce **lentamente, per accumulo**, non per un salto 
 - Sa ora il nome di De Biasi (dal decreto). Collega in silenzio Cicimarra relatore alla nota spese e al comitato.
 - Ricorda la festa del 9 ottobre con Carlo presente. Lista dei trenta giorni; **Porto Clodio fissato per lunedì 29 novembre**, da sola.
 - «Allora abbiamo trenta giorni. E ne possiamo usare diciannove.»
+
+## Fissato nel capitolo 44 (mercoledì 22 dicembre)
+- Carlo sale da lei alle 0.20 (sessantaquattro gradini, quarto piano). Quarto indizio: le carte di Calabrese, di cui si era parlato solo nell'ufficio. **Certezza senza confronto**: non gli chiede come lo sa.
+- Scrive per la prima volta i quattro punti di Carlo sul foglio della tasca con la cerniera.
+- Porta le carte da Cataldo; scrive a Carlo «Da Cataldo». Consegna il fascicolo alla task force alle 7.
+- Porto Clodio: l'armatore del comitato ha ceduto le venti navi il 16 marzo di undici anni prima.
+- Chiusura: «Per ora… le bastava sapere che quella notte aveva scelto il suo.»
