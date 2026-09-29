@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 31 (Flora, lunedì 23 agosto: l'elenco comincia; si scioglie Calabrese; terzo indizio su De Stefano). Scritti: prologo, capitoli 1–30. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 32 (Elena, venerdì 27 agosto: prima lettura della copia, l'estratto di Cadrasca). Scritti: prologo, capitoli 1–31. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -141,3 +141,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Capitolo 29 (Giorgi, 2.223 parole): la consegna al terzo chilometro della strada delle saline, Tanino, il ritardo nella teoria del controllo, il coniglio e la maniglia, «Sì» al telefono, l'inventario di Elena, le trascrizioni della linea di Tanino, «Aspettiamo», il foglio del 31 maggio. Prima crepa: «Li aveva pagati lei.» La mano aperta sul lenzuolo.
 - 2026-09-29 — Passo 0: lettera di Adorisio distrutta dagli uomini di De Biasi al 33 (una riga); intestazione del 29 verificata. Scaletta 30 corretta (a) dopo segnalazione.
 - 2026-09-29 — Capitolo 30 (Dalia, 2.125 parole): trenta righe di routine, Valcerna 9.02, Morenna 8.00, venti curve di controllo, Marcena nel muro, niente prove interne, le vicinanze, Pietro e ottobre, «Due su tre» cancellato, il cassetto sotto il secondo telefono, Nicola rinviato. Terza data e certezza al 41.
+- 2026-09-29 — Capitolo 31 (Flora, 2.172 parole): il plico di via dei Cordai, tre fiducianti e il banchiere della Lanterna, «nessuno fa fatica per caso», Calabrese resta e lascia Partenia, non firma, la richiesta alla Banca d'Italia, il pranzo con Carlo e il registro di Merania. «Niente. Carte vecchie. Agosto.»
