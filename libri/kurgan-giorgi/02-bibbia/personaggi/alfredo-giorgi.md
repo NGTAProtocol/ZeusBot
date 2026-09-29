@@ -122,3 +122,6 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Aveva chiesto lui l'emendamento di marzo; la Sestante è «il prezzo di un attuatore».
 - Pensa a Flora senza averla mai vista: stesso metodo del suo («un avversario così… si fermava togliendogli la fila»).
 - Vota progettando un'emergenza di cose, non di persone, con De Biasi come esecutore. Gira la quarta tazza. «Serve un'emergenza.» Nessuna crepa.
+
+## Fissato nel capitolo 41 (dal telefono di Dalia)
+- Dopo Riva Salmara scrive a Dalia tre volte senza risposta: mercoledì 30 giugno, 23.10, «Come stai?»; martedì 12 ottobre e martedì 9 novembre, alle 10.02, «Stasera?».
