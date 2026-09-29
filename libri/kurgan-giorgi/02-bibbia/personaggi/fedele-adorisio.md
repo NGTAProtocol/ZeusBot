@@ -54,3 +54,6 @@ De Biasi installa Bertola a capo di Casal Fascio subito dopo la morte di Kurgan,
 - Trova Laura attraverso Tanino: dal 14 luglio paga la retta della clinica della madre di Tanino («uno che mi ha chiesto una strada»). Il 18 luglio alle 22.47, al telefono con Tanino: «Non la spostate. Non la toccate… Aspettiamo… Finché lo dico io.»
 - Il 29 luglio, tramite l'avvocato di Partenia, chiede «spese impreviste» e il posto nell'ordine per iscritto: ottiene una seconda partita e una lettera di Giorgi di quattro righe, senza nomi.
 - Il 10 agosto non viene: manda Tanino («Ha detto che lei capisce»). La sera fa chiedere se il dottore è «soddisfatto della consegna».
+
+## Fissato nel capitolo 33 (morte)
+- Guida il golpe con il serrano anziano, Onorato e Carrese contro Bertola a Casal Fascio, all'1.15 del 30 agosto. Sotto ascolto dei servizi da luglio. Entra per primo, con un libro nella tasca della giacca; muore nello scontro. La lettera di Giorgi, trovata sotto un tascabile di un filosofo greco, viene bruciata dai reparti.
