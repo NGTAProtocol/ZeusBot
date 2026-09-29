@@ -82,7 +82,7 @@ Fece il conto come l'aveva sempre fatto: con il corpo, prima che con la testa. L
 
 Da una parte c'era Alfredo, in piedi, con la manica della giacca per terra. Dall'altra c'era Vito, e dietro Vito vent'anni. La stanza con le persiane chiuse. La laurea pagata. La villa di Monte Marzio, il cancello verde, la buganvillea, i venti gradini sotto la cucina, la stanza bianca con le cose nere montate sui cavalletti.
 
-A dicembre Alfredo le aveva chiesto dove dormiva Vito quando non voleva essere trovato. Lei aveva risposto che non lo sapeva. Allora era vero. A maggio dell'anno prima non lo era più, e lei aveva deciso di tacerlo. La villa non era soltanto il letto di Vito. Era il letto dei suoi uomini, di quei ragazzi che nei vicoli di Partenia la chiamavano *signora* anche quando aveva quindici anni.
+Il dicembre di due anni prima Alfredo le aveva chiesto dove dormiva Vito quando non voleva essere trovato. Lei aveva risposto che non lo sapeva. Allora era vero. A maggio dell'anno prima non lo era più, e lei aveva deciso di tacerlo. La villa non era soltanto il letto di Vito. Era il letto dei suoi uomini, di quei ragazzi che nei vicoli di Partenia la chiamavano *signora* anche quando aveva quindici anni.
 
 Quella non l'avrebbe data. Lo decise lì, con il pollice sul filo di velluto.
 
@@ -122,9 +122,9 @@ Alfredo restò in silenzio a lungo. Dalia guardò le sue mani: le teneva lungo i
 
 Dalia sentì il velluto sotto il pollice. Il filo tirato. Lo tirò ancora un poco.
 
-«Te l'ho detto a dicembre. Non lo so.»
+«Te l'ho detto quel dicembre. Non lo so.»
 
-«A dicembre sì.» Alfredo parlò piano, senza guardarla. «A maggio dell'anno scorso sei stata via tre giorni. Una domenica sera ti ho scritto. Mi hai risposto il martedì. *Ero via.*»
+«Quel dicembre sì.» Alfredo parlò piano, senza guardarla. «A maggio dell'anno scorso sei stata via tre giorni. Una domenica sera ti ho scritto. Mi hai risposto il martedì. *Ero via.*»
 
 La stanza divenne molto piccola. Dalia sentì il cuore battere nelle orecchie, un rumore sordo, come qualcuno che bussa dall'altra parte di un muro spesso.
 
