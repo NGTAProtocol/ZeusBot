@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 35 (De Stefano, lunedì 27 settembre: il comando di Rocca Sannella gli è negato). Scritti: prologo, capitoli 1–34. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 36 (Flora, martedì 5 ottobre: arrivano i dati anonimi, venti nomi, il presidente della Cassazione). Scritti: prologo, capitoli 1–35. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -147,3 +147,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Passo 0: cap. 32 verificato (l'11.40 è l'accesso in banca, il «presto» è della sera; il 14 novembre cade due giorni dopo il giorno 0): nessuna modifica.
 - 2026-09-29 — Capitolo 33 (Giorgi, 2.120 parole): l'avviso delle 23.52, il sistema che si corregge da solo, il numero non chiamato, Elena all'1.30, De Biasi alle 2.41 (undici minuti, due morti, due arresti, «Lo abbiamo notato»), la lettera bruciata, Bertola alle 5.10 e il 112, la radio delle 6.30. Nessuna crepa. Non se ne rallegra.
 - 2026-09-29 — Capitolo 34 (Tommaso, 2.158 parole): la fattura 11 della Sestante e la nota spese, Cicimarra, Martina, il premio mai toccato, la biblioteca e la colonna delle date, l'emendamento, il primo invio alla piattaforma anticorruzione, il compagno di master e il Meridiano, SRV-ADM07 alle 16.02. Registro: Sestante Relazioni Istituzionali.
+- 2026-09-29 — Passo 0: SRV-ADM07 = sicurezza interna di AV System (semi, scheda Tommaso); nodo 12.07 confermato aperto per il 38.
+- 2026-09-29 — Capitolo 35 (De Stefano, 2.175 parole): i due fogli sul tavolo, il diniego, «troppo utile dov'è», le due colonne, «non sono mai salito da lei», «dove sarà», il registro di Merania come errore, la bugia sul 9 ottobre guardando negli occhi, il messaggio sulle melanzane. «Davvero?»
