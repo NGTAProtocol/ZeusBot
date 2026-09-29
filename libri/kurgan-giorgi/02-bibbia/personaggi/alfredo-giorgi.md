@@ -91,3 +91,9 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Non entra al casale: guarda da una carrareccia a duecento metri, con Ferri. Per gli uomini di Kurgan deve restare «un nome detto a voce bassa, una distanza».
 - Alle 22.10, nel garage, calcola l'inganno di Adorisio come costo (usura di un componente), non come rimorso. Mostra il foglio «vivo» del 31 maggio come mezza verità; tace di aver saputo alle 23.14 del 28 giugno. Alla domanda «perché io?» dice una sola delle due ragioni (i servizi decidono loro); tace l'altra (un ingannato che sa di esserlo è un difetto noto, non un guasto latente).
 - Rivela il rapimento di Laura ad Adorisio; offre somma e «ordine più grande»; accetta la condizione del segreto («Solo io»). Nessuna crepa.
+
+## Fissato nel capitolo 28 (visto da Elena, 25 luglio)
+- Rientra a Merania alle due di notte tra il 2 e il 3 luglio e mette la chiavetta nel cassetto delle chiavi della console, sotto le chiavi della macchina; non la sposta per ventidue giorni.
+- Pranza a casa la domenica (seconda volta in un mese); risponde a tutti «con un minuto di ritardo». A Elena: «Torna presto… Adesso è più vero.» Sulla chiavetta: «È meglio per tutti, per te prima di tutti, che tu continui a non sapere niente.»
+- Dorme in fretta; salta il terzo gradino senza saperlo. Non si accorge della clonazione.
+
