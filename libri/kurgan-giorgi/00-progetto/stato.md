@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 45 (De Stefano, Mese 25: deve indicare ai servizi dove sono le carte; le manda nel posto sbagliato; brucia il rapporto nel lavandino). Scritti: prologo, capitoli 1–44. **Nodo urgente Tommaso: chiudere al 48.** Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 46 (Dalia, Mese 25: la ritorsione, la fonte falsificata presentata come frode, dimissioni, gogna; spedisce a Elena il filmato di Nicola). Scritti: prologo, capitoli 1–45. **Nodo urgente Tommaso: chiudere al 48.** Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -161,3 +161,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Passo 0: nodo urgente su Tommaso aperto in semi.md (Giorgi a un passo dal nome); verificato che il quinto capitolo di Tommaso (48) affronta il pericolo; annotate le tre cose da risolvere lì.
 - 2026-09-29 — Capitolo 43 (Dalia, 1.745 parole): 6.01 «Complimenti per l'articolo», l'edicola, «Tre su tre» in prima pagina, cento chiamate, il vedovo di Valcerna, AV System, Ardesia, Consob, la diffida, «come stavo», il caporedattore, l'uomo del bar e il dopobarba in ascensore, Nicola, Pietro e il taccuino. «La prima chiamata del giorno era partita da un numero dei servizi.»
 - 2026-09-29 — Capitolo 44 (Flora, 1.950 parole): il citofono delle 0.20, Carlo sul pianerottolo, quaranta ore di anticipo, «le carte di Calabrese», il quarto punto e la retta, il pool dopo lo scoop, Cataldo e la Panda, Porto Clodio (l'armatore numero otto, 16 marzo), «Da Cataldo», il colonnello alle 7 e i ventisei faldoni, il faldone diciotto. «Quella notte aveva scelto il suo.»
+- 2026-09-29 — Capitolo 45 (De Stefano, 1.765 parole, ultimo suo): «Da Cataldo» cancellato, il capo reparto e le carte mancanti, la colonna vuota, «Nella macchina», il fico senza cancello, «Dov'era?» «Scrivevo», la relazione delle 10.12, la lettera di settembre, il foglio a quadretti bruciato nel lavandino. Rischio aperto.
