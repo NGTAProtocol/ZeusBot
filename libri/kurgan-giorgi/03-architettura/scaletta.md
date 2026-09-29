@@ -198,7 +198,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **43. Dalia** · Merania · giovedì 16 dicembre (Mese 25) · Lo scoop esce alle 6.00 → il telefono squilla senza sosta. · **Chiusura:** la prima chiamata è di un numero dei servizi. · 1.800 *(Scritto: alle 6.01 «Buongiorno, dottoressa Esposito. Complimenti per l'articolo»; l'edicola della stazione; comunicato di AV System, Ardesia, Consob, diffida; le quattro telefonate al direttore; Nicola; Pietro riconosce il numero dal taccuino di giudiziaria.)*
 
-**44. Flora** · Albaterra · Mese 25 · Lo scoop e i dati: il pool accelera → la task force viene a prendere il fascicolo; De Stefano l'avverte in tempo. · **Chiusura:** Flora capisce che lui gioca su due tavoli. Decide di fidarsi, per ora. · 2.000
+**44. Flora** · Albaterra · mercoledì 22 dicembre (Mese 25) · Lo scoop e i dati: il pool accelera → la task force viene a prendere il fascicolo; De Stefano l'avverte in tempo. · **Chiusura:** Flora capisce che lui gioca su due tavoli. Decide di fidarsi, per ora. · 2.000 *(Scritto: Carlo sale per la prima volta alle 0.20 e avverte: la task force viene alle 7, quaranta ore prima, e «non tenere niente qui, le carte di Calabrese»; quarto indizio → certezza senza confronto; le carte da Cataldo; Porto Clodio riferito; «Da Cataldo» mandato a Carlo; il colonnello alle 7, ventisei faldoni; nessuno cerca «altrove». Chiusura: «quella notte aveva scelto il suo.»)*
 
 **45. De Stefano** (raro) · Albaterra · Mese 25 · Deve indicare ai servizi dove sono le carte → le manda nel posto sbagliato. · **Chiusura:** brucia il suo rapporto nel lavandino. · 1.800
 
