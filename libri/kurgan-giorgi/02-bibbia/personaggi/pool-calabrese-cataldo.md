@@ -21,3 +21,7 @@ Nasce come risposta dello Stato alle **tre stragi** (Valcerna, Morenna, Marcena)
 - La fede di Calabrese come barometro: due giri pensa, quattro è nervoso, sei è peggio.
 - **Prima lettera anonima (22 gennaio):** timbro di Albaterra, testo stampato: «Chiudi a chiave, amore. Anche se sei in casa.», la frase della sua telefonata del 25 novembre, quindi intercettata. Sotto, l'indirizzo dello studio dove la moglie lavora solo il giovedì alle quattro. Arriva il giovedì alle 15.30.
 - La moglie è giovane; Calabrese la chiama «amore».
+
+## Fissato nel capitolo 27 (lunedì 5 luglio)
+- **Calabrese:** la moglie è incinta, terzo mese. Dopo Riva Salmara scrive (sabato 3 luglio) la richiesta di tornare a Partenia e la lascia aperta sulla scrivania di Flora. Sei giri di fede. Scopre che Flora e Cataldo gli hanno taciuto Valdhof: «Quindi siete in due. E io sono quello che non deve sapere.» Termine: manderà la lettera venerdì 9 luglio. Alla fine la posa sul tavolo accanto al foglio degli artificieri e non la riprende.
+- **Cataldo:** porta la ventitreesima pagina che nessuno aveva letto (relazione preliminare degli artificieri: innesco a comando via radio entro trecento metri); l'ha trovata perché l'indice diceva ventitré. «Se lei se ne va, le carte le leggo da solo. Ci metto il doppio. Ma le leggo.» Occhiali, camicia stirata male. Primo peso inatteso del sottovalutato (proposta della scheda: **confermata**).
