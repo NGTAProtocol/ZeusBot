@@ -29,3 +29,7 @@ Nasce come risposta dello Stato alle **tre stragi** (Valcerna, Morenna, Marcena)
 ## Fissato nel capitolo 31 (lunedì 23 agosto)
 - **Calabrese resta:** applicato a tempo pieno alla Direzione nazionale, lascia Partenia e la sua indagine (al collega più anziano, prudente). Moglie dalla madre al nord fino al parto. Copie delle carte a casa di Flora. **Non firma** le richieste sui tre fiducianti: «le lettere arrivano a chi firma… Adesso vi proteggo io, allo stesso modo. Non firmando.» Strappa la lettera in quattro e se la mette in tasca. Conosce l'ammiraglio di nome.
 - **Cataldo:** quaranta minuti per escludere ogni legame pubblico fra i tre; firma accanto a Flora: «Adesso lo sanno.»
+
+## Fissato nel capitolo 36 (martedì 5 ottobre)
+- **Calabrese** firma la richiesta al registro («Se c'è un senatore, voglio che sappiano che siamo in tre. Tre è più difficile da spostare di due»): eccezione alla condizione del cap. 31, con il costo per la moglie. «Questa non è un'organizzazione criminale. Questo è un circolo.»
+- **Cataldo**: la lente dei timbri; legge la mano del mittente («È giovane… Scrive come lei»); separa i 38 gusci; nota per primo la data del 2 marzo; scrive i venti in colonna. «Se sa contare, prima o poi qualcuno conterà anche lui.»
