@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 39 (Flora, Mese 24: Portofosco, Tarassa, Dorsale, Litoranea; Cicimarra presenta la legge d'emergenza; trenta giorni). Scritti: prologo, capitoli 1–38. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 40 (Elena, Mese 24: il deposito della copia nella cassetta a nome da nubile; «può tenerla, ma non usarla»). Scritti: prologo, capitoli 1–39. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -153,3 +153,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Capitolo 37 (Giorgi, 2.163 parole, chiude la Parte III): quattro tazze, Cicimarra attuatore, «non lo sappiamo», il foglio di sessanta righe e la riga quarantuno, la Sestante come prezzo, le tre possibilità, la legge dei dodici articoli, la quarta tazza come prova, un'emergenza di cose e non di persone. «Serve un'emergenza.»
 - 2026-09-29 — Correzione di calendario: il giorno 0 cade due anni prima dei cap. 12–38; corretti «l'anno prima», «dieci mesi», «l'anno scorso» nei cap. 16, 30, 32, 34, 35, 37 (e ritirata la conclusione sbagliata del Passo 0 del 33 sul 14 novembre).
 - 2026-09-29 — Capitolo 38 (Tommaso, 1.850 parole, apre la Parte IV): la radio delle 5.41 e le quattro bombe, Portofosco e Tarassa, la fermata di Marcena, la nota della Ardesia del 12 novembre, trentuno conti, i dieci anni delle scritture contabili, 12.07.04 AGIORGI, l'esportazione delle 9.47, SRV-ADM07 alle 11.02, il foglietto giallo. «Il fondo sapeva.»
+- 2026-09-29 — Passo 0: verificate le date di Portofosco e Tarassa (stesso anno del presente, dopo Riva Salmara): nessuna correzione.
+- 2026-09-29 — Capitolo 39 (Flora, 1.943 parole): l'art. 7 cerchiato, il decreto delle 23.40, De Biasi comandante, la colonna delle date, l'ipotesi del Parlamento, il procuratore («il più connesso d'Italia»), Cicimarra relatore, il giudice dal 13, la festa del 9 ottobre, la lista dei trenta giorni, Porto Clodio lunedì 29. «Ne possiamo usare diciannove.»
