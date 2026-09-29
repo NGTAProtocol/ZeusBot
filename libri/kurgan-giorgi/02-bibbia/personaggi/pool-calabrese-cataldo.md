@@ -37,3 +37,7 @@ Nasce come risposta dello Stato alle **tre stragi** (Valcerna, Morenna, Marcena)
 ## Fissato nel capitolo 39 (martedì 23 novembre)
 - **Cataldo:** cerchia l'art. 7 due volte; la scheda pubblica di De Biasi («Non ha mai comandato un'indagine in vita sua. Adesso le comanda tutte»); «la legge arriva prima del diritto»; conta diciannove giorni lavorativi.
 - **Calabrese:** «Ci assorbono… È più elegante.» Dopo il procuratore: «Da oggi firmo tutto.»
+
+## Fissato nel capitolo 44 (22 dicembre)
+- **Cataldo:** alle 1.10 in tuta con una Panda grigia di quindici anni; ospita le carte nel suo soggiorno; «Io non so mai niente, dottoressa.»
+- **Calabrese:** firma per primo il modulo di consegna; sa che il decreto di sequestro era nel faldone diciotto. Non sa dove sono le carte.
