@@ -8,6 +8,7 @@
 - **I quattro ex funzionari di Kurgan:** autori del golpe fallito contro Bertola.
 
 ## Fissati nel capitolo 12
+- **Laura, al ritorno (cap. 29):** coperta grigia non sua; il coniglio di pezza sotto il mento; guarda le maniglie delle porte; una sola parola al telefono con la madre («Sì»); luce accesa di notte; gira lei la chiave della porta di casa, due volte. Nessun dettaglio sulla prigionia.
 - **Laura (7 anni):** divisa della scuola delle suore (gonna blu a pieghe, camicetta bianca, cardigan con lo stemma); scende le scale tenendosi con due mani; suor Agnese la mette davanti al coro «perché è piccola»; canta una canzone sulla Madonna e sul mare, sbagliando la terza strofa. Dorme con la luce del corridoio accesa (cap. 2).
 - **Fabrizio:** cuffie al collo, beve il latte in piedi. **Cesare:** sempre in ritardo, zaino aperto.
 - **Sergio:** autista-guardia del corpo di Laura da quattro anni, pistola sotto la giacca. L'11 maggio segnala una berlina grigia con targa di fuori davanti alla scuola, tre volte in una settimana.
@@ -29,6 +30,7 @@
 - **Ritorno (cap. 13):** per un anno solo porti stranieri. A marzo dell'anno seguente la madre smette di alzarsi dal letto; Kurgan lo fa rientrare di notte da Punta Saline e paga alla madre una clinica sulla collina. Da allora lavora al molo e la domenica va a trovarla. È la leva di Kurgan su di lui.
 - **Ruolo nel rapimento:** guida la macchina del cambio sulla Litoranea; non sa chi c'è in macchina finché non la vede.
 - **Partenza (allineato):** quella notte parte su una petroliera con il Biondo e Rocco (cap. 3: «Con il Biondo e con Rocco»; cap. 7: «tre dei suoi uomini sono in mare»). Il Biondo e Rocco rientrano in autunno dell'anno dopo, quando il dottore non può più toccarli; Tanino resta a bordo fino a marzo dell'anno seguente.
+- **Fissato al cap. 29:** consegna Laura a Giorgi alle 5.53 del 10 agosto, al terzo chilometro della strada delle saline; non lo guarda; riparte verso le saline. Linea sotto ascolto di routine dopo Riva Salmara: dal 14 luglio la clinica è pagata da un conto nuovo; alla madre: «uno che mi ha chiesto una strada, mamma. Solo una strada.»
 - **Filo, deciso:** quando vede la bambina non fa niente di visibile (la madre è nella clinica pagata da Kurgan). Il suo cedimento è piccolo: dopo la morte di Kurgan è lui la strada per cui Adorisio trova Laura «prima di quanto dichiara» — un'informazione, o una porta lasciata aperta. Spiega il ritardo di Adorisio scoperto da Giorgi al cap. 29.
 
 ## Fissato nel capitolo 14
