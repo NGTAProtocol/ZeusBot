@@ -69,3 +69,14 @@ La magistrata che segue la fusione delle mafie fino a Osiride: la giustizia a cu
 - Decide un giorno di ferie per martedì 29: capitaneria di porto di Porto Clodio, registro navale della Clodia Navi, da sola. Non lo dice a nessuno.
 - Dice «Non ancora» a Calabrese su Valdhof: una cosa falsa per una ragione che le sembra vera.
 - Non sa: AV System, Porta Vetra, Kurgan, Civitas Perennis.
+
+## Il sospetto su Carlo: per accumulo
+Il sospetto su De Stefano cresce **lentamente, per accumulo**, non per un salto logico nel giorno della bomba. Flora mette i punti in fila e si rifiuta di tracciare la retta finché i punti sono due. Ogni capitolo aggiunge al massimo un punto (indizi: 9, 20, 31, più uno libero); ciò che lei *non chiede* pesa quanto ciò che trova.
+
+## Fissato nel capitolo 27 (lunedì 5 luglio, Albaterra)
+- **Porto Clodio:** non ci va. Disdice il giorno di ferie lunedì 28 sera senza darsi una ragione; il 29 scrive in ufficio la relazione semestrale (41 pagine; a pagina 19 un paragrafo su Kurgan al presente, corretto la sera). Sul terzo foglio: «rinviato».
+- La madre alle 21.15: «Meno male che tu il mare non lo vedi mai.» Solo dopo pensa a Carlo. **Quarto foglio** nella tasca con la cerniera: «26 giugno: stai lontana dalla costa» / «29 giugno: Riva Salmara. Costa adriatica». «Due punti non facevano una sequenza.»
+- Carlo la chiama mercoledì 30 (il caldo, un condizionatore rotto, la cena spostata a dopo il quindici). Ha la domanda pronta, «Perché la costa, Carlo?», e non la fa.
+- Nel fascicolo archiviato: 114 pagine su Kurgan, «l'alto» per i collaboratori.
+- I quattro punti contro la versione ufficiale; il quinto, dopo il foglio degli artificieri, senza nome.
+- Dice a Calabrese la verità su Valdhof per tenerlo nel pool: «la ragione è quella vera». Guarda Cataldo «come se lo vedesse per la prima volta dal giorno del decreto».
