@@ -33,3 +33,7 @@ Nasce come risposta dello Stato alle **tre stragi** (Valcerna, Morenna, Marcena)
 ## Fissato nel capitolo 36 (martedì 5 ottobre)
 - **Calabrese** firma la richiesta al registro («Se c'è un senatore, voglio che sappiano che siamo in tre. Tre è più difficile da spostare di due»): eccezione alla condizione del cap. 31, con il costo per la moglie. «Questa non è un'organizzazione criminale. Questo è un circolo.»
 - **Cataldo**: la lente dei timbri; legge la mano del mittente («È giovane… Scrive come lei»); separa i 38 gusci; nota per primo la data del 2 marzo; scrive i venti in colonna. «Se sa contare, prima o poi qualcuno conterà anche lui.»
+
+## Fissato nel capitolo 39 (martedì 23 novembre)
+- **Cataldo:** cerchia l'art. 7 due volte; la scheda pubblica di De Biasi («Non ha mai comandato un'indagine in vita sua. Adesso le comanda tutte»); «la legge arriva prima del diritto»; conta diciannove giorni lavorativi.
+- **Calabrese:** «Ci assorbono… È più elegante.» Dopo il procuratore: «Da oggi firmo tutto.»
