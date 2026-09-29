@@ -93,3 +93,9 @@ Il sospetto su De Stefano cresce **lentamente, per accumulo**, non per un salto 
 - Il procuratore nazionale le chiede di tenere il foglio in due per un mese.
 - Chiusura: «Ne mancano quaranta.»
 - Sa ora: Cicimarra, la Sestante, l'istituto e i venti. Non sa ancora: Osiride, Civitas Perennis per nome, AV System come mittente.
+
+## Fissato nel capitolo 39 (martedì 23 novembre)
+- Legge l'art. 7 del decreto; colonna delle date (Portofosco, Tarassa, autostrade, decreto). Ipotesi, non scritta: stragi per i mercati, bombe senza morti per il Parlamento.
+- Sa ora il nome di De Biasi (dal decreto). Collega in silenzio Cicimarra relatore alla nota spese e al comitato.
+- Ricorda la festa del 9 ottobre con Carlo presente. Lista dei trenta giorni; **Porto Clodio fissato per lunedì 29 novembre**, da sola.
+- «Allora abbiamo trenta giorni. E ne possiamo usare diciannove.»
