@@ -94,3 +94,9 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - Trasferisce «Saggio» su una chiavetta nuova (contanti, negozio dall'altra parte della città) e lo cancella dal portatile. Fabrizio la vede e dice di non aver visto niente.
 - Cassetta n. 87 nella banca di credito cooperativo della madre (via del mercato), a nome Pisapia Elena; nessun delegato; corrispondenza dalla madre (75 anni). Conta le macchine nella via: undici, le stesse.
 - Chiusura: «Può tenerla. Non può usarla.»
+
+## Fissato nel capitolo 47 (mercoledì 29 dicembre)
+- Riceve la busta a nome Pisapia Elena; guarda gli undici file sul vecchio portatile di Fabrizio; collega il 4 giugno di quindici anni prima alla cassetta di Cadrasca (3 giugno).
+- Lista dei quattro mittenti possibili, Dalia compresa, senza certezza; aveva già annotato il nome «Dalia Esposito» il 16.
+- Gelo: nessuna scenata, nessun pianto. Tiene la chiavetta nera accanto alla chiave della cassetta 87, non dentro.
+- A cena sorride al marito: «Le faccio come le faceva lei.»
