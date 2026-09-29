@@ -47,3 +47,5 @@ Laureato in economia/finanza, entrato da poco in AV System, orgoglioso di far pa
 - **Contatto comune con Dalia: fissato** (vedi semi.md). Non si espone ancora.
 - **SRV-ADM07 (deciso dopo il cap. 34):** è la **sicurezza interna di AV System**. Il rischio per Tommaso cresce perché il controllo è vicino, non lontano: sta nell'edificio, conosce il suo codice e i suoi orari, e può revocargli un accesso o convocarlo senza passare da nessun altro.
 - **Nodo aperto per il cap. 38:** i dati interni completi delle 12.07 (per ora solo a memoria: «AGIORGI, 12.07.04»).
+
+- **Cap. 36 (senza comparire):** la sua segnalazione arriva al pool il 5 ottobre tramite l'Autorità nazionale anticorruzione. Tommaso non lo sa.
