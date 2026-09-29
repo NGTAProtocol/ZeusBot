@@ -39,7 +39,7 @@ Laureato in economia/finanza, entrato da poco in AV System, orgoglioso di far pa
 - Chi è il contatto comune con Dalia: un vecchio compagno di master, analista in una banca d'affari straniera a Porta Vetra, senza nome proprio (fissato al cap. 34).
 
 ## Fissato nel capitolo 34 (giovedì 16 settembre)
-- Da dieci mesi alle riconciliazioni, diciannovesimo piano, stesse regole (arriva alle 8.30, schermo spostato di dieci centimetri, pranzo al bar all'angolo, niente treno per Marcena, trentuno passi all'ascensore). Chiavetta blu con il tappo rotto nella tasca interna, sotto la carta d'identità.
+- Da quasi due anni alle riconciliazioni, diciannovesimo piano, stesse regole (arriva alle 8.30, schermo spostato di dieci centimetri, pranzo al bar all'angolo, niente treno per Marcena, trentuno passi all'ascensore). Chiavetta blu con il tappo rotto nella tasca interna, sotto la carta d'identità.
 - Riconcilia dal novembre del giorno 0 le fatture della Sestante Relazioni Istituzionali; a marzo nota l'indirizzo di via dei Cordai. Il 16 settembre, la nota spese con il nome di Cicimarra.
 - Rompe per la prima volta la regola del pranzo: biblioteca dell'università, postazione 7. Colonna delle date a matita; l'emendamento di marzo. Primo invio alla piattaforma dell'Autorità nazionale anticorruzione (13.14). Diciassette gradini.
 - Dà una copia al vecchio compagno di master (analista, banca d'affari straniera) perché arrivi a una giornalista del Meridiano di cui non vuole sapere il nome. «C'è qualcuno che ti segue?» «Non lo so.»
@@ -49,3 +49,10 @@ Laureato in economia/finanza, entrato da poco in AV System, orgoglioso di far pa
 - **Nodo aperto per il cap. 38:** i dati interni completi delle 12.07 (per ora solo a memoria: «AGIORGI, 12.07.04»).
 
 - **Cap. 36 (senza comparire):** la sua segnalazione arriva al pool il 5 ottobre tramite l'Autorità nazionale anticorruzione. Tommaso non lo sa.
+
+## Fissato nel capitolo 38 (lunedì 15 novembre)
+- Sveglia alle 5.40 da due anni, radio alle 5.41; autobus delle 7.52 invece del treno per Marcena. Apprende le quattro bombe dalla radio: conta gli orari e le squadre.
+- A Martina: «Due anni fa c'erano i morti.» Prima frase non di lavoro in due anni.
+- Vede per la prima volta il nome **Ardesia Custodia** (nota di commissione del venerdì 12 novembre: trentuno conti, sei minuti prima della chiusura). Ricorda che le scritture contabili si conservano dieci anni (Martina, il primo giorno) e recupera la nota del 12 novembre di due anni prima: **12.07.04, AGIORGI**. Esporta le due note alle 9.47 con la causale del manuale. SRV-ADM07 le visualizza alle 11.02.
+- Appuntamento scritto su un foglietto giallo per venerdì 19 novembre, 13.30, con il compagno di master.
+- **Nodo delle 12.07: risolto.**
