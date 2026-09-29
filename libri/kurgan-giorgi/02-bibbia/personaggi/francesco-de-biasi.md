@@ -48,3 +48,6 @@ Il militare che fa il lavoro sporco di Osiride dopo Kurgan: crea Casal Fascio, l
 
 ## Fissato nel capitolo 33
 - Sa del golpe in anticipo (ascolto da luglio, rafforzato dalla richiesta di Giorgi sulla linea di Tanino). Fa uscire Bertola dal retro e mette i reparti nel casale: undici minuti. Consegna Onorato e Carrese ai Carabinieri; «I nostri non esistono». Chiama Giorgi alle 2.41 da un'auto in movimento. «È il vantaggio dei golpe che falliscono. Rendono stabili i governi che volevano rovesciare.» «Lo abbiamo notato.» Chiede se Adorisio avesse chiesto qualcosa a Giorgi; non insiste.
+
+## Fissato nel capitolo 39
+- Nominato dal decreto-legge del 22 novembre (art. 7, comma 3) comandante della Task force nazionale presso la Presidenza del Consiglio, con il grado di generale di corpo d'armata. Scheda pubblica: reparti speciali, addestramento all'estero, promozione senza cerimonia; foto a una parata, capelli grigi cortissimi, mani dietro la schiena.
