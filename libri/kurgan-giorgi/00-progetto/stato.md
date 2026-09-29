@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 29 (Giorgi, martedì 10 agosto: Laura torna, prima crepa). Scritti: prologo, capitoli 1–28. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 30 (Dalia, mercoledì 18 agosto: le date delle stragi e le posizioni al ribasso). Scritti: prologo, capitoli 1–29. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -138,3 +138,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Capitolo 27 (Flora, 2.148 parole): la lettera di Calabrese aperta sulla scrivania, il 29 in ufficio e «rinviato», il quarto foglio con due punti, la domanda non fatta a Carlo, i quattro punti contro la versione ufficiale, la moglie incinta, la verità su Valdhof, il termine di venerdì, la ventitreesima pagina degli artificieri. «Qualcuno era lì.»
 - 2026-09-29 — Passo 0: seme della persona sola in cancelleria confermato (non Carlo; possibile infiltrazione di Osiride nella Direzione nazionale, pagamento libero); «Calabrese resta o parte» aperto fino al cap. 31.
 - 2026-09-29 — Capitolo 28 (Elena, 2.052 parole): il cordino nel cassetto dal 3 luglio, sessantasette giorni, «Torna presto» (3), «Serve a lei?» e il non-no, le due ragioni sulla ricevuta, i respiri contati, i quattro punti del cassetto, Nocciolo1207 al primo tentativo, la cartella «Saggio», Fabrizio e il cordino, la matita di Cadrasca. Alle 7.10 lui richiude il cassetto senza guardare.
+- 2026-09-29 — Capitolo 29 (Giorgi, 2.223 parole): la consegna al terzo chilometro della strada delle saline, Tanino, il ritardo nella teoria del controllo, il coniglio e la maniglia, «Sì» al telefono, l'inventario di Elena, le trascrizioni della linea di Tanino, «Aspettiamo», il foglio del 31 maggio. Prima crepa: «Li aveva pagati lei.» La mano aperta sul lenzuolo.
