@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 42 (Giorgi, mercoledì 15 dicembre sera, Albaterra: la legge passa; il Meridiano chiama per un commento; riconosce il nome della giornalista). Scritti: prologo, capitoli 1–41. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 43 (Dalia, giovedì 16 dicembre: lo scoop esce alle 6.00; la prima chiamata è di un numero dei servizi). Scritti: prologo, capitoli 1–42. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -157,3 +157,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Capitolo 39 (Flora, 1.943 parole): l'art. 7 cerchiato, il decreto delle 23.40, De Biasi comandante, la colonna delle date, l'ipotesi del Parlamento, il procuratore («il più connesso d'Italia»), Cicimarra relatore, il giudice dal 13, la festa del 9 ottobre, la lista dei trenta giorni, Porto Clodio lunedì 29. «Ne possiamo usare diciannove.»
 - 2026-09-29 — Capitolo 40 (Elena, 1.845 parole): la chiavetta da undici euro e novanta, la torre accanto al telegiornale, «Se vengono qui», i quattro secondi di Alfredo, la banca da pensionati, Fabrizio («Io non ho visto niente»), «Saggio» cancellato, la cassetta 87 a nome Pisapia, undici macchine. «Può tenerla. Non può usarla.»
 - 2026-09-29 — Capitolo 41 (Dalia, 1.961 parole): le due chiavette, «12 NOVEMBRE», tre su tre al secondo, la fine di una visione, il risveglio, il secondo telefono e i tre messaggi, Pietro, «Tre su tre», il direttore. «Domattina lo pubblichiamo.» Data spostata al 15 dicembre per la catena 41–42–43.
+- 2026-09-29 — Capitolo 42 (Giorgi, 1.835 parole): 161 voti alle 19.42, undici più della stima, il regime, la fila tolta, Salvarani alle 20.15, le domande del Meridiano alle 21.38, rumore e perdita, il ragazzo spostato tre piani più in basso, la correzione che può avere come oggetto lui, «Dalia Esposito». «Conosceva quel nome.» Nessuna crepa.
