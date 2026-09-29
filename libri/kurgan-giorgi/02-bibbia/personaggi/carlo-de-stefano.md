@@ -60,3 +60,6 @@ L'uomo dei servizi incaricato di sorvegliare Flora che se ne innamora e la prote
 - **Prima bugia guardando negli occhi** il capo reparto (regola che si era dato: incomplete sì, false mai): Flora «ad Albaterra» il 9 ottobre.
 - Sa che il fisso del pool è ascoltato da novembre e il cellulare di Flora no.
 - Messaggio a Flora: accetta l'invito della madre per i settant'anni. Esce guardando a destra, a sinistra, e di nuovo a destra.
+
+## Fissato nel capitolo 39 (ricordo di Flora)
+- Il 9 ottobre è andato alla festa per i settant'anni della madre di Flora, con una bottiglia di vino e fiori sbagliati; è rimasto fino alla domenica sera senza guardare il telefono. La madre: «finalmente». Ride per la quinta volta in tre anni.
