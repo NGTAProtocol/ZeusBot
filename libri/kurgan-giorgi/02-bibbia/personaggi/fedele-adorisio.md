@@ -49,3 +49,8 @@ De Biasi installa Bertola a capo di Casal Fascio subito dopo la morte di Kurgan,
 - Giorgi gli mostra il foglio del 31 maggio con «vivo» sottolineato due volte («L'avevo scritto io»): Adorisio crede che anche il dottore sia stato scavalcato. Non sa che Giorgi sapeva della bomba.
 - Giorgi gli rivela il rapimento di Laura. Adorisio: un battito di palpebre più lento, poi «Da quando?» (Giorgi non sa leggere se è sorpresa o il ricordo di «una cosa sua»). Offerta: una somma attraverso una partita di merce già pagata e mai consegnata; un posto in «un ordine più grande» (le forze pontificie, non nominate).
 - La sua condizione: nessuno deve sapere che la cerca, né i servizi, né De Biasi, né Bertola. «Mi dia tre settimane.» Non rivela di averla già trovata (lo farà il cap. 29).
+
+## Fissato nel capitolo 29 (senza comparire)
+- Trova Laura attraverso Tanino: dal 14 luglio paga la retta della clinica della madre di Tanino («uno che mi ha chiesto una strada»). Il 18 luglio alle 22.47, al telefono con Tanino: «Non la spostate. Non la toccate… Aspettiamo… Finché lo dico io.»
+- Il 29 luglio, tramite l'avvocato di Partenia, chiede «spese impreviste» e il posto nell'ordine per iscritto: ottiene una seconda partita e una lettera di Giorgi di quattro righe, senza nomi.
+- Il 10 agosto non viene: manda Tanino («Ha detto che lei capisce»). La sera fa chiedere se il dottore è «soddisfatto della consegna».
