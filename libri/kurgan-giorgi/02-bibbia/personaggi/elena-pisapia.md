@@ -71,3 +71,14 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - Non lo segue («non si segue un uomo che ha una scorta»). Cerca che cosa succede alle 13.30 (voli, un treno delle 13.28, un'udienza, una conferenza stampa) e butta il foglio. Tiene Cesare a casa senza ragione.
 - Terza lista sulla ricevuta della farmacia: sette righe, poi, staccato in fondo, «13.30». Non lo lega a niente.
 - Fabrizio riconosce «il vestito del nonno»: Elena si accorge di averlo sottovalutato.
+
+## Fissato nel capitolo 28 (domenica 25 luglio, notte sul 26)
+- **Il cassetto delle chiavi:** primo cassetto della console nell'ingresso, sotto lo specchio. Contenuto: chiavi della macchina di Alfredo (portachiavi di cuoio), chiavi di scorta della casa al mare, telecomando del cancello, due monete da un euro, una matita dell'albergo di Cadrasca di quindici anni prima. Dal 3 luglio, sotto le chiavi, la chiavetta con il cordino nero. Alfredo apre il cassetto ogni mattina alle 7.10 e non guarda dentro.
+- Sessantasette giorni da via dei Tintori. Apparecchia per quattro dalla seconda settimana (Cesare: «perché metti il piatto di Laura se Laura è dai nonni?»).
+- In giardino, sotto il glicine: «Voglio sapere quando.» «Torna presto.» Terzo «presto» (21 maggio, 20 giugno, 25 luglio). «Serve a lei?» Lui non dice no. Elena finge per il resto della giornata: «Fingere era una cosa che si faceva con le mani.»
+- Sulla ricevuta: «Presto (3). Non ha detto no.»; le due ragioni con il trattino (leva, assicurazione); «Stanotte.»
+- Conta i respiri di Alfredo (un piccolo rumore in gola ogni sette respiri); si alza all'1.10; salta il terzo gradino, che scricchiola. Memorizza la posizione in quattro punti: cuoio a destra, tre giri, porta verso il fondo, telecomando sulla moneta.
+- Il portatile gemello sta nel mobile dei grembiuli, dietro i libri di ricette. Password al primo tentativo; nove cartelle di cui non legge i nomi; cartella «Saggio»; 4.117 elementi, 14 minuti. Copertura: il libro di ricette aperto sulla torta di mele.
+- Fabrizio scende all'1.29 e vede il cordino. «Buonanotte, mamma.» Lei annota con la matita per gli occhi: «1.31 — F. (cordino).»
+- Rimette la chiavetta identica; non tocca la matita di Cadrasca, di cui non ricorda l'orientamento. **Non legge la copia** (prima lettura al cap. 32).
+
