@@ -41,3 +41,11 @@ De Biasi installa Bertola a capo di Casal Fascio subito dopo la morte di Kurgan,
 ## Fissato nel capitolo 17 (senza nome)
 - Nei capitoli di Giorgi è «la variabile interna». Profilo dalla mappa dei servizi: nel nucleo da quindici anni, non nato nel nucleo, un'altra montagna e un'altra lingua, legge libri, negli ultimi mesi scavalcato nella fiducia di Kurgan da uomini più giovani e più rumorosi.
 - Riceve l'offerta attraverso un avvocato di Partenia. Risponde il 31 maggio alle 23.52: «Sì», con una condizione: **Kurgan consegnato vivo, o niente.**
+
+## Fissato nel capitolo 26 (venerdì 2 luglio, la rivelazione)
+- **Aspetto:** quarantasei anni, ne dimostra di più; faccia chiusa dei serrani, cicatrice sottile sul sopracciglio, occhi chiari di chi legge molto e dorme poco. Porta sempre un libro.
+- Al casale (Casal Fascio) arriva per ultimo, legge il nome sul muro prima di entrare; esce per ultimo, non stringe la mano a Bertola, guarda la strada verso la macchina di Giorgi.
+- Alle 22.10, nel secondo interrato di un garage di Albaterra: «Lei mi aveva detto vivo.» Leva, non confessione. Dice che i biglietti passarono per mani non sue e che Kurgan lo chiamò alle 5.45 («tu tieni la villa»). Capisce da solo che il generale del casale era a Riva Salmara («quando siamo entrati»).
+- Giorgi gli mostra il foglio del 31 maggio con «vivo» sottolineato due volte («L'avevo scritto io»): Adorisio crede che anche il dottore sia stato scavalcato. Non sa che Giorgi sapeva della bomba.
+- Giorgi gli rivela il rapimento di Laura. Adorisio: un battito di palpebre più lento, poi «Da quando?» (Giorgi non sa leggere se è sorpresa o il ricordo di «una cosa sua»). Offerta: una somma attraverso una partita di merce già pagata e mai consegnata; un posto in «un ordine più grande» (le forze pontificie, non nominate).
+- La sua condizione: nessuno deve sapere che la cerca, né i servizi, né De Biasi, né Bertola. «Mi dia tre settimane.» Non rivela di averla già trovata (lo farà il cap. 29).
