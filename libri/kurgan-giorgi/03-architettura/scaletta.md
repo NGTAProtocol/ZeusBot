@@ -188,7 +188,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **38. Tommaso** · Merania · lunedì 15 novembre (Mese 24) · Le bombe sulla Dorsale all'alba → il fondo è di nuovo posizionato. · **Chiusura:** il fondo sapeva. · 1.900 *(Scritto: le quattro bombe tra le 3.50 e le 4.20 su Dorsale e Litoranea; le posizioni aperte venerdì 12 novembre 17.24–17.29 tramite Ardesia Custodia su trentuno conti; la nota di commissione di due anni prima, conservata dieci anni come scrittura contabile, con 12.07.04 e AGIORGI: **nodo delle 12.07 risolto**.)*
 
-**39. Flora** · Albaterra · Mese 24 · Portofosco, Tarassa, la Dorsale, la Litoranea → Cicimarra presenta la legge d'emergenza; la task force sarà di De Biasi. · **Chiusura:** hanno trenta giorni prima di perdere il fascicolo. · 2.000
+**39. Flora** · Albaterra · martedì 23 novembre (Mese 24) · Portofosco, Tarassa, la Dorsale, la Litoranea → Cicimarra presenta la legge d'emergenza; la task force sarà di De Biasi. · **Chiusura:** hanno trenta giorni prima di perdere il fascicolo. · 2.000 *(Scritto: decreto-legge approvato lunedì 22 alle 23.40; art. 7, trasmissione entro trenta giorni alla Task force di De Biasi; scadenza 23 dicembre; giudice di turno dal 13; Porto Clodio deciso per lunedì 29 novembre, non raccontato qui. Chiusura: «Allora abbiamo trenta giorni. E ne possiamo usare diciannove.»)*
 
 **40. Elena** · Merania · Mese 24 · La copia fatta al 28 (e letta per la prima volta al 32) trova casa: la cassetta a nome da nubile, in una banca che il marito non controlla. Nessuna clonazione in questo capitolo. · **Chiusura:** può tenerla, ma non usarla. · 1.900
 
