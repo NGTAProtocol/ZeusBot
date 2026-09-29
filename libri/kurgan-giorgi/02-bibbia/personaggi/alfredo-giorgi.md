@@ -132,3 +132,7 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Salvarani gli telefona (fatto raro): il complimento come misura.
 - Le domande del Meridiano: distingue rumore (fuori) e **perdita** (dentro); deduce l'archivio delle riconciliazioni e il ragazzo spostato due anni prima, senza nome. Detta la risposta.
 - Considera per la prima volta che la correzione del sistema possa avere come oggetto lui. Riconosce il nome: Dalia Esposito. Nessuna crepa.
+
+## Fissato nel capitolo 47 (visto da Elena, dal 16 al 29 dicembre)
+- Dopo lo scoop lavora da casa, nello studio a porta chiusa; otto notti sul divano dello studio. Una ruga nuova tra le sopracciglia. A cena: «Sono buone. Come le faceva tua madre.»
+- Negli undici file (quindici anni di festini) tiene sempre un solo bicchiere; in uno si volta verso la telecamera.
