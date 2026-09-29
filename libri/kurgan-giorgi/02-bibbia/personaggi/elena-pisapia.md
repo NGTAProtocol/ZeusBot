@@ -36,7 +36,7 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 
 ## Dettagli fisici/di caratterizzazione da fissare
 - **Aspetto (fissato):** elegante, deliberatamente anonima in pubblico.
-- Provenienza, nome da nubile: [DA DEFINIRE]
+- Provenienza: [DA DEFINIRE]. **Nome da nubile: Pisapia** (è il suo cognome; socialmente «la signora Giorgi»). Fissato al cap. 40.
 - Dove "si mette al sicuro": [DA DEFINIRE]
 
 ## Fissato nel capitolo 12
@@ -88,3 +88,9 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - Prima lettura della copia: le nove sigle; B1 aperta per errore (la scheda del giudice in pensione vicino di casa della sorella: moglie malata, figlio con un debito, figlia a Londra con l'indirizzo e l'orario); K1 e l'estratto di Cadrasca. Tocca per la prima volta la matita di Cadrasca e la rimette con la punta verso di sé.
 - Quindici anni prima Alfredo era a Cadrasca «per un convegno», tre giorni di giugno, mentre lei era sola con Fabrizio di un mese.
 - Chiusura: seduta sul pavimento del corridoio davanti alla camera di Laura, aspetta le 3.10.
+
+## Fissato nel capitolo 40 (martedì 30 novembre)
+- Lista «Se vengono qui», dopo gli accessi della Task force del 26 novembre. Nota i quattro secondi di Alfredo davanti al generale in televisione.
+- Trasferisce «Saggio» su una chiavetta nuova (contanti, negozio dall'altra parte della città) e lo cancella dal portatile. Fabrizio la vede e dice di non aver visto niente.
+- Cassetta n. 87 nella banca di credito cooperativo della madre (via del mercato), a nome Pisapia Elena; nessun delegato; corrispondenza dalla madre (75 anni). Conta le macchine nella via: undici, le stesse.
+- Chiusura: «Può tenerla. Non può usarla.»
