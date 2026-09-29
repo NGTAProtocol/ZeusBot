@@ -76,3 +76,11 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - Alle 11.40 scrive «Stasera ti devo chiedere una cosa»: letto, nessuna risposta. Alle 12.10 Nicola, sul fisso della redazione: «Stasera no. Ha disdetto la stanza.» Il telefono di Giorgi non è raggiungibile; il portiere conferma la disdetta delle 11.55, notte pagata, «non riaffittarla».
 - Conto: ha protetto la casa (Monte Marzio) e ha dato l'uomo. Scrive «Vito, questa settimana non» e lo cancella lettera per lettera; chiude il telefono nel cassetto a chiave.
 - Chiusura alle 12.41: ripensa alle proprie parole della 512, «Con lui va da solo. Sempre. In mezzo alla gente. All'ora di pranzo.» Non sa della bomba, né del luogo, né dell'ora.
+
+## Fissato nel capitolo 25 (martedì 29 giugno, sera)
+- Rientra alle 19.50 a piedi (quaranta minuti); mette il vestito blu nel cesto della biancheria sporca senza averlo indossato.
+- Il notiziario delle 20: quattro vittime con nome e foto; Kurgan nominato come capo di un'organizzazione di Partenia. Reazione: prima il sollievo, nelle spalle e nel respiro; poi il nodo in gola. Nessuna dichiarazione di dolore.
+- Chiama il numero di Vito: «non raggiungibile», per la prima volta in vent'anni.
+- Pietro (cronaca) le chiede della sua vecchia inchiesta sui porti: lei nega di aver mai incrociato Kurgan. «Pare che l'aspettassero.»
+- La testimone del pergolato dice «da solo»: Dalia riconosce le sue parole della 512. Il dubbio si affaccia, non la certezza.
+- Scrive «lo sapevi» a Giorgi e cancella; compone il numero e non chiama; spegne il secondo telefono e lo posa a faccia in giù. Non chiama Alfredo.

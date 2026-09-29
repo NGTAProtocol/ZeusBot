@@ -89,3 +89,7 @@
 - **Tanino**: guida cinque ore in silenzio, mani alle dieci e dieci; da maggio parla ancora meno (Kurgan lo attribuisce alla madre).
 - **Il doganiere di Porto Clodio**: tre mesi di fotografie notturne per Carrese (su una scheda di memoria); il figlio operato in una clinica del nord con i soldi di Kurgan. (È da lui che passa la fuga: vedi `semi.md`.)
 - **Luca Ferrante** del prologo e dei capitoli 1 e 4 è stato rinominato **Andrea Gatti**.
+
+## Fissato nel capitolo 25
+- **Le vittime di Riva Salmara**: Enzo Palumbo (cuoco, 58 anni), Davide Ursini (cameriere, 22), Walter e Rita Zanella (pensionati, clienti, in vacanza da una settimana).
+- **Pietro** (cronaca): legge i lanci a voce alta con la bocca piena di cracker; da ragazzo è stato a Riva Salmara; alle 21.15 chiama Dalia a casa per il pezzo; ricorda che il direttore le tagliò l'inchiesta sui porti. La chiama Esposito.

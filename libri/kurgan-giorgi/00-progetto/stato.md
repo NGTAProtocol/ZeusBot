@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 25 (Dalia, la notizia; apre la Parte III). Scritti: prologo, Parte I (capitoli 1–12), Parte II completa (capitoli 13–24). Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 26 (Giorgi, registro c, venerdì 2 luglio, Albaterra; De Biasi con nome, Bertola a Casal Fascio, Adorisio si rivela: «Lei mi aveva detto vivo»). Scritti: prologo, capitoli 1–25. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -130,3 +130,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Passo 0: broker rinominato Ardesia Custodia (cap. 20, scaletta, registro, schede, semi); Luca Ferrante rinominato Andrea Gatti (prologo, cap. 1 e 4); regola «Carlo» / «il generale» nel manuale, sez. 6; Adorisio si rivela al 26, idea del libro in macchina ritirata.
 - 2026-09-29 — Capitolo 24 (Kurgan, circa 2.320 parole): il foglietto delle 5.10, la fretta del contabile, la busta come scelta, il numero del molo non chiamato, il conteggio sopra e non sotto, l'uomo sul tetto, si alza per primo. Il pavimento della cucina si sollevò. Chiusa la Parte II.
 - 2026-09-29 — Passo 0 prima della Parte III: la seconda busta brucia a Riva Salmara (nel cap. 24 diventa una scheda di memoria con le fotografie del doganiere); Parsàn si ritira anche per questo (scheda agenti stranieri). Il 112 di Elena si paga al cap. 33 (riserva 32). Tabella «Mese N» → calendario in scaletta; Laura liberata martedì 10 agosto, sei settimane dopo Riva Salmara (compatibile con «circa un mese e mezzo» della bibbia: nessuna modifica a bibbia né posizione); date reali per i capitoli 25–37.
+- 2026-09-29 — Scaletta 40 corretta (a): niente clonazione, solo deposito della copia fatta al 28 («può tenerla, ma non usarla»); 28 = clonazione, 32 = prima lettura; bibbia, trama, semi, scheda Elena allineate. Verificato: nessun capitolo tra 28 e 40 presuppone che Elena non abbia la copia.
+- 2026-09-29 — Capitolo 25 (Dalia, circa 2.120 parole, apre la Parte III): il vestito blu nel cesto, i lanci d'agenzia, il notiziario delle 20 con i quattro nomi, il sollievo nelle spalle, il numero di Vito non raggiungibile, Pietro e la vecchia inchiesta, «da solo», «lo sapevi» cancellato. Non chiamò Alfredo.

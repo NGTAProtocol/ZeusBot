@@ -42,7 +42,7 @@ Ogni traccia lasciata nel testo va pagata o chiusa di proposito. Per ciascuna: d
   2. Dopo il 19 maggio: Giorgi la ritira e la porta a casa, nello studio di Merania, «perché mi serviva vicina»: è l'ultima moneta per Laura, se tutto il resto fallisce (da spendere con il fronte o con Osiride).
   3. Domenica 20 giugno (cap. 19): la verifica sul portatile, la mostra a Elena, dice «Da domani non ci sarà più». Lunedì 21 la porta con sé (sala sicura di Porta Vetra) per la settimana di Riva Salmara.
   4. Dopo Riva Salmara: la riporta a casa, nel **cassetto dove tiene le chiavi** (da fissare al cap. 26 o 28 con una riga), perché Porta Vetra, dopo il 29 giugno, è il primo posto dove chiunque la cercherebbe.
-  5. Cap. 28: Elena apre il cassetto e la clona (terza copia, poi nella sua cassetta a nome da nubile).
+  5. Cap. 28: Elena apre il cassetto e la clona sul proprio portatile gemello (terza copia). Cap. 32: prima lettura della copia (l'estratto di Cadrasca). Cap. 40: deposito nella cassetta a nome da nubile («può tenerla, ma non usarla»); nessuna clonazione al 40.
   6. Dopo: Giorgi la rimette a Cadrasca; alla sparizione passa a Cicimarra (bibbia). Da decidere quando torna in Svizzera.
 - **Perché Giorgi la mostra a Elena** (cap. 19): motivo leggibile nel testo: sta per fare una cosa rischiosa e «se non torno, qualcuno deve sapere che c'era. Non che cosa c'è dentro. Che c'era.» Un'assicurazione umana fuori da Osiride, che poi gli si rivolterà contro.
 - **La frase «segreti che spostano gli equilibri»** (bibbia): **è già nel testo**, al cap. 19, in parafrasi: «Cose che, se escono tutte insieme, spostano più di un governo. In questo Paese e fuori.» Non serve ripeterla.
@@ -77,6 +77,9 @@ Ogni traccia lasciata nel testo va pagata o chiusa di proposito. Per ciascuna: d
 
 - **Fili senza capitolo di pagamento (controllo di fine Parte II):**
   - **Chiavetta, passo 4 e 6:** la riga che la riporta nel cassetto delle chiavi (26 o 28) e il ritorno a Cadrasca non sono ancora fissati.
+
+- **Il notiziario del 29 giugno** (cap. 25): le quattro vittime per nome: **Enzo Palumbo**, cuoco, 58 anni; **Davide Ursini**, cameriere, 22 anni; **Walter e Rita Zanella**, pensionati, clienti, in vacanza da una settimana. Sette clienti illesi sotto il pergolato (alcuni medicati). Kurgan «considerato dagli inquirenti il capo di un'organizzazione criminale radicata a Partenia e nei porti della costa tirrenica», non ricercato; foto sgranata da teleobiettivo. Lanci d'agenzia: 14.12 «almeno tre morti, ipotesi fuga di gas»; 17.00 quattro vittime; 18.00 la procura apre un fascicolo, non esclude il dolo. In serata (Pietro): «pista dolosa, una carica sotto la cucina. Pare che l'aspettassero.» Testimone: una ragazza del pergolato («un signore altissimo, seduto dentro da solo, aspettava qualcuno… il cameriere gli aveva portato due bicchieri… si è alzato»).
+- **Dalia al cap. 25:** il numero di Vito risulta «non raggiungibile» per la prima volta in vent'anni. Scrive «lo sapevi» e lo cancella; compone il numero di Giorgi e non chiama. Il dubbio si affaccia («Un'esplosione non prendeva nessuno»), la certezza è rinviata (cap. 41). Pietro ricorda la sua vecchia inchiesta sui porti tagliata dal direttore: lei nega di aver mai incrociato Kurgan. Rischio di esposizione da tenere.
 
 ## Indizi su De Stefano (tetto: quattro in tutto)
 Ogni indizio regge da solo; insieme fanno un conto. Non superare quattro.

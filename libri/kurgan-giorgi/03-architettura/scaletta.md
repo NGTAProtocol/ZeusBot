@@ -164,7 +164,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **27. Flora** · Porto Clodio (29 giugno, da confermare), poi Albaterra · lunedì 5 luglio · La versione ufficiale su Riva Salmara → non le torna niente. Calabrese vuole lasciare il pool per la moglie. · **Chiusura:** Cataldo, il sottovalutato, porta un foglio che nessuno aveva letto. · 2.200
 
-**28. Elena** · Merania · domenica 25 luglio · Laura è ancora via: vuole una risposta → Giorgi le dice solo "torna presto". Il matrimonio si incrina, lei finge. · **Chiusura:** Elena apre il cassetto dove lui tiene le chiavi. · 2.100
+**28. Elena** · Merania · domenica 25 luglio · Laura è ancora via: vuole una risposta → Giorgi le dice solo "torna presto". Il matrimonio si incrina, lei finge. Di notte clona la chiavetta sul proprio portatile gemello, con la password del 19 (la clonazione avviene in questo capitolo; la prima lettura è al 32, il deposito al 40). · **Chiusura:** Elena apre il cassetto dove lui tiene le chiavi. · 2.100
 
 **29. Giorgi (c)** · Merania / Punta Saline · martedì 10 agosto (sei settimane dopo Riva Salmara) · Laura torna → dalle intercettazioni scopre che Adorisio l'aveva trovata settimane prima. *(Strada concreta: Tanino, che sa dov'è la casa dei guardiani; con la madre nella clinica pagata da Kurgan può cedere solo in piccolo — un'informazione, una porta lasciata aperta.)* **Prima crepa.** · **Chiusura:** Laura non parla; lui non sa cosa dirle. · 2.300
 
@@ -190,7 +190,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **39. Flora** · Albaterra · Mese 24 · Portofosco, Tarassa, la Dorsale, la Litoranea → Cicimarra presenta la legge d'emergenza; la task force sarà di De Biasi. · **Chiusura:** hanno trenta giorni prima di perdere il fascicolo. · 2.000
 
-**40. Elena** · Merania · Mese 24 · Clona la chiavetta con le password → la cassetta a nome da nubile, in una banca che il marito non controlla. · **Chiusura:** non può leggerla. Può solo tenerla. · 1.900
+**40. Elena** · Merania · Mese 24 · La copia fatta al 28 (e letta per la prima volta al 32) trova casa: la cassetta a nome da nubile, in una banca che il marito non controlla. Nessuna clonazione in questo capitolo. · **Chiusura:** può tenerla, ma non usarla. · 1.900
 
 **41. Dalia** · Merania · Mese 24 · I dati di Tommaso confermano tutto → capisce che Giorgi ha usato le sue parole per uccidere Kurgan. Il risveglio. · **Chiusura:** "Domattina lo pubblichiamo." · 2.000
 
