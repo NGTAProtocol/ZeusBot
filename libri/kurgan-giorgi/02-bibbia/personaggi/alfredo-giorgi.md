@@ -85,3 +85,9 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Posa il telefono alle 23.51, schermo in giù, e non lo tocca più fino all'alba. Nessuna crepa.
 - Eco rovesciata del cap. 2: «Conoscere le equazioni non era il contrario di non conoscerle. Era soltanto il modo più preciso di lasciarle andare.»
 - Porta la chiavetta nella tasca interna della giacca, accanto al disegno di Laura: «l'ultima moneta».
+
+## Fissato nel capitolo 26 (venerdì 2 luglio, Albaterra)
+- Alle 10.40 assiste alla «riconfigurazione dopo un guasto»: De Biasi presentato con nome; Giorgi lo collega ai tetti dalla scottatura sul collo (inferenza). Accetta Bertola a capo di Casal Fascio («Luigi è la persona giusta») e lascia i due punti (il canale del cap. 21, il «Sissignore» detto guardando De Biasi) dove stanno.
+- Non entra al casale: guarda da una carrareccia a duecento metri, con Ferri. Per gli uomini di Kurgan deve restare «un nome detto a voce bassa, una distanza».
+- Alle 22.10, nel garage, calcola l'inganno di Adorisio come costo (usura di un componente), non come rimorso. Mostra il foglio «vivo» del 31 maggio come mezza verità; tace di aver saputo alle 23.14 del 28 giugno. Alla domanda «perché io?» dice una sola delle due ragioni (i servizi decidono loro); tace l'altra (un ingannato che sa di esserlo è un difetto noto, non un guasto latente).
+- Rivela il rapimento di Laura ad Adorisio; offre somma e «ordine più grande»; accetta la condizione del segreto («Solo io»). Nessuna crepa.
