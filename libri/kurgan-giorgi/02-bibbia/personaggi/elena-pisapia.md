@@ -82,3 +82,9 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - Fabrizio scende all'1.29 e vede il cordino. «Buonanotte, mamma.» Lei annota con la matita per gli occhi: «1.31 — F. (cordino).»
 - Rimette la chiavetta identica; non tocca la matita di Cadrasca, di cui non ricorda l'orientamento. **Non legge la copia** (prima lettura al cap. 32).
 
+## Fissato nel capitolo 32 (venerdì 27 agosto)
+- Nuova ricevuta: otto righe su Laura in diciassette giorni (vedi semi.md). La seconda colonna: «Dove. Chi. Perché lui lo sa e la polizia no. Chi l'ha riportata. La coperta. Che cosa c'è nella chiavetta, se serviva a lei.»
+- Butta la coperta grigia nella pattumiera del garage. Al vestito bianco, Laura: «Devo?» — «No. Non devi.» Tre secondi prima di rispondere: «bastavano a non dire la cosa sbagliata.»
+- Prima lettura della copia: le nove sigle; B1 aperta per errore (la scheda del giudice in pensione vicino di casa della sorella: moglie malata, figlio con un debito, figlia a Londra con l'indirizzo e l'orario); K1 e l'estratto di Cadrasca. Tocca per la prima volta la matita di Cadrasca e la rimette con la punta verso di sé.
+- Quindici anni prima Alfredo era a Cadrasca «per un convegno», tre giorni di giugno, mentre lei era sola con Fabrizio di un mese.
+- Chiusura: seduta sul pavimento del corridoio davanti alla camera di Laura, aspetta le 3.10.
