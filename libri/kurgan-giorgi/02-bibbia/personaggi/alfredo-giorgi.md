@@ -97,3 +97,11 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Pranza a casa la domenica (seconda volta in un mese); risponde a tutti «con un minuto di ritardo». A Elena: «Torna presto… Adesso è più vero.» Sulla chiavetta: «È meglio per tutti, per te prima di tutti, che tu continui a non sapere niente.»
 - Dorme in fretta; salta il terzo gradino senza saperlo. Non si accorge della clonazione.
 
+## Fissato nel capitolo 29 (martedì 10 agosto) — prima crepa
+- Notte in macchina con Ferri (sette ore); alle 5.53 riceve Laura da Tanino al terzo chilometro della strada delle saline. Si inginocchia sulla ghiaia e aspetta. Riconosce Tanino dalla scheda dei servizi di ventun mesi prima (l'uomo del pullman di Morenna che aveva voluto «fuori dal sistema»).
+- Analogia: il ritardo nella teoria del controllo («Il ritardo non aggiunge niente alla catena. Toglie»); Adorisio come relè che resta chiuso finché non arriva il prezzo giusto.
+- Chiede le trascrizioni della linea di Tanino dalla sala sicura di Porta Vetra; copertura con De Biasi: «un controllo contabile».
+- **Prima crepa**, una frase: «Li aveva pagati lei.» Poi torna alle grandezze.
+- All'avvocato: «Gli dica che sono soddisfatto. Gli dica che ne riparleremo.» Il confronto rinviato: «un conto che si chiudeva in fretta si chiudeva male.»
+- Il foglio del 31 maggio (vivo; venerdì 23 luglio) torna nella tasca interna accanto al disegno; non ci scrive altro.
+- Con Laura: nessuna parola regge; lascia la mano aperta sul lenzuolo.
