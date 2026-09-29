@@ -164,13 +164,13 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **27. Flora** · Albaterra (Porto Clodio il 29 giugno: **deciso, non ci va**; il 29 è in ufficio) · lunedì 5 luglio · La versione ufficiale su Riva Salmara → non le torna niente. Calabrese vuole lasciare il pool per la moglie. · **Chiusura:** Cataldo, il sottovalutato, porta un foglio che nessuno aveva letto. · 2.200
 
-**28. Elena** · Merania · domenica 25 luglio · Laura è ancora via: vuole una risposta → Giorgi le dice solo "torna presto". Il matrimonio si incrina, lei finge. Di notte clona la chiavetta sul proprio portatile gemello, con la password del 19 (la clonazione avviene in questo capitolo; la prima lettura è al 32, il deposito al 40). · **Chiusura:** Elena apre il cassetto dove lui tiene le chiavi. · 2.100
+**28. Elena** · Merania · domenica 25 luglio · Laura è ancora via: vuole una risposta → Giorgi le dice solo "torna presto". Il matrimonio si incrina, lei finge. Di notte clona la chiavetta sul proprio portatile gemello, con la password del 19 (la clonazione avviene in questo capitolo; la prima lettura è al 32, il deposito al 40). · **Chiusura (corretta al cap. 28):** Elena rimette la chiavetta nel cassetto delle chiavi, identica; alle 7.10 lui apre il cassetto e lo richiude senza guardare. · 2.100
 
 **29. Giorgi (c)** · Merania / Punta Saline · martedì 10 agosto (sei settimane dopo Riva Salmara) · Laura torna → dalle intercettazioni scopre che Adorisio l'aveva trovata settimane prima. *(Strada concreta: Tanino, che sa dov'è la casa dei guardiani; con la madre nella clinica pagata da Kurgan può cedere solo in piccolo — un'informazione, una porta lasciata aperta.)* **Prima crepa.** · **Chiusura:** Laura non parla; lui non sa cosa dirle. · 2.300
 
 **30. Dalia** · Merania, redazione del *Meridiano* · mercoledì 18 agosto · Da giornalista finanziaria incrocia le date delle stragi con le posizioni al ribasso → le mancano le prove interne. · **Chiusura:** lo schema coincide al minuto. · 2.200
 
-**31. Flora** · Albaterra · lunedì 23 agosto · L'elenco comincia: i primi nomi di Osiride → le informazioni di De Stefano non tornano con quello che sa. · **Chiusura:** Flora non gli dice cosa ha trovato. · 2.200
+**31. Flora** · Albaterra · lunedì 23 agosto · L'elenco comincia: i primi nomi di Osiride → le informazioni di De Stefano non tornano con quello che sa. · *(Qui si scioglie anche «Calabrese resta o parte», lasciato aperto al 27, insieme al terzo indizio su De Stefano.)* · **Chiusura:** Flora non gli dice cosa ha trovato. · 2.200
 
 **32. Elena** · Merania · venerdì 27 agosto · Laura è a casa ma non è più la stessa (conseguenze, mai l'atto) → Elena decide di sapere cosa c'è nella chiavetta. · **Chiusura:** trova un estratto di una banca di Cadrasca. · 2.100
 
