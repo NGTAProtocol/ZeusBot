@@ -86,3 +86,10 @@ Il sospetto su De Stefano cresce **lentamente, per accumulo**, non per un salto 
 - Prova a dissuadere Calabrese dal lasciare Partenia; non ha «una risposta che fosse anche vera».
 - Firma per prima la richiesta alla Banca d'Italia; la calligrafia non trema.
 - A pranzo con Carlo (trattoria dietro il palazzo di giustizia; ora pranzo invece della cena rinviata) quasi gli dice dei tre nomi e tace. Carlo nomina il registro di Merania: lei posa la forchetta piano. Terzo punto, messo in fila senza scriverlo. «Niente. Carte vecchie. Agosto.»
+
+## Fissato nel capitolo 36 (martedì 5 ottobre)
+- Riceve dall'Autorità nazionale anticorruzione la segnalazione anonima (Sestante, Cicimarra); decide di usare le credenziali per i 42 atti di via dei Cordai 14 («Non cambiava la direzione. Cambiava soltanto la velocità»).
+- Lo statuto dell'istituto dal nome latino: sessanta soci fondatori, venti pubblici; al numero uno il primo presidente della Corte di Cassazione. Ricorda il decreto di assegnazione del suo ricorso: capisce chi scelse i giudici. Colonna: punto cinque.
+- Il procuratore nazionale le chiede di tenere il foglio in due per un mese.
+- Chiusura: «Ne mancano quaranta.»
+- Sa ora: Cicimarra, la Sestante, l'istituto e i venti. Non sa ancora: Osiride, Civitas Perennis per nome, AV System come mittente.
