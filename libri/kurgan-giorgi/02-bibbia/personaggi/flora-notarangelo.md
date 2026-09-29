@@ -80,3 +80,9 @@ Il sospetto su De Stefano cresce **lentamente, per accumulo**, non per un salto 
 - Nel fascicolo archiviato: 114 pagine su Kurgan, «l'alto» per i collaboratori.
 - I quattro punti contro la versione ufficiale; il quinto, dopo il foglio degli artificieri, senza nome.
 - Dice a Calabrese la verità su Valdhof per tenerlo nel pool: «la ragione è quella vera». Guarda Cataldo «come se lo vedesse per la prima volta dal giorno del decreto».
+
+## Fissato nel capitolo 31 (lunedì 23 agosto, Albaterra)
+- Il plico del notaio: i tre fiducianti del 9 marzo; il banchiere siede nella Lanterna con Giorgi. Colonna in cinque punti; cartellina grigia «9 marzo».
+- Prova a dissuadere Calabrese dal lasciare Partenia; non ha «una risposta che fosse anche vera».
+- Firma per prima la richiesta alla Banca d'Italia; la calligrafia non trema.
+- A pranzo con Carlo (trattoria dietro il palazzo di giustizia; ora pranzo invece della cena rinviata) quasi gli dice dei tre nomi e tace. Carlo nomina il registro di Merania: lei posa la forchetta piano. Terzo punto, messo in fila senza scriverlo. «Niente. Carte vecchie. Agosto.»
