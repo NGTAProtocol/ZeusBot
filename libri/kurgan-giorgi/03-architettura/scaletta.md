@@ -162,7 +162,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **26. Giorgi (c)** · Albaterra · venerdì 2 luglio · Il passaggio di potere: De Biasi (ora con nome) insedia Bertola a capo di Casal Fascio → Adorisio scavalcato; Giorgi gli affida Laura e una grossa somma. · **Chiusura:** "Mi dia tre settimane." · 2.300
 
-**27. Flora** · Porto Clodio (29 giugno, da confermare), poi Albaterra · lunedì 5 luglio · La versione ufficiale su Riva Salmara → non le torna niente. Calabrese vuole lasciare il pool per la moglie. · **Chiusura:** Cataldo, il sottovalutato, porta un foglio che nessuno aveva letto. · 2.200
+**27. Flora** · Albaterra (Porto Clodio il 29 giugno: **deciso, non ci va**; il 29 è in ufficio) · lunedì 5 luglio · La versione ufficiale su Riva Salmara → non le torna niente. Calabrese vuole lasciare il pool per la moglie. · **Chiusura:** Cataldo, il sottovalutato, porta un foglio che nessuno aveva letto. · 2.200
 
 **28. Elena** · Merania · domenica 25 luglio · Laura è ancora via: vuole una risposta → Giorgi le dice solo "torna presto". Il matrimonio si incrina, lei finge. Di notte clona la chiavetta sul proprio portatile gemello, con la password del 19 (la clonazione avviene in questo capitolo; la prima lettura è al 32, il deposito al 40). · **Chiusura:** Elena apre il cassetto dove lui tiene le chiavi. · 2.100
 
