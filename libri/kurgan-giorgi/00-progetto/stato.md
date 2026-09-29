@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 26 (Giorgi, registro c, venerdì 2 luglio, Albaterra; De Biasi con nome, Bertola a Casal Fascio, Adorisio si rivela: «Lei mi aveva detto vivo»). Scritti: prologo, capitoli 1–25. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 27 (Flora, lunedì 5 luglio; decidere prima Porto Clodio il 29). Scritti: prologo, capitoli 1–26. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -132,3 +132,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Passo 0 prima della Parte III: la seconda busta brucia a Riva Salmara (nel cap. 24 diventa una scheda di memoria con le fotografie del doganiere); Parsàn si ritira anche per questo (scheda agenti stranieri). Il 112 di Elena si paga al cap. 33 (riserva 32). Tabella «Mese N» → calendario in scaletta; Laura liberata martedì 10 agosto, sei settimane dopo Riva Salmara (compatibile con «circa un mese e mezzo» della bibbia: nessuna modifica a bibbia né posizione); date reali per i capitoli 25–37.
 - 2026-09-29 — Scaletta 40 corretta (a): niente clonazione, solo deposito della copia fatta al 28 («può tenerla, ma non usarla»); 28 = clonazione, 32 = prima lettura; bibbia, trama, semi, scheda Elena allineate. Verificato: nessun capitolo tra 28 e 40 presuppone che Elena non abbia la copia.
 - 2026-09-29 — Capitolo 25 (Dalia, circa 2.120 parole, apre la Parte III): il vestito blu nel cesto, i lanci d'agenzia, il notiziario delle 20 con i quattro nomi, il sollievo nelle spalle, il numero di Vito non raggiungibile, Pietro e la vecchia inchiesta, «da solo», «lo sapevi» cancellato. Non chiamò Alfredo.
+- 2026-09-29 — Passo 0: aperto in semi.md il nodo sulla vecchia inchiesta di Dalia sui porti (stessa storia della fonte falsificata o episodio distinto; da risolvere prima dello scandalo).
+- 2026-09-29 — Capitolo 26 (Giorgi, circa 2.300 parole): De Biasi con nome e scottatura, la riconfigurazione, Bertola «Sissignore» guardando De Biasi, il casale di Casal Fascio visto da duecento metri, l'uomo con il libro, il garage delle 22.10, «Lei mi aveva detto vivo», il foglio del 31 maggio, «Kurgan aveva mia figlia», la condizione del segreto. «Mi dia tre settimane.»
