@@ -42,3 +42,6 @@ Il braccio istituzionale di Osiride: trasforma le bombe in una legge che toglie 
 ## Fissato nel capitolo 37 (20 ottobre, Vaticano)
 - Prima scena con Salvarani e Giorgi. 62 anni, capelli tinti di castano, acqua di colonia, si alza mezzo secondo prima del necessario, stringe la mano con due mani; parla «come in aula». Allude all'emendamento di marzo come a un favore.
 - Espone le tre possibilità; ha il testo della legge: dodici articoli, task force nazionale a comando unico con un generale (letta da De Biasi). «Il Parlamento vota quello che ha paura di non votare.»
+
+## Fissato nel capitolo 39
+- Relatore in Senato del decreto-legge del 22 novembre (dodici articoli; art. 7 trasferisce i fascicoli connessi alla Task force entro trenta giorni).
