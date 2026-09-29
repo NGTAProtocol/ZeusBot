@@ -168,7 +168,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **29. Giorgi (c)** · Merania / Punta Saline · martedì 10 agosto (sei settimane dopo Riva Salmara) · Laura torna → dalle intercettazioni scopre che Adorisio l'aveva trovata settimane prima. *(Strada concreta: Tanino, che sa dov'è la casa dei guardiani; con la madre nella clinica pagata da Kurgan può cedere solo in piccolo — un'informazione, una porta lasciata aperta.)* **Prima crepa.** · **Chiusura:** Laura non parla; lui non sa cosa dirle. · 2.300 *(Scritto: consegna alle 5.53 al terzo chilometro della strada delle saline, da Tanino; trascrizioni della linea di Tanino chieste per abitudine; crepa «Li aveva pagati lei.»)*
 
-**30. Dalia** · Merania, redazione del *Meridiano* · mercoledì 18 agosto · Da giornalista finanziaria incrocia le date delle stragi con le posizioni al ribasso → le mancano le prove interne. · **Chiusura:** lo schema coincide al minuto. · 2.200
+**30. Dalia** · Merania, redazione del *Meridiano* · mercoledì 18 agosto · *(Corretto, opzione a.)* Trenta righe di routine sulle vendite allo scoperto di agosto → il confronto con le date delle stragi le si forma sotto gli occhi quasi per riflesso: **due date su tre coincidono all'ora** (Valcerna, Morenna); la terza (Marcena) resta sepolta nel rumore del giorno delle dimissioni → senza prove interne non può scriverlo. Nessuna decisione. · **Chiusura:** chiude le curve nel cassetto, sotto il secondo telefono: un rimando, non una scelta. · 2.200
 
 **31. Flora** · Albaterra · lunedì 23 agosto · L'elenco comincia: i primi nomi di Osiride → le informazioni di De Stefano non tornano con quello che sa. · *(Qui si scioglie anche «Calabrese resta o parte», lasciato aperto al 27, insieme al terzo indizio su De Stefano.)* · **Chiusura:** Flora non gli dice cosa ha trovato. · 2.200
 
@@ -192,7 +192,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **40. Elena** · Merania · Mese 24 · La copia fatta al 28 (e letta per la prima volta al 32) trova casa: la cassetta a nome da nubile, in una banca che il marito non controlla. Nessuna clonazione in questo capitolo. · **Chiusura:** può tenerla, ma non usarla. · 1.900
 
-**41. Dalia** · Merania · Mese 24 · I dati di Tommaso confermano tutto → capisce che Giorgi ha usato le sue parole per uccidere Kurgan. Il risveglio. · **Chiusura:** "Domattina lo pubblichiamo." · 2.000
+**41. Dalia** · Merania · Mese 24 · I dati di Tommaso confermano tutto (**qui si chiude la terza data, Marcena, al minuto: le 12.07; e qui matura la certezza**, lasciata aperta al 30) → capisce che Giorgi ha usato le sue parole per uccidere Kurgan. Il risveglio. · **Chiusura:** "Domattina lo pubblichiamo." · 2.000
 
 **42. Giorgi (c)** · Albaterra · Mese 25 · La legge passa: il sistema è di nuovo sotto controllo → Il Meridiano chiama per un commento. · **Chiusura:** Giorgi riconosce il nome della giornalista. · 1.900
 
