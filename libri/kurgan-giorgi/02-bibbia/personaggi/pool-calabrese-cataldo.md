@@ -25,3 +25,7 @@ Nasce come risposta dello Stato alle **tre stragi** (Valcerna, Morenna, Marcena)
 ## Fissato nel capitolo 27 (lunedì 5 luglio)
 - **Calabrese:** la moglie è incinta, terzo mese. Dopo Riva Salmara scrive (sabato 3 luglio) la richiesta di tornare a Partenia e la lascia aperta sulla scrivania di Flora. Sei giri di fede. Scopre che Flora e Cataldo gli hanno taciuto Valdhof: «Quindi siete in due. E io sono quello che non deve sapere.» Termine: manderà la lettera venerdì 9 luglio. Alla fine la posa sul tavolo accanto al foglio degli artificieri e non la riprende.
 - **Cataldo:** porta la ventitreesima pagina che nessuno aveva letto (relazione preliminare degli artificieri: innesco a comando via radio entro trecento metri); l'ha trovata perché l'indice diceva ventitré. «Se lei se ne va, le carte le leggo da solo. Ci metto il doppio. Ma le leggo.» Occhiali, camicia stirata male. Primo peso inatteso del sottovalutato (proposta della scheda: **confermata**).
+
+## Fissato nel capitolo 31 (lunedì 23 agosto)
+- **Calabrese resta:** applicato a tempo pieno alla Direzione nazionale, lascia Partenia e la sua indagine (al collega più anziano, prudente). Moglie dalla madre al nord fino al parto. Copie delle carte a casa di Flora. **Non firma** le richieste sui tre fiducianti: «le lettere arrivano a chi firma… Adesso vi proteggo io, allo stesso modo. Non firmando.» Strappa la lettera in quattro e se la mette in tasca. Conosce l'ammiraglio di nome.
+- **Cataldo:** quaranta minuti per escludere ogni legame pubblico fra i tre; firma accanto a Flora: «Adesso lo sanno.»
