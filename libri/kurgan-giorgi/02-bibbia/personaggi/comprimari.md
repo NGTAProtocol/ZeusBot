@@ -52,6 +52,9 @@
 
 ## Fissato nel capitolo 16
 - **Il compagno di master di Tommaso** (cap. 34, 41): trent'anni, cappotto blu, cravatta allentata apposta, dopobarba da banca d'affari; conosce Dalia di vista dai convegni. Tiene le due consegne di Tommaso fino al 15 dicembre; poi le porta a Dalia al bar sotto la redazione. «Sa contare. Più di me. Forse più di te.»
+- **Pietro** (cap. 46): scopre con orrore che la fonte era quella dell'inchiesta che ricordava; poi la difende («Te l'hanno fatto perché hai avuto ragione dodici giorni fa»); si offre di scriverlo lui.
+- **Nicola** (cap. 46): interrogato due volte dalla sicurezza; porta a Dalia la chiavetta «Sicurezza» (undici file dei festini: i recenti girati da lui, i vecchi copiati dall'archivio delle telecamere delle ville). Scarpe nuove bagnate. Guarda la strada a destra e a sinistra.
+- **La madre di Dalia** (cap. 46): anni prima le fu pagato l'affitto per sei mesi da qualcuno che non conobbe mai; al telefono capisce senza chiedere.
 - **Pietro** (cap. 43): le porta un caffè e le tocca la spalla con due dita; la sera la accompagna; dal taccuino nero di cronaca giudiziaria riconosce il numero delle 6.01: «Non era un lettore, Esposito.»
 - **Nicola** (cap. 43): «Ho letto. Attenta.» / «Oggi il dottore non è venuto in ufficio.»
 - **Il caporedattore** (cap. 43): «Se quella nota è falsa, sei finita… Allora siamo in due a non conoscerla.»
