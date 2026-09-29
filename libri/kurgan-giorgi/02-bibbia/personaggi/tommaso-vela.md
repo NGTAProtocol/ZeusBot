@@ -36,4 +36,12 @@ Laureato in economia/finanza, entrato da poco in AV System, orgoglioso di far pa
 
 ## Dettagli fisici/di caratterizzazione da fissare
 - **Aspetto (fissato):** giovane, occhiali, energia nervosa.
-- Chi è il contatto comune con Dalia: [DA DEFINIRE]
+- Chi è il contatto comune con Dalia: un vecchio compagno di master, analista in una banca d'affari straniera a Porta Vetra, senza nome proprio (fissato al cap. 34).
+
+## Fissato nel capitolo 34 (giovedì 16 settembre)
+- Da dieci mesi alle riconciliazioni, diciannovesimo piano, stesse regole (arriva alle 8.30, schermo spostato di dieci centimetri, pranzo al bar all'angolo, niente treno per Marcena, trentuno passi all'ascensore). Chiavetta blu con il tappo rotto nella tasca interna, sotto la carta d'identità.
+- Riconcilia dal novembre del giorno 0 le fatture della Sestante Relazioni Istituzionali; a marzo nota l'indirizzo di via dei Cordai. Il 16 settembre, la nota spese con il nome di Cicimarra.
+- Rompe per la prima volta la regola del pranzo: biblioteca dell'università, postazione 7. Colonna delle date a matita; l'emendamento di marzo. Primo invio alla piattaforma dell'Autorità nazionale anticorruzione (13.14). Diciassette gradini.
+- Dà una copia al vecchio compagno di master (analista, banca d'affari straniera) perché arrivi a una giornalista del Meridiano di cui non vuole sapere il nome. «C'è qualcuno che ti segue?» «Non lo so.»
+- Mente a Martina sul pranzo. Alle 17.52 scopre il download di SRV-ADM07 delle 16.02, solo sul suo file.
+- **Contatto comune con Dalia: fissato** (vedi semi.md). Non si espone ancora.
