@@ -18,6 +18,7 @@
 | Intermediario di regolamento di Merania dei 31 conti delle 12.07 (broker terzo; AV System a monte) | **Ardesia Custodia** |
 | Società di leasing delle venti petroliere di Porto Clodio | **Clodia Navi** |
 | Finanziaria di Merania che controlla la Clodia Navi (Giorgi consigliere non esecutivo) | **Finanziaria Lanterna** |
+| Società di «relazioni istituzionali» di Albaterra (sede in via dei Cordai 14), fornitore di AV System dal novembre del giorno 0; paga le spese del senatore Cicimarra (cap. 34). Verificata: nessuna assonanza con Lanterna, Ardesia, Clodia, Civitas, Sannella, Salmara | **Sestante Relazioni Istituzionali** |
 | Porto già controllato da Kurgan; casa dei guardiani delle saline, prigionia di Laura | **Punta Saline** |
 | Porto a cui punta Kurgan | **Tarassa**, ex terminal **Oriens** |
 | Polo logistico colpito (nord-ovest) | **Portofosco** |
