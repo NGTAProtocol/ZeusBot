@@ -52,3 +52,11 @@ L'uomo dei servizi incaricato di sorvegliare Flora che se ne innamora e la prote
 ## Fissato nel capitolo 31 (lunedì 23 agosto, visto da Flora)
 - Pranzo ad Albaterra, trattoria dietro il palazzo di giustizia; camicia azzurra. Il comando di Rocca Sannella: «L'estate è finita. Non mi hanno ancora detto niente.» Ride per la quarta volta in tre anni.
 - **Terzo indizio:** «Te l'ha detto anche il registro di Merania, a maggio.» Flora non gliel'aveva mai detto. Chiede del pool; lei risponde «Niente».
+
+## Fissato nel capitolo 35 (lunedì 27 settembre, primo capitolo suo)
+- **Diniego del comando**: lettera del comando generale, quattro righe, identica a quella di tre anni prima; il comando di Rocca Sannella va a un capitano di trentaquattro anni. «Lei è troppo utile dov'è.» La sua utilità «stava esattamente nella distanza». Il risentimento resta un'informazione che non dà a nessuno.
+- Tre anni prima, dopo la prima lettera, a cena con Flora aveva risposto «il lavoro»: lei aveva deciso di non fare la domanda successiva.
+- **Doppio binario** esplicito: colonne «da riferire» / «da tenere». Riferisce quattro verità sulle abitudini di Flora («ogni voce vera era un mattone») e dice: «Non sono mai salito da lei.»
+- **Prima bugia guardando negli occhi** il capo reparto (regola che si era dato: incomplete sì, false mai): Flora «ad Albaterra» il 9 ottobre.
+- Sa che il fisso del pool è ascoltato da novembre e il cellulare di Flora no.
+- Messaggio a Flora: accetta l'invito della madre per i settant'anni. Esce guardando a destra, a sinistra, e di nuovo a destra.
