@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 30 (Dalia, mercoledì 18 agosto: le date delle stragi e le posizioni al ribasso). Scritti: prologo, capitoli 1–29. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 31 (Flora, lunedì 23 agosto: l'elenco comincia; si scioglie Calabrese; terzo indizio su De Stefano). Scritti: prologo, capitoli 1–30. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -139,3 +139,5 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Passo 0: seme della persona sola in cancelleria confermato (non Carlo; possibile infiltrazione di Osiride nella Direzione nazionale, pagamento libero); «Calabrese resta o parte» aperto fino al cap. 31.
 - 2026-09-29 — Capitolo 28 (Elena, 2.052 parole): il cordino nel cassetto dal 3 luglio, sessantasette giorni, «Torna presto» (3), «Serve a lei?» e il non-no, le due ragioni sulla ricevuta, i respiri contati, i quattro punti del cassetto, Nocciolo1207 al primo tentativo, la cartella «Saggio», Fabrizio e il cordino, la matita di Cadrasca. Alle 7.10 lui richiude il cassetto senza guardare.
 - 2026-09-29 — Capitolo 29 (Giorgi, 2.223 parole): la consegna al terzo chilometro della strada delle saline, Tanino, il ritardo nella teoria del controllo, il coniglio e la maniglia, «Sì» al telefono, l'inventario di Elena, le trascrizioni della linea di Tanino, «Aspettiamo», il foglio del 31 maggio. Prima crepa: «Li aveva pagati lei.» La mano aperta sul lenzuolo.
+- 2026-09-29 — Passo 0: lettera di Adorisio distrutta dagli uomini di De Biasi al 33 (una riga); intestazione del 29 verificata. Scaletta 30 corretta (a) dopo segnalazione.
+- 2026-09-29 — Capitolo 30 (Dalia, 2.125 parole): trenta righe di routine, Valcerna 9.02, Morenna 8.00, venti curve di controllo, Marcena nel muro, niente prove interne, le vicinanze, Pietro e ottobre, «Due su tre» cancellato, il cassetto sotto il secondo telefono, Nicola rinviato. Terza data e certezza al 41.
