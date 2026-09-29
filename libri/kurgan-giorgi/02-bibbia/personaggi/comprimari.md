@@ -52,6 +52,10 @@
 
 ## Fissato nel capitolo 16
 - **Il compagno di master di Tommaso** (cap. 34, 41): trent'anni, cappotto blu, cravatta allentata apposta, dopobarba da banca d'affari; conosce Dalia di vista dai convegni. Tiene le due consegne di Tommaso fino al 15 dicembre; poi le porta a Dalia al bar sotto la redazione. «Sa contare. Più di me. Forse più di te.»
+- **Pietro** (cap. 43): le porta un caffè e le tocca la spalla con due dita; la sera la accompagna; dal taccuino nero di cronaca giudiziaria riconosce il numero delle 6.01: «Non era un lettore, Esposito.»
+- **Nicola** (cap. 43): «Ho letto. Attenta.» / «Oggi il dottore non è venuto in ufficio.»
+- **Il caporedattore** (cap. 43): «Se quella nota è falsa, sei finita… Allora siamo in due a non conoscerla.»
+- **Il direttore del Meridiano** (cap. 43): diffida di cinque pagine, non rimuove l'articolo; quattro telefonate di persone che gli chiedono «come stava».
 - **Il direttore del Meridiano** (cap. 30, 41): stanza che sa di sigaro spento e pelle vecchia; due anni prima tagliò il pezzo di Dalia; il 15 dicembre non risponde a «Domattina lo pubblichiamo».
 - **Nicola** (cap. 30): chiama Dalia sul primo telefono il 18 agosto alle 18.15, «non è per il dottore»: una cosa sua, «anche» soldi, «non solo». Lei rinvia. Non ancora fonte attiva.
 - **Pietro** (cap. 30): vede la curva di Valcerna sullo schermo di Dalia; era sul posto a ottobre («frutta e plastica bruciata»); scommesse sul ciclismo; offre le alici da Ettore.
