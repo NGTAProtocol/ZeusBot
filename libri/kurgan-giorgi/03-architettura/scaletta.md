@@ -186,7 +186,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 ### PARTE IV — IL PADRE DEL MOSTRO
 
-**38. Tommaso** · Merania · Mese 24 · Le bombe sulla Dorsale all'alba → il fondo è di nuovo posizionato. · **Chiusura:** il fondo sapeva. · 1.900
+**38. Tommaso** · Merania · lunedì 15 novembre (Mese 24) · Le bombe sulla Dorsale all'alba → il fondo è di nuovo posizionato. · **Chiusura:** il fondo sapeva. · 1.900 *(Scritto: le quattro bombe tra le 3.50 e le 4.20 su Dorsale e Litoranea; le posizioni aperte venerdì 12 novembre 17.24–17.29 tramite Ardesia Custodia su trentuno conti; la nota di commissione di due anni prima, conservata dieci anni come scrittura contabile, con 12.07.04 e AGIORGI: **nodo delle 12.07 risolto**.)*
 
 **39. Flora** · Albaterra · Mese 24 · Portofosco, Tarassa, la Dorsale, la Litoranea → Cicimarra presenta la legge d'emergenza; la task force sarà di De Biasi. · **Chiusura:** hanno trenta giorni prima di perdere il fascicolo. · 2.000
 
