@@ -8,6 +8,7 @@
 - **I quattro ex funzionari di Kurgan:** autori del golpe fallito contro Bertola.
 
 ## Fissati nel capitolo 12
+- **Laura, diciassette giorni dopo (cap. 32):** non canta più; scarpe in fila davanti alla camera; alle 3.10 nel letto della madre; il vestito bianco dietro i cappotti; «Devo?»; mangia tutto, anche i piselli; conta sulle dita i giorni al ritorno del padre. Il saggio di danza rinviato a ottobre.
 - **Laura, al ritorno (cap. 29):** coperta grigia non sua; il coniglio di pezza sotto il mento; guarda le maniglie delle porte; una sola parola al telefono con la madre («Sì»); luce accesa di notte; gira lei la chiave della porta di casa, due volte. Nessun dettaglio sulla prigionia.
 - **Laura (7 anni):** divisa della scuola delle suore (gonna blu a pieghe, camicetta bianca, cardigan con lo stemma); scende le scale tenendosi con due mani; suor Agnese la mette davanti al coro «perché è piccola»; canta una canzone sulla Madonna e sul mare, sbagliando la terza strofa. Dorme con la luce del corridoio accesa (cap. 2).
 - **Fabrizio:** cuffie al collo, beve il latte in piedi. **Cesare:** sempre in ritardo, zaino aperto.
