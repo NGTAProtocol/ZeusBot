@@ -4,3 +4,4 @@ __pycache__/
 .pytest_cache/
 .ghimoney/
 .venv/
+.ai_toolkit_reference/
