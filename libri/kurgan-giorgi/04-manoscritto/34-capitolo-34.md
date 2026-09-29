@@ -4,9 +4,9 @@
 
 La fattura numero undici della Sestante Relazioni Istituzionali aveva un allegato di tre pagine che non avrebbe dovuto esserci, e Tommaso lo notò perché il file pesava quattrocento kilobyte invece di novanta.
 
-Erano le 8.47 di giovedì. Arrivava alle 8.30, non prima. Lo schermo era spostato di dieci centimetri a destra, fuori dall'inquadratura della telecamera sopra la stampante. Da dieci mesi le sue regole erano le stesse, e da dieci mesi nessuno le aveva notate, perché erano fatte per non essere notate.
+Erano le 8.47 di giovedì. Arrivava alle 8.30, non prima. Lo schermo era spostato di dieci centimetri a destra, fuori dall'inquadratura della telecamera sopra la stampante. Da quasi due anni le sue regole erano le stesse, e da quasi due anni nessuno le aveva notate, perché erano fatte per non essere notate.
 
-La Sestante fatturava ad AV System dal novembre dell'anno prima, dal primo mese dopo la chiusura. Tommaso lo sapeva perché le riconciliava lui, una al mese, dalla prima. Servizi di relazioni istituzionali. Trentottomila euro più imposte. Sempre la stessa cifra, sempre la stessa causale, sempre un documento di una pagina senza dettaglio. Sempre approvata da Ricci in meno di un'ora.
+La Sestante fatturava ad AV System dal novembre dell'anno prima. Tommaso lo sapeva perché le riconciliava lui, una al mese, dalla prima. Servizi di relazioni istituzionali. Trentottomila euro più imposte. Sempre la stessa cifra, sempre la stessa causale, sempre un documento di una pagina senza dettaglio. Sempre approvata da Ricci in meno di un'ora.
 
 Undici fatture. Quattrocentodiciottomila euro.
 
@@ -50,15 +50,15 @@ Sette minuti.
 
 Poi fece la cosa che le sue regole vietavano. Non subito. Aspettò mezz'ora, perché un gesto fatto subito dopo un altro gesto era una sequenza, e le sequenze si leggevano. Alle 9.49 aprì l'archivio delle riconciliazioni, cercò il fornitore, selezionò le undici fatture con gli allegati, e le esportò in un unico file compresso. Era il suo lavoro. Esportare un fornitore per un controllo trimestrale era una cosa che faceva ogni settimana. Il sistema registrò l'esportazione con il suo codice e l'ora: 9.51.
 
-Pensò al premio straordinario del 27 novembre, fermo sul conto da dieci mesi, mai toccato. Più di quanto guadagnava in otto mesi. Lo aveva lasciato lì come si lasciava un oggetto trovato per strada su un muretto, perché il proprietario possa tornare a prenderlo. Adesso gli sembrò un'altra cosa. Una cifra che qualcuno aveva scritto accanto al suo nome, in un elenco, per ricordarsi quanto costava il suo silenzio.
+Pensò al premio straordinario del 27 novembre, fermo sul conto da quasi due anni, mai toccato. Più di quanto guadagnava in otto mesi. Lo aveva lasciato lì come si lasciava un oggetto trovato per strada su un muretto, perché il proprietario possa tornare a prenderlo. Adesso gli sembrò un'altra cosa. Una cifra che qualcuno aveva scritto accanto al suo nome, in un elenco, per ricordarsi quanto costava il suo silenzio.
 
-Mise il file sulla chiavetta blu con il tappo rotto, quella dell'università, che da dieci mesi dormiva nella tasca interna della giacca, sotto la carta d'identità.
+Mise il file sulla chiavetta blu con il tappo rotto, quella dell'università, che da quasi due anni dormiva nella tasca interna della giacca, sotto la carta d'identità.
 
 ---
 
 A mezzogiorno e mezzo non andò al bar all'angolo.
 
-Era la prima volta in dieci mesi. Aveva calcolato il rischio tutta la mattina, tra una riga e l'altra. Una persona prevedibile che smetteva di essere prevedibile per un giorno era un'anomalia. Ma un'anomalia di un giorno, isolata, si perdeva nel rumore. Il barista si sarebbe accorto del tavolo vuoto e poi se ne sarebbe dimenticato. Il rischio era basso. Non era zero.
+Era la prima volta in quasi due anni. Aveva calcolato il rischio tutta la mattina, tra una riga e l'altra. Una persona prevedibile che smetteva di essere prevedibile per un giorno era un'anomalia. Ma un'anomalia di un giorno, isolata, si perdeva nel rumore. Il barista si sarebbe accorto del tavolo vuoto e poi se ne sarebbe dimenticato. Il rischio era basso. Non era zero.
 
 Camminò undici minuti fino alla biblioteca dell'università, quella vecchia, con le sale di lettura a volta e i computer pubblici in fila contro il muro. Da studente ci passava i pomeriggi. Nessuno gli chiese un documento. La bibliotecaria gli diede un numero di postazione su un cartoncino plastificato. Il sette.
 
@@ -74,7 +74,7 @@ Gennaio: fattura il 14. Seduta il 16.
 Febbraio: fattura l'11. Seduta il 13.
 Marzo: fattura il 10. Approvazione in commissione del decreto sui mercati il 12. Relatore: Cicimarra.
 
-La prima fattura era del 25 novembre. Tredici giorni dopo la chiusura delle 12.07. Tommaso scrisse il tredici a margine, piccolo, e non lo commentò nemmeno in testa.
+La prima fattura era del 25 novembre dell'anno prima. Un anno e tredici giorni dopo la chiusura delle 12.07. Tommaso scrisse il tredici a margine, piccolo, e non lo commentò nemmeno in testa.
 
 Undici mesi. Nove su undici avevano lo stesso scarto. Due giorni. La fattura partiva il martedì. Il senatore parlava il giovedì. Le due eccezioni erano agosto, quando il Senato era chiuso, e luglio, quando la seduta era stata rinviata di una settimana e la fattura, quel mese, era arrivata con una settimana di ritardo.
 
@@ -116,7 +116,7 @@ Tommaso non gli raccontò niente. Gli diede una busta, e dentro la busta una sec
 
 L'amico ci pensò. Tommaso lo vide pensarci, e vide il nome arrivare prima della risposta.
 
-«Conosco una che scrive di mercati al *Meridiano*. È brava. A dicembre le hanno tagliato un pezzo che avevo letto in bozza. Era il pezzo più giusto dell'anno.»
+«Conosco una che scrive di mercati al *Meridiano*. È brava. Due anni fa, a dicembre, le hanno tagliato un pezzo che avevo letto in bozza. Era il pezzo più giusto di quell'anno.»
 
 «Non voglio sapere come si chiama.»
 
