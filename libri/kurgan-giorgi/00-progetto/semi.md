@@ -75,14 +75,19 @@ Ogni traccia lasciata nel testo va pagata o chiusa di proposito. Per ciascuna: d
 - **Il bicchiere capovolto** (cap. 24): il cameriere porta due bicchieri, uno capovolto per chi deve arrivare. Eco non dichiarata della terza tazza di Salvarani (cap. 8).
 - **L'ultima scelta di Kurgan** (cap. 24): calcola l'uscita migliore (la cucina, senza tetti sopra il vicolo) e si alza per primo da un tavolo, per la prima volta in vita sua. Poi il pavimento della cucina si solleva. Nessun corpo descritto.
 
+- **Fili senza capitolo di pagamento (controllo di fine Parte II):**
+  - **Chiamata al 112** (cap. 14): Bertola la ritrova nella Parte III, ma il capitolo non è fissato. Proposta: cap. 33 (Giorgi, il golpe) o un'eco al cap. 32 (Elena).
+  - **Chiavetta, passo 4 e 6:** la riga che la riporta nel cassetto delle chiavi (26 o 28) e il ritorno a Cadrasca non sono ancora fissati.
+  - **La seconda busta di Kurgan** (cap. 24): era nella tasca interna della giacca, a Riva Salmara. Nessuno la raccoglie sulla scena e la scaletta non la fa riapparire. Da decidere.
+
 ## Indizi su De Stefano (tetto: quattro in tutto)
 Ogni indizio regge da solo; insieme fanno un conto. Non superare quattro.
 1. **Cap. 9** — la pista troppo precisa: 31 conti, le 12.07, un intermediario di Merania. Dati che nessuno poteva avere.
 2. **Cap. 20** — «La settimana prossima stai lontana dalla costa.» E non chiede nulla della bambina di Merania.
 3. **Cap. 31** — il «registro di Merania»: un riferimento a una ricerca che Flora non gli ha mai detto.
 4. **(Libero, da usare con parsimonia.)**
-- **Ipotesi da confermare al cap. 27:** Flora va davvero a Porto Clodio martedì 29 (sul Tirreno); alla capitaneria sente la notizia della bomba di Riva Salmara (sull'Adriatico) e collega l'avvertimento di Carlo. È il suo primo vero «non torna»: da lì sospetta senza prove, come vuole la bibbia, e i suoi capitoli successivi (35 e 45 nella proposta) hanno tensione.
-- **La richiesta di comando a Rocca Sannella** (cap. 20): Carlo l'ha rifatta lunedì 21 giugno; «ne parliamo dopo l'estate». **Da pagare più avanti:** i servizi gliela negano di nuovo perché è troppo prezioso dov'è (bibbia). Il rifiuto alimenta il risentimento verso l'apparato e il tradimento silenzioso.
+- **Ipotesi da confermare al cap. 27:** Flora va davvero a Porto Clodio martedì 29 (sul Tirreno); alla capitaneria sente la notizia della bomba di Riva Salmara (sull'Adriatico) e collega l'avvertimento di Carlo. È il suo primo vero «non torna»: da lì sospetta senza prove, come vuole la bibbia, e i suoi capitoli successivi (31, 36, 39, 44) hanno tensione.
+- **La richiesta di comando a Rocca Sannella** (cap. 20): Carlo l'ha rifatta lunedì 21 giugno; «ne parliamo dopo l'estate». **Pagamento: cap. 35** (De Stefano, «Il comando di Rocca Sannella gli è negato»): i servizi gliela negano di nuovo perché è troppo prezioso dov'è (bibbia). Il rifiuto alimenta il risentimento verso l'apparato e il tradimento silenzioso.
 
 ## Decise
 

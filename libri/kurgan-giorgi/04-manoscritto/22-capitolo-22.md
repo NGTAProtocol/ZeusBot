@@ -92,7 +92,7 @@ Alfredo si fermò con la mano sul bottone della giacca.
 
 «Anche per Laura.»
 
-*Anche.* Elena mise la parola in fila con le altre. Da un mese, da quando in giardino le aveva detto che sapeva chi era stato, ogni frase di lui su Laura aveva una parola in più o una in meno. Mai quella giusta.
+*Anche.* Elena mise la parola in fila con le altre. Da nove giorni, da quando in giardino le aveva detto che sapeva chi era stato, ogni frase di lui su Laura aveva una parola in più o una in meno. Mai quella giusta.
 
 «Alfredo. Se oggi succede qualcosa, a me chi lo dice?»
 
