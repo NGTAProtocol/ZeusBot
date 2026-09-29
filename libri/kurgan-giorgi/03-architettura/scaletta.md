@@ -202,7 +202,7 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **45. De Stefano** (raro, ultimo suo) · Albaterra · giovedì 23 dicembre (Mese 25) · Deve indicare ai servizi dove sono le carte → le manda nel posto sbagliato. · **Chiusura:** brucia il suo rapporto nel lavandino. · 1.800 *(Scritto: cancella «Da Cataldo»; il capo reparto chiede dove sono le copie di Partenia e di Porto Clodio; Carlo dice «Nella macchina», nel cortile della madre di Flora a Rocca Sannella per Natale; «Dov'era la notte tra il 21 e il 22?» «In macchina, sotto casa mia, fino alle due. Scrivevo»; relazione protocollata alle 10.12; brucia nel lavandino il foglio a quadretti con le due colonne vere.)*
 
-**46. Dalia** · Merania · Mese 25 · La ritorsione: la fonte falsificata anni prima, presentata come frode → dimissioni, gogna. · **Chiusura:** spedisce a Elena il filmato avuto dalla guardia del corpo. · 1.900
+**46. Dalia** · Merania · martedì 28 dicembre (Mese 25) · La ritorsione: la fonte falsificata anni prima, presentata come frode → dimissioni, gogna. · **Chiusura:** spedisce a Elena il filmato avuto dalla guardia del corpo. · 1.900 *(Scritto: il giornale concorrente pubblica bozza e dichiarazione falsa di nove anni prima; Pietro; dimissioni in tre righe; la gogna in televisione; la madre al telefono; Nicola porta undici file; busta imbottita «Pisapia Elena», senza mittente, al corriere della stazione alle 7 del 29.)*
 
 **47. Elena** · Merania · Mese 25 · Riceve il materiale: quindici anni → gelo, nessuna scenata. · **Chiusura:** a cena sorride al marito. · 1.900
 
