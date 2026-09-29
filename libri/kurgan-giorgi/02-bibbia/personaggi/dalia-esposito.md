@@ -43,7 +43,7 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - **Testata:** *Il Meridiano*, quotidiano inventato.
 - Identità del cliente e del caso di corruzione: [DA DEFINIRE]
 - Da quanti anni vede Giorgi: [DA DEFINIRE]
-- Nome della guardia: [DA DEFINIRE]
+- Nome della guardia: **Nicola** (fissato nei cap. 6, 16, 46).
 
 ## Fissato nel capitolo 6
 - Vede Giorgi da **sei anni**, sempre nella stanza 512 di un albergo di Merania. Si sono conosciuti a un convegno: lui le chiese un parere su un'emissione di obbligazioni e ascoltò la risposta fino in fondo. La prima volta le chiese «Posso?» prima di sfiorarle la mano.
@@ -105,3 +105,13 @@ Il cuore del tema del controllo: usata da entrambi gli uomini, è l'unica che ro
 - Tre ore di sonno, maglione grigio pesante; all'edicola della stazione alle 6.12 compra tre copie (l'inchiostro umido sul cappotto).
 - Oltre cento chiamate; rifiuta le televisioni; scrive un secondo pezzo sulle reazioni, con i numeri.
 - La chiamata delle 6.01 da un numero dei servizi (riconosciuto da Pietro la sera). Messaggi di Nicola. Per la prima volta in sei anni non riesce a immaginare la faccia di Alfredo.
+
+## Versione definitiva della fonte falsificata (decisa prima del cap. 46)
+- È **la stessa storia** della «vecchia inchiesta sui porti» ricordata da Pietro al cap. 25. Nove anni prima, inchiesta sui porti di Partenia; Kurgan le impone una fonte falsa (dichiarazione di un ex impiegato inesistente, firma e documento contraffatti) per scagionare un dirigente dell'autorità portuale di Partenia sotto indagine per corruzione. Lei lo sa ed è costretta. Il direttore taglia il pezzo perché qualcosa nella fonte non torna; lei non può spiegare perché senza rivelare Vito. La dichiarazione, allegata al suo dossier, arriva alla difesa del dirigente e contribuisce all'archiviazione.
+- Al cap. 46 i servizi riesumano bozza e dichiarazione e le presentano come frode deliberata, senza la coercizione.
+
+## Fissato nel capitolo 46 (martedì 28 dicembre)
+- La ritorsione: bozza e dichiarazione falsa di nove anni prima pubblicate da un giornale concorrente. Ammette a Pietro di sapere che la fonte era falsa, non dice perché.
+- Dimissioni a mano, tre righe, dal Meridiano. Procedimento del consiglio dell'ordine.
+- La madre capisce («l'affitto per sei mesi»).
+- Nicola le porta undici file; lei li guarda: non c'è mai. Li spedisce a Elena Pisapia, senza mittente. La chiavetta «SETTEMBRE» resta chiusa.
