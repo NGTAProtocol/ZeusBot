@@ -112,3 +112,9 @@
 ## Fissato nel capitolo 25
 - **Le vittime di Riva Salmara**: Enzo Palumbo (cuoco, 58 anni), Davide Ursini (cameriere, 22), Walter e Rita Zanella (pensionati, clienti, in vacanza da una settimana).
 - **Pietro** (cronaca): legge i lanci a voce alta con la bocca piena di cracker; da ragazzo è stato a Riva Salmara; alle 21.15 chiama Dalia a casa per il pezzo; ricorda che il direttore le tagliò l'inchiesta sui porti. La chiama Esposito.
+
+## Momenti fuori misura (revisione, fase 2)
+- **Nicola** (cap. 46): consegnando la chiavetta a Dalia, «Lei gli piaceva davvero», e guarda altrove «come se l'avesse detto qualcun altro». Coerente con la bibbia (amore reale).
+- **Tanino** (cap. 29): alla consegna tira su la coperta scivolata dalle spalle di Laura e ritrae la mano sentendosi guardato da Giorgi.
+- **Ferri** (cap. 29): all'area di servizio compra un pacchetto di biscotti che nessuno gli ha chiesto e lo posa accanto a Laura senza parlare.
+- **Andrea Gatti** (cap. 1): tornando senza caffè alle 16.47 urta il cestino, che si rovescia; non lo raccoglie.
