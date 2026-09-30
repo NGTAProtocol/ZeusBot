@@ -76,3 +76,4 @@ L'uomo dei servizi incaricato di sorvegliare Flora che se ne innamora e la prote
 
 ## Fissato nel capitolo 52 (lunedì 31 gennaio, visto da Flora)
 - Arriva a Castelvaro alle 16.40, non in servizio, con una macchina non sua. «L'ho sentito alla radio. Ho pensato che fossi qui.» Porta due caffè del circolo. Resta accanto a lei sul pontile senza dire che resta. Flora non gli chiede «Tu lo sapevi?». **Nessun nuovo indizio** (tetto di quattro rispettato). Relazione in equilibrio fragile, come da bibbia.
+- **Incrinatura del tic (revisione, cap. 45):** dopo aver mandato i servizi sotto il fico, per una riga l'immagine di Flora nel cortile «non stava in nessuna delle due colonne».
