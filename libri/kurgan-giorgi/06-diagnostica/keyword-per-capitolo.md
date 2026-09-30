@@ -493,3 +493,21 @@ La somiglianza delle parole chiave (stanza, letto, mano) viene dall'ambientazion
 - **Capitolo 16:** il messaggio del venerdì «non aveva il punto interrogativo»; «In sei anni non l'aveva mai ringraziata di essere venuta. […] Non si ringraziava un patto.»; «Per la prima volta in sei anni, nella 512, non si toccarono.»; «Mi chiedi di Vito come si chiede di un uomo che si deve trovare.»; «Non era una promessa. Era una descrizione.»; «Mi rispondi come a una riunione.»; «Ho paura»; «Non più la donna del martedì. Un pezzo.»; «Non fecero l'amore.»; «Non disse *martedì*.»; «Una faccia nuda».
 
 **Difetto reale trovato rileggendo il 16:** la chiusura rivista in fase 2 («Dalia guardò il bicchiere sul tavolino. Il ghiaccio si era sciolto del tutto.») si appoggia a un oggetto che nel capitolo 16 non esiste. Nel 16 non c'è nessun bicchiere e nessun ghiaccio: il bicchiere d'acqua era nel capitolo 6. Da correggere con un oggetto già in scena (per esempio la manica della giacca, il velluto della poltrona, il telefono girato a faccia in giù). Non applicato in questa fase.
+
+## Chiusura della revisione
+
+### Verifica sul capitolo 16 (giacca)
+La giacca in scena è di Alfredo, non di Kurgan. È sulla sedia (righe 33 e 213), ma alla riga 225 Alfredo «Si rimise la giacca.» prima di uscire. La chiusura proposta con la giacca («La giacca era di nuovo sulla sedia…») avrebbe contraddetto il testo e non è stata applicata.
+
+### Modifiche applicate
+- **Capitolo 16, chiusura.** Prima: «Lo disse piano, e troppo a lungo. Dalia guardò il bicchiere sul tavolino. Il ghiaccio si era sciolto del tutto.» Dopo: «Lo disse piano, e troppo a lungo. Dalia sentiva ancora sotto il pollice il filo tirato del velluto.» Il velluto della poltrona è in scena (il filo tirato con il pollice) e il capitolo 25 lo riprende.
+- **Capitolo 5, chiusura della prima scena.** Prima: «…con la borsa sulle ginocchia, e aspettò che la chiamassero.» Dopo: «…con le mani in grembo, e aspettò che la chiamassero.» Flora arriva con due scatoloni tra le braccia e nessuna borsa è mai nominata.
+
+### Controllo degli oggetti nelle chiusure riviste
+Verificate le 9 chiusure sostituite e la chiusura del capitolo 35. Unico oggetto assente: bicchiere e ghiaccio del capitolo 16, ora corretti. Punto debole corretto: la borsa del capitolo 5. Oggetti introdotti dalla chiusura stessa senza contraddizione: cameriere (18), cappuccio della penna (26), taccuino del maresciallo (52).
+
+### Decisione sul capitolo 52
+Il taccuino del maresciallo resta com'è: nessuna contraddizione, solo un oggetto nominato per la prima volta nella chiusura.
+
+### PDF
+`05-output/il-padre-del-mostro-completo.pdf` rigenerato (A5, EB Garamond): 494 pagine, indice verificato. Manoscritto: 111.547 parole (prologo e 53 capitoli).

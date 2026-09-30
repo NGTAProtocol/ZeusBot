@@ -1031,7 +1031,7 @@ Posò gli scatoloni sul bancone. Sul fianco di ciascuno c'era scritto a pennarel
 
 Flora firmò. Guardò l'orologio sopra la porta. Le 8.52. Era in anticipo di otto minuti.
 
-Si sedette su una sedia di plastica nel corridoio, con la borsa sulle ginocchia, e aspettò che la chiamassero.
+Si sedette su una sedia di plastica nel corridoio, con le mani in grembo, e aspettò che la chiamassero.
 
 
 <p align="center">* * *</p>
@@ -3595,7 +3595,7 @@ La guardò con una faccia che lei non conosceva. Non il sorriso con l'ombra agli
 
 «Grazie» disse.
 
-Lo disse piano, e troppo a lungo. Dalia guardò il bicchiere sul tavolino. Il ghiaccio si era sciolto del tutto.
+Lo disse piano, e troppo a lungo. Dalia sentiva ancora sotto il pollice il filo tirato del velluto.
 
 ---
 
