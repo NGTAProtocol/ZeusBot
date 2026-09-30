@@ -45,3 +45,4 @@ Il braccio istituzionale di Osiride: trasforma le bombe in una legge che toglie 
 
 ## Fissato nel capitolo 39
 - Relatore in Senato del decreto-legge del 22 novembre (dodici articoli; art. 7 trasferisce i fascicoli connessi alla Task force entro trenta giorni).
+- **Cap. 49 (assente):** Salvarani destina a lui la chiavetta consegnata da Giorgi: «La terrà il senatore. Una qui, una da lui.»
