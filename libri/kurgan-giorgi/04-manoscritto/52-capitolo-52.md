@@ -88,7 +88,7 @@ Il maresciallo ci pensò. «Quelle d'inverno le affittano. Gente di fuori. Posso
 
 «Chieda.»
 
-Lo disse senza insistere. Sapeva già che cosa avrebbe risposto il comune. Un contratto regolare, un nome che non le diceva niente, un pagamento anticipato per sei mesi. Un lucchetto nuovo su una porta vecchia non era un indizio. Era una porta.
+Lo disse senza insistere. Sapeva già che cosa avrebbe risposto il comune. Un contratto regolare, un nome che non le diceva niente, un pagamento anticipato per sei mesi. Il maresciallo lo annotò sul taccuino, in fondo alla pagina, sotto la targa della berlina.
 
 ---
 
