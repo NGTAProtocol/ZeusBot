@@ -112,6 +112,8 @@ Dentro la busta c'era una chiavetta, e un foglietto con una sola parola scritta 
 
 «Gli ultimi li ho fatti io» disse Nicola, a voce bassa. «Alle feste del dottore, quando facevo la guardia fuori dalle ville. Con il telefono. Per sicurezza, mi avevano insegnato a riprendere sempre chi entrava e chi usciva. I vecchi erano nell'archivio delle telecamere delle ville, che nessuno guardava più da anni. Li ho copiati.» Guardò la strada, a destra e a sinistra, come uno che aveva imparato da qualcuno. «Se mi succede qualcosa, qualcuno deve averli. Non so a chi altro darli.»
 
+«Lei gli piaceva davvero» disse Nicola, e subito guardò da un'altra parte, come se l'avesse detto qualcun altro.
+
 Se ne andò prima che lei potesse rispondere.
 
 ---
