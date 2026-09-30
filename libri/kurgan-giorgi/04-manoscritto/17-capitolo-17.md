@@ -34,7 +34,7 @@ Poi l'immagine sullo schermo cambiò. Una ripresa dall'alto, grigia e verde, le 
 
 ---
 
-In fisica dei reattori c'è un problema che gli studenti del primo anno trovano sempre elegante e gli ingegneri trovano sempre insolubile: misurare il flusso di neutroni in un punto del nocciolo senza alterarlo. Ogni rivelatore che si inserisce assorbe una parte dei neutroni che dovrebbe contare. Ogni misura modifica la cosa misurata. Si può soltanto scegliere quanto disturbo si è disposti a introdurre in cambio di quanta informazione, e la scelta non è mai tecnica: è una scelta su che cosa si è disposti a perdere.
+Sullo schermo era rimasta la ripresa delle colline, con i suoi trentasei edifici, e guardarla voleva dire toccarla. Giorgi conosceva quel problema dal primo anno di fisica dei reattori: misurare il flusso di neutroni in un punto del nocciolo senza alterarlo. Ogni rivelatore che si inserisce assorbe una parte dei neutroni che dovrebbe contare. Ogni misura modifica la cosa misurata. Si può soltanto scegliere quanto disturbo si è disposti a introdurre in cambio di quanta informazione, e la scelta non è mai tecnica: è una scelta su che cosa si è disposti a perdere.
 
 L'arsenale che il fronte gli aveva messo a disposizione era un insieme di rivelatori di altissima sensibilità: satelliti, intercettazioni, informatori, reparti. Ognuno di essi, inserito nel sistema di Kurgan, lo avrebbe perturbato. Un'irruzione in una delle trentasei ville avrebbe detto a Kurgan che il dottore sapeva dove cercare. Un arresto di uno dei suoi uomini gli avrebbe detto che il dottore aveva scelto la guerra. E in entrambi i casi la sola grandezza che a Giorgi interessava misurare, la posizione di una bambina di sette anni, si sarebbe spostata prima che la misura fosse completata. Oppure si sarebbe annullata.
 
@@ -124,7 +124,7 @@ In un reattore si chiama variabile interna: una grandezza che nessuno strumento 
 
 Aveva calcolato anche l'altra ipotesi, quella che rendeva il foglio quasi inutile. Che l'offerta arrivasse alla variabile e la variabile la portasse intera a Kurgan, la sera stessa. In quel caso Kurgan avrebbe saputo che il dottore cercava lui e non la bambina, che aveva il nome del contabile, che aveva comprato qualcuno. Avrebbe cambiato le regole, e la sola finestra in cui era privo di scorta si sarebbe chiusa per sempre. Giorgi aveva stimato questa probabilità a una su tre. Poi aveva spedito l'offerta lo stesso, perché le altre due, per ora, erano tutto ciò che aveva.
 
-Non disse il nome. Nessuno glielo chiese. Nella stanza, ormai, tutti avevano capito che certe cose era meglio saperle da un'altra parte.
+Non disse il nome. Nessuno glielo chiese.
 
 «C'è una persona dentro» disse. «Ho già fatto arrivare un'offerta. Attraverso un canale che non passa da nessuno di voi.»
 

@@ -30,8 +30,6 @@ Sei settimane. Tre ingressi calibrati, tre risposte del mercato. Il mercato cope
 
 Si era laureato in fisica nucleare in un'università dove i professori portavano la tonaca e insegnavano che l'ordine del creato è leggibile da chi ha la pazienza di leggerlo. Aveva conservato di quegli anni due convinzioni che non gli erano mai sembrate in contraddizione: che il mondo fosse un sistema, e che un sistema, se lo si conosce abbastanza, si lasci governare.
 
-L'unica parte dell'operazione che restava aperta era la più piccola, e proprio per questo la più pericolosa.
-
 Tre uomini avevano messo gli ordigni. Tre uomini di Kurgan, scelti da lui, addestrati da lui, fedeli a lui con quella fedeltà quasi animale che Kurgan sapeva produrre intorno a sé e che Giorgi, in dieci anni, aveva imparato a considerare la risorsa più preziosa e insieme il difetto più grave della sua creatura. Tre uomini che sapevano dove, quando e con che cosa. Tre uomini che da quel pomeriggio erano diventati, nel linguaggio che Giorgi usava soltanto dentro di sé, isotopi instabili: nuclei che avevano accumulato un'energia che prima o poi, per una legge statistica e non morale, avrebbero rilasciato, e che rilasciandola avrebbero contaminato tutto ciò che si trovava intorno.
 
 La soluzione non richiedeva immaginazione. Richiedeva soltanto che l'ordine venisse dato, e che venisse eseguito dalla stessa mano che aveva scelto quegli uomini.
@@ -135,8 +133,6 @@ Restava da stabilire che cosa fosse diventato Kurgan da quella sera in avanti, e
 Per dieci anni Kurgan era stato un componente: un attuatore, nel linguaggio della teoria del controllo, cioè l'elemento che traduce un comando in un'azione sul mondo. Potente, efficiente, dotato di una sua inerzia, ma pur sempre governato da un segnale che veniva dall'esterno, e che Giorgi, per dieci anni, aveva calibrato con cura. Un attuatore che rifiuta il segnale, tuttavia, non è un attuatore guasto. Un attuatore guasto si ripara o si sostituisce. Un attuatore che rifiuta il segnale ha sviluppato un proprio anello di retroazione, e da quel momento non appartiene più al sistema che lo contiene: è diventato un sistema a sé, con i suoi obiettivi, la sua energia e la sua traiettoria, che nessuno ha calcolato perché nessuno pensava che esistesse.
 
 Ciò che si trovava dall'altra parte di quel numero non più raggiungibile, dunque, non era un sottoposto in rivolta. Era un secondo centro di gravità.
-
-E due centri di gravità, in uno spazio chiuso, non restano mai fermi a lungo.
 
 ---
 

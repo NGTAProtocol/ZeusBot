@@ -22,7 +22,7 @@ Poi risalì in macchina e se ne andò verso le saline, dalla parte dove la strad
 
 ---
 
-Nella teoria del controllo c'è una grandezza che i manuali trattano con una certa distrazione e gli ingegneri con un certo terrore: il ritardo. Un sistema che riceve il segnale giusto nel momento sbagliato non è un sistema quasi corretto. È un sistema che oscilla, che reagisce a condizioni che non esistono più, e che in certi casi, a parità di tutto il resto, diventa instabile soltanto per il tempo che il segnale ha impiegato ad arrivare. Il ritardo non aggiunge niente alla catena. Toglie. E la cosa che toglie non si vede fino a quando non è troppo tardi per rimetterla.
+Il termine scritto sotto *vivo* era il 23 luglio. Era il 10 agosto. In teoria del controllo quella distanza ha un nome, il ritardo, ed è la grandezza che chi progetta un impianto teme di più. Un sistema che riceve il segnale giusto nel momento sbagliato non è un sistema quasi corretto. È un sistema che oscilla, che reagisce a condizioni che non esistono più, e che in certi casi, a parità di tutto il resto, diventa instabile soltanto per il tempo che il segnale ha impiegato ad arrivare. Il ritardo non aggiunge niente alla catena. Toglie.
 
 Nelle sette ore del ritorno Giorgi guardò Laura nello specchietto, e non riuscì a pensare ad altro che a questo.
 

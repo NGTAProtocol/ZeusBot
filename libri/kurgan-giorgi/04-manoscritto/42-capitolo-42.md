@@ -12,7 +12,7 @@ Sullo schermo il senatore Cicimarra stava ringraziando l'aula. Aveva la cravatta
 
 ---
 
-Nella teoria del controllo c'è un momento che gli ingegneri aspettano con più sollievo di qualunque altro, e che i manuali descrivono con una sola parola: regime. È il momento in cui, dopo una perturbazione, il sistema smette di oscillare e si assesta sul valore desiderato. Le correzioni si fanno piccole, poi impercettibili, poi smettono. Da quel momento il regolatore non deve più fare niente. Deve soltanto guardare che nulla cambi.
+Il voto era finito e i numeri non si muovevano più: centosessantuno. Giorgi aveva un nome per quel momento, e l'aveva aspettato per due mesi: regime. È il momento in cui, dopo una perturbazione, il sistema smette di oscillare e si assesta sul valore desiderato. Le correzioni si fanno piccole, poi impercettibili, poi smettono. Da quel momento il regolatore non deve più fare niente. Deve soltanto guardare che nulla cambi.
 
 Giorgi guardò lo schermo e riconobbe il regime.
 

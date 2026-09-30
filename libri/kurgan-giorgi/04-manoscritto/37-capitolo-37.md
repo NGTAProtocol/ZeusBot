@@ -14,7 +14,7 @@ Salvarani non si alzò. Sedeva sul divano di velluto verde con le mani deformate
 
 ---
 
-Nella teoria del controllo gerarchico c'è una regola che i manuali enunciano nella prima pagina e che gli ingegneri dimenticano entro la terza: un sistema complesso non ha un solo livello di regolazione, ne ha diversi, sovrapposti, e ciascuno vede soltanto il livello immediatamente sotto di sé. Il regolatore corregge l'impianto. Il supervisore corregge il regolatore. Sopra il supervisore c'è quasi sempre un altro livello, più lento, più lontano, che interviene di rado e soltanto quando le correzioni dei livelli inferiori hanno smesso di bastare.
+Il senatore sedeva al posto della terza tazza, e Giorgi contò i livelli della stanza come si contano in un controllo gerarchico: un sistema complesso non ha un solo livello di regolazione, ne ha diversi, sovrapposti, e ciascuno vede soltanto il livello immediatamente sotto di sé. Il regolatore corregge l'impianto. Il supervisore corregge il regolatore. Sopra il supervisore c'è quasi sempre un altro livello, più lento, più lontano, che interviene di rado e soltanto quando le correzioni dei livelli inferiori hanno smesso di bastare.
 
 Giorgi si era considerato a lungo il supervisore. Il 6 gennaio, in quella stessa stanza, davanti a una terza tazza girata dritta, aveva capito di essere il regolatore. A giugno, con un telefono posato a faccia in giù su una scrivania, aveva visto il supervisore sostituirlo senza avvertirlo. Ad agosto, in una notte in cui non aveva toccato il telefono, aveva visto il sistema correggersi senza di lui.
 

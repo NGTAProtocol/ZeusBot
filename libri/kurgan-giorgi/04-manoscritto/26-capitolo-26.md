@@ -16,7 +16,7 @@ Non disse niente. De Biasi lo salutò con un cenno del mento, breve, come si sal
 
 ---
 
-Nella teoria dei sistemi c'è un momento che i manuali descrivono in una riga e gli impianti reali impiegano settimane a digerire: la riconfigurazione dopo un guasto. Quando un componente viene rimosso, il supervisore non si limita a spegnerlo. Ridisegna le connessioni intorno al vuoto, assegna ad altri componenti le funzioni che quello svolgeva, stabilisce nuovi limiti di tolleranza. Il sistema che ne risulta non è il vecchio sistema meno un pezzo. È un sistema diverso, con un'altra topologia, che conserva del precedente soltanto la memoria dei carichi.
+Il cenno di De Biasi era durato mezzo secondo, e in quel mezzo secondo Giorgi riconobbe la fase che segue un guasto: la riconfigurazione. Quando un componente viene rimosso, il supervisore non si limita a spegnerlo. Ridisegna le connessioni intorno al vuoto, assegna ad altri componenti le funzioni che quello svolgeva, stabilisce nuovi limiti di tolleranza. Il sistema che ne risulta non è il vecchio sistema meno un pezzo. È un sistema diverso, con un'altra topologia, che conserva del precedente soltanto la memoria dei carichi.
 
 Quella mattina, in quell'ufficio, Giorgi assistette alla riconfigurazione.
 

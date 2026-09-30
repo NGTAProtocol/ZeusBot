@@ -90,7 +90,7 @@ Giorgi sapeva che cosa conteneva. Ne possedeva una copia identica, in una casset
 
 Giorgi guardò l'astuccio, poi la tazza vuota, e capì che l'argomento della terza tazza non era Kurgan.
 
-Nella teoria del controllo esiste una struttura che gli ingegneri chiamano gerarchica: un regolatore di basso livello governa direttamente il processo, correggendone le deviazioni istante per istante, mentre sopra di lui un supervisore osserva non il processo ma il regolatore stesso, e ne valuta le prestazioni su una scala di tempo più lunga. Il supervisore non interviene finché l'errore resta entro una banda di tolleranza stabilita. Quando l'errore la supera, non corregge il processo: sostituisce il regolatore.
+La tazza era dritta sul piattino, vuota, e Giorgi ci vide una struttura che conosceva dagli anni di studio, e che gli ingegneri chiamano gerarchica: un regolatore di basso livello governa direttamente il processo, correggendone le deviazioni istante per istante, mentre sopra di lui un supervisore osserva non il processo ma il regolatore stesso, e ne valuta le prestazioni su una scala di tempo più lunga. Il supervisore non interviene finché l'errore resta entro una banda di tolleranza stabilita. Quando l'errore la supera, non corregge il processo: sostituisce il regolatore.
 
 Per trent'anni Giorgi era stato il regolatore. Aveva sempre saputo che sopra di lui c'era un supervisore, e ne aveva sempre conosciuto la banda di tolleranza, perché l'aveva sempre rispettata con un margine tale da non doverci mai pensare. Quel pomeriggio, nel freddo di quello studio, per la prima volta, gli sembrò di vederne i bordi.
 

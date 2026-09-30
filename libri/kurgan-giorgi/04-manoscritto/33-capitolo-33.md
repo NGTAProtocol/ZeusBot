@@ -8,7 +8,7 @@ Giorgi era rientrato a Merania alle nove di sera, come aveva promesso, e aveva t
 
 *Stanotte*: la cosa era già decisa, e non da lui. *A Casal Fascio*: il bersaglio era Bertola, dove Bertola era più visibile. *Di non chiamare nessuno*: De Biasi sapeva che Giorgi avrebbe potuto chiamare qualcuno, e sapeva chi.
 
-Nella teoria del controllo c'è una classe di sistemi che i manuali trattano come una curiosità e gli ingegneri come un sogno: i sistemi che si correggono da soli. Un componente che si guasta, invece di trascinare con sé il resto, si stacca; il carico si ridistribuisce; il sistema ritorna al punto di equilibrio senza che il regolatore debba intervenire, e a volte senza che il regolatore se ne accorga. Sulla carta è la configurazione perfetta. Nella pratica ha un solo difetto, che i manuali non scrivono: un sistema che si corregge da solo non ha più bisogno di un regolatore.
+Nessuna delle tre gli chiedeva di fare qualcosa. Giorgi ne riconobbe la forma: quella dei sistemi che si correggono da soli. Un componente che si guasta, invece di trascinare con sé il resto, si stacca; il carico si ridistribuisce; il sistema ritorna al punto di equilibrio senza che il regolatore debba intervenire, e a volte senza che il regolatore se ne accorga. Sulla carta è la configurazione perfetta. Nella pratica ha un solo difetto, che i manuali non scrivono: un sistema che si corregge da solo non ha più bisogno di un regolatore.
 
 Giorgi rimase seduto con quell'idea per il tempo che gli servì a riconoscerla. Poi la mise da parte, perché c'era un conto più urgente da fare.
 
@@ -24,7 +24,7 @@ A mezzanotte e venti prese il telefono e cercò in rubrica il numero dell'avvoca
 
 Lo schermo si spense da solo dopo trenta secondi.
 
-Non chiamò nessuno. Posò la mano sul telefono, per abitudine, e lasciò che il sistema facesse quello che i sistemi facevano quando nessuno li regolava.
+Non chiamò nessuno. Posò la mano sul telefono, per abitudine.
 
 All'una e mezza la porta dello studio si aprì. Elena, in vestaglia, senza accendere la luce. Guardò lui, il telefono sotto la sua mano, la scrivania vuota.
 
@@ -126,6 +126,6 @@ Il sistema si era corretto da solo. Il componente difettoso si era espulso da s�
 
 Giorgi lo registrò con precisione, come avrebbe registrato il collaudo riuscito di un impianto progettato da altri.
 
-Non se ne rallegrò. Un regolatore che guarda il sistema correggersi senza di lui impara soltanto una cosa, e la impara per ultimo: di quanto poco, ormai, gli si chieda di intervenire.
+Non se ne rallegrò.
 
 Di sopra, Laura dormiva nel letto di Elena, con la luce del comodino accesa anche adesso che era giorno.

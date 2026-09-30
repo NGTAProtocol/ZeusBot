@@ -72,7 +72,7 @@ Giorgi restò seduto. Sul tavolo, accanto al telefono, c'era ancora il foglio sc
 
 ---
 
-In teoria del controllo esiste un'architettura che gli studenti imparano al terzo anno e che gli impianti reali applicano ovunque: il controllo gerarchico. In basso stanno i regolatori locali, ciascuno responsabile di una grandezza, ciascuno convinto, per così dire, di governare il proprio pezzo di mondo. Sopra di loro sta un supervisore, che non regola niente direttamente ma osserva l'errore di ciascun regolatore. Finché l'errore resta dentro la tolleranza, il supervisore tace. Quando la supera, il supervisore non corregge il regolatore. Lo sostituisce. Stacca il suo segnale dall'attuatore e ci mette il proprio, senza avvertirlo, perché un regolatore che ha superato la tolleranza non è più un interlocutore: è la parte del sistema che ha smesso di funzionare.
+Chi aveva deciso, e quando? La domanda aveva una risposta tecnica, e Giorgi la conosceva dal terzo anno: il controllo gerarchico. In basso stanno i regolatori locali, ciascuno responsabile di una grandezza, ciascuno convinto, per così dire, di governare il proprio pezzo di mondo. Sopra di loro sta un supervisore, che non regola niente direttamente ma osserva l'errore di ciascun regolatore. Finché l'errore resta dentro la tolleranza, il supervisore tace. Quando la supera, il supervisore non corregge il regolatore. Lo sostituisce. Stacca il suo segnale dall'attuatore e ci mette il proprio, senza avvertirlo, perché un regolatore che ha superato la tolleranza non è più un interlocutore: è la parte del sistema che ha smesso di funzionare.
 
 Giorgi era stato un regolatore per dieci anni. Aveva regolato Kurgan, e attraverso Kurgan i porti, le navi, due mafie, tre stragi. Da diciannove mesi il suo errore era fuori tolleranza. Il supervisore lo aveva osservato con pazienza, da un appartamento con un divano di velluto verde, e il 6 gennaio aveva girato la terza tazza sul piattino. Quella notte aveva staccato il suo segnale dall'attuatore.
 
@@ -98,7 +98,7 @@ Una chiamata. Quattro parole: *domani non si fa.* Il generale avrebbe capito. Il
 
 Prima di fare il conto esaminò la terza via, quella che i sistemi reali offrono sempre a chi non vuole scegliere tra due stati: lo stato intermedio. Non fermare, non lasciar andare. Chiamare il generale e chiedere soltanto un rinvio. Una settimana. Il tempo di riportare la cattura dentro il piano, di rimettere quattro uomini ai tavoli e un furgone nel vicolo.
 
-La esaminò e la scartò in meno di un minuto. Un rinvio chiesto la notte prima, dopo la notizia, era una risposta alla prova tanto quanto un arresto. Diceva al supervisore che il regolatore sostituito aveva visto la sostituzione e tentava di negoziarla. E diceva un'altra cosa, peggiore: che il regolatore aveva paura. In un impianto, uno stato intermedio mantenuto troppo a lungo si chiamava instabilità, e le instabilità venivano corrette dall'alto con una forza maggiore di quella che le aveva prodotte.
+La esaminò e la scartò in meno di un minuto. Un rinvio chiesto la notte prima, dopo la notizia, era una risposta alla prova tanto quanto un arresto. Diceva al supervisore che il regolatore sostituito aveva visto la sostituzione e tentava di negoziarla. E diceva un'altra cosa, peggiore: che il regolatore aveva paura.
 
 Non c'erano tre vie. Ce n'erano due, e una sola delle due lasciava aperta la strada verso la bambina.
 
