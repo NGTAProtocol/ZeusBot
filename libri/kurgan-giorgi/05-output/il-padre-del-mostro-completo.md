@@ -387,7 +387,7 @@ Il pezzo era una persona che, di notte, aveva guardato chi aveva aperto quel reg
 
 Alle 16.47 Andrea tornò. Non aveva il caffè.
 
-Si sedette, girò la sedia verso di lui e abbassò la voce, anche se nessuno era abbastanza vicino da sentire.
+Si sedette, girò la sedia verso di lui e urtò con il ginocchio il cestino, che si rovesciò. Non lo raccolse. Abbassò la voce, anche se nessuno era abbastanza vicino da sentire.
 
 «Ma tu che hai combinato?»
 
@@ -1031,7 +1031,7 @@ Posò gli scatoloni sul bancone. Sul fianco di ciascuno c'era scritto a pennarel
 
 Flora firmò. Guardò l'orologio sopra la porta. Le 8.52. Era in anticipo di otto minuti.
 
-Era sempre in anticipo. Era l'unico vantaggio che nessuno poteva toglierle.
+Si sedette su una sedia di plastica nel corridoio, con la borsa sulle ginocchia, e aspettò che la chiamassero.
 
 
 <p align="center">* * *</p>
@@ -3595,7 +3595,7 @@ La guardò con una faccia che lei non conosceva. Non il sorriso con l'ombra agli
 
 «Grazie» disse.
 
-Lo disse piano, e troppo a lungo. Come si diceva a chi ti aveva appena dato qualcosa che non avrebbe più potuto riprendersi.
+Lo disse piano, e troppo a lungo. Dalia guardò il bicchiere sul tavolino. Il ghiaccio si era sciolto del tutto.
 
 ---
 
@@ -3895,7 +3895,7 @@ Rastegar lo guardò a lungo. Poi rise, piano, senza allegria, come aveva riso a 
 
 «Allora ci rivediamo. Da solo, come sempre.» Rastegar si voltò verso il buffet, prese un piatto pulito, si mise in fila. «Le farò sapere io dove. Quando la mia gente è pronta a leggerla.»
 
-Kurgan restò accanto alla colonna altri dieci minuti, con un bicchiere d'acqua in mano. Chi arrivava secondo se ne andava secondo.
+Kurgan restò accanto alla colonna altri dieci minuti, con un bicchiere d'acqua in mano. Un cameriere gli chiese se voleva qualcos'altro. Disse di no, e posò il bicchiere pieno sul vassoio.
 
 
 <p align="center">* * *</p>
@@ -5441,7 +5441,7 @@ Adorisio annuì. Guardò Giorgi un'ultima volta, con gli occhi chiari di chi leg
 
 «Mi dia tre settimane.»
 
-Quando la portiera si fu richiusa, Giorgi tirò fuori di nuovo il foglio del 31 maggio e scrisse sotto *vivo*, con la stessa penna, una data: *venerdì 23 luglio*. Le misure si archiviavano, con la data. Anche le promesse degli altri.
+Quando la portiera si fu richiusa, Giorgi tirò fuori di nuovo il foglio del 31 maggio e scrisse sotto *vivo*, con la stessa penna, una data: *venerdì 23 luglio*. Rimise il cappuccio alla penna, e il foglio nella tasca interna, dove stava dal 31 maggio.
 
 ---
 
@@ -5847,7 +5847,7 @@ Poi lui richiuse il frigorifero, e la cucina tornò al buio dello schermo.
 
 Risalì. Il terzo gradino scricchiolò di nuovo. Una porta, di sopra.
 
-Elena scrisse sulla ricevuta, con la matita per gli occhi, perché non aveva altro: *1.31 — F. (cordino).* Poi girò di nuovo lo schermo. La barra era a metà.
+Elena scrisse sulla ricevuta, con la matita per gli occhi, perché non aveva altro: *1.13*. Lo guardò. Lo cancellò con un tratto e scrisse accanto: *1.31 — F. (cordino).* Poi girò di nuovo lo schermo. La barra era a metà.
 
 
 <p align="center">* * *</p>
@@ -5889,7 +5889,7 @@ Giorgi lo vide dal parabrezza alle sei meno sette minuti, nella luce ancora grig
 
 Il messaggio era arrivato la sera prima alle nove, dal numero dell'avvocato di Partenia. *Domani, alle sei. Strada delle saline, terzo chilometro. Lei e l'autista, nessun altro.* Giorgi aveva guidato la notte intera con Ferri al volante, sette ore di autostrada vuota, e non aveva dormito un minuto, e non aveva pensato a niente che non fosse misurabile: i chilometri, i caselli, l'ora d'arrivo stimata, la probabilità che il messaggio fosse vero.
 
-Tanino aprì la portiera posteriore e si fece da parte.
+Tanino aprì la portiera posteriore. Prima di farsi da parte si chinò dentro e tirò su la coperta che era scivolata dalle spalle della bambina, un gesto di un secondo, e ritrasse la mano come se si fosse accorto troppo tardi di chi lo stava guardando.
 
 Laura era seduta sul sedile, con le ginocchia al petto e una coperta grigia sulle spalle che non era sua. Guardò la portiera aperta. Poi guardò lui. Non si mosse.
 
@@ -5912,6 +5912,8 @@ Nelle sette ore del ritorno Giorgi guardò Laura nello specchietto, e non riusc�
 Lei stava seduta dietro, dalla parte opposta alla sua, con la borsa che Elena aveva preparato il 19 maggio e che era rimasta ottantatré giorni accanto alla porta di casa. Giorgi l'aveva presa passando, alle dieci di sera, senza chiedere a Elena che cosa ci fosse dentro. Dentro c'erano otto cose. Laura ne aveva tirato fuori una sola, il coniglio di pezza, e lo teneva sotto il mento, stretto, senza giocarci. Le altre sette erano rimaste nella borsa, e la borsa chiusa.
 
 Non parlò. A un'area di servizio, verso le nove, Ferri si fermò per la benzina e Giorgi le chiese se voleva qualcosa. Lei scosse la testa. Quando lui aprì la portiera per scendere, lo guardò finché non la richiuse, e poi guardò la maniglia, e continuò a guardarla finché lui non tornò. Giorgi registrò il dato senza commentarlo, come si registrava la prima deviazione di uno strumento appena sostituito: non la si capiva ancora, ma si sapeva già che avrebbe detto qualcosa.
+
+Ferri tornò dalla cassa con un pacchetto di biscotti che nessuno gli aveva chiesto, lo posò sul sedile accanto a Laura senza dire niente, e rimise in moto.
 
 Verso le dieci, sulla Dorsale, le chiese se voleva sentire la mamma. Lei lo guardò nello specchietto per un tempo lungo, e poi fece di sì con la testa, una volta sola. Giorgi chiamò. Elena rispose al primo squillo, e non disse pronto.
 
@@ -6828,7 +6830,7 @@ L'amico ci pensò. Tommaso lo vide pensarci, e vide il nome arrivare prima della
 
 «Sto bene.»
 
-Non era vero. Ma era una frase di tre parole, e le frasi corte erano le più difficili da smentire.
+Non era vero. L'amico non insistette. Si alzò per primo.
 
 
 <p align="center">* * *</p>
@@ -6902,7 +6904,7 @@ Tre anni prima, la prima lettera, l'aveva letta nello stesso ufficio, sulla stes
 
 Il suo lavoro, da due anni, era lei. Glielo avevano dato perché era bravo. Adesso glielo toglievano un'altra volta, per la stessa ragione.
 
-Non disse niente di tutto questo. Aveva imparato da molto tempo che il risentimento, in quella palazzina, era un'informazione, e che le informazioni si davano solo a chi ne aveva bisogno.
+Non disse niente di tutto questo. Tolse la mano dal ginocchio e aspettò che il capo reparto gli spingesse davanti il foglio di destra.
 
 
 <p align="center">* * *</p>
@@ -8203,7 +8205,7 @@ A mezzogiorno il direttore la chiamò nella sua stanza. Aveva gli occhi rossi di
 
 Dalia non rispose. Sentì il maglione grigio pesarle sulle spalle.
 
-«Non so ancora che cosa significhi» disse il direttore. «Ma quando la gente chiede come stai con quella voce, di solito non è per sapere come stai.»
+«Non so ancora che cosa significhi» disse il direttore. «Vai a casa a dormire due ore. Poi torna.»
 
 
 <p align="center">* * *</p>
@@ -8291,6 +8293,8 @@ Non lo aveva richiamato. Non gli aveva chiesto come lo sapesse. Aveva avuto la d
 
 Rimase nell'ingresso, con la porta ancora aperta e il freddo delle scale che le entrava nella vestaglia.
 
+Cominciò a mettere in fila, e la fila non veniva: la scala, il cappotto chiuso fino al collo, il secondo piano dove si era fermato, di nuovo il cappotto.
+
 Quaranta ore. Sapeva perché. Da giovedì 16, da quando il *Meridiano* aveva stampato in prima pagina tre parole e una sigla, il pool aveva corso più in sei giorni che in sei mesi. Il fondo di Merania del punto quattro aveva un nome, AV System, e la sigla sulla nota di commissione aveva il nome di un consigliere non esecutivo della Lanterna. Il 17 Calabrese aveva firmato la richiesta di acquisizione alla Consob dei dati per secondo del 12 novembre, di due anni prima e di quest'anno. Il 20 il giudice che nessuno aveva mai scelto per niente aveva autorizzato il sequestro presso lo studio di via dei Cordai, da eseguire il 23 alle nove. Il 21 Cataldo aveva scritto, in una notte, la richiesta di perquisizione della sede di AV System a Porta Vetra, e l'aveva messa sulla scrivania del procuratore alle sette del mattino.
 
 Alle dieci di sera qualcuno aveva dichiarato un'urgenza.
@@ -8330,7 +8334,7 @@ Chiamò Cataldo alle 0.41. Non dal fisso. Dal cellulare, che non era mai stato a
 
 «Ho bisogno della sua macchina. E del suo soggiorno. Per qualche giorno.»
 
-Cataldo non chiese perché. Arrivò alle 1.10, in tuta, con una Panda grigia di quindici anni. Caricarono i due scatoloni di Calabrese e un terzo, più piccolo, con le carte di Porto Clodio.
+Cataldo non chiese perché. Arrivò alle 1.10, in tuta, con una Panda grigia di quindici anni. A metà della seconda rampa gli scivolò di mano uno scatolone, e Cataldo rise, una risata corta e sbagliata, da ragazzo, che si spense subito nel buio delle scale. Caricarono i due scatoloni di Calabrese e un terzo, più piccolo, con le carte di Porto Clodio.
 
 Mentre il bagagliaio si chiudeva, Flora guardò la cartellina di Porto Clodio in cima al terzo scatolone. Il 29 novembre, un lunedì di pioggia, quattro ore di macchina all'andata e quattro al ritorno, due alla capitaneria. Un impiegato con la barba, gentile, che le aveva fatto compilare un modulo e le aveva portato tre raccoglitori senza chiederle chi fosse. Il registro navale delle venti petroliere della Clodia Navi.
 
@@ -8395,6 +8399,8 @@ Calabrese si appoggiò allo stipite della porta. La fede girava. Sei giri. Poi s
 «Non lo eseguiranno» disse Cataldo.
 
 «No.» Calabrese guardò gli scaffali vuoti. «L'armadio resta dov'è. Con il suo foglio.»
+
+Diede un colpo con il palmo allo scaffale vuoto, uno solo, e la polvere si alzò. «Scusate» disse, a nessuno.
 
 Flora guardò la copia carbone. Sessanta righe in un armadio, a venti minuti a piedi da lì, in una via con un nome di mestiere. Un giudice che le aveva detto sì, e un decreto che adesso stava in un ufficio della Presidenza del Consiglio. Non era finita. Era soltanto diventata una corsa, e le corse, pensò, si vincevano o si perdevano di poche ore.
 
@@ -8527,6 +8533,8 @@ E Cataldo avrebbe continuato a non sapere niente, perché nessuno glielo chiedev
 Pensò di chiamare Flora. Di dirle di non andare a Rocca Sannella, o di andarci con un'altra macchina, o di lasciare il bagagliaio aperto perché nessuno dovesse forzarlo. Non poteva. Una telefonata dal suo numero al suo, quella mattina, dopo quella stanza, sarebbe stata la riga più visibile di tutto il suo fascicolo. E lei avrebbe chiesto perché, e questa volta lui non avrebbe avuto una strada da guardare a destra e a sinistra per non rispondere.
 
 La lasciò partire, nella sua testa, alle sei di sera, con i regali di Natale nel bagagliaio e sua madre che la aspettava sotto il fico.
+
+Il fico, il cortile, lei che scendeva dalla macchina con i regali: non stava in nessuna delle due colonne, e per un momento non seppe in quale scriverlo.
 
 
 <p align="center">* * *</p>
@@ -8687,6 +8695,8 @@ Non lo fece salire. Scese lei, in cappotto, e lo trovò sul marciapiede con le s
 Dentro la busta c'era una chiavetta, e un foglietto con una sola parola scritta a matita, in stampatello. *Sicurezza.*
 
 «Gli ultimi li ho fatti io» disse Nicola, a voce bassa. «Alle feste del dottore, quando facevo la guardia fuori dalle ville. Con il telefono. Per sicurezza, mi avevano insegnato a riprendere sempre chi entrava e chi usciva. I vecchi erano nell'archivio delle telecamere delle ville, che nessuno guardava più da anni. Li ho copiati.» Guardò la strada, a destra e a sinistra, come uno che aveva imparato da qualcuno. «Se mi succede qualcosa, qualcuno deve averli. Non so a chi altro darli.»
+
+«Lei gli piaceva davvero» disse Nicola, e subito guardò da un'altra parte, come se l'avesse detto qualcun altro.
 
 Se ne andò prima che lei potesse rispondere.
 
@@ -9074,7 +9084,7 @@ Lo disse come si leggeva un risultato già verificato, senza enfasi. Giorgi guar
 
 «Hai contato le tazze, entrando. Ti ho visto.» Salvarani indicò il vassoio con due dita storte. «Non c'era niente da decidere, qui dentro. Ti ho chiamato per dirtelo, non per chiedertelo. È l'ultima cortesia che il sistema ti deve, e ho voluto fartela io.»
 
-«Non come pensi» continuò il cardinale. «Nessuno ti chiede di morire. Un uomo morto lo cercano: chi l'ha ucciso, perché, chi c'era prima. Ti chiediamo soltanto di non esserci. Di non essere più raggiungibile da nessuno. Né da un giudice, né da un giornale, né da noi.» Una pausa breve. «Il potere non muore, Alfredo. Si divide, si nasconde, si ricompone. Te l'ho raccontato quando avevi quindici anni. Adesso tocca a te nasconderti. È la parte della storia che ti è sempre piaciuta di più.»
+«Non come pensi» continuò il cardinale. «Nessuno ti chiede di morire. Un uomo morto lo cercano: chi l'ha ucciso, perché, chi c'era prima. Ti chiediamo soltanto di non esserci. Di non essere più raggiungibile da nessuno. Né da un giudice, né da un giornale, né da noi.» Una pausa breve. «Il potere non muore, Alfredo. Si divide, si nasconde, si ricompone. Te l'ho raccontato quando avevi quindici anni. Adesso tocca a te nasconderti.» Posò la teiera sul vassoio, con il beccuccio verso di sé.
 
 
 <p align="center">* * *</p>
@@ -9517,7 +9527,7 @@ Il maresciallo ci pensò. «Quelle d'inverno le affittano. Gente di fuori. Posso
 
 «Chieda.»
 
-Lo disse senza insistere. Sapeva già che cosa avrebbe risposto il comune. Un contratto regolare, un nome che non le diceva niente, un pagamento anticipato per sei mesi. Un lucchetto nuovo su una porta vecchia non era un indizio. Era una porta.
+Lo disse senza insistere. Sapeva già che cosa avrebbe risposto il comune. Un contratto regolare, un nome che non le diceva niente, un pagamento anticipato per sei mesi. Il maresciallo lo annotò sul taccuino, in fondo alla pagina, sotto la targa della berlina.
 
 
 <p align="center">* * *</p>
@@ -9680,7 +9690,7 @@ Guardò le cinque righe. Poi scrisse, sotto, la sesta.
 
 La guardò a lungo. Poi, con la matita, ci tirò sopra una riga dritta, sola. La frase restava leggibile sotto il tratto. Non la cancellò di più.
 
-Non era una conclusione. Era una riga. Le conclusioni le lasciava a chi aveva un tribunale.
+Rimise lo scontrino nella tasca con la cerniera, accanto alla chiave di ottone, e scese dalla macchina.
 
 
 <p align="center">* * *</p>
