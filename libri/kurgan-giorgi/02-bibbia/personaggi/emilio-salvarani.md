@@ -55,3 +55,4 @@ Il volto del potere sopra Giorgi: il maestro che lo ha formato e che alla fine l
 - Invito a pesca da parte di «un amico mio»: Castelvaro, lago di Varo, domenica 30 gennaio alle 6; biglietto scritto a mano dal cassetto dello scrittoio. «Il resto non devi saperlo. Un uomo che sa come andrà lo fa capire con le mani.» «Vivo.»
 - Riceve la chiavetta di Giorgi: «La terrà il senatore. Una qui, una da lui.»
 - «Il pesce abbocca prima che faccia giorno. Me l'ha insegnato mio padre, su un lago molto più piccolo di quello.» «Porta un maglione pesante.» A Giorgi sembra, per la prima volta, vecchio in tutto.
+- **Cap. 51 (senza comparire):** il suo «amico» (sessant'anni, loden verde, senza nome) resta a terra e dà a Giorgi l'unica istruzione («due colpi sotto lo scafo… vada a poppa. Non si volti»). L'operazione: sommozzatore, rimessa di legno, furgone.
