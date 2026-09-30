@@ -218,7 +218,8 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 **51. Giorgi (c)** · Castelvaro, lago di Varo · domenica 30 gennaio, alba (Mese 26) · A pesca; il sommozzatore; l'esplosione con altre vittime → sparisce, vivo. · **Chiusura:** il foglio del 31 maggio fradicio, la parola *vivo* sciolta in una macchia blu, lasciato asciugare sul ginocchio. · 1.800
   *Scritto (1.803 parole): l'amico in loden resta a terra; due fratelli del posto sulla barca; «due colpi sotto lo scafo, vada a poppa»; la camera a nebbia; il calcolo di giugno rifatto e non cambiato; il sommozzatore e l'erogatore («un regolatore… tenuto fermo dalla mano di un altro»); l'esplosione al diciannovesimo respiro; la rimessa e il furgone senza finestrini; Giorgi diventa un sistema non osservabile.*
 
-**52. Flora** · Castelvaro · Mese 26 · La versione ufficiale → il corpo non c'è. De Stefano accanto, la domanda mai fatta. · **Chiusura:** Flora non chiude il fascicolo. · 1.800
+**52. Flora** · Castelvaro · lunedì 31 gennaio (Mese 26) · La versione ufficiale → il corpo non c'è. De Stefano accanto, la domanda mai fatta. · **Chiusura:** Flora non chiude il fascicolo. · 1.800
+  *Scritto (1.747 parole): quarantadue pezzi e niente di Giorgi; il comunicato delle 18 e la dichiarazione di Cicimarra; il testimone in loden non è tra i trentotto; il motore con la brina; la vedova e il doppio in contanti; le chiavi nel cruscotto; la rimessa con il lucchetto nuovo; Carlo alle 16.40, la domanda non fatta; art. 60 c.c., due anni; il quinto foglio; la parola non scritta.*
 
 **53. Elena** · Merania / cassetta di sicurezza · Mese 27 · Vedova per il mondo → apre la cassetta: la terza copia del dossier. Cicimarra e Salvarani credono di avere le uniche due. · **Chiusura:** ultima riga del romanzo, aggancio al seguito. · 1.800
 
