@@ -45,3 +45,6 @@ Nasce come risposta dello Stato alle **tre stragi** (Valcerna, Morenna, Marcena)
 ## Fissato nel capitolo 48
 - **Cataldo** vive in una palazzina popolare dietro la ferrovia di Albaterra, secondo piano; radio sul notiziario sportivo; tre scatoloni chiusi in soggiorno. Ha ricopiato a mano la tabella di Tommaso sul portablocco e l'ha continuata per tre mesi (date del Senato, protocolli, un indirizzo). Tiene nel taschino la lente per i timbri.
 - Martedì 18 gennaio Tommaso lo avvicina al bar di fronte alla DNA; Cataldo lo fa seguire a cinquanta metri e lo porta a casa sua: «Di là, da un mese, entra anche chi non dovrebbe.» Chiama Flora dal fisso: «venga a pranzo da me. Ho una persona che scrive i sette come lei.» È l'unico canale del pool fuori dal controllo della task force.
+
+## Fissato nel capitolo 50
+- Calabrese e Cataldo presenti al sequestro di via dei Cordai (sabato 29 gennaio). Cataldo annota l'ora sul portablocco e fa un punto a matita quando Flora legge la riga quarantuno; nel pomeriggio ricopia una colonna di numeri che Flora non chiede. Calabrese gira la fede otto volte all'arrivo dell'avocazione: «Sei ore. Quasi.» Cataldo: «Sei ore e mezza, se aspettano di arrivare.»
