@@ -478,3 +478,18 @@ Su 54 file, **3 segnalazioni** (una per ciascun criterio). Gli altri 51 capitoli
 - **Le altre coppie** (0,29 o meno) condividono solo nomi di personaggi fissi o parole generiche (cucina, nome, porta).
 
 **Casi deboli verificati a mano e non segnalati:** i capitoli 9, 13, 23 e 53 hanno poca sovrapposizione lessicale con la scaletta, ma le parole chiave sono chiaramente pertinenti: Valdhof e Carlo per la pista dei soldi (9), Porto Clodio, bambina e autista per il piano del rapimento (13), «Stasera» e il punto interrogativo per l'incontro annullato (23), chiavetta, avvocato e Duomo per la vedovanza e la cassetta (53).
+
+## Esito della verifica sul testo (dopo la sintesi)
+
+### Capitolo 1: Sandro Merlo
+Aggiunto a `02-bibbia/nomi-inventati.md`, nuova sezione «Persone minori», con una riga coerente con la sua unica apparizione (capo del desk, cinquantadue anni, diciassette in sala, le tre regole del 13 novembre). `comprimari.md` non ha una sezione per il capitolo 1, quindi non è stato toccato. Il testo del capitolo è invariato.
+
+### Capitolo 25: falso allarme
+Il dettaglio c'è ed è il perno della scena. La testimone al telegiornale dice: «C'era un signore grande, altissimo, seduto dentro da solo. Aspettava qualcuno.» Subito dopo, su una riga isolata: «*Da solo.*» E poi il ricordo della frase detta da Dalia nella 512: «*Con lui va da solo. Sempre. È la condizione. In mezzo alla gente. All'ora di pranzo.*», seguito da «Un'esplosione non prendeva nessuno.» È il motivo per cui il lettore capisce che Kurgan è andato a un appuntamento fatale e che l'informazione veniva da lei. YAKE! non lo ha colto perché «da» e «solo» sono entrambe stopword italiane: l'espressione è invisibile all'estrazione.
+
+### Capitoli 6 e 16: falso allarme per la ripetizione, ma un difetto reale nel 16
+La somiglianza delle parole chiave (stanza, letto, mano) viene dall'ambientazione prevista nella 512. Il capitolo 16 è costruito come rovesciamento del 6, con segni espliciti:
+- **Capitolo 6:** «Quella sera il sorriso aveva qualcosa in più. Un'ombra agli angoli.»; «Sapeva tutto di lei. Era questo, all'inizio, che le aveva fatto paura.»; «Eccola, pensò Dalia. La frase con dentro due frasi.»; «Messe in fila, adesso, le sembravano un'altra cosa. Le sembravano una scheda.»; «Anche Vito, quando mentiva, aveva il battito calmo.»; «Si chiese, davanti allo specchio, se anche quel centimetro fosse stato calcolato.» Il sospetto nasce, ma dentro l'intimità di sempre.
+- **Capitolo 16:** il messaggio del venerdì «non aveva il punto interrogativo»; «In sei anni non l'aveva mai ringraziata di essere venuta. […] Non si ringraziava un patto.»; «Per la prima volta in sei anni, nella 512, non si toccarono.»; «Mi chiedi di Vito come si chiede di un uomo che si deve trovare.»; «Non era una promessa. Era una descrizione.»; «Mi rispondi come a una riunione.»; «Ho paura»; «Non più la donna del martedì. Un pezzo.»; «Non fecero l'amore.»; «Non disse *martedì*.»; «Una faccia nuda».
+
+**Difetto reale trovato rileggendo il 16:** la chiusura rivista in fase 2 («Dalia guardò il bicchiere sul tavolino. Il ghiaccio si era sciolto del tutto.») si appoggia a un oggetto che nel capitolo 16 non esiste. Nel 16 non c'è nessun bicchiere e nessun ghiaccio: il bicchiere d'acqua era nel capitolo 6. Da correggere con un oggetto già in scena (per esempio la manica della giacca, il velluto della poltrona, il telefono girato a faccia in giù). Non applicato in questa fase.
