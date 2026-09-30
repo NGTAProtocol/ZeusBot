@@ -47,3 +47,4 @@ Il braccio istituzionale di Osiride: trasforma le bombe in una legge che toglie 
 - Relatore in Senato del decreto-legge del 22 novembre (dodici articoli; art. 7 trasferisce i fascicoli connessi alla Task force entro trenta giorni).
 - **Cap. 49 (assente):** Salvarani destina a lui la chiavetta consegnata da Giorgi: «La terrà il senatore. Una qui, una da lui.»
 - **Cap. 52:** dichiarazione pubblica sulla scomparsa di Giorgi: «una perdita grave per il sistema economico del Paese, un uomo che aveva sempre anteposto la stabilità a ogni interesse di parte». Nessun inquirente lo collega alla sparizione.
+- **Cap. 53 (visto da Elena):** alla messa in suffragio del 12 febbraio le stringe la mano con due mani, mezzo secondo prima del necessario; l'acqua di colonia le resta sul guanto. Crede di custodire una delle uniche due copie; non sa della terza.
