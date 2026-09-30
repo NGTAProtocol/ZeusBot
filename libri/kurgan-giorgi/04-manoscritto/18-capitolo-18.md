@@ -96,7 +96,7 @@ Rastegar lo guardò a lungo. Poi rise, piano, senza allegria, come aveva riso a 
 
 «Allora ci rivediamo. Da solo, come sempre.» Rastegar si voltò verso il buffet, prese un piatto pulito, si mise in fila. «Le farò sapere io dove. Quando la mia gente è pronta a leggerla.»
 
-Kurgan restò accanto alla colonna altri dieci minuti, con un bicchiere d'acqua in mano. Chi arrivava secondo se ne andava secondo.
+Kurgan restò accanto alla colonna altri dieci minuti, con un bicchiere d'acqua in mano. Un cameriere gli chiese se voleva qualcos'altro. Disse di no, e posò il bicchiere pieno sul vassoio.
 
 ---
 
