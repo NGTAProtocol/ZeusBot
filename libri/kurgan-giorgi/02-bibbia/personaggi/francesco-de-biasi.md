@@ -51,3 +51,4 @@ Il militare che fa il lavoro sporco di Osiride dopo Kurgan: crea Casal Fascio, l
 
 ## Fissato nel capitolo 39
 - Nominato dal decreto-legge del 22 novembre (art. 7, comma 3) comandante della Task force nazionale presso la Presidenza del Consiglio, con il grado di generale di corpo d'armata. Scheda pubblica: reparti speciali, addestramento all'estero, promozione senza cerimonia; foto a una parata, capelli grigi cortissimi, mani dietro la schiena.
+- **Cap. 50 (senza comparire):** firma come comandante della task force la dichiarazione d'urgenza (art. 9) delle 17.34 di sabato 29 gennaio che avoca il fascicolo nuovo e il reperto di via dei Cordai.
