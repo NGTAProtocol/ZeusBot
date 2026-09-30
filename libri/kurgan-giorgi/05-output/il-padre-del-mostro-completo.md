@@ -2,7 +2,7 @@
 
 ### Felice Faraone
 
-*Romanzo — prima stesura completa*
+*Romanzo — prima stesura rivista*
 
 ---
 
