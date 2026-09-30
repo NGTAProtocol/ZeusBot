@@ -24,6 +24,8 @@ Non lo aveva richiamato. Non gli aveva chiesto come lo sapesse. Aveva avuto la d
 
 Rimase nell'ingresso, con la porta ancora aperta e il freddo delle scale che le entrava nella vestaglia.
 
+Cominciò a mettere in fila, e la fila non veniva: la scala, il cappotto chiuso fino al collo, il secondo piano dove si era fermato, di nuovo il cappotto.
+
 Quaranta ore. Sapeva perché. Da giovedì 16, da quando il *Meridiano* aveva stampato in prima pagina tre parole e una sigla, il pool aveva corso più in sei giorni che in sei mesi. Il fondo di Merania del punto quattro aveva un nome, AV System, e la sigla sulla nota di commissione aveva il nome di un consigliere non esecutivo della Lanterna. Il 17 Calabrese aveva firmato la richiesta di acquisizione alla Consob dei dati per secondo del 12 novembre, di due anni prima e di quest'anno. Il 20 il giudice che nessuno aveva mai scelto per niente aveva autorizzato il sequestro presso lo studio di via dei Cordai, da eseguire il 23 alle nove. Il 21 Cataldo aveva scritto, in una notte, la richiesta di perquisizione della sede di AV System a Porta Vetra, e l'aveva messa sulla scrivania del procuratore alle sette del mattino.
 
 Alle dieci di sera qualcuno aveva dichiarato un'urgenza.
@@ -61,7 +63,7 @@ Chiamò Cataldo alle 0.41. Non dal fisso. Dal cellulare, che non era mai stato a
 
 «Ho bisogno della sua macchina. E del suo soggiorno. Per qualche giorno.»
 
-Cataldo non chiese perché. Arrivò alle 1.10, in tuta, con una Panda grigia di quindici anni. Caricarono i due scatoloni di Calabrese e un terzo, più piccolo, con le carte di Porto Clodio.
+Cataldo non chiese perché. Arrivò alle 1.10, in tuta, con una Panda grigia di quindici anni. A metà della seconda rampa gli scivolò di mano uno scatolone, e Cataldo rise, una risata corta e sbagliata, da ragazzo, che si spense subito nel buio delle scale. Caricarono i due scatoloni di Calabrese e un terzo, più piccolo, con le carte di Porto Clodio.
 
 Mentre il bagagliaio si chiudeva, Flora guardò la cartellina di Porto Clodio in cima al terzo scatolone. Il 29 novembre, un lunedì di pioggia, quattro ore di macchina all'andata e quattro al ritorno, due alla capitaneria. Un impiegato con la barba, gentile, che le aveva fatto compilare un modulo e le aveva portato tre raccoglitori senza chiederle chi fosse. Il registro navale delle venti petroliere della Clodia Navi.
 
@@ -122,6 +124,8 @@ Calabrese si appoggiò allo stipite della porta. La fede girava. Sei giri. Poi s
 «Non lo eseguiranno» disse Cataldo.
 
 «No.» Calabrese guardò gli scaffali vuoti. «L'armadio resta dov'è. Con il suo foglio.»
+
+Diede un colpo con il palmo allo scaffale vuoto, uno solo, e la polvere si alzò. «Scusate» disse, a nessuno.
 
 Flora guardò la copia carbone. Sessanta righe in un armadio, a venti minuti a piedi da lì, in una via con un nome di mestiere. Un giudice che le aveva detto sì, e un decreto che adesso stava in un ufficio della Presidenza del Consiglio. Non era finita. Era soltanto diventata una corsa, e le corse, pensò, si vincevano o si perdevano di poche ore.
 
