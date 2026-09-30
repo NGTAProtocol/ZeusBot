@@ -128,7 +128,7 @@ L'amico ci pensò. Tommaso lo vide pensarci, e vide il nome arrivare prima della
 
 «Sto bene.»
 
-Non era vero. Ma era una frase di tre parole, e le frasi corte erano le più difficili da smentire.
+Non era vero. L'amico non insistette. Si alzò per primo.
 
 ---
 
