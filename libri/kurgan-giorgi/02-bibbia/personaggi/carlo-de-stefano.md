@@ -73,3 +73,6 @@ L'uomo dei servizi incaricato di sorvegliare Flora che se ne innamora e la prote
 - Alla domanda sulla notte del 21 risponde con una verità parziale (in macchina sotto casa sua, fino alle due, scriveva).
 - Brucia nel lavandino il foglio a quadretti con le due colonne vere. Bilocale al quarto piano in un quartiere dove nessuno si conosce; lavandino d'acciaio con un graffio lungo; fiammiferi di legno lunghi. Foto di sfondo del telefono: un mare grigio.
 - Resta a rischio, non scoperto.
+
+## Fissato nel capitolo 52 (lunedì 31 gennaio, visto da Flora)
+- Arriva a Castelvaro alle 16.40, non in servizio, con una macchina non sua. «L'ho sentito alla radio. Ho pensato che fossi qui.» Porta due caffè del circolo. Resta accanto a lei sul pontile senza dire che resta. Flora non gli chiede «Tu lo sapevi?». **Nessun nuovo indizio** (tetto di quattro rispettato). Relazione in equilibrio fragile, come da bibbia.
