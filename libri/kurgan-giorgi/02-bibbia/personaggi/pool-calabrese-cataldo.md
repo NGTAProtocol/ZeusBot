@@ -48,3 +48,7 @@ Nasce come risposta dello Stato alle **tre stragi** (Valcerna, Morenna, Marcena)
 
 ## Fissato nel capitolo 50
 - Calabrese e Cataldo presenti al sequestro di via dei Cordai (sabato 29 gennaio). Cataldo annota l'ora sul portablocco e fa un punto a matita quando Flora legge la riga quarantuno; nel pomeriggio ricopia una colonna di numeri che Flora non chiede. Calabrese gira la fede otto volte all'arrivo dell'avocazione: «Sei ore. Quasi.» Cataldo: «Sei ore e mezza, se aspettano di arrivare.»
+
+## Momenti fuori misura (revisione, fase 2)
+- **Cataldo** (cap. 44, 1.10): sulla seconda rampa gli scivola uno scatolone e ride, «una risata corta e sbagliata, da ragazzo».
+- **Calabrese** (cap. 44, dopo il ritiro dei faldoni): un colpo con il palmo allo scaffale vuoto; «Scusate», a nessuno.
