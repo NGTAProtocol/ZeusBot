@@ -212,7 +212,8 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 **49. Giorgi (c)** · Vaticano · venerdì 21 gennaio (Mese 26) · Salvarani gli comunica la decisione di Osiride → **seconda crepa**, la resa totale. · **Chiusura:** accetta l'invito a pesca. · 2.000
   *Scritto (1.946 parole): due tazze, nessuna capovolta; «Non sappiamo dove»; testimone, giudice, armadio; l'osservabilità rovesciata («Tu parleresti»); «non ci sarai più»; le tre vie già calcolate; seconda crepa: «Non era più nemmeno una domanda.»; invito a pesca a Castelvaro per domenica 30 gennaio alle 6; «Vivo?» «Vivo.»; la chiavetta consegnata (la terrà il senatore); «Porta un maglione pesante.» «Lo porterò.»*
 
-**50. Flora** · Albaterra · Mese 26 · La corsa: depositare gli atti e l'elenco prima che la task force li prenda → ci riesce, per poche ore. · **Chiusura:** una notizia dal lago di Varo. · 1.900
+**50. Flora** · Albaterra · sabato 29 gennaio → domenica 30, mattina (Mese 26) · La corsa: depositare gli atti e l'elenco prima che la task force li prenda → ci riesce, per poche ore. · **Chiusura:** una notizia dal lago di Varo. · 1.900
+  *Scritto (1.862 parole): fascicolo nuovo sul verbale di Tommaso, dieci giorni dall'iscrizione (scadenza a mezzanotte del 29); sequestro alle 8.52 in via dei Cordai; il foglio di sessanta righe, trentaquattro cancellature, riga quarantuno «Giorgi Alfredo»; deposito al gip alle 12.40, numero di reperto; avocazione art. 9 alle 17.34, ritiro alle 19.10: «sei ore e trenta minuti»; la riga dodici, cancellato e vivo; radio delle 9 del 30: esplosione su una barca da pesca davanti a Castelvaro.*
 
 **51. Giorgi (c)** · Castelvaro, lago di Varo · domenica 30 gennaio, alba (Mese 26) · A pesca; il sommozzatore; l'esplosione con altre vittime → sparisce, vivo. · **Chiusura:** [da scrivere: ultima immagine di Giorgi]. · 1.800
 
