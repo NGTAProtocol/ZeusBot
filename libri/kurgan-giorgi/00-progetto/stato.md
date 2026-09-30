@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 48 (Tommaso, Mese 26: il fondo risale alla fuga di dati; si consegna a Flora, testimone chiave; **chiude il nodo urgente del 42**). Scritti: prologo, capitoli 1–47. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 49 (Giorgi, Vaticano, Mese 26: **seconda crepa**, Salvarani e la «resa totale»; accetta l'invito a pesca). Scritti: prologo, capitoli 1–48. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -165,3 +165,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Passo 0: chiuso il nodo della vecchia inchiesta sui porti (stessa storia della fonte falsificata); scheda Dalia aggiornata.
 - 2026-09-29 — Capitolo 46 (Dalia, 1.838 parole): la firma ingrandita, «fonti qualificate», la busta di Vito e l'affitto della madre, Pietro («Te l'hanno fatto perché hai avuto ragione»), il direttore e le dimissioni in tre righe, la gogna, la madre al telefono, «SETTEMBRE» chiusa, Nicola e la chiavetta «Sicurezza», undici file senza di lei, la busta a Pisapia Elena.
 - 2026-09-29 — Capitolo 47 (Elena, 1.834 parole): la busta «Pisapia Elena», i tredici giorni di Alfredo in casa, il nome del 16, gli undici file, il colpo alla porta, il 4 giugno e Cadrasca, i quattro mittenti, il freddo, la chiavetta accanto alla chiave 87, le patate, il sorriso.
+- 2026-09-30 — Capitolo 48 (Tommaso, 1.855 parole, ultimo suo): la convocazione delle 16.02, il mese di attesa, il biglietto strappato, la fuga in treno, Cataldo al bar («conosce la mia calligrafia»), la tabella ricopiata, Flora e «Cominci dai numeri», i carabinieri non della task force, l'appartamento protetto. Chiuso il nodo urgente del 42.
