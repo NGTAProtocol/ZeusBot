@@ -28,7 +28,7 @@ C'era una cosa che non tornava, e Kurgan la guardò mentre si infilava i pantalo
 
 Da *entro l'estate* a *oggi* in tredici giorni.
 
-Kurgan fece il conto e il conto gli diede una spiegazione sola. Il governo del contabile aveva fretta. Rastegar glielo aveva detto chiaro: *il mio governo un po' meno*, di pazienza. Qualcuno, a Parsàn, aveva letto la prima busta e voleva la seconda prima dell'autunno, e il contabile, che era un uomo paziente pagato da gente impaziente, stava correndo. Un contabile che correva non era un contabile che tradiva. Era un contabile a cui avevano messo una scadenza.
+Kurgan rilesse a memoria le due parole del secondo biglietto, *questa settimana*, e ci trovò una spiegazione sola. Il governo del contabile aveva fretta. Rastegar glielo aveva detto chiaro: *il mio governo un po' meno*, di pazienza. Qualcuno, a Parsàn, aveva letto la prima busta e voleva la seconda prima dell'autunno, e il contabile, che era un uomo paziente pagato da gente impaziente, stava correndo. Un contabile che correva non era un contabile che tradiva. Era un contabile a cui avevano messo una scadenza.
 
 La spiegazione reggeva. La tenne.
 

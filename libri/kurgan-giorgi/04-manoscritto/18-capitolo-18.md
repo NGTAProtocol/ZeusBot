@@ -126,7 +126,7 @@ Il ragazzo della Serrana fece un passo avanti. Rocco si staccò dai sacchi. Il B
 
 Non alzò la voce. Non serviva. Il ragazzo tornò indietro di un passo. Onorato si aggiustò il cappello. Adorisio non si era mosso dalla sua cassa; Carrese nemmeno; Tanino, contro i sacchi, aveva infilato le mani in tasca.
 
-Kurgan fece il conto, lì, in piedi, come l'aveva fatto sul muretto nella valle. Onorato erano quaranta uomini, e quaranta uomini che non caricano le navi non mangiano. Se Onorato se ne andava, se ne andavano anche i suoi notai, e senza notai le navi non avevano padrone. I sei della Serrana erano suoi perché li aveva presi quando nessuno li voleva: ma i sei della Serrana tenevano la banchina, e la banchina era la cosa che lo straniero pagava. Carrese teneva i moli e i doganieri. Il Biondo, Rocco e Tanino erano suoi fino alla morte, ma non valevano un porto. E Adorisio teneva insieme tutto il resto, i manuali, le casse, i ragazzi, senza mai chiedere niente per sé.
+Kurgan restò in piedi, con la schiena alla porta scorrevole, e li guardò in faccia. Onorato erano quaranta uomini, e quaranta uomini che non caricano le navi non mangiano. Se Onorato se ne andava, se ne andavano anche i suoi notai, e senza notai le navi non avevano padrone. I sei della Serrana erano suoi perché li aveva presi quando nessuno li voleva: ma i sei della Serrana tenevano la banchina, e la banchina era la cosa che lo straniero pagava. Carrese teneva i moli e i doganieri. Il Biondo, Rocco e Tanino erano suoi fino alla morte, ma non valevano un porto. E Adorisio teneva insieme tutto il resto, i manuali, le casse, i ragazzi, senza mai chiedere niente per sé.
 
 Ognuno di loro, quella sera, era una colonna che reggeva un pezzo di tetto. Nessuno reggeva il tetto intero.
 

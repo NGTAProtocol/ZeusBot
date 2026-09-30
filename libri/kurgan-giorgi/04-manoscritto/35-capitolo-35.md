@@ -124,7 +124,7 @@ In dodici anni Carlo aveva detto a quell'uomo molte cose incomplete. Aveva scelt
 
 «Ad Albaterra» disse. «Il pool ha una scadenza con la Banca d'Italia. Lavora anche il sabato, fino a metà ottobre. Me l'ha detto lei.»
 
-Lo disse guardando il capo reparto negli occhi. Non abbassò lo sguardo. Non lo spostò sulla finestra, né sul foglio. Contò, dentro di sé, fino a tre, perché sapeva che una bugia reggeva meglio se durava quanto una verità.
+Lo disse guardando il capo reparto negli occhi. Non abbassò lo sguardo. Non lo spostò sulla finestra, né sul foglio. Sentì il proprio respiro, lento, e lo lasciò durare, perché sapeva che una bugia reggeva meglio se durava quanto una verità.
 
 Il capo reparto annuì.
 
@@ -160,4 +160,4 @@ Non rispose. Non sapeva ancora che cosa avrebbe detto, se lei gli avesse chiesto
 
 In fondo alle scale salutò il piantone, e prima di attraversare la strada guardò a destra, poi a sinistra, come faceva sempre. Poi guardò a destra un'altra volta.
 
-Non c'era nessuno. Non gli servì a niente saperlo.
+Non c'era nessuno. Attraversò.

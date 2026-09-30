@@ -87,7 +87,7 @@ Sotto, dopo una riga vuota, un'altra parola. *Stanotte.*
 
 Alle undici Alfredo salì a letto. Alle undici e venti spense la luce. Elena restò sveglia accanto a lui e contò i respiri.
 
-Lui si addormentava in fretta, da sempre. Anche adesso, anche con Laura via. Dopo venti minuti il respiro si allungava. Dopo quaranta, faceva un piccolo rumore in fondo alla gola, ogni sette respiri. Elena aspettò il rumore. Lo contò tre volte.
+Lui si addormentava in fretta, da sempre. Anche adesso, anche con Laura via. Dopo venti minuti il respiro si allungava. Dopo quaranta, faceva un piccolo rumore in fondo alla gola, ogni sette respiri. Elena aspettò il rumore. Lo sentì arrivare, piccolo, in fondo alla gola di lui.
 
 Alle dodici e mezza lui si girò sul fianco, verso di lei. Il rumore smise. Elena restò immobile, con gli occhi aperti nel buio, e contò i respiri da capo. Uno. Due. Al decimo lui disse una parola, impastata, che non era un nome. Poi niente. Al trentesimo il rumore tornò, ogni sette respiri.
 

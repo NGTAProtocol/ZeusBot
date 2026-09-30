@@ -76,7 +76,7 @@ Piegò la ricevuta e la mise nel portafoglio, dietro la carta d'identità, accan
 
 ---
 
-La domenica passò come passavano le domeniche da un mese. Alfredo si svegliò alle nove, fece la doccia, scese in cucina con i capelli bagnati. Baciò Elena sulla tempia. Lei si lasciò baciare. Contò i secondi: meno di uno.
+La domenica passò come passavano le domeniche da un mese. Alfredo si svegliò alle nove, fece la doccia, scese in cucina con i capelli bagnati. Baciò Elena sulla tempia. Lei si lasciò baciare. Sentì il freddo dei capelli bagnati contro la fronte.
 
 Alle dieci, mentre Alfredo era al telefono in giardino, Fabrizio scese in cucina e si versò il latte. Lo bevve in piedi, come sempre. Poi, invece di risalire, restò appoggiato al frigorifero.
 

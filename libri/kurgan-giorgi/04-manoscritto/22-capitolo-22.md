@@ -48,7 +48,7 @@ La doccia scorreva. Elena scostò il lenzuolo.
 
 Non lo prese in mano. Si alzò, fece due passi a piedi nudi sul parquet, si chinò sul cassettone come ci si chinava su una culla, e guardò.
 
-Lo schermo era spento. Elena aspettò. Contò i secondi, come aveva contato i respiri di lui la domenica di giugno in cui aveva letto l'altro telefono. Venti. Quaranta. La doccia scorreva. Al cinquantaduesimo secondo lo schermo si accese da solo, per un avviso di batteria scarica, e sotto l'avviso c'era la riga di una notifica rimasta lì dalla notte.
+Lo schermo era spento. Elena aspettò. Sentì il parquet sotto i piedi nudi. La doccia scorreva. Poi lo schermo si accese da solo, per un avviso di batteria scarica, e sotto l'avviso c'era la riga di una notifica rimasta lì dalla notte.
 
 Un messaggio. Nessun nome sopra, soltanto un numero che finiva con tre zeri. L'orario di arrivo: 03.12.
 

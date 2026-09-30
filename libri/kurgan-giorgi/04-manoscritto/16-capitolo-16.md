@@ -212,7 +212,7 @@ Alfredo chiuse gli occhi per un secondo.
 
 Lui non rispose. Riaprì gli occhi e guardò il tappeto, la manica della giacca per terra, come se se ne accorgesse soltanto allora. Si chinò, la raccolse, la posò sulla sedia con cura. Dalla tasca interna spuntava l'angolo di un foglio piegato in quattro, e sul bordo, a pennarello rosso, lo spigolo di un tetto disegnato da una mano di bambino. Lui lo spinse dentro con due dita, senza guardarlo, come si rimetteva a posto una cosa che si sapeva a memoria. Poi restò chino un momento di più, con la mano sulla stoffa.
 
-Dalia contò i secondi. Sette. Non capiva. Sapeva soltanto che in quei sette secondi Alfredo aveva pensato a una persona precisa, e che quella persona non era Vito, e non era lei.
+Dalia guardò la mano ferma sulla stoffa. Non capiva. Sapeva soltanto che, chino in quel modo, Alfredo aveva pensato a una persona precisa, e che quella persona non era Vito, e non era lei.
 
 ---
 

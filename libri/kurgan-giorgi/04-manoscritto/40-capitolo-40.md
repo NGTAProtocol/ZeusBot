@@ -80,7 +80,7 @@ Rimasero in silenzio. La barra arrivò a metà.
 
 Non era una domanda.
 
-Elena contò fino a tre prima di rispondere. Era il suo numero.
+Elena sentì la parola *papà* restare tra loro, prima di rispondere.
 
 «Sì.»
 

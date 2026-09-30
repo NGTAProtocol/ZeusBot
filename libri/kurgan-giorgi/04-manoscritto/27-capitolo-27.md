@@ -6,7 +6,7 @@ La lettera di Calabrese era sulla scrivania di Flora, non sulla sua. Busta bianc
 
 Erano le otto e cinquanta di lunedì. L'ufficio del pool, al terzo piano della Direzione nazionale antimafia, sapeva ancora di chiuso dal fine settimana. Flora posò la borsa sulla sedia e non aprì la busta subito.
 
-Prima mise in fila le cose. Lo faceva sempre.
+Prima guardò la calligrafia storta del biglietto giallo.
 
 Calabrese era arrivato prima di lei, cosa che non succedeva mai. Aveva lasciato la lettera ed era uscito. La giacca non c'era. Quindi non era al bagno, né alla macchinetta del caffè. Era uscito per non essere lì quando lei la leggeva.
 

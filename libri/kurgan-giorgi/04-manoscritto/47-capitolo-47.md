@@ -130,7 +130,7 @@ Poi cominciò a preparare la cena. Contò le patate. Otto. Le sbucciò una per u
 
 Alle 20.30 erano tutti a tavola. Cesare parlava di una partita. Fabrizio mangiava a testa bassa, e ogni tanto alzava gli occhi verso sua madre, e poi verso suo padre, e poi di nuovo verso il piatto. Laura aveva messo le scarpe in fila davanti alla porta della cucina, come faceva da agosto, prima di sedersi.
 
-Alfredo sedeva a capotavola. Era stanco. Aveva una ruga nuova tra le sopracciglia, che Elena contò come si contava una cosa comparsa in un inventario dove prima non c'era. Mangiava piano. Rispondeva a Cesare con un minuto di ritardo.
+Alfredo sedeva a capotavola. Era stanco. Aveva una ruga nuova tra le sopracciglia, che Elena vide come si vedeva una cosa comparsa in un inventario dove prima non c'era. Mangiava piano. Rispondeva a Cesare con un minuto di ritardo.
 
 A metà della cena alzò gli occhi verso di lei.
 

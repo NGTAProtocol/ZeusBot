@@ -42,7 +42,7 @@ Il notaio guardò i due carabinieri. Poi guardò Cataldo, che aveva aperto il po
 
 ---
 
-L'armadio era di noce, nello studio in fondo, con una serratura a doppia mappa. Il notaio disse che la chiave era a casa sua, dall'altra parte della città. Il maresciallo disse che allora avrebbe chiamato un fabbro, e che un fabbro, il sabato, costava il triplo e rompeva il doppio. Il notaio restò in silenzio per un tempo che Flora contò. Nove secondi. Poi tirò fuori un mazzo dalla tasca del maglione, aprì un cassetto della scrivania con una chiave piccola, e dal cassetto prese quella dell'armadio. Dentro c'erano repertori rilegati in tela verde, anno per anno. Sul ripiano più alto, da solo, un raccoglitore di pelle rossa, consumato agli angoli.
+L'armadio era di noce, nello studio in fondo, con una serratura a doppia mappa. Il notaio disse che la chiave era a casa sua, dall'altra parte della città. Il maresciallo disse che allora avrebbe chiamato un fabbro, e che un fabbro, il sabato, costava il triplo e rompeva il doppio. Il notaio restò in silenzio, e Flora gli vide la mano andare alla tasca del maglione e fermarsi lì. Poi tirò fuori un mazzo dalla tasca del maglione, aprì un cassetto della scrivania con una chiave piccola, e dal cassetto prese quella dell'armadio. Dentro c'erano repertori rilegati in tela verde, anno per anno. Sul ripiano più alto, da solo, un raccoglitore di pelle rossa, consumato agli angoli.
 
 Il maresciallo lo prese con i guanti. Lo posò sulla scrivania. Lo aprì.
 

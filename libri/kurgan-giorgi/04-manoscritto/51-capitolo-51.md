@@ -18,7 +18,7 @@ Giorgi salì a bordo. Due.
 
 ---
 
-Nella fisica sperimentale c'è una regola che i fisici imparano presto e rispettano male: l'osservatore non può misurare un sistema di cui fa parte senza perturbarlo, e più la misura è fine, più la perturbazione è grande. Per trent'anni Giorgi aveva risolto il problema restando fuori. Un telefono posato sul tavolo, una sala sotto terra, un piano più in alto degli altri. Aveva guardato i sistemi dall'esterno, come si guardava una camera a nebbia, e aveva visto le tracce delle particelle senza essere una di esse.
+L'uomo con il loden verde e il berretto di lana era rimasto sul pontile a guardare la barca, e Giorgi conosceva la regola che la fisica sperimentale impone a chiunque guardi: l'osservatore non può misurare un sistema di cui fa parte senza perturbarlo, e più la misura è fine, più la perturbazione è grande. Per trent'anni Giorgi aveva risolto il problema restando fuori. Un telefono posato sul tavolo, una sala sotto terra, un piano più in alto degli altri. Aveva guardato i sistemi dall'esterno, come si guardava una camera a nebbia, e aveva visto le tracce delle particelle senza essere una di esse.
 
 Quella mattina era dentro la camera. Seduto a poppa su una panca bagnata, con il maglione pesante sotto la giacca e le mani in tasca, non vedeva niente del sistema che lo conteneva. Non sapeva quanti uomini fossero sulla riva, né dove. Non sapeva a che distanza fosse l'altra barca, né se esistesse. Non sapeva di che cosa fosse fatta la carica, né dove fosse stata messa, né chi tenesse il dito sopra il comando. Sapeva soltanto che esisteva un comando, perché un sistema così aveva sempre un comando, e che qualcuno lo teneva.
 

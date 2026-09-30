@@ -174,7 +174,7 @@ Poi si voltò e prese le scale di servizio.
 
 Kurgan restò seduto altri dieci minuti. Era la regola: chi arrivava secondo se ne andava secondo, e lasciava all'altro il tempo di sparire.
 
-Guardò il caffè freddo nella tazza. Guardò la folla. Fece il conto un'altra volta, da capo.
+Guardò il caffè freddo nella tazza. Guardò la folla. Riascoltò la voce di Rastegar, da capo.
 
 Cinque aerei, invece di venti. Una banchina a Punta Saline, tre notti al mese. Un uomo che aveva avuto un fratello dentro un impianto, quindici anni prima, e che adesso sapeva di dovere a Kurgan il nome di chi l'aveva ucciso. Un debito così non si scriveva da nessuna parte. Valeva più di cinque aerei. Forse valeva più di venti.
 

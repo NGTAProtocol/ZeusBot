@@ -60,7 +60,7 @@ In fondo c'era una stanza grande, bianca, illuminata da neon. Faceva freddo. Odo
 
 Sui tavoli c'erano gli aerei.
 
-Grigi, piccoli, con le ali dritte e sottili come quelle di un insetto. Alcuni ancora mezzi dentro le casse di legno, tra la paglia. Altri montati, allineati, con i cavi attaccati a una fila di computer. Dalia ne contò undici. Poi vide che in fondo, contro il muro, c'erano altre casse ancora chiuse, e smise di contare.
+Grigi, piccoli, con le ali dritte e sottili come quelle di un insetto. Alcuni ancora mezzi dentro le casse di legno, tra la paglia. Altri montati, allineati, con i cavi attaccati a una fila di computer. Undici, sui tavoli. Dalia sentì il freddo della stanza sulle braccia, e vide che in fondo, contro il muro, c'erano altre casse ancora chiuse.
 
 Due ragazzi in tuta lavoravano a un tavolo, chini su un pezzo aperto. Uno aveva le mani grandi, sproporzionate, da muratore, e le muoveva sui fili sottili con una delicatezza che non ci si aspettava. Alzarono la testa quando videro Vito, poi la riabbassarono.
 

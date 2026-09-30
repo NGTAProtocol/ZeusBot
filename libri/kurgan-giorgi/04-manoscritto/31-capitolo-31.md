@@ -140,7 +140,7 @@ Flora mangiò. Aveva il settimo foglio nella borsa, nella tasca con la cerniera,
 
 Per un momento, a metà del piatto, ebbe voglia di dirglielo. Non tutto. Una cosa. *Oggi ho trovato tre nomi.* Carlo era l'unico, fuori dal pool, con cui avesse mai parlato del suo lavoro. Due anni di cene, una al mese. Lui ascoltava fino in fondo, non interrompeva, e a gennaio le aveva dato una pista che aveva aperto una porta.
 
-Fece il conto, come lo faceva sempre. Dirglielo le avrebbe dato qualcosa: una voce che le diceva se aveva ragione. Non dirglielo non le toglieva niente. E da gennaio c'era una colonna, nella tasca con la cerniera, che nessuno le aveva chiesto di scrivere.
+Sentì il foglio piegato contro il fianco. Dirglielo le avrebbe dato qualcosa: una voce che le diceva se aveva ragione. Non dirglielo non le toglieva niente. E da gennaio c'era una colonna, nella tasca con la cerniera, che nessuno le aveva chiesto di scrivere.
 
 Tacque.
 

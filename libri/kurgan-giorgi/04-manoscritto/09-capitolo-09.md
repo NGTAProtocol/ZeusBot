@@ -186,7 +186,7 @@ Flora sentì il freddo partire dalla nuca. Conosceva quella frase. L'aveva senti
 
 Quattro persone erano in quella stanza, quel giorno. Tre magistrati e un procuratore. E un corridoio, e un telefono, e una linea.
 
-Rimise in fila. Non riusciva a smettere.
+Il freddo dalla nuca le era sceso lungo la schiena, e non se ne andava.
 
 Uno. Qualcuno aveva ascoltato una telefonata privata di un magistrato, il primo giorno del pool.
 

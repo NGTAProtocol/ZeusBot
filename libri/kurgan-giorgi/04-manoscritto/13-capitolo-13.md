@@ -52,7 +52,7 @@ Dall'altra parte mise se stesso.
 
 Duecentoquaranta uomini, contati uno per uno. Di questi, sessanta suoi davvero: quelli del Drenak, i ragazzi dei vicoli, i sei della Serrana. Gli altri erano suoi finché c'erano i soldi e il porto. Poi i droni: cinquantotto, adesso, sotto la villa. Poi tre amici stranieri che non erano amici. Il biondo di Kaliria voleva la costa. Il cinese voleva i porti. Rastegar voleva quello che aveva nella testa lui, e che nessuno aveva ancora capito del tutto.
 
-Fece il conto come l'aveva fatto sul muretto, nella valle. Contro il dottore da solo, poteva vincere. Contro il dottore con lo Stato alle spalle, no. Poteva fargli male. Poteva bruciargli un porto, una banca, un palazzo. E per ogni cosa che bruciava, il dottore avrebbe mandato la Finanza, i carabinieri, i servizi, e alla fine qualcuno con un fucile di precisione su un tetto. E i morti sarebbero stati i suoi. Il Biondo. Rocco. Tanino. I ragazzi.
+Guardò fuori, verso il buio delle saline, come aveva guardato la valle dal muretto. Contro il dottore da solo, poteva vincere. Contro il dottore con lo Stato alle spalle, no. Poteva fargli male. Poteva bruciargli un porto, una banca, un palazzo. E per ogni cosa che bruciava, il dottore avrebbe mandato la Finanza, i carabinieri, i servizi, e alla fine qualcuno con un fucile di precisione su un tetto. E i morti sarebbero stati i suoi. Il Biondo. Rocco. Tanino. I ragazzi.
 
 Una guerra aperta con il dottore la pagavano gli uomini. Come sempre.
 

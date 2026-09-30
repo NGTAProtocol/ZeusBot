@@ -158,7 +158,7 @@ Lunedì 20 ottobre, Morenna.
 
 Mercoledì 12 novembre, Marcena. Il governo cade.
 
-Sei mesi tra la prima riga e la seconda. Sei settimane tra la seconda e l'ultima.
+Quattro mesi e mezzo tra la prima riga e la seconda. Sei settimane tra la seconda e l'ultima.
 
 «Chi riesce a mettere d'accordo due mafie in una notte» disse, «riesce anche a mettere tre bombe senza firmarle.»
 
