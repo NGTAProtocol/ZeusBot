@@ -41,3 +41,7 @@ Nasce come risposta dello Stato alle **tre stragi** (Valcerna, Morenna, Marcena)
 ## Fissato nel capitolo 44 (22 dicembre)
 - **Cataldo:** alle 1.10 in tuta con una Panda grigia di quindici anni; ospita le carte nel suo soggiorno; «Io non so mai niente, dottoressa.»
 - **Calabrese:** firma per primo il modulo di consegna; sa che il decreto di sequestro era nel faldone diciotto. Non sa dove sono le carte.
+
+## Fissato nel capitolo 48
+- **Cataldo** vive in una palazzina popolare dietro la ferrovia di Albaterra, secondo piano; radio sul notiziario sportivo; tre scatoloni chiusi in soggiorno. Ha ricopiato a mano la tabella di Tommaso sul portablocco e l'ha continuata per tre mesi (date del Senato, protocolli, un indirizzo). Tiene nel taschino la lente per i timbri.
+- Martedì 18 gennaio Tommaso lo avvicina al bar di fronte alla DNA; Cataldo lo fa seguire a cinquanta metri e lo porta a casa sua: «Di là, da un mese, entra anche chi non dovrebbe.» Chiama Flora dal fisso: «venga a pranzo da me. Ho una persona che scrive i sette come lei.» È l'unico canale del pool fuori dal controllo della task force.
