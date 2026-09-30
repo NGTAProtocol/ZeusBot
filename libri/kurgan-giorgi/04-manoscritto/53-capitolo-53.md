@@ -101,7 +101,7 @@ Guardò le cinque righe. Poi scrisse, sotto, la sesta.
 
 La guardò a lungo. Poi, con la matita, ci tirò sopra una riga dritta, sola. La frase restava leggibile sotto il tratto. Non la cancellò di più.
 
-Non era una conclusione. Era una riga. Le conclusioni le lasciava a chi aveva un tribunale.
+Rimise lo scontrino nella tasca con la cerniera, accanto alla chiave di ottone, e scese dalla macchina.
 
 ---
 
