@@ -215,7 +215,8 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 **50. Flora** · Albaterra · sabato 29 gennaio → domenica 30, mattina (Mese 26) · La corsa: depositare gli atti e l'elenco prima che la task force li prenda → ci riesce, per poche ore. · **Chiusura:** una notizia dal lago di Varo. · 1.900
   *Scritto (1.862 parole): fascicolo nuovo sul verbale di Tommaso, dieci giorni dall'iscrizione (scadenza a mezzanotte del 29); sequestro alle 8.52 in via dei Cordai; il foglio di sessanta righe, trentaquattro cancellature, riga quarantuno «Giorgi Alfredo»; deposito al gip alle 12.40, numero di reperto; avocazione art. 9 alle 17.34, ritiro alle 19.10: «sei ore e trenta minuti»; la riga dodici, cancellato e vivo; radio delle 9 del 30: esplosione su una barca da pesca davanti a Castelvaro.*
 
-**51. Giorgi (c)** · Castelvaro, lago di Varo · domenica 30 gennaio, alba (Mese 26) · A pesca; il sommozzatore; l'esplosione con altre vittime → sparisce, vivo. · **Chiusura:** [da scrivere: ultima immagine di Giorgi]. · 1.800
+**51. Giorgi (c)** · Castelvaro, lago di Varo · domenica 30 gennaio, alba (Mese 26) · A pesca; il sommozzatore; l'esplosione con altre vittime → sparisce, vivo. · **Chiusura:** il foglio del 31 maggio fradicio, la parola *vivo* sciolta in una macchia blu, lasciato asciugare sul ginocchio. · 1.800
+  *Scritto (1.803 parole): l'amico in loden resta a terra; due fratelli del posto sulla barca; «due colpi sotto lo scafo, vada a poppa»; la camera a nebbia; il calcolo di giugno rifatto e non cambiato; il sommozzatore e l'erogatore («un regolatore… tenuto fermo dalla mano di un altro»); l'esplosione al diciannovesimo respiro; la rimessa e il furgone senza finestrini; Giorgi diventa un sistema non osservabile.*
 
 **52. Flora** · Castelvaro · Mese 26 · La versione ufficiale → il corpo non c'è. De Stefano accanto, la domanda mai fatta. · **Chiusura:** Flora non chiude il fascicolo. · 1.800
 
