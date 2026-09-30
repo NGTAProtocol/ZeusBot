@@ -206,7 +206,8 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 
 **47. Elena** · Merania · mercoledì 29 dicembre (Mese 25) · Riceve il materiale: quindici anni → gelo, nessuna scenata. · **Chiusura:** a cena sorride al marito. · 1.900 *(Scritto: la busta «Pisapia Elena» alle 15.40; undici file guardati sul vecchio portatile di Fabrizio; il più vecchio del 4 giugno di quindici anni prima, il giorno dopo l'apertura della cassetta di Cadrasca; i quattro mittenti possibili; la chiavetta nera nella tasca con la cerniera, accanto alla chiave n. 87; a cena, «Come le faceva tua madre», il sorriso.)*
 
-**48. Tommaso** · Merania → Albaterra · Mese 26 · *(Nodo urgente: chiude il pericolo aperto al 42; vedi semi.md.)* · Il fondo risale alla fuga di dati → si consegna a Flora, testimone chiave. · **Chiusura:** la porta dell'appartamento protetto si chiude alle sue spalle. · 1.900
+**48. Tommaso** · Merania → Albaterra · martedì 18 gennaio (Mese 26) · *(Nodo urgente: chiuso.)* · Il fondo risale alla fuga di dati → si consegna a Flora, testimone chiave. · **Chiusura:** la porta dell'appartamento protetto si chiude alle sue spalle. · 1.900
+  *Scritto (1.855 parole): convocazione del 17 alle 16.02 (colloquio di verifica accessi, 19 gennaio, sala 22B); il mese di attesa e la telecamera nuova; il biglietto strappato; la fuga in treno e l'uomo in giacca a vento; Cataldo al bar di fronte alla DNA («conosce la mia calligrafia»); la tabella ricopiata; Flora, «Cominci dai numeri»; carabinieri non della task force; l'appartamento al quinto piano.*
 
 **49. Giorgi (c)** · Vaticano · Mese 26 · Salvarani gli comunica la decisione di Osiride → **seconda crepa**, la resa totale. · **Chiusura:** accetta l'invito a pesca. · 2.000
 
