@@ -40,7 +40,7 @@ Tre anni prima, la prima lettera, l'aveva letta nello stesso ufficio, sulla stes
 
 Il suo lavoro, da due anni, era lei. Glielo avevano dato perché era bravo. Adesso glielo toglievano un'altra volta, per la stessa ragione.
 
-Non disse niente di tutto questo. Aveva imparato da molto tempo che il risentimento, in quella palazzina, era un'informazione, e che le informazioni si davano solo a chi ne aveva bisogno.
+Non disse niente di tutto questo. Tolse la mano dal ginocchio e aspettò che il capo reparto gli spingesse davanti il foglio di destra.
 
 ---
 
