@@ -104,6 +104,8 @@ Pensò di chiamare Flora. Di dirle di non andare a Rocca Sannella, o di andarci 
 
 La lasciò partire, nella sua testa, alle sei di sera, con i regali di Natale nel bagagliaio e sua madre che la aspettava sotto il fico.
 
+Il fico, il cortile, lei che scendeva dalla macchina con i regali: non stava in nessuna delle due colonne, e per un momento non seppe in quale scriverlo.
+
 ---
 
 Scrisse la relazione nel suo ufficio, al secondo piano, in quaranta minuti. Una pagina e mezza. Le abitudini della dottoressa, di nuovo, in ordine, vere. L'ora in cui arrivava, la trattoria, le sere tardi. Poi, a metà della seconda pagina, in mezzo e non in fondo, la macchina. Il bagagliaio. Il cortile sotto il fico.
