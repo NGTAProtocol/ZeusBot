@@ -228,7 +228,7 @@ Il pezzo era una persona che, di notte, aveva guardato chi aveva aperto quel reg
 
 Alle 16.47 Andrea tornò. Non aveva il caffè.
 
-Si sedette, girò la sedia verso di lui e abbassò la voce, anche se nessuno era abbastanza vicino da sentire.
+Si sedette, girò la sedia verso di lui e urtò con il ginocchio il cestino, che si rovesciò. Non lo raccolse. Abbassò la voce, anche se nessuno era abbastanza vicino da sentire.
 
 «Ma tu che hai combinato?»
 
