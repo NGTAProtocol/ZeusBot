@@ -163,7 +163,7 @@ Poi lui richiuse il frigorifero, e la cucina tornò al buio dello schermo.
 
 Risalì. Il terzo gradino scricchiolò di nuovo. Una porta, di sopra.
 
-Elena scrisse sulla ricevuta, con la matita per gli occhi, perché non aveva altro: *1.31 — F. (cordino).* Poi girò di nuovo lo schermo. La barra era a metà.
+Elena scrisse sulla ricevuta, con la matita per gli occhi, perché non aveva altro: *1.13*. Lo guardò. Lo cancellò con un tratto e scrisse accanto: *1.31 — F. (cordino).* Poi girò di nuovo lo schermo. La barra era a metà.
 
 ---
 
