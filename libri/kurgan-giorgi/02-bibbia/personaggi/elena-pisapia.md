@@ -100,3 +100,12 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - Lista dei quattro mittenti possibili, Dalia compresa, senza certezza; aveva già annotato il nome «Dalia Esposito» il 16.
 - Gelo: nessuna scenata, nessun pianto. Tiene la chiavetta nera accanto alla chiave della cassetta 87, non dentro.
 - A cena sorride al marito: «Le faccio come le faceva lei.»
+
+## Fissato nel capitolo 53 (martedì 15 febbraio, ultimo capitolo del romanzo)
+- Dall'avvocato di famiglia: per la legge non è vedova (morte presunta solo dopo due anni, con sentenza; curatore, inventario, beni fermi). Alla richiesta di consegnare «chiavette, dischi» risponde «Non ho trovato niente» («Non l'aveva trovata. L'aveva fatta»).
+- Il 3 febbraio lascia che due uomini di AV System svuotino lo studio; inventario di ciò che manca (telefono nero, maglione grigio, chiavetta con il cordino nero). Crede che l'originale sia nel lago e che la sua sia forse l'unica copia.
+- Messa in suffragio in Duomo (sabato 12 febbraio) celebrata da Salvarani, che conosceva solo da una fotografia; Cicimarra le stringe la mano con due mani. Nessun sospetto su di loro: solo *Mani fredde. Guanto.*
+- Fabrizio: «Papà non pescava.» «No.»
+- Sei righe di sospetto (non pescava; cancello chiuso a mano, telecomando nel cassetto; ha guidato lui; il maglione pesante; nessuno l'ha trovato); la sesta («Un uomo che va a morire non chiude il cancello a mano per non svegliare nessuno») cancellata con un tratto solo e leggibile. **Sospetta che sia vivo, senza concluderlo.**
+- Nella cassetta 87 mette la chiavetta nera accanto alla grigia (buste diverse) e sotto lo scontrino di nove mesi. Non si ripete «può tenerla, non può usarla»: «Due anni erano molti giorni. Si potevano contare.»
+- All'impiegato che dice «signora Giorgi»: «Pisapia». Chiave del seguito.
