@@ -209,11 +209,12 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 **48. Tommaso** · Merania → Albaterra · martedì 18 gennaio (Mese 26) · *(Nodo urgente: chiuso.)* · Il fondo risale alla fuga di dati → si consegna a Flora, testimone chiave. · **Chiusura:** la porta dell'appartamento protetto si chiude alle sue spalle. · 1.900
   *Scritto (1.855 parole): convocazione del 17 alle 16.02 (colloquio di verifica accessi, 19 gennaio, sala 22B); il mese di attesa e la telecamera nuova; il biglietto strappato; la fuga in treno e l'uomo in giacca a vento; Cataldo al bar di fronte alla DNA («conosce la mia calligrafia»); la tabella ricopiata; Flora, «Cominci dai numeri»; carabinieri non della task force; l'appartamento al quinto piano.*
 
-**49. Giorgi (c)** · Vaticano · Mese 26 · Salvarani gli comunica la decisione di Osiride → **seconda crepa**, la resa totale. · **Chiusura:** accetta l'invito a pesca. · 2.000
+**49. Giorgi (c)** · Vaticano · venerdì 21 gennaio (Mese 26) · Salvarani gli comunica la decisione di Osiride → **seconda crepa**, la resa totale. · **Chiusura:** accetta l'invito a pesca. · 2.000
+  *Scritto (1.946 parole): due tazze, nessuna capovolta; «Non sappiamo dove»; testimone, giudice, armadio; l'osservabilità rovesciata («Tu parleresti»); «non ci sarai più»; le tre vie già calcolate; seconda crepa: «Non era più nemmeno una domanda.»; invito a pesca a Castelvaro per domenica 30 gennaio alle 6; «Vivo?» «Vivo.»; la chiavetta consegnata (la terrà il senatore); «Porta un maglione pesante.» «Lo porterò.»*
 
 **50. Flora** · Albaterra · Mese 26 · La corsa: depositare gli atti e l'elenco prima che la task force li prenda → ci riesce, per poche ore. · **Chiusura:** una notizia dal lago di Varo. · 1.900
 
-**51. Giorgi (c)** · Castelvaro, lago di Varo · Mese 26 · A pesca; il sommozzatore; l'esplosione con altre vittime → sparisce, vivo. · **Chiusura:** [da scrivere: ultima immagine di Giorgi]. · 1.800
+**51. Giorgi (c)** · Castelvaro, lago di Varo · domenica 30 gennaio, alba (Mese 26) · A pesca; il sommozzatore; l'esplosione con altre vittime → sparisce, vivo. · **Chiusura:** [da scrivere: ultima immagine di Giorgi]. · 1.800
 
 **52. Flora** · Castelvaro · Mese 26 · La versione ufficiale → il corpo non c'è. De Stefano accanto, la domanda mai fatta. · **Chiusura:** Flora non chiude il fascicolo. · 1.800
 
