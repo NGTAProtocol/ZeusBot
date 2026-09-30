@@ -8,7 +8,7 @@ Giorgi lo vide dal parabrezza alle sei meno sette minuti, nella luce ancora grig
 
 Il messaggio era arrivato la sera prima alle nove, dal numero dell'avvocato di Partenia. *Domani, alle sei. Strada delle saline, terzo chilometro. Lei e l'autista, nessun altro.* Giorgi aveva guidato la notte intera con Ferri al volante, sette ore di autostrada vuota, e non aveva dormito un minuto, e non aveva pensato a niente che non fosse misurabile: i chilometri, i caselli, l'ora d'arrivo stimata, la probabilità che il messaggio fosse vero.
 
-Tanino aprì la portiera posteriore e si fece da parte.
+Tanino aprì la portiera posteriore. Prima di farsi da parte si chinò dentro e tirò su la coperta che era scivolata dalle spalle della bambina, un gesto di un secondo, e ritrasse la mano come se si fosse accorto troppo tardi di chi lo stava guardando.
 
 Laura era seduta sul sedile, con le ginocchia al petto e una coperta grigia sulle spalle che non era sua. Guardò la portiera aperta. Poi guardò lui. Non si mosse.
 
@@ -29,6 +29,8 @@ Nelle sette ore del ritorno Giorgi guardò Laura nello specchietto, e non riusc�
 Lei stava seduta dietro, dalla parte opposta alla sua, con la borsa che Elena aveva preparato il 19 maggio e che era rimasta ottantatré giorni accanto alla porta di casa. Giorgi l'aveva presa passando, alle dieci di sera, senza chiedere a Elena che cosa ci fosse dentro. Dentro c'erano otto cose. Laura ne aveva tirato fuori una sola, il coniglio di pezza, e lo teneva sotto il mento, stretto, senza giocarci. Le altre sette erano rimaste nella borsa, e la borsa chiusa.
 
 Non parlò. A un'area di servizio, verso le nove, Ferri si fermò per la benzina e Giorgi le chiese se voleva qualcosa. Lei scosse la testa. Quando lui aprì la portiera per scendere, lo guardò finché non la richiuse, e poi guardò la maniglia, e continuò a guardarla finché lui non tornò. Giorgi registrò il dato senza commentarlo, come si registrava la prima deviazione di uno strumento appena sostituito: non la si capiva ancora, ma si sapeva già che avrebbe detto qualcosa.
+
+Ferri tornò dalla cassa con un pacchetto di biscotti che nessuno gli aveva chiesto, lo posò sul sedile accanto a Laura senza dire niente, e rimise in moto.
 
 Verso le dieci, sulla Dorsale, le chiese se voleva sentire la mamma. Lei lo guardò nello specchietto per un tempo lungo, e poi fece di sì con la testa, una volta sola. Giorgi chiamò. Elena rispose al primo squillo, e non disse pronto.
 
