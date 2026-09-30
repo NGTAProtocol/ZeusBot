@@ -221,7 +221,8 @@ Conteggio del solo testo narrativo (esclusi titoli e intestazioni).
 **52. Flora** · Castelvaro · lunedì 31 gennaio (Mese 26) · La versione ufficiale → il corpo non c'è. De Stefano accanto, la domanda mai fatta. · **Chiusura:** Flora non chiude il fascicolo. · 1.800
   *Scritto (1.747 parole): quarantadue pezzi e niente di Giorgi; il comunicato delle 18 e la dichiarazione di Cicimarra; il testimone in loden non è tra i trentotto; il motore con la brina; la vedova e il doppio in contanti; le chiavi nel cruscotto; la rimessa con il lucchetto nuovo; Carlo alle 16.40, la domanda non fatta; art. 60 c.c., due anni; il quinto foglio; la parola non scritta.*
 
-**53. Elena** · Merania / cassetta di sicurezza · Mese 27 · Vedova per il mondo → apre la cassetta: la terza copia del dossier. Cicimarra e Salvarani credono di avere le uniche due. · **Chiusura:** ultima riga del romanzo, aggancio al seguito. · 1.800
+**53. Elena** · Merania / cassetta di sicurezza · martedì 15 febbraio (Mese 27) · Vedova per il mondo → apre la cassetta: la terza copia del dossier. Cicimarra e Salvarani credono di avere le uniche due. · **Chiusura:** ultima riga del romanzo, aggancio al seguito: «Pisapia» disse. · 1.800
+  *Scritto (1.743 parole): l'avvocato, i due anni e «Non ho trovato niente»; il 3 febbraio, lo studio svuotato e l'inventario di ciò che manca (la chiavetta originale forse nel lago); la cronologia sullo scontrino; Laura e le quattordici paia di scarpe; Fabrizio, «Papà non pescava»; la messa in suffragio celebrata da Salvarani, la stretta di Cicimarra; le sei righe del sospetto, la sesta cancellata e leggibile; la cassetta 87; la grigia e la nera accanto, non nella stessa busta; «Due anni erano molti giorni. Si potevano contare.»; «signora Giorgi» — «Pisapia».*
 
 ## 5. Da decidere prima della stesura
 1. De Stefano "fuori rotazione" (soluzione a) o dentro i capitoli di Flora (b)?
