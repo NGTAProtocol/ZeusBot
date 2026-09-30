@@ -106,3 +106,4 @@ Il sospetto su De Stefano cresce **lentamente, per accumulo**, non per un salto 
 - Porta le carte da Cataldo; scrive a Carlo «Da Cataldo». Consegna il fascicolo alla task force alle 7.
 - Porto Clodio: l'armatore del comitato ha ceduto le venti navi il 16 marzo di undici anni prima.
 - Chiusura: «Per ora… le bastava sapere che quella notte aveva scelto il suo.»
+- **Cap. 48 (senza POV), 18 gennaio:** raggiunge Tommaso a casa di Cataldo alle 14.20 («Cominci dai numeri»), raccoglie due ore e quaranta di deposizione, chiama il procuratore nazionale e fa scortare Tommaso da due carabinieri in borghese «non della task force» in un appartamento protetto. «Le costerà la vita che aveva.»
