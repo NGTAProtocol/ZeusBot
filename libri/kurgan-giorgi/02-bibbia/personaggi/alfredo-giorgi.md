@@ -136,3 +136,13 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 ## Fissato nel capitolo 47 (visto da Elena, dal 16 al 29 dicembre)
 - Dopo lo scoop lavora da casa, nello studio a porta chiusa; otto notti sul divano dello studio. Una ruga nuova tra le sopracciglia. A cena: «Sono buone. Come le faceva tua madre.»
 - Negli undici file (quindici anni di festini) tiene sempre un solo bicchiere; in uno si volta verso la telecamera.
+
+## Fissato nel capitolo 49 (venerdì 21 gennaio, Vaticano) — seconda crepa
+- Due tazze sul vassoio, nessuna capovolta: la decisione su di lui è già presa. Il nome di Tommaso gli è arrivato giovedì 20, «quando non serviva più».
+- Mette in fila le difese (una testimonianza sola, gli avvocati, la sigla non è una firma); Salvarani le ha già pesate: «E tu parleresti, Alfredo.»
+- Analogia rovesciata: **osservabilità**. Kurgan non osservabile, lasciato morire perché non avrebbe parlato; Giorgi osservabile da quarant'anni di uscite, fatto sparire perché parlerebbe. Il componente non viene consultato sulla propria sostituzione. Le tre vie (rifiutare, fuggire, andare da Flora come il ragazzo) sono già calcolate.
+- **Seconda crepa**, una frase: «Non era più nemmeno una domanda.» Poi nessuna grandezza successiva: per la prima volta non ha un calcolo da fare.
+- Non chiede quante persone ci saranno sulla riva di Castelvaro. Unica domanda: «Vivo?» «Vivo.»
+- Consegna la chiavetta a Salvarani (la terrà Cicimarra). Nella tasca interna: il biglietto con l'indirizzo di Castelvaro e le 6, accanto al foglio del 31 maggio.
+- Accetta l'invito a pesca per domenica 30 gennaio: «Lo porterò» (il maglione). Non sa del sommozzatore.
+- Nota di registro: la regola «una frase» resta rispettata; il cedimento è esteso solo nel registro (c) che la circonda.
