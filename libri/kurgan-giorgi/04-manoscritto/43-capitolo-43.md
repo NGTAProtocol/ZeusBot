@@ -68,7 +68,7 @@ A mezzogiorno il direttore la chiamò nella sua stanza. Aveva gli occhi rossi di
 
 Dalia non rispose. Sentì il maglione grigio pesarle sulle spalle.
 
-«Non so ancora che cosa significhi» disse il direttore. «Ma quando la gente chiede come stai con quella voce, di solito non è per sapere come stai.»
+«Non so ancora che cosa significhi» disse il direttore. «Vai a casa a dormire due ore. Poi torna.»
 
 ---
 
