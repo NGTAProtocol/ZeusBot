@@ -146,3 +146,10 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Consegna la chiavetta a Salvarani (la terrà Cicimarra). Nella tasca interna: il biglietto con l'indirizzo di Castelvaro e le 6, accanto al foglio del 31 maggio.
 - Accetta l'invito a pesca per domenica 30 gennaio: «Lo porterò» (il maglione). Non sa del sommozzatore.
 - Nota di registro: la regola «una frase» resta rispettata; il cedimento è esteso solo nel registro (c) che la circonda.
+
+## Fissato nel capitolo 51 (domenica 30 gennaio, Castelvaro) — ultimo POV
+- Guida da solo da Merania; macchina lasciata con le chiavi nel cruscotto alle 5.51; al pontile alle 6.04. Porta il maglione pesante sotto la giacca; nella tasca interna il biglietto di Castelvaro e il foglio del 31 maggio.
+- Sulla barca due fratelli del posto (barcaiolo e fratello anziano); beve il caffè del thermos. Considera di avvertirli e non lo fa: stesso calcolo di giugno, e ormai sa che calcolo corretto e cosa giusta non coincidono.
+- Ai due colpi va a poppa senza voltarsi; il sommozzatore lo prende per la caviglia e gli dà l'erogatore («regulator»: un regolatore tenuto fermo dalla mano di un altro). Esplosione al diciannovesimo respiro; smette di contare senza deciderlo.
+- Rimessa di legno, coperta d'alluminio, furgone senza finestrini: non sa dove va. Capisce di essere diventato quello che era Kurgan, un sistema non osservabile.
+- Ultima immagine: il foglio con *vivo* sciolto in una macchia blu, lasciato asciugare sul ginocchio. **Vivo, nascosto, fuori dal potere.** Nessuna crepa.
