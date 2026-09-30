@@ -51,5 +51,10 @@
 |---|---|
 | Quotidiano di Dalia | **Il Meridiano** (scelto dall'autore; controllo legale pre-pubblicazione per escludere coincidenze con testate reali) |
 
+## Persone minori
+| Ruolo | Nome |
+|---|---|
+| Responsabile della sala operativa di AV System (capo del desk), cap. 1: cinquantadue anni, diciassette in quella sala, parla con le mani in tasca; la mattina del 13 novembre, dopo aver pianto, detta le tre regole (nessun commento esterno, nessun messaggio personale, nessuna ricostruzione del giorno prima) e guarda Tommaso per meno di un secondo | **Sandro Merlo** |
+
 ## Reali (nominati per nome)
 Italia, Vaticano e università vaticane, CIA, NATO/UE, Corte di Cassazione, Carabinieri, servizi segreti militari, Parlamento e Senato, massoneria, P2 (come ispirazione storica di Osiride), Impero romano e Papato (nella dottrina interna di Osiride).
