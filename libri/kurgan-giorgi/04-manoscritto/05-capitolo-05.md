@@ -16,7 +16,7 @@ Posò gli scatoloni sul bancone. Sul fianco di ciascuno c'era scritto a pennarel
 
 Flora firmò. Guardò l'orologio sopra la porta. Le 8.52. Era in anticipo di otto minuti.
 
-Era sempre in anticipo. Era l'unico vantaggio che nessuno poteva toglierle.
+Si sedette su una sedia di plastica nel corridoio, con la borsa sulle ginocchia, e aspettò che la chiamassero.
 
 ---
 
