@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 52 (Flora, Castelvaro, Mese 26: la versione ufficiale → il corpo non c'è; De Stefano accanto, la domanda mai fatta; chiusura: Flora non chiude il fascicolo). Scritti: prologo, capitoli 1–51. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 53 (Elena, Merania / cassetta di sicurezza, Mese 27: vedova per il mondo → apre la cassetta, la terza copia del dossier; Cicimarra e Salvarani credono di avere le uniche due; chiusura: ultima riga del romanzo, aggancio al seguito). Scritti: prologo, capitoli 1–52. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -169,3 +169,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-30 — Capitolo 49 (Giorgi, 1.946 parole): due tazze e nessuna capovolta, «Non sappiamo dove», l'osservabilità rovesciata («Tu parleresti»), «non ci sarai più», le tre vie già calcolate, **seconda crepa: «Non era più nemmeno una domanda.»**, l'invito a Castelvaro per domenica 30 gennaio, «Vivo?» «Vivo.», la chiavetta al senatore, il maglione pesante.
 - 2026-09-30 — Capitolo 50 (Flora, 1.862 parole): il fascicolo nuovo sul verbale di Tommaso e i dieci giorni, il notaio in maglione, l'armadio di noce, il foglio di sessanta righe e trentaquattro cancellature, riga quarantuno «Giorgi Alfredo», il numero di reperto, l'avocazione delle 17.34, «sei ore e trenta minuti», la riga dodici (cancellato e vivo), la radio: una barca da pesca davanti a Castelvaro.
 - 2026-09-30 — Capitolo 51 (Giorgi, 1.803 parole, ultimo suo): l'amico in loden a terra, i due fratelli sulla barca, il caffè del thermos, la camera a nebbia, il calcolo di giugno, i due colpi, il sommozzatore e l'erogatore, l'esplosione al diciannovesimo respiro, la rimessa, il furgone senza finestrini, il sistema non osservabile, *vivo* sciolto nell'acqua. Nessuna crepa.
+- 2026-09-30 — Capitolo 52 (Flora, 1.747 parole, ultimo suo): quarantadue pezzi e niente di Giorgi, il comunicato e Cicimarra, il testimone in loden fuori dai trentotto, il motore con la brina, la vedova e il doppio in contanti, le chiavi nel cruscotto, la rimessa, Carlo e la domanda non fatta, l'art. 60 c.c., il quinto foglio, la parola non scritta. «SETTEMBRE» non usata (ridondante; al sequel).
