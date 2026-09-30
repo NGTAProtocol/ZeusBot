@@ -47,3 +47,11 @@ Il volto del potere sopra Giorgi: il maestro che lo ha formato e che alla fine l
 
 ## Fissato nel capitolo 42 (15 dicembre, 20.15, al telefono)
 - Chiama Giorgi dopo il voto (non chiama mai): «È andata come avevi detto tu… Un uomo che ha ragione su una cosa così grande diventa un uomo di cui ci si ricorda. Cerca di ricordartelo anche tu.» «Dormi. Te lo sei guadagnato.»
+
+## Fissato nel capitolo 49 (venerdì 21 gennaio)
+- Due tazze, nessuna capovolta: «Ti ho chiamato per dirtelo, non per chiedertelo. È l'ultima cortesia che il sistema ti deve, e ho voluto fartela io.»
+- Sa di Tommaso (uscito martedì alle 6.10, tre ore con Flora, due carabinieri), non sa dove sia: «Non sappiamo dove» (seconda volta).
+- «Tu parleresti… Ti ho osservato per quarant'anni.» «Nessuno ti chiede di morire… Ti chiediamo soltanto di non esserci.» Richiama il mito di Osiride: «Adesso tocca a te nasconderti.»
+- Invito a pesca da parte di «un amico mio»: Castelvaro, lago di Varo, domenica 30 gennaio alle 6; biglietto scritto a mano dal cassetto dello scrittoio. «Il resto non devi saperlo. Un uomo che sa come andrà lo fa capire con le mani.» «Vivo.»
+- Riceve la chiavetta di Giorgi: «La terrà il senatore. Una qui, una da lui.»
+- «Il pesce abbocca prima che faccia giorno. Me l'ha insegnato mio padre, su un lago molto più piccolo di quello.» «Porta un maglione pesante.» A Giorgi sembra, per la prima volta, vecchio in tutto.
