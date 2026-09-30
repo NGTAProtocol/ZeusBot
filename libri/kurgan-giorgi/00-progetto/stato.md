@@ -4,7 +4,7 @@
 - **Autore:** Felice Faraone
 - **Cartella:** `libri/kurgan-giorgi/`
 - **Fase attuale:** bibbia v7 integrata, nodi strutturali chiusi; voce scelta; manuale di stile adottato.
-- **Prossimo passo:** capitolo 50 (Flora, Albaterra, Mese 26: la corsa per depositare atti ed elenco prima della task force; ci riesce per poche ore; chiusura: una notizia dal lago di Varo, domenica 30 gennaio). Scritti: prologo, capitoli 1–49. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
+- **Prossimo passo:** capitolo 51 (Giorgi, Castelvaro, lago di Varo, domenica 30 gennaio all'alba: a pesca; il sommozzatore; l'esplosione con altre vittime → sparisce, vivo; chiusura: ultima immagine di Giorgi). Scritti: prologo, capitoli 1–50. Fase 1: `01-mercato/mercato.md`. Fase 2: `03-architettura/scaletta.md`.
 
 ## Decisioni prese
 - Titolo: *Il padre del mostro*.
@@ -167,3 +167,4 @@ Età (De Stefano 42, Bertola 50, Adorisio 46, De Biasi 58, Elena 45, Cicimarra 6
 - 2026-09-29 — Capitolo 47 (Elena, 1.834 parole): la busta «Pisapia Elena», i tredici giorni di Alfredo in casa, il nome del 16, gli undici file, il colpo alla porta, il 4 giugno e Cadrasca, i quattro mittenti, il freddo, la chiavetta accanto alla chiave 87, le patate, il sorriso.
 - 2026-09-30 — Capitolo 48 (Tommaso, 1.855 parole, ultimo suo): la convocazione delle 16.02, il mese di attesa, il biglietto strappato, la fuga in treno, Cataldo al bar («conosce la mia calligrafia»), la tabella ricopiata, Flora e «Cominci dai numeri», i carabinieri non della task force, l'appartamento protetto. Chiuso il nodo urgente del 42.
 - 2026-09-30 — Capitolo 49 (Giorgi, 1.946 parole): due tazze e nessuna capovolta, «Non sappiamo dove», l'osservabilità rovesciata («Tu parleresti»), «non ci sarai più», le tre vie già calcolate, **seconda crepa: «Non era più nemmeno una domanda.»**, l'invito a Castelvaro per domenica 30 gennaio, «Vivo?» «Vivo.», la chiavetta al senatore, il maglione pesante.
+- 2026-09-30 — Capitolo 50 (Flora, 1.862 parole): il fascicolo nuovo sul verbale di Tommaso e i dieci giorni, il notaio in maglione, l'armadio di noce, il foglio di sessanta righe e trentaquattro cancellature, riga quarantuno «Giorgi Alfredo», il numero di reperto, l'avocazione delle 17.34, «sei ore e trenta minuti», la riga dodici (cancellato e vivo), la radio: una barca da pesca davanti a Castelvaro.
