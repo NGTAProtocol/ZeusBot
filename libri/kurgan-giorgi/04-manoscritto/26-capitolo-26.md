@@ -160,4 +160,4 @@ Adorisio annuì. Guardò Giorgi un'ultima volta, con gli occhi chiari di chi leg
 
 «Mi dia tre settimane.»
 
-Quando la portiera si fu richiusa, Giorgi tirò fuori di nuovo il foglio del 31 maggio e scrisse sotto *vivo*, con la stessa penna, una data: *venerdì 23 luglio*. Le misure si archiviavano, con la data. Anche le promesse degli altri.
+Quando la portiera si fu richiusa, Giorgi tirò fuori di nuovo il foglio del 31 maggio e scrisse sotto *vivo*, con la stessa penna, una data: *venerdì 23 luglio*. Rimise il cappuccio alla penna, e il foglio nella tasca interna, dove stava dal 31 maggio.
