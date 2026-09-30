@@ -232,4 +232,4 @@ La guardò con una faccia che lei non conosceva. Non il sorriso con l'ombra agli
 
 «Grazie» disse.
 
-Lo disse piano, e troppo a lungo. Come si diceva a chi ti aveva appena dato qualcosa che non avrebbe più potuto riprendersi.
+Lo disse piano, e troppo a lungo. Dalia guardò il bicchiere sul tavolino. Il ghiaccio si era sciolto del tutto.
