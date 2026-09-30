@@ -52,7 +52,7 @@ Lo disse come si leggeva un risultato già verificato, senza enfasi. Giorgi guar
 
 «Hai contato le tazze, entrando. Ti ho visto.» Salvarani indicò il vassoio con due dita storte. «Non c'era niente da decidere, qui dentro. Ti ho chiamato per dirtelo, non per chiedertelo. È l'ultima cortesia che il sistema ti deve, e ho voluto fartela io.»
 
-«Non come pensi» continuò il cardinale. «Nessuno ti chiede di morire. Un uomo morto lo cercano: chi l'ha ucciso, perché, chi c'era prima. Ti chiediamo soltanto di non esserci. Di non essere più raggiungibile da nessuno. Né da un giudice, né da un giornale, né da noi.» Una pausa breve. «Il potere non muore, Alfredo. Si divide, si nasconde, si ricompone. Te l'ho raccontato quando avevi quindici anni. Adesso tocca a te nasconderti. È la parte della storia che ti è sempre piaciuta di più.»
+«Non come pensi» continuò il cardinale. «Nessuno ti chiede di morire. Un uomo morto lo cercano: chi l'ha ucciso, perché, chi c'era prima. Ti chiediamo soltanto di non esserci. Di non essere più raggiungibile da nessuno. Né da un giudice, né da un giornale, né da noi.» Una pausa breve. «Il potere non muore, Alfredo. Si divide, si nasconde, si ricompone. Te l'ho raccontato quando avevi quindici anni. Adesso tocca a te nasconderti.» Posò la teiera sul vassoio, con il beccuccio verso di sé.
 
 ---
 
