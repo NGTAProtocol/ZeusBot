@@ -153,3 +153,4 @@ Il "padre del mostro": il finanziere che orchestra le stragi per far esplodere l
 - Ai due colpi va a poppa senza voltarsi; il sommozzatore lo prende per la caviglia e gli dà l'erogatore («regulator»: un regolatore tenuto fermo dalla mano di un altro). Esplosione al diciannovesimo respiro; smette di contare senza deciderlo.
 - Rimessa di legno, coperta d'alluminio, furgone senza finestrini: non sa dove va. Capisce di essere diventato quello che era Kurgan, un sistema non osservabile.
 - Ultima immagine: il foglio con *vivo* sciolto in una macchia blu, lasciato asciugare sul ginocchio. **Vivo, nascosto, fuori dal potere.** Nessuna crepa.
+- **Cap. 52 (visto da Flora):** ufficialmente «disperso»; nessun resto recuperato. Macchina a noleggio intestata ad AV System, trovata con le chiavi nel cruscotto. Per l'art. 60 c.c. la morte presunta si potrà dichiarare solo dopo due anni.
