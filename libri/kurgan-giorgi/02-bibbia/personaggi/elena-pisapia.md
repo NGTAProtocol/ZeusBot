@@ -109,3 +109,4 @@ La persona più pericolosa e sottovalutata del romanzo: la moglie che, fingendo 
 - Sei righe di sospetto (non pescava; cancello chiuso a mano, telecomando nel cassetto; ha guidato lui; il maglione pesante; nessuno l'ha trovato); la sesta («Un uomo che va a morire non chiude il cancello a mano per non svegliare nessuno») cancellata con un tratto solo e leggibile. **Sospetta che sia vivo, senza concluderlo.**
 - Nella cassetta 87 mette la chiavetta nera accanto alla grigia (buste diverse) e sotto lo scontrino di nove mesi. Non si ripete «può tenerla, non può usarla»: «Due anni erano molti giorni. Si potevano contare.»
 - All'impiegato che dice «signora Giorgi»: «Pisapia». Chiave del seguito.
+- **Incrinatura del tic (revisione, cap. 28):** all'1.31, dopo che Fabrizio vede il cordino, scrive prima *1.13*, lo cancella e scrive *1.31 — F. (cordino).* Unico errore di cifra nelle sue liste.
