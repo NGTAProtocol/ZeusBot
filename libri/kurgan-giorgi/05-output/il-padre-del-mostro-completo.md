@@ -1179,7 +1179,7 @@ Lunedì 20 ottobre, Morenna.
 
 Mercoledì 12 novembre, Marcena. Il governo cade.
 
-Sei mesi tra la prima riga e la seconda. Sei settimane tra la seconda e l'ultima.
+Quattro mesi e mezzo tra la prima riga e la seconda. Sei settimane tra la seconda e l'ultima.
 
 «Chi riesce a mettere d'accordo due mafie in una notte» disse, «riesce anche a mettere tre bombe senza firmarle.»
 
@@ -1655,7 +1655,7 @@ Poi si voltò e prese le scale di servizio.
 
 Kurgan restò seduto altri dieci minuti. Era la regola: chi arrivava secondo se ne andava secondo, e lasciava all'altro il tempo di sparire.
 
-Guardò il caffè freddo nella tazza. Guardò la folla. Fece il conto un'altra volta, da capo.
+Guardò il caffè freddo nella tazza. Guardò la folla. Riascoltò la voce di Rastegar, da capo.
 
 Cinque aerei, invece di venti. Una banchina a Punta Saline, tre notti al mese. Un uomo che aveva avuto un fratello dentro un impianto, quindici anni prima, e che adesso sapeva di dovere a Kurgan il nome di chi l'aveva ucciso. Un debito così non si scriveva da nessuna parte. Valeva più di cinque aerei. Forse valeva più di venti.
 
@@ -2021,7 +2021,7 @@ Flora sentì il freddo partire dalla nuca. Conosceva quella frase. L'aveva senti
 
 Quattro persone erano in quella stanza, quel giorno. Tre magistrati e un procuratore. E un corridoio, e un telefono, e una linea.
 
-Rimise in fila. Non riusciva a smettere.
+Il freddo dalla nuca le era sceso lungo la schiena, e non se ne andava.
 
 Uno. Qualcuno aveva ascoltato una telefonata privata di un magistrato, il primo giorno del pool.
 
@@ -2339,7 +2339,7 @@ In fondo c'era una stanza grande, bianca, illuminata da neon. Faceva freddo. Odo
 
 Sui tavoli c'erano gli aerei.
 
-Grigi, piccoli, con le ali dritte e sottili come quelle di un insetto. Alcuni ancora mezzi dentro le casse di legno, tra la paglia. Altri montati, allineati, con i cavi attaccati a una fila di computer. Dalia ne contò undici. Poi vide che in fondo, contro il muro, c'erano altre casse ancora chiuse, e smise di contare.
+Grigi, piccoli, con le ali dritte e sottili come quelle di un insetto. Alcuni ancora mezzi dentro le casse di legno, tra la paglia. Altri montati, allineati, con i cavi attaccati a una fila di computer. Undici, sui tavoli. Dalia sentì il freddo della stanza sulle braccia, e vide che in fondo, contro il muro, c'erano altre casse ancora chiuse.
 
 Due ragazzi in tuta lavoravano a un tavolo, chini su un pezzo aperto. Uno aveva le mani grandi, sproporzionate, da muratore, e le muoveva sui fili sottili con una delicatezza che non ci si aspettava. Alzarono la testa quando videro Vito, poi la riabbassarono.
 
@@ -2661,7 +2661,7 @@ Dall'altra parte mise se stesso.
 
 Duecentoquaranta uomini, contati uno per uno. Di questi, sessanta suoi davvero: quelli del Drenak, i ragazzi dei vicoli, i sei della Serrana. Gli altri erano suoi finché c'erano i soldi e il porto. Poi i droni: cinquantotto, adesso, sotto la villa. Poi tre amici stranieri che non erano amici. Il biondo di Kaliria voleva la costa. Il cinese voleva i porti. Rastegar voleva quello che aveva nella testa lui, e che nessuno aveva ancora capito del tutto.
 
-Fece il conto come l'aveva fatto sul muretto, nella valle. Contro il dottore da solo, poteva vincere. Contro il dottore con lo Stato alle spalle, no. Poteva fargli male. Poteva bruciargli un porto, una banca, un palazzo. E per ogni cosa che bruciava, il dottore avrebbe mandato la Finanza, i carabinieri, i servizi, e alla fine qualcuno con un fucile di precisione su un tetto. E i morti sarebbero stati i suoi. Il Biondo. Rocco. Tanino. I ragazzi.
+Guardò fuori, verso il buio delle saline, come aveva guardato la valle dal muretto. Contro il dottore da solo, poteva vincere. Contro il dottore con lo Stato alle spalle, no. Poteva fargli male. Poteva bruciargli un porto, una banca, un palazzo. E per ogni cosa che bruciava, il dottore avrebbe mandato la Finanza, i carabinieri, i servizi, e alla fine qualcuno con un fucile di precisione su un tetto. E i morti sarebbero stati i suoi. Il Biondo. Rocco. Tanino. I ragazzi.
 
 Una guerra aperta con il dottore la pagavano gli uomini. Come sempre.
 
@@ -3569,7 +3569,7 @@ Alfredo chiuse gli occhi per un secondo.
 
 Lui non rispose. Riaprì gli occhi e guardò il tappeto, la manica della giacca per terra, come se se ne accorgesse soltanto allora. Si chinò, la raccolse, la posò sulla sedia con cura. Dalla tasca interna spuntava l'angolo di un foglio piegato in quattro, e sul bordo, a pennarello rosso, lo spigolo di un tetto disegnato da una mano di bambino. Lui lo spinse dentro con due dita, senza guardarlo, come si rimetteva a posto una cosa che si sapeva a memoria. Poi restò chino un momento di più, con la mano sulla stoffa.
 
-Dalia contò i secondi. Sette. Non capiva. Sapeva soltanto che in quei sette secondi Alfredo aveva pensato a una persona precisa, e che quella persona non era Vito, e non era lei.
+Dalia guardò la mano ferma sulla stoffa. Non capiva. Sapeva soltanto che, chino in quel modo, Alfredo aveva pensato a una persona precisa, e che quella persona non era Vito, e non era lei.
 
 
 <p align="center">* * *</p>
@@ -3923,7 +3923,7 @@ Il ragazzo della Serrana fece un passo avanti. Rocco si staccò dai sacchi. Il B
 
 Non alzò la voce. Non serviva. Il ragazzo tornò indietro di un passo. Onorato si aggiustò il cappello. Adorisio non si era mosso dalla sua cassa; Carrese nemmeno; Tanino, contro i sacchi, aveva infilato le mani in tasca.
 
-Kurgan fece il conto, lì, in piedi, come l'aveva fatto sul muretto nella valle. Onorato erano quaranta uomini, e quaranta uomini che non caricano le navi non mangiano. Se Onorato se ne andava, se ne andavano anche i suoi notai, e senza notai le navi non avevano padrone. I sei della Serrana erano suoi perché li aveva presi quando nessuno li voleva: ma i sei della Serrana tenevano la banchina, e la banchina era la cosa che lo straniero pagava. Carrese teneva i moli e i doganieri. Il Biondo, Rocco e Tanino erano suoi fino alla morte, ma non valevano un porto. E Adorisio teneva insieme tutto il resto, i manuali, le casse, i ragazzi, senza mai chiedere niente per sé.
+Kurgan restò in piedi, con la schiena alla porta scorrevole, e li guardò in faccia. Onorato erano quaranta uomini, e quaranta uomini che non caricano le navi non mangiano. Se Onorato se ne andava, se ne andavano anche i suoi notai, e senza notai le navi non avevano padrone. I sei della Serrana erano suoi perché li aveva presi quando nessuno li voleva: ma i sei della Serrana tenevano la banchina, e la banchina era la cosa che lo straniero pagava. Carrese teneva i moli e i doganieri. Il Biondo, Rocco e Tanino erano suoi fino alla morte, ma non valevano un porto. E Adorisio teneva insieme tutto il resto, i manuali, le casse, i ragazzi, senza mai chiedere niente per sé.
 
 Ognuno di loro, quella sera, era una colonna che reggeva un pezzo di tetto. Nessuno reggeva il tetto intero.
 
@@ -4069,7 +4069,7 @@ Piegò la ricevuta e la mise nel portafoglio, dietro la carta d'identità, accan
 <p align="center">* * *</p>
 
 
-La domenica passò come passavano le domeniche da un mese. Alfredo si svegliò alle nove, fece la doccia, scese in cucina con i capelli bagnati. Baciò Elena sulla tempia. Lei si lasciò baciare. Contò i secondi: meno di uno.
+La domenica passò come passavano le domeniche da un mese. Alfredo si svegliò alle nove, fece la doccia, scese in cucina con i capelli bagnati. Baciò Elena sulla tempia. Lei si lasciò baciare. Sentì il freddo dei capelli bagnati contro la fronte.
 
 Alle dieci, mentre Alfredo era al telefono in giardino, Fabrizio scese in cucina e si versò il latte. Lo bevve in piedi, come sempre. Poi, invece di risalire, restò appoggiato al frigorifero.
 
@@ -4641,7 +4641,7 @@ La doccia scorreva. Elena scostò il lenzuolo.
 
 Non lo prese in mano. Si alzò, fece due passi a piedi nudi sul parquet, si chinò sul cassettone come ci si chinava su una culla, e guardò.
 
-Lo schermo era spento. Elena aspettò. Contò i secondi, come aveva contato i respiri di lui la domenica di giugno in cui aveva letto l'altro telefono. Venti. Quaranta. La doccia scorreva. Al cinquantaduesimo secondo lo schermo si accese da solo, per un avviso di batteria scarica, e sotto l'avviso c'era la riga di una notifica rimasta lì dalla notte.
+Lo schermo era spento. Elena aspettò. Sentì il parquet sotto i piedi nudi. La doccia scorreva. Poi lo schermo si accese da solo, per un avviso di batteria scarica, e sotto l'avviso c'era la riga di una notifica rimasta lì dalla notte.
 
 Un messaggio. Nessun nome sopra, soltanto un numero che finiva con tre zeri. L'orario di arrivo: 03.12.
 
@@ -4985,7 +4985,7 @@ C'era una cosa che non tornava, e Kurgan la guardò mentre si infilava i pantalo
 
 Da *entro l'estate* a *oggi* in tredici giorni.
 
-Kurgan fece il conto e il conto gli diede una spiegazione sola. Il governo del contabile aveva fretta. Rastegar glielo aveva detto chiaro: *il mio governo un po' meno*, di pazienza. Qualcuno, a Parsàn, aveva letto la prima busta e voleva la seconda prima dell'autunno, e il contabile, che era un uomo paziente pagato da gente impaziente, stava correndo. Un contabile che correva non era un contabile che tradiva. Era un contabile a cui avevano messo una scadenza.
+Kurgan rilesse a memoria le due parole del secondo biglietto, *questa settimana*, e ci trovò una spiegazione sola. Il governo del contabile aveva fretta. Rastegar glielo aveva detto chiaro: *il mio governo un po' meno*, di pazienza. Qualcuno, a Parsàn, aveva letto la prima busta e voleva la seconda prima dell'autunno, e il contabile, che era un uomo paziente pagato da gente impaziente, stava correndo. Un contabile che correva non era un contabile che tradiva. Era un contabile a cui avevano messo una scadenza.
 
 La spiegazione reggeva. La tenne.
 
@@ -5449,7 +5449,7 @@ La lettera di Calabrese era sulla scrivania di Flora, non sulla sua. Busta bianc
 
 Erano le otto e cinquanta di lunedì. L'ufficio del pool, al terzo piano della Direzione nazionale antimafia, sapeva ancora di chiuso dal fine settimana. Flora posò la borsa sulla sedia e non aprì la busta subito.
 
-Prima mise in fila le cose. Lo faceva sempre.
+Prima guardò la calligrafia storta del biglietto giallo.
 
 Calabrese era arrivato prima di lei, cosa che non succedeva mai. Aveva lasciato la lettera ed era uscito. La giacca non c'era. Quindi non era al bagno, né alla macchinetta del caffè. Era uscito per non essere lì quando lei la leggeva.
 
@@ -5763,7 +5763,7 @@ Sotto, dopo una riga vuota, un'altra parola. *Stanotte.*
 
 Alle undici Alfredo salì a letto. Alle undici e venti spense la luce. Elena restò sveglia accanto a lui e contò i respiri.
 
-Lui si addormentava in fretta, da sempre. Anche adesso, anche con Laura via. Dopo venti minuti il respiro si allungava. Dopo quaranta, faceva un piccolo rumore in fondo alla gola, ogni sette respiri. Elena aspettò il rumore. Lo contò tre volte.
+Lui si addormentava in fretta, da sempre. Anche adesso, anche con Laura via. Dopo venti minuti il respiro si allungava. Dopo quaranta, faceva un piccolo rumore in fondo alla gola, ogni sette respiri. Elena aspettò il rumore. Lo sentì arrivare, piccolo, in fondo alla gola di lui.
 
 Alle dodici e mezza lui si girò sul fianco, verso di lei. Il rumore smise. Elena restò immobile, con gli occhi aperti nel buio, e contò i respiri da capo. Uno. Due. Al decimo lui disse una parola, impastata, che non era un nome. Poi niente. Al trentesimo il rumore tornò, ogni sette respiri.
 
@@ -6359,7 +6359,7 @@ Flora mangiò. Aveva il settimo foglio nella borsa, nella tasca con la cerniera,
 
 Per un momento, a metà del piatto, ebbe voglia di dirglielo. Non tutto. Una cosa. *Oggi ho trovato tre nomi.* Carlo era l'unico, fuori dal pool, con cui avesse mai parlato del suo lavoro. Due anni di cene, una al mese. Lui ascoltava fino in fondo, non interrompeva, e a gennaio le aveva dato una pista che aveva aperto una porta.
 
-Fece il conto, come lo faceva sempre. Dirglielo le avrebbe dato qualcosa: una voce che le diceva se aveva ragione. Non dirglielo non le toglieva niente. E da gennaio c'era una colonna, nella tasca con la cerniera, che nessuno le aveva chiesto di scrivere.
+Sentì il foglio piegato contro il fianco. Dirglielo le avrebbe dato qualcosa: una voce che le diceva se aveva ragione. Non dirglielo non le toglieva niente. E da gennaio c'era una colonna, nella tasca con la cerniera, che nessuno le aveva chiesto di scrivere.
 
 Tacque.
 
@@ -6988,7 +6988,7 @@ In dodici anni Carlo aveva detto a quell'uomo molte cose incomplete. Aveva scelt
 
 «Ad Albaterra» disse. «Il pool ha una scadenza con la Banca d'Italia. Lavora anche il sabato, fino a metà ottobre. Me l'ha detto lei.»
 
-Lo disse guardando il capo reparto negli occhi. Non abbassò lo sguardo. Non lo spostò sulla finestra, né sul foglio. Contò, dentro di sé, fino a tre, perché sapeva che una bugia reggeva meglio se durava quanto una verità.
+Lo disse guardando il capo reparto negli occhi. Non abbassò lo sguardo. Non lo spostò sulla finestra, né sul foglio. Sentì il proprio respiro, lento, e lo lasciò durare, perché sapeva che una bugia reggeva meglio se durava quanto una verità.
 
 Il capo reparto annuì.
 
@@ -7026,7 +7026,7 @@ Non rispose. Non sapeva ancora che cosa avrebbe detto, se lei gli avesse chiesto
 
 In fondo alle scale salutò il piantone, e prima di attraversare la strada guardò a destra, poi a sinistra, come faceva sempre. Poi guardò a destra un'altra volta.
 
-Non c'era nessuno. Non gli servì a niente saperlo.
+Non c'era nessuno. Attraversò.
 
 ---
 
@@ -7765,7 +7765,7 @@ Rimasero in silenzio. La barra arrivò a metà.
 
 Non era una domanda.
 
-Elena contò fino a tre prima di rispondere. Era il suo numero.
+Elena sentì la parola *papà* restare tra loro, prima di rispondere.
 
 «Sì.»
 
@@ -8858,7 +8858,7 @@ Poi cominciò a preparare la cena. Contò le patate. Otto. Le sbucciò una per u
 
 Alle 20.30 erano tutti a tavola. Cesare parlava di una partita. Fabrizio mangiava a testa bassa, e ogni tanto alzava gli occhi verso sua madre, e poi verso suo padre, e poi di nuovo verso il piatto. Laura aveva messo le scarpe in fila davanti alla porta della cucina, come faceva da agosto, prima di sedersi.
 
-Alfredo sedeva a capotavola. Era stanco. Aveva una ruga nuova tra le sopracciglia, che Elena contò come si contava una cosa comparsa in un inventario dove prima non c'era. Mangiava piano. Rispondeva a Cesare con un minuto di ritardo.
+Alfredo sedeva a capotavola. Era stanco. Aveva una ruga nuova tra le sopracciglia, che Elena vide come si vedeva una cosa comparsa in un inventario dove prima non c'era. Mangiava piano. Rispondeva a Cesare con un minuto di ritardo.
 
 A metà della cena alzò gli occhi verso di lei.
 
@@ -9200,7 +9200,7 @@ Il notaio guardò i due carabinieri. Poi guardò Cataldo, che aveva aperto il po
 <p align="center">* * *</p>
 
 
-L'armadio era di noce, nello studio in fondo, con una serratura a doppia mappa. Il notaio disse che la chiave era a casa sua, dall'altra parte della città. Il maresciallo disse che allora avrebbe chiamato un fabbro, e che un fabbro, il sabato, costava il triplo e rompeva il doppio. Il notaio restò in silenzio per un tempo che Flora contò. Nove secondi. Poi tirò fuori un mazzo dalla tasca del maglione, aprì un cassetto della scrivania con una chiave piccola, e dal cassetto prese quella dell'armadio. Dentro c'erano repertori rilegati in tela verde, anno per anno. Sul ripiano più alto, da solo, un raccoglitore di pelle rossa, consumato agli angoli.
+L'armadio era di noce, nello studio in fondo, con una serratura a doppia mappa. Il notaio disse che la chiave era a casa sua, dall'altra parte della città. Il maresciallo disse che allora avrebbe chiamato un fabbro, e che un fabbro, il sabato, costava il triplo e rompeva il doppio. Il notaio restò in silenzio, e Flora gli vide la mano andare alla tasca del maglione e fermarsi lì. Poi tirò fuori un mazzo dalla tasca del maglione, aprì un cassetto della scrivania con una chiave piccola, e dal cassetto prese quella dell'armadio. Dentro c'erano repertori rilegati in tela verde, anno per anno. Sul ripiano più alto, da solo, un raccoglitore di pelle rossa, consumato agli angoli.
 
 Il maresciallo lo prese con i guanti. Lo posò sulla scrivania. Lo aprì.
 
@@ -9339,7 +9339,7 @@ Giorgi salì a bordo. Due.
 <p align="center">* * *</p>
 
 
-Nella fisica sperimentale c'è una regola che i fisici imparano presto e rispettano male: l'osservatore non può misurare un sistema di cui fa parte senza perturbarlo, e più la misura è fine, più la perturbazione è grande. Per trent'anni Giorgi aveva risolto il problema restando fuori. Un telefono posato sul tavolo, una sala sotto terra, un piano più in alto degli altri. Aveva guardato i sistemi dall'esterno, come si guardava una camera a nebbia, e aveva visto le tracce delle particelle senza essere una di esse.
+L'uomo con il loden verde e il berretto di lana era rimasto sul pontile a guardare la barca, e Giorgi conosceva la regola che la fisica sperimentale impone a chiunque guardi: l'osservatore non può misurare un sistema di cui fa parte senza perturbarlo, e più la misura è fine, più la perturbazione è grande. Per trent'anni Giorgi aveva risolto il problema restando fuori. Un telefono posato sul tavolo, una sala sotto terra, un piano più in alto degli altri. Aveva guardato i sistemi dall'esterno, come si guardava una camera a nebbia, e aveva visto le tracce delle particelle senza essere una di esse.
 
 Quella mattina era dentro la camera. Seduto a poppa su una panca bagnata, con il maglione pesante sotto la giacca e le mani in tasca, non vedeva niente del sistema che lo conteneva. Non sapeva quanti uomini fossero sulla riva, né dove. Non sapeva a che distanza fosse l'altra barca, né se esistesse. Non sapeva di che cosa fosse fatta la carica, né dove fosse stata messa, né chi tenesse il dito sopra il comando. Sapeva soltanto che esisteva un comando, perché un sistema così aveva sempre un comando, e che qualcuno lo teneva.
 
