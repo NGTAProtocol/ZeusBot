@@ -433,8 +433,6 @@ Sei settimane. Tre ingressi calibrati, tre risposte del mercato. Il mercato cope
 
 Si era laureato in fisica nucleare in un'università dove i professori portavano la tonaca e insegnavano che l'ordine del creato è leggibile da chi ha la pazienza di leggerlo. Aveva conservato di quegli anni due convinzioni che non gli erano mai sembrate in contraddizione: che il mondo fosse un sistema, e che un sistema, se lo si conosce abbastanza, si lasci governare.
 
-L'unica parte dell'operazione che restava aperta era la più piccola, e proprio per questo la più pericolosa.
-
 Tre uomini avevano messo gli ordigni. Tre uomini di Kurgan, scelti da lui, addestrati da lui, fedeli a lui con quella fedeltà quasi animale che Kurgan sapeva produrre intorno a sé e che Giorgi, in dieci anni, aveva imparato a considerare la risorsa più preziosa e insieme il difetto più grave della sua creatura. Tre uomini che sapevano dove, quando e con che cosa. Tre uomini che da quel pomeriggio erano diventati, nel linguaggio che Giorgi usava soltanto dentro di sé, isotopi instabili: nuclei che avevano accumulato un'energia che prima o poi, per una legge statistica e non morale, avrebbero rilasciato, e che rilasciandola avrebbero contaminato tutto ciò che si trovava intorno.
 
 La soluzione non richiedeva immaginazione. Richiedeva soltanto che l'ordine venisse dato, e che venisse eseguito dalla stessa mano che aveva scelto quegli uomini.
@@ -542,8 +540,6 @@ Restava da stabilire che cosa fosse diventato Kurgan da quella sera in avanti, e
 Per dieci anni Kurgan era stato un componente: un attuatore, nel linguaggio della teoria del controllo, cioè l'elemento che traduce un comando in un'azione sul mondo. Potente, efficiente, dotato di una sua inerzia, ma pur sempre governato da un segnale che veniva dall'esterno, e che Giorgi, per dieci anni, aveva calibrato con cura. Un attuatore che rifiuta il segnale, tuttavia, non è un attuatore guasto. Un attuatore guasto si ripara o si sostituisce. Un attuatore che rifiuta il segnale ha sviluppato un proprio anello di retroazione, e da quel momento non appartiene più al sistema che lo contiene: è diventato un sistema a sé, con i suoi obiettivi, la sua energia e la sua traiettoria, che nessuno ha calcolato perché nessuno pensava che esistesse.
 
 Ciò che si trovava dall'altra parte di quel numero non più raggiungibile, dunque, non era un sottoposto in rivolta. Era un secondo centro di gravità.
-
-E due centri di gravità, in uno spazio chiuso, non restano mai fermi a lungo.
 
 
 <p align="center">* * *</p>
@@ -1799,7 +1795,7 @@ Giorgi sapeva che cosa conteneva. Ne possedeva una copia identica, in una casset
 
 Giorgi guardò l'astuccio, poi la tazza vuota, e capì che l'argomento della terza tazza non era Kurgan.
 
-Nella teoria del controllo esiste una struttura che gli ingegneri chiamano gerarchica: un regolatore di basso livello governa direttamente il processo, correggendone le deviazioni istante per istante, mentre sopra di lui un supervisore osserva non il processo ma il regolatore stesso, e ne valuta le prestazioni su una scala di tempo più lunga. Il supervisore non interviene finché l'errore resta entro una banda di tolleranza stabilita. Quando l'errore la supera, non corregge il processo: sostituisce il regolatore.
+La tazza era dritta sul piattino, vuota, e Giorgi ci vide una struttura che conosceva dagli anni di studio, e che gli ingegneri chiamano gerarchica: un regolatore di basso livello governa direttamente il processo, correggendone le deviazioni istante per istante, mentre sopra di lui un supervisore osserva non il processo ma il regolatore stesso, e ne valuta le prestazioni su una scala di tempo più lunga. Il supervisore non interviene finché l'errore resta entro una banda di tolleranza stabilita. Quando l'errore la supera, non corregge il processo: sostituisce il regolatore.
 
 Per trent'anni Giorgi era stato il regolatore. Aveva sempre saputo che sopra di lui c'era un supervisore, e ne aveva sempre conosciuto la banda di tolleranza, perché l'aveva sempre rispettata con un margine tale da non doverci mai pensare. Quel pomeriggio, nel freddo di quello studio, per la prima volta, gli sembrò di vederne i bordi.
 
@@ -3639,7 +3635,7 @@ Poi l'immagine sullo schermo cambiò. Una ripresa dall'alto, grigia e verde, le 
 <p align="center">* * *</p>
 
 
-In fisica dei reattori c'è un problema che gli studenti del primo anno trovano sempre elegante e gli ingegneri trovano sempre insolubile: misurare il flusso di neutroni in un punto del nocciolo senza alterarlo. Ogni rivelatore che si inserisce assorbe una parte dei neutroni che dovrebbe contare. Ogni misura modifica la cosa misurata. Si può soltanto scegliere quanto disturbo si è disposti a introdurre in cambio di quanta informazione, e la scelta non è mai tecnica: è una scelta su che cosa si è disposti a perdere.
+Sullo schermo era rimasta la ripresa delle colline, con i suoi trentasei edifici, e guardarla voleva dire toccarla. Giorgi conosceva quel problema dal primo anno di fisica dei reattori: misurare il flusso di neutroni in un punto del nocciolo senza alterarlo. Ogni rivelatore che si inserisce assorbe una parte dei neutroni che dovrebbe contare. Ogni misura modifica la cosa misurata. Si può soltanto scegliere quanto disturbo si è disposti a introdurre in cambio di quanta informazione, e la scelta non è mai tecnica: è una scelta su che cosa si è disposti a perdere.
 
 L'arsenale che il fronte gli aveva messo a disposizione era un insieme di rivelatori di altissima sensibilità: satelliti, intercettazioni, informatori, reparti. Ognuno di essi, inserito nel sistema di Kurgan, lo avrebbe perturbato. Un'irruzione in una delle trentasei ville avrebbe detto a Kurgan che il dottore sapeva dove cercare. Un arresto di uno dei suoi uomini gli avrebbe detto che il dottore aveva scelto la guerra. E in entrambi i casi la sola grandezza che a Giorgi interessava misurare, la posizione di una bambina di sette anni, si sarebbe spostata prima che la misura fosse completata. Oppure si sarebbe annullata.
 
@@ -3733,7 +3729,7 @@ In un reattore si chiama variabile interna: una grandezza che nessuno strumento 
 
 Aveva calcolato anche l'altra ipotesi, quella che rendeva il foglio quasi inutile. Che l'offerta arrivasse alla variabile e la variabile la portasse intera a Kurgan, la sera stessa. In quel caso Kurgan avrebbe saputo che il dottore cercava lui e non la bambina, che aveva il nome del contabile, che aveva comprato qualcuno. Avrebbe cambiato le regole, e la sola finestra in cui era privo di scorta si sarebbe chiusa per sempre. Giorgi aveva stimato questa probabilità a una su tre. Poi aveva spedito l'offerta lo stesso, perché le altre due, per ora, erano tutto ciò che aveva.
 
-Non disse il nome. Nessuno glielo chiese. Nella stanza, ormai, tutti avevano capito che certe cose era meglio saperle da un'altra parte.
+Non disse il nome. Nessuno glielo chiese.
 
 «C'è una persona dentro» disse. «Ho già fatto arrivare un'offerta. Attraverso un canale che non passa da nessuno di voi.»
 
@@ -4527,7 +4523,7 @@ Giorgi restò seduto. Sul tavolo, accanto al telefono, c'era ancora il foglio sc
 <p align="center">* * *</p>
 
 
-In teoria del controllo esiste un'architettura che gli studenti imparano al terzo anno e che gli impianti reali applicano ovunque: il controllo gerarchico. In basso stanno i regolatori locali, ciascuno responsabile di una grandezza, ciascuno convinto, per così dire, di governare il proprio pezzo di mondo. Sopra di loro sta un supervisore, che non regola niente direttamente ma osserva l'errore di ciascun regolatore. Finché l'errore resta dentro la tolleranza, il supervisore tace. Quando la supera, il supervisore non corregge il regolatore. Lo sostituisce. Stacca il suo segnale dall'attuatore e ci mette il proprio, senza avvertirlo, perché un regolatore che ha superato la tolleranza non è più un interlocutore: è la parte del sistema che ha smesso di funzionare.
+Chi aveva deciso, e quando? La domanda aveva una risposta tecnica, e Giorgi la conosceva dal terzo anno: il controllo gerarchico. In basso stanno i regolatori locali, ciascuno responsabile di una grandezza, ciascuno convinto, per così dire, di governare il proprio pezzo di mondo. Sopra di loro sta un supervisore, che non regola niente direttamente ma osserva l'errore di ciascun regolatore. Finché l'errore resta dentro la tolleranza, il supervisore tace. Quando la supera, il supervisore non corregge il regolatore. Lo sostituisce. Stacca il suo segnale dall'attuatore e ci mette il proprio, senza avvertirlo, perché un regolatore che ha superato la tolleranza non è più un interlocutore: è la parte del sistema che ha smesso di funzionare.
 
 Giorgi era stato un regolatore per dieci anni. Aveva regolato Kurgan, e attraverso Kurgan i porti, le navi, due mafie, tre stragi. Da diciannove mesi il suo errore era fuori tolleranza. Il supervisore lo aveva osservato con pazienza, da un appartamento con un divano di velluto verde, e il 6 gennaio aveva girato la terza tazza sul piattino. Quella notte aveva staccato il suo segnale dall'attuatore.
 
@@ -4555,7 +4551,7 @@ Una chiamata. Quattro parole: *domani non si fa.* Il generale avrebbe capito. Il
 
 Prima di fare il conto esaminò la terza via, quella che i sistemi reali offrono sempre a chi non vuole scegliere tra due stati: lo stato intermedio. Non fermare, non lasciar andare. Chiamare il generale e chiedere soltanto un rinvio. Una settimana. Il tempo di riportare la cattura dentro il piano, di rimettere quattro uomini ai tavoli e un furgone nel vicolo.
 
-La esaminò e la scartò in meno di un minuto. Un rinvio chiesto la notte prima, dopo la notizia, era una risposta alla prova tanto quanto un arresto. Diceva al supervisore che il regolatore sostituito aveva visto la sostituzione e tentava di negoziarla. E diceva un'altra cosa, peggiore: che il regolatore aveva paura. In un impianto, uno stato intermedio mantenuto troppo a lungo si chiamava instabilità, e le instabilità venivano corrette dall'alto con una forza maggiore di quella che le aveva prodotte.
+La esaminò e la scartò in meno di un minuto. Un rinvio chiesto la notte prima, dopo la notizia, era una risposta alla prova tanto quanto un arresto. Diceva al supervisore che il regolatore sostituito aveva visto la sostituzione e tentava di negoziarla. E diceva un'altra cosa, peggiore: che il regolatore aveva paura.
 
 Non c'erano tre vie. Ce n'erano due, e una sola delle due lasciava aperta la strada verso la bambina.
 
@@ -5293,7 +5289,7 @@ Non disse niente. De Biasi lo salutò con un cenno del mento, breve, come si sal
 <p align="center">* * *</p>
 
 
-Nella teoria dei sistemi c'è un momento che i manuali descrivono in una riga e gli impianti reali impiegano settimane a digerire: la riconfigurazione dopo un guasto. Quando un componente viene rimosso, il supervisore non si limita a spegnerlo. Ridisegna le connessioni intorno al vuoto, assegna ad altri componenti le funzioni che quello svolgeva, stabilisce nuovi limiti di tolleranza. Il sistema che ne risulta non è il vecchio sistema meno un pezzo. È un sistema diverso, con un'altra topologia, che conserva del precedente soltanto la memoria dei carichi.
+Il cenno di De Biasi era durato mezzo secondo, e in quel mezzo secondo Giorgi riconobbe la fase che segue un guasto: la riconfigurazione. Quando un componente viene rimosso, il supervisore non si limita a spegnerlo. Ridisegna le connessioni intorno al vuoto, assegna ad altri componenti le funzioni che quello svolgeva, stabilisce nuovi limiti di tolleranza. Il sistema che ne risulta non è il vecchio sistema meno un pezzo. È un sistema diverso, con un'altra topologia, che conserva del precedente soltanto la memoria dei carichi.
 
 Quella mattina, in quell'ufficio, Giorgi assistette alla riconfigurazione.
 
@@ -5905,7 +5901,7 @@ Poi risalì in macchina e se ne andò verso le saline, dalla parte dove la strad
 <p align="center">* * *</p>
 
 
-Nella teoria del controllo c'è una grandezza che i manuali trattano con una certa distrazione e gli ingegneri con un certo terrore: il ritardo. Un sistema che riceve il segnale giusto nel momento sbagliato non è un sistema quasi corretto. È un sistema che oscilla, che reagisce a condizioni che non esistono più, e che in certi casi, a parità di tutto il resto, diventa instabile soltanto per il tempo che il segnale ha impiegato ad arrivare. Il ritardo non aggiunge niente alla catena. Toglie. E la cosa che toglie non si vede fino a quando non è troppo tardi per rimetterla.
+Il termine scritto sotto *vivo* era il 23 luglio. Era il 10 agosto. In teoria del controllo quella distanza ha un nome, il ritardo, ed è la grandezza che chi progetta un impianto teme di più. Un sistema che riceve il segnale giusto nel momento sbagliato non è un sistema quasi corretto. È un sistema che oscilla, che reagisce a condizioni che non esistono più, e che in certi casi, a parità di tutto il resto, diventa instabile soltanto per il tempo che il segnale ha impiegato ad arrivare. Il ritardo non aggiunge niente alla catena. Toglie.
 
 Nelle sette ore del ritorno Giorgi guardò Laura nello specchietto, e non riuscì a pensare ad altro che a questo.
 
@@ -6560,7 +6556,7 @@ Giorgi era rientrato a Merania alle nove di sera, come aveva promesso, e aveva t
 
 *Stanotte*: la cosa era già decisa, e non da lui. *A Casal Fascio*: il bersaglio era Bertola, dove Bertola era più visibile. *Di non chiamare nessuno*: De Biasi sapeva che Giorgi avrebbe potuto chiamare qualcuno, e sapeva chi.
 
-Nella teoria del controllo c'è una classe di sistemi che i manuali trattano come una curiosità e gli ingegneri come un sogno: i sistemi che si correggono da soli. Un componente che si guasta, invece di trascinare con sé il resto, si stacca; il carico si ridistribuisce; il sistema ritorna al punto di equilibrio senza che il regolatore debba intervenire, e a volte senza che il regolatore se ne accorga. Sulla carta è la configurazione perfetta. Nella pratica ha un solo difetto, che i manuali non scrivono: un sistema che si corregge da solo non ha più bisogno di un regolatore.
+Nessuna delle tre gli chiedeva di fare qualcosa. Giorgi ne riconobbe la forma: quella dei sistemi che si correggono da soli. Un componente che si guasta, invece di trascinare con sé il resto, si stacca; il carico si ridistribuisce; il sistema ritorna al punto di equilibrio senza che il regolatore debba intervenire, e a volte senza che il regolatore se ne accorga. Sulla carta è la configurazione perfetta. Nella pratica ha un solo difetto, che i manuali non scrivono: un sistema che si corregge da solo non ha più bisogno di un regolatore.
 
 Giorgi rimase seduto con quell'idea per il tempo che gli servì a riconoscerla. Poi la mise da parte, perché c'era un conto più urgente da fare.
 
@@ -6578,7 +6574,7 @@ A mezzanotte e venti prese il telefono e cercò in rubrica il numero dell'avvoca
 
 Lo schermo si spense da solo dopo trenta secondi.
 
-Non chiamò nessuno. Posò la mano sul telefono, per abitudine, e lasciò che il sistema facesse quello che i sistemi facevano quando nessuno li regolava.
+Non chiamò nessuno. Posò la mano sul telefono, per abitudine.
 
 All'una e mezza la porta dello studio si aprì. Elena, in vestaglia, senza accendere la luce. Guardò lui, il telefono sotto la sua mano, la scrivania vuota.
 
@@ -6686,7 +6682,7 @@ Il sistema si era corretto da solo. Il componente difettoso si era espulso da s�
 
 Giorgi lo registrò con precisione, come avrebbe registrato il collaudo riuscito di un impianto progettato da altri.
 
-Non se ne rallegrò. Un regolatore che guarda il sistema correggersi senza di lui impara soltanto una cosa, e la impara per ultimo: di quanto poco, ormai, gli si chieda di intervenire.
+Non se ne rallegrò.
 
 Di sopra, Laura dormiva nel letto di Elena, con la luce del comodino accesa anche adesso che era giorno.
 
@@ -7245,7 +7241,7 @@ Salvarani non si alzò. Sedeva sul divano di velluto verde con le mani deformate
 <p align="center">* * *</p>
 
 
-Nella teoria del controllo gerarchico c'è una regola che i manuali enunciano nella prima pagina e che gli ingegneri dimenticano entro la terza: un sistema complesso non ha un solo livello di regolazione, ne ha diversi, sovrapposti, e ciascuno vede soltanto il livello immediatamente sotto di sé. Il regolatore corregge l'impianto. Il supervisore corregge il regolatore. Sopra il supervisore c'è quasi sempre un altro livello, più lento, più lontano, che interviene di rado e soltanto quando le correzioni dei livelli inferiori hanno smesso di bastare.
+Il senatore sedeva al posto della terza tazza, e Giorgi contò i livelli della stanza come si contano in un controllo gerarchico: un sistema complesso non ha un solo livello di regolazione, ne ha diversi, sovrapposti, e ciascuno vede soltanto il livello immediatamente sotto di sé. Il regolatore corregge l'impianto. Il supervisore corregge il regolatore. Sopra il supervisore c'è quasi sempre un altro livello, più lento, più lontano, che interviene di rado e soltanto quando le correzioni dei livelli inferiori hanno smesso di bastare.
 
 Giorgi si era considerato a lungo il supervisore. Il 6 gennaio, in quella stessa stanza, davanti a una terza tazza girata dritta, aveva capito di essere il regolatore. A giugno, con un telefono posato a faccia in giù su una scrivania, aveva visto il supervisore sostituirlo senza avvertirlo. Ad agosto, in una notte in cui non aveva toccato il telefono, aveva visto il sistema correggersi senza di lui.
 
@@ -8023,7 +8019,7 @@ Sullo schermo il senatore Cicimarra stava ringraziando l'aula. Aveva la cravatta
 <p align="center">* * *</p>
 
 
-Nella teoria del controllo c'è un momento che gli ingegneri aspettano con più sollievo di qualunque altro, e che i manuali descrivono con una sola parola: regime. È il momento in cui, dopo una perturbazione, il sistema smette di oscillare e si assesta sul valore desiderato. Le correzioni si fanno piccole, poi impercettibili, poi smettono. Da quel momento il regolatore non deve più fare niente. Deve soltanto guardare che nulla cambi.
+Il voto era finito e i numeri non si muovevano più: centosessantuno. Giorgi aveva un nome per quel momento, e l'aveva aspettato per due mesi: regime. È il momento in cui, dopo una perturbazione, il sistema smette di oscillare e si assesta sul valore desiderato. Le correzioni si fanno piccole, poi impercettibili, poi smettono. Da quel momento il regolatore non deve più fare niente. Deve soltanto guardare che nulla cambi.
 
 Giorgi guardò lo schermo e riconobbe il regime.
 

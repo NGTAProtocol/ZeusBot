@@ -216,3 +216,32 @@ Criterio generale: si tiene quando la conclusione segna un cambiamento decisivo 
 - **Tagli delle catene (10 su 20):** 165 parole.
 - **Saldo netto:** circa 144 parole in meno su 111.547 (circa 0,13%).
 - **Nota:** il cap. 29, r. 25 riceve sia la nuova apertura sia il taglio della frase finale; nel prima/dopo della catena la riga è mostrata con l'apertura attuale.
+
+## Applicazione (30 settembre 2026)
+
+Punto di ripristino: commit `cf6d1bb` (il tag `backup-prima-coerenza-finale` esiste solo in locale: il push dei tag è rifiutato con HTTP 403).
+
+**Aperture applicate (8 su 9):** capitoli 8 (r. 93), 17 (r. 37), 21 (r. 75), 26 (r. 19), 29 (r. 25), 33 (r. 11), 37 (r. 17), 42 (r. 15), come proposte sopra. Parole: +17.
+
+**Capitolo 51, r. 21: non applicata.** Su richiesta, l'apertura con una domanda è sostituita da una variante che parte da una persona già in scena, in attesa di conferma:
+- Prima: «Nella fisica sperimentale c'è una regola che i fisici imparano presto e rispettano male: l'osservatore non può misurare un sistema di cui fa parte senza perturbarlo…»
+- Proposta: «L'uomo con il loden verde e il berretto di lana era rimasto sul pontile a guardare la barca, e Giorgi conosceva la regola che la fisica sperimentale impone a chiunque guardi: l'osservatore non può misurare un sistema di cui fa parte senza perturbarlo…»
+- Verificato: l'amico del cardinale, «un uomo sui sessant'anni, con un loden verde e un berretto di lana», è sul pontile (r. 9) e dice «Io vi raggiungo con l'altra barca» (r. 11); la barca lascia il pontile solo alla r. 25.
+
+**Tagli applicati (7):**
+- Cap. 2, r. 33: riga eliminata («L'unica parte dell'operazione che restava aperta era la più piccola, e proprio per questo la più pericolosa.»).
+- Cap. 2, r. 139: riga eliminata («E due centri di gravità, in uno spazio chiuso, non restano mai fermi a lungo.»).
+- Cap. 17, r. 127: tolta la frase «Nella stanza, ormai, tutti avevano capito che certe cose era meglio saperle da un'altra parte.»
+- Cap. 21, r. 101: tolta l'ultima frase («In un impianto, uno stato intermedio…»).
+- Cap. 29, r. 25: tolta l'ultima frase («E la cosa che toglie non si vede…»).
+- Cap. 33, r. 27: tolto l'inciso finale; resta «Non chiamò nessuno. Posò la mano sul telefono, per abitudine.»
+- Cap. 33, r. 129: resta «Non se ne rallegrò.»
+Parole: −137.
+
+**Non tagliati, e perché:**
+- Cap. 12, r. 25 («Il reattore non si stava spegnendo. Si stava avvicinando alla massa critica.»): richiamo nella scheda di Giorgi (`02-bibbia/personaggi/alfredo-giorgi.md`, r. 62: «si avvicina alla massa critica»).
+- Cap. 49, r. 45 («Era la stessa equazione, risolta con un segno diverso.»): richiamata in `semi.md` e nella scheda di Giorgi; esclusa su indicazione.
+- Cap. 51, r. 89 («Gli era costato la vita che aveva.»): richiamo nel cap. 48, r. 119 («Le costerà la vita che aveva»), in `semi.md` (blocco del cap. 48) e nella scheda di Flora. Il taglio era proposto proprio per l'eco; la regola dei richiami lo blocca.
+- Le dieci frasi «da tenere» sono invariate.
+
+**Saldo:** −120 parole.
