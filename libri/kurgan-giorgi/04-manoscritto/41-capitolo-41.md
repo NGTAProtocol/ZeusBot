@@ -20,7 +20,7 @@ Dentro la busta c'erano due chiavette. Una con un'etichetta scritta a penna, in 
 
 Salì in redazione. Il terzo piano sapeva di termosifoni troppo caldi, di cappotti bagnati appesi agli attaccapanni, di mandarini sbucciati sulle scrivanie. Dicembre, in quella redazione, aveva sempre avuto l'odore dei mandarini.
 
-Chiuse la porta del suo stanzino. Aprì il cassetto con la chiave che teneva nella tasca con la cerniera della borsa. Dentro c'erano ancora il secondo telefono spento e, sotto, i tre fogli di agosto. Le due curve stampate. Il foglio con la data e il punto interrogativo. *12 novembre ?*
+Chiuse la porta del suo stanzino. Aprì il cassetto con la chiave che teneva nella tasca con la cerniera della borsa. Dentro c'erano ancora il secondo telefono spento e, sotto, i tre fogli di agosto. Le due curve stampate. Il foglio con la data e il punto interrogativo. *12 novembre?*
 
 Li mise sul tavolo. Poi prese la chiavetta con l'etichetta che diceva la stessa cosa del suo foglio, e la infilò nel portatile.
 
@@ -52,7 +52,7 @@ Il secondo documento era un'altra nota della stessa Ardesia, per lo stesso clien
 
 Tre giorni dopo, all'alba, quattro autostrade.
 
-Dalia si alzò. Andò alla finestra. Fuori, nella strada, qualcuno aveva appeso delle luci di Natale tra un balcone e l'altro, e non erano ancora accese. Guardò i fili neri per un tempo che non misurò. Poi tornò al tavolo, e prese il foglio di agosto, e sotto *12 novembre ?* cancellò il punto interrogativo. Accanto scrisse: *12.07.04. AGIORGI. 31.*
+Dalia si alzò. Andò alla finestra. Fuori, nella strada, qualcuno aveva appeso delle luci di Natale tra un balcone e l'altro, e non erano ancora accese. Guardò i fili neri per un tempo che non misurò. Poi tornò al tavolo, e prese il foglio di agosto, e sotto *12 novembre?* cancellò il punto interrogativo. Accanto scrisse: *12.07.04. AGIORGI. 31.*
 
 Tre su tre.
 
