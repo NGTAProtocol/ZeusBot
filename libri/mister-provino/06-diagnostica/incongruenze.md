@@ -11,36 +11,43 @@ Legenda:
 
 ---
 
-### 1. La dipendenza della madre prima del 1963 · S · alta
+### 1. La dipendenza della madre prima del 1963 · S · alta · **RISOLTA (Fase 3f)**
 - **Il problema:** il v.cap. 2 dice che la madre «si faceva già prima che io nascessi» (maggio 1963) e che Beniamino nasce in astinenza. In Italia l'eroina di strada si diffonde dai primi anni Settanta. Una tossicodipendente da oppiacei in un basso di Bari nel 1962-63 è possibile solo per altre vie: morfina di origine medica, farmacie, conoscenze in ospedale.
 - **Dove pesa:** capp. 2, 6, 17, 20, 38.
 - **Possibile via:** la dipendenza comincia con la morfina data dopo il parto difficile di Checco (1954) o dopo una malattia, e prosegue con farmaci procurati. La roba di Nicola arriva solo negli anni Settanta. Resta però un fatto: nel 1976, per il ragazzo, la madre si fa con la stessa roba che assaggia lui.
+- **Soluzione:** bibbia §10.1 (morfina medica dal 1954, poi ricette e un farmacista compiacente; la roba di Nicola solo negli anni Settanta).
 
-### 2. «Una notte d'ottobre» · T · media
+### 2. «Una notte d'ottobre» · T · media · **RISOLTA (Fase 3f)**
 - **Il problema:** il v.cap. 28 e l'epilogo collocano l'incendio in ottobre. Seguendo i tempi del vecchio testo (dieci giorni di camion, Calabria il giorno dopo il ritorno, «metà ottobre», «tre giorni», «il terzo giorno», «la sera dopo») l'incendio cade a novembre.
 - **Stato:** la cronologia della bibbia (sezione 3) la rende compatibile: incendio sabato 30 ottobre. Per farlo stringe i passaggi tra ritorno dalla Calabria, pedinamento e retata, e inserisce la settimana della caccia. **Da confermare.**
+- **Soluzione:** bibbia §3, cronologia: incendio sabato 30 ottobre 1976, notte d'ottobre confermata.
 
-### 3. La storia di Michele e Lucia, due versioni · T · alta
+### 3. La storia di Michele e Lucia, due versioni · T · alta · **RISOLTA (Fase 3f)**
 - **Il problema:** nel v.cap. 11 Lucia abitava di fronte, «in fondo alla Vallisa»; butta i fucili, perdona Michele e muore di tisi due inverni dopo. Nel v.cap. 29 Michele dice al ritratto: «Lo avevamo deciso in quella stessa stanza, quando c'era solo il letto e due sedie», e «mi presi quei soldi sporchi… e persi te», come se l'avesse persa per colpa sua e se avessero vissuto insieme lì.
 - **Dove pesa:** capp. 12 e 37.
 - **Possibile via:** tenere la versione del v.cap. 11. Nel cap. 37 «ti ho persa» si riferisce a Buenos Aires (la vita insieme perduta), non a lei.
+- **Soluzione:** bibbia §10.2 (vale la versione del v.cap. 11; «ti ho persa» si riferisce a Buenos Aires).
 
-### 4. Nicola non sa di Michele fino al 21 luglio · T · media
+### 4. Nicola non sa di Michele fino al 21 luglio · T · media · **RISOLTA (Fase 3f)**
 - **Il problema:** Beniamino va da Michele «da mesi», con le maniche lunghe (v.cap. 11). Nicola «sa tutto» e fa pedinare, ma scopre il pittore solo dalla frase del v.cap. 5 («Stavo da Michele»).
 - **Possibile via:** Nicola sapeva e non gli importava finché Michele era un vecchio innocuo. Diventa un ostaggio solo quando il ragazzo va all'ospedale, cioè quando il ragazzo comincia a disobbedire.
+- **Soluzione:** bibbia §10.3 (Nicola sapeva e non gli importava; Michele diventa ostaggio quando il ragazzo disobbedisce).
 
-### 5. L'età di Checco al primo arresto · T · bassa (collegata al briefing)
+### 5. L'età di Checco al primo arresto · T · bassa (collegata al briefing) · **RISOLTA (Fase 3f)**
 - **Il problema:** il v.cap. 6 parla di un «sedicenne affamato» che resiste a Nicola. Con le date fissate in bibbia l'arresto è del marzo 1973, a 19 anni.
 - **Stato:** nel cap. 6 Nicola avvicina Checco a 16-17 anni (1970-71) e l'arresto arriva a 19. Si tratta solo di non scrivere «sedicenne» al momento dell'arresto. Segnalata per completezza.
+- **Soluzione:** bibbia §2.3 e §3 (nato nel febbraio 1954, arrestato il 6 marzo 1973 a 19 anni); nel cap. 6 nessun «sedicenne» al momento dell'arresto.
 
-### 6. La pistola dell'omicidio e l'alibi del carcere · S/T · alta
+### 6. La pistola dell'omicidio e l'alibi del carcere · S/T · alta · **RISOLTA (Fase 3f)**
 - **Il problema:** Checco viene incastrato con l'arma di un omicidio di due anni prima, commesso mentre era detenuto (v.cap. 14). Per quell'omicidio ha un alibi perfetto. L'accusa sostenibile è **detenzione e ricettazione di arma** (e forse favoreggiamento), non l'omicidio. L'epilogo dice che «la pistola nel cofano resse più della verità» e che «l'unico che avrebbe potuto confessare era sottoterra». Va chiarito di quale accusa si parla.
 - **Dove pesa:** capp. 19, 39, epilogo.
 - **Possibile via:** l'accusa è di detenzione di arma clandestina con matricola abrasa, con il sospetto di concorso e la recidiva; la condanna è pesante ma finita. È la violenza in carcere, per la madre, a trasformarla in un «non esce più».
+- **Soluzione:** bibbia §10.4 (arma clandestina con matricola abrasa, sospetto di concorso, nessuna attenuante; tabella delle pene fino al dicembre 1998, mai ergastolo).
 
-### 7. Con che soldi Checco compra una macchina · T · bassa
+### 7. Con che soldi Checco compra una macchina · T · bassa · **RISOLTA (Fase 3f)**
 - **Il problema:** esce il 7 settembre e dopo pochi giorni ha «una carcassa sgangherata che si era ricomprato» (v.cap. 14).
 - **Possibile via:** la macchina gliela presta o gliela regala qualcuno (un compagno di cella, un amico), oppure la paga con i risparmi del lavoro in carcere. Vedi cap. 18.
+- **Soluzione:** bibbia §10.5 (risparmi della mercede, la paga del lavoro in carcere).
 
 ### 8. Lo zaino «per Don Micu» dopo che Nicola aveva già pagato · T · alta · **RISOLTA (Fase 3d)**
 - **Il problema:** in Aspromonte Nicola paga il doppio e chiude (v.cap. 19). Dieci giorni dopo il Capo gli affida 220 milioni «per Don Micu, per chiudere i conti con la Calabria» e «una guerra prima che cominciasse» (v.capp. 22 e 27). La guerra non è mai stata preparata, e resta da capire quale conto fosse ancora aperto.
@@ -52,72 +59,87 @@ Legenda:
 - **Possibile via:** con la caccia del cap. 23 il piano diventa esplicito (farlo cadere per mano di altri), e il pensiero di ucciderlo va tolto.
 - **Soluzione:** bibbia §9.1, decisione (a). Il pensiero di uccidere Nicola non si cancella: si sposta nel cap. 23, dove il ragazzo lo considera e lo scarta (non sa ammazzare, sa solo guardare e dire). Nel cap. 24 nessuna «morte nel cuore»; nella grotta (cap. 25) il vecchio dichiara una sola volta che la voce era sua.
 
-### 10. La frase di Saro · T · bassa
+### 10. La frase di Saro · T · bassa · **RISOLTA (Fase 3f)**
 - **Il problema:** «Stavo qua pure io. A sedici anni. Da quella parte, però.» (v.cap. 18). Non si capisce se Saro fosse prigioniero o guardiano, né da quando.
 - **Verificato sul v.cap. 18:** è Saro che porta l'acqua e il pane. La battuta va chiarita (guardiano da quando aveva sedici anni).
+- **Soluzione:** bibbia §10.6 (guardiano da quando aveva sedici anni, ora ne ha diciannove).
 
-### 11. Che cosa c'è nell'involto · T · media
+### 11. Che cosa c'è nell'involto · T · media · **RISOLTA (Fase 3f)**
 - **Il problema:** nel v.cap. 9 il ragazzo tiene un involto «duro, angoloso, freddo» mentre Nicola massacra Franco, e lo restituisce. Non si dice mai cosa sia. Il prologo lo mette al centro («Ho stretto un involto»).
 - **Possibile via:** il vecchio dichiara di non averlo mai saputo e di aver scelto di non immaginarlo. Oppure lo sa: una pistola, tenuta dal ragazzo perché, se fosse arrivata la polizia, a portarla sarebbe stato un minore. La seconda è più forte e coerente con il ruolo del ragazzo (v.cap. 2), ma va decisa.
+- **Soluzione:** bibbia §10.7 (è una pistola; il vecchio lo dichiara una sola volta, nell'interludio VII).
 
-### 12. Il Ciao e le distanze · T · bassa
+### 12. Il Ciao e le distanze · T · bassa · **RISOLTA (Fase 3f)**
 - **Il problema:** il Ciao ha i pedali e il motore; «pedalai veloce» (v.cap. 10) è ambiguo. Nel v.cap. 1 dal lungomare di Bari Vecchia al mercato del pesce ci sono «pochi chilometri», mentre il mercato è lì.
 - **Possibile via:** solo attenzione in stesura.
+- **Soluzione:** nessuna decisione di trama: il mercato del pesce sta sul molo di San Nicola, a ridosso di Bari Vecchia (bibbia §4). Il Ciao si guida, non si pedala. Solo attenzione in stesura.
 
-### 13. Cataldo minorenne arrestato come gli adulti · S/T · media
+### 13. Cataldo minorenne arrestato come gli adulti · S/T · media · **RISOLTA (Fase 3f)**
 - **Il problema:** Cataldo ha 17 anni e compare nella lista dei 160 arrestati sul giornale (v.cap. 24). Beniamino si dice escluso «perché minorenne». Un minore arrestato non finisce nell'elenco nominativo di un quotidiano.
 - **Possibile via:** Cataldo viene fermato e portato all'istituto minorile; il ragazzo lo sa dal quartiere, non dal giornale. Oppure si alza l'età di Cataldo a 18 anni.
+- **Soluzione:** bibbia §10.8 (istituto minorile; Beniamino lo sa dal quartiere, non dal giornale).
 
-### 14. Dettagli procedurali sulla droga · R · alta
+### 14. Dettagli procedurali sulla droga · R · alta · **RISOLTA (Fase 3f)**
 - **Il problema:** il vecchio testo contiene nomi di sostanze da taglio (v.cap. 2), il cucchiaio sulla fiamma (v.capp. 2 e 13), la siringa «già pronta» sul cruscotto (v.cap. 20). Sono in conflitto con il briefing, punto 9.
 - **Stato:** il manuale di stile (sezione 6) li vieta, e la scaletta li toglie dai capp. 2, 17 e 27. Segnalata perché il registro dei fatti li contiene.
+- **Soluzione:** bibbia §2.1 e §10.1 (nessun dettaglio di sostanze, dosi o modi) e manuale di stile §6.
 
-### 15. Due stranieri che si stabiliscono nel Brasile del 1977 · S · media
+### 15. Due stranieri che si stabiliscono nel Brasile del 1977 · S · media · **RISOLTA (Fase 3f)**
 - **Il problema:** un vecchio e un minore italiani sbarcano a Santos con un passaporto e comprano casa in contanti (v.cap. 33). Nel Brasile del regime militare servivano un visto e un permesso di residenza; per un minore affidato a un non parente la cosa è ancora più delicata. Il testo non ne parla.
 - **Possibile via:** un visto di residenza preso a Genova al consolato, grazie all'età di Michele e a una lettera del signore dei quadri; oppure la cosa si lascia in ombra con una riga del vecchio («le carte, in Brasile, si comprano come il pesce»). Da decidere.
+- **Soluzione:** bibbia §10.9 (visto di residenza al consolato, a Genova; una riga del vecchio).
 
-### 16. O Anjo e il divieto degli stranieri · S · media
-- **Il problema:** dal 1966 al 1980 le squadre italiane non potevano tesserare calciatori stranieri. O Anjo nel Bari del 1976 regge solo se è cittadino italiano (figlio di pugliesi) e cresciuto nel vivaio, come il vecchio testo già suggerisce (v.cap. 8). Il Bari 1975-76 giocava in Serie C (promosso in B per il 1976-77): «giocatori del Bari» e «la curva» vanno verificati.
+### 16. O Anjo e il divieto degli stranieri · S · media · **RISOLTA (Fase 3f)**
+- **Il problema:** dal 1966 al 1980 le squadre italiane non potevano tesserare calciatori stranieri. O Anjo nel Bari del 1976 regge solo se è cittadino italiano (figlio di pugliesi) e cresciuto nel vivaio, come il vecchio testo già suggerisce (v.cap. 8). Bari in Serie C nel 1975-76; promosso in B alla fine del 1976-77. «Giocatori del Bari» e «la curva» vanno verificati.
 - **Possibile via:** tenere l'oriundo cresciuto nelle giovanili; verificare la categoria del Bari nel luglio 1976.
+- **Soluzione:** bibbia §10.11 (Serie C nel luglio 1976; oriundo cittadino italiano cresciuto nel vivaio; mai «Serie B» nel testo).
 
-### 17. Persone reali identificabili alla festa di Palese · R · alta
+### 17. Persone reali identificabili alla festa di Palese · R · alta · **RISOLTA (Fase 3f)**
 - **Il problema:** nel v.cap. 7 alla festa del Capo ci sono «il sindaco», due assessori, «giocatori del Bari» e un «alto funzionario della polizia». Il sindaco di Bari nel luglio 1976 era una persona reale e identificabile: la scena gli attribuirebbe una collusione. Lo stesso vale, in misura minore, per i giocatori della rosa reale.
 - **Possibile via:** «un onorevole», «gente del Comune», «uomini che la domenica stavano in tribuna d'onore», senza cariche uniche. O Anjo resta perché è inventato.
+- **Soluzione:** bibbia §10.12 (solo «un onorevole», «gente del Comune», «uomini che la domenica stavano in tribuna d'onore»).
 
-### 18. Trulli nelle campagne di Bitonto · S · bassa
+### 18. Trulli nelle campagne di Bitonto · S · bassa · **RISOLTA (Fase 3f)**
 - **Il problema:** il trullo è tipico della Valle d'Itria e della Murgia dei trulli. Nelle campagne di Bitonto ci sono ricoveri di pietra a secco con altri nomi e forme (casedde, pagghiare, lamie).
 - **Possibile via:** verificare. Se non regge, «un rudere di pietra a secco con il tetto a cono», chiamato dal ragazzo «il trullo» perché non conosce un'altra parola.
+- **Soluzione:** bibbia §10.13 (rudere di pietra a secco con il tetto a cono, che il ragazzo chiama «il trullo»).
 
-### 19. L'ospedale Di Venere nel luglio 1976 · S · bassa
+### 19. L'ospedale Di Venere nel luglio 1976 · S · bassa · **RISOLTA (Fase 3f)**
 - **Il problema:** va verificato che l'ospedale di Carbonara fosse già attivo in quella data.
 - **Possibile via:** altrimenti il Policlinico, o un altro ospedale senza nome.
+- **Soluzione:** bibbia §10.14 («l'ospedale», senza nome; il Policlinico resta per Michele).
 
-### 20. Il passaporto di un tredicenne nel 1976 · S · media
+### 20. Il passaporto di un tredicenne nel 1976 · S · media · **RISOLTA (Fase 3f)**
 - **Il problema:** il vecchio testo parla di un «libretto verde» arrivato «dopo un mese», con l'assenso di entrambi i genitori e una dichiarazione per l'accompagnatore (v.cap. 30). Vanno verificati:
   - il colore del passaporto italiano nel 1976;
   - se un minore di 14 anni potesse avere un passaporto individuale o dovesse essere iscritto su quello di un genitore;
   - la forma dell'accompagnamento da parte di un non parente;
   - i tempi (nella cronologia nuova sono poco più di tre settimane).
 - **Possibile via:** verifica d'archivio; in stesura restare generici sul colore.
+- **Soluzione:** bibbia §10.15 («il passaporto», senza colore e senza «libretto verde»; tempi vaghi).
 
-### 21. 170 milioni in contanti attraverso la frontiera · S · alta
+### 21. 170 milioni in contanti attraverso la frontiera · S · alta · **RISOLTA (Fase 3f)**
 - **Il problema:** nel 1976 l'Italia aveva controlli valutari severi, e proprio nel 1976 l'esportazione illecita di valuta diventa reato. Uno zaino con quasi 170 milioni in lire, all'imbarco di Genova per il Sud America, rischia il controllo doganale. In Brasile, poi, cambiare le lire in contanti in quantità simili non è banale. Il vecchio testo non ne parla (v.capp. 31 e 33).
 - **Possibile via:**
   1. il rischio diventa tensione nel cap. 40 (la dogana guarda la valigia di Michele e non lo zaino del ragazzo: la stessa invisibilità dei minori che Nicola sfruttava);
   2. il cambio in Brasile passa per un cambiavalute del porto, con una perdita secca da mettere in contabilità;
   3. entrambe.
+- **Soluzione:** bibbia §10.10 (tensione alla dogana di Genova nel cap. 40 e perdita al cambio in Brasile; contabilità in §5.7, valore finale di circa 142,9 milioni).
 
-### 22. Il 113 · S · bassa
+### 22. Il 113 · S · bassa · **RISOLTA (Fase 3f)**
 - **Il problema:** va verificato che il 113 fosse il numero di soccorso pubblico attivo a Bari nel 1976, e se da una cabina servisse il gettone.
 - **Possibile via:** in alternativa la Questura con il numero lungo, o la volante di quartiere.
+- **Soluzione:** bibbia §10.16 («il numero della polizia» al posto di «113»).
 
-### 23. I tempi del ritorno dall'Aspromonte · T · bassa
+### 23. I tempi del ritorno dall'Aspromonte · T · bassa · **RISOLTA (Fase 3f)**
 - **Il problema:** liberati all'alba (v.cap. 19), sono «tra Rossano e Sibari» nella luce del «tardo pomeriggio». Con le strade del 1976 è plausibile arrivarci a metà giornata; il tardo pomeriggio richiede soste non raccontate.
 - **Possibile via:** solo attenzione in stesura (una sosta, un guasto, Nicola che si ferma a telefonare).
+- **Soluzione:** bibbia §3, cronologia (lunedì 11 ottobre): nessuna decisione di trama, una sosta sulla 106 da mettere in stesura.
 
-### 24. La stanza dove scrive il vecchio · T · bassa
+### 24. La stanza dove scrive il vecchio · T · bassa · **RISOLTA (Fase 3f)**
 - **Il problema:** il prologo dice che Michele «è morto qui, in questa stanza». L'epilogo dice che il ritratto «è appeso nella stanza dove scrivo». Ne segue che il vecchio scrive nella camera dove è morto Michele.
 - **Possibile via:** è una scelta forte e va tenuta consapevolmente, oppure si corregge il prologo in «in questa casa».
+- **Soluzione:** bibbia §10.17 e §2.1-bis (scelta consapevole: scrive nella stanza dove è morto Michele).
 
 ### 25. Le date del prologo della stesura Drive · T · nota
 - **Il problema:** le stesure su Drive (`Mister_Provino_ITA_CARTACEO_PRODUZIONE.docx`, `Mister_Provino_KDP_Interno_v2.docx`) hanno Beniamino di 16 anni, il 1971, Brindisi e Checco che esce. Se il libro già pubblicato è quello, il romanzo nuovo ne cambia fatti di base.
@@ -237,4 +259,36 @@ Legenda:
 **Non toccato, e perché**
 - **Scaletta, tutto il resto:** per istruzione. Restano da allineare le rr. 241, 248 e 254 (capp. 23-25), segnalate nella nota della Fase 3d.
 - **Bibbia §8, filone 4:** «contro circa 1.260 parole del vecchio cap. 14». Con il metodo unico il v.cap. 14 ha 1.228 parole. Non corretto: in questa fase la bibbia andava toccata solo nella riga «Contare».
+- **`01-originale/`, `00-progetto/briefing.md`, `libri/kurgan-giorgi/`:** non toccati.
+
+---
+
+## Nota della Fase 3f (1 ottobre 2026)
+
+**Cambiato**
+- **`02-bibbia/bibbia.md`** (numeri di riga nuovi):
+  - r. 40 (§2.1-bis): la stanza dove scrive il vecchio.
+  - r. 195 (cronologia, mar 20 luglio): «L'ospedale (senza nome)» al posto di «Ospedale Di Venere».
+  - r. 224 (cronologia, sab 30 ottobre): «il numero della polizia» al posto di «113».
+  - r. 268 (§4, Carbonara): tolto «l'ospedale Di Venere».
+  - rr. 318-324 (§5.7): riga della perdita al cambio, circa 15%, −25,2; valore finale circa **142,9 milioni**; note aggiornate.
+  - r. 420 (§8, filone 4): «1.228 parole del vecchio cap. 14 (metodo unico)».
+  - r. 436 (§9, punto 5): «il numero della polizia».
+  - rr. 472-556 (nuova §10): «Decisioni sulle incongruenze», da 10.1 a 10.18. In 10.4 c'è la tabella delle pene di Checco e la verifica con l'epilogo.
+- **`03-architettura/scaletta.md`:**
+  - r. 144 (cap. 11): titolo «L'ospedale».
+  - r. 241 (cap. 23): via il commento del vecchio sulla colpa; aggiunti il pensiero di uccidere considerato e scartato e lo scarto «allora pensavo solo a vederlo piegato».
+  - r. 248 (cap. 24): nessun commento del narratore.
+  - r. 254 (cap. 25): tolto «Decide: non uccidere» e tolto «non fischiare più» (il cap. 25 non è tra le sei apparizioni del verbo); resta la dichiarazione del vecchio, una sola volta.
+  - r. 325 (cap. 35): «il numero della polizia».
+- **Questo file:**
+  - segnate come «RISOLTA (Fase 3f)» le n. 1-7 e 10-24, ciascuna con la riga «Soluzione» e il rimando alla bibbia;
+  - n. 16 (r. 93): «Bari in Serie C nel 1975-76; promosso in B alla fine del 1976-77».
+
+**Non toccato, e perché**
+- **n. 25 (stesure Drive):** resta aperta, per istruzione. La riga «verificare cosa c'è pubblicato su KDP» sta in bibbia §10.18.
+- **n. 12 e n. 23:** risolte senza una decisione di trama; restano solo come attenzione in stesura.
+- **Scaletta, r. 360 (cap. 39):** dice «il libretto» per il passaporto. Contraddice la decisione 10.15, ma non era tra le righe da toccare: da allineare.
+- **Scaletta, r. 379:** «il libretto di Lisbona» è il manuale di portoghese, non il passaporto: va bene così.
+- **Manuale di stile, r. 216 (§6):** cita ancora «il questore» e «il sindaco» come esempi vietati. È coerente con 10.12 e non è stato toccato.
 - **`01-originale/`, `00-progetto/briefing.md`, `libri/kurgan-giorgi/`:** non toccati.

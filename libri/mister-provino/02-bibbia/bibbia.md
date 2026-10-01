@@ -37,6 +37,7 @@ Un uomo di settant'anni, in una casa bianca su una scogliera dall'altra parte de
 #### 2.1-bis Il settantenne (il presente che scrive)
 
 - **Dati fissi [CANONE]:** casa bianca su una scogliera, l'oceano intero dalla finestra; la stanza dove scrive con il ritratto di lei appeso (il nome solo dal cap. 37 in poi, vedi 5.8); i fiori cambiati ogni mattina (da quando è morto Michele li cambia lui); il segno del collare sul collo; una moglie che sa poco; due figli che non sanno niente; le lettere dell'avvocato conservate; la nave ferma al largo con le luci di bordo.
+- **La stanza [DECISO, Fase 3f]:** il vecchio scrive nella stanza dove è morto Michele, con il ritratto alla parete. È una scelta consapevole (vedi §10.17).
 - **Il presente non ha data [DECISO].** Nessun anno, nessuna tecnologia datante (niente telefoni cellulari descritti, niente internet). Il telefono è «il telefono». L'età («ho settant'anni») è l'unico orologio.
 - **[PROPOSTA] Famiglia:** la moglie è brasiliana; la conosce a vent'anni al porto dove vende il pesce della ditta. Sa di Bari solo «il mare, i vicoli, un fratello morto in Italia». Due figli adulti (un maschio e una femmina) che vivono in città, lontani dal mare. Parlano l'italiano male e lo capiscono bene. La figlia chiama la domenica.
 - **COME SCRIVE:** al presente negli interludi e al passato nel racconto. Non si assolve e non si accusa più di quanto serve. Quando non ricorda lo dice; quando ricostruisce da testimonianze lo dichiara (Carlo, la levatrice, l'avvocato).
@@ -191,7 +192,7 @@ Anni di nascita: Michele 1906, Gaetano 1930, Dora 1938, Nicola 1946, Checco 1954
 | ven 16 luglio | 8-9 | Michele regala la teca. Giornata con Franco (cap. 9 nuovo). |
 | **sab 17 luglio** | 10 | Il palo. Franco massacrato. |
 | dom 18-lun 19 | 11 | Due notti senza sonno. |
-| **mar 20 luglio** | 11-12 | Ospedale Di Venere; la sera da Michele, la storia di «lei». |
+| **mar 20 luglio** | 11-12 | L'ospedale (senza nome); la sera da Michele, la storia di «lei». |
 | mer 21 luglio | 13 | Nicola in macchina: Michele diventa il secondo ostaggio. |
 | fine luglio | 14 | Le notti di Pane e Pomodoro; la Finanza; Cataldo. |
 | inizio agosto | 15 | Il mercato; la storia del nome; la madre nell'ora lucida; il padre al porto. |
@@ -220,7 +221,7 @@ Anni di nascita: Michele 1906, Gaetano 1930, Dora 1938, Nicola 1946, Checco 1954
 | mar 26 ottobre | 33 | Secondo «no». |
 | mer 27 ottobre | 33 | Il magro al trullo; la mazzetta sul tavolo di Michele. |
 | **ven 29 ottobre** | 34 | «Ci ho pensato»: no. «Allora non vado.» |
-| **sab 30 ottobre**, sera | 35-36 | L'accendino sulla teca; la telefonata al 113; l'incendio; il ritratto salvato. |
+| **sab 30 ottobre**, sera | 35-36 | L'accendino sulla teca; la telefonata al numero della polizia; l'incendio; il ritratto salvato. |
 | dom 31 ottobre | 37 | Il Policlinico: «Si chiamava Lucia.» Sì. |
 | lun 1-mar 2 novembre | 38 | La pensione dietro la stazione; la domanda di passaporto. |
 | novembre | 38-39 | Le firme del padre e della madre; Molfetta; l'avvocato; la lettera a Checco. |
@@ -264,7 +265,7 @@ Nota sulle distanze temporali. Tra l'astinenza (14-20 settembre) e la tempesta (
 - **Il lungomare:** le palme, la scogliera, il pescatore di polpi.
 - **La villa di Palese:** a nord, verso l'aeroporto; piscina, veranda con le piante tropicali, poltrona di vimini.
 - **Un'altra casa del Capo:** muro alto, palme, cancello (cap. 28).
-- **Carbonara:** il quartiere di Mimmo e Tonino; l'ospedale Di Venere (vedi incongruenze n. 19).
+- **Carbonara:** il quartiere di Mimmo e Tonino. L'ospedale dove portano Franco resta senza nome (vedi §10.14).
 - **Il mercato ortofrutticolo vicino al porto:** il cancello sul retro, i camion; il mondo di Giuseppe e dei camion di agrumi calabresi.
 - **La campagna verso Bitonto:** ulivi vecchi, muretti a secco, la carraia, il rudere a cono di pietra (vedi incongruenze n. 18 su «trullo»), il terzo ulivo cavo in fondo al campo.
 - **Il centro:** via Sparano (studio dell'avvocato), la Questura, il Policlinico, la stazione e la pensione dietro la stazione, la stazione delle corriere.
@@ -314,12 +315,13 @@ Lo zaino contiene **220 milioni** in banconote da 100.000 lire: **22 mazzette da
 | Avvocato, un anno di lavoro (cap. 39) | −10,0 | 170,0 |
 | Pensione per 5 settimane, vestiti, valigia, colori, passaporto e bolli | −0,6 | 169,4 |
 | Due cuccette di terza classe Genova-Santos, sola andata [stima da verificare] | −1,2 | 168,2 |
-| Treno di notte per Genova, spese di viaggio | −0,1 | **≈168** |
+| Treno di notte per Genova, spese di viaggio | −0,1 | ≈168,1 |
+| Perdita al cambio in Brasile: cambiavalute del porto di Santos, in più volte nel primo anno, circa il 15% [DECISO, Fase 3f] | −25,2 | **≈142,9** |
 
-- A Genova lo zaino porta «quasi centosettanta milioni»; il ragazzo sa la cifra esatta, 168 e qualcosa, e la dice una volta sola.
+- A Genova lo zaino porta «quasi centosettanta milioni»; il ragazzo sa la cifra esatta, 168 e qualcosa, e la dice una volta sola. Il valore che arriva davvero in Brasile, dopo il cambio, è di circa 143 milioni.
 - La mazzetta a Michele non viene mai spesa: la sua perdita è «la parte del fuoco».
 - In Brasile: una parte nell'intercapedine del muro, una in una cassetta sotto il pavimento della cucina.
-- Sul cambio e sull'uscita dei contanti dall'Italia vedi incongruenze n. 21.
+- Sull'uscita dei contanti dall'Italia e sul cambio vedi §10.10.
 
 #### 5.7-bis Tabella unica dei debiti [DECISO, Fase 3d]
 Cifre di finzione: devono solo tornare tra loro.
@@ -415,7 +417,7 @@ Il conto vale per le apparizioni **esplicite o simboliche**. Gli oggetti di scen
 | **1. L'estate saltata** | 8.100 | 9 (giornata con Franco, 2.100), 14 (notti di Pane e Pomodoro, 1.900), 15 (il mercato e il nome, 2.200; in parte filone 5), 16 (Ferragosto, 1.900); più ampliamento del cap. 17 |
 | **2. La caccia vera** | circa 5.000 | 22 (ampliato: Giuseppe e il mercato ortofrutticolo, circa 900 nuove), 23 (la settimana della caccia e il fischio sbagliato, 3.000), 24 (la scoperta della colpa, circa 400 nuove), 28 (pedinamento rafforzato, circa 500 nuove) |
 | **3. Il settantenne** | 3.700 | 9 interludi (vedi scaletta) |
-| **4. I sette giorni di Checco** | 4.600 | 18 (2.300), 19 (2.300), contro circa 1.260 parole del vecchio cap. 14 |
+| **4. I sette giorni di Checco** | 4.600 | 18 (2.300), 19 (2.300), contro 1.228 parole del vecchio cap. 14 (metodo unico) |
 | **5. Madre e padre** | 3.500 | 6, 15, 17, 18, 38, interludio VIII |
 | **6. O Anjo, la maglia, il Brasile** | 3.500 | 8, 26, 39, 42, 43, interludio IX, epilogo |
 
@@ -431,7 +433,7 @@ I gradini 1-3 sono scene di silenzio: il verbo «fischiare» non compare nei cap
 2. **Non fischia per la madre** (cap. 17): lei lo zittisce e lui si unisce a lei. Senza il verbo «fischiare».
 3. **Non fischia per il fratello** (cap. 19): a Checco non può dire niente, pena la gola di Checco. Senza il verbo «fischiare».
 4. **Fischia all'orecchio sbagliato** (cap. 23) [PROPOSTA CENTRALE]: fa arrivare ai calabresi la voce che Nicola compra a Napoli. È la sua vendetta ed è una vera caccia, ma fischia a un altro padrone, e per questo finisce incatenato in una grotta (cap. 25). Il vecchio dichiara una volta sola, nel cap. 25 (la grotta), che la voce era sua: non nel cap. 23, non nel cap. 24 (vedi 9.1). Da quella voce discende tutto: il disprezzo dei calabresi, il crollo di Nicola, i soldi rubati al Capo, la morte al circolo. La caccia riesce nel modo peggiore.
-5. **Fischia** (cap. 35): la telefonata al 113, per salvare Michele. Tardi, una volta, e all'orecchio giusto.
+5. **Fischia** (cap. 35): la telefonata al numero della polizia, per salvare Michele. Tardi, una volta, e all'orecchio giusto.
 
 Senza il punto 4 la Parte seconda torna a essere un'attesa.
 
@@ -464,3 +466,91 @@ Senza il punto 4 la Parte seconda torna a essere un'attesa.
 - **(c) La tabella unica dei debiti** sta in 5.7-bis.
 
 **Dove compare il messo nella bibbia:** 2.13 (scheda, capp. 22-23), 6.8 (la notte del cap. 22 al mercato ortofrutticolo), qui in 9.1. Nella scaletta: cap. 21 (seme, l'autista che dice che la roba buona adesso arriva dal mare), cap. 22 («il messo calabrese tra i camion di agrumi, primo sguardo»), cap. 23.
+
+---
+
+## 10. Decisioni sulle incongruenze [DECISO, Fase 3f]
+
+I numeri rimandano a `06-diagnostica/incongruenze.md`; i capitoli sono quelli della scaletta nuova.
+
+### 10.1 La dipendenza della madre (n. 1) — capp. 2, 6, 17, 38
+Comincia con la morfina medica dopo il parto difficile di Checco (1954), poi prosegue con le ricette e con un farmacista compiacente. La roba di Nicola arriva solo negli anni Settanta. Nel testo nessun dettaglio di sostanze, dosi o modi. Beniamino nasce in astinenza: lo sa dal racconto della levatrice, arrivato in una lettera dell'avvocato (§2.1, §6.11).
+
+### 10.2 Lucia e Michele (n. 3) — capp. 12, 37
+Vale la versione del v.cap. 11: Lucia abita di fronte, in fondo alla Vallisa, e i due non hanno mai vissuto insieme. «Ti ho persa», nel cap. 37, si riferisce alla vita a Buenos Aires. Da non scrivere: «in quella stessa stanza, quando c'era solo il letto e due sedie».
+
+### 10.3 Nicola e Michele (n. 4) — capp. 5, 13
+Nicola sapeva del pittore e non gli importava. Michele diventa un ostaggio quando il ragazzo comincia a disobbedire, con la visita all'ospedale (capp. 11-13).
+
+### 10.4 Checco incastrato (n. 6) — capp. 19, 39, epilogo
+- **L'accusa:** detenzione di arma clandestina con matricola abrasa, con il sospetto di concorso nell'omicidio di due anni prima. Checco ha un alibi (era in carcere), ma non fa il nome di Nicola, quindi niente attenuanti.
+- **Il «non esce più»** è la somma di una pena pesante e delle condanne per le aggressioni in carcere. Mai un ergastolo. Nel testo le cifre restano generiche.
+
+| Anno | Fatto | Pena aggiunta | Fine pena prevista |
+|---|---|---|---|
+| lun 13 settembre 1976 | Arresto (22 anni) | — | — |
+| 1977 | Condanna: arma clandestina con matricola abrasa, ricettazione, recidiva; il sospetto di concorso pesa sul giudizio, senza attenuanti | 7 anni | settembre 1983 |
+| 1982 | In carcere spacca la testa a un detenuto che ha parlato della madre: tentato omicidio | +10 anni | settembre 1993 |
+| 1989 | Rissa in cortile, lesioni gravi | +4 anni | settembre 1997 |
+| 1995 | Aggressione a un detenuto con un'arma rudimentale | +5 anni | settembre 2002 |
+| dicembre 1998 | Muore nel carcere di Trani, a 44 anni (nato il 10 febbraio 1954), con quasi quattro anni ancora da scontare | — | — |
+
+Totale: 26 anni di pene cumulate, di cui 22 anni e 3 mesi scontati.
+
+**Verifica con l'epilogo (v.cap. epilogo, r. 3375):**
+- «la pistola nel cofano resse più della verità»: compatibile. La condanna regge sull'arma e sul sospetto, mentre la verità (Nicola che la mette nel cofano) non emerge mai.
+- «l'unico che avrebbe potuto confessare era sottoterra»: compatibile. Nicola muore il 19 ottobre 1976, prima del processo.
+- «dopo quella notte nessun avvocato al mondo avrebbe potuto più niente»: corrisponde all'aggressione del 1982, dopo «due anni, poi quattro» di lavoro dell'avvocato.
+- **Unico attrito:** nel vecchio testo la frase «l'arma di un omicidio» fa pensare a una condanna per omicidio. Nel testo nuovo si dirà «la pistola di un omicidio», senza dire che fu condannato per quello.
+
+### 10.5 La macchina di Checco (n. 7) — cap. 18
+La compra con i risparmi della mercede, la paga del lavoro in carcere.
+
+### 10.6 Saro (n. 10) — cap. 25
+Fa il guardiano da quando aveva sedici anni; ora ne ha diciannove. La battuta «Stavo qua pure io. A sedici anni. Da quella parte, però.» vuol dire: dalla parte dei guardiani.
+
+### 10.7 L'involto (n. 11) — capp. 10, interludio VII
+È una pistola. La tiene il ragazzo perché, se fosse arrivata la polizia, l'avrebbe portata un minore. Il vecchio lo dichiara **una sola volta**, nell'interludio VII («Ero io»). Prima il lettore non lo sa. Il prologo dice «involto» senza spiegare.
+
+### 10.8 Cataldo (n. 13) — cap. 31
+Fermato nella retata e portato all'istituto minorile. Beniamino lo sa dal quartiere, non dal giornale. Sulla Gazzetta il suo nome non c'è.
+
+### 10.9 Il Brasile (n. 15) — capp. 38-40
+Il visto di residenza si prende a Genova, al consolato, durante le cinque settimane. Una riga del vecchio, senza nomi di procedure.
+
+### 10.10 I contanti (n. 21) — capp. 40, 42
+- **Alla dogana di Genova (cap. 40):** guardano la valigia di Michele, non lo zaino del ragazzo. È la stessa invisibilità dei minori che Nicola sfruttava.
+- **In Brasile (cap. 42):** il cambio passa per un cambiavalute del porto di Santos, in più volte, con una perdita di circa il 15%.
+- **Contabilità aggiornata in §5.7:** da circa 168,1 milioni a Genova a un valore di circa **142,9 milioni** dopo il cambio.
+
+### 10.11 O Anjo (n. 16) — capp. 7, 8
+- Nel luglio 1976 il Bari gioca in **Serie C**: terzo nel 1975-76, promosso in B alla fine del 1976-77, per giocare in B nel 1977-78.
+- Il divieto di tesserare stranieri vale dal 1966 al 1980: O Anjo è cittadino italiano, figlio di emigrati pugliesi, cresciuto nel vivaio.
+- Il testo non dice mai «Serie B».
+
+### 10.12 La festa di Palese (n. 17) — cap. 7
+Niente «il sindaco», «il questore», «giocatori del Bari». Solo «un onorevole», «gente del Comune», «uomini che la domenica stavano in tribuna d'onore».
+
+### 10.13 Il trullo (n. 18) — capp. 28, 32, 33, 37
+«Un rudere di pietra a secco con il tetto a cono», che il ragazzo chiama «il trullo» perché non conosce un'altra parola.
+
+### 10.14 L'ospedale (n. 19) — cap. 11
+Nella scena di Franco è «l'ospedale», senza nome. Il Policlinico resta per Michele (cap. 37).
+Dove compariva «Di Venere»:
+- bibbia, cronologia (mar 20 luglio) e §4 (Carbonara), entrambe corrette;
+- scaletta, titolo del cap. 11, corretto in Fase 3f.
+
+### 10.15 Il passaporto (n. 20) — capp. 38-39
+«Il passaporto», senza colore e senza «libretto verde». Nel testo i tempi restano vaghi; nella cronologia resta «poco più di tre settimane».
+
+### 10.16 Il numero di soccorso (n. 22) — cap. 35
+«Il numero della polizia» al posto di «113», nel cap. 35 e in tutte le altre menzioni:
+- bibbia: cronologia (sab 30 ottobre) e §9 punto 5;
+- scaletta: cap. 35.
+
+### 10.17 La stanza del vecchio (n. 24) — prologo, interludi, epilogo
+Il vecchio scrive nella stanza dove è morto Michele, con il ritratto alla parete. È una scelta consapevole (§2.1-bis).
+
+### 10.18 Le stesure di Drive (n. 25)
+Ignorate. **Da fare prima del lancio: verificare che cosa c'è pubblicato su KDP.**
+

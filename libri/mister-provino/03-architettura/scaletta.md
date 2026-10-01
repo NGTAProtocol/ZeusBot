@@ -141,7 +141,7 @@ Il vecchio testo aveva 49.998 parole (metodo unico, manuale §1). Il nuovo ne ha
 > **Interludio II — *La pagina*** · 400 · presente
 > La mano che si ferma sulla pagina di Franco. Il vecchio non riesce a scrivere il rumore e scrive qualcos'altro: il bar del villaggio, un ragazzo con un motorino. Pensa alla Vespa rossa. **Specchio:** il cap. 10.
 
-### Cap. 11 — Il Di Venere · 1.300 · mar 20 luglio
+### Cap. 11 — L'ospedale · 1.300 · mar 20 luglio
 - Due notti senza sonno (la crepa, 2 di 4). Il Ciao fino a Carbonara. Le guardie davanti alla porta. La madre di Franco. **Franco lo guarda con paura.** La fuga per le scale.
 - **Cambia:**
   - più breve;
@@ -238,20 +238,20 @@ Il vecchio testo aveva 49.998 parole (metodo unico, manuale §1). Il nuovo ne ha
 - **La caccia vera:** il ragazzo mappa Nicola. Orari, il bar, il retro, chi entra, dove tiene i soldi (un vano dell'Alfa), le telefonate dalla cabina. Conta e misura: **il cacciatore usa gli strumenti del cane.**
 - **Il ricordo di Napoli** (la stretta di mano del cap. 2): Nicola compra dai napoletani alle spalle dei calabresi. Il ragazzo lo sa di prima mano.
 - **Cataldo lo vede** vicino al messo calabrese e **non lo riferisce** a Nicola (la sua scommessa). Il ragazzo se ne accorge dopo.
-- **Il fischio sbagliato** [PROPOSTA CENTRALE, bibbia sezione 9]: Beniamino fa arrivare al messo calabrese la voce che il barese compra a Napoli. Come: una frase detta a un autista, con la faccia giusta. Il vecchio: «allora credevo che fosse il primo colpo della caccia; era la prima volta che fischiavo, e fischiavo all'orecchio di un altro padrone».
+- **Il fischio sbagliato** [PROPOSTA CENTRALE, bibbia sezione 9]: Beniamino fa arrivare al messo calabrese la voce che il barese compra a Napoli. Come: una frase detta a un autista, con la faccia giusta (bibbia §9.1). Prima, **il pensiero di uccidere Nicola, considerato e scartato**: non sa ammazzare, sa solo guardare e dire, e la voce è una scelta, non un ripiego. Il vecchio segna solo lo scarto: «allora pensavo solo a vederlo piegato». Nessun commento sulla colpa (va nel cap. 25).
 - **Il venerdì:** Nicola annuncia la Calabria, «c'è da prendere la roba nuova».
 - **Filone:** 2. **Asse del fischio:** punto 4. **Chiusura:** B (Nicola: «Domani si parte. Vieni pure tu.»).
 
 ### Cap. 24 — La Jonica · 1.700 · sab 9 ottobre
 - Palagiano, la 106, lo Ionio a sinistra. Nicola nervoso. L'Aspromonte, lo slargo, le campagnole, **i cappucci**; nel furgone Nicola: «Beniamino… non ti lascio» (2 di 4).
 - **Il casolare, zi' Nardu:** la strada cambiata («adesso viene per mare dalla Scala»), il doppio. **«Da quando ho saputo che sei andato a comprare a Napoli.»**
-- **Il ragazzo capisce che è la sua voce:** la sa lui, e il vecchio lo dice in una frase. Il coltello alla gola, i «panetti». Nicola abbassa gli occhi.
+- **Il ragazzo sente la frase di zi' Nardu; nessun commento del narratore** (bibbia §9.1, decisione b). Il coltello alla gola, i «panetti». Nicola abbassa gli occhi.
 - La separazione. Il ragazzo conta i passi.
 - **Cambia:** Gioia Tauro sostituita; il momento della colpa. **Filone:** 2. **Chiusura:** F (il cappuccio tolto: il buio di una grotta).
 
 ### Cap. 25 — La grotta · 1.800 · sab 9 – dom 10 ottobre
 - **Il collare di ferro, la catena, l'anello nella roccia; il gocciolio.** Il ragazzo sa che altri ci sono stati prima di lui, i sequestrati.
-- La paura messa al lavoro: misura, acqua, la mappa di Nicola rifatta al buio. Sa di aver causato la grotta. **Decide:** non uccidere, sopravvivere; ma adesso anche non fischiare più a nessun padrone.
+- La paura messa al lavoro: misura, acqua, la mappa di Nicola rifatta al buio. **La dichiarazione del vecchio, una sola volta nel libro:** la voce al mercato era sua, ed è lei che lo ha portato lì. Senza il verbo «fischiare», che il cap. 25 non ha tra le sue sei apparizioni. Il ragazzo resta: sopravvivere.
 - **Saro:** l'acqua, «Tredici», «Diciannove», «uno si abitua», il nome detto come disobbedienza.
 - La seconda notte: la voce di Nicola che lo chiama.
 - **Motivo:** il collare (prima volta in scena). **Filone:** base. **Chiusura:** B (Nicola, da lontano: «Dov'è mio cugino?»).
@@ -322,7 +322,7 @@ Il vecchio testo aveva 49.998 parole (metodo unico, manuale §1). Il nuovo ne ha
 ### Cap. 35 — L'accendino · 1.700 · sab 30 ottobre, sera
 - **Il Ciao con il cavalletto giù. La teca per terra, posata; sopra l'accendino d'oro** (seme del cap. 17). Il ragazzo capisce.
 - **La porta chiusa del basso,** l'ombra magra dietro la finestrella. **Il ricordo dell'angolo di luglio.**
-- **La cabina, i gettoni di Nicola, il 113.** L'indirizzo, «l'uomo del circolo». **Il fischio** (asse, punto 5).
+- **La cabina, i gettoni di Nicola, il numero della polizia.** L'indirizzo, «l'uomo del circolo». **Il fischio** (asse, punto 5).
 - **Bussa. Dentro:** la trementina, le tele con i piedi nel solvente, Michele legato. Il magro, «duecentoventi milioni», lo Zippo. **La geografia delle facce** (seconda: la faccia del magro letta). **La verità detta:** il terzo ulivo. Due testimoni. La prima sirena.
 - **Filone:** base. **Chiusura:** F (la prima sirena in fondo al vicolo).
 
