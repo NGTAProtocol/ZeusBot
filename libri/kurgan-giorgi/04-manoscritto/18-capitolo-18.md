@@ -172,7 +172,7 @@ Il ragazzo della Serrana tese a Kurgan un foglietto piegato in due, di carta sot
 
 «E io l'ho portato qui» disse Adorisio, «perché sapevo che alle sei saresti arrivato.»
 
-Kurgan guardò i tre. Tre facce stanche, tre versioni che combaciavano, tre uomini che gli avevano dato ognuno qualcosa in quindici, dieci, un anno. Nel Drenak gli ufficiali avrebbero chiesto chi, per primo, avesse toccato quel foglio. Avrebbero messo tre uomini in fila e cercato la crepa. Lui non lo fece. A un uomo non si chiedeva di dimostrare la propria lealtà: lo si offendeva e basta.
+Kurgan guardò i tre. Tre facce stanche, tre versioni che combaciavano, tre uomini che gli avevano dato ognuno qualcosa in quindici, dieci, due anni. Nel Drenak gli ufficiali avrebbero chiesto chi, per primo, avesse toccato quel foglio. Avrebbero messo tre uomini in fila e cercato la crepa. Lui non lo fece. A un uomo non si chiedeva di dimostrare la propria lealtà: lo si offendeva e basta.
 
 Il ragazzo aspettava a testa bassa. Carrese si grattava il collo. Adorisio teneva il libro sotto il braccio con il dito tra le pagine, per non perdere il segno. Sotto di loro, sul molo, una gru si mise in moto con un gemito lungo, e un gabbiano si alzò dal parapetto. Kurgan li lasciò lì, sulla scala, tutti e tre.
 
