@@ -7913,7 +7913,7 @@ Il 29 giugno, all'ora di pranzo, in mezzo alla gente, da solo, Vito era saltato 
 
 Alfredo le aveva chiesto quelle parole perché Vito sapeva dell'autunno. Perché Vito era l'unico uomo vivo che potesse raccontare chi aveva comprato le date. E lei, che aveva protetto la villa e i ragazzi che la chiamavano signora, aveva dato l'uomo. Con le sue parole. Nella sua voce. Credendo che servissero a qualcos'altro.
 
-Aveva creduto, quella sera, di essere diventata un pezzo. Non era diventata un pezzo. Era sempre stata un pezzo. Per vent'anni, Vito l'aveva usata come si usava una cosa che rendeva: il corpo prima, poi la laurea, poi il letto di un uomo utile. E per sei anni un uomo più elegante, che chiedeva *posso?* prima di sfiorarle la mano, l'aveva usata allo stesso modo, con più cura. Lo stesso schema. Un altro vestito.
+Aveva creduto, quella sera, di essere diventata un pezzo. Non era diventata un pezzo. Era sempre stata un pezzo. Per vent'anni, Vito l'aveva usata come si usava una cosa che rendeva: il corpo prima, poi la laurea, poi il letto di un uomo utile. E per sette anni un uomo più elegante, che chiedeva *posso?* prima di sfiorarle la mano, l'aveva usata allo stesso modo, con più cura. Lo stesso schema. Un altro vestito.
 
 Si accorse che si stava toccando il polso sinistro con due dita, nel punto dove una volta, a diciassette anni, aveva avuto un livido che non se ne andava. Tolse la mano.
 
@@ -7927,7 +7927,7 @@ Mercoledì 30 giugno, alle 23.10: *Come stai?*
 Martedì 12 ottobre, alle 10.02: *Stasera?*
 Martedì 9 novembre, alle 10.02: *Stasera?*
 
-Nessuno dopo. Il punto interrogativo c'era sempre. Alle 10.02, sempre, come per sei anni, come se niente fosse successo in mezzo. Come si mandava un messaggio a una cosa che si era messa da parte e che, si pensava, sarebbe stata ancora lì.
+Nessuno dopo. Il punto interrogativo c'era sempre. Alle 10.02, sempre, come per sette anni, come se niente fosse successo in mezzo. Come si mandava un messaggio a una cosa che si era messa da parte e che, si pensava, sarebbe stata ancora lì.
 
 Dalia non rispose. Lesse i tre messaggi una volta, poi spense il telefono, tolse la batteria come le aveva insegnato Vito, e mise il telefono e la batteria in due tasche diverse della borsa. Non sarebbe più tornato nel cassetto.
 
@@ -8223,7 +8223,7 @@ Poi un secondo, un minuto dopo.
 
 Dalia guardò il telefono. Non rispose. Non sapeva se quella seconda frase fosse un'informazione, un avvertimento o una cosa che Nicola aveva scritto soltanto per scriverla a qualcuno. La mise in fila con le altre, dove teneva le cose che non sapeva ancora come leggere.
 
-Alfredo non era venuto in ufficio. Alfredo, che Nicola, in sei anni, non aveva mai visto mancare un giorno, nemmeno con la febbre. Pensò a lui che leggeva il giornale, in qualche stanza, alle sei del mattino. Pensò a come doveva aver letto la sigla, in basso a destra, sfocata. Non riuscì a immaginare la sua faccia. Per la prima volta in sei anni non riusciva a immaginare la sua faccia.
+Alfredo non era venuto in ufficio. Alfredo, che Nicola, in sei anni, non aveva mai visto mancare un giorno, nemmeno con la febbre. Pensò a lui che leggeva il giornale, in qualche stanza, alle sei del mattino. Pensò a come doveva aver letto la sigla, in basso a destra, sfocata. Non riuscì a immaginare la sua faccia. Per la prima volta in sette anni non riusciva a immaginare la sua faccia.
 
 
 <p align="center">* * *</p>
@@ -8826,7 +8826,7 @@ Fece il conto di chi poteva averla mandata. Non per sapere. Per mettere in fila.
 *3. Qualcuno che vuole fare male ad A. Adesso. Dopo il 16.*
 *4. Dalia.*
 
-Guardò la riga quattro. Dalia. Il nome del telefono, sei anni di martedì. Il nome in piccolo sotto il titolo del 16. Il nome della fotografia con i capelli corti, ieri, alla televisione, con la parola *falso* sotto. Una donna alta, con un modo di stare in piedi fiero e composto, che nella fotografia del tesserino guardava dritta nell'obiettivo.
+Guardò la riga quattro. Dalia. Il nome del telefono, sette anni di martedì. Il nome in piccolo sotto il titolo del 16. Il nome della fotografia con i capelli corti, ieri, alla televisione, con la parola *falso* sotto. Una donna alta, con un modo di stare in piedi fiero e composto, che nella fotografia del tesserino guardava dritta nell'obiettivo.
 
 Nei file, lei non c'era. Elena li aveva guardati tutti, e lei non c'era mai.
 
