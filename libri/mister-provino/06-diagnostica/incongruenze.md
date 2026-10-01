@@ -157,3 +157,24 @@ Legenda:
 - **Bibbia, dati di riferimento:** il nome «Lucia» resta in §2.4 (r. 67), nella cronologia (r. 170), in §2.14 (r. 157) e nella cronologia del cap. 37 (r. 224). Sono note per chi scrive, non testo del romanzo.
 - **Bibbia, Napoli:** restano le menzioni del viaggio di Beniamino e Nicola (capp. 2, 6.10, §9 punto 4), che non riguardano Michele.
 - **Proposte del blocco C** (levatrice, «Perché i calabresi prendono Beniamino», origine del nome): solo in chat, non applicate.
+
+---
+
+## Nota della Fase 3c (1 ottobre 2026)
+
+**Cambiato:** solo `03-architettura/manuale-di-stile.md` (numeri di riga nuovi).
+- **r. 182 (§5.2):** Michele tolto dai parlanti napoletani. Ora: «(solo don Tobia e Ciro)».
+- **rr. 38-44 (§1):** nuovo «Metodo unico di conteggio delle parole». Si escludono i titoli Markdown e i token senza lettere né cifre; il vecchio testo vale 49.998; il target di 78.000 si misura così.
+- **rr. 111-112 (nuovo §3.6):** «Il tic del contare». Al massimo 3 gesti di conteggio per capitolo.
+- **rr. 152-153 (nuovo §4.6):** «Lo schema vietato». Vietata la catena azione → osservazione → metafora → spiegazione → conclusione filosofica.
+- **rr. 251-253 (§8):** tre voci nuove nella checklist (13 conteggio, 14 schema vietato, 15 metodo di conteggio).
+- **r. 259 (§9):** il registro dei contatori ha la colonna «Gesti di conteggio (su 3)»; la colonna «Parole» diventa «Parole (metodo unico)».
+
+**Non toccato, e perché**
+- **`02-bibbia/bibbia.md`:** per istruzione.
+  - Le tre proposte del passo 7C (levatrice, «Perché i calabresi prendono Beniamino», nome «Mister Provino») sono state mostrate solo in chat.
+  - Da riconciliare, se approvi il tetto: bibbia §7, riga «Contare (tic del ragazzo) | libero come gesto; mai commentato più di 3 volte», ora meno restrittiva del manuale §3.6.
+- **`03-architettura/scaletta.md`:** per istruzione (non va mostrata né toccata in questa fase).
+  - Da allineare in seguito: «Il vecchio testo aveva 51.543 parole» nella sezione «Struttura in breve». Con il metodo unico sono 49.998, quindi l'aumento verso 78.000 è del 56%, non del 51%.
+- **`00-progetto/briefing.md` e `01-originale/`:** non toccati. `01-originale/` è sola lettura.
+- **`libri/kurgan-giorgi/`:** non toccata.

@@ -36,6 +36,13 @@ Riferimenti di registro, da tenere a mente e da non imitare:
 - dialogo tra il 15% e il 35% per capitolo;
 - nessun capitolo sotto le 1.300 parole; la media è di circa 1.700 (vedi scaletta).
 
+**Metodo unico di conteggio delle parole.** Vale per il target, per la scaletta, per il registro dei contatori e per ogni confronto con il vecchio testo:
+- si contano i token separati da spazi (spazio, a capo, tabulazione);
+- **si escludono le righe di titolo Markdown** (che cominciano con «#»);
+- **si escludono i token senza nessuna lettera e nessuna cifra**: la lineetta «—» isolata dei dialoghi, i «•» dei separatori di scena, ogni altro segno da solo.
+
+Con questo metodo il vecchio testo vale **49.998 parole**. Il target di **78.000** si misura nello stesso modo. Non si usano altri conteggi: `wc -w` dà 49.945 o 51.664 a seconda della lingua di sistema; contare tutti i token esclusi i titoli dà 51.543.
+
 ---
 
 ## 2. Le due voci
@@ -101,6 +108,9 @@ Riferimenti di registro, da tenere a mente e da non imitare:
 | «qualcosa di» + aggettivo (qualcosa di freddo, di antico) | 1 per capitolo |
 | «come se» | 2 per capitolo |
 
+### 3.6 Il tic del contare
+Contare è un tratto di Beniamino (passi, ore, soldi, secondi, gradini, mazzette), ma ripetuto diventa un tic dell'autore. Tetto: **al massimo 3 gesti di conteggio per capitolo**, inclusi quelli del narratore adulto. Un elenco di conteggi nella stessa frase vale come un gesto solo. Il conteggio dei gesti va annotato nel registro dei contatori (sezione 9).
+
 ---
 
 ## 4. Immagini e similitudini
@@ -139,6 +149,9 @@ Divieto assoluto:
 ### 4.5 Emozioni
 **Non si spiega l'emozione dopo averla mostrata.** Vietate le formule «Non era coraggio, non era rabbia. Era resa.» e «Provai qualcosa che non sapevo nominare». Se la scena ha mostrato, basta. Se deve dire, lo dice il vecchio con lo scarto segnato (2.2).
 
+### 4.6 Lo schema vietato
+È vietata la catena **azione → osservazione → metafora → spiegazione della metafora → conclusione filosofica**. Il paragrafo si ferma prima: all'azione e a ciò che si vede, al massimo con un'immagine. Il lettore deve arrivare da solo al senso. Una metafora non si spiega mai nella frase successiva; una conclusione generale non chiude mai un paragrafo di scena.
+
 ---
 
 ## 5. Lingua e dialetto
@@ -166,7 +179,7 @@ Il dialetto **affiora**: sta in poche parole, in qualche costruzione, nella sint
 
 - Costruzioni di parlato regionale in bocca ai personaggi, con misura: «tenere» per «avere» («tengo fame»), il tu ai vecchi, il voi alla madre di un amico.
 
-**Napoletani** (solo don Tobia, Ciro, e Michele per «guaglione»): «guagliò», «piccerì», «guaglione».
+**Napoletani** (solo don Tobia e Ciro): «guagliò», «piccerì», «guaglione».
 
 **Calabresi** (solo zi' Nardu, Saro, gli uomini della montagna): «cumpà», «figghiolu», il «mi» del verbo al posto dell'infinito, con misura.
 
@@ -235,11 +248,14 @@ Il dialetto **affiora**: sta in poche parole, in qualche costruzione, nella sint
 10. Continuità: nomi, età, oggetti, luoghi e cifre coincidono con la bibbia?
 11. Sensibilità: niente procedura, niente persone reali, violenza con misura?
 12. I motivi usati sono sotto il tetto della bibbia (sezione 7) e il conto è aggiornato?
+13. Gesti di conteggio: al massimo 3 (3.6)?
+14. Nessun paragrafo segue lo schema vietato del 4.6 (metafora spiegata, conclusione filosofica)?
+15. Parole contate con il metodo unico (sezione 1)?
 
 ---
 
 ## 9. Registro dei contatori (da aggiornare capitolo per capitolo)
 
-| Cap. | Parole | Frase media | Dialogo % | «Non era X. Era Y.» (cumulato, su 5) | Chiusura sentenziosa (cumulato, su 8) | Intrusioni | Note sui motivi |
-|---|---|---|---|---|---|---|---|
-| — | — | — | — | 0 | 0 | — | — |
+| Cap. | Parole (metodo unico) | Frase media | Dialogo % | «Non era X. Era Y.» (cumulato, su 5) | Chiusura sentenziosa (cumulato, su 8) | Intrusioni | Gesti di conteggio (su 3) | Note sui motivi |
+|---|---|---|---|---|---|---|---|---|
+| — | — | — | — | 0 | 0 | — | — | — |
