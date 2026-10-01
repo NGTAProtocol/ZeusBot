@@ -50,7 +50,7 @@ De Biasi chiamò alle 2.41, di persona, dal telefono di un'auto in movimento. La
 
 Raccontò con l'ordine di un rapporto di servizio, e Giorgi ascoltò senza interrompere, ricostruendo la scena a mano a mano, come si ricostruiva un guasto dai registri degli strumenti, senza averlo visto.
 
-Bertola aveva convocato a Casal Fascio, per la domenica sera, una riunione dei capi dei porti. Era un'abitudine che aveva preso da luglio: una domenica al mese, alle undici di sera, nel casale con il nome dipinto sul muro. Adorisio e altri tre avevano deciso che quella domenica sarebbe stata l'ultima. Quattro macchine, dodici uomini, armi da guerra portate su da Serrania in una cisterna d'acqua per l'irrigazione. Dovevano entrare all'una e un quarto, quando la riunione finiva e le guardie di Bertola erano stanche.
+Bertola aveva convocato a Casal Fascio, per la domenica sera, una riunione dei capi dei porti. Era un'abitudine che aveva preso da luglio: una domenica al mese, alle undici di sera, nel casale con il nome dipinto sul muro. Adorisio e altri tre avevano deciso che quella domenica sarebbe stata l'ultima. Quattro macchine, dodici uomini, armi da guerra portate su dalla Serrania in una cisterna d'acqua per l'irrigazione. Dovevano entrare all'una e un quarto, quando la riunione finiva e le guardie di Bertola erano stanche.
 
 Bertola non c'era. De Biasi lo aveva fatto uscire alle undici e mezza da una porta sul retro, e al suo posto, nel casale, c'erano i reparti.
 

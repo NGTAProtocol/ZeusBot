@@ -68,7 +68,7 @@ Kurgan non rispose. Rastegar girò il cucchiaino nel tè, anche se non c'era zuc
 
 Kurgan sentì la cosa che sentiva quando un uomo, in una stanza, metteva la mano in tasca. Non paura. Una specie di contabilità immediata. Chi sapeva, quanto sapeva, da quanto.
 
-Maggio. Un capannone vuoto dietro il porto di Partenia, di notte. Uno schermo grande su un tavolo pieghevole, e un uomo biondo con l'accento del nord che parlava solo inglese e fumava sigarette sottili. Undici puntini luminosi sparsi su una mappa di Serrania. Kurgan li aveva guardati spegnersi uno alla volta, in quaranta minuti, senza un rumore. Il dottore aveva pagato. Il dottore aveva telefonato alle persone giuste perché quella notte nessuno guardasse il cielo.
+Maggio. Un capannone vuoto dietro il porto di Partenia, di notte. Uno schermo grande su un tavolo pieghevole, e un uomo biondo con l'accento del nord che parlava solo inglese e fumava sigarette sottili. Undici puntini luminosi sparsi su una mappa della Serrania. Kurgan li aveva guardati spegnersi uno alla volta, in quaranta minuti, senza un rumore. Il dottore aveva pagato. Il dottore aveva telefonato alle persone giuste perché quella notte nessuno guardasse il cielo.
 
 Quegli amici del nord erano del dottore, non suoi. Kurgan lo aveva sempre saputo. Era uno dei motivi per cui aveva chiamato un altro numero.
 

@@ -36,7 +36,7 @@ Il capannone dietro il porto di Partenia, a maggio. Una notte senza luna.
 
 Un tavolo pieghevole, uno schermo grande collegato a un computer, tre uomini che Kurgan non conosceva. Volkov era uno dei tre. Fumava sigarette sottili, bianche, una dopo l'altra, e le spegneva in un bicchiere di plastica pieno d'acqua. Gli altri due battevano sulle tastiere e parlavano tra loro in una lingua dura, piena di consonanti.
 
-Sullo schermo c'era una mappa di Serrania. Undici puntini verdi, sparsi tra le montagne e la costa. Una villa. Una masseria. Un appartamento sopra una farmacia. Una casa di campagna con un pozzo. Undici posti dove undici uomini dormivano, convinti che nessuno sapesse dove.
+Sullo schermo c'era una mappa della Serrania. Undici puntini verdi, sparsi tra le montagne e la costa. Una villa. Una masseria. Un appartamento sopra una farmacia. Una casa di campagna con un pozzo. Undici posti dove undici uomini dormivano, convinti che nessuno sapesse dove.
 
 Qualcuno lo sapeva. Qualcuno che stava molto più lontano di Partenia.
 

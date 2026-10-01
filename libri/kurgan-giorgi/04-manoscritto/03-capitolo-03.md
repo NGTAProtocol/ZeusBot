@@ -46,7 +46,7 @@ Kurgan conosceva il peso di ognuno di loro come si conosce il peso di un'arma.
 
 Onorato valeva quaranta uomini e tre notai. Mimmo Carrese teneva i moli di Punta Saline e sapeva quale gru si fermava quando pioveva. Il gruppo della Serrana, sei uomini con la stessa faccia chiusa, non valeva ancora niente di preciso. Valeva quello che avrebbe deciso di valere il giorno in cui qualcuno gli avesse offerto di più.
 
-Sei mesi prima i capi della Serrana erano morti tutti nella stessa notte, in undici posti diversi, colpiti dall'alto. Nessuno a Serrania aveva capito da dove. Il giorno dopo quei sei erano venuti a Partenia, con le mani in vista, a chiedere chi comandava adesso. Kurgan aveva detto: io. Loro avevano detto: va bene.
+Sei mesi prima i capi della Serrana erano morti tutti nella stessa notte, in undici posti diversi, colpiti dall'alto. Nessuno in Serrania aveva capito da dove. Il giorno dopo quei sei erano venuti a Partenia, con le mani in vista, a chiedere chi comandava adesso. Kurgan aveva detto: io. Loro avevano detto: va bene.
 
 Un uomo che si inginocchia così in fretta, pensava Kurgan, si rialza in fretta uguale.
 

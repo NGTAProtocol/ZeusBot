@@ -116,7 +116,7 @@ Calabrese non rispose. Flora annuì.
 
 «Droni» disse Flora.
 
-«Droni. Militari, non di quelli che si comprano su internet. Io ho i frammenti di uno, sequestrati a Serrania la mattina dopo. Nessuno me li ha fatti analizzare.»
+«Droni. Militari, non di quelli che si comprano su internet. Io ho i frammenti di uno, sequestrati in Serrania la mattina dopo. Nessuno me li ha fatti analizzare.»
 
 Calabrese si sporse sul tavolo. Guardò lo schema per un tempo lungo.
 
