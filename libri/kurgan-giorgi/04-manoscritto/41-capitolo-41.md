@@ -74,7 +74,7 @@ Il 29 giugno, all'ora di pranzo, in mezzo alla gente, da solo, Vito era saltato 
 
 Alfredo le aveva chiesto quelle parole perché Vito sapeva dell'autunno. Perché Vito era l'unico uomo vivo che potesse raccontare chi aveva comprato le date. E lei, che aveva protetto la villa e i ragazzi che la chiamavano signora, aveva dato l'uomo. Con le sue parole. Nella sua voce. Credendo che servissero a qualcos'altro.
 
-Aveva creduto, quella sera, di essere diventata un pezzo. Non era diventata un pezzo. Era sempre stata un pezzo. Per vent'anni, Vito l'aveva usata come si usava una cosa che rendeva: il corpo prima, poi la laurea, poi il letto di un uomo utile. E per sei anni un uomo più elegante, che chiedeva *posso?* prima di sfiorarle la mano, l'aveva usata allo stesso modo, con più cura. Lo stesso schema. Un altro vestito.
+Aveva creduto, quella sera, di essere diventata un pezzo. Non era diventata un pezzo. Era sempre stata un pezzo. Per vent'anni, Vito l'aveva usata come si usava una cosa che rendeva: il corpo prima, poi la laurea, poi il letto di un uomo utile. E per sette anni un uomo più elegante, che chiedeva *posso?* prima di sfiorarle la mano, l'aveva usata allo stesso modo, con più cura. Lo stesso schema. Un altro vestito.
 
 Si accorse che si stava toccando il polso sinistro con due dita, nel punto dove una volta, a diciassette anni, aveva avuto un livido che non se ne andava. Tolse la mano.
 
@@ -88,7 +88,7 @@ Mercoledì 30 giugno, alle 23.10: *Come stai?*
 Martedì 12 ottobre, alle 10.02: *Stasera?*
 Martedì 9 novembre, alle 10.02: *Stasera?*
 
-Nessuno dopo. Il punto interrogativo c'era sempre. Alle 10.02, sempre, come per sei anni, come se niente fosse successo in mezzo. Come si mandava un messaggio a una cosa che si era messa da parte e che, si pensava, sarebbe stata ancora lì.
+Nessuno dopo. Il punto interrogativo c'era sempre. Alle 10.02, sempre, come per sette anni, come se niente fosse successo in mezzo. Come si mandava un messaggio a una cosa che si era messa da parte e che, si pensava, sarebbe stata ancora lì.
 
 Dalia non rispose. Lesse i tre messaggi una volta, poi spense il telefono, tolse la batteria come le aveva insegnato Vito, e mise il telefono e la batteria in due tasche diverse della borsa. Non sarebbe più tornato nel cassetto.
 

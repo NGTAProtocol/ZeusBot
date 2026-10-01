@@ -102,7 +102,7 @@ Fece il conto di chi poteva averla mandata. Non per sapere. Per mettere in fila.
 *3. Qualcuno che vuole fare male ad A. Adesso. Dopo il 16.*
 *4. Dalia.*
 
-Guardò la riga quattro. Dalia. Il nome del telefono, sei anni di martedì. Il nome in piccolo sotto il titolo del 16. Il nome della fotografia con i capelli corti, ieri, alla televisione, con la parola *falso* sotto. Una donna alta, con un modo di stare in piedi fiero e composto, che nella fotografia del tesserino guardava dritta nell'obiettivo.
+Guardò la riga quattro. Dalia. Il nome del telefono, sette anni di martedì. Il nome in piccolo sotto il titolo del 16. Il nome della fotografia con i capelli corti, ieri, alla televisione, con la parola *falso* sotto. Una donna alta, con un modo di stare in piedi fiero e composto, che nella fotografia del tesserino guardava dritta nell'obiettivo.
 
 Nei file, lei non c'era. Elena li aveva guardati tutti, e lei non c'era mai.
 

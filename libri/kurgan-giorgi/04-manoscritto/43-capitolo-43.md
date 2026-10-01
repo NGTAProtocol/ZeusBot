@@ -88,7 +88,7 @@ Poi un secondo, un minuto dopo.
 
 Dalia guardò il telefono. Non rispose. Non sapeva se quella seconda frase fosse un'informazione, un avvertimento o una cosa che Nicola aveva scritto soltanto per scriverla a qualcuno. La mise in fila con le altre, dove teneva le cose che non sapeva ancora come leggere.
 
-Alfredo non era venuto in ufficio. Alfredo, che Nicola, in sei anni, non aveva mai visto mancare un giorno, nemmeno con la febbre. Pensò a lui che leggeva il giornale, in qualche stanza, alle sei del mattino. Pensò a come doveva aver letto la sigla, in basso a destra, sfocata. Non riuscì a immaginare la sua faccia. Per la prima volta in sei anni non riusciva a immaginare la sua faccia.
+Alfredo non era venuto in ufficio. Alfredo, che Nicola, in sei anni, non aveva mai visto mancare un giorno, nemmeno con la febbre. Pensò a lui che leggeva il giornale, in qualche stanza, alle sei del mattino. Pensò a come doveva aver letto la sigla, in basso a destra, sfocata. Non riuscì a immaginare la sua faccia. Per la prima volta in sette anni non riusciva a immaginare la sua faccia.
 
 ---
 
