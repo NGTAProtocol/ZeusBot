@@ -66,9 +66,9 @@ Il capo reparto annuì. Se lo ricordava.
 
 «C'è qualcosa, tra lei e la dottoressa, che io dovrei sapere, colonnello?»
 
-Due colonne, di nuovo. Nella prima, quello che si poteva dire. Nella seconda, due anni di tavoli in fondo alla sala, di mezzo metro davanti a una macchina, di una madre che chiedeva di lui.
+Due colonne, di nuovo. Nella prima, quello che si poteva dire. Nella seconda, tre anni di tavoli in fondo alla sala, di mezzo metro davanti a una macchina, di una madre che chiedeva di lui.
 
-«Non sono mai salito da lei» disse Carlo. «In due anni. Neanche una volta.»
+«Non sono mai salito da lei» disse Carlo. «In tre anni. Neanche una volta.»
 
 Era vero. Era la cosa più vera che potesse dire, ed era scelta apposta perché bastasse. Il capo reparto la pesò per il tempo di un respiro e la mise da parte, soddisfatto, come si metteva via una ricevuta.
 

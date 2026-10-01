@@ -6,7 +6,7 @@ Il citofono suonò alle 0.20, e Flora, che era sveglia sul divano con le carte d
 
 «Sono io.»
 
-In due anni Carlo non era mai salito. Si fermava sempre a mezzo metro dalla macchina, sotto casa di sua madre a Rocca Sannella, o sul marciapiede della trattoria, e ripartiva la notte stessa. Flora aprì il portone. Lo sentì salire i quattro piani a piedi. Contò i gradini che conosceva a memoria. Sessantaquattro. Lui non si fermò una volta.
+In tre anni Carlo non era mai salito. Si fermava sempre a mezzo metro dalla macchina, sotto casa di sua madre a Rocca Sannella, o sul marciapiede della trattoria, e ripartiva la notte stessa. Flora aprì il portone. Lo sentì salire i quattro piani a piedi. Contò i gradini che conosceva a memoria. Sessantaquattro. Lui non si fermò una volta.
 
 Sulla porta non entrò. Restò sul pianerottolo, con il cappotto chiuso fino al collo e le mani in tasca.
 
@@ -93,7 +93,7 @@ Prese il telefono. Scrisse un messaggio. Lo cancellò. Lo riscrisse più corto.
 
 *Da Cataldo.*
 
-Lo guardò. Era la prima cosa, in due anni, che gli diceva sapendo che lui avrebbe potuto usarla contro di lei. Premette invio.
+Lo guardò. Era la prima cosa, in tre anni, che gli diceva sapendo che lui avrebbe potuto usarla contro di lei. Premette invio.
 
 Due spunte grigie. Poi blu. Nessuna risposta.
 

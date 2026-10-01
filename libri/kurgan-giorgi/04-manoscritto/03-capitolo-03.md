@@ -14,7 +14,7 @@ Kurgan guardò le uscite. Due. La scala da cui era sceso, e il cunicolo che port
 
 Adorisio lo guardò e scosse la testa, appena. Tanino non aveva chiamato.
 
-Kurgan si sedette a capotavola. Non disse niente per un po'. Lasciò che il silenzio facesse il suo lavoro, che era quello di far capire a ciascuno che stava per succedere qualcosa che non si sarebbe potuto disfare.
+Kurgan si sedette a capotavola. Non disse niente per un po'. Lasciò che il silenzio facesse il suo lavoro. Il generatore, nell'angolo, ronzava per tutti.
 
 ---
 
@@ -50,7 +50,7 @@ Sei mesi prima i capi della Serrana erano morti tutti nella stessa notte, in und
 
 Un uomo che si inginocchia così in fretta, pensava Kurgan, si rialza in fretta uguale.
 
-Quella sera guardò i sei uno per uno. Il più giovane, un ragazzo con le mani grandi, teneva gli occhi fissi su Adorisio. Adorisio era della Serrania anche lui, ma veniva da prima. Veniva da quindici anni con Kurgan. Per quei sei era un ponte. Kurgan lo sapeva e lo usava.
+Quella sera guardò i sei uno per uno. Il più giovane, un ragazzo con le mani grandi, teneva gli occhi fissi su Adorisio. Adorisio era della Serrania anche lui, ma veniva da prima. Veniva da tredici anni con Kurgan. Per quei sei era un ponte. Kurgan lo sapeva e lo usava.
 
 «Il dottore ci dava tre cose» disse. «I soldi. I porti. E gli occhi chiusi di chi doveva guardare.»
 
@@ -142,7 +142,7 @@ Tanino si fermò sull'ultimo gradino, bagnato di pioggia, con un sacchetto di pl
 
 Nessuno rise. Adorisio gli tolse il sacchetto dalle mani e guardò dentro. Medicine. Scatole di medicine, e uno scontrino.
 
-Kurgan si alzò di nuovo, andò verso di lui e gli mise una mano sulla nuca. Tanino aveva ventisei anni ed era alto poco più del suo petto. Aveva messo un ordigno sotto un sedile del pullman di Morenna alle sei e quaranta di un lunedì mattina, e poi era sceso alla fermata dopo, ed era andato a fare colazione.
+Kurgan si alzò di nuovo, andò verso di lui e gli mise una mano sulla nuca. Tanino aveva venticinque anni ed era alto poco più del suo petto. Aveva messo un ordigno sotto un sedile del pullman di Morenna alle sei e quaranta di un lunedì mattina, e poi era sceso alla fermata dopo, ed era andato a fare colazione.
 
 Kurgan questo lo sapeva. Lo sapeva e non lo pensava. C'erano cose che un uomo nella sua posizione doveva sapere senza pensarle, come sapeva dov'era la sicura di un'arma senza guardarla.
 

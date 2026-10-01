@@ -4,7 +4,7 @@
 
 L'ascensore sapeva di cera e di mani sconosciute.
 
-Al quinto piano, davanti alle porte che si aprivano, c'era Ferri. Il più anziano dei due. Sessant'anni, collo largo, un auricolare color carne che si vedeva lo stesso. Le tese la mano senza dire niente e lei gli diede la borsa, come sempre. Lui la aprì, guardò dentro senza toccare, la richiuse. Rossetto, chiavi, due telefoni, un taccuino. In sei anni non le aveva mai chiesto perché i telefoni fossero due.
+Al quinto piano, davanti alle porte che si aprivano, c'era Ferri. Il più anziano dei due. Sessant'anni, collo largo, un auricolare color carne che si vedeva lo stesso. Le tese la mano senza dire niente e lei gli diede la borsa, come sempre. Lui la aprì, guardò dentro senza toccare, la richiuse. Rossetto, chiavi, due telefoni, un taccuino. In cinque anni non le aveva mai chiesto perché i telefoni fossero due.
 
 Ferri aveva un odore di sapone da caserma. Era un uomo che si lavava molto e non si profumava mai. Dalia lo classificava tra le persone pulite: quelle che non volevano niente da lei.
 
@@ -20,7 +20,7 @@ Dietro la porta, nel corridoio, il suo telefono vibrava. Lui non rispondeva.
 
 «Buonasera, Nicola.»
 
-Lui alzò gli occhi, sorpreso. In sei anni lei non l'aveva mai chiamato per nome. Poi li riabbassò, e la porta si chiuse alle sue spalle con quel suono ovattato che avevano solo le porte degli alberghi cari.
+Lui alzò gli occhi, sorpreso. In cinque anni lei non l'aveva mai chiamato per nome. Poi li riabbassò, e la porta si chiuse alle sue spalle con quel suono ovattato che avevano solo le porte degli alberghi cari.
 
 ---
 
@@ -30,7 +30,7 @@ Alfredo era in piedi davanti alla finestra, in camicia, con le maniche arrotolat
 
 Si voltò. Sorrise.
 
-Dalia conosceva quel sorriso. Lo conosceva da sei anni, da un tavolo d'angolo in una sala convegni di Merania, dove un uomo in grigio le aveva chiesto un parere su un'emissione di obbligazioni e poi era rimasto ad ascoltare la risposta fino in fondo. Nessun uomo, prima di allora, era rimasto ad ascoltarla fino in fondo.
+Dalia conosceva quel sorriso. Lo conosceva da cinque anni, da un tavolo d'angolo in una sala convegni di Merania, dove un uomo in grigio le aveva chiesto un parere su un'emissione di obbligazioni e poi era rimasto ad ascoltare la risposta fino in fondo. Nessun uomo, prima di allora, era rimasto ad ascoltarla fino in fondo.
 
 Quella sera il sorriso aveva qualcosa in più. Un'ombra agli angoli. Come una stanza in cui qualcuno ha spostato un mobile di dieci centimetri.
 
@@ -72,7 +72,7 @@ Poi le tolse il bicchiere dalle mani e lo posò sul tavolino, accanto alla crava
 
 Dopo, lui rimase a lungo in silenzio, con la mano ferma sulla sua spalla.
 
-Dalia guardava il soffitto. C'era una crepa sottile nell'intonaco, sopra la lampada, che si allargava a forma di fiume. L'aveva vista crescere in sei anni. Tre millimetri, forse quattro. La guardava ogni volta, e ogni volta pensava che era l'unica cosa in quella stanza che cambiava senza chiedere il permesso a nessuno.
+Dalia guardava il soffitto. C'era una crepa sottile nell'intonaco, sopra la lampada, che si allargava a forma di fiume. L'aveva vista crescere in cinque anni. Tre millimetri, forse quattro. La guardava ogni volta, e ogni volta pensava che era l'unica cosa in quella stanza che cambiava senza chiedere il permesso a nessuno.
 
 Il suo corpo era suo. Lo pensava spesso, in quella stanza, e non era un pensiero felice. Era un pensiero contabile. Come un conto finalmente in attivo, dopo anni di debiti che non aveva fatto lei.
 
@@ -102,7 +102,7 @@ Sentì la mano di lui fermarsi sulla spalla. Solo un istante. Poi riprese a muov
 
 Vito sapeva di loro. Lo aveva saputo quasi subito.
 
-Sei anni prima, una sera di marzo, l'aveva fatta salire in macchina sotto la redazione. Non aveva spento il motore. Aveva guardato la strada davanti a sé, con le mani sul volante, e aveva detto: *Il finanziere, eh?* Lei aveva avuto paura come non aveva più avuto paura da anni. Poi lui aveva riso, basso, e aveva aggiunto: *Bene. Tienilo contento.*
+Quasi cinque anni prima, una sera di marzo, l'aveva fatta salire in macchina sotto la redazione. Non aveva spento il motore. Aveva guardato la strada davanti a sé, con le mani sul volante, e aveva detto: *Il finanziere, eh?* Lei aveva avuto paura come non aveva più avuto paura da anni. Poi lui aveva riso, basso, e aveva aggiunto: *Bene. Tienilo contento.*
 
 Da allora non ne avevano più parlato. Vito non le aveva mai chiesto niente di Alfredo. Non le aveva mai chiesto cosa si dicevano, cosa sapeva il finanziere, cosa voleva. Per lui era una cosa che stava bene dove stava: una sua proprietà nel letto di un uomo utile. Un investimento che rendeva senza bisogno di controllarlo.
 
@@ -110,7 +110,7 @@ Vito non immaginava nemmeno che si potessero dire delle cose, in quella stanza. 
 
 E Alfredo, sapeva che Vito sapeva?
 
-Dalia non gliel'aveva mai detto. In sei anni, non una volta. Ogni tanto pensava che fosse l'unica cosa che lui non sapeva di lei. Ogni tanto pensava che lo sapesse benissimo, e che anche quella fosse una frase lasciata aperta, in attesa che qualcuno la chiudesse.
+Dalia non gliel'aveva mai detto. In cinque anni, non una volta. Ogni tanto pensava che fosse l'unica cosa che lui non sapeva di lei. Ogni tanto pensava che lo sapesse benissimo, e che anche quella fosse una frase lasciata aperta, in attesa che qualcuno la chiudesse.
 
 ---
 
@@ -132,13 +132,13 @@ Lo disse semplicemente. Senza la voce che usava con gli altri, quella misurata, 
 
 Eccola, pensò Dalia. La frase con dentro due frasi.
 
-Provò a ricordare cosa gli aveva detto di Vito, in sei anni. Non molto. Mai niente di intero. Cose piccole, dette tra una frase e l'altra, con la testa appoggiata sul suo petto. Che Vito chiamava la domenica sera. Che odiava gli ascensori e prendeva sempre le scale, anche per dieci piani. Che non dormiva mai due notti di fila nello stesso letto. Che mangiava solo cose cucinate davanti a lui.
+Provò a ricordare cosa gli aveva detto di Vito, in cinque anni. Non molto. Mai niente di intero. Cose piccole, dette tra una frase e l'altra, con la testa appoggiata sul suo petto. Che Vito chiamava la domenica sera. Che odiava gli ascensori e prendeva sempre le scale, anche per dieci piani. Che non dormiva mai due notti di fila nello stesso letto. Che mangiava solo cose cucinate davanti a lui.
 
 Cose che una donna racconta di un uomo che l'ha fatta soffrire, per farlo sembrare più piccolo.
 
 Messe in fila, adesso, le sembravano un'altra cosa. Le sembravano una scheda.
 
-Poteva essere un uomo innamorato che aveva paura per la donna che amava. Poteva essere un uomo che, per sei anni, aveva ascoltato ogni sua risposta fino in fondo perché ogni risposta gli serviva. Poteva essere tutte e due le cose insieme, e questa era la possibilità che la spaventava di più, perché non lasciava spazio per scegliere.
+Poteva essere un uomo innamorato che aveva paura per la donna che amava. Poteva essere un uomo che, per cinque anni, aveva ascoltato ogni sua risposta fino in fondo perché ogni risposta gli serviva. Poteva essere tutte e due le cose insieme, e questa era la possibilità che la spaventava di più, perché non lasciava spazio per scegliere.
 
 Si girò sul fianco, verso di lui. Gli sfiorò il polso sinistro. Era nudo.
 
@@ -162,7 +162,7 @@ Una donna di trentacinque anni. Alta. Il collo lungo che sua madre le aveva lasc
 
 Tutte cose sue. Anche quelle che erano costate.
 
-La prima volta, sei anni prima, in quella stessa stanza, Alfredo le aveva chiesto: *Posso?* Prima di sfiorarle la mano. Una parola sola. Nessuno, in tutta la sua vita, le aveva mai chiesto il permesso per qualcosa. Lei era rimasta così stupita che non aveva risposto, e lui aveva aspettato. Aveva aspettato davvero, con la mano ferma a un centimetro dalla sua, finché lei non aveva detto sì.
+La prima volta, quasi cinque anni prima, in quella stessa stanza, Alfredo le aveva chiesto: *Posso?* Prima di sfiorarle la mano. Una parola sola. Nessuno, in tutta la sua vita, le aveva mai chiesto il permesso per qualcosa. Lei era rimasta così stupita che non aveva risposto, e lui aveva aspettato. Aveva aspettato davvero, con la mano ferma a un centimetro dalla sua, finché lei non aveva detto sì.
 
 Per questo era rimasta. Per quel centimetro.
 

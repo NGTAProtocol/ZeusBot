@@ -202,7 +202,7 @@ Il tecnico tornò alle 14.25. Ventitré minuti.
 
 Tommaso lo riaprì. Era tutto dov'era. La posta, i modelli, lo sfondo con il mare che aveva messo il primo giorno. Tutto uguale.
 
-Non si fidò di niente per il resto del pomeriggio.
+Per il resto del pomeriggio non si fidò di niente che non potesse contare.
 
 ---
 

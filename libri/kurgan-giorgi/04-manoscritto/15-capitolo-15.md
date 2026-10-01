@@ -54,7 +54,7 @@ Tornò al foglio. Quattro punti e un nome. Nella colonna del nome, a margine, sc
 
 La riunione del pool era alle dieci. Calabrese arrivò alle dieci e un quarto, con la giacca sul braccio e la faccia di chi aveva dormito a metà. Cataldo era già seduto, con il suo blocco a righe e tre matite temperate in fila.
 
-Sulla lavagna c'era ancora la colonna del gennaio precedente: quarantasei soggetti, una banca di Valdhof, il 29 settembre, il 12 novembre. Sotto, in blu, le cose nuove di sedici mesi. Poche. I dati della Consob erano arrivati in autunno e i conti delle 12.07 si erano persi, uno per uno, dentro altrettante fiduciarie di Valdhof. La seconda rogatoria era tornata con metà delle pagine annerite.
+Sulla lavagna c'era ancora la colonna del gennaio precedente: quarantasei soggetti, una banca di Valdhof, il 29 settembre, il 12 novembre. Sotto, in blu, le cose nuove di sedici mesi. Poche. I dati della Consob, chiesti per secondo, erano arrivati in autunno: dei quarantasei soggetti, trentuno avevano chiuso alle 12.07, nello stesso secondo, e si erano persi, uno per uno, dentro altrettante fiduciarie di Valdhof. La seconda rogatoria era tornata con metà delle pagine annerite.
 
 Flora non cancellò niente. Prese un foglio e lo appese con il nastro adesivo accanto alla lavagna. I quattro punti di Oddone, senza il nome di Oddone.
 

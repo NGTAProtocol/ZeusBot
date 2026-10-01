@@ -36,7 +36,7 @@ Prese un foglio bianco. Lo faceva sempre, prima di permettersi di pensare.
 
 Guardò la colonna. Non era una prova. Un banchiere poteva sedere in dieci consigli, e aprire trenta fiduciarie per ragioni sue. Un ammiraglio in congedo poteva avere risparmi da nascondere al fisco. Un industriale del farmaco poteva avere mille motivi per non comparire.
 
-Ma i tre non si conoscevano. Flora ne era quasi certa senza averlo ancora verificato. Un ammiraglio, un industriale, un banchiere: tre mondi che non si incontravano a cena. E undici anni prima, lo stesso giorno, dallo stesso notaio, avevano affidato i loro soldi agli stessi trentuno gusci, che undici anni dopo avrebbero chiuso nello stesso secondo.
+Ma i tre non si conoscevano. Flora ne era quasi certa senza averlo ancora verificato. Un ammiraglio, un industriale, un banchiere: tre mondi che non si incontravano a cena. E undici anni prima, lo stesso giorno, dallo stesso notaio, avevano affidato i loro soldi agli stessi trentuno gusci, che nove anni dopo avrebbero chiuso nello stesso secondo.
 
 Tre persone che non avevano niente in comune avevano in comune un secondo.
 
@@ -138,7 +138,7 @@ Parlarono del caldo, di Rocca Sannella, della madre di lei, che aveva chiesto di
 
 Flora mangiò. Aveva il settimo foglio nella borsa, nella tasca con la cerniera, piegato in quattro insieme agli altri. Lo sentiva contro il fianco come si sentiva un telefono spento.
 
-Per un momento, a metà del piatto, ebbe voglia di dirglielo. Non tutto. Una cosa. *Oggi ho trovato tre nomi.* Carlo era l'unico, fuori dal pool, con cui avesse mai parlato del suo lavoro. Due anni di cene, una al mese. Lui ascoltava fino in fondo, non interrompeva, e a gennaio le aveva dato una pista che aveva aperto una porta.
+Per un momento, a metà del piatto, ebbe voglia di dirglielo. Non tutto. Una cosa. *Oggi ho trovato tre nomi.* Carlo era l'unico, fuori dal pool, con cui avesse mai parlato del suo lavoro. Tre anni di cene, una al mese. Lui ascoltava fino in fondo, non interrompeva, e a gennaio le aveva dato una pista che aveva aperto una porta.
 
 Sentì il foglio piegato contro il fianco. Dirglielo le avrebbe dato qualcosa: una voce che le diceva se aveva ragione. Non dirglielo non le toglieva niente. E da gennaio c'era una colonna, nella tasca con la cerniera, che nessuno le aveva chiesto di scrivere.
 

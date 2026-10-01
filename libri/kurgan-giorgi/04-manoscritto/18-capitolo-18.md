@@ -4,7 +4,7 @@
 
 Il cinese arrivò con dieci minuti di anticipo, e Kurgan lo prese come un avvertimento.
 
-Li Wei Chen sedeva già in prima fila sulla terrazza, sotto il tendone bianco del ristorante più grande del lungomare, con una bottiglia d'acqua frizzante e due bicchieri capovolti. Il locale piccolo in fondo alla passeggiata, quello dove dieci anni prima un uomo in grigio gli aveva regalato un orologio, aveva chiuso da un pezzo: al suo posto c'era una gelateria con l'insegna al neon. Alle undici del mattino la terrazza era mezza vuota: coppie di turisti, un gruppo di avvocati con le giacche sulle sedie, camerieri che stendevano tovaglie per il pranzo. Kurgan contò le uscite dalla porta a vetri. Tre. La scala verso la spiaggia, la porta della cucina, il passaggio laterale verso il parcheggio. Contò gli uomini che non erano turisti. Due, al bancone, con la stessa camicia. Del cinese.
+Li Wei Chen sedeva già in prima fila sulla terrazza, sotto il tendone bianco del ristorante più grande del lungomare, con una bottiglia d'acqua frizzante e due bicchieri capovolti. Il locale piccolo in fondo alla passeggiata, quello dove dodici anni prima un uomo in grigio gli aveva regalato un orologio, aveva chiuso da un pezzo: al suo posto c'era una gelateria con l'insegna al neon. Alle undici del mattino la terrazza era mezza vuota: coppie di turisti, un gruppo di avvocati con le giacche sulle sedie, camerieri che stendevano tovaglie per il pranzo. Kurgan contò le uscite dalla porta a vetri. Tre. La scala verso la spiaggia, la porta della cucina, il passaggio laterale verso il parcheggio. Contò gli uomini che non erano turisti. Due, al bancone, con la stessa camicia. Del cinese.
 
 Si sedette con le spalle alla ringhiera e il mare dietro.
 

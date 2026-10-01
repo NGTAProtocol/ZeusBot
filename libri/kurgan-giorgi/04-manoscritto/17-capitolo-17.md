@@ -158,7 +158,7 @@ Giorgi guardò il foglio scritto a mano sul tavolo.
 
 Elena chiuse senza salutare. Era la prima volta in diciassette anni. Giorgi tenne il telefono all'orecchio ancora qualche secondo, ad ascoltare la linea vuota, e registrò anche questo: un altro punto in una serie che cominciava ad avere abbastanza punti per diventare una curva.
 
-Alle 23.52 il telefono nero senza marca vibrò sul tavolo di noce. Non era quello che aveva usato per dieci anni con Kurgan: era uno nuovo, acquistato per una sola conversazione e destinato a finire in un tombino. Il numero sullo schermo era quello di un avvocato di Partenia che difendeva mezza costa e che, per una cifra con sei zeri, aveva accettato di fare da tramite senza chiedere tra chi.
+Alle 23.52 il telefono nero senza marca vibrò sul tavolo di noce. Non era quello che aveva usato per dodici anni con Kurgan: era uno nuovo, acquistato per una sola conversazione e destinato a finire in un tombino. Il numero sullo schermo era quello di un avvocato di Partenia che difendeva mezza costa e che, per una cifra con sei zeri, aveva accettato di fare da tramite senza chiedere tra chi.
 
 «Mi ha dato la risposta» disse l'avvocato. Aveva la voce di chi ha bevuto un bicchiere in più per trovare il coraggio di comporre il numero. «Una parola, poi una condizione.»
 

@@ -136,7 +136,7 @@ Adesso lo guardò mangiare e sentì quel racconto tornarle in bocca, amaro.
 
 «Diverse.» Lui la guardò. «Ci sarà un posto per te. Un posto vero. Non una stanza d'albergo.»
 
-Dalia non chiese come sapesse della stanza d'albergo. Lo sapeva da sei anni. Non ne avevano mai parlato.
+Dalia non chiese come sapesse della stanza d'albergo. Lo sapeva da cinque anni. Non ne avevano mai parlato.
 
 Mangiò il pesce. Era buono. Si sforzò di sentirne il sapore, perché un sapore era una cosa che nessuno poteva toglierle mentre ce l'aveva in bocca.
 

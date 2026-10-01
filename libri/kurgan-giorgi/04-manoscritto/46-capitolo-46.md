@@ -50,7 +50,7 @@ Pietro chiuse gli occhi. Li riaprì.
 
 «Perché?»
 
-Avrebbe potuto dirglielo. Una macchina sotto la redazione, un uomo altissimo seduto dietro, una busta, l'affitto di sua madre. Avrebbe dovuto dirgli anche il resto, allora. Il 2005. Le stanze. I vent'anni. Il corpo come una cosa che rendeva. Non c'era una versione della risposta vera che non cominciasse da lì. E una volta cominciata da lì, non sarebbe più stata la storia di una fonte falsa. Sarebbe stata la sua.
+Avrebbe potuto dirglielo. Una macchina sotto la redazione, un uomo altissimo seduto dietro, una busta, l'affitto di sua madre. Avrebbe dovuto dirgli anche il resto, allora. I quindici anni. Le stanze. I vent'anni. Il corpo come una cosa che rendeva. Non c'era una versione della risposta vera che non cominciasse da lì. E una volta cominciata da lì, non sarebbe più stata la storia di una fonte falsa. Sarebbe stata la sua.
 
 «Non posso dirtelo» disse.
 

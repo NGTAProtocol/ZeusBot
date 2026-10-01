@@ -22,7 +22,7 @@ Si sedette su una sedia di plastica nel corridoio, con le mani in grembo, e aspe
 
 La sala riunioni era al terzo piano, con le finestre sui tetti di Albaterra e un tavolo ovale troppo grande per quattro persone.
 
-Il procuratore nazionale era già seduto a capotavola. Un uomo di sessant'anni, stanco, con una cravatta scura che aveva messo apposta. Accanto a lui c'erano due uomini che Flora non aveva mai visto e di cui conosceva già tutto quello che si poteva sapere da una rassegna stampa.
+Il procuratore nazionale era già seduto a capotavola. Un uomo di sessantaquattro anni, stanco, con una cravatta scura che aveva messo apposta. Accanto a lui c'erano due uomini che Flora non aveva mai visto e di cui conosceva già tutto quello che si poteva sapere da una rassegna stampa.
 
 Gerardo Calabrese, della Direzione distrettuale di Partenia. Quarantuno anni, giacca sgualcita, una fede nuova che si girava intorno al dito. Zaccaria Cataldo, della Procura di Tarassa. Più giovane, più magro, con un portablocco già aperto e una penna già in mano.
 
@@ -44,7 +44,7 @@ Calabrese guardò gli scatoloni. Poi guardò lei.
 
 «Quello è il fascicolo archiviato.»
 
-Non era una domanda. Flora lo prese come tale lo stesso.
+Non era una domanda. Flora la mise agli atti come tale lo stesso.
 
 «È il fascicolo sull'unificazione. Tre anni di lavoro. Intercettazioni, conti, due collaboratori. L'ho portato perché ci serve.»
 
@@ -64,7 +64,7 @@ Cataldo scriveva. Flora non capiva cosa.
 
 Aveva letto i nomi dei colleghi sul decreto la sera prima, in treno, e aveva fatto quello che faceva sempre con un fascicolo nuovo. Li aveva messi in ordine.
 
-Calabrese: tre anni prima aveva aperto un'indagine sui porti di Partenia. Traffico di carburante tra Partenia e Porto Clodio, società di comodo, navi con bandiere di paesi lontani. L'indagine era ancora aperta, ma da un anno non usciva niente. Troppo silenzio, per uno come lui.
+Calabrese: l'anno prima aveva aperto un'indagine sui porti di Partenia. Traffico di carburante tra Partenia e Porto Clodio, società di comodo, navi con bandiere di paesi lontani. L'indagine era ancora aperta, ma da mesi non usciva niente. Troppo silenzio, per uno come lui.
 
 Cataldo: due anni prima aveva chiesto l'arresto di un funzionario della dogana di Punta Saline. Il giudice aveva detto di no. Cataldo non aveva fatto ricorso. In una procura di provincia, un pubblico ministero che non fa ricorso è un pubblico ministero che ha capito qualcosa, o che ha avuto paura.
 
@@ -190,7 +190,7 @@ Flora lo ripassò in treno, al ritorno, come ripassava tutto. Chi lo sapeva. Il 
 
 Il treno era mezzo vuoto. Fuori era già buio. Nel vetro vedeva la sua faccia sovrapposta ai campi neri, e sotto la faccia la stanchezza, che ormai non se ne andava più nemmeno con il sonno.
 
-Pensò a Carlo De Stefano senza volerlo, come le capitava a quell'ora. Colonnello, quarantadue anni, un uomo che conosceva da due anni e con cui cenava una volta al mese, senza che nessuno dei due avesse mai dato un nome alla cosa. Lui lavorava "per il ministero", diceva. Non diceva quale. Lei non chiedeva, perché era un magistrato e sapeva che c'erano domande che, una volta fatte, obbligavano a verbalizzare la risposta.
+Pensò a Carlo De Stefano senza volerlo, come le capitava a quell'ora. Colonnello, quarantadue anni, un uomo che conosceva da un anno e con cui cenava una volta al mese, senza che nessuno dei due avesse mai dato un nome alla cosa. Lui lavorava "per il ministero", diceva. Non diceva quale. Lei non chiedeva, perché era un magistrato e sapeva che c'erano domande che, una volta fatte, obbligavano a verbalizzare la risposta.
 
 Non gli aveva detto del pool. Non l'aveva detto a nessuno. Nemmeno a sua madre, che la sera la chiamava sempre alle nove e un quarto.
 

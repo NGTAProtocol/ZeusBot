@@ -74,7 +74,7 @@ Giorgi restò seduto. Sul tavolo, accanto al telefono, c'era ancora il foglio sc
 
 Chi aveva deciso, e quando? La domanda aveva una risposta tecnica, e Giorgi la conosceva dal terzo anno: il controllo gerarchico. In basso stanno i regolatori locali, ciascuno responsabile di una grandezza, ciascuno convinto, per così dire, di governare il proprio pezzo di mondo. Sopra di loro sta un supervisore, che non regola niente direttamente ma osserva l'errore di ciascun regolatore. Finché l'errore resta dentro la tolleranza, il supervisore tace. Quando la supera, il supervisore non corregge il regolatore. Lo sostituisce. Stacca il suo segnale dall'attuatore e ci mette il proprio, senza avvertirlo, perché un regolatore che ha superato la tolleranza non è più un interlocutore: è la parte del sistema che ha smesso di funzionare.
 
-Giorgi era stato un regolatore per dieci anni. Aveva regolato Kurgan, e attraverso Kurgan i porti, le navi, due mafie, tre stragi. Da diciannove mesi il suo errore era fuori tolleranza. Il supervisore lo aveva osservato con pazienza, da un appartamento con un divano di velluto verde, e il 6 gennaio aveva girato la terza tazza sul piattino. Quella notte aveva staccato il suo segnale dall'attuatore.
+Giorgi era stato un regolatore per dodici anni. Aveva regolato Kurgan, e attraverso Kurgan i porti, le navi, due mafie, tre stragi. Da diciannove mesi il suo errore era fuori tolleranza. Il supervisore lo aveva osservato con pazienza, da un appartamento con un divano di velluto verde, e il 6 gennaio aveva girato la terza tazza sul piattino. Quella notte aveva staccato il suo segnale dall'attuatore.
 
 La cattura era stata il suo segnale. La bomba era il segnale del supervisore.
 

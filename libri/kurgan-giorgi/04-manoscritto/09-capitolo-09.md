@@ -52,7 +52,7 @@ Non si vedevano da tre settimane. Lei aveva saltato la cena di gennaio con una s
 
 ---
 
-Carlo De Stefano era seduto al tavolino più interno, con le spalle al muro e la vista sulla porta. Si sedeva sempre così. Flora lo aveva notato la prima sera, due anni prima, e aveva pensato che fosse un'abitudine da carabiniere. Poi aveva pensato che fosse un'abitudine da qualcos'altro, e aveva smesso di pensarci.
+Carlo De Stefano era seduto al tavolino più interno, con le spalle al muro e la vista sulla porta. Si sedeva sempre così. Flora lo aveva notato la prima sera, un anno prima, e aveva pensato che fosse un'abitudine da carabiniere. Poi aveva pensato che fosse un'abitudine da qualcos'altro, e aveva smesso di pensarci.
 
 Si alzò quando lei entrò. Si alzava sempre.
 
@@ -62,7 +62,7 @@ Si alzò quando lei entrò. Si alzava sempre.
 
 Carlo ordinò due caffè senza chiederle niente. Lo sapeva: lungo, senza zucchero. Si sedettero. Il barista portò le tazze e si allontanò.
 
-Due anni di cene, una al mese, sempre nello stesso ristorante di Rocca Sannella, sempre al tavolo in fondo. Lui arrivava da Albaterra in macchina, due ore e mezza, e ripartiva la notte stessa. Non era mai salito da lei. Lei non glielo aveva mai chiesto. Parlavano di libri, di sua madre, del mare che lui aveva visto da bambino e lei no. Non parlavano mai di quello che facevano. Non parlavano mai di quello che erano.
+Un anno di cene, una al mese, sempre nello stesso ristorante di Rocca Sannella, sempre al tavolo in fondo. Lui arrivava da Albaterra in macchina, due ore e mezza, e ripartiva la notte stessa. Non era mai salito da lei. Lei non glielo aveva mai chiesto. Parlavano di libri, di sua madre, del mare che lui aveva visto da bambino e lei no. Non parlavano mai di quello che facevano. Non parlavano mai di quello che erano.
 
 C'era un momento, alla fine di ogni cena, in cui lui la accompagnava alla macchina e si fermava a mezzo metro da lei. Mezzo metro esatto. Flora lo aveva misurato con gli occhi, una sera, e da allora lo misurava sempre. Non si era mai accorciato.
 

@@ -16,7 +16,7 @@ Diciotto mesi.
 
 Per diciotto mesi aveva applicato a Kurgan la strategia che si applica a un reattore di cui si teme la reazione a catena: non spegnerlo di colpo, perché uno spegnimento brusco produce a sua volta effetti imprevedibili, ma inserire gradualmente le barre di controllo, sottrarre neutroni, abbassare il flusso finché la reazione non scende sotto la soglia in cui si sostiene da sola e si esaurisce per mancanza di combustibile.
 
-Le barre erano state i soldi. Le società di Merania avevano smesso di comprare il suo carburante; le banche che per dieci anni avevano ripulito i suoi flussi avevano cominciato, una dopo l'altra, a chiedere documenti che prima non chiedevano; le dogane di Punta Saline e di Porto Clodio, sollecitate con discrezione attraverso i canali che Giorgi conosceva, avevano moltiplicato le ispezioni, i sequestri, i ritardi. I ricavi di Kurgan, secondo tutte le stime, si erano dimezzati nel primo semestre. Il modello prevedeva che entro l'anno, con i costi fissi di un'organizzazione di quelle dimensioni, sarebbe tornato a trattare.
+Le barre erano state i soldi. Le società di Merania avevano smesso di comprare il suo carburante; le banche che per dodici anni avevano ripulito i suoi flussi avevano cominciato, una dopo l'altra, a chiedere documenti che prima non chiedevano; le dogane di Punta Saline e di Porto Clodio, sollecitate con discrezione attraverso i canali che Giorgi conosceva, avevano moltiplicato le ispezioni, i sequestri, i ritardi. I ricavi di Kurgan, secondo tutte le stime, si erano dimezzati nel primo semestre. Il modello prevedeva che entro l'anno, con i costi fissi di un'organizzazione di quelle dimensioni, sarebbe tornato a trattare.
 
 Non era tornato. Il modello conteneva un errore che Giorgi aveva individuato soltanto a posteriori, e che lo irritava come lo irritava ogni errore di impostazione, perché gli errori di calcolo si correggono mentre quelli di impostazione si pagano: aveva trattato Kurgan come un sistema chiuso. Un sistema chiuso, privato di energia, si raffredda. Ma Kurgan aveva aperto le pareti. Metà delle sue navi, a partire dalla primavera precedente, trasportava sotto bandiere di comodo un carburante che non aveva nome né provenienza dichiarata, e che i servizi attribuivano con ragionevole certezza a Kaliria; una banchina del molo nord di Punta Saline, tre notti al mese, restava chiusa a qualunque controllo, e da lì passavano casse che nessuno aveva mai aperto; nei porti del sud, dove attraccavano per il rifornimento le navi della NATO, qualcuno fotografava le carte di carico.
 
@@ -68,7 +68,7 @@ Il generale parlò per primo, esponendo in venti minuti ciò che Giorgi aveva le
 
 Fu il sottosegretario a rispondere, ed era evidente che aveva preparato la frase.
 
-«Lei è l'unica persona in questo Paese che conosce quell'uomo. Lo ha conosciuto per dieci anni. Sa come ragiona, cosa teme, cosa vuole. Nessuno dei nostri analisti ha mai parlato con lui. Lei sì.»
+«Lei è l'unica persona in questo Paese che conosce quell'uomo. Lo ha conosciuto per dodici anni. Sa come ragiona, cosa teme, cosa vuole. Nessuno dei nostri analisti ha mai parlato con lui. Lei sì.»
 
 Giorgi non rispose subito. Guardò il generale, che guardava il tavolo.
 

@@ -44,7 +44,7 @@ Kurgan prese un foglio e una penna. Non scriveva mai niente di quello che contav
 
 Da una parte mise il dottore.
 
-I soldi, che non erano mai stati il punto. I servizi, quelli militari, che per dieci anni gli avevano portato le posizioni, le targhe, gli orari, e che adesso li portavano a qualcun altro. Da una settimana la Guardia di Finanza saliva sulle sue petroliere a Porto Clodio quasi ogni giorno, con i cani e le carte bollate, e non trovava mai niente e tornava lo stesso. Il capitano del porto, che per anni aveva preso i suoi soldi sorridendo, adesso li prendeva senza guardarlo in faccia. Un uomo così non cambiava idea da solo. Qualcuno sopra di lui l'aveva cambiata al posto suo.
+I soldi, che non erano mai stati il punto. I servizi, quelli militari, che per dodici anni gli avevano portato le posizioni, le targhe, gli orari, e che adesso li portavano a qualcun altro. Da una settimana la Guardia di Finanza saliva sulle sue petroliere a Porto Clodio quasi ogni giorno, con i cani e le carte bollate, e non trovava mai niente e tornava lo stesso. Il capitano del porto, che per anni aveva preso i suoi soldi sorridendo, adesso li prendeva senza guardarlo in faccia. Un uomo così non cambiava idea da solo. Qualcuno sopra di lui l'aveva cambiata al posto suo.
 
 Il governo, quindi. E forse amici più grandi del governo, di quelli che non si fanno mai vedere e non perdono mai.
 
@@ -62,7 +62,7 @@ Serviva una cosa che fermasse la guerra prima che cominciasse. Una sola cosa che
 
 Tranne uno.
 
-Kurgan l'aveva visto sei anni prima, per caso, su una fotografia che uno dei suoi aveva scattato davanti a un palazzo di Merania. Il dottore che scendeva dalla macchina e si chinava a sistemare il colletto a una bambina di un anno. L'unica fotografia, in dieci anni, in cui il dottore non sembrava stare facendo un calcolo.
+Kurgan l'aveva visto sei anni prima, per caso, su una fotografia che uno dei suoi aveva scattato davanti a un palazzo di Merania. Il dottore che scendeva dalla macchina e si chinava a sistemare il colletto a una bambina di un anno. L'unica fotografia, in dodici anni, in cui il dottore non sembrava stare facendo un calcolo.
 
 ---
 

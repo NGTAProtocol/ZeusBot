@@ -18,7 +18,7 @@ Dalla vetrata dell'attico Merania era una griglia di luci ordinate, e sopra la g
 
 «Lo so.»
 
-Lei girò una pagina. Non aggiunse altro, e lui le fu grato di quella misura, che era una delle ragioni per cui, diciassette anni prima, l'aveva scelta.
+Lei girò una pagina. Non aggiunse altro, e lui le fu grato di quella misura, che era una delle ragioni per cui, quindici anni prima, l'aveva scelta.
 
 ---
 

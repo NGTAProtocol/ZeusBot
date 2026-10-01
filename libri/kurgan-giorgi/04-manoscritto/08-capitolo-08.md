@@ -24,7 +24,7 @@ Giorgi era sempre stato quello studente. Soltanto molti anni dopo aveva capito c
 
 Giorgi bevve un sorso di tè prima di rispondere. Era un tè cinese, affumicato, che il cardinale beveva da quarant'anni e che a lui era sempre sembrato sapere di legna bruciata.
 
-L'orologio era arrivato ad AV System una settimana dopo la notte del rifiuto, in una busta imbottita senza mittente, consegnata a mano alla portineria. Lo aveva ritirato Luigi Bertola, che lo accompagnava da tredici anni e che quel giorno era sceso a prendere la posta al posto della segretaria. Bertola lo aveva portato su, gli aveva posato la busta sulla scrivania e se n'era andato senza chiedere niente, come faceva sempre. Nessun altro, oltre a loro due, sapeva di quella busta.
+L'orologio era arrivato ad AV System una settimana dopo la notte del rifiuto, in una busta imbottita senza mittente, consegnata a mano alla portineria. Lo aveva ritirato Luigi Bertola, che lo accompagnava da dodici anni e che quel giorno era sceso a prendere la posta al posto della segretaria. Bertola lo aveva portato su, gli aveva posato la busta sulla scrivania e se n'era andato senza chiedere niente, come faceva sempre. Nessun altro, oltre a loro due, sapeva di quella busta.
 
 Giorgi registrò il dato, lo collocò nella memoria insieme agli altri e non gli attribuì, in quel momento, alcun significato particolare. Salvarani aveva molte fonti; averne una in più, in un punto qualunque del sistema, non era un'anomalia ma una costante di cui aveva sempre tenuto conto.
 
@@ -36,7 +36,7 @@ Dieci anni prima, di sera, in un ristorante vuoto sul lungomare di Partenia.
 
 Giorgi aveva prenotato tutto il locale, e il proprietario, un uomo che doveva favori a persone che dovevano favori a lui, aveva spento le luci della sala tranne quelle del tavolo d'angolo, sicché il resto della stanza affondava in una penombra da cui emergevano soltanto le sedie capovolte sui tavoli e, oltre i vetri, il nero del mare con le luci delle barche lontane.
 
-Kurgan era arrivato a piedi, da solo, con dieci minuti di anticipo. Si era chinato passando sotto l'architrave della porta, e Giorgi aveva notato con interesse che non si era chinato abbastanza, che lo stipite gli aveva sfiorato i capelli e che lui non aveva fatto una piega, come chi da tutta la vita urta le cose e ha smesso da tempo di considerarlo un problema proprio. Aveva trentotto anni, un vestito comprato in fretta e mani enormi, posate sul tavolo come due attrezzi.
+Kurgan era arrivato a piedi, da solo, con dieci minuti di anticipo. Si era chinato passando sotto l'architrave della porta, e Giorgi aveva notato con interesse che non si era chinato abbastanza, che lo stipite gli aveva sfiorato i capelli e che lui non aveva fatto una piega, come chi da tutta la vita urta le cose e ha smesso da tempo di considerarlo un problema proprio. Aveva trentasette anni, un vestito comprato in fretta e mani enormi, posate sul tavolo come due attrezzi.
 
 Giorgi aveva letto il fascicolo tre volte. La valle nel Drenak, i seicento metri scoperti, i tre ufficiali, il colpo di mortaio a cui nessuno aveva creduto e il foglio di congedo bruciato sul traghetto; poi i vicoli di Partenia, la Fratellanza, i primi lavori, la precisione. Soprattutto la precisione. Ma quello che lo aveva convinto non stava in nessuna riga del fascicolo: stava in una nota a margine, scritta a matita da un funzionario dei servizi che aveva seguito Kurgan per due anni. *Non perde mai uomini. Preferisce perdere il lavoro.*
 

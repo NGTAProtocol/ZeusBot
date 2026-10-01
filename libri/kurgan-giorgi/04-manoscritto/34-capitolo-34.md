@@ -152,4 +152,4 @@ Spense il computer. Si alzò. Contò i passi fino all'ascensore, come ogni sera.
 
 Trentuno.
 
-Non gli erano mai sembrati così tanti.
+Chiuse la mano sinistra sul codice sbiadito e aspettò l'ascensore.

@@ -40,7 +40,7 @@ Uno. Il 12 novembre, alle 12.07, trentuno conti chiudono nello stesso secondo, a
 
 Due. I trentuno conti finiscono in trentuno fiduciarie di Valdhof.
 
-Tre. Le trentuno fiduciarie nascono lo stesso giorno, il 9 marzo di undici anni fa. Qualcuno, undici anni fa, aveva preparato trentuno cassetti vuoti per un'operazione che sarebbe arrivata dopo più di dieci anni.
+Tre. Le trentuno fiduciarie nascono lo stesso giorno, il 9 marzo di undici anni fa. Qualcuno, undici anni fa, aveva preparato trentuno cassetti vuoti per un'operazione che sarebbe arrivata nove anni dopo.
 
 Quattro. Undici anni fa Alfredo Giorgi entra come consigliere non esecutivo nella Finanziaria Lanterna, che controlla la Clodia Navi, che dà in leasing le venti navi dell'unificazione. Allegato trentasette.
 

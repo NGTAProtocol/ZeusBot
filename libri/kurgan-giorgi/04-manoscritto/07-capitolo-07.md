@@ -204,7 +204,7 @@ Salì dal lato del passeggero. La macchina si abbassò sotto il suo peso.
 
 «Cinque è l'inizio.»
 
-Adorisio annuì, chiuse il libro, accese il motore. Non chiese altro. Era una delle cose per cui Kurgan lo teneva vicino da quindici anni: sapeva quando smettere di chiedere.
+Adorisio annuì, chiuse il libro, accese il motore. Non chiese altro. Era una delle cose per cui Kurgan lo teneva vicino da tredici anni: sapeva quando smettere di chiedere.
 
 Sul telefono nuovo, nella tasca del cappotto, arrivò un messaggio. Una riga sola, senza mittente.
 
