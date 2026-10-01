@@ -19,7 +19,7 @@ Per ogni capitolo: **target** di parole · **data** (dalla cronologia della bibb
 | Epilogo | | — | — | 1.000 |
 | **Totale** | | 43 | 9 | **78.000** |
 
-Il vecchio testo aveva 51.543 parole. Il nuovo ne ha 78.000, circa il 51% in più. Il vecchio non si riusa: ogni capitolo si riscrive per intero, anche quelli che nella tabella sono «corrispondenti».
+Il vecchio testo aveva 49.998 parole (metodo unico, manuale §1). Il nuovo ne ha 78.000, circa il 56% in più. Il vecchio non si riusa: ogni capitolo si riscrive per intero, anche quelli che nella tabella sono «corrispondenti».
 
 **Sentenze di chiusura previste (7 su 8 consentite):** capp. 6, 13, 19, 26, 31, 37, 43.
 
@@ -30,7 +30,7 @@ Il vecchio testo aveva 51.543 parole. Il nuovo ne ha 78.000, circa il 51% in pi�
 - **Presente, senza data.** La casa bianca sulla scogliera, l'oceano intero contro il mare a pezzi dei vicoli. Michele è morto in questa casa, a novantatré anni. Il ritratto e i fiori. Il segno sul collo. Nessuno qui conosce il nome di allora.
 - **Il catalogo delle colpe** [CANONE]: l'involto stretto mentre un amico veniva massacrato; i soldi sporchi; la madre lasciata alla sua roba; e una volta, l'ultima, la testa non girata.
 - Perché scrive: «una vita non detta si perde due volte» è di Michele. Qui compare **una sola volta** e ritorna nell'interludio IX.
-- **Cambia:** più corto e più asciutto del vecchio (526 parole gonfiate dall'ultima revisione). Niente «presenza antica che non dimentica». Il nome «Mister Provino» non si dice. Nessuna chiusura su una parola isolata («Io.»).
+- **Cambia:** più corto e più asciutto del vecchio (522 parole, metodo unico, gonfiate dall'ultima revisione). Niente «presenza antica che non dimentica». Il nome «Mister Provino» non si dice. Nessuna chiusura su una parola isolata («Io.»).
 - **Filone:** 3. **Chiusura:** I (il ragazzo sulla spiaggia, a luglio, con ancora un nome tutto suo).
 
 ---

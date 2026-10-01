@@ -404,7 +404,7 @@ Il conto vale per le apparizioni **esplicite o simboliche**. Gli oggetti di scen
 | **La nave ferma con le luci** | 4, fisso | cap. 1, interludio III, cap. 41, ultima pagina |
 | **Fischiare / non fischiare**, il verbo esplicito | 6 | cap. 10, cap. 23, cap. 35, interludio VII, cap. 39 (Franco), epilogo. Le scene della madre (cap. 17) e del fratello (cap. 19), e quella del cap. 9 con Franco, stanno nella scala dei fischi (sezione 9) **senza** il verbo «fischiare» |
 | **La crepa sul soffitto** | 4 | 2, 11, 17, 19 |
-| **Contare** (tic del ragazzo) | libero come gesto; mai commentato più di 3 volte | |
+| **Contare** (tic del ragazzo) | massimo 3 gesti di conteggio per capitolo (manuale §3.6) | |
 
 ---
 

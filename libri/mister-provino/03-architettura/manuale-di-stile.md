@@ -61,15 +61,21 @@ Con questo metodo il vecchio testo vale **49.998 parole**. Il target di **78.000
   3. **fonte:** questo non l'ho visto, me l'hanno raccontato;
   4. **dubbio di memoria:** non ricordo se fosse martedì;
   5. **giudizio su di sé**, raro e mai assolutorio.
-- **Quantità:** da 2 a 5 intrusioni per capitolo, di 1-3 frasi l'una. Un'intrusione più lunga (un paragrafo) al massimo una volta ogni 3 capitoli.
-- **Aforismi del vecchio:** al massimo uno per capitolo, e solo dentro un'intrusione marcata.
+- **Quantità:** da 1 a 3 intrusioni per capitolo, di 1-3 frasi l'una, con alcuni capitoli a zero (il cap. 10 resta puro: nessuna intrusione). Un'intrusione più lunga (un paragrafo) al massimo una volta ogni 3 capitoli.
+- **Aforismi del vecchio:** al massimo uno ogni due capitoli (circa 20 nel libro), e solo dentro un'intrusione marcata.
 - **Il vecchio non anticipa i colpi di scena del capitolo in corso.** Può anticipare esiti lontani (Checco che non uscirà più) per dare peso alle scene vicine.
 
 ### 2.3 Gli interludi (il presente)
 - **Presente indicativo.** Da 300 a 600 parole. Un solo **piccolo evento del presente** (i fiori, la nave, una lettera, una telefonata, la mano ferma sulla pagina) che si specchia con la scena accanto, senza spiegarla.
 - **Niente riassunti di trama e niente date.** Nessun oggetto che dati il presente (niente cellulari, computer, schermi): il telefono è «il telefono».
 - **Personaggi del presente:** la moglie (mai nominata [PROPOSTA]), la figlia al telefono, il figlio che viene di rado, il mare, la nave. Nessun personaggio del 1976 compare vivo nel presente.
-- **Formato [PROPOSTA]:** gli interludi non hanno numero di capitolo. Portano un titolo di una sola parola, un oggetto, in corsivo (per esempio *I fiori*, *La nave*), e stanno tra due capitoli.
+- **Formato:** gli interludi non hanno numero di capitolo. Portano un titolo breve, 1-2 parole, in corsivo (per esempio *I fiori*, *La nave*), e stanno tra due capitoli.
+
+### 2.4 Voce d'autore
+Da compilare dopo l'approvazione della pagina campione.
+
+### 2.5 Il nome di Lucia
+Il nome «Lucia» **non compare prima del cap. 37**: né nel racconto, né nel prologo, né negli interludi I-VI. Fino ad allora il narratore scrive «lei» o «il ritratto». Dal cap. 37 in poi (interludi VII-IX ed epilogo compresi) il nome si usa sempre (bibbia §5.8).
 
 ---
 
@@ -107,6 +113,7 @@ Con questo metodo il vecchio testo vale **49.998 parole**. Il target di **78.000
 | «una specie di» | 10 |
 | «qualcosa di» + aggettivo (qualcosa di freddo, di antico) | 1 per capitolo |
 | «come se» | 2 per capitolo |
+| «fischiare» / il fischio in senso morale | **6** apparizioni esplicite: cap. 10, cap. 23, cap. 35, interludio VII, cap. 39, epilogo. I capp. 9, 17 e 19 funzionano senza il verbo |
 
 ### 3.6 Il tic del contare
 Contare è un tratto di Beniamino (passi, ore, soldi, secondi, gradini, mazzette), ma ripetuto diventa un tic dell'autore. Tetto: **al massimo 3 gesti di conteggio per capitolo**, inclusi quelli del narratore adulto. Un elenco di conteggi nella stessa frase vale come un gesto solo. Il conteggio dei gesti va annotato nel registro dei contatori (sezione 9).
@@ -240,7 +247,7 @@ Il dialetto **affiora**: sta in poche parole, in qualche costruzione, nella sint
 2. Il controllo anti-riciclo (7 parole) è pulito?
 3. Frase media tra 10 e 13? Dialogo tra 15 e 35%?
 4. C'è almeno una scena in tempo reale di 800 o più parole?
-5. Intrusioni del vecchio: da 2 a 5, ognuna con la sua àncora temporale? Nessun aforisma prestato al ragazzo?
+5. Intrusioni del vecchio: da 1 a 3 (zero nel cap. 10), ognuna con la sua àncora temporale? Aforismi del vecchio entro uno ogni due capitoli? Nessun aforisma prestato al ragazzo?
 6. Le formule contate (3.5) e le immagini vietate (4.3) sono sotto soglia? Il registro qui sotto è aggiornato?
 7. Similitudini: al massimo 1 per pagina, concrete, nei campi ammessi?
 8. La chiusura è di un tipo ammesso? Il conto delle sentenze è sotto 8?
@@ -251,6 +258,7 @@ Il dialetto **affiora**: sta in poche parole, in qualche costruzione, nella sint
 13. Gesti di conteggio: al massimo 3 (3.6)?
 14. Nessun paragrafo segue lo schema vietato del 4.6 (metafora spiegata, conclusione filosofica)?
 15. Parole contate con il metodo unico (sezione 1)?
+16. Il nome «Lucia» è assente se il capitolo viene prima del cap. 37 (prologo e interludi I-VI compresi)? Presente, dal cap. 37 in poi, al posto di «lei»? (2.5)
 
 ---
 

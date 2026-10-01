@@ -214,3 +214,27 @@ Legenda:
   - r. 1863: «lo sapevano tutti», che va inteso come «tutti nella stanza».
 - **Il manuale di stile:** non toccato in questa parte (vedi Fase 3e).
 - **`libri/kurgan-giorgi/`:** non toccata.
+
+---
+
+## Nota della Fase 3e (1 ottobre 2026)
+
+**Cambiato**
+- **`03-architettura/manuale-di-stile.md`** (numeri di riga nuovi):
+  - r. 64 (§2.2): intrusioni da 1 a 3 per capitolo, con alcuni capitoli a zero; il cap. 10 resta puro.
+  - r. 65 (§2.2): aforismi del vecchio al massimo uno ogni due capitoli (circa 20 nel libro).
+  - r. 72 (§2.3): titolo degli interludi breve, 1-2 parole, in corsivo. Tolta la marca [PROPOSTA] dal formato, ora deciso.
+  - rr. 74-75 (nuovo §2.4): «Voce d'autore», da compilare dopo l'approvazione della pagina campione.
+  - rr. 77-78 (nuovo §2.5): la regola sul nome «Lucia».
+  - r. 116 (§3.5): la riga «fischiare / il fischio in senso morale», 6 apparizioni esplicite.
+  - r. 250 (§8, voce 5): la checklist allineata alle nuove soglie di intrusioni e aforismi.
+  - r. 261 (§8, nuova voce 16): il controllo del nome «Lucia».
+- **`02-bibbia/bibbia.md`:** r. 407 (§7, riga «Contare»), ora «massimo 3 gesti di conteggio per capitolo (manuale §3.6)».
+- **`03-architettura/scaletta.md`:**
+  - r. 22 («Struttura in breve»): 49.998 parole nel vecchio testo (metodo unico), crescita del 56% verso 78.000.
+  - r. 33 (prologo): 526 diventa 522 parole, ricontate con il metodo unico. È l'unico altro numero della scaletta calcolato con il vecchio conteggio.
+
+**Non toccato, e perché**
+- **Scaletta, tutto il resto:** per istruzione. Restano da allineare le rr. 241, 248 e 254 (capp. 23-25), segnalate nella nota della Fase 3d.
+- **Bibbia §8, filone 4:** «contro circa 1.260 parole del vecchio cap. 14». Con il metodo unico il v.cap. 14 ha 1.228 parole. Non corretto: in questa fase la bibbia andava toccata solo nella riga «Contare».
+- **`01-originale/`, `00-progetto/briefing.md`, `libri/kurgan-giorgi/`:** non toccati.
