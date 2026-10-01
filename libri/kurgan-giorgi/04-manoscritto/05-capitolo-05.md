@@ -190,7 +190,7 @@ Flora lo ripassò in treno, al ritorno, come ripassava tutto. Chi lo sapeva. Il 
 
 Il treno era mezzo vuoto. Fuori era già buio. Nel vetro vedeva la sua faccia sovrapposta ai campi neri, e sotto la faccia la stanchezza, che ormai non se ne andava più nemmeno con il sonno.
 
-Pensò a Carlo De Stefano senza volerlo, come le capitava a quell'ora. Colonnello, quarantadue anni, un uomo che conosceva da un anno e con cui cenava una volta al mese, senza che nessuno dei due avesse mai dato un nome alla cosa. Lui lavorava "per il ministero", diceva. Non diceva quale. Lei non chiedeva, perché era un magistrato e sapeva che c'erano domande che, una volta fatte, obbligavano a verbalizzare la risposta.
+Pensò a Carlo De Stefano senza volerlo, come le capitava a quell'ora. Colonnello, quarantadue anni, un uomo che conosceva da un anno e con cui cenava una volta al mese, senza che nessuno dei due avesse mai dato un nome alla cosa. Lui lavorava «per il ministero», diceva. Non diceva quale. Lei non chiedeva, perché era un magistrato e sapeva che c'erano domande che, una volta fatte, obbligavano a verbalizzare la risposta.
 
 Non gli aveva detto del pool. Non l'aveva detto a nessuno. Nemmeno a sua madre, che la sera la chiamava sempre alle nove e un quarto.
 

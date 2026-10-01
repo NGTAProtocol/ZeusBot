@@ -16,7 +16,7 @@ Direzione.
 
 Da tre settimane lavorava al diciannovesimo piano.
 
-Il giorno dopo la chiusura, alle nove del mattino, una donna dell'ufficio del personale lo aveva chiamato in una saletta con le pareti di vetro smerigliato. Una donna gentile, sui cinquant'anni, con un fascicolo che non aveva mai aperto. Gli aveva detto che la direzione aveva notato il suo lavoro. Che un profilo come il suo era sprecato sul desk. Che c'era bisogno di una persona precisa alle riconciliazioni di fine mese, per crescere, per vedere l'azienda "dall'interno dei suoi numeri".
+Il giorno dopo la chiusura, alle nove del mattino, una donna dell'ufficio del personale lo aveva chiamato in una saletta con le pareti di vetro smerigliato. Una donna gentile, sui cinquant'anni, con un fascicolo che non aveva mai aperto. Gli aveva detto che la direzione aveva notato il suo lavoro. Che un profilo come il suo era sprecato sul desk. Che c'era bisogno di una persona precisa alle riconciliazioni di fine mese, per crescere, per vedere l'azienda «dall'interno dei suoi numeri».
 
 Tommaso aveva ringraziato. Aveva contato quante volte lei aveva detto la parola *crescere*. Quattro.
 

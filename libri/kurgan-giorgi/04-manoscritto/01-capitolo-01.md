@@ -156,7 +156,7 @@ Al tavolo accanto qualcuno aveva lasciato il giornale del mattino. In prima pagi
 
 Aveva scelto AV System per un motivo solo.
 
-Aveva ventinove anni e una laurea presa in corso, con una tesi sui modelli di prezzo delle obbligazioni che il relatore aveva definito "inutilmente elegante". Aveva mandato quarantadue curricula. Lo avevano chiamato in tre. AV System era l'unica che non gli aveva chiesto chi fosse suo padre.
+Aveva ventinove anni e una laurea presa in corso, con una tesi sui modelli di prezzo delle obbligazioni che il relatore aveva definito «inutilmente elegante». Aveva mandato quarantadue curricula. Lo avevano chiamato in tre. AV System era l'unica che non gli aveva chiesto chi fosse suo padre.
 
 Gli avevano dato un test di tre ore e una stanza vuota. Poi un colloquio con due persone che non si erano presentate. Poi una mail. Nessuna raccomandazione, nessun cognome da pronunciare. Solo il test.
 

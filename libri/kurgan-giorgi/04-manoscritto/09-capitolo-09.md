@@ -104,7 +104,7 @@ Due. Carlo sapeva che la Consob aveva mandato i dati per giorno.
 
 Tre. Carlo sapeva un orario: le 12.07. Un numero: trentuno. Un luogo: Merania.
 
-Quattro. Carlo lavorava "per il ministero", e il ministero, qualunque fosse, non aveva accesso ai dati di regolamento dei titoli senza un provvedimento di un magistrato.
+Quattro. Carlo lavorava «per il ministero», e il ministero, qualunque fosse, non aveva accesso ai dati di regolamento dei titoli senza un provvedimento di un magistrato.
 
 La pista era vera. La sentiva come un gradino sotto il piede, nel buio. Era vera e precisa. Troppo precisa. Non era la pista di uno che aveva sentito qualcosa. Era la pista di uno che aveva visto i dati.
 
@@ -136,7 +136,7 @@ Tornò in ufficio alle 11.47.
 
 Prima di togliersi il cappotto, fece una cosa sola. Aprì il fascicolo delle rogatorie e controllò chi aveva visto quella per Valdhof.
 
-La rogatoria era partita da lei, era passata per il ministero della Giustizia, era andata all'ambasciata, era arrivata alla banca. Il ministero. Quattro uffici, forse sei funzionari. Carlo lavorava "per il ministero". Non aveva mai detto quale.
+La rogatoria era partita da lei, era passata per il ministero della Giustizia, era andata all'ambasciata, era arrivata alla banca. Il ministero. Quattro uffici, forse sei funzionari. Carlo lavorava «per il ministero». Non aveva mai detto quale.
 
 Poteva essere quella la strada. Una rogatoria passata per troppe mani, qualcuno che parlava a un caffè, una voce arrivata a un colonnello. Era una spiegazione. Flora la scrisse su un foglio, con un numero accanto: uno.
 
