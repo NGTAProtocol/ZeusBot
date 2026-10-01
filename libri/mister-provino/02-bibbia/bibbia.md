@@ -1,7 +1,7 @@
 # Mister Provino — Bibbia
 
 Versione 1 (Fase 3). Documento di riferimento per la riscrittura da zero.
-Il vecchio testo (`00-progetto/registro-dei-fatti_vecchio-testo.md`) vale solo come **registro dei fatti**: da lì si prendono eventi, nomi e oggetti, mai frasi.
+Il vecchio testo (`01-originale/Mister_Provino_revisione_completa.md`) vale solo come **registro dei fatti**: da lì si prendono eventi, nomi e oggetti, mai frasi.
 
 Convenzioni:
 - **[CANONE]**: fatto fissato dal briefing, non si tocca.
@@ -25,7 +25,7 @@ Un uomo di settant'anni, in una casa bianca su una scogliera dall'altra parte de
 
 ### 2.1 Beniamino — il ragazzo (13 anni) e il narratore (70)
 
-- **Dati [DECISO]:** nato a Bari Vecchia il 2 maggio 1963, ultimo figlio di Vito e Dora (nomi [PROPOSTA], vedi 2.5-2.6). Nel luglio 1976 ha 13 anni. Scrive intorno ai 70 anni; il presente non si data mai (vedi 2.1-bis).
+- **Dati [DECISO]:** nato a Bari Vecchia il 2 maggio 1963, ultimo figlio di Gaetano e Dora (nomi [PROPOSTA], vedi 2.5-2.6). Nel luglio 1976 ha 13 anni. Scrive intorno ai 70 anni; il presente non si data mai (vedi 2.1-bis).
 - **VUOLE:** all'inizio non essere visto (farsi piccolo, cose e persone gli scivolano addosso); poi essere guardato come un ragazzo e non come uno strumento (Michele, O Anjo); poi salvare Checco, e alla fine Michele.
 - **TEME:** di diventare suo padre (il respiro impastato sul tavolo); che Checco gli veda i buchi; più avanti, di diventare sua madre (cap. 17) e di diventare Nicola (capp. 23-26).
 - **COME SI COMPORTA E PARLA:** parla poco e risponde corto. Mente con «la faccia giusta» e costruisce bugie con dentro un difetto piccolo e vero. Conta passi, soldi, ore, gradini. Misura le distanze. Legge mani e facce (le mani prima delle facce). Distingue i sapori sotto la lingua. Porta le maniche lunghe anche ad agosto. Quando ha paura fa un lavoro con le mani o con la testa. In dialetto dice poco: «uè», qualche parola barese con Ciccio, con la madre e con Franco; con Michele parla italiano.
@@ -36,7 +36,7 @@ Un uomo di settant'anni, in una casa bianca su una scogliera dall'altra parte de
 
 #### 2.1-bis Il settantenne (il presente che scrive)
 
-- **Dati fissi [CANONE]:** casa bianca su una scogliera, l'oceano intero dalla finestra; la stanza dove scrive con il ritratto di Lucia appeso; i fiori cambiati ogni mattina (da quando è morto Michele li cambia lui); il segno del collare sul collo; una moglie che sa poco; due figli che non sanno niente; le lettere dell'avvocato conservate; la nave ferma al largo con le luci di bordo.
+- **Dati fissi [CANONE]:** casa bianca su una scogliera, l'oceano intero dalla finestra; la stanza dove scrive con il ritratto di lei appeso (il nome solo dal cap. 37 in poi, vedi 5.8); i fiori cambiati ogni mattina (da quando è morto Michele li cambia lui); il segno del collare sul collo; una moglie che sa poco; due figli che non sanno niente; le lettere dell'avvocato conservate; la nave ferma al largo con le luci di bordo.
 - **Il presente non ha data [DECISO].** Nessun anno, nessuna tecnologia datante (niente telefoni cellulari descritti, niente internet). Il telefono è «il telefono». L'età («ho settant'anni») è l'unico orologio.
 - **[PROPOSTA] Famiglia:** la moglie è brasiliana; la conosce a vent'anni al porto dove vende il pesce della ditta. Sa di Bari solo «il mare, i vicoli, un fratello morto in Italia». Due figli adulti (un maschio e una femmina) che vivono in città, lontani dal mare. Parlano l'italiano male e lo capiscono bene. La figlia chiama la domenica.
 - **COME SCRIVE:** al presente negli interludi e al passato nel racconto. Non si assolve e non si accusa più di quanto serve. Quando non ricorda lo dice; quando ricostruisce da testimonianze lo dichiara (Carlo, la levatrice, l'avvocato).
@@ -44,7 +44,7 @@ Un uomo di settant'anni, in una casa bianca su una scogliera dall'altra parte de
 
 ### 2.2 Nicola — il cugino (30 anni)
 
-- **Dati [PROPOSTA]:** nato nel 1946, figlio del fratello maggiore di Vito (lo zio è morto), quindi porta lo stesso cognome della famiglia di Beniamino. Da qui la frase di Checco: sangue loro «solo di cognome». Fa il garzone di panetteria a tredici anni (1959) e a tredici anni viene «preso» da un uomo importante: è il parallelo esatto con Beniamino, e Nicola lo rivela solo nel cap. 26.
+- **Dati [PROPOSTA]:** nato nel 1946, figlio del fratello maggiore di Gaetano (lo zio è morto), quindi porta lo stesso cognome della famiglia di Beniamino. Da qui la frase di Checco: sangue loro «solo di cognome». Fa il garzone di panetteria a tredici anni (1959) e a tredici anni viene «preso» da un uomo importante: è il parallelo esatto con Beniamino, e Nicola lo rivela solo nel cap. 26.
 - **VUOLE:** rispetto dall'alto (dal Capo, dai calabresi, dalla villa); Beniamino come strumento (il «fiuto») e come assicurazione (tenerlo legato con Checco, poi con Michele, poi con la madre).
 - **TEME:** il Capo; i debiti; essere visto piccolo.
 - **COME SI COMPORTA E PARLA:** la cortesia è la sua arma («È matematica, non cattiveria»). Tamburella sul volante quando aspetta. Profumo costoso, che Beniamino si porta addosso fino a Trani. Guida l'Alfa GT Junior rossa, con San Nicola nella nicchia del cruscotto. Aggiusta il colletto degli altri con due dita. Tiene per sé tutto quello che gli dicono, «come i soldi». Chiama il cugino «Mister Provino»; «Beniamino» solo nei momenti di verità (massimo 4 volte nel libro: al buio del parcheggio dopo la villa, sotto il cappuccio nel furgone, alla liberazione, sulla Jonica nella confessione del panettiere).
@@ -67,13 +67,13 @@ Un uomo di settant'anni, in una casa bianca su una scogliera dall'altra parte de
 - **Dati [DECISO]:** nato nel 1906. A vent'anni (1926) si innamora di Lucia, sarta, che abita di fronte alla sua finestra, in fondo alla Vallisa. Nel 1928 tiene in casa la cassa di fucili; Lucia li butta in mare dal molo di San Nicola in nove viaggi notturni; a lui spaccano il ginocchio con una spranga (da qui il bastone). I risparmi per Buenos Aires se ne vanno per ripagare la cassa. Lucia muore di tisi nell'inverno 1930. Da allora cambia i fiori al suo ritratto ogni mattina e dipinge il mare che non va a guardare. Nel 1976 vive in un basso a livello della strada, a due vicoli da Beniamino: quello dal quale guardava la finestra di lei. In Brasile dipinge altri 23 anni e muore nel 1999, a 93 anni, nella casa sulla scogliera, con un pennello sporco sul comodino.
 - **VUOLE:** dipingere il mare vero (all'inizio non lo sa); cambiare i fiori a «lei»; che il ragazzo resti un ragazzo.
 - **TEME:** Nicola, e lo confessa (cap. 12); sperare di nuovo; morire lontano da quella stanza.
-- **COME SI COMPORTA E PARLA:** non fa domande: è il suo modo di voler bene, e anche la sua colpa (lui stesso lo dice nel cap. 12). Cucina per chi trema. Dice «lei» e mai il nome: il nome Lucia esce una sola volta, nel cap. 37, e da lì in poi lo usa sempre. Usa il bastone. Parla con le mani sporche di colore. Chiama Beniamino «figlio mio» e di rado «guaglione», l'unico napoletanismo che si concede, perché da giovane ha lavorato a Napoli [PROPOSTA]. Insegna l'olio contro l'acqua (cap. 4) e la geografia delle facce (cap. 4).
+- **COME SI COMPORTA E PARLA:** non fa domande: è il suo modo di voler bene, e anche la sua colpa (lui stesso lo dice nel cap. 12). Cucina per chi trema. Dice «lei» e mai il nome: il nome Lucia esce una sola volta, nel cap. 37, e da lì in poi lo usa sempre (regola in 5.8). Usa il bastone. Parla con le mani sporche di colore. Chiama Beniamino «figlio mio» e «ragazzo». Nessuna parola napoletana: Michele non è mai stato più lontano di Foggia (vedi 5.3). Insegna l'olio contro l'acqua (cap. 4) e la geografia delle facce (cap. 4).
 - **NON FA MAI:** non giudica, non si fa pagare, non chiude la porta (tranne la sera di Carlo, cap. 30, e la sera del magro, cap. 35).
 - **ARCO:** rifiuta il Brasile (capp. 33-34) → il fuoco gli prende tutti i mari, non lei (cap. 36) → accetta (cap. 37), dicendo per la prima volta il nome → il mare vero: «finalmente» (cap. 43).
 
 ### 2.5 La madre — Addolorata, detta Dora [PROPOSTA]
 
-- **Dati [PROPOSTA]:** nata nel 1938. Da ragazza fa la camiciaia in un laboratorio vicino al porto; ha una calligrafia bella, imparata dalle suore, che nessuno le conosce (la firma del cap. 38 lo rivela). Sposa Vito a sedici anni e partorisce Checco a sedici anni. La dipendenza comincia prima della nascita di Beniamino: l'origine va decisa, vedi `incongruenze.md` n. 1.
+- **Dati [PROPOSTA]:** nata nel 1938. Da ragazza fa la camiciaia in un laboratorio vicino al porto; ha una calligrafia bella, imparata dalle suore, che nessuno le conosce (la firma del cap. 38 lo rivela). Sposa Gaetano a sedici anni e partorisce Checco a sedici anni. La dipendenza comincia prima della nascita di Beniamino: l'origine va decisa, vedi `incongruenze.md` n. 1.
 - **VUOLE:** la dose e la quiete; che nessuno le chieda niente.
 - **TEME:** Nicola; restare senza.
 - **COME SI COMPORTA E PARLA:** barese secco, insulti usati come carezze mancate («Muoviti»). La sigaretta spenta tra le dita. La mattina, prima della dose, ha un'ora di lucidità: in quell'ora è quasi una madre (cap. 15, una scena di cucina).
@@ -81,7 +81,7 @@ Un uomo di settant'anni, in una casa bianca su una scogliera dall'altra parte de
 - **IL SUO SILENZIO:** il secondo dei tre, venduto per una busta (1973, cap. 6), e poi di nuovo per la dose (cap. 17: «Stai zitto»).
 - **ARCO:** ambigua, non mostruosa. La firma dell'assenso (cap. 38) è l'unico atto con cui lascia andare il figlio invece di tenerlo. Nessuna notizia dopo; resta solo la copia della firma (interludio VIII, epilogo).
 
-### 2.6 Il padre — Vito [PROPOSTA]
+### 2.6 Il padre — Gaetano [PROPOSTA]
 
 - **Dati [PROPOSTA]:** nato nel 1930. Ex scaricatore al porto, ha perso il posto per il vino. Da allora vive di giornate a chiamata e dei soldi della moglie.
 - **VUOLE:** non sentire.
@@ -161,7 +161,7 @@ Controllo fatto sulle mie conoscenze, **senza una ricerca d'archivio**: prima de
 
 ## 3. Cronologia 1976 [DECISO]
 
-Anni di nascita: Michele 1906, Vito 1930, Dora 1938, Nicola 1946, Checco 1954, Franco 1961, Cataldo 1959, Beniamino 1963. I giorni della settimana sono verificati sul calendario reale del 1976.
+Anni di nascita: Michele 1906, Gaetano 1930, Dora 1938, Nicola 1946, Checco 1954, Franco 1961, Cataldo 1959, Beniamino 1963. I giorni della settimana sono verificati sul calendario reale del 1976.
 
 ### Prima del romanzo
 
@@ -251,13 +251,13 @@ Nota sulle distanze temporali. Tra l'astinenza (14-20 settembre) e la tempesta (
 ### Bari Vecchia
 - **La casa di Beniamino:** primo piano su un cortile di poveri, i panni stesi, il portone. La cucina con il tavolo dove il padre crolla; la poltrona sfondata della madre nella stanza accanto; la camera con la crepa sul soffitto, la finestra sul vicolo, il chiodo della teca. Il Ciao verde militare appoggiato al muro sotto la finestra, il cavalletto mai tirato giù (la molla è rotta).
 - **Il basso di Michele:** a due vicoli, verso la Vallisa. Una stanza a livello della strada: cavalletto, sedia impagliata, branda, angolo cucina, finestrella con le grate sul vicolo e finestrella sul retro verso il cortile dei panni. Il ritratto è a tre passi a destra dalla porta, su un chiodo all'altezza della fronte di un ragazzo; sotto, il vasetto dei fiori di campo. La porta resta socchiusa.
-- **La finestra di Lucia:** di fronte al basso di Michele, ora di altri. [PROPOSTA] Michele la guarda ancora.
+- **La finestra di lei:** di fronte al basso di Michele, ora di altri. [PROPOSTA] Michele la guarda ancora.
 - **Il bar di Nicola:** tavolino fuori, gli uomini intorno; un vicolo laterale dove si parla contro il muro.
 - **Il bar-circolo di Carlo:** in fondo a un vicolo, due stanze basse, la tenda di perline, il tavolo di formica, il soffitto giallo di fumo, le casse di bibite.
 - **Lo spiazzo davanti alla chiesa:** il pallone di stracci, la staccia, il gioco dello schiaffo (ricordo, cap. 6).
 - **La cabina telefonica:** in fondo alla via del basso, sotto il lampione.
 - **Il mercato del pesce sul molo di San Nicola:** le casse, i ricci, Ciccio, Pasquale; l'Alfa che fa tacere tutti. Il nome dialettale del posto si può usare come colore; nessuna persona reale.
-- **Il molo di San Nicola:** dove Lucia buttò i fucili.
+- **Il molo di San Nicola:** dove lei buttò i fucili.
 
 ### Bari e dintorni
 - **Pane e Pomodoro:** la spiaggia a sud-est del lungomare, punto di sbarco; la duna; i motocarri.
@@ -297,7 +297,7 @@ Sulla nave: «fino a due giorni fa non ero mai stato più lontano di Foggia» (M
 Niente Gioia Tauro. La roba arriva con i pescherecci a **la Scala**, sulla costa ionica sotto l'Aspromonte, e da lì risale per mare fino al porto di Bari. Zi' Nardu lo dice nel cap. 24 («la strada è cambiata: adesso viene per mare dalla Scala»); il ragazzo ci pensa nel cap. 28; il giornale del cap. 31 scrive di una «rotta via mare dalla costa ionica al porto di Bari».
 
 ### 5.5 Dialetto
-Baresi: «uagnò», «uè». Napoletani (don Tobia, Ciro): «guagliò», «piccerì». Michele: «guaglione», una rarità (vedi 2.4). Niente accenti grafici decorativi. Dettagli nel manuale di stile.
+Baresi: «uagnò», «uè». Napoletani (don Tobia, Ciro): «guagliò», «piccerì». Michele: nessuna parola napoletana; dice «figlio mio» e «ragazzo» (vedi 2.4). Niente accenti grafici decorativi. Dettagli nel manuale di stile.
 
 ### 5.6 Checco: tre anni o tre anni e mezzo
 La pena è di 3 anni e 6 mesi (marzo 1973-settembre 1976). A Trani, a luglio, sono passati tre anni e quattro mesi: Beniamino dice «più di tre anni», Checco dice «tre anni e mezzo» a settembre.
@@ -321,6 +321,9 @@ Lo zaino contiene **220 milioni** in banconote da 100.000 lire: **22 mazzette da
 - In Brasile: una parte nell'intercapedine del muro, una in una cassetta sotto il pavimento della cucina.
 - Sul cambio e sull'uscita dei contanti dall'Italia vedi incongruenze n. 21.
 
+### 5.8 Il nome di Lucia
+Il nome «Lucia» non compare nel testo prima del cap. 37: né nel racconto, né nel prologo, né negli interludi I-VI. Fino ad allora il narratore scrive «lei» o «il ritratto». Dal cap. 37 in poi (interludi VII-IX ed epilogo compresi) il nome si usa sempre. Nella bibbia il nome resta solo nei dati di riferimento (2.4, cronologia, 2.14).
+
 ---
 
 ## 6. Fili caduti: decisioni [PROPOSTA salvo dove indicato]
@@ -329,7 +332,7 @@ Lo zaino contiene **220 milioni** in banconote da 100.000 lire: **22 mazzette da
 Primavera 1976, al mercato del pesce. Ciccio fa un gioco con i ragazzi: ricci a occhi chiusi, indovinare da quale scoglio vengono. Beniamino non sbaglia mai. Ciccio ride e lo chiama «mister», come l'allenatore che fa i provini ai ragazzi del pallone; e da lì «Mister Provino»: quello che prova, e quello che fa il provino. Il doppio senso (assaggio e audizione) resta sottinteso: il ragazzo è sempre sotto esame. Nicola sente il nome e se lo prende: dallo scherzo al lavoro. Il vecchio lo racconta per intero nel cap. 15. Il cap. 1 accenna al mercato e a Ciccio, senza spiegare.
 
 ### 6.2 La maglia nella teca — da usare
-La teca resta nella stanza vuota della casa, per terra, dove l'ha posata il magro (cap. 35). La maglia parte: piegata in fondo allo zaino, sotto le mazzette (cap. 39), senza vetro. In Brasile è appesa nella stanza dove il vecchio scrive, accanto al ritratto di Lucia (interludi). Quando non protegge più niente, la maglia smette di essere una reliquia (la parola resta vietata) e torna a essere una maglia.
+La teca resta nella stanza vuota della casa, per terra, dove l'ha posata il magro (cap. 35). La maglia parte: piegata in fondo allo zaino, sotto le mazzette (cap. 39), senza vetro. In Brasile è appesa nella stanza dove il vecchio scrive, accanto al ritratto (interludi; il nome solo dall'interludio VII in poi, vedi 5.8). Quando non protegge più niente, la maglia smette di essere una reliquia (la parola resta vietata) e torna a essere una maglia.
 
 ### 6.3 O Anjo — da usare, con misura
 Il suo è il primo Brasile (cap. 8); il Brasile come casa (cap. 26); nel cap. 42, a Santos, Beniamino cerca il suo nome su un giornale sportivo e trova solo una riga su un infortunio e un ritorno a San Paolo. Non lo va a cercare. Nel presente (interludio IX o epilogo) il vecchio legge che è morto e capisce di non avergli mai scritto. Mai un incontro: la gentilezza gratuita resta gratuita.
@@ -359,7 +362,7 @@ La stretta di mano tesa del cap. 2 è l'informazione che Beniamino usa nel cap. 
 Cap. 2: la voce del vecchio, la levatrice. Cap. 20: il corpo che «ricorda da prima di ricordare». Cap. 38: la madre, nella sua confessione rotta, ci arriva vicino senza dirlo.
 
 ### 6.12 Il cognome e i nomi di battesimo
-Nessun cognome. I nomi della madre (Dora) e del padre (Vito) compaiono con parsimonia: in bocca ad altri (zia Maria, Nicola, l'impiegato della Questura che legge i moduli) e nella firma.
+Nessun cognome. I nomi della madre (Dora) e del padre (Gaetano) compaiono con parsimonia: in bocca ad altri (zia Maria, Nicola, l'impiegato della Questura che legge i moduli) e nella firma.
 
 ---
 
@@ -379,7 +382,7 @@ Il conto vale per le apparizioni **esplicite o simboliche**. Gli oggetti di scen
 | **Ritratto e fiori** | 8 | 4, 12, 36, 37, 40, interludio I, interludio IX, epilogo |
 | **Collare e segno sul collo** | 6 | prologo, 25, 27, 39 (foto del passaporto), interludio V, epilogo |
 | **La nave ferma con le luci** | 4, fisso | cap. 1, interludio III, cap. 41, ultima pagina |
-| **Fischiare / non fischiare** (metafora) | 6 | 10, 23, 35, interludio VII, 39 (Franco), epilogo |
+| **Fischiare / non fischiare**, il verbo esplicito | 6 | cap. 10, cap. 23, cap. 35, interludio VII, cap. 39 (Franco), epilogo. Le scene della madre (cap. 17) e del fratello (cap. 19), e quella del cap. 9 con Franco, stanno nella scala dei fischi (sezione 9) **senza** il verbo «fischiare» |
 | **La crepa sul soffitto** | 4 | 2, 11, 17, 19 |
 | **Contare** (tic del ragazzo) | libero come gesto; mai commentato più di 3 volte | |
 
@@ -402,9 +405,11 @@ Il conto vale per le apparizioni **esplicite o simboliche**. Gli oggetti di scen
 
 Asse strutturale del libro, che tutte le scene servono.
 
-1. **Non fischia per l'amico** (cap. 9-10): vede che Franco ruba e tace; poi fa il palo e si volta. È il silenzio per paura, il terzo dei tre.
-2. **Non fischia per la madre** (cap. 17): lei lo zittisce e lui si unisce a lei.
-3. **Non fischia per il fratello** (cap. 19): a Checco non può dire niente, pena la gola di Checco.
+I gradini 1-3 sono scene di silenzio: il verbo «fischiare» non compare nei capp. 9, 17 e 19. Il verbo esplicito compare sei volte in tutto il libro, come da tetto della sezione 7: cap. 10, cap. 23, cap. 35, interludio VII, cap. 39, epilogo.
+
+1. **Non fischia per l'amico** (cap. 9-10): vede che Franco ruba e tace (cap. 9, senza il verbo); poi fa il palo e si volta (cap. 10: qui il verbo c'è, è la prima delle sei apparizioni). È il silenzio per paura, il terzo dei tre.
+2. **Non fischia per la madre** (cap. 17): lei lo zittisce e lui si unisce a lei. Senza il verbo «fischiare».
+3. **Non fischia per il fratello** (cap. 19): a Checco non può dire niente, pena la gola di Checco. Senza il verbo «fischiare».
 4. **Fischia all'orecchio sbagliato** (cap. 23) [PROPOSTA CENTRALE]: fa arrivare ai calabresi la voce che Nicola compra a Napoli. È la sua vendetta ed è una vera caccia, ma fischia a un altro padrone, e per questo finisce incatenato in una grotta (cap. 25). Allora non lo capisce; il vecchio sì, e lo dice una volta sola. Da quella voce discende tutto: il disprezzo dei calabresi, il crollo di Nicola, i soldi rubati al Capo, la morte al circolo. La caccia riesce nel modo peggiore.
 5. **Fischia** (cap. 35): la telefonata al 113, per salvare Michele. Tardi, una volta, e all'orecchio giusto.
 

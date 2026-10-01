@@ -1,6 +1,6 @@
 # Mister Provino — Incongruenze aggiuntive
 
-Versione 1 (Fase 3). Contraddizioni e problemi di verosimiglianza trovati nel vecchio testo (`00-progetto/registro-dei-fatti_vecchio-testo.md`), **in più** rispetto all'elenco del briefing (punto 6), che è già applicato nella bibbia.
+Versione 1 (Fase 3). Contraddizioni e problemi di verosimiglianza trovati nel vecchio testo (`01-originale/Mister_Provino_revisione_completa.md`), **in più** rispetto all'elenco del briefing (punto 6), che è già applicato nella bibbia.
 
 **Nessuna è risolta.** Dove ho un'idea la scrivo come «Possibile via», ma resta da decidere. «v.cap.» = capitolo del vecchio testo; «cap.» = capitolo della scaletta nuova.
 
@@ -120,3 +120,40 @@ Legenda:
 ### 25. Le date del prologo della stesura Drive · T · nota
 - **Il problema:** le stesure su Drive (`Mister_Provino_ITA_CARTACEO_PRODUZIONE.docx`, `Mister_Provino_KDP_Interno_v2.docx`) hanno Beniamino di 16 anni, il 1971, Brindisi e Checco che esce. Se il libro già pubblicato è quello, il romanzo nuovo ne cambia fatti di base.
 - **Stato:** solo da sapere. La base scelta è la «revisione completa» (13 anni, 1976).
+
+---
+
+## Nota della Fase 3b (1 ottobre 2026)
+
+**Cambiato**
+- **Originale:** `00-progetto/registro-dei-fatti_vecchio-testo.md` → `01-originale/Mister_Provino_revisione_completa.md` (git mv).
+  - sha256 `78afbc2ca68d47731c0e883da9cfe88d240a735506afb9fac5ec49f760a0ec31`, 3.394 righe, 297.680 byte: identico.
+  - Da qui `01-originale/` è sola lettura.
+- **Rimandi al vecchio percorso aggiornati** in due file:
+  - `02-bibbia/bibbia.md`, r. 4;
+  - questo file, r. 3.
+  - Il `briefing.md` cita già il nome `Mister_Provino_revisione_completa.md` (r. 4) e non va cambiato.
+  - Nessun altro documento citava il vecchio percorso.
+- **Bibbia** (numeri di riga nuovi):
+  - **Michele senza Napoli.**
+    - r. 70 (§2.4): tolti «guaglione» e «da giovane ha lavorato a Napoli». Ora dice «figlio mio» e «ragazzo» e «non è mai stato più lontano di Foggia».
+    - r. 300 (§5.5): Michele senza parole napoletane.
+    - Nessun altro passo della bibbia lo porta a Napoli o oltre Foggia. Coerente con §5.3: «fino a due giorni fa non ero mai stato più lontano di Foggia».
+  - **Fischiare.**
+    - r. 385 (§7): il tetto riguarda il verbo esplicito, sei apparizioni: capp. 10, 23, 35, interludio VII, cap. 39, epilogo.
+    - rr. 408-415 (§9): nota sui gradini 1-3 senza il verbo; i capp. 9, 17 e 19 sono marcati «senza il verbo "fischiare"».
+  - **Lucia.**
+    - Nuova regola §5.8, rr. 324-326: il nome non compare prima del cap. 37, né nel prologo né negli interludi I-VI.
+    - Corretti r. 39 (§2.1-bis, «il ritratto di lei»), r. 254 e r. 260 (§4, «la finestra di lei», «dove lei buttò i fucili») e r. 335 (§6.2, «accanto al ritratto»).
+    - r. 70: rimando alla regola.
+  - **Il padre: Vito → Gaetano** in 6 righe: 28, 47, 76, 84, 164, 365. Nella bibbia non resta nessun «Vito».
+
+**Ricerca di «Vito» in tutto `libri/mister-provino/`:** nessuna occorrenza. Non compare in briefing, scaletta, manuale di stile, incongruenze né nell'originale.
+
+**Non toccato, e perché**
+- **`briefing.md`:** documento dell'autore. Usa «Lucia» nei dati fissi (rr. 24, 50, 81), ma come descrizione, non come testo del romanzo.
+- **`scaletta.md`:** già coerente sul nome di Lucia (r. 157 «il nome Lucia non si dice», r. 343 la rivelazione nel cap. 37). Non c'era nessun «Vito» da cambiare.
+- **`manuale-di-stile.md`:** non richiesto in questa fase.
+- **Bibbia, dati di riferimento:** il nome «Lucia» resta in §2.4 (r. 67), nella cronologia (r. 170), in §2.14 (r. 157) e nella cronologia del cap. 37 (r. 224). Sono note per chi scrive, non testo del romanzo.
+- **Bibbia, Napoli:** restano le menzioni del viaggio di Beniamino e Nicola (capp. 2, 6.10, §9 punto 4), che non riguardano Michele.
+- **Proposte del blocco C** (levatrice, «Perché i calabresi prendono Beniamino», origine del nome): solo in chat, non applicate.
