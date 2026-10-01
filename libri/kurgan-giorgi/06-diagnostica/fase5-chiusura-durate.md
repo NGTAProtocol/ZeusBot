@@ -239,7 +239,7 @@ Prima di ogni modifica ho letto la frase intera e ho cercato «sette» nello ste
 | 17 | 161 | dodici anni | cambiata (fase 4) |
 | 18 | 7 | dodici anni | cambiata (fase 4) |
 | 18 | 31 | dieci anni | invariata |
-| 18 | 175 | un anno | invariata |
+| 18 | 175 | un anno | invariata → cambiata nella fase 6 («due anni») |
 | 19 | 7 | trent'anni | invariata |
 | 19 | 15 | due anni | invariata |
 | 19 | 39 | Sei anni | invariata |
@@ -527,3 +527,31 @@ Prima di ogni modifica ho letto la frase intera e ho cercato «sette» nello ste
 - Cap. 43, r. 91, prima frase: riguarda Nicola, «in sei anni», e resta.
 - Cap. 12, rr. 19 e 71: per tua decisione.
 - Tutte le altre durate: per tua decisione.
+
+## Nota di chiusura della fase 6 (1 ottobre 2026)
+
+**Cambiato** (commit `2bea18c`): cap. 18, r. 175, solo «un anno» → «due anni». Il resto della frase e del paragrafo è identico.
+
+- **Prima:** «Kurgan guardò i tre. Tre facce stanche, tre versioni che combaciavano, tre uomini che gli avevano dato ognuno qualcosa in quindici, dieci, un anno. Nel Drenak gli ufficiali avrebbero chiesto chi, per primo, avesse toccato quel foglio. Avrebbero messo tre uomini in fila e cercato la crepa. Lui non lo fece. A un uomo non si chiedeva di dimostrare la propria lealtà: lo si offendeva e basta.»
+- **Dopo:** «Kurgan guardò i tre. Tre facce stanche, tre versioni che combaciavano, tre uomini che gli avevano dato ognuno qualcosa in quindici, dieci, due anni. Nel Drenak gli ufficiali avrebbero chiesto chi, per primo, avesse toccato quel foglio. Avrebbero messo tre uomini in fila e cercato la crepa. Lui non lo fece. A un uomo non si chiedeva di dimostrare la propria lealtà: lo si offendeva e basta.»
+- **Verifica:**
+  - Il ragazzo della Serrana sta con Kurgan dal giorno dopo la notte dei droni: cap. 5, r. 71, «Il giorno dopo, sei uomini della Serrana a Partenia con le mani in vista»; la notte dei droni è il 17 maggio Y (cap. 5, r. 153; cap. 11). Quindi dal 18 maggio Y al 16 giugno Y+2 sono **2,1 anni effettivi**, e «due anni» è esatto.
+  - **Correzione di un errore mio nelle fasi 4 e 5.** Avevo scritto che i serrani erano con Kurgan «da 2,6 anni», contando dal 14 novembre Y (cap. 3). Il conto era sbagliato: dal 14 novembre Y al 16 giugno Y+2 sono 1,6 anni, non 2,6.
+    - L'ancora giusta è il 18 maggio Y, che dà 2,1 anni: «due» resta corretto.
+    - Allo stesso modo, nella sezione A2 qui sopra, «cioè 2,6 anni prima» va letto «cioè 1,6 anni prima». Il valore di Adorisio (14,6 anni) era giusto.
+  - Nel cap. 18 nessun altro passo dà una durata per il ragazzo o per i serrani: rr. 115, 117, 123, 145, 147, 163, 167. Le sole altre occorrenze di «anni» nel capitolo sono la r. 7 («dodici anni prima», Kurgan–Giorgi) e la r. 31 («Tra dieci anni», battuta di Li Wei Chen).
+- **Parole:** 0. **Manoscritto:** 111.470. **PDF:** 493 pagine.
+
+**Verifica finale delle occorrenze di «N anni»:**
+- **Totale:** 403.
+- **Invariate:** 363.
+- **Cambiate:** 40 (35 nella fase 4, 4 nella fase 5, 1 nella fase 6). Più le due del cap. 5, r. 67, che non contengono più «N anni».
+- **Contraddizioni residue:** 0.
+- **Al limite (6 mesi esatti):** cap. 12, rr. 19 e 71. Non toccate per tua decisione.
+
+**Non toccato:**
+- Cap. 12, rr. 19 e 71.
+- Tutte le altre durate.
+- I sette interventi di voce non approvati.
+- Cap. 40, r. 59.
+- Le note interne (`stato.md`, `trama.md`, schede).
