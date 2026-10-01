@@ -359,7 +359,7 @@ Il tecnico tornò alle 14.25. Ventitré minuti.
 
 Tommaso lo riaprì. Era tutto dov'era. La posta, i modelli, lo sfondo con il mare che aveva messo il primo giorno. Tutto uguale.
 
-Non si fidò di niente per il resto del pomeriggio.
+Per il resto del pomeriggio non si fidò di niente che non potesse contare.
 
 
 <p align="center">* * *</p>
@@ -419,7 +419,7 @@ Dalla vetrata dell'attico Merania era una griglia di luci ordinate, e sopra la g
 
 «Lo so.»
 
-Lei girò una pagina. Non aggiunse altro, e lui le fu grato di quella misura, che era una delle ragioni per cui, diciassette anni prima, l'aveva scelta.
+Lei girò una pagina. Non aggiunse altro, e lui le fu grato di quella misura, che era una delle ragioni per cui, quindici anni prima, l'aveva scelta.
 
 
 <p align="center">* * *</p>
@@ -583,7 +583,7 @@ Kurgan guardò le uscite. Due. La scala da cui era sceso, e il cunicolo che port
 
 Adorisio lo guardò e scosse la testa, appena. Tanino non aveva chiamato.
 
-Kurgan si sedette a capotavola. Non disse niente per un po'. Lasciò che il silenzio facesse il suo lavoro, che era quello di far capire a ciascuno che stava per succedere qualcosa che non si sarebbe potuto disfare.
+Kurgan si sedette a capotavola. Non disse niente per un po'. Lasciò che il silenzio facesse il suo lavoro. Il generatore, nell'angolo, ronzava per tutti.
 
 
 <p align="center">* * *</p>
@@ -623,7 +623,7 @@ Sei mesi prima i capi della Serrana erano morti tutti nella stessa notte, in und
 
 Un uomo che si inginocchia così in fretta, pensava Kurgan, si rialza in fretta uguale.
 
-Quella sera guardò i sei uno per uno. Il più giovane, un ragazzo con le mani grandi, teneva gli occhi fissi su Adorisio. Adorisio era della Serrania anche lui, ma veniva da prima. Veniva da quindici anni con Kurgan. Per quei sei era un ponte. Kurgan lo sapeva e lo usava.
+Quella sera guardò i sei uno per uno. Il più giovane, un ragazzo con le mani grandi, teneva gli occhi fissi su Adorisio. Adorisio era della Serrania anche lui, ma veniva da prima. Veniva da tredici anni con Kurgan. Per quei sei era un ponte. Kurgan lo sapeva e lo usava.
 
 «Il dottore ci dava tre cose» disse. «I soldi. I porti. E gli occhi chiusi di chi doveva guardare.»
 
@@ -719,7 +719,7 @@ Tanino si fermò sull'ultimo gradino, bagnato di pioggia, con un sacchetto di pl
 
 Nessuno rise. Adorisio gli tolse il sacchetto dalle mani e guardò dentro. Medicine. Scatole di medicine, e uno scontrino.
 
-Kurgan si alzò di nuovo, andò verso di lui e gli mise una mano sulla nuca. Tanino aveva ventisei anni ed era alto poco più del suo petto. Aveva messo un ordigno sotto un sedile del pullman di Morenna alle sei e quaranta di un lunedì mattina, e poi era sceso alla fermata dopo, ed era andato a fare colazione.
+Kurgan si alzò di nuovo, andò verso di lui e gli mise una mano sulla nuca. Tanino aveva venticinque anni ed era alto poco più del suo petto. Aveva messo un ordigno sotto un sedile del pullman di Morenna alle sei e quaranta di un lunedì mattina, e poi era sceso alla fermata dopo, ed era andato a fare colazione.
 
 Kurgan questo lo sapeva. Lo sapeva e non lo pensava. C'erano cose che un uomo nella sua posizione doveva sapere senza pensarle, come sapeva dov'era la sicura di un'arma senza guardarla.
 
@@ -1035,7 +1035,7 @@ Si sedette su una sedia di plastica nel corridoio, con le mani in grembo, e aspe
 
 La sala riunioni era al terzo piano, con le finestre sui tetti di Albaterra e un tavolo ovale troppo grande per quattro persone.
 
-Il procuratore nazionale era già seduto a capotavola. Un uomo di sessant'anni, stanco, con una cravatta scura che aveva messo apposta. Accanto a lui c'erano due uomini che Flora non aveva mai visto e di cui conosceva già tutto quello che si poteva sapere da una rassegna stampa.
+Il procuratore nazionale era già seduto a capotavola. Un uomo di sessantaquattro anni, stanco, con una cravatta scura che aveva messo apposta. Accanto a lui c'erano due uomini che Flora non aveva mai visto e di cui conosceva già tutto quello che si poteva sapere da una rassegna stampa.
 
 Gerardo Calabrese, della Direzione distrettuale di Partenia. Quarantuno anni, giacca sgualcita, una fede nuova che si girava intorno al dito. Zaccaria Cataldo, della Procura di Tarassa. Più giovane, più magro, con un portablocco già aperto e una penna già in mano.
 
@@ -1059,7 +1059,7 @@ Calabrese guardò gli scatoloni. Poi guardò lei.
 
 «Quello è il fascicolo archiviato.»
 
-Non era una domanda. Flora lo prese come tale lo stesso.
+Non era una domanda. Flora la mise agli atti come tale lo stesso.
 
 «È il fascicolo sull'unificazione. Tre anni di lavoro. Intercettazioni, conti, due collaboratori. L'ho portato perché ci serve.»
 
@@ -1081,7 +1081,7 @@ Cataldo scriveva. Flora non capiva cosa.
 
 Aveva letto i nomi dei colleghi sul decreto la sera prima, in treno, e aveva fatto quello che faceva sempre con un fascicolo nuovo. Li aveva messi in ordine.
 
-Calabrese: tre anni prima aveva aperto un'indagine sui porti di Partenia. Traffico di carburante tra Partenia e Porto Clodio, società di comodo, navi con bandiere di paesi lontani. L'indagine era ancora aperta, ma da un anno non usciva niente. Troppo silenzio, per uno come lui.
+Calabrese: l'anno prima aveva aperto un'indagine sui porti di Partenia. Traffico di carburante tra Partenia e Porto Clodio, società di comodo, navi con bandiere di paesi lontani. L'indagine era ancora aperta, ma da mesi non usciva niente. Troppo silenzio, per uno come lui.
 
 Cataldo: due anni prima aveva chiesto l'arresto di un funzionario della dogana di Punta Saline. Il giudice aveva detto di no. Cataldo non aveva fatto ricorso. In una procura di provincia, un pubblico ministero che non fa ricorso è un pubblico ministero che ha capito qualcosa, o che ha avuto paura.
 
@@ -1213,7 +1213,7 @@ Flora lo ripassò in treno, al ritorno, come ripassava tutto. Chi lo sapeva. Il 
 
 Il treno era mezzo vuoto. Fuori era già buio. Nel vetro vedeva la sua faccia sovrapposta ai campi neri, e sotto la faccia la stanchezza, che ormai non se ne andava più nemmeno con il sonno.
 
-Pensò a Carlo De Stefano senza volerlo, come le capitava a quell'ora. Colonnello, quarantadue anni, un uomo che conosceva da due anni e con cui cenava una volta al mese, senza che nessuno dei due avesse mai dato un nome alla cosa. Lui lavorava "per il ministero", diceva. Non diceva quale. Lei non chiedeva, perché era un magistrato e sapeva che c'erano domande che, una volta fatte, obbligavano a verbalizzare la risposta.
+Pensò a Carlo De Stefano senza volerlo, come le capitava a quell'ora. Colonnello, quarantadue anni, un uomo che conosceva da un anno e con cui cenava una volta al mese, senza che nessuno dei due avesse mai dato un nome alla cosa. Lui lavorava "per il ministero", diceva. Non diceva quale. Lei non chiedeva, perché era un magistrato e sapeva che c'erano domande che, una volta fatte, obbligavano a verbalizzare la risposta.
 
 Non gli aveva detto del pool. Non l'aveva detto a nessuno. Nemmeno a sua madre, che la sera la chiamava sempre alle nove e un quarto.
 
@@ -1253,7 +1253,7 @@ Lei non gli aveva detto niente.
 
 L'ascensore sapeva di cera e di mani sconosciute.
 
-Al quinto piano, davanti alle porte che si aprivano, c'era Ferri. Il più anziano dei due. Sessant'anni, collo largo, un auricolare color carne che si vedeva lo stesso. Le tese la mano senza dire niente e lei gli diede la borsa, come sempre. Lui la aprì, guardò dentro senza toccare, la richiuse. Rossetto, chiavi, due telefoni, un taccuino. In sei anni non le aveva mai chiesto perché i telefoni fossero due.
+Al quinto piano, davanti alle porte che si aprivano, c'era Ferri. Il più anziano dei due. Sessant'anni, collo largo, un auricolare color carne che si vedeva lo stesso. Le tese la mano senza dire niente e lei gli diede la borsa, come sempre. Lui la aprì, guardò dentro senza toccare, la richiuse. Rossetto, chiavi, due telefoni, un taccuino. In cinque anni non le aveva mai chiesto perché i telefoni fossero due.
 
 Ferri aveva un odore di sapone da caserma. Era un uomo che si lavava molto e non si profumava mai. Dalia lo classificava tra le persone pulite: quelle che non volevano niente da lei.
 
@@ -1269,7 +1269,7 @@ Dietro la porta, nel corridoio, il suo telefono vibrava. Lui non rispondeva.
 
 «Buonasera, Nicola.»
 
-Lui alzò gli occhi, sorpreso. In sei anni lei non l'aveva mai chiamato per nome. Poi li riabbassò, e la porta si chiuse alle sue spalle con quel suono ovattato che avevano solo le porte degli alberghi cari.
+Lui alzò gli occhi, sorpreso. In cinque anni lei non l'aveva mai chiamato per nome. Poi li riabbassò, e la porta si chiuse alle sue spalle con quel suono ovattato che avevano solo le porte degli alberghi cari.
 
 
 <p align="center">* * *</p>
@@ -1281,7 +1281,7 @@ Alfredo era in piedi davanti alla finestra, in camicia, con le maniche arrotolat
 
 Si voltò. Sorrise.
 
-Dalia conosceva quel sorriso. Lo conosceva da sei anni, da un tavolo d'angolo in una sala convegni di Merania, dove un uomo in grigio le aveva chiesto un parere su un'emissione di obbligazioni e poi era rimasto ad ascoltare la risposta fino in fondo. Nessun uomo, prima di allora, era rimasto ad ascoltarla fino in fondo.
+Dalia conosceva quel sorriso. Lo conosceva da cinque anni, da un tavolo d'angolo in una sala convegni di Merania, dove un uomo in grigio le aveva chiesto un parere su un'emissione di obbligazioni e poi era rimasto ad ascoltare la risposta fino in fondo. Nessun uomo, prima di allora, era rimasto ad ascoltarla fino in fondo.
 
 Quella sera il sorriso aveva qualcosa in più. Un'ombra agli angoli. Come una stanza in cui qualcuno ha spostato un mobile di dieci centimetri.
 
@@ -1325,7 +1325,7 @@ Poi le tolse il bicchiere dalle mani e lo posò sul tavolino, accanto alla crava
 
 Dopo, lui rimase a lungo in silenzio, con la mano ferma sulla sua spalla.
 
-Dalia guardava il soffitto. C'era una crepa sottile nell'intonaco, sopra la lampada, che si allargava a forma di fiume. L'aveva vista crescere in sei anni. Tre millimetri, forse quattro. La guardava ogni volta, e ogni volta pensava che era l'unica cosa in quella stanza che cambiava senza chiedere il permesso a nessuno.
+Dalia guardava il soffitto. C'era una crepa sottile nell'intonaco, sopra la lampada, che si allargava a forma di fiume. L'aveva vista crescere in cinque anni. Tre millimetri, forse quattro. La guardava ogni volta, e ogni volta pensava che era l'unica cosa in quella stanza che cambiava senza chiedere il permesso a nessuno.
 
 Il suo corpo era suo. Lo pensava spesso, in quella stanza, e non era un pensiero felice. Era un pensiero contabile. Come un conto finalmente in attivo, dopo anni di debiti che non aveva fatto lei.
 
@@ -1357,7 +1357,7 @@ Sentì la mano di lui fermarsi sulla spalla. Solo un istante. Poi riprese a muov
 
 Vito sapeva di loro. Lo aveva saputo quasi subito.
 
-Sei anni prima, una sera di marzo, l'aveva fatta salire in macchina sotto la redazione. Non aveva spento il motore. Aveva guardato la strada davanti a sé, con le mani sul volante, e aveva detto: *Il finanziere, eh?* Lei aveva avuto paura come non aveva più avuto paura da anni. Poi lui aveva riso, basso, e aveva aggiunto: *Bene. Tienilo contento.*
+Quasi cinque anni prima, una sera di marzo, l'aveva fatta salire in macchina sotto la redazione. Non aveva spento il motore. Aveva guardato la strada davanti a sé, con le mani sul volante, e aveva detto: *Il finanziere, eh?* Lei aveva avuto paura come non aveva più avuto paura da anni. Poi lui aveva riso, basso, e aveva aggiunto: *Bene. Tienilo contento.*
 
 Da allora non ne avevano più parlato. Vito non le aveva mai chiesto niente di Alfredo. Non le aveva mai chiesto cosa si dicevano, cosa sapeva il finanziere, cosa voleva. Per lui era una cosa che stava bene dove stava: una sua proprietà nel letto di un uomo utile. Un investimento che rendeva senza bisogno di controllarlo.
 
@@ -1365,7 +1365,7 @@ Vito non immaginava nemmeno che si potessero dire delle cose, in quella stanza. 
 
 E Alfredo, sapeva che Vito sapeva?
 
-Dalia non gliel'aveva mai detto. In sei anni, non una volta. Ogni tanto pensava che fosse l'unica cosa che lui non sapeva di lei. Ogni tanto pensava che lo sapesse benissimo, e che anche quella fosse una frase lasciata aperta, in attesa che qualcuno la chiudesse.
+Dalia non gliel'aveva mai detto. In cinque anni, non una volta. Ogni tanto pensava che fosse l'unica cosa che lui non sapeva di lei. Ogni tanto pensava che lo sapesse benissimo, e che anche quella fosse una frase lasciata aperta, in attesa che qualcuno la chiudesse.
 
 
 <p align="center">* * *</p>
@@ -1389,13 +1389,13 @@ Lo disse semplicemente. Senza la voce che usava con gli altri, quella misurata, 
 
 Eccola, pensò Dalia. La frase con dentro due frasi.
 
-Provò a ricordare cosa gli aveva detto di Vito, in sei anni. Non molto. Mai niente di intero. Cose piccole, dette tra una frase e l'altra, con la testa appoggiata sul suo petto. Che Vito chiamava la domenica sera. Che odiava gli ascensori e prendeva sempre le scale, anche per dieci piani. Che non dormiva mai due notti di fila nello stesso letto. Che mangiava solo cose cucinate davanti a lui.
+Provò a ricordare cosa gli aveva detto di Vito, in cinque anni. Non molto. Mai niente di intero. Cose piccole, dette tra una frase e l'altra, con la testa appoggiata sul suo petto. Che Vito chiamava la domenica sera. Che odiava gli ascensori e prendeva sempre le scale, anche per dieci piani. Che non dormiva mai due notti di fila nello stesso letto. Che mangiava solo cose cucinate davanti a lui.
 
 Cose che una donna racconta di un uomo che l'ha fatta soffrire, per farlo sembrare più piccolo.
 
 Messe in fila, adesso, le sembravano un'altra cosa. Le sembravano una scheda.
 
-Poteva essere un uomo innamorato che aveva paura per la donna che amava. Poteva essere un uomo che, per sei anni, aveva ascoltato ogni sua risposta fino in fondo perché ogni risposta gli serviva. Poteva essere tutte e due le cose insieme, e questa era la possibilità che la spaventava di più, perché non lasciava spazio per scegliere.
+Poteva essere un uomo innamorato che aveva paura per la donna che amava. Poteva essere un uomo che, per cinque anni, aveva ascoltato ogni sua risposta fino in fondo perché ogni risposta gli serviva. Poteva essere tutte e due le cose insieme, e questa era la possibilità che la spaventava di più, perché non lasciava spazio per scegliere.
 
 Si girò sul fianco, verso di lui. Gli sfiorò il polso sinistro. Era nudo.
 
@@ -1421,7 +1421,7 @@ Una donna di trentacinque anni. Alta. Il collo lungo che sua madre le aveva lasc
 
 Tutte cose sue. Anche quelle che erano costate.
 
-La prima volta, sei anni prima, in quella stessa stanza, Alfredo le aveva chiesto: *Posso?* Prima di sfiorarle la mano. Una parola sola. Nessuno, in tutta la sua vita, le aveva mai chiesto il permesso per qualcosa. Lei era rimasta così stupita che non aveva risposto, e lui aveva aspettato. Aveva aspettato davvero, con la mano ferma a un centimetro dalla sua, finché lei non aveva detto sì.
+La prima volta, quasi cinque anni prima, in quella stessa stanza, Alfredo le aveva chiesto: *Posso?* Prima di sfiorarle la mano. Una parola sola. Nessuno, in tutta la sua vita, le aveva mai chiesto il permesso per qualcosa. Lei era rimasta così stupita che non aveva risposto, e lui aveva aspettato. Aveva aspettato davvero, con la mano ferma a un centimetro dalla sua, finché lei non aveva detto sì.
 
 Per questo era rimasta. Per quel centimetro.
 
@@ -1687,7 +1687,7 @@ Salì dal lato del passeggero. La macchina si abbassò sotto il suo peso.
 
 «Cinque è l'inizio.»
 
-Adorisio annuì, chiuse il libro, accese il motore. Non chiese altro. Era una delle cose per cui Kurgan lo teneva vicino da quindici anni: sapeva quando smettere di chiedere.
+Adorisio annuì, chiuse il libro, accese il motore. Non chiese altro. Era una delle cose per cui Kurgan lo teneva vicino da tredici anni: sapeva quando smettere di chiedere.
 
 Sul telefono nuovo, nella tasca del cappotto, arrivò un messaggio. Una riga sola, senza mittente.
 
@@ -1723,7 +1723,7 @@ Giorgi era sempre stato quello studente. Soltanto molti anni dopo aveva capito c
 
 Giorgi bevve un sorso di tè prima di rispondere. Era un tè cinese, affumicato, che il cardinale beveva da quarant'anni e che a lui era sempre sembrato sapere di legna bruciata.
 
-L'orologio era arrivato ad AV System una settimana dopo la notte del rifiuto, in una busta imbottita senza mittente, consegnata a mano alla portineria. Lo aveva ritirato Luigi Bertola, che lo accompagnava da tredici anni e che quel giorno era sceso a prendere la posta al posto della segretaria. Bertola lo aveva portato su, gli aveva posato la busta sulla scrivania e se n'era andato senza chiedere niente, come faceva sempre. Nessun altro, oltre a loro due, sapeva di quella busta.
+L'orologio era arrivato ad AV System una settimana dopo la notte del rifiuto, in una busta imbottita senza mittente, consegnata a mano alla portineria. Lo aveva ritirato Luigi Bertola, che lo accompagnava da dodici anni e che quel giorno era sceso a prendere la posta al posto della segretaria. Bertola lo aveva portato su, gli aveva posato la busta sulla scrivania e se n'era andato senza chiedere niente, come faceva sempre. Nessun altro, oltre a loro due, sapeva di quella busta.
 
 Giorgi registrò il dato, lo collocò nella memoria insieme agli altri e non gli attribuì, in quel momento, alcun significato particolare. Salvarani aveva molte fonti; averne una in più, in un punto qualunque del sistema, non era un'anomalia ma una costante di cui aveva sempre tenuto conto.
 
@@ -1737,7 +1737,7 @@ Dieci anni prima, di sera, in un ristorante vuoto sul lungomare di Partenia.
 
 Giorgi aveva prenotato tutto il locale, e il proprietario, un uomo che doveva favori a persone che dovevano favori a lui, aveva spento le luci della sala tranne quelle del tavolo d'angolo, sicché il resto della stanza affondava in una penombra da cui emergevano soltanto le sedie capovolte sui tavoli e, oltre i vetri, il nero del mare con le luci delle barche lontane.
 
-Kurgan era arrivato a piedi, da solo, con dieci minuti di anticipo. Si era chinato passando sotto l'architrave della porta, e Giorgi aveva notato con interesse che non si era chinato abbastanza, che lo stipite gli aveva sfiorato i capelli e che lui non aveva fatto una piega, come chi da tutta la vita urta le cose e ha smesso da tempo di considerarlo un problema proprio. Aveva trentotto anni, un vestito comprato in fretta e mani enormi, posate sul tavolo come due attrezzi.
+Kurgan era arrivato a piedi, da solo, con dieci minuti di anticipo. Si era chinato passando sotto l'architrave della porta, e Giorgi aveva notato con interesse che non si era chinato abbastanza, che lo stipite gli aveva sfiorato i capelli e che lui non aveva fatto una piega, come chi da tutta la vita urta le cose e ha smesso da tempo di considerarlo un problema proprio. Aveva trentasette anni, un vestito comprato in fretta e mani enormi, posate sul tavolo come due attrezzi.
 
 Giorgi aveva letto il fascicolo tre volte. La valle nel Drenak, i seicento metri scoperti, i tre ufficiali, il colpo di mortaio a cui nessuno aveva creduto e il foglio di congedo bruciato sul traghetto; poi i vicoli di Partenia, la Fratellanza, i primi lavori, la precisione. Soprattutto la precisione. Ma quello che lo aveva convinto non stava in nessuna riga del fascicolo: stava in una nota a margine, scritta a matita da un funzionario dei servizi che aveva seguito Kurgan per due anni. *Non perde mai uomini. Preferisce perdere il lavoro.*
 
@@ -1881,7 +1881,7 @@ Non si vedevano da tre settimane. Lei aveva saltato la cena di gennaio con una s
 <p align="center">* * *</p>
 
 
-Carlo De Stefano era seduto al tavolino più interno, con le spalle al muro e la vista sulla porta. Si sedeva sempre così. Flora lo aveva notato la prima sera, due anni prima, e aveva pensato che fosse un'abitudine da carabiniere. Poi aveva pensato che fosse un'abitudine da qualcos'altro, e aveva smesso di pensarci.
+Carlo De Stefano era seduto al tavolino più interno, con le spalle al muro e la vista sulla porta. Si sedeva sempre così. Flora lo aveva notato la prima sera, un anno prima, e aveva pensato che fosse un'abitudine da carabiniere. Poi aveva pensato che fosse un'abitudine da qualcos'altro, e aveva smesso di pensarci.
 
 Si alzò quando lei entrò. Si alzava sempre.
 
@@ -1891,7 +1891,7 @@ Si alzò quando lei entrò. Si alzava sempre.
 
 Carlo ordinò due caffè senza chiederle niente. Lo sapeva: lungo, senza zucchero. Si sedettero. Il barista portò le tazze e si allontanò.
 
-Due anni di cene, una al mese, sempre nello stesso ristorante di Rocca Sannella, sempre al tavolo in fondo. Lui arrivava da Albaterra in macchina, due ore e mezza, e ripartiva la notte stessa. Non era mai salito da lei. Lei non glielo aveva mai chiesto. Parlavano di libri, di sua madre, del mare che lui aveva visto da bambino e lei no. Non parlavano mai di quello che facevano. Non parlavano mai di quello che erano.
+Un anno di cene, una al mese, sempre nello stesso ristorante di Rocca Sannella, sempre al tavolo in fondo. Lui arrivava da Albaterra in macchina, due ore e mezza, e ripartiva la notte stessa. Non era mai salito da lei. Lei non glielo aveva mai chiesto. Parlavano di libri, di sua madre, del mare che lui aveva visto da bambino e lei no. Non parlavano mai di quello che facevano. Non parlavano mai di quello che erano.
 
 C'era un momento, alla fine di ogni cena, in cui lui la accompagnava alla macchina e si fermava a mezzo metro da lei. Mezzo metro esatto. Flora lo aveva misurato con gli occhi, una sera, e da allora lo misurava sempre. Non si era mai accorciato.
 
@@ -2421,7 +2421,7 @@ Adesso lo guardò mangiare e sentì quel racconto tornarle in bocca, amaro.
 
 «Diverse.» Lui la guardò. «Ci sarà un posto per te. Un posto vero. Non una stanza d'albergo.»
 
-Dalia non chiese come sapesse della stanza d'albergo. Lo sapeva da sei anni. Non ne avevano mai parlato.
+Dalia non chiese come sapesse della stanza d'albergo. Lo sapeva da cinque anni. Non ne avevano mai parlato.
 
 Mangiò il pesce. Era buono. Si sforzò di sentirne il sapore, perché un sapore era una cosa che nessuno poteva toglierle mentre ce l'aveva in bocca.
 
@@ -2485,7 +2485,7 @@ Diciotto mesi.
 
 Per diciotto mesi aveva applicato a Kurgan la strategia che si applica a un reattore di cui si teme la reazione a catena: non spegnerlo di colpo, perché uno spegnimento brusco produce a sua volta effetti imprevedibili, ma inserire gradualmente le barre di controllo, sottrarre neutroni, abbassare il flusso finché la reazione non scende sotto la soglia in cui si sostiene da sola e si esaurisce per mancanza di combustibile.
 
-Le barre erano state i soldi. Le società di Merania avevano smesso di comprare il suo carburante; le banche che per dieci anni avevano ripulito i suoi flussi avevano cominciato, una dopo l'altra, a chiedere documenti che prima non chiedevano; le dogane di Punta Saline e di Porto Clodio, sollecitate con discrezione attraverso i canali che Giorgi conosceva, avevano moltiplicato le ispezioni, i sequestri, i ritardi. I ricavi di Kurgan, secondo tutte le stime, si erano dimezzati nel primo semestre. Il modello prevedeva che entro l'anno, con i costi fissi di un'organizzazione di quelle dimensioni, sarebbe tornato a trattare.
+Le barre erano state i soldi. Le società di Merania avevano smesso di comprare il suo carburante; le banche che per dodici anni avevano ripulito i suoi flussi avevano cominciato, una dopo l'altra, a chiedere documenti che prima non chiedevano; le dogane di Punta Saline e di Porto Clodio, sollecitate con discrezione attraverso i canali che Giorgi conosceva, avevano moltiplicato le ispezioni, i sequestri, i ritardi. I ricavi di Kurgan, secondo tutte le stime, si erano dimezzati nel primo semestre. Il modello prevedeva che entro l'anno, con i costi fissi di un'organizzazione di quelle dimensioni, sarebbe tornato a trattare.
 
 Non era tornato. Il modello conteneva un errore che Giorgi aveva individuato soltanto a posteriori, e che lo irritava come lo irritava ogni errore di impostazione, perché gli errori di calcolo si correggono mentre quelli di impostazione si pagano: aveva trattato Kurgan come un sistema chiuso. Un sistema chiuso, privato di energia, si raffredda. Ma Kurgan aveva aperto le pareti. Metà delle sue navi, a partire dalla primavera precedente, trasportava sotto bandiere di comodo un carburante che non aveva nome né provenienza dichiarata, e che i servizi attribuivano con ragionevole certezza a Kaliria; una banchina del molo nord di Punta Saline, tre notti al mese, restava chiusa a qualunque controllo, e da lì passavano casse che nessuno aveva mai aperto; nei porti del sud, dove attraccavano per il rifornimento le navi della NATO, qualcuno fotografava le carte di carico.
 
@@ -2541,7 +2541,7 @@ Il generale parlò per primo, esponendo in venti minuti ciò che Giorgi aveva le
 
 Fu il sottosegretario a rispondere, ed era evidente che aveva preparato la frase.
 
-«Lei è l'unica persona in questo Paese che conosce quell'uomo. Lo ha conosciuto per dieci anni. Sa come ragiona, cosa teme, cosa vuole. Nessuno dei nostri analisti ha mai parlato con lui. Lei sì.»
+«Lei è l'unica persona in questo Paese che conosce quell'uomo. Lo ha conosciuto per dodici anni. Sa come ragiona, cosa teme, cosa vuole. Nessuno dei nostri analisti ha mai parlato con lui. Lei sì.»
 
 Giorgi non rispose subito. Guardò il generale, che guardava il tavolo.
 
@@ -2653,7 +2653,7 @@ Kurgan prese un foglio e una penna. Non scriveva mai niente di quello che contav
 
 Da una parte mise il dottore.
 
-I soldi, che non erano mai stati il punto. I servizi, quelli militari, che per dieci anni gli avevano portato le posizioni, le targhe, gli orari, e che adesso li portavano a qualcun altro. Da una settimana la Guardia di Finanza saliva sulle sue petroliere a Porto Clodio quasi ogni giorno, con i cani e le carte bollate, e non trovava mai niente e tornava lo stesso. Il capitano del porto, che per anni aveva preso i suoi soldi sorridendo, adesso li prendeva senza guardarlo in faccia. Un uomo così non cambiava idea da solo. Qualcuno sopra di lui l'aveva cambiata al posto suo.
+I soldi, che non erano mai stati il punto. I servizi, quelli militari, che per dodici anni gli avevano portato le posizioni, le targhe, gli orari, e che adesso li portavano a qualcun altro. Da una settimana la Guardia di Finanza saliva sulle sue petroliere a Porto Clodio quasi ogni giorno, con i cani e le carte bollate, e non trovava mai niente e tornava lo stesso. Il capitano del porto, che per anni aveva preso i suoi soldi sorridendo, adesso li prendeva senza guardarlo in faccia. Un uomo così non cambiava idea da solo. Qualcuno sopra di lui l'aveva cambiata al posto suo.
 
 Il governo, quindi. E forse amici più grandi del governo, di quelli che non si fanno mai vedere e non perdono mai.
 
@@ -2671,7 +2671,7 @@ Serviva una cosa che fermasse la guerra prima che cominciasse. Una sola cosa che
 
 Tranne uno.
 
-Kurgan l'aveva visto sei anni prima, per caso, su una fotografia che uno dei suoi aveva scattato davanti a un palazzo di Merania. Il dottore che scendeva dalla macchina e si chinava a sistemare il colletto a una bambina di un anno. L'unica fotografia, in dieci anni, in cui il dottore non sembrava stare facendo un calcolo.
+Kurgan l'aveva visto sei anni prima, per caso, su una fotografia che uno dei suoi aveva scattato davanti a un palazzo di Merania. Il dottore che scendeva dalla macchina e si chinava a sistemare il colletto a una bambina di un anno. L'unica fotografia, in dodici anni, in cui il dottore non sembrava stare facendo un calcolo.
 
 
 <p align="center">* * *</p>
@@ -3195,7 +3195,7 @@ Tornò al foglio. Quattro punti e un nome. Nella colonna del nome, a margine, sc
 
 La riunione del pool era alle dieci. Calabrese arrivò alle dieci e un quarto, con la giacca sul braccio e la faccia di chi aveva dormito a metà. Cataldo era già seduto, con il suo blocco a righe e tre matite temperate in fila.
 
-Sulla lavagna c'era ancora la colonna del gennaio precedente: quarantasei soggetti, una banca di Valdhof, il 29 settembre, il 12 novembre. Sotto, in blu, le cose nuove di sedici mesi. Poche. I dati della Consob erano arrivati in autunno e i conti delle 12.07 si erano persi, uno per uno, dentro altrettante fiduciarie di Valdhof. La seconda rogatoria era tornata con metà delle pagine annerite.
+Sulla lavagna c'era ancora la colonna del gennaio precedente: quarantasei soggetti, una banca di Valdhof, il 29 settembre, il 12 novembre. Sotto, in blu, le cose nuove di sedici mesi. Poche. I dati della Consob, chiesti per secondo, erano arrivati in autunno: dei quarantasei soggetti, trentuno avevano chiuso alle 12.07, nello stesso secondo, e si erano persi, uno per uno, dentro altrettante fiduciarie di Valdhof. La seconda rogatoria era tornata con metà delle pagine annerite.
 
 Flora non cancellò niente. Prese un foglio e lo appese con il nastro adesivo accanto alla lavagna. I quattro punti di Oddone, senza il nome di Oddone.
 
@@ -3765,7 +3765,7 @@ Giorgi guardò il foglio scritto a mano sul tavolo.
 
 Elena chiuse senza salutare. Era la prima volta in diciassette anni. Giorgi tenne il telefono all'orecchio ancora qualche secondo, ad ascoltare la linea vuota, e registrò anche questo: un altro punto in una serie che cominciava ad avere abbastanza punti per diventare una curva.
 
-Alle 23.52 il telefono nero senza marca vibrò sul tavolo di noce. Non era quello che aveva usato per dieci anni con Kurgan: era uno nuovo, acquistato per una sola conversazione e destinato a finire in un tombino. Il numero sullo schermo era quello di un avvocato di Partenia che difendeva mezza costa e che, per una cifra con sei zeri, aveva accettato di fare da tramite senza chiedere tra chi.
+Alle 23.52 il telefono nero senza marca vibrò sul tavolo di noce. Non era quello che aveva usato per dodici anni con Kurgan: era uno nuovo, acquistato per una sola conversazione e destinato a finire in un tombino. Il numero sullo schermo era quello di un avvocato di Partenia che difendeva mezza costa e che, per una cifra con sei zeri, aveva accettato di fare da tramite senza chiedere tra chi.
 
 «Mi ha dato la risposta» disse l'avvocato. Aveva la voce di chi ha bevuto un bicchiere in più per trovare il coraggio di comporre il numero. «Una parola, poi una condizione.»
 
@@ -3793,7 +3793,7 @@ Chiuse la comunicazione, tolse la batteria dal telefono e la posò sul tavolo, a
 
 Il cinese arrivò con dieci minuti di anticipo, e Kurgan lo prese come un avvertimento.
 
-Li Wei Chen sedeva già in prima fila sulla terrazza, sotto il tendone bianco del ristorante più grande del lungomare, con una bottiglia d'acqua frizzante e due bicchieri capovolti. Il locale piccolo in fondo alla passeggiata, quello dove dieci anni prima un uomo in grigio gli aveva regalato un orologio, aveva chiuso da un pezzo: al suo posto c'era una gelateria con l'insegna al neon. Alle undici del mattino la terrazza era mezza vuota: coppie di turisti, un gruppo di avvocati con le giacche sulle sedie, camerieri che stendevano tovaglie per il pranzo. Kurgan contò le uscite dalla porta a vetri. Tre. La scala verso la spiaggia, la porta della cucina, il passaggio laterale verso il parcheggio. Contò gli uomini che non erano turisti. Due, al bancone, con la stessa camicia. Del cinese.
+Li Wei Chen sedeva già in prima fila sulla terrazza, sotto il tendone bianco del ristorante più grande del lungomare, con una bottiglia d'acqua frizzante e due bicchieri capovolti. Il locale piccolo in fondo alla passeggiata, quello dove dodici anni prima un uomo in grigio gli aveva regalato un orologio, aveva chiuso da un pezzo: al suo posto c'era una gelateria con l'insegna al neon. Alle undici del mattino la terrazza era mezza vuota: coppie di turisti, un gruppo di avvocati con le giacche sulle sedie, camerieri che stendevano tovaglie per il pranzo. Kurgan contò le uscite dalla porta a vetri. Tre. La scala verso la spiaggia, la porta della cucina, il passaggio laterale verso il parcheggio. Contò gli uomini che non erano turisti. Due, al bancone, con la stessa camicia. Del cinese.
 
 Si sedette con le spalle alla ringhiera e il mare dietro.
 
@@ -4271,7 +4271,7 @@ Uno. Il 12 novembre, alle 12.07, trentuno conti chiudono nello stesso secondo, a
 
 Due. I trentuno conti finiscono in trentuno fiduciarie di Valdhof.
 
-Tre. Le trentuno fiduciarie nascono lo stesso giorno, il 9 marzo di undici anni fa. Qualcuno, undici anni fa, aveva preparato trentuno cassetti vuoti per un'operazione che sarebbe arrivata dopo più di dieci anni.
+Tre. Le trentuno fiduciarie nascono lo stesso giorno, il 9 marzo di undici anni fa. Qualcuno, undici anni fa, aveva preparato trentuno cassetti vuoti per un'operazione che sarebbe arrivata nove anni dopo.
 
 Quattro. Undici anni fa Alfredo Giorgi entra come consigliere non esecutivo nella Finanziaria Lanterna, che controlla la Clodia Navi, che dà in leasing le venti navi dell'unificazione. Allegato trentasette.
 
@@ -4525,7 +4525,7 @@ Giorgi restò seduto. Sul tavolo, accanto al telefono, c'era ancora il foglio sc
 
 Chi aveva deciso, e quando? La domanda aveva una risposta tecnica, e Giorgi la conosceva dal terzo anno: il controllo gerarchico. In basso stanno i regolatori locali, ciascuno responsabile di una grandezza, ciascuno convinto, per così dire, di governare il proprio pezzo di mondo. Sopra di loro sta un supervisore, che non regola niente direttamente ma osserva l'errore di ciascun regolatore. Finché l'errore resta dentro la tolleranza, il supervisore tace. Quando la supera, il supervisore non corregge il regolatore. Lo sostituisce. Stacca il suo segnale dall'attuatore e ci mette il proprio, senza avvertirlo, perché un regolatore che ha superato la tolleranza non è più un interlocutore: è la parte del sistema che ha smesso di funzionare.
 
-Giorgi era stato un regolatore per dieci anni. Aveva regolato Kurgan, e attraverso Kurgan i porti, le navi, due mafie, tre stragi. Da diciannove mesi il suo errore era fuori tolleranza. Il supervisore lo aveva osservato con pazienza, da un appartamento con un divano di velluto verde, e il 6 gennaio aveva girato la terza tazza sul piattino. Quella notte aveva staccato il suo segnale dall'attuatore.
+Giorgi era stato un regolatore per dodici anni. Aveva regolato Kurgan, e attraverso Kurgan i porti, le navi, due mafie, tre stragi. Da diciannove mesi il suo errore era fuori tolleranza. Il supervisore lo aveva osservato con pazienza, da un appartamento con un divano di velluto verde, e il 6 gennaio aveva girato la terza tazza sul piattino. Quella notte aveva staccato il suo segnale dall'attuatore.
 
 La cattura era stata il suo segnale. La bomba era il segnale del supervisore.
 
@@ -6251,7 +6251,7 @@ Prese un foglio bianco. Lo faceva sempre, prima di permettersi di pensare.
 
 Guardò la colonna. Non era una prova. Un banchiere poteva sedere in dieci consigli, e aprire trenta fiduciarie per ragioni sue. Un ammiraglio in congedo poteva avere risparmi da nascondere al fisco. Un industriale del farmaco poteva avere mille motivi per non comparire.
 
-Ma i tre non si conoscevano. Flora ne era quasi certa senza averlo ancora verificato. Un ammiraglio, un industriale, un banchiere: tre mondi che non si incontravano a cena. E undici anni prima, lo stesso giorno, dallo stesso notaio, avevano affidato i loro soldi agli stessi trentuno gusci, che undici anni dopo avrebbero chiuso nello stesso secondo.
+Ma i tre non si conoscevano. Flora ne era quasi certa senza averlo ancora verificato. Un ammiraglio, un industriale, un banchiere: tre mondi che non si incontravano a cena. E undici anni prima, lo stesso giorno, dallo stesso notaio, avevano affidato i loro soldi agli stessi trentuno gusci, che nove anni dopo avrebbero chiuso nello stesso secondo.
 
 Tre persone che non avevano niente in comune avevano in comune un secondo.
 
@@ -6357,7 +6357,7 @@ Parlarono del caldo, di Rocca Sannella, della madre di lei, che aveva chiesto di
 
 Flora mangiò. Aveva il settimo foglio nella borsa, nella tasca con la cerniera, piegato in quattro insieme agli altri. Lo sentiva contro il fianco come si sentiva un telefono spento.
 
-Per un momento, a metà del piatto, ebbe voglia di dirglielo. Non tutto. Una cosa. *Oggi ho trovato tre nomi.* Carlo era l'unico, fuori dal pool, con cui avesse mai parlato del suo lavoro. Due anni di cene, una al mese. Lui ascoltava fino in fondo, non interrompeva, e a gennaio le aveva dato una pista che aveva aperto una porta.
+Per un momento, a metà del piatto, ebbe voglia di dirglielo. Non tutto. Una cosa. *Oggi ho trovato tre nomi.* Carlo era l'unico, fuori dal pool, con cui avesse mai parlato del suo lavoro. Tre anni di cene, una al mese. Lui ascoltava fino in fondo, non interrompeva, e a gennaio le aveva dato una pista che aveva aperto una porta.
 
 Sentì il foglio piegato contro il fianco. Dirglielo le avrebbe dato qualcosa: una voce che le diceva se aveva ragione. Non dirglielo non le toglieva niente. E da gennaio c'era una colonna, nella tasca con la cerniera, che nessuno le aveva chiesto di scrivere.
 
@@ -6852,7 +6852,7 @@ Spense il computer. Si alzò. Contò i passi fino all'ascensore, come ogni sera.
 
 Trentuno.
 
-Non gli erano mai sembrati così tanti.
+Chiuse la mano sinistra sul codice sbiadito e aspettò l'ascensore.
 
 ---
 
@@ -6928,9 +6928,9 @@ Il capo reparto annuì. Se lo ricordava.
 
 «C'è qualcosa, tra lei e la dottoressa, che io dovrei sapere, colonnello?»
 
-Due colonne, di nuovo. Nella prima, quello che si poteva dire. Nella seconda, due anni di tavoli in fondo alla sala, di mezzo metro davanti a una macchina, di una madre che chiedeva di lui.
+Due colonne, di nuovo. Nella prima, quello che si poteva dire. Nella seconda, tre anni di tavoli in fondo alla sala, di mezzo metro davanti a una macchina, di una madre che chiedeva di lui.
 
-«Non sono mai salito da lei» disse Carlo. «In due anni. Neanche una volta.»
+«Non sono mai salito da lei» disse Carlo. «In tre anni. Neanche una volta.»
 
 Era vero. Era la cosa più vera che potesse dire, ed era scelta apposta perché bastasse. Il capo reparto la pesò per il tempo di un respiro e la mise da parte, soddisfatto, come si metteva via una ricevuta.
 
@@ -8269,7 +8269,7 @@ Il citofono suonò alle 0.20, e Flora, che era sveglia sul divano con le carte d
 
 «Sono io.»
 
-In due anni Carlo non era mai salito. Si fermava sempre a mezzo metro dalla macchina, sotto casa di sua madre a Rocca Sannella, o sul marciapiede della trattoria, e ripartiva la notte stessa. Flora aprì il portone. Lo sentì salire i quattro piani a piedi. Contò i gradini che conosceva a memoria. Sessantaquattro. Lui non si fermò una volta.
+In tre anni Carlo non era mai salito. Si fermava sempre a mezzo metro dalla macchina, sotto casa di sua madre a Rocca Sannella, o sul marciapiede della trattoria, e ripartiva la notte stessa. Flora aprì il portone. Lo sentì salire i quattro piani a piedi. Contò i gradini che conosceva a memoria. Sessantaquattro. Lui non si fermò una volta.
 
 Sulla porta non entrò. Restò sul pianerottolo, con il cappotto chiuso fino al collo e le mani in tasca.
 
@@ -8362,7 +8362,7 @@ Prese il telefono. Scrisse un messaggio. Lo cancellò. Lo riscrisse più corto.
 
 *Da Cataldo.*
 
-Lo guardò. Era la prima cosa, in due anni, che gli diceva sapendo che lui avrebbe potuto usarla contro di lei. Premette invio.
+Lo guardò. Era la prima cosa, in tre anni, che gli diceva sapendo che lui avrebbe potuto usarla contro di lei. Premette invio.
 
 Due spunte grigie. Poi blu. Nessuna risposta.
 
@@ -8626,7 +8626,7 @@ Pietro chiuse gli occhi. Li riaprì.
 
 «Perché?»
 
-Avrebbe potuto dirglielo. Una macchina sotto la redazione, un uomo altissimo seduto dietro, una busta, l'affitto di sua madre. Avrebbe dovuto dirgli anche il resto, allora. Il 2005. Le stanze. I vent'anni. Il corpo come una cosa che rendeva. Non c'era una versione della risposta vera che non cominciasse da lì. E una volta cominciata da lì, non sarebbe più stata la storia di una fonte falsa. Sarebbe stata la sua.
+Avrebbe potuto dirglielo. Una macchina sotto la redazione, un uomo altissimo seduto dietro, una busta, l'affitto di sua madre. Avrebbe dovuto dirgli anche il resto, allora. I quindici anni. Le stanze. I vent'anni. Il corpo come una cosa che rendeva. Non c'era una versione della risposta vera che non cominciasse da lì. E una volta cominciata da lì, non sarebbe più stata la storia di una fonte falsa. Sarebbe stata la sua.
 
 «Non posso dirtelo» disse.
 
