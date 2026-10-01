@@ -31,7 +31,7 @@ Un uomo di settant'anni, in una casa bianca su una scogliera dall'altra parte de
 - **COME SI COMPORTA E PARLA:** parla poco e risponde corto. Mente con «la faccia giusta» e costruisce bugie con dentro un difetto piccolo e vero. Conta passi, soldi, ore, gradini. Misura le distanze. Legge mani e facce (le mani prima delle facce). Distingue i sapori sotto la lingua. Porta le maniche lunghe anche ad agosto. Quando ha paura fa un lavoro con le mani o con la testa. In dialetto dice poco: «uè», qualche parola barese con Ciccio, con la madre e con Franco; con Michele parla italiano.
 - **NON FA MAI:** non chiede aiuto per primo (tranne una volta, a Michele, nel cap. 20) e non piange davanti agli altri fino al cap. 36 (il ritratto) e al cap. 37 (l'ospedale). Non dice mai «ti voglio bene» a voce: lo scrive a Checco (cap. 39).
 - **ARCO:** complice passivo (capp. 1-17) → cacciatore (capp. 19-28), e la caccia gli riesce nel modo sbagliato (cap. 23) → salvatore (capp. 35-37) → uno che se ne va da uomo e non da ladro (capp. 38-43).
-- **LA DIPENDENZA CONGENITA [CANONE]:** nasce già dipendente per via della madre. Si mostra come **esperienza**, mai come procedura: il freddo, il tremito, il corpo che «riconosce», la levatrice che molti anni dopo gli racconta i primi giorni. Nessun dettaglio su sostanze, dosi, tagli o preparazione. Sull'origine della dipendenza della madre c'è un problema storico, vedi `incongruenze.md` n. 1.
+- **LA DIPENDENZA CONGENITA [CANONE]:** nasce già dipendente per via della madre. Si mostra come **esperienza**, mai come procedura: il freddo, il tremito, il corpo che «riconosce», il racconto della levatrice arrivato molti anni dopo in una lettera dell'avvocato (vedi 6.11). Nessun dettaglio su sostanze, dosi, tagli o preparazione. Sull'origine della dipendenza della madre c'è un problema storico, vedi `incongruenze.md` n. 1.
 - **Dove serve nelle espansioni:** in tutti e sei i filoni.
 
 #### 2.1-bis Il settantenne (il presente che scrive)
@@ -141,7 +141,7 @@ Attaccante del Bari, nato a San Paolo da genitori pugliesi emigrati, tornato a B
 | **Peppino il Lungo** | Cugino di secondo grado del Capo, muore al circolo. | cap. 29 |
 | **Il signore dei quadri** | Uomo altolocato che compra le tele di Michele «da signore». [PROPOSTA] Compare in scena nel cap. 4 (un saluto, uno sguardo al ragazzo), così nel cap. 39 non piove dal cielo. | capp. 4, 39 |
 | **L'avvocato di via Sparano** | Bravo, «non ha paura», non chiede da dove vengono i soldi. Scrive lettere per vent'anni. | cap. 39, epilogo, interludi |
-| **La levatrice** | Racconta, molti anni dopo, i primi giorni di Beniamino. Solo nella voce del vecchio. | cap. 2 |
+| **La levatrice** | Conosceva la famiglia. Tra il 1977 e il 1982 racconta all'avvocato di via Sparano i primi giorni di Beniamino (il neonato che trema nella culla, la madre) e gli chiede di riferirglielo «adesso che non serve più nasconderlo». Non compare mai in scena: arriva solo attraverso la lettera dell'avvocato (vedi 6.11). | cap. 2; interludio IV o VIII |
 | **Osvaldo** | Pescatore brasiliano taciturno; il primo lavoro e le prime monete pulite. | cap. 43 |
 | **Il contadino calabrese sulla nave** | Ha venduto la terra per il biglietto. | cap. 41 |
 | **Pino, il figlio del calzolaio** | Il ragazzo che spinse Beniamino da piccolo. [DECISO] Nel ricordo ha **14 anni** ed è grande e grosso; Checco (15-16) è più basso di lui, e la scena regge. | cap. 6 |
@@ -235,7 +235,7 @@ Anni di nascita: Michele 1906, Gaetano 1930, Dora 1938, Nicola 1946, Checco 1954
 
 | Data | Fatto |
 |---|---|
-| 1977-1982 | L'avvocato lavora due anni, poi quattro; il testimone ritratta. |
+| 1977-1982 | L'avvocato lavora due anni, poi quattro; il testimone ritratta. Cercando testimoni nei vicoli per il caso di Checco, parla con la levatrice che conosceva la famiglia; le sue parole arrivano a Beniamino in Brasile in una lettera, che il vecchio conserva nella scatola. |
 | 1976-1998 | Una lettera l'anno di Checco, a Natale, attraverso l'avvocato. |
 | ~1977 | Franco si compra la Vespa rossa (lo scrive l'avvocato). |
 | dicembre 1998 | Checco muore a Trani, a 44 anni. La notizia arriva con due mesi di ritardo. |
@@ -321,6 +321,18 @@ Lo zaino contiene **220 milioni** in banconote da 100.000 lire: **22 mazzette da
 - In Brasile: una parte nell'intercapedine del muro, una in una cassetta sotto il pavimento della cucina.
 - Sul cambio e sull'uscita dei contanti dall'Italia vedi incongruenze n. 21.
 
+#### 5.7-bis Tabella unica dei debiti [DECISO, Fase 3d]
+Cifre di finzione: devono solo tornare tra loro.
+
+| Voce | Chi deve | A chi | Milioni | Quando | Esito |
+|---|---|---|---|---|---|
+| Roba nuova, prezzo pattuito | Nicola | zi' Nardu | 80 | prima del 9 ottobre | portati da Nicola sabato 9 ottobre (cap. 24) |
+| Prezzo preteso (il doppio: nuova rotta e sgarro di Napoli) | Nicola | zi' Nardu | 160 | sab 9 ottobre | mancano 80: restano gli ostaggi |
+| Prestito per completare i 160 | Nicola | il Capo | 80 | 9-11 ottobre | consegnati a zi' Nardu lunedì 11 ottobre (cap. 26); Nicola resta in debito col Capo e muore senza averlo saldato |
+| Prezzo della pace per gli anni di acquisti a Napoli | il Capo | zi' Nardu | 220 | dato a Nicola domenica 17 ottobre (cap. 28) | Nicola lo nasconde nel trullo e non lo consegna: è **lo zaino** del §5.7 |
+
+**Come si concilia con il §5.7:** la contabilità dello zaino parte da 220 e riguarda solo il prezzo della pace. Gli 80 più 80 pagati a zi' Nardu sono già usciti dal mondo del romanzo prima dello zaino e non toccano il suo contenuto. Il prestito del Capo (80) non sta nello zaino: è il debito personale di Nicola che spiega la sua braccatura (capp. 27-28). Il Capo, in tutto, mette fuori 300 milioni (80 + 220), e questo dà al magro una ragione in più per cercare lo zaino.
+
 ### 5.8 Il nome di Lucia
 Il nome «Lucia» non compare nel testo prima del cap. 37: né nel racconto, né nel prologo, né negli interludi I-VI. Fino ad allora il narratore scrive «lei» o «il ritratto». Dal cap. 37 in poi (interludi VII-IX ed epilogo compresi) il nome si usa sempre. Nella bibbia il nome resta solo nei dati di riferimento (2.4, cronologia, 2.14).
 
@@ -330,6 +342,12 @@ Il nome «Lucia» non compare nel testo prima del cap. 37: né nel racconto, né
 
 ### 6.1 L'origine del nome «Mister Provino» — da tenere
 Primavera 1976, al mercato del pesce. Ciccio fa un gioco con i ragazzi: ricci a occhi chiusi, indovinare da quale scoglio vengono. Beniamino non sbaglia mai. Ciccio ride e lo chiama «mister», come l'allenatore che fa i provini ai ragazzi del pallone; e da lì «Mister Provino»: quello che prova, e quello che fa il provino. Il doppio senso (assaggio e audizione) resta sottinteso: il ragazzo è sempre sotto esame. Nicola sente il nome e se lo prende: dallo scherzo al lavoro. Il vecchio lo racconta per intero nel cap. 15. Il cap. 1 accenna al mercato e a Ciccio, senza spiegare.
+
+**Accorgimenti [DECISO, Fase 3d]:**
+1. Nel cap. 1 Ciccio non usa mai il soprannome e chiama il ragazzo «uagnò» (nel vecchio testo «guaglio'», v. r. 57). Il nome si spiega solo nel cap. 15; prima il lettore lo sente in bocca a Nicola. Il prologo lo nomina già senza spiegarlo (come nel vecchio testo, v. r. 7: «il nome che mi avevano cucito addosso»).
+2. Nel gioco dei ricci a occhi chiusi nessun dettaglio tecnico sul sapore: basta «quelli dello scoglio di là».
+
+Il secondo senso, «provare la merce» (v. r. 373), è quello che Nicola dà al nome quando se lo prende.
 
 ### 6.2 La maglia nella teca — da usare
 La teca resta nella stanza vuota della casa, per terra, dove l'ha posata il magro (cap. 35). La maglia parte: piegata in fondo allo zaino, sotto le mazzette (cap. 39), senza vetro. In Brasile è appesa nella stanza dove il vecchio scrive, accanto al ritratto (interludi; il nome solo dall'interludio VII in poi, vedi 5.8). Quando non protegge più niente, la maglia smette di essere una reliquia (la parola resta vietata) e torna a essere una maglia.
@@ -359,7 +377,9 @@ Cap. 14: le notti di sbarco con i dieci, la Finanza, la fuga. Poi spariscono con
 La stretta di mano tesa del cap. 2 è l'informazione che Beniamino usa nel cap. 23: sa di prima mano che Nicola compra a Napoli.
 
 ### 6.11 La dipendenza congenita — da usare
-Cap. 2: la voce del vecchio, la levatrice. Cap. 20: il corpo che «ricorda da prima di ricordare». Cap. 38: la madre, nella sua confessione rotta, ci arriva vicino senza dirlo.
+**La levatrice [DECISO, Fase 3d]:** tra il 1977 e il 1982 l'avvocato di via Sparano, cercando nei vicoli testimoni per il caso di Checco, parla con la levatrice che conosceva la famiglia. Lei gli racconta i primi giorni di Beniamino (il neonato che trema nella culla, la madre) e gli chiede di riferirglielo «adesso che non serve più nasconderlo». L'avvocato lo scrive in una lettera, che il vecchio conserva nella scatola. Nel libro: cap. 2, due frasi con la fonte dichiarata (in sostanza: me lo scrisse l'avvocato, riportando le parole di una levatrice); interludio IV o VIII, la lettera ritrovata. Nessun personaggio nuovo vivo nella Parte terza. Scartata l'ipotesi della levatrice incontrata in persona nel novembre 1976.
+
+Cap. 2: la voce del vecchio e la lettera dell'avvocato. Cap. 20: il corpo che «ricorda da prima di ricordare». Cap. 38: la madre, nella sua confessione rotta, ci arriva vicino senza dirlo.
 
 ### 6.12 Il cognome e i nomi di battesimo
 Nessun cognome. I nomi della madre (Dora) e del padre (Gaetano) compaiono con parsimonia: in bocca ad altri (zia Maria, Nicola, l'impiegato della Questura che legge i moduli) e nella firma.
@@ -410,7 +430,37 @@ I gradini 1-3 sono scene di silenzio: il verbo «fischiare» non compare nei cap
 1. **Non fischia per l'amico** (cap. 9-10): vede che Franco ruba e tace (cap. 9, senza il verbo); poi fa il palo e si volta (cap. 10: qui il verbo c'è, è la prima delle sei apparizioni). È il silenzio per paura, il terzo dei tre.
 2. **Non fischia per la madre** (cap. 17): lei lo zittisce e lui si unisce a lei. Senza il verbo «fischiare».
 3. **Non fischia per il fratello** (cap. 19): a Checco non può dire niente, pena la gola di Checco. Senza il verbo «fischiare».
-4. **Fischia all'orecchio sbagliato** (cap. 23) [PROPOSTA CENTRALE]: fa arrivare ai calabresi la voce che Nicola compra a Napoli. È la sua vendetta ed è una vera caccia, ma fischia a un altro padrone, e per questo finisce incatenato in una grotta (cap. 25). Allora non lo capisce; il vecchio sì, e lo dice una volta sola. Da quella voce discende tutto: il disprezzo dei calabresi, il crollo di Nicola, i soldi rubati al Capo, la morte al circolo. La caccia riesce nel modo peggiore.
+4. **Fischia all'orecchio sbagliato** (cap. 23) [PROPOSTA CENTRALE]: fa arrivare ai calabresi la voce che Nicola compra a Napoli. È la sua vendetta ed è una vera caccia, ma fischia a un altro padrone, e per questo finisce incatenato in una grotta (cap. 25). Il vecchio dichiara una volta sola, nel cap. 25 (la grotta), che la voce era sua: non nel cap. 23, non nel cap. 24 (vedi 9.1). Da quella voce discende tutto: il disprezzo dei calabresi, il crollo di Nicola, i soldi rubati al Capo, la morte al circolo. La caccia riesce nel modo peggiore.
 5. **Fischia** (cap. 35): la telefonata al 113, per salvare Michele. Tardi, una volta, e all'orecchio giusto.
 
-Senza il punto 4 la Parte seconda torna a essere un'attesa. Il punto 4 va approvato prima della stesura della scaletta dei capp. 22-26.
+Senza il punto 4 la Parte seconda torna a essere un'attesa.
+
+### 9.1 Perché i calabresi prendono Beniamino (capp. 23-25) [DECISO, Fase 3d]
+
+**Il debito.** La roba nuova vale 80 milioni pattuiti; zi' Nardu ne pretende 160; Nicola ne ha con sé 80 e torna dopo due giorni con gli altri 80, presi in prestito dal Capo. Da quel momento Nicola è in debito anche con lui. I 220 milioni dello zaino sono un'altra cosa: il prezzo della pace che zi' Nardu, scoperto lo sgarro, chiede al Capo per gli anni in cui il suo uomo comprava dai napoletani. Tabella unica in 5.7-bis.
+
+**La scena (cap. 23).**
+- **Quando e dove:** giovedì 7 ottobre 1976, all'alba, quinto giorno della settimana della caccia, al mercato ortofrutticolo vicino al porto.
+- **A chi:** al messo calabrese, l'autista dei camion di agrumi della costa ionica che porta anche i messaggi di zi' Nardu. Beniamino lo ha notato il 2 ottobre (cap. 22), mentre metteva d'accordo le bugie con Giuseppe.
+- **Cosa dice, tre cose:**
+  1. Nicola, quello dell'Alfa rossa, compra anche dai napoletani, e da anni;
+  2. il 13 luglio era con lui in un capannone vicino a piazza Garibaldi;
+  3. quella stessa notte un camion frigorifero di Napoli è entrato in questo mercato.
+- **Perché gli credono:** sono dettagli controllabili ai cancelli.
+- **Cosa chiede:** niente, solo di non dire chi ha parlato. La frase esatta si scrive in stesura.
+
+**Perché un ostaggio e non Nicola colpito.**
+- Nicola serve vivo: è lo sbocco a Bari della nuova rotta via mare, e dietro di lui c'è il Capo.
+- I soldi valgono più del sangue, e gli ostaggi garantiscono i soldi.
+- Il ragazzo vale più di Nicola: il «fiuto» è noto anche al Capo.
+- Zi' Nardu non sa chi ha parlato: per lui è «una voce del mercato».
+- **Ironia:** Beniamino è lì perché Nicola lo porta ad assaggiare la merce nuova. Si consegna da solo come garanzia.
+
+**Cosa pensa il ragazzo (cap. 23).** Vuole vedere Nicola piegato, umiliato davanti a tutti da altri, senza sporcarsi le mani. Non pensa a Checco, a ciò che gli toccherà, alle conseguenze. Il vecchio lo segna con lo scarto (in sostanza: allora pensavo solo a vederlo piegato) e non anticipa la grotta.
+
+**Decisioni:**
+- **(a) Il pensiero di uccidere Nicola** non si cancella: si sposta nel cap. 23. Il ragazzo lo considera e lo scarta: non sa ammazzare, sa solo guardare e dire. Così la voce è una scelta e non un ripiego. Nel cap. 24 non resta nessuna «morte nel cuore».
+- **(b) Il vecchio dichiara una sola volta che la voce era sua,** nel cap. 25 (la grotta). Non nel cap. 23, non nel cap. 24. Nel cap. 24 il ragazzo sente zi' Nardu dire «da quando ho saputo…» e il narratore non commenta.
+- **(c) La tabella unica dei debiti** sta in 5.7-bis.
+
+**Dove compare il messo nella bibbia:** 2.13 (scheda, capp. 22-23), 6.8 (la notte del cap. 22 al mercato ortofrutticolo), qui in 9.1. Nella scaletta: cap. 21 (seme, l'autista che dice che la roba buona adesso arriva dal mare), cap. 22 («il messo calabrese tra i camion di agrumi, primo sguardo»), cap. 23.

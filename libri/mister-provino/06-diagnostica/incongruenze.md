@@ -2,7 +2,7 @@
 
 Versione 1 (Fase 3). Contraddizioni e problemi di verosimiglianza trovati nel vecchio testo (`01-originale/Mister_Provino_revisione_completa.md`), **in più** rispetto all'elenco del briefing (punto 6), che è già applicato nella bibbia.
 
-**Nessuna è risolta.** Dove ho un'idea la scrivo come «Possibile via», ma resta da decidere. «v.cap.» = capitolo del vecchio testo; «cap.» = capitolo della scaletta nuova.
+**Nessuna è risolta, salvo quelle segnate «RISOLTA».** Dove ho un'idea la scrivo come «Possibile via», ma resta da decidere. «v.cap.» = capitolo del vecchio testo; «cap.» = capitolo della scaletta nuova.
 
 Legenda:
 - **T** = trama o continuità;
@@ -42,13 +42,15 @@ Legenda:
 - **Il problema:** esce il 7 settembre e dopo pochi giorni ha «una carcassa sgangherata che si era ricomprato» (v.cap. 14).
 - **Possibile via:** la macchina gliela presta o gliela regala qualcuno (un compagno di cella, un amico), oppure la paga con i risparmi del lavoro in carcere. Vedi cap. 18.
 
-### 8. Lo zaino «per Don Micu» dopo che Nicola aveva già pagato · T · alta
+### 8. Lo zaino «per Don Micu» dopo che Nicola aveva già pagato · T · alta · **RISOLTA (Fase 3d)**
 - **Il problema:** in Aspromonte Nicola paga il doppio e chiude (v.cap. 19). Dieci giorni dopo il Capo gli affida 220 milioni «per Don Micu, per chiudere i conti con la Calabria» e «una guerra prima che cominciasse» (v.capp. 22 e 27). La guerra non è mai stata preparata, e resta da capire quale conto fosse ancora aperto.
 - **Possibile via:** lo sgarro di Napoli non si chiude con i soldi di Nicola. Zi' Nardu pretende dal Capo in persona un risarcimento, perché il Capo ha coperto Nicola. È la conseguenza diretta del «fischio sbagliato» del cap. 23, e rafforza la catena causale della bibbia (sezione 9).
+- **Soluzione:** bibbia §9.1 e tabella unica dei debiti §5.7-bis. I 160 di zi' Nardu sono pagati da Nicola (80 suoi e 80 prestati dal Capo). I 220 dello zaino sono un altro conto: il prezzo della pace che zi' Nardu chiede al Capo per gli anni di acquisti a Napoli.
 
-### 9. «Trovarlo e finirlo» contro il piano del v.cap. 15 · T · bassa
+### 9. «Trovarlo e finirlo» contro il piano del v.cap. 15 · T · bassa · **RISOLTA (Fase 3d)**
 - **Il problema:** nella grotta (v.cap. 18) il ragazzo ricorda di essere sceso in Calabria pensando di uccidere Nicola. Nel v.cap. 15 il piano era «conoscerlo tutto, e poi togliergli tutto».
 - **Possibile via:** con la caccia del cap. 23 il piano diventa esplicito (farlo cadere per mano di altri), e il pensiero di ucciderlo va tolto.
+- **Soluzione:** bibbia §9.1, decisione (a). Il pensiero di uccidere Nicola non si cancella: si sposta nel cap. 23, dove il ragazzo lo considera e lo scarta (non sa ammazzare, sa solo guardare e dire). Nel cap. 24 nessuna «morte nel cuore»; nella grotta (cap. 25) il vecchio dichiara una sola volta che la voce era sua.
 
 ### 10. La frase di Saro · T · bassa
 - **Il problema:** «Stavo qua pure io. A sedici anni. Da quella parte, però.» (v.cap. 18). Non si capisce se Saro fosse prigioniero o guardiano, né da quando.
@@ -177,4 +179,38 @@ Legenda:
 - **`03-architettura/scaletta.md`:** per istruzione (non va mostrata né toccata in questa fase).
   - Da allineare in seguito: «Il vecchio testo aveva 51.543 parole» nella sezione «Struttura in breve». Con il metodo unico sono 49.998, quindi l'aumento verso 78.000 è del 56%, non del 51%.
 - **`00-progetto/briefing.md` e `01-originale/`:** non toccati. `01-originale/` è sola lettura.
+- **`libri/kurgan-giorgi/`:** non toccata.
+
+---
+
+## Nota della Fase 3d (1 ottobre 2026)
+
+**Cambiato**
+- **`02-bibbia/bibbia.md`** (numeri di riga nuovi):
+  - **Levatrice:**
+    - r. 34 (§2.1): il racconto arriva molti anni dopo in una lettera dell'avvocato;
+    - r. 144 (§2.13): la scheda della levatrice (mai in scena, solo attraverso la lettera; cap. 2, interludio IV o VIII);
+    - r. 238 (cronologia «Dopo il romanzo»): l'avvocato la incontra cercando testimoni per Checco, 1977-1982;
+    - r. 380 (§6.11): la decisione (modo 1 semplificato, senza la premessa dell'atto di nascita; modo 2 scartato).
+  - **Debiti:** rr. 324-333 (nuovo §5.7-bis), tabella unica dei debiti e conciliazione con il §5.7.
+  - **Nome:** rr. 346-350 (§6.1), i due accorgimenti (Ciccio dice «uagnò» e non usa il soprannome nel cap. 1; ricci senza dettagli tecnici) e il secondo senso «provare la merce».
+  - **Calabresi:**
+    - r. 433 (§9, punto 4): il vecchio dichiara una volta sola, nel cap. 25, che la voce era sua;
+    - rr. 438-466 (nuovo §9.1): «Perché i calabresi prendono Beniamino», con il debito, la scena del 7 ottobre, il perché dell'ostaggio, cosa pensa il ragazzo, le decisioni (a), (b), (c) e dove compare il messo.
+- **Questo file:**
+  - r. 5: l'intestazione dice ora «Nessuna è risolta, salvo quelle segnate RISOLTA»;
+  - n. 8 (rr. 45, 48) e n. 9 (rr. 49, 53): segnate come risolte, con il rimando alla bibbia.
+
+**Non toccato, e perché**
+- **Le altre incongruenze:** per istruzione.
+- **`03-architettura/scaletta.md`:** non era nel perimetro della Fase 3d, ma contiene tre righe che **contraddicono le decisioni (a) e (b)** del §9.1 e andranno allineate quando rivediamo la scaletta:
+  - r. 241 (cap. 23): il vecchio commenta già nel cap. 23 («allora credevo che fosse il primo colpo della caccia…»). Con la decisione (b) il commento del vecchio va spostato al cap. 25; nel cap. 23 resta solo lo scarto «allora pensavo solo a vederlo piegato», e manca il pensiero di uccidere considerato e scartato.
+  - r. 248 (cap. 24): «il vecchio lo dice in una frase». Con la decisione (b) nel cap. 24 il narratore non commenta.
+  - r. 254 (cap. 25): «Decide: non uccidere». Con la decisione (a) la scelta di non uccidere è già avvenuta nel cap. 23; nel cap. 25 resta solo la dichiarazione del vecchio.
+- **Vecchio testo, righe in attrito** (`01-originale/`, sola lettura, non toccato):
+  - r. 1937 (v.cap. 18): «avevo pensato… di trovarlo da solo e finirlo», spostato nel cap. 23 e scartato lì;
+  - rr. 1761 e 1779 (v.cap. 16): la Calabria parte il giorno dopo il controllo di Cataldo, mentre ora c'è la settimana dal 3 all'8 ottobre;
+  - r. 1849 (v.cap. 17): Nicola arriva convinto che sia «come sempre», compatibile solo se il raddoppio gli è nuovo (nuova rotta);
+  - r. 1863: «lo sapevano tutti», che va inteso come «tutti nella stanza».
+- **Il manuale di stile:** non toccato in questa parte (vedi Fase 3e).
 - **`libri/kurgan-giorgi/`:** non toccata.
