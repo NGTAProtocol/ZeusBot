@@ -629,7 +629,7 @@ Kurgan conosceva il peso di ognuno di loro come si conosce il peso di un'arma.
 
 Onorato valeva quaranta uomini e tre notai. Mimmo Carrese teneva i moli di Punta Saline e sapeva quale gru si fermava quando pioveva. Il gruppo della Serrana, sei uomini con la stessa faccia chiusa, non valeva ancora niente di preciso. Valeva quello che avrebbe deciso di valere il giorno in cui qualcuno gli avesse offerto di più.
 
-Sei mesi prima i capi della Serrana erano morti tutti nella stessa notte, in undici posti diversi, colpiti dall'alto. Nessuno a Serrania aveva capito da dove. Il giorno dopo quei sei erano venuti a Partenia, con le mani in vista, a chiedere chi comandava adesso. Kurgan aveva detto: io. Loro avevano detto: va bene.
+Sei mesi prima i capi della Serrana erano morti tutti nella stessa notte, in undici posti diversi, colpiti dall'alto. Nessuno in Serrania aveva capito da dove. Il giorno dopo quei sei erano venuti a Partenia, con le mani in vista, a chiedere chi comandava adesso. Kurgan aveva detto: io. Loro avevano detto: va bene.
 
 Un uomo che si inginocchia così in fretta, pensava Kurgan, si rialza in fretta uguale.
 
@@ -1145,7 +1145,7 @@ Calabrese non rispose. Flora annuì.
 
 «Droni» disse Flora.
 
-«Droni. Militari, non di quelli che si comprano su internet. Io ho i frammenti di uno, sequestrati a Serrania la mattina dopo. Nessuno me li ha fatti analizzare.»
+«Droni. Militari, non di quelli che si comprano su internet. Io ho i frammenti di uno, sequestrati in Serrania la mattina dopo. Nessuno me li ha fatti analizzare.»
 
 Calabrese si sporse sul tavolo. Guardò lo schema per un tempo lungo.
 
@@ -1551,7 +1551,7 @@ Kurgan non rispose. Rastegar girò il cucchiaino nel tè, anche se non c'era zuc
 
 Kurgan sentì la cosa che sentiva quando un uomo, in una stanza, metteva la mano in tasca. Non paura. Una specie di contabilità immediata. Chi sapeva, quanto sapeva, da quanto.
 
-Maggio. Un capannone vuoto dietro il porto di Partenia, di notte. Uno schermo grande su un tavolo pieghevole, e un uomo biondo con l'accento del nord che parlava solo inglese e fumava sigarette sottili. Undici puntini luminosi sparsi su una mappa di Serrania. Kurgan li aveva guardati spegnersi uno alla volta, in quaranta minuti, senza un rumore. Il dottore aveva pagato. Il dottore aveva telefonato alle persone giuste perché quella notte nessuno guardasse il cielo.
+Maggio. Un capannone vuoto dietro il porto di Partenia, di notte. Uno schermo grande su un tavolo pieghevole, e un uomo biondo con l'accento del nord che parlava solo inglese e fumava sigarette sottili. Undici puntini luminosi sparsi su una mappa della Serrania. Kurgan li aveva guardati spegnersi uno alla volta, in quaranta minuti, senza un rumore. Il dottore aveva pagato. Il dottore aveva telefonato alle persone giuste perché quella notte nessuno guardasse il cielo.
 
 Quegli amici del nord erano del dottore, non suoi. Kurgan lo aveva sempre saputo. Era uno dei motivi per cui aveva chiamato un altro numero.
 
@@ -2115,7 +2115,7 @@ Il capannone dietro il porto di Partenia, a maggio. Una notte senza luna.
 
 Un tavolo pieghevole, uno schermo grande collegato a un computer, tre uomini che Kurgan non conosceva. Volkov era uno dei tre. Fumava sigarette sottili, bianche, una dopo l'altra, e le spegneva in un bicchiere di plastica pieno d'acqua. Gli altri due battevano sulle tastiere e parlavano tra loro in una lingua dura, piena di consonanti.
 
-Sullo schermo c'era una mappa di Serrania. Undici puntini verdi, sparsi tra le montagne e la costa. Una villa. Una masseria. Un appartamento sopra una farmacia. Una casa di campagna con un pozzo. Undici posti dove undici uomini dormivano, convinti che nessuno sapesse dove.
+Sullo schermo c'era una mappa della Serrania. Undici puntini verdi, sparsi tra le montagne e la costa. Una villa. Una masseria. Un appartamento sopra una farmacia. Una casa di campagna con un pozzo. Undici posti dove undici uomini dormivano, convinti che nessuno sapesse dove.
 
 Qualcuno lo sapeva. Qualcuno che stava molto più lontano di Partenia.
 
@@ -6612,7 +6612,7 @@ De Biasi chiamò alle 2.41, di persona, dal telefono di un'auto in movimento. La
 
 Raccontò con l'ordine di un rapporto di servizio, e Giorgi ascoltò senza interrompere, ricostruendo la scena a mano a mano, come si ricostruiva un guasto dai registri degli strumenti, senza averlo visto.
 
-Bertola aveva convocato a Casal Fascio, per la domenica sera, una riunione dei capi dei porti. Era un'abitudine che aveva preso da luglio: una domenica al mese, alle undici di sera, nel casale con il nome dipinto sul muro. Adorisio e altri tre avevano deciso che quella domenica sarebbe stata l'ultima. Quattro macchine, dodici uomini, armi da guerra portate su da Serrania in una cisterna d'acqua per l'irrigazione. Dovevano entrare all'una e un quarto, quando la riunione finiva e le guardie di Bertola erano stanche.
+Bertola aveva convocato a Casal Fascio, per la domenica sera, una riunione dei capi dei porti. Era un'abitudine che aveva preso da luglio: una domenica al mese, alle undici di sera, nel casale con il nome dipinto sul muro. Adorisio e altri tre avevano deciso che quella domenica sarebbe stata l'ultima. Quattro macchine, dodici uomini, armi da guerra portate su dalla Serrania in una cisterna d'acqua per l'irrigazione. Dovevano entrare all'una e un quarto, quando la riunione finiva e le guardie di Bertola erano stanche.
 
 Bertola non c'era. De Biasi lo aveva fatto uscire alle undici e mezza da una porta sul retro, e al suo posto, nel casale, c'erano i reparti.
 
