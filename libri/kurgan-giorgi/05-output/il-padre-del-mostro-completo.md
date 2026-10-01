@@ -1,8 +1,18 @@
 # Il padre del mostro
 
-### Felice Faraone
+### F.R. Faraone
 
-*Romanzo — prima stesura rivista*
+*Romanzo*
+
+---
+
+<div class="copyright">
+
+© 2026 F.R. Faraone. Tutti i diritti riservati.
+
+Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzione dell'autore o usati in modo fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale.
+
+</div>
 
 ---
 
@@ -311,7 +321,7 @@ Al tavolo accanto qualcuno aveva lasciato il giornale del mattino. In prima pagi
 
 Aveva scelto AV System per un motivo solo.
 
-Aveva ventinove anni e una laurea presa in corso, con una tesi sui modelli di prezzo delle obbligazioni che il relatore aveva definito "inutilmente elegante". Aveva mandato quarantadue curricula. Lo avevano chiamato in tre. AV System era l'unica che non gli aveva chiesto chi fosse suo padre.
+Aveva ventinove anni e una laurea presa in corso, con una tesi sui modelli di prezzo delle obbligazioni che il relatore aveva definito «inutilmente elegante». Aveva mandato quarantadue curricula. Lo avevano chiamato in tre. AV System era l'unica che non gli aveva chiesto chi fosse suo padre.
 
 Gli avevano dato un test di tre ore e una stanza vuota. Poi un colloquio con due persone che non si erano presentate. Poi una mail. Nessuna raccomandazione, nessun cognome da pronunciare. Solo il test.
 
@@ -809,7 +819,7 @@ Direzione.
 
 Da tre settimane lavorava al diciannovesimo piano.
 
-Il giorno dopo la chiusura, alle nove del mattino, una donna dell'ufficio del personale lo aveva chiamato in una saletta con le pareti di vetro smerigliato. Una donna gentile, sui cinquant'anni, con un fascicolo che non aveva mai aperto. Gli aveva detto che la direzione aveva notato il suo lavoro. Che un profilo come il suo era sprecato sul desk. Che c'era bisogno di una persona precisa alle riconciliazioni di fine mese, per crescere, per vedere l'azienda "dall'interno dei suoi numeri".
+Il giorno dopo la chiusura, alle nove del mattino, una donna dell'ufficio del personale lo aveva chiamato in una saletta con le pareti di vetro smerigliato. Una donna gentile, sui cinquant'anni, con un fascicolo che non aveva mai aperto. Gli aveva detto che la direzione aveva notato il suo lavoro. Che un profilo come il suo era sprecato sul desk. Che c'era bisogno di una persona precisa alle riconciliazioni di fine mese, per crescere, per vedere l'azienda «dall'interno dei suoi numeri».
 
 Tommaso aveva ringraziato. Aveva contato quante volte lei aveva detto la parola *crescere*. Quattro.
 
@@ -1213,7 +1223,7 @@ Flora lo ripassò in treno, al ritorno, come ripassava tutto. Chi lo sapeva. Il 
 
 Il treno era mezzo vuoto. Fuori era già buio. Nel vetro vedeva la sua faccia sovrapposta ai campi neri, e sotto la faccia la stanchezza, che ormai non se ne andava più nemmeno con il sonno.
 
-Pensò a Carlo De Stefano senza volerlo, come le capitava a quell'ora. Colonnello, quarantadue anni, un uomo che conosceva da un anno e con cui cenava una volta al mese, senza che nessuno dei due avesse mai dato un nome alla cosa. Lui lavorava "per il ministero", diceva. Non diceva quale. Lei non chiedeva, perché era un magistrato e sapeva che c'erano domande che, una volta fatte, obbligavano a verbalizzare la risposta.
+Pensò a Carlo De Stefano senza volerlo, come le capitava a quell'ora. Colonnello, quarantadue anni, un uomo che conosceva da un anno e con cui cenava una volta al mese, senza che nessuno dei due avesse mai dato un nome alla cosa. Lui lavorava «per il ministero», diceva. Non diceva quale. Lei non chiedeva, perché era un magistrato e sapeva che c'erano domande che, una volta fatte, obbligavano a verbalizzare la risposta.
 
 Non gli aveva detto del pool. Non l'aveva detto a nessuno. Nemmeno a sua madre, che la sera la chiamava sempre alle nove e un quarto.
 
@@ -1935,7 +1945,7 @@ Due. Carlo sapeva che la Consob aveva mandato i dati per giorno.
 
 Tre. Carlo sapeva un orario: le 12.07. Un numero: trentuno. Un luogo: Merania.
 
-Quattro. Carlo lavorava "per il ministero", e il ministero, qualunque fosse, non aveva accesso ai dati di regolamento dei titoli senza un provvedimento di un magistrato.
+Quattro. Carlo lavorava «per il ministero», e il ministero, qualunque fosse, non aveva accesso ai dati di regolamento dei titoli senza un provvedimento di un magistrato.
 
 La pista era vera. La sentiva come un gradino sotto il piede, nel buio. Era vera e precisa. Troppo precisa. Non era la pista di uno che aveva sentito qualcosa. Era la pista di uno che aveva visto i dati.
 
@@ -1969,7 +1979,7 @@ Tornò in ufficio alle 11.47.
 
 Prima di togliersi il cappotto, fece una cosa sola. Aprì il fascicolo delle rogatorie e controllò chi aveva visto quella per Valdhof.
 
-La rogatoria era partita da lei, era passata per il ministero della Giustizia, era andata all'ambasciata, era arrivata alla banca. Il ministero. Quattro uffici, forse sei funzionari. Carlo lavorava "per il ministero". Non aveva mai detto quale.
+La rogatoria era partita da lei, era passata per il ministero della Giustizia, era andata all'ambasciata, era arrivata alla banca. Il ministero. Quattro uffici, forse sei funzionari. Carlo lavorava «per il ministero». Non aveva mai detto quale.
 
 Poteva essere quella la strada. Una rogatoria passata per troppe mani, qualcuno che parlava a un caffè, una voce arrivata a un colonnello. Era una spiegazione. Flora la scrisse su un foglio, con un numero accanto: uno.
 
