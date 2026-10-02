@@ -1,5 +1,8 @@
 """Controlli di stile (proposta B.3, B.6, C.2).
 
+Voci con solo_dialogo: true: ammesse solo nelle righe di dialogo (che cominciano con la
+lineetta di lingue.yaml); ogni riga fuori dal dialogo che le contiene è KO.
+
 Uso: python3 -B stile.py <libro> [N] [--schermo]
 Per ogni unità (o solo la N): frase media e dialogo % (solo capitoli numerati),
 voci con pattern (lista nera di base + voci del libro), parole filtro, candidati
@@ -82,6 +85,16 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
             continue
         if v.get('vietato_in_capitoli') and not comune.in_elenco(nome, v['vietato_in_capitoli']):
             continue
+        if v.get('solo_dialogo'):
+            # Ammessa solo nel discorso diretto: fuori dal dialogo è KO (una riga per riga di testo);
+            # nel dialogo vale la modalità della voce.
+            dialogo = {n for n, r in prosa if r.lstrip().startswith(lingua['lineetta_dialogo'])}
+            fuori = sorted({n for n, _ in occ if n not in dialogo})
+            out += [risultato(nome, f'voce:{v["id"]}:fuori_dialogo', 'KO', n, 'fuori dal discorso diretto')
+                    for n in fuori]
+            occ = [(n, t) for n, t in occ if n in dialogo]
+            if not occ:
+                continue
         mod = v['modalita']
         if mod == 'vieta':
             out += [risultato(nome, f'voce:{v["id"]}', 'KO', n, t) for n, t in occ]

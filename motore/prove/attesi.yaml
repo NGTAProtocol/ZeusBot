@@ -137,3 +137,11 @@ passo_2:
     continuita.py mini-libro-romance: 0
     riciclo.py mini-libro: 0
     riciclo.py mini-libro-romance: 0
+  solo_dialogo:                   # voce di prova {id: registro_prova, pattern: '(?i)\bregistro\b', modalita: conta,
+                                  # massimo: 10, solo_dialogo: true} aggiunta a una copia del giallo
+    righe_ko_cap_1: [17, 19, 39, 53, 69, 71, 103]   # righe di narrazione con «registro»
+    righe_dialogo_ammesse: [79, 99]                 # righe di dialogo: nessun esito
+  checklist_capitolo:             # sezione «Checklist manuale» nel report di capitolo.py
+    tic: 4
+  nome_obbligatorio:              # copia del giallo con obbligatorio_in: ["3"] per «Lodovico Arsa»
+    esito_cap_3: "nome_obbligatorio:Lodovico Arsa|KO|"

@@ -217,6 +217,32 @@ def passo_2(A):
         o = f'KO: {e}'
     esito('lista-nera.yaml', 'regex valide', A['lista_nera']['regex_valide'], o, sez)
 
+    import stile
+    c = copia_libro('mini-libro')
+    y = open(os.path.join(c, 'libro.yaml'), encoding='utf-8').read()
+    y = y.replace("voci:\n", "voci:\n  - {id: registro_prova, pattern: '(?i)\\bregistro\\b', modalita: conta, massimo: 10, solo_dialogo: true}\n", 1)
+    open(os.path.join(c, 'libro.yaml'), 'w', encoding='utf-8').write(y)
+    cart, libro, prof = comune.carica_libro(c)
+    ris = stile.controlla_libro(cart, libro, prof)['1'][1]
+    ko = sorted(r['riga'] for r in ris if r['controllo'] == 'voce:registro_prova:fuori_dialogo')
+    altri = [r['riga'] for r in ris if r['controllo'].startswith('voce:registro_prova') and r['riga'] in A['solo_dialogo']['righe_dialogo_ammesse']]
+    esito('stile.py', 'solo_dialogo: righe KO fuori dal dialogo (cap. 1)', A['solo_dialogo']['righe_ko_cap_1'], ko, sez)
+    esito('stile.py', 'solo_dialogo: righe di dialogo segnalate', [], altri, sez)
+
+    c = copia_libro('mini-libro')
+    y = open(os.path.join(c, 'libro.yaml'), encoding='utf-8').read()
+    open(os.path.join(c, 'libro.yaml'), 'w', encoding='utf-8').write(y.replace('obbligatorio_in: []}', 'obbligatorio_in: ["3"]}'))
+    cart, libro, prof = comune.carica_libro(c)
+    ris = stile.controlla_libro(cart, libro, prof)['3'][1]
+    trovati = [f'{r["controllo"]}|{r["esito"]}|{r["riga"] or ""}' for r in ris if r['controllo'].startswith('nome_obbligatorio')]
+    esito('stile.py', 'nome obbligatorio assente nel cap. 3', [A['nome_obbligatorio']['esito_cap_3']], trovati, sez)
+
+    c = copia_libro('mini-libro')
+    esegui(os.path.join(S, 'capitolo.py'), c, '1')
+    rep = open(os.path.join(c, '06-diagnostica', 'capitoli', '01.md'), encoding='utf-8').read()
+    n_tic = len(re.findall(r'^\| Tic: .* \| \[ \] \|$', rep, re.M)) if '## Checklist manuale' in rep else 0
+    esito('capitolo.py', 'checklist manuale nel report: tic con casella', A['checklist_capitolo']['tic'], n_tic, sez)
+
     report = {'stile.py': 'stile.md', 'continuita.py': 'continuita.md', 'riciclo.py': 'riciclo.md'}
     for chiave, att in A['comandi'].items():
         script, libro_nome = chiave.split()

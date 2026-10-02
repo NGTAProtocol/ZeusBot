@@ -60,3 +60,11 @@ Errori voluti di B.2.2, tutti trovati:
 ## Non fatto in questo passo
 
 - Tic «meteo all'inizio del capitolo» e «domande retoriche in serie» (05 r. 20): non rilevabili con affidabilità; restano al controllo a vista.
+
+## Le tre modifiche al mini-libro giallo (chiarimento del passo 2b)
+
+| Modifica | Errore di prova che toglieva | Controllo che continua a esercitare |
+|---|---|---|
+| Assunzione di Gemma da giugno a settembre 2017 (cronologia.yaml e bibbia) | Con giugno, «tre anni, quasi quattro» (36 mesi dichiarati) contro 45 mesi calcolati superava la tolleranza di 6 mesi: dava un KO di durata nel cap. 1, che per B.2.2 deve passare tutti i controlli. | Il controllo `durata` gira ancora sul cap. 1: trova la frase, ricalcola dalle date (42 mesi) e la accetta al limite della tolleranza. La prova «cap. 1: 0 esiti» lo verifica. |
+| `obbligatorio_in: ["3"]` diventa `[]` per «Lodovico Arsa» | Il cap. 3 non nomina Lodovico Arsa: dava un KO «nome_obbligatorio» non previsto tra gli errori voluti. | Il divieto prima del cap. 3 resta esercitato (4 KO nel cap. 2). Il ramo «obbligatorio» si prova dal passo 2b su una copia con `obbligatorio_in: ["3"]`: KO atteso nel cap. 3. |
+| Briefing: «il nome del colpevole» diventa «il nome di Lodovico Arsa» | Nessun errore di prova: era un'incoerenza del testo, perché nella storia il colpevole è la sorella. | Nessun controllo cambia: la regola resta quella di `nome_vietato_prima_di` in libro.yaml. |

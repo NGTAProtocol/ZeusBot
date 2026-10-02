@@ -205,20 +205,25 @@ def controlla_libro(cartella, libro):
     return risultati, durate_trovate, date_unita
 
 
-def checklist(cartella, libro):
+def voci_toccate(cartella, libro, nome_unita):
+    """Voci in grassetto della bibbia che compaiono nell'unità."""
     pb = os.path.join(cartella, '02-bibbia', 'bibbia.md')
     voci = re.findall(r'\*\*([^*]+)\*\*', open(pb, encoding='utf-8').read()) if os.path.isfile(pb) else []
     voci = [v for v in voci if v.lower() != 'oggetti']
+    testo = open(dict(comune.unita(cartella, libro))[nome_unita], encoding='utf-8').read()
+    toccate = []
+    for v in voci:
+        parti = v.split()
+        chiave = parti[-1] if parti[0].lower() in ('signora', 'signor', 'don', 'dottor', 'zia', 'zio') else parti[0]
+        if v in testo or re.search(r'\b' + re.escape(chiave) + r'\b', testo):
+            toccate.append(v)
+    return toccate
+
+
+def checklist(cartella, libro):
     righe = ['| Unità | Voci della bibbia toccate | Verificato dall\'autore |', '|---|---|---|']
-    for nome, p in comune.unita(cartella, libro):
-        testo = open(p, encoding='utf-8').read()
-        toccate = []
-        for v in voci:
-            parti = v.split()
-            chiave = parti[-1] if parti[0].lower() in ('signora', 'signor', 'don', 'dottor', 'zia', 'zio') else parti[0]
-            if v in testo or re.search(r'\b' + re.escape(chiave) + r'\b', testo):
-                toccate.append(v)
-        righe.append(f'| {nome} | {", ".join(toccate) or "—"} | [ ] |')
+    for nome, _ in comune.unita(cartella, libro):
+        righe.append(f'| {nome} | {", ".join(voci_toccate(cartella, libro, nome)) or "—"} | [ ] |')
     return righe
 
 

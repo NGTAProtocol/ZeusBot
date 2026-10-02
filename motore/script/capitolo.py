@@ -21,6 +21,14 @@ import stile  # noqa: E402
 from stile import risultato, tabella  # noqa: E402
 
 
+CHECKLIST_TIC = [
+    'Tic: descrizione del meteo all\'inizio del capitolo (05-critica r. 20)',
+    'Tic: domande retoriche interiori in serie (05-critica r. 20)',
+    'Tic: chiusure di paragrafo con morale o riflessione (05-critica r. 20)',
+    'Tic: scena che finisce con un momento di consapevolezza (05-critica r. 20)',
+]
+
+
 def dichiarazioni(cartella, libro, unita, nome):
     """Controlli delle dichiarazioni dell'unità `nome` (lista di (nome, percorso) in ordine)."""
     spec = libro.get('dichiarazioni') or {}
@@ -110,6 +118,11 @@ def main(argv):
              f'dialogo: {met["dialogo_percento"]}%', '',
              f'Esito: {ko} KO, {sum(1 for r in out if r["esito"] == "AVVISO")} avvisi.', '']
     righe += tabella(out) if out else ['Nessun KO e nessun avviso.']
+    righe += ['', '## Checklist manuale', '',
+              'Controlli che il motore non sa fare da solo: li verifica l\'autore.', '',
+              '| Controllo | Verificato dall\'autore |', '|---|---|']
+    righe += [f'| {c} | [ ] |' for c in CHECKLIST_TIC]
+    righe += [f'| {v} | [ ] |' for v in continuita.voci_toccate(cartella, libro, nome)]
     testo = '\n'.join(righe + [''])
     if '--schermo' in argv:
         print(testo)
