@@ -1,0 +1,190 @@
+"""Prove ripetibili del motore (comando «zb prove»).
+
+Uso: python3 -B prove.py [--radice <cartella motore>]
+Copia i due mini-libri inventati di prove/ in cartelle temporanee, esegue le prove
+di ogni passo presente in prove/attesi.yaml (passo_1, passo_2, …), confronta gli
+esiti e stampa la tabella script | controllo | atteso | ottenuto | OK/KO.
+Alla fine rilancia separazione.py e recinto.py su motore/.
+Codice d'uscita 0 solo se tutto è OK.
+"""
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import comune  # noqa: E402
+
+M = comune.radice_motore()
+S = os.path.join(M, 'script')
+ENV = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
+TMP = tempfile.mkdtemp(prefix='zb-prove-')
+righe = []
+
+
+def esito(script, controllo, atteso, ottenuto, sezione):
+    ok = str(atteso) == str(ottenuto)
+    righe.append((sezione, script, controllo, str(atteso), str(ottenuto), 'OK' if ok else 'KO'))
+
+
+def esegui(*args):
+    return subprocess.run([sys.executable, '-B', *args], env=ENV, capture_output=True, text=True)
+
+
+def copia_libro(nome):
+    d = tempfile.mkdtemp(dir=TMP)
+    return shutil.copytree(os.path.join(M, 'prove', nome), os.path.join(d, nome))
+
+
+def copia_motore():
+    d = tempfile.mkdtemp(dir=TMP)
+    return shutil.copytree(M, os.path.join(d, 'motore'))
+
+
+# ---------------------------------------------------------------- passo 1
+
+def passo_1(A):
+    import conta
+    import valida_profili
+    sez = 'passo 1'
+    for nome, att in A['profili'].items():
+        e = valida_profili.valida_profilo(os.path.join(M, 'profili', f'{nome}.yaml'))
+        esito('valida_profili.py', f'profilo {nome}', att, 'OK' if not e else 'KO', sez)
+    t = open(os.path.join(M, 'profili', 'giallo.yaml'), encoding='utf-8').read()
+    d = tempfile.mkdtemp(dir=TMP)
+    p = os.path.join(d, 'giallo.yaml')
+    open(p, 'w', encoding='utf-8').write(re.sub(r'(parole_per_pagina: 250)\s+#.*', r'\1', t))
+    esito('valida_profili.py', 'profilo con valore senza fonte', A['profilo_senza_fonte'],
+          'OK' if not valida_profili.valida_profilo(p) else 'KO', sez)
+    open(p, 'w', encoding='utf-8').write(t.replace('massimo: 3500', 'massimo: 2000'))
+    esito('valida_profili.py', 'profilo con media oltre il massimo', A['profilo_media_fuori'],
+          'OK' if not valida_profili.valida_profilo(p) else 'KO', sez)
+    esito('valida_profili.py', "esecuzione su profili/ (codice d'uscita)", 0,
+          esegui(os.path.join(S, 'valida_profili.py')).returncode, sez)
+
+    for nome, att in A['libro_schema'].items():
+        try:
+            comune.carica_libro(os.path.join(M, 'prove', nome))
+            o = 'OK'
+        except comune.ErroreMotore:
+            o = 'KO'
+        esito('comune.py', f'libro.yaml {nome} contro lo schema', att, o, sez)
+
+    casi = {
+        'lingua_en': lambda y: y.replace('lingua: it', 'lingua: en'),
+        'lingua_mancante': lambda y: y.replace('lingua: it\n', ''),
+        'override_senza_motivo': lambda y: y.replace(
+            'override: []', 'override:\n  - {campo: capitoli.minimo, valore: 700, motivo: ""}'),
+        'profilo_cambiato_senza_override': lambda y: y.replace(
+            'override: []', 'override: []\nstile:\n  frase_media: [8, 12]'),
+        'riscrittura_senza_testo_precedente': lambda y: y.replace('modalita: nuovo', 'modalita: riscrittura'),
+    }
+    for k, f in casi.items():
+        c = copia_libro('mini-libro')
+        y = open(os.path.join(c, 'libro.yaml'), encoding='utf-8').read()
+        open(os.path.join(c, 'libro.yaml'), 'w', encoding='utf-8').write(f(y))
+        try:
+            comune.carica_libro(c)
+            msg = 'accettato'
+        except comune.ErroreMotore as e:
+            msg = str(e)
+        att = A['rifiuti'][k]
+        esito('comune.py', f'rifiuto: {k}', att, att if att in msg else msg.splitlines()[0][:80], sez)
+
+    stato = {'libro': 'Prova di stampa', 'motore_commit': 'abc1234', 'ramo_ultimo_salvataggio': 'prova',
+             'fase': 0, 'passo': 'briefing', 'gate_in_attesa': 'G0',
+             'lotto': {'dimensione': 3, 'capitoli': []}, 'ultimo_capitolo_approvato': None,
+             'parole': {'scritte': 0, 'obiettivo': 3000, 'metodo': 'unico'},
+             'documenti_approvati': {}, 'avvisi_aperti': [], 'revisione_in_corso': None,
+             'push_in_sospeso': False, 'aggiornato': '2026-10-02T00:00:00Z'}
+    sc = comune.carica_schema('stato')
+    esito('stato.schema.yaml', "stato.yaml d'esempio (C.1)", A['stato_schema']['modello_valido'],
+          'OK' if not comune.valida(stato, sc, 'stato') else 'KO', sez)
+    s2 = dict(stato)
+    del s2['fase']
+    esito('stato.schema.yaml', 'stato.yaml senza fase', A['stato_schema']['fase_mancante'],
+          'OK' if not comune.valida(s2, sc, 'stato') else 'KO', sez)
+
+    for nome, att in A['conta'].items():
+        c = copia_libro(nome)
+        cart, libro, _ = comune.carica_libro(c)
+        un = comune.unita(cart, libro)
+        esito('conta.py', f'{nome}: ordine delle unità', att['ordine'], [n for n, _ in un], sez)
+        for n, p in un:
+            esito('conta.py', f'{nome}: parole unità {n}', att['unita'][n],
+                  conta.conta_testo(open(p, encoding='utf-8').read()), sez)
+        esegui(os.path.join(S, 'conta.py'), c)
+        rep = os.path.join(c, '06-diagnostica', 'conteggio.md')
+        m = re.search(r'\*\*Totale:\*\* (\d+)', open(rep, encoding='utf-8').read()) if os.path.isfile(rep) else None
+        esito('conta.py', f'{nome}: totale nel report', att['totale'], m.group(1) if m else 'nessun report', sez)
+
+    c = copia_libro('mini-libro')
+    for etichetta, dest in (('scrivi fuori dal libro', os.path.join(os.path.dirname(c), 'fuori.txt')),
+                            ('scrivi con ../ fuori dal libro', '../fuori2.txt')):
+        try:
+            comune.scrivi(c, dest, 'x')
+            o = 'accettata'
+        except comune.ErroreMotore:
+            o = 'rifiutata'
+        esito('comune.py', etichetta, A['recinto']['scrivi_fuori_dal_libro'], o, sez)
+
+    def sep(modifica):
+        c = copia_motore()
+        modifica(c)
+        return esegui(os.path.join(c, 'script', 'separazione.py'), '--radice', c).returncode
+
+    def nome_vietato(c):
+        open(os.path.join(c, 'dati', 'nomi_vietati.txt'), 'a', encoding='utf-8').write('Zarvenco\n')
+        open(os.path.join(c, 'prove', 'mini-libro', '02-bibbia', 'bibbia.md'), 'a', encoding='utf-8').write('\nZarvenco\n')
+
+    def yaml_fuori(c):
+        shutil.copy(os.path.join(c, 'prove', 'mini-libro', 'libro.yaml'), os.path.join(c, 'dati', 'libro.yaml'))
+
+    esito('separazione.py', 'nome vietato presente in una copia di motore/',
+          A['separazione']['nome_vietato_in_copia'], sep(nome_vietato), sez)
+    esito('separazione.py', 'libro.yaml fuori dai mini-libri',
+          A['separazione']['libro_yaml_fuori_posto'], sep(yaml_fuori), sez)
+
+    c = copia_motore()
+    viol = os.path.join(c, 'prove', 'esiti', '_violazione_di_prova.tmp')
+    cmd = f"{sys.executable} -c \"open('{viol}','w').write('x')\""
+    p = esegui(os.path.join(c, 'script', 'recinto.py'), '--radice', c, '--extra', cmd)
+    esito('recinto.py', 'scrittura messa apposta in motore/', A['recinto']['scrittura_messa_apposta'],
+          p.returncode, sez)
+
+
+# ---------------------------------------------------------------- tabella
+
+SEZIONI = {'passo_1': passo_1}
+
+
+def main(argv):
+    A = comune.leggi_yaml(os.path.join(M, 'prove', 'attesi.yaml'))
+    try:
+        for chiave, funz in SEZIONI.items():
+            if chiave in A:
+                funz(A[chiave])
+        finali = []
+        for nome in ('separazione.py', 'recinto.py'):
+            p = esegui(os.path.join(S, nome), '--radice', M)
+            finali.append((nome, p.returncode, (p.stdout.strip().splitlines() or [''])[-1]))
+    finally:
+        shutil.rmtree(TMP, ignore_errors=True)
+    print('| Sezione | Script | Controllo | Atteso | Ottenuto | Esito |')
+    print('|---|---|---|---|---|---|')
+    for r in righe:
+        print('| ' + ' | '.join(r) + ' |')
+    ok = sum(1 for r in righe if r[5] == 'OK')
+    print(f'\nProve: {ok}/{len(righe)} OK')
+    for nome, codice, riga in finali:
+        print(f'{nome} su motore/: {"OK" if codice == 0 else "KO"} — {riga}')
+    tutto_ok = ok == len(righe) and all(c == 0 for _, c, _ in finali)
+    print('ESITO: ' + ('tutto OK' if tutto_ok else 'CI SONO KO'))
+    return 0 if tutto_ok else 1
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
