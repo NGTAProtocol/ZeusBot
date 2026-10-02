@@ -1,6 +1,6 @@
 # Motore editoriale — proposta
 
-Stato: **proposta**. Nessun file del motore è ancora stato creato oltre a questo.
+Stato: **proposta approvata dall'autore** (2026-10-02). Nessun file del motore è ancora stato creato oltre a questo; la costruzione segue B.7.
 
 **Principio.** Il motore è una fabbrica vuota e generica, per qualsiasi romanzo o manoscritto di qualsiasi genere. Contiene solo: procedura, script, modelli vuoti, profili di genere, dati KDP e un mini-libro inventato per le prove. **Non contiene nessun libro reale**, nemmeno come esempio o caso di prova. Il libro si indica a ogni comando con un percorso; tutto ciò che il motore produce per un libro va nella cartella di quel libro, e il motore non scrive in nessuna cartella di libro che non gli sia stata indicata.
 
@@ -676,7 +676,7 @@ copyright:
 | `zb pacchetto <libro>` | `pacchetto.py` | `<libro>/06-pubblicazione/` |
 | `zb revisione <libro> <documento>` | `revisione.py` | niente (a schermo) |
 | `verifica KDP fatta [AAAA-MM-GG]` | `kdp_verifica.py` | `motore/dati/kdp.yaml`, `motore/dati/verifiche-kdp.md` (unica eccezione: non riguarda un libro) |
-| `zb prove` | tutti, sul mini-libro | una copia temporanea del mini-libro |
+| `zb prove` | tutti, sui due mini-libri (giallo e romance) | copie temporanee dei mini-libri |
 
 Ogni comando che opera su un libro scrive **solo** dentro `<libro>` (B.9). Nessun comando fa commit o push da solo: il salvataggio segue B.5.
 
@@ -708,7 +708,7 @@ Ogni comando che opera su un libro scrive **solo** dentro `<libro>` (B.9). Nessu
 Un file per genere. Ogni profilo è un **default**: `libro.yaml` lo sceglie con `profilo:` e lo corregge con `override` motivato (B.3). Accanto a ogni valore c'è la fonte:
 - `12 r. N`, `02 r. N`, `03 r. N`, `05 r. N` sono le righe dei file `riferimenti/12-lunghezze-e-struttura-capitoli.md`, `02-architettura.md`, `03-stesura.md` e `05-critica-e-punteggio.md` (casa-editrice main @ becd0e2);
 - `01-mercato r. 25` è la riga di `riferimenti/01-mercato.md`;
-- **PROPOSTA** è un valore mio, senza una fonte nei riferimenti, da approvare.
+- **PROPOSTA** è un valore senza una fonte nei riferimenti, approvato dall'autore il 2026-10-02. Fanno eccezione le similitudini dei cinque profili giallo, narrativa-letteraria, fantasy, fantascienza e young-adult, segnate «da confermare».
 
 **Formato di un profilo** (`dati/profilo.schema.yaml`): `genere`, `lunghezza_totale`, `capitoli`, `scene`, `parole_per_atto`, `battiti`, `chiusura_preferita` (`gancio_domanda` | `gesto_oggetto` | `misto`), `frase_media`, `dialogo_percento`, `similitudini_max_per_parole`, `parole_filtro`, `lista_nera`, `parole_per_pagina`, `scene_obbligatorie`.
 
@@ -799,33 +799,219 @@ scene_obbligatorie:
 
 #### Gli altri profili
 
-Stesso formato. Qui sotto ci sono solo i valori che cambiano rispetto al thriller; il resto (scene, atti, battiti, tolleranze, lista nera) è uguale, con le stesse fonti.
+Stesso formato di thriller e romance. Tutti i valori marcati PROPOSTA sono stati approvati dall'autore.
 
-| Profilo | Totale | Capitoli min / media / max | Chiusura preferita | Scene obbligatorie |
-|---|---|---|---|---|
-| `giallo` | 70-90 mila (12 r. 17) | 800 / 1.500-2.500 / 3.500 (12 r. 22) | gancio_domanda (03 r. 12) | scoperta del crimine, falsa pista, smascheramento (01-mercato r. 25); indizi leali prima della soluzione (PROPOSTA) |
-| `narrativa-letteraria` | 70-100 mila (12 r. 17) | 2.500 / 3.500-5.000 / 7.000 (12 r. 25) | gesto_oggetto (PROPOSTA) | nessuna fissa: si decidono nel libro (PROPOSTA) |
-| `fantasy` | 90-130 mila e oltre (12 r. 17); parti obbligatorie (12 r. 46) | 3.000 / 4.000-6.000 / 8.000 (12 r. 27) | misto (PROPOSTA) | regole del mondo mostrate prima di essere usate, prezzo della magia, viaggio o soglia (PROPOSTA) |
-| `fantascienza` | 80-110 mila (PROPOSTA: 12 r. 17 non lo indica) | 2.000 / 3.000-4.000 / 6.000 (12 r. 26) | misto (PROPOSTA) | novum presentato presto, conseguenza sociale del novum (PROPOSTA) |
-| `young-adult` | 60-85 mila (12 r. 17) | 1.500 / 2.500-4.000 / 5.000 (12 r. 28) | gancio_domanda (03 r. 12) | scelta di identità del protagonista, prova tra pari (PROPOSTA) |
+#### `profili/giallo.yaml`
 
-Frase media, dialogo %, similitudini e numero di parole filtro sono **PROPOSTA** in tutti i profili. I riferimenti non danno numeri per questi campi.
+```yaml
+genere: giallo
+lunghezza_totale:
+  consigliata: [70000, 90000]                  # 12 r. 17 (thriller/giallo)
+  formati:                                    # 12 rr. 13-16
+    breve: [40000, 60000]
+    standard: [70000, 90000]
+    lungo: [90000, 120000]
+    epico: [120000, 180000]
+  parti_sopra: 100000                         # 12 r. 46
+capitoli:
+  minimo: 800                                 # 12 r. 22
+  media: [1500, 2500]                         # 12 r. 22
+  massimo: 3500                               # 12 r. 22
+  coerenza: {min_su_media: 0.5, max_su_media: 1.7}   # 12 r. 30
+  scene_per_capitolo: [1, 3]                  # 12 rr. 34-35
+  tolleranza_budget: 0.15                     # 12 r. 67
+  tolleranza_totale: 0.05                     # 12 r. 67
+scene:
+  lunghezza: [800, 2500]                      # 12 r. 38
+  sequel: [150, 600]                          # 12 r. 38
+  budget_interno: {apertura: [0.10, 0.15], centro: [0.60, 0.70], chiusura: [0.15, 0.25]}   # 12 rr. 41-43
+parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56
+battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46
+chiusura_preferita: gancio_domanda            # 03 r. 12; 02 r. 39
+frase_media: [9, 14]                          # PROPOSTA approvata
+dialogo_percento: [25, 45]                    # PROPOSTA approvata
+similitudini_max_per_parole: 400              # PROPOSTA da confermare: valore non presente nelle tabelle approvate
+parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21; il numero è PROPOSTA approvata
+lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20
+parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA approvata)
+scene_obbligatorie:
+  - scoperta del crimine                      # 01-mercato r. 25 (crime)
+  - falsa pista                               # 01-mercato r. 25 (crime)
+  - smascheramento                            # 01-mercato r. 25 (crime)
+  - incidente scatenante che promette il climax   # 02 r. 19
+  - indizi leali prima della soluzione        # PROPOSTA approvata
+```
+
+#### `profili/narrativa-letteraria.yaml`
+
+```yaml
+genere: narrativa-letteraria
+lunghezza_totale:
+  consigliata: [70000, 100000]                 # 12 r. 17
+  formati:                                    # 12 rr. 13-16
+    breve: [40000, 60000]
+    standard: [70000, 90000]
+    lungo: [90000, 120000]
+    epico: [120000, 180000]
+  parti_sopra: 100000                         # 12 r. 46
+capitoli:
+  minimo: 2500                                # 12 r. 25
+  media: [3500, 5000]                         # 12 r. 25
+  massimo: 7000                               # 12 r. 25
+  coerenza: {min_su_media: 0.5, max_su_media: 1.7}   # 12 r. 30
+  scene_per_capitolo: [2, 6]                  # 12 rr. 35-36
+  tolleranza_budget: 0.15                     # 12 r. 67
+  tolleranza_totale: 0.05                     # 12 r. 67
+scene:
+  lunghezza: [800, 2500]                      # 12 r. 38
+  sequel: [150, 600]                          # 12 r. 38
+  budget_interno: {apertura: [0.10, 0.15], centro: [0.60, 0.70], chiusura: [0.15, 0.25]}   # 12 rr. 41-43
+parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56
+battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46
+chiusura_preferita: gesto_oggetto             # PROPOSTA approvata
+frase_media: [14, 20]                         # PROPOSTA approvata
+dialogo_percento: [15, 35]                    # PROPOSTA approvata
+similitudini_max_per_parole: 250              # PROPOSTA da confermare: valore non presente nelle tabelle approvate
+parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21; il numero è PROPOSTA approvata
+lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20
+parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA approvata)
+scene_obbligatorie:
+  - incidente scatenante che promette il climax   # 02 r. 19
+  # nessuna scena fissa di genere: si decidono nel libro (PROPOSTA approvata)
+```
+
+#### `profili/fantasy.yaml`
+
+```yaml
+genere: fantasy
+lunghezza_totale:
+  consigliata: [90000, 130000]                 # 12 r. 17 («e oltre»)
+  formati:                                    # 12 rr. 13-16
+    breve: [40000, 60000]
+    standard: [70000, 90000]
+    lungo: [90000, 120000]
+    epico: [120000, 180000]
+  parti_sopra: 100000                         # 12 r. 46
+  parti_obbligatorie: true                    # 12 r. 46-47 (romanzo lungo: 3-5 parti)
+capitoli:
+  minimo: 3000                                # 12 r. 27
+  media: [4000, 6000]                         # 12 r. 27
+  massimo: 8000                               # 12 r. 27
+  coerenza: {min_su_media: 0.5, max_su_media: 1.7}   # 12 r. 30
+  scene_per_capitolo: [3, 6]                  # 12 r. 36 (capitolo lungo)
+  tolleranza_budget: 0.15                     # 12 r. 67
+  tolleranza_totale: 0.05                     # 12 r. 67
+scene:
+  lunghezza: [800, 2500]                      # 12 r. 38
+  sequel: [150, 600]                          # 12 r. 38
+  budget_interno: {apertura: [0.10, 0.15], centro: [0.60, 0.70], chiusura: [0.15, 0.25]}   # 12 rr. 41-43
+parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56
+battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46
+chiusura_preferita: misto                     # PROPOSTA approvata
+frase_media: [13, 18]                         # PROPOSTA approvata
+dialogo_percento: [25, 45]                    # PROPOSTA approvata
+similitudini_max_per_parole: 300              # PROPOSTA da confermare: valore non presente nelle tabelle approvate
+parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21; il numero è PROPOSTA approvata
+lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20
+parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA approvata)
+scene_obbligatorie:
+  - incidente scatenante che promette il climax   # 02 r. 19
+  - regole del mondo mostrate prima di essere usate   # PROPOSTA approvata
+  - prezzo della magia                        # PROPOSTA approvata
+  - viaggio o soglia                          # PROPOSTA approvata
+```
+
+#### `profili/fantascienza.yaml`
+
+```yaml
+genere: fantascienza
+lunghezza_totale:
+  consigliata: [80000, 110000]                 # PROPOSTA approvata (12 r. 17 non lo indica)
+  formati:                                    # 12 rr. 13-16
+    breve: [40000, 60000]
+    standard: [70000, 90000]
+    lungo: [90000, 120000]
+    epico: [120000, 180000]
+  parti_sopra: 100000                         # 12 r. 46
+capitoli:
+  minimo: 2000                                # 12 r. 26
+  media: [3000, 4000]                         # 12 r. 26
+  massimo: 6000                               # 12 r. 26
+  coerenza: {min_su_media: 0.5, max_su_media: 1.7}   # 12 r. 30
+  scene_per_capitolo: [2, 3]                  # 12 r. 35
+  tolleranza_budget: 0.15                     # 12 r. 67
+  tolleranza_totale: 0.05                     # 12 r. 67
+scene:
+  lunghezza: [800, 2500]                      # 12 r. 38
+  sequel: [150, 600]                          # 12 r. 38
+  budget_interno: {apertura: [0.10, 0.15], centro: [0.60, 0.70], chiusura: [0.15, 0.25]}   # 12 rr. 41-43
+parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56
+battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46
+chiusura_preferita: misto                     # PROPOSTA approvata
+frase_media: [12, 17]                         # PROPOSTA approvata
+dialogo_percento: [25, 45]                    # PROPOSTA approvata
+similitudini_max_per_parole: 300              # PROPOSTA da confermare: valore non presente nelle tabelle approvate
+parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21; il numero è PROPOSTA approvata
+lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20
+parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA approvata)
+scene_obbligatorie:
+  - incidente scatenante che promette il climax   # 02 r. 19
+  - novum presentato presto                   # PROPOSTA approvata
+  - conseguenza sociale del novum             # PROPOSTA approvata
+```
+
+#### `profili/young-adult.yaml`
+
+```yaml
+genere: young-adult
+lunghezza_totale:
+  consigliata: [60000, 85000]                  # 12 r. 17
+  formati:                                    # 12 rr. 13-16
+    breve: [40000, 60000]
+    standard: [70000, 90000]
+    lungo: [90000, 120000]
+    epico: [120000, 180000]
+  parti_sopra: 100000                         # 12 r. 46
+capitoli:
+  minimo: 1500                                # 12 r. 28
+  media: [2500, 4000]                         # 12 r. 28
+  massimo: 5000                               # 12 r. 28
+  coerenza: {min_su_media: 0.5, max_su_media: 1.7}   # 12 r. 30
+  scene_per_capitolo: [2, 3]                  # 12 r. 35
+  tolleranza_budget: 0.15                     # 12 r. 67
+  tolleranza_totale: 0.05                     # 12 r. 67
+scene:
+  lunghezza: [800, 2500]                      # 12 r. 38
+  sequel: [150, 600]                          # 12 r. 38
+  budget_interno: {apertura: [0.10, 0.15], centro: [0.60, 0.70], chiusura: [0.15, 0.25]}   # 12 rr. 41-43
+parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56
+battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46
+chiusura_preferita: gancio_domanda            # 03 r. 12; 02 r. 39
+frase_media: [10, 15]                         # PROPOSTA approvata
+dialogo_percento: [30, 50]                    # PROPOSTA approvata
+similitudini_max_per_parole: 300              # PROPOSTA da confermare: valore non presente nelle tabelle approvate
+parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21; il numero è PROPOSTA approvata
+lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20
+parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA approvata)
+scene_obbligatorie:
+  - incidente scatenante che promette il climax   # 02 r. 19
+  - scelta di identità del protagonista       # PROPOSTA approvata
+  - prova tra pari                            # PROPOSTA approvata
+```
 
 ### B.7 Ordine di costruzione
 
-Tutti i casi di prova sono sul mini-libro inventato (B.2.2). Nessun libro reale.
+**Nessun libro reale tra i casi di prova.** Ogni passo si prova solo sui due mini-libri inventati di `motore/prove/` (giallo e romance, B.2.2), confrontando gli esiti con `prove/attesi.yaml`. Le prove girano su copie dei mini-libri in una cartella temporanea.
 
-| Passo | Cosa | Caso di prova | Criterio |
+| Passo | File creati | Prova | Criterio di superamento |
 |---|---|---|---|
-| 1 | `script/separazione.py`, `script/recinto.py`, `dati/nomi_vietati.txt` (vuoto) | `motore/` stesso; mini-libro in copia temporanea | `separazione.py` esce con 0 su `motore/`; `recinto.py` rileva una scrittura fuori dal libro messa apposta |
-| 2 | `profili/*.yaml`, `dati/profilo.schema.yaml`, `script/valida_profili.py`, `dati/libro.schema.yaml`, `dati/lingue.yaml`, `modelli/` | i 7 profili; i due esempi inventati di B.3; i due mini-libri; un `libro.yaml` con `lingua: en` | `valida_profili.py` esce con 0; il motore si ferma su `lingua: en`; gli schemi validano; un override senza motivo viene rifiutato |
-| 3 | `prove/mini-libro/`, `prove/mini-libro-romance/`, `script/conta.py`, `script/compila.py`, `script/impagina.py`, `stampa/` con i font da `FONTI.yaml` | i due mini-libri | parole uguali ad `attesi.yaml`; PDF generato; pagine e sha256 fissati con l'«ok» dell'autore |
-| 4 | `dati/kdp.yaml`, `script/verifica_pdf.py`, `script/conformita_kdp.py`, `script/kdp_verifica.py` | PDF del mini-libro | A.7; avviso «verifica mai fatta»; promemoria dei sette valori se il proxy blocca |
-| 5 | `script/stile.py`, `dati/lista-nera.yaml`, `script/capitolo.py`, `script/riciclo.py`, `script/continuita.py`, `script/ortografia.py` | mini-libro giallo, cap. 2 e 3 con errori voluti; confronto con il mini-libro romance (B.2.2) | esattamente i KO e gli avvisi di `attesi.yaml` |
-| 6 | `PROCEDURA.md`, `script/avvio.py`, `script/nuovo.py`, `script/fase.py`, `script/revisione.py`, `zb` | `zb nuovo` su un briefing inventato in una cartella temporanea | struttura creata; gate G0; `avvio.py` stampa «Letto: …» e si ferma nei casi di C.4 |
-| 7 | `script/pacchetto.py`, `README.md`, hook in modalità avviso (C.4) | mini-libro | pacchetto completo; report KDP con le sole conferme dell'autore aperte |
+| **1. Fondamenta** | `script/comune.py`, `script/conta.py`; `dati/libro.schema.yaml`, `dati/profilo.schema.yaml`, `dati/stato.schema.yaml`, `dati/lingue.yaml`; `profili/` (7 file); `script/valida_profili.py`; `prove/mini-libro/`, `prove/mini-libro-romance/`; `prove/attesi.yaml`; `dati/nomi_vietati.txt` (vuoto); `script/separazione.py`, `script/recinto.py` | `valida_profili.py` sui 7 profili; `libro.yaml` dei due mini-libri contro lo schema; un `libro.yaml` con `lingua: en` e uno con un override senza motivo; `conta.py` sui due mini-libri; `separazione.py` su `motore/`; `recinto.py` con una scrittura fuori dal libro messa apposta | profili e schemi validi; `lingua: en` e override senza motivo rifiutati; parole per capitolo e totale uguali ad `attesi.yaml`; `separazione.py` esce con 0; `recinto.py` rileva la scrittura messa apposta |
+| **2. Controlli del testo** | `script/stile.py`, `dati/lista-nera.yaml`, `script/continuita.py`, `script/riciclo.py`, `script/capitolo.py` | i capitoli con errori voluti del mini-libro giallo; il capitolo-prova e la pagina-prova comuni ai due mini-libri | esattamente i KO e gli avvisi di `attesi.yaml`, nessuno in più e nessuno in meno; lo stesso testo dà OK nel giallo e KO nel romance dove previsto (minimo di parole, frase media, dialogo, chiusure) |
+| **3. Stampa** | `script/compila.py`, `script/impagina.py`, `stampa/modello.css`, `stampa/print.js`, `stampa/font/` con `FONTI.yaml` e `OFL.txt`, `script/verifica_pdf.py` | `compila` + `impagina` + `pdf` sui due mini-libri | font scaricati dalle fonti ufficiali, con sha256 registrati; PDF con tutti i font incorporati e nessun Type3; margini ≥ max(tabella KDP, valori di `libro.yaml`); indice uguale alle pagine reali; numero di pagine e sha256 fissati in `attesi.yaml` con l'«ok» dell'autore |
+| **4. Pubblicazione** | `dati/kdp.yaml`, `dati/verifiche-kdp.md`, `script/conformita_kdp.py`, `script/kdp_verifica.py`, `script/pacchetto.py`; `modelli/conferme-autore.yaml` | `kdp` e `pacchetto` sui due mini-libri (uno con `ebook: true` e `serie`); `verifica KDP fatta` con una data futura e con una data valida | sezioni 1-15 con gli esiti di `attesi.yaml`; avviso «verifica mai fatta»; promemoria dei sette valori se il proxy blocca; data futura rifiutata; `recinto.py` riconosce l'eccezione dichiarata |
+| **5. Conduzione** | `script/avvio.py`, `script/nuovo.py`, `script/fase.py`, `script/revisione.py`, `script/hook_sessione.py`, `script/hook_manoscritto.py`, `dati/hook.yaml` (modalità avviso), `modelli/` (briefing, libro.yaml, LEGGIMI, stato, cronologia), `PROCEDURA.md`, `README.md`, `CLAUDE.md`, `zb` | `zb nuovo` su un briefing inventato in una cartella temporanea; `zb avvio` e i gate G0-G1 sul mini-libro giallo; hook in modalità avviso sui 14 scenari di C.4, su una copia del mini-libro | struttura creata; `avvio.py` stampa la riga «Letto: …» e si ferma in tutti i casi di C.4; `ok`, `avanti`, `correggi`, `stato` producono gli effetti di C.1; l'hook avvisa e non blocca; `separazione.py` e `recinto.py` ancora a 0 |
 
-Ogni passo: proposta → «ok» → codice → caso di prova → commit e push secondo B.5.
+Ogni passo: codice → prova sui mini-libri → confronto con `attesi.yaml` → commit e push secondo B.5. Si passa al passo successivo solo con tutti i criteri superati e l'«ok» dell'autore.
 
 ### B.8 Riferimenti copiati in `motore/riferimenti/`
 
