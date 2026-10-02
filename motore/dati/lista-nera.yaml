@@ -1,0 +1,28 @@
+# Lista nera di base (proposta B.8, mod. 4): da riferimenti/05-critica-e-punteggio.md
+# (casa-editrice main @ becd0e2), rr. 19-21. Il libro aggiunge voci in libro.yaml (voci).
+# Formato delle voci: vedi proposta B.3 (id, pattern, modalita, massimo, ambito).
+voci:
+  # r. 19 — espressioni stanche (eliminare sempre)
+  - {id: brivido_schiena, pattern: '(?i)\bun brivido (le|gli|mi|ti|ci|vi) percorse la schiena', modalita: vieta}
+  - {id: cuore_martellava, pattern: '(?i)\bil cuore (le|gli|mi|ti) martellava nel petto', modalita: vieta}
+  - {id: respiro_senza_accorgersene, pattern: '(?i)trattenne il respiro senza accorgersene', modalita: vieta}
+  - {id: silenzio_carico, pattern: '(?i)\bun silenzio carico di significato', modalita: vieta}
+  - {id: tempo_fermarsi, pattern: '(?i)\bil tempo sembrò fermarsi', modalita: vieta}
+  - {id: occhi_determinazione, pattern: '(?i)\bocchi che brillavano di determinazione', modalita: vieta}
+  - {id: sorriso_occhi, pattern: '(?i)\bun sorriso che non raggiungeva gli occhi', modalita: vieta}
+  - {id: aria_densa, pattern: "(?i)\\bl'aria era densa di tensione", modalita: vieta}
+  - {id: nodo_stomaco, pattern: '(?i)\bsentì un nodo allo stomaco', modalita: conta, massimo: 1, ambito: libro, nota: "vietato se ripetuto"}
+  - {id: mondo_intero, pattern: '(?i)\bcome se il mondo intero', modalita: vieta}
+  - {id: qualcosa_spezzo, pattern: '(?i)\bqualcosa dentro di (lei|lui|me) si spezzò', modalita: vieta}
+  - {id: prima_volta_vita, pattern: '(?i)\bper la prima volta in vita (sua|mia)', modalita: vieta}
+  - {id: non_solo_x_era_y, pattern: '(?i)\bnon era solo\b[^.!?]{1,60},\s*era\b', modalita: vieta}
+  - {id: danzare_luci, pattern: '(?i)\b(luci|ombre|luce|ombra)\s+(danzava|danzavano|danzano|danza)\b', modalita: vieta}
+  - {id: vento_sussurra, pattern: '(?i)\bvento\s+(sussurrava|sussurra|sussurrò)\b', modalita: vieta}
+  - {id: arazzo_di, pattern: '(?i)\barazzo di\b', modalita: vieta}
+  - {id: sinfonia_di, pattern: '(?i)\bsinfonia di\b', modalita: vieta}
+  # r. 20 — tic strutturali (le forme fisse; il resto è controllo a vista)
+  - {id: parole_sospese, pattern: '(?i)\ble parole rimasero sospese tra (loro|di noi)', modalita: vieta}
+  - {id: gesti_tic, pattern: '(?i)\b(annuì|annuirono|sospirò|sospirarono|deglutì|deglutirono)\b', modalita: avviso, massimo: 3, ambito: capitolo, nota: "annuire, sospirare, deglutire di continuo"}
+# r. 21 — parole filtro da ridurre: densità massima nel profilo (parole_filtro)
+parole_filtro: ['vide', 'sentì', 'notò', 'si accorse', 'pensò', 'sembrava', 'cominciò a', 'iniziò a',
+                'improvvisamente', "all'improvviso", 'davvero', 'molto', 'quasi', 'in qualche modo']

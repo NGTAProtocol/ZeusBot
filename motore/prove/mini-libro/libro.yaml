@@ -29,10 +29,10 @@ vincoli_capitolo:
   - {id: chiave_retro, pattern: '(?i)\bretro\b', consentito_in_capitoli: ["1-3"]}
 
 nome_vietato_prima_di:
-  - {nome: "Lodovico Arsa", pattern: '\bLodovico\b|\bArsa\b', vietato_in: ["1-2", "interludio I"], obbligatorio_in: ["3"]}
+  - {nome: "Lodovico Arsa", pattern: '\bLodovico\b|\bArsa\b', vietato_in: ["1-2", "interludio I"], obbligatorio_in: []}
 
 dichiarazioni:
-  chiusura: {sigle: [D, R, P, X], prevista_da: scaletta}   # domanda, rivelazione, pericolo, decisione
+  chiusura: {sigle: [D, R, P, X], prevista_da: scaletta, riga_finale_min_parole: 3}   # domanda, rivelazione, pericolo, decisione
 
 struttura:
   separatore_scena: {sorgente: "* * *", stampa: "* * *"}

@@ -3,7 +3,7 @@ nascite:
   - {chi: Irene Calvi, data: 1985-06-10}
   - {chi: Gemma Rosselli, data: 1999-09-02}
 eventi:
-  - {id: assunzione_gemma, data: 2017-06-01, capitolo: 1, descrizione: "Gemma comincia in farmacia"}
+  - {id: assunzione_gemma, data: 2017-09-01, capitolo: 1, descrizione: "Gemma comincia in farmacia"}
   - {id: litigio_natale, data: 2020-12-25, capitolo: 1, descrizione: "lite tra i fratelli Brenna"}
   - {id: visita_domenica, data: 2021-02-28, capitolo: 3, descrizione: "la sorella in farmacia di domenica"}
   - {id: morte, data: 2021-03-01, capitolo: 1, descrizione: "morte del farmacista, tra le 22 e le 23"}

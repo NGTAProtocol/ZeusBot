@@ -56,3 +56,84 @@ passo_1:
     comandi_del_motore: 0        # nessuna scrittura fuori dalla copia del mini-libro
     scrittura_messa_apposta: 1   # un comando di prova che scrive in motore/ viene rilevato
     scrivi_fuori_dal_libro: rifiutata   # comune.scrivi verso un percorso fuori dal libro
+
+passo_2:
+  # Esiti di capitolo.py su ogni unità (controllo|esito|riga), verificati sugli errori voluti di B.2.2.
+  capitoli:
+    mini-libro:
+      "1":
+        parole: 1186
+        frase_media: 9.8
+        dialogo: 29.5
+        esiti: []
+      "2":
+        parole: 832
+        frase_media: 9.7
+        dialogo: 26.1
+        esiti:
+          - "dichiarazione:chiusura|AVVISO|"
+          - "eta|KO|27"
+          - "giorno_settimana|KO|2"
+          - "nome_due_grafie|AVVISO|5"
+          - "nome_vietato:Lodovico Arsa|KO|25"
+          - "nome_vietato:Lodovico Arsa|KO|43"
+          - "nome_vietato:Lodovico Arsa|KO|55"
+          - "nome_vietato:Lodovico Arsa|KO|65"
+          - "similitudini|AVVISO|"
+          - "voce:brivido_schiena|KO|5"
+          - "voce:come_se|KO|19"
+      "interludio I":
+        parole: 103
+        frase_media: 12.9
+        dialogo: 0.0
+        esiti:
+          - "parole_budget|AVVISO|"
+      "3":
+        parole: 457
+        frase_media: 45.3
+        dialogo: 0.0
+        esiti:
+          - "dialogo|KO|"
+          - "dichiarazione:chiusura|KO|7"
+          - "frase_media|KO|"
+          - "parole_budget|AVVISO|"
+          - "parole_minimo|KO|"
+    mini-libro-romance:
+      "1":
+        parole: 1581
+        frase_media: 13.4
+        dialogo: 39.1
+        esiti: []
+      "2":
+        parole: 1549
+        frase_media: 13.2
+        dialogo: 40.3
+        esiti: []
+      "3":
+        parole: 1183
+        frase_media: 9.8
+        dialogo: 29.5
+        esiti:
+          - "dialogo|KO|"
+          - "dichiarazione:chiusura|KO|"
+          - "frase_media|KO|"
+          - "parole_minimo|KO|"
+  capitolo_sotto_minimo:          # capitolo.py sul cap. 3 del giallo (457 parole, minimo 800)
+    codice: 1
+    controllo: "parole_minimo|KO"
+  capitolo_prova:                 # stesso testo: cap. 1 del giallo e cap. 3 del romance
+    giallo_ko: 0
+    romance_ko: 4
+  riciclo:
+    testo_precedente: 1           # segmenti KO nel cap. 1, con il suo primo paragrafo come testo precedente
+    unita_precedenti: 1           # segmenti AVVISO nel cap. 3, dopo avervi copiato una frase del cap. 1
+  lista_nera:
+    voci: 19
+    regex_valide: OK
+  comandi:                        # codici d'uscita sulle copie; ogni comando scrive il suo report
+    stile.py mini-libro: 1
+    stile.py mini-libro-romance: 1
+    continuita.py mini-libro: 1
+    continuita.py mini-libro-romance: 0
+    riciclo.py mini-libro: 0
+    riciclo.py mini-libro-romance: 0

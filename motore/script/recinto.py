@@ -32,6 +32,12 @@ def comandi(motore):
         ('conta.py --schermo', 'conta.py {libro} --schermo'),
         ('valida_profili.py', 'valida_profili.py'),
         ('separazione.py', 'separazione.py'),
+        ('stile.py', 'stile.py {libro}'),
+        ('continuita.py', 'continuita.py {libro}'),
+        ('riciclo.py', 'riciclo.py {libro}'),
+        ('capitolo.py 1', 'capitolo.py {libro} 1'),
+        ('capitolo.py 2', 'capitolo.py {libro} 2'),
+        ('capitolo.py 3', 'capitolo.py {libro} 3'),
     ]
     return [(n, f'{sys.executable} {os.path.join(s, c.split()[0])} ' + ' '.join(c.split()[1:]))
             for n, c in elenco if os.path.isfile(os.path.join(s, c.split()[0]))]

@@ -26,7 +26,7 @@ Sobrio, frasi brevi.
 - La morte avviene lunedì 1 marzo, tra le 22 e le 23.
 
 ## Cose da non cambiare
-- Il nome del colpevole non compare prima del capitolo 3.
+- Il nome di Lodovico Arsa non compare prima del capitolo 3.
 
 ## Divieti
 - Nessun dettaglio tecnico sui farmaci.

@@ -310,3 +310,78 @@ def unita(cartella, libro):
     if 'epilogo' in altri:
         ordine.append(('epilogo', altri['epilogo']))
     return ordine
+
+
+# ---------------------------------------------------------------- testo
+
+def righe_prosa(testo):
+    """Righe di prosa con il loro numero (1-based): escluse le righe «#», i commenti HTML,
+    le righe senza lettere né cifre (separatori di scena) e la riga d'intestazione in corsivo
+    che segue un titolo «#»."""
+    import re
+    out, in_commento, dopo_titolo = [], False, False
+    for n, riga in enumerate(testo.splitlines(), 1):
+        s = riga.strip()
+        if in_commento:
+            if '-->' in s:
+                in_commento = False
+            continue
+        if s.startswith('<!--'):
+            in_commento = '-->' not in s
+            continue
+        if s.startswith('#'):
+            dopo_titolo = True
+            continue
+        if not s:
+            continue
+        if dopo_titolo and re.match(r'^\*[^*].*\*$', s):
+            dopo_titolo = False
+            continue
+        dopo_titolo = False
+        if not any(c.isalnum() for c in s):
+            continue
+        out.append((n, riga))
+    return out
+
+
+def parole(s):
+    return [t for t in s.split() if any(c.isalnum() for c in t)]
+
+
+def dichiarazioni_unita(testo):
+    """Coppie campo=valore della riga nascosta <!-- zb: … -->."""
+    import re
+    m = re.search(r'<!--\s*zb:(.*?)-->', testo, re.S)
+    if not m:
+        return {}
+    return dict(re.findall(r'(\w+)=([^\s()]+)', m.group(1)))
+
+
+def in_elenco(unita, elenco):
+    """True se l'unità («3», «interludio II», «prologo») è nell'elenco (numeri, «a-b», nomi)."""
+    import re
+    for voce in elenco or []:
+        v = str(voce).strip().lower()
+        if v == unita.lower():
+            return True
+        m = re.match(r'^(\d+)\s*-\s*(\d+)$', v)
+        if m and unita.isdigit() and int(m.group(1)) <= int(unita) <= int(m.group(2)):
+            return True
+    return False
+
+
+def tabella_md(percorso):
+    """Righe di una tabella Markdown come dizionari {intestazione: cella}."""
+    if not os.path.isfile(percorso):
+        return []
+    righe = [r for r in open(percorso, encoding='utf-8').read().splitlines() if r.strip().startswith('|')]
+    if not righe:
+        return []
+    intest = [c.strip() for c in righe[0].strip().strip('|').split('|')]
+    out = []
+    for r in righe[1:]:
+        celle = [c.strip() for c in r.strip().strip('|').split('|')]
+        if all(set(c) <= set('-: ') for c in celle):
+            continue
+        out.append(dict(zip(intest, celle)))
+    return out

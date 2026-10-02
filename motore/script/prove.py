@@ -156,9 +156,80 @@ def passo_1(A):
           p.returncode, sez)
 
 
+# ---------------------------------------------------------------- passo 2
+
+def passo_2(A):
+    import capitolo
+    import riciclo
+    sez = 'passo 2'
+    for nome, unita in A['capitoli'].items():
+        c = copia_libro(nome)
+        cart, libro, prof = comune.carica_libro(c)
+        for u, att in unita.items():
+            met, ris = capitolo.controlla(cart, libro, prof, u)
+            esito('capitolo.py', f'{nome} {u}: parole', att['parole'], met['parole'], sez)
+            esito('capitolo.py', f'{nome} {u}: frase media', att['frase_media'], met['frase_media'], sez)
+            esito('capitolo.py', f'{nome} {u}: dialogo %', att['dialogo'], met['dialogo_percento'], sez)
+            ottenuti = sorted(f'{r["controllo"]}|{r["esito"]}|{r["riga"] or ""}' for r in ris)
+            esito('capitolo.py', f'{nome} {u}: esiti ({len(att["esiti"])} attesi)', sorted(att['esiti']), ottenuti, sez)
+
+    c = copia_libro('mini-libro')
+    p = esegui(os.path.join(S, 'capitolo.py'), c, '3')
+    rep = os.path.join(c, '06-diagnostica', 'capitoli', '03.md')
+    trovato = os.path.isfile(rep) and '| 3 | parole_minimo | KO |' in open(rep, encoding='utf-8').read()
+    esito('capitolo.py', "giallo cap. 3 sotto il minimo: codice d'uscita", A['capitolo_sotto_minimo']['codice'], p.returncode, sez)
+    esito('capitolo.py', 'giallo cap. 3 sotto il minimo: KO nel report', A['capitolo_sotto_minimo']['controllo'],
+          A['capitolo_sotto_minimo']['controllo'] if trovato else 'assente', sez)
+
+    ko = lambda lst: sum(1 for e in lst if '|KO|' in e)
+    esito('capitolo.py', 'capitolo-prova nel giallo: KO', A['capitolo_prova']['giallo_ko'],
+          ko(A['capitoli']['mini-libro']['1']['esiti']), sez)
+    esito('capitolo.py', 'capitolo-prova nel romance: KO', A['capitolo_prova']['romance_ko'],
+          ko(A['capitoli']['mini-libro-romance']['3']['esiti']), sez)
+
+    c = copia_libro('mini-libro')
+    cap1 = open(os.path.join(c, '04-manoscritto', '01-la-farmacia.md'), encoding='utf-8').read()
+    primo = [b for b in cap1.split('\n\n') if b.strip() and not b.lstrip().startswith(('#', '*', '<!--'))][0]
+    open(os.path.join(c, '00-progetto', 'testo-precedente.md'), 'w', encoding='utf-8').write(primo + '\n')
+    y = open(os.path.join(c, 'libro.yaml'), encoding='utf-8').read()
+    y = y.replace('modalita: nuovo', 'modalita: riscrittura\ntesto_precedente: 00-progetto/testo-precedente.md')
+    open(os.path.join(c, 'libro.yaml'), 'w', encoding='utf-8').write(y)
+    cart, libro, _ = comune.carica_libro(c)
+    r = riciclo.controlla_libro(cart, libro)
+    esito('riciclo.py', 'testo precedente: segmenti KO nel cap. 1', A['riciclo']['testo_precedente'],
+          sum(1 for x in r if x['controllo'] == 'riciclo:testo_precedente' and x['unita'] == '1'), sez)
+    c = copia_libro('mini-libro')
+    frase = 'Gemma Rosselli aspettava sul marciapiede con le chiavi in mano e il bavero alzato.'
+    with open(os.path.join(c, '04-manoscritto', '03-la-stazione.md'), 'a', encoding='utf-8') as f:
+        f.write('\n' + frase + '\n')
+    cart, libro, _ = comune.carica_libro(c)
+    r = riciclo.controlla_libro(cart, libro)
+    esito('riciclo.py', 'unità precedenti: segmenti AVVISO nel cap. 3', A['riciclo']['unita_precedenti'],
+          sum(1 for x in r if x['controllo'] == 'riciclo:unita_precedenti' and x['unita'] == '3'), sez)
+
+    ln = comune.leggi_yaml(os.path.join(M, 'dati', 'lista-nera.yaml'))
+    esito('lista-nera.yaml', 'numero di voci', A['lista_nera']['voci'], len(ln['voci']), sez)
+    try:
+        for v in ln['voci']:
+            re.compile(v['pattern'])
+        o = 'OK'
+    except re.error as e:
+        o = f'KO: {e}'
+    esito('lista-nera.yaml', 'regex valide', A['lista_nera']['regex_valide'], o, sez)
+
+    report = {'stile.py': 'stile.md', 'continuita.py': 'continuita.md', 'riciclo.py': 'riciclo.md'}
+    for chiave, att in A['comandi'].items():
+        script, libro_nome = chiave.split()
+        c = copia_libro(libro_nome)
+        p = esegui(os.path.join(S, script), c)
+        esito(script, f"{libro_nome}: codice d'uscita", att, p.returncode, sez)
+        esito(script, f'{libro_nome}: report scritto', 'sì',
+              'sì' if os.path.isfile(os.path.join(c, '06-diagnostica', report[script])) else 'no', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2}
 
 
 def main(argv):
