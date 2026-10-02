@@ -1,10 +1,10 @@
 # Motore editoriale — proposta
 
 Stato: **proposta**, nessun file del motore è ancora stato creato oltre a questo.
-Parti: A (direttive KDP), B (motore 1-7), C (funzionamento quasi automatico: macchina a stati, stesura, briefing, avvio obbligatorio, sessioni, migrazione, secondo lettore).
+Parti: A (direttive KDP), B (motore 1-7), C (funzionamento quasi automatico: macchina a stati, stesura, briefing, avvio obbligatorio, sessioni, migrazione, secondo lettore, distribuzione ai rami dei libri).
 Ramo: `claude/mister-provino-espansione`, cartella `motore/` alla radice di NGTAProtocol/ZeusBot.
 Vincoli: `libri/` non si tocca; casa-editrice si legge soltanto, mai in scrittura.
-Fonte delle direttive KDP: `riferimenti/11-direttive-kdp.md` di NGTAProtocol/casa-editrice, `origin/main` @ becd0e2.
+Fonte delle direttive KDP: `riferimenti/11-direttive-kdp.md` di NGTAProtocol/casa-editrice, `origin/main` @ becd0e2, da copiare in `motore/riferimenti/` (B.8): dopo la copia il motore non legge più casa-editrice.
 
 ---
 
@@ -102,7 +102,7 @@ dichiarazione_ai:            # rr. 62-64
 ### A.3 Esiti: cosa blocca e cosa avvisa
 
 - **KO (bloccanti):** URL, email, «per i fan di», parole vietate (a parola intera), tag HTML non ammessi, superamento dei limiti di caratteri, più di 7 parole chiave, più di 3 categorie, margini o pagine fuori soglia, font non incorporati o Type3, nome autore diverso tra i file, conferme dell'autore mancanti.
-- **AVVISO (non bloccanti):** numeri di telefono, parole chiave che ripetono parole del titolo, parole chiave fuori da 2-3 parole, formato pagina non tra quelli citati, numero di pagine dispari (da verificare), ISBN presente nel manoscritto, verifica delle direttive scaduta o mai fatta.
+- **AVVISO (non bloccanti):** numeri di telefono, parole chiave che ripetono parole del titolo, parole chiave fuori da 2-3 parole, formato pagina non tra quelli citati finché `formato_confermato_kdp` in `conferme-autore.yaml` è false (con true la riga è OK, A.9), numero di pagine dispari (da verificare), ISBN presente nel manoscritto, verifica delle direttive scaduta o mai fatta.
 - La verifica scaduta (più di 30 giorni o `null`) produce un avviso in testa al report e il codice d'uscita 2: il pacchetto non risulta pronto finché qualcuno non riverifica kdp.amazon.com/help e aggiorna la data.
 
 ### A.4 `motore/script/conformita_kdp.py`
@@ -127,7 +127,7 @@ Legge `06-pubblicazione/scheda-amazon.md`, `manoscritto-finale.md`, `cartaceo.pd
 | 8 Categorie | Massimo 3 | coerenza categorie/parole chiave/descrizione/copertina; contenuti espliciti |
 | 9 Copertina | — | bleed, dimensioni dal calcolatore KDP, nessuna imitazione, dati identici ai metadati, riquadro del codice a barre libero |
 | 10 ISBN | Vedi A.5 | `isbn: kdp_gratuito` |
-| 11 Cartaceo | Formato da `pdfinfo` (avviso se non citato); pagine min/max per carta; pagine pari (avviso); margini con `pdftotext -bbox` (interno a sinistra sulle dispari, a destra sulle pari; esterni); font con `pdffonts` (tutti `emb=yes`, nessun Type3) | scelta della carta |
+| 11 Cartaceo | Formato da `pdfinfo` (avviso se non citato); pagine min/max per carta; pagine pari (avviso); margini con `pdftotext -bbox` (interno a sinistra sulle dispari, a destra sulle pari; esterni); font con `pdffonts` (tutti `emb=yes`, nessun Type3) | scelta della carta; `formato_confermato_kdp` (A.9) |
 | 12 eBook | Se c'è `ebook.docx`: stili Titolo 1/2, nessun campo numero di pagina, intestazione o piè di pagina | controllo con Kindle Previewer |
 | 13 Dichiarazione AI | Promemoria fisso (A.6) | `dichiarazione_ai: fatta` |
 | 14 Contenuti | — | copyright, marchi, contenuti per adulti segnalati |
@@ -165,9 +165,71 @@ File: `libri/kurgan-giorgi/05-output/il-padre-del-mostro-DEFINITIVO.pdf` del ram
 | Margine basso | min 0,435" (11,1 mm) a pag. 5 (numero di pagina); corpo 0,894" | ≥ 0,25" | OK |
 | Font | solo EB Garamond Regular/Italic, tutti incorporati, nessun Type3 | tutti incorporati | OK |
 | Autore | `Author` «F.R. Faraone»; frontespizio e copyright «F.R. Faraone» | identico | OK |
-| Formato | 420 × 594,96 pt = 5,83 × 8,26" (A5) | formati citati r. 50 | AVVISO |
+| Formato | 420 × 594,96 pt = 5,83 × 8,26" (A5) | formati citati r. 50 | AVVISO finché `formato_confermato_kdp: false` (A.9) |
 
 Sezioni 1-10 e 12-15: per Kurgan/Giorgi oggi non esistono `06-pubblicazione/`, `scheda-amazon.md` né `conferme-autore.yaml`, quindi il caso di prova copre solo la sezione 11 e il nome autore nel PDF.
+
+
+### A.8 Verifica delle direttive: la data la scrive l'autore
+
+**Comando:** `verifica KDP fatta [AAAA-MM-GG]` (senza data vale oggi). Lo esegue `motore/script/kdp_verifica.py`.
+
+**File:** imposta `ultima_verifica` in **`motore/dati/kdp.yaml`**, e solo lì. Perché lì:
+- le direttive sono di Amazon, non di un libro: una sola verifica vale per tutti i libri;
+- `conformita_kdp.py` legge la data da quel file e la copia in testa a ogni report;
+- tenerla in `stato.yaml` di ogni libro creerebbe date diverse per le stesse regole.
+
+**Regole del comando:**
+- rifiuta una data futura o scritta male;
+- accetta una data più vecchia di 30 giorni, ma avvisa che è già scaduta;
+- aggiunge una riga a `motore/dati/verifiche-kdp.md` (data, chi, valori confermati) e fa commit e push con il blocco di salvataggio;
+- non tocca nessun altro valore: se l'autore ha trovato un valore diverso, lo dice con «correggi: …» e la modifica a `kdp.yaml` passa dal gate.
+
+**Se il proxy blocca le pagine ufficiali,** lo script prova a scaricarle, e al primo 403 stampa questo promemoria, breve e leggibile da telefono:
+
+```
+Verifica KDP a mano (proxy bloccato)
+Ultima verifica: mai
+
+1 Titolo+sottotitolo: < 200 caratteri
+2 Descrizione: max 4.000 caratteri
+3 Parole chiave: 7 caselle
+4 Margine interno: 24-150 p 0,375" | 151-300 0,5" | 301-500 0,625" | 501-700 0,75" | 701-828 0,875"
+5 Margini esterni: 0,25" senza bleed | 0,375" con bleed
+6 Pagine: min 24 | max 828 bianca, 776 crema
+7 Tag HTML descrizione: b i u em strong br p ul ol li h4-h6
+
+Link:
+kdp.amazon.com/help/topic/G201097560  (metadati: 1, 2)
+kdp.amazon.com/help/topic/G201298500  (parole chiave: 3)
+kdp.amazon.com/help/topic/G201834180  (formato, margini, pagine: 4, 5, 6)
+kdp.amazon.com/help  (cerca «description HTML»: 7)
+
+Se tutto coincide: verifica KDP fatta AAAA-MM-GG
+Se qualcosa cambia: correggi: <voce> <valore nuovo>
+```
+
+I tre codici di pagina sono quelli che conosco per quelle guide e non li ho potuti aprire: alla prima verifica vanno confermati, e se sono cambiati si correggono in `kdp.yaml` (`url_verifica`).
+
+### A.9 `conferme-autore.yaml`
+
+File per libro: `libri/<nome>/06-pubblicazione/conferme-autore.yaml`. Lo scrive solo l'autore, oppure il motore su sua risposta esplicita.
+
+```yaml
+isbn: kdp_gratuito              # sezione 10
+formato_confermato_kdp: false   # sezione 11: true quando l'autore ha verificato
+                                # che il formato del PDF (per Kurgan A5) è
+                                # accettato da KDP. Con false: AVVISO, non KO.
+carta: crema
+dichiarazione_ai: da_fare       # sezione 13: "fatta" dopo la pubblicazione
+copertina_verificata: false     # sezione 9
+categorie_coerenti: false       # sezione 8
+contenuti_verificati: false     # sezione 14
+recensioni_regolari: false      # sezione 15
+note: ""
+```
+
+Le voci a `false` delle sezioni 8, 9, 14 e 15 danno KO «da confermare dall'autore» (A.4). Fa eccezione `formato_confermato_kdp`, che dà solo AVVISO.
 
 ---
 
@@ -197,18 +259,19 @@ Sezioni 1-10 e 12-15: per Kurgan/Giorgi oggi non esistono `06-pubblicazione/`, `
 
 **ZeusBot, `libri/mister-provino/`**: `03-architettura/manuale-di-stile.md` è la fonte delle regole del libro (frase media, minimi, formule contate, tetti, immagini vietate, metodo unico di conteggio). **Riusare come dati**: i valori passano in `libro.yaml`, il manuale resta il testo di riferimento.
 
-**casa-editrice (`origin/main` @ becd0e2), sola lettura**
+**casa-editrice (`origin/main` @ becd0e2)**: si legge una volta sola, per copiarla in `motore/riferimenti/` con gli adattamenti di B.8; dopo la copia il motore non la legge più e non ci scrive mai.
 
 | File | Decisione |
 |---|---|
-| `SKILL.md` (fasi 1-10) | **riusare con modifiche**: la sequenza delle fasi diventa l'elenco dei comandi; le parti che contrastano con il manuale del libro cedono (vedi B.5) |
-| `riferimenti/01-mercato`, `02-architettura`, `04-editing-sviluppo`, `06-lettori-beta`, `07-copyediting`, `09-edizione-inglese`, `10-lancio` | **riusare** come testo di procedura, letti dal motore, non copiati |
-| `riferimenti/03-stesura` | **riusare con modifiche**: r. 12 «interrompi sul massimo della domanda» contrasta con il manuale di Mister Provino (chiusure su gesto o oggetto) |
-| `riferimenti/05-critica-e-punteggio` | **riusare**: scheda a 10 voci, soglia media < 8 o voce < 7; la lista nera diventa dati di `stile.py` |
-| `riferimenti/08-pubblicazione` | **riusare con modifiche**: ordine del manoscritto finale; gli interludi senza numero vanno aggiunti al sommario |
-| `riferimenti/11-direttive-kdp` | **riusare come dati** in `kdp.yaml` |
-| `riferimenti/12-lunghezze` | **riusare con modifiche**: `wc -w` sostituito dal metodo unico (B.5) |
-| `modelli/` (lezioni, personaggio, registro-promesse, scheda-scena, stato, struttura-capitolo, style-sheet) | **riusare** come modelli |
+| `SKILL.md` (fasi 1-10) | **non copiare**: la sequenza delle fasi è già riscritta in C.1 e finisce in `motore/PROCEDURA.md`; la sua r. 53 (`wc -w`) non vale |
+| `riferimenti/01-mercato`, `04-editing-sviluppo`, `06-lettori-beta`, `07-copyediting`, `09-edizione-inglese`, `10-lancio` | **riusare**: copiati in `motore/riferimenti/` senza modifiche, salvo l'intestazione di fonte |
+| `riferimenti/03-stesura` | **riusare con modifiche** (B.8, mod. 1): r. 12, chiusure su gesto o oggetto |
+| `riferimenti/05-critica-e-punteggio` | **riusare con modifiche** (B.8, mod. 4): scheda a 10 voci, soglia media < 8 o voce < 7; lista nera unita alle immagini vietate del manuale del libro |
+| `riferimenti/08-pubblicazione` | **riusare con modifiche** (B.8, mod. 5-6): interludi senza numero nel corpo e nel sommario |
+| `riferimenti/11-direttive-kdp` | **riusare**: copiato senza modifiche; i valori passano anche in `kdp.yaml` |
+| `riferimenti/02-architettura` | **riusare con modifiche** (B.8, mod. 7, nuova): r. 39, gancio di chiusura senza «domanda» come prima scelta |
+| `riferimenti/12-lunghezze` | **riusare con modifiche** (B.8, mod. 2-3): `wc -w` sostituito dal metodo unico |
+| `modelli/` (lezioni, personaggio, registro-promesse, scheda-scena, stato, struttura-capitolo, style-sheet) | **riusare**: copiati in `motore/riferimenti/modelli/` senza modifiche |
 
 ### B.2 Albero di `motore/`
 
@@ -218,15 +281,21 @@ motore/
   PROCEDURA.md              fasi, gate, comandi, regole fisse (C.1-C.7)      da scrivere
   README.md                 come si usa il motore, comandi, regole fisse     da scrivere
   zb                        lanciatore: zb <comando> [libro]                 da scrivere
+  riferimenti/               copia di casa-editrice main @ becd0e2 (B.8)       da copiare
+    01-mercato.md … 12-lunghezze-e-struttura-capitoli.md   12 file, 4 adattati (B.8)
+    modelli/                lezioni, personaggio, registro-promesse, scheda-scena,
+                            stato, struttura-capitolo, style-sheet (7 file)
   modelli/
     briefing.md             briefing da compilare dal telefono (C.3)         da scrivere
     LEGGIMI.md              modello del LEGGIMI di libro (C.4)               da scrivere
     stato.yaml              modello della macchina a stati (C.1)             da scrivere
   dati/
-    kdp.yaml                direttive KDP (A.2)                              da scrivere
+    kdp.yaml                direttive KDP (A.2); ultima_verifica (A.8)       da scrivere
+    verifiche-kdp.md        registro delle verifiche fatte dall'autore (A.8) da scrivere
     lista-nera.yaml         cliché e tic da 05-critica rr. 19-21             da scrivere
     libro.schema.yaml       schema di libro.yaml (B.3)                       da scrivere
     stato.schema.yaml       schema di stato.yaml (C.1)                       da scrivere
+    hook.yaml               modalita dell'hook: avviso | blocco (C.4)        da scrivere
   script/
     avvio.py                lettura obbligatoria, marker di sessione (C.4)   da scrivere
     fase.py                 macchina a stati: gate, ok/avanti/correggi/stato (C.1)  da scrivere
@@ -235,7 +304,7 @@ motore/
     date.py                 date e giorni della settimana dal calendario (C.2)  da scrivere
     revisione.py            «prepara per revisione»: blocchi da incollare (C.7)  da scrivere
     hook_sessione.py        hook SessionStart (C.4, solo proposta)           da scrivere
-    hook_manoscritto.py     hook PreToolUse (C.4, solo proposta)             da scrivere
+    hook_manoscritto.py     hook PreToolUse, modalità avviso/blocco (C.4)    da scrivere
     comune.py               lettura di libro.yaml, percorsi, ramo, salvataggio  da scrivere
     conta.py                metodo unico di conteggio, parole per pagina     da scrivere
     stile.py                frase media, formule contate, tetti, immagini vietate, lista nera  da scrivere
@@ -245,6 +314,7 @@ motore/
     print.js                render Chromium                                  esiste (da copiare)
     verifica_pdf.py         pagine, margini, font, sommario/pagine           da scrivere (metodo provato in A.7)
     conformita_kdp.py       report KDP sezioni 1-15                          da scrivere
+    kdp_verifica.py         «verifica KDP fatta [data]»; promemoria se 403 (A.8)  da scrivere
     pacchetto.py            06-pubblicazione: scheda, quarta, brief, checklist  da scrivere
   impaginazione/
     fonts.css               EB Garamond statico                              esiste (da copiare)
@@ -253,7 +323,9 @@ motore/
     attesi.yaml             valori attesi dei casi di prova (sha256, conteggi)  da scrivere
 ```
 
-Esistono già, da generalizzare o copiare: `compile_md.py`, `build_pdf.py`, `print.js`, `fonts.css`, `fonts/`. Tutto il resto va scritto.
+Esistono già, da generalizzare o copiare: `compile_md.py`, `build_pdf.py`, `print.js`, `fonts.css`, `fonts/` (da `libri/kurgan-giorgi/07-impaginazione/`) e i 19 file di `riferimenti/` (da casa-editrice). Tutto il resto va scritto.
+
+`motore/modelli/` (modelli del motore: briefing, LEGGIMI, stato) e `motore/riferimenti/modelli/` (modelli di casa-editrice) sono due cartelle diverse.
 
 ### B.3 Schema di `libro.yaml`
 
@@ -267,7 +339,8 @@ lingua: it
 genere: narrativa            # chiave della tabella minimi di 12-lunghezze r. 19-28
 
 formato:
-  pagina_pollici: [5.5, 8.5] # da scegliere con l'autore; Kurgan oggi: A5 (5,83 x 8,27)
+  pagina_pollici: [5.5, 8.5] # da scegliere con l'autore; Kurgan oggi: A5 (5,83 x 8,27),
+                             # accettazione KDP in conferme-autore.yaml (A.9)
   carta: crema
   bleed: false
   margini_mm: {alto: 22, basso: 22, esterno: 18, interno: auto}   # auto = tabella KDP
@@ -332,6 +405,7 @@ Forma: `motore/zb <comando> [libro]`; senza libro usa `libri/libro-attivo.md`.
 | `impagina` | `impagina.py` | `05-output/<titolo>-completo.pdf`, `-rivisto.pdf`, `-DEFINITIVO.pdf` |
 | `pdf` | `verifica_pdf.py` | `verifica-pdf.md`: pagine, margini, font, sommario contro pagine reali |
 | `kdp` | `conformita_kdp.py` | `06-pubblicazione/conformita-kdp.md` |
+| `verifica KDP fatta [AAAA-MM-GG]` | `kdp_verifica.py` | `motore/dati/kdp.yaml` (`ultima_verifica`) e `motore/dati/verifiche-kdp.md` (A.8) |
 | `pacchetto` | `pacchetto.py` | `06-pubblicazione/`: scheda-amazon, quarta, brief-copertina, checklist, promemoria AI |
 
 Nessun comando fa commit o push da solo: il salvataggio segue B.5.
@@ -371,6 +445,58 @@ Nessun comando fa commit o push da solo: il salvataggio segue B.5.
 | 7 | `script/pacchetto.py`, `zb`, `README.md` | Kurgan | pacchetto completo; report KDP con le sole conferme dell'autore aperte |
 
 Ogni passo: proposta → OK → codice → caso di prova → commit e push secondo B.5.
+
+### B.8 Copia dei riferimenti in `motore/riferimenti/`
+
+**Cosa si copia.** Da NGTAProtocol/casa-editrice, `origin/main` @ becd0e2, con `git show` (sola lettura):
+- i 12 file di `.claude/skills/casa-editrice/riferimenti/` (da `01-mercato.md` a `12-lunghezze-e-struttura-capitoli.md`) → `motore/riferimenti/`;
+- i 7 file di `.claude/skills/casa-editrice/modelli/` → `motore/riferimenti/modelli/`.
+
+**Intestazione** aggiunta in testa a ogni file copiato, come prima riga, seguita da una riga vuota:
+
+```
+> Fonte: NGTAProtocol/casa-editrice main @ becd0e2, copiato il AAAA-MM-GG. Adattamenti: vedi motore/proposta-motore.md B.8.
+```
+
+Per questo, nei file copiati, ogni riga originale scende di 2 posizioni. I numeri di riga qui sotto sono quelli dell'originale.
+
+**Adattamenti, uno per uno**
+
+**Mod. 1 — `03-stesura.md` r. 12** (chiusure)
+- Prima: `9. **Chiusura di capitolo**: interrompi sul massimo della domanda, non sulla risposta.`
+- Dopo: `9. **Chiusura di capitolo**: chiudi su un gesto, un oggetto, una battuta o un'immagine concreta, non su una domanda. I tetti delle chiusure (sentenze, domande) li fissa il manuale del libro.`
+
+**Mod. 2 — `12-lunghezze-e-struttura-capitoli.md` r. 6** (conteggio)
+- Prima: `- Si conta in **parole** (comando `wc -w` sul file del capitolo, esclusi titoli e note).`
+- Dopo: `- Si conta in **parole** con il metodo unico del motore (`motore/script/conta.py`): token separati da spazi; escluse le righe che cominciano con «#» e i token senza lettere né cifre. Non si usa `wc -w`, che cambia con la lingua di sistema.`
+
+**Mod. 3 — `12-lunghezze-e-struttura-capitoli.md` r. 66** (conteggio)
+- Prima: `- Dopo ogni capitolo conta le parole e aggiorna "Parole reali" e "Scarto".`
+- Dopo: `- Dopo ogni capitolo conta le parole con il metodo unico e aggiorna "Parole reali" e "Scarto".`
+
+**Mod. 4 — `05-critica-e-punteggio.md`, dopo r. 22** (lista nera unita alle immagini vietate del libro; si aggiunge una riga, nessuna si toglie)
+- Prima (r. 22): `Aggiungi in lezioni.md ogni nuova espressione che l'autore segnala.`
+- Dopo (r. 22 invariata, più una riga nuova): `Alla lista nera si sommano le immagini e le formule vietate del manuale del libro (in `libro.yaml`: `stile.immagini_vietate`, `stile.formule_contate`). `stile.py` le controlla insieme. In caso di contrasto vale il manuale del libro: un'espressione che il manuale ammette con un tetto segue il tetto, non il divieto.`
+
+**Mod. 5 — `08-pubblicazione.md` r. 8** (corpo)
+- Prima: `**Corpo**: eventuali parti ("Parte prima — titolo") e capitoli con titoli e numerazione uniformi.`
+- Dopo: `**Corpo**: eventuali parti ("Parte prima — titolo") e capitoli con titoli e numerazione uniformi. Prologo, epilogo e interludi non hanno numero di capitolo quando il manuale del libro lo prevede.`
+
+**Mod. 6 — `08-pubblicazione.md` r. 12** (sommario)
+- Prima: `- Generalo SEMPRE dai titoli reali dei file in 04-manoscritto, mai a memoria, includendo parti, prologo, epilogo e pagine finali principali.`
+- Dopo: `- Generalo SEMPRE dai titoli reali dei file in 04-manoscritto, mai a memoria, includendo parti, prologo, interludi (con il loro titolo, senza numero), epilogo e pagine finali principali.`
+
+**Mod. 7 — `02-architettura.md` r. 39** (nuova, non era tra quelle già individuate: stessa questione della mod. 1)
+- Prima: `… un capitolo = 1-4 scene, chiuso da un gancio (domanda, rivelazione, pericolo, decisione).`
+- Dopo: `… un capitolo = 1-4 scene, chiuso da un gancio (gesto, oggetto, rivelazione, pericolo, decisione; la domanda solo se il manuale del libro la ammette).`
+
+**Non modificati.**
+- `05-critica-e-punteggio.md` r. 5 («le prime righe creano una domanda?») riguarda l'apertura, non la chiusura.
+- `04-editing-sviluppo.md` r. 11 riguarda le prime 10 pagine.
+- `modelli/registro-promesse.md` r. 3 usa «domanda» come tipo di promessa.
+- I file `01`, `04`, `06`, `07`, `09`, `10`, `11` e i 7 modelli si copiano identici, salvo l'intestazione.
+
+**Verifica della copia.** Un caso di prova confronta ogni file copiato con l'originale (`git show`). La differenza ammessa è solo l'intestazione più le 7 modifiche sopra; qualsiasi altra differenza è un KO.
 
 ---
 
@@ -633,17 +759,44 @@ In questa sessione non l'ho provato, perché non l'ho creato.
 ```
 
 - `hook_sessione.py` scrive il `session_id` in `.zb/sessione-corrente`. Con `source: compact` (contesto compattato) cancella il marker, così dopo una compattazione bisogna rileggere.
-- `hook_manoscritto.py`:
-  - se il percorso è sotto `libri/*/04-manoscritto/` (per Bash: il comando nomina `04-manoscritto` con un'operazione di scrittura: `>`, `tee`, `sed -i`, `mv`, `cp`, `rm`, `python`) e manca `.zb/letto-<session_id>`, esce con codice 2 e il messaggio «Esegui motore/script/avvio.py prima di scrivere nel manoscritto»;
-  - negli altri casi esce con 0.
+- `hook_manoscritto.py` ha due modalità, scelte in `motore/dati/hook.yaml` (`modalita: avviso | blocco`):
+  - **avviso** (iniziale): se il percorso è sotto `libri/*/04-manoscritto/` e manca `.zb/letto-<session_id>`, stampa «ATTENZIONE: avvio.py non eseguito in questa sessione; scrittura nel manoscritto non verificata» ed esce con 0, quindi **non blocca**. Ogni avviso finisce anche in `.zb/avvisi-hook.log`;
+  - **blocco**: stesso controllo, ma esce con codice 2 e il messaggio «Esegui motore/script/avvio.py prima di scrivere nel manoscritto».
 
-Rischi:
-- **Bash:** il riconoscimento di una scrittura dentro un comando è euristico. Uno script Python che scrive nel manoscritto senza nominare il percorso nel comando passa.
-- **Errori dell'hook:** un errore nel codice può bloccare tutte le scritture. Proposta: blocca solo i percorsi del manoscritto e, per ogni altro percorso, in caso di errore lascia passare con un avviso.
-- **Portata:** `.claude/settings.json` nel repo vale per ogni sessione su quel ramo e su ogni ramo in cui venga unito.
-- **Comandi eseguiti:** gli hook eseguono comandi con i permessi della sessione. Lo script deve solo leggere stdin e il marker.
-- **Marker:** se `.zb/` non è in `.gitignore`, il marker finisce in un commit. Un marker vecchio di un'altra sessione non vale, perché il nome contiene il `session_id`.
-- **Garanzia:** l'hook è una protezione in più, non una garanzia. La regola resta in `CLAUDE.md` e in `PROCEDURA.md`.
+**Passaggio da avviso a blocco.** Solo dopo una prova superata, in una cartella temporanea fuori dal repo (per esempio `/tmp/zb-prova-hook/libri/prova/04-manoscritto/prova.md`):
+1. senza marker: Write, Edit e i comandi Bash dei casi della tabella qui sotto. Atteso: blocco dove previsto;
+2. con marker: le stesse operazioni. Atteso: nessun blocco;
+3. scritture fuori dal manoscritto: mai bloccate;
+4. hook con un errore volontario: per i percorsi fuori dal manoscritto lascia passare.
+
+L'esito si mostra in una tabella. Il passaggio a `modalita: blocco` è un commit a parte, dopo il tuo «ok».
+
+**Rilevamento delle scritture via Bash: scenari di errore**
+
+Il comando Bash arriva all'hook come testo. L'hook lo considera una scrittura nel manoscritto se contiene `04-manoscritto` insieme a un operatore di scrittura: `>`, `>>`, `tee`, `sed -i`, `perl -i`, `mv`, `cp`, `rm`, `truncate`, `git checkout --`, `git restore`, `python`.
+
+| # | Scenario | Tipo di errore | Cosa fa il sistema |
+|---|---|---|---|
+| 1 | `grep -n x libri/mp/04-manoscritto/01.md > /tmp/out.txt` (lettura, con redirezione verso un altro file) | falso blocco | L'hook guarda dove punta la redirezione: se il bersaglio di `>` non è in `04-manoscritto` lascia passare. In modalità avviso non blocca comunque. |
+| 2 | `python3 motore/script/capitolo.py 01` (legge il manoscritto, non lo nomina) | nessun errore | Lascia passare: il percorso non compare. |
+| 3 | `python3 -c "open('libri/mp/04-manoscritto/01.md','w')…"` | rilevato | Blocca (o avvisa): compaiono `python` e il percorso. |
+| 4 | Uno script che scrive nel manoscritto senza nominarlo nel comando (`python3 /tmp/s.py`) | falso permesso | Non rilevabile dall'hook. Lo copre `avvio.py` al passo successivo: lo sha256 di un capitolo approvato cambiato fuori procedura ferma il lavoro (C.4). |
+| 5 | Percorso costruito con variabili (`D=libri/mp/04-manoscritto; echo x > $D/01.md`) | falso permesso | Non rilevabile con certezza. L'hook cerca anche `04-manoscritto` nelle assegnazioni di variabili dello stesso comando; il resto lo copre il controllo sha256 di `avvio.py`. |
+| 6 | `cd libri/mp/04-manoscritto && sed -i … 01.md` | rilevato | Blocca: `04-manoscritto` e `sed -i` nello stesso comando. |
+| 7 | `cd libri/mp/04-manoscritto` in un comando precedente, poi `sed -i … 01.md` | falso permesso | Non rilevabile, perché il comando non nomina la cartella. Lo copre il controllo sha256 di `avvio.py`. |
+| 8 | `git commit` o `git push` con file del manoscritto in stage | falso blocco evitato | `git add/commit/push/status/log/diff` non sono operatori di scrittura: lascia passare. |
+| 9 | `git checkout -- libri/mp/04-manoscritto/01.md` o `git restore …` | rilevato | Blocca (o avvisa): sovrascrive il capitolo. |
+| 10 | `cp libri/mp/04-manoscritto/01.md /tmp/copia.md` (copia in uscita) | falso blocco | L'hook guarda l'ultimo argomento di `cp`/`mv`: se la destinazione è fuori dal manoscritto lascia passare. `mv` con sorgente nel manoscritto invece blocca, perché toglie il file. |
+| 11 | `cat libri/mp/04-manoscritto/*.md \| wc -w` | nessun errore | Lascia passare: nessun operatore di scrittura. |
+| 12 | Nome di un file che contiene `04-manoscritto` fuori da `libri/*/` (per esempio nella proposta) | falso blocco | L'hook richiede il percorso completo `libri/<nome>/04-manoscritto/`: lascia passare. |
+| 13 | L'hook stesso va in errore (JSON illeggibile, Python mancante) | falso blocco o falso permesso | In modalità avviso lascia sempre passare e lo scrive nel log. In modalità blocco blocca solo se il testo contiene `libri/` e `04-manoscritto`, altrimenti lascia passare. |
+| 14 | Contesto compattato: il marker viene cancellato (`source: compact`) | blocco voluto | Il messaggio chiede di rieseguire `avvio.py`; dopo la rilettura si procede. |
+
+Rischi che restano:
+- **Garanzia:** l'hook è una protezione in più, non una garanzia. La regola resta in `CLAUDE.md` e in `PROCEDURA.md`, e il controllo sha256 di `avvio.py` copre i casi 4, 5 e 7.
+- **Portata:** `.claude/settings.json` nel repo vale per ogni sessione su quel ramo e su ogni ramo in cui venga unito (C.8).
+- **Comandi eseguiti:** gli hook eseguono comandi con i permessi della sessione. Lo script deve solo leggere stdin, il marker e `hook.yaml`.
+- **Marker:** `.zb/` va in `.gitignore`, altrimenti il marker finisce in un commit. Un marker di un'altra sessione non vale, perché il nome contiene il `session_id`.
 
 ### C.5 Sessioni
 
@@ -710,3 +863,26 @@ Al gate scrivo: «Consigliata una lettura fuori sessione. Scrivi "prepara per re
 - a ogni «avanti» passa al blocco successivo;
 - le tue note tornano come «correggi: righe X-Y, …», applicate secondo C.1;
 - se il documento cambia durante la revisione, lo sha256 diverso lo segnala e la revisione riparte dal blocco 1.
+
+### C.8 Come il motore arriva a tutti i libri
+
+**Situazione verificata il 2026-10-02 con `git ls-remote --symref origin HEAD`:**
+- in ZeusBot **non esiste un ramo `main`**;
+- il ramo principale (HEAD di GitHub) è **`claude/claude-rc-4umw8n`**, ultimo commit 28560a6 del 2026-09-24. Contiene solo `.gitignore` e `ghimoney/`, niente `libri/`;
+- `claude/mister-provino-espansione` è 289 commit avanti al principale e 0 indietro; `claude/kurgan-giorgi-thriller-3f6mfq` è 302 avanti e 0 indietro. Partono entrambi da 28560a6.
+
+**Problema.** Una pull request di `claude/mister-provino-espansione` verso il principale porterebbe con sé anche tutta `libri/`: i due libri e la versione vecchia di Kurgan/Giorgi che sta su quel ramo.
+
+**Proposta.**
+1. Creo un ramo solo per il motore, per esempio `claude/motore`, partendo dal principale (28560a6), e ci copio **solo** `motore/` (più `CLAUDE.md` e `.claude/settings.json` quando esisteranno). Nessun file di `libri/`. Creare questo ramo richiede il tuo permesso esplicito, perché è un ramo diverso da quello assegnato.
+2. Tu apri su GitHub la pull request `claude/motore` → `claude/claude-rc-4umw8n` e fai il merge.
+3. Unisco il principale nei rami dei libri con `git merge` (commit di merge, nessuna riscrittura della storia): prima `claude/kurgan-giorgi-thriller-3f6mfq`, poi `claude/mister-provino-espansione`. Il principale non ha `libri/`, quindi il merge aggiunge solo `motore/` e non tocca i libri. Su `claude/mister-provino-espansione` `motore/` esiste già con la stessa storia di file, quindi il merge non dà conflitti, oppure dà conflitti solo sui file cambiati nel frattempo.
+4. I libri futuri: il ramo del nuovo libro parte dal principale, quindi ha già il motore.
+5. Gli aggiornamenti del motore si fanno su `claude/motore`, poi PR verso il principale, poi merge del principale nei rami dei libri.
+
+**Se non puoi fare il merge sul principale** (ramo protetto, permessi, o preferisci non toccarlo):
+- **Alternativa A:** unisco `claude/motore` direttamente in ciascun ramo di libro con `git merge`. Funziona senza il principale. Ogni aggiornamento del motore va unito in ogni ramo, uno per uno.
+- **Alternativa B:** copio la cartella con `git checkout origin/claude/motore -- motore/` e un commit su ciascun ramo di libro. È più semplice, ma le copie si separano nel tempo: va annotato in `stato.yaml` il commit del motore usato (`motore_commit`), e `avvio.py` avvisa se è più vecchio di quello di `claude/motore`.
+- In tutti i casi: niente force push, niente rebase dei rami dei libri, niente tag. Se un push fallisce mi fermo e riporto l'errore.
+- Finché il motore non è su un ramo di libro, per quel libro si usa da un checkout separato del ramo del motore, con `--libro` e `--pdf` che puntano al checkout del libro (come per il caso di prova di A.7).
+
