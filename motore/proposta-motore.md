@@ -1,6 +1,7 @@
 # Motore editoriale — proposta
 
 Stato: **proposta**, nessun file del motore è ancora stato creato oltre a questo.
+Parti: A (direttive KDP), B (motore 1-7), C (funzionamento quasi automatico: macchina a stati, stesura, briefing, avvio obbligatorio, sessioni, migrazione, secondo lettore).
 Ramo: `claude/mister-provino-espansione`, cartella `motore/` alla radice di NGTAProtocol/ZeusBot.
 Vincoli: `libri/` non si tocca; casa-editrice si legge soltanto, mai in scrittura.
 Fonte delle direttive KDP: `riferimenti/11-direttive-kdp.md` di NGTAProtocol/casa-editrice, `origin/main` @ becd0e2.
@@ -214,13 +215,27 @@ Sezioni 1-10 e 12-15: per Kurgan/Giorgi oggi non esistono `06-pubblicazione/`, `
 ```
 motore/
   proposta-motore.md        questo file (esiste)
+  PROCEDURA.md              fasi, gate, comandi, regole fisse (C.1-C.7)      da scrivere
   README.md                 come si usa il motore, comandi, regole fisse     da scrivere
   zb                        lanciatore: zb <comando> [libro]                 da scrivere
+  modelli/
+    briefing.md             briefing da compilare dal telefono (C.3)         da scrivere
+    LEGGIMI.md              modello del LEGGIMI di libro (C.4)               da scrivere
+    stato.yaml              modello della macchina a stati (C.1)             da scrivere
   dati/
     kdp.yaml                direttive KDP (A.2)                              da scrivere
     lista-nera.yaml         cliché e tic da 05-critica rr. 19-21             da scrivere
     libro.schema.yaml       schema di libro.yaml (B.3)                       da scrivere
+    stato.schema.yaml       schema di stato.yaml (C.1)                       da scrivere
   script/
+    avvio.py                lettura obbligatoria, marker di sessione (C.4)   da scrivere
+    fase.py                 macchina a stati: gate, ok/avanti/correggi/stato (C.1)  da scrivere
+    capitolo.py             controlli del capitolo in un colpo solo (C.2)    da scrivere
+    riciclo.py              anti-riciclo a 7 parole (C.2)                    da scrivere
+    date.py                 date e giorni della settimana dal calendario (C.2)  da scrivere
+    revisione.py            «prepara per revisione»: blocchi da incollare (C.7)  da scrivere
+    hook_sessione.py        hook SessionStart (C.4, solo proposta)           da scrivere
+    hook_manoscritto.py     hook PreToolUse (C.4, solo proposta)             da scrivere
     comune.py               lettura di libro.yaml, percorsi, ramo, salvataggio  da scrivere
     conta.py                metodo unico di conteggio, parole per pagina     da scrivere
     stile.py                frase media, formule contate, tetti, immagini vietate, lista nera  da scrivere
@@ -348,9 +363,350 @@ Nessun comando fa commit o push da solo: il salvataggio segue B.5.
 | 1 | `dati/kdp.yaml`, `script/verifica_pdf.py`, `script/conformita_kdp.py` | PDF DEFINITIVO di Kurgan con `--pdf` | sezione 11 OK con i valori di A.7; avviso formato A5; avviso verifica mai fatta |
 | 2 | `script/conta.py` | vecchio testo di Mister Provino | 49.998 parole esatte |
 | 3 | `dati/libro.schema.yaml` + bozza di `libro.yaml` dei due libri (in chat, non in `libri/`) | entrambi | approvazione dell'autore |
+| 3a | `PROCEDURA.md`, `CLAUDE.md`, `modelli/` (briefing, LEGGIMI, stato), `script/avvio.py`, `script/fase.py` (C.1, C.3, C.4) | Mister Provino: migrazione di C.6, ripartenza a G2 | `avvio.py` stampa la riga «Letto: …» e si ferma nei casi di C.4 |
+| 3b | `script/capitolo.py`, `riciclo.py`, `date.py`, `revisione.py` (C.2, C.7) | Mister Provino, pagina campione e primo lotto | report di capitolo completo; regola della correzione unica |
 | 4 | `script/compila.py`, `script/impagina.py`, `impaginazione/` | Kurgan | non regressione di B.6 punto 3 |
 | 5 | `script/stile.py`, `dati/lista-nera.yaml` | Mister Provino, primi capitoli scritti | valori del registro dei contatori del manuale |
 | 6 | `script/ortografia.py` | Kurgan | zero errori certi, come `controllo-ortografico.md` |
 | 7 | `script/pacchetto.py`, `zb`, `README.md` | Kurgan | pacchetto completo; report KDP con le sole conferme dell'autore aperte |
 
 Ogni passo: proposta → OK → codice → caso di prova → commit e push secondo B.5.
+
+---
+
+## C. Funzionamento quasi automatico
+
+Obiettivo: l'autore scrive solo il briefing e risponde «ok», «avanti», «correggi: …», «stato» o «prepara per revisione». Tutto il resto si legge da file: lo stato del libro, le fasi, i controlli e i punti di approvazione. Nessun prompt da incollare a ogni passo.
+
+### C.1 Macchina a stati
+
+**File:** `libri/<nome>/stato.yaml`, scritto solo da `motore/script/fase.py`.
+
+```yaml
+libro: mister-provino
+ramo: claude/mister-provino-espansione
+fase: 2                        # 0-8, oppure "chiuso"
+passo: pagina-campione         # sottopasso della fase
+gate_in_attesa: voce           # null se nessun gate è aperto
+lotto: {dimensione: 3, capitoli: []}   # fase 5
+ultimo_capitolo_approvato: null
+parole: {scritte: 0, obiettivo: 78000, metodo: unico}
+documenti_approvati:           # percorso → sha256 e commit dell'approvazione
+  02-bibbia/bibbia.md: {sha256: "3302e642cd67…", commit: 7692265}
+avvisi_aperti:
+  - {id: A1, fonte: bibbia, testo: "20 marche [PROPOSTA]"}
+revisione_in_corso: null       # {documento, blocco, blocchi_totali, sha256}
+push_in_sospeso: false
+aggiornato: 2026-10-02T00:00:00Z
+```
+
+**Tabella delle fasi**
+
+| Fase | Legge | Produce | Controlli automatici | Gate |
+|---|---|---|---|---|
+| 0 Avvio | `00-progetto/briefing.md`, `motore/modelli/` | cartelle `00-06`, `libro.yaml`, `stato.yaml`, `LEGGIMI.md`, file dai modelli | briefing completo (C.3); nome autore; ramo | **G0** domande (massimo 5, solo se mancano dati essenziali) e conferma di `libro.yaml` |
+| 1 Bibbia | briefing, `libro.yaml`; registro dei fatti se c'è | `02-bibbia/bibbia.md` (personaggi, luoghi, cronologia, motivi con tetti) | nomi unici, età coerenti con la cronologia, ogni fatto canonico del briefing presente, marche [PROPOSTA] contate | **G1** bibbia |
+| 2 Voce | bibbia, briefing (tono, riferimenti, divieti) | `03-architettura/manuale-di-stile.md`; `05-revisioni/pagina-campione.md` in 3 voci (stessa scena, circa 400 parole ciascuna) | frase media, dialogo %, formule e immagini vietate sulle tre voci | **G2** scelta della voce; il manuale si completa con la voce scelta |
+| 3 Continuità | bibbia, manuale | `02-bibbia/continuita.md`: cronologia giorno per giorno, date con giorno della settimana, età per anno, cifre (soldi, distanze, durate) | `date.py`: giorno della settimana dal calendario reale; età da data di nascita; somme e durate | **G3** decisioni di continuità |
+| 4 Scaletta | bibbia, manuale, continuità | `03-architettura/scaletta.md`, `03-architettura/piano-parole.md` | somma budget = obiettivo ± 5%; nessun capitolo sotto il minimo; parti; interludi; date in ordine | **G4** scaletta e piano parole |
+| 5 Stesura | `LEGGIMI.md`, manuale, scaletta (riga del capitolo), continuità, capitoli precedenti | `04-manoscritto/NN-*.md`, `06-diagnostica/capitoli/NN.md` | C.2 per ogni capitolo | **G5** a ogni lotto: primo lotto di 3 capitoli, poi lotti di N scelti dall'autore |
+| 6 Assemblaggio | tutti i capitoli, `libro.yaml` | `05-output/*-completo.md`, `*-completo.pdf`, `*-rivisto.pdf`, `*-DEFINITIVO.pdf` | `verifica_pdf.py`: indice contro pagine, margini, font, pagine pari | **G6** PDF |
+| 7 Controlli finali | manoscritto, continuità | `06-diagnostica/controlli-finali.md` | durate, ortografia (Hunspell), coerenza nomi e date, tetti sull'intero libro, anti-riciclo | **G7** esiti e proposte di correzione |
+| 8 Pacchetto KDP | `libro.yaml`, PDF, `kdp.yaml` | `06-pubblicazione/`: scheda, quarta, brief copertina, `conformita-kdp.md`, promemoria AI | `conformita_kdp.py` (A.4) | **G8** pacchetto; resta aperto finché ci sono KO o conferme dell'autore mancanti |
+
+**Cosa mostra ogni gate**
+
+| Gate | Cosa mostro | Formato |
+|---|---|---|
+| G0 | domande mancanti (al massimo 5), poi `libro.yaml` | elenco numerato; poi il file intero in blocchi |
+| G1 | bibbia intera e riepilogo dei controlli (nomi, età, fatti canonici, [PROPOSTA]) | blocchi di circa 120 righe, «Blocco N di M, righe X-Y»; riepilogo in fondo all'ultimo blocco |
+| G2 | le tre voci della pagina campione affiancate, con le misure (frase media, dialogo %) | un blocco per voce, poi una tabella |
+| G3 | tabella delle date, età e cifre con i dubbi in cima | blocchi di circa 120 righe |
+| G4 | scaletta e piano parole | blocchi di circa 120 righe; totali in fondo |
+| G5 | per ogni capitolo del lotto: testo intero e report dei controlli | blocchi di circa 120 righe per capitolo; tabella dei controlli dopo l'ultimo blocco |
+| G6 | indice con le pagine, margini, font, numero di pagine, sha256 del PDF | tabella; il PDF si invia come file |
+| G7 | esiti dei controlli e proposte di correzione voce per voce | tabella con file e riga |
+| G8 | `conformita-kdp.md` e promemoria AI | blocchi; righe KO in cima |
+
+**Significato delle risposte**
+
+| Risposta | Effetto |
+|---|---|
+| `ok` | Approva il documento del gate aperto: registro sha256 e commit in `documenti_approvati`, chiudo il gate, commit e push, passo al passo successivo e mi fermo al gate seguente. `ok` vale solo se il documento è stato mostrato per intero; se ci sono blocchi non ancora mostrati chiedo prima di mostrarli. |
+| `avanti` | Mostra il blocco successivo del documento in revisione. Non approva nulla. Dopo l'ultimo blocco scrivo: «Fine del documento. Scrivi ok o correggi: …». |
+| `correggi: …` | Applico solo la correzione descritta, rieseguo i controlli, mostro le righe cambiate (prima e dopo) e resto allo stesso gate. Nessun'altra modifica. |
+| `stato` | Mostra `stato.yaml` in forma leggibile: fase, gate, lotto, parole scritte/obiettivo, avvisi aperti, ultimo commit, allineamento con origin. Non scrive nulla. |
+| `prepara per revisione` | Vedi C.7. Non scrive nulla. |
+| `ok, lotti da N` | Al gate G5 approva il lotto e fissa la dimensione dei lotti successivi. |
+
+Qualunque altra frase è una domanda: rispondo senza cambiare stato.
+
+### C.2 Stesura di un capitolo
+
+Procedura meccanica, uguale per ogni capitolo:
+
+1. **Avvio:** `avvio.py` (C.4). Leggo `LEGGIMI.md`, la riga del capitolo nella scaletta, il budget nel piano parole, le voci di continuità che il capitolo tocca, il manuale e il capitolo precedente.
+2. **Scrittura** del capitolo in `04-manoscritto/NN-slug.md`.
+3. **Controlli** con `motore/script/capitolo.py NN`, che esegue in un colpo solo:
+   - parole con il metodo unico, rispetto a budget e minimo;
+   - frase media e dialogo %;
+   - formule contate (per capitolo e cumulate sul libro);
+   - immagini vietate e lista nera;
+   - similitudini rispetto al tetto per parole;
+   - gesti di conteggio rispetto al tetto per capitolo;
+   - anti-riciclo a 7 parole (`riciclo.py`): ogni sequenza di 7 parole uguale al registro dei fatti o a un capitolo già scritto, con file e riga;
+   - date e giorni della settimana (`date.py`) contro `continuita.md`;
+   - nomi: ogni nome proprio deve esistere in bibbia;
+   - tetti dei motivi e delle chiusure (sentenze, domande).
+4. **Report** in `06-diagnostica/capitoli/NN.md`: tabella dei controlli con valore, soglia ed esito, più la posizione di ogni KO.
+5. **Commit e push** (capitolo e report), poi `stato.yaml` aggiornato con le parole scritte.
+
+**Regola della correzione unica.** Se un controllo numerico fallisce:
+- faccio **una sola** correzione mirata sul punto indicato e rieseguo i controlli;
+- se fallisce ancora mi **fermo** e scrivo quale controllo, quale valore, quale soglia, file e righe;
+- non riscrivo in ciclo, non allento le soglie, non approvo da solo. Il capitolo resta al gate G5 come «da decidere».
+
+### C.3 Briefing
+
+**`motore/modelli/briefing.md`**, pensato per il telefono: una voce per riga, «Campo: valore»; le voci multiple con un trattino.
+
+```markdown
+# Briefing
+
+Titolo di lavoro:
+Autore: F.R. Faraone
+Genere:
+Lettore:
+Lunghezza (parole):
+Persona e tempo:
+
+## Idea (massimo 5 righe)
+
+## Tono e voce desiderati
+
+## Personaggi chiave
+- Nome — ruolo — età — una riga
+
+## Fatti canonici
+- 
+
+## Cose da non cambiare
+- 
+
+## Divieti
+- 
+
+## Riferimenti
+- 
+```
+
+**Verifica di completezza** (`avvio.py`, fase 0). Prima di passare alla fase 1 controlla:
+
+| Voce | Obbligatoria | Controllo |
+|---|---|---|
+| Titolo di lavoro, Autore | sì | non vuoti |
+| Genere | sì | nella tabella di 12-lunghezze, altrimenti avviso |
+| Lunghezza | sì | numero tra 40.000 e 180.000 |
+| Idea | sì | da 1 a 5 righe |
+| Personaggi chiave | sì | almeno 1, con nome e ruolo |
+| Lettore, tono e voce, persona e tempo | no | se mancano, la fase 2 propone le tre voci |
+| Fatti canonici, cose da non cambiare, divieti, riferimenti | no | se ci sono, finiscono in bibbia e manuale come vincoli |
+
+Se manca una voce obbligatoria: al massimo 5 domande, solo su quelle voci, al gate G0. Le altre voci mancanti non generano domande.
+
+### C.4 Avvio obbligatorio
+
+**`CLAUDE.md` alla radice di ZeusBot** (testo completo):
+
+```markdown
+# ZeusBot — regole di avvio
+
+Prima di toccare qualunque file:
+1. Leggi `motore/PROCEDURA.md`.
+2. Leggi `libri/libro-attivo.md` e il `LEGGIMI.md` del libro attivo.
+3. Esegui `python3 motore/script/avvio.py` e riporta la sua riga «Letto: …».
+   Se avvio.py si ferma, fermati anche tu e riporta il motivo.
+
+Precedenza: manuale del libro > procedura del motore > skill dell'autore.
+In caso di contrasto vince il manuale del libro; segnalalo nel report.
+
+Metodo: proponi → l'autore approva → applica. Mai approvare da solo.
+Risposte dell'autore: ok, avanti, correggi: …, stato, prepara per revisione
+(significato in `motore/PROCEDURA.md`, sezione gate).
+
+Ramo: solo quello assegnato dalla sessione; deve coincidere con `ramo`
+in `libro.yaml`. Se non coincide, fermati.
+
+Tono: il vecchio testo di un libro è un registro dei fatti,
+non va commentato né giudicato.
+
+Salvataggio a ogni passo: git add, commit, push, git status -sb, git log -1.
+Se il push fallisce o un file non si salva: fermati e riporta l'errore.
+Non dire «fatto» se non è su origin. Resoconto con hash, file,
+parole/pagine e «branch allineato a origin: sì/no».
+
+Nel testo pushato non vanno identificativi di modello.
+```
+
+**`LEGGIMI.md` di libro** (modello `motore/modelli/LEGGIMI.md`):
+
+```markdown
+# <Titolo> — LEGGIMI
+
+Ramo: <ramo>
+Fase: <n> — <nome>; gate in attesa: <gate>
+Ultimo capitolo approvato: <NN>
+
+Da leggere a ogni avvio (in quest'ordine):
+1. libro.yaml
+2. stato.yaml
+3. <manuale>
+4. <documenti della fase corrente>
+
+Decisioni fisse (non si toccano senza richiesta esplicita):
+- <elenco>
+
+Non toccare: <file o cartelle>
+Avvisi aperti: vedi stato.yaml
+```
+
+Il LEGGIMI lo aggiorna `fase.py` a ogni gate chiuso. L'elenco delle decisioni fisse si scrive solo con un «ok».
+
+**Libro attivo con due romanzi.**
+- Ogni ramo ha il suo `libri/libro-attivo.md`, con il nome del libro di quel ramo.
+- `libro.yaml` del libro contiene `ramo`.
+- `avvio.py` controlla che ramo corrente, libro attivo e `libro.yaml` coincidano; se non coincidono si ferma: «Il ramo X appartiene al libro Y».
+- Su `claude/mister-provino-espansione` oggi `libro-attivo.md` dice `kurgan-giorgi`: va cambiato in `mister-provino` (passo della migrazione, C.6).
+
+**`motore/script/avvio.py`**
+
+Cosa stampa:
+1. libro, ramo, ultimo commit (hash breve e messaggio), allineamento con origin;
+2. fase, passo, gate in attesa, ultimo capitolo approvato, parole scritte/obiettivo;
+3. i file da leggere per la fase corrente, ciascuno con righe e sha256 (12 caratteri);
+4. avvisi aperti;
+5. in fase 8: età della verifica delle direttive KDP.
+
+Quando si ferma (codice d'uscita diverso da zero):
+- ramo diverso da `libro.yaml`, o libro attivo incoerente;
+- modifiche non salvate nel checkout, o ramo indietro rispetto a origin;
+- `stato.yaml` mancante o non valido;
+- sha256 di un documento approvato diverso da quello registrato (modificato fuori procedura);
+- in fase 0: briefing incompleto (C.3);
+- `push_in_sospeso: true` (C.5).
+
+**Marker di sessione.** Quando `avvio.py` termina senza errori scrive `.zb/letto-<session_id>` con la data, il commit e gli sha256 dei file letti. `.zb/` va in `.gitignore`. Il `session_id` lo deposita in `.zb/sessione-corrente` l'hook SessionStart. Se non c'è un hook, `avvio.py` usa un identificativo locale e lo dichiara.
+
+**Frase di conferma** prima di ogni scrittura (stampata da `avvio.py`, ripetuta da me):
+
+```
+Letto: libro.yaml (54 righe, sha256 …), stato.yaml (31 righe, sha256 …),
+03-architettura/manuale-di-stile.md (269 righe, sha256 f460afa60d65), …;
+ultimo commit a8a69e1 «…»; fase 2, gate voce.
+```
+
+**Hook PreToolUse sul manoscritto (solo proposta, non creato)**
+
+Versione presente nel container: **Claude Code 2.1.287**. Gli hook `SessionStart` e `PreToolUse` sono funzioni documentate di Claude Code:
+- ricevono su stdin un JSON con `session_id`, `tool_name` e `tool_input`;
+- un `PreToolUse` che esce con codice 2 blocca lo strumento e il messaggio su stderr torna al modello;
+- `$CLAUDE_PROJECT_DIR` indica la radice del repo.
+
+In questa sessione non l'ho provato, perché non l'ho creato.
+
+`.claude/settings.json` proposto:
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [ { "type": "command",
+        "command": "python3 \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_sessione.py" } ] }
+    ],
+    "PreToolUse": [
+      { "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
+        "hooks": [ { "type": "command",
+          "command": "python3 \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_manoscritto.py" } ] }
+    ]
+  }
+}
+```
+
+- `hook_sessione.py` scrive il `session_id` in `.zb/sessione-corrente`. Con `source: compact` (contesto compattato) cancella il marker, così dopo una compattazione bisogna rileggere.
+- `hook_manoscritto.py`:
+  - se il percorso è sotto `libri/*/04-manoscritto/` (per Bash: il comando nomina `04-manoscritto` con un'operazione di scrittura: `>`, `tee`, `sed -i`, `mv`, `cp`, `rm`, `python`) e manca `.zb/letto-<session_id>`, esce con codice 2 e il messaggio «Esegui motore/script/avvio.py prima di scrivere nel manoscritto»;
+  - negli altri casi esce con 0.
+
+Rischi:
+- **Bash:** il riconoscimento di una scrittura dentro un comando è euristico. Uno script Python che scrive nel manoscritto senza nominare il percorso nel comando passa.
+- **Errori dell'hook:** un errore nel codice può bloccare tutte le scritture. Proposta: blocca solo i percorsi del manoscritto e, per ogni altro percorso, in caso di errore lascia passare con un avviso.
+- **Portata:** `.claude/settings.json` nel repo vale per ogni sessione su quel ramo e su ogni ramo in cui venga unito.
+- **Comandi eseguiti:** gli hook eseguono comandi con i permessi della sessione. Lo script deve solo leggere stdin e il marker.
+- **Marker:** se `.zb/` non è in `.gitignore`, il marker finisce in un commit. Un marker vecchio di un'altra sessione non vale, perché il nome contiene il `session_id`.
+- **Garanzia:** l'hook è una protezione in più, non una garanzia. La regola resta in `CLAUDE.md` e in `PROCEDURA.md`.
+
+### C.5 Sessioni
+
+**Ripresa dopo un'interruzione**, solo da file:
+1. `avvio.py` legge `stato.yaml`: fase, passo, gate, lotto, `revisione_in_corso`.
+2. Se ci sono modifiche non salvate nel checkout (sessione caduta a metà), si ferma, mostra quali file e quante righe e chiede «tieni» o «scarta». Non scarta nulla da solo.
+3. Se il ramo locale è avanti rispetto a origin, prova un solo push. Se riesce, prosegue; se fallisce, si ferma (punto seguente).
+4. Se c'era una revisione in corso, riparte dal blocco indicato in `revisione_in_corso`, dopo aver verificato che lo sha256 del documento sia lo stesso.
+5. Il riepilogo di ripresa è la frase «Letto: …» più fase e gate. Nessun riassunto a memoria della conversazione precedente.
+
+**Se la sessione non può pushare:**
+- mi fermo subito e riporto il messaggio d'errore esatto di `git push`;
+- non scrivo il capitolo successivo e non apro un nuovo gate sopra lavoro non pushato;
+- il commit resta locale. Il container della sessione è temporaneo: il lavoro non pushato si perde quando il container viene chiuso, e lo dico esplicitamente;
+- non provo altri rami, non creo tag e non forzo il push;
+- `stato.yaml` non può segnare il problema su origin. Lo segno nel resoconto in chat con l'hash del commit locale non pushato.
+
+### C.6 Migrazione dei due romanzi
+
+| | Kurgan/Giorgi | Mister Provino |
+|---|---|---|
+| Ramo | `claude/kurgan-giorgi-thriller-3f6mfq` | `claude/mister-provino-espansione` |
+| Fase nel motore | `chiuso` dopo la fase 7 (PDF DEFINITIVO); fase 8 non avviata | fase 2, passo `pagina-campione`, gate G2 |
+| File che servono subito | `stato.yaml`, `LEGGIMI.md`, `libro.yaml` (sul suo ramo) | `stato.yaml`, `LEGGIMI.md`, `libro.yaml`; `libri/libro-attivo.md` → `mister-provino` |
+| Avvisi iniziali | formato A5 da verificare su KDP; «Felice Faraone» in `00-progetto/stato.md` r. 4, `02-bibbia/bibbia.md` r. 4, `01-mercato/mercato.md` r. 3; direttive KDP mai verificate | 20 marche [PROPOSTA] in bibbia, 4 nel manuale, 3 in scaletta; incongruenza n. 25 aperta per istruzione; manuale r. 75 «Da compilare dopo l'approvazione della pagina campione» |
+
+**Kurgan/Giorgi.** Nessun file esistente cambia. I tre file nuovi si aggiungono con un commit sul suo ramo, dopo il tuo «ok». In `documenti_approvati` vanno gli sha256 attuali di manoscritto, bibbia, manuale e PDF DEFINITIVO (`fe460844…`), con il commit d31e84c.
+
+**Mister Provino: ripartenza senza rifare il lavoro.**
+- I documenti delle fasi 3b-3f del libro sono già su origin (commit 7692265). Nel motore li registro come approvati con il loro sha256:
+  - briefing `a2c2e8ded919`
+  - bibbia `3302e642cd67`
+  - manuale `f460afa60d65`
+  - scaletta `50a952d18b02`
+  - incongruenze `9f0c81e3d9b9`
+  - registro dei fatti `78afbc2ca68d`
+- Corrispondenza con le fasi del motore:
+  - bibbia → fase 1, fatta;
+  - manuale → fase 2, fatta salvo la pagina campione;
+  - incongruenze e bibbia §10 → fase 3, fatta salvo la n. 25;
+  - scaletta → fase 4, fatta, con 3 [PROPOSTA].
+- Il libro riparte da **fase 2, pagina campione in 3 voci (G2)**, l'unico passo mancante prima della stesura.
+- Dopo G2 non rifaccio le fasi 3 e 4. Apro un solo gate di conferma che mostra l'elenco dei documenti con sha256 e le marche [PROPOSTA] ancora aperte, non il testo intero. Con «ok» si passa alla fase 5, primo lotto di 3 capitoli.
+- Le marche [PROPOSTA] restano avvisi: si chiudono quando un capitolo le tocca, con un «ok» sulla singola voce.
+- Prima della fase 5 manca il piano parole come file a sé (`03-architettura/piano-parole.md`). Si ricava dalla tabella della scaletta senza cambiare numeri e si mostra al gate di conferma.
+
+### C.7 Secondo lettore
+
+Gate in cui suggerisco una lettura fuori dalla sessione, prima dell'«ok»:
+
+| Gate | Documento | Perché |
+|---|---|---|
+| G1 | bibbia | tutti i fatti successivi dipendono da qui |
+| G2 | pagina campione e manuale | la voce non si cambia dopo la stesura |
+| G4 | scaletta e piano parole | ordine e lunghezze dei capitoli |
+| G5, primo lotto | primi tre capitoli | prova della voce su pagine vere |
+
+Al gate scrivo: «Consigliata una lettura fuori sessione. Scrivi "prepara per revisione" per avere il documento in blocchi pronti da incollare.»
+
+**«prepara per revisione»** (`revisione.py`, sola lettura):
+- mostra il documento in blocchi di circa 120 righe, tagliati a fine paragrafo;
+- ogni blocco si apre con «<Titolo> — <documento> — Blocco N di M, righe X-Y — sha256 <12 caratteri>»;
+- testo puro, senza numeri di riga né commenti;
+- a ogni «avanti» passa al blocco successivo;
+- le tue note tornano come «correggi: righe X-Y, …», applicate secondo C.1;
+- se il documento cambia durante la revisione, lo sha256 diverso lo segnala e la revisione riparte dal blocco 1.
