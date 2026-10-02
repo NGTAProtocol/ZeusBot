@@ -1,0 +1,39 @@
+# Profilo di genere «romance» — default per libro.yaml (proposta B.6).
+# Fonti: righe dei riferimenti di casa-editrice main @ becd0e2; PROPOSTA = valore approvato dall'autore.
+genere: romance
+lunghezza_totale:
+  consigliata: [60000, 90000]                 # 12 r. 17
+  formati:                                    # 12 rr. 13-16
+    breve: [40000, 60000]
+    standard: [70000, 90000]
+    lungo: [90000, 120000]
+    epico: [120000, 180000]
+  parti_sopra: 100000                         # 12 r. 46
+capitoli:
+  minimo: 1500                                # 12 r. 23
+  media: [2000, 3000]                         # 12 r. 23
+  massimo: 4000                               # 12 r. 23
+  coerenza: {min_su_media: 0.5, max_su_media: 1.7}   # 12 r. 30
+  scene_per_capitolo: [2, 3]                  # 12 r. 35 (capitolo standard)
+  tolleranza_budget: 0.15                     # 12 r. 67
+  tolleranza_totale: 0.05                     # 12 r. 67
+scene:
+  lunghezza: [800, 2500]                      # 12 r. 38
+  sequel: [150, 600]                          # 12 r. 38
+  budget_interno: {apertura: [0.10, 0.15], centro: [0.60, 0.70], chiusura: [0.15, 0.25]}   # 12 rr. 41-43
+parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56
+battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46
+chiusura_preferita: misto                     # PROPOSTA (il default di 03 r. 12 è la domanda)
+frase_media: [12, 17]                         # PROPOSTA
+dialogo_percento: [35, 55]                    # PROPOSTA
+similitudini_max_per_parole: 300              # PROPOSTA
+parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21; il numero è PROPOSTA
+lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20
+parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA il valore dentro il range)
+scene_obbligatorie:
+  - primo incontro                            # 01-mercato r. 25 (romance)
+  - separazione                               # 01-mercato r. 25 (romance)
+  - gesto finale                              # 01-mercato r. 25 (romance)
+  - incidente scatenante che promette il climax   # 02 r. 19
+  - punto di non ritorno della relazione      # PROPOSTA
+  - finale felice o aperto alla speranza      # PROPOSTA

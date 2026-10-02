@@ -1,0 +1,58 @@
+# Esiti attesi delle prove del motore sui due mini-libri inventati (proposta B.2.2, B.7).
+# Ogni passo aggiunge la sua sezione. Le prove girano su copie temporanee dei mini-libri.
+#
+# Errori voluti già presenti nei mini-libri, da verificare nei passi successivi:
+#   mini-libro (giallo), cap. 2: «un brivido le percorse la schiena» (lista nera);
+#     «come se» 6 volte (tetto 2 per capitolo); «Lodovico Arsa» prima del cap. 3;
+#     intestazione «venerdì 4 marzo» (nel 2021 il 4 marzo è giovedì); «quarantadue anni»
+#     per Irene Calvi (nel 2021 ne ha 35); «Brena» accanto a «Brenna»; chiusura dichiarata
+#     X, prevista R in scaletta.
+#   mini-libro (giallo), cap. 3: 457 parole (minimo 800); frase media oltre 14;
+#     ultima riga di una parola.
+#   capitolo-prova (giallo cap. 1 = romance cap. 3): circa 1.180 parole, frase media
+#     circa 10, dialogo circa 30%: OK nel giallo, KO nel romance (minimo 1.500,
+#     frase media 12-17, dialogo 35-55%); chiusure su domanda: tre di fila nel romance.
+
+passo_1:
+  profili:                       # valida_profili.py: tutti OK
+    giallo: OK
+    thriller: OK
+    romance: OK
+    narrativa-letteraria: OK
+    fantasy: OK
+    fantascienza: OK
+    young-adult: OK
+  profilo_senza_fonte: KO        # copia di un profilo con una riga senza fonte né PROPOSTA
+  profilo_media_fuori: KO        # copia con media fuori da minimo/massimo
+  libro_schema:                  # comune.carica_libro
+    mini-libro: OK
+    mini-libro-romance: OK
+  rifiuti:                       # comune.carica_libro su copie modificate
+    lingua_en: "Lingua «en» non supportata"
+    lingua_mancante: "Lingua «None» non supportata"
+    override_senza_motivo: "override senza motivo"
+    profilo_cambiato_senza_override: "valore del profilo cambiato senza override"
+    riscrittura_senza_testo_precedente: "obbligatorio con modalita: riscrittura"
+  stato_schema:
+    modello_valido: OK           # stato.yaml d'esempio della proposta C.1
+    fase_mancante: KO
+  # Conteggi calcolati con una pipeline di shell indipendente da conta.py:
+  #   grep -v -E '^[[:space:]]*(#|<!--)' FILE | tr -s '[:space:]' '\n' | grep -c '[[:alnum:]]'
+  #   (LC_ALL=C.UTF-8)
+  conta:
+    mini-libro:
+      unita: {"1": 1186, "2": 832, "interludio I": 103, "3": 457}
+      ordine: ["1", "2", "interludio I", "3"]
+      totale: 2578
+    mini-libro-romance:
+      unita: {"1": 1581, "2": 1549, "3": 1183}
+      ordine: ["1", "2", "3"]
+      totale: 4313
+  separazione:
+    motore: 0                    # codice d'uscita su motore/
+    nome_vietato_in_copia: 1     # copia di motore/ con una voce in nomi_vietati.txt presente in un file
+    libro_yaml_fuori_posto: 1    # copia di motore/ con un libro.yaml fuori dai mini-libri
+  recinto:
+    comandi_del_motore: 0        # nessuna scrittura fuori dalla copia del mini-libro
+    scrittura_messa_apposta: 1   # un comando di prova che scrive in motore/ viene rilevato
+    scrivi_fuori_dal_libro: rifiutata   # comune.scrivi verso un percorso fuori dal libro

@@ -1,0 +1,28 @@
+# Schema di stato.yaml (proposta C.1). Formato degli schemi: vedi profilo.schema.yaml.
+tipo: mappa
+campi:
+  libro: {tipo: testo, obbligatorio: true}
+  motore_commit: {tipo: testo, nullo: true}
+  ramo_ultimo_salvataggio: {tipo: testo, nullo: true}
+  fase: {tipo: qualsiasi, obbligatorio: true}        # 0-8 oppure "chiuso" (controllo in comune.py)
+  passo: {tipo: testo, nullo: true}
+  gate_in_attesa: {tipo: testo, nullo: true}
+  lotto:
+    tipo: mappa
+    obbligatorio: true
+    campi:
+      dimensione: {tipo: intero, obbligatorio: true}
+      capitoli: {tipo: lista, obbligatorio: true}
+  ultimo_capitolo_approvato: {tipo: intero, nullo: true}
+  parole:
+    tipo: mappa
+    obbligatorio: true
+    campi:
+      scritte: {tipo: intero, obbligatorio: true}
+      obiettivo: {tipo: intero, obbligatorio: true}
+      metodo: {tipo: scelta, valori: [unico], obbligatorio: true}
+  documenti_approvati: {tipo: mappa, altri_campi: true, obbligatorio: true}
+  avvisi_aperti: {tipo: lista, obbligatorio: true}
+  revisione_in_corso: {tipo: mappa, altri_campi: true, nullo: true}
+  push_in_sospeso: {tipo: booleano, obbligatorio: true}
+  aggiornato: {tipo: testo, obbligatorio: true}
