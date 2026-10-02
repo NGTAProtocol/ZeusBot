@@ -298,9 +298,142 @@ def passo_3(A):
               'sì' if os.path.isfile(os.path.join(cart, '06-diagnostica', 'verifica-pdf.md')) else 'no', sez)
 
 
+# ---------------------------------------------------------------- passo 4
+
+def passo_4(A):
+    import pymupdf
+    import conformita_kdp
+    sez = 'passo 4'
+    oggi = ['--oggi', '2026-10-02']
+
+    def prepara(nome, scheda):
+        c = copia_libro(nome)
+        for s in ('compila.py', 'impagina.py', 'pacchetto.py'):
+            esegui(os.path.join(S, s), c)
+        shutil.copyfile(os.path.join(M, 'prove', 'pubblicazione', scheda),
+                        os.path.join(c, '06-pubblicazione', 'scheda-amazon.md'))
+        return c
+
+    def sezioni(c, argv=()):
+        cart, libro, _ = comune.carica_libro(c)
+        S_, _ = conformita_kdp.controlla(cart, libro, list(argv))
+        return S_
+
+    for nome, scheda in (('mini-libro', 'scheda-giallo.md'), ('mini-libro-romance', 'scheda-romance.md')):
+        att = A['mini-libri'][nome]
+        c = prepara(nome, scheda)
+        r = esegui(os.path.join(S, 'conformita_kdp.py'), c, *oggi)
+        esito('conformita_kdp.py', f"{nome}: codice d'uscita", att['codice'], r.returncode, sez)
+        S_ = sezioni(c)
+        esito('conformita_kdp.py', f'{nome}: sezioni KO', att['ko'], [n for n, s in S_.items() if s.ko], sez)
+        esito('conformita_kdp.py', f'{nome}: sezioni con avvisi', att['avvisi'], [n for n, s in S_.items() if s.avvisi], sez)
+        esito('conformita_kdp.py', f'{nome}: sezione 11 pagine sotto il minimo', att['sezione_11_pagine'],
+              next((x for x in S_[11].ko if 'minimo' in x), 'assente'), sez)
+        esito('conformita_kdp.py', f'{nome}: report scritto', 'sì',
+              'sì' if os.path.isfile(os.path.join(c, '06-pubblicazione', 'conformita-kdp.md')) else 'no', sez)
+
+    # percorso «tutto OK»: PDF sintetico di almeno 30 pagine, senza testo aggiunto
+    att = A['tutto_ok']
+    c = prepara('mini-libro', 'scheda-giallo.md')
+    shutil.copyfile(os.path.join(M, 'prove', 'pubblicazione', 'conferme-tutto-ok.yaml'),
+                    os.path.join(c, '06-pubblicazione', 'conferme-autore.yaml'))
+    cart, libro, _ = comune.carica_libro(c)
+    orig = os.path.join(cart, '05-output', f'{comune.nome_file(libro["titolo"])}.pdf')
+    sint = os.path.join(tempfile.mkdtemp(dir=TMP), 'sintetico.pdf')
+    with pymupdf.open(orig) as src:
+        d = pymupdf.open()
+        while d.page_count < 30:
+            d.insert_pdf(src)
+        d.set_metadata(src.metadata)
+        d.save(sint)
+        d.close()
+    with pymupdf.open(sint) as d:
+        esito('pymupdf', 'PDF sintetico: pagine', att['pagine_pdf_sintetico'], d.page_count, sez)
+    mc = copia_motore()
+    esegui(os.path.join(mc, 'script', 'kdp_verifica.py'), 'fatta', '2026-10-01', '--radice', mc, *oggi)
+    r = esegui(os.path.join(mc, 'script', 'conformita_kdp.py'), c, '--radice', mc, '--pdf', sint, *oggi)
+    esito('conformita_kdp.py', "tutto OK: codice d'uscita", att['codice'], r.returncode, sez)
+    S_ = sezioni(c, ['--pdf', sint])
+    esito('conformita_kdp.py', 'tutto OK: sezioni KO', att['ko'], [n for n, s in S_.items() if s.ko], sez)
+    esito('conformita_kdp.py', 'tutto OK: sezioni con avvisi', att['avvisi'], [n for n, s in S_.items() if s.avvisi], sez)
+    r = esegui(os.path.join(S, 'conformita_kdp.py'), c, '--pdf', sint, *oggi)
+    esito('conformita_kdp.py', "verifica KDP nulla: codice d'uscita", A['verifica']['nulla'], r.returncode, sez)
+    mc2 = copia_motore()
+    esegui(os.path.join(mc2, 'script', 'kdp_verifica.py'), 'fatta', '2026-08-01', '--radice', mc2, *oggi)
+    r = esegui(os.path.join(mc2, 'script', 'conformita_kdp.py'), c, '--radice', mc2, '--pdf', sint, *oggi)
+    esito('conformita_kdp.py', "verifica KDP scaduta: codice d'uscita", A['verifica']['scaduta'], r.returncode, sez)
+
+    pc = os.path.join(c, '06-pubblicazione', 'conferme-autore.yaml')
+    base_conf = open(pc, encoding='utf-8').read()
+    for chiave, valore in (('falso', 'false'), ('vero', 'true')):
+        open(pc, 'w', encoding='utf-8').write(base_conf.replace('formato_confermato_kdp: true', f'formato_confermato_kdp: {valore}'))
+        S_ = sezioni(c, ['--pdf', sint])
+        av = any('formato' in x for x in S_[11].avvisi)
+        esito('conformita_kdp.py', f'formato_confermato_kdp {valore}: sezione 11',
+              A['formato_confermato'][chiave], {'esito_11': S_[11].esito, 'avviso_formato': 'sì' if av else 'no'}, sez)
+    open(pc, 'w', encoding='utf-8').write(base_conf)
+
+    ps = os.path.join(c, '06-pubblicazione', 'scheda-amazon.md')
+    base_scheda = open(ps, encoding='utf-8').read()
+    modifiche = {
+        'parola_amazzonia': lambda s: s.replace('5. registro segreto', '5. viaggio in Amazzonia'),
+        'parola_kindle': lambda s: s.replace('5. registro segreto', '5. romanzo Kindle'),
+        'descrizione_4001': lambda s: s.replace('## Parole chiave', 'x' * 4001 + '\n\n## Parole chiave'),
+        'url_nella_descrizione': lambda s: s.replace('## Parole chiave', 'Leggi su www.esempio-prova.it\n\n## Parole chiave'),
+        'otto_parole_chiave': lambda s: s.replace('5. registro segreto', '5. registro segreto\n6. sei parole\n7. sette parole\n8. otto parole'),
+        'autore_diverso': lambda s: s.replace('Autore: Autore di Prova', 'Autore: Altro Autore'),
+    }
+    for chiave, f in modifiche.items():
+        open(ps, 'w', encoding='utf-8').write(f(base_scheda))
+        att = A['scheda_modificata'][chiave]
+        S_ = sezioni(c, ['--pdf', sint])
+        esito('conformita_kdp.py', f'{chiave}: sezione {att["sezione"]}', att['esito'], S_[att['sezione']].esito, sez)
+    open(ps, 'w', encoding='utf-8').write(base_scheda)
+
+    # kdp_verifica.py
+    kv = A['kdp_verifica']
+    mc = copia_motore()
+    kvs = os.path.join(mc, 'script', 'kdp_verifica.py')
+    esito('kdp_verifica.py', 'data futura rifiutata', kv['data_futura'],
+          esegui(kvs, 'fatta', '2026-12-31', '--radice', mc, *oggi).returncode, sez)
+    esito('kdp_verifica.py', 'data scritta male rifiutata', kv['data_malformata'],
+          esegui(kvs, 'fatta', '1-10-2026', '--radice', mc, *oggi).returncode, sez)
+    esito('kdp_verifica.py', 'data valida accettata', kv['data_valida'],
+          esegui(kvs, 'fatta', '2026-10-01', '--radice', mc, *oggi).returncode, sez)
+    riga = next((r.split('#')[0].strip() for r in open(os.path.join(mc, 'dati', 'kdp.yaml'), encoding='utf-8') if r.startswith('ultima_verifica:')), '')
+    esito('kdp_verifica.py', 'ultima_verifica scritta in dati/kdp.yaml', kv['riga_kdp_yaml'], riga, sez)
+    reg = [r for r in open(os.path.join(mc, 'dati', 'verifiche-kdp.md'), encoding='utf-8') if r.startswith('| 2026')]
+    esito('kdp_verifica.py', 'righe nel registro delle verifiche', kv['righe_registro'], len(reg), sez)
+    r = esegui(kvs, 'fatta', '2026-07-01', '--radice', mc, *oggi)
+    esito('kdp_verifica.py', 'data già scaduta: accettata con avviso', kv['data_vecchia_avviso'],
+          'sì' if r.returncode == 0 and 'AVVISO' in r.stdout else 'no', sez)
+    r = esegui(os.path.join(S, 'kdp_verifica.py'), 'controlla', '--simula-blocco')
+    esito('kdp_verifica.py', 'promemoria dei sette valori (proxy bloccato)', kv['promemoria_righe_numerate'],
+          len(re.findall(r'(?m)^[1-7] ', r.stdout)), sez)
+
+    # recinto: eccezione dichiarata di «verifica KDP fatta»
+    mc = copia_motore()
+    cmd = f'{sys.executable} -B {os.path.join(mc, "script", "kdp_verifica.py")} fatta 2026-10-01 --radice {mc} --oggi 2026-10-02'
+    r = esegui(os.path.join(mc, 'script', 'recinto.py'), '--radice', mc, '--extra', cmd)
+    esito('recinto.py', "eccezione «verifica KDP fatta»: codice d'uscita", A['recinto_eccezione']['codice'], r.returncode, sez)
+    esito('recinto.py', 'eccezione «verifica KDP fatta»: eccezioni riportate', A['recinto_eccezione']['eccezioni'],
+          r.stdout.count('ECCEZIONE'), sez)
+
+    # pacchetto
+    c = copia_libro('mini-libro')
+    r = esegui(os.path.join(S, 'pacchetto.py'), c)
+    esito('pacchetto.py', 'file creati', A['pacchetto']['creati'], r.stdout.count('creato:'), sez)
+    ps = os.path.join(c, '06-pubblicazione', 'scheda-amazon.md')
+    open(ps, 'a', encoding='utf-8').write('\nriga dell\'autore\n')
+    r = esegui(os.path.join(S, 'pacchetto.py'), c)
+    esito('pacchetto.py', 'seconda esecuzione: file creati', A['pacchetto']['seconda_esecuzione_creati'], r.stdout.count('creato:'), sez)
+    esito('pacchetto.py', 'scheda già presente non toccata', A['pacchetto']['scheda_non_toccata'],
+          'sì' if open(ps, encoding='utf-8').read().endswith("riga dell'autore\n") else 'no', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4}
 
 
 def main(argv):

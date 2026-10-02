@@ -39,5 +39,10 @@ Un file con un nome diverso ferma il motore.
 | `python3 -B motore/script/compila.py <libro>` | manoscritto completo in `<libro>/05-output/<titolo>-completo.md` |
 | `python3 -B motore/script/impagina.py <libro>` | PDF di stampa in `<libro>/05-output/<titolo>.pdf` (Chromium via Node e Playwright, PyMuPDF; font di `stampa/font/`) |
 | `python3 -B motore/script/verifica_pdf.py <libro> [--pdf <file>]` | pagine, metadati, font, margini contro la tabella KDP, sommario contro le pagine, parole per pagina |
+| `python3 -B motore/script/pacchetto.py <libro>` | struttura di `06-pubblicazione/` con i modelli compilati da `libro.yaml` (nessun testo commerciale; non sovrascrive) |
+| `python3 -B motore/script/conformita_kdp.py <libro> [--pdf <file>]` | conformità KDP sezioni 1-15; codice 0 tutto OK, 1 almeno un KO, 2 verifica delle direttive mai fatta o scaduta |
+| `python3 -B motore/script/kdp_verifica.py fatta [AAAA-MM-GG]` | «verifica KDP fatta»: l'autore registra la data in `dati/kdp.yaml` e `dati/verifiche-kdp.md` |
+| `python3 -B motore/script/kdp_verifica.py controlla` | prova a raggiungere le pagine ufficiali; se bloccate, promemoria dei sette valori |
+| `python3 -B motore/script/kdp_verifica.py stato` | stato della verifica delle direttive (codice 2 se mai fatta o scaduta) |
 | `python3 -B motore/script/separazione.py` | controlla che `motore/` non contenga libri |
 | `python3 -B motore/script/recinto.py` | controlla che i comandi scrivano solo nel libro indicato |

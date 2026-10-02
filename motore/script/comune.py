@@ -254,7 +254,7 @@ def argomenti(argv):
         if salta:
             salta = False
             continue
-        if a == '--radice':
+        if a in ('--radice', '--oggi', '--pdf'):
             salta = True
             continue
         if a.startswith('--'):
@@ -434,3 +434,17 @@ def kdp_interno_pollici(pagine):
         if pagine <= a:
             return poll
     return tabella[-1][2]
+
+
+def oggi(argv=None):
+    """Data di oggi: --oggi AAAA-MM-GG, poi ZB_OGGI, poi la data di sistema (le prove la fissano)."""
+    import datetime
+    argv = argv if argv is not None else sys.argv
+    valore = None
+    for i, a in enumerate(argv):
+        if a == '--oggi' and i + 1 < len(argv):
+            valore = argv[i + 1]
+        elif a.startswith('--oggi='):
+            valore = a.split('=', 1)[1]
+    valore = valore or os.environ.get('ZB_OGGI')
+    return datetime.date.fromisoformat(valore) if valore else datetime.date.today()

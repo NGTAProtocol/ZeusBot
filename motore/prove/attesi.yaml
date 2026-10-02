@@ -184,3 +184,54 @@ passo_3:
     parole_per_pagina: 205.8
     esiti: ["pagine_pari|AVVISO"]   # 23 pagine: numero dispari (avviso, da verificare su KDP)
     codice: 0
+
+passo_4:
+  # conformita_kdp.py sui due mini-libri dopo compila, impagina e pacchetto, con la scheda inventata
+  # di prove/pubblicazione/ e le conferme del modello (nessuna conferma data).
+  # Sezione 11: i PDF hanno meno di 24 pagine, quindi KO per costruzione.
+  mini-libri:
+    mini-libro:
+      codice: 1
+      ko: [8, 9, 11, 13, 14, 15]
+      avvisi: [6, 10, 11]          # editore «Independently published»; codice a barre; formato A5 non citato
+      sezione_11_pagine: "16 pagine (minimo 24)"
+    mini-libro-romance:
+      codice: 1
+      ko: [8, 9, 11, 12, 13, 14, 15]   # 12: ebook: true senza ebook.docx
+      avvisi: [6, 7, 10, 11, 12]       # 7: «romanzo» ripete il sottotitolo; 11: pagine dispari; 12: Kindle Previewer
+      sezione_11_pagine: "23 pagine (minimo 24)"
+  tutto_ok:                       # giallo, PDF sintetico (pagine del PDF di prova ripetute, nessun testo aggiunto),
+                                  # conferme di prove/pubblicazione/conferme-tutto-ok.yaml, verifica KDP del 2026-10-01
+    pagine_pdf_sintetico: 32
+    codice: 0
+    ko: []
+    avvisi: [6, 10]
+  formato_confermato:             # sul percorso «tutto OK»: formato A5 non citato
+    falso: {esito_11: OK, avviso_formato: "sì"}
+    vero: {esito_11: OK, avviso_formato: "no"}
+  scheda_modificata:              # copie della scheda del giallo con un solo errore ciascuna → sezione: esito
+    parola_amazzonia: {sezione: 7, esito: OK}
+    parola_kindle: {sezione: 7, esito: KO}
+    descrizione_4001: {sezione: 4, esito: KO}
+    url_nella_descrizione: {sezione: 4, esito: KO}
+    otto_parole_chiave: {sezione: 7, esito: KO}
+    autore_diverso: {sezione: 5, esito: KO}
+  verifica:
+    nulla: 2                      # codice d'uscita sul percorso «tutto OK» con ultima_verifica: null
+    scaduta: 2                    # verifica del 2026-08-01, oggi 2026-10-02
+  kdp_verifica:
+    data_futura: 1
+    data_malformata: 1
+    data_valida: 0
+    riga_kdp_yaml: "ultima_verifica: 2026-10-01"
+    righe_registro: 1
+    data_vecchia_avviso: sì
+    promemoria_righe_numerate: 7
+  recinto_eccezione:              # recinto.py su una copia di motore/ con «kdp_verifica.py fatta» come comando extra
+    codice: 0
+    eccezioni: 3                  # 1° mini-libro: dati/kdp.yaml e dati/verifiche-kdp.md; 2° mini-libro: solo
+                                  # verifiche-kdp.md (stessa data: kdp.yaml resta identico)
+  pacchetto:
+    creati: 6
+    seconda_esecuzione_creati: 0
+    scheda_non_toccata: sì

@@ -41,6 +41,10 @@ def comandi(motore):
         ('compila.py', 'compila.py {libro}'),
         ('impagina.py', 'impagina.py {libro}'),
         ('verifica_pdf.py', 'verifica_pdf.py {libro}'),
+        ('pacchetto.py', 'pacchetto.py {libro}'),
+        ('conformita_kdp.py', 'conformita_kdp.py {libro}'),
+        ('kdp_verifica.py controlla', 'kdp_verifica.py controlla --simula-blocco'),
+        ('kdp_verifica.py stato', 'kdp_verifica.py stato'),
     ]
     return [(n, f'{sys.executable} {os.path.join(s, c.split()[0])} ' + ' '.join(c.split()[1:]))
             for n, c in elenco if os.path.isfile(os.path.join(s, c.split()[0]))]
@@ -79,7 +83,7 @@ def main(argv):
         with tempfile.TemporaryDirectory(prefix='zb-recinto-') as tmp:
             copia = os.path.join(tmp, nome)
             shutil.copytree(sorgente, copia)
-            lista = comandi(motore) + ([('extra', extra)] if extra else [])
+            lista = comandi(motore) + ([('kdp_verifica.py (extra)' if 'kdp_verifica.py' in extra else 'extra', extra)] if extra else [])
             for etichetta, cmd in lista:
                 prima = foto(base)
                 subprocess.run(shlex.split(cmd.replace('{libro}', copia)), env=env,

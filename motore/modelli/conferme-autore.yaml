@@ -1,0 +1,12 @@
+# Conferme dell'autore per la conformità KDP (proposta A.9).
+# Le scrive solo l'autore, oppure il motore su sua risposta esplicita.
+isbn: kdp_gratuito              # sezione 10: ISBN gratuito KDP, nessuna azione
+formato_confermato_kdp: false   # sezione 11: true quando l'autore ha verificato su KDP
+                                # che il formato del PDF è accettato. Con false: AVVISO, non KO.
+carta: crema
+dichiarazione_ai: da_fare       # sezione 13: "fatta" dopo la pubblicazione
+copertina_verificata: false     # sezione 9
+categorie_coerenti: false       # sezione 8
+contenuti_verificati: false     # sezione 14
+recensioni_regolari: false      # sezione 15
+note: ""
