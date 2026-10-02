@@ -904,7 +904,7 @@ Rispetto alla versione precedente della proposta, `08-pubblicazione.md` torna in
 
 **`motore/script/recinto.py`** fallisce se un comando scrive fuori dalla cartella del libro indicato. Ha due livelli:
 - **in esecuzione:** ogni script scrive solo tramite `comune.scrivi(percorso, …)`. La funzione risolve il percorso reale, seguendo anche i collegamenti simbolici, e solleva un errore se non sta sotto `<libro>`. L'unica eccezione dichiarata è `verifica KDP fatta`, che scrive in `motore/dati/`;
-- **in prova:** `recinto.py` copia il mini-libro in una cartella temporanea, fotografa il file system fuori dalla copia (percorsi, dimensioni, sha256 di `motore/` e del repository), esegue ogni comando e confronta. Qualsiasi file creato o cambiato fuori dalla copia è un KO, con il nome del comando.
+- **in prova:** `recinto.py` copia il mini-libro in una cartella temporanea, fotografa il file system fuori dalla copia (percorsi, dimensioni, sha256 di `motore/` e del repository), esegue ogni comando e confronta. Qualsiasi file creato o cambiato fuori dalla copia è un KO, con il nome del comando. **Eccezione ammessa:** `verifica KDP fatta` scrive in `motore/dati/kdp.yaml` e `motore/dati/verifiche-kdp.md`; `recinto.py` la riconosce dal nome del comando e da questi due percorsi esatti, la riporta nel report come «eccezione dichiarata» e **non** la segnala come violazione. Qualsiasi altro file toccato da quel comando, o gli stessi file toccati da un altro comando, resta un KO.
 
 Tutti e due girano nel passo 1 di B.7 e prima di ogni commit nel ramo del motore.
 
