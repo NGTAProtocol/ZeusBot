@@ -247,7 +247,7 @@ Solo tecniche e testi generici. Nessun file di un libro entra nel motore.
 |---|---|---|
 | Composizione del manoscritto da capitoli Markdown, con parti, indice, pagina copyright e separatore di scena | tecnica già usata nel repository (script fuori da `motore/`) | **riusare con modifiche**: si riscrive generico in `compila.py`; titolo, autore, parti, copyright e separatore vengono da `libro.yaml` |
 | Impaginazione md → HTML → PDF con Chromium (Playwright), numeri di pagina stampati con PyMuPDF, metadati Title/Author | tecnica già usata nel repository | **riusare con modifiche**: si riscrive generico in `impagina.py`; formato, margini, font e numerazione da `libro.yaml` |
-| Font statici ricavati con fontTools da un font variabile, per evitare i font Type3 nel PDF | tecnica già usata | **riusare**: in `motore/stampa/font/` solo font a licenza libera (OFL), nessun file legato a un libro |
+| Font statici ricavati con fontTools da un font variabile, per evitare i font Type3 nel PDF | tecnica già usata | **riusare la tecnica**: i file di `motore/stampa/font/` si scaricano dalle fonti ufficiali con licenza OFL (B.2.3), mai da cartelle di libri |
 | Misura dei margini con `pdftotext -bbox`, font con `pdffonts`, pagine con `pdfinfo` | metodo provato in questa sessione | **riusare** in `verifica_pdf.py` |
 | Controllo ortografico con Hunspell it_IT (`-i utf-8`) | metodo già usato | **riusare** in `ortografia.py`, con le parole ammesse del libro |
 | Metodo unico di conteggio (token separati da spazi; esclusi i titoli Markdown e i token senza lettere né cifre) | metodo già usato | **riusare** in `conta.py` come metodo predefinito |
@@ -284,6 +284,7 @@ motore/
     libro.schema.yaml       schema di libro.yaml (B.3)                       da scrivere
     profilo.schema.yaml     schema dei profili (B.6)                         da scrivere
     stato.schema.yaml       schema di stato.yaml (C.1)                       da scrivere
+    lingue.yaml             lingue supportate: per ora solo it (B.3)         da scrivere
     hook.yaml               modalità dell'hook: avviso | blocco (C.4)        da scrivere
     nomi_vietati.txt        nomi che non devono comparire in motore/ (B.9); lo compila l'autore  da scrivere (vuoto)
   script/
@@ -304,6 +305,7 @@ motore/
     kdp_verifica.py         «verifica KDP fatta [data]»; promemoria se 403 (A.8)  da scrivere
     pacchetto.py            06-pubblicazione: scheda, quarta, brief, checklist  da scrivere
     revisione.py            «prepara per revisione» (C.6)                    da scrivere
+    valida_profili.py       i 7 profili contro profilo.schema.yaml (B.2.2)   da scrivere
     separazione.py          nessun libro dentro motore/ (B.9)                da scrivere
     recinto.py              nessuna scrittura fuori dal libro indicato (B.9) da scrivere
     hook_sessione.py        hook SessionStart (C.4)                          da scrivere
@@ -311,10 +313,11 @@ motore/
   stampa/
     modello.css             foglio di stile parametrico (valori da libro.yaml)  da scrivere
     print.js                render Chromium                                  da scrivere (tecnica esistente)
-    font/                   font OFL statici + licenze                       da preparare
+    font/                   font OFL statici, licenze, FONTI.yaml (B.2.3)    da preparare dalle fonti ufficiali
   prove/
-    mini-libro/             libro inventato di 3 capitoli (B.2.2)            da scrivere
-    attesi.yaml             esiti attesi degli script sul mini-libro         da scrivere
+    mini-libro/             giallo inventato di 3 capitoli (B.2.2)           da scrivere
+    mini-libro-romance/     romance inventato di 3 capitoli brevi (B.2.2)    da scrivere
+    attesi.yaml             esiti attesi degli script sui due mini-libri     da scrivere
 ```
 
 **File per libro** (nella cartella `<libro>`, creati da `zb nuovo` o con l'«ok» dell'autore): `libro.yaml` (B.3), `stato.yaml` (C.1), `LEGGIMI.md` (C.4), `cronologia.yaml` (B.2.1), `nomi_propri.txt` (B.3), `06-pubblicazione/conferme-autore.yaml` (A.9), e le cartelle `00-progetto` … `06-pubblicazione`.
@@ -380,6 +383,53 @@ motore/prove/
 
 Uno script si usa su un libro vero solo dopo che sul mini-libro dà **esattamente** gli esiti di `attesi.yaml`: nessun KO in più, nessuno in meno. Le prove girano su una copia del mini-libro in una cartella temporanea, così `recinto.py` (B.9) può verificare che nessun file fuori dalla copia sia cambiato.
 
+**Validazione dei profili: `script/valida_profili.py`.**
+- Legge i 7 file di `motore/profili/` e li confronta con `dati/profilo.schema.yaml`.
+- Controlla che ci siano tutti i campi obbligatori e che i tipi siano giusti.
+- Controlla la coerenza interna:
+  - minimo ≤ media ≤ massimo;
+  - `parole_per_atto` con somma 1;
+  - `chiusura_preferita` tra `gancio_domanda`, `gesto_oggetto` e `misto`;
+  - intervalli con il primo valore minore del secondo.
+- Ogni valore deve avere una fonte nel commento (`12 r. N`, `01-mercato r. N`…) oppure la marca `PROPOSTA`.
+- Esce con 1, indicando file e campo, al primo errore. Gira nel passo 2 di B.7 e prima di ogni commit nel ramo del motore.
+
+**Secondo mini-libro: `prove/mini-libro-romance/`.** Romance inventato: titolo «Prova d'inchiostro», autore «Autrice di Prova», luoghi e personaggi fittizi. Ha 3 capitoli brevi, circa 1.600 parole ciascuno, e serve a provare che i controlli cambiano davvero con il profilo.
+
+| Cosa | Mini-libro giallo | Mini-libro romance | Atteso |
+|---|---|---|---|
+| Minimo di parole per capitolo | 800 (profilo giallo) | 1.500 (profilo romance) | un capitolo di 1.200 parole è OK nel giallo e KO nel romance; i due mini-libri contengono lo stesso capitolo-prova di 1.200 parole |
+| Chiusura preferita | `gancio_domanda` | `misto` | la stessa chiusura su una domanda è conforme nel giallo; nel romance (`misto`, e `D_massimo_consecutivi: 2` nel `libro.yaml` del mini-libro romance) la terza chiusura su domanda di fila dà KO |
+| Frase media | [9, 14] (thriller/giallo) | [12, 17] | un capitolo con frase media 10 è OK nel giallo e KO nel romance |
+| Dialogo % | [25, 45] | [35, 55] | un capitolo con il 30% di dialogo è OK nel giallo e KO nel romance |
+| Scene obbligatorie | scoperta, falsa pista, smascheramento | primo incontro, separazione, gesto finale | il report di struttura chiede le scene del profilo giusto |
+
+Il confronto usa **lo stesso testo** dove serve (il capitolo-prova da 1.200 parole e una pagina con frase media 10 e dialogo al 30%), così l'unica cosa che cambia è il profilo. `attesi.yaml` ha una sezione per ciascun mini-libro. Nessun riferimento a libri reali.
+
+#### B.2.3 Font: `motore/stampa/font/`
+
+I font si preparano **solo dalle fonti ufficiali**, con licenza SIL Open Font License (OFL). Mai da una cartella di libro o da un'altra copia locale.
+
+`motore/stampa/font/FONTI.yaml` registra ogni file:
+
+```yaml
+- nome: "EB Garamond"
+  versione: "<da registrare al download>"
+  licenza: "SIL Open Font License 1.1"
+  fonte: "https://github.com/google/fonts/tree/main/ofl/ebgaramond"
+  file_origine: "EBGaramond[wght].ttf, EBGaramond-Italic[wght].ttf"
+  preparazione: "istanze statiche con fontTools (Regular 400, Italic 400, SemiBold 600), compressione woff2"
+  file:
+    - {nome: EBGaramond-Regular.woff2, sha256: "<…>"}
+  licenza_file: OFL.txt
+  scaricato_il: AAAA-MM-GG
+```
+
+- La versione e gli sha256 si scrivono al momento del download, letti dal file scaricato. Non si inventano.
+- Se il download è bloccato (proxy), mi fermo e lo dico. Non prendo il font da un'altra cartella.
+- Il file della licenza (`OFL.txt`) sta accanto ai font.
+- Si possono aggiungere altri font OFL con una voce nuova in `FONTI.yaml`. `libro.yaml` sceglie il font per nome, e `impagina.py` si ferma se il nome non è in `FONTI.yaml`.
+
 ### B.3 Schema di `libro.yaml`
 
 Un file per libro, in `<libro>/libro.yaml`. Lo crea `zb nuovo` dal briefing (fase 0) e lo approva l'autore al gate G0. **Il ramo non sta in `libro.yaml`**: lo legge `comune.py` da git, perché ogni sessione ha il suo.
@@ -390,7 +440,8 @@ Un file per libro, in `<libro>/libro.yaml`. Lo crea `zb nuovo` dal briefing (fas
 
 | Campo | Obbligatorio | Contenuto |
 |---|---|---|
-| `titolo`, `autore`, `lingua` | sì | testo; `lingua` = codice (`it`) |
+| `titolo`, `autore` | sì | testo |
+| `lingua` | sì | codice di lingua; per ora solo `it` (vedi sotto) |
 | `profilo` | sì | nome di un file in `motore/profili/` |
 | `override` | no | elenco di `{campo, valore, motivo}`; senza motivo è un errore |
 | `parole.metodo` | no | `unico` (predefinito) |
@@ -413,6 +464,25 @@ Un file per libro, in `<libro>/libro.yaml`. Lo crea `zb nuovo` dal briefing (fas
 | `testo_precedente` | no | percorso di un testo precedente del libro, solo per l'anti-riciclo (C.2) |
 | `copyright` | sì | riga ©, dichiarazione di fantasia (08-pubblicazione r. 7), nota dell'autore facoltativa |
 | `manuale` | no | percorso del manuale di stile del libro, se c'è |
+
+**Lingua.** `lingua` è obbligatoria. Le lingue supportate stanno in `motore/dati/lingue.yaml`; per ora c'è solo `it`:
+
+```yaml
+it:
+  ortografia: {hunspell: it_IT, opzioni: "-i utf-8"}
+  mesi: [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre]
+  giorni: [lunedì, martedì, mercoledì, giovedì, venerdì, sabato, domenica]
+  lineetta_dialogo: "—"
+  virgolette: ["«", "»"]
+```
+
+`comune.py` lo controlla prima di qualsiasi altra cosa. Con un altro codice, o con il campo mancante, il motore si ferma senza scrivere nulla:
+
+```
+Lingua «<codice>» non supportata. Il motore oggi lavora solo in italiano (lingua: it):
+ortografia Hunspell it_IT, giorni e mesi in italiano. Correggi libro.yaml oppure
+chiedi di aggiungere la lingua in motore/dati/lingue.yaml.
+```
 
 **Margine interno.** Margine interno = **max(tabella KDP per il numero di pagine, `margini_mm.interno_scelto`)**. `impagina.py` stima le pagine con `parole.target_totale ÷ parole_per_pagina`. La densità parte dal valore del profilo; dopo la prima impaginazione si usa quella misurata sul PDF reale. Se il numero vero di pagine cambia fascia, `impagina.py` ricalcola il margine e rifà l'impaginazione.
 
@@ -738,10 +808,10 @@ Tutti i casi di prova sono sul mini-libro inventato (B.2.2). Nessun libro reale.
 | Passo | Cosa | Caso di prova | Criterio |
 |---|---|---|---|
 | 1 | `script/separazione.py`, `script/recinto.py`, `dati/nomi_vietati.txt` (vuoto) | `motore/` stesso; mini-libro in copia temporanea | `separazione.py` esce con 0 su `motore/`; `recinto.py` rileva una scrittura fuori dal libro messa apposta |
-| 2 | `profili/*.yaml`, `dati/profilo.schema.yaml`, `dati/libro.schema.yaml`, `modelli/` | i due esempi inventati di B.3 e il mini-libro | gli schemi validano; un override senza motivo viene rifiutato |
-| 3 | `prove/mini-libro/`, `script/conta.py`, `script/compila.py`, `script/impagina.py`, `stampa/` | mini-libro | parole uguali ad `attesi.yaml`; PDF generato; pagine e sha256 fissati con l'«ok» dell'autore |
+| 2 | `profili/*.yaml`, `dati/profilo.schema.yaml`, `script/valida_profili.py`, `dati/libro.schema.yaml`, `dati/lingue.yaml`, `modelli/` | i 7 profili; i due esempi inventati di B.3; i due mini-libri; un `libro.yaml` con `lingua: en` | `valida_profili.py` esce con 0; il motore si ferma su `lingua: en`; gli schemi validano; un override senza motivo viene rifiutato |
+| 3 | `prove/mini-libro/`, `prove/mini-libro-romance/`, `script/conta.py`, `script/compila.py`, `script/impagina.py`, `stampa/` con i font da `FONTI.yaml` | i due mini-libri | parole uguali ad `attesi.yaml`; PDF generato; pagine e sha256 fissati con l'«ok» dell'autore |
 | 4 | `dati/kdp.yaml`, `script/verifica_pdf.py`, `script/conformita_kdp.py`, `script/kdp_verifica.py` | PDF del mini-libro | A.7; avviso «verifica mai fatta»; promemoria dei sette valori se il proxy blocca |
-| 5 | `script/stile.py`, `dati/lista-nera.yaml`, `script/capitolo.py`, `script/riciclo.py`, `script/continuita.py`, `script/ortografia.py` | mini-libro, cap. 2 e 3 con errori voluti | esattamente i KO e gli avvisi di `attesi.yaml` |
+| 5 | `script/stile.py`, `dati/lista-nera.yaml`, `script/capitolo.py`, `script/riciclo.py`, `script/continuita.py`, `script/ortografia.py` | mini-libro giallo, cap. 2 e 3 con errori voluti; confronto con il mini-libro romance (B.2.2) | esattamente i KO e gli avvisi di `attesi.yaml` |
 | 6 | `PROCEDURA.md`, `script/avvio.py`, `script/nuovo.py`, `script/fase.py`, `script/revisione.py`, `zb` | `zb nuovo` su un briefing inventato in una cartella temporanea | struttura creata; gate G0; `avvio.py` stampa «Letto: …» e si ferma nei casi di C.4 |
 | 7 | `script/pacchetto.py`, `README.md`, hook in modalità avviso (C.4) | mini-libro | pacchetto completo; report KDP con le sole conferme dell'autore aperte |
 
@@ -816,7 +886,9 @@ Rispetto alla versione precedente della proposta, `08-pubblicazione.md` torna in
 **`motore/script/separazione.py`** fallisce (codice d'uscita 1, con file e riga) se:
 1. sotto `motore/` c'è un percorso che contiene un segmento `libri/`, o un file che è copia identica (stesso sha256) di un file che sta fuori da `motore/` in una cartella con `libro.yaml`;
 2. in un file di `motore/` compare, come parola intera e senza distinguere le maiuscole, una voce di `motore/dati/nomi_vietati.txt`;
-3. in `motore/` c'è un file `libro.yaml` fuori da `motore/prove/mini-libro/`.
+3. in `motore/` c'è un file `libro.yaml` fuori da `motore/prove/mini-libro/` e `motore/prove/mini-libro-romance/`.
+
+**Eccezione per i font.** I file di `motore/stampa/font/` elencati in `FONTI.yaml`, con lo sha256 registrato, non sono segnalati dal punto 1: un font OFL ufficiale può essere identico a una copia dello stesso font usata da un libro. Un file in `stampa/font/` che **non** è in `FONTI.yaml`, o ha uno sha256 diverso, resta un KO.
 
 `nomi_vietati.txt` lo compila l'autore quando serve, una voce per riga: titoli, personaggi, luoghi dei libri veri. Le righe che cominciano con `#` sono commenti. Il file stesso è escluso dal controllo. Il motore non aggiunge voci da solo.
 
