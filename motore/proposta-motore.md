@@ -120,7 +120,7 @@ Uso:
 zb kdp <libro> [--pdf <percorso>] [--carta crema|bianca] [--bleed]
 ```
 
-Legge `06-pubblicazione/scheda-amazon.md`, `manoscritto-finale.md`, `cartaceo.pdf` (o `--pdf`), `ebook.docx` se c'è, `06-pubblicazione/conferme-autore.yaml` e `motore/dati/kdp.yaml`. Scrive `<libro>/06-pubblicazione/conformita-kdp.md`: in testa data, hash del PDF, stato della verifica; poi una riga **OK/KO** con la **prova** (il testo o il valore esatto controllato) e gli eventuali **avvisi** per ognuna delle sezioni 1-15. Un controllo lasciato all'autore e non confermato è **KO** con nota «da confermare dall'autore» (11-direttive r. 76). Codice d'uscita: 0 tutto OK; 1 almeno un KO; 2 verifica direttive scaduta.
+Legge da `libro.yaml` titolo, `sottotitolo`, `serie` ed `ebook` (B.3), poi `06-pubblicazione/scheda-amazon.md`, `manoscritto-finale.md`, `cartaceo.pdf` (o `--pdf`), `ebook.docx` se c'è, `06-pubblicazione/conferme-autore.yaml` e `motore/dati/kdp.yaml`. Scrive `<libro>/06-pubblicazione/conformita-kdp.md`: in testa data, hash del PDF, stato della verifica; poi una riga **OK/KO** con la **prova** (il testo o il valore esatto controllato) e gli eventuali **avvisi** per ognuna delle sezioni 1-15. Un controllo lasciato all'autore e non confermato è **KO** con nota «da confermare dall'autore» (11-direttive r. 76). Codice d'uscita: 0 tutto OK; 1 almeno un KO; 2 verifica direttive scaduta.
 
 | Sez. | Controlla da solo | Lascia all'autore (`conferme-autore.yaml`) |
 |---|---|---|
@@ -441,6 +441,10 @@ Un file per libro, in `<libro>/libro.yaml`. Lo crea `zb nuovo` dal briefing (fas
 | Campo | Obbligatorio | Contenuto |
 |---|---|---|
 | `titolo`, `autore` | sì | testo |
+| `modalita` | sì | `nuovo` (si scrive da zero) \| `riscrittura` (si riscrive un testo precedente) |
+| `sottotitolo` | no | testo; letto da `conformita_kdp.py` (sezione 2: titolo + sottotitolo ≤ 200 caratteri) |
+| `serie` | no | `{nome, numero}`; letto da `conformita_kdp.py` (sezione 3: numero solo in cifre, nome senza parole vietate) |
+| `ebook` | no | `true`/`false` (predefinito `false`); con `true` `conformita_kdp.py` esegue anche la sezione 12 su `ebook.docx` |
 | `lingua` | sì | codice di lingua; per ora solo `it` (vedi sotto) |
 | `profilo` | sì | nome di un file in `motore/profili/` |
 | `override` | no | elenco di `{campo, valore, motivo}`; senza motivo è un errore |
@@ -461,7 +465,7 @@ Un file per libro, in `<libro>/libro.yaml`. Lo crea `zb nuovo` dal briefing (fas
 | `struttura.parti`, `struttura.interludi` | no | parti con capitoli; interludi con `dopo_capitolo`, `titolo`, `parte` |
 | `calendario.anni_ammessi` | no | anni su cui si verificano i giorni della settimana |
 | `ortografia.parole_ammesse_file` | no | predefinito `nomi_propri.txt` |
-| `testo_precedente` | no | percorso di un testo precedente del libro, solo per l'anti-riciclo (C.2) |
+| `testo_precedente` | **sì in `riscrittura`**, assente in `nuovo` | percorso del testo precedente del libro: registro dei fatti, usato per l'anti-riciclo (C.2) e letto in fase 1; con `modalita: nuovo` il campo dà errore se presente, con `riscrittura` dà errore se manca o il file non esiste |
 | `copyright` | sì | riga ©, dichiarazione di fantasia (08-pubblicazione r. 7), nota dell'autore facoltativa |
 | `manuale` | no | percorso del manuale di stile del libro, se c'è |
 
@@ -503,12 +507,12 @@ I capitoli si indicano come numeri, intervalli (`"5-12"`), o nomi di unità senz
 - Il resto ha `modalita: avviso` e finisce in una tabella «da guardare» del report, con capitolo, riga e frase.
 - Ciò che non si può cercare nel testo (persone reali, per esempio) va nella checklist manuale del capitolo.
 
-**Dichiarazioni nel capitolo.** Ogni file di capitolo può avere, sotto l'intestazione, una riga nascosta che `compila.py` toglie in stampa:
+**Dichiarazioni nel capitolo.** Ogni file di capitolo può avere, sotto l'intestazione, una riga nascosta (commento HTML) che `compila.py` toglie in stampa. **I campi non sono fissi: li decide ogni libro in `dichiarazioni` di `libro.yaml`**; il motore legge le coppie `campo=valore` e ignora il testo tra parentesi:
 
 ```
 ## 7
 *Luogo — giorno e data*
-<!-- zb: chiusura=G pov=Anna -->
+<!-- zb: chiusura=G pov=Anna (campi decisi dal libro in «dichiarazioni» di libro.yaml) -->
 ```
 
 I campi e i loro vincoli li definisce `dichiarazioni` in `libro.yaml`. `capitolo.py` li confronta:
@@ -523,6 +527,9 @@ Titolo, autrice, luoghi, personaggi e numeri sono inventati.
 ```yaml
 titolo: "Le chiavi di Morlano"
 sottotitolo: null
+modalita: nuovo
+serie: {nome: "Le indagini di Nora Silvi", numero: 1}
+ebook: true
 autore: "Ada Rensi"
 lingua: it
 profilo: thriller
@@ -578,7 +585,10 @@ Titolo, autore, luoghi, personaggi e numeri sono inventati.
 
 ```yaml
 titolo: "Un'estate a Calvenna"
-sottotitolo: null
+sottotitolo: "Romanzo"
+modalita: nuovo
+serie: null
+ebook: false
 autore: "Piero Lanzi"
 lingua: it
 profilo: romance
