@@ -282,7 +282,7 @@ motore/
   README.md                 come si usa il motore, comandi, regole fisse     da scrivere
   zb                        lanciatore: zb <comando> [libro]                 da scrivere
   riferimenti/               copia di casa-editrice main @ becd0e2 (B.8)       da copiare
-    01-mercato.md … 12-lunghezze-e-struttura-capitoli.md   12 file, 4 adattati (B.8)
+    01-mercato.md … 12-lunghezze-e-struttura-capitoli.md   12 file, 5 adattati (B.8)
     modelli/                lezioni, personaggio, registro-promesse, scheda-scena,
                             stato, struttura-capitolo, style-sheet (7 file)
   modelli/
@@ -305,7 +305,8 @@ motore/
     revisione.py            «prepara per revisione»: blocchi da incollare (C.7)  da scrivere
     hook_sessione.py        hook SessionStart (C.4, solo proposta)           da scrivere
     hook_manoscritto.py     hook PreToolUse, modalità avviso/blocco (C.4)    da scrivere
-    comune.py               lettura di libro.yaml, percorsi, ramo, salvataggio  da scrivere
+    comune.py               lettura di libro.yaml, percorsi, ramo letto da git, salvataggio  da scrivere
+    continuita.py           date, età, durate, cifre, nomi in due grafie (B.2.1)  da scrivere
     conta.py                metodo unico di conteggio, parole per pagina     da scrivere
     stile.py                frase media, formule contate, tetti, immagini vietate, lista nera  da scrivere
     ortografia.py           Hunspell it_IT                                   da scrivere (metodo esistente)
@@ -320,76 +321,319 @@ motore/
     fonts.css               EB Garamond statico                              esiste (da copiare)
     fonts/                  woff2 statici                                    esiste (da copiare)
   prove/
-    attesi.yaml             valori attesi dei casi di prova (sha256, conteggi)  da scrivere
+    libro-prova/            libro finto di 3 capitoli con errori voluti (B.2.2)  da scrivere
+    attesi.yaml             esiti attesi degli script e dei casi reali (sha256, conteggi)  da scrivere
 ```
+
+File per libro letti dal motore (in `libri/<nome>/`, creati solo dopo approvazione): `libro.yaml` (B.3), `stato.yaml` (C.1), `LEGGIMI.md` (C.4), `cronologia.yaml` (B.2.1), `nomi_propri.txt` (B.3), `06-pubblicazione/conferme-autore.yaml` (A.9).
 
 Esistono già, da generalizzare o copiare: `compile_md.py`, `build_pdf.py`, `print.js`, `fonts.css`, `fonts/` (da `libri/kurgan-giorgi/07-impaginazione/`) e i 19 file di `riferimenti/` (da casa-editrice). Tutto il resto va scritto.
 
 `motore/modelli/` (modelli del motore: briefing, LEGGIMI, stato) e `motore/riferimenti/modelli/` (modelli di casa-editrice) sono due cartelle diverse.
 
+#### B.2.1 Continuità: `continuita.py` e `cronologia.yaml`
+
+**File per libro:** `libri/<nome>/cronologia.yaml`, compilato in fase 3 (C.1) dai documenti approvati (bibbia, scaletta). Contiene:
+
+```yaml
+nascite:
+  - {chi: Beniamino, data: AAAA-MM-GG}        # dalla bibbia, sezione 3 (cronologia)
+eventi:
+  - {id: palo, data: 1976-07-17, capitolo: 10, descrizione: "il palo"}   # scaletta: cap. 10, sab 17 luglio
+durate:                                       # ogni «N anni/mesi/giorni» atteso nel testo
+  - {da: evento_x, a: evento_y, valore: "tre anni", tolleranza_mesi: 6}
+cifre:                                        # zaino, debiti, prezzi (bibbia 5.7)
+  - {id: zaino, valore: <dalla tabella della bibbia 5.7>, unita: lire, forme_ammesse: [<cifre>, <in lettere>]}
+eta_per_capitolo:                             # calcolata da nascite + data d'intestazione
+  calcolata: true
+```
+
+**Cosa controlla `continuita.py`** (tabelle nel report `06-diagnostica/continuita.md`):
+
+| Controllo | Come |
+|---|---|
+| Giorni della settimana | ogni «sabato 17 luglio» nell'intestazione e nel testo, ricalcolato su `calendario.anni_ammessi`; KO se nessun anno ammesso dà quel giorno |
+| Età | ogni «N anni» riferito a un personaggio nominato nella stessa frase, confrontato con nascita e data del capitolo; KO oltre ±1 anno |
+| Durate | **tabella di tutte le occorrenze** di «N anni/mesi/settimane/giorni» con capitolo e riga, e il ricalcolo dalle date di intestazione e da `durate`; KO oltre la tolleranza |
+| Cifre ripetute | ogni cifra in lettere o in numeri vicina a «lire», «milioni», «mila» confrontata con `cifre`; KO se diversa dalle forme ammesse |
+| Nomi propri scritti in due modi | parole con maiuscola non in `nomi_propri.txt` a distanza di modifica 1-2 da una voce dell'elenco (es. «Nardo» / «Nardu») → avviso con le due grafie |
+| Ordine delle date | le date d'intestazione non tornano indietro rispetto alla scaletta → avviso |
+
+**Cosa NON può controllare**, e come lo segnala:
+- che un oggetto o una persona sia già in scena, o sia uscito di scena;
+- chi sa cosa in un certo momento (per esempio Nicola che non sa di Michele fino al 21 luglio);
+- la posizione dei personaggi nello spazio e i tempi di spostamento («il Ciao e le distanze»);
+- il tempo interno di una scena (giorno e notte, pasti, luce);
+- età e durate dette in modo indiretto («quando aveva l'età di Franco»);
+- le conseguenze fisiche (ferite, il segno del collare) da un capitolo all'altro.
+
+Per questi punti il report finisce con una **checklist manuale**: una riga per capitolo con le voci della bibbia che il capitolo tocca (personaggi, oggetti, ferite, chi sa cosa) e la casella «verificato dall'autore». Al gate G5 la checklist si mostra con il capitolo; le caselle vuote restano avvisi aperti in `stato.yaml`, non KO.
+
+#### B.2.2 Libro di prova: `motore/prove/`
+
+```
+motore/prove/
+  libro-prova/
+    libro.yaml              titolo «Prova», A5, minimo 300 parole, 2 interludi
+    cronologia.yaml         2 nascite, 3 eventi, 1 durata, 1 cifra
+    nomi_propri.txt
+    03-architettura/scaletta.md, piano-parole.md
+    04-manoscritto/
+      00-prologo.md         corretto
+      01-*.md               corretto: deve passare tutti i controlli
+      02-*.md               errori voluti: «lama di luce», «come se» ×3, «Lucia» prima del limite,
+                            giorno della settimana sbagliato, età sbagliata, «Nardo» per «Nardu»,
+                            chiusura S consecutiva, intrusioni 4
+      03-*.md               sotto il minimo di parole, frase media 22, ultima riga di una parola
+  attesi.yaml               per ogni script: esito atteso, controllo, file, riga
+```
+
+`attesi.yaml` elenca ogni KO e ogni avviso atteso, e il numero di parole con il metodo unico. Uno script si usa sui due romanzi solo dopo che sul libro di prova dà esattamente gli esiti attesi: nessun KO in più, nessuno in meno. Poi si aggiungono i casi reali: 49.998 parole sul registro dei fatti di Mister Provino (B.7 passo 2) e i margini del PDF di Kurgan/Giorgi (A.7).
+
 ### B.3 Schema di `libro.yaml`
 
-Un file per libro in `libri/<nome>/libro.yaml` (si crea solo dopo approvazione, vedi B.6). Esempio con i valori di Mister Provino dal suo manuale di stile.
+Un file per libro in `libri/<nome>/libro.yaml` (si crea solo dopo approvazione, vedi B.6). Esempio con i valori di Mister Provino, presi dal manuale di stile (`03-architettura/manuale-di-stile.md`, «manuale») e dalla scaletta.
+
+**Il ramo non sta in `libro.yaml`.** Lo legge `comune.py` da git (`git branch --show-current`): ogni sessione ha il suo ramo. `avvio.py` controlla solo che il libro attivo di quel ramo (`libri/libro-attivo.md`) esista e abbia `libro.yaml` (C.4).
+
+**Formato e margine interno.** Formato A5 (5,83 × 8,27"), come Kurgan/Giorgi, valido solo con `formato_confermato_kdp: true` in `conferme-autore.yaml` (A.9); finché è false il report dà AVVISO. Margine interno = **max(tabella KDP per numero di pagine, margine scelto)**. Stima per Mister Provino con la densità di Kurgan/Giorgi (111.468 parole su 494 pagine = 225,6 parole per pagina): 78.000 ÷ 225,6 ≈ **346 pagine** → fascia KDP **301-500 → 0,625" (15,9 mm)**. Il margine scelto (18 mm = 0,709") è più largo, quindi vale **18 mm**. Se il libro finisse sotto le 301 pagine la fascia scenderebbe a 0,5" e il margine resterebbe 18 mm; sopra le 500, 0,75" (19,1 mm) supererebbe i 18 mm e `impagina.py` userebbe 19,1 mm. Il numero vero di pagine lo misura `impagina.py`, che ricalcola il margine e rifà l'impaginazione se cambia fascia.
 
 ```yaml
 titolo: "Mister Provino"
 sottotitolo: null
 autore: "F.R. Faraone"
 lingua: it
-genere: narrativa            # chiave della tabella minimi di 12-lunghezze r. 19-28
+genere: narrativa            # chiave della tabella di 12-lunghezze rr. 19-28
 
 formato:
-  pagina_pollici: [5.5, 8.5] # da scegliere con l'autore; Kurgan oggi: A5 (5,83 x 8,27),
-                             # accettazione KDP in conferme-autore.yaml (A.9)
+  pagina_pollici: [5.83, 8.27]   # A5; accettazione KDP in conferme-autore.yaml (A.9)
   carta: crema
   bleed: false
-  margini_mm: {alto: 22, basso: 22, esterno: 18, interno: auto}   # auto = tabella KDP
+  margini_mm: {alto: 22, basso: 22, esterno: 18, interno_scelto: 18}
+  margine_interno: max(tabella_kdp, interno_scelto)   # calcolato da impagina.py
   font: {nome: "EB Garamond", corpo_pt: 11.5, interlinea: 1.5}
   numerazione: {da: prologo, pagine_iniziali: senza_numero, posizione: piede_centro}
 
 parole:
+  metodo: unico              # manuale §1
   target_totale: 78000
   tolleranza_totale: 0.05
-  capitolo: {minimo: 1300, media: 1700, massimo: null, tolleranza: 0.15}
+  capitolo:
+    minimo: 1300
+    media: 1700
+    tolleranza_budget: 0.15  # ±15% sul budget DEL CAPITOLO in 03-architettura/piano-parole.md,
+                             # non sulla media generica (12-lunghezze rr. 66-67)
+    override_dichiarato:
+      campo: minimo
+      valore_tabella: 2000   # 12-lunghezze, narrativa
+      valore_libro: 1300
+      motivo: "Capitoli brevi del romanzo di formazione a doppia voce, media 1.700 (manuale §1, scaletta)."
+      fonte: "12-lunghezze r. 30: scelta narrativa dichiarata"
   prologo: 500
   epilogo: 1000
-  interludi: {numero: 9, minimo: 300, massimo: 600}
+  interludi: {minimo: 300, massimo: 600}
   parole_per_pagina_misurate: null   # calcolate da impagina.py sul PDF reale
 
 stile:
   persona: prima
   tempo: {racconto: passato, interludi: presente}
   frase_media: [10, 13]
+  frase_breve: {sotto_parole: 6, massimo_di_fila: 3}           # manuale 3.1
+  paragrafi_una_frase_breve_max_capitolo: 3                    # manuale 3.1
   dialogo_percento: [15, 35]
-  similitudini_max_per_parole: 300
-  gesti_di_conteggio_max_per_capitolo: 3
-  chiusure: {sentenza_tematica_max: 8, consecutive: false, mai_su_domanda: true}
-  formule_contate:           # manuale 3.5
-    - {formula: "Non era X. Era Y.", massimo_libro: 5}
-    - {formula: "come se", massimo_capitolo: 2}
-    # ... le altre righe della tabella 3.5
-  immagini_vietate:          # manuale 4.3
-    - "lama (figurata)"
-    - "cuore che martella / in gola"
-    # ... elenco completo dal manuale
-  lista_nera_casa_editrice: true    # 05-critica rr. 19-21, cede al manuale
+  similitudini_max_per_parole: 300                             # manuale 4.1
+  gesti_di_conteggio_max_per_capitolo: 3                       # manuale 3.6
+  aperture: {data_in_prima_frase: vieta, risveglio_max_libro: 3}   # manuale 3.3
+  chiusure:                                                    # manuale 3.4
+    sigle: [G, I, O, B, F, S]   # gesto, immagine, oggetto, battuta, fatto, sentenza (scaletta r. 7)
+    sentenza_max_libro: 8
+    sentenza_consecutive: false
+    escluso_dal_conto: [epilogo]
+    frase_isolata_max_parole: 2   # vieta la chiusura su una riga di 1-2 parole
+  intrusioni:                                                  # manuale 2.2
+    per_capitolo: [1, 3]
+    capitoli_a_zero: [10]
+    ancore:                       # controllo incrociato: avviso, non KO
+      - "allora non lo sapevo"
+      - "quel giorno"
+      - "anni dopo"
+      - "l'ho saputo anni dopo"
+      - "oggi"
+      - "da vecchio"
+      - "me lo raccontò"
+      - "me l'hanno raccontato"
+      - "non ricordo se"
+  aforismi: {massimo: "1 ogni 2 capitoli", solo_dentro_intrusione: true}
+  lista_nera_casa_editrice: true  # 05-critica rr. 19-21 (B.8 mod. 4), cede al manuale
+  voci:                           # vedi sotto, «Voci con pattern»
 
 struttura:
-  separatore_scena: "•"      # Kurgan: "---" nel sorgente → "* * *" in stampa
+  separatore_scena: {sorgente: "•", stampa: "•"}   # manuale §1 nomina «•»; da confermare
   nomi_file: "{numero:02d}-{slug}.md"
-  intestazione_capitolo: "Voce — luogo, data"   # Kurgan: "*Nome — Luogo, giorno mese*"
+  intestazione_capitolo: "Luogo — giorno e data"   # un solo narratore: niente «Voce»
+  intestazione_interludio: "Titolo"                # in corsivo, senza data (manuale 2.3)
+  dichiarazioni_capitolo: "<!-- zb: chiusura=G intrusioni=2 aforismi=0 -->"
   prologo_epilogo_numerati: false
   interludi_numerati: false
   parti:
     - {titolo: "Parte prima — Il cane", capitoli: [1, 19]}
     - {titolo: "Parte seconda — La caccia", capitoli: [20, 30]}
     - {titolo: "Parte terza — Oltre l'orizzonte", capitoli: [31, 43]}
+  interludi:                                       # scaletta rr. 75-396
+    - {numero: I,    dopo_capitolo: 3,  titolo: "I fiori",    parte: 1}
+    - {numero: II,   dopo_capitolo: 10, titolo: "La pagina",  parte: 1}
+    - {numero: III,  dopo_capitolo: 15, titolo: "La nave",    parte: 1}
+    - {numero: IV,   dopo_capitolo: 19, titolo: "La lettera", parte: 1}
+    - {numero: V,    dopo_capitolo: 25, titolo: "Il collo",   parte: 2}
+    - {numero: VI,   dopo_capitolo: 30, titolo: "Il telefono", parte: 2}
+    - {numero: VII,  dopo_capitolo: 35, titolo: "Ero io",     parte: 3}
+    - {numero: VIII, dopo_capitolo: 38, titolo: "La firma",   parte: 3}
+    - {numero: IX,   dopo_capitolo: 43, titolo: "Le pagine",  parte: 3}
+
+nome_vietato_prima_di:                             # manuale 2.5
+  - nome: "Lucia"
+    pattern: '\bLucia\b'
+    vietato_in: [prologo, "1-36", "interludi I-VI"]
+    obbligatorio_in: ["37-43", "interludi VII-IX", epilogo]   # avviso se il capitolo nomina
+                                                             # «il ritratto» o «lei» senza «Lucia»
+
+calendario:
+  anni_ammessi: [1976, 1977]   # 1976 come richiesto; 1977 proposto: la scaletta (r. 388) data il cap. 43 al 1977
+  file: cronologia.yaml        # B.2.1
+
+ortografia:
+  parole_ammesse_file: nomi_propri.txt   # una voce per riga, letto da ortografia.py e continuita.py
+  esempi: [Sabino, Gaetano, "don Tobia", "zi' Nardu", "La Scala", "Mister Provino", Beniamino, Checco, Michele, Cataldo, Saro, Ciro]
+
+copyright:
+  riga: "© {anno} {autore}. Tutti i diritti riservati."
+  fantasia: >                  # 08-pubblicazione r. 7
+    Quest'opera è frutto di fantasia. Nomi, personaggi e fatti sono invenzione
+    dell'autore o usati in modo fittizio; ogni somiglianza con persone, vive o
+    scomparse, o con fatti realmente accaduti è puramente casuale.
+  nota_autore: >               # pagine finali, 08-pubblicazione r. 9
+    Bari e il 1976 sono reali: le strade, i quartieri, le istituzioni nominate.
+    Le persone, le famiglie e i clan del romanzo sono inventati, e nessuno di loro
+    rimanda a persone o gruppi realmente esistiti. Date, luoghi e cifre sono stati
+    adattati alle esigenze del racconto.
 
 voce_narratore: "03-architettura/manuale-di-stile.md §2"   # rimando, non copia
 manuale: "03-architettura/manuale-di-stile.md"
-ramo: "claude/mister-provino-espansione"
-copyright: "© {anno} {autore}. Tutti i diritti riservati."
 ```
+
+Per Kurgan/Giorgi gli stessi campi hanno: `separatore_scena: {sorgente: "---", stampa: "* * *"}`, `intestazione_capitolo: "Nome — Luogo, giorno mese"` (sette punti di vista), `calendario.anni_ammessi: [2025, 2026, 2027, 2028]`. Gli anni sono Y, Y+1, Y+2, Y+3 del suo calendario, che usa quattro anni e non tre: capp. 1-10 in Y, cap. 11 in Y+1, capp. 12-47 in Y+2, capp. 48-53 in Y+3. `00-progetto/semi.md` r. 118 dice che la griglia dei giorni della settimana è «coerente con 2025/2027, anno mai nominato».
+
+#### Voci con pattern (`stile.voci`)
+
+Ogni voce ha: `id`, `pattern` (regex Python, `(?i)` = senza maiuscole), `modalita` (`vieta`: ogni occorrenza è KO; `conta`: KO solo sopra il massimo; `avviso`: elenca le occorrenze con capitolo e riga per un controllo a vista), `massimo`, `ambito` (`libro` | `capitolo`), e quando serve `consentito_in_capitoli` / `vietato_in_capitoli` / `solo_dialogo`.
+
+```yaml
+voci:
+  # Manuale 3.5 — formule contate
+  - {id: non_era_era, pattern: '(?i)\bnon (era|fu)\b[^.!?]{1,60}[.!?]\s+(era|fu)\b', modalita: conta, massimo: 5, ambito: libro}
+  - {id: non_ma_due_frasi, pattern: '(?i)\bnon\b[^.!?]{1,60}[.!?]\s+ma\b', modalita: avviso, ambito: libro, nota: "variante del 3.5; somma a non_era_era dopo controllo a vista"}
+  - {id: era_peggio, pattern: '(?i)\bera peggio\b|\bqualcosa di peggio\b', modalita: conta, massimo: 2, ambito: libro}
+  - {id: come_si_verbo, pattern: '(?i)\bcome si [a-zà-ù]+(a|e|ono|ava|eva)\b', modalita: conta, massimo: 1, ambito: capitolo}
+  - {id: non_risposi_isolata, pattern: '(?im)^(—\s*)?(non risposi|non disse niente)\.\s*$', modalita: conta, massimo: 1, ambito: capitolo}
+  - {id: una_specie_di, pattern: '(?i)\buna specie di\b', modalita: conta, massimo: 10, ambito: libro}
+  - {id: qualcosa_di_agg, pattern: '(?i)\bqualcosa di (?!peggio\b)[a-zà-ù]+', modalita: conta, massimo: 1, ambito: capitolo}
+  - {id: come_se, pattern: '(?i)\bcome se\b', modalita: conta, massimo: 2, ambito: capitolo}
+  - id: fischiare
+    pattern: '(?i)\bfischi\w*|\bfischia\w*|\bfischio\b'
+    modalita: conta
+    massimo: 6
+    ambito: libro
+    consentito_in_capitoli: [10, 23, 35, "interludio VII", 39, epilogo]
+    vietato_in_capitoli: [9, 17, 19]
+    nota: "senso morale; ogni occorrenza fuori dall'elenco è KO"
+  # Manuale 4.3 — immagini vietate (forme fisse)
+  - {id: lama_letterale, pattern: '(?i)\blam[ae]\b', modalita: conta, massimo: 3, ambito: libro, nota: "solo la lama vera di un coltello; ogni occorrenza elencata per il controllo a vista"}
+  - {id: lama_figurata, pattern: '(?i)\blam[ae] d[i\x27]\s*(luce|sole|sorriso|acqua|oro|argento)|\blama (d.oro|azzurra|bianca)', modalita: vieta}
+  - {id: cuore_uccello, pattern: '(?i)cuore come un uccello in gabbia', modalita: vieta}
+  - {id: cuore_martella, pattern: '(?i)\bcuore\b[^.!?]{0,40}\b(martell\w*|all.impazzata|in gola)', modalita: vieta}
+  - {id: silenzio_piombo, pattern: '(?i)silenzio si fece piombo|silenzio (denso|assordante|di pietra|pesante)|silenzio che pes\w+|silenzio pesava', modalita: vieta}
+  - {id: reliquia, pattern: '(?i)\breliqui[ae]\b', modalita: vieta}
+  - {id: campo_sacro, pattern: '(?i)\b(altar[ei]|sacr[oaie]|religios[oaie])\b', modalita: avviso, nota: "vietato solo sugli oggetti; in chiesa è ammesso"}
+  - {id: paura_cosi, pattern: '(?i)faceva più paura così|era questo a fare paura', modalita: vieta}
+  - {id: battito_ciglia, pattern: '(?i)in un battito di ciglia', modalita: vieta}
+  - {id: statue_persone, pattern: '(?i)statu[ae] di sale|come (una )?statu[ae]', modalita: vieta}
+  - {id: statue_altre, pattern: '(?i)\bstatu[ae]\b', modalita: avviso}
+  - {id: animale_gabbia, pattern: '(?i)come un animale in gabbia|come un cane bastonato|come una bestia', modalita: vieta}
+  - {id: sangue_gelo, pattern: '(?i)il sangue mi si gelò|un brivido lungo la schiena|gelo nelle vene', modalita: vieta}
+  - {id: tempo_fermo, pattern: '(?i)in quel preciso istante|il mondo si fermò|il tempo si fermò', modalita: vieta}
+  - {id: occhi_ghiaccio, pattern: '(?i)occhi di ghiaccio|sorriso che non arrivava agli occhi', modalita: vieta}
+  - {id: spezzo_dentro, pattern: '(?i)qualcosa si spezzò dentro di me|qualcosa dentro di me cambiò', modalita: vieta}
+  - {id: acqua_nera, pattern: '(?i)come acqua nera|sentinelle nere|cassa armonica', modalita: vieta}
+  - {id: ingranaggio, pattern: '(?i)\bingranagg\w*', modalita: avviso, nota: "vietato per il sistema criminale; ammesso per un motore"}
+  # Manuale 4.4 — campo del cane
+  - {id: campo_cane, pattern: '(?i)\bcane da tartufo\b|\bcan[ei]\b|\bguinzagl\w*|\bcollar[ei]\b', modalita: conta, massimo: 8, ambito: libro, nota: "«cane da tartufo» conta una volta"}
+  - {id: cane_similitudine, pattern: '(?i)\bcome (un|i) can[ei]\b', modalita: vieta}
+  # Manuale 4.5 — emozioni spiegate
+  - {id: emozione_innominabile, pattern: '(?i)provai qualcosa che non sapevo nominare', modalita: vieta}
+  # Manuale 5.1-5.4 — lingua e dialetto
+  - {id: accento_decorativo, pattern: '\b\w*[àèéìíòóù]\w+\b', modalita: avviso, nota: "es. «Siéditi», «Avvicìnati»; controllo a vista"}
+  - id: napoletano
+    pattern: '(?i)\bguagli(ò|o\x27|one)\b|\bpiccerì\b'
+    modalita: vieta
+    consentito_in_capitoli: [2]          # don Tobia e Ciro (scaletta r. 55, bibbia r. 138-139)
+    consentito_con_personaggi: ["don Tobia", Ciro]
+    solo_dialogo: true
+    nota: "l'elenco dei capitoli si ricalcola dalla scaletta: ogni capitolo che nomina don Tobia o Ciro"
+  - id: calabrese
+    pattern: '(?i)\bcumpà\b|\bfigghiolu\b'
+    modalita: vieta
+    consentito_con_personaggi: ["zi' Nardu", Saro]
+    solo_dialogo: true
+  - {id: beniami, pattern: '\bBeniamì\b', modalita: conta, massimo: 3, ambito: libro}
+  - {id: dialetto_nel_racconto, pattern: '(?i)\b(uè|uagnò|uagnone|citte|mo\x27)\b', modalita: avviso, nota: "KO se fuori dal discorso diretto (riga che non inizia con «—»)"}
+  - {id: dichiarativo_avverbio, pattern: '(?i)\b(disse|chiese|rispose)\s+(piano|\w+mente)\b', modalita: conta, massimo: 1, ambito: capitolo}
+  - {id: dialogo_lineetta, pattern: '(?m)^(-|–|«)\s?', modalita: vieta, nota: "il dialogo si apre con «— »"}
+  # Manuale 6 — sensibilità
+  - {id: ago, pattern: '(?i)\bl.ago\b|\bago\b', modalita: conta, massimo: 3, ambito: libro}
+  - {id: bucarsi, pattern: '(?i)\bbucar(si|mi|ti)\b|\bsi buca(va|vano)?\b|\bmi bucai\b|\bsi bucò\b', modalita: conta, massimo: 3, ambito: libro}
+  - {id: droga_strumenti, pattern: '(?i)\b(cucchiaino|cucchiaio|laccio|fiamma)\b', modalita: avviso, nota: "vietati solo in primo piano sulla droga"}
+  - {id: droga_dosi, pattern: '(?i)\b\d+([.,]\d+)?\s?(g|gr|grammi|mg|milligrammi)\b', modalita: avviso}
+  - {id: sostanze_taglio, pattern: '(?i)\b(mannite|lattosio|stricnina|caffeina|lidocaina)\b', modalita: vieta}
+  - {id: cariche_pubbliche, pattern: '(?i)\bil (sindaco|questore)\b', modalita: avviso, nota: "vietati in una scena di collusione"}
+  # Manuale 7 — anacronismi (aggiunta)
+  - {id: anacronismi, pattern: '(?i)\b(walkman|cellular[ei]|computer|scherm[oi]|cordless|porto container)\b', modalita: vieta}
+```
+
+**Voci che una regex non può decidere, e come si trattano**
+
+| Regola | Perché la regex non basta | Trattamento |
+|---|---|---|
+| «lama» figurata (manuale 4.3) | «lama» può essere vera o figurata; il senso dipende dalla frase | forme fisse (`lama di luce`, `lama d'oro`…) → **vieta**; ogni altra «lama» → conteggio (max 3) **e** elenco per controllo a vista nel report |
+| «cuore» che martella, batte all'impazzata, sta in gola | infinite varianti («il cuore mi saliva») | forme fisse → **vieta**; ogni «cuore» entro 40 caratteri da un verbo di movimento → **avviso** |
+| silenzio denso, di pietra, che pesa | aggettivi e verbi variabili | forme fisse → **vieta**; ogni «silenzio» con aggettivo → **avviso** |
+| campo sacro applicato agli oggetti | «altare» in chiesa è ammesso | **avviso** con la frase |
+| «statue» per persone immobili | una statua vera è ammessa | «come una statua», «statue di sale» → **vieta**; il resto → **avviso** |
+| «ingranaggio» per il sistema criminale | l'ingranaggio di un motore è ammesso | **avviso** |
+| «come una bestia» e simili per esseri umani | il soggetto non è leggibile da regex | le similitudini fisse → **vieta** |
+| schema vietato (manuale 4.6), metafora spiegata | è una struttura di paragrafo | **avviso** se una frase con «come» o «era» è seguita da una frase che comincia con «Era/Voleva dire/Significava» o da una conclusione con «sempre/mai/tutti»; controllo a vista |
+| aforismi prestati al ragazzo (manuale 2.1) | serve il senso | conteggio dichiarato nell'intestazione + **avviso** sulle frasi al presente gnomico fuori dalle intrusioni |
+| gesti di conteggio (manuale 3.6) | «contare» non è una parola sola | **avviso** su numerali seguiti da unità (passi, gradini, secondi, lire, mazzette) e sui verbi «contai/contava»; il numero vero lo dichiara il registro dei contatori |
+| similitudini (manuale 4.1) | «come» ha molti usi | **avviso** su «come un/una/il/la», «sembrava», «pareva»; tetto controllato sul conteggio dei candidati |
+| dialetto «in bocca a un barese» (manuale 5.3) | chi parla non è nel testo | `solo_dialogo` + capitoli consentiti dai personaggi in scaletta; il resto **avviso** |
+| trascrizioni fonetiche > 5 parole | serve l'orecchio | **avviso** su sequenze di parole non riconosciute da Hunspell e non in `nomi_propri.txt` |
+| persone reali, clan, boss | non c'è un elenco chiuso | controllo **manuale** nella checklist del capitolo |
+
+Le voci in `avviso` non bloccano: finiscono in una tabella «da guardare» del report di capitolo, con capitolo, riga e frase.
+
+#### Dichiarazioni nel capitolo
+
+Ogni file di capitolo ha, sotto l'intestazione, una riga nascosta (in stampa la toglie `compila.py`):
+
+```
+## 12
+*Bari — sabato 17 luglio*
+<!-- zb: chiusura=G intrusioni=2 aforismi=0 -->
+```
+
+`capitolo.py` verifica:
+- **chiusura**: una sigla tra G, I, O, B, F, S (la scaletta usa anche F, «fatto»); confronto con la sigla prevista in scaletta → **avviso** se diversa; sentenze (S) al massimo 8 nel libro e mai in due capitoli consecutivi (epilogo escluso) → **KO**; ultima riga di 1-2 parole → **KO**; ultima frase con «?» quando la sigla non è B → **avviso**;
+- **intrusioni**: da 1 a 3, il cap. 10 a zero (`capitoli_a_zero`) → **KO** fuori dai limiti; conteggio delle ancore fuori dal discorso diretto → **avviso** se diverso dal numero dichiarato;
+- **aforismi**: totale cumulato ≤ metà dei capitoli scritti (arrotondata per eccesso) → **KO** oltre; aforismi > intrusioni nello stesso capitolo → **KO** (stanno solo dentro un'intrusione).
 
 ### B.4 Comandi a una parola
 
@@ -416,7 +660,7 @@ Nessun comando fa commit o push da solo: il salvataggio segue B.5.
 2. **Proponi → approvo → applica.** Ogni modifica al testo o ai dati di un libro si propone, voce per voce; si applica solo dopo l'OK. Mai nuovi oggetti o persone in una scena senza richiesta.
 3. **Metodo unico di conteggio.** Token separati da spazi; esclusi le righe che cominciano con «#» e i token senza lettere né cifre (lineette di dialogo, separatori, segni isolati). Niente `wc -w`, che cambia con la lingua di sistema. Ogni report dichiara il metodo.
 4. **Precedenza.** Manuale del libro > procedura (motore e casa-editrice) > skill dell'autore. In caso di contrasto vince il manuale del libro e il report lo segnala.
-5. **Ramo.** Si lavora solo sul ramo assegnato dalla sessione o indicato in `libro.yaml`; il motore controlla il ramo prima di scrivere e si ferma se non coincide.
+5. **Ramo.** Si lavora solo sul ramo assegnato dalla sessione; `comune.py` lo legge da git. Il motore controlla che il libro attivo di quel ramo esista e si ferma se il ramo non è quello della sessione.
 6. **Dichiarazione AI.** Promemoria fisso in ogni pacchetto e in ogni report KDP (A.6).
 7. **Blocco di salvataggio.** Dopo ogni fase: file derivati rigenerati, report in `06-diagnostica/`, `git add`, commit, push, `git status -sb`, `git log`. Se il push fallisce o un file non si salva: fermarsi e riportare l'errore, mai dire «fatto» se non è su origin. Resoconto con hash, file, pagine, parole e «branch allineato a origin: sì/no».
 8. **Direttive KDP.** Verifica più vecchia di 30 giorni = avviso e pacchetto non pronto.
@@ -437,8 +681,9 @@ Nessun comando fa commit o push da solo: il salvataggio segue B.5.
 | 1 | `dati/kdp.yaml`, `script/verifica_pdf.py`, `script/conformita_kdp.py` | PDF DEFINITIVO di Kurgan con `--pdf` | sezione 11 OK con i valori di A.7; avviso formato A5; avviso verifica mai fatta |
 | 2 | `script/conta.py` | vecchio testo di Mister Provino | 49.998 parole esatte |
 | 3 | `dati/libro.schema.yaml` + bozza di `libro.yaml` dei due libri (in chat, non in `libri/`) | entrambi | approvazione dell'autore |
+| 2b | `prove/libro-prova/`, `prove/attesi.yaml` (B.2.2) | libro di prova | ogni script, prima dei casi reali, dà esattamente gli esiti attesi |
 | 3a | `PROCEDURA.md`, `CLAUDE.md`, `modelli/` (briefing, LEGGIMI, stato), `script/avvio.py`, `script/fase.py` (C.1, C.3, C.4) | Mister Provino: migrazione di C.6, ripartenza a G2 | `avvio.py` stampa la riga «Letto: …» e si ferma nei casi di C.4 |
-| 3b | `script/capitolo.py`, `riciclo.py`, `date.py`, `revisione.py` (C.2, C.7) | Mister Provino, pagina campione e primo lotto | report di capitolo completo; regola della correzione unica |
+| 3b | `script/capitolo.py`, `riciclo.py`, `date.py`, `continuita.py`, `revisione.py` (C.2, C.7, B.2.1) | Mister Provino, pagina campione e primo lotto | report di capitolo completo; regola della correzione unica |
 | 4 | `script/compila.py`, `script/impagina.py`, `impaginazione/` | Kurgan | non regressione di B.6 punto 3 |
 | 5 | `script/stile.py`, `dati/lista-nera.yaml` | Mister Provino, primi capitoli scritti | valori del registro dei contatori del manuale |
 | 6 | `script/ortografia.py` | Kurgan | zero errori certi, come `controllo-ortografico.md` |
@@ -510,7 +755,7 @@ Obiettivo: l'autore scrive solo il briefing e risponde «ok», «avanti», «cor
 
 ```yaml
 libro: mister-provino
-ramo: claude/mister-provino-espansione
+ramo_ultimo_salvataggio: claude/mister-provino-espansione   # solo informativo, scritto da fase.py
 fase: 2                        # 0-8, oppure "chiuso"
 passo: pagina-campione         # sottopasso della fase
 gate_in_attesa: voce           # null se nessun gate è aperto
@@ -660,8 +905,8 @@ Metodo: proponi → l'autore approva → applica. Mai approvare da solo.
 Risposte dell'autore: ok, avanti, correggi: …, stato, prepara per revisione
 (significato in `motore/PROCEDURA.md`, sezione gate).
 
-Ramo: solo quello assegnato dalla sessione; deve coincidere con `ramo`
-in `libro.yaml`. Se non coincide, fermati.
+Ramo: solo quello assegnato dalla sessione (letto da git, non da file).
+Se il checkout è su un altro ramo, fermati.
 
 Tono: il vecchio testo di un libro è un registro dei fatti,
 non va commentato né giudicato.
@@ -679,7 +924,7 @@ Nel testo pushato non vanno identificativi di modello.
 ```markdown
 # <Titolo> — LEGGIMI
 
-Ramo: <ramo>
+Ramo: letto da git all'avvio (non scritto qui)
 Fase: <n> — <nome>; gate in attesa: <gate>
 Ultimo capitolo approvato: <NN>
 
@@ -700,8 +945,8 @@ Il LEGGIMI lo aggiorna `fase.py` a ogni gate chiuso. L'elenco delle decisioni fi
 
 **Libro attivo con due romanzi.**
 - Ogni ramo ha il suo `libri/libro-attivo.md`, con il nome del libro di quel ramo.
-- `libro.yaml` del libro contiene `ramo`.
-- `avvio.py` controlla che ramo corrente, libro attivo e `libro.yaml` coincidano; se non coincidono si ferma: «Il ramo X appartiene al libro Y».
+- Il ramo non è scritto in nessun file: `comune.py` lo legge da git.
+- `avvio.py` controlla che il libro indicato in `libro-attivo.md` esista su quel ramo e abbia `libro.yaml`; se non c'è si ferma: «Sul ramo X il libro attivo Y non ha libro.yaml».
 - Su `claude/mister-provino-espansione` oggi `libro-attivo.md` dice `kurgan-giorgi`: va cambiato in `mister-provino` (passo della migrazione, C.6).
 
 **`motore/script/avvio.py`**
@@ -714,7 +959,7 @@ Cosa stampa:
 5. in fase 8: età della verifica delle direttive KDP.
 
 Quando si ferma (codice d'uscita diverso da zero):
-- ramo diverso da `libro.yaml`, o libro attivo incoerente;
+- checkout su un ramo diverso da quello della sessione, o libro attivo senza `libro.yaml`;
 - modifiche non salvate nel checkout, o ramo indietro rispetto a origin;
 - `stato.yaml` mancante o non valido;
 - sha256 di un documento approvato diverso da quello registrato (modificato fuori procedura);
