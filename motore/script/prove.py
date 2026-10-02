@@ -253,9 +253,54 @@ def passo_2(A):
               'sì' if os.path.isfile(os.path.join(c, '06-diagnostica', report[script])) else 'no', sez)
 
 
+# ---------------------------------------------------------------- passo 3
+
+def passo_3(A):
+    import hashlib
+    import verifica_pdf
+    sez = 'passo 3'
+    sha = lambda p: hashlib.sha256(open(p, 'rb').read()).hexdigest()
+    for nome in ('mini-libro', 'mini-libro-romance'):
+        att = A[nome]
+        c = copia_libro(nome)
+        r = esegui(os.path.join(S, 'compila.py'), c)
+        esito('compila.py', f"{nome}: codice d'uscita", 0, r.returncode, sez)
+        cart, libro, _ = comune.carica_libro(c)
+        base = comune.nome_file(libro['titolo'])
+        md = os.path.join(cart, '05-output', f'{base}-completo.md')
+        esito('compila.py', f'{nome}: sha256 del .md compilato', att['md_sha256'],
+              sha(md) if os.path.isfile(md) else 'assente', sez)
+        r = esegui(os.path.join(S, 'impagina.py'), c)
+        esito('impagina.py', f"{nome}: codice d'uscita", 0, r.returncode, sez)
+        pdf = os.path.join(cart, '05-output', f'{base}.pdf')
+        primo = sha(pdf) if os.path.isfile(pdf) else 'assente'
+        esegui(os.path.join(S, 'impagina.py'), c)
+        secondo = sha(pdf) if os.path.isfile(pdf) else 'assente'
+        esito('impagina.py', f'{nome}: due generazioni, stesso sha256', 'sì', 'sì' if primo == secondo else 'no', sez)
+        esito('impagina.py', f'{nome}: sha256 del PDF', att['pdf_sha256'], primo, sez)
+        misure, ris = verifica_pdf.verifica(cart, libro, pdf)
+        esito('verifica_pdf.py', f'{nome}: pagine', att['pagine'], misure['pagine'], sez)
+        esito('verifica_pdf.py', f'{nome}: metadati Title e Author', att['metadati'],
+              {'Title': misure['Title'], 'Author': misure['Author']}, sez)
+        esito('verifica_pdf.py', f'{nome}: font Type3', 0, misure['font_type3'], sez)
+        esito('verifica_pdf.py', f'{nome}: font non incorporati', 0, misure['font_non_incorporati'], sez)
+        for k, v in att['margini'].items():
+            esito('verifica_pdf.py', f'{nome}: margine {k}', v, misure[f'margine_{k}'], sez)
+        for k, v in att['soglie_kdp'].items():
+            esito('verifica_pdf.py', f'{nome}: soglia KDP margine {k}', v, misure[f'margine_{k}_soglia'], sez)
+        esito('verifica_pdf.py', f'{nome}: sommario contro pagine reali', att['sommario'], misure['sommario'], sez)
+        esito('verifica_pdf.py', f'{nome}: parole per pagina', att['parole_per_pagina'], misure['parole_per_pagina'], sez)
+        esito('verifica_pdf.py', f'{nome}: esiti', sorted(att['esiti']),
+              sorted(f'{x["controllo"]}|{x["esito"]}' for x in ris), sez)
+        r = esegui(os.path.join(S, 'verifica_pdf.py'), c)
+        esito('verifica_pdf.py', f"{nome}: codice d'uscita", att['codice'], r.returncode, sez)
+        esito('verifica_pdf.py', f'{nome}: report scritto', 'sì',
+              'sì' if os.path.isfile(os.path.join(cart, '06-diagnostica', 'verifica-pdf.md')) else 'no', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3}
 
 
 def main(argv):

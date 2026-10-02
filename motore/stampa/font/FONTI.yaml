@@ -1,0 +1,19 @@
+# Fonti dei font di stampa (proposta B.2.3). Solo fonti ufficiali con licenza OFL.
+# Mai copiare font da cartelle di libri. separazione.py ammette solo i file elencati qui,
+# con lo sha256 registrato.
+- nome: "EB Garamond"
+  versione: "Version 1.003"            # letta dalla tabella «name» (nameID 5) dei file scaricati
+  licenza: "SIL Open Font License 1.1"
+  fonte: "https://raw.githubusercontent.com/google/fonts/main/ofl/ebgaramond/"
+  pagina: "https://github.com/google/fonts/tree/main/ofl/ebgaramond"
+  file_origine:
+    - {nome: "EBGaramond[wght].ttf", sha256: "ef9512f92f6d579e5dc75af59a5a4b1b8b47d2eda89e00b954d44520e5369027"}
+    - {nome: "EBGaramond-Italic[wght].ttf", sha256: "bba2c4499c93c9612b90b9825d32b07da52fce2fe57562a1eb6b833553f93c4e"}
+  preparazione: "istanze statiche con fontTools varLib.instancer: Regular wght 400, Italic wght 400, SemiBold wght 600 (evita i font Type3 nel PDF)"
+  file:
+    - {nome: EBGaramond-Regular.ttf, sha256: "44b42cc31b8d10ea172be333113173dec49f53ce720d2ea9ece66411f979cfec"}
+    - {nome: EBGaramond-Italic.ttf, sha256: "c762787cbf8a4c7b2bfc9ff467e1cc39506198edcf8a1eae81d5b11a34025886"}
+    - {nome: EBGaramond-SemiBold.ttf, sha256: "37c4fb678423e5967cd2081618404e95a38e9d5ad807d5ff9d3ca74613452115"}
+    - {nome: OFL.txt, sha256: "0985066662eb755ed3683ae5482a81a9195b49ce3f7e165cc2388b3dbece7dd7"}
+  licenza_file: OFL.txt
+  scaricato_il: 2026-10-02

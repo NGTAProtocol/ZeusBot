@@ -36,5 +36,8 @@ Un file con un nome diverso ferma il motore.
 | `python3 -B motore/script/stile.py <libro> [N]` | frase media, dialogo %, lista nera e voci del libro, parole filtro, similitudini, vincoli, nomi vietati |
 | `python3 -B motore/script/continuita.py <libro>` | giorni della settimana, età, durate, cifre, nomi in due grafie; checklist manuale |
 | `python3 -B motore/script/riciclo.py <libro>` | sequenze di 7 parole ripetute (testo precedente: KO; capitoli precedenti: avviso) |
+| `python3 -B motore/script/compila.py <libro>` | manoscritto completo in `<libro>/05-output/<titolo>-completo.md` |
+| `python3 -B motore/script/impagina.py <libro>` | PDF di stampa in `<libro>/05-output/<titolo>.pdf` (Chromium via Node e Playwright, PyMuPDF; font di `stampa/font/`) |
+| `python3 -B motore/script/verifica_pdf.py <libro> [--pdf <file>]` | pagine, metadati, font, margini contro la tabella KDP, sommario contro le pagine, parole per pagina |
 | `python3 -B motore/script/separazione.py` | controlla che `motore/` non contenga libri |
 | `python3 -B motore/script/recinto.py` | controlla che i comandi scrivano solo nel libro indicato |

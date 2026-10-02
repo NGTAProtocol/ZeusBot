@@ -125,6 +125,7 @@ campi:
     obbligatorio: true
     campi:
       riga: {tipo: testo, obbligatorio: true}
+      anno: {tipo: intero}                          # anno per {anno} nella riga; senza, l'anno corrente
       fantasia: {tipo: testo, obbligatorio: true}
       nota_autore: {tipo: testo, nullo: true}
   manuale: {tipo: testo}

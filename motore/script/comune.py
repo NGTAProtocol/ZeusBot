@@ -263,6 +263,26 @@ def argomenti(argv):
     return out
 
 
+def percorso_in_libro(cartella_libro, percorso):
+    """Percorso assoluto controllato: solleva ErroreMotore se è fuori dal libro (per file binari)."""
+    if not os.path.isabs(percorso):
+        percorso = os.path.join(cartella_libro, percorso)
+    if not dentro(cartella_libro, percorso):
+        raise ErroreMotore(f'Scrittura rifiutata fuori dal libro: {percorso}')
+    os.makedirs(os.path.dirname(percorso), exist_ok=True)
+    if not dentro(cartella_libro, os.path.dirname(percorso)):
+        raise ErroreMotore(f'Scrittura rifiutata fuori dal libro: {percorso}')
+    return percorso
+
+
+def nome_file(titolo):
+    """Nome di file dal titolo: minuscole, lettere e cifre, trattini."""
+    import re
+    import unicodedata
+    s = unicodedata.normalize('NFKD', titolo).encode('ascii', 'ignore').decode().lower()
+    return re.sub(r'[^a-z0-9]+', '-', s).strip('-') or 'libro'
+
+
 def esci_con_errore(e):
     print(f'FERMO: {e}', file=sys.stderr)
     sys.exit(2)
@@ -385,3 +405,31 @@ def tabella_md(percorso):
             continue
         out.append(dict(zip(intest, celle)))
     return out
+
+
+# ---------------------------------------------------------------- margini KDP
+
+# Tabella del margine interno per numero di pagine e margini esterni minimi, in pollici
+# (riferimenti/11-direttive-kdp.md r. 53 e r. 52, casa-editrice main @ becd0e2).
+# Dal passo 4 i valori si leggono da dati/kdp.yaml, se c'è.
+KDP_INTERNO = [(24, 150, 0.375), (151, 300, 0.5), (301, 500, 0.625), (501, 700, 0.75), (701, 828, 0.875)]
+KDP_ESTERNO = {'senza_bleed': 0.25, 'con_bleed': 0.375}
+
+
+def kdp_margini():
+    p = os.path.join(radice_motore(), 'dati', 'kdp.yaml')
+    if os.path.isfile(p):
+        c = (leggi_yaml(p) or {}).get('cartaceo') or {}
+        if c.get('margine_interno_per_pagine') and c.get('margine_esterno_min_pollici'):
+            return ([(f['da'], f['a'], f['pollici']) for f in c['margine_interno_per_pagine']],
+                    c['margine_esterno_min_pollici'])
+    return KDP_INTERNO, KDP_ESTERNO
+
+
+def kdp_interno_pollici(pagine):
+    """Margine interno minimo KDP per il numero di pagine (sotto le 24 vale la prima fascia)."""
+    tabella, _ = kdp_margini()
+    for da, a, poll in tabella:
+        if pagine <= a:
+            return poll
+    return tabella[-1][2]

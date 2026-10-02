@@ -145,3 +145,42 @@ passo_2:
     tic: 4
   nome_obbligatorio:              # copia del giallo con obbligatorio_in: ["3"] per «Lodovico Arsa»
     esito_cap_3: "nome_obbligatorio:Lodovico Arsa|KO|"
+
+passo_3:
+  # PDF dei due mini-libri generati dal motore (compila.py + impagina.py), verificati con verifica_pdf.py.
+  # Lo sha256 del PDF è fissato perché due generazioni consecutive danno lo stesso valore
+  # (Chromium di Playwright 1.56.1, PyMuPDF 1.28.2, font di stampa/font/FONTI.yaml).
+  mini-libro:
+    md_sha256: "2324fc633819fa46b08b111465e3a9ab5267327a131bf744593852d46a0a9daf"
+    pdf_sha256: "cecd5860e1c3a46ff15adbe1901ac254fe7bd8ae1695c8e91c27d64c5b65c884"
+    pagine: 16                    # 4 iniziali senza numero + 12 numerate
+    metadati: {Title: "Prova di stampa", Author: "Autore di Prova"}
+    margini:                      # minimi misurati (pollici); interno a sinistra sulle dispari, a destra sulle pari
+      interno: 0.625
+      esterno: 0.625
+      alto: 0.798
+      basso: 0.356
+    soglie_kdp:                   # 16 pagine → prima fascia (24-150 pagine): 0,375"; esterni senza bleed 0,25"
+      interno: 0.375
+      esterno: 0.25
+    sommario: {"Capitolo 1": 1, "Capitolo 2": 6, "La vetrina": 10, "Capitolo 3": 11}
+    parole_per_pagina: 184.9
+    esiti: []
+    codice: 0
+  mini-libro-romance:
+    md_sha256: "f853e720bf4d8850b1e1f4caa79226724f7d1fc0b2b4d9cd112a17ac95dd2df4"
+    pdf_sha256: "9e54c302eb0f153f7daf9cd5e10f9a405956da3f176a51d240b86a0f77065fde"
+    pagine: 23                    # 4 iniziali + 19 numerate
+    metadati: {Title: "Prova d'inchiostro", Author: "Autrice di Prova"}
+    margini:                      # interno scelto 17 mm, esterno 16 mm: margini a specchio
+      interno: 0.665
+      esterno: 0.624
+      alto: 0.798
+      basso: 0.396
+    soglie_kdp:
+      interno: 0.375
+      esterno: 0.25
+    sommario: {"Capitolo 1": 1, "Capitolo 2": 8, "Capitolo 3": 15}
+    parole_per_pagina: 205.8
+    esiti: ["pagine_pari|AVVISO"]   # 23 pagine: numero dispari (avviso, da verificare su KDP)
+    codice: 0

@@ -46,5 +46,6 @@ ortografia: {parole_ammesse_file: nomi_propri.txt}
 
 copyright:
   riga: "© {anno} {autore}. Tutti i diritti riservati."
+  anno: 2026
   fantasia: "Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzione dell'autore o usati in modo fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale."
   nota_autore: null
