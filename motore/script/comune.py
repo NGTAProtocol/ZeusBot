@@ -409,21 +409,22 @@ def tabella_md(percorso):
 
 # ---------------------------------------------------------------- margini KDP
 
-# Tabella del margine interno per numero di pagine e margini esterni minimi, in pollici
-# (riferimenti/11-direttive-kdp.md r. 53 e r. 52, casa-editrice main @ becd0e2).
-# Dal passo 4 i valori si leggono da dati/kdp.yaml, se c'è.
-KDP_INTERNO = [(24, 150, 0.375), (151, 300, 0.5), (301, 500, 0.625), (501, 700, 0.75), (701, 828, 0.875)]
-KDP_ESTERNO = {'senza_bleed': 0.25, 'con_bleed': 0.375}
+def kdp():
+    """Direttive KDP da dati/kdp.yaml: unica fonte dei valori KDP del motore."""
+    p = os.path.join(radice_motore(), 'dati', 'kdp.yaml')
+    if not os.path.isfile(p):
+        raise ErroreMotore('Manca motore/dati/kdp.yaml (direttive KDP)')
+    return leggi_yaml(p) or {}
 
 
 def kdp_margini():
-    p = os.path.join(radice_motore(), 'dati', 'kdp.yaml')
-    if os.path.isfile(p):
-        c = (leggi_yaml(p) or {}).get('cartaceo') or {}
-        if c.get('margine_interno_per_pagine') and c.get('margine_esterno_min_pollici'):
-            return ([(f['da'], f['a'], f['pollici']) for f in c['margine_interno_per_pagine']],
-                    c['margine_esterno_min_pollici'])
-    return KDP_INTERNO, KDP_ESTERNO
+    """(tabella del margine interno [(da, a, pollici)], margini esterni minimi) da dati/kdp.yaml."""
+    c = kdp().get('cartaceo') or {}
+    try:
+        tabella = [(f['da'], f['a'], f['pollici']) for f in c['margine_interno_per_pagine']]
+        return tabella, c['margine_esterno_min_pollici']
+    except (KeyError, TypeError):
+        raise ErroreMotore('dati/kdp.yaml: mancano cartaceo.margine_interno_per_pagine o margine_esterno_min_pollici')
 
 
 def kdp_interno_pollici(pagine):

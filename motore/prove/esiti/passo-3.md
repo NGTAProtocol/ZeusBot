@@ -23,11 +23,11 @@ Data: 2026-10-02. Proposta di riferimento: `motore/proposta-motore.md` (approvat
 
 | File | Righe |
 |---|---|
-| script/compila.py | 107 |
-| script/impagina.py | 177 |
-| script/verifica_pdf.py | 213 |
-| stampa/modello.css | 34 |
-| stampa/print.js | 13 |
+| script/compila.py | 102 |
+| script/impagina.py | 176 |
+| script/verifica_pdf.py | 199 |
+| stampa/modello.css | 35 |
+| stampa/print.js | 12 |
 | stampa/font/ | FONTI.yaml, OFL.txt, 3 file .ttf |
 | script/comune.py | + percorso_in_libro, nome_file, margini KDP |
 | dati/libro.schema.yaml | + copyright.anno |
@@ -54,7 +54,7 @@ Data: 2026-10-02. Proposta di riferimento: `motore/proposta-motore.md` (approvat
 3. Le pagine iniziali (frontespizio, copyright, sommario) si stampano senza numero e si completano a un numero pari con una pagina bianca, così il capitolo 1 comincia su una pagina dispari.
 4. I numeri di pagina partono da 1 sulla prima unità del corpo e li stampa PyMuPDF al centro del piede: in Chromium il piè di pagina via CSS non funziona.
 5. Margini a specchio con `@page :right / :left`: interno a sinistra sulle pagine dispari. Le misure sul romance (17 mm interno, 16 mm esterno) confermano che Chromium li applica.
-6. Tabella KDP dei margini in comune.py fino al passo 4: da allora si legge da dati/kdp.yaml, se c'è. Sotto le 24 pagine vale la prima fascia (0,375").
+6. Tabella KDP dei margini: dal passo 3b sta solo in dati/kdp.yaml, letta da comune.py. Sotto le 24 pagine vale la prima fascia (0,375").
 7. I PDF sono resi deterministici: metadati senza date, nessun nuovo ID, font ridotti ai sottoinsiemi.
 8. Nome del PDF: `<libro>/05-output/<titolo>.pdf`, con il titolo in minuscolo e i trattini.
 9. Nuovo campo facoltativo `copyright.anno` in libro.yaml (fissato a 2026 nei mini-libri), per avere lo stesso .md anche a cavallo di un cambio d'anno.

@@ -1,0 +1,13 @@
+# Direttive KDP in forma di dati (proposta A.2).
+# Fonte: casa-editrice riferimenti/11-direttive-kdp.md (main @ becd0e2)
+# e KDP Help Center (kdp.amazon.com/help). Prima di pubblicare, riverificare.
+# Passo 3b: solo la sezione «cartaceo» (margini), unica fonte per comune.py.
+
+cartaceo:
+  margine_esterno_min_pollici: {senza_bleed: 0.25, con_bleed: 0.375}   # r. 52
+  margine_interno_per_pagine:    # r. 53
+    - {da: 24,  a: 150, pollici: 0.375}
+    - {da: 151, a: 300, pollici: 0.5}
+    - {da: 301, a: 500, pollici: 0.625}
+    - {da: 501, a: 700, pollici: 0.75}
+    - {da: 701, a: 828, pollici: 0.875}

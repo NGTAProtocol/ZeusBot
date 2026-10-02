@@ -9,7 +9,21 @@
   file_origine:
     - {nome: "EBGaramond[wght].ttf", sha256: "ef9512f92f6d579e5dc75af59a5a4b1b8b47d2eda89e00b954d44520e5369027"}
     - {nome: "EBGaramond-Italic[wght].ttf", sha256: "bba2c4499c93c9612b90b9825d32b07da52fce2fe57562a1eb6b833553f93c4e"}
-  preparazione: "istanze statiche con fontTools varLib.instancer: Regular wght 400, Italic wght 400, SemiBold wght 600 (evita i font Type3 nel PDF)"
+  preparazione:                        # istanze statiche dal font variabile (evitano i font Type3 nel PDF)
+    strumento: "fontTools 4.66.1 (fontTools.varLib.instancer), Python 3.11.15"
+    data: 2026-10-02
+    comando: |
+      from fontTools.ttLib import TTFont
+      from fontTools.varLib import instancer
+      st = instancer.instantiateVariableFont(TTFont(ORIGINE), {"wght": PESO}, updateFontNames=False)
+      for r in st["name"].names:            # nameID 2 e 17 = stile
+          if r.nameID in (2, 17): st["name"].setName(STILE, r.nameID, r.platformID, r.platEncID, r.langID)
+      st.save(DESTINAZIONE)
+    istanze:
+      - {origine: "EBGaramond[wght].ttf", peso: 400, stile: Regular, destinazione: EBGaramond-Regular.ttf}
+      - {origine: "EBGaramond-Italic[wght].ttf", peso: 400, stile: Italic, destinazione: EBGaramond-Italic.ttf}
+      - {origine: "EBGaramond[wght].ttf", peso: 600, stile: SemiBold, destinazione: EBGaramond-SemiBold.ttf}
+    nota: "il nome PostScript (nameID 6) resta quello dell'origine: pdffonts elenca l'istanza SemiBold come EBGaramond-Regular"
   file:
     - {nome: EBGaramond-Regular.ttf, sha256: "44b42cc31b8d10ea172be333113173dec49f53ce720d2ea9ece66411f979cfec"}
     - {nome: EBGaramond-Italic.ttf, sha256: "c762787cbf8a4c7b2bfc9ff467e1cc39506198edcf8a1eae81d5b11a34025886"}
