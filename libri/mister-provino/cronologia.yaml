@@ -1,0 +1,49 @@
+# BOZZA da «zb adotta», completata a mano dalla bibbia (adotta non riconosce le tabelle della bibbia).
+# Fonte di ogni riga: B = 02-bibbia/bibbia.md, numero di riga.
+nascite:
+  - {chi: Beniamino, data: 1963-05-02}        # B:28
+  - {chi: Checco, data: 1954-02-10}           # B:58
+  # Michele 1906, Gaetano 1930, Dora 1938, Nicola 1946, Franco 1961, Cataldo 1959 (B:165): solo l'anno, non usabili per le età
+eventi:
+  - {id: arresto_checco_1973, data: 1973-03-06, capitolo: 6, descrizione: "Arresto di Checco con il pacco di Carlo (ricordo)"}   # B:176
+  - {id: sbarco, data: 1976-07-13, capitolo: 1, descrizione: "Sbarco a Pane e Pomodoro; il mercato; il golf"}   # B:185
+  - {id: napoli, data: 1976-07-13, capitolo: 2, descrizione: "Napoli, don Tobia, le tre prove"}               # B:186
+  - {id: trani, data: 1976-07-14, capitolo: 3, descrizione: "Trani con il padre; il giuramento falso"}         # B:187
+  - {id: villa, data: 1976-07-15, capitolo: 7, descrizione: "La villa di Palese, il Capo"}                     # B:190
+  - {id: teca, data: 1976-07-16, capitolo: 8, descrizione: "Michele regala la teca; giornata con Franco"}      # B:192
+  - {id: palo, data: 1976-07-17, capitolo: 10, descrizione: "Il palo; Franco massacrato"}                      # B:193
+  - {id: ospedale, data: 1976-07-20, capitolo: 11, descrizione: "L'ospedale; la storia di lei"}                # B:195
+  - {id: ostaggio_michele, data: 1976-07-21, capitolo: 13, descrizione: "Michele diventa il secondo ostaggio"} # B:196
+  - {id: ferragosto, data: 1976-08-15, capitolo: 16, descrizione: "Ferragosto"}                                # B:199
+  - {id: lettera_checco, data: 1976-08-27, capitolo: 17, descrizione: "La lettera di Checco da Trani"}         # B:200
+  - {id: busta_madre, data: 1976-08-30, capitolo: 17, descrizione: "Nicola porta la busta alla madre"}         # B:201
+  - {id: uscita_checco, data: 1976-09-07, capitolo: 18, descrizione: "Checco esce"}                            # B:202
+  - {id: arresto_checco_1976, data: 1976-09-13, capitolo: 19, descrizione: "Settimo giorno: Checco arrestato"} # B:204
+  - {id: astinenza, data: 1976-09-14, capitolo: 20, descrizione: "Astinenza da solo"}                          # B:205
+  - {id: camion, data: 1976-09-21, capitolo: 21, descrizione: "Parte il camion di Giuseppe"}                   # B:207
+  - {id: ritorno_bari, data: 1976-10-01, capitolo: 21, descrizione: "Ritorno a Bari"}                          # B:208
+  - {id: cataldo, data: 1976-10-02, capitolo: 22, descrizione: "Cataldo controlla"}                            # B:209
+  - {id: caccia, data: 1976-10-03, capitolo: 23, descrizione: "La settimana della caccia"}                     # B:210
+  - {id: voce_al_messo, data: 1976-10-07, capitolo: 23, descrizione: "La voce al messo calabrese"}             # B:445
+  - {id: jonica, data: 1976-10-09, capitolo: 24, descrizione: "La Jonica, l'Aspromonte, zi' Nardu"}            # B:211
+  - {id: liberazione, data: 1976-10-11, capitolo: 26, descrizione: "Liberazione; la confessione del panettiere"}   # B:213
+  - {id: ago, data: 1976-10-14, capitolo: 27, descrizione: "La siringa in macchina"}                           # B:214
+  - {id: zaino, data: 1976-10-17, capitolo: 28, descrizione: "La villa del Capo, lo zaino, il trullo"}         # B:215
+  - {id: circolo, data: 1976-10-19, capitolo: 29, descrizione: "Strage al circolo di Carlo"}                   # B:216
+  - {id: retata, data: 1976-10-23, capitolo: 31, descrizione: "Gli elicotteri e la Gazzetta (notte 22-23)"}    # B:218-219
+  - {id: ulivo, data: 1976-10-25, capitolo: 32, descrizione: "Lo zaino nell'ulivo"}                            # B:220
+  - {id: magro_al_trullo, data: 1976-10-27, capitolo: 33, descrizione: "Il magro al trullo"}                   # B:222
+  - {id: allora_non_vado, data: 1976-10-29, capitolo: 34, descrizione: "Allora non vado"}                      # B:223
+  - {id: incendio, data: 1976-10-30, capitolo: 35, descrizione: "L'accendino, la telefonata, l'incendio"}      # B:224
+  - {id: lucia, data: 1976-10-31, capitolo: 37, descrizione: "Il Policlinico: il nome di Lucia"}               # B:225
+  - {id: treno_genova, data: 1976-12-03, capitolo: 40, descrizione: "Treno per Genova"}                        # B:229
+  - {id: imbarco, data: 1976-12-04, capitolo: 40, descrizione: "Genova, imbarco"}                              # B:230
+  - {id: tempesta, data: 1976-12-11, capitolo: 41, descrizione: "Tempesta, la settima notte (data indicativa)"}   # B:231
+  - {id: santos, data: 1976-12-21, capitolo: 41, descrizione: "Santos"}                                        # B:232
+durate:
+  - {da: uscita_checco, a: arresto_checco_1976, valore: "sette giorni", tolleranza_giorni: 1}    # B:58, B:202-204 (il settimo giorno)
+  - {da: imbarco, a: santos, valore: "diciassette giorni", tolleranza_giorni: 0}                # B:232, briefing punto 4
+  - {da: astinenza, a: tempesta, valore: "dodici settimane", tolleranza_giorni: 7}              # B:246
+  - {da: sbarco, a: tempesta, valore: "cinque mesi", tolleranza_giorni: 15}                     # B:246, B:295
+cifre: []          # le cifre dello zaino cambiano scena per scena (B:306-336): si controllano a mano
+eta_per_capitolo: {calcolata: true}
