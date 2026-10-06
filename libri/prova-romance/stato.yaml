@@ -42,8 +42,8 @@ documenti_approvati: {}
 avvisi_aperti: []
 revisione_in_corso:
   gate: documenti
-  blocco: 1
+  blocco: 6
   blocchi_totali: 6
-  sha256: 5ce454bf3d5f
+  sha256: ada5291a996c
 push_in_sospeso: false
-aggiornato: '2026-10-06T09:05:44Z'
+aggiornato: '2026-10-06T09:08:15Z'
