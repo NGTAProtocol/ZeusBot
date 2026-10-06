@@ -117,6 +117,8 @@ Si ferma (codice 2) **senza scrivere nulla da nessuna parte** se:
 - `stato.yaml` manca o non è valido, o `push_in_sospeso` è vero;
 - in fase «documenti» il briefing è incompleto;
 - un documento approvato è cambiato fuori procedura (sha256 diverso da quello registrato).
+  Se la modifica è autorizzata dall'autore: commit, poi `zb riapprova <libro> <documento> <motivo>`
+  (nuovo sha256 e commit; in `stato.yaml` restano data, motivo e sha256 precedente).
 
 Se tutto va bene stampa:
 `Letto: <file> (N righe, sha256 …, commit …), …; libro @ <commit>; motore @ <commit>; fase, gate`,
@@ -128,9 +130,9 @@ marker `<libro>/.zb/letto-<session_id>` (la cartella `.zb/` ignora sé stessa in
 | Fase | Lavoro | Gate (se attivo) | Documenti mostrati |
 |---|---|---|---|
 | documenti | completare bibbia, cronologia, scaletta, piano parole | `documenti` | libro.yaml, bibbia, cronologia, manuale, scaletta, piano parole |
-| pagina_campione | scrivere `05-revisioni/pagina-campione.md` | `pagina_campione` | pagina campione |
+| pagina_campione | scrivere `05-revisioni/pagina-campione.md` (creata vuota all'ingresso nella fase; `pronto` la rifiuta finché è vuota) | `pagina_campione` | pagina campione |
 | stesura | capitoli, uno dopo l'altro | `primi_capitoli` dopo il capitolo 3; `lotto` a ogni lotto (se attivo); `controllo_fallito` sempre | capitoli e report |
-| chiusura | continuità, ortografia, manoscritto completo, PDF, controllo KDP, pacchetto | — | — |
+| chiusura | continuità, ortografia, manoscritto completo, PDF, pacchetto, controllo KDP | — | — |
 | chiuso | — | — | — |
 
 **Gate attivi:** campo `gate` di `libro.yaml` (dal briefing, «Gate:»). Predefiniti:
@@ -146,6 +148,7 @@ ferma: i documenti si registrano con `senza_gate: true` e si passa oltre.
 | `ok, lotti da N` | `zb ok <libro> lotti da N` | Come `ok`, e fissa la dimensione dei lotti successivi. |
 | `avanti` | `zb avanti <libro>` | Blocco successivo (circa 120 righe, tagliato a fine paragrafo). Non approva nulla. Se i documenti cambiano, riparte dal blocco 1. |
 | `correggi: …` | `zb correggi <libro> <istruzione>` | Registra la correzione; il gate resta aperto. Applico solo quella, rieseguo i controlli, mostro le righe cambiate (prima e dopo), salvo; poi `avanti` riparte dal blocco 1. |
+| `riapprova` | `zb riapprova <libro> <documento> <motivo>` | Modifica autorizzata a un documento già approvato (già salvata in un commit): registra il nuovo sha256 e commit, con data, motivo e sha256 precedente. Rifiutato se il documento non è approvato, non è cambiato o ha modifiche non salvate. |
 | `stato` | `zb stato <libro>` | Fase, gate, lotto, capitoli, parole, revisione, correzioni, avvisi, ultimo commit, allineamento con origin. Non scrive nulla. |
 
 Qualunque altra frase è una domanda: rispondo senza cambiare stato.
@@ -175,6 +178,16 @@ i tic fissi del motore, le voci di cronologia che il capitolo tocca e le voci pr
 fermo e scrivo quale controllo, valore, soglia, file e righe. L'autore decide: `ok` accetta il
 capitolo così com'è, `correggi: …` indica la correzione.
 
+**Correzione a un gate di capitoli.** Con il gate `primi_capitoli` o `lotto` aperto e una correzione
+registrata (`correggi: …`), `zb esito <libro> N` su un capitolo del gate rifà i controlli e aggiorna le
+parole in `stato.yaml`; il gate resta aperto e `avanti` riparte dal blocco 1.
+
+**Totale del libro.** `zb conta` e `zb capitolo` confrontano il totale previsto (parole scritte più i
+budget delle unità non ancora scritte) con `parole.target_totale`. Fuori da `capitoli.tolleranza_totale`
+danno un AVVISO con il budget residuo proposto per le unità rimanenti (in proporzione ai loro budget).
+È una proposta: il motore non accorcia né allunga un capitolo per far sparire l'avviso, e non tiene
+i capitoli sotto una soglia; a libro finito, fuori tolleranza, decide l'autore.
+
 **Lotti.** Dopo il capitolo 3 si apre `primi_capitoli`; con l'«ok» l'autore sceglie i lotti
 (`ok, lotti da N`). Poi i capitoli si scrivono in lotti di N **senza fermate** (salvo gate
 `lotto` attivo o controllo fallito due volte). Scritto l'ultimo capitolo del piano parole, la
@@ -183,8 +196,22 @@ fase passa a «chiusura».
 ## 7. Chiusura
 
 In ordine: `zb continuita`, `zb ortografia`,
-`zb compila`, `zb impagina`, `zb pdf`, `zb kdp`, `zb pacchetto`; poi `zb pronto <libro>`, che
-controlla che ci siano tutti i report e chiude il libro.
+`zb compila`, `zb impagina`, `zb pdf`, `zb pacchetto`, `zb kdp`; poi `zb pronto <libro>`, che
+controlla che ci siano tutti i report e chiude il libro. `zb pacchetto` va prima di `zb kdp`: il
+controllo KDP legge la scheda del pacchetto (senza, dà KO anche sulle sezioni che la scheda copre).
+
+**Continuità: durate e cifre.** Le durate di `cronologia.yaml` si confrontano con le date degli eventi
+anche quando nessun capitolo le nomina (unità «cronologia» nel report). Una cifra (`cifre`) con
+`contesto: [parole]` si controlla solo nelle righe che contengono una di quelle parole (KO se il
+numero è diverso); senza `contesto`, un numero diverso vicino all'unità è un AVVISO da verificare,
+perché la frase può parlare d'altro («tre settimane di lavoro»).
+
+**Limiti noti.**
+- Similitudini (`stile.py`): si contano solo «come» seguito da un articolo o da «se», «sembrava» e
+  «pareva»; «come l'» seguito da un verbo («a come l'aveva lasciata») non si conta. Forme come
+  «come si fa con…», «come quando…» non si contano: sono spesso «in che modo» e il motore non le
+  distingue. Effetto sul report: il numero di candidati e l'AVVISO «similitudini» possono stare
+  sotto il vero; il controllo resta alla lettura dell'autore.
 
 **Ortografia (`zb ortografia <libro>`), tre livelli.**
 - (a) Hunspell it_IT, sempre. Parole ammesse: quelle del libro (`nomi_propri.txt`) e quelle generiche

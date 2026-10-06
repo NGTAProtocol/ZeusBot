@@ -3,7 +3,9 @@
 Uso: python3 -B continuita.py <libro> [--schermo]
 Legge <libro>/cronologia.yaml e controlla nel testo: giorni della settimana
 (su calendario.anni_ammessi), età dei personaggi con data di nascita, durate
-dichiarate in cronologia, cifre, nomi propri scritti in due modi, ordine delle date.
+dichiarate in cronologia (nel testo e tra le date degli eventi, unità «cronologia»), cifre
+(KO solo nelle righe con una parola di «contesto»; senza contesto AVVISO), nomi propri scritti
+in due modi, ordine delle date.
 Report: <libro>/06-diagnostica/continuita.md, con la tabella di tutte le durate
 trovate e la checklist manuale per capitolo.
 """
@@ -245,9 +247,13 @@ def controlla_libro(cartella, libro):
                         risultati.append(risultato(nome, 'durata', 'KO', n,
                                                    f'«{du["valore"]}»: dalle date risultano {calcolati} giorni '
                                                    f'({calcolati / 365.25:.1f} anni); tolleranza {tolleranza_giorni(du):.0f} giorni'))
-        # cifre
+        # cifre: con «contesto» si controllano solo le righe che contengono una di quelle parole (KO);
+        # senza, un numero diverso vicino all'unità è solo un AVVISO (può parlare d'altro)
         for ci in cron.get('cifre') or []:
+            contesto = [c.lower() for c in ci.get('contesto') or []]
             for n, r in prosa:
+                if contesto and not any(c in r.lower() for c in contesto):
+                    continue
                 toks = r.split()
                 for i, t in enumerate(toks):
                     if t.lower().strip('.,;:!?') != ci['unita'].lower():
@@ -257,8 +263,11 @@ def controlla_libro(cartella, libro):
                         k = numero(v)
                         if k is not None:
                             if k != ci['valore']:
-                                risultati.append(risultato(nome, f'cifra:{ci["id"]}', 'KO', n,
-                                                           f'«{v} {ci["unita"]}», atteso {ci["valore"]}'))
+                                risultati.append(risultato(
+                                    nome, f'cifra:{ci["id"]}', 'KO' if contesto else 'AVVISO', n,
+                                    f'«{v} {ci["unita"]}», atteso {ci["valore"]}'
+                                    + ('' if contesto else ' (senza «contesto» in cronologia.yaml: verifica '
+                                       'che la frase parli di questa cifra)')))
                             break
         # nomi in due grafie
         visti = set()
@@ -271,6 +280,16 @@ def controlla_libro(cartella, libro):
                         visti.add(t)
                         risultati.append(risultato(nome, 'nome_due_grafie', 'AVVISO', n, f'«{t}» e «{nm}»'))
                         break
+    # durate della cronologia confrontate con le date degli eventi, anche se il testo non le nomina
+    for du in cron.get('durate') or []:
+        dichiarati = giorni_dichiarati(du['valore'])
+        if dichiarati is None or du['da'] not in eventi or du['a'] not in eventi:
+            continue
+        calcolati = (eventi[du['a']] - eventi[du['da']]).days
+        if abs(calcolati - dichiarati) > tolleranza_giorni(du):
+            risultati.append(risultato('cronologia', 'durata', 'KO', None,
+                                       f'«{du["valore"]}» da {du["da"]} a {du["a"]}: dalle date risultano {calcolati} '
+                                       f'giorni; tolleranza {tolleranza_giorni(du):.0f} giorni'))
     # ordine delle date
     prec = None
     for nome, d in date_unita:

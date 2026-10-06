@@ -34,7 +34,7 @@ Un file con un nome diverso ferma il motore.
 4. Fase pagina campione: `05-revisioni/pagina-campione.md`; `zb pronto`, poi `ok`.
 5. Stesura: un capitolo alla volta, `zb esito <libro> N`; fermata dopo il capitolo 3, poi lotti di N.
 6. Due controlli falliti di fila sullo stesso capitolo: fermata e decisione dell'autore.
-7. Chiusura: `continuita`, `ortografia`, `compila`, `impagina`, `pdf`, `kdp`, `pacchetto`; `zb pronto`.
+7. Chiusura: `continuita`, `ortografia`, `compila`, `impagina`, `pdf`, `pacchetto`, `kdp`; `zb pronto`.
 8. A ogni passo: commit, push, `git status -sb`, `git log -1` (blocco di salvataggio, `PROCEDURA.md`).
 
 ## Comandi
@@ -49,6 +49,7 @@ Si lanciano con `python3 motore/zb <comando> …`; il libro è sempre un percors
 - `zb ok <libro> [lotti da N]`: approva il gate aperto, dopo aver mostrato tutti i blocchi.
 - `zb avanti <libro>`: blocco successivo dei documenti del gate.
 - `zb correggi <libro> <istruzione>`: registra una correzione; il gate resta aperto.
+- `zb riapprova <libro> <documento> <motivo>`: registra una modifica autorizzata a un documento già approvato.
 - `zb adotta <cartella>`: bozze di libro.yaml, stato, cronologia e nomi da documenti esistenti, con le fonti.
 - `zb conta <libro>`: parole con il metodo unico, per capitolo e totale.
 - `zb stile <libro> [N]`: frase media, dialogo, lista nera, tetti, similitudini, vincoli.

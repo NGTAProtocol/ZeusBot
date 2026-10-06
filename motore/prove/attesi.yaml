@@ -65,7 +65,8 @@ passo_2:
         parole: 1186
         frase_media: 9.8
         dialogo: 29.5
-        esiti: []
+        esiti:
+          - "parole_totale|AVVISO|"     # totale previsto 2578 su 3000 (-14,1%), fuori da ±5% (correzione «totale»)
       "2":
         parole: 832
         frase_media: 9.7
@@ -79,6 +80,7 @@ passo_2:
           - "nome_vietato:Lodovico Arsa|KO|43"
           - "nome_vietato:Lodovico Arsa|KO|55"
           - "nome_vietato:Lodovico Arsa|KO|65"
+          - "parole_totale|AVVISO|"     # totale previsto 2578 su 3000 (-14,1%), fuori da ±5% (correzione «totale»)
           - "scena_minimo|KO|2"        # controllo delle scene (correzione «scene»): 340 parole, minimo 800
           - "scena_minimo|KO|37"       # 492 parole, minimo 800
           - "similitudini|AVVISO|"
@@ -90,6 +92,7 @@ passo_2:
         dialogo: 0.0
         esiti:
           - "parole_budget|AVVISO|"
+          - "parole_totale|AVVISO|"     # totale previsto 2578 su 3000 (-14,1%), fuori da ±5% (correzione «totale»)
       "3":
         parole: 457
         frase_media: 45.3
@@ -100,6 +103,7 @@ passo_2:
           - "frase_media|KO|"
           - "parole_budget|AVVISO|"
           - "parole_minimo|KO|"
+          - "parole_totale|AVVISO|"     # totale previsto 2578 su 3000 (-14,1%), fuori da ±5% (correzione «totale»)
           - "scena_minimo|KO|2"        # 457 parole, minimo 800
     mini-libro-romance:
       "1":
@@ -476,3 +480,41 @@ continuita_eta_durate:
     due_mesi_70_giorni: {da: a, a: c, valore: "due mesi", tolleranza_mesi: 1, atteso: []}
     cinque_mesi_70_giorni: {da: a, a: c, valore: "cinque mesi", tolleranza_mesi: 1, atteso: ['durata|KO']}
     un_anno_41_giorni: {da: a, a: b, valore: "un anno", tolleranza_anni: 0, atteso: ['durata|KO']}
+
+correzioni_dopo_prova:
+  # Correzioni dopo la prova romance (voci a-l). Copie temporanee del mini-libro giallo e del briefing inventato.
+  c_creata: "True / []"
+  c_vuota: "2 / nessuno"
+  c_scritta: pagina_campione
+  g_codici: [2, 2, 2, 0, 0]          # avvio fermo; riapprova senza motivo; documento invariato; riapprova; avvio OK
+  g_registro: "['tolleranza cambiata su richiesta'] / True"
+  d_righe:
+    - "- Chiusura preferita: gancio_domanda. Sigle: D domanda, R rivelazione, P pericolo, X decisione."
+    - "- Chiusura preferita: misto. Sigle: G gesto, O oggetto, B battuta, D domanda, R rivelazione."
+  i_frasi:
+    - "La stanza era uguale a come l'aveva lasciata."
+    - "Rimise il vaso a come l'aveva messa la madre."
+    - "La strada brillava come l'acqua del porto."
+    - "Il silenzio tagliava come una lama."
+  i_attesi: [0, 0, 1, 1]
+  b_frasi:
+    - "Lo teneva fermo come si fa con un cane."
+    - "Rideva come quando da bambina correva in cortile."
+  b_attesi: [0, 0]
+  h_casi:
+    senza_contesto: [null, "Le pagine erano tre, disse il tipografo."]
+    contesto_assente: [["registro"], "Le pagine erano tre, disse il tipografo."]
+    contesto_presente: [["registro"], "Nel registro le pagine erano tre."]
+  h_attesi:
+    senza_contesto: ['cifra:pagine_registro|AVVISO']
+    contesto_assente: []
+    contesto_presente: ['cifra:pagine_registro|KO']
+  a_casi: {giorni_41: 41, giorni_70: 70}
+  a_attesi:
+    giorni_41: []
+    giorni_70: ['cronologia|durata|KO']
+  j_ordine: ['zb continuita', 'zb ortografia', 'zb compila', 'zb impagina', 'zb pdf', 'zb pacchetto', 'zb kdp']
+  k_esito: "2 / 0 / primi_capitoli / 2578"
+  # scritte 1186 + 832 + 103 = 2121; capitolo 3 (budget 900) non scritto; previsto 3021 su 4000
+  l_avviso: "totale previsto 3021 parole su 4000 (-24.5%, tolleranza ±5%); scritte 2121. Budget residuo proposto: 1879 parole per 1 unità (3: 1879); è una proposta, nessun capitolo si accorcia o si allunga per evitare l'avviso"
+  l_schermo: "True | True"

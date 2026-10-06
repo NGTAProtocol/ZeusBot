@@ -3,7 +3,8 @@
 Uso: python3 -B capitolo.py <libro> <N> [--schermo]
 N è il numero del capitolo, oppure il nome di un'unità («prologo», «interludio II»).
 Esegue: parole con il metodo unico rispetto a minimo del profilo (KO, solo capitoli)
-e budget di piano-parole.md (AVVISO oltre la tolleranza); controlli di stile.py;
+e budget di piano-parole.md (AVVISO oltre la tolleranza); totale previsto del libro (AVVISO oltre
+capitoli.tolleranza_totale, con il budget residuo proposto, vedi conta.py); controlli di stile.py;
 continuità di continuita.py; anti-riciclo di riciclo.py; dichiarazioni della riga
 nascosta <!-- zb: … --> secondo «dichiarazioni» di libro.yaml; scene (solo capitoli numerati), contate
 dal separatore struttura.separatore_scena.sorgente: numero fuori da capitoli.scene_per_capitolo (KO),
@@ -131,6 +132,9 @@ def controlla(cartella, libro, profilo, nome):
         if abs(sc) > profilo['capitoli']['tolleranza_budget']:
             out.append(risultato(nome, 'parole_budget', 'AVVISO', None,
                                  f'{n_parole} parole su {bud} ({sc:+.0%}, tolleranza ±{profilo["capitoli"]["tolleranza_budget"]:.0%})'))
+    avviso = conta.totale_previsto(cartella, libro, profilo)[3]
+    if avviso:
+        out.append(risultato(nome, 'parole_totale', 'AVVISO', None, avviso))
     if nome.isdigit():
         out += controlla_scene(nome, testo, libro, profilo)
     met, ris_stile = stile.controlla_libro(cartella, libro, profilo)[nome]

@@ -7,9 +7,13 @@ Comandi dell'autore:
   avanti                   mostra il blocco successivo dei documenti del gate aperto
   ok [lotti da N]          approva il gate aperto (solo dopo aver mostrato tutti i blocchi)
   correggi <istruzione>    registra una correzione; il gate resta aperto
+  riapprova <documento> <motivo>   registra una modifica autorizzata a un documento già approvato
+                           (nuovo sha256 e commit, con data, motivo e sha256 precedente)
 Comandi di Claude Code:
   pronto                   il lavoro della fase è finito: apre il gate (se previsto in libro.yaml) o passa oltre
-  esito <N>                esegue capitolo.py sull'unità N e registra l'esito (OK, KO, secondo KO = fermata)
+  esito <N>                esegue capitolo.py sull'unità N e registra l'esito (OK, KO, secondo KO = fermata);
+                           a un gate «primi_capitoli» o «lotto» con una correzione registrata, rifà i controlli
+                           di un capitolo del gate e aggiorna le parole; il gate resta aperto
 
 Fasi: documenti → pagina_campione → stesura → chiusura → chiuso.
 Gate (libro.yaml, campo «gate»; predefiniti documenti, pagina_campione, primi_capitoli):
@@ -39,8 +43,10 @@ CHIUSURA = [('06-diagnostica/continuita.md', 'zb continuita'),
             ('05-output/{nome}-completo.md', 'zb compila'),
             ('05-output/{nome}.pdf', 'zb impagina'),
             ('06-diagnostica/verifica-pdf.md', 'zb pdf'),
-            ('06-pubblicazione/conformita-kdp.md', 'zb kdp'),
-            ('06-pubblicazione/checklist.md', 'zb pacchetto')]
+            ('06-pubblicazione/checklist.md', 'zb pacchetto'),
+            ('06-pubblicazione/conformita-kdp.md', 'zb kdp')]
+PAGINA_DA_SCRIVERE = ('# Pagina campione\n\n<!-- Da scrivere secondo 03-architettura/manuale-di-stile.md; '
+                      'poi «zb pronto <libro>». -->\n')
 SALVA = 'Salva: git add, commit, push, git status -sb, git log -1.'
 
 
@@ -156,6 +162,9 @@ def chiudi_fase(cartella, libro, stato):
     """Dopo l'approvazione dei documenti o della pagina campione: fase successiva."""
     if stato['fase'] == 'documenti':
         stato.update(fase='pagina_campione', passo='da completare', gate_in_attesa=None)
+        if not os.path.isfile(os.path.join(cartella, revisione.PAGINA_CAMPIONE)):
+            comune.scrivi(cartella, revisione.PAGINA_CAMPIONE, PAGINA_DA_SCRIVERE)
+            print(f'Creato {revisione.PAGINA_CAMPIONE}, da scrivere secondo il manuale.')
     elif stato['fase'] == 'pagina_campione':
         stato.update(fase='stesura', passo='capitolo 1', gate_in_attesa=None)
     stato['revisione_in_corso'] = None
@@ -223,6 +232,9 @@ def cmd_pronto(cartella, libro, stato):
         manca = [d for d in docs if not os.path.isfile(os.path.join(cartella, d))]
         if manca:
             raise comune.ErroreMotore('Documenti mancanti: ' + ', '.join(manca))
+        pc = os.path.join(cartella, revisione.PAGINA_CAMPIONE)
+        if fase == 'pagina_campione' and not conta.conta_testo(open(pc, encoding='utf-8').read()):
+            raise comune.ErroreMotore(f'{revisione.PAGINA_CAMPIONE} è ancora vuota: scrivila, poi «zb pronto <libro>».')
         if fase in gate_attivi(libro):
             apri_gate(cartella, libro, stato, fase, passo='in revisione')
         else:
@@ -296,6 +308,24 @@ def cmd_correggi(cartella, libro, stato, resto):
           'Il gate resta aperto; dopo la correzione «avanti» riparte dal blocco 1.')
 
 
+def cmd_riapprova(cartella, stato, resto):
+    if len(resto) < 2:
+        raise comune.ErroreMotore('Uso: riapprova <documento> <motivo>')
+    rel, motivo = resto[0], ' '.join(resto[1:]).strip()
+    prima = stato['documenti_approvati'].get(rel)
+    if not prima:
+        raise comune.ErroreMotore(f'«{rel}» non è tra i documenti approvati: ' + ', '.join(stato['documenti_approvati']))
+    if comune.sha256_file(os.path.join(cartella, rel)) == prima['sha256']:
+        raise comune.ErroreMotore(f'{rel} non è cambiato dall\'approvazione: niente da registrare.')
+    registra(cartella, stato, [rel])
+    voce = stato['documenti_approvati'][rel]
+    voce.update({k: v for k, v in prima.items() if k not in ('sha256', 'commit', 'riapprovazioni')})
+    voce['riapprovazioni'] = (prima.get('riapprovazioni') or []) + [
+        {'data': datetime.date.today().isoformat(), 'motivo': motivo, 'sha256_precedente': prima['sha256'],
+         'commit_precedente': prima['commit']}]
+    print(f'Modifica autorizzata registrata: {rel} (commit {voce["commit"]}); motivo: {motivo}.')
+
+
 def accetta_capitolo(cartella, libro, stato, n):
     if n.isdigit():
         stato['ultimo_capitolo_scritto'] = max(int(n), stato['ultimo_capitolo_scritto'] or 0)
@@ -317,13 +347,21 @@ def cmd_esito(cartella, libro, stato, resto, argv):
     gate = stato['gate_in_attesa']
     if stato['fase'] != 'stesura':
         raise comune.ErroreMotore(f'«esito» vale solo in fase «stesura» (ora: {stato["fase"]}).')
-    if gate and not (gate == 'controllo_fallito' and str(stato['passo']) == f'capitolo {n}'):
+    correzione = (gate in ('primi_capitoli', 'lotto') and n in [str(c) for c in stato['lotto']['capitoli']]
+                  and any(c['gate'] == gate for c in stato['correzioni_aperte']))
+    if gate and not correzione and not (gate == 'controllo_fallito' and str(stato['passo']) == f'capitolo {n}'):
         raise comune.ErroreMotore(f'Gate «{gate}» aperto: prima ok o correggi.')
     extra = ['--radice', argv[argv.index('--radice') + 1]] if '--radice' in argv else []
     r = subprocess.run([sys.executable, '-B', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'capitolo.py'),
                         cartella, *n.split(), *extra], capture_output=True, text=True)
     if r.returncode not in (0, 1):
         raise comune.ErroreMotore(f'capitolo.py {n} non eseguito: {r.stderr.strip() or r.stdout.strip()}')
+    if correzione:
+        stato['parole']['scritte'] = parole_scritte(cartella, libro)
+        print(f'Capitolo {n} corretto al gate «{gate}»: controlli {"OK" if r.returncode == 0 else "KO"}; '
+              f'parole del libro aggiornate ({stato["parole"]["scritte"]}). Il gate resta aperto: '
+              '«avanti» riparte dal blocco 1.')
+        return r.returncode
     if r.returncode == 0:
         stato['tentativi'].pop(n, None)
         print(f'Capitolo {n}: controlli OK.')
@@ -344,7 +382,7 @@ def cmd_esito(cartella, libro, stato, resto, argv):
 def main(argv):
     args = [a for i, a in enumerate(argv) if a != '--radice' and (i == 0 or argv[i - 1] != '--radice')]
     if len(args) < 2:
-        raise comune.ErroreMotore('Uso: fase.py <libro> stato|avanti|ok|correggi|pronto|esito [argomenti]')
+        raise comune.ErroreMotore('Uso: fase.py <libro> stato|avanti|ok|correggi|riapprova|pronto|esito [argomenti]')
     cartella, libro, _ = comune.carica_libro(args[0])
     comando, resto = args[1], args[2:]
     stato = carica_stato(cartella)
@@ -360,10 +398,12 @@ def main(argv):
         cmd_correggi(cartella, libro, stato, resto)
     elif comando == 'pronto':
         cmd_pronto(cartella, libro, stato)
+    elif comando == 'riapprova':
+        cmd_riapprova(cartella, stato, resto)
     elif comando == 'esito':
         codice = cmd_esito(cartella, libro, stato, resto, argv)
     else:
-        raise comune.ErroreMotore(f'Comando sconosciuto: {comando}. Comandi: stato, avanti, ok, correggi, pronto, esito.')
+        raise comune.ErroreMotore(f'Comando sconosciuto: {comando}. Comandi: stato, avanti, ok, correggi, riapprova, pronto, esito.')
     salva_stato(cartella, stato)
     print(f'Fase: {stato["fase"]}; gate in attesa: {stato["gate_in_attesa"] or "nessuno"}. {prossimo(stato)}')
     print(SALVA)

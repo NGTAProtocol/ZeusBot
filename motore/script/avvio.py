@@ -109,7 +109,8 @@ def controlla(percorso):
                 or comune.sha256_file(os.path.join(cartella, rel)) != v['sha256']]
     if cambiati:
         ferma('Documenti approvati cambiati fuori procedura (sha256 diverso da quello registrato):\n- '
-              + '\n- '.join(cambiati))
+              + '\n- '.join(cambiati) + '\nSe la modifica è autorizzata dall\'autore: salvala con un commit, poi '
+              '«zb riapprova <libro> <documento> <motivo>».')
 
     # 4. file da leggere
     letti, sha = [], {}

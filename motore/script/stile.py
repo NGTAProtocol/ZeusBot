@@ -17,7 +17,10 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 
-SIMILITUDINE = re.compile(r'(?i)\bcome (un|una|uno|il|la|lo|l\'|i|gli|le|se)\b|\bsembrava\b|\bpareva\b')
+# «come l'» seguito da un verbo («a come l'aveva lasciata») vuol dire «in che modo»: non è una similitudine
+SIMILITUDINE = re.compile(r"(?i)\bcome (un|una|uno|il|la|lo|i|gli|le|se)\b"
+                          r"|\bcome l'(?!(?:ho|hai|ha|abbiamo|avete|hanno|avev\w*|avess\w*|avrebb\w*|avrà|avrei|"
+                          r"abbia\w*|ebbe|ebbero|era|erano|è)\b)|\bsembrava\b|\bpareva\b")
 
 
 def risultato(unita, controllo, esito, riga=None, dettaglio=''):

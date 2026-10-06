@@ -28,7 +28,7 @@ cartelle:
   05-revisioni:
     scopo: pagina campione e materiali di revisione
     modalita: [nuovo, riscrittura]
-    creazione: pagina campione, fase pagina_campione
+    creazione: zb ok al gate documenti (pagina-campione.md vuota, da scrivere), fase pagina_campione
   05-output:
     scopo: manoscritto completo e PDF
     modalita: [nuovo, riscrittura]

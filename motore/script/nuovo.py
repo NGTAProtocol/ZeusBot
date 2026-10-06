@@ -26,6 +26,15 @@ import comune  # noqa: E402
 GATE_PREDEFINITI = ['documenti', 'pagina_campione', 'primi_capitoli']
 SIGLE = {'gancio_domanda': ['D', 'R', 'P', 'X'], 'gesto_oggetto': ['G', 'O', 'B', 'I'],
          'misto': ['G', 'O', 'B', 'D', 'R']}
+SIGNIFICATO_SIGLE = {'G': 'gesto', 'O': 'oggetto', 'B': 'battuta', 'D': 'domanda', 'R': 'rivelazione',
+                     'P': 'pericolo', 'X': 'decisione', 'I': 'immagine'}
+
+
+def sigle_spiegate(sigle):
+    """[G, O, B] -> «G gesto, O oggetto, B battuta»."""
+    return ', '.join(f'{s} {SIGNIFICATO_SIGLE.get(s, "?")}' for s in sigle)
+
+
 SEGNAPOSTO = 'Nome — ruolo — età — una riga'
 
 
@@ -307,7 +316,7 @@ def genera_manuale(b, libro, profilo, n_cap):
               f'- Dialogo: {profilo["dialogo_percento"][0]}-{profilo["dialogo_percento"][1]}% delle parole del capitolo.',
               f'- Similitudini: al massimo una ogni {profilo["similitudini_max_per_parole"]} parole.', '',
               '## 4. Chiusure', '',
-              f'- Chiusura preferita: {profilo["chiusura_preferita"]}. Sigle: {", ".join(libro["dichiarazioni"]["chiusura"]["sigle"])}.',
+              f'- Chiusura preferita: {profilo["chiusura_preferita"]}. Sigle: {sigle_spiegate(libro["dichiarazioni"]["chiusura"]["sigle"])}.',
               '- Ogni capitolo dichiara la chiusura nella riga nascosta `<!-- zb: chiusura=… -->`; '
               'la sigla prevista sta nella scaletta.', '',
               '## 5. Tetti e vietati', '']

@@ -4,6 +4,9 @@ Uso: conta.py <libro> [--schermo]
 Metodo unico: token separati da spazi; escluse le righe che cominciano con «#»
 (titoli Markdown), le righe di commento HTML (<!-- … -->, note nascoste del
 motore) e i token senza lettere né cifre (lineette, separatori, segni isolati).
+Totale: parole scritte più i budget delle unità di piano-parole.md non ancora scritte, rispetto a
+parole.target_totale. Fuori da capitoli.tolleranza_totale: AVVISO con il budget residuo proposto per le
+unità rimanenti (proposta: il motore non accorcia né allunga nessun capitolo da solo).
 Scrive <libro>/06-diagnostica/conteggio.md, oppure stampa a schermo con --schermo.
 """
 import os
@@ -61,6 +64,33 @@ def budget(cartella):
     return out
 
 
+def totale_previsto(cartella, libro, profilo):
+    """Totale previsto (scritte + budget delle unità non scritte) e, se esce dalla tolleranza, l'avviso.
+
+    Restituisce (scritte, previsto, scarto, avviso o None)."""
+    b = budget(cartella)
+    scritte_per_unita = {n.lower(): conta_testo(open(p, encoding='utf-8').read()) for n, p in comune.unita(cartella, libro)}
+    scritte = sum(scritte_per_unita.values())
+    rimaste = {k: v for k, v in b.items() if k not in scritte_per_unita}
+    previsto = scritte + sum(rimaste.values())
+    obiettivo = libro['parole']['target_totale']
+    tt = profilo['capitoli']['tolleranza_totale']
+    sc = (previsto - obiettivo) / obiettivo
+    if abs(sc) <= tt:
+        return scritte, previsto, sc, None
+    avviso = (f'totale previsto {previsto} parole su {obiettivo} ({sc:+.1%}, tolleranza ±{tt:.0%}); '
+              f'scritte {scritte}')
+    if rimaste:
+        residuo = obiettivo - scritte
+        fattore = residuo / sum(rimaste.values()) if sum(rimaste.values()) else 0
+        proposta = ', '.join(f'{k}: {round(v * fattore)}' for k, v in rimaste.items())
+        avviso += (f'. Budget residuo proposto: {residuo} parole per {len(rimaste)} unità ({proposta}); '
+                   'è una proposta, nessun capitolo si accorcia o si allunga per evitare l\'avviso')
+    else:
+        avviso += '. Nessuna unità rimasta: decide l\'autore (motivo in libro.yaml o revisione dei capitoli)'
+    return scritte, previsto, sc, avviso
+
+
 def main(argv):
     args = comune.argomenti(argv)
     if not args:
@@ -85,8 +115,13 @@ def main(argv):
     obiettivo = libro['parole']['target_totale']
     sct = (totale - obiettivo) / obiettivo
     tt = profilo['capitoli']['tolleranza_totale']
+    _, previsto, scp, avviso = totale_previsto(cartella, libro, profilo)
     righe += ['', f'**Totale:** {totale} parole su {obiettivo} ({sct:+.1%}; '
-              f'entro ±{tt:.0%}: {"sì" if abs(sct) <= tt else "no"}).', '']
+              f'entro ±{tt:.0%}: {"sì" if abs(sct) <= tt else "no"}).',
+              f'**Totale previsto** (scritte + budget delle unità non scritte): {previsto} ({scp:+.1%}).', '']
+    if avviso:
+        righe += [f'**AVVISO:** {avviso}.', '']
+        print(f'AVVISO: {avviso}.')
     testo = '\n'.join(righe)
     if '--schermo' in argv:
         print(testo)

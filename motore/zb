@@ -22,7 +22,7 @@ SCRIPT = {
     'separazione': 'separazione.py', 'recinto': 'recinto.py', 'profili': 'valida_profili.py',
     'ortografia': 'ortografia.py',
 }
-FASE = ('stato', 'ok', 'avanti', 'correggi', 'pronto', 'esito')
+FASE = ('stato', 'ok', 'avanti', 'correggi', 'riapprova', 'pronto', 'esito')
 AIUTO = """Comandi (il libro è sempre un percorso):
   zb nuovo <briefing>              crea il libro dal briefing
   zb adotta <cartella>             bozze di libro.yaml, stato, cronologia, nomi da documenti esistenti
@@ -33,6 +33,7 @@ AIUTO = """Comandi (il libro è sempre un percorso):
   zb ok <libro> [lotti da N]       approva il gate aperto
   zb correggi <libro> <istruzione> registra una correzione; il gate resta aperto
   zb esito <libro> <N>             controlli del capitolo N e registrazione dell'esito
+  zb riapprova <libro> <documento> <motivo>   modifica autorizzata a un documento già approvato
   zb revisione <libro> <documento|gate> [N]   blocco N di un documento (non scrive)
   zb capitolo|conta|stile|continuita|riciclo|compila|impagina|pdf|kdp|pacchetto <libro>
   zb verifica KDP fatta [AAAA-MM-GG] | zb verifica KDP stato | zb verifica KDP controlla

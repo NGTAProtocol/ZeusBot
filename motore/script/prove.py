@@ -1263,9 +1263,185 @@ def continuita_eta_durate(A):
         esito('continuita.py', f'durata: {chiave}', du['atteso'], esiti(L, 'durata'), sez)
 
 
+# ---------------------------------------------------------------- correzioni dopo la prova romance
+
+def correzioni_dopo_prova(A):
+    import datetime
+    import conta
+    import continuita
+    import fase
+    import nuovo
+    import stile
+    sez = 'correzioni'
+    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
+    E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def zb(cwd, *a):
+        return subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def git(cwd, *a):
+        return subprocess.run(['git', *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def salva(r):
+        git(r, 'add', '-A')
+        git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'prova')
+        git(r, 'push', '-q', '-u', 'origin', 'prova')
+
+    def repo():
+        d = tempfile.mkdtemp(dir=TMP)
+        git(d, 'init', '-q', '--bare', 'remoto.git')
+        r = os.path.join(d, 'repo')
+        os.makedirs(r)
+        git(r, 'init', '-q')
+        git(r, 'checkout', '-q', '-b', 'prova')
+        git(r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git'))
+        return r
+
+    def stato(L):
+        return comune.leggi_yaml(os.path.join(L, 'stato.yaml'))
+
+    def tutto_e_ok(r, nome):
+        for _ in range(40):
+            if 'Fine dei documenti' in zb(r, 'avanti', nome).stdout:
+                break
+        return zb(r, 'ok', nome)
+
+    # (c) pagina campione: 05-revisioni/ creata all'ingresso nella fase; pronto rifiuta la pagina vuota
+    briefing = open(os.path.join(M, 'prove', 'briefing', 'briefing-giallo.md'), encoding='utf-8').read()
+    r = repo()
+    L = os.path.join(r, 'giallo')
+    os.makedirs(L)
+    open(os.path.join(L, 'briefing.md'), 'w', encoding='utf-8').write(briefing)
+    zb(r, 'nuovo', 'giallo/briefing.md')
+    salva(r)
+    zb(r, 'pronto', 'giallo')
+    salva(r)
+    tutto_e_ok(r, 'giallo')
+    pc = os.path.join(L, '05-revisioni', 'pagina-campione.md')
+    esito('fase.py', '(c) pagina campione creata, struttura conforme', A['c_creata'],
+          f'{os.path.isfile(pc)} / {comune.controlla_struttura(L, "nuovo")}', sez)
+    salva(r)
+    p = zb(r, 'pronto', 'giallo')
+    esito('fase.py', '(c) pronto con la pagina vuota: rifiutato', A['c_vuota'],
+          f'{p.returncode} / {stato(L)["gate_in_attesa"] or "nessuno"}', sez)
+    open(pc, 'a', encoding='utf-8').write('\nTesto di prova della pagina.\n')
+    salva(r)
+    zb(r, 'pronto', 'giallo')
+    esito('fase.py', '(c) pronto con la pagina scritta: gate', A['c_scritta'], stato(L)['gate_in_attesa'], sez)
+
+    # (g) riapprova: modifica autorizzata a un documento già approvato
+    doc = '02-bibbia/bibbia.md'
+    salva(r)
+    open(os.path.join(L, doc), 'a', encoding='utf-8').write('- modifica autorizzata\n')
+    salva(r)
+    p1 = zb(r, 'avvio', 'giallo')
+    p2 = zb(r, 'riapprova', 'giallo', doc)
+    p3 = zb(r, 'riapprova', 'giallo', '03-architettura/manuale-di-stile.md', 'nessun', 'cambiamento')
+    p4 = zb(r, 'riapprova', 'giallo', doc, 'tolleranza', 'cambiata', 'su', 'richiesta')
+    salva(r)
+    p5 = zb(r, 'avvio', 'giallo')
+    v = stato(L)['documenti_approvati'][doc]
+    esito('fase.py', '(g) avvio fermo / senza motivo / invariato / riapprova / avvio', A['g_codici'],
+          [p.returncode for p in (p1, p2, p3, p4, p5)], sez)
+    esito('fase.py', '(g) registro della riapprovazione', A['g_registro'],
+          f'{[x["motivo"] for x in v.get("riapprovazioni") or []]} / '
+          f'{v["sha256"] == comune.sha256_file(os.path.join(L, doc))}', sez)
+
+    # (d) manuale: sigle di chiusura spiegate
+    righe = []
+    for genere in ('giallo', 'romance'):
+        d = tempfile.mkdtemp(dir=TMP)
+        Lb = os.path.join(d, 'libro')
+        os.makedirs(Lb)
+        open(os.path.join(Lb, 'briefing.md'), 'w', encoding='utf-8').write(briefing.replace('Genere: giallo', f'Genere: {genere}'))
+        subprocess.run([sys.executable, '-B', os.path.join(S, 'nuovo.py'), os.path.join(Lb, 'briefing.md')], env=E, capture_output=True)
+        righe += [x for x in open(os.path.join(Lb, '03-architettura', 'manuale-di-stile.md'), encoding='utf-8').read().splitlines()
+                  if x.startswith('- Chiusura preferita:')]
+    esito('nuovo.py', '(d) manuale: riga delle sigle (giallo, romance)', A['d_righe'], righe, sez)
+    esito('nuovo.py', '(d) sigle senza significato nei tre tipi di chiusura', [],
+          [s for v in nuovo.SIGLE.values() for s in v if s not in nuovo.SIGNIFICATO_SIGLE], sez)
+
+    # (i) e (b) similitudini
+    esito('stile.py', '(i) candidati per frase', A['i_attesi'],
+          [len(stile.occorrenze([(1, f)], stile.SIMILITUDINE.pattern)) for f in A['i_frasi']], sez)
+    esito('stile.py', '(b) limite noto: «come si…», «come quando…» non contati', A['b_attesi'],
+          [len(stile.occorrenze([(1, f)], stile.SIMILITUDINE.pattern)) for f in A['b_frasi']], sez)
+
+    # (h) cifre con e senza contesto; (a) durate della cronologia senza testo
+    def cifre(contesto, frase):
+        Lm = copia_libro('mini-libro')
+        pc_ = os.path.join(Lm, 'cronologia.yaml')
+        cron = yaml.safe_load(open(pc_, encoding='utf-8'))
+        if contesto:
+            cron['cifre'][0]['contesto'] = contesto
+        open(pc_, 'w', encoding='utf-8').write(yaml.safe_dump(cron, allow_unicode=True))
+        open(os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write('\n' + frase + '\n')
+        _, libro, _ = comune.carica_libro(Lm)
+        return [f'{x["controllo"]}|{x["esito"]}' for x in continuita.controlla_libro(Lm, libro)[0]
+                if x['controllo'].startswith('cifra')]
+    for chiave, (contesto, frase) in A['h_casi'].items():
+        esito('continuita.py', f'(h) cifre: {chiave}', A['h_attesi'][chiave], cifre(contesto, frase), sez)
+    for chiave, giorni in A['a_casi'].items():
+        Lm = copia_libro('mini-libro')
+        pc_ = os.path.join(Lm, 'cronologia.yaml')
+        cron = yaml.safe_load(open(pc_, encoding='utf-8'))
+        cron['eventi'] += [{'id': 'a', 'data': datetime.date(2021, 1, 1), 'capitolo': 1, 'descrizione': 'prova'},
+                           {'id': 'b', 'data': datetime.date(2021, 1, 1) + datetime.timedelta(days=giorni), 'capitolo': 1,
+                            'descrizione': 'prova'}]
+        cron['durate'] = [{'da': 'a', 'a': 'b', 'valore': 'sei settimane', 'tolleranza_giorni': 3}]
+        open(pc_, 'w', encoding='utf-8').write(yaml.safe_dump(cron, allow_unicode=True))
+        _, libro, _ = comune.carica_libro(Lm)
+        esito('continuita.py', f'(a) durata solo in cronologia: {chiave}', A['a_attesi'][chiave],
+              [f'{x["unita"]}|{x["controllo"]}|{x["esito"]}' for x in continuita.controlla_libro(Lm, libro)[0]
+               if x['controllo'] == 'durata'], sez)
+
+    # (j) ordine di chiusura
+    proc = open(os.path.join(M, 'PROCEDURA.md'), encoding='utf-8').read()
+    esito('fase.py', '(j) ordine di chiusura (fase.py)', A['j_ordine'], [c for _, c in fase.CHIUSURA], sez)
+    esito('PROCEDURA.md', '(j) zb pacchetto prima di zb kdp (sezione 7)', 'sì',
+          'sì' if '`zb pdf`, `zb pacchetto`, `zb kdp`; poi `zb pronto' in proc else 'no', sez)
+
+    # (k) esito a un gate di capitoli dopo una correzione registrata
+    r = repo()
+    Lm = shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'mini'))
+    s = comune.leggi_yaml(os.path.join(M, 'modelli', 'stato.yaml'))
+    s.update(libro='Prova di stampa', fase='stesura', passo='capitolo 4', aggiornato='prova', gate_in_attesa='primi_capitoli',
+             ultimo_capitolo_scritto=3)
+    s['lotto']['capitoli'] = [1, 2, 'interludio I', 3]
+    open(os.path.join(Lm, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(s, sort_keys=False, allow_unicode=True))
+    for u in ('1', '2', 'interludio I', '3'):
+        esegui(os.path.join(S, 'capitolo.py'), Lm, *u.split())       # report dei capitoli del gate
+    salva(r)
+    p1 = zb(r, 'esito', 'mini', '1')
+    zb(r, 'correggi', 'mini', 'capitolo 1: una frase più corta')
+    p2 = zb(r, 'esito', 'mini', '1')
+    s = stato(Lm)
+    esito('fase.py', '(k) esito al gate: senza correzione / con correzione / gate / parole', A['k_esito'],
+          f'{p1.returncode} / {p2.returncode} / {s["gate_in_attesa"]} / {s["parole"]["scritte"]}', sez)
+
+    # (l) totale previsto fuori tolleranza: avviso e budget residuo proposto
+    Lm = copia_libro('mini-libro')
+    caps = {n: p for n, p in comune.unita(Lm, comune.carica_libro(Lm)[1])}
+    os.remove(caps['3'])
+    pl = os.path.join(Lm, 'libro.yaml')
+    tl = re.sub(r'target_totale: \d+', 'target_totale: 4000', open(pl, encoding='utf-8').read())
+    open(pl, 'w', encoding='utf-8').write(tl)
+    prima = {n: comune.sha256_file(p) for n, p in caps.items() if n != '3'}
+    _, libro, prof = comune.carica_libro(Lm)
+    esito('conta.py', '(l) totale previsto e avviso (capitolo 3 non scritto, obiettivo 4000)', A['l_avviso'],
+          conta.totale_previsto(Lm, libro, prof)[3], sez)
+    p = esegui(os.path.join(S, 'conta.py'), Lm, '--schermo')
+    q = esegui(os.path.join(S, 'capitolo.py'), Lm, '1', '--schermo')
+    esito('conta.py / capitolo.py', '(l) avviso a schermo (conta | capitolo 1)', A['l_schermo'],
+          f'{"AVVISO: totale previsto" in p.stdout} | {"| parole_totale | AVVISO |" in q.stdout}', sez)
+    esito('conta.py / capitolo.py', '(l) capitoli invariati', 'sì',
+          'sì' if prima == {n: comune.sha256_file(caps[n]) for n in prima} else 'no', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova}
 
 
 def main(argv):

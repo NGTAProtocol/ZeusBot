@@ -2,5 +2,5 @@
 nascite: []        # - {chi: <personaggio>, data: AAAA-MM-GG}
 eventi: []         # - {id: <id>, data: AAAA-MM-GG, capitolo: <N>, descrizione: <breve>}
 durate: []         # - {da: <id evento>, a: <id evento>, valore: "<N anni|mesi|settimane|giorni>", tolleranza_giorni: 3 (oppure tolleranza_mesi / tolleranza_anni)}
-cifre: []          # - {id: <id>, valore: <numero>, unita: <unità>, forme_ammesse: [<cifre>, <in lettere>]}
+cifre: []          # - {id: <id>, valore: <numero>, unita: <unità>, forme_ammesse: [<cifre>, <in lettere>], contesto: [<parole della frase>]}
 eta_per_capitolo: {calcolata: true}
