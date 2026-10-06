@@ -1,6 +1,6 @@
 """Adotta nel motore un libro già avviato (passo 5b).
 
-Uso: python3 -B adotta.py <cartella-del-libro>
+Uso: python3 -B adotta.py <cartella-del-libro> [--titolo «titolo»]
 Per un libro con alcuni documenti già scritti (briefing, manuale di stile, bibbia, scaletta,
 piano parole, cronologia) genera in BOZZA libro.yaml, stato.yaml, cronologia.yaml e
 nomi_propri.txt, ricavando i valori dai documenti e dal profilo di genere.
@@ -8,6 +8,7 @@ nomi_propri.txt, ricavando i valori dai documenti e dal profilo di genere.
 - Se un documento diverge dal profilo, il valore va in libro.yaml come override con motivo.
 - Non sovrascrive mai un file esistente; scrive solo nella cartella indicata.
 - In adozione.md elenca ciò che non ha potuto ricavare.
+- Se il titolo non si ricava dai documenti si ferma senza scrivere nulla e lo chiede (--titolo).
 - Si ferma alla fase «documenti»: apre il gate se tutti i documenti ci sono, altrimenti dice cosa manca.
 Riconosce le righe nel formato dei documenti del motore (vedi PROCEDURA.md, «zb adotta»).
 """
@@ -68,7 +69,7 @@ class Raccolta:
         return out
 
 
-def ricava(cartella):
+def ricava(cartella, titolo_dato=None):
     R = Raccolta(cartella)
     presenti = [k for k in DOC if R.righe[k] is not None]
     if not presenti:
@@ -78,6 +79,10 @@ def ricava(cartella):
                                 ('manuale', r'^#\s*Manuale di stile\s*—\s*(.+)$', g1),
                                 ('bibbia', r'^#\s*Bibbia\s*—\s*(.+)$', g1),
                                 ('scaletta', r'^#\s*Scaletta\s*—\s*(.+)$', g1)])
+    if titolo is None and titolo_dato:
+        R.mancano.remove('titolo')
+        titolo = titolo_dato
+        R.fonti.append(('titolo', titolo, 'indicato con --titolo'))
     autore = R.primo('autore', [('briefing', r'^Autore:\s*(\S.*)$', g1), ('manuale', r'^Autore:\s*(\S.*)$', g1)])
     genere = R.primo('profilo', [('briefing', r'^Genere:\s*([\w-]+)', g1), ('manuale', r'^Genere:\s*([\w-]+)', g1),
                                  ('manuale', r'profilo «([\w-]+)»', g1)])
@@ -115,8 +120,9 @@ def ricava(cartella):
             ('dialogo_percento', r'Dialogo:\s*(\d+)\s*-\s*(\d+)\s*%', lambda m: [int(m.group(1)), int(m.group(2))]),
             ('similitudini_max_per_parole', r'una ogni\s+(\d+)\s+parole', lambda m: int(m.group(1))),
             ('capitoli.minimo', r'Capitolo:\s*minimo\s+(\d+)', lambda m: int(m.group(1))),
-            ('capitoli.media', r'media\s+(\d+)\s*-\s*(\d+)', lambda m: [int(m.group(1)), int(m.group(2))]),
-            ('capitoli.massimo', r'massimo\s+(\d+)\s+parole', lambda m: int(m.group(1)))):
+            # solo dalla riga «Capitolo:»: «frase media 10-13» o «al massimo 150 parole» altrove non sono capitoli
+            ('capitoli.media', r'Capitolo:.*\bmedia\s+(\d+)\s*-\s*(\d+)', lambda m: [int(m.group(1)), int(m.group(2))]),
+            ('capitoli.massimo', r'Capitolo:.*\bmassimo\s+(\d+)\s+parole', lambda m: int(m.group(1)))):
         m, fonte = R.cerca('manuale', regex)
         if m:
             v = conv(m)
@@ -196,11 +202,16 @@ def ricava(cartella):
     return R, libro, cron, nomi, presenti
 
 
-def adotta(percorso):
+def adotta(percorso, titolo=None):
     cartella = os.path.realpath(percorso)
     if not os.path.isdir(cartella):
         raise comune.ErroreMotore(f'Cartella inesistente: {percorso}')
-    R, libro, cron, nomi, presenti = ricava(cartella)
+    R, libro, cron, nomi, presenti = ricava(cartella, titolo)
+    if not libro['titolo']:
+        raise comune.ErroreMotore('Titolo non trovato nei documenti (briefing «Titolo di lavoro:», oppure '
+                                  '«# Manuale di stile — <titolo>», «# Bibbia — <titolo>», «# Scaletta — <titolo>»). '
+                                  'Non ho scritto nulla. Qual è il titolo? Indicalo così: '
+                                  'zb adotta <cartella> --titolo "<titolo>"')
     scritti, esistenti = [], []
 
     def scrivi(rel, testo):
@@ -221,7 +232,7 @@ def adotta(percorso):
     mancanti_doc = [d for d in docs if not os.path.isfile(os.path.join(cartella, d)) and d not in GENERATI]
     capitoli = [int(n) for n, _ in comune.unita(cartella, libro) if n.isdigit()] if os.path.isdir(
         os.path.join(cartella, '04-manoscritto')) else []
-    stato.update({'libro': libro['titolo'] or '', 'fase': 'documenti', 'motore_commit': None,
+    stato.update({'libro': libro['titolo'], 'fase': 'documenti', 'motore_commit': None,
                   'passo': 'adozione: bozze da approvare' if not mancanti_doc else
                   'adozione: mancano ' + ', '.join(mancanti_doc),
                   'gate_in_attesa': 'documenti' if not mancanti_doc else None,
@@ -258,8 +269,9 @@ def adotta(percorso):
 def main(argv):
     args = comune.argomenti(argv)
     if not args:
-        raise comune.ErroreMotore('Uso: adotta.py <cartella-del-libro>')
-    scritti, esistenti, mancano, valido = adotta(args[0])
+        raise comune.ErroreMotore('Uso: adotta.py <cartella-del-libro> [--titolo «titolo»]')
+    titolo = argv[argv.index('--titolo') + 1] if '--titolo' in argv and argv.index('--titolo') + 1 < len(argv) else None
+    scritti, esistenti, mancano, valido = adotta(args[0], titolo)
     for s in scritti:
         print(f'scritto: {s}')
     for e in esistenti:
