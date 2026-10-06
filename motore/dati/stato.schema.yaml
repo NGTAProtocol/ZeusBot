@@ -14,6 +14,9 @@ campi:
       dimensione: {tipo: intero, obbligatorio: true}
       capitoli: {tipo: lista, obbligatorio: true}
   ultimo_capitolo_approvato: {tipo: intero, nullo: true}
+  ultimo_capitolo_scritto: {tipo: intero, nullo: true}
+  tentativi: {tipo: mappa, altri_campi: true}
+  correzioni_aperte: {tipo: lista}
   parole:
     tipo: mappa
     obbligatorio: true

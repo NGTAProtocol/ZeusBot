@@ -6,7 +6,7 @@ Fallisce (codice 1, con file e riga) se:
    (stesso sha256) a un file di una cartella di libro (con libro.yaml) fuori da motore/;
 2. in un file di motore/ compare, come parola intera e senza distinguere le
    maiuscole, una voce di dati/nomi_vietati.txt (il file stesso è escluso);
-3. in motore/ c'è un libro.yaml fuori da prove/mini-libro/ e prove/mini-libro-romance/.
+3. in motore/ c'è un libro.yaml fuori da prove/mini-libro/, prove/mini-libro-romance/ e dal modello vuoto modelli/libro.yaml.
 Eccezione: i font di stampa/font/ elencati in FONTI.yaml con lo sha256 registrato.
 """
 import hashlib
@@ -18,7 +18,8 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 
-AMMESSI_LIBRO_YAML = ('prove/mini-libro/libro.yaml', 'prove/mini-libro-romance/libro.yaml')
+AMMESSI_LIBRO_YAML = ('prove/mini-libro/libro.yaml', 'prove/mini-libro-romance/libro.yaml',
+                      'modelli/libro.yaml')  # modello vuoto, usato solo come esempio commentato
 
 
 def sha256(p):

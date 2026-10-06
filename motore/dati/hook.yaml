@@ -1,0 +1,4 @@
+# Modalità di motore/script/hook_manoscritto.py (proposta C.4).
+# avviso: stampa un avviso e lascia passare (codice 0). blocco: ferma lo strumento (codice 2).
+# Il passaggio a «blocco» è un commit a parte, dopo l'«ok» dell'autore e la prova dei 14 scenari.
+modalita: avviso

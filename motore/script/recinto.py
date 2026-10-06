@@ -45,6 +45,9 @@ def comandi(motore):
         ('conformita_kdp.py', 'conformita_kdp.py {libro}'),
         ('kdp_verifica.py controlla', 'kdp_verifica.py controlla --simula-blocco'),
         ('kdp_verifica.py stato', 'kdp_verifica.py stato'),
+        ('avvio.py', 'avvio.py {libro}'),
+        ('fase.py stato', 'fase.py {libro} stato'),
+        ('revisione.py', 'revisione.py {libro} 02-bibbia/bibbia.md'),
     ]
     return [(n, f'{sys.executable} {os.path.join(s, c.split()[0])} ' + ' '.join(c.split()[1:]))
             for n, c in elenco if os.path.isfile(os.path.join(s, c.split()[0]))]

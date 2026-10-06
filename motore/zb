@@ -1,0 +1,131 @@
+#!/usr/bin/env python3
+"""zb — comandi del motore editoriale (proposta B.4). Uso: python3 motore/zb <comando> [argomenti]
+
+Il libro è sempre un percorso: zb <comando> <libro> [argomenti] (oppure ZB_LIBRO=<libro>).
+Ogni comando lancia lo script di motore/script/ con python3 -B e ne restituisce il codice d'uscita.
+Elenco completo: python3 motore/zb aiuto
+"""
+import filecmp
+import os
+import subprocess
+import sys
+
+sys.dont_write_bytecode = True
+MOTORE = os.path.dirname(os.path.abspath(__file__))
+S = os.path.join(MOTORE, 'script')
+
+SCRIPT = {
+    'nuovo': 'nuovo.py', 'avvio': 'avvio.py', 'revisione': 'revisione.py',
+    'capitolo': 'capitolo.py', 'conta': 'conta.py', 'stile': 'stile.py', 'continuita': 'continuita.py',
+    'riciclo': 'riciclo.py', 'compila': 'compila.py', 'impagina': 'impagina.py', 'pdf': 'verifica_pdf.py',
+    'kdp': 'conformita_kdp.py', 'pacchetto': 'pacchetto.py', 'prove': 'prove.py',
+    'separazione': 'separazione.py', 'recinto': 'recinto.py', 'profili': 'valida_profili.py',
+    'ortografia': 'ortografia.py',
+}
+FASE = ('stato', 'ok', 'avanti', 'correggi', 'pronto', 'esito')
+AIUTO = """Comandi (il libro è sempre un percorso):
+  zb nuovo <briefing>              crea il libro dal briefing
+  zb avvio <libro>                 avvio obbligatorio: controlli e riga «Letto: …»
+  zb stato <libro>                 stato del libro (non scrive)
+  zb pronto <libro>                fine del lavoro di una fase: apre il gate o passa oltre
+  zb avanti <libro>                blocco successivo dei documenti del gate
+  zb ok <libro> [lotti da N]       approva il gate aperto
+  zb correggi <libro> <istruzione> registra una correzione; il gate resta aperto
+  zb esito <libro> <N>             controlli del capitolo N e registrazione dell'esito
+  zb revisione <libro> <documento|gate> [N]   blocco N di un documento (non scrive)
+  zb capitolo|conta|stile|continuita|riciclo|compila|impagina|pdf|kdp|pacchetto <libro>
+  zb verifica KDP fatta [AAAA-MM-GG] | zb verifica KDP stato | zb verifica KDP controlla
+  zb hook stato | zb hook attiva [--ok] | zb hook disattiva
+  zb prove | zb separazione | zb recinto | zb profili"""
+
+
+def lancia(script, args):
+    p = os.path.join(S, script)
+    if not os.path.isfile(p):
+        print(f'FERMO: {script} non esiste ancora nel motore.', file=sys.stderr)
+        return 2
+    return subprocess.run([sys.executable, '-B', p, *args]).returncode
+
+
+def progetto(args):
+    if '--progetto' in args:
+        return os.path.realpath(args[args.index('--progetto') + 1])
+    r = subprocess.run(['git', '-C', MOTORE, 'rev-parse', '--show-toplevel'], capture_output=True, text=True)
+    return r.stdout.strip() or os.path.dirname(MOTORE)
+
+
+def hook(args):
+    esempio = os.path.join(MOTORE, 'dati', 'hook-settings.esempio.json')
+    dest = os.path.join(progetto(args), '.claude', 'settings.json')
+    azione = args[0] if args else 'stato'
+    nostro = os.path.isfile(dest) and filecmp.cmp(dest, esempio, shallow=False)
+    if azione == 'stato':
+        mod = next((r.split(':', 1)[1].split('#')[0].strip() for r in open(os.path.join(MOTORE, 'dati', 'hook.yaml'),
+                    encoding='utf-8') if r.startswith('modalita:')), 'avviso')
+        print(f'Modalità (dati/hook.yaml): {mod}')
+        print(f'{dest}: ' + ('attivo (configurazione del motore)' if nostro else
+                             'presente ma diverso dal modello del motore' if os.path.isfile(dest) else 'assente: hook non attivi'))
+        return 0
+    if azione == 'attiva':
+        if nostro:
+            print(f'Già attivo: {dest}')
+            return 0
+        if os.path.exists(dest):
+            print(f'FERMO: {dest} esiste già con un contenuto diverso; non lo sovrascrivo.', file=sys.stderr)
+            return 2
+        if '--ok' not in args:
+            print(f'Creerei {dest} con questo contenuto (da {os.path.relpath(esempio, os.path.dirname(MOTORE))}):\n')
+            print(open(esempio, encoding='utf-8').read())
+            print('Vale per ogni sessione su questo ramo e su ogni ramo in cui venga unito.\n'
+                  'Per confermare, dopo l\'«ok» dell\'autore: zb hook attiva --ok')
+            return 0
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        with open(esempio, encoding='utf-8') as f, open(dest, 'w', encoding='utf-8') as g:
+            g.write(f.read())
+        print(f'Creato {dest}. Gli hook valgono dalla prossima sessione. Salvalo con un commit a parte.')
+        return 0
+    if azione == 'disattiva':
+        if not os.path.exists(dest):
+            print(f'Niente da fare: {dest} non esiste.')
+            return 0
+        if not nostro:
+            print(f'FERMO: {dest} non è quello del motore; non lo tolgo.', file=sys.stderr)
+            return 2
+        os.remove(dest)
+        try:
+            os.rmdir(os.path.dirname(dest))
+        except OSError:
+            pass
+        print(f'Tolto {dest}. Salva la rimozione con un commit.')
+        return 0
+    print('Uso: zb hook stato | attiva [--ok] | disattiva', file=sys.stderr)
+    return 2
+
+
+def main(argv):
+    if not argv or argv[0] in ('aiuto', '-h', '--help'):
+        print(AIUTO)
+        return 0
+    cmd, args = argv[0], argv[1:]
+    if cmd in FASE:
+        if not args and os.environ.get('ZB_LIBRO'):
+            args = [os.environ['ZB_LIBRO']]
+        if not args:
+            print(f'Uso: zb {cmd} <libro> …', file=sys.stderr)
+            return 2
+        return lancia('fase.py', [args[0], cmd, *args[1:]])
+    if cmd == 'verifica':
+        resto = [a for a in args if a.upper() != 'KDP']
+        return lancia('kdp_verifica.py', resto)
+    if cmd == 'hook':
+        return hook(args)
+    if cmd in SCRIPT:
+        if cmd in ('avvio',) and not args and os.environ.get('ZB_LIBRO'):
+            args = [os.environ['ZB_LIBRO']]
+        return lancia(SCRIPT[cmd], args)
+    print(f'Comando sconosciuto: {cmd}\n\n{AIUTO}', file=sys.stderr)
+    return 2
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))

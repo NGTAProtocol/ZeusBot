@@ -2,8 +2,8 @@
 
 Fabbrica generica per romanzi di qualsiasi genere: procedura, script, modelli vuoti,
 profili di genere e dati KDP. Non contiene libri reali. Il progetto completo è in
-`proposta-motore.md` (approvata); questo file raccoglie le regole d'uso già in vigore.
-È una prima versione: si completa al passo 5 di B.7, insieme a `PROCEDURA.md`.
+`proposta-motore.md` (approvata). Come si lavora su un libro: `PROCEDURA.md`.
+Questo file raccoglie le regole d'uso e i comandi.
 
 ## Regole d'uso
 
@@ -25,7 +25,26 @@ profili di genere e dati KDP. Non contiene libri reali. Il progetto completo è 
 
 Un file con un nome diverso ferma il motore.
 
-## Comandi disponibili
+## Comandi `zb`
+
+Si lanciano con `python3 motore/zb <comando> …` (il libro è sempre un percorso, oppure `ZB_LIBRO`).
+
+| Comando | Script | Cosa fa |
+|---|---|---|
+| `zb nuovo <briefing>` | `nuovo.py` | crea il libro dal briefing (modello in `modelli/briefing.md`); briefing incompleto: elenca cosa manca e non crea nulla |
+| `zb avvio <libro>` | `avvio.py` | avvio obbligatorio: controlli, riga «Letto: …», marker `<libro>/.zb/letto-<sessione>` |
+| `zb stato <libro>` | `fase.py` | stato del libro (non scrive) |
+| `zb ok <libro> [lotti da N]` · `zb avanti <libro>` · `zb correggi <libro> <istruzione>` | `fase.py` | risposte dell'autore al gate aperto |
+| `zb pronto <libro>` · `zb esito <libro> N` | `fase.py` | fine del lavoro di una fase; esito dei controlli del capitolo N |
+| `zb revisione <libro> <documento\|gate> [N]` | `revisione.py` | blocco N di un documento, circa 120 righe (non scrive) |
+| `zb capitolo` · `conta` · `stile` · `continuita` · `riciclo` · `compila` · `impagina` · `pdf` · `kdp` · `pacchetto` `<libro>` | vedi sotto | controlli, stampa, pubblicazione |
+| `zb verifica KDP fatta [AAAA-MM-GG]` · `stato` · `controlla` | `kdp_verifica.py` | verifica delle direttive KDP |
+| `zb hook stato` · `attiva [--ok]` · `disattiva` | `zb` | hook di Claude Code: `attiva` senza `--ok` mostra soltanto; con `--ok` crea `.claude/settings.json` |
+| `zb prove` · `separazione` · `recinto` · `profili` | | prove del motore |
+
+`zb ortografia` è previsto ma lo script non c'è ancora.
+
+## Script
 
 | Comando | Cosa fa |
 |---|---|
@@ -46,3 +65,5 @@ Un file con un nome diverso ferma il motore.
 | `python3 -B motore/script/kdp_verifica.py stato` | stato della verifica delle direttive (codice 2 se mai fatta o scaduta) |
 | `python3 -B motore/script/separazione.py` | controlla che `motore/` non contenga libri |
 | `python3 -B motore/script/recinto.py` | controlla che i comandi scrivano solo nel libro indicato |
+| `python3 -B motore/script/hook_sessione.py` | hook SessionStart (stdin JSON): session_id in `.zb/sessione-corrente` |
+| `python3 -B motore/script/hook_manoscritto.py` | hook PreToolUse (stdin JSON): avviso o blocco sulle scritture nel manoscritto senza avvio |

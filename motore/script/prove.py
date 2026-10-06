@@ -14,6 +14,8 @@ import subprocess
 import sys
 import tempfile
 
+import yaml
+
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
@@ -431,9 +433,431 @@ def passo_4(A):
           'sì' if open(ps, encoding='utf-8').read().endswith("riga dell'autore\n") else 'no', sez)
 
 
+# ---------------------------------------------------------------- passo 5
+
+def passo_5(A):
+    import json
+    import time
+    import fase
+    import recinto
+    sez = 'passo 5'
+    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
+    E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+    py = [sys.executable, '-B']
+
+    def zb(cwd, *a, env=None, motore=M):
+        return subprocess.run(py + [os.path.join(motore, 'zb'), *a], cwd=cwd, env=env or E, capture_output=True, text=True)
+
+    def git(cwd, *a):
+        return subprocess.run(['git', *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def repo():
+        d = tempfile.mkdtemp(dir=TMP)
+        git(d, 'init', '-q', '--bare', 'remoto.git')
+        r = os.path.join(d, 'repo')
+        os.makedirs(r)
+        git(r, 'init', '-q')
+        git(r, 'checkout', '-q', '-b', 'prova')
+        git(r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git'))
+        return r
+
+    def salva(r, msg='prova'):
+        git(r, 'add', '-A')
+        git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', msg)
+        return git(r, 'push', '-q', '-u', 'origin', 'prova').returncode
+
+    def stato(L):
+        return comune.leggi_yaml(os.path.join(L, 'stato.yaml'))
+
+    def gate(L):
+        s = stato(L)
+        return f'{s["fase"]} / {s["gate_in_attesa"] or "nessuno"}'
+
+    def mancanti(testo):
+        return [r[2:].split(':')[0] for r in testo.splitlines() if r.startswith('- ')]
+
+    def diff(base, prima, escludi=None):
+        return [d for d in recinto.differenze(prima, recinto.foto(base)) if not (escludi and d.startswith(escludi))]
+
+    briefing = open(os.path.join(M, 'prove', 'briefing', 'briefing-giallo.md'), encoding='utf-8').read()
+
+    def libro_nuovo(testo=briefing, nome='giallo', prima_di=None):
+        r = repo()
+        L = os.path.join(r, nome)
+        os.makedirs(L)
+        if prima_di:
+            prima_di(L)
+        open(os.path.join(L, 'briefing.md'), 'w', encoding='utf-8').write(testo)
+        p = zb(r, 'nuovo', f'{nome}/briefing.md')
+        salva(r, 'nuovo libro')
+        return r, L, p
+
+    # --- nuovo da un briefing inventato
+    a = A['nuovo']
+    r = repo()
+    L = os.path.join(r, 'giallo')
+    os.makedirs(L)
+    open(os.path.join(L, 'briefing.md'), 'w', encoding='utf-8').write(briefing)
+    foto_r, foto_m = recinto.foto(r), recinto.foto(M)
+    p = zb(r, 'nuovo', 'giallo/briefing.md')
+    esito('nuovo.py', "briefing inventato: codice d'uscita", a['codice'], p.returncode, sez)
+    creati = sorted(os.path.relpath(os.path.join(d, f), L) for d, _, fs in os.walk(L) for f in fs)
+    esito('nuovo.py', 'file creati nella cartella del libro', a['file'], creati, sez)
+    esito('nuovo.py', 'scritture fuori dalla cartella del libro (repo e motore)', a['fuori'],
+          diff(r, foto_r, 'giallo/') + recinto.differenze(foto_m, recinto.foto(M)), sez)
+    _, libro, _ = comune.carica_libro(L)
+    esito('nuovo.py', 'libro.yaml valido (schema, lingua, profilo)', a['libro_valido'], 'sì', sez)
+    esito('nuovo.py', 'stato iniziale (fase / gate)', a['stato'], gate(L), sez)
+    esito('nuovo.py', 'capitoli previsti dal piano parole', a['capitoli'], fase.capitoli_previsti(L), sez)
+    esito('nuovo.py', 'voci da Tetti e Vietati', a['voci'], [v['id'] for v in libro['voci']], sez)
+    esito('nuovo.py', 'vincolo «vietato prima del 2»', a['vincolo'], libro['nome_vietato_prima_di'][0]['vietato_in'], sez)
+    esito('nuovo.py', 'gate da Direttive', a['gate'], libro['gate'], sez)
+    open(os.path.join(L, 'briefing.md'), 'w', encoding='utf-8').write(briefing)
+    sha = comune.sha256_file(os.path.join(L, 'libro.yaml'))
+    p = zb(r, 'nuovo', 'giallo/briefing.md')
+    esito('nuovo.py', 'libro già esistente: rifiutato, libro.yaml intatto', a['esistente'],
+          f'{p.returncode} / {"intatto" if comune.sha256_file(os.path.join(L, "libro.yaml")) == sha else "cambiato"}', sez)
+
+    # --- briefing incompleto
+    a = A['briefing_incompleto']
+    inc = re.sub(r'(## Idea[^\n]*\n)(?:[^#\n][^\n]*\n)+', r'\1', briefing.replace('Autore: Autore di Prova\n', '')
+                 .replace('Lunghezza: 60000', 'Lunghezza: 9000'))
+    d = tempfile.mkdtemp(dir=TMP)
+    os.makedirs(os.path.join(d, 'incompleto'))
+    open(os.path.join(d, 'incompleto', 'briefing.md'), 'w', encoding='utf-8').write(inc)
+    prima = recinto.foto(d)
+    p = zb(d, 'nuovo', 'incompleto/briefing.md')
+    esito('nuovo.py', "briefing incompleto: codice d'uscita", a['codice'], p.returncode, sez)
+    esito('nuovo.py', 'briefing incompleto: voci mancanti elencate', a['mancano'], mancanti(p.stderr), sez)
+    esito('nuovo.py', 'briefing incompleto: niente creato', a['creato'], diff(d, prima), sez)
+    p = zb(d, 'avvio', 'incompleto')
+    esito('avvio.py', "solo briefing incompleto: codice d'uscita", a['codice'], p.returncode, sez)
+    esito('avvio.py', 'solo briefing incompleto: voci mancanti elencate', a['mancano'], mancanti(p.stderr), sez)
+    esito('avvio.py', 'solo briefing incompleto: niente scritto', a['creato'], diff(d, prima), sez)
+    r2, L2, _ = libro_nuovo()
+    pb = os.path.join(L2, '00-progetto', 'briefing.md')
+    testo_b = open(pb, encoding='utf-8').read()
+    open(pb, 'w', encoding='utf-8').write(testo_b.replace('Autore: Autore di Prova\n', ''))
+    salva(r2, 'briefing svuotato')
+    p = zb(r2, 'avvio', 'giallo')
+    esito('avvio.py', 'fase documenti, briefing reso incompleto: fermo', a['avvio_libro'],
+          f'{p.returncode} / {mancanti(p.stderr)}', sez)
+
+    # --- avvio
+    a = A['avvio']
+    r, L, _ = libro_nuovo()
+    p = zb(r, 'avvio', 'giallo')
+    esito('avvio.py', "libro pulito e pushato: codice d'uscita", a['codice'], p.returncode, sez)
+    esito('avvio.py', 'riga «Letto»: file con righe, sha256 e ultimo commit', a['file_letti'],
+          len(re.findall(r'\(\d+ righe, sha256 [0-9a-f]{12}, commit [0-9a-f]{7,}\)', p.stdout))
+          if 'Letto: ' in p.stdout else 0, sez)
+    esito('avvio.py', 'riga «Letto»: commit del libro e del motore', 'sì',
+          'sì' if re.search(r'libro @ [0-9a-f]{7,} .*; motore @ [0-9a-f]{7,}', p.stdout) else 'no', sez)
+    esito('avvio.py', 'marker di sessione (senza hook: «locale»)', 'sì',
+          'sì' if os.path.isfile(os.path.join(L, '.zb', 'letto-locale')) else 'no', sez)
+    esito('avvio.py', 'git status dopo l\'avvio', a['git_status'], git(r, 'status', '--porcelain').stdout.strip() or 'pulito', sez)
+    subprocess.run(py + [os.path.join(S, 'hook_sessione.py')], input=json.dumps({'session_id': 'sessione-prova', 'source': 'startup'}),
+                   env=dict(E, CLAUDE_PROJECT_DIR=r), capture_output=True, text=True)
+    p = zb(r, 'avvio', 'giallo', env=dict(E, CLAUDE_PROJECT_DIR=r))
+    esito('avvio.py', 'marker con il session_id dell\'hook SessionStart', 'sì',
+          'sì' if p.returncode == 0 and os.path.isfile(os.path.join(L, '.zb', 'letto-sessione-prova')) else 'no', sez)
+    # fermate
+    r, L, _ = libro_nuovo()
+    git(r, 'remote', 'set-url', 'origin', os.path.join(TMP, 'remoto-inesistente.git'))
+    prima = recinto.foto(os.path.dirname(r))
+    p = zb(r, 'avvio', 'giallo')
+    esito('avvio.py', 'sessione che non può pushare: fermo', a['non_scrivibile'],
+          f'{p.returncode} / {"push --dry-run" in p.stderr}', sez)
+    esito('avvio.py', 'sessione che non può pushare: niente scritto', [], diff(os.path.dirname(r), prima), sez)
+    d = tempfile.mkdtemp(dir=TMP)
+    Lc = shutil.copytree(L, os.path.join(d, 'giallo'), ignore=shutil.ignore_patterns('.zb'))
+    prima = recinto.foto(d)
+    p = zb(d, 'avvio', Lc)
+    esito('avvio.py', 'libro fuori da git: fermo, niente scritto', a['fuori_git'],
+          f'{p.returncode} / {diff(d, prima)}', sez)
+    r, L, _ = libro_nuovo()
+    open(os.path.join(L, '02-bibbia', 'bibbia.md'), 'a', encoding='utf-8').write('- riga non salvata\n')
+    p = zb(r, 'avvio', 'giallo')
+    esito('avvio.py', 'modifiche non salvate: fermo', a['non_salvate'], f'{p.returncode} / {"non salvate" in p.stderr}', sez)
+    git(r, 'checkout', '--', '.')
+    p = zb(r, 'avvio', 'giallo', env=dict(E, ZB_RAMO='altro-ramo'))
+    esito('avvio.py', 'ramo diverso da quello della sessione: fermo', a['ramo'], f'{p.returncode} / {"altro-ramo" in p.stderr}', sez)
+
+    # --- fase.py: gate documenti
+    a = A['gate_documenti']
+    r, L, _ = libro_nuovo()
+    esito('fase.py', 'ok senza gate aperto', a['ok_senza_gate'], zb(r, 'ok', 'giallo').returncode, sez)
+    p = zb(r, 'pronto', 'giallo')
+    rc = stato(L)['revisione_in_corso']
+    esito('fase.py', 'pronto: gate aperto e blocco mostrato', a['pronto'],
+          f'{gate(L)} / blocco {rc["blocco"]} di {rc["blocchi_totali"]}', sez)
+    p = zb(r, 'ok', 'giallo')
+    esito('fase.py', 'ok prima di aver mostrato tutto', a['ok_presto'], f'{p.returncode} / {"Mancano i blocchi" in p.stderr}', sez)
+    for _ in range(5):
+        p = zb(r, 'avanti', 'giallo')
+    esito('fase.py', 'avanti fino all\'ultimo blocco', a['ultimo_blocco'],
+          f'{"Blocco 6 di 6" in p.stdout} / {"Fine dei documenti" in p.stdout}', sez)
+    p = zb(r, 'correggi', 'giallo', ': aggiungi', 'un', 'luogo')
+    esito('fase.py', 'correggi: registrata, gate invariato', a['correggi'],
+          f'{p.returncode} / {len(stato(L)["correzioni_aperte"])} / {gate(L)}', sez)
+    p = zb(r, 'ok', 'giallo')
+    esito('fase.py', 'ok con correzione non applicata', a['ok_correzione_pendente'],
+          f'{p.returncode} / {"non ancora applicata" in p.stderr}', sez)
+    open(os.path.join(L, '02-bibbia', 'bibbia.md'), 'a', encoding='utf-8').write('- Il forno di via Lunga\n')
+    p = zb(r, 'ok', 'giallo')
+    esito('fase.py', 'ok dopo la correzione senza rileggere', a['ok_documenti_cambiati'],
+          f'{p.returncode} / {"mostrati per intero" in p.stderr}', sez)
+    p = zb(r, 'avanti', 'giallo')
+    esito('fase.py', 'avanti dopo la correzione: si riparte dal blocco 1', a['riparte'],
+          f'{"riparte dal blocco 1" in p.stdout} / {stato(L)["revisione_in_corso"]["blocco"]}', sez)
+    for _ in range(5):
+        zb(r, 'avanti', 'giallo')
+    p = zb(r, 'ok', 'giallo')
+    esito('fase.py', 'ok con documenti non salvati', a['ok_non_salvati'], f'{p.returncode} / {"non salvate" in p.stderr}', sez)
+    salva(r, 'correzione')
+    sha_st = comune.sha256_file(os.path.join(L, 'stato.yaml'))
+    p = zb(r, 'stato', 'giallo')
+    esito('fase.py', 'stato: a schermo, stato.yaml intatto', a['stato'],
+          f'{p.returncode} / {comune.sha256_file(os.path.join(L, "stato.yaml")) == sha_st}', sez)
+    p = zb(r, 'ok', 'giallo')
+    s = stato(L)
+    esito('fase.py', 'ok: approvato, fase successiva', a['ok'],
+          f'{p.returncode} / {gate(L)} / {len(s["documenti_approvati"])} / {len(s["correzioni_aperte"])}', sez)
+    esito('fase.py', 'LEGGIMI aggiornato', a['leggimi'],
+          next(x for x in open(os.path.join(L, 'LEGGIMI.md'), encoding='utf-8').read().splitlines() if x.startswith('Fase:')), sez)
+    salva(r, 'ok documenti')
+    esito('avvio.py', 'dopo l\'ok: avvio', a['avvio_dopo_ok'], zb(r, 'avvio', 'giallo').returncode, sez)
+    pb = os.path.join(L, '02-bibbia', 'bibbia.md')
+    orig = open(pb, encoding='utf-8').read()
+    open(pb, 'a', encoding='utf-8').write('- fuori procedura\n')
+    salva(r, 'modifica fuori procedura')
+    p = zb(r, 'avvio', 'giallo')
+    esito('avvio.py', 'documento approvato cambiato: fermo', a['approvato_cambiato'],
+          f'{p.returncode} / {"02-bibbia/bibbia.md" in p.stderr}', sez)
+    open(pb, 'w', encoding='utf-8').write(orig)
+    salva(r, 'ripristino')
+    os.makedirs(os.path.join(L, '05-revisioni'), exist_ok=True)
+    open(os.path.join(L, '05-revisioni', 'pagina-campione.md'), 'w', encoding='utf-8').write('# Pagina campione\n\nTesto di prova.\n')
+    salva(r, 'pagina campione')
+    zb(r, 'pronto', 'giallo')
+    esito('fase.py', 'pagina campione: gate', a['gate_pagina'], gate(L), sez)
+    p = zb(r, 'ok', 'giallo')
+    esito('fase.py', 'pagina campione: ok', a['ok_pagina'], f'{p.returncode} / {gate(L)} / {stato(L)["passo"]}', sez)
+
+    # --- gate configurabili
+    a = A['gate_configurabili']
+    r, L, _ = libro_nuovo(briefing.replace('Gate: documenti, pagina_campione, primi_capitoli', 'Gate: primi_capitoli'))
+    p = zb(r, 'pronto', 'giallo')
+    s = stato(L)
+    esito('fase.py', 'gate «documenti» disattivato: pronto passa oltre', a['senza_gate_documenti'],
+          f'{p.returncode} / {gate(L)} / {sum(1 for v in s["documenti_approvati"].values() if v.get("senza_gate"))}', sez)
+
+    def mini(gate_libro=None, dimensione=3):
+        r = repo()
+        Lm = shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'mini'))
+        if gate_libro is not None:
+            open(os.path.join(Lm, 'libro.yaml'), 'a', encoding='utf-8').write(f'gate: {gate_libro}\n')
+        s = comune.leggi_yaml(os.path.join(M, 'modelli', 'stato.yaml'))
+        s.update(libro='Prova di stampa', fase='stesura', passo='capitolo 1', aggiornato='prova')
+        s['lotto']['dimensione'] = dimensione
+        open(os.path.join(Lm, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(s, sort_keys=False, allow_unicode=True))
+        salva(r, 'mini')
+        return r, Lm
+
+    r, Lm = mini('[lotto]', 1)
+    zb(r, 'esito', 'mini', '1')
+    esito('fase.py', 'gate «lotto» attivo, lotti da 1: fermata dopo il capitolo 1', a['lotto_attivo'], gate(Lm), sez)
+    r, Lm = mini('[]', 1)
+    p = zb(r, 'esito', 'mini', '1')
+    esito('fase.py', 'nessun gate, lotti da 1: nessuna fermata', a['lotto_senza_gate'],
+          f'{gate(Lm)} / {"nessuna fermata" in p.stdout}', sez)
+
+    # --- stesura sul mini-libro giallo (capitolo 1 OK, 2 e 3 KO per costruzione)
+    a = A['stesura']
+    r, Lm = mini()
+    p = zb(r, 'esito', 'mini', '1')
+    esito('fase.py', 'esito 1 (OK)', a['esito_1'], f'{p.returncode} / {stato(Lm)["ultimo_capitolo_scritto"]} / {gate(Lm)}', sez)
+    p = zb(r, 'esito', 'mini', '2')
+    esito('fase.py', 'esito 2, primo KO: correzione unica, nessuna fermata', a['esito_2_primo'],
+          f'{p.returncode} / {stato(Lm)["tentativi"]} / {gate(Lm)}', sez)
+    p = zb(r, 'esito', 'mini', '2')
+    esito('fase.py', 'esito 2, secondo KO: fermata', a['esito_2_secondo'], f'{p.returncode} / {gate(Lm)}', sez)
+    p = zb(r, 'esito', 'mini', '3')
+    esito('fase.py', 'esito 3 con gate aperto: rifiutato', a['esito_3_gate_aperto'], p.returncode, sez)
+    salva(r, 'report 2')
+    zb(r, 'avanti', 'mini')
+    p = zb(r, 'ok', 'mini')
+    s = stato(Lm)
+    esito('fase.py', 'ok al controllo fallito: capitolo accettato', a['ok_controllo'],
+          f'{p.returncode} / {gate(Lm)} / {s["passo"]} / {s["tentativi"]}', sez)
+    zb(r, 'esito', 'mini', '3')
+    zb(r, 'esito', 'mini', '3')
+    salva(r, 'report 3')
+    zb(r, 'avanti', 'mini')
+    zb(r, 'ok', 'mini')
+    esito('fase.py', 'dopo il capitolo 3: gate «primi_capitoli»', a['primi_capitoli'], gate(Lm), sez)
+    salva(r, 'primi capitoli')
+    for _ in range(30):
+        if 'Fine dei documenti' in zb(r, 'avanti', 'mini').stdout:
+            break
+    p = zb(r, 'ok', 'mini', 'lotti', 'da', '5')
+    s = stato(Lm)
+    esito('fase.py', 'ok, lotti da 5: lotti, ultimo approvato, fase', a['ok_lotti'],
+          f'{p.returncode} / {s["lotto"]["dimensione"]} / {s["ultimo_capitolo_approvato"]} / {s["fase"]}', sez)
+    p = zb(r, 'pronto', 'mini')
+    esito('fase.py', 'chiusura senza report: fermo con elenco', a['chiusura_incompleta'],
+          f'{p.returncode} / {len(mancanti(p.stderr))}', sez)
+
+    # --- nuovo e riscrittura
+    a = A['modalita']
+    ris = briefing.replace('Modalità: nuovo', 'Modalità: riscrittura')
+    d = tempfile.mkdtemp(dir=TMP)
+    os.makedirs(os.path.join(d, 'ris'))
+    open(os.path.join(d, 'ris', 'briefing.md'), 'w', encoding='utf-8').write(ris)
+    p = zb(d, 'nuovo', 'ris/briefing.md')
+    esito('nuovo.py', 'riscrittura senza testo precedente: rifiutato', a['senza_testo'], f'{p.returncode} / {mancanti(p.stderr)}', sez)
+
+    def testo_prec(Lx):
+        os.makedirs(os.path.join(Lx, '00-progetto'))
+        open(os.path.join(Lx, '00-progetto', 'testo-precedente.md'), 'w', encoding='utf-8').write('# Vecchio testo\n\nUna riga.\n')
+
+    rr, Lr, p = libro_nuovo(ris.replace('Testo precedente:\n', 'Testo precedente: 00-progetto/testo-precedente.md\n'),
+                            'ris', testo_prec)
+    _, lr, _ = comune.carica_libro(Lr)
+    rn, Ln, _ = libro_nuovo()
+    _, ln, _ = comune.carica_libro(Ln)
+    esito('nuovo.py', 'libro.yaml: modalità e testo precedente (riscrittura | nuovo)', a['libro_yaml'],
+          f'{lr["modalita"]} {lr.get("testo_precedente", "assente")} | {ln["modalita"]} {ln.get("testo_precedente", "assente")}', sez)
+    pr, pn = zb(rr, 'avvio', 'ris'), zb(rn, 'avvio', 'giallo')
+    esito('avvio.py', 'testo precedente tra i file letti (riscrittura | nuovo)', a['avvio_letti'],
+          f'{"testo-precedente.md (" in pr.stdout} | {"testo-precedente.md (" in pn.stdout}', sez)
+    esito('nuovo.py', 'LEGGIMI: modalità (riscrittura | nuovo)', a['leggimi'],
+          ' | '.join(next(x for x in open(os.path.join(Lx, 'LEGGIMI.md'), encoding='utf-8').read().splitlines()
+                          if x.startswith('Modalità')) for Lx in (Lr, Ln)), sez)
+
+    # --- CLAUDE.md
+    a = A['claude_md']
+    testo = open(os.path.join(os.path.dirname(M), 'CLAUDE.md'), encoding='utf-8').read()
+    esito('CLAUDE.md', 'righe (massimo 30)', a['righe_max_30'], 'sì' if len(testo.splitlines()) <= 30 else 'no', sez)
+    nomi = ['libri/']
+    nomi += [x.strip() for x in open(os.path.join(M, 'dati', 'nomi_vietati.txt'), encoding='utf-8') if x.strip() and not x.startswith('#')]
+    for nome in ('mini-libro', 'mini-libro-romance'):
+        lb = comune.leggi_yaml(os.path.join(M, 'prove', nome, 'libro.yaml'))
+        nomi += [lb['titolo'], lb['autore']]
+        nomi += [x.strip() for x in open(os.path.join(M, 'prove', nome, 'nomi_propri.txt'), encoding='utf-8') if x.strip() and not x.startswith('#')]
+    nomi += ['La chiave del forno', 'Nadia Ferro', 'Ugo Pelle']
+    esito('CLAUDE.md', 'nomi di libri trovati', a['nomi'], [n for n in nomi if n.lower() in testo.lower()], sez)
+    esito('CLAUDE.md', 'frasi obbligatorie mancanti', a['frasi'], [f for f in a['frasi_obbligatorie'] if f not in testo], sez)
+
+    # --- hook in modalità avviso (scenari di PROCEDURA.md, sezione 10)
+    a = A['hook']
+    hr = repo()
+    Lh = shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(hr, 'libri-prova', 'mini'))
+    os.makedirs(os.path.join(hr, 'documenti', '04-manoscritto'))
+    F = 'libri-prova/mini/04-manoscritto/01-la-farmacia.md'
+    cart_m = os.path.join(Lh, '04-manoscritto')
+
+    def hook(dati, env=E, motore=M, cwd=hr):
+        raw = dati if isinstance(dati, str) else json.dumps(dict({'session_id': 'sessione-prova', 'cwd': cwd}, **dati))
+        return subprocess.run(py + [os.path.join(motore, 'script', 'hook_manoscritto.py')], input=raw, cwd=cwd,
+                              env=env, capture_output=True, text=True)
+
+    def tipo(p):
+        return f'{"avviso" if "ATTENZIONE" in p.stdout else "niente"} / {p.returncode}'
+
+    B = lambda c: {'tool_name': 'Bash', 'tool_input': {'command': c}}
+    casi = {
+        'Write': {'tool_name': 'Write', 'tool_input': {'file_path': F, 'content': 'x'}},
+        'Edit': {'tool_name': 'Edit', 'tool_input': {'file_path': os.path.join(hr, F)}},
+        'Write fuori dal manoscritto': {'tool_name': 'Write', 'tool_input': {'file_path': 'libri-prova/mini/02-bibbia/bibbia.md'}},
+        '1': B(f'grep -n x {F} > {os.path.join(TMP, "out.txt")}'),
+        '2': B('python3 motore/script/capitolo.py libri-prova/mini 1'),
+        '3': B(f"python3 -c \"open('{F}','w').write('x')\""),
+        '4': B(f'python3 {os.path.join(TMP, "s.py")}'),
+        '5': B('D=libri-prova/mini/04-manoscritto; echo x > $D/01-la-farmacia.md'),
+        '6': B("cd libri-prova/mini/04-manoscritto && sed -i 's/a/b/' 01-la-farmacia.md"),
+        '8': B(f'git add {F} && git commit -m x && git push'),
+        '9': B(f'git checkout -- {F}'),
+        '10': B(f'cp {F} {os.path.join(TMP, "copia.md")}'),
+        '11': B('cat libri-prova/mini/04-manoscritto/*.md | wc -w'),
+        '12': B('echo x > documenti/04-manoscritto/nota.md'),
+    }
+    for k, dati in casi.items():
+        esito('hook_manoscritto.py', f'avviso, senza marker: {k}', a['scenari'][k], tipo(hook(dati)), sez)
+    esito('hook_manoscritto.py', 'avviso, senza marker: 7 (cd in un comando precedente)', a['scenari']['7'],
+          tipo(hook(B("sed -i 's/a/b/' 01-la-farmacia.md"), cwd=cart_m)), sez)
+    esito('hook_manoscritto.py', 'avviso: 13 (JSON illeggibile)', a['scenari']['13'], tipo(hook('{non è json 04-manoscritto')), sez)
+    esito('hook_manoscritto.py', 'avviso annotato in .zb/avvisi-hook.log', 'sì',
+          'sì' if os.path.isfile(os.path.join(Lh, '.zb', 'avvisi-hook.log')) else 'no', sez)
+    marker = os.path.join(Lh, '.zb', 'letto-sessione-prova')
+    open(marker, 'w', encoding='utf-8').write('prova\n')
+    esito('hook_manoscritto.py', 'con marker: Write', a['con_marker'], tipo(hook(casi['Write'])), sez)
+    esito('hook_manoscritto.py', 'con marker: Bash 6', a['con_marker'], tipo(hook(casi['6'])), sez)
+    t0 = time.time() - 60
+    os.utime(marker, (t0, t0))
+    p = subprocess.run(py + [os.path.join(S, 'hook_sessione.py')], input=json.dumps({'session_id': 'sessione-prova', 'source': 'compact'}),
+                       env=dict(E, CLAUDE_PROJECT_DIR=hr), capture_output=True, text=True)
+    esito('hook_sessione.py', 'compattazione: messaggio e codice', a['compact_sessione'],
+          f'{"riesegui" in p.stdout} / {p.returncode}', sez)
+    esito('hook_manoscritto.py', 'avviso: 14 (marker più vecchio della compattazione)', a['scenari']['14'],
+          tipo(hook(casi['Write'], env=dict(E, CLAUDE_PROJECT_DIR=hr))), sez)
+    esito('hook_sessione.py', 'session_id in .zb/sessione-corrente, .zb ignorata da git', a['sessione_corrente'],
+          f'{open(os.path.join(hr, ".zb", "sessione-corrente"), encoding="utf-8").read().strip()} / '
+          f'{git(hr, "status", "--porcelain", "--", ".zb").stdout.strip() or "ignorata"}', sez)
+    mc = copia_motore()
+    open(os.path.join(mc, 'dati', 'hook.yaml'), 'w', encoding='utf-8').write('modalita: blocco\n')
+    altra = lambda dati: dict(dati, session_id='altra-sessione')
+    esito('hook_manoscritto.py', 'modalità blocco (copia del motore): Write senza marker', a['blocco']['write'],
+          hook(altra(casi['Write']), motore=mc).returncode, sez)
+    esito('hook_manoscritto.py', 'modalità blocco: Write fuori dal manoscritto', a['blocco']['fuori'],
+          hook(altra(casi['Write fuori dal manoscritto']), motore=mc).returncode, sez)
+    esito('hook_manoscritto.py', 'modalità blocco: JSON illeggibile (con e senza 04-manoscritto)', a['blocco']['errore'],
+          f'{hook("{x 04-manoscritto", motore=mc).returncode} / {hook("{x", motore=mc).returncode}', sez)
+
+    # --- zb hook attiva / disattiva (su una copia del motore in un repository temporaneo)
+    a = A['zb_hook']
+    rh = repo()
+    mz = shutil.copytree(M, os.path.join(rh, 'motore'))
+    dest = os.path.join(rh, '.claude', 'settings.json')
+    p = zb(rh, 'hook', 'attiva', motore=mz)
+    esito('zb', 'hook attiva senza --ok: mostra soltanto', a['attiva_senza_ok'],
+          f'{p.returncode} / {"presente" if os.path.exists(dest) else "assente"}', sez)
+    p = zb(rh, 'hook', 'attiva', '--ok', motore=mz)
+    esito('zb', 'hook attiva --ok: settings.json uguale al modello', a['attiva_ok'],
+          f'{p.returncode} / {open(dest, encoding="utf-8").read() == open(os.path.join(mz, "dati", "hook-settings.esempio.json"), encoding="utf-8").read()}', sez)
+    p = zb(rh, 'hook', 'disattiva', motore=mz)
+    esito('zb', 'hook disattiva: settings.json tolto', a['disattiva'],
+          f'{p.returncode} / {"presente" if os.path.exists(dest) else "assente"}', sez)
+    os.makedirs(os.path.dirname(dest))
+    open(dest, 'w', encoding='utf-8').write('{}\n')
+    esito('zb', 'hook disattiva su un settings.json non del motore: rifiutato', a['disattiva_altrui'],
+          f'{zb(rh, "hook", "disattiva", motore=mz).returncode} / {"presente" if os.path.exists(dest) else "assente"}', sez)
+    esito('zb', '.claude/settings.json nel repository del motore', a['settings_nel_repo'],
+          'presente' if os.path.exists(os.path.join(os.path.dirname(M), '.claude', 'settings.json')) else 'assente', sez)
+
+    # --- revisione.py e zb
+    a = A['revisione']
+    Lv = copia_libro('mini-libro')
+    paragrafi = ''.join(''.join(f'Paragrafo {i}, riga {j}.\n' for j in range(1, 9)) + '\n' for i in range(1, 31))
+    os.makedirs(os.path.join(Lv, '05-revisioni'))
+    open(os.path.join(Lv, '05-revisioni', 'lungo.md'), 'w', encoding='utf-8').write(paragrafi)
+    prima = recinto.foto(Lv)
+    blocchi = []
+    for n in (1, 2, 3):
+        p = zb(Lv, 'revisione', Lv, '05-revisioni/lungo.md', str(n))
+        m = re.match(r'^.+ — 05-revisioni/lungo\.md — Blocco (\d) di (\d), righe (\d+-\d+) — sha256 [0-9a-f]{12}$', p.stdout.splitlines()[0])
+        blocchi.append(m.group(3) if m else p.stdout.splitlines()[0])
+    esito('revisione.py', 'blocchi tagliati a fine paragrafo (270 righe)', a['blocchi'], blocchi, sez)
+    esito('revisione.py', 'sola lettura', [], diff(Lv, prima), sez)
+    p = zb(Lv, 'ortografia', Lv)
+    esito('zb', 'comando previsto ma non costruito (ortografia)', a['ortografia'], f'{p.returncode} / {"non esiste ancora" in p.stderr}', sez)
+    esito('zb', 'conta <libro> --schermo', a['conta'], zb(Lv, 'conta', Lv, '--schermo').returncode, sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5}
 
 
 def main(argv):

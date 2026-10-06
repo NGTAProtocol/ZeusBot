@@ -235,3 +235,110 @@ passo_4:
     creati: 6
     seconda_esecuzione_creati: 0
     scheda_non_toccata: sì
+
+passo_5:
+  # Conduzione: nuovo, avvio, fase (gate), revisione, hook, zb, CLAUDE.md. Su copie temporanee
+  # (repository git con un remoto locale), mai sul repository del motore.
+  nuovo:
+    codice: 0
+    file: ['.gitignore', '00-progetto/briefing.md', '02-bibbia/.gitkeep', '02-bibbia/bibbia.md',
+           '03-architettura/.gitkeep', '03-architettura/manuale-di-stile.md', '03-architettura/piano-parole.md',
+           '03-architettura/scaletta.md', '04-manoscritto/.gitkeep', '05-output/.gitkeep', '05-revisioni/.gitkeep',
+           '06-diagnostica/.gitkeep', '06-pubblicazione/.gitkeep', 'LEGGIMI.md', 'cronologia.yaml', 'libro.yaml',
+           'nomi_propri.txt', 'stato.yaml']
+    fuori: []
+    libro_valido: "sì"
+    stato: "documenti / nessuno"
+    capitoli: 30
+    voci: ['come_se', 'all_improvviso', 'un_brivido_le_percorse_la_schiena']
+    vincolo: ['1']
+    gate: ['documenti', 'pagina_campione', 'primi_capitoli']
+    esistente: "2 / intatto"
+  briefing_incompleto:
+    codice: 2
+    mancano: ['Autore', 'Lunghezza', 'Idea']
+    creato: []
+    avvio_libro: "2 / ['Autore']"
+  avvio:
+    codice: 0
+    file_letti: 10
+    git_status: pulito
+    non_scrivibile: "2 / True"
+    fuori_git: "2 / []"
+    non_salvate: "2 / True"
+    ramo: "2 / True"
+  gate_documenti:
+    ok_senza_gate: 2
+    pronto: "documenti / documenti / blocco 1 di 6"
+    ok_presto: "2 / True"
+    ultimo_blocco: "True / True"
+    correggi: "0 / 1 / documenti / documenti"
+    ok_correzione_pendente: "2 / True"
+    ok_documenti_cambiati: "2 / True"
+    riparte: "True / 1"
+    ok_non_salvati: "2 / True"
+    stato: "0 / True"
+    ok: "0 / pagina_campione / nessuno / 6 / 0"
+    leggimi: "Fase: pagina_campione; gate in attesa: nessuno"
+    avvio_dopo_ok: 0
+    approvato_cambiato: "2 / True"
+    gate_pagina: "pagina_campione / pagina_campione"
+    ok_pagina: "0 / stesura / nessuno / capitolo 1"
+  gate_configurabili:
+    senza_gate_documenti: "0 / pagina_campione / nessuno / 6"
+    lotto_attivo: "stesura / lotto"
+    lotto_senza_gate: "stesura / nessuno / True"
+  stesura:
+    esito_1: "0 / 1 / stesura / nessuno"
+    esito_2_primo: "1 / {'2': 1} / stesura / nessuno"
+    esito_2_secondo: "1 / stesura / controllo_fallito"
+    esito_3_gate_aperto: 2
+    ok_controllo: "0 / stesura / nessuno / capitolo 3 / {}"
+    primi_capitoli: "stesura / primi_capitoli"
+    ok_lotti: "0 / 5 / 3 / chiusura"
+    chiusura_incompleta: "2 / 7"
+  modalita:
+    senza_testo: "2 / ['Testo precedente']"
+    libro_yaml: "riscrittura 00-progetto/testo-precedente.md | nuovo assente"
+    avvio_letti: "True | False"
+    leggimi: "Modalità: riscrittura | Modalità: nuovo"
+  claude_md:
+    righe_max_30: "sì"
+    nomi: []
+    frasi: []
+    frasi_obbligatorie: ['motore/PROCEDURA.md', 'LEGGIMI.md', 'zb avvio', 'Letto', 'manuale del libro',
+                         'procedura del motore', 'skill', "proponi → l'autore approva → applica", 'Ramo',
+                         'cartella del libro indicato', 'git status -sb', 'Non dire «fatto»']
+  hook:
+    scenari:
+      Write: "avviso / 0"
+      Edit: "avviso / 0"
+      Write fuori dal manoscritto: "niente / 0"
+      "1": "niente / 0"
+      "2": "niente / 0"
+      "3": "avviso / 0"
+      "4": "niente / 0"
+      "5": "avviso / 0"
+      "6": "avviso / 0"
+      "7": "niente / 0"
+      "8": "niente / 0"
+      "9": "avviso / 0"
+      "10": "niente / 0"
+      "11": "niente / 0"
+      "12": "niente / 0"
+      "13": "niente / 0"
+      "14": "avviso / 0"
+    con_marker: "niente / 0"
+    compact_sessione: "True / 0"
+    sessione_corrente: "sessione-prova / ignorata"
+    blocco: {write: 2, fuori: 0, errore: "2 / 0"}
+  zb_hook:
+    attiva_senza_ok: "0 / assente"
+    attiva_ok: "0 / True"
+    disattiva: "0 / assente"
+    disattiva_altrui: "2 / presente"
+    settings_nel_repo: assente
+  revisione:
+    blocchi: ['1-126', '127-252', '253-270']
+    ortografia: "2 / True"
+    conta: 0

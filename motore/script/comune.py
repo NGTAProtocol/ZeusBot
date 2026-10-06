@@ -448,3 +448,57 @@ def oggi(argv=None):
             valore = a.split('=', 1)[1]
     valore = valore or os.environ.get('ZB_OGGI')
     return datetime.date.fromisoformat(valore) if valore else datetime.date.today()
+
+
+# ---------------------------------------------------------------- sessione e git (passo 5)
+
+def git(cartella, *args, timeout=60):
+    """Esegue git -C <cartella> …; restituisce (codice, stdout, stderr)."""
+    try:
+        r = subprocess.run(['git', '-C', cartella, *args], capture_output=True, text=True, timeout=timeout)
+        return r.returncode, r.stdout.strip(), r.stderr.strip()
+    except subprocess.TimeoutExpired:
+        return 124, '', f'git {" ".join(args)}: nessuna risposta in {timeout} s'
+    except FileNotFoundError:
+        return 127, '', 'git non installato'
+
+
+def ultimo_commit(cartella, rel='.'):
+    """Hash breve dell'ultimo commit che tocca `rel` (stringa vuota se mai salvato)."""
+    return git(cartella, 'log', '-1', '--format=%h', '--', rel)[1]
+
+
+def sha256_file(percorso):
+    import hashlib
+    with open(percorso, 'rb') as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+def cartella_progetto():
+    """Radice della sessione: $CLAUDE_PROJECT_DIR, altrimenti la radice git della cartella corrente."""
+    return os.environ.get('CLAUDE_PROJECT_DIR') or radice_git(os.getcwd())
+
+
+def sessione_corrente():
+    """(session_id, fonte). Lo deposita hook_sessione.py; senza hook, identificativo locale."""
+    p = os.path.join(cartella_progetto(), '.zb', 'sessione-corrente')
+    try:
+        sid = open(p, encoding='utf-8').read().strip()
+        if sid:
+            return sid, 'hook SessionStart'
+    except OSError:
+        pass
+    if os.environ.get('ZB_SESSIONE'):
+        return os.environ['ZB_SESSIONE'], 'variabile ZB_SESSIONE'
+    return 'locale', 'identificativo locale (nessun hook SessionStart)'
+
+
+def prepara_zb(cartella):
+    """Crea <cartella>/.zb/ con un .gitignore che ignora tutto (marker mai nei commit)."""
+    d = os.path.join(cartella, '.zb')
+    os.makedirs(d, exist_ok=True)
+    gi = os.path.join(d, '.gitignore')
+    if not os.path.isfile(gi):
+        with open(gi, 'w', encoding='utf-8') as f:
+            f.write('*\n')
+    return d

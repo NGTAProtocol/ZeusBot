@@ -20,6 +20,7 @@ campi:
       numero: {tipo: intero, obbligatorio: true}
   ebook: {tipo: booleano}
   profilo: {tipo: testo, obbligatorio: true}
+  gate: {tipo: lista, elementi: {tipo: scelta, valori: [documenti, pagina_campione, primi_capitoli, lotto]}}
   override:
     tipo: lista
     elementi:

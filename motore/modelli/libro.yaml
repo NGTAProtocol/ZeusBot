@@ -1,0 +1,35 @@
+# libro.yaml — schema in motore/dati/libro.schema.yaml (proposta B.3).
+# Lo genera nuovo.py dal briefing (sezione «Direttive») e dal profilo di genere.
+titolo: ""
+sottotitolo: null
+autore: ""
+lingua: it
+modalita: nuovo            # nuovo | riscrittura (con testo_precedente)
+serie: null
+ebook: false
+profilo: ""                # nome di un file in motore/profili/
+override: []               # {campo, valore, motivo}
+gate: [documenti, pagina_campione, primi_capitoli]
+parole: {metodo: unico, target_totale: 0}
+formato:
+  pagina_pollici: [5.5, 8.5]
+  carta: crema
+  bleed: false
+  margini_mm: {alto: 20, basso: 20, esterno: 16, interno_scelto: 16}
+  font: {nome: "EB Garamond", corpo_pt: 11.5, interlinea: 1.5}
+  numerazione: {da: capitolo_1, pagine_iniziali: senza_numero, posizione: piede_centro}
+voci: []
+vincoli_capitolo: []
+nome_vietato_prima_di: []
+dichiarazioni: {}
+struttura:
+  separatore_scena: {sorgente: "* * *", stampa: "* * *"}
+  intestazione_capitolo: "Luogo — giorno e data"
+  parti: []
+  interludi: []
+calendario: {anni_ammessi: []}
+ortografia: {parole_ammesse_file: nomi_propri.txt}
+copyright:
+  riga: "© {anno} {autore}. Tutti i diritti riservati."
+  fantasia: "Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzione dell'autore o usati in modo fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale."
+  nota_autore: null

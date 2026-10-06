@@ -1,0 +1,6 @@
+# Cronologia del libro (proposta B.2.1). Si compila nella fase dei documenti.
+nascite: []        # - {chi: <personaggio>, data: AAAA-MM-GG}
+eventi: []         # - {id: <id>, data: AAAA-MM-GG, capitolo: <N>, descrizione: <breve>}
+durate: []         # - {da: <id evento>, a: <id evento>, valore: "<N anni>", tolleranza_mesi: 6}
+cifre: []          # - {id: <id>, valore: <numero>, unita: <unità>, forme_ammesse: [<cifre>, <in lettere>]}
+eta_per_capitolo: {calcolata: true}
