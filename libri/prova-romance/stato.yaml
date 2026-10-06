@@ -1,49 +1,40 @@
 libro: Le ore del restauro
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: documenti
-passo: in revisione
-gate_in_attesa: documenti
+fase: pagina_campione
+passo: da completare
+gate_in_attesa: null
 lotto:
   dimensione: 3
   capitoli: []
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: null
 tentativi: {}
-correzioni_aperte:
-- gate: documenti
-  testo: capitolo 1 senza il nome di Elia (chiude su lui/l'architetto); campi scene del profilo verificati; capitolo 8 con
-    la bottega aperta
-  sha256: f1ff3be6124f
-  data: '2026-10-06'
-- gate: documenti
-  testo: 'scene: 1 per capitolo, 400-1200 parole (override motivato da «Scene:» nel briefing)'
-  sha256: eca21dad425c
-  data: '2026-10-06'
-- gate: documenti
-  testo: 'manuale: espressioni vere nei tetti e nei vietati; vincolo «nel capitolo 1»'
-  sha256: d9d013202155
-  data: '2026-10-06'
-- gate: documenti
-  testo: 'bibbia: «Motivi ricorrenti» con la regola carta, colla, sale e caffè (al massimo due per capitolo, mai in elenco);
-    stessa riga nel manuale'
-  sha256: b2fcbe624bf3
-  data: '2026-10-06'
-- gate: documenti
-  testo: 'bibbia: tolta la riga doppia sui motivi; libro.yaml e manuale: voce «motivi_ricorrenti» (avviso oltre 4 per capitolo);
-    checklist del report di capitolo'
-  sha256: 5ce454bf3d5f
-  data: '2026-10-06'
+correzioni_aperte: []
 parole:
   scritte: 0
   obiettivo: 9000
   metodo: unico
-documenti_approvati: {}
+documenti_approvati:
+  libro.yaml:
+    sha256: 760601c33102ab0b0cfa48f863f2c574a4246ddca5d2479bcd55b852a6997901
+    commit: 495ac47
+  02-bibbia/bibbia.md:
+    sha256: 38d8273944cd55a9ca2f1d372b1c0f82e271d18f396959a6b319248221da576e
+    commit: ec47b68
+  cronologia.yaml:
+    sha256: f344d6102fd81dacdc4617bb44944648a03889a447dfd62c4376c1c03b5dff0b
+    commit: 938dad8
+  03-architettura/manuale-di-stile.md:
+    sha256: 11111141363d6f10a1f522b546489ae5005d33c79906e9c01ef1cd8feeb19f16
+    commit: ec47b68
+  03-architettura/scaletta.md:
+    sha256: 8b3565c2dd879e0318940ccafd4a8f1ef3bcfe6e4a960833e7c90a3eb1df7c3c
+    commit: 9647ed2
+  03-architettura/piano-parole.md:
+    sha256: 240007a3ba2ca065f0f68acffca5ee4a30d147b0eaca0e1d15d108955f0ba0ed
+    commit: 86e84fa
 avvisi_aperti: []
-revisione_in_corso:
-  gate: documenti
-  blocco: 6
-  blocchi_totali: 6
-  sha256: ada5291a996c
+revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-06T09:08:15Z'
+aggiornato: '2026-10-06T09:12:47Z'
