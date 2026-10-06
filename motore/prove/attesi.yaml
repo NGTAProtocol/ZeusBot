@@ -338,7 +338,7 @@ passo_5:
     settings_nel_repo: assente
   revisione:
     blocchi: ['1-126', '127-252', '253-270']
-    ortografia: "2 / True"
+    ortografia: "1 / False"
     conta: 0
 
 passo_5b:
@@ -378,3 +378,17 @@ passo_6:
               '__pycache__/a.pyc', '_build/b.html', '05-output/vuota/', '05-revisioni/', '__pycache__/', '_build/']
     protetti: "True / True / True"
     dopo: 0
+
+passo_7:
+  # Hunspell it_IT; «Brena» è la seconda grafia messa apposta nel mini-libro giallo (passo 2).
+  base:
+    mini-libro: ['Brena']
+    mini-libro-romance: []
+  refusi:
+    riga: "Irene trovò un errrore nel registo della farmacia e sedette accanto al banco. Anch'io sedevo nell'auto, dov'era l'officina."
+    segnalate: ['Brena', 'errrore', 'registo']
+    codice: 1
+  livelli_senza_lt: "sì / no / sì"
+  languagetool:
+    segnalate: ['Brena', 'errrore', 'registo']
+    livelli: "sì / sì / sì"

@@ -32,6 +32,10 @@ def esito(script, controllo, atteso, ottenuto, sezione):
     righe.append((sezione, script, controllo, str(atteso), str(ottenuto), 'OK' if ok else 'KO'))
 
 
+def saltata(script, controllo, motivo, sezione):
+    righe.append((sezione, script, controllo, '—', motivo, 'SALTATA'))
+
+
 def esegui(*args):
     return subprocess.run([sys.executable, '-B', *args], env=ENV, capture_output=True, text=True)
 
@@ -851,7 +855,7 @@ def passo_5(A):
     esito('revisione.py', 'blocchi tagliati a fine paragrafo (270 righe)', a['blocchi'], blocchi, sez)
     esito('revisione.py', 'sola lettura', [], diff(Lv, prima), sez)
     p = zb(Lv, 'ortografia', Lv)
-    esito('zb', 'comando previsto ma non costruito (ortografia)', a['ortografia'], f'{p.returncode} / {"non esiste ancora" in p.stderr}', sez)
+    esito('zb', 'ortografia ora costruito (codice, «non esiste ancora»)', a['ortografia'], f'{p.returncode} / {"non esiste ancora" in p.stderr}', sez)
     esito('zb', 'conta <libro> --schermo', a['conta'], zb(Lv, 'conta', Lv, '--schermo').returncode, sez)
 
 
@@ -1003,9 +1007,66 @@ def passo_6(A):
     esito('pulizia.py', 'dopo --applica: niente da pulire', a['dopo'], p.stdout.count('\n- '), sez)
 
 
+# ---------------------------------------------------------------- passo 7
+
+def passo_7(A):
+    sez = 'passo 7'
+    E = {k: v for k, v in ENV.items() if k != 'ZB_LANGUAGETOOL'}
+
+    def orto(L, env=E):
+        return subprocess.run([sys.executable, '-B', os.path.join(S, 'ortografia.py'), L, '--schermo'],
+                              env=env, capture_output=True, text=True)
+
+    def tabella_a(out):
+        sez_a = out.split('## (a)')[1].split('## ')[0] if '## (a)' in out else ''
+        return [r.split('|')[1].strip() for r in sez_a.splitlines() if r.startswith('| ') and not r.startswith('| Parola')]
+
+    gen = [r.strip() for r in open(os.path.join(M, 'dati', 'parole-ammesse-it.txt'), encoding='utf-8')
+           if r.strip() and not r.startswith('#')]
+    nomi = []
+    for nome in ('mini-libro', 'mini-libro-romance', 'mini-libro-adozione'):
+        p = os.path.join(M, 'prove', nome, 'nomi_propri.txt')
+        if os.path.isfile(p):
+            nomi += [x.strip() for x in open(p, encoding='utf-8') if x.strip()]
+    esito('parole-ammesse-it.txt', 'nessun nome di personaggio o luogo (mini-libri)', [], [x for x in gen if x in nomi], sez)
+    for nome, att in A['base'].items():
+        p = orto(copia_libro(nome))
+        esito('ortografia.py', f'{nome}: parole non riconosciute', att, tabella_a(p.stdout), sez)
+    L = copia_libro('mini-libro')
+    with open(os.path.join(L, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8') as f:
+        f.write('\n' + A['refusi']['riga'] + '\n')
+    p = orto(L)
+    esito('ortografia.py', 'refusi inventati: parole segnalate', A['refusi']['segnalate'], tabella_a(p.stdout), sez)
+    esito('ortografia.py', "refusi inventati: codice d'uscita", A['refusi']['codice'], p.returncode, sez)
+    esito('ortografia.py', 'livelli nel report (Hunspell / LanguageTool / checklist)', A['livelli_senza_lt'],
+          ' / '.join(re.findall(r'^\| \([abc]\) [^|]+\| (sì|no) \|', p.stdout, re.M)), sez)
+    esito('ortografia.py', 'checklist con la nota su «e»/«è» e accordi', 'sì',
+          'sì' if '«e» al posto di «è»' in p.stdout and 'accordi' in p.stdout else 'no', sez)
+    open(os.path.join(L, 'nomi_propri.txt'), 'w', encoding='utf-8').write('')
+    esito('ortografia.py', 'senza parole ammesse del libro: compaiono i nomi propri', 'sì',
+          'sì' if len(tabella_a(orto(L).stdout)) > len(A['refusi']['segnalate']) else 'no', sez)
+    r = subprocess.run([sys.executable, '-B', os.path.join(S, 'ortografia.py'), L], env=E, capture_output=True, text=True)
+    esito('ortografia.py', 'report scritto in 06-diagnostica', 'sì',
+          'sì' if os.path.isfile(os.path.join(L, '06-diagnostica', 'controllo-ortografico.md')) else 'no', sez)
+    lt = os.environ.get('ZB_LANGUAGETOOL')
+    if not lt:
+        saltata('ortografia.py', 'LanguageTool sui refusi inventati', 'ZB_LANGUAGETOOL non impostata', sez)
+        saltata('ortografia.py', 'LanguageTool: livello eseguito nel report', 'ZB_LANGUAGETOOL non impostata', sez)
+        return
+    L = copia_libro('mini-libro')
+    with open(os.path.join(L, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8') as f:
+        f.write('\n' + A['refusi']['riga'] + '\n')
+    p = orto(L, dict(E, ZB_LANGUAGETOOL=lt))
+    sez_b = p.stdout.split('## (b)')[1].split('## ')[0] if '## (b)' in p.stdout else ''
+    esito('ortografia.py', 'LanguageTool sui refusi inventati', A['languagetool']['segnalate'],
+          sorted({r.split('|')[3].strip() for r in sez_b.splitlines() if r.startswith('| 04-')}), sez)
+    esito('ortografia.py', 'LanguageTool: livello eseguito nel report', A['languagetool']['livelli'],
+          ' / '.join(re.findall(r'^\| \([abc]\) [^|]+\| (sì|no) \|', p.stdout, re.M)), sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7}
 
 
 def main(argv):
@@ -1025,10 +1086,11 @@ def main(argv):
     for r in righe:
         print('| ' + ' | '.join(r) + ' |')
     ok = sum(1 for r in righe if r[5] == 'OK')
-    print(f'\nProve: {ok}/{len(righe)} OK')
+    contate = [r for r in righe if r[5] != 'SALTATA']
+    print(f'\nProve: {ok}/{len(contate)} OK; saltate: {len(righe) - len(contate)} (non contate nel totale)')
     for nome, codice, riga in finali:
         print(f'{nome} su motore/: {"OK" if codice == 0 else "KO"} — {riga}')
-    tutto_ok = ok == len(righe) and all(c == 0 for _, c, _ in finali)
+    tutto_ok = ok == len(contate) and all(c == 0 for _, c, _ in finali)
     print('ESITO: ' + ('tutto OK' if tutto_ok else 'CI SONO KO'))
     return 0 if tutto_ok else 1
 

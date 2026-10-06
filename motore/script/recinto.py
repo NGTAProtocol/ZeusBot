@@ -48,6 +48,7 @@ def comandi(motore):
         ('avvio.py', 'avvio.py {libro}'),
         ('adotta.py', 'adotta.py {libro}'),
         ('pulizia.py', 'pulizia.py {libro}'),
+        ('ortografia.py', 'ortografia.py {libro}'),
         ('fase.py stato', 'fase.py {libro} stato'),
         ('revisione.py', 'revisione.py {libro} 02-bibbia/bibbia.md'),
     ]

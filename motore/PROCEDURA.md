@@ -140,9 +140,25 @@ fase passa a «chiusura».
 
 ## 7. Chiusura
 
-In ordine: `zb continuita`, `zb ortografia` (script non ancora costruito: va aggiunto),
+In ordine: `zb continuita`, `zb ortografia`,
 `zb compila`, `zb impagina`, `zb pdf`, `zb kdp`, `zb pacchetto`; poi `zb pronto <libro>`, che
 controlla che ci siano tutti i report e chiude il libro.
+
+**Ortografia (`zb ortografia <libro>`), tre livelli.**
+- (a) Hunspell it_IT, sempre. Parole ammesse: quelle del libro (`nomi_propri.txt`) e quelle generiche
+  del motore (`dati/parole-ammesse-it.txt`: forme italiane valide che il dizionario non conosce, mai
+  nomi di personaggi o luoghi). Le elisioni (l', dell', anch') non si controllano.
+- (b) LanguageTool, solo se `ZB_LANGUAGETOOL` indica la cartella dei suoi `.jar`. Non va nel
+  repository e non si scarica mai da languagetool.org. Si scarica da Maven Central (serve Java e
+  Maven) in una cartella temporanea:
+  1. in una cartella temporanea, un `pom.xml` con le dipendenze `org.languagetool:languagetool-commandline`
+     e `org.languagetool:language-it` (stessa versione, per esempio 6.8);
+  2. `mvn -q -B dependency:copy-dependencies -DoutputDirectory=lib` (circa 140 file, 240 MB);
+  3. `export ZB_LANGUAGETOOL=<cartella temporanea>/lib`.
+  Se Maven Central risponde 403 o 429, non insistere: si resta con Hunspell e la checklist.
+- (c) Checklist per la lettura umana, sempre, in fondo al report: i correttori automatici non
+  rilevano «e» per «è», gli accordi sbagliati, le parole vere usate al posto di altre.
+- Il report (`06-diagnostica/controllo-ortografico.md`) dice quali livelli sono stati eseguiti.
 
 ## 8. Blocco di salvataggio
 

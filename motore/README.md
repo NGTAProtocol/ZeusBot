@@ -25,45 +25,45 @@ Questo file raccoglie le regole d'uso e i comandi.
 
 Un file con un nome diverso ferma il motore.
 
-## Comandi `zb`
+## Dal briefing al PDF
 
-Si lanciano con `python3 motore/zb <comando> …` (il libro è sempre un percorso, oppure `ZB_LIBRO`).
+1. L'autore compila `modelli/briefing.md` nella cartella del libro; `zb nuovo <briefing>` crea il libro.
+   Per un libro già avviato con documenti propri: `zb adotta <cartella>`.
+2. A ogni sessione: `zb avvio <libro>` e la riga «Letto: …».
+3. Fase documenti: bibbia, cronologia, scaletta e piano parole; `zb pronto`, poi `avanti` e `ok`.
+4. Fase pagina campione: `05-revisioni/pagina-campione.md`; `zb pronto`, poi `ok`.
+5. Stesura: un capitolo alla volta, `zb esito <libro> N`; fermata dopo il capitolo 3, poi lotti di N.
+6. Due controlli falliti di fila sullo stesso capitolo: fermata e decisione dell'autore.
+7. Chiusura: `continuita`, `ortografia`, `compila`, `impagina`, `pdf`, `kdp`, `pacchetto`; `zb pronto`.
+8. A ogni passo: commit, push, `git status -sb`, `git log -1` (blocco di salvataggio, `PROCEDURA.md`).
 
-| Comando | Script | Cosa fa |
-|---|---|---|
-| `zb nuovo <briefing>` | `nuovo.py` | crea il libro dal briefing (modello in `modelli/briefing.md`); briefing incompleto: elenca cosa manca e non crea nulla |
-| `zb avvio <libro>` | `avvio.py` | avvio obbligatorio: controlli, riga «Letto: …», marker `<libro>/.zb/letto-<sessione>` |
-| `zb stato <libro>` | `fase.py` | stato del libro (non scrive) |
-| `zb ok <libro> [lotti da N]` · `zb avanti <libro>` · `zb correggi <libro> <istruzione>` | `fase.py` | risposte dell'autore al gate aperto |
-| `zb pronto <libro>` · `zb esito <libro> N` | `fase.py` | fine del lavoro di una fase; esito dei controlli del capitolo N |
-| `zb revisione <libro> <documento\|gate> [N]` | `revisione.py` | blocco N di un documento, circa 120 righe (non scrive) |
-| `zb capitolo` · `conta` · `stile` · `continuita` · `riciclo` · `compila` · `impagina` · `pdf` · `kdp` · `pacchetto` `<libro>` | vedi sotto | controlli, stampa, pubblicazione |
-| `zb verifica KDP fatta [AAAA-MM-GG]` · `stato` · `controlla` | `kdp_verifica.py` | verifica delle direttive KDP |
-| `zb hook stato` · `attiva [--ok]` · `disattiva` | `zb` | hook di Claude Code: `attiva` senza `--ok` mostra soltanto; con `--ok` crea `.claude/settings.json` |
-| `zb prove` · `separazione` · `recinto` · `profili` | | prove del motore |
+## Comandi
 
-`zb ortografia` è previsto ma lo script non c'è ancora.
+Si lanciano con `python3 motore/zb <comando> …`; il libro è sempre un percorso (oppure `ZB_LIBRO`).
 
-## Script
+- `zb nuovo <briefing>`: crea il libro dal briefing; se è incompleto elenca cosa manca e non crea nulla.
+- `zb avvio <libro>`: controlli di avvio e riga «Letto: …»; si ferma se qualcosa non va.
+- `zb stato <libro>`: fase, gate, capitoli, parole, allineamento con origin; non scrive.
+- `zb pronto <libro>`: fine del lavoro di una fase; apre il gate o passa oltre.
+- `zb esito <libro> N`: controlli del capitolo N e registrazione dell'esito.
+- `zb ok <libro> [lotti da N]`: approva il gate aperto, dopo aver mostrato tutti i blocchi.
+- `zb avanti <libro>`: blocco successivo dei documenti del gate.
+- `zb correggi <libro> <istruzione>`: registra una correzione; il gate resta aperto.
+- `zb adotta <cartella>`: bozze di libro.yaml, stato, cronologia e nomi da documenti esistenti, con le fonti.
+- `zb conta <libro>`: parole con il metodo unico, per capitolo e totale.
+- `zb stile <libro> [N]`: frase media, dialogo, lista nera, tetti, similitudini, vincoli.
+- `zb continuita <libro>`: date, età, durate, cifre, nomi scritti in due modi.
+- `zb capitolo <libro> N`: tutti i controlli di un capitolo, con report.
+- `zb ortografia <libro>`: Hunspell, LanguageTool se disponibile, checklist per la lettura umana.
+- `zb compila <libro>`: manoscritto completo in `05-output/`.
+- `zb impagina <libro>`: PDF di stampa in `05-output/`.
+- `zb pdf <libro>`: verifica del PDF (pagine, font, margini, indice).
+- `zb kdp <libro>`: conformità KDP, sezioni 1-15.
+- `zb pacchetto <libro>`: struttura di `06-pubblicazione/` per KDP.
+- `zb revisione <libro> <documento|gate> [N]`: un documento in blocchi di circa 120 righe; non scrive.
+- `zb pulizia <libro> [--applica]`: elenco di temporanei, cartelle vuote e copie; cancella solo con `--applica`.
+- `zb hook stato|attiva [--ok]|disattiva`: hook di Claude Code (oggi in modalità avviso, non attivi).
+- `zb prove`: tutte le prove sui mini-libri inventati, più separazione e recinto.
 
-| Comando | Cosa fa |
-|---|---|
-| `python3 -B motore/script/prove.py` | «zb prove»: tutte le prove sui due mini-libri inventati, confronto con `prove/attesi.yaml`, poi `separazione.py` e `recinto.py`; codice 0 solo se tutto è OK |
-| `python3 -B motore/script/conta.py <libro> [--schermo]` | conteggio delle parole con il metodo unico |
-| `python3 -B motore/script/valida_profili.py` | valida i profili di genere |
-| `python3 -B motore/script/capitolo.py <libro> <N>` | tutti i controlli di un capitolo (parole, stile, continuità, riciclo, dichiarazioni); `N` può essere anche `prologo`, `epilogo`, `interludio II` |
-| `python3 -B motore/script/stile.py <libro> [N]` | frase media, dialogo %, lista nera e voci del libro, parole filtro, similitudini, vincoli, nomi vietati |
-| `python3 -B motore/script/continuita.py <libro>` | giorni della settimana, età, durate, cifre, nomi in due grafie; checklist manuale |
-| `python3 -B motore/script/riciclo.py <libro>` | sequenze di 7 parole ripetute (testo precedente: KO; capitoli precedenti: avviso) |
-| `python3 -B motore/script/compila.py <libro>` | manoscritto completo in `<libro>/05-output/<titolo>-completo.md` |
-| `python3 -B motore/script/impagina.py <libro>` | PDF di stampa in `<libro>/05-output/<titolo>.pdf` (Chromium via Node e Playwright, PyMuPDF; font di `stampa/font/`) |
-| `python3 -B motore/script/verifica_pdf.py <libro> [--pdf <file>]` | pagine, metadati, font, margini contro la tabella KDP, sommario contro le pagine, parole per pagina |
-| `python3 -B motore/script/pacchetto.py <libro>` | struttura di `06-pubblicazione/` con i modelli compilati da `libro.yaml` (nessun testo commerciale; non sovrascrive) |
-| `python3 -B motore/script/conformita_kdp.py <libro> [--pdf <file>]` | conformità KDP sezioni 1-15; codice 0 tutto OK, 1 almeno un KO, 2 verifica delle direttive mai fatta o scaduta |
-| `python3 -B motore/script/kdp_verifica.py fatta [AAAA-MM-GG]` | «verifica KDP fatta»: l'autore registra la data in `dati/kdp.yaml` e `dati/verifiche-kdp.md` |
-| `python3 -B motore/script/kdp_verifica.py controlla` | prova a raggiungere le pagine ufficiali; se bloccate, promemoria dei sette valori |
-| `python3 -B motore/script/kdp_verifica.py stato` | stato della verifica delle direttive (codice 2 se mai fatta o scaduta) |
-| `python3 -B motore/script/separazione.py` | controlla che `motore/` non contenga libri |
-| `python3 -B motore/script/recinto.py` | controlla che i comandi scrivano solo nel libro indicato |
-| `python3 -B motore/script/hook_sessione.py` | hook SessionStart (stdin JSON): session_id in `.zb/sessione-corrente` |
-| `python3 -B motore/script/hook_manoscritto.py` | hook PreToolUse (stdin JSON): avviso o blocco sulle scritture nel manoscritto senza avvio |
+Altri comandi: `zb verifica KDP fatta [AAAA-MM-GG]` (anche `stato`, `controlla`), `zb riciclo <libro>`,
+`zb separazione`, `zb recinto`, `zb profili`, `zb aiuto`.

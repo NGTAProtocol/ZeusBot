@@ -13,7 +13,7 @@ Prove: `zb prove` **289/289 OK** (12 nuove); separazione OK; recinto OK (44 esec
 
 ## Audit di ZeusBot (solo elenco, nulla cancellato)
 
-### Radice del ramo `claude/mister-provino-espansione`
+### Radice del ramo di lavoro del motore (con il libro 2)
 
 | Voce | Scopo | Ultimo commit | Dimensione | Candidato alla rimozione |
 |---|---|---|---|---|
@@ -31,8 +31,8 @@ Prove: `zb prove` **289/289 OK** (12 nuove); separazione OK; recinto OK (44 esec
 | `claude/roadmemo-context-review-c9rf26` | sessione chiusa senza modifiche | 28560a6 2026-09-24 | identico al principale | sì: nessun commit proprio (decide l'autore) |
 | `claude/ai-toolkit-reference-setup-b3kel4` | regola .gitignore per un riferimento locale | c047398 2026-09-29 | principale + 1 commit | possibile: un solo commit su .gitignore, da unire o scartare |
 | `claude/manuscript-reader-voice-notes-s0vnee` | app lettore del manoscritto (Android) | 42fa935 2026-09-25 | storia diversa (nato da e7a94cb, prima del principale) | no: progetto a sé |
-| `claude/kurgan-giorgi-thriller-3f6mfq` | primo libro reale | d31e84c 2026-10-01 | principale + `libri/` | no |
-| `claude/mister-provino-espansione` | secondo libro reale + motore | c3e3964 2026-10-06 | principale + `libri/` + `motore/` + `CLAUDE.md` | no |
+| ramo del libro 1 (`…-3f6mfq`) | primo libro reale | d31e84c 2026-10-01 | principale + `libri/` | no |
+| ramo di lavoro del motore (questo ramo, con il libro 2) | secondo libro reale + motore | c3e3964 2026-10-06 | principale + `libri/` + `motore/` + `CLAUDE.md` | no |
 
 ### Cartelle di lavoro nel container (fuori dal repository o non tracciate)
 
