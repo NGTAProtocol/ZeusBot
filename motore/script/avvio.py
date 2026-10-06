@@ -7,13 +7,15 @@ Si ferma (codice 2) e non scrive nulla da nessuna parte se:
 - il ramo non è quello della sessione (ZB_RAMO, se indicato);
 - ci sono modifiche non salvate nel libro, o il ramo è avanti o indietro rispetto a origin;
 - stato.yaml manca o non è valido, oppure push_in_sospeso è vero;
-- in fase «documenti»: briefing incompleto;
+- in fase «documenti»: briefing incompleto (non per un libro in riscrittura senza briefing nel formato
+  del motore, cioè senza la riga «Titolo di lavoro:»: è un libro adottato con i suoi documenti);
 - un documento approvato è cambiato fuori procedura (sha256 diverso).
 Se tutto va bene stampa la riga «Letto: …» (file, righe, sha256, ultimo commit; libro e motore)
 e scrive solo il marker <libro>/.zb/letto-<session_id>.
 """
 import datetime
 import os
+import re
 import sys
 
 sys.dont_write_bytecode = True
@@ -100,7 +102,9 @@ def controlla(percorso):
     stato = fase.carica_stato(cartella)
     if stato['push_in_sospeso']:
         ferma('stato.yaml: push_in_sospeso è vero. Prima il push.')
-    if stato['fase'] == 'documenti':
+    pb = os.path.join(cartella, '00-progetto', 'briefing.md')
+    briefing_motore = os.path.isfile(pb) and re.search(r'(?m)^Titolo di lavoro:', open(pb, encoding='utf-8').read())
+    if stato['fase'] == 'documenti' and (libro.get('modalita') != 'riscrittura' or briefing_motore):
         manca = nuovo.mancanze(nuovo.leggi_briefing(os.path.join(cartella, '00-progetto', 'briefing.md')), cartella)
         if manca:
             ferma('Briefing incompleto. Mancano:\n- ' + '\n- '.join(manca))

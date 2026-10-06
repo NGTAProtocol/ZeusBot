@@ -88,6 +88,10 @@ parole, cronologia) ma non ancora `libro.yaml`.
 - Se il manuale diverge dal profilo di genere, il valore entra come `override` con il motivo.
 - Non sovrascrive mai un file esistente; scrive solo nella cartella indicata.
 - Elenca in `adozione.md` ciò che non ha potuto ricavare (da completare a mano).
+- Se il titolo non si ricava dai documenti si ferma senza scrivere nulla e lo chiede:
+  `zb adotta <cartella> --titolo "<titolo>"`.
+- Media e massimo dei capitoli si leggono solo dalla riga «Capitolo:» del manuale: «frase media 10-13»
+  o «al massimo 150 parole» scritti altrove non diventano valori dei capitoli.
 - Si ferma alla fase «documenti»: apre il gate se ci sono tutti i documenti, altrimenti li elenca.
 
 Righe riconosciute (formato dei documenti del motore): `Titolo di lavoro:`, `Autore:`,
@@ -115,7 +119,8 @@ Si ferma (codice 2) **senza scrivere nulla da nessuna parte** se:
 - il ramo non è quello della sessione; ci sono modifiche non salvate; il ramo è avanti o
   indietro rispetto a origin;
 - `stato.yaml` manca o non è valido, o `push_in_sospeso` è vero;
-- in fase «documenti» il briefing è incompleto;
+- in fase «documenti» il briefing è incompleto (non per un libro in riscrittura senza briefing nel
+  formato del motore, cioè senza «Titolo di lavoro:»: un libro adottato parte dai suoi documenti);
 - un documento approvato è cambiato fuori procedura (sha256 diverso da quello registrato).
   Se la modifica è autorizzata dall'autore: commit, poi `zb riapprova <libro> <documento> <motivo>`
   (nuovo sha256 e commit; in `stato.yaml` restano data, motivo e sha256 precedente).

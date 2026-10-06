@@ -518,3 +518,19 @@ correzioni_dopo_prova:
   # scritte 1186 + 832 + 103 = 2121; capitolo 3 (budget 900) non scritto; previsto 3021 su 4000
   l_avviso: "totale previsto 3021 parole su 4000 (-24.5%, tolleranza ±5%); scritte 2121. Budget residuo proposto: 1879 parole per 1 unità (3: 1879); è una proposta, nessun capitolo si accorcia o si allunga per evitare l'avviso"
   l_schermo: "True | True"
+
+adozione_libri_esistenti:
+  # Libro inventato «La torre di sale», in riscrittura, adottato con i suoi documenti (copie temporanee).
+  briefing_libero: "# Note dell'autrice\n\nIdea libera, scritta prima del motore: una torre, il sale, due sorelle.\n"
+  briefing_motore_incompleto: "# Briefing\n\nTitolo di lavoro: La torre di sale\n"
+  vecchio: "# Vecchio testo\n\nUna riga del testo precedente.\n"
+  manuale: "# Manuale di stile — La torre di sale\n\nAutore: Autrice Inventata\nGenere: narrativa-letteraria\nObiettivo: 60000 parole\n\n- frase media 10-13 parole per capitolo;\n- un ponte di riassunto al massimo 150 parole.\n"
+  manuale_senza_titolo: "# Note di stile\n\nAutore: Autrice Inventata\nGenere: narrativa-letteraria\nObiettivo: 60000 parole\n"
+  bibbia: "# Bibbia — La torre di sale\n\n**Ada Neri**, nata il 1990-01-02.\n"
+  scaletta: "# Scaletta — La torre di sale\n\n| 1 | 2020-05-04 | la torre |\n"
+  piano: "# Piano parole\n\n| Parte | Cap. | Titolo | Budget capitolo |\n|---|---|---|---|\n| — | 1 | La torre | 20000 |\n| — | 2 | Il sale | 20000 |\n| — | 3 | Le sorelle | 20000 |\n\nTotale: 60000.\n"
+  capitoli: "[] / []"                       # «frase media 10-13» e «al massimo 150 parole» non diventano capitoli
+  avvio_libero: "0 / True"
+  avvio_motore: "2 / True"
+  senza_titolo: "2 / True / True"
+  con_titolo: "0 / La torre di sale / La torre di sale"
