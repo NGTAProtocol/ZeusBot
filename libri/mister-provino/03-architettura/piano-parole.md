@@ -6,7 +6,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 |---|---|---|---|---|---|---|---|---|
 | — | prologo | Prologo | 500 | — | — | — | — | 137 |
 | Parte prima | 1 | Pane e Pomodoro | 1.700 | — | — | 1.600 | -5,9% | 149 |
-| Parte prima | 2 | Napoli | 1.800 | — | — | — | — | 163 |
+| Parte prima | 2 | Napoli | 1.800 | — | — | 1.625 | -9,7% | 163 |
 | Parte prima | 3 | Trani | 2.000 | — | — | — | — | 174 |
 | Parte prima | interludio I | I fiori | 400 | — | — | — | — | 185 |
 | Parte prima | 4 | La stanza di Michele | 1.500 | — | — | — | — | 188 |
