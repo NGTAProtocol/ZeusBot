@@ -2,7 +2,7 @@
 
 | Parte | Cap. | Titolo | Funzione | Scene | Budget capitolo | Budget per scena | Parole reali | Scarto |
 |---|---|---|---|---|---|---|---|---|
-| — | 1 | Il ritorno | apertura e incidente scatenante; chiusura su «lui» (nessun nome) | 1 | 1125 | 1125 |  |  |
+| — | 1 | Il ritorno | apertura e incidente scatenante; chiusura su «lui» (nessun nome) | 1 | 1125 | 1125 | 1002 | −11% |
 | — | 2 | Il cantiere | primo incontro | 1 | 1125 | 1125 |  |  |
 | — | 3 | Carta bagnata | avvicinamento | 1 | 1125 | 1125 |  |  |
 | — | 4 | La lettera | svolta della relazione | 1 | 1125 | 1125 |  |  |

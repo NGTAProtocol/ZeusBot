@@ -16,7 +16,7 @@ eventi:
   - {id: riapertura, data: 2024-04-14, capitolo: 8, descrizione: "riapertura della biblioteca"}
 durate:
   - {da: partenza_elia, a: ritorno_nora, valore: "dieci anni", tolleranza_mesi: 6}
-  - {da: ritorno_nora, a: riapertura, valore: "sei settimane", tolleranza_mesi: 0}
+  - {da: ritorno_nora, a: riapertura, valore: "sei settimane", tolleranza_giorni: 3}
 cifre:
   - {id: settimane_cantiere, valore: 6, unita: settimane, forme_ammesse: ["sei"]}
 eta_per_capitolo: {calcolata: true}
