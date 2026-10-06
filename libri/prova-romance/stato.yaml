@@ -23,6 +23,10 @@ correzioni_aperte:
     del flessibile'
   sha256: 62935494c9a9
   data: '2026-10-06'
+- gate: primi_capitoli
+  testo: 'capitolo 2: una frase sulla notte nella vecchia camera sopra il bar e sulla valigia, per rientrare nel budget'
+  sha256: e2ee4dc30eb8
+  data: '2026-10-06'
 parole:
   scritte: 3002
   obiettivo: 9000
@@ -56,4 +60,4 @@ revisione_in_corso:
   blocchi_totali: 6
   sha256: e2ee4dc30eb8
 push_in_sospeso: false
-aggiornato: '2026-10-06T11:27:56Z'
+aggiornato: '2026-10-06T11:31:35Z'

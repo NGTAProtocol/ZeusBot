@@ -2,7 +2,7 @@
 
 *Cala Rossa — martedì 5 marzo 2024*
 
-Un flessibile urlava da qualche parte al piano terra del palazzo comunale, i martelli battevano sulle impalcature e una radio, appesa a un tubo con il fil di ferro, trasmetteva canzoni di trent'anni prima a un volume che nessuno aveva il coraggio di abbassare. Nora salì la scala tra i teli di plastica con la cassetta in mano e un elmetto giallo troppo grande, prestato da un operaio che l'aveva fermata sul portone per ricordarle che senza elmetto non si entrava.
+Un flessibile urlava da qualche parte al piano terra del palazzo comunale, i martelli battevano sulle impalcature e una radio, appesa a un tubo con il fil di ferro, trasmetteva canzoni di trent'anni prima a un volume che nessuno aveva il coraggio di abbassare. Nora salì la scala tra i teli di plastica con la cassetta in mano e un elmetto giallo troppo grande, prestato da un operaio che l'aveva fermata sul portone per ricordarle che senza elmetto non si entrava. Aveva dormito nella sua vecchia camera sopra il bar, tra lenzuola che sapevano di lavanda e di armadio chiuso, e la valigia era rimasta lassù, aperta sul pavimento e ancora piena, perché disfarla le pareva una promessa troppo grande.
 
 Lui era in fondo alla sala grande, chino su un tavolo coperto di disegni, con la luce bianca di una lampada da cantiere che gli tagliava la faccia a metà. Aveva i capelli più corti e una giacca impermeabile che a Lisbona, probabilmente, nessuno portava. Quando alzò la testa, Nora capì che l'aveva sentita arrivare dal primo gradino e che aveva aspettato apposta a voltarsi.
 
