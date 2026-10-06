@@ -10,7 +10,12 @@ lotto:
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: null
 tentativi: {}
-correzioni_aperte: []
+correzioni_aperte:
+- gate: documenti
+  testo: capitolo 1 senza il nome di Elia (chiude su lui/l'architetto); campi scene del profilo verificati; capitolo 8 con
+    la bottega aperta
+  sha256: f1ff3be6124f
+  data: '2026-10-06'
 parole:
   scritte: 0
   obiettivo: 9000
@@ -21,6 +26,6 @@ revisione_in_corso:
   gate: documenti
   blocco: 1
   blocchi_totali: 6
-  sha256: f1ff3be6124f
+  sha256: eca21dad425c
 push_in_sospeso: false
-aggiornato: '2026-10-06T08:35:47Z'
+aggiornato: '2026-10-06T08:45:09Z'

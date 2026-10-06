@@ -12,7 +12,7 @@
 - **Cala Rossa**: paese di mare inventato, sulla costa; un porto piccolo, case strette, scogli rossi.
 - **Palazzo comunale**: la biblioteca è al primo piano; sale allagate da un'infiltrazione del tetto.
 - **Bar Vitale**: il bar di Adele sul porto; caffè, sale, discorsi a mezza voce.
-- **La bottega**: una vecchia merceria chiusa in via del Molo; nel finale diventa il laboratorio di Nora.
+- **La bottega**: una vecchia merceria chiusa in via del Molo; nel finale diventa il laboratorio di Nora e apre il giorno della riapertura (capitolo 8), con l'insegna nuova.
 - **Lisbona**: solo citata; la città dove Elia ha lavorato per dieci anni.
 
 ## Motivi (con tetti)
@@ -26,6 +26,10 @@
 - La storia dura sei settimane, da lunedì 4 marzo a domenica 14 aprile 2024.
 - La lettera di Elia è nella cassetta degli attrezzi di Nora fin dall'inizio; viene aperta al capitolo 4.
 - Il finale è felice: Nora apre la sua bottega nel paese ed Elia resta.
+
+## Vincoli di stesura
+
+- Capitolo 1: Nora scopre chi dirige il cantiere ma il nome di Elia non compare; nel testo è «lui» o «l'architetto».
 
 ## Cose da non cambiare
 

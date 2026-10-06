@@ -36,6 +36,7 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «romanc
 ## 6. Vincoli
 
 - «Elia» non compare nei capitoli 1.
+- Capitolo 1: Nora scopre chi dirige il cantiere senza che il nome compaia; la chiusura usa «lui» o «l'architetto».
 
 ## 7. Struttura
 
@@ -64,5 +65,6 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «romanc
 - La storia dura sei settimane, da lunedì 4 marzo a domenica 14 aprile 2024.
 - La lettera di Elia è nella cassetta degli attrezzi di Nora fin dall'inizio; viene aperta al capitolo 4.
 - Il finale è felice: Nora apre la sua bottega nel paese ed Elia resta.
+- Capitolo 8: dopo la riapertura della biblioteca, una riga finale sulla bottega aperta (insegna o porta aperta).
 - Il paese si chiama Cala Rossa ed è inventato.
 - Nessuna scena di sesso esplicita.
