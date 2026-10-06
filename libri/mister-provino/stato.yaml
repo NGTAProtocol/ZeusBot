@@ -1,20 +1,16 @@
 libro: Mister Provino
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: pagina_campione
-passo: in revisione
-gate_in_attesa: pagina_campione
+fase: stesura
+passo: capitolo 1
+gate_in_attesa: null
 lotto:
   dimensione: 3
   capitoli: []
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: null
 tentativi: {}
-correzioni_aperte:
-- gate: pagina_campione
-  testo: 'pagina campione: tolto «in bocca» da «la parola mi rimase in bocca per tutta la mattina»'
-  sha256: 7fc944f2b9f7
-  data: '2026-10-06'
+correzioni_aperte: []
 parole:
   scritte: 0
   obiettivo: 78000
@@ -38,11 +34,10 @@ documenti_approvati:
   03-architettura/piano-parole.md:
     sha256: 440b10fb003f05cd1b0dd90b4fdc68360eaba1e6d10b774fcd0a978a789c155d
     commit: 275ed3e
+  05-revisioni/pagina-campione.md:
+    sha256: 9c73760076edaff8922d288a33bc340622a161fd0e1623d072193be824bbca62
+    commit: f27c61c
 avvisi_aperti: []
-revisione_in_corso:
-  gate: pagina_campione
-  blocco: 1
-  blocchi_totali: 1
-  sha256: 7fc944f2b9f7
+revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-06T23:12:15Z'
+aggiornato: '2026-10-06T23:12:18Z'
