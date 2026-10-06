@@ -1,0 +1,7 @@
+# Lingue supportate dal motore (proposta B.3). Per ora solo l'italiano.
+it:
+  ortografia: {hunspell: it_IT, opzioni: "-i utf-8"}
+  mesi: [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre]
+  giorni: [lunedì, martedì, mercoledì, giovedì, venerdì, sabato, domenica]
+  lineetta_dialogo: "—"
+  virgolette: ["«", "»"]

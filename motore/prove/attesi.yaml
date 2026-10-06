@@ -1,0 +1,394 @@
+# Esiti attesi delle prove del motore sui due mini-libri inventati (proposta B.2.2, B.7).
+# Ogni passo aggiunge la sua sezione. Le prove girano su copie temporanee dei mini-libri.
+#
+# Errori voluti già presenti nei mini-libri, da verificare nei passi successivi:
+#   mini-libro (giallo), cap. 2: «un brivido le percorse la schiena» (lista nera);
+#     «come se» 6 volte (tetto 2 per capitolo); «Lodovico Arsa» prima del cap. 3;
+#     intestazione «venerdì 4 marzo» (nel 2021 il 4 marzo è giovedì); «quarantadue anni»
+#     per Irene Calvi (nel 2021 ne ha 35); «Brena» accanto a «Brenna»; chiusura dichiarata
+#     X, prevista R in scaletta.
+#   mini-libro (giallo), cap. 3: 457 parole (minimo 800); frase media oltre 14;
+#     ultima riga di una parola.
+#   capitolo-prova (giallo cap. 1 = romance cap. 3): circa 1.180 parole, frase media
+#     circa 10, dialogo circa 30%: OK nel giallo, KO nel romance (minimo 1.500,
+#     frase media 12-17, dialogo 35-55%); chiusure su domanda: tre di fila nel romance.
+
+passo_1:
+  profili:                       # valida_profili.py: tutti OK
+    giallo: OK
+    thriller: OK
+    romance: OK
+    narrativa-letteraria: OK
+    fantasy: OK
+    fantascienza: OK
+    young-adult: OK
+  profilo_senza_fonte: KO        # copia di un profilo con una riga senza fonte né PROPOSTA
+  profilo_media_fuori: KO        # copia con media fuori da minimo/massimo
+  libro_schema:                  # comune.carica_libro
+    mini-libro: OK
+    mini-libro-romance: OK
+  rifiuti:                       # comune.carica_libro su copie modificate
+    lingua_en: "Lingua «en» non supportata"
+    lingua_mancante: "Lingua «None» non supportata"
+    override_senza_motivo: "override senza motivo"
+    profilo_cambiato_senza_override: "valore del profilo cambiato senza override"
+    riscrittura_senza_testo_precedente: "obbligatorio con modalita: riscrittura"
+  stato_schema:
+    modello_valido: OK           # stato.yaml d'esempio della proposta C.1
+    fase_mancante: KO
+  # Conteggi calcolati con una pipeline di shell indipendente da conta.py:
+  #   grep -v -E '^[[:space:]]*(#|<!--)' FILE | tr -s '[:space:]' '\n' | grep -c '[[:alnum:]]'
+  #   (LC_ALL=C.UTF-8)
+  conta:
+    mini-libro:
+      unita: {"1": 1186, "2": 832, "interludio I": 103, "3": 457}
+      ordine: ["1", "2", "interludio I", "3"]
+      totale: 2578
+    mini-libro-romance:
+      unita: {"1": 1581, "2": 1549, "3": 1183}
+      ordine: ["1", "2", "3"]
+      totale: 4313
+  separazione:
+    motore: 0                    # codice d'uscita su motore/
+    nome_vietato_in_copia: 1     # copia di motore/ con una voce in nomi_vietati.txt presente in un file
+    libro_yaml_fuori_posto: 1    # copia di motore/ con un libro.yaml fuori dai mini-libri
+  recinto:
+    comandi_del_motore: 0        # nessuna scrittura fuori dalla copia del mini-libro
+    scrittura_messa_apposta: 1   # un comando di prova che scrive in motore/ viene rilevato
+    scrivi_fuori_dal_libro: rifiutata   # comune.scrivi verso un percorso fuori dal libro
+
+passo_2:
+  # Esiti di capitolo.py su ogni unità (controllo|esito|riga), verificati sugli errori voluti di B.2.2.
+  capitoli:
+    mini-libro:
+      "1":
+        parole: 1186
+        frase_media: 9.8
+        dialogo: 29.5
+        esiti: []
+      "2":
+        parole: 832
+        frase_media: 9.7
+        dialogo: 26.1
+        esiti:
+          - "dichiarazione:chiusura|AVVISO|"
+          - "eta|KO|27"
+          - "giorno_settimana|KO|2"
+          - "nome_due_grafie|AVVISO|5"
+          - "nome_vietato:Lodovico Arsa|KO|25"
+          - "nome_vietato:Lodovico Arsa|KO|43"
+          - "nome_vietato:Lodovico Arsa|KO|55"
+          - "nome_vietato:Lodovico Arsa|KO|65"
+          - "similitudini|AVVISO|"
+          - "voce:brivido_schiena|KO|5"
+          - "voce:come_se|KO|19"
+      "interludio I":
+        parole: 103
+        frase_media: 12.9
+        dialogo: 0.0
+        esiti:
+          - "parole_budget|AVVISO|"
+      "3":
+        parole: 457
+        frase_media: 45.3
+        dialogo: 0.0
+        esiti:
+          - "dialogo|KO|"
+          - "dichiarazione:chiusura|KO|7"
+          - "frase_media|KO|"
+          - "parole_budget|AVVISO|"
+          - "parole_minimo|KO|"
+    mini-libro-romance:
+      "1":
+        parole: 1581
+        frase_media: 13.4
+        dialogo: 39.1
+        esiti: []
+      "2":
+        parole: 1549
+        frase_media: 13.2
+        dialogo: 40.3
+        esiti: []
+      "3":
+        parole: 1183
+        frase_media: 9.8
+        dialogo: 29.5
+        esiti:
+          - "dialogo|KO|"
+          - "dichiarazione:chiusura|KO|"
+          - "frase_media|KO|"
+          - "parole_minimo|KO|"
+  capitolo_sotto_minimo:          # capitolo.py sul cap. 3 del giallo (457 parole, minimo 800)
+    codice: 1
+    controllo: "parole_minimo|KO"
+  capitolo_prova:                 # stesso testo: cap. 1 del giallo e cap. 3 del romance
+    giallo_ko: 0
+    romance_ko: 4
+  riciclo:
+    testo_precedente: 1           # segmenti KO nel cap. 1, con il suo primo paragrafo come testo precedente
+    unita_precedenti: 1           # segmenti AVVISO nel cap. 3, dopo avervi copiato una frase del cap. 1
+  lista_nera:
+    voci: 19
+    regex_valide: OK
+  comandi:                        # codici d'uscita sulle copie; ogni comando scrive il suo report
+    stile.py mini-libro: 1
+    stile.py mini-libro-romance: 1
+    continuita.py mini-libro: 1
+    continuita.py mini-libro-romance: 0
+    riciclo.py mini-libro: 0
+    riciclo.py mini-libro-romance: 0
+  solo_dialogo:                   # voce di prova {id: registro_prova, pattern: '(?i)\bregistro\b', modalita: conta,
+                                  # massimo: 10, solo_dialogo: true} aggiunta a una copia del giallo
+    righe_ko_cap_1: [17, 19, 39, 53, 69, 71, 103]   # righe di narrazione con «registro»
+    righe_dialogo_ammesse: [79, 99]                 # righe di dialogo: nessun esito
+  checklist_capitolo:             # sezione «Checklist manuale» nel report di capitolo.py
+    tic: 4
+  nome_obbligatorio:              # copia del giallo con obbligatorio_in: ["3"] per «Lodovico Arsa»
+    esito_cap_3: "nome_obbligatorio:Lodovico Arsa|KO|"
+
+passo_3:
+  # PDF dei due mini-libri generati dal motore (compila.py + impagina.py), verificati con verifica_pdf.py.
+  # Lo sha256 del PDF è fissato perché due generazioni consecutive danno lo stesso valore
+  # (Chromium di Playwright 1.56.1, PyMuPDF 1.28.2, font di stampa/font/FONTI.yaml).
+  mini-libro:
+    md_sha256: "2324fc633819fa46b08b111465e3a9ab5267327a131bf744593852d46a0a9daf"
+    pdf_sha256: "cecd5860e1c3a46ff15adbe1901ac254fe7bd8ae1695c8e91c27d64c5b65c884"
+    pagine: 16                    # 4 iniziali senza numero + 12 numerate
+    metadati: {Title: "Prova di stampa", Author: "Autore di Prova"}
+    margini:                      # minimi misurati (pollici); interno a sinistra sulle dispari, a destra sulle pari
+      interno: 0.625
+      esterno: 0.625
+      alto: 0.798
+      basso: 0.356
+    soglie_kdp:                   # 16 pagine → prima fascia (24-150 pagine): 0,375"; esterni senza bleed 0,25"
+      interno: 0.375
+      esterno: 0.25
+    sommario: {"Capitolo 1": 1, "Capitolo 2": 6, "La vetrina": 10, "Capitolo 3": 11}
+    parole_per_pagina: 184.9
+    esiti: []
+    codice: 0
+  mini-libro-romance:
+    md_sha256: "f853e720bf4d8850b1e1f4caa79226724f7d1fc0b2b4d9cd112a17ac95dd2df4"
+    pdf_sha256: "9e54c302eb0f153f7daf9cd5e10f9a405956da3f176a51d240b86a0f77065fde"
+    pagine: 23                    # 4 iniziali + 19 numerate
+    metadati: {Title: "Prova d'inchiostro", Author: "Autrice di Prova"}
+    margini:                      # interno scelto 17 mm, esterno 16 mm: margini a specchio
+      interno: 0.665
+      esterno: 0.624
+      alto: 0.798
+      basso: 0.396
+    soglie_kdp:
+      interno: 0.375
+      esterno: 0.25
+    sommario: {"Capitolo 1": 1, "Capitolo 2": 8, "Capitolo 3": 15}
+    parole_per_pagina: 205.8
+    esiti: ["pagine_pari|AVVISO"]   # 23 pagine: numero dispari (avviso, da verificare su KDP)
+    codice: 0
+
+passo_4:
+  # conformita_kdp.py sui due mini-libri dopo compila, impagina e pacchetto, con la scheda inventata
+  # di prove/pubblicazione/ e le conferme del modello (nessuna conferma data).
+  # Sezione 11: i PDF hanno meno di 24 pagine, quindi KO per costruzione.
+  mini-libri:
+    mini-libro:
+      codice: 1
+      ko: [8, 9, 11, 13, 14, 15]
+      avvisi: [6, 10, 11]          # editore «Independently published»; codice a barre; formato A5 non citato
+      sezione_11_pagine: "16 pagine (minimo 24)"
+    mini-libro-romance:
+      codice: 1
+      ko: [8, 9, 11, 12, 13, 14, 15]   # 12: ebook: true senza ebook.docx
+      avvisi: [6, 7, 10, 11, 12]       # 7: «romanzo» ripete il sottotitolo; 11: pagine dispari; 12: Kindle Previewer
+      sezione_11_pagine: "23 pagine (minimo 24)"
+  tutto_ok:                       # giallo, PDF sintetico (pagine del PDF di prova ripetute, nessun testo aggiunto),
+                                  # conferme di prove/pubblicazione/conferme-tutto-ok.yaml, verifica KDP del 2026-10-01
+    pagine_pdf_sintetico: 32
+    codice: 0
+    ko: []
+    avvisi: [6, 10]
+  formato_confermato:             # sul percorso «tutto OK»: formato A5 non citato
+    falso: {esito_11: OK, avviso_formato: "sì"}
+    vero: {esito_11: OK, avviso_formato: "no"}
+  scheda_modificata:              # copie della scheda del giallo con un solo errore ciascuna → sezione: esito
+    parola_amazzonia: {sezione: 7, esito: OK}
+    parola_kindle: {sezione: 7, esito: KO}
+    descrizione_4001: {sezione: 4, esito: KO}
+    url_nella_descrizione: {sezione: 4, esito: KO}
+    otto_parole_chiave: {sezione: 7, esito: KO}
+    autore_diverso: {sezione: 5, esito: KO}
+  verifica:
+    nulla: 2                      # codice d'uscita sul percorso «tutto OK» con ultima_verifica: null
+    scaduta: 2                    # verifica del 2026-08-01, oggi 2026-10-02
+  kdp_verifica:
+    data_futura: 1
+    data_malformata: 1
+    data_valida: 0
+    riga_kdp_yaml: "ultima_verifica: 2026-10-01"
+    righe_registro: 1
+    data_vecchia_avviso: sì
+    promemoria_righe_numerate: 7
+  recinto_eccezione:              # recinto.py su una copia di motore/ con «kdp_verifica.py fatta» come comando extra
+    codice: 0
+    eccezioni: 3                  # 1° mini-libro: dati/kdp.yaml e dati/verifiche-kdp.md; 2° mini-libro: solo
+                                  # verifiche-kdp.md (stessa data: kdp.yaml resta identico)
+  pacchetto:
+    creati: 6
+    seconda_esecuzione_creati: 0
+    scheda_non_toccata: sì
+
+passo_5:
+  # Conduzione: nuovo, avvio, fase (gate), revisione, hook, zb, CLAUDE.md. Su copie temporanee
+  # (repository git con un remoto locale), mai sul repository del motore.
+  nuovo:
+    codice: 0
+    file: ['.gitignore', '00-progetto/briefing.md', '02-bibbia/bibbia.md', '03-architettura/manuale-di-stile.md',
+           '03-architettura/piano-parole.md', '03-architettura/scaletta.md', 'LEGGIMI.md', 'cronologia.yaml',
+           'libro.yaml', 'nomi_propri.txt', 'stato.yaml']
+    fuori: []
+    libro_valido: "sì"
+    stato: "documenti / nessuno"
+    capitoli: 30
+    voci: ['come_se', 'all_improvviso', 'un_brivido_le_percorse_la_schiena']
+    vincolo: ['1']
+    gate: ['documenti', 'pagina_campione', 'primi_capitoli']
+    esistente: "2 / intatto"
+  briefing_incompleto:
+    codice: 2
+    mancano: ['Autore', 'Lunghezza', 'Idea']
+    creato: []
+    avvio_libro: "2 / ['Autore']"
+  avvio:
+    codice: 0
+    file_letti: 10
+    git_status: pulito
+    non_scrivibile: "2 / True"
+    fuori_git: "2 / []"
+    non_salvate: "2 / True"
+    ramo: "2 / True"
+  gate_documenti:
+    ok_senza_gate: 2
+    pronto: "documenti / documenti / blocco 1 di 6"
+    ok_presto: "2 / True"
+    ultimo_blocco: "True / True"
+    correggi: "0 / 1 / documenti / documenti"
+    ok_correzione_pendente: "2 / True"
+    ok_documenti_cambiati: "2 / True"
+    riparte: "True / 1"
+    ok_non_salvati: "2 / True"
+    stato: "0 / True"
+    ok: "0 / pagina_campione / nessuno / 6 / 0"
+    leggimi: "Fase: pagina_campione; gate in attesa: nessuno"
+    avvio_dopo_ok: 0
+    approvato_cambiato: "2 / True"
+    gate_pagina: "pagina_campione / pagina_campione"
+    ok_pagina: "0 / stesura / nessuno / capitolo 1"
+  gate_configurabili:
+    senza_gate_documenti: "0 / pagina_campione / nessuno / 6"
+    lotto_attivo: "stesura / lotto"
+    lotto_senza_gate: "stesura / nessuno / True"
+  stesura:
+    esito_1: "0 / 1 / stesura / nessuno"
+    esito_2_primo: "1 / {'2': 1} / stesura / nessuno"
+    esito_2_secondo: "1 / stesura / controllo_fallito"
+    esito_3_gate_aperto: 2
+    ok_controllo: "0 / stesura / nessuno / capitolo 3 / {}"
+    primi_capitoli: "stesura / primi_capitoli"
+    ok_lotti: "0 / 5 / 3 / chiusura"
+    chiusura_incompleta: "2 / 7"
+  modalita:
+    senza_testo: "2 / ['Testo precedente']"
+    libro_yaml: "riscrittura 01-originale/testo-precedente.md | nuovo assente"
+    avvio_letti: "True | False"
+    leggimi: "Modalità: riscrittura | Modalità: nuovo"
+  claude_md:
+    righe_max_30: "sì"
+    nomi: []
+    frasi: []
+    frasi_obbligatorie: ['motore/PROCEDURA.md', 'LEGGIMI.md', 'zb avvio', 'Letto', 'manuale del libro',
+                         'procedura del motore', 'skill', "proponi → l'autore approva → applica", 'Ramo',
+                         'cartella del libro indicato', 'git status -sb', 'Non dire «fatto»']
+  hook:
+    scenari:
+      Write: "avviso / 0"
+      Edit: "avviso / 0"
+      Write fuori dal manoscritto: "niente / 0"
+      "1": "niente / 0"
+      "2": "niente / 0"
+      "3": "avviso / 0"
+      "4": "niente / 0"
+      "5": "avviso / 0"
+      "6": "avviso / 0"
+      "7": "niente / 0"
+      "8": "niente / 0"
+      "9": "avviso / 0"
+      "10": "niente / 0"
+      "11": "niente / 0"
+      "12": "niente / 0"
+      "13": "niente / 0"
+      "14": "avviso / 0"
+    con_marker: "niente / 0"
+    compact_sessione: "True / 0"
+    sessione_corrente: "sessione-prova / ignorata"
+    blocco: {write: 2, fuori: 0, errore: "2 / 0"}
+  zb_hook:
+    attiva_senza_ok: "0 / assente"
+    attiva_ok: "0 / True"
+    disattiva: "0 / assente"
+    disattiva_altrui: "2 / presente"
+    settings_nel_repo: assente
+  revisione:
+    blocchi: ['1-126', '127-252', '253-270']
+    ortografia: "1 / False"
+    conta: 0
+
+passo_5b:
+  # zb adotta sul mini-libro inventato prove/mini-libro-adozione (bibbia, manuale, scaletta, un capitolo).
+  codice: 0
+  scritti: ['libro.yaml', 'cronologia.yaml', 'nomi_propri.txt', 'stato.yaml', '06-diagnostica/adozione.md']
+  ricavati: 19
+  non_ricavati: ['autore', 'formato (predefinito 5.5 x 8.5: da confermare)', 'copyright.fantasia (testo standard: da confermare)',
+                 'documento mancante: 03-architettura/piano-parole.md']
+  override: ['frase_media [8, 12] 03-architettura/manuale-di-stile.md:16']
+  libro: "Il faro spento / narrativa-letteraria / 60000 / ['come_se', 'il_cuore_in_gola'] / [('Bice Orlandi', ['1-2'])]"
+  valido: "no"
+  cronologia: "2 / 3"
+  nomi: ['Anselmo', 'Bice', 'Capo', 'Lanza', 'Orlandi', 'Porto', 'Riva', 'Sferra']
+  stato_parziale: "documenti / nessuno / 1"
+  seconda: "0 / 5 / []"
+  completo: "True / documenti"
+  fonte_autore: "00-progetto/briefing.md:4"
+  riscrittura: "riscrittura 01-originale/vecchio-testo.md"
+  vuota: "2 / []"
+
+passo_6:
+  struttura:
+    cartelle: ['00-progetto', '01-originale', '02-bibbia', '03-architettura', '04-manoscritto', '05-revisioni',
+               '05-output', '06-diagnostica', '06-pubblicazione', '.zb']
+    nuovo: ['00-progetto', '02-bibbia', '03-architettura']
+    riscrittura: "0 / ['00-progetto', '01-originale', '02-bibbia', '03-architettura']"
+    nuovo_con_originale: "2 / True / False"
+    testo_altrove: "2 / True"
+  pulizia:
+    # 04-manoscritto/02-l-officina.md.tmp è messo apposta: il manoscritto non si tocca mai, quindi non compare.
+    # 05-revisioni/ resta vuota dopo aver tolto la copia: è proposta anche lei.
+    elenco: ['.zb/letto-vecchia', '05-output/libro-bozza.pdf', '05-output/libro-copia.pdf', '05-output/vuota/',
+             '05-revisioni/', '05-revisioni/01-copia.md', '__pycache__/', '_build/']
+    dry_run: "0 / [] / True"
+    applica: ['.zb/letto-vecchia', '05-output/libro-bozza.pdf', '05-output/libro-copia.pdf', '05-revisioni/01-copia.md',
+              '__pycache__/a.pyc', '_build/b.html', '05-output/vuota/', '05-revisioni/', '__pycache__/', '_build/']
+    protetti: "True / True / True"
+    dopo: 0
+
+passo_7:
+  # Hunspell it_IT; «Brena» è la seconda grafia messa apposta nel mini-libro giallo (passo 2).
+  base:
+    mini-libro: ['Brena']
+    mini-libro-romance: []
+  refusi:
+    riga: "Irene trovò un errrore nel registo della farmacia e sedette accanto al banco. Anch'io sedevo nell'auto, dov'era l'officina."
+    segnalate: ['Brena', 'errrore', 'registo']
+    codice: 1
+  livelli_senza_lt: "sì / no / sì"
+  languagetool:
+    segnalate: ['Brena', 'errrore', 'registo']
+    livelli: "sì / sì / sì"

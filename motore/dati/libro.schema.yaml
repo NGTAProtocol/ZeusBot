@@ -1,0 +1,132 @@
+# Schema di libro.yaml (proposta B.3). Formato degli schemi: vedi profilo.schema.yaml.
+# Controlli che lo schema non esprime (li fa comune.py):
+#   - lingua presente in dati/lingue.yaml;
+#   - testo_precedente obbligatorio con modalita: riscrittura, vietato con modalita: nuovo;
+#   - profilo esistente in profili/;
+#   - ogni override ha campo, valore e motivo non vuoto;
+#   - nessun valore del profilo cambiato fuori da override.
+tipo: mappa
+campi:
+  titolo: {tipo: testo, obbligatorio: true}
+  sottotitolo: {tipo: testo, nullo: true}
+  autore: {tipo: testo, obbligatorio: true}
+  lingua: {tipo: testo, obbligatorio: true}
+  modalita: {tipo: scelta, valori: [nuovo, riscrittura], obbligatorio: true}
+  serie:
+    tipo: mappa
+    nullo: true
+    campi:
+      nome: {tipo: testo, obbligatorio: true}
+      numero: {tipo: intero, obbligatorio: true}
+  ebook: {tipo: booleano}
+  profilo: {tipo: testo, obbligatorio: true}
+  gate: {tipo: lista, elementi: {tipo: scelta, valori: [documenti, pagina_campione, primi_capitoli, lotto]}}
+  override:
+    tipo: lista
+    elementi:
+      tipo: mappa
+      campi:
+        campo: {tipo: testo, obbligatorio: true}
+        valore: {tipo: qualsiasi, obbligatorio: true}
+        motivo: {tipo: testo, obbligatorio: true}
+  parole:
+    tipo: mappa
+    obbligatorio: true
+    campi:
+      metodo: {tipo: scelta, valori: [unico]}
+      target_totale: {tipo: intero, obbligatorio: true}
+      unita_senza_numero: {tipo: mappa, altri_campi: true}
+  formato:
+    tipo: mappa
+    obbligatorio: true
+    campi:
+      pagina_pollici: {tipo: intervallo, obbligatorio: true}
+      carta: {tipo: scelta, valori: [crema, bianca]}
+      bleed: {tipo: booleano}
+      margini_mm:
+        tipo: mappa
+        campi:
+          alto: {tipo: numero}
+          basso: {tipo: numero}
+          esterno: {tipo: numero}
+          interno_scelto: {tipo: numero}
+      font: {tipo: mappa, altri_campi: true}
+      numerazione: {tipo: mappa, altri_campi: true}
+  stile: {tipo: mappa, altri_campi: true}
+  voci:
+    tipo: lista
+    elementi:
+      tipo: mappa
+      altri_campi: true
+      campi:
+        id: {tipo: testo, obbligatorio: true}
+        pattern: {tipo: testo, obbligatorio: true}
+        modalita: {tipo: scelta, valori: [vieta, conta, avviso], obbligatorio: true}
+        massimo: {tipo: intero}
+        ambito: {tipo: scelta, valori: [libro, capitolo]}
+  vincoli_capitolo:
+    tipo: lista
+    elementi:
+      tipo: mappa
+      altri_campi: true
+      campi:
+        id: {tipo: testo, obbligatorio: true}
+        pattern: {tipo: testo, obbligatorio: true}
+        consentito_in_capitoli: {tipo: lista}
+        vietato_in_capitoli: {tipo: lista}
+  nome_vietato_prima_di:
+    tipo: lista
+    elementi:
+      tipo: mappa
+      altri_campi: true
+      campi:
+        nome: {tipo: testo, obbligatorio: true}
+        pattern: {tipo: testo, obbligatorio: true}
+        vietato_in: {tipo: lista, obbligatorio: true}
+        obbligatorio_in: {tipo: lista}
+  dichiarazioni: {tipo: mappa, altri_campi: true}
+  struttura:
+    tipo: mappa
+    obbligatorio: true
+    campi:
+      separatore_scena:
+        tipo: mappa
+        obbligatorio: true
+        campi:
+          sorgente: {tipo: testo, obbligatorio: true}
+          stampa: {tipo: testo, obbligatorio: true}
+      intestazione_capitolo: {tipo: testo, obbligatorio: true}
+      parti:
+        tipo: lista
+        elementi:
+          tipo: mappa
+          campi:
+            titolo: {tipo: testo, obbligatorio: true}
+            capitoli: {tipo: intervallo, obbligatorio: true}
+      interludi:
+        tipo: lista
+        elementi:
+          tipo: mappa
+          campi:
+            numero: {tipo: testo, obbligatorio: true}
+            dopo_capitolo: {tipo: intero, obbligatorio: true}
+            titolo: {tipo: testo, obbligatorio: true}
+            parte: {tipo: intero, nullo: true}
+  calendario:
+    tipo: mappa
+    campi:
+      anni_ammessi: {tipo: lista, elementi: {tipo: intero}}
+  ortografia:
+    tipo: mappa
+    campi:
+      parole_ammesse_file: {tipo: testo}
+  testo_precedente: {tipo: testo}
+  copyright:
+    tipo: mappa
+    obbligatorio: true
+    campi:
+      riga: {tipo: testo, obbligatorio: true}
+      anno: {tipo: intero}                          # anno per {anno} nella riga; senza, l'anno corrente
+      fantasia: {tipo: testo, obbligatorio: true}
+      nota_autore: {tipo: testo, nullo: true}
+  manuale: {tipo: testo}

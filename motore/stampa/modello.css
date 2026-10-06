@@ -1,0 +1,35 @@
+/* Foglio di stile parametrico del motore (proposta B.2).
+   impagina.py sostituisce i segnaposto {{…}} con i valori di libro.yaml e del calcolo
+   del margine interno (max tra tabella KDP e margine scelto). Pagine dispari = destra (recto):
+   margine interno a sinistra; pagine pari = sinistra (verso): margine interno a destra. */
+@font-face { font-family: 'Libro'; font-style: normal; font-weight: 400; src: url('{{font_dir}}/EBGaramond-Regular.ttf'); }
+@font-face { font-family: 'Libro'; font-style: italic; font-weight: 400; src: url('{{font_dir}}/EBGaramond-Italic.ttf'); }
+@font-face { font-family: 'Libro'; font-style: normal; font-weight: 600; src: url('{{font_dir}}/EBGaramond-SemiBold.ttf'); }
+
+@page { size: {{larghezza}}in {{altezza}}in; margin-top: {{alto}}mm; margin-bottom: {{basso}}mm; }
+@page :right { margin-left: {{interno}}mm; margin-right: {{esterno}}mm; }
+@page :left { margin-left: {{esterno}}mm; margin-right: {{interno}}mm; }
+
+html { font-family: 'Libro', serif; font-size: {{corpo}}pt; line-height: {{interlinea}}; color: #111; }
+body { margin: 0; }
+p { margin: 0; text-indent: 1.2em; text-align: justify; hyphens: auto; orphans: 2; widows: 2; }
+h1, h2, h3 { font-weight: 600; text-align: center; text-indent: 0; }
+em, i { font-weight: 400; }
+
+section { break-before: page; }
+section:first-child { break-before: auto; }
+
+.frontespizio h1 { font-size: 24pt; margin-top: 45mm; letter-spacing: .03em; }
+.frontespizio h2 { font-size: 14pt; font-weight: 400; font-style: italic; margin-top: 4mm; }
+.frontespizio h3 { font-size: 13pt; font-weight: 400; margin-top: 10mm; }
+.copyright { padding-top: 95mm; font-size: 8.5pt; line-height: 1.4; }
+.copyright p { text-indent: 0; text-align: left; hyphens: manual; margin-bottom: 3mm; }
+.sommario h2 { font-size: 14pt; margin: 8mm 0 6mm; }
+.sommario .voce { display: flex; align-items: baseline; font-size: 10.5pt; line-height: 1.5; }
+.sommario .voce .punti { flex: 1; border-bottom: 1px dotted #999; margin: 0 .35em; transform: translateY(-.25em); }
+.sommario .parte { margin-top: .8em; font-weight: 600; }
+.parte h1 { font-size: 18pt; margin-top: 60mm; }
+.capitolo h2, .prologo h2, .epilogo h2, .interludio h2 { font-size: 15pt; margin-top: 18mm; margin-bottom: 4mm; }
+.interludio h2 { font-weight: 400; font-style: italic; }
+.capitolo h2 + p, .prologo h2 + p, .epilogo h2 + p { text-align: center; text-indent: 0; margin-bottom: 8mm; font-size: 10pt; }
+p.scena { text-align: center; text-indent: 0; margin: .9em 0; letter-spacing: .3em; }

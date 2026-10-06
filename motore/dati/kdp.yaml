@@ -1,0 +1,82 @@
+# Direttive KDP in forma di dati (proposta A.2).
+# Fonte: casa-editrice riferimenti/11-direttive-kdp.md (main @ becd0e2)
+# e KDP Help Center (kdp.amazon.com/help). Prima di pubblicare, riverificare.
+# ultima_verifica la scrive solo l'autore, con «verifica KDP fatta [AAAA-MM-GG]» (kdp_verifica.py).
+ultima_verifica: null        # AAAA-MM-GG; null = mai verificata
+validita_giorni: 30
+url_verifica: https://kdp.amazon.com/help
+pagine_ufficiali:            # codici da confermare alla prima verifica (proposta A.8)
+  - {url: "https://kdp.amazon.com/help/topic/G201097560", tema: "metadati", valori: [1, 2]}
+  - {url: "https://kdp.amazon.com/help/topic/G201298500", tema: "parole chiave", valori: [3]}
+  - {url: "https://kdp.amazon.com/help/topic/G201834180", tema: "formato, margini, pagine", valori: [4, 5, 6]}
+  - {url: "https://kdp.amazon.com/help", tema: "cerca «description HTML»", valori: [7]}
+
+metadati:
+  titolo_piu_sottotitolo_max_caratteri: 200      # r. 11
+  descrizione_max_caratteri: 4000                # r. 17
+  parole_chiave_max: 7                           # r. 30
+  parole_chiave_parole_consigliate: [2, 3]       # r. 31 (fuori range = avviso)
+  categorie_max: 3                               # r. 37
+  html_ammesso_descrizione:                      # r. 20
+    stato: da_verificare_sulla_pagina_ufficiale
+    tag: [b, strong, i, em, u, br, p, ul, ol, li, h4, h5, h6]
+  # Confronto per PAROLA INTERA o FRASE COMPLETA, senza distinguere le maiuscole:
+  # «Amazzonia», «Amazonas», «freedom», «gratissimo» NON scattano.
+  parole_vietate:            # titolo, sottotitolo, serie, parole chiave, editore, descrizione (rr. 7, 19, 28, 32)
+    - amazon
+    - kindle
+    - kindle unlimited
+    - kdp
+    - kdp select
+    - bestseller
+    - best seller
+    - gratis
+    - free
+  valori_vuoti_vietati:      # solo se sono l'intero valore del campo (r. 7)
+    - n/a
+    - nessuno
+  formule_vietate_descrizione:   # r. 21 (bloccanti)
+    - "per i fan di"
+  pattern_descrizione:
+    bloccanti:               # r. 19
+      url: '(?i)\bhttps?://|\bwww\.'
+      email: '[\w.+-]+@[\w-]+\.[A-Za-z]{2,}'
+    avvisi:
+      telefono: '\+?\d[\d\s./-]{7,}\d'
+  recensioni_vietate: '(?i)\b(recensione positiva|recensioni positive|5 stelle|cinque stelle|in cambio di)\b'   # r. 72
+
+cartaceo:
+  formati_citati_pollici:    # r. 50: elenco non chiuso
+    - [6, 9]
+    - [5, 8]
+    - [5.25, 8]
+    - [5.5, 8.5]
+  pagine_min: 24             # r. 51
+  pagine_max: {bianca: 828, crema: 776}
+  pagine_pari:               # avviso, non KO
+    stato: da_verificare_sulla_pagina_ufficiale
+  margine_esterno_min_pollici: {senza_bleed: 0.25, con_bleed: 0.375}   # r. 52
+  bleed_pollici: 0.125           # r. 55
+  margine_interno_per_pagine:    # r. 53
+    - {da: 24,  a: 150, pollici: 0.375}
+    - {da: 151, a: 300, pollici: 0.5}
+    - {da: 301, a: 500, pollici: 0.625}
+    - {da: 501, a: 700, pollici: 0.75}
+    - {da: 701, a: 828, pollici: 0.875}
+  margine_esterno_consigliato_narrativa: [0.6, 0.75]   # r. 54, solo consiglio
+  font_incorporati: obbligatorio                        # r. 56
+
+isbn:
+  modalita_predefinita: kdp_gratuito
+  editore_risultante: "Independently published"
+  pattern: '\b(?:ISBN[-: ]*)?(97[89][- ]?\d{1,5}[- ]?\d{1,7}[- ]?\d{1,7}[- ]?\d)\b'
+
+dichiarazione_ai:            # rr. 62-64
+  domande: [testo, immagini, traduzioni]
+  testo_del_sistema: generato
+  promemoria: >-
+    Promemoria per l'autore — dichiarazione AI su KDP. Alla pubblicazione KDP pone tre
+    domande: testo, immagini, traduzioni. Il testo prodotto con questo sistema va
+    dichiarato «generato dall'AI», anche se poi modificato a fondo. Lo stesso vale per
+    copertine e traduzioni fatte con l'AI. La dichiarazione non è visibile ai lettori;
+    ometterla può portare alla rimozione del libro e a sanzioni sull'account.

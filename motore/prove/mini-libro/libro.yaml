@@ -1,0 +1,51 @@
+# Mini-libro di prova del motore (giallo). Tutto inventato: nessun riferimento a libri reali.
+titolo: "Prova di stampa"
+sottotitolo: null
+autore: "Autore di Prova"
+lingua: it
+modalita: nuovo
+serie: null
+ebook: false
+profilo: giallo
+override: []
+
+parole:
+  metodo: unico
+  target_totale: 3000
+  unita_senza_numero: {interludi: 150}
+
+formato:
+  pagina_pollici: [5.83, 8.27]
+  carta: crema
+  bleed: false
+  margini_mm: {alto: 20, basso: 20, esterno: 16, interno_scelto: 16}
+  font: {nome: "EB Garamond", corpo_pt: 11.5, interlinea: 1.5}
+  numerazione: {da: capitolo_1, pagine_iniziali: senza_numero, posizione: piede_centro}
+
+voci:
+  - {id: come_se, pattern: '(?i)\bcome se\b', modalita: conta, massimo: 2, ambito: capitolo}
+
+vincoli_capitolo:
+  - {id: chiave_retro, pattern: '(?i)\bretro\b', consentito_in_capitoli: ["1-3"]}
+
+nome_vietato_prima_di:
+  - {nome: "Lodovico Arsa", pattern: '\bLodovico\b|\bArsa\b', vietato_in: ["1-2", "interludio I"], obbligatorio_in: []}
+
+dichiarazioni:
+  chiusura: {sigle: [D, R, P, X], prevista_da: scaletta, riga_finale_min_parole: 3}   # domanda, rivelazione, pericolo, decisione
+
+struttura:
+  separatore_scena: {sorgente: "* * *", stampa: "* * *"}
+  intestazione_capitolo: "Luogo — giorno e data"
+  parti: []
+  interludi:
+    - {numero: I, dopo_capitolo: 2, titolo: "La vetrina", parte: null}
+
+calendario: {anni_ammessi: [2021]}
+ortografia: {parole_ammesse_file: nomi_propri.txt}
+
+copyright:
+  riga: "© {anno} {autore}. Tutti i diritti riservati."
+  anno: 2026
+  fantasia: "Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzione dell'autore o usati in modo fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale."
+  nota_autore: null

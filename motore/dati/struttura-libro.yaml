@@ -1,0 +1,47 @@
+# Struttura standard di un libro (passo 6). La legge nuovo.py; la usano pulizia.py e PROCEDURA.md.
+# modalita: per quali modalità esiste la cartella. creazione: chi la crea e quando.
+# Nessuna cartella vuota e nessun .gitkeep: una cartella nasce con il suo primo file.
+radice:
+  file: [libro.yaml, stato.yaml, LEGGIMI.md, cronologia.yaml, nomi_propri.txt, .gitignore]
+  creazione: zb nuovo (o zb adotta, in bozza)
+cartelle:
+  00-progetto:
+    scopo: briefing e note dell'autore
+    modalita: [nuovo, riscrittura]
+    creazione: zb nuovo (briefing.md)
+  01-originale:
+    scopo: testo precedente da riscrivere (registro dei fatti, mai modificato dal motore)
+    modalita: [riscrittura]
+    creazione: l'autore, prima di zb nuovo (il briefing lo indica in «Testo precedente:»)
+  02-bibbia:
+    scopo: bibbia (personaggi, luoghi, fatti canonici)
+    modalita: [nuovo, riscrittura]
+    creazione: zb nuovo (bibbia.md)
+  03-architettura:
+    scopo: manuale di stile, scaletta, piano parole
+    modalita: [nuovo, riscrittura]
+    creazione: zb nuovo
+  04-manoscritto:
+    scopo: capitoli (NN-slug.md, prologo, interludi, epilogo)
+    modalita: [nuovo, riscrittura]
+    creazione: primo capitolo, fase stesura
+  05-revisioni:
+    scopo: pagina campione e materiali di revisione
+    modalita: [nuovo, riscrittura]
+    creazione: pagina campione, fase pagina_campione
+  05-output:
+    scopo: manoscritto completo e PDF
+    modalita: [nuovo, riscrittura]
+    creazione: zb compila / zb impagina, fase chiusura
+  06-diagnostica:
+    scopo: report dei controlli (capitoli, stile, continuità, ortografia, adozione)
+    modalita: [nuovo, riscrittura]
+    creazione: primo report (zb esito, zb adotta, …)
+  06-pubblicazione:
+    scopo: pacchetto KDP e conformità
+    modalita: [nuovo, riscrittura]
+    creazione: zb pacchetto / zb kdp, fase chiusura
+  .zb:
+    scopo: marker di sessione e log degli hook (ignorata da git)
+    modalita: [nuovo, riscrittura]
+    creazione: zb avvio

@@ -1,0 +1,12 @@
+# Cronologia del mini-libro romance (inventata).
+nascite:
+  - {chi: Lidia Fenzi, data: 1988-04-15}
+eventi:
+  - {id: spedizione_atlante, data: 2012-05-20, capitolo: 1, descrizione: "il timbro sulla scatola dell'atlante"}
+  - {id: morte_padre, data: 2022-01-12, capitolo: 1, descrizione: "morte di Alberto Fenzi"}
+  - {id: arrivo, data: 2022-06-11, capitolo: 1, descrizione: "Lidia arriva ad Ardena"}
+durate:
+  - {da: spedizione_atlante, a: arrivo, valore: "dieci anni", tolleranza_mesi: 6}
+cifre:
+  - {id: distanza_paese, valore: 40, unita: chilometri, forme_ammesse: ["quaranta"]}
+eta_per_capitolo: {calcolata: true}
