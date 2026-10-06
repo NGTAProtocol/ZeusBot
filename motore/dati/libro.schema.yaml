@@ -44,6 +44,7 @@ campi:
       pagina_pollici: {tipo: intervallo, obbligatorio: true}
       carta: {tipo: scelta, valori: [crema, bianca]}
       bleed: {tipo: booleano}
+      formato_confermato_kdp: {tipo: booleano}   # facoltativo, predefinito false: conformita_kdp.py sezione 11, AVVISO se false
       margini_mm:
         tipo: mappa
         campi:

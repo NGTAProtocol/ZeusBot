@@ -249,7 +249,13 @@ def controlla(cartella, libro, argv):
         if pagine % 2:
             S[11].avviso(f'{pagine} pagine: numero dispari (da verificare sulla pagina ufficiale)')
         citato = any(abs(wi - a_) < 0.03 and abs(hi - b_) < 0.03 for a_, b_ in c['formati_citati_pollici'])
-        if not citato:
+        if 'formato_confermato_kdp' in libro['formato']:
+            # libro.yaml (formato.formato_confermato_kdp): false = AVVISO, true = OK, citato o no
+            if libro['formato']['formato_confermato_kdp'] is True:
+                S[11].prova(f'formato {wi} × {hi}" confermato dall\'autore su KDP (libro.yaml)')
+            else:
+                S[11].avviso(f'formato {wi} × {hi}" da confermare su KDP: formato_confermato_kdp è false in libro.yaml')
+        elif not citato:
             if conferme.get('formato_confermato_kdp') is True:
                 S[11].prova('formato non tra quelli citati, confermato dall\'autore su KDP')
             else:

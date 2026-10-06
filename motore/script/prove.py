@@ -379,6 +379,15 @@ def passo_4(A):
         esito('conformita_kdp.py', f'formato_confermato_kdp {valore}: sezione 11',
               A['formato_confermato'][chiave], {'esito_11': S_[11].esito, 'avviso_formato': 'sì' if av else 'no'}, sez)
     open(pc, 'w', encoding='utf-8').write(base_conf)
+    pl = os.path.join(c, 'libro.yaml')
+    base_libro = open(pl, encoding='utf-8').read()
+    for chiave, valore in (('falso', 'false'), ('vero', 'true')):
+        open(pl, 'w', encoding='utf-8').write(base_libro.replace('\nformato:\n', f'\nformato:\n  formato_confermato_kdp: {valore}\n', 1))
+        S_ = sezioni(c, ['--pdf', sint])
+        av = any('formato' in x for x in S_[11].avvisi)
+        esito('conformita_kdp.py', f'libro.yaml formato.formato_confermato_kdp {valore}: sezione 11',
+              A['formato_confermato_libro'][chiave], {'esito_11': S_[11].esito, 'avviso_formato': 'sì' if av else 'no'}, sez)
+    open(pl, 'w', encoding='utf-8').write(base_libro)
 
     ps = os.path.join(c, '06-pubblicazione', 'scheda-amazon.md')
     base_scheda = open(ps, encoding='utf-8').read()

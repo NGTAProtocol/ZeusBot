@@ -219,6 +219,9 @@ passo_4:
   formato_confermato:             # sul percorso «tutto OK»: formato A5 non citato
     falso: {esito_11: OK, avviso_formato: "sì"}
     vero: {esito_11: OK, avviso_formato: "no"}
+  formato_confermato_libro:       # campo in libro.yaml (formato.formato_confermato_kdp), con conferme-autore.yaml a true
+    falso: {esito_11: OK, avviso_formato: "sì"}
+    vero: {esito_11: OK, avviso_formato: "no"}
   scheda_modificata:              # copie della scheda del giallo con un solo errore ciascuna → sezione: esito
     parola_amazzonia: {sezione: 7, esito: OK}
     parola_kindle: {sezione: 7, esito: KO}
