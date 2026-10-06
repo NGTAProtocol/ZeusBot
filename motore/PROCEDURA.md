@@ -158,6 +158,10 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto).
 5. Blocco di salvataggio (sezione 8).
 
+**Checklist di capitolo.** Il report di `capitolo.py` chiude con una checklist manuale per l'autore:
+i tic fissi del motore, le voci di cronologia che il capitolo tocca e le voci proprie del libro scritte in
+`libro.yaml` come `checklist_capitolo` (esempio neutro: `checklist_capitolo: ["Il diario non si apre prima del capitolo 5"]`).
+
 **Correzione unica.** Se i controlli danno KO: **una sola** correzione mirata, poi di nuovo
 `zb esito`. Al secondo KO di fila sullo stesso capitolo si apre il gate `controllo_fallito`: mi
 fermo e scrivo quale controllo, valore, soglia, file e righe. L'autore decide: `ok` accetta il

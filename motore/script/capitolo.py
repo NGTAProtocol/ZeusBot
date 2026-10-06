@@ -8,7 +8,8 @@ continuità di continuita.py; anti-riciclo di riciclo.py; dichiarazioni della ri
 nascosta <!-- zb: … --> secondo «dichiarazioni» di libro.yaml; scene (solo capitoli numerati), contate
 dal separatore struttura.separatore_scena.sorgente: numero fuori da capitoli.scene_per_capitolo (KO),
 scena sotto il minimo di scene.lunghezza (KO) o sopra il massimo (AVVISO). Il sequel è informativo.
-Report: <libro>/06-diagnostica/capitoli/NN.md. Codice 1 se c'è almeno un KO.
+Report: <libro>/06-diagnostica/capitoli/NN.md, con la checklist manuale (tic fissi, voci di cronologia
+toccate e le voci del libro in checklist_capitolo di libro.yaml). Codice 1 se c'è almeno un KO.
 """
 import os
 import sys
@@ -159,6 +160,7 @@ def main(argv):
               '| Controllo | Verificato dall\'autore |', '|---|---|']
     righe += [f'| {c} | [ ] |' for c in CHECKLIST_TIC]
     righe += [f'| {v} | [ ] |' for v in continuita.voci_toccate(cartella, libro, nome)]
+    righe += [f'| {v} | [ ] |' for v in libro.get('checklist_capitolo') or []]
     testo = '\n'.join(righe + [''])
     if '--schermo' in argv:
         print(testo)

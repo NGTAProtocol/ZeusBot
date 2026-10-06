@@ -131,3 +131,4 @@ campi:
       fantasia: {tipo: testo, obbligatorio: true}
       nota_autore: {tipo: testo, nullo: true}
   manuale: {tipo: testo}
+  checklist_capitolo: {tipo: lista, elementi: {tipo: testo}}   # voci in più della checklist manuale di capitolo.py
