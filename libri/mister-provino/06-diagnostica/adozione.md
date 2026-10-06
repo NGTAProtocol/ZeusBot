@@ -52,7 +52,7 @@ Al gate «documenti» l'autore ha indicato: autore F.R. Faraone; formato A5; dic
 ### Ancora da completare
 - sottotitolo, serie;
 - struttura.intestazione_capitolo (predefinito del motore; il manuale dice solo che nessun capitolo si apre con una data, M:96);
-- formato A5 indicato dall'autore, da confermare su KDP (`formato_confermato_kdp: false`, per ora solo come nota: il campo non è nello schema del motore);
+- formato A5 indicato dall'autore, da confermare su KDP (`formato.formato_confermato_kdp: false` in `libro.yaml`);
 - capitoli.tolleranza_totale (il manuale non la dice: resta quella del profilo, ±5%);
 - cifre della cronologia (lo zaino cambia scena per scena: controllo a mano, bibbia §5.7);
 - nascite con la data completa solo per Beniamino e Checco (gli altri hanno solo l'anno).

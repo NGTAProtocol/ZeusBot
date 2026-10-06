@@ -16,7 +16,7 @@ override:
   - {campo: capitoli.minimo, valore: 1300, motivo: "M:37 «nessun capitolo sotto le 1.300 parole»; il profilo dice 2500"}
   - {campo: capitoli.media, valore: [1490, 1800], motivo: "M:37 «la media è di circa 1.700»; S:78-80 medie delle parti 1.492-1.795; il profilo dice 3500-5000"}
   - {campo: capitoli.massimo, valore: 3000, motivo: "S:349 cap. 23 a 3.000 parole, il più lungo; il profilo dice 7000"}
-  - {campo: capitoli.scene_per_capitolo, valore: [1, 6], motivo: "M:91 «almeno una scena in tempo reale di 800 o più parole» in capitoli da 1.300: una scena basta; il profilo dice 2-6"}
+  - {campo: capitoli.scene_per_capitolo, valore: [1, 6], motivo: "M:91 «almeno una scena in tempo reale di 800 o più parole» in capitoli da 1.300: una scena basta; S:355 il cap. 23 ne dichiara 3 (1.100, 1.200, 700); il profilo dice 2-6"}
   - {campo: scene.lunghezza, valore: [150, 3000], motivo: "M:91-92 una scena da 800+ per capitolo e ponti di riassunto fino a 150 parole; S:349 cap. 23 a 3.000; il profilo dice 800-2500"}
   - {campo: similitudini_max_per_parole, valore: 300, motivo: "M:126 «una similitudine per pagina, circa una ogni 300 parole»; il profilo dice 250"}
 gate:                                                    # predefiniti del motore
@@ -27,12 +27,12 @@ parole:
   metodo: unico                                          # M:39-44 metodo unico
   target_totale: 78000                                   # M:32, S:35 (78.000 parole)
 formato:                                                 # A5, indicato dall'autore al gate «documenti»
-  # formato_confermato_kdp: false — da verificare su KDP; il campo non è ancora nello schema del motore
   pagina_pollici:                                        # A5: 148 x 210 mm
   - 5.83
   - 8.27
   carta: crema
   bleed: false
+  formato_confermato_kdp: false                          # A5 da verificare su KDP prima dell'impaginazione
   margini_mm:
     alto: 20
     basso: 20
@@ -96,17 +96,17 @@ struttura:
   parti:
   - {titolo: Parte prima — Il cane, capitoli: [1, 19]}                  # S:147
   - {titolo: Parte seconda — La caccia, capitoli: [20, 30]}             # S:329
-  - {titolo: Parte terza — Oltre l'orizzonte, capitoli: [31, 43]}       # S:411
+  - {titolo: Parte terza — Oltre l'orizzonte, capitoli: [31, 43]}       # S:412
   interludi:
   - {numero: I, dopo_capitolo: 3, titolo: I fiori, parte: 1}            # S:185
   - {numero: II, dopo_capitolo: 10, titolo: La pagina, parte: 1}        # S:253
   - {numero: III, dopo_capitolo: 15, titolo: La nave, parte: 1}         # S:291
   - {numero: IV, dopo_capitolo: 19, titolo: La lettera, parte: 1}       # S:324
-  - {numero: V, dopo_capitolo: 25, titolo: Il collo, parte: 2}          # S:371
-  - {numero: VI, dopo_capitolo: 30, titolo: Il telefono, parte: 2}      # S:406
-  - {numero: VII, dopo_capitolo: 35, titolo: Ero io, parte: 3}          # S:441
-  - {numero: VIII, dopo_capitolo: 38, titolo: La firma, parte: 3}       # S:468
-  - {numero: IX, dopo_capitolo: 43, titolo: Le pagine, parte: 3}        # S:508
+  - {numero: V, dopo_capitolo: 25, titolo: Il collo, parte: 2}          # S:372
+  - {numero: VI, dopo_capitolo: 30, titolo: Il telefono, parte: 2}      # S:407
+  - {numero: VII, dopo_capitolo: 35, titolo: Ero io, parte: 3}          # S:442
+  - {numero: VIII, dopo_capitolo: 38, titolo: La firma, parte: 3}       # S:469
+  - {numero: IX, dopo_capitolo: 43, titolo: Le pagine, parte: 3}        # S:509
 calendario:
   anni_ammessi: [1976]                                   # B:163-233 (cronologia del romanzo; le altre date hanno l'anno scritto)
 ortografia:

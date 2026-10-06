@@ -352,6 +352,7 @@ Gli interludi I-IX sono tutti nuovi.
 - **Cataldo lo vede** vicino al messo calabrese e **non lo riferisce** a Nicola (la sua scommessa). Il ragazzo se ne accorge dopo.
 - **Il fischio sbagliato** [PROPOSTA CENTRALE, bibbia sezione 9]: Beniamino fa arrivare al messo calabrese la voce che il barese compra a Napoli. Come: una frase detta a un autista, con la faccia giusta (bibbia §9.1). Prima, **il pensiero di uccidere Nicola, considerato e scartato**: non sa ammazzare, sa solo guardare e dire, e la voce è una scelta, non un ripiego. Il vecchio segna solo lo scarto: allora pensava solo a vederlo piegato. Nessun commento sulla colpa (va nel cap. 25).
 - **Il venerdì:** Nicola annuncia la Calabria: c'è da prendere la roba nuova.
+- **Scene (3), budget per scena:** 1. la mappatura di Nicola, da domenica a mercoledì · 1.100; 2. il messo calabrese e la voce, giovedì all'alba al mercato ortofrutticolo (con Cataldo che vede) · 1.200; 3. il venerdì, l'annuncio della Calabria · 700. Totale 3.000; ogni scena sotto il tetto di 3.000 parole per scena (libro.yaml, scene.lunghezza).
 - **Filone:** 2. **Asse del fischio:** punto 4. **Chiusura:** B (Nicola gli dice che si parte domani e che viene anche lui).
 
 ### Cap. 24 — La Jonica · 1.700 · sab 9 ottobre
