@@ -33,6 +33,8 @@ Genere: romance
 Modalità: nuovo
 Testo precedente:
 Lunghezza: 9000
+Motivo override: libro di prova del motore (lunghezza e capitoli ridotti)
+Capitoli: 800 | 1000-1300 | 1800
 Voce: terza persona, passato, un solo punto di vista (Nora)
 Intestazione capitolo: Luogo — giorno e data
 Separatore di scena: * * *

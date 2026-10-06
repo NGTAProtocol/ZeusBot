@@ -1,0 +1,103 @@
+titolo: Le ore del restauro
+sottotitolo: null
+autore: Autore di Prova
+lingua: it
+modalita: nuovo
+serie: null
+ebook: false
+profilo: romance
+override:
+- campo: lunghezza_totale.consigliata
+  valore:
+  - 9000
+  - 9000
+  motivo: 'libro di prova del motore (lunghezza e capitoli ridotti) — Lunghezza: 9000 fuori dai formati del profilo (40000-180000)'
+- campo: capitoli.minimo
+  valore: 800
+  motivo: 'libro di prova del motore (lunghezza e capitoli ridotti) — Capitoli (minimo): 800 invece di 1500 del profilo'
+- campo: capitoli.media
+  valore:
+  - 1000
+  - 1300
+  motivo: 'libro di prova del motore (lunghezza e capitoli ridotti) — Capitoli (media): [1000, 1300] invece di [2000, 3000]
+    del profilo'
+- campo: capitoli.massimo
+  valore: 1800
+  motivo: 'libro di prova del motore (lunghezza e capitoli ridotti) — Capitoli (massimo): 1800 invece di 4000 del profilo'
+gate:
+- documenti
+- pagina_campione
+- primi_capitoli
+parole:
+  metodo: unico
+  target_totale: 9000
+formato:
+  pagina_pollici:
+  - 5.5
+  - 8.5
+  carta: crema
+  bleed: false
+  margini_mm:
+    alto: 20
+    basso: 20
+    esterno: 16
+    interno_scelto: 16
+  font:
+    nome: EB Garamond
+    corpo_pt: 11.5
+    interlinea: 1.5
+  numerazione:
+    da: capitolo_1
+    pagine_iniziali: senza_numero
+    posizione: piede_centro
+voci:
+- id: come_se
+  pattern: (?i)(?<!\w)come\ se(?!\w)
+  modalita: conta
+  massimo: 2
+  ambito: capitolo
+- id: una_specie_di
+  pattern: (?i)(?<!\w)una\ specie\ di(?!\w)
+  modalita: conta
+  massimo: 3
+  ambito: libro
+- id: un_brivido_le_percorse_la_schiena
+  pattern: (?i)(?<!\w)un\ brivido\ le\ percorse\ la\ schiena(?!\w)
+  modalita: vieta
+- id: il_cuore_le_martellava_nel_petto
+  pattern: (?i)(?<!\w)il\ cuore\ le\ martellava\ nel\ petto(?!\w)
+  modalita: vieta
+vincoli_capitolo: []
+nome_vietato_prima_di:
+- nome: Elia
+  pattern: \bElia\b
+  vietato_in:
+  - '1'
+  obbligatorio_in: []
+dichiarazioni:
+  chiusura:
+    sigle:
+    - G
+    - O
+    - B
+    - D
+    - R
+    prevista_da: scaletta
+struttura:
+  separatore_scena:
+    sorgente: '* * *'
+    stampa: '* * *'
+  intestazione_capitolo: Luogo — giorno e data
+  parti: []
+  interludi: []
+calendario:
+  anni_ammessi:
+  - 2024
+ortografia:
+  parole_ammesse_file: nomi_propri.txt
+copyright:
+  riga: © {anno} {autore}. Tutti i diritti riservati.
+  anno: 2026
+  fantasia: Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzione dell'autore o usati in modo
+    fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale.
+  nota_autore: null

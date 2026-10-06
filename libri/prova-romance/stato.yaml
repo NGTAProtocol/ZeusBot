@@ -1,0 +1,22 @@
+libro: Le ore del restauro
+motore_commit: null
+ramo_ultimo_salvataggio: null
+fase: documenti
+passo: da completare
+gate_in_attesa: null
+lotto:
+  dimensione: 3
+  capitoli: []
+ultimo_capitolo_approvato: null
+ultimo_capitolo_scritto: null
+tentativi: {}
+correzioni_aperte: []
+parole:
+  scritte: 0
+  obiettivo: 9000
+  metodo: unico
+documenti_approvati: {}
+avvisi_aperti: []
+revisione_in_corso: null
+push_in_sospeso: false
+aggiornato: '2026-10-06T08:34:42Z'
