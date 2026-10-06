@@ -32,6 +32,7 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «romanc
 - Tetto: «una specie di» al massimo 3 per libro.
 - Vietato: «un brivido le percorse la schiena».
 - Vietato: «il cuore le martellava nel petto».
+- Motivi ricorrenti: carta, colla, sale e caffè, al massimo due di questi quattro per capitolo; mai in elenco.
 - Lista nera di base (05-critica rr. 19-21): 19 voci, sempre attive.
 
 ## 6. Vincoli
