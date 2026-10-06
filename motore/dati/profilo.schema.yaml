@@ -4,15 +4,18 @@
 #   valori: [..]            (per scelta)     obbligatorio: true|false (predefinito false)
 #   nullo: true             (ammette null)   altri_campi: true (mappa aperta)
 #   intervallo = lista di due numeri [a, b] con a <= b
+#   uso: controllo (letto da uno script di controllo) | generazione (usato da nuovo.py per i documenti)
+#        | informativo (informativo, non controllato da nessuno script)
 tipo: mappa
 campi:
-  genere: {tipo: testo, obbligatorio: true}
+  genere: {tipo: testo, obbligatorio: true, uso: generazione}
   lunghezza_totale:
     tipo: mappa
     obbligatorio: true
     campi:
-      consigliata: {tipo: intervallo, obbligatorio: true}
+      consigliata: {tipo: intervallo, obbligatorio: true, uso: informativo}
       formati:
+        uso: generazione
         tipo: mappa
         obbligatorio: true
         campi:
@@ -20,54 +23,58 @@ campi:
           standard: {tipo: intervallo, obbligatorio: true}
           lungo: {tipo: intervallo, obbligatorio: true}
           epico: {tipo: intervallo, obbligatorio: true}
-      parti_sopra: {tipo: intero, obbligatorio: true}
-      parti_obbligatorie: {tipo: booleano}
+      parti_sopra: {tipo: intero, obbligatorio: true, uso: informativo}
+      parti_obbligatorie: {tipo: booleano, uso: informativo}
   capitoli:
     tipo: mappa
     obbligatorio: true
     campi:
-      minimo: {tipo: intero, obbligatorio: true}
-      media: {tipo: intervallo, obbligatorio: true}
-      massimo: {tipo: intero, obbligatorio: true}
+      minimo: {tipo: intero, obbligatorio: true, uso: controllo}
+      media: {tipo: intervallo, obbligatorio: true, uso: generazione}
+      massimo: {tipo: intero, obbligatorio: true, uso: generazione}
       coerenza:
+        uso: informativo
         tipo: mappa
         obbligatorio: true
         campi:
           min_su_media: {tipo: numero, obbligatorio: true}
           max_su_media: {tipo: numero, obbligatorio: true}
-      scene_per_capitolo: {tipo: intervallo, obbligatorio: true}
-      tolleranza_budget: {tipo: numero, obbligatorio: true}
-      tolleranza_totale: {tipo: numero, obbligatorio: true}
+      scene_per_capitolo: {tipo: intervallo, obbligatorio: true, uso: controllo}
+      tolleranza_budget: {tipo: numero, obbligatorio: true, uso: controllo}
+      tolleranza_totale: {tipo: numero, obbligatorio: true, uso: controllo}
   scene:
     tipo: mappa
     obbligatorio: true
     campi:
-      lunghezza: {tipo: intervallo, obbligatorio: true}
-      sequel: {tipo: intervallo, obbligatorio: true}
+      lunghezza: {tipo: intervallo, obbligatorio: true, uso: controllo}
+      sequel: {tipo: intervallo, obbligatorio: true, uso: informativo}
       budget_interno:
+        uso: informativo
         tipo: mappa
         obbligatorio: true
         campi:
           apertura: {tipo: intervallo, obbligatorio: true}
           centro: {tipo: intervallo, obbligatorio: true}
           chiusura: {tipo: intervallo, obbligatorio: true}
-  parole_per_atto: {tipo: lista, elementi: {tipo: numero}, obbligatorio: true}
+  parole_per_atto: {tipo: lista, elementi: {tipo: numero}, obbligatorio: true, uso: informativo}
   battiti:
+    uso: informativo
     tipo: mappa
     obbligatorio: true
     campi:
       punto_centrale: {tipo: intervallo, obbligatorio: true}
       tutto_perduto: {tipo: intervallo, obbligatorio: true}
-  chiusura_preferita: {tipo: scelta, valori: [gancio_domanda, gesto_oggetto, misto], obbligatorio: true}
-  frase_media: {tipo: intervallo, obbligatorio: true}
-  dialogo_percento: {tipo: intervallo, obbligatorio: true}
-  similitudini_max_per_parole: {tipo: intero, obbligatorio: true}
+  chiusura_preferita: {tipo: scelta, valori: [gancio_domanda, gesto_oggetto, misto], obbligatorio: true, uso: generazione}
+  frase_media: {tipo: intervallo, obbligatorio: true, uso: controllo}
+  dialogo_percento: {tipo: intervallo, obbligatorio: true, uso: controllo}
+  similitudini_max_per_parole: {tipo: intero, obbligatorio: true, uso: controllo}
   parole_filtro:
+    uso: controllo
     tipo: mappa
     obbligatorio: true
     campi:
       modalita: {tipo: scelta, valori: [vieta, conta, avviso], obbligatorio: true}
       massimo_per_1000_parole: {tipo: intero, obbligatorio: true}
-  lista_nera: {tipo: testo, obbligatorio: true}
-  parole_per_pagina: {tipo: intero, obbligatorio: true}
-  scene_obbligatorie: {tipo: lista, elementi: {tipo: testo}, obbligatorio: true}
+  lista_nera: {tipo: testo, obbligatorio: true, uso: informativo}
+  parole_per_pagina: {tipo: intero, obbligatorio: true, uso: informativo}
+  scene_obbligatorie: {tipo: lista, elementi: {tipo: testo}, obbligatorio: true, uso: generazione}

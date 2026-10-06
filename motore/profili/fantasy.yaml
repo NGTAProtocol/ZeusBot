@@ -2,35 +2,35 @@
 # Fonti: righe dei riferimenti di casa-editrice main @ becd0e2; PROPOSTA = valore approvato dall'autore.
 genere: fantasy
 lunghezza_totale:
-  consigliata: [90000, 130000]                 # 12 r. 17 («e oltre»)
+  consigliata: [90000, 130000]                 # 12 r. 17 («e oltre») · informativo, non controllato
   formati:                                    # 12 rr. 13-16
     breve: [40000, 60000]
     standard: [70000, 90000]
     lungo: [90000, 120000]
     epico: [120000, 180000]
-  parti_sopra: 100000                         # 12 r. 46
-  parti_obbligatorie: true                    # 12 r. 46-47 (romanzo lungo: 3-5 parti)
+  parti_sopra: 100000                         # 12 r. 46 · informativo, non controllato
+  parti_obbligatorie: true                    # 12 r. 46-47 (romanzo lungo: 3-5 parti) · informativo, non controllato
 capitoli:
   minimo: 3000                                # 12 r. 27
   media: [4000, 6000]                         # 12 r. 27
   massimo: 8000                               # 12 r. 27
-  coerenza: {min_su_media: 0.5, max_su_media: 1.7}   # 12 r. 30
+  coerenza: {min_su_media: 0.5, max_su_media: 1.7}   # 12 r. 30 · informativo, non controllato
   scene_per_capitolo: [3, 6]                  # 12 r. 36 (capitolo lungo)
   tolleranza_budget: 0.15                     # 12 r. 67
   tolleranza_totale: 0.05                     # 12 r. 67
 scene:
   lunghezza: [800, 2500]                      # 12 r. 38
-  sequel: [150, 600]                          # 12 r. 38
-  budget_interno: {apertura: [0.10, 0.15], centro: [0.60, 0.70], chiusura: [0.15, 0.25]}   # 12 rr. 41-43
-parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56
-battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46
+  sequel: [150, 600]                          # 12 r. 38 · informativo, non controllato
+  budget_interno: {apertura: [0.10, 0.15], centro: [0.60, 0.70], chiusura: [0.15, 0.25]}   # 12 rr. 41-43 · informativo, non controllato
+parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56 · informativo, non controllato
+battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46 · informativo, non controllato
 chiusura_preferita: misto                     # PROPOSTA approvata
 frase_media: [13, 18]                         # PROPOSTA approvata
 dialogo_percento: [25, 45]                    # PROPOSTA approvata
 similitudini_max_per_parole: 300              # PROPOSTA da confermare: valore non presente nelle tabelle approvate
 parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21; il numero è PROPOSTA approvata
-lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20
-parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA approvata)
+lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20 · informativo, non controllato
+parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA approvata) · informativo, non controllato
 scene_obbligatorie:
   - incidente scatenante che promette il climax   # 02 r. 19
   - regole del mondo mostrate prima di essere usate   # PROPOSTA approvata

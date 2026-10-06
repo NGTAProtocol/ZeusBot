@@ -5,7 +5,9 @@ N è il numero del capitolo, oppure il nome di un'unità («prologo», «interlu
 Esegue: parole con il metodo unico rispetto a minimo del profilo (KO, solo capitoli)
 e budget di piano-parole.md (AVVISO oltre la tolleranza); controlli di stile.py;
 continuità di continuita.py; anti-riciclo di riciclo.py; dichiarazioni della riga
-nascosta <!-- zb: … --> secondo «dichiarazioni» di libro.yaml.
+nascosta <!-- zb: … --> secondo «dichiarazioni» di libro.yaml; scene (solo capitoli numerati), contate
+dal separatore struttura.separatore_scena.sorgente: numero fuori da capitoli.scene_per_capitolo (KO),
+scena sotto il minimo di scene.lunghezza (KO) o sopra il massimo (AVVISO). Il sequel è informativo.
 Report: <libro>/06-diagnostica/capitoli/NN.md. Codice 1 se c'è almeno un KO.
 """
 import os
@@ -78,6 +80,38 @@ def dichiarazioni(cartella, libro, unita, nome):
     return out
 
 
+def scene(testo, libro):
+    """[(riga di inizio, parole)] delle scene, separate da struttura.separatore_scena.sorgente."""
+    sep = ((libro.get('struttura') or {}).get('separatore_scena') or {}).get('sorgente') or '* * *'
+    out, inizio, righe = [], None, []
+    for n, r in enumerate(testo.splitlines() + [sep], 1):
+        if r.strip() == sep.strip():
+            p = conta.conta_testo('\n'.join(righe))
+            if p:
+                out.append((inizio, p))
+            inizio, righe = None, []
+        else:
+            if inizio is None and r.strip() and not r.strip().startswith(('#', '<!--')) and conta.conta_testo(r):
+                inizio = n
+            righe.append(r)
+    return out
+
+
+def controlla_scene(nome, testo, libro, profilo):
+    sc = scene(testo, libro)
+    lo, hi = profilo['capitoli']['scene_per_capitolo']
+    mn, mx = profilo['scene']['lunghezza']
+    out = []
+    if not lo <= len(sc) <= hi:
+        out.append(stile.risultato(nome, 'scene_numero', 'KO', None, f'{len(sc)} scene, ammesse {lo}-{hi}'))
+    for i, (riga, p) in enumerate(sc, 1):
+        if p < mn:
+            out.append(stile.risultato(nome, 'scena_minimo', 'KO', riga, f'scena {i}: {p} parole, minimo {mn}'))
+        elif p > mx:
+            out.append(stile.risultato(nome, 'scena_massimo', 'AVVISO', riga, f'scena {i}: {p} parole, massimo {mx}'))
+    return out
+
+
 def controlla(cartella, libro, profilo, nome):
     unita = comune.unita(cartella, libro)
     nomi = [n for n, _ in unita]
@@ -96,6 +130,8 @@ def controlla(cartella, libro, profilo, nome):
         if abs(sc) > profilo['capitoli']['tolleranza_budget']:
             out.append(risultato(nome, 'parole_budget', 'AVVISO', None,
                                  f'{n_parole} parole su {bud} ({sc:+.0%}, tolleranza ±{profilo["capitoli"]["tolleranza_budget"]:.0%})'))
+    if nome.isdigit():
+        out += controlla_scene(nome, testo, libro, profilo)
     met, ris_stile = stile.controlla_libro(cartella, libro, profilo)[nome]
     out += ris_stile
     out += [r for r in continuita.controlla_libro(cartella, libro)[0] if r['unita'] == nome]

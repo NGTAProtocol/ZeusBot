@@ -31,7 +31,8 @@ Lettore:
      Gate (facoltativo): documenti, pagina_campione, primi_capitoli, lotto.
      Testo precedente (solo riscrittura): un file in 01-originale/, per esempio 01-originale/testo.md.
      Motivo override: obbligatorio se un valore è fuori dal profilo di genere (lunghezza, capitoli…).
-     Capitoli: «minimo | media | massimo» in parole; obbligatorio se la lunghezza è fuori profilo. -->
+     Capitoli: «minimo | media | massimo» in parole; obbligatorio se la lunghezza è fuori profilo.
+     Scene: «numero | lunghezza» (es. 1 | 400-1200); obbligatorio se le scene del profilo non stanno nei capitoli. -->
 
 Genere:
 Modalità: nuovo
@@ -39,6 +40,7 @@ Testo precedente:
 Lunghezza:
 Motivo override:
 Capitoli:
+Scene:
 Voce:
 Intestazione capitolo: Luogo — giorno e data
 Separatore di scena: * * *
