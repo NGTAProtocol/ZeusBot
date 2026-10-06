@@ -3,30 +3,14 @@ motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
 passo: capitolo 4
-gate_in_attesa: primi_capitoli
+gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 1
-  - 2
-  - 3
-ultimo_capitolo_approvato: null
+  capitoli: []
+ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 3
 tentativi: {}
-correzioni_aperte:
-- gate: primi_capitoli
-  testo: 'capitolo 3: similitudini sopra il tetto (4 su 3,3): tolte due'
-  sha256: e6ce21152edc
-  data: '2026-10-06'
-- gate: primi_capitoli
-  testo: 'capitolo 2: flashback del molo ridotto (senza mercato, colline e busta), tolto «dieci anni», apertura sul rumore
-    del flessibile'
-  sha256: 62935494c9a9
-  data: '2026-10-06'
-- gate: primi_capitoli
-  testo: 'capitolo 2: una frase sulla notte nella vecchia camera sopra il bar e sulla valigia, per rientrare nel budget'
-  sha256: e2ee4dc30eb8
-  data: '2026-10-06'
+correzioni_aperte: []
 parole:
   scritte: 3002
   obiettivo: 9000
@@ -53,11 +37,25 @@ documenti_approvati:
   05-revisioni/pagina-campione.md:
     sha256: efda5b78f8af174744b7f366e0fa3b699335cac905079fdff8b27d45bb20ec10
     commit: 4d6b520
+  04-manoscritto/01-il-ritorno.md:
+    sha256: 4aeabb7bb5a27b968714ec2e9916b217d1c993d279b0e43357153e1d3bff10d2
+    commit: 16ee1ab
+  06-diagnostica/capitoli/01.md:
+    sha256: b4c43290a66480eb760127b4a2c8ed1cf141d68559ab993661e11c206201713a
+    commit: c9931f5
+  04-manoscritto/02-il-cantiere.md:
+    sha256: f5d718f309c0facdcd4138860cf3c7906841ba87fb8e194d25154cd33dd6fc06
+    commit: 196a3ec
+  06-diagnostica/capitoli/02.md:
+    sha256: 8259b76e2315c0cb8c1719ac023e5f1ff7744297e3cbfa1980e6ec866bad6179
+    commit: 196a3ec
+  04-manoscritto/03-carta-bagnata.md:
+    sha256: ecd9d0233368fccd7b0b6f79a7f8316a925d9f354c9f510c65ac76689251d4e1
+    commit: 24b9019
+  06-diagnostica/capitoli/03.md:
+    sha256: 12142bd20b385b10752d84f920eae53104fa13e7163ea837720f049f060446c1
+    commit: 24b9019
 avvisi_aperti: []
-revisione_in_corso:
-  gate: primi_capitoli
-  blocco: 1
-  blocchi_totali: 6
-  sha256: e2ee4dc30eb8
+revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-06T11:31:35Z'
+aggiornato: '2026-10-06T11:31:53Z'
