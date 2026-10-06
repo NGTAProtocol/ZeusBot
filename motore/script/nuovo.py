@@ -82,8 +82,8 @@ def mancanze(b, cartella_libro):
     lung = re.sub(r'[^\d]', '', c.get('lunghezza', ''))
     if not lung:
         out.append('Lunghezza: manca (numero di parole)')
-    elif not 40000 <= int(lung) <= 180000:
-        out.append(f'Lunghezza: {lung} fuori da 40.000-180.000 parole')
+    elif g and os.path.isfile(os.path.join(comune.radice_motore(), 'profili', f'{g}.yaml')):
+        out += override_dal_briefing(c, comune.carica_profilo(g))[1]
     if not 1 <= len(b['idea']) <= 5:
         out.append(f'Idea: servono da 1 a 5 righe (ora {len(b["idea"])})')
     if not any('—' in p for p in b['personaggi']):
@@ -118,6 +118,71 @@ def slug(s):
     return comune.nome_file(s).replace('-', '_')
 
 
+MINIMO_ASSOLUTO = 1000
+DESCRIZIONE = {'lunghezza_totale.consigliata': 'Lunghezza', 'capitoli.minimo': 'Capitoli (minimo)',
+               'capitoli.media': 'Capitoli (media)', 'capitoli.massimo': 'Capitoli (massimo)',
+               'frase_media': 'Frase media', 'dialogo_percento': 'Dialogo'}
+
+
+def _intervallo(s):
+    m = re.match(r'^\s*(\d+)\s*-\s*(\d+)\s*%?\s*$', s or '')
+    return [int(m.group(1)), int(m.group(2))] if m else None
+
+
+def override_dal_briefing(c, profilo):
+    """Valori del briefing fuori dal profilo -> (override, errori).
+
+    Regola: un valore diverso dal profilo vale solo con «Motivo override:» non vuoto.
+    Lunghezza fuori dai formati del profilo: serve anche «Capitoli: minimo | media | massimo».
+    Sotto MINIMO_ASSOLUTO parole il motore si ferma comunque."""
+    valori, err = [], []
+    motivo = (c.get('motivo override') or '').strip()
+    lung = int(re.sub(r'[^\d]', '', c.get('lunghezza', '')) or 0)
+    formati = list(profilo['lunghezza_totale']['formati'].values())
+    lo, hi = min(f[0] for f in formati), max(f[1] for f in formati)
+    if lung and lung < MINIMO_ASSOLUTO:
+        err.append(f'Lunghezza: {lung} sotto il minimo assoluto di {MINIMO_ASSOLUTO:,} parole'.replace(',', '.'))
+    elif lung and not lo <= lung <= hi:
+        valori.append(('lunghezza_totale.consigliata', [lung, lung], f'{lung} fuori dai formati del profilo ({lo}-{hi})'))
+        if not (c.get('capitoli') or '').strip():
+            err.append('Capitoli: obbligatorio con una lunghezza fuori profilo '
+                       '(«minimo | media | massimo», per esempio 800 | 1000-1300 | 1800)')
+    cap = (c.get('capitoli') or '').strip()
+    if cap:
+        parti = [x.strip() for x in cap.split('|')]
+        media = _intervallo(parti[1]) if len(parti) == 3 else None
+        if not media or not parti[0].isdigit() or not parti[2].isdigit():
+            err.append('Capitoli: forma «minimo | media | massimo», per esempio 800 | 1000-1300 | 1800')
+        else:
+            mn, mx = int(parti[0]), int(parti[2])
+            if not mn <= media[0] <= media[1] <= mx:
+                err.append(f'Capitoli: serve minimo ≤ media ≤ massimo (ora {cap})')
+            pc = profilo['capitoli']
+            for campo, v, att in (('capitoli.minimo', mn, pc['minimo']), ('capitoli.media', media, pc['media']),
+                                  ('capitoli.massimo', mx, pc['massimo'])):
+                if v != att:
+                    valori.append((campo, v, f'{v} invece di {att} del profilo'))
+    for campo, chiave in (('frase_media', 'frase media'), ('dialogo_percento', 'dialogo')):
+        if (c.get(chiave) or '').strip():
+            v = _intervallo(c[chiave])
+            if not v:
+                err.append(f'{DESCRIZIONE[campo]}: forma «a-b»')
+            elif v != profilo[campo]:
+                valori.append((campo, v, f'{v} invece di {profilo[campo]} del profilo'))
+    if valori and not motivo:
+        err += [f'{DESCRIZIONE[campo]}: {nota}; serve «Motivo override:» nel briefing' for campo, _, nota in valori]
+    ov = [{'campo': campo, 'valore': v, 'motivo': f'{motivo} — {DESCRIZIONE[campo]}: {nota}'} for campo, v, nota in valori]
+    return ov, err
+
+
+def profilo_effettivo(profilo, override):
+    import copy
+    eff = copy.deepcopy(profilo)
+    for o in override:
+        comune._metti(eff, o['campo'], o['valore'])
+    return eff
+
+
 def genera_libro_yaml(b, profilo):
     c, L = b['campi'], b['liste']
     voci = []
@@ -146,7 +211,7 @@ def genera_libro_yaml(b, profilo):
     if libro['modalita'] == 'riscrittura':
         libro['testo_precedente'] = c['testo precedente']
     libro.update({
-        'serie': None, 'ebook': False, 'profilo': c['genere'], 'override': [], 'gate': gate,
+        'serie': None, 'ebook': False, 'profilo': c['genere'], 'override': override_dal_briefing(c, profilo)[0], 'gate': gate,
         'parole': {'metodo': 'unico', 'target_totale': int(re.sub(r'[^\d]', '', c['lunghezza']))},
         'formato': {'pagina_pollici': [float(fm[0]), float(fm[1])] if len(fm) >= 2 else [5.5, 8.5],
                     'carta': 'crema', 'bleed': False,
@@ -215,7 +280,9 @@ def genera_manuale(b, libro, profilo, n_cap):
               '- Nomi dei file: NN-<slug>.md in 04-manoscritto/.', '',
               '## 8. Scene obbligatorie del genere', '']
     righe += [f'- {s}' for s in profilo['scene_obbligatorie']]
-    righe += ['', '## 9. Fatti canonici e cose da non cambiare', '']
+    righe += ['', '## 9. Override rispetto al profilo (da approvare al gate «documenti»)', '']
+    righe += [f'- {o["campo"]}: {o["valore"]} — motivo: {o["motivo"]}' for o in libro['override']] or ['- Nessuno.']
+    righe += ['', '## 10. Fatti canonici e cose da non cambiare', '']
     righe += [f'- {f}' for f in b['fatti'] + b['non_cambiare']] or ['- Nessuno.']
     return '\n'.join(righe) + '\n'
 
@@ -262,6 +329,7 @@ def crea(percorso_briefing):
         raise comune.ErroreMotore('Briefing incompleto. Mancano:\n- ' + '\n- '.join(manca))
     profilo = comune.carica_profilo(b['campi']['genere'])
     libro = genera_libro_yaml(b, profilo)
+    profilo = profilo_effettivo(profilo, libro['override'])
     n_cap = numero_capitoli(libro, profilo)
     dest = os.path.join(cartella, '00-progetto', 'briefing.md')
     if os.path.realpath(percorso_briefing) != os.path.realpath(dest):
@@ -287,6 +355,7 @@ def crea(percorso_briefing):
         titolo=libro['titolo'], percorso=cartella, modalita=libro['modalita'], fase='documenti',
         gate='nessuno', ultimo='—', decisioni=decisioni)
     comune.scrivi(cartella, 'LEGGIMI.md', leggimi)
+    comune.carica_libro(cartella)          # libro.yaml generato valido (schema, override con motivo)
     errori = comune.controlla_struttura(cartella, libro['modalita'])
     if errori:
         raise comune.ErroreMotore('Struttura del libro non conforme a dati/struttura-libro.yaml:\n- ' + '\n- '.join(errori))

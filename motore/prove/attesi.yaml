@@ -254,7 +254,7 @@ passo_5:
     esistente: "2 / intatto"
   briefing_incompleto:
     codice: 2
-    mancano: ['Autore', 'Lunghezza', 'Idea']
+    mancano: ['Autore', 'Capitoli', 'Lunghezza', 'Idea']   # 9000 parole senza motivo: servono anche Capitoli e Motivo override
     creato: []
     avvio_libro: "2 / ['Autore']"
   avvio:
@@ -392,3 +392,24 @@ passo_7:
   languagetool:
     segnalate: ['Brena', 'errrore', 'registo']
     livelli: "sì / sì / sì"
+
+override_lunghezza:
+  # Briefing inventato (giallo) con la lunghezza cambiata. Profilo giallo: formati 40.000-180.000;
+  # capitoli minimo 800 (uguale al briefing: nessun override), media 1500-2500, massimo 3500.
+  casi:
+    senza_motivo: "Lunghezza: 9000"
+    motivo_senza_capitoli: "Lunghezza: 9000\nMotivo override: libro di prova"
+    sotto_minimo_assoluto: "Lunghezza: 900\nMotivo override: libro di prova\nCapitoli: 100 | 200-300 | 400"
+    capitoli_senza_motivo: "Lunghezza: 60000\nCapitoli: 800 | 1000-1300 | 1800"
+    motivo_e_capitoli: "Lunghezza: 9000\nMotivo override: libro di prova\nCapitoli: 800 | 1000-1300 | 1800"
+  attesi:
+    senza_motivo: "2 / ['Capitoli', 'Lunghezza'] / False"
+    motivo_senza_capitoli: "2 / ['Capitoli'] / False"
+    sotto_minimo_assoluto: "2 / ['Lunghezza'] / False"
+    capitoli_senza_motivo: "2 / ['Capitoli (media)', 'Capitoli (massimo)'] / False"
+    motivo_e_capitoli:
+      codice: 0
+      override: ['lunghezza_totale.consigliata [9000, 9000] True', 'capitoli.media [1000, 1300] True',
+                 'capitoli.massimo 1800 True']
+      capitoli: 8
+      manuale: 3
