@@ -10,7 +10,11 @@ lotto:
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: null
 tentativi: {}
-correzioni_aperte: []
+correzioni_aperte:
+- gate: pagina_campione
+  testo: 'pagina campione: tolto «in bocca» da «la parola mi rimase in bocca per tutta la mattina»'
+  sha256: 7fc944f2b9f7
+  data: '2026-10-06'
 parole:
   scritte: 0
   obiettivo: 78000
@@ -41,4 +45,4 @@ revisione_in_corso:
   blocchi_totali: 1
   sha256: 7fc944f2b9f7
 push_in_sospeso: false
-aggiornato: '2026-10-06T19:50:56Z'
+aggiornato: '2026-10-06T23:12:15Z'

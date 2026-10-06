@@ -26,7 +26,7 @@ La buttò nel cassone con le altre e non disse più niente.
 
 — Per farci paura. Tu tieni le braccia su e stai zitto.
 
-Io intanto guardavo la nave. Stava ferma oltre la barca, con le luci di bordo ancora accese, bianca e lunga, e non andava da nessuna parte. Gente che partiva e basta, pensai, e la parola mi rimase in bocca per tutta la mattina.
+Io intanto guardavo la nave. Stava ferma oltre la barca, con le luci di bordo ancora accese, bianca e lunga, e non andava da nessuna parte. Gente che partiva e basta, pensai, e la parola mi rimase addosso per tutta la mattina.
 
 — Oh, — disse il ragazzo dietro di me, e mi spinse la busta tra le scapole. — Ti sei incantato?
 
