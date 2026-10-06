@@ -103,8 +103,88 @@ def eta(nascita, data):
     return data.year - nascita.year - ((data.month, data.day) < (nascita.month, nascita.day))
 
 
-def mesi_tra(a, b):
-    return (b.year - a.year) * 12 + (b.month - a.month) + (b.day - a.day) / 30.0
+GIORNI_UNITA = {'giorn': 1, 'settiman': 7, 'mes': 30.44, 'ann': 365.25}
+
+
+def giorni_dichiarati(valore):
+    """«sei settimane» -> 42; «tre anni, quasi quattro» -> 1096 (prima cifra e prima unità)."""
+    parti = valore.replace(',', ' ').split()
+    if len(parti) < 2 or numero(parti[0]) is None:
+        return None
+    for pref, g in GIORNI_UNITA.items():
+        if parti[1].lower().startswith(pref):
+            return numero(parti[0]) * g
+    return None
+
+
+def tolleranza_giorni(du):
+    """Tolleranza di una durata della cronologia: tolleranza_giorni, oppure _mesi o _anni come prima."""
+    return (du.get('tolleranza_giorni') or 0) + (du.get('tolleranza_mesi') or 0) * 30.44 \
+        + (du.get('tolleranza_anni') or 0) * 365.25
+
+
+def _numero_enne(parola):
+    """«trentaquattrenne» -> 34, «ventenne» -> 20, «diciottenne» -> 18."""
+    base = parola.lower()[:-4]
+    for fine in ('', 'o', 'e', 'i', 'a'):
+        k = numero(base + fine)
+        if k is not None:
+            return k
+    return None
+
+
+def eta_nella_frase(frase, nascite):
+    """[(chi, anni, forma, certo)] con le sole forme dichiarative dell'età attuale.
+
+    KO (certo): «Nome ha N anni», «Nome, di N anni», «Nome … ha N anni» (soggetto = nome più vicino prima).
+    AVVISO (incerto): «Nome aveva N anni» nella proposizione principale (imperfetto narrativo), «N-enne»
+    con più nomi, «ha N anni» senza un nome prima.
+    Ignorate: «quando/da quando/fin da quando … aveva N anni», «a N anni», «da N anni», «per N anni»."""
+    pos = []
+    for chi in nascite:
+        for m in re.finditer(r'\b(' + re.escape(chi) + '|' + re.escape(chi.split()[0]) + r')\b', frase):
+            pos.append((m.start(), m.end(), chi))
+    if not pos:
+        return []
+    pos.sort()
+
+    def prima(i):
+        cand = [p for p in pos if p[1] <= i]
+        return cand[-1] if cand else None
+
+    out = []
+    for m in re.finditer(r"(?i)\b(ha|compie|compirà)\s+(\w+)(?:\s+|['’])anni\b", frase):
+        k = numero(m.group(2))
+        if k is None:
+            continue
+        p = prima(m.start())
+        if p:
+            out.append((p[2], k, m.group(0), True))
+        else:
+            out.append((pos[0][2], k, m.group(0), False))
+    for m in re.finditer(r"(?i)\b(aveva|avevi|avevo)\s+(\w+)(?:\s+|['’])anni\b", frase):
+        k = numero(m.group(2))
+        if k is None:
+            continue
+        prec = frase[:m.start()]
+        if re.search(r"(?i)\b(quando|da quando|fin da quando|ricord\w*|allora)\b[^,;:]*$", prec):
+            continue                                  # ricordo: età di allora, non attuale
+        p = prima(m.start())
+        if p and frase[p[1]:m.start()].strip(' ,') == '' or (p and len(frase[p[1]:m.start()].split()) <= 2):
+            out.append((p[2], k, m.group(0), False))  # «Nome aveva N anni»: imperfetto narrativo, nel dubbio avviso
+    for m in re.finditer(r"(?i)\b([\w']+)\s*,?\s+di\s+(\w+)(?:\s+|['’])anni\b", frase):
+        k = numero(m.group(2))
+        p = prima(m.start(2))
+        if k is not None and p and len(frase[p[1]:m.start(2)].split()) <= 2:
+            out.append((p[2], k, m.group(0).split(None, 1)[1] if m.group(1) not in [x[2] for x in pos] else m.group(0), True))
+    for m in re.finditer(r"(?i)\b(\w+enne)\b", frase):
+        k = _numero_enne(m.group(1))
+        if k is None:
+            continue
+        vicini = sorted(pos, key=lambda p: min(abs(p[0] - m.end()), abs(p[1] - m.start())))
+        certo = len({p[2] for p in pos}) == 1
+        out.append((vicini[0][2], k, m.group(1), certo))
+    return out
 
 
 def controlla_libro(cartella, libro):
@@ -138,22 +218,17 @@ def controlla_libro(cartella, libro):
             if m:
                 data_unita = cal.risolvi(m)[0]
         date_unita.append((nome, data_unita))
-        # età
+        # età (solo forme dichiarative; vedi eta_nella_frase)
         unito = ' '.join(r.strip() for _, r in prosa)
         if data_unita:
             for frase in re.split(r'(?<=[.!?…])\s+', unito):
-                for chi, nascita in nascite.items():
-                    if not re.search(r'\b(' + re.escape(chi) + '|' + re.escape(chi.split()[0]) + r')\b', frase):
-                        continue
-                    for m in re.finditer(r"(?i)\b([\w']+)\s+anni\b", frase):
-                        k = numero(m.group(1))
-                        if k is None:
-                            continue
-                        vera = eta(nascita, data_unita)
-                        if abs(k - vera) > 1:
-                            riga = next((n for n, r in prosa if m.group(0) in r), None)
-                            risultati.append(risultato(nome, 'eta', 'KO', riga,
-                                                       f'{chi}: «{m.group(0)}», ma al {data_unita} ne ha {vera}'))
+                for chi, k, forma, certo in eta_nella_frase(frase, nascite):
+                    vera = eta(nascite[chi], data_unita)
+                    if abs(k - vera) > 1:
+                        riga = next((n for n, r in prosa if forma in r), None)
+                        risultati.append(risultato(nome, 'eta', 'KO' if certo else 'AVVISO', riga,
+                                                   f'{chi}: «{forma}», ma al {data_unita} ne ha {vera}'
+                                                   + ('' if certo else ' (attribuzione o tempo incerti: da verificare)')))
         # durate (tabella) e durate della cronologia
         for n, r in prosa:
             for m in DURATA.finditer(r):
@@ -162,13 +237,14 @@ def controlla_libro(cartella, libro):
         for du in cron.get('durate') or []:
             for n, r in prosa:
                 if du['valore'].lower() in r.lower():
-                    k = numero(du['valore'].split()[0])
-                    unita_t = du['valore'].split()[1].rstrip(',').lower()
-                    dichiarati = k * 12 if unita_t.startswith('ann') else k
-                    calcolati = mesi_tra(eventi[du['da']], eventi[du['a']])
-                    if abs(calcolati - dichiarati) > du.get('tolleranza_mesi', 0):
+                    dichiarati = giorni_dichiarati(du['valore'])
+                    if dichiarati is None:
+                        continue
+                    calcolati = (eventi[du['a']] - eventi[du['da']]).days
+                    if abs(calcolati - dichiarati) > tolleranza_giorni(du):
                         risultati.append(risultato(nome, 'durata', 'KO', n,
-                                                   f'«{du["valore"]}»: dalle date risultano {calcolati / 12:.1f} anni'))
+                                                   f'«{du["valore"]}»: dalle date risultano {calcolati} giorni '
+                                                   f'({calcolati / 365.25:.1f} anni); tolleranza {tolleranza_giorni(du):.0f} giorni'))
         # cifre
         for ci in cron.get('cifre') or []:
             for n, r in prosa:

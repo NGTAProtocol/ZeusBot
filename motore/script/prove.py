@@ -1230,9 +1230,42 @@ def checklist_capitolo(A):
     esito('capitolo.py', 'checklist_capitolo non valida: rifiutata', A['non_valida'], p.returncode, sez)
 
 
+# ---------------------------------------------------------------- età e durate in continuita.py
+
+def continuita_eta_durate(A):
+    import continuita
+    sez = 'continuita'
+
+    def esiti(L, controllo):
+        _, libro, _ = comune.carica_libro(L)
+        ris = continuita.controlla_libro(L, libro)[0]
+        return [f'{r["controllo"]}|{r["esito"]}' for r in ris if r['unita'] == '1' and r['controllo'] == controllo]
+
+    for chiave, frase in A['frasi'].items():
+        L = copia_libro('mini-libro')
+        cap = os.path.join(L, '04-manoscritto', '01-la-farmacia.md')
+        base = esiti(L, 'eta')
+        open(cap, 'a', encoding='utf-8').write('\n' + frase + '\n')
+        esito('continuita.py', f'età: {chiave}', A['attesi'][chiave], esiti(L, 'eta')[len(base):], sez)
+    for chiave, du in A['durate'].items():
+        L = copia_libro('mini-libro')
+        pc = os.path.join(L, 'cronologia.yaml')
+        cron = yaml.safe_load(open(pc, encoding='utf-8'))
+        import datetime
+        cron['eventi'] += [{'id': 'a', 'data': datetime.date(2021, 1, 1), 'capitolo': 1, 'descrizione': 'prova'},
+                           {'id': 'b', 'data': datetime.date(2021, 2, 11), 'capitolo': 1, 'descrizione': 'prova'},
+                           {'id': 'c', 'data': datetime.date(2021, 3, 12), 'capitolo': 1, 'descrizione': 'prova'}]
+        voce = {k: v for k, v in du.items() if k != 'atteso'}
+        cron['durate'] = [voce]
+        open(pc, 'w', encoding='utf-8').write(yaml.safe_dump(cron, allow_unicode=True))
+        open(os.path.join(L, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write(
+            f'\nIn tutto erano passate {du["valore"]} da quel giorno.\n')
+        esito('continuita.py', f'durata: {chiave}', du['atteso'], esiti(L, 'durata'), sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate}
 
 
 def main(argv):

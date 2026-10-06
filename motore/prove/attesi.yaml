@@ -72,7 +72,7 @@ passo_2:
         dialogo: 26.1
         esiti:
           - "dichiarazione:chiusura|AVVISO|"
-          - "eta|KO|27"
+          - "eta|AVVISO|27"            # «Irene Calvi aveva quarantadue anni»: imperfetto narrativo, attribuzione incerta → avviso (correzione continuita.py)
           - "giorno_settimana|KO|2"
           - "nome_due_grafie|AVVISO|5"
           - "nome_vietato:Lodovico Arsa|KO|25"
@@ -457,3 +457,22 @@ checklist_capitolo:
   voci: ['Il registro non si apre prima del capitolo 3']
   righe: ['| Il registro non si apre prima del capitolo 3 | [ ] |']
   non_valida: 2
+
+continuita_eta_durate:
+  # Testi inventati aggiunti al capitolo 1 di una copia del mini-libro giallo (cronologia: Irene Calvi
+  # nata il 1985-06-10, Gemma Rosselli il 1999-09-02; capitolo 1 datato marzo 2021).
+  frasi:
+    passato_due_nomi: "Gemma ricordava che Irene, da quando aveva sei anni, voleva fare la farmacista."
+    eta_sbagliata: "Gemma ha 34 anni e nessuna voglia di parlarne."
+    senza_nome_prima: "— Ha trent'anni, — disse Gemma."
+  attesi:
+    passato_due_nomi: []
+    eta_sbagliata: ['eta|KO']
+    senza_nome_prima: ['eta|AVVISO']
+  durate:
+    # eventi aggiunti: a = 2021-01-01, b = 2021-02-11 (41 giorni), c = 2021-03-12 (70 giorni)
+    sei_settimane_41_giorni: {da: a, a: b, valore: "sei settimane", tolleranza_giorni: 3, atteso: []}
+    sei_settimane_70_giorni: {da: a, a: c, valore: "sei settimane", tolleranza_giorni: 3, atteso: ['durata|KO']}
+    due_mesi_70_giorni: {da: a, a: c, valore: "due mesi", tolleranza_mesi: 1, atteso: []}
+    cinque_mesi_70_giorni: {da: a, a: c, valore: "cinque mesi", tolleranza_mesi: 1, atteso: ['durata|KO']}
+    un_anno_41_giorni: {da: a, a: b, valore: "un anno", tolleranza_anni: 0, atteso: ['durata|KO']}

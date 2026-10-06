@@ -58,6 +58,14 @@ cambiano con «Scene: numero | lunghezza» nel briefing, con le stesse regole di
 medio. Esempio neutro: profilo con 2-3 scene da 800-2500 parole, `Capitoli: 800 | 1000-1300 | 1800`
 → serve `Scene: 1 | 400-1200` (override su `capitoli.scene_per_capitolo` e `scene.lunghezza`).
 
+**Continuità: età e durate.** `continuita.py` prende come età attuale solo le forme dichiarative
+(«Nome ha N anni», «Nome, di N anni», «trentenne»): KO se non torna con la data di nascita. «Nome aveva N
+anni» nella principale (imperfetto narrativo) e le attribuzioni incerte danno un avviso; i ricordi
+(«quando aveva N anni», «a N anni», «da N anni») sono ignorati. Le durate della cronologia si
+confrontano in giorni con l'unità vera (giorni, settimane, mesi, anni); la tolleranza si scrive come
+`tolleranza_giorni`, `tolleranza_mesi` o `tolleranza_anni`. Esempio neutro: «sei settimane» tra due date a
+41 giorni con `tolleranza_giorni: 3` → nessun KO.
+
 **Campi del profilo: controllati e informativi.** Lo schema `dati/profilo.schema.yaml` dichiara per
 ogni campo il suo uso; `zb profili` li elenca.
 - Controllati da uno script: `capitoli.minimo`, `capitoli.scene_per_capitolo`, `capitoli.tolleranza_budget`,
