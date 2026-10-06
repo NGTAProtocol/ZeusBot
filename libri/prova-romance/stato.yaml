@@ -1,9 +1,9 @@
 libro: Le ore del restauro
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: pagina_campione
-passo: in revisione
-gate_in_attesa: pagina_campione
+fase: stesura
+passo: capitolo 1
+gate_in_attesa: null
 lotto:
   dimensione: 3
   capitoli: []
@@ -34,11 +34,10 @@ documenti_approvati:
   03-architettura/piano-parole.md:
     sha256: 240007a3ba2ca065f0f68acffca5ee4a30d147b0eaca0e1d15d108955f0ba0ed
     commit: 86e84fa
+  05-revisioni/pagina-campione.md:
+    sha256: efda5b78f8af174744b7f366e0fa3b699335cac905079fdff8b27d45bb20ec10
+    commit: 4d6b520
 avvisi_aperti: []
-revisione_in_corso:
-  gate: pagina_campione
-  blocco: 1
-  blocchi_totali: 1
-  sha256: f122973cf8e4
+revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-06T11:09:21Z'
+aggiornato: '2026-10-06T11:11:30Z'
