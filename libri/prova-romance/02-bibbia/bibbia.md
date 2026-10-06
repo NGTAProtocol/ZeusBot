@@ -18,7 +18,6 @@
 ## Motivi ricorrenti
 
 - La cassetta degli attrezzi di Nora, con dentro la lettera chiusa: torna in ogni capitolo fino al 4.
-- Carta, colla, sale e caffè: le sensazioni ricorrenti della voce di Nora.
 - Carta, colla, sale e caffè: al massimo due di questi quattro per capitolo; mai in elenco.
 - Le sei settimane del cantiere: il conto alla rovescia verso la riapertura del 14 aprile.
 

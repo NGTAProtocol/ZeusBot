@@ -78,6 +78,13 @@ voci:
 - id: il_cuore_le_martellava_nel_petto
   pattern: (?i)(?<!\w)il\ cuore\ le\ martellava\ nel\ petto(?!\w)
   modalita: vieta
+- id: motivi_ricorrenti
+  espressione: carta, colla, sale, caffè
+  pattern: (?i)\b(carta|colla|sale|caffè)\b
+  modalita: avviso
+  massimo: 4
+  ambito: capitolo
+  nota: 'approssimata: conta le occorrenze, non quanti dei quattro motivi compaiono'
 vincoli_capitolo: []
 nome_vietato_prima_di:
 - nome: Elia

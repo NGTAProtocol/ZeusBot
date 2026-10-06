@@ -29,6 +29,11 @@ correzioni_aperte:
     stessa riga nel manuale'
   sha256: b2fcbe624bf3
   data: '2026-10-06'
+- gate: documenti
+  testo: 'bibbia: tolta la riga doppia sui motivi; libro.yaml e manuale: voce «motivi_ricorrenti» (avviso oltre 4 per capitolo);
+    checklist del report di capitolo'
+  sha256: 5ce454bf3d5f
+  data: '2026-10-06'
 parole:
   scritte: 0
   obiettivo: 9000
@@ -41,4 +46,4 @@ revisione_in_corso:
   blocchi_totali: 6
   sha256: 5ce454bf3d5f
 push_in_sospeso: false
-aggiornato: '2026-10-06T09:02:42Z'
+aggiornato: '2026-10-06T09:05:44Z'

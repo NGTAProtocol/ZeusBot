@@ -33,6 +33,7 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «romanc
 - Vietato: «un brivido le percorse la schiena».
 - Vietato: «il cuore le martellava nel petto».
 - Motivi ricorrenti: carta, colla, sale e caffè, al massimo due di questi quattro per capitolo; mai in elenco.
+- Tetto (avviso): «carta, colla, sale, caffè» al massimo 4 occorrenze per capitolo — approssimata: conta le occorrenze, non quanti dei quattro motivi compaiono.
 - Lista nera di base (05-critica rr. 19-21): 19 voci, sempre attive.
 
 ## 6. Vincoli
