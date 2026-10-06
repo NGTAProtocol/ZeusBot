@@ -7,6 +7,7 @@ esiti e stampa la tabella script | controllo | atteso | ottenuto | OK/KO.
 Alla fine rilancia separazione.py e recinto.py su motore/.
 Codice d'uscita 0 solo se tutto è OK.
 """
+import json
 import os
 import re
 import shutil
@@ -1209,9 +1210,29 @@ def manuale_leggibile(A):
           f'{"sì" if libri[0]["parole"].get("motivo_fuori_profilo") else "no"}', sez)
 
 
+# ---------------------------------------------------------------- checklist di capitolo dal libro
+
+def checklist_capitolo(A):
+    sez = 'checklist'
+    L = copia_libro('mini-libro')
+    p = esegui(os.path.join(S, 'capitolo.py'), L, '1', '--schermo')
+    base = [r for r in p.stdout.splitlines() if r.endswith('| [ ] |')]
+    pl = os.path.join(L, 'libro.yaml')
+    with open(pl, 'a', encoding='utf-8') as f:
+        f.write('checklist_capitolo: ' + json.dumps(A['voci'], ensure_ascii=False) + '\n')
+    p = esegui(os.path.join(S, 'capitolo.py'), L, '1', '--schermo')
+    righe = [r for r in p.stdout.splitlines() if r.endswith('| [ ] |')]
+    esito('capitolo.py', 'voci del libro in fondo alla checklist', A['righe'], righe[len(base):], sez)
+    esito('capitolo.py', 'checklist fissa invariata', 'sì', 'sì' if righe[:len(base)] == base else 'no', sez)
+    t = open(pl, encoding='utf-8').read().replace('checklist_capitolo: ', 'checklist_capitolo: 5 #')
+    open(pl, 'w', encoding='utf-8').write(t)
+    p = esegui(os.path.join(S, 'capitolo.py'), L, '1', '--schermo')
+    esito('capitolo.py', 'checklist_capitolo non valida: rifiutata', A['non_valida'], p.returncode, sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo}
 
 
 def main(argv):

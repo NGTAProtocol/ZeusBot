@@ -451,3 +451,9 @@ manuale_leggibile:
           '- Vietato: «un brivido le percorse la schiena».']
   dove_capitoli: ['nel capitolo 1', 'nei capitoli 1-3', 'nei capitoli 1, 4 e 6-8', 'in nessun capitolo']
   motivo_fuori_profilo: "sì / no"
+
+checklist_capitolo:
+  # Voce inventata aggiunta al libro.yaml di una copia del mini-libro giallo.
+  voci: ['Il registro non si apre prima del capitolo 3']
+  righe: ['| Il registro non si apre prima del capitolo 3 | [ ] |']
+  non_valida: 2
