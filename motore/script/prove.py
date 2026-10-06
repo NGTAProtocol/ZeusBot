@@ -1064,9 +1064,45 @@ def passo_7(A):
           ' / '.join(re.findall(r'^\| \([abc]\) [^|]+\| (sì|no) \|', p.stdout, re.M)), sez)
 
 
+# ---------------------------------------------------------------- override motivati sulla lunghezza
+
+def override_lunghezza(A):
+    sez = 'override'
+    E = {k: v for k, v in ENV.items() if k != 'CLAUDE_PROJECT_DIR'}
+    base = open(os.path.join(M, 'prove', 'briefing', 'briefing-giallo.md'), encoding='utf-8').read()
+
+    def prova(sostituzione):
+        d = tempfile.mkdtemp(dir=TMP)
+        L = os.path.join(d, 'libro')
+        os.makedirs(L)
+        open(os.path.join(L, 'briefing.md'), 'w', encoding='utf-8').write(base.replace('Lunghezza: 60000', sostituzione))
+        p = subprocess.run([sys.executable, '-B', os.path.join(S, 'nuovo.py'), os.path.join(L, 'briefing.md')],
+                           env=E, capture_output=True, text=True)
+        return L, p
+
+    def campi(p):
+        return [r[2:].split(':')[0] for r in p.stderr.splitlines() if r.startswith('- ')]
+
+    for chiave, testo in A['casi'].items():
+        att = A['attesi'][chiave]
+        L, p = prova(testo)
+        if p.returncode != 0:
+            esito('nuovo.py', f'{chiave}: rifiutato, campi elencati', att,
+                  f'{p.returncode} / {campi(p)} / {"libro.yaml" in os.listdir(L)}', sez)
+            continue
+        lb = yaml.safe_load(open(os.path.join(L, 'libro.yaml'), encoding='utf-8'))
+        esito('nuovo.py', f'{chiave}: accettato', att['codice'], p.returncode, sez)
+        esito('nuovo.py', f'{chiave}: override in libro.yaml (campo, valore, motivo presente)', att['override'],
+              [f'{o["campo"]} {o["valore"]} {bool(o["motivo"])}' for o in lb['override']], sez)
+        esito('nuovo.py', f'{chiave}: capitoli ricalcolati', att['capitoli'],
+              len(re.findall(r'(?m)^\| — \| \d+ \|', open(os.path.join(L, '03-architettura', 'piano-parole.md'), encoding='utf-8').read())), sez)
+        esito('nuovo.py', f'{chiave}: override elencati nel manuale', att['manuale'],
+              open(os.path.join(L, '03-architettura', 'manuale-di-stile.md'), encoding='utf-8').read().count('— motivo:'), sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza}
 
 
 def main(argv):

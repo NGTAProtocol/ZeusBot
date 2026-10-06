@@ -29,12 +29,16 @@ Lettore:
      Genere = nome di un profilo di motore/profili/. Tetti: «espressione | massimo | capitolo o libro».
      Vietati: un'espressione per riga. Vincoli: «Nome | vietato prima del N».
      Gate (facoltativo): documenti, pagina_campione, primi_capitoli, lotto.
-     Testo precedente (solo riscrittura): un file in 01-originale/, per esempio 01-originale/testo.md. -->
+     Testo precedente (solo riscrittura): un file in 01-originale/, per esempio 01-originale/testo.md.
+     Motivo override: obbligatorio se un valore è fuori dal profilo di genere (lunghezza, capitoli…).
+     Capitoli: «minimo | media | massimo» in parole; obbligatorio se la lunghezza è fuori profilo. -->
 
 Genere:
 Modalità: nuovo
 Testo precedente:
 Lunghezza:
+Motivo override:
+Capitoli:
 Voce:
 Intestazione capitolo: Luogo — giorno e data
 Separatore di scena: * * *
