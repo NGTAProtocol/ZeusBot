@@ -18,6 +18,11 @@ correzioni_aperte:
   testo: 'capitolo 3: similitudini sopra il tetto (4 su 3,3): tolte due'
   sha256: e6ce21152edc
   data: '2026-10-06'
+- gate: primi_capitoli
+  testo: 'capitolo 2: flashback del molo ridotto (senza mercato, colline e busta), tolto «dieci anni», apertura sul rumore
+    del flessibile'
+  sha256: 62935494c9a9
+  data: '2026-10-06'
 parole:
   scritte: 3002
   obiettivo: 9000
@@ -49,6 +54,6 @@ revisione_in_corso:
   gate: primi_capitoli
   blocco: 1
   blocchi_totali: 6
-  sha256: 62935494c9a9
+  sha256: e2ee4dc30eb8
 push_in_sospeso: false
-aggiornato: '2026-10-06T11:23:51Z'
+aggiornato: '2026-10-06T11:27:56Z'

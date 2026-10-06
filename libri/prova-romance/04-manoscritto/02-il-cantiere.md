@@ -2,7 +2,7 @@
 
 *Cala Rossa — martedì 5 marzo 2024*
 
-Il palazzo comunale, il mattino dopo, non aveva più niente del silenzio del giorno prima. Un flessibile urlava da qualche parte al piano terra, i martelli battevano sulle impalcature e una radio, appesa a un tubo con il fil di ferro, trasmetteva canzoni di trent'anni prima a un volume che nessuno aveva il coraggio di abbassare. Nora salì la scala tra i teli di plastica con la cassetta in mano e un elmetto giallo troppo grande, prestato da un operaio che l'aveva fermata sul portone per ricordarle che senza elmetto non si entrava.
+Un flessibile urlava da qualche parte al piano terra del palazzo comunale, i martelli battevano sulle impalcature e una radio, appesa a un tubo con il fil di ferro, trasmetteva canzoni di trent'anni prima a un volume che nessuno aveva il coraggio di abbassare. Nora salì la scala tra i teli di plastica con la cassetta in mano e un elmetto giallo troppo grande, prestato da un operaio che l'aveva fermata sul portone per ricordarle che senza elmetto non si entrava.
 
 Lui era in fondo alla sala grande, chino su un tavolo coperto di disegni, con la luce bianca di una lampada da cantiere che gli tagliava la faccia a metà. Aveva i capelli più corti e una giacca impermeabile che a Lisbona, probabilmente, nessuno portava. Quando alzò la testa, Nora capì che l'aveva sentita arrivare dal primo gradino e che aveva aspettato apposta a voltarsi.
 
@@ -26,7 +26,7 @@ Nora lasciò la cassetta su una sedia libera, lontano dai disegni, e si tolse i 
 
 — Ho letto il tuo ultimo articolo, quello sui libri alluvionati. Era scritto bene, per essere un articolo sulla muffa.
 
-Lei non rispose subito. Dieci anni prima avrebbe riso, e lui lo sapeva, e forse per questo aveva scelto proprio quella frase. L'ultima volta che si erano parlati erano seduti sul muretto del molo, in una sera di aprile che sapeva di gasolio e di glicine, e lui aveva parlato per un'ora intera di un concorso a Lisbona, di un progetto per un mercato coperto, di una città costruita sulle colline dove la luce cambiava colore a ogni ora del giorno. Lei aveva ascoltato tutto senza fare domande, perché le domande avrebbero avuto bisogno di risposte, e il giorno dopo lui era partito con il primo traghetto lasciandole soltanto una busta. Fuori, sull'impalcatura, un operaio fischiava dietro alla radio, sbagliando tutte le note con grande convinzione.
+Lei non rispose subito. L'ultima volta che si erano parlati erano seduti sul muretto del molo, in una sera di aprile che sapeva di gasolio e di glicine, e lui aveva parlato soltanto di Lisbona. Lei aveva ascoltato senza fare domande, perché le domande avrebbero avuto bisogno di risposte. Il giorno dopo lui era partito con il primo traghetto. Fuori, sull'impalcatura, un operaio fischiava dietro alla radio, sbagliando tutte le note con grande convinzione.
 
 — Non ero sicura che fossi tu, — disse infine. — Marta non ha voluto dirmi il nome.
 
