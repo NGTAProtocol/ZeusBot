@@ -24,6 +24,17 @@ override:
 - campo: capitoli.massimo
   valore: 1800
   motivo: 'libro di prova del motore (lunghezza e capitoli ridotti) — Capitoli (massimo): 1800 invece di 4000 del profilo'
+- campo: capitoli.scene_per_capitolo
+  valore:
+  - 1
+  - 1
+  motivo: 'libro di prova del motore (lunghezza e capitoli ridotti) — Scene (numero): [1, 1] invece di [2, 3] del profilo'
+- campo: scene.lunghezza
+  valore:
+  - 400
+  - 1200
+  motivo: 'libro di prova del motore (lunghezza e capitoli ridotti) — Scene (lunghezza): [400, 1200] invece di [800, 2500]
+    del profilo'
 gate:
 - documenti
 - pagina_campione

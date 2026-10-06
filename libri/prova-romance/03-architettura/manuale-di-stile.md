@@ -12,6 +12,7 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «romanc
 
 - Obiettivo: 9000 parole, circa 8 capitoli.
 - Capitolo: minimo 800, media 1000-1300, massimo 1800 parole.
+- Scene: 1 per capitolo, ciascuna 400-1200 parole (controllate da capitolo.py; separatore «* * *»).
 - Tolleranza: ±15% sul budget del capitolo in piano-parole.md; ±5% sul totale.
 
 ## 3. Frase e dialogo
@@ -59,6 +60,8 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «romanc
 - capitoli.minimo: 800 — motivo: libro di prova del motore (lunghezza e capitoli ridotti) — Capitoli (minimo): 800 invece di 1500 del profilo
 - capitoli.media: [1000, 1300] — motivo: libro di prova del motore (lunghezza e capitoli ridotti) — Capitoli (media): [1000, 1300] invece di [2000, 3000] del profilo
 - capitoli.massimo: 1800 — motivo: libro di prova del motore (lunghezza e capitoli ridotti) — Capitoli (massimo): 1800 invece di 4000 del profilo
+- capitoli.scene_per_capitolo: [1, 1] — motivo: libro di prova del motore (lunghezza e capitoli ridotti) — Scene (numero): [1, 1] invece di [2, 3] del profilo
+- scene.lunghezza: [400, 1200] — motivo: libro di prova del motore (lunghezza e capitoli ridotti) — Scene (lunghezza): [400, 1200] invece di [800, 2500] del profilo
 
 ## 10. Fatti canonici e cose da non cambiare
 

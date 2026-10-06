@@ -35,6 +35,7 @@ Testo precedente:
 Lunghezza: 9000
 Motivo override: libro di prova del motore (lunghezza e capitoli ridotti)
 Capitoli: 800 | 1000-1300 | 1800
+Scene: 1 | 400-1200
 Voce: terza persona, passato, un solo punto di vista (Nora)
 Intestazione capitolo: Luogo — giorno e data
 Separatore di scena: * * *

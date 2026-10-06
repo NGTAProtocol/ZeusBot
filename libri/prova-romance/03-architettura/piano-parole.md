@@ -11,4 +11,4 @@
 | — | 7 | Il bar sul porto | decisione | 1 | 1125 | 1125 |  |  |
 | — | 8 | La riapertura | gesto finale e finale felice; la bottega di Nora apre | 1 | 1125 | 1125 |  |  |
 
-Totale: 9000. Metodo unico di conteggio. Tolleranza ±15% per capitolo (956-1294), ±5% sul totale.
+Totale: 9000. Metodo unico di conteggio. Tolleranza ±15% per capitolo (956-1294), ±5% sul totale. Scene: 1 per capitolo, 400-1200 parole (override).
