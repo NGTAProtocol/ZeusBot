@@ -1174,9 +1174,44 @@ def glob_profili():
     return glob.glob(os.path.join(M, 'profili', '*.yaml'))
 
 
+# ---------------------------------------------------------------- manuale generato leggibile
+
+def manuale_leggibile(A):
+    import nuovo
+    sez = 'manuale'
+    E = {k: v for k, v in ENV.items() if k != 'CLAUDE_PROJECT_DIR'}
+    base = open(os.path.join(M, 'prove', 'briefing', 'briefing-giallo.md'), encoding='utf-8').read()
+    manuali, libri = [], []
+    for testo in (base, base.replace('Lunghezza: 60000', 'Lunghezza: 9000\nMotivo override: prova\nCapitoli: 800 | 1000-1300 | 1800'),
+                  base.replace('Ugo Pelle | vietato prima del 2', 'Ugo Pelle | vietato prima del 4')):
+        d = tempfile.mkdtemp(dir=TMP)
+        L = os.path.join(d, 'libro')
+        os.makedirs(L)
+        open(os.path.join(L, 'briefing.md'), 'w', encoding='utf-8').write(testo)
+        subprocess.run([sys.executable, '-B', os.path.join(S, 'nuovo.py'), os.path.join(L, 'briefing.md')], env=E, capture_output=True)
+        manuali.append(open(os.path.join(L, '03-architettura', 'manuale-di-stile.md'), encoding='utf-8').read())
+        libri.append(yaml.safe_load(open(os.path.join(L, 'libro.yaml'), encoding='utf-8')))
+    tutto = '\n'.join(manuali)
+    esito('nuovo.py', 'manuale: identificativi con trattino basso tra «»', A['identificativi'],
+          sorted(set(re.findall(r'«([^»]*_[^»]*)»', tutto))), sez)
+    esito('nuovo.py', 'manuale: «nei capitolo» o «nei capitoli N.» (un solo capitolo)', A['grammatica_errata'],
+          re.findall(r'nei capitolo\b|nei capitoli \d+\.', tutto), sez)
+    esito('nuovo.py', 'manuale: vincolo su un solo capitolo', A['vincolo'],
+          next((r for r in manuali[0].splitlines() if 'non compare' in r), ''), sez)
+    esito('nuovo.py', 'manuale: vincolo su un intervallo', 'nei capitoli 1-3',
+          'nei capitoli 1-3' if 'non compare nei capitoli 1-3.' in manuali[2] else 'no', sez)
+    esito('nuovo.py', 'manuale: tetti e vietati con le espressioni', A['tetti'],
+          [r for r in manuali[0].splitlines() if r.startswith(('- Tetto:', '- Vietato:'))], sez)
+    esito('nuovo.py', 'dove_capitoli', A['dove_capitoli'],
+          [nuovo.dove_capitoli(x) for x in (['1'], ['1-3'], ['1', '4', '6-8'], [])], sez)
+    esito('nuovo.py', 'lunghezza fuori profilo: parole.motivo_fuori_profilo (fuori profilo / dentro)', A['motivo_fuori_profilo'],
+          f'{"sì" if libri[1]["parole"].get("motivo_fuori_profilo") else "no"} / '
+          f'{"sì" if libri[0]["parole"].get("motivo_fuori_profilo") else "no"}', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile}
 
 
 def main(argv):

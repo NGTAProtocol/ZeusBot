@@ -204,17 +204,27 @@ def profilo_effettivo(profilo, override):
     return eff
 
 
+def parole_dal_briefing(c, profilo):
+    """Obiettivo in parole.target_totale; se è fuori dai formati del profilo, il motivo va in
+    parole.motivo_fuori_profilo (il profilo non si tocca: lunghezza_totale.consigliata resta com'è)."""
+    out = {'metodo': 'unico', 'target_totale': int(re.sub(r'[^\d]', '', c['lunghezza']))}
+    for o in override_dal_briefing(c, profilo)[0]:
+        if o['campo'] == 'lunghezza_totale.consigliata':
+            out['motivo_fuori_profilo'] = o['motivo']
+    return out
+
+
 def genera_libro_yaml(b, profilo):
     c, L = b['campi'], b['liste']
     voci = []
     for t in L.get('tetti', []):
         parti = [x.strip() for x in t.split('|')]
         if len(parti) >= 2 and parti[1].isdigit():
-            voci.append({'id': slug(parti[0]), 'pattern': r'(?i)(?<!\w)' + re.escape(parti[0]) + r'(?!\w)',
+            voci.append({'id': slug(parti[0]), 'espressione': parti[0], 'pattern': r'(?i)(?<!\w)' + re.escape(parti[0]) + r'(?!\w)',
                          'modalita': 'conta', 'massimo': int(parti[1]),
                          'ambito': parti[2] if len(parti) > 2 and parti[2] in ('libro', 'capitolo') else 'capitolo'})
     for v in L.get('vietati', []):
-        voci.append({'id': slug(v)[:40], 'pattern': r'(?i)(?<!\w)' + re.escape(v) + r'(?!\w)', 'modalita': 'vieta'})
+        voci.append({'id': slug(v)[:40], 'espressione': v, 'pattern': r'(?i)(?<!\w)' + re.escape(v) + r'(?!\w)', 'modalita': 'vieta'})
     nomi = []
     for v in L.get('vincoli', []):
         m = re.match(r'^(.+?)\s*\|\s*vietato prima del\s+(\d+)', v)
@@ -232,8 +242,9 @@ def genera_libro_yaml(b, profilo):
     if libro['modalita'] == 'riscrittura':
         libro['testo_precedente'] = c['testo precedente']
     libro.update({
-        'serie': None, 'ebook': False, 'profilo': c['genere'], 'override': override_dal_briefing(c, profilo)[0], 'gate': gate,
-        'parole': {'metodo': 'unico', 'target_totale': int(re.sub(r'[^\d]', '', c['lunghezza']))},
+        'serie': None, 'ebook': False, 'profilo': c['genere'], 'override': [o for o in override_dal_briefing(c, profilo)[0]
+                                              if o['campo'] != 'lunghezza_totale.consigliata'], 'gate': gate,
+        'parole': parole_dal_briefing(c, profilo),
         'formato': {'pagina_pollici': [float(fm[0]), float(fm[1])] if len(fm) >= 2 else [5.5, 8.5],
                     'carta': 'crema', 'bleed': False,
                     'margini_mm': {'alto': 20, 'basso': 20, 'esterno': 16, 'interno_scelto': 16},
@@ -260,6 +271,17 @@ def genera_libro_yaml(b, profilo):
 def numero_capitoli(libro, profilo):
     media = sum(profilo['capitoli']['media']) / 2
     return max(1, round(libro['parole']['target_totale'] / media))
+
+
+def dove_capitoli(elenco):
+    """«nel capitolo 1», «nei capitoli 1-3», «nei capitoli 1, 4 e 6-8»."""
+    elenco = [str(x) for x in elenco or []]
+    if not elenco:
+        return 'in nessun capitolo'
+    if len(elenco) == 1 and '-' not in elenco[0]:
+        return f'nel capitolo {elenco[0]}'
+    testo = elenco[0] if len(elenco) == 1 else ', '.join(elenco[:-1]) + ' e ' + elenco[-1]
+    return f'nei capitoli {testo}'
 
 
 def genera_manuale(b, libro, profilo, n_cap):
@@ -291,12 +313,12 @@ def genera_manuale(b, libro, profilo, n_cap):
               '## 5. Tetti e vietati', '']
     for v in libro['voci']:
         if v['modalita'] == 'conta':
-            righe.append(f'- Tetto: «{v["id"]}» al massimo {v["massimo"]} per {v["ambito"]}.')
+            righe.append(f'- Tetto: «{v.get("espressione", v["id"])}» al massimo {v["massimo"]} per {v["ambito"]}.')
         else:
-            righe.append(f'- Vietato: «{v["id"]}».')
+            righe.append(f'- Vietato: «{v.get("espressione", v["id"])}».')
     righe += [f'- Lista nera di base (05-critica rr. 19-21): {len(base["voci"])} voci, sempre attive.', '',
               '## 6. Vincoli', '']
-    righe += [f'- «{n["nome"]}» non compare nei capitoli {", ".join(n["vietato_in"]) or "—"}.'
+    righe += [f'- «{n["nome"]}» non compare {dove_capitoli(n["vietato_in"])}.'
               for n in libro['nome_vietato_prima_di']] or ['- Nessun vincolo.']
     righe += ['', '## 7. Struttura', '',
               f'- Intestazione del capitolo: «{libro["struttura"]["intestazione_capitolo"]}».',
@@ -305,7 +327,10 @@ def genera_manuale(b, libro, profilo, n_cap):
               '## 8. Scene obbligatorie del genere', '']
     righe += [f'- {s}' for s in profilo['scene_obbligatorie']]
     righe += ['', '## 9. Override rispetto al profilo (da approvare al gate «documenti»)', '']
-    righe += [f'- {o["campo"]}: {o["valore"]} — motivo: {o["motivo"]}' for o in libro['override']] or ['- Nessuno.']
+    fuori = libro['parole'].get('motivo_fuori_profilo')
+    ov_righe = ([f'- parole.target_totale: {libro["parole"]["target_totale"]} — motivo: {fuori}'] if fuori else [])
+    ov_righe += [f'- {o["campo"]}: {o["valore"]} — motivo: {o["motivo"]}' for o in libro['override']]
+    righe += ov_righe or ['- Nessuno.']
     righe += ['', '## 10. Fatti canonici e cose da non cambiare', '']
     righe += [f'- {f}' for f in b['fatti'] + b['non_cambiare']] or ['- Nessuno.']
     return '\n'.join(righe) + '\n'

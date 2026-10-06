@@ -48,7 +48,7 @@ briefing; allora va in `libro.yaml` come override con il motivo, il manuale lo e
 Senza motivo `zb nuovo` elenca i campi e si ferma. Con una lunghezza fuori dai formati del profilo
 serve anche «Capitoli:». Sotto 1.000 parole il motore si ferma comunque.
 Esempio neutro: `Lunghezza: 9000`, `Motivo override: racconto lungo`, `Capitoli: 800 | 1000-1300 | 1800`
-→ 8 capitoli, override su `lunghezza_totale.consigliata` e `capitoli.minimo/media/massimo`.
+→ 8 capitoli; l'obiettivo resta in `parole.target_totale` con il motivo in `parole.motivo_fuori_profilo` (il profilo non si tocca), override su `capitoli.minimo/media/massimo`.
 
 **Scene.** `capitolo.py` conta le scene di ogni capitolo numerato dal separatore di `libro.yaml`
 (`struttura.separatore_scena.sorgente`): numero fuori da `capitoli.scene_per_capitolo` = KO; scena
