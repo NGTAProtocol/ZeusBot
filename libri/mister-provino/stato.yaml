@@ -2,8 +2,8 @@ libro: Mister Provino
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: pagina_campione
-passo: da completare
-gate_in_attesa: null
+passo: in revisione
+gate_in_attesa: pagina_campione
 lotto:
   dimensione: 3
   capitoli: []
@@ -35,6 +35,10 @@ documenti_approvati:
     sha256: 440b10fb003f05cd1b0dd90b4fdc68360eaba1e6d10b774fcd0a978a789c155d
     commit: 275ed3e
 avvisi_aperti: []
-revisione_in_corso: null
+revisione_in_corso:
+  gate: pagina_campione
+  blocco: 1
+  blocchi_totali: 1
+  sha256: 7fc944f2b9f7
 push_in_sospeso: false
-aggiornato: '2026-10-06T19:45:10Z'
+aggiornato: '2026-10-06T19:50:56Z'
