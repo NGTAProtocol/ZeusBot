@@ -121,7 +121,8 @@ def slug(s):
 MINIMO_ASSOLUTO = 1000
 DESCRIZIONE = {'lunghezza_totale.consigliata': 'Lunghezza', 'capitoli.minimo': 'Capitoli (minimo)',
                'capitoli.media': 'Capitoli (media)', 'capitoli.massimo': 'Capitoli (massimo)',
-               'frase_media': 'Frase media', 'dialogo_percento': 'Dialogo'}
+               'frase_media': 'Frase media', 'dialogo_percento': 'Dialogo',
+               'capitoli.scene_per_capitolo': 'Scene (numero)', 'scene.lunghezza': 'Scene (lunghezza)'}
 
 
 def _intervallo(s):
@@ -162,6 +163,26 @@ def override_dal_briefing(c, profilo):
                                   ('capitoli.massimo', mx, pc['massimo'])):
                 if v != att:
                     valori.append((campo, v, f'{v} invece di {att} del profilo'))
+    sc = (c.get('scene') or '').strip()
+    if sc:
+        parti = [x.strip() for x in sc.split('|')]
+        numero = ([int(parti[0])] * 2 if parti[0].isdigit() else _intervallo(parti[0])) if len(parti) == 2 else None
+        lung = _intervallo(parti[1]) if len(parti) == 2 else None
+        if not numero or not lung:
+            err.append('Scene: forma «numero | lunghezza», per esempio 1 | 400-1200 oppure 2-3 | 800-2500')
+        else:
+            for campo, v, att in (('capitoli.scene_per_capitolo', numero, profilo['capitoli']['scene_per_capitolo']),
+                                  ('scene.lunghezza', lung, profilo['scene']['lunghezza'])):
+                if v != att:
+                    valori.append((campo, v, f'{v} invece di {att} del profilo'))
+    # coerenza: le scene previste devono stare in un capitolo medio
+    nuovi = {cm: v for cm, v, _ in valori}
+    media = nuovi.get('capitoli.media', profilo['capitoli']['media'])
+    n_sc = nuovi.get('capitoli.scene_per_capitolo', profilo['capitoli']['scene_per_capitolo'])
+    l_sc = nuovi.get('scene.lunghezza', profilo['scene']['lunghezza'])
+    if not sc and n_sc[0] * l_sc[0] > media[1]:
+        err.append(f'Scene: obbligatorio: {n_sc[0]} scene da almeno {l_sc[0]} parole non stanno in un capitolo '
+                   f'medio di {media[1]} («numero | lunghezza», per esempio 1 | 400-1200)')
     for campo, chiave in (('frase_media', 'frase media'), ('dialogo_percento', 'dialogo')):
         if (c.get(chiave) or '').strip():
             v = _intervallo(c[chiave])
@@ -254,6 +275,9 @@ def genera_manuale(b, libro, profilo, n_cap):
               '## 2. Lunghezze', '',
               f'- Obiettivo: {libro["parole"]["target_totale"]} parole, circa {n_cap} capitoli.',
               f'- Capitolo: minimo {cap["minimo"]}, media {cap["media"][0]}-{cap["media"][1]}, massimo {cap["massimo"]} parole.',
+              f'- Scene: {"-".join(map(str, sorted(set(cap["scene_per_capitolo"]))))} per capitolo, ciascuna '
+              f'{profilo["scene"]["lunghezza"][0]}-{profilo["scene"]["lunghezza"][1]} parole (controllate da capitolo.py; '
+              f'separatore «{libro["struttura"]["separatore_scena"]["sorgente"]}»).',
               f'- Tolleranza: ±{cap["tolleranza_budget"]:.0%} sul budget del capitolo in piano-parole.md; '
               f'±{cap["tolleranza_totale"]:.0%} sul totale.', '',
               '## 3. Frase e dialogo', '',

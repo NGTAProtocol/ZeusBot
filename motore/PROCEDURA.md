@@ -50,6 +50,26 @@ serve anche «Capitoli:». Sotto 1.000 parole il motore si ferma comunque.
 Esempio neutro: `Lunghezza: 9000`, `Motivo override: racconto lungo`, `Capitoli: 800 | 1000-1300 | 1800`
 → 8 capitoli, override su `lunghezza_totale.consigliata` e `capitoli.minimo/media/massimo`.
 
+**Scene.** `capitolo.py` conta le scene di ogni capitolo numerato dal separatore di `libro.yaml`
+(`struttura.separatore_scena.sorgente`): numero fuori da `capitoli.scene_per_capitolo` = KO; scena
+sotto il minimo di `scene.lunghezza` = KO, sopra il massimo = avviso; il sequel è informativo. Si
+cambiano con «Scene: numero | lunghezza» nel briefing, con le stesse regole di «Capitoli:» (serve
+«Motivo override:»); «Scene:» è obbligatoria quando le scene del profilo non stanno in un capitolo
+medio. Esempio neutro: profilo con 2-3 scene da 800-2500 parole, `Capitoli: 800 | 1000-1300 | 1800`
+→ serve `Scene: 1 | 400-1200` (override su `capitoli.scene_per_capitolo` e `scene.lunghezza`).
+
+**Campi del profilo: controllati e informativi.** Lo schema `dati/profilo.schema.yaml` dichiara per
+ogni campo il suo uso; `zb profili` li elenca.
+- Controllati da uno script: `capitoli.minimo`, `capitoli.scene_per_capitolo`, `capitoli.tolleranza_budget`,
+  `capitoli.tolleranza_totale`, `scene.lunghezza`, `frase_media`, `dialogo_percento`,
+  `similitudini_max_per_parole`, `parole_filtro`.
+- Usati da `zb nuovo` per generare i documenti: `genere`, `lunghezza_totale.formati`, `capitoli.media`,
+  `capitoli.massimo`, `chiusura_preferita`, `scene_obbligatorie`.
+- Informativi, non controllati (marcati così anche nei profili): `lunghezza_totale.consigliata`,
+  `lunghezza_totale.parti_sopra`, `lunghezza_totale.parti_obbligatorie`, `capitoli.coerenza`,
+  `scene.sequel`, `scene.budget_interno`, `parole_per_atto`, `battiti`, `lista_nera` (la lista nera
+  usata è sempre `dati/lista-nera.yaml`), `parole_per_pagina`.
+
 ## 3b. Libro già avviato: `zb adotta <cartella>`
 
 Per un libro che ha già alcuni documenti (briefing, manuale di stile, bibbia, scaletta, piano

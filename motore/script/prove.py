@@ -1100,9 +1100,83 @@ def override_lunghezza(A):
               open(os.path.join(L, '03-architettura', 'manuale-di-stile.md'), encoding='utf-8').read().count('— motivo:'), sez)
 
 
+# ---------------------------------------------------------------- controllo delle scene e campi informativi
+
+def scene(A):
+    import valida_profili
+    sez = 'scene'
+
+    def cap(L, n):
+        p = esegui(os.path.join(S, 'capitolo.py'), L, n, '--schermo')
+        righe = [r for r in p.stdout.splitlines() if re.match(r'^\| \S+ \| (scene_numero|scena_minimo|scena_massimo) \|', r)]
+        return p.returncode, [f'{r.split("|")[2].strip()}|{r.split("|")[3].strip()}' for r in righe]
+
+    def con_override(nome, override):
+        L = copia_libro(nome)
+        pl = os.path.join(L, 'libro.yaml')
+        t = open(pl, encoding='utf-8').read()
+        open(pl, 'w', encoding='utf-8').write(t.replace('override: []', 'override: ' + json.dumps(override, ensure_ascii=False)))
+        return L
+
+    import json
+    for chiave, (nome, n, override) in {
+            'romance_1_senza_override': ('mini-libro-romance', '1', None),
+            'romance_1_con_override': ('mini-libro-romance', '1', [{'campo': 'capitoli.scene_per_capitolo', 'valore': [1, 3],
+                                                                     'motivo': 'prova: capitoli brevi'}]),
+            'giallo_3_sotto_minimo': ('mini-libro', '3', None),
+            'giallo_1_sopra_massimo': ('mini-libro', '1', [{'campo': 'scene.lunghezza', 'valore': [300, 1000],
+                                                             'motivo': 'prova: scene brevi'}])}.items():
+        L = con_override(nome, override) if override else copia_libro(nome)
+        codice, righe = cap(L, n)
+        esito('capitolo.py', f'scene: {chiave}', A[chiave], f'{codice} / {righe}', sez)
+    L = con_override('mini-libro-romance', [{'campo': 'capitoli.scene_per_capitolo', 'valore': [1, 3], 'motivo': ''}])
+    p = esegui(os.path.join(S, 'capitolo.py'), L, '1', '--schermo')
+    esito('capitolo.py', 'scene: override senza motivo rifiutato', A['override_senza_motivo'],
+          f'{p.returncode} / {"senza motivo" in p.stderr}', sez)
+
+    # briefing: «Scene:»
+    E = {k: v for k, v in ENV.items() if k != 'CLAUDE_PROJECT_DIR'}
+    base = open(os.path.join(M, 'prove', 'briefing', 'briefing-giallo.md'), encoding='utf-8').read().replace(
+        'Genere: giallo', 'Genere: romance')
+    for chiave, testo in A['briefing']['casi'].items():
+        d = tempfile.mkdtemp(dir=TMP)
+        Lb = os.path.join(d, 'libro')
+        os.makedirs(Lb)
+        open(os.path.join(Lb, 'briefing.md'), 'w', encoding='utf-8').write(base.replace('Lunghezza: 60000', testo))
+        p = subprocess.run([sys.executable, '-B', os.path.join(S, 'nuovo.py'), os.path.join(Lb, 'briefing.md')],
+                           env=E, capture_output=True, text=True)
+        if p.returncode:
+            ott = f'{p.returncode} / {[r[2:].split(":")[0] for r in p.stderr.splitlines() if r.startswith("- ")]}'
+        else:
+            lb = yaml.safe_load(open(os.path.join(Lb, 'libro.yaml'), encoding='utf-8'))
+            ott = f'0 / {[(o["campo"], o["valore"]) for o in lb["override"] if o["campo"].startswith(("scene", "capitoli.scene"))]}'
+        esito('nuovo.py', f'briefing «Scene:»: {chiave}', A['briefing']['attesi'][chiave], ott, sez)
+
+    # campi informativi
+    u = valida_profili.usi()
+    esito('valida_profili.py', 'campi informativi (dallo schema)', A['informativi'], sorted(k for k, v in u.items() if v == 'informativo'), sez)
+    esito('valida_profili.py', 'campi controllati (dallo schema)', A['controllati'], sorted(k for k, v in u.items() if v == 'controllo'), sez)
+    p = esegui(os.path.join(S, 'valida_profili.py'))
+    esito('valida_profili.py', 'elenco per uso a schermo', 'sì',
+          'sì' if all(x in p.stdout for x in ('Campi controllati:', 'Informativi, non controllati:', 'Usati da nuovo.py')) else 'no', sez)
+    foglie = [k.split('.')[-1] for k, v in u.items() if v == 'informativo']
+    manca = []
+    for pr in sorted(glob_profili()):
+        for r in open(pr, encoding='utf-8'):
+            m = re.match(r'^\s*([a-z_]+):', r)
+            if m and m.group(1) in foglie and 'informativo, non controllato' not in r:
+                manca.append(f'{os.path.basename(pr)}:{m.group(1)}')
+    esito('profili/*.yaml', 'campi informativi marcati nei sette profili', [], manca, sez)
+
+
+def glob_profili():
+    import glob
+    return glob.glob(os.path.join(M, 'profili', '*.yaml'))
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene}
 
 
 def main(argv):

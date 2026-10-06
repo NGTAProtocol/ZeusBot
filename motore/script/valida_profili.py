@@ -6,6 +6,8 @@ somma di parole_per_atto = 1; min_su_media < max_su_media; chiusura tra i
 valori ammessi; ogni valore con una fonte nel commento (es. «12 r. 22»,
 «01-mercato r. 25») o la marca PROPOSTA, sulla riga o su una riga madre.
 Esce con 1 al primo profilo non valido, indicando file e campo.
+Alla fine elenca i campi per uso (dallo schema, chiave «uso»): controllati da uno script,
+usati da nuovo.py per generare i documenti, informativi (non controllati da nessuno script).
 """
 import glob
 import os
@@ -59,6 +61,18 @@ def valida_profilo(percorso):
     return errori
 
 
+def usi(schema=None, prefisso=''):
+    """{campo: uso} dai campi dello schema dei profili che dichiarano «uso»."""
+    schema = schema or comune.carica_schema('profilo')
+    out = {}
+    for k, s in (schema.get('campi') or {}).items():
+        if 'uso' in s:
+            out[prefisso + k] = s['uso']
+        elif s.get('tipo') == 'mappa':
+            out.update(usi(s, prefisso + k + '.'))
+    return out
+
+
 def main(argv):
     file = comune.argomenti(argv) or sorted(glob.glob(os.path.join(comune.radice_motore(), 'profili', '*.yaml')))
     for p in file:
@@ -69,6 +83,10 @@ def main(argv):
                 print(f'  - {e}')
             return 1
         print(f'OK {os.path.basename(p)}')
+    u = usi()
+    for uso, titolo in (('controllo', 'Campi controllati'), ('generazione', 'Usati da nuovo.py per i documenti'),
+                        ('informativo', 'Informativi, non controllati')):
+        print(f'{titolo}: {", ".join(k for k, v in u.items() if v == uso)}')
     return 0
 
 

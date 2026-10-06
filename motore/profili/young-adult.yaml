@@ -2,34 +2,34 @@
 # Fonti: righe dei riferimenti di casa-editrice main @ becd0e2; PROPOSTA = valore approvato dall'autore.
 genere: young-adult
 lunghezza_totale:
-  consigliata: [60000, 85000]                  # 12 r. 17
+  consigliata: [60000, 85000]                  # 12 r. 17 · informativo, non controllato
   formati:                                    # 12 rr. 13-16
     breve: [40000, 60000]
     standard: [70000, 90000]
     lungo: [90000, 120000]
     epico: [120000, 180000]
-  parti_sopra: 100000                         # 12 r. 46
+  parti_sopra: 100000                         # 12 r. 46 · informativo, non controllato
 capitoli:
   minimo: 1500                                # 12 r. 28
   media: [2500, 4000]                         # 12 r. 28
   massimo: 5000                               # 12 r. 28
-  coerenza: {min_su_media: 0.5, max_su_media: 1.7}   # 12 r. 30
+  coerenza: {min_su_media: 0.5, max_su_media: 1.7}   # 12 r. 30 · informativo, non controllato
   scene_per_capitolo: [2, 3]                  # 12 r. 35
   tolleranza_budget: 0.15                     # 12 r. 67
   tolleranza_totale: 0.05                     # 12 r. 67
 scene:
   lunghezza: [800, 2500]                      # 12 r. 38
-  sequel: [150, 600]                          # 12 r. 38
-  budget_interno: {apertura: [0.10, 0.15], centro: [0.60, 0.70], chiusura: [0.15, 0.25]}   # 12 rr. 41-43
-parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56
-battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46
+  sequel: [150, 600]                          # 12 r. 38 · informativo, non controllato
+  budget_interno: {apertura: [0.10, 0.15], centro: [0.60, 0.70], chiusura: [0.15, 0.25]}   # 12 rr. 41-43 · informativo, non controllato
+parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56 · informativo, non controllato
+battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46 · informativo, non controllato
 chiusura_preferita: gancio_domanda            # 03 r. 12; 02 r. 39
 frase_media: [10, 15]                         # PROPOSTA approvata
 dialogo_percento: [30, 50]                    # PROPOSTA approvata
 similitudini_max_per_parole: 300              # PROPOSTA da confermare: valore non presente nelle tabelle approvate
 parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21; il numero è PROPOSTA approvata
-lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20
-parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA approvata)
+lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20 · informativo, non controllato
+parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA approvata) · informativo, non controllato
 scene_obbligatorie:
   - incidente scatenante che promette il climax   # 02 r. 19
   - scelta di identità del protagonista       # PROPOSTA approvata
