@@ -20,6 +20,10 @@ correzioni_aperte:
   testo: 'scene: 1 per capitolo, 400-1200 parole (override motivato da «Scene:» nel briefing)'
   sha256: eca21dad425c
   data: '2026-10-06'
+- gate: documenti
+  testo: 'manuale: espressioni vere nei tetti e nei vietati; vincolo «nel capitolo 1»'
+  sha256: d9d013202155
+  data: '2026-10-06'
 parole:
   scritte: 0
   obiettivo: 9000
@@ -28,8 +32,8 @@ documenti_approvati: {}
 avvisi_aperti: []
 revisione_in_corso:
   gate: documenti
-  blocco: 1
+  blocco: 2
   blocchi_totali: 6
-  sha256: d9d013202155
+  sha256: b2fcbe624bf3
 push_in_sospeso: false
-aggiornato: '2026-10-06T08:54:47Z'
+aggiornato: '2026-10-06T08:59:39Z'

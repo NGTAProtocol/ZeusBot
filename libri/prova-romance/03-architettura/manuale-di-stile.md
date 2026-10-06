@@ -28,15 +28,15 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «romanc
 
 ## 5. Tetti e vietati
 
-- Tetto: «come_se» al massimo 2 per capitolo.
-- Tetto: «una_specie_di» al massimo 3 per libro.
-- Vietato: «un_brivido_le_percorse_la_schiena».
-- Vietato: «il_cuore_le_martellava_nel_petto».
+- Tetto: «come se» al massimo 2 per capitolo.
+- Tetto: «una specie di» al massimo 3 per libro.
+- Vietato: «un brivido le percorse la schiena».
+- Vietato: «il cuore le martellava nel petto».
 - Lista nera di base (05-critica rr. 19-21): 19 voci, sempre attive.
 
 ## 6. Vincoli
 
-- «Elia» non compare nei capitoli 1.
+- «Elia» non compare nel capitolo 1.
 - Capitolo 1: Nora scopre chi dirige il cantiere senza che il nome compaia; la chiusura usa «lui» o «l'architetto».
 
 ## 7. Struttura
