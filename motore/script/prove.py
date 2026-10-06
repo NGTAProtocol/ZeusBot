@@ -719,10 +719,10 @@ def passo_5(A):
     esito('nuovo.py', 'riscrittura senza testo precedente: rifiutato', a['senza_testo'], f'{p.returncode} / {mancanti(p.stderr)}', sez)
 
     def testo_prec(Lx):
-        os.makedirs(os.path.join(Lx, '00-progetto'))
-        open(os.path.join(Lx, '00-progetto', 'testo-precedente.md'), 'w', encoding='utf-8').write('# Vecchio testo\n\nUna riga.\n')
+        os.makedirs(os.path.join(Lx, '01-originale'))
+        open(os.path.join(Lx, '01-originale', 'testo-precedente.md'), 'w', encoding='utf-8').write('# Vecchio testo\n\nUna riga.\n')
 
-    rr, Lr, p = libro_nuovo(ris.replace('Testo precedente:\n', 'Testo precedente: 00-progetto/testo-precedente.md\n'),
+    rr, Lr, p = libro_nuovo(ris.replace('Testo precedente:\n', 'Testo precedente: 01-originale/testo-precedente.md\n'),
                             'ris', testo_prec)
     _, lr, _ = comune.carica_libro(Lr)
     rn, Ln, _ = libro_nuovo()
@@ -924,9 +924,88 @@ def passo_5b(A):
     esito('adotta.py', 'cartella senza documenti: fermo, niente scritto', A['vuota'], f'{p.returncode} / {os.listdir(vuota)}', sez)
 
 
+# ---------------------------------------------------------------- passo 6
+
+def passo_6(A):
+    import recinto
+    sez = 'passo 6'
+    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_SESSIONE')}
+    briefing = open(os.path.join(M, 'prove', 'briefing', 'briefing-giallo.md'), encoding='utf-8').read()
+
+    def nuovo_in(testo, prepara=None):
+        d = tempfile.mkdtemp(dir=TMP)
+        L = os.path.join(d, 'libro')
+        os.makedirs(L)
+        if prepara:
+            prepara(L)
+        open(os.path.join(L, 'briefing.md'), 'w', encoding='utf-8').write(testo)
+        return L, subprocess.run([sys.executable, '-B', os.path.join(S, 'nuovo.py'), os.path.join(L, 'briefing.md')],
+                                 env=E, capture_output=True, text=True)
+
+    def cartelle(L):
+        return sorted(x for x in os.listdir(L) if os.path.isdir(os.path.join(L, x)))
+
+    a = A['struttura']
+    s = comune.struttura()
+    esito('struttura-libro.yaml', 'cartelle descritte (scopo, modalità, creazione)', a['cartelle'],
+          [k for k, v in s['cartelle'].items() if {'scopo', 'modalita', 'creazione'} <= set(v)], sez)
+    L, p = nuovo_in(briefing)
+    esito('nuovo.py', 'modalità nuovo: cartelle create', a['nuovo'], cartelle(L), sez)
+    esito('nuovo.py', 'nessuna cartella vuota, nessun .gitkeep, nessuna cartella fuori struttura', [],
+          comune.controlla_struttura(L, 'nuovo'), sez)
+
+    def originale(Lx):
+        os.makedirs(os.path.join(Lx, '01-originale'))
+        open(os.path.join(Lx, '01-originale', 'testo.md'), 'w', encoding='utf-8').write('# Testo\n\nUna riga.\n')
+    ris = briefing.replace('Modalità: nuovo', 'Modalità: riscrittura')
+    L, p = nuovo_in(ris.replace('Testo precedente:\n', 'Testo precedente: 01-originale/testo.md\n'), originale)
+    esito('nuovo.py', 'modalità riscrittura: cartelle create', a['riscrittura'], f'{p.returncode} / {cartelle(L)}', sez)
+    L, p = nuovo_in(briefing, originale)
+    esito('nuovo.py', 'modalità nuovo con 01-originale: rifiutato', a['nuovo_con_originale'],
+          f'{p.returncode} / {"solo in riscrittura" in p.stderr} / {"libro.yaml" in os.listdir(L)}', sez)
+
+    def altrove(Lx):
+        os.makedirs(os.path.join(Lx, '00-progetto'))
+        open(os.path.join(Lx, '00-progetto', 'testo.md'), 'w', encoding='utf-8').write('x\n')
+    L, p = nuovo_in(ris.replace('Testo precedente:\n', 'Testo precedente: 00-progetto/testo.md\n'), altrove)
+    esito('nuovo.py', 'testo precedente fuori da 01-originale: rifiutato', a['testo_altrove'],
+          f'{p.returncode} / {"01-originale" in p.stderr}', sez)
+
+    # pulizia
+    a = A['pulizia']
+    L = copia_libro('mini-libro')
+    for d in ('__pycache__', '_build', '.zb', '05-output/vuota', '05-revisioni'):
+        os.makedirs(os.path.join(L, d), exist_ok=True)
+    for rel, dati in (('__pycache__/a.pyc', b'x'), ('_build/b.html', b'y'), ('.zb/letto-vecchia', b'm'),
+                      ('.zb/letto-sessione-prova', b'm'), ('05-output/libro.pdf', b'PDFDATA'),
+                      ('05-output/libro-copia.pdf', b'PDFDATA'), ('05-output/libro-bozza.pdf', b'BOZZA')):
+        open(os.path.join(L, rel), 'wb').write(dati)
+    shutil.copyfile(os.path.join(L, '04-manoscritto', '01-la-farmacia.md'), os.path.join(L, '05-revisioni', '01-copia.md'))
+    shutil.copyfile(os.path.join(L, '04-manoscritto', '02-l-officina.md'), os.path.join(L, '04-manoscritto', '02-l-officina.md.tmp'))
+    env = dict(E, ZB_SESSIONE='sessione-prova')
+    prima = recinto.foto(L)
+    vuote_prima = sorted(r for r, ds, fs in os.walk(L) if not ds and not fs)
+    p = subprocess.run([sys.executable, '-B', os.path.join(S, 'pulizia.py'), L], env=env, capture_output=True, text=True)
+    elenco = [r[2:].split(' — ')[0] for r in p.stdout.splitlines() if r.startswith('- ')]
+    esito('pulizia.py', 'elenco (dry-run)', a['elenco'], elenco, sez)
+    esito('pulizia.py', 'dry-run: niente cancellato', a['dry_run'],
+          f'{p.returncode} / {recinto.differenze(prima, recinto.foto(L))} / '
+          f'{sorted(r for r, ds, fs in os.walk(L) if not ds and not fs) == vuote_prima}', sez)
+    esito('pulizia.py', 'peso dichiarato', 'sì', 'sì' if re.search(r'elementi, [\d.]+ (B|KB|MB)', p.stdout) else 'no', sez)
+    man = {r: v for r, v in prima.items() if r.startswith('04-manoscritto/')}
+    p = subprocess.run([sys.executable, '-B', os.path.join(S, 'pulizia.py'), L, '--applica'], env=env, capture_output=True, text=True)
+    dopo = recinto.foto(L)
+    esito('pulizia.py', '--applica: tolti esattamente gli elementi elencati', a['applica'],
+          sorted(r for r in prima if r not in dopo) + sorted(e for e in elenco if e.endswith('/') and not os.path.exists(os.path.join(L, e))), sez)
+    esito('pulizia.py', '--applica: manoscritto, libro.yaml e marker corrente intatti', a['protetti'],
+          f'{all(dopo.get(r) == v for r, v in man.items())} / {"libro.yaml" in dopo} / {".zb/letto-sessione-prova" in dopo}', sez)
+    p = subprocess.run([sys.executable, '-B', os.path.join(S, 'pulizia.py'), L], env=env, capture_output=True, text=True)
+    esito('pulizia.py', 'dopo --applica: niente da pulire', a['dopo'], p.stdout.count('\n- '), sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6}
 
 
 def main(argv):

@@ -28,7 +28,8 @@ Lettore:
 <!-- Regole che il motore trasforma da solo in libro.yaml e nel manuale di stile.
      Genere = nome di un profilo di motore/profili/. Tetti: «espressione | massimo | capitolo o libro».
      Vietati: un'espressione per riga. Vincoli: «Nome | vietato prima del N».
-     Gate (facoltativo): documenti, pagina_campione, primi_capitoli, lotto. -->
+     Gate (facoltativo): documenti, pagina_campione, primi_capitoli, lotto.
+     Testo precedente (solo riscrittura): un file in 01-originale/, per esempio 01-originale/testo.md. -->
 
 Genere:
 Modalità: nuovo

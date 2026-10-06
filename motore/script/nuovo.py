@@ -23,8 +23,6 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 
-CARTELLE = ['00-progetto', '02-bibbia', '03-architettura', '04-manoscritto', '05-output',
-            '05-revisioni', '06-diagnostica', '06-pubblicazione']
 GATE_PREDEFINITI = ['documenti', 'pagina_campione', 'primi_capitoli']
 SIGLE = {'gancio_domanda': ['D', 'R', 'P', 'X'], 'gesto_oggetto': ['G', 'O', 'B', 'I'],
          'misto': ['G', 'O', 'B', 'D', 'R']}
@@ -97,8 +95,12 @@ def mancanze(b, cartella_libro):
         tp = c.get('testo precedente', '')
         if not tp:
             out.append('Testo precedente: obbligatorio con Modalità: riscrittura')
+        elif not tp.replace(os.sep, '/').startswith('01-originale/'):
+            out.append(f'Testo precedente: «{tp}» deve stare in 01-originale/ (struttura standard)')
         elif not os.path.isfile(os.path.join(cartella_libro, tp)) or not comune.dentro(cartella_libro, os.path.join(cartella_libro, tp)):
             out.append(f'Testo precedente: «{tp}» non trovato dentro la cartella del libro')
+    elif os.path.isdir(os.path.join(cartella_libro, '01-originale')):
+        out.append('Modalità: 01-originale/ esiste solo in riscrittura (scrivi «Modalità: riscrittura» o togli la cartella)')
     return out[:5] if len(out) > 5 else out
 
 
@@ -261,14 +263,9 @@ def crea(percorso_briefing):
     profilo = comune.carica_profilo(b['campi']['genere'])
     libro = genera_libro_yaml(b, profilo)
     n_cap = numero_capitoli(libro, profilo)
-    for d in CARTELLE:
-        os.makedirs(comune.percorso_in_libro(cartella, os.path.join(d, '.gitkeep')).rsplit(os.sep, 1)[0], exist_ok=True)
     dest = os.path.join(cartella, '00-progetto', 'briefing.md')
     if os.path.realpath(percorso_briefing) != os.path.realpath(dest):
         os.replace(percorso_briefing, comune.percorso_in_libro(cartella, '00-progetto/briefing.md'))
-    for d in CARTELLE:
-        if not os.listdir(os.path.join(cartella, d)):
-            comune.scrivi(cartella, f'{d}/.gitkeep', '')
     comune.scrivi(cartella, 'libro.yaml', yaml.safe_dump(libro, sort_keys=False, allow_unicode=True, width=120))
     comune.scrivi(cartella, '.gitignore', '.zb/\n')
     m = os.path.join(comune.radice_motore(), 'modelli')
@@ -290,6 +287,9 @@ def crea(percorso_briefing):
         titolo=libro['titolo'], percorso=cartella, modalita=libro['modalita'], fase='documenti',
         gate='nessuno', ultimo='—', decisioni=decisioni)
     comune.scrivi(cartella, 'LEGGIMI.md', leggimi)
+    errori = comune.controlla_struttura(cartella, libro['modalita'])
+    if errori:
+        raise comune.ErroreMotore('Struttura del libro non conforme a dati/struttura-libro.yaml:\n- ' + '\n- '.join(errori))
     return cartella, n_cap
 
 

@@ -23,7 +23,7 @@ Regole di lavoro per qualsiasi libro. Comandi: `python3 motore/zb <comando> <lib
 | Modalità | Quando | Differenze |
 |---|---|---|
 | `nuovo` | libro da zero | nessun testo precedente |
-| `riscrittura` | si riscrive un testo esistente | `Testo precedente:` obbligatorio nel briefing (file dentro la cartella del libro); finisce in `libro.yaml`; `zb avvio` lo elenca tra i file letti; `riciclo.py` dà KO su ogni sequenza di 7 parole uguale |
+| `riscrittura` | si riscrive un testo esistente | `Testo precedente:` obbligatorio nel briefing (file in `01-originale/`, cartella che esiste solo in riscrittura); finisce in `libro.yaml`; `zb avvio` lo elenca tra i file letti; `riciclo.py` dà KO su ogni sequenza di 7 parole uguale |
 
 ## 3. Nascita del libro: `zb nuovo <briefing>`
 
@@ -33,8 +33,8 @@ Regole di lavoro per qualsiasi libro. Comandi: `python3 motore/zb <comando> <lib
    - se il briefing è incompleto elenca cosa manca (al massimo 5 voci) e **non crea nulla**;
    - se c'è già un `libro.yaml` si ferma;
    - altrimenti sposta il briefing in `00-progetto/briefing.md` e crea solo dentro la cartella:
-     le cartelle `00-progetto`, `02-bibbia`, `03-architettura`, `04-manoscritto`, `05-output`,
-     `05-revisioni`, `06-diagnostica`, `06-pubblicazione`; `libro.yaml`, `stato.yaml`, `LEGGIMI.md`,
+     solo le cartelle che hanno già un file (`00-progetto`, `02-bibbia`, `03-architettura`; in
+     riscrittura anche `01-originale`, preparata dall'autore); `libro.yaml`, `stato.yaml`, `LEGGIMI.md`,
      `cronologia.yaml`, `nomi_propri.txt`, `.gitignore`; bibbia, manuale di stile, scaletta e
      piano parole.
 3. Le regole della sezione «Direttive» del briefing (genere, lunghezza, voce, tetti, vietati,

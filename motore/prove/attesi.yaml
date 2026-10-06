@@ -241,11 +241,9 @@ passo_5:
   # (repository git con un remoto locale), mai sul repository del motore.
   nuovo:
     codice: 0
-    file: ['.gitignore', '00-progetto/briefing.md', '02-bibbia/.gitkeep', '02-bibbia/bibbia.md',
-           '03-architettura/.gitkeep', '03-architettura/manuale-di-stile.md', '03-architettura/piano-parole.md',
-           '03-architettura/scaletta.md', '04-manoscritto/.gitkeep', '05-output/.gitkeep', '05-revisioni/.gitkeep',
-           '06-diagnostica/.gitkeep', '06-pubblicazione/.gitkeep', 'LEGGIMI.md', 'cronologia.yaml', 'libro.yaml',
-           'nomi_propri.txt', 'stato.yaml']
+    file: ['.gitignore', '00-progetto/briefing.md', '02-bibbia/bibbia.md', '03-architettura/manuale-di-stile.md',
+           '03-architettura/piano-parole.md', '03-architettura/scaletta.md', 'LEGGIMI.md', 'cronologia.yaml',
+           'libro.yaml', 'nomi_propri.txt', 'stato.yaml']
     fuori: []
     libro_valido: "sì"
     stato: "documenti / nessuno"
@@ -299,7 +297,7 @@ passo_5:
     chiusura_incompleta: "2 / 7"
   modalita:
     senza_testo: "2 / ['Testo precedente']"
-    libro_yaml: "riscrittura 00-progetto/testo-precedente.md | nuovo assente"
+    libro_yaml: "riscrittura 01-originale/testo-precedente.md | nuovo assente"
     avvio_letti: "True | False"
     leggimi: "Modalità: riscrittura | Modalità: nuovo"
   claude_md:
@@ -361,3 +359,22 @@ passo_5b:
   fonte_autore: "00-progetto/briefing.md:4"
   riscrittura: "riscrittura 01-originale/vecchio-testo.md"
   vuota: "2 / []"
+
+passo_6:
+  struttura:
+    cartelle: ['00-progetto', '01-originale', '02-bibbia', '03-architettura', '04-manoscritto', '05-revisioni',
+               '05-output', '06-diagnostica', '06-pubblicazione', '.zb']
+    nuovo: ['00-progetto', '02-bibbia', '03-architettura']
+    riscrittura: "0 / ['00-progetto', '01-originale', '02-bibbia', '03-architettura']"
+    nuovo_con_originale: "2 / True / False"
+    testo_altrove: "2 / True"
+  pulizia:
+    # 04-manoscritto/02-l-officina.md.tmp è messo apposta: il manoscritto non si tocca mai, quindi non compare.
+    # 05-revisioni/ resta vuota dopo aver tolto la copia: è proposta anche lei.
+    elenco: ['.zb/letto-vecchia', '05-output/libro-bozza.pdf', '05-output/libro-copia.pdf', '05-output/vuota/',
+             '05-revisioni/', '05-revisioni/01-copia.md', '__pycache__/', '_build/']
+    dry_run: "0 / [] / True"
+    applica: ['.zb/letto-vecchia', '05-output/libro-bozza.pdf', '05-output/libro-copia.pdf', '05-revisioni/01-copia.md',
+              '__pycache__/a.pyc', '_build/b.html', '05-output/vuota/', '05-revisioni/', '__pycache__/', '_build/']
+    protetti: "True / True / True"
+    dopo: 0

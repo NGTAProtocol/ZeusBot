@@ -502,3 +502,31 @@ def prepara_zb(cartella):
         with open(gi, 'w', encoding='utf-8') as f:
             f.write('*\n')
     return d
+
+
+# ---------------------------------------------------------------- struttura standard (passo 6)
+
+def struttura():
+    return leggi_yaml(os.path.join(radice_motore(), 'dati', 'struttura-libro.yaml'))
+
+
+def controlla_struttura(cartella, modalita):
+    """Cartelle fuori struttura o non previste per la modalità, cartelle vuote, .gitkeep."""
+    s = struttura()['cartelle']
+    errori = []
+    for d in sorted(os.listdir(cartella)):
+        p = os.path.join(cartella, d)
+        if not os.path.isdir(p) or d == '.git':
+            continue
+        if d not in s:
+            errori.append(f'{d}/: cartella non prevista')
+        elif modalita not in s[d]['modalita']:
+            errori.append(f'{d}/: prevista solo in {", ".join(s[d]["modalita"])}')
+    for radice, dirs, files in os.walk(cartella):
+        dirs[:] = [x for x in dirs if x != '.git']
+        rel = os.path.relpath(radice, cartella)
+        if '.gitkeep' in files:
+            errori.append(f'{os.path.join(rel, ".gitkeep")}: .gitkeep non ammesso')
+        if rel != '.' and not dirs and not files:
+            errori.append(f'{rel}/: cartella vuota')
+    return errori

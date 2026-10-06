@@ -47,6 +47,7 @@ def comandi(motore):
         ('kdp_verifica.py stato', 'kdp_verifica.py stato'),
         ('avvio.py', 'avvio.py {libro}'),
         ('adotta.py', 'adotta.py {libro}'),
+        ('pulizia.py', 'pulizia.py {libro}'),
         ('fase.py stato', 'fase.py {libro} stato'),
         ('revisione.py', 'revisione.py {libro} 02-bibbia/bibbia.md'),
     ]
