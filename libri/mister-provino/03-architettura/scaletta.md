@@ -392,7 +392,7 @@ Gli interludi I-IX sono tutti nuovi.
 
 ### Cap. 29 — Il circolo · 1.300 · mar 19 ottobre (ricostruito)
 - **Dichiarato:** il vecchio non l'ha visto, glielo ha raccontato Carlo.
-- **Il tavolo di formica, le carte, Peppino il Lungo; il magro, l'accento di Taranto, la tosse.** Il magro chiede chi di loro sia Nicola. Lo zaino per zi' Nardu mai arrivato. I colpi (sonori, brevi). **La domanda sullo zaino, ripetuta.** Nicola con in bocca solo sangue; il forno alle quattro del mattino (unica licenza del vecchio, dichiarata come immaginata).
+- **Il tavolo di formica, le carte, Peppino il Lungo; un uomo magro, l'accento di Taranto, la tosse.** L'uomo chiede chi di loro sia Nicola. Lo zaino per zi' Nardu mai arrivato. I colpi (sonori, brevi). **La domanda sullo zaino, ripetuta.** Nicola con in bocca solo sangue; il forno alle quattro del mattino (unica licenza del vecchio, dichiarata come immaginata).
 - Tre righe sul giornale.
 - **Cambia:**
   - Carlo ha visto togliere l'accendino d'oro dalla tasca del morto (seme del cap. 35);
@@ -401,7 +401,7 @@ Gli interludi I-IX sono tutti nuovi.
 
 ### Cap. 30 — Carlo · 1.400 · mer 20 – ven 22 ottobre
 - La notizia dalla bocca della madre, lucida per una volta. **Il sollievo e lo schifo di sé;** Michele gli dice che non è una vendetta: è la fine di una storia che non ha scritto lui. **Il ragazzo non dice a Michele del fischio ai calabresi:** il vecchio lo dice a noi.
-- **Carlo sulla porta:** il pacco di Checco del 1973 partito dal suo retrobottega, il debito; lo zaino, il magro che cercherà chi stava vicino al morto. Michele chiude la porta a chiave (1 di 2).
+- **Carlo sulla porta:** il pacco di Checco del 1973 partito dal suo retrobottega, il debito; lo zaino, l'uomo del circolo che cercherà chi stava vicino al morto. Michele chiude la porta a chiave (1 di 2).
 - **Cambia:** il ragazzo tace a Michele la propria parte (nuovo); via il «Plic. Plic.» ripetuto. **Filone:** 2 (conseguenza). **Chiusura:** G (la mano di Michele che resta sulla maniglia).
 
 > **Interludio VI — *Il telefono*** · 400 · presente
@@ -424,8 +424,8 @@ Gli interludi I-IX sono tutti nuovi.
 
 ### Cap. 33 — Il no di Michele · 1.500 · mar 26 – mer 27 ottobre
 - Secondo «no» (i sogni di partire gli hanno spezzato il cuore).
-- **Mercoledì in campagna:** la bicicletta nuova, **il magro al trullo**, il cappello di paglia, lo sguardo verso la fila di ulivi, il rumore delle ruote che rallenta vicino al Ciao.
-- **La mazzetta sul tavolo di Michele;** il racconto (ma non del magro: l'ultima bugia per omissione). Michele dice che i soldi sono sporchi; il ragazzo risponde che ci può fare una cosa pulita; Michele chiede qualche giorno.
+- **Mercoledì in campagna:** la bicicletta nuova, **al trullo un uomo con un cappello di paglia**, lo sguardo verso la fila di ulivi, il rumore delle ruote che rallenta vicino al Ciao.
+- **La mazzetta sul tavolo di Michele;** il racconto (ma non dell'uomo con il cappello di paglia: l'ultima bugia per omissione). Michele dice che i soldi sono sporchi; il ragazzo risponde che ci può fare una cosa pulita; Michele chiede qualche giorno.
 - **Filone:** 6. **Chiusura:** O (la mazzetta sul tavolo, il ritratto che guarda).
 
 ### Cap. 34 — Allora non vado · 1.300 · ven 29 ottobre
@@ -482,10 +482,10 @@ Gli interludi I-IX sono tutti nuovi.
 - Il treno di notte, **Michele che non dorme** con il ritratto sulle ginocchia. Piazza Principe, il porto, la fila degli emigranti, la famiglia di sette.
 - **Il poliziotto di frontiera:** l'assenso; chiede a Michele se il ragazzo viaggia con lui, e Michele dice di sì.
 - **La passerella; il primo fischio della nave;** il ragazzo saluta a voce bassa il proprio soprannome, Mister Provino. **Michele gira il ritratto verso il mare.** La Lanterna nella foschia.
-- **Cambia:** meno aggettivi (il v.cap. 31 aveva la frase media più alta del vecchio testo: 19,9). **Filone:** 6. **Chiusura:** I (nessuno dei due si volta, detto con un'immagine e non con la sentenza).
+- **Cambia:** frase media 10-13. **Filone:** 6. **Chiusura:** I (nessuno dei due si volta, detto con un'immagine e non con la sentenza).
 
 ### Cap. 41 — Diciassette giorni · 1.500 · 4-21 dicembre
-- **La terza classe, il ponte, la paura di Michele:** prima di due giorni fa non era mai stato più lontano di Foggia (bibbia 5.3); il dubbio di aver saputo dipingere solo ciò che non poteva avere.
+- **La terza classe, il ponte, la paura di Michele:** prima di questo viaggio non era mai stato più lontano di Foggia (bibbia 5.3); il dubbio di aver saputo dipingere solo ciò che non poteva avere.
 - **Il contadino calabrese** che ha venduto la terra.
 - **La nave ferma con le luci ricordata** (terza apparizione): dopo cinque mesi il ragazzo è lui quella gente.
 - **La tempesta:** il ragazzo che tiene Michele come Michele teneva lui, tre mesi prima.
