@@ -35,6 +35,7 @@ campi:
     campi:
       metodo: {tipo: scelta, valori: [unico]}
       target_totale: {tipo: intero, obbligatorio: true}
+      motivo_fuori_profilo: {tipo: testo}      # obiettivo fuori dai formati del profilo: motivo dal briefing
       unita_senza_numero: {tipo: mappa, altri_campi: true}
   formato:
     tipo: mappa
