@@ -6,7 +6,7 @@
 | — | 2 | Il cantiere | primo incontro | 1 | 1125 | 1125 | 977 | −13% |
 | — | 3 | Carta bagnata | avvicinamento | 1 | 1125 | 1125 | 996 | −11% |
 | — | 4 | La lettera | svolta della relazione | 1 | 1210 | 1210 | 1111 | −8% |
-| — | 5 | Burrasca | punto di non ritorno | 1 | 1210 | 1210 |  |  |
+| — | 5 | Burrasca | punto di non ritorno | 1 | 1210 | 1210 | 1127 | −7% |
 | — | 6 | L'offerta | separazione | 1 | 1210 | 1210 |  |  |
 | — | 7 | Il bar sul porto | decisione | 1 | 1210 | 1210 |  |  |
 | — | 8 | La riapertura | gesto finale e finale felice; la bottega di Nora apre | 1 | 1210 | 1210 |  |  |
