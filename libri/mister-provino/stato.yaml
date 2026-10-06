@@ -1,40 +1,40 @@
 libro: Mister Provino
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: documenti
-passo: 'adozione: bozze da approvare'
-gate_in_attesa: documenti
+fase: pagina_campione
+passo: da completare
+gate_in_attesa: null
 lotto:
   dimensione: 3
   capitoli: []
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: null
 tentativi: {}
-correzioni_aperte:
-- gate: documenti
-  testo: 'correzioni al gate documenti: autore, formato A5, fantasia e nota dell''autore in libro.yaml; 12 battute canoniche
-    nel manuale; sigla F e interludio V nella scaletta'
-  sha256: 8924b8657510
-  data: '2026-10-06'
-- gate: documenti
-  testo: 'formato_confermato_kdp: false in libro.yaml'
-  sha256: 3d54ddb5457b
-  data: '2026-10-06'
-- gate: documenti
-  testo: 'cap. 23: tre scene dichiarate con il budget per scena; piano parole e override sulle scene in libro.yaml'
-  sha256: 3d54ddb5457b
-  data: '2026-10-06'
-- gate: documenti
-  testo: 'scaletta: il magro non nominato prima del cap. 35 (capp. 29, 30, 33); cap. 40 solo frase media 10-13; cap. 41 prima
-    di questo viaggio'
-  sha256: 9ca75487d894
-  data: '2026-10-06'
+correzioni_aperte: []
 parole:
   scritte: 0
   obiettivo: 78000
   metodo: unico
-documenti_approvati: {}
+documenti_approvati:
+  libro.yaml:
+    sha256: 85b5c15b22a383d4680ddf4175d09fca89f7a25a96ee8e3e60eded3e99c77ce8
+    commit: 275ed3e
+  02-bibbia/bibbia.md:
+    sha256: d3d74000321d325c8273bb05a157a6f1360b106e86436230a3d24dc0d5c71f25
+    commit: 3c355aa
+  cronologia.yaml:
+    sha256: 8012ec1c0e68d7a82bbca2c9ff2fe222da66199fdf5eec9b0029e9a64e7e34ef
+    commit: 1dc472f
+  03-architettura/manuale-di-stile.md:
+    sha256: 1cd740f2f5f9af6b5d7f08322cd2949592e3ff245e6cc242a80a203d6c5fc9bd
+    commit: 4097b57
+  03-architettura/scaletta.md:
+    sha256: 589718b3c0b1d0964f66ed3ade648e56046e289229945c301b0405a6cce442b0
+    commit: 4e3ac5b
+  03-architettura/piano-parole.md:
+    sha256: 440b10fb003f05cd1b0dd90b4fdc68360eaba1e6d10b774fcd0a978a789c155d
+    commit: 275ed3e
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-06T19:44:44Z'
+aggiornato: '2026-10-06T19:45:10Z'
