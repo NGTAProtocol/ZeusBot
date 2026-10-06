@@ -204,6 +204,8 @@ In ordine: `zb continuita`, `zb ortografia`,
 `zb compila`, `zb impagina`, `zb pdf`, `zb pacchetto`, `zb kdp`; poi `zb pronto <libro>`, che
 controlla che ci siano tutti i report e chiude il libro. `zb pacchetto` va prima di `zb kdp`: il
 controllo KDP legge la scheda del pacchetto (senza, dà KO anche sulle sezioni che la scheda copre).
+Il formato della pagina si conferma in `libro.yaml` con `formato.formato_confermato_kdp` (facoltativo,
+predefinito false): con false la sezione 11 del controllo KDP dà un AVVISO, con true è OK.
 
 **Continuità: durate e cifre.** Le durate di `cronologia.yaml` si confrontano con le date degli eventi
 anche quando nessun capitolo le nomina (unità «cronologia» nel report). Una cifra (`cifre`) con
