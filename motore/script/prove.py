@@ -855,9 +855,78 @@ def passo_5(A):
     esito('zb', 'conta <libro> --schermo', a['conta'], zb(Lv, 'conta', Lv, '--schermo').returncode, sez)
 
 
+# ---------------------------------------------------------------- passo 5b
+
+def passo_5b(A):
+    import recinto
+    sez = 'passo 5b'
+    fx = os.path.join(M, 'prove', 'mini-libro-adozione')
+    sha_fx = recinto.foto(fx)
+    d = tempfile.mkdtemp(dir=TMP)
+    L = shutil.copytree(fx, os.path.join(d, 'adozione'))
+    prima_d, prima_m = recinto.foto(d), recinto.foto(M)
+    p = esegui(os.path.join(S, 'adotta.py'), L)
+    esito('adotta.py', "documenti parziali: codice d'uscita", A['codice'], p.returncode, sez)
+    esito('adotta.py', 'file scritti', A['scritti'], [r[9:] for r in p.stdout.splitlines() if r.startswith('scritto: ')], sez)
+    fuori = [x for x in recinto.differenze(prima_d, recinto.foto(d)) if not x.startswith('adozione/')]
+    esito('adotta.py', 'scritture fuori dalla cartella (e nel motore)', [], fuori + recinto.differenze(prima_m, recinto.foto(M)), sez)
+    esito('adotta.py', 'mini-libro di prova originale intatto', [], recinto.differenze(sha_fx, recinto.foto(fx)), sez)
+    rep = open(os.path.join(L, '06-diagnostica', 'adozione.md'), encoding='utf-8').read()
+    tab = [r for r in rep.splitlines() if r.startswith('| ') and not r.startswith('| Campo')]
+    esito('adotta.py', 'valori con fonte file:riga (o cartella)', 'tutti',
+          'tutti' if tab and all(re.search(r'\| ([^|]*:\d+|[^|]*\(cartella presente\)|predefinito[^|]*) \|$', r) for r in tab) else
+          [r for r in tab if not re.search(r':\d+ \|$', r)], sez)
+    esito('adotta.py', 'valori ricavati', A['ricavati'], len(tab), sez)
+    esito('adotta.py', 'non ricavati elencati', A['non_ricavati'],
+          [r[len('non ricavato: '):] for r in p.stdout.splitlines() if r.startswith('non ricavato: ')], sez)
+    lb = yaml.safe_load(open(os.path.join(L, 'libro.yaml'), encoding='utf-8'))
+    esito('adotta.py', 'override con motivo (campo e fonte)', A['override'],
+          [f'{o["campo"]} {o["valore"]} {o["motivo"].split(" dice ")[0]}' for o in lb['override']], sez)
+    esito('adotta.py', 'libro.yaml: titolo, profilo, parole, voci, vincoli', A['libro'],
+          f'{lb["titolo"]} / {lb["profilo"]} / {lb["parole"]["target_totale"]} / {[v["id"] for v in lb["voci"]]} / '
+          f'{[(n["nome"], n["vietato_in"]) for n in lb["nome_vietato_prima_di"]]}', sez)
+    esito('adotta.py', 'libro.yaml senza autore: non valido (segnalato)', A['valido'],
+          'no' if 'libro.yaml valido: no' in p.stdout else 'sì', sez)
+    cr = yaml.safe_load(open(os.path.join(L, 'cronologia.yaml'), encoding='utf-8'))
+    esito('adotta.py', 'cronologia: nascite / eventi', A['cronologia'], f'{len(cr["nascite"])} / {len(cr["eventi"])}', sez)
+    esito('adotta.py', 'nomi_propri.txt', A['nomi'], open(os.path.join(L, 'nomi_propri.txt'), encoding='utf-8').read().split(), sez)
+    st = yaml.safe_load(open(os.path.join(L, 'stato.yaml'), encoding='utf-8'))
+    esito('adotta.py', 'stato: fase / gate / ultimo capitolo scritto', A['stato_parziale'],
+          f'{st["fase"]} / {st["gate_in_attesa"] or "nessuno"} / {st["ultimo_capitolo_scritto"]}', sez)
+    foto1 = recinto.foto(L)
+    p = esegui(os.path.join(S, 'adotta.py'), L)
+    esito('adotta.py', 'seconda esecuzione: niente sovrascritto', A['seconda'],
+          f'{p.returncode} / {p.stdout.count("già presente, non toccato")} / {recinto.differenze(foto1, recinto.foto(L))}', sez)
+    # documenti completi: briefing con autore e piano parole
+    L2 = shutil.copytree(fx, os.path.join(tempfile.mkdtemp(dir=TMP), 'adozione'))
+    os.makedirs(os.path.join(L2, '00-progetto'))
+    open(os.path.join(L2, '00-progetto', 'briefing.md'), 'w', encoding='utf-8').write(
+        '# Briefing\n\nTitolo di lavoro: Il faro spento\nAutore: Autrice Inventata\nGenere: narrativa-letteraria\nLunghezza: 60000\n')
+    open(os.path.join(L2, '03-architettura', 'piano-parole.md'), 'w', encoding='utf-8').write(
+        ''.join(f'| — | {i} | x | | | 20000 | | | |\n' for i in (1, 2, 3)) + '\nTotale: 60000.\n')
+    p = esegui(os.path.join(S, 'adotta.py'), L2)
+    st = yaml.safe_load(open(os.path.join(L2, 'stato.yaml'), encoding='utf-8'))
+    esito('adotta.py', 'documenti completi: valido, gate «documenti» aperto', A['completo'],
+          f'{"libro.yaml valido: sì" in p.stdout} / {st["gate_in_attesa"]}', sez)
+    esito('adotta.py', 'autore: fonte nel briefing', A['fonte_autore'],
+          next((r.split('|')[3].strip() for r in open(os.path.join(L2, '06-diagnostica', 'adozione.md'), encoding='utf-8')
+                if r.startswith('| autore |')), 'assente'), sez)
+    # riscrittura: 01-originale presente
+    L3 = shutil.copytree(fx, os.path.join(tempfile.mkdtemp(dir=TMP), 'adozione'))
+    os.makedirs(os.path.join(L3, '01-originale'))
+    open(os.path.join(L3, '01-originale', 'vecchio-testo.md'), 'w', encoding='utf-8').write('# Testo precedente\n\nUna riga.\n')
+    esegui(os.path.join(S, 'adotta.py'), L3)
+    lb = yaml.safe_load(open(os.path.join(L3, 'libro.yaml'), encoding='utf-8'))
+    esito('adotta.py', 'con 01-originale: modalità e testo precedente', A['riscrittura'],
+          f'{lb["modalita"]} {lb.get("testo_precedente")}', sez)
+    vuota = tempfile.mkdtemp(dir=TMP)
+    p = esegui(os.path.join(S, 'adotta.py'), vuota)
+    esito('adotta.py', 'cartella senza documenti: fermo, niente scritto', A['vuota'], f'{p.returncode} / {os.listdir(vuota)}', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b}
 
 
 def main(argv):

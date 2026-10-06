@@ -40,6 +40,32 @@ Regole di lavoro per qualsiasi libro. Comandi: `python3 motore/zb <comando> <lib
 3. Le regole della sezione «Direttive» del briefing (genere, lunghezza, voce, tetti, vietati,
    vincoli, gate) vanno in `libro.yaml` e nel manuale **senza riscriverle a mano**.
 
+## 3b. Libro già avviato: `zb adotta <cartella>`
+
+Per un libro che ha già alcuni documenti (briefing, manuale di stile, bibbia, scaletta, piano
+parole, cronologia) ma non ancora `libro.yaml`.
+
+- Genera in **bozza** `libro.yaml`, `stato.yaml`, `cronologia.yaml`, `nomi_propri.txt` e
+  `06-diagnostica/adozione.md`. Ogni valore ha la sua fonte (file:riga) in `adozione.md`.
+- Se il manuale diverge dal profilo di genere, il valore entra come `override` con il motivo.
+- Non sovrascrive mai un file esistente; scrive solo nella cartella indicata.
+- Elenca in `adozione.md` ciò che non ha potuto ricavare (da completare a mano).
+- Si ferma alla fase «documenti»: apre il gate se ci sono tutti i documenti, altrimenti li elenca.
+
+Righe riconosciute (formato dei documenti del motore): `Titolo di lavoro:`, `Autore:`,
+`Genere:`, `Lunghezza:`, `Modalità:` nel briefing; nel manuale `# Manuale di stile — <titolo>`,
+`Genere:`, `Obiettivo: N parole`, `Capitolo: minimo …, media a-b, massimo … parole`,
+`Frase media: a-b`, `Dialogo: a-b%`, `una ogni N parole`, `Tetto: «…» al massimo N per capitolo|libro`,
+`Vietato: «…»`, `«Nome» non compare nei capitoli 1-3`, `Separatore di scena: «…»`,
+`Intestazione del capitolo: «…»`; nella bibbia `**Nome**` e `nato/nata il AAAA-MM-GG`; nella
+scaletta le righe `| N | AAAA-MM-GG | contenuto |`; `01-originale/` presente = riscrittura.
+
+Esempio neutro: una cartella con bibbia, manuale (con «Frase media: 8-12» e genere
+narrativa-letteraria) e scaletta, senza briefing né piano parole. `zb adotta` ricava titolo,
+profilo, obiettivo, tetti, vincoli, date e nomi; scrive un override `frase_media [8, 12]` con la
+riga del manuale come motivo; segnala «autore» e il piano parole come mancanti; resta in fase
+«documenti» senza gate aperto finché il piano parole non c'è.
+
 ## 4. Avvio: `zb avvio <libro>`
 
 Obbligatorio all'inizio di ogni sessione e dopo ogni compattazione del contesto.

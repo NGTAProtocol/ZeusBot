@@ -342,3 +342,22 @@ passo_5:
     blocchi: ['1-126', '127-252', '253-270']
     ortografia: "2 / True"
     conta: 0
+
+passo_5b:
+  # zb adotta sul mini-libro inventato prove/mini-libro-adozione (bibbia, manuale, scaletta, un capitolo).
+  codice: 0
+  scritti: ['libro.yaml', 'cronologia.yaml', 'nomi_propri.txt', 'stato.yaml', '06-diagnostica/adozione.md']
+  ricavati: 19
+  non_ricavati: ['autore', 'formato (predefinito 5.5 x 8.5: da confermare)', 'copyright.fantasia (testo standard: da confermare)',
+                 'documento mancante: 03-architettura/piano-parole.md']
+  override: ['frase_media [8, 12] 03-architettura/manuale-di-stile.md:16']
+  libro: "Il faro spento / narrativa-letteraria / 60000 / ['come_se', 'il_cuore_in_gola'] / [('Bice Orlandi', ['1-2'])]"
+  valido: "no"
+  cronologia: "2 / 3"
+  nomi: ['Anselmo', 'Bice', 'Capo', 'Lanza', 'Orlandi', 'Porto', 'Riva', 'Sferra']
+  stato_parziale: "documenti / nessuno / 1"
+  seconda: "0 / 5 / []"
+  completo: "True / documenti"
+  fonte_autore: "00-progetto/briefing.md:4"
+  riscrittura: "riscrittura 01-originale/vecchio-testo.md"
+  vuota: "2 / []"

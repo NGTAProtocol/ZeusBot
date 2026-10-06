@@ -46,6 +46,7 @@ def comandi(motore):
         ('kdp_verifica.py controlla', 'kdp_verifica.py controlla --simula-blocco'),
         ('kdp_verifica.py stato', 'kdp_verifica.py stato'),
         ('avvio.py', 'avvio.py {libro}'),
+        ('adotta.py', 'adotta.py {libro}'),
         ('fase.py stato', 'fase.py {libro} stato'),
         ('revisione.py', 'revisione.py {libro} 02-bibbia/bibbia.md'),
     ]

@@ -15,7 +15,7 @@ MOTORE = os.path.dirname(os.path.abspath(__file__))
 S = os.path.join(MOTORE, 'script')
 
 SCRIPT = {
-    'nuovo': 'nuovo.py', 'avvio': 'avvio.py', 'revisione': 'revisione.py',
+    'nuovo': 'nuovo.py', 'adotta': 'adotta.py', 'avvio': 'avvio.py', 'revisione': 'revisione.py',
     'capitolo': 'capitolo.py', 'conta': 'conta.py', 'stile': 'stile.py', 'continuita': 'continuita.py',
     'riciclo': 'riciclo.py', 'compila': 'compila.py', 'impagina': 'impagina.py', 'pdf': 'verifica_pdf.py',
     'kdp': 'conformita_kdp.py', 'pacchetto': 'pacchetto.py', 'prove': 'prove.py',
@@ -25,6 +25,7 @@ SCRIPT = {
 FASE = ('stato', 'ok', 'avanti', 'correggi', 'pronto', 'esito')
 AIUTO = """Comandi (il libro è sempre un percorso):
   zb nuovo <briefing>              crea il libro dal briefing
+  zb adotta <cartella>             bozze di libro.yaml, stato, cronologia, nomi da documenti esistenti
   zb avvio <libro>                 avvio obbligatorio: controlli e riga «Letto: …»
   zb stato <libro>                 stato del libro (non scrive)
   zb pronto <libro>                fine del lavoro di una fase: apre il gate o passa oltre
