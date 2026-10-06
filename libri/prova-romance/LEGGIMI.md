@@ -3,7 +3,7 @@
 Libro: /home/user/ZeusBot-pr/libri/prova-romance
 Ramo: letto da git all'avvio (non scritto qui)
 Modalità: nuovo
-Fase: stesura; gate in attesa: nessuno
+Fase: stesura; gate in attesa: primi_capitoli
 Ultimo capitolo approvato: —
 
 Da leggere a ogni avvio, in quest'ordine:
