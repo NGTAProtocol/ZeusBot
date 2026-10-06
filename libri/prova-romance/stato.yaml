@@ -2,8 +2,8 @@ libro: Le ore del restauro
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: documenti
-passo: da completare
-gate_in_attesa: null
+passo: in revisione
+gate_in_attesa: documenti
 lotto:
   dimensione: 3
   capitoli: []
@@ -17,6 +17,10 @@ parole:
   metodo: unico
 documenti_approvati: {}
 avvisi_aperti: []
-revisione_in_corso: null
+revisione_in_corso:
+  gate: documenti
+  blocco: 1
+  blocchi_totali: 6
+  sha256: f1ff3be6124f
 push_in_sospeso: false
-aggiornato: '2026-10-06T08:34:42Z'
+aggiornato: '2026-10-06T08:35:47Z'
