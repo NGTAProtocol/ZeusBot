@@ -47,11 +47,12 @@ Due righe della tabella qui sopra vengono da riconoscimenti sbagliati e **non** 
 
 `03-architettura/piano-parole.md` è ricavato 1:1 dalla scaletta (tabella delle parole), senza valori nuovi.
 
+Al gate «documenti» l'autore ha indicato: autore F.R. Faraone; formato A5; dichiarazione di fantasia e nota dell'autore.
+
 ### Ancora da completare
-- autore (nessun documento lo nomina; in `libro.yaml` c'è «DA COMPLETARE»);
 - sottotitolo, serie;
 - struttura.intestazione_capitolo (predefinito del motore; il manuale dice solo che nessun capitolo si apre con una data, M:96);
-- formato e copyright (predefiniti del motore, da confermare);
+- formato A5 indicato dall'autore, da confermare su KDP (`formato_confermato_kdp: false`, per ora solo come nota: il campo non è nello schema del motore);
 - capitoli.tolleranza_totale (il manuale non la dice: resta quella del profilo, ±5%);
 - cifre della cronologia (lo zaino cambia scena per scena: controllo a mano, bibbia §5.7);
 - nascite con la data completa solo per Beniamino e Checco (gli altri hanno solo l'anno).

@@ -4,7 +4,7 @@
 # Campi senza fonte nei documenti: elencati in 06-diagnostica/adozione.md («Non ricavato»).
 titolo: Mister Provino                                   # M:1, B:1, S:1
 sottotitolo: null                                        # non ricavato
-autore: DA COMPLETARE                                    # non ricavato: nessun documento nomina l'autore
+autore: F.R. Faraone                                     # indicato dall'autore al gate «documenti»
 lingua: it                                               # adotta (unica lingua del motore); documenti in italiano
 modalita: riscrittura                                    # adotta: 01-originale/ presente
 testo_precedente: 01-originale/Mister_Provino_revisione_completa.md   # adotta; sha256 78afbc2c…0ec31, sola lettura
@@ -26,10 +26,11 @@ gate:                                                    # predefiniti del motor
 parole:
   metodo: unico                                          # M:39-44 metodo unico
   target_totale: 78000                                   # M:32, S:35 (78.000 parole)
-formato:                                                 # non ricavato: predefinito di adotta, da confermare
-  pagina_pollici:
-  - 5.5
-  - 8.5
+formato:                                                 # A5, indicato dall'autore al gate «documenti»
+  # formato_confermato_kdp: false — da verificare su KDP; il campo non è ancora nello schema del motore
+  pagina_pollici:                                        # A5: 148 x 210 mm
+  - 5.83
+  - 8.27
   carta: crema
   bleed: false
   margini_mm:
@@ -110,12 +111,12 @@ calendario:
   anni_ammessi: [1976]                                   # B:163-233 (cronologia del romanzo; le altre date hanno l'anno scritto)
 ortografia:
   parole_ammesse_file: nomi_propri.txt                   # predefinito di adotta
-copyright:                                               # non ricavato: testo standard di adotta, da confermare
+copyright:                                               # fantasia e nota dell'autore confermate al gate «documenti»
   riga: © {anno} {autore}. Tutti i diritti riservati.
   anno: 2026
   fantasia: Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzione dell'autore o usati in modo
     fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale.
-  nota_autore: null
+  nota_autore: Bari 1976 è reale; persone, clan e boss sono inventati.
 checklist_capitolo:                                      # M §8, voci che il motore non controlla da solo
   - "Almeno una scena in tempo reale di 800 o più parole (M:249)"
   - "Intrusioni del vecchio da 1 a 3 (zero nel cap. 10), con l'àncora temporale; nessun aforisma prestato al ragazzo (M:250)"

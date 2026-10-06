@@ -15,7 +15,19 @@ Versione 1 (Fase 3). Vale per ogni riga del romanzo nuovo. Tra i valori, quelli 
   - «è matematica, non cattiveria» (Nicola);
   - «Tu il giuramento l'hai mantenuto, fratello mio. Io il mio no.» (Checco);
   - «Tutto si aggiusta, solo la morte è una fine vera» (O Anjo, forma libera);
-  - «Finalmente» (Michele).
+  - «Finalmente» (Michele);
+  - «Le mie mani avevano aiutato» (il vecchio, cap. 10; una volta sola, con l'eco del cap. 36);
+  - «Si chiamava Lucia.» (Michele, cap. 37);
+  - «La scelta c'è sempre, anche all'ultimo.» (Michele, cap. 12; ultima volta nell'epilogo);
+  - «Una vita non detta si perde due volte» (di Michele, nel prologo e nell'interludio IX);
+  - «E se anche fosse?» (Nicola, cap. 19);
+  - «Uno si abitua.» (Saro, cap. 25; eco nel cap. 26);
+  - «Beniamino… non ti lascio» (Nicola, cap. 24);
+  - «Ti porto via da qua» (Checco, cap. 18);
+  - «Allora non vado.» (Beniamino, cap. 34);
+  - «Il cugino di Nicola. Una guardia.» (il magro, cap. 36);
+  - «Stai zitto.» (la madre, cap. 17);
+  - «A che ora parte questo transatlantico?» (Michele, cap. 37).
 
 ---
 

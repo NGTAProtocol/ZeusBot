@@ -369,7 +369,7 @@ Gli interludi I-IX sono tutti nuovi.
 - **Motivo:** il collare (prima volta in scena). **Filone:** base. **Chiusura:** B (Nicola, da lontano, che chiede del cugino).
 
 > **Interludio V — *Il collo*** · 400 · presente
-> La moglie, mentre gli sistema il colletto per una festa dei nipoti o di un vicino, tocca il segno e chiede, come ha chiesto altre volte. Lui mente, ancora, con la faccia giusta: un incidente di pesca. Poi scrive la grotta. **Specchio:** il cap. 25.
+> La moglie, mentre gli sistema il colletto per una cena dai vicini, tocca il segno e chiede, come ha chiesto altre volte. Lui mente, ancora, con la faccia giusta: un incidente di pesca. Poi scrive la grotta. **Specchio:** il cap. 25.
 
 ### Cap. 26 — Il panettiere · 1.800 · lun 11 ottobre
 - Il collare aperto, il segno. Nicola sbattuto: gli ricorda che non lo ha lasciato (3 di 4).
