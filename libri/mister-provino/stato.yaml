@@ -34,17 +34,21 @@ documenti_approvati:
     sha256: 589718b3c0b1d0964f66ed3ade648e56046e289229945c301b0405a6cce442b0
     commit: 4e3ac5b
   03-architettura/piano-parole.md:
-    sha256: 4c7bef5c57c43c637379affeb48cdc06bea3d29e7aa50692354f7fa718ee72ac
-    commit: 7d377fd
+    sha256: 19f25414f755921c98ed82b4c7310bcb7d8f7c3fa50f5c8e9ad7b2438985bf9a
+    commit: 929cd0b
     riapprovazioni:
     - data: '2026-10-06'
       motivo: parole reali del capitolo 1
       sha256_precedente: 440b10fb003f05cd1b0dd90b4fdc68360eaba1e6d10b774fcd0a978a789c155d
       commit_precedente: 275ed3e
+    - data: '2026-10-06'
+      motivo: parole reali del capitolo 2
+      sha256_precedente: 4c7bef5c57c43c637379affeb48cdc06bea3d29e7aa50692354f7fa718ee72ac
+      commit_precedente: 7d377fd
   05-revisioni/pagina-campione.md:
     sha256: 9c73760076edaff8922d288a33bc340622a161fd0e1623d072193be824bbca62
     commit: f27c61c
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-06T23:16:48Z'
+aggiornato: '2026-10-06T23:16:50Z'
