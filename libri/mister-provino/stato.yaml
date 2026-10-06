@@ -2,19 +2,20 @@ libro: Mister Provino
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
-passo: capitolo 3
-gate_in_attesa: null
+passo: capitolo 4
+gate_in_attesa: primi_capitoli
 lotto:
   dimensione: 3
   capitoli:
   - 1
   - 2
+  - 3
 ultimo_capitolo_approvato: null
-ultimo_capitolo_scritto: 2
+ultimo_capitolo_scritto: 3
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 3225
+  scritte: 5109
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -49,6 +50,10 @@ documenti_approvati:
     sha256: 9c73760076edaff8922d288a33bc340622a161fd0e1623d072193be824bbca62
     commit: f27c61c
 avvisi_aperti: []
-revisione_in_corso: null
+revisione_in_corso:
+  gate: primi_capitoli
+  blocco: 1
+  blocchi_totali: 9
+  sha256: 9da992b623ca
 push_in_sospeso: false
-aggiornato: '2026-10-06T23:16:50Z'
+aggiornato: '2026-10-06T23:18:51Z'
