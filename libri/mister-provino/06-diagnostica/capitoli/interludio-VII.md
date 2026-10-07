@@ -2,13 +2,11 @@
 
 Libro: Mister Provino — profilo: narrativa-letteraria.
 
-Parole (metodo unico): 440 · frase media: 13.8 · dialogo: 0.0%
+Parole (metodo unico): 438 · frase media: 12.9 · dialogo: 0.0%
 
-Esito: 0 KO, 1 avvisi.
+Esito: 0 KO, 0 avvisi.
 
-| Unità | Controllo | Esito | Riga | Dettaglio |
-|---|---|---|---|---|
-| interludio VII | voce:fischiare | AVVISO | 15 | superato il massimo di 6 nel libro |
+Nessun KO e nessun avviso.
 
 ## Checklist manuale
 
@@ -56,6 +54,7 @@ Controlli che il motore non sa fare da solo: li verifica l'autore.
 | La scena (cap. 23). | [ ] |
 | Il «non esce più» | [ ] |
 | una sola volta | [ ] |
+| Da fare prima del lancio: verificare che cosa c'è pubblicato su KDP. | [ ] |
 | Almeno una scena in tempo reale di 800 o più parole (M:249) | [ ] |
 | Intrusioni del vecchio da 1 a 3 (zero nel cap. 10), con l'àncora temporale; nessun aforisma prestato al ragazzo (M:250) | [ ] |
 | Chiusura di un tipo ammesso; sentenze nel libro sotto 8 (M:253) | [ ] |

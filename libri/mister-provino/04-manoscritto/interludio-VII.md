@@ -8,7 +8,7 @@ La polizia l'ho chiamata io.
 
 Sono passati cinquant'anni, e non l'ha mai saputo nessuno. Michele non me l'ha mai chiesto, e io non gliel'ho mai detto. Mia moglie non lo sa, i miei figli nemmeno. Quella sera una voce di ragazzo disse un indirizzo dentro un telefono pubblico e riattaccò, e per tutto questo tempo la voce è rimasta senza una faccia.
 
-Guardo la frase. Sono cinque parole. Le altre che ho messo sulla carta in questi mesi sono lunghe, piene di virgole e di «e poi», perché da ragazzo parlavo così e da vecchio scrivo così, tirando una cosa dietro l'altra per paura che la prima resti sola. Questa no. Questa è corta, e sta in piedi da sola, e la riconosco: è mia, con la stessa certezza del segno che ho sul collo.
+Guardo la frase. Sono cinque parole. Le altre che ho messo sulla carta in questi mesi sono lunghe, piene di virgole e di «e poi». Da ragazzo parlavo così. Da vecchio scrivo così, tirando una cosa dietro l'altra per paura che la prima resti sola. Questa no. Questa è corta, e sta in piedi da sola, e la riconosco: è mia, con la stessa certezza del segno che ho sul collo.
 
 Già che ci sono, scrivo anche l'altra cosa, una volta, e poi non la scrivo più. Quella mattina di luglio, in fondo alla traversa dietro San Marco, tenevo contro la pancia una pistola avvolta in uno straccio. Nelle pagine l'ho sempre chiamato involto, perché a tredici anni la parola vera non me la dicevo nemmeno in testa. Adesso è scritta. Basta.
 

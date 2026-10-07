@@ -9,12 +9,13 @@ lotto:
   capitoli:
   - 30
   - 37
+  - interludio VII
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 37
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 65319
+  scritte: 65317
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -103,7 +104,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T10:37:51Z'
+aggiornato: '2026-10-07T10:38:07Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
@@ -165,3 +166,8 @@ correzioni_registrate:
   motivo: titolo «Il transatlantico» (file, titolo, scaletta, piano parole)
   sha256_precedente: null
   sha256_corretto: 4d7001d54e6267785a1e6928374a3d3b42cc269355569e64385c69c6f72fd61d
+- data: '2026-10-07'
+  file: 04-manoscritto/interludio-VII.md
+  motivo: frase media sotto 13 (una frase riscritta)
+  sha256_precedente: c71c4ea161d6a3a42c35e03968ade142caad4433e3d0485a331355750f6e06d7
+  sha256_corretto: ae05de1ab053455a3f26e64301efae3c4fa8c669e1f81ca66524ae236075229b
