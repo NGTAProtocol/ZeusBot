@@ -553,3 +553,10 @@ correzioni_lotto_11_20:
   c_stato: "1 / capitolo 2"
   d_grafie: ['«Calvo» e «Calvi»']      # «Calvo» a inizio frase e dopo la lineetta: ignorato; a metà frase: segnalato
   e_riciclo: "1 / ['che la pioggia lava le strade ma non le colpe']"   # la battuta canonica non è più un KO
+
+# zb correggi fuori dal gate (registra data, file, motivo, sha256 precedente) e passo che non scende.
+correzioni_e_passo:
+  a_libera: "0 / 04-manoscritto/01-la-farmacia.md / una riga in più / True / True / None"
+  a_commit: "0 / True / True / True"
+  a_rifiuti: "2 / 2 / 2"          # unità inesistente e istruzione senza «:» rifiutate; registrate restano 2
+  b_passo: "0 / capitolo 3 / 2"   # prima della correzione il passo tornava a «capitolo 2»

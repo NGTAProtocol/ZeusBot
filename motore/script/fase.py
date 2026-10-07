@@ -214,7 +214,8 @@ def cmd_stato(cartella, libro, stato):
              f'{stato["ultimo_capitolo_approvato"] or "—"}, previsti {capitoli_previsti(cartella) or "—"}',
              f'Parole: {stato["parole"]["scritte"]}/{stato["parole"]["obiettivo"]} (metodo unico)',
              'Revisione: ' + (f'blocco {rc["blocco"]} di {rc["blocchi_totali"]} (gate {rc["gate"]})' if rc else 'nessuna'),
-             f'Correzioni aperte: {len(stato["correzioni_aperte"])}']
+             f'Correzioni aperte: {len(stato["correzioni_aperte"])}; '
+             f'correzioni registrate fuori dal gate: {len(stato.get("correzioni_registrate") or [])}']
     righe += [f'  - [{c["gate"]}] {c["testo"]}' for c in stato['correzioni_aperte']]
     righe += [f'Controlli falliti di fila: {stato["tentativi"] or "nessuno"}',
               f'Avvisi aperti: {len(stato["avvisi_aperti"])}',
@@ -295,10 +296,75 @@ def cmd_ok(cartella, libro, stato, resto):
         accetta_capitolo(cartella, libro, stato, n)
 
 
+def file_unita(cartella, libro, rif):
+    """Percorso relativo al libro per «capitolo N», «N», «interludio X», «prologo», «epilogo» o un file del libro."""
+    r = rif.strip()
+    r = r[len('capitolo '):] if r.lower().startswith('capitolo ') else r
+    unita = dict(comune.unita(cartella, libro))
+    if r in unita:
+        return os.path.relpath(unita[r], cartella)
+    p = os.path.normpath(os.path.join(cartella, r))
+    if p.startswith(os.path.abspath(cartella) + os.sep) and os.path.isfile(p):
+        return os.path.relpath(p, cartella)
+    raise comune.ErroreMotore(f'«{rif}»: né un\'unità di 04-manoscritto né un file del libro')
+
+
+def sha_versione(cartella, commit, rel):
+    """sha256 del file `rel` (relativo al libro) nella versione del commit; None se lì non esiste."""
+    import hashlib
+    r = subprocess.run(['git', '-C', cartella, 'show', f'{commit}:./{rel}'], capture_output=True)
+    return hashlib.sha256(r.stdout).hexdigest() if r.returncode == 0 else None
+
+
+def registra_correzione(cartella, libro, stato, resto):
+    """Correzione fuori dal gate: «<unità o file>: <motivo> [--commit <hash>]». Registra data, file, motivo,
+    sha256 precedente e attuale; non apre e non chiude nessun gate.
+
+    sha256 precedente: con --commit, la versione prima di quel commit; altrimenti la versione salvata
+    (HEAD) se il file ha modifiche non salvate, o la versione prima dell'ultimo commit che lo tocca."""
+    commit = None
+    if '--commit' in resto:
+        i = resto.index('--commit')
+        if i + 1 >= len(resto):
+            raise comune.ErroreMotore('--commit vuole un hash')
+        commit = resto[i + 1]
+        resto = resto[:i] + resto[i + 2:]
+    testo = ' '.join(resto).strip()
+    if ':' not in testo:
+        raise comune.ErroreMotore('Uso: correggi <unità o file>: <motivo> [--commit <hash>]')
+    rif, motivo = (x.strip() for x in testo.split(':', 1))
+    if not motivo:
+        raise comune.ErroreMotore('Manca il motivo della correzione')
+    rel = file_unita(cartella, libro, rif)
+    attuale = comune.sha256_file(os.path.join(cartella, rel))
+    if commit:
+        prima, dopo = sha_versione(cartella, f'{commit}^', rel), sha_versione(cartella, commit, rel)
+        if dopo is None:
+            raise comune.ErroreMotore(f'Il commit {commit} non contiene {rel}')
+    else:
+        modificato = comune.git(cartella, 'status', '--porcelain', '--', rel)[1]
+        if modificato:
+            prima = sha_versione(cartella, 'HEAD', rel)
+        else:
+            ultimi = comune.git(cartella, 'log', '-2', '--format=%h', '--', rel)[1].split()
+            prima = sha_versione(cartella, ultimi[1], rel) if len(ultimi) > 1 else None
+        dopo = attuale
+    if prima == dopo:
+        raise comune.ErroreMotore(f'{rel}: nessuna differenza tra la versione precedente e quella corretta')
+    voce = {'data': datetime.date.today().isoformat(), 'file': rel, 'motivo': motivo,
+            'sha256_precedente': prima, 'sha256_corretto': dopo}
+    if commit:
+        voce['commit'] = commit
+    stato.setdefault('correzioni_registrate', []).append(voce)
+    print(f'Correzione registrata: {rel}; motivo: {motivo}; sha256 precedente {(prima or "—")[:12]}, '
+          f'corretto {dopo[:12]}. Gate invariato ({stato["gate_in_attesa"] or "nessuno"}).')
+
+
 def cmd_correggi(cartella, libro, stato, resto):
     gate = stato['gate_in_attesa']
-    if not gate:
-        raise comune.ErroreMotore('Nessun gate aperto: «correggi» vale solo a un gate. ' + prossimo(stato))
+    if not gate or '--commit' in resto:     # fuori dal gate, o correzione già salvata: solo registro
+        registra_correzione(cartella, libro, stato, resto)
+        return
     testo = ' '.join(resto).strip().lstrip(':').strip()
     if not testo:
         raise comune.ErroreMotore('Uso: correggi <istruzione>')
@@ -330,8 +396,10 @@ def cmd_riapprova(cartella, stato, resto):
 
 def accetta_capitolo(cartella, libro, stato, n):
     if n.isdigit():
-        stato['ultimo_capitolo_scritto'] = max(int(n), stato['ultimo_capitolo_scritto'] or 0)
-        stato['passo'] = f'capitolo {int(n) + 1}'
+        prima = stato['ultimo_capitolo_scritto'] or 0
+        stato['ultimo_capitolo_scritto'] = max(int(n), prima)
+        if int(n) >= prima:      # un capitolo già scritto, ricontrollato, non riporta indietro il passo
+            stato['passo'] = f'capitolo {stato["ultimo_capitolo_scritto"] + 1}'
     if n not in [str(c) for c in stato['lotto']['capitoli']]:
         stato['lotto']['capitoli'].append(int(n) if n.isdigit() else n)
     stato['parole']['scritte'] = parole_scritte(cartella, libro)

@@ -32,6 +32,7 @@ AIUTO = """Comandi (il libro è sempre un percorso):
   zb avanti <libro>                blocco successivo dei documenti del gate
   zb ok <libro> [lotti da N]       approva il gate aperto
   zb correggi <libro> <istruzione> registra una correzione; il gate resta aperto
+  zb correggi <libro> <unità>: <motivo> [--commit H]   fuori dal gate: registra data, file, motivo, sha256 precedente
   zb esito <libro> <N>             controlli del capitolo N e registrazione dell'esito
   zb riapprova <libro> <documento> <motivo>   modifica autorizzata a un documento già approvato
   zb revisione <libro> <documento|gate> [N]   blocco N di un documento (non scrive)

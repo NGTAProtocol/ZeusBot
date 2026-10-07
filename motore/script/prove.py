@@ -1649,9 +1649,75 @@ def correzioni_lotto_11_20(A):
           f'{[x["dettaglio"] for x in riciclo.controlla_libro(Lm, libro) if x["controllo"] == "riciclo:testo_precedente"]}',
           sez)
 
+# ---------------------------------------------------------------- correzioni fuori dal gate e passo
+
+def correzioni_e_passo(A):
+    sez = 'correggi e passo'
+    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
+    E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def git(cwd, *a):
+        return subprocess.run(['git', *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def zb(cwd, *a):
+        return subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def salva(r):
+        git(r, 'add', '-A')
+        git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'prova')
+        git(r, 'push', '-q', '-u', 'origin', 'prova')
+
+    d = tempfile.mkdtemp(dir=TMP)
+    git(d, 'init', '-q', '--bare', 'remoto.git')
+    r = os.path.join(d, 'repo')
+    os.makedirs(r)
+    git(r, 'init', '-q')
+    git(r, 'checkout', '-q', '-b', 'prova')
+    git(r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git'))
+    Lm = shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'mini'))
+    s = comune.leggi_yaml(os.path.join(M, 'modelli', 'stato.yaml'))
+    s.update(libro='Prova di stampa', fase='stesura', passo='capitolo 1', aggiornato='prova', gate_in_attesa=None)
+    open(os.path.join(Lm, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(s, sort_keys=False, allow_unicode=True))
+    salva(r)
+    cap = os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md')
+
+    def stato():
+        return comune.leggi_yaml(os.path.join(Lm, 'stato.yaml'))
+
+    # (a) fuori dal gate, con il file modificato e non salvato
+    salvato = comune.sha256_file(cap)
+    open(cap, 'a', encoding='utf-8').write('\nUna riga corretta.\n')
+    p1 = zb(r, 'correggi', 'mini', 'capitolo 1: una riga in più')
+    v = (stato().get('correzioni_registrate') or [{}])[-1]
+    esito('fase.py', '(a) correggi senza gate: registrata, gate invariato', A['a_libera'],
+          f'{p1.returncode} / {v.get("file")} / {v.get("motivo")} / {v.get("sha256_precedente") == salvato} / '
+          f'{v.get("sha256_corretto") == comune.sha256_file(cap)} / {stato()["gate_in_attesa"]}', sez)
+    # (a) correzione già salvata, con --commit
+    salva(r)
+    h = git(r, 'log', '-1', '--format=%h').stdout.strip()
+    p2 = zb(r, 'correggi', 'mini', '1: registrata dopo il salvataggio', '--commit', h)
+    v = stato()['correzioni_registrate'][-1]
+    esito('fase.py', '(a) correggi --commit: sha256 prima e dopo il commit', A['a_commit'],
+          f'{p2.returncode} / {v["sha256_precedente"] == salvato} / {v["sha256_corretto"] == comune.sha256_file(cap)} / '
+          f'{v["commit"] == h}', sez)
+    p3 = zb(r, 'correggi', 'mini', 'capitolo 9: inesistente')
+    p4 = zb(r, 'correggi', 'mini', 'senza due punti')
+    esito('fase.py', '(a) unità inesistente / uso sbagliato: rifiutati', A['a_rifiuti'],
+          f'{p3.returncode} / {p4.returncode} / {len(stato()["correzioni_registrate"])}', sez)
+
+    # (b) esito su un capitolo già scritto: misure aggiornate, passo invariato
+    st = stato()
+    st.update(ultimo_capitolo_scritto=2, passo='capitolo 3')      # capitoli 1-2 già scritti
+    open(os.path.join(Lm, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(st, sort_keys=False, allow_unicode=True))
+    salva(r)
+    p5 = zb(r, 'esito', 'mini', '1')
+    esito('fase.py', '(b) esito di nuovo sul capitolo 1 (scritti fino a 2): codice / passo / scritti', A['b_passo'],
+          f'{p5.returncode} / {stato()["passo"]} / {stato()["ultimo_capitolo_scritto"]}', sez)
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo}
 
 
 def main(argv):

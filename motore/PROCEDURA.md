@@ -153,6 +153,7 @@ ferma: i documenti si registrano con `senza_gate: true` e si passa oltre.
 | `ok, lotti da N` | `zb ok <libro> lotti da N` | Come `ok`, e fissa la dimensione dei lotti successivi. |
 | `avanti` | `zb avanti <libro>` | Blocco successivo (circa 120 righe, tagliato a fine paragrafo). Non approva nulla. Se i documenti cambiano, riparte dal blocco 1. |
 | `correggi: …` | `zb correggi <libro> <istruzione>` | Registra la correzione; il gate resta aperto. Applico solo quella, rieseguo i controlli, mostro le righe cambiate (prima e dopo), salvo; poi `avanti` riparte dal blocco 1. |
+| correzione fuori dal gate | `zb correggi <libro> <unità>: <motivo>` (con `--commit <hash>` per una correzione già salvata) | Registra data, file, motivo, sha256 precedente e corretto in `stato.yaml` (`correzioni_registrate`); non apre e non chiude gate. |
 | `riapprova` | `zb riapprova <libro> <documento> <motivo>` | Modifica autorizzata a un documento già approvato (già salvata in un commit): registra il nuovo sha256 e commit, con data, motivo e sha256 precedente. Rifiutato se il documento non è approvato, non è cambiato o ha modifiche non salvate. |
 | `stato` | `zb stato <libro>` | Fase, gate, lotto, capitoli, parole, revisione, correzioni, avvisi, ultimo commit, allineamento con origin. Non scrive nulla. |
 
