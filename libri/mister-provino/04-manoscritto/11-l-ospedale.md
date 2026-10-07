@@ -102,7 +102,7 @@ Si girò e mi vide.
 
 — Siediti, siediti qua. — Si alzò e mi diede la sedia, mi toccò il braccio. — Franco, guarda chi è venuto. Guarda.
 
-Franco aveva la testa fasciata fino alle sopracciglia, e la faccia non era più la sua. Era gonfia, viola e gialla, con un occhio chiuso del tutto e le labbra nere. Il braccio destro stava ingessato sopra la coperta. L'occhio buono si aprì piano, mi trovò, ci mise un poco a capire.
+Franco aveva la testa fasciata fino alle sopracciglia, e una faccia che faticavo a riconoscere, gonfia, viola e gialla, con un occhio chiuso del tutto e le labbra nere. Il braccio destro stava ingessato sopra la coperta. L'occhio buono si aprì piano, mi trovò, ci mise un poco a capire.
 
 Poi capì, e si tirò indietro.
 

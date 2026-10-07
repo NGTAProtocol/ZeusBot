@@ -8,12 +8,13 @@ lotto:
   dimensione: 3
   capitoli:
   - 37
+  - 11
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 37
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 65321
+  scritte: 65319
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -93,7 +94,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T10:36:48Z'
+aggiornato: '2026-10-07T10:37:09Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
@@ -135,3 +136,8 @@ correzioni_registrate:
   motivo: via «scimmia»; prima persona; esperienza al posto della massima; tolto l'orario, due conteggi
   sha256_precedente: eba8bedf2b9f765cbfe7301fefa99236caf942144e190b39df32aaed6be314af
   sha256_corretto: c8f9311c71e509775f09b889069ddad46508af027c5a0eac25bc37d56b67b743
+- data: '2026-10-07'
+  file: 04-manoscritto/11-l-ospedale.md
+  motivo: «Non era X. Era Y.» riscritta (eccesso nel libro)
+  sha256_precedente: f8283e1513f6b3c38c6613f92e3804f68204a23fdd6b88ade0c2f7536c2b7b4a
+  sha256_corretto: b22e6bafb7e47274686748650b7fb74c2c7f44d0844f7c96749a5114ecd2e599

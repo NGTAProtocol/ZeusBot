@@ -8,7 +8,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 1 | Pane e Pomodoro | 1.700 | — | — | 1.698 | -0,1% | 149 |
 | Parte prima | 2 | Napoli | 1.800 | — | — | 1.621 | -9,9% | 163 |
 | Parte prima | 3 | Trani | 2.000 | — | — | 1.870 | -6,5% | 174 |
-| Parte prima | interludio I | I fiori | 400 | — | — | 418 | +4.5% | 185 |
+| Parte prima | interludio I | I fiori | 400 | — | — | 418 | +4,5% | 185 |
 | Parte prima | 4 | La stanza di Michele | 1.500 | — | — | 1.383 | -7,8% | 188 |
 | Parte prima | 5 | Il brodetto | 1.350 | — | — | 1.328 | -1,6% | 199 |
 | Parte prima | 6 | I tre silenzi | 1.600 | — | — | 1.421 | -11,2% | 205 |
@@ -16,8 +16,8 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 8 | O Anjo | 1.600 | — | — | 1.435 | -10,3% | 225 |
 | Parte prima | 9 | Il giro con Franco | 2.100 | — | — | 1.810 | -13,8% | 235 |
 | Parte prima | 10 | Il palo | 2.000 | — | — | 1.702 | -14,9% | 242 |
-| Parte prima | interludio II | La pagina | 400 | — | — | 425 | +6.2% | 253 |
-| Parte prima | 11 | L'ospedale | 1.340 | — | — | 1.461 | +9,0% | 256 |
+| Parte prima | interludio II | La pagina | 400 | — | — | 425 | +6,2% | 253 |
+| Parte prima | 11 | L'ospedale | 1.340 | — | — | 1.459 | +8,9% | 256 |
 | Parte prima | 12 | La storia di «lei» | 1.750 | — | — | 1.708 | -2,4% | 264 |
 | Parte prima | 13 | Da qualche altra parte | 1.540 | — | — | 1.501 | -2,5% | 273 |
 | Parte prima | 14 | Le notti di Pane e Pomodoro | 1.960 | — | — | 1.869 | -4,6% | 278 |
@@ -34,19 +34,19 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte seconda | 23 | La settimana | 3.000 | 3 | 1.100 / 1.200 / 700 | 2.821 | -6,0% | 349 |
 | Parte seconda | 24 | La Jonica | 1.750 | — | — | 1.724 | -1,5% | 358 |
 | Parte seconda | 25 | La grotta | 1.850 | — | — | 1.794 | -3,0% | 365 |
-| Parte seconda | interludio V | Il collo | 400 | — | — | 446 | +11.5% | 372 |
+| Parte seconda | interludio V | Il collo | 400 | — | — | 446 | +11,5% | 372 |
 | Parte seconda | 26 | Il panettiere | 1.850 | — | — | 1.768 | -4,4% | 375 |
 | Parte seconda | 27 | L'ago | 1.440 | — | — | 1.370 | -4,9% | 382 |
 | Parte seconda | 28 | L'ombra | 1.750 | — | — | 1.860 | +6,3% | 387 |
 | Parte seconda | 29 | Il circolo | 1.340 | — | — | 1.355 | +1,1% | 393 |
 | Parte seconda | 30 | Carlo | 1.440 | — | — | 1.473 | +2,3% | 402 |
-| Parte seconda | interludio VI | Il telefono | 400 | — | — | 445 | +11.2% | 407 |
+| Parte seconda | interludio VI | Il telefono | 400 | — | — | 445 | +11,2% | 407 |
 | Parte terza | 31 | Gli elicotteri | 1.440 | — | — | 1.544 | +7,2% | 414 |
 | Parte terza | 32 | L'ulivo | 1.340 | — | — | 1.368 | +2,1% | 420 |
 | Parte terza | 33 | Il no di Michele | 1.540 | — | — | 1.479 | -4,0% | 425 |
 | Parte terza | 34 | Allora non vado | 1.340 | — | — | 1.366 | +1,9% | 431 |
 | Parte terza | 35 | L'accendino | 1.750 | — | — | 1.793 | +2,5% | 435 |
-| Parte terza | interludio VII | Ero io | 400 | — | — | 440 | +10.0% | 442 |
+| Parte terza | interludio VII | Ero io | 400 | — | — | 440 | +10,0% | 442 |
 | Parte terza | 36 | Il fuoco | 1.540 | — | — | 1.543 | +0,2% | 445 |
 | Parte terza | 37 | Lucia | 1.340 | — | — | 1.324 | -1,2% | 453 |
 | Parte terza | 38 | Le firme | 1.850 | — | — | — | — | 459 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.381.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.379.
