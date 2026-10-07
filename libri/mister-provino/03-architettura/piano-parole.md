@@ -54,9 +54,9 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | 39 | I debiti | 1.850 | — | — | 1.750 | -5,4% | 472 |
 | Parte terza | 40 | Genova | 1.340 | — | — | 1.453 | +8,4% | 481 |
 | Parte terza | 41 | Diciassette giorni | 1.540 | — | — | 1.530 | -0,6% | 487 |
-| Parte terza | 42 | Santos | 1.540 | — | — | — | — | 495 |
+| Parte terza | 42 | Santos | 1.540 | — | — | 1.520 | -1,3% | 495 |
 | Parte terza | 43 | Le prime monete | 1.540 | — | — | — | — | 501 |
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.455.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.435.
