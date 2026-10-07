@@ -21,7 +21,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 12 | La storia di «lei» | 1.750 | — | — | — | — | 264 |
 | Parte prima | 13 | Da qualche altra parte | 1.540 | — | — | — | — | 273 |
 | Parte prima | 14 | Le notti di Pane e Pomodoro | 1.960 | — | — | — | — | 278 |
-| Parte prima | 15 | Il mercato | 2.280 | — | — | — | — | 284 |
+| Parte prima | 15 | Il mercato | 2.280 | — | — | 2.189 | -4,0% | 284 |
 | Parte prima | interludio III | La nave | 400 | — | — | — | — | 291 |
 | Parte prima | 16 | Ferragosto | 1.960 | — | — | — | — | 294 |
 | Parte prima | 17 | La busta | 1.850 | — | — | — | — | 300 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali dei capitoli 1-10 + budget del resto): 78.000.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.481.
