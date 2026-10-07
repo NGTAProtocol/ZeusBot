@@ -6,7 +6,8 @@ passo: capitolo 38
 gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli: []
+  capitoli:
+  - 30
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 37
 tentativi: {}
@@ -92,7 +93,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T10:37:13Z'
+aggiornato: '2026-10-07T10:37:17Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
@@ -144,3 +145,8 @@ correzioni_registrate:
   motivo: «Non era X. Era Y.» riscritta (eccesso nel libro)
   sha256_precedente: 94206f271d38ddc04f9efd97f795f369640984a83dd669f0ae8319636fc3057a
   sha256_corretto: bfffb49d1ff39f27d99691d07e4f5ede127f17d8a055f5df67ea098e7d6901ac
+- data: '2026-10-07'
+  file: 04-manoscritto/30-carlo.md
+  motivo: «Non era X. Era Y.» riscritta (eccesso nel libro)
+  sha256_precedente: fd25fa1f6e2b6c13e93a4d10a0c1405cdbcff9979951fdb3f5e44f5ff29894d4
+  sha256_corretto: 4b86c714ce010a1fca494d4d6b75744aadbe0ea410d3b59131e27b0bbed97e20

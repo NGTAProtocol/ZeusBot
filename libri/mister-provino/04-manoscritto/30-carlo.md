@@ -24,7 +24,7 @@ Nel vicolo la notizia camminava da sola. La sentivo passare da una soglia all'al
 
 Michele lo sapeva già. Stava sulla soglia del basso, appoggiato allo stipite con il bastone, e mi guardò arrivare dal fondo del vicolo senza muoversi. Quando gli fui davanti si spostò per farmi entrare, e chiuse la porta dietro di me fino a metà.
 
-Mi sedetti sulla branda. Mi tremavano le mani, ma non era la scimmia. Era un'altra cosa, che saliva dallo stomaco e non trovava dove uscire.
+Mi sedetti sulla branda. Mi tremavano le mani, e la roba non c'entrava: mi saliva dallo stomaco un'altra cosa, che non trovava dove uscire.
 
 — Sono contento, — dissi. — Michele, io sono contento che è morto.
 
