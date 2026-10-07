@@ -1594,6 +1594,20 @@ def correzioni_lotto_11_20(A):
     esito('fase.py', '(b) esito aggiorna «Parole reali» e «Scarto»; impronta invariata', A['b_esito'],
           f'{p.returncode} / {riga} / {comune.documento_invariato(pp, registrata)}', sez)
 
+    # (b) sha256 grezzo registrato prima delle impronte: valido anche dopo che esito aggiorna le misure;
+    # il «Totale previsto» si aggiorna senza perdere il punto finale
+    r, Lm = repo_stesura()
+    pp = os.path.join(Lm, '03-architettura', 'piano-parole.md')
+    open(pp, 'a', encoding='utf-8').write('\nTotale previsto (prova): 3.150.\n')
+    git(r, 'add', '-A')
+    git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'piano')
+    git(r, 'push', '-q')
+    grezzo, commit = comune.sha256_file(pp), git(r, 'log', '-1', '--format=%h').stdout.strip()
+    subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), 'esito', 'mini', '1'], cwd=r, env=E, capture_output=True)
+    ultima = open(pp, encoding='utf-8').read().strip().splitlines()[-1]
+    esito('comune.py / fase.py', '(b) registrazione grezza ancora valida / riga del totale', A['b_grezzo'],
+          f'{comune.documento_invariato(pp, grezzo, commit)} / {ultima}', sez)
+
     # (c) stato.yaml salvato prima di stampare: un'uscita chiusa non perde lo stato
     r, Lm = repo_stesura()
     pr = subprocess.Popen([sys.executable, '-B', os.path.join(M, 'zb'), 'esito', 'mini', '1'], cwd=r, env=E,

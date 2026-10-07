@@ -317,7 +317,7 @@ def cmd_riapprova(cartella, stato, resto):
     prima = stato['documenti_approvati'].get(rel)
     if not prima:
         raise comune.ErroreMotore(f'«{rel}» non è tra i documenti approvati: ' + ', '.join(stato['documenti_approvati']))
-    if comune.documento_invariato(os.path.join(cartella, rel), prima['sha256']):
+    if comune.documento_invariato(os.path.join(cartella, rel), prima['sha256'], prima.get('commit')):
         raise comune.ErroreMotore(f'{rel} non è cambiato dall\'approvazione: niente da registrare.')
     registra(cartella, stato, [rel])
     voce = stato['documenti_approvati'][rel]
@@ -377,7 +377,7 @@ def aggiorna_piano(cartella, libro, n):
     if cambiata is None:
         return None
     testo = '\n'.join(righe)
-    m = re.search(r'Totale previsto[^:]*:\s*([\d.]+)', testo)
+    m = re.search(r'Totale previsto[^:]*:\s*(\d{1,3}(?:\.\d{3})+|\d+)', testo)
     if m:
         previsto = conta.totale_previsto(cartella, libro, comune.carica_libro(cartella)[2])[1]
         testo = testo[:m.start(1)] + (f'{previsto:,}'.replace(',', '.') if '.' in m.group(1) else str(previsto)) + testo[m.end(1):]

@@ -109,7 +109,7 @@ def controlla(percorso):
         if manca:
             ferma('Briefing incompleto. Mancano:\n- ' + '\n- '.join(manca))
     cambiati = [rel for rel, v in stato['documenti_approvati'].items()
-                if not comune.documento_invariato(os.path.join(cartella, rel), v['sha256'])]
+                if not comune.documento_invariato(os.path.join(cartella, rel), v['sha256'], v.get('commit'))]
     if cambiati:
         ferma('Documenti approvati cambiati fuori procedura (sha256 diverso da quello registrato):\n- '
               + '\n- '.join(cambiati) + '\nSe la modifica è autorizzata dall\'autore: salvala con un commit, poi '

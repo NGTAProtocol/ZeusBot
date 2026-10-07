@@ -549,6 +549,7 @@ correzioni_lotto_11_20:
   a_sconosciuto: "2 / True"
   b_impronta: "True / True"
   b_esito: "0 / ['| — | 1 | La farmacia | apertura | 1 | 1200 | 1200 | 1186 | -1.2% |'] / True"
+  b_grezzo: "True / Totale previsto (prova): 2.578."   # sha256 grezzo + commit registrati prima delle impronte
   c_stato: "1 / capitolo 2"
   d_grafie: ['«Calvo» e «Calvi»']      # «Calvo» a inizio frase e dopo la lineetta: ignorato; a metà frase: segnalato
   e_riciclo: "1 / ['che la pioggia lava le strade ma non le colpe']"   # la battuta canonica non è più un KO
