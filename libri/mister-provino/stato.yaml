@@ -2,19 +2,20 @@ libro: Mister Provino
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
-passo: capitolo 17
+passo: capitolo 18
 gate_in_attesa: null
 lotto:
   dimensione: 3
   capitoli:
   - interludio III
   - 16
+  - 17
 ultimo_capitolo_approvato: 3
-ultimo_capitolo_scritto: 16
+ultimo_capitolo_scritto: 17
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 26653
+  scritte: 28532
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -89,4 +90,4 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T04:46:10Z'
+aggiornato: '2026-10-07T04:48:07Z'
