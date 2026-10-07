@@ -6,9 +6,7 @@ passo: capitolo 31
 gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 30
-  - 23
+  capitoli: []
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 30
 tentativi: {}
@@ -89,7 +87,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T10:08:02Z'
+aggiornato: '2026-10-07T10:08:07Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
@@ -126,3 +124,8 @@ correzioni_registrate:
   motivo: via la frase dei numeri; orari ridotti a due; tolto il camion frigorifero di Napoli
   sha256_precedente: 19a3bc37960d5dd6e2db2a9277e9ab969809696d2aba4080a514ca3c6f7bad72
   sha256_corretto: 7634732190bb0143ec055aa7e7eac06991eb9f007a718af69abf9df73fba4f12
+- data: '2026-10-07'
+  file: 04-manoscritto/25-la-grotta.md
+  motivo: via «scimmia»; prima persona; esperienza al posto della massima; tolto l'orario, due conteggi
+  sha256_precedente: eba8bedf2b9f765cbfe7301fefa99236caf942144e190b39df32aaed6be314af
+  sha256_corretto: c8f9311c71e509775f09b889069ddad46508af027c5a0eac25bc37d56b67b743

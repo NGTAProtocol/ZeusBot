@@ -33,7 +33,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte seconda | 22 | Cataldo | 1.850 | — | — | 1.733 | -6,3% | 343 |
 | Parte seconda | 23 | La settimana | 3.000 | 3 | 1.100 / 1.200 / 700 | 2.821 | -6,0% | 349 |
 | Parte seconda | 24 | La Jonica | 1.750 | — | — | 1.724 | -1,5% | 358 |
-| Parte seconda | 25 | La grotta | 1.850 | — | — | 1.810 | -2,2% | 365 |
+| Parte seconda | 25 | La grotta | 1.850 | — | — | 1.794 | -3,0% | 365 |
 | Parte seconda | interludio V | Il collo | 400 | — | — | — | — | 372 |
 | Parte seconda | 26 | Il panettiere | 1.850 | — | — | 1.768 | -4,4% | 375 |
 | Parte seconda | 27 | L'ago | 1.440 | — | — | 1.370 | -4,9% | 382 |
