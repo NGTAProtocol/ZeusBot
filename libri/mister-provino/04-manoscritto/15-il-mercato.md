@@ -98,7 +98,7 @@ Le cozze le presi da Pasquale, al banco grande, e lui mi guardò le mani mentre 
 
 — No. Mia madre.
 
-— Ah. — Aggiunse una manciata di cozze sulla bilancia, dopo che l'ago si era fermato, e le buttò nella borsa senza ripesarle. — E Michele come sta? Non lo vedo da una settimana.
+— Ah. — Aggiunse una manciata di cozze sulla bilancia, dopo che la lancetta si era fermata, e le buttò nella borsa senza ripesarle. — E Michele come sta? Non lo vedo da una settimana.
 
 — Sta bene. Dipinge.
 

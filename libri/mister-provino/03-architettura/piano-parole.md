@@ -21,7 +21,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 12 | La storia di «lei» | 1.750 | — | — | 1.708 | -2,4% | 264 |
 | Parte prima | 13 | Da qualche altra parte | 1.540 | — | — | 1.501 | -2,5% | 273 |
 | Parte prima | 14 | Le notti di Pane e Pomodoro | 1.960 | — | — | 1.869 | -4,6% | 278 |
-| Parte prima | 15 | Il mercato | 2.280 | — | — | 2.189 | -4,0% | 284 |
+| Parte prima | 15 | Il mercato | 2.280 | — | — | 2.190 | -3,9% | 284 |
 | Parte prima | interludio III | La nave | 400 | — | — | — | — | 291 |
 | Parte prima | 16 | Ferragosto | 1.960 | — | — | 1.849 | -5,7% | 294 |
 | Parte prima | 17 | La busta | 1.850 | — | — | 1.879 | +1,6% | 300 |
