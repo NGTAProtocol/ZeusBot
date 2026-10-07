@@ -54,7 +54,7 @@ Il Ciao partì al primo colpo, per una volta, e io presi il lungomare con la cam
 
 Sotto il muraglione, sugli scogli, un pescatore teneva un polpo per la testa e lo sbatteva sulla pietra. Lo faceva senza fretta, sempre nello stesso punto, e a ogni colpo i tentacoli si arricciavano un po' meno. Il rumore arrivava fino alla strada, bagnato e sordo. Rallentai per sentirlo meglio, poi tirai dritto.
 
-All'incrocio dove parte la strada per Taranto mi fermai con il motore acceso. Mi fermavo lì quasi ogni mattina. Facevo il conto della benzina, delle mille lire nella scarpa, del tempo che ci voleva prima che a casa qualcuno trovasse il letto vuoto, e il conto tornava sempre allo stesso punto: mia madre, sola in quella casa con mio padre addormentato sul tavolo. Girai il manubrio verso la città.
+All'incrocio dove parte la strada per Taranto mi fermai con il motore acceso. Mi fermavo lì quasi ogni mattina. Facevo il conto del tempo che ci voleva prima che a casa qualcuno trovasse il letto vuoto, e il conto tornava sempre allo stesso punto: mia madre, sola in quella casa con mio padre addormentato sul tavolo. Girai il manubrio verso la città.
 
 Bari Vecchia si stava svegliando dalla parte del mare. Le prime finestre erano aperte, qualcuno sbatteva una tovaglia dal balcone, e davanti alla chiesa un vecchio spazzava i gradini con una scopa di saggina più alta di lui. Sentivo l'odore del pane che usciva dai forni e quello della nafta che arrivava dal porto, mischiati, e mi venne una fame che non avevo sentito per tutta la notte.
 
@@ -84,7 +84,7 @@ Poi il mercato smise di parlare.
 
 Lo sentii prima del motore. Le voci si spensero a cominciare dall'ingresso, un banco dopo l'altro, e le teste si abbassarono sulle cassette. L'Alfa rossa entrò sul molo piano, con i finestrini alzati, e si fermò davanti al nostro secchio. Quando mi girai Ciccio aveva già il coltellino in tasca e gli occhi sui ricci, e la sua mano non stava più sulla mia spalla.
 
-Il finestrino scese. Nicola portava una camicia bianca con le maniche arrotolate sopra il gomito e un orologio d'oro che gli girava largo sul polso. Aveva la barba fatta da poco e i capelli pettinati all'indietro, lucidi, e niente di lui sembrava aver passato la notte sveglio. Mi guardò da dentro, senza fretta, dalle scarpe bagnate ai capelli pieni di sale. Sul cruscotto, nella sua nicchia, San Nicola teneva la faccia di sempre.
+Il finestrino scese. Nicola portava una camicia bianca con le maniche arrotolate sopra il gomito e un orologio d'oro che gli girava largo sul polso. Aveva la barba fatta da poco e i capelli pettinati all'indietro, lucidi. Mi guardò da dentro, senza fretta, dalle scarpe bagnate ai capelli pieni di sale. Sul cruscotto, nella sua nicchia, San Nicola teneva la faccia di sempre.
 
 — Sali, Mister Provino, — disse.
 
@@ -104,6 +104,14 @@ Me lo infilai sopra la camicia bagnata. Era largo, di lana buona, e sapeva di lu
 
 — Dove ti porto io.
 
+— Hai mangiato qualcosa, almeno, da stanotte?
+
+— Un riccio, da Ciccio. E la birra, quella fredda.
+
+— Un riccio e una birra non sono una colazione, Mister Provino. Quando ti lascio, sali e ti mangi un pezzo di pane, che stasera non ti voglio con la faccia bianca e le mani che ballano.
+
+— Va bene, Nicola. Appena arrivo salgo e mi mangio il pane.
+
 Per un poco non disse altro. Poi, senza girarsi:
 
 — Sabino dice che stamattina guardavi le navi.
@@ -111,6 +119,18 @@ Per un poco non disse altro. Poi, senza girarsi:
 Non risposi. Mi strinsi nel golf e guardai la strada.
 
 — Le navi non ti danno da mangiare, — disse Nicola. — Io sì.
+
+— Lo so, Nicola. Lo so.
+
+— Lo sai. E allora dimmelo tu, che lo voglio sentire dalla tua bocca.
+
+— Le navi non mi danno da mangiare.
+
+— E allora chi è che ti dà da mangiare?
+
+— Tu, Nicola. Mi dai da mangiare tu.
+
+— Bravo, — disse, e mi batté la mano sul ginocchio. — Così mi piaci.
 
 L'Alfa entrò nei vicoli di Bari Vecchia senza rallentare, e la gente si stringeva contro i muri per lasciarla passare, con le buste della spesa alzate davanti al petto. Nessuno guardava dentro. Nicola guidava con una mano sola e con l'altra si aggiustava il polsino della camicia, come se fossimo già arrivati da qualche parte.
 

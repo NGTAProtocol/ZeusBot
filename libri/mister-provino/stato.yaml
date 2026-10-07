@@ -13,9 +13,14 @@ lotto:
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: 3
 tentativi: {}
-correzioni_aperte: []
+correzioni_aperte:
+- gate: primi_capitoli
+  testo: 'capitolo 1: dialogo verso il 22-25% con due scambi in macchina; un solo conto (il letto vuoto); tolta una frase
+    sul sonno mancato'
+  sha256: 9da992b623ca
+  data: '2026-10-07'
 parole:
-  scritte: 5109
+  scritte: 5207
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -60,4 +65,4 @@ revisione_in_corso:
   blocchi_totali: 9
   sha256: 9da992b623ca
 push_in_sospeso: false
-aggiornato: '2026-10-06T23:18:54Z'
+aggiornato: '2026-10-07T02:31:04Z'
