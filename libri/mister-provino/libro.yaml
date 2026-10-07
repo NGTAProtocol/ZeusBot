@@ -19,6 +19,12 @@ override:
   - {campo: capitoli.scene_per_capitolo, valore: [1, 6], motivo: "M:91 «almeno una scena in tempo reale di 800 o più parole» in capitoli da 1.300: una scena basta; S:355 il cap. 23 ne dichiara 3 (1.100, 1.200, 700); il profilo dice 2-6"}
   - {campo: scene.lunghezza, valore: [150, 3000], motivo: "M:91-92 una scena da 800+ per capitolo e ponti di riassunto fino a 150 parole; S:349 cap. 23 a 3.000; il profilo dice 800-2500"}
   - {campo: similitudini_max_per_parole, valore: 300, motivo: "M:126 «una similitudine per pagina, circa una ogni 300 parole»; il profilo dice 250"}
+stile:
+  eccezioni:                                             # eccezioni motivate, per unità (registro dell'autore)
+    - {unita: epilogo, controllo: parole_budget, motivo: "−9,4% sul budget: tagliate frasi deboli"}
+    - {unita: interludio VI, controllo: frase_media, motivo: "frasi brevi volute"}
+  richiami_ammessi:                                      # ripetizioni volute tra unità (anti-riciclo)
+    - "la sera che venne da Michele"
 gate:                                                    # predefiniti del motore
 - documenti
 - pagina_campione

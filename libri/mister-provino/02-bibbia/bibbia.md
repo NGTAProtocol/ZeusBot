@@ -318,7 +318,7 @@ Lo zaino contiene **220 milioni** in banconote da 100.000 lire: **22 mazzette da
 | Treno di notte per Genova, spese di viaggio | −0,1 | ≈168,1 |
 | Perdita al cambio in Brasile: cambiavalute del porto di Santos, in più volte nel primo anno, circa il 15% [DECISO, Fase 3f] | −25,2 | **≈142,9** |
 
-- A Genova lo zaino porta «quasi centosettanta milioni»; il ragazzo sa la cifra esatta, 168 e qualcosa, e la dice una volta sola. Il valore che arriva davvero in Brasile, dopo il cambio, è di circa 143 milioni.
+- A Genova lo zaino porta circa 168 milioni: è un dato di contabilità, e il testo non è tenuto a dire la cifra. Il valore che arriva davvero in Brasile, dopo il cambio, è di circa 143 milioni.
 - La mazzetta a Michele non viene mai spesa: la sua perdita è «la parte del fuoco».
 - In Brasile: una parte nell'intercapedine del muro, una in una cassetta sotto il pavimento della cucina.
 - Sull'uscita dei contanti dall'Italia e sul cambio vedi §10.10.
