@@ -28,21 +28,21 @@ Lo sapevo, che cosa era quel posto. Lo sapevano tutti, a Bari, anche i bambini. 
 
 Poi venne la paura.
 
-Venne a ondate, come il freddo della scimmia. Mi diceva cose precise. Che Nicola non tornava. Che Nicola i soldi non li aveva e non li avrebbe trovati, e che anche se li trovava non sarebbe tornato per me. Che i panetti di zi' Nardu non erano un modo di dire. Che nessuno a Bari sapeva dov'ero: non Michele, non mia madre, non Checco in una cella di Trani. Mi tremavano le mani, e la catena tremava con loro e faceva un rumore piccolo contro la roccia.
+Venne a ondate, come il mare sotto la Muraglia. Mi diceva cose precise. Che Nicola non tornava. Che Nicola i soldi non li aveva e non li avrebbe trovati, e che anche se li trovava non sarebbe tornato per me. Che i panetti di zi' Nardu non erano un modo di dire. Che nessuno a Bari sapeva dov'ero: non Michele, non mia madre, non Checco in una cella di Trani. Mi tremavano le mani, e la catena tremava con loro e faceva un rumore piccolo contro la roccia.
 
-Sulla branda di Michele, nelle notti senza la roba, avevo imparato una cosa: la paura ferma ti mangia, la paura che lavora no. Così la misi a lavorare.
+Sulla branda di Michele, nelle notti senza la roba, me n'ero accorto con il corpo: stare fermo faceva peggio che muoversi. Così mi mossi.
 
 Prima misurai. Mi alzai in piedi, piano, con una mano sulla parete, e camminai fino a dove la catena si tendeva, contando i passi: tre, e un mezzo. Girai intorno all'anello tenendo la catena tesa, con le braccia avanti, e trovai la forma del mio pezzo di grotta: un mezzo cerchio di roccia e di terra battuta, con il soffitto basso dalla parte della parete e più alto verso il buio. Trovai un sacco di tela per terra, che puzzava di muffa. Trovai, a sinistra, un secchio di latta vuoto. Trovai, all'estremo della catena, allungando il braccio fino a farmi male alla spalla, il bordo della pozza dove cadeva la goccia. L'acqua era gelata e sapeva di ferro e di pietra. Ne bevvi poco, dal palmo, e mi bagnai la faccia.
 
 Poi misurai il tempo con la goccia. Le contavo a gruppi di cento, e ogni cento facevo un nodo nel filo che si era sfilato dall'orlo della mia giacca. Non so quanto durava un nodo. So che a un certo punto smisi di fare nodi, perché il filo era finito.
 
-Poi mi misi a lavorare con la testa. Ripresi la mappa di Nicola, quella del quaderno nero, e la rifeci al buio, riga per riga, con il quaderno aperto sulle ginocchia soltanto nella testa. Le otto e cinque, il tavolino con la schiena al muro. La porta verde nel vicolo dei bidoni. Il pannello sotto il cruscotto, un dito sotto il bordo e una spinta verso l'alto. La cabina in fondo alla via del basso, la fessura nel vetro. Piazza Garibaldi. Il mercato ortofrutticolo all'alba, l'uomo con il cappello di feltro, il Garelli rosso al cancello.
+Poi mi misi a lavorare con la testa. Ripresi la mappa di Nicola, quella del quaderno nero, e la rifeci al buio, riga per riga, con il quaderno aperto sulle ginocchia soltanto nella testa. Il tavolino con la schiena al muro. La porta verde nel vicolo dei bidoni. Il pannello sotto il cruscotto, un dito sotto il bordo e una spinta verso l'alto. La cabina in fondo alla via del basso, la fessura nel vetro. Piazza Garibaldi. Il mercato ortofrutticolo all'alba, l'uomo con il cappello di feltro, il Garelli rosso al cancello.
 
 Lì la mappa si fermava, e mi fermai anch'io.
 
 Lo scrivo una volta sola, qui, e poi non lo scrivo più. Quella mattina al mercato ero stato io. Le tre cose che avevo detto all'uomo con il cappello erano arrivate su per la montagna in meno di due giorni, e zi' Nardu le aveva ripetute davanti a me, al casolare, quasi con le mie parole. Il mercato parla, aveva detto. Il mercato ero io. Avevo voluto vedere Nicola piegato, e lo avevo visto: con gli occhi a terra davanti a un vecchio con la coppola. E per vederlo ero finito legato a un anello, al buio, con un ferro al collo, perché ero io la garanzia che Nicola si era portato fin lassù da solo, nella macchina, a sedere davanti, accanto a lui.
 
-Al buio, quel giorno, il ragazzo non pianse. Fece un'altra cosa. Si mise seduto sul sacco, con la schiena contro la parete e la catena sulle ginocchia, e decise che doveva arrivare a domani. Poi a dopodomani. Il resto non contava.
+Non piansi. Mi misi seduto sul sacco, con la schiena contro la parete e la catena sulle ginocchia, e decisi che dovevo arrivare a domani. Poi a dopodomani. Il resto non contava.
 
 •
 

@@ -8,12 +8,13 @@ lotto:
   dimensione: 3
   capitoli:
   - 30
+  - 23
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 30
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 54035
+  scritte: 54018
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -88,7 +89,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T10:07:11Z'
+aggiornato: '2026-10-07T10:08:02Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
@@ -120,3 +121,8 @@ correzioni_registrate:
   sha256_precedente: 7f8928b3d7d5637dad1af85b15f6047eb3c037316e6724bc986014e967320cae
   sha256_corretto: c718eb64b374b83922a882c54e18e2dcd602e379928b3ce1214c14c203ff0846
   commit: 0ae87f0
+- data: '2026-10-07'
+  file: 04-manoscritto/23-la-settimana.md
+  motivo: via la frase dei numeri; orari ridotti a due; tolto il camion frigorifero di Napoli
+  sha256_precedente: 19a3bc37960d5dd6e2db2a9277e9ab969809696d2aba4080a514ca3c6f7bad72
+  sha256_corretto: 7634732190bb0143ec055aa7e7eac06991eb9f007a718af69abf9df73fba4f12

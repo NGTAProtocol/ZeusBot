@@ -6,19 +6,19 @@
 
 Il quaderno era uno di quelli di scuola, con la copertina nera e il bordo rosso, e l'avevo comprato dal cartolaio di piazza Mercantile con i soldi del camion. Lo tenevo nella tasca interna della giacca, contro il petto, con una matita corta legata alla spirale con lo spago, e non ci scrivevo mai per strada. Scrivevo la sera, a casa, seduto sul letto con la schiena contro il muro, sotto la teca.
 
-La domenica mattina, alle otto meno un quarto, ero già sul gradino della chiesa di fronte al bar della piazzetta, con un cartoccio di sgagliozze in mano, come uno che aspetta la messa.
+La domenica mattina, prima che aprisse il bar, ero già sul gradino della chiesa di fronte al bar della piazzetta, con un cartoccio di sgagliozze in mano, come uno che aspetta la messa.
 
-Nicola arrivò alle otto e cinque. Parcheggiò l'Alfa nello stesso punto di sempre, con le ruote di destra sul marciapiede, davanti alla merceria chiusa, e prima di scendere si guardò nello specchietto e si sistemò il colletto con due dita. Al bar si sedette al tavolino di fuori, con la schiena al muro. Il barista gli portò il caffè senza che lui lo chiedesse, e un bicchiere d'acqua, e il giornale piegato in quattro. Lo sapevo già, tutto questo. Lo sapevo da mesi senza averlo mai messo in fila.
+Nicola arrivò poco dopo le otto. Parcheggiò l'Alfa nello stesso punto di sempre, con le ruote di destra sul marciapiede, davanti alla merceria chiusa, e prima di scendere si guardò nello specchietto e si sistemò il colletto con due dita. Al bar si sedette al tavolino di fuori, con la schiena al muro. Il barista gli portò il caffè senza che lui lo chiedesse, e un bicchiere d'acqua, e il giornale piegato in quattro. Lo sapevo già, tutto questo. Lo sapevo da mesi senza averlo mai messo in fila.
 
 Quella settimana lo misi in fila.
 
 Mi ero fatto un posto per ogni ora. Il gradino della chiesa per la mattina; la finestra delle scale del palazzo di fronte al retro del bar, dove la porta del portone non chiudeva, per il primo pomeriggio; il muretto del lungomare per quando prendeva la macchina, perché da lì vedevo fino al semaforo e capivo da che parte girava. Il Ciao lo lasciavo sempre lontano, dietro un angolo diverso, e lo spingevo a mano nei vicoli per non farmi sentire.
 
-Nella mia testa, quei giorni, tutto diventava numero: le ore, i passi, i minuti dentro, le volte che il barista usciva con il vassoio. Era la cosa che sapevo fare. Nicola me l'aveva insegnata per guardare la merce e le facce degli altri, e adesso la usavo per guardare lui.
+Quei giorni imparai l'ordine delle sue cose come si impara una strada al buio: con i piedi, passandoci tante volte finché il corpo non sa dove gira, senza guardare. Era la cosa che sapevo fare. Nicola me l'aveva insegnata per guardare la merce e le facce degli altri, e adesso la usavo per guardare lui.
 
 La domenica non successe quasi niente. Il caffè, la messa delle undici, che lui ascoltò in piedi in fondo alla chiesa, con il cappello in mano, il pranzo da una zia di Carbonara. Nel pomeriggio prese l'Alfa da solo e scese lungo il lungomare piano, con il finestrino abbassato, fino alla spiaggia di Pane e Pomodoro, e lì si fermò con il motore spento, davanti alla duna, e ci restò mezz'ora senza scendere, a guardare il mare con le mani sul volante. Io lo guardavo dal muretto, più su, con il Ciao appoggiato a una palma. Non fece niente. Non telefonò, non aspettò nessuno. Guardò il mare, si accese due sigarette una dopo l'altra, e poi tornò indietro. Quella mezz'ora non la scrissi sul quaderno, perché non sapevo in quale riga metterla.
 
-Il lunedì cominciò il lavoro. Alle nove passò Mimmo con una busta, alle dieci Tonino con un'altra. Le buste non le apriva al tavolino: si alzava, entrava, e usciva dalla porta di dietro del bar, nel vicolo laterale, quello con i bidoni e la lampadina. Lì c'era una porta verde con il lucchetto, e lui ce l'aveva in tasca, la chiave del lucchetto, attaccata allo stesso anello di quella dell'Alfa.
+Il lunedì cominciò il lavoro. A metà mattina passò Mimmo con una busta, e più tardi Tonino con un'altra. Le buste non le apriva al tavolino: si alzava, entrava, e usciva dalla porta di dietro del bar, nel vicolo laterale, quello con i bidoni e la lampadina. Lì c'era una porta verde con il lucchetto, e lui ce l'aveva in tasca, la chiave del lucchetto, attaccata allo stesso anello di quella dell'Alfa.
 
 Il pomeriggio di lunedì vidi dove teneva i soldi grossi. Non al bar. Nella macchina. Si fermò in una traversa dietro la stazione, dove non passava nessuno, si chinò sotto il cruscotto dalla parte del passeggero, e tirò fuori un pannello di plastica nera, piano, con le unghie. Dietro c'era un vano. Ci mise una busta e richiuse. Dal tetto di un garage, a trenta passi, con la pancia sul catrame caldo, lo vidi fare il gesto due volte, e me lo imparai. Un dito sotto il bordo, una spinta verso l'alto, e il pannello veniva via.
 
@@ -26,9 +26,9 @@ Il lunedì sera, quando il bar chiuse, tornai nel vicolo dei bidoni. La lampadin
 
 Il martedì scoprii la cabina.
 
-Era quella in fondo alla via del basso di Michele, sotto il lampione, quella dove le donne del vicolo andavano a chiamare i figli emigrati la domenica sera, con i gettoni contati in mano. Nicola ci entrò alle sei di sera, chiuse lo sportello a vetri e ci restò dieci minuti. Non chiamava dal bar. Dal bar chiamava la gente del quartiere, la zia, il sarto di via Manzoni. Dalla cabina chiamava gli altri.
+Era quella in fondo alla via del basso di Michele, sotto il lampione, quella dove le donne del vicolo andavano a chiamare i figli emigrati la domenica sera, con i gettoni contati in mano. Nicola ci entrò verso sera, chiuse lo sportello a vetri e ci restò dieci minuti. Non chiamava dal bar. Dal bar chiamava la gente del quartiere, la zia, il sarto di via Manzoni. Dalla cabina chiamava gli altri.
 
-Il mercoledì mi misi dietro l'edicola chiusa, di fianco alla cabina, alle sei meno dieci, con la guancia contro la lamiera ancora calda del giorno. Lo sportello era rotto in alto: c'era una fessura tra il vetro e il telaio, e quando Nicola parlava con la voce di quando era nervoso, le parole uscivano.
+Il mercoledì mi misi dietro l'edicola chiusa, di fianco alla cabina, prima che arrivasse lui, con la guancia contro la lamiera ancora calda del giorno. Lo sportello era rotto in alto: c'era una fessura tra il vetro e il telaio, e quando Nicola parlava con la voce di quando era nervoso, le parole uscivano.
 
 — Sì. Sì, lo so. Ditegli che la settimana prossima scendo io. — Una pausa lunga. — No, quelli di giù non sanno niente. Non devono sapere niente. Con loro io pago e basta, e voi per me restate quelli di piazza Garibaldi, come sempre. — Un'altra pausa. — Don Tobia lo saluto io. Ciao, ciao.
 
@@ -42,13 +42,13 @@ Quella sera, sul letto, aprii il quaderno e scrissi tutto, una riga sotto l'altr
 
 Per un'ora, quella notte, pensai di ammazzarlo.
 
-Ci pensai con le cose che avevo intorno. Il coltello del pane, in cucina, che tagliava bene. La traversa dietro la stazione, dove si fermava da solo. La porta verde con il lucchetto. Mi vedevo arrivare alle sue spalle mentre era chinato sotto il cruscotto, e poi la cosa si fermava lì, all'altezza delle sue spalle, e non andava avanti. Non sapevo come si fa. Non avevo mai colpito nessuno. Non sapevo nemmeno tenere un coltello in mano se non per il pane. Le mie mani sapevano tenere un involto, passare una busta, aprire un pannello. Sapevo guardare, e sapevo dire. Era tutto.
+Ci pensai con le cose che avevo intorno. Il coltello del pane, in cucina, che tagliava bene. La traversa dietro la stazione, dove si fermava da solo. La porta verde con il lucchetto. Mi vedevo arrivare alle sue spalle mentre era chinato sotto il cruscotto, e poi la cosa si fermava lì, all'altezza delle sue spalle, e non andava avanti. Non sapevo farlo. Non avevo mai colpito nessuno. Non sapevo nemmeno tenere un coltello in mano se non per il pane. Le mie mani sapevano tenere un involto, passare una busta, aprire un pannello. Sapevo guardare, e sapevo dire. Era tutto.
 
 Allora, pensai, si fa con quello che si sa fare.
 
 •
 
-Il giovedì mi alzai alle quattro.
+Il giovedì mi alzai che era ancora notte fonda.
 
 Uscii di casa senza accendere la luce, con le scarpe in mano fino al portone, e nel vicolo l'aria era umida e ferma, e le chianche bagnate dalla notte rimandavano la luce dei lampioni a macchie gialle. Avevo dormito poco e niente. Non per la paura: la paura, quella notte, non c'era. C'era una cosa più leggera e più calda, che mi faceva camminare svelto e mi teneva le mani ferme in tasca, e che non aveva un nome.
 
@@ -86,7 +86,7 @@ L'uomo con il cappello di feltro non si mosse. Fui io ad andare da lui. Visto da
 
 — E tu come lo sai?
 
-— Il tredici luglio ero con lui. In un capannone vicino a piazza Garibaldi. Ho visto la stretta di mano. — Mi strinsi nelle spalle. — E quella notte stessa un camion frigorifero di Napoli è entrato qua dentro. Lo potete chiedere ai cancelli. I guardiani si ricordano le targhe.
+— Il tredici luglio ero con lui. In un capannone vicino a piazza Garibaldi. Ho visto la stretta di mano. — Mi strinsi nelle spalle. — Lo potete chiedere a chi vi pare. A Napoli lo sanno tutti, che quello dell'Alfa rossa ci va.
 
 L'uomo mi guardò a lungo. Mi guardò dalla faccia alle scarpe e dalle scarpe alla faccia, senza fretta, come Cataldo, ma più a fondo.
 
@@ -124,7 +124,7 @@ Al cancello, contro il palo del lampione, c'era un Garelli rosso, lucido, con la
 
 •
 
-Il venerdì Nicola mi mandò a chiamare da Mimmo, alle dieci.
+Il venerdì mattina Nicola mi mandò a chiamare da Mimmo.
 
 Al bar della piazzetta c'era più gente del solito. Nicola stava al tavolino con Cataldo seduto alla sua destra e Tonino in piedi dietro, appoggiato alla colonna. Cataldo, con la solita Nazionale spenta tra le labbra, mi seguì con gli occhi dall'angolo della chiesa fino al tavolino, tutti i passi, senza muovere la testa.
 
