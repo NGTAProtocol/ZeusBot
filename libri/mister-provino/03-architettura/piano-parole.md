@@ -26,7 +26,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 16 | Ferragosto | 1.960 | — | — | — | — | 294 |
 | Parte prima | 17 | La busta | 1.850 | — | — | — | — | 300 |
 | Parte prima | 18 | Sette giorni | 2.385 | — | — | 2.249 | -5,7% | 310 |
-| Parte prima | 19 | Il settimo giorno | 2.380 | — | — | — | — | 317 |
+| Parte prima | 19 | Il settimo giorno | 2.380 | — | — | 2.251 | -5,4% | 317 |
 | Parte prima | interludio IV | La lettera | 400 | — | — | — | — | 324 |
 | Parte seconda | 20 | La scimmia | 1.750 | — | — | — | — | 331 |
 | Parte seconda | 21 | Il camion | 1.750 | — | — | — | — | 337 |
