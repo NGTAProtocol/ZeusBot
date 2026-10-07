@@ -16,7 +16,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 8 | O Anjo | 1.600 | — | — | 1.435 | -10,3% | 225 |
 | Parte prima | 9 | Il giro con Franco | 2.100 | — | — | 1.810 | -13,8% | 235 |
 | Parte prima | 10 | Il palo | 2.000 | — | — | 1.702 | -14,9% | 242 |
-| Parte prima | interludio II | La pagina | 400 | — | — | — | — | 253 |
+| Parte prima | interludio II | La pagina | 400 | — | — | 425 | +6.2% | 253 |
 | Parte prima | 11 | L'ospedale | 1.340 | — | — | 1.461 | +9,0% | 256 |
 | Parte prima | 12 | La storia di «lei» | 1.750 | — | — | 1.706 | -2,5% | 264 |
 | Parte prima | 13 | Da qualche altra parte | 1.540 | — | — | 1.501 | -2,5% | 273 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.529.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.554.
