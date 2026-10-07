@@ -2,11 +2,13 @@
 
 Libro: Mister Provino — profilo: narrativa-letteraria.
 
-Parole (metodo unico): 941 · frase media: 12.2 · dialogo: 0.0%
+Parole (metodo unico): 906 · frase media: 12.4 · dialogo: 0.0%
 
-Esito: 0 KO, 0 avvisi.
+Esito: 0 KO, 1 avvisi.
 
-Nessun KO e nessun avviso.
+| Unità | Controllo | Esito | Riga | Dettaglio |
+|---|---|---|---|---|
+| epilogo | riciclo:unita_precedenti | AVVISO | 33 | cabina in fondo alla via del basso |
 
 ## Checklist manuale
 

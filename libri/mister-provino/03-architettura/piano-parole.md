@@ -57,6 +57,6 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | 42 | Santos | 1.540 | — | — | 1.520 | -1,3% | 495 |
 | Parte terza | 43 | Le prime monete | 1.540 | — | — | 1.449 | -5,9% | 501 |
 | Parte terza | interludio IX | Le pagine | 500 | — | — | 458 | -8,4% | 509 |
-| — | epilogo | Epilogo | 1.000 | — | — | 941 | -5,9% | 514 |
+| — | epilogo | Epilogo | 1.000 | — | — | 906 | -9,4% | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.227.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.192.

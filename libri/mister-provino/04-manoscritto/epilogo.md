@@ -22,18 +22,18 @@ Ci siamo scritti fino alla fine, una lettera ogni Natale. Le sue arrivavano a ma
 
 «Tu il giuramento l'hai mantenuto, fratello mio. Io il mio no.»
 
-Ancora oggi non so di che giuramento parlasse. Quello che gli feci io a Trani, con il vetro in mezzo, era una bugia, e lui non l'ha mai scoperto. Il suo era «ti porto via da qua», e non ha potuto. Eppure è lui che si dà la colpa.
+Il mio giuramento era quello di Trani, fatto con il vetro in mezzo e la faccia giusta. Mentivo, e lui non l'ha mai scoperto. Il suo era «ti porto via da qua», e non ha potuto mantenerlo. Eppure, nell'ultima lettera, la colpa se la prende lui.
 
-Lo zaino ha comprato tutto. La nave, questa casa, un avvocato bravo, una Vespa rossa, i colori di Michele per ventitré anni. Non ha comprato l'unica cosa per cui l'avrei svuotato fino all'ultima banconota. I soldi sporchi fanno così: non ti tolgono niente di quello che si compra. Ti tolgono soltanto il resto.
+Lo zaino ha comprato tutto. La nave, questa casa, un avvocato bravo, una Vespa rossa, i colori di Michele per ventitré anni. Non ha comprato l'unica cosa per cui l'avrei svuotato fino all'ultima banconota.
 
 Da mia madre non è più arrivata una parola, né una notizia, né una voce portata da qualcuno. Di lei ho la firma, in fotocopia, in fondo alla scatola, dritta e pulita.
 
 Il soprannome di quell'estate qui non l'ha mai detto nessuno. Sono Beniamino da più di cinquant'anni. Mi è servita quasi una vita intera per capire che bastava, e che per avere il diritto di stare al mondo non dovevo diventare né un eroe né un altro.
 
-Una volta, una sera d'ottobre, in un vicolo dietro la Vallisa, ho fischiato. Una volta sola, tardi, dopo averne mancate tante. Ma l'ho fatto.
+Una volta, una sera d'ottobre, da una cabina in fondo alla via del basso, dietro la Vallisa, ho fischiato. Una volta sola, tardi, dopo averne mancate tante. Ma l'ho fatto.
 
 Michele me l'aveva detto la prima estate, nel basso della Vallisa che adesso è un muro nero, con le mani sporche di blu: la scelta c'è sempre, anche all'ultimo. Io allora ero un ragazzo. Pensavo che fosse una frase da vecchi. Adesso il vecchio sono io, e l'ho scritta.
 
-Stanotte, mentre finisco queste pagine, al largo c'è una nave ferma. Ha le luci di bordo accese e aspetta che faccia giorno per avvicinarsi alla costa. Non sta scappando da niente, e non porta niente di nascosto. C'è soltanto gente che va da un'altra parte.
+Stanotte, mentre finisco queste pagine, al largo c'è una nave ferma. Ha le luci di bordo accese e aspetta che faccia giorno per avvicinarsi alla costa.
 
 Tra poco schiarisce. Prima del caffè scendo nell'orto a tagliare i fiori nuovi, quelli bianchi che crescono contro il muro, e li porto su. Tolgo dal vasetto quelli di ieri, che hanno già piegato la testa, cambio l'acqua, e metto quelli freschi sotto il ritratto di Lucia.
