@@ -2,7 +2,7 @@
 
 Libro: Mister Provino — profilo: narrativa-letteraria.
 
-Parole (metodo unico): 458 · frase media: 12.1 · dialogo: 0.0%
+Parole (metodo unico): 456 · frase media: 12.3 · dialogo: 0.0%
 
 Esito: 0 KO, 0 avvisi.
 

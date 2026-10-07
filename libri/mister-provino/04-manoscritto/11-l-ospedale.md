@@ -66,7 +66,7 @@ Il nome di quell'ospedale non lo scrivo. Per anni l'ho saputo; poi, da vecchio, 
 
 •
 
-Il martedì, dopo pranzo, presi il Ciao e uscii dalla parte del porto, per non passare davanti al bar della piazzetta. La strada per Carbonara l'avevo fatta tre giorni prima, dietro la schiena di Franco, e la rifeci tutta da solo: le strade larghe della periferia, gli ulivi che finivano contro i palazzi nuovi, le gru ferme. A ogni incrocio una macchina rossa mi faceva stringere le mani sul manubrio, e non era mai l'Alfa.
+Il martedì, dopo pranzo, presi il Ciao e uscii dalla parte del porto, per non passare davanti al bar della piazzetta. La strada per Carbonara l'avevo fatta quattro giorni prima, dietro la schiena di Franco, e la rifeci tutta da solo: le strade larghe della periferia, gli ulivi che finivano contro i palazzi nuovi, le gru ferme. A ogni incrocio una macchina rossa mi faceva stringere le mani sul manubrio, e non era mai l'Alfa.
 
 L'ospedale stava in mezzo ai campi, bianco e lungo, con le finestre tutte uguali e un piazzale di ghiaia dove aspettava un'ambulanza. Lasciai il Ciao dietro una siepe di oleandri e attraversai il piazzale a piedi, senza correre.
 

@@ -20,7 +20,7 @@ Non decisi di andarci. Mi trovai lì, in piedi nel corridoio buio, con la mano s
 
 Restai lì con la mano sulla maniglia finché la mano non mi fece male. Poi la tolsi, un dito alla volta, e tornai nella mia stanza camminando all'indietro, senza staccare gli occhi dalla porta, e mi sdraiai sul letto con le braccia strette intorno al petto. Sopra di me, al buio, sentivo i colpi della traversa con le loro pause uguali, e la faccia di Checco contro il muro, e la voce di Nicola che contava sulle dita. Non dormii.
 
-La quarta mattina, il sabato, uscii di casa prima che facesse giorno, con la coperta di Michele sulle spalle.
+Dopo la quarta notte, il sabato, uscii di casa prima che facesse giorno, con la coperta di Michele sulle spalle.
 
 •
 

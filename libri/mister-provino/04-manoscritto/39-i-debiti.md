@@ -16,7 +16,7 @@ Lo misi nella tasca della camicia, insieme al biglietto della nave e al modulo c
 
 •
 
-Presi la corriera la mattina dopo, con il vento di tramontana che piegava i pini lungo la strada. Nella giacca, contro le costole, avevo una busta gialla, grande, chiusa con lo scotch. Dentro c'erano due mazzette avvolte in un pezzo di tela cerata. Di Franco sapevo una cosa sola, che l'avevano mandato da una sorella di sua madre, in una casa sul mare. Lo aveva lasciato cadere Carlo, la sera del vino, senza che io domandassi niente.
+Presi la corriera la mattina dopo, con il vento di tramontana che piegava i pini lungo la strada. Nella giacca, contro le costole, avevo una busta gialla, grande, chiusa con lo scotch. Dentro c'erano due mazzette avvolte in un pezzo di tela cerata. Di Franco sapevo una cosa sola, che l'avevano mandato da una sorella di sua madre, in una casa sul mare. Lo aveva lasciato cadere Carlo, la sera che venne da Michele, senza che io domandassi niente.
 
 Molfetta era Bari Vecchia rimpicciolita e lavata dal vento. Le stesse chianche, le stesse reti stese, le stesse donne sulle soglie che smettevano di parlare quando passava uno che non conoscevano. Chiesi di Franco a un ragazzino che tirava calci a una lattina, e quello mi squadrò dalle scarpe ai capelli prima di rispondere.
 

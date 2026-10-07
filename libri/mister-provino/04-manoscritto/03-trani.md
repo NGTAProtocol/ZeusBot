@@ -62,7 +62,7 @@ Mio padre lo disse con la voce rotta, e Checco abbassò gli occhi.
 
 — È quella del lunedì. Va bene così.
 
-Parlarono della casa, del caldo, di un cugino di Bitonto che si era sposato. Mio padre disse che stavamo bene. Checco disse che lì dentro si mangiava male ma si mangiava, e che lavorava in cucina, e che il tempo passava.
+Parlarono della casa, del caldo, di un cugino di Bitonto che si era sposato. Mio padre disse che stavamo bene. Checco disse che lì dentro si mangiava male ma si mangiava, e che lavorava in falegnameria, e che il tempo passava.
 
 — Quanto è che non venite? — chiese.
 

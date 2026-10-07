@@ -38,7 +38,7 @@ Guidava a scatti, frenando tardi. Aveva la barba fatta male e gli occhi gialli d
 
 — Fermati un momento, — disse, a sé stesso più che a me, e girò in una traversa dietro la stazione, quella del pannello, deserta come sempre a quell'ora.
 
-Tolse la chiave. Si chinò sotto il cruscotto dalla mia parte, e io tirai indietro le gambe. Il pannello venne via al primo tentativo. Nel vano c'era meno di quanto ci avessi visto a ottobre: due buste soltanto, una delle quali vuota, e un sacchetto di carta piegato. Prese il sacchetto, rimise il pannello, e se lo posò sulle ginocchia. Le mani gli rimasero ferme sul sacchetto, e gli occhi sul muro del magazzino davanti a noi.
+Tolse la chiave. Si chinò sotto il cruscotto dalla mia parte, e io tirai indietro le gambe. Il pannello venne via al primo tentativo. Nel vano c'era meno di quanto ci avessi visto dieci giorni prima: due buste soltanto, una delle quali vuota, e un sacchetto di carta piegato. Prese il sacchetto, rimise il pannello, e se lo posò sulle ginocchia. Le mani gli rimasero ferme sul sacchetto, e gli occhi sul muro del magazzino davanti a noi.
 
 — Lo sai quanto devo? — disse. — No, non lo sai. Nessuno lo sa, a parte me e uno. E quell'uno non è uno che aspetta. — Si passò la lingua sul labbro spaccato, che non si era ancora chiuso. — Questa roba deve girare in fretta. Deve girare bene. E per girare bene la deve assaggiare chi non sbaglia.
 

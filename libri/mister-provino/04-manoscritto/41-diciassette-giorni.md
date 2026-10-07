@@ -14,7 +14,7 @@ Lui non dormiva. Lo sentivo cambiare posizione, tirarsi su il bavero, sistemare 
 
 Non rispose subito. Il motore batteva sotto di noi, regolare, e il mare passava nero lungo la fiancata.
 
-— Fino a due giorni fa, figlio mio, il punto più lontano dove avevo messo i piedi era Foggia. Una volta, per un funerale, nel trentadue. E adesso guarda. — Allargò una mano verso il buio. — Settant'anni, una valigia di cartone e una ragazza dipinta. Se questo non fa paura, non so che cosa.
+— Fino a ieri, figlio mio, il punto più lontano dove avevo messo i piedi era Foggia. Una volta, per un funerale, nel trentadue. E adesso guarda. — Allargò una mano verso il buio. — Settant'anni, una valigia di cartone e una ragazza dipinta. Se questo non fa paura, non so che cosa.
 
 Mi avvicinai finché le nostre spalle non si toccarono. Restammo così. Più tardi, quando il cielo cominciò a schiarirsi dietro la poppa, parlò di nuovo.
 

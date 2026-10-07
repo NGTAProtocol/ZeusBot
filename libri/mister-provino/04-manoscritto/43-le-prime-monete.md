@@ -74,7 +74,7 @@ Me lo ricordavo. La prima sera nel basso, il barattolo giallo, il blu che ci gal
 
 — Me lo ricordo.
 
-— Ecco. Questa è olio, — disse, e mi richiuse la mano con la sua.
+— Ecco. Questo è olio, — disse, e mi richiuse la mano con la sua.
 
 •
 

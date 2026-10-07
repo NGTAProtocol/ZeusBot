@@ -28,7 +28,7 @@ Non gli andai dietro, e non mi venne neanche in mente di farlo.
 
 Michele gridava, e non l'avevo mai sentito gridare.
 
-Il fuoco gli era salito sulle scarpe. I pantaloni, fradici di trementina, cominciavano a bruciare dall'orlo, con una fiamma blu che si arrampicava sulla caviglia. Strappai la tenda della cucina dal suo filo, gliela buttai sulle gambe e ci premetti sopra con tutto quello che avevo, i palmi, gli avambracci, il petto, finché la fiamma blu non morì sotto la stoffa. Sentivo la pelle delle mani che sfrigolava, ma il male non arrivava.
+Il fuoco gli era salito sulle scarpe. I pantaloni, fradici di trementina, cominciavano a bruciare dall'orlo, con una fiamma blu che si arrampicava sulla caviglia. Strappai la coperta militare dalla branda, gliela buttai sulle gambe e ci premetti sopra con tutto quello che avevo, i palmi, gli avambracci, il petto, finché la fiamma blu non morì sotto la stoffa. Sentivo la pelle delle mani che sfrigolava, ma il male non arrivava.
 
 — Vattene, — diceva Michele. — Lasciami qua e vattene, figlio mio, che io sono vecchio.
 
@@ -80,7 +80,7 @@ Cercava il ritratto.
 
 Non ci pensai, perché se ci pensavo restavo lì. Mi sfilai la camicia, me la girai intorno alla faccia, e tornai dentro.
 
-— Uagliò! — gridò qualcuno. — Fermatelo, quello!
+— Uagnò! — gridò qualcuno. — Fermatelo, quello!
 
 Una mano mi sfiorò la schiena e non mi prese. Dentro, il fumo aveva un peso, e non vedevo niente, e non serviva vedere: in quella stanza ci avevo passato l'estate e l'autunno, e i piedi la sapevano da soli. Tre passi a destra dall'ingresso, contando. Il legno dello stipite sotto la spalla. Più su, all'altezza dei miei occhi, il ferro.
 

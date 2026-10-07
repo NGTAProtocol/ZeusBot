@@ -62,7 +62,7 @@ voci:
   - {id: bucarsi, pattern: '(?i)\bbucar[a-zà-ù]*|\b(mi|ti|si|ci) buc[a-zà-ù]*', modalita: avviso, massimo: 3, ambito: libro}   # M:222
   - {id: lama, pattern: '(?i)\blam[ae]\b', modalita: conta, massimo: 3, ambito: libro}                               # M:138 (solo la lama vera, al massimo 3)
   - {id: campo_del_cane, pattern: '(?i)\b(cane|cani|guinzaglio|collare)\b', modalita: avviso, massimo: 8, ambito: libro}   # M:154 (prende anche i cani veri: avviso)
-  - {id: guaglio_napoletano, pattern: '(?i)\bguagli', modalita: avviso, ambito: capitolo}                           # M:189, M:194 (solo don Tobia e Ciro: verifica a mano)
+  - {id: guaglio_napoletano, pattern: "(?i)\\bg?uagli[òo]'?", modalita: vieta, ambito: capitolo, consentito_in_capitoli: ["2", "35"]}   # M:189, M:194: solo con don Tobia e Ciro (cap. 2) e il magro tarantino (cap. 35)
   # vietati (M §4.3, §4.5, §5.1)
   - {id: uccello_in_gabbia, pattern: '(?i)uccello in gabbia', modalita: vieta}                                      # M:139
   - {id: silenzio_piombo, pattern: '(?i)silenzio si fece piombo', modalita: vieta}                                  # M:140

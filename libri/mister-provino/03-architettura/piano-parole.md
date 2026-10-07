@@ -9,7 +9,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 2 | Napoli | 1.800 | — | — | 1.621 | -9,9% | 163 |
 | Parte prima | 3 | Trani | 2.000 | — | — | 1.870 | -6,5% | 174 |
 | Parte prima | interludio I | I fiori | 400 | — | — | 418 | +4,5% | 185 |
-| Parte prima | 4 | La stanza di Michele | 1.500 | — | — | 1.383 | -7,8% | 188 |
+| Parte prima | 4 | La stanza di Michele | 1.500 | — | — | 1.382 | -7,9% | 188 |
 | Parte prima | 5 | Il brodetto | 1.350 | — | — | 1.328 | -1,6% | 199 |
 | Parte prima | 6 | I tre silenzi | 1.600 | — | — | 1.421 | -11,2% | 205 |
 | Parte prima | 7 | Palese | 1.550 | — | — | 1.367 | -11,8% | 214 |
@@ -20,7 +20,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 11 | L'ospedale | 1.340 | — | — | 1.459 | +8,9% | 256 |
 | Parte prima | 12 | La storia di «lei» | 1.750 | — | — | 1.708 | -2,4% | 264 |
 | Parte prima | 13 | Da qualche altra parte | 1.540 | — | — | 1.501 | -2,5% | 273 |
-| Parte prima | 14 | Le notti di Pane e Pomodoro | 1.960 | — | — | 1.869 | -4,6% | 278 |
+| Parte prima | 14 | Le notti di Pane e Pomodoro | 1.960 | — | — | 1.870 | -4,6% | 278 |
 | Parte prima | 15 | Il mercato | 2.280 | — | — | 2.190 | -3,9% | 284 |
 | Parte prima | interludio III | La nave | 400 | — | — | — | — | 291 |
 | Parte prima | 16 | Ferragosto | 1.960 | — | — | 1.849 | -5,7% | 294 |
@@ -28,7 +28,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 18 | Sette giorni | 2.385 | — | — | 2.249 | -5,7% | 310 |
 | Parte prima | 19 | Il settimo giorno | 2.380 | — | — | 2.251 | -5,4% | 317 |
 | Parte prima | interludio IV | La lettera | 400 | — | — | — | — | 324 |
-| Parte seconda | 20 | La scimmia | 1.750 | — | — | 1.685 | -3,7% | 331 |
+| Parte seconda | 20 | La scimmia | 1.750 | — | — | 1.686 | -3,7% | 331 |
 | Parte seconda | 21 | Il camion | 1.750 | — | — | 1.688 | -3,5% | 337 |
 | Parte seconda | 22 | Cataldo | 1.850 | — | — | 1.733 | -6,3% | 343 |
 | Parte seconda | 23 | La settimana | 3.000 | 3 | 1.100 / 1.200 / 700 | 2.821 | -6,0% | 349 |
@@ -36,7 +36,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte seconda | 25 | La grotta | 1.850 | — | — | 1.794 | -3,0% | 365 |
 | Parte seconda | interludio V | Il collo | 400 | — | — | 446 | +11,5% | 372 |
 | Parte seconda | 26 | Il panettiere | 1.850 | — | — | 1.768 | -4,4% | 375 |
-| Parte seconda | 27 | L'ago | 1.440 | — | — | 1.370 | -4,9% | 382 |
+| Parte seconda | 27 | L'ago | 1.440 | — | — | 1.371 | -4,8% | 382 |
 | Parte seconda | 28 | L'ombra | 1.750 | — | — | 1.860 | +6,3% | 387 |
 | Parte seconda | 29 | Il circolo | 1.340 | — | — | 1.355 | +1,1% | 393 |
 | Parte seconda | 30 | Carlo | 1.440 | — | — | 1.472 | +2,2% | 402 |
@@ -47,16 +47,16 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | 34 | Allora non vado | 1.340 | — | — | 1.366 | +1,9% | 431 |
 | Parte terza | 35 | L'accendino | 1.750 | — | — | 1.793 | +2,5% | 435 |
 | Parte terza | interludio VII | Ero io | 400 | — | — | 438 | +9,5% | 442 |
-| Parte terza | 36 | Il fuoco | 1.540 | — | — | 1.543 | +0,2% | 445 |
-| Parte terza | 37 | Il transatlantico | 1.340 | — | — | 1.324 | -1,2% | 453 |
-| Parte terza | 38 | Le firme | 1.850 | — | — | 1.878 | +1,5% | 459 |
+| Parte terza | 36 | Il fuoco | 1.540 | — | — | 1.541 | +0,1% | 445 |
+| Parte terza | 37 | Il transatlantico | 1.340 | — | — | 1.325 | -1,1% | 453 |
+| Parte terza | 38 | Le firme | 1.850 | — | — | 1.879 | +1,6% | 459 |
 | Parte terza | interludio VIII | La firma | 400 | — | — | 446 | +11,5% | 469 |
-| Parte terza | 39 | I debiti | 1.850 | — | — | 1.750 | -5,4% | 472 |
+| Parte terza | 39 | I debiti | 1.850 | — | — | 1.752 | -5,3% | 472 |
 | Parte terza | 40 | Genova | 1.340 | — | — | 1.453 | +8,4% | 481 |
-| Parte terza | 41 | Diciassette giorni | 1.540 | — | — | 1.530 | -0,6% | 487 |
+| Parte terza | 41 | Diciassette giorni | 1.540 | — | — | 1.528 | -0,8% | 487 |
 | Parte terza | 42 | Santos | 1.540 | — | — | 1.520 | -1,3% | 495 |
 | Parte terza | 43 | Le prime monete | 1.540 | — | — | 1.449 | -5,9% | 501 |
-| Parte terza | interludio IX | Le pagine | 500 | — | — | 458 | -8,4% | 509 |
+| Parte terza | interludio IX | Le pagine | 500 | — | — | 456 | -8,8% | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | 906 | -9,4% | 514 |
 
 Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.192.

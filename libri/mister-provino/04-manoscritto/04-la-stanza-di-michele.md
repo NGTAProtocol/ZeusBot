@@ -38,7 +38,7 @@ La stanza era come sempre. Una sola, a livello della strada, con il pavimento di
 
 E alla parete, a destra entrando, appesa bassa, c'era lei.
 
-Era un ritratto piccolo, in una cornice scura, di una ragazza con i capelli raccolti e un colletto bianco. Guardava un po' di lato, come se qualcuno l'avesse chiamata da fuori proprio mentre posava. Sotto, su una mensola stretta, c'era un vasetto di vetro con i fiori di campo: margherite, un papavero, un ciuffo di qualcosa di giallo che di cui non sapevo il nome. Michele li cambiava ogni mattina. Non gli avevo mai chiesto chi fosse lei, e lui non me l'aveva mai detto.
+Era un ritratto piccolo, in una cornice scura, di una ragazza con i capelli raccolti e un colletto bianco. Guardava un po' di lato, come se qualcuno l'avesse chiamata da fuori proprio mentre posava. Sotto, su una mensola stretta, c'era un vasetto di vetro con i fiori di campo: margherite, un papavero, un ciuffo di qualcosa di giallo di cui non sapevo il nome. Michele li cambiava ogni mattina. Non gli avevo mai chiesto chi fosse lei, e lui non me l'aveva mai detto.
 
 Michele posò la spatola e venne a sedersi sulla branda, di fronte a me, appoggiando il bastone tra le ginocchia. Il ginocchio cattivo lo teneva sempre un po' più avanti dell'altro.
 

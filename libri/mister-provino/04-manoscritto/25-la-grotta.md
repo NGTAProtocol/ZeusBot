@@ -98,7 +98,7 @@ Si fermò. Guardò verso il cunicolo, da dove poteva arrivare qualcuno, e poi me
 
 Saro non rispose, e la luce se ne andò su per il cunicolo, e il buio tornò, e la goccia ricominciò a cadere, senza essersi mai fermata.
 
-Pensai a Saro per molto tempo, dopo. Pensai che era uguale a me, con tre anni in più e la torcia dall'altra parte. Che se Nicola fosse nato su quella montagna, avrebbe mandato me a portare l'acqua. E che io non volevo abituarmi. Non a quella grotta, non alla poltrona di mia madre, non al tavolino di Nicola. Da qualche parte, oltre la montagna e oltre Bari e oltre il mare, doveva esserci un posto dove uno non deve abituarsi a niente.
+Pensai a Saro per molto tempo, dopo. Pensai che era uguale a me, con sei anni in più e la torcia dall'altra parte. Che se Nicola fosse nato su quella montagna, avrebbe mandato me a portare l'acqua. E che io non volevo abituarmi. Non a quella grotta, non alla poltrona di mia madre, non al tavolino di Nicola. Da qualche parte, oltre la montagna e oltre Bari e oltre il mare, doveva esserci un posto dove uno non deve abituarsi a niente.
 
 •
 

@@ -40,7 +40,7 @@ La barca arrivò dopo le due, con il motore al minimo. Entrammo in acqua in fila
 
 — Stai zitto e tieni le braccia su.
 
-Me lo sentii uscire dalla bocca con la voce del ragazzo che, la prima notte, l'aveva detto a me.
+Me lo sentii uscire dalla bocca con la voce del ragazzo che me l'aveva detto la mattina della nave ferma.
 
 Quando uscimmo dall'acqua Sabino ci mise in mano la paga, una banconota piegata per uno. Arrivato a me si fermò, con la mia banconota ancora tra le dita.
 

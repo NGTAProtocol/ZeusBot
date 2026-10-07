@@ -4,11 +4,11 @@ I fogli sono tanti, adesso. Stanno sul tavolo in tre pile, legate con l'elastico
 
 Spedirle no. Non saprei a chi. A Bari non c'è più nessuno che mi aspetti. Gli editori sono gente che non conosco. Bruciarle nemmeno: di fuoco, in questa storia, ce n'è stato abbastanza. Tenerle nella scatola con le lettere dell'avvocato mi sembra il modo di non decidere.
 
-Sul muro, di fianco alla finestra, c'è la maglia. È appesa a un chiodo da quasi cinquant'anni, con le spalle un po' allungate dal peso. Il bianco è diventato color latte, il nove sulla schiena si è scolorito, e della dedica a pennarello si leggono solo «amico» e il mio nome. Accanto, all'altezza degli occhi, c'è il ritratto di Lucia, con la cornice nera da una parte. Sotto c'è il vasetto con i fiori di stamattina.
+Accanto alla finestra, appesa al muro, c'è la maglia. È appesa a un chiodo da quasi cinquant'anni, con le spalle un po' allungate dal peso. Il bianco è diventato color latte, il nove sulla schiena si è scolorito, e della dedica a pennarello si leggono solo «amico» e il mio nome. Accanto, all'altezza degli occhi, c'è Lucia, con il legno bruciato in un angolo, e sotto di lei i fiori che ho cambiato stamattina.
 
 Qualche anno fa, sul giornale sportivo che il figlio di Osvaldo lascia al bar del porto, ho trovato un trafiletto. Due righe, in fondo a una pagina. C'era il soprannome che gli davano a Bari, e c'era un ospedale di San Paolo. Era morto vecchio, dopo una malattia lunga. Ho letto le due righe al bancone, in piedi, con il caffè che si raffreddava. Poi ho pensato che in tutti quegli anni non gli avevo mai scritto. Avevo il suo nome e la sua città. Avevo una vita intera. Non gli ho mandato neanche una cartolina. Lui mi aveva regalato una maglia e una frase, e io gli ho restituito il silenzio, che è la cosa che so fare meglio.
 
-Michele lo diceva della sua vita, di sera, nel basso, quando il vino gli scioglieva la lingua: una vita non detta si perde due volte. Una quando finisce, e un'altra quando nessuno se la ricorda più. Lo diceva per lei, credo. Io ci ho messo cinquant'anni per capire che valeva anche per me.
+Michele lo diceva della sua vita, di sera, nel basso, quando aveva bevuto un bicchiere in più: una vita non detta si perde due volte. Una quando finisce, e un'altra quando nessuno se la ricorda più. Lo diceva per lei, credo. Io ci ho messo cinquant'anni per capire che valeva anche per me.
 
 Nella stanza accanto c'è il mobile con il cassetto lungo, quello di sotto, dove tengo le carte della casa. Ci sono l'atto del notaio, le ricevute delle tasse, i fogli della barca, le assicurazioni. Quando morirò, i miei figli apriranno quel cassetto il primo giorno, perché sono figli ordinati e le carte della casa servono subito.
 

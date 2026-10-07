@@ -134,7 +134,7 @@ La sera la parcheggiò sotto casa, nel vicolo, con due ruote sul marciapiede, e 
 
 Il sabato sera ci sedemmo sul molo, alla fine del lungomare, con i piedi sopra l'acqua. Era quasi buio. Le barche dei pescatori uscivano una dopo l'altra con le lampare accese, e sull'acqua le luci si allungavano e tremavano.
 
-Per tutta la strada fino al molo avevo avuto in bocca una cosa da dirgli. Volevo dirgli del palo, della traversa dietro San Marco, dell'occhio di Franco sopra la mano aperta, e della busta del pane sul tavolo della cucina, dieci giorni prima, con nostra madre che mi diceva di stare zitto. Avevo messo in fila le parole mentre camminavamo, una dopo l'altra, e ogni volta che arrivavo alla prima mi tornava in mente la sua faccia nel parlatorio, quando gli avevo giurato, e la riga storta in fondo alla lettera. Così le parole tornarono indietro, e non le dissi.
+Per tutta la strada fino al molo avevo avuto in bocca una cosa da dirgli. Volevo dirgli del palo, della traversa dietro San Marco, dell'occhio di Franco sopra la mano aperta, e della busta del pane sul tavolo della cucina, dodici giorni prima, con nostra madre che mi diceva di stare zitto. Avevo messo in fila le parole mentre camminavamo, una dopo l'altra, e ogni volta che arrivavo alla prima mi tornava in mente la sua faccia nel parlatorio, quando gli avevo giurato, e la riga storta in fondo alla lettera. Così le parole tornarono indietro, e non le dissi.
 
 Checco stava zitto da un pezzo. Poi parlò senza guardarmi, in italiano, con la voce che usava quando faceva sul serio.
 

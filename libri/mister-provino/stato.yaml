@@ -112,7 +112,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T11:15:00Z'
+aggiornato: '2026-10-07T15:23:35Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
@@ -209,6 +209,86 @@ correzioni_registrate:
   motivo: tolta la morale sui soldi sporchi
   sha256_precedente: e4120337b154ff54d0ebf68fced71c266decadfcd019f75ae74eb31db6c37e5e
   sha256_corretto: b69e63b50dd7b9605d2fc7eea4df3ad4790940cbfbf7372ca3ebe89ba41e10fd
+- data: '2026-10-07'
+  file: 04-manoscritto/38-le-firme.md
+  motivo: Michele non va a Genova prima della partenza (visto per posta)
+  sha256_precedente: cfe790c759f00d35dad7141239119052d8936ca3d088821635a3670c08e79459
+  sha256_corretto: c89df09876f3c88651b449c2e11d315bc001b80ee891f36922101a8f047a5246
+- data: '2026-10-07'
+  file: 04-manoscritto/41-diciassette-giorni.md
+  motivo: «Fino a ieri» (Foggia)
+  sha256_precedente: eec37e496921b67b04b9bb9027788d79bb07c0c40122cecff63264cf3be22975
+  sha256_corretto: 68b756bf8a50682ec2e02f83f67485f9982ff1d9314425ce9646f2f2582fff42
+- data: '2026-10-07'
+  file: 04-manoscritto/11-l-ospedale.md
+  motivo: 'durata: quattro giorni'
+  sha256_precedente: b22e6bafb7e47274686748650b7fb74c2c7f44d0844f7c96749a5114ecd2e599
+  sha256_corretto: d558cdcd343c48486e7d93d260f0df325c313ee597f2869cdfba6ac2d6f50407
+- data: '2026-10-07'
+  file: 04-manoscritto/18-sette-giorni.md
+  motivo: 'durata: dodici giorni'
+  sha256_precedente: abf42c933305d4457fcce3d8b97be1e3dbd78e30145eecd07b17a6bdc7ace8a3
+  sha256_corretto: f37682c0e3fc9ed84ac13ad227c4a816e028be252a35d41922b0f85167ae1dbd
+- data: '2026-10-07'
+  file: 04-manoscritto/27-l-ago.md
+  motivo: 'durata: dieci giorni prima'
+  sha256_precedente: 60984386452532ab97a02f2af561f42cc314fe44ae279ba81f56aa731485b413
+  sha256_corretto: 6bde0a81aacb0fb4a0470ecee8e1ba56e0a740fed8254cdf171d2ea1a0f36afa
+- data: '2026-10-07'
+  file: 04-manoscritto/20-la-scimmia.md
+  motivo: 'giorno: dopo la quarta notte'
+  sha256_precedente: bfffb49d1ff39f27d99691d07e4f5ede127f17d8a055f5df67ea098e7d6901ac
+  sha256_corretto: 8956b84554575523149cae7af03a8917feecf68d068a8e245cec8852f4ded4ed
+- data: '2026-10-07'
+  file: 04-manoscritto/25-la-grotta.md
+  motivo: 'età: sei anni in più'
+  sha256_precedente: c8f9311c71e509775f09b889069ddad46508af027c5a0eac25bc37d56b67b743
+  sha256_corretto: 080bd9876948dfb51fd8a21e44b49e65dae38d68060e092d7ab1d63d49da7222
+- data: '2026-10-07'
+  file: 04-manoscritto/39-i-debiti.md
+  motivo: 'Carlo: la sera che venne da Michele'
+  sha256_precedente: 83bd643c732fc6f3123d56a3b42372da29879ecfc9934992c608240396a295bb
+  sha256_corretto: 8471211e8d86678a5a183ec8155f43c2266400b8f690de37538dfddf5e4d4a60
+- data: '2026-10-07'
+  file: 04-manoscritto/03-trani.md
+  motivo: Checco in falegnameria
+  sha256_precedente: 5fb400b6de4158058bfa3503fd532425239b2142c0e0b982ff1d33fb3bd3176a
+  sha256_corretto: d1d7ff094707fa6ea7ef274611862e99e976095e8469d30d6de1488a4fccf9f3
+- data: '2026-10-07'
+  file: 04-manoscritto/36-il-fuoco.md
+  motivo: coperta militare al posto della tenda; «Uagnò» barese
+  sha256_precedente: 62766fda59207836b6cccf151af727fd2ed586a10942756b431108080582256e
+  sha256_corretto: 088311ff5d6bfe7b3a6778e5432c45d2646b82782fbfd9cdf91e1c591d2c3bba
+- data: '2026-10-07'
+  file: 04-manoscritto/37-il-transatlantico.md
+  motivo: coperta militare bruciata a metà
+  sha256_precedente: 4d7001d54e6267785a1e6928374a3d3b42cc269355569e64385c69c6f72fd61d
+  sha256_corretto: 66d9705b53941c46ed31cc0d49cdddc48b313ba345016dc321e138c36e47822e
+- data: '2026-10-07'
+  file: 04-manoscritto/04-la-stanza-di-michele.md
+  motivo: refuso «che di cui»
+  sha256_precedente: 449a30e3028833cbd4b776ea0e000aef9457dda240f849499676741bc1c2dd47
+  sha256_corretto: b249ebe3b1463b498a5b6e09a78fd020765987217e7b3a40f9a3a8081d9ea753
+- data: '2026-10-07'
+  file: 04-manoscritto/43-le-prime-monete.md
+  motivo: «Questo è olio»
+  sha256_precedente: bae1a8e2c3083ec540bec6d6c381b121b87c899c3f843a90b52e910a1074b185
+  sha256_corretto: 69bff235ac138c8477b619ba13d2307dae23313fde4ff990ceb26f41feb6807b
+- data: '2026-10-07'
+  file: 04-manoscritto/interludio-IX.md
+  motivo: variata la ripresa del prologo
+  sha256_precedente: 8b13b4ffe694149b6aefa6851f2d43744f331f489c069ea1d10b5be51f21c0ca
+  sha256_corretto: c3d7e219224800c7cb0df79a941a830b926161b303b02fea916203fcb7b1bb2b
+- data: '2026-10-07'
+  file: 04-manoscritto/14-le-notti-di-pane-e-pomodoro.md
+  motivo: «la prima notte» → la mattina della nave ferma (cap. 1)
+  sha256_precedente: 198027146262b23fc2dff40869ed103648ed6f9becb27124e048d59543005984
+  sha256_corretto: f50ca30d679bc36d81d8cf6101a59c53f46d535e6588b6711a2fb22432ff0ed9
+- data: '2026-10-07'
+  file: 04-manoscritto/interludio-IX.md
+  motivo: variate anche le altre due riprese del prologo (il muro della finestra, il vino)
+  sha256_precedente: 8b13b4ffe694149b6aefa6851f2d43744f331f489c069ea1d10b5be51f21c0ca
+  sha256_corretto: c13cd0490a06fd8ff98961f3cd03ba932b2ffe0428f19d5f3d722dd91aaa6f77
 cambi_fase:
 - data: '2026-10-07'
   da: chiusura

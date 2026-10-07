@@ -42,7 +42,7 @@ Il giorno dopo decidemmo la strada. Da Bari no: al porto c'erano troppe facce ch
 
 L'impiegato alzò gli occhi dal registro, guardò il vecchio, guardò me, e scrisse. Pagai io, dal portafoglio nuovo che avevo comprato quella mattina al mercato, e uscii dall'agenzia con il biglietto piegato in quattro nella tasca della camicia, sopra il cuore, e lo toccai con le dita fino alla pensione.
 
-Per le carte del Brasile Michele andò a Genova una volta, da solo, in treno, a metà mese. Tornò dopo due giorni con un timbro sul passaporto, un raffreddore e una cartolina della Lanterna che appoggiò al ritratto.
+Per le carte del Brasile bastarono una lettera del signore dei quadri e il lavoro dell'agenzia del corso: il timbro del consolato arrivò per posta, in due settimane, e Michele lo guardò a lungo prima di metterlo in tasca.
 
 Restava la cosa che i soldi non potevano comprare.
 
