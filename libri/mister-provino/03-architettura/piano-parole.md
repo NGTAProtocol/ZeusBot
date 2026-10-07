@@ -47,7 +47,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | 34 | Allora non vado | 1.340 | — | — | 1.366 | +1,9% | 431 |
 | Parte terza | 35 | L'accendino | 1.750 | — | — | 1.793 | +2,5% | 435 |
 | Parte terza | interludio VII | Ero io | 400 | — | — | 440 | +10.0% | 442 |
-| Parte terza | 36 | Il fuoco | 1.540 | — | — | — | — | 445 |
+| Parte terza | 36 | Il fuoco | 1.540 | — | — | 1.543 | +0,2% | 445 |
 | Parte terza | 37 | Lucia | 1.340 | — | — | — | — | 453 |
 | Parte terza | 38 | Le firme | 1.850 | — | — | — | — | 459 |
 | Parte terza | interludio VIII | La firma | 400 | — | — | — | — | 469 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.394.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.397.
