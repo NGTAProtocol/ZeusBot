@@ -460,6 +460,7 @@ Un file per libro, in `<libro>/libro.yaml`. Lo crea `zb nuovo` dal briefing (fas
 | `vincoli_capitolo` | no | parole o voci con `consentito_in_capitoli` / `vietato_in_capitoli` |
 | `nome_vietato_prima_di` | no | nomi che non compaiono prima di un punto del libro |
 | `dichiarazioni` | no | campi dichiarati nell'intestazione nascosta di ogni capitolo e loro vincoli |
+| `fatti_incompatibili` | no | coppie di fatti che non possono stare tutti e due nel libro: `{id, a: {pattern, unita}, b: {pattern, unita}, nota}`; `unita` è facoltativo (senza, tutto il libro); se compaiono A e B, `continuita.py` dà un AVVISO con le due righe |
 | `struttura.separatore_scena` | sì | `{sorgente, stampa}`: un valore ciascuno |
 | `struttura.intestazione_capitolo` | sì | modello, per esempio `"Luogo — giorno e data"` o `"Nome — Luogo, giorno mese"` |
 | `struttura.parti`, `struttura.interludi` | no | parti con capitoli; interludi con `dopo_capitolo`, `titolo`, `parte` |
@@ -556,6 +557,10 @@ vincoli_capitolo:
 
 nome_vietato_prima_di:
   - {nome: "Ivo Barca", pattern: '\bIvo Barca\b|\bBarca\b', vietato_in: [prologo, "1-21"]}
+fatti_incompatibili:
+  # esempio neutro: se il faro è spento dal capitolo 3, nessuna luce del faro dopo
+  - {id: faro_spento, a: {pattern: '(?i)\bfaro\b.*\bspento\b', unita: ["1-3"]},
+     b: {pattern: '(?i)\bluce del faro\b', unita: ["4-34"]}, nota: "il faro resta spento"}
 
 dichiarazioni:
   chiusura: {sigle: [D, R, P, X], prevista_da: scaletta}   # domanda, rivelazione, pericolo, decisione
@@ -665,7 +670,7 @@ copyright:
 | `zb avvio <libro>` | `avvio.py` | `<libro>/.zb/` (marker) |
 | `zb stato <libro>` | `fase.py` | niente (a schermo) |
 | `zb capitolo <libro> N` | `capitolo.py` | `<libro>/06-diagnostica/capitoli/NN.md` |
-| `zb conta <libro>` | `conta.py` | `<libro>/06-diagnostica/conteggio.md` |
+| `zb conta <libro>` | `conta.py` | a schermo; con `--scrivi` `<libro>/06-diagnostica/conteggio.md` |
 | `zb stile <libro> [N]` | `stile.py` | `<libro>/06-diagnostica/stile.md` |
 | `zb continuita <libro>` | `continuita.py` | `<libro>/06-diagnostica/continuita.md` |
 | `zb ortografia <libro>` | `ortografia.py` | `<libro>/06-diagnostica/controllo-ortografico.md` |
@@ -677,8 +682,9 @@ copyright:
 | `zb revisione <libro> <documento>` | `revisione.py` | niente (a schermo) |
 | `verifica KDP fatta [AAAA-MM-GG]` | `kdp_verifica.py` | `motore/dati/kdp.yaml`, `motore/dati/verifiche-kdp.md` (unica eccezione: non riguarda un libro) |
 | `zb prove` | tutti, sui due mini-libri (giallo e romance) | copie temporanee dei mini-libri |
+| `zb push` | `push.py` | niente nel repository: push del ramo corrente con attese crescenti, poi su un ramo alternativo `<ramo>-salvataggio-<data-ora>`, poi un `git bundle` nella cartella temporanea (percorso e sha256 a schermo) |
 
-Ogni comando che opera su un libro scrive **solo** dentro `<libro>` (B.9). Nessun comando fa commit o push da solo: il salvataggio segue B.5.
+Ogni comando che opera su un libro scrive **solo** dentro `<libro>` (B.9). Nessun comando fa commit da solo, e il push lo fa solo `zb push`, quando lo si lancia: il salvataggio segue B.5.
 
 **Motore e libri in repository diversi.**
 - Il motore trova sé stesso dal percorso di `zb`, oppure da `--radice <cartella-del-motore>`, oppure da `ZB_RADICE`. Esempio: `python3 /percorso/repo-motore/motore/zb avvio /percorso/repo-libri/romanzi/le-chiavi`.

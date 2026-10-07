@@ -1,13 +1,14 @@
 """Conteggio delle parole con il metodo unico (proposta B.5 regola 3).
 
-Uso: conta.py <libro> [--schermo]
+Uso: conta.py <libro> [--scrivi]
 Metodo unico: token separati da spazi; escluse le righe che cominciano con «#»
 (titoli Markdown), le righe di commento HTML (<!-- … -->, note nascoste del
 motore) e i token senza lettere né cifre (lineette, separatori, segni isolati).
 Totale: parole scritte più i budget delle unità di piano-parole.md non ancora scritte, rispetto a
 parole.target_totale. Fuori da capitoli.tolleranza_totale: AVVISO con il budget residuo proposto per le
 unità rimanenti (proposta: il motore non accorcia né allunga nessun capitolo da solo).
-Scrive <libro>/06-diagnostica/conteggio.md, oppure stampa a schermo con --schermo.
+Stampa a schermo e non scrive file; con --scrivi salva il report in <libro>/06-diagnostica/conteggio.md
+(«--schermo», delle versioni precedenti, è accettato e non cambia niente).
 """
 import os
 import re
@@ -94,7 +95,7 @@ def totale_previsto(cartella, libro, profilo):
 def main(argv):
     args = comune.argomenti(argv)
     if not args:
-        raise comune.ErroreMotore('Uso: conta.py <libro> [--schermo]')
+        raise comune.ErroreMotore('Uso: conta.py <libro> [--scrivi]')
     cartella, libro, profilo = comune.carica_libro(args[0])
     toll = profilo['capitoli']['tolleranza_budget']
     b = budget(cartella)
@@ -123,10 +124,10 @@ def main(argv):
         righe += [f'**AVVISO:** {avviso}.', '']
         print(f'AVVISO: {avviso}.')
     testo = '\n'.join(righe)
-    if '--schermo' in argv:
-        print(testo)
-    else:
+    if '--scrivi' in argv:
         print('scritto', comune.scrivi(cartella, '06-diagnostica/conteggio.md', testo))
+    else:
+        print(testo)
     return totale
 
 

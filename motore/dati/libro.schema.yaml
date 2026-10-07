@@ -89,6 +89,15 @@ campi:
         pattern: {tipo: testo, obbligatorio: true}
         vietato_in: {tipo: lista, obbligatorio: true}
         obbligatorio_in: {tipo: lista}
+  fatti_incompatibili:                                         # continuita.py: AVVISO se compaiono A e B
+    tipo: lista
+    elementi:
+      tipo: mappa
+      campi:
+        id: {tipo: testo, obbligatorio: true}
+        a: {tipo: mappa, obbligatorio: true, campi: {pattern: {tipo: testo, obbligatorio: true}, unita: {tipo: lista}}}
+        b: {tipo: mappa, obbligatorio: true, campi: {pattern: {tipo: testo, obbligatorio: true}, unita: {tipo: lista}}}
+        nota: {tipo: testo}
   dichiarazioni: {tipo: mappa, altri_campi: true}
   struttura:
     tipo: mappa
