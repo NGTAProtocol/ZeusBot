@@ -8,12 +8,13 @@ lotto:
   dimensione: 3
   capitoli:
   - 19
+  - interludio IV
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 19
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 33002
+  scritte: 33437
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -88,4 +89,4 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T04:52:05Z'
+aggiornato: '2026-10-07T04:52:34Z'
