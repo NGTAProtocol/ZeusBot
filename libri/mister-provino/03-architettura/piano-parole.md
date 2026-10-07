@@ -52,11 +52,11 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | 38 | Le firme | 1.850 | — | — | 1.879 | +1,6% | 459 |
 | Parte terza | interludio VIII | La firma | 400 | — | — | 446 | +11,5% | 469 |
 | Parte terza | 39 | I debiti | 1.850 | — | — | 1.750 | -5,4% | 472 |
-| Parte terza | 40 | Genova | 1.340 | — | — | — | — | 481 |
+| Parte terza | 40 | Genova | 1.340 | — | — | 1.453 | +8,4% | 481 |
 | Parte terza | 41 | Diciassette giorni | 1.540 | — | — | — | — | 487 |
 | Parte terza | 42 | Santos | 1.540 | — | — | — | — | 495 |
 | Parte terza | 43 | Le prime monete | 1.540 | — | — | — | — | 501 |
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.352.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.465.
