@@ -50,7 +50,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | 36 | Il fuoco | 1.540 | — | — | 1.543 | +0,2% | 445 |
 | Parte terza | 37 | Il transatlantico | 1.340 | — | — | 1.324 | -1,2% | 453 |
 | Parte terza | 38 | Le firme | 1.850 | — | — | 1.879 | +1,6% | 459 |
-| Parte terza | interludio VIII | La firma | 400 | — | — | — | — | 469 |
+| Parte terza | interludio VIII | La firma | 400 | — | — | 446 | +11,5% | 469 |
 | Parte terza | 39 | I debiti | 1.850 | — | — | — | — | 472 |
 | Parte terza | 40 | Genova | 1.340 | — | — | — | — | 481 |
 | Parte terza | 41 | Diciassette giorni | 1.540 | — | — | — | — | 487 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.406.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.452.
