@@ -17,6 +17,7 @@ campi:
   ultimo_capitolo_scritto: {tipo: intero, nullo: true}
   tentativi: {tipo: mappa, altri_campi: true}
   correzioni_aperte: {tipo: lista}
+  correzioni_registrate: {tipo: lista}        # correzioni fuori dal gate (zb correggi <unità>: <motivo>)
   parole:
     tipo: mappa
     obbligatorio: true
