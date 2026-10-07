@@ -1520,9 +1520,124 @@ def adozione_libri_esistenti(A):
           f'{p.returncode} / {yaml.safe_load(open(os.path.join(L, "libro.yaml"), encoding="utf-8"))["titolo"]} / {st["libro"]}', sez)
 
 
+# ---------------------------------------------------------------- correzioni dopo il lotto 11-20
+
+def correzioni_lotto_11_20(A):
+    import continuita
+    import fase
+    import riciclo
+    sez = 'lotto 11-20'
+    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
+    E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def git(cwd, *a):
+        return subprocess.run(['git', *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def repo_stesura():
+        d = tempfile.mkdtemp(dir=TMP)
+        git(d, 'init', '-q', '--bare', 'remoto.git')
+        r = os.path.join(d, 'repo')
+        os.makedirs(r)
+        git(r, 'init', '-q')
+        git(r, 'checkout', '-q', '-b', 'prova')
+        git(r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git'))
+        Lm = shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'mini'))
+        s = comune.leggi_yaml(os.path.join(M, 'modelli', 'stato.yaml'))
+        s.update(libro='Prova di stampa', fase='stesura', passo='capitolo 1', aggiornato='prova', gate_in_attesa=None)
+        open(os.path.join(Lm, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(s, sort_keys=False, allow_unicode=True))
+        git(r, 'add', '-A')
+        git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'prova')
+        git(r, 'push', '-q', '-u', 'origin', 'prova')
+        return r, Lm
+
+    # (a) interludio la cui posizione è oltre l'ultimo capitolo scritto: AVVISO, nessun FERMO
+    Lm = copia_libro('mini-libro')
+    pl = os.path.join(Lm, 'libro.yaml')
+    t = open(pl, encoding='utf-8').read().replace(
+        '    - {numero: I, dopo_capitolo: 2, titolo: "La vetrina", parte: null}',
+        '    - {numero: I, dopo_capitolo: 2, titolo: "La vetrina", parte: null}\n'
+        '    - {numero: II, dopo_capitolo: 9, titolo: "La porta", parte: null}')
+    open(pl, 'w', encoding='utf-8').write(t)
+    open(os.path.join(Lm, '04-manoscritto', 'interludio-II.md'), 'w', encoding='utf-8').write(
+        '## *La porta*\n\nLa porta del magazzino resta socchiusa tutta la notte, e il vento la muove piano.\n')
+    _, libro, _ = comune.carica_libro(Lm)
+    esito('comune.py', '(a) ordine con un interludio in anticipo', A['a_ordine'],
+          [n for n, _ in comune.unita(Lm, libro)], sez)
+    esito('comune.py', '(a) interludi in anticipo', A['a_anticipo'],
+          [f'{n} dopo {d}' for n, d in comune.interludi_in_anticipo(Lm, libro)], sez)
+    p = esegui(os.path.join(S, 'capitolo.py'), Lm, 'interludio', 'II', '--schermo')
+    q = esegui(os.path.join(S, 'conta.py'), Lm, '--schermo')
+    esito('capitolo.py / conta.py', '(a) nessun FERMO; AVVISO «in anticipo»', A['a_comandi'],
+          f'{p.returncode in (0, 1)} / {"| posizione | AVVISO |" in p.stdout and "in anticipo" in p.stdout} / '
+          f'{q.returncode} / {"FERMO" in p.stderr + q.stderr}', sez)
+    open(os.path.join(Lm, '04-manoscritto', 'interludio-III.md'), 'w', encoding='utf-8').write('## *Fuori*\n\nUna riga.\n')
+    p = esegui(os.path.join(S, 'conta.py'), Lm, '--schermo')
+    esito('conta.py', '(a) interludio assente da struttura.interludi: resta FERMO', A['a_sconosciuto'],
+          f'{p.returncode} / {"senza posizione" in p.stderr}', sez)
+
+    # (b) piano parole: misure fuori dall'impronta; zb esito le aggiorna senza riapprova
+    r, Lm = repo_stesura()
+    pp = os.path.join(Lm, '03-architettura', 'piano-parole.md')
+    registrata = comune.impronta_documento(pp)
+    testo = open(pp, encoding='utf-8').read()
+    misure = testo.replace('| 1200 | 1200 | | |', '| 1200 | 1200 | 999 | -16,8% |')
+    open(pp, 'w', encoding='utf-8').write(misure)
+    invariata = comune.impronta_documento(pp) == registrata
+    open(pp, 'w', encoding='utf-8').write(testo.replace('| 1200 | 1200 | | |', '| 1300 | 1200 | | |'))
+    cambiata = comune.impronta_documento(pp) != registrata
+    open(pp, 'w', encoding='utf-8').write(testo)
+    esito('comune.py', '(b) impronta: misure ignorate / budget contato', A['b_impronta'], f'{invariata} / {cambiata}', sez)
+    p = subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), 'esito', 'mini', '1'], cwd=r, env=E,
+                       capture_output=True, text=True)
+    riga = [x for x in open(pp, encoding='utf-8').read().splitlines() if x.startswith('| — | 1 |')]
+    esito('fase.py', '(b) esito aggiorna «Parole reali» e «Scarto»; impronta invariata', A['b_esito'],
+          f'{p.returncode} / {riga} / {comune.documento_invariato(pp, registrata)}', sez)
+
+    # (c) stato.yaml salvato prima di stampare: un'uscita chiusa non perde lo stato
+    r, Lm = repo_stesura()
+    pr = subprocess.Popen([sys.executable, '-B', os.path.join(M, 'zb'), 'esito', 'mini', '1'], cwd=r, env=E,
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    pr.stdout.close()
+    pr.wait()
+    s = comune.leggi_yaml(os.path.join(Lm, 'stato.yaml'))
+    esito('fase.py', '(c) esito con l\'uscita chiusa: stato salvato', A['c_stato'],
+          f'{s["ultimo_capitolo_scritto"]} / {s["passo"]}', sez)
+
+    # (d) nomi in due grafie: le parole a inizio frase non si confrontano
+    Lm = copia_libro('mini-libro')
+    open(os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write(
+        '\nCalvo e stanco, il farmacista chiuse la porta. — Calvo, lui? Venne poi il dottor Calvo.\n')
+    _, libro, _ = comune.carica_libro(Lm)
+    esito('continuita.py', '(d) «Calvo» a inizio frase ignorato, a metà frase segnalato', A['d_grafie'],
+          [x['dettaglio'] for x in continuita.controlla_libro(Lm, libro)[0]
+           if x['controllo'] == 'nome_due_grafie' and x['unita'] == '1'], sez)
+
+    # (e) battute canoniche escluse dall'anti-riciclo
+    Lm = copia_libro('mini-libro')
+    vecchio = ('Il vecchio disse che la notte porta sempre consiglio a chi resta sveglio. '
+               'Poi aggiunse piano che la pioggia lava le strade ma non le colpe.')
+    os.makedirs(os.path.join(Lm, '01-originale'), exist_ok=True)
+    open(os.path.join(Lm, '01-originale', 'vecchio.md'), 'w', encoding='utf-8').write(vecchio + '\n')
+    open(os.path.join(Lm, '03-architettura', 'manuale-di-stile.md'), 'w', encoding='utf-8').write(
+        '# Manuale\n\n- Niente riciclo, tranne le battute canoniche qui sotto.\n'
+        '- **Battute canoniche**, con le parole identiche:\n'
+        '  - «la notte porta sempre consiglio a chi resta sveglio» (il vecchio);\n\n## 1. Altro\n')
+    t = open(os.path.join(Lm, 'libro.yaml'), encoding='utf-8').read()
+    t = re.sub(r'(?m)^modalita: .*$', 'modalita: riscrittura\ntesto_precedente: 01-originale/vecchio.md', t)
+    open(os.path.join(Lm, 'libro.yaml'), 'w', encoding='utf-8').write(t)
+    open(os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write(
+        '\nLa notte porta sempre consiglio a chi resta sveglio, disse Irene. '
+        'Sapeva che la pioggia lava le strade ma non le colpe.\n')
+    _, libro, _ = comune.carica_libro(Lm)
+    esito('riciclo.py', '(e) battute del manuale / KO rimasti', A['e_riciclo'],
+          f'{len(riciclo.battute_canoniche(Lm))} / '
+          f'{[x["dettaglio"] for x in riciclo.controlla_libro(Lm, libro) if x["controllo"] == "riciclo:testo_precedente"]}',
+          sez)
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20}
 
 
 def main(argv):

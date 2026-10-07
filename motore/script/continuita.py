@@ -28,6 +28,9 @@ DECINE = [('novant', 90), ('ottant', 80), ('settant', 70), ('sessant', 60), ('ci
 DURATA = re.compile(r"(?i)\b([\w']+)\s+(anni|anno|mesi|mese|settimane|settimana|giorni|giorno)\b")
 
 
+
+INIZIO_FRASE = '.!?…:;«"“—–-('
+
 def numero(tok):
     t = tok.lower().strip(".,;:!?«»\"()'")
     if t.isdigit():
@@ -272,8 +275,13 @@ def controlla_libro(cartella, libro):
         # nomi in due grafie
         visti = set()
         for n, r in prosa:
-            for t in re.findall(r"\b[A-ZÀ-Ý][a-zà-ÿ]+\b", r):
+            for mt in re.finditer(r"\b[A-ZÀ-Ý][a-zà-ÿ]+\b", r):
+                t = mt.group(0)
                 if t in nomi or t in visti:
+                    continue
+                # a inizio frase la maiuscola è della frase, non del nome: le parole comuni non si confrontano
+                prima = r[:mt.start()].rstrip()
+                if not prima or prima[-1] in INIZIO_FRASE:
                     continue
                 for nm in nomi:
                     if len(t) >= 5 and t[0] == nm[0] and leva(t, nm) == 1:

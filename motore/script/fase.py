@@ -22,7 +22,9 @@ documenti, pagina_campione, primi_capitoli, lotto; più controllo_fallito, sempr
 Scrive solo <libro>/stato.yaml e <libro>/LEGGIMI.md (e il report di capitolo.py). Nessun commit:
 il salvataggio lo fa Claude Code secondo il blocco di salvataggio.
 """
+import contextlib
 import datetime
+import io
 import os
 import re
 import subprocess
@@ -152,7 +154,7 @@ def registra(cartella, stato, documenti, senza_gate=False):
         commit = comune.ultimo_commit(cartella, rel)
         if not commit:
             raise comune.ErroreMotore(f'{rel} non è mai stato salvato in un commit')
-        voce = {'sha256': comune.sha256_file(os.path.join(cartella, rel)), 'commit': commit}
+        voce = {'sha256': comune.impronta_documento(os.path.join(cartella, rel)), 'commit': commit}
         if senza_gate:
             voce['senza_gate'] = True
         stato['documenti_approvati'][rel] = voce
@@ -315,7 +317,7 @@ def cmd_riapprova(cartella, stato, resto):
     prima = stato['documenti_approvati'].get(rel)
     if not prima:
         raise comune.ErroreMotore(f'«{rel}» non è tra i documenti approvati: ' + ', '.join(stato['documenti_approvati']))
-    if comune.sha256_file(os.path.join(cartella, rel)) == prima['sha256']:
+    if comune.documento_invariato(os.path.join(cartella, rel), prima['sha256']):
         raise comune.ErroreMotore(f'{rel} non è cambiato dall\'approvazione: niente da registrare.')
     registra(cartella, stato, [rel])
     voce = stato['documenti_approvati'][rel]
@@ -339,6 +341,50 @@ def accetta_capitolo(cartella, libro, stato, n):
     dopo_capitolo(cartella, libro, stato)
 
 
+def aggiorna_piano(cartella, libro, n):
+    """Scrive in piano-parole.md le misure dell'unità n («Parole reali», «Scarto») e il «Totale previsto».
+
+    Sono colonne di misura, escluse dall'impronta del documento approvato: nessuna riapprovazione."""
+    rel = '03-architettura/piano-parole.md'
+    p = os.path.join(cartella, rel)
+    u = dict(comune.unita(cartella, libro)).get(n)
+    if not os.path.isfile(p) or not u:
+        return None
+    parole = conta.conta_testo(open(u, encoding='utf-8').read())
+    righe = open(p, encoding='utf-8').read().split('\n')
+    intest, cambiata = None, None
+    for i, r in enumerate(righe):
+        if not r.strip().startswith('|'):
+            continue
+        celle = [c.strip() for c in r.strip().strip('|').split('|')]
+        if intest is None:
+            intest = celle
+            if not all(k in intest for k in ('Cap.', 'Budget capitolo', 'Parole reali', 'Scarto')):
+                return None
+            continue
+        ic = intest.index('Cap.')
+        if len(celle) != len(intest) or celle[ic].lower() != n.lower():
+            continue
+        grezzo = celle[intest.index('Budget capitolo')]
+        cifre = re.sub(r'[^\d]', '', grezzo)
+        italiano = '.' in grezzo
+        celle[intest.index('Parole reali')] = f'{parole:,}'.replace(',', '.' if italiano else '')
+        if cifre:
+            sc = (parole - int(cifre)) / int(cifre) * 100
+            celle[intest.index('Scarto')] = f'{sc:+.1f}%'.replace('.', ',' if italiano else '.')
+        righe[i] = '| ' + ' | '.join(celle) + ' |'
+        cambiata = righe[i]
+    if cambiata is None:
+        return None
+    testo = '\n'.join(righe)
+    m = re.search(r'Totale previsto[^:]*:\s*([\d.]+)', testo)
+    if m:
+        previsto = conta.totale_previsto(cartella, libro, comune.carica_libro(cartella)[2])[1]
+        testo = testo[:m.start(1)] + (f'{previsto:,}'.replace(',', '.') if '.' in m.group(1) else str(previsto)) + testo[m.end(1):]
+    comune.scrivi(cartella, rel, testo)
+    return cambiata
+
+
 def cmd_esito(cartella, libro, stato, resto, argv):
     if not resto:
         raise comune.ErroreMotore('Uso: esito <N>')
@@ -356,6 +402,9 @@ def cmd_esito(cartella, libro, stato, resto, argv):
                         cartella, *n.split(), *extra], capture_output=True, text=True)
     if r.returncode not in (0, 1):
         raise comune.ErroreMotore(f'capitolo.py {n} non eseguito: {r.stderr.strip() or r.stdout.strip()}')
+    riga_piano = aggiorna_piano(cartella, libro, n)
+    if riga_piano:
+        print(f'Piano parole aggiornato (misure, senza riapprovazione): {riga_piano}')
     if correzione:
         stato['parole']['scritte'] = parole_scritte(cartella, libro)
         print(f'Capitolo {n} corretto al gate «{gate}»: controlli {"OK" if r.returncode == 0 else "KO"}; '
@@ -390,21 +439,31 @@ def main(argv):
         cmd_stato(cartella, libro, stato)
         return 0
     codice = 0
-    if comando == 'avanti':
-        avanti(cartella, libro, stato)
-    elif comando == 'ok':
-        cmd_ok(cartella, libro, stato, resto)
-    elif comando == 'correggi':
-        cmd_correggi(cartella, libro, stato, resto)
-    elif comando == 'pronto':
-        cmd_pronto(cartella, libro, stato)
-    elif comando == 'riapprova':
-        cmd_riapprova(cartella, stato, resto)
-    elif comando == 'esito':
-        codice = cmd_esito(cartella, libro, stato, resto, argv)
-    else:
-        raise comune.ErroreMotore(f'Comando sconosciuto: {comando}. Comandi: stato, avanti, ok, correggi, riapprova, pronto, esito.')
+    # i messaggi del comando si raccolgono e si stampano solo dopo aver salvato stato.yaml: un'uscita
+    # interrotta (pipe chiusa, terminale chiuso) non deve perdere lo stato
+    uscita = io.StringIO()
+    try:
+        with contextlib.redirect_stdout(uscita):
+            if comando == 'avanti':
+                avanti(cartella, libro, stato)
+            elif comando == 'ok':
+                cmd_ok(cartella, libro, stato, resto)
+            elif comando == 'correggi':
+                cmd_correggi(cartella, libro, stato, resto)
+            elif comando == 'pronto':
+                cmd_pronto(cartella, libro, stato)
+            elif comando == 'riapprova':
+                cmd_riapprova(cartella, stato, resto)
+            elif comando == 'esito':
+                codice = cmd_esito(cartella, libro, stato, resto, argv)
+            else:
+                raise comune.ErroreMotore(f'Comando sconosciuto: {comando}. Comandi: stato, avanti, ok, correggi, '
+                                          'riapprova, pronto, esito.')
+    except comune.ErroreMotore:
+        sys.stdout.write(uscita.getvalue())
+        raise
     salva_stato(cartella, stato)
+    sys.stdout.write(uscita.getvalue())
     print(f'Fase: {stato["fase"]}; gate in attesa: {stato["gate_in_attesa"] or "nessuno"}. {prossimo(stato)}')
     print(SALVA)
     return codice

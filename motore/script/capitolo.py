@@ -137,6 +137,10 @@ def controlla(cartella, libro, profilo, nome):
         out.append(risultato(nome, 'parole_totale', 'AVVISO', None, avviso))
     if nome.isdigit():
         out += controlla_scene(nome, testo, libro, profilo)
+    for n_int, d in comune.interludi_in_anticipo(cartella, libro):
+        if n_int == nome:
+            out.append(risultato(nome, 'posizione', 'AVVISO', None,
+                                 f'in anticipo: va dopo il capitolo {d}, non ancora scritto; per ora sta in coda'))
     met, ris_stile = stile.controlla_libro(cartella, libro, profilo)[nome]
     out += ris_stile
     out += [r for r in continuita.controlla_libro(cartella, libro)[0] if r['unita'] == nome]

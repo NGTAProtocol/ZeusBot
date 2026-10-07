@@ -6,6 +6,9 @@ Per ogni unità cerca le sequenze di 7 parole uguali:
 - alle unità precedenti dello stesso libro → AVVISO (una ripetizione può essere voluta).
 Le parole si confrontano in minuscolo, senza la punteggiatura ai bordi. Le finestre
 consecutive che combaciano formano un solo segmento, riportato con la riga d'inizio.
+Le battute canoniche del manuale (03-architettura/manuale-di-stile.md, voce «Battute canoniche»:
+le frasi tra «» delle righe che la seguono, più rientrate) sono escluse: le loro parole, nel testo
+nuovo e in quello precedente, non combaciano con niente.
 Report: <libro>/06-diagnostica/riciclo.md.
 """
 import os
@@ -31,6 +34,49 @@ def gettoni(testo):
     return out
 
 
+MANUALE = os.path.join('03-architettura', 'manuale-di-stile.md')
+
+
+def battute_canoniche(cartella):
+    """Frasi tra «» della voce «Battute canoniche» del manuale, come liste di parole normalizzate."""
+    import re
+    p = os.path.join(cartella, MANUALE)
+    if not os.path.isfile(p):
+        return []
+    righe = open(p, encoding='utf-8').read().splitlines()
+    out, rientro, trovate = [], None, 0
+    for r in righe:
+        if rientro is not None and r.strip():
+            if len(r) - len(r.lstrip()) <= rientro or r.lstrip().startswith('#'):
+                if trovate:
+                    break
+                rientro = None       # la voce citata senza elenco sotto: si cerca la successiva
+        if rientro is None:
+            if re.search(r'(?i)battute canoniche', r) and not r.lstrip().startswith('#'):
+                rientro = len(r) - len(r.lstrip())
+            continue
+        if not r.strip():
+            continue
+        trovate += 1
+        for frase in re.findall(r'«([^»]+)»', r):
+            parole = [w for w in (t.strip(BORDI).lower() for t in comune.parole(frase)) if w]
+            if parole:
+                out.append(parole)
+    return out
+
+
+def maschera(tok, canoniche):
+    """Sostituisce le parole delle battute canoniche con segnaposto unici (non combaciano mai)."""
+    parole = [w for w, _ in tok]
+    via = set()
+    for c in canoniche:
+        k = len(c)
+        for i in range(len(parole) - k + 1):
+            if parole[i:i + k] == c:
+                via.update(range(i, i + k))
+    return [((None, id(tok), i), r) if i in via else (w, r) for i, (w, r) in enumerate(tok)]
+
+
 def ngrammi(tok):
     return {tuple(w for w, _ in tok[i:i + N]) for i in range(len(tok) - N + 1)}
 
@@ -43,7 +89,7 @@ def segmenti(tok, insieme):
             j = i
             while j + 1 <= len(tok) - N and tuple(w for w, _ in tok[j + 1:j + 1 + N]) in insieme:
                 j += 1
-            out.append((tok[i][1], ' '.join(w for w, _ in tok[i:j + N])))
+            out.append((tok[i][1], ' '.join(w if isinstance(w, str) else '…' for w, _ in tok[i:j + N])))
             i = j + N
         else:
             i += 1
@@ -52,12 +98,14 @@ def segmenti(tok, insieme):
 
 def controlla_libro(cartella, libro):
     risultati = []
+    canoniche = battute_canoniche(cartella)
     precedente = set()
     if libro.get('modalita') == 'riscrittura' and libro.get('testo_precedente'):
-        precedente = ngrammi(gettoni(open(os.path.join(cartella, libro['testo_precedente']), encoding='utf-8').read()))
+        precedente = ngrammi(maschera(gettoni(open(os.path.join(cartella, libro['testo_precedente']),
+                                                   encoding='utf-8').read()), canoniche))
     gia_scritti = set()
     for nome, p in comune.unita(cartella, libro):
-        tok = gettoni(open(p, encoding='utf-8').read())
+        tok = maschera(gettoni(open(p, encoding='utf-8').read()), canoniche)
         for riga, testo in segmenti(tok, precedente):
             risultati.append(risultato(nome, 'riciclo:testo_precedente', 'KO', riga, testo))
         for riga, testo in segmenti(tok, gia_scritti):

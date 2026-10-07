@@ -317,19 +317,49 @@ def unita(cartella, libro):
     dopo = {}
     for i in (libro.get('struttura') or {}).get('interludi') or []:
         dopo.setdefault(i['dopo_capitolo'], []).append(str(i['numero']))
+    sconosciuti = [num for num in interludi if not any(num in v for v in dopo.values())]
+    if sconosciuti:
+        raise ErroreMotore(f'Interludio {sconosciuti[0]} senza posizione in struttura.interludi di libro.yaml')
+    # posizione: dopo il capitolo indicato; se quel capitolo non è scritto, dopo l'ultimo capitolo scritto
+    # che lo precede; se è oltre l'ultimo capitolo scritto, in coda («in anticipo», vedi interludi_in_anticipo)
+    ultimo = max(capitoli) if capitoli else 0
+    posti = {}
+    for d, nums in dopo.items():
+        for num in nums:
+            if num not in interludi:
+                continue
+            prima = [c for c in capitoli if c <= d]
+            if d > ultimo:
+                chiave = None
+            else:
+                chiave = d if d in capitoli else (max(prima) if prima else 'inizio')
+            posti.setdefault(chiave, []).append((d, num))
     ordine = []
     if 'prologo' in altri:
         ordine.append(('prologo', altri['prologo']))
+    for _, num in sorted(posti.get('inizio', [])):
+        ordine.append((f'interludio {num}', interludi[num]))
     for n in sorted(capitoli):
         ordine.append((str(n), capitoli[n]))
-        for num in dopo.get(n, []):
-            if num in interludi:
-                ordine.append((f'interludio {num}', interludi.pop(num)))
-    for num, p in interludi.items():
-        raise ErroreMotore(f'Interludio {num} senza posizione in struttura.interludi di libro.yaml')
+        for _, num in sorted(posti.get(n, [])):
+            ordine.append((f'interludio {num}', interludi[num]))
+    for _, num in sorted(posti.get(None, [])):
+        ordine.append((f'interludio {num}', interludi[num]))
     if 'epilogo' in altri:
         ordine.append(('epilogo', altri['epilogo']))
     return ordine
+
+
+def interludi_in_anticipo(cartella, libro):
+    """Interludi scritti la cui posizione (dopo_capitolo) è oltre l'ultimo capitolo scritto: [(nome, dopo)].
+
+    Non è un errore: le unità restano in coda all'ordine di lettura e i comandi segnalano un AVVISO."""
+    scritti = [int(n) for n, _ in unita(cartella, libro) if n.isdigit()]
+    ultimo = max(scritti) if scritti else 0
+    nomi = {n for n, _ in unita(cartella, libro)}
+    return [(f'interludio {i["numero"]}', i['dopo_capitolo'])
+            for i in (libro.get('struttura') or {}).get('interludi') or []
+            if f'interludio {i["numero"]}' in nomi and i['dopo_capitolo'] > ultimo]
 
 
 # ---------------------------------------------------------------- testo
@@ -472,6 +502,41 @@ def sha256_file(percorso):
     import hashlib
     with open(percorso, 'rb') as f:
         return hashlib.sha256(f.read()).hexdigest()
+
+
+COLONNE_MISURATE = ('Parole reali', 'Scarto')
+
+
+def testo_piano_senza_misure(testo):
+    """piano-parole.md senza le colonne che misurano il manoscritto («Parole reali», «Scarto») e senza la
+    frase «Totale previsto …: N.»: sono valori che zb esito aggiorna, non decisioni dell'autore."""
+    import re
+    out, idx = [], []
+    for r in testo.splitlines():
+        if r.strip().startswith('|'):
+            celle = r.strip().strip('|').split('|')
+            if not idx and any(c.strip() in COLONNE_MISURATE for c in celle):
+                idx = [i for i, c in enumerate(celle) if c.strip() in COLONNE_MISURATE]
+            elif idx:
+                celle = [('' if i in idx else c) for i, c in enumerate(celle)]
+            out.append('|'.join(c.strip() for c in celle))
+        else:
+            out.append(re.sub(r'Totale previsto[^:]*:\s*[\d.]+\.?', 'Totale previsto', r))
+    return '\n'.join(out)
+
+
+def impronta_documento(percorso):
+    """sha256 con cui un documento approvato si registra e si confronta. Per piano-parole.md le misure del
+    manoscritto restano fuori dall'impronta (zb esito le aggiorna senza riapprovazione)."""
+    import hashlib
+    if os.path.basename(percorso) == 'piano-parole.md':
+        return hashlib.sha256(testo_piano_senza_misure(open(percorso, encoding='utf-8').read()).encode()).hexdigest()
+    return sha256_file(percorso)
+
+
+def documento_invariato(percorso, registrato):
+    """True se il documento corrisponde allo sha256 registrato (impronta attuale o sha256 grezzo dei vecchi stati)."""
+    return os.path.isfile(percorso) and registrato in (impronta_documento(percorso), sha256_file(percorso))
 
 
 def cartella_progetto():
