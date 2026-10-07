@@ -19,8 +19,8 @@ parole:
   metodo: unico
 documenti_approvati:
   libro.yaml:
-    sha256: b7c65c5882f0a607f91416dbe0571e54e2d4d54dec090b836876e499a261fb43
-    commit: 009e1a5
+    sha256: 76ad8c706bfe6628c3985b0d186e9ea9513be2be6eb42cd25328981b99ab9c2b
+    commit: 0616b09
     riapprovazioni:
     - data: '2026-10-07'
       motivo: fischiare contato per unità, consentito in 35, interludio VII e 39
@@ -34,9 +34,19 @@ documenti_approvati:
       motivo: 'voce guaglio_napoletano: g?uagli vietato fuori dai capitoli 2 e 35'
       sha256_precedente: 1662b35890d909dd2a95f770d055b5d5ce96ef030624cc77db1e1477c88ffb5f
       commit_precedente: 77e5eb6
+    - data: '2026-10-07'
+      motivo: eccezioni motivate per budget dell'epilogo e frase media dell'interludio VI; richiamo ammesso «la sera che venne
+        da Michele»
+      sha256_precedente: b7c65c5882f0a607f91416dbe0571e54e2d4d54dec090b836876e499a261fb43
+      commit_precedente: 009e1a5
   02-bibbia/bibbia.md:
-    sha256: d3d74000321d325c8273bb05a157a6f1360b106e86436230a3d24dc0d5c71f25
-    commit: 3c355aa
+    sha256: 86a2aa08ce362d393e018a82e7d352cba0399087d0dcde87726e143aa5ccf2e7
+    commit: 0616b09
+    riapprovazioni:
+    - data: '2026-10-07'
+      motivo: '§5.7: tolto il requisito della cifra «168 e qualcosa» detta a Genova'
+      sha256_precedente: d3d74000321d325c8273bb05a157a6f1360b106e86436230a3d24dc0d5c71f25
+      commit_precedente: 3c355aa
   cronologia.yaml:
     sha256: 8012ec1c0e68d7a82bbca2c9ff2fe222da66199fdf5eec9b0029e9a64e7e34ef
     commit: 1dc472f
@@ -116,7 +126,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T15:24:10Z'
+aggiornato: '2026-10-07T15:41:57Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
