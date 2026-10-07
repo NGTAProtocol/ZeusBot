@@ -94,7 +94,7 @@ Quel primo quadro venne storto. Lo disse lui stesso, la sera, guardandolo alla l
 
 Ci vollero mesi. Michele scendeva sulla spiaggia ogni mattina, con la tela, lo sgabello e il cappello di paglia che gli aveva regalato la moglie di Osvaldo. Tornava a mezzogiorno. Certi giorni non aveva toccato il pennello. Certi giorni aveva grattato via tutto con la spatola. Io lo vedevo dalla barca, da lontano, un punto scuro sulla sabbia bianca, sempre allo stesso posto.
 
-Un pomeriggio di fine estate tornai dal mare prima del solito e lo trovai sulla spiaggia, in piedi, qualche passo indietro rispetto al cavalletto, con le braccia incrociate sul petto. Mi avvicinai senza fare rumore. Sulla tela c'era il mare che avevamo davanti, con la luce di quell'ora, con la schiuma sulle rocce a destra e la barca di Osvaldo tirata in secco, piccola, in un angolo. Non era più bello dei mari del basso. Era vero. Non diceva niente che non ci fosse.
+Un pomeriggio di fine estate tornai dal mare prima del solito e lo trovai sulla spiaggia, in piedi, qualche passo indietro rispetto al cavalletto, con le braccia incrociate sul petto. Mi avvicinai senza fare rumore. Sulla tela c'era il mare che avevamo davanti, con la luce di quell'ora, con la schiuma sulle rocce a destra e la barca di Osvaldo tirata in secco, piccola, in un angolo. Dei mari del basso non aveva la bellezza, e nemmeno la cercava: diceva soltanto quello che c'era.
 
 Michele lo guardò ancora un poco, senza accorgersi di me.
 

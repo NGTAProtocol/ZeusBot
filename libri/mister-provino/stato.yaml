@@ -106,7 +106,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T11:03:07Z'
+aggiornato: '2026-10-07T11:03:12Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
@@ -178,6 +178,11 @@ correzioni_registrate:
   motivo: «Non era X. Era Y.» in eccesso riscritta
   sha256_precedente: 2d68c8446b6a152003c47d1deebe835fb5977841a7868b0ca23c173ea76bc0c6
   sha256_corretto: cfe790c759f00d35dad7141239119052d8936ca3d088821635a3670c08e79459
+- data: '2026-10-07'
+  file: 04-manoscritto/43-le-prime-monete.md
+  motivo: «Non era X. Era Y.» in eccesso riscritta
+  sha256_precedente: 4dc1910244d7ca1c9350cc633e904b24655c57748eabcd185512ae56c3e472e4
+  sha256_corretto: bae1a8e2c3083ec540bec6d6c381b121b87c899c3f843a90b52e910a1074b185
 cambi_fase:
 - data: '2026-10-07'
   da: chiusura
