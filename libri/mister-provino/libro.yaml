@@ -55,7 +55,7 @@ voci:
   - {id: come_si_verbo, pattern: '(?i)\bcome si [a-zà-ù]+', modalita: avviso, massimo: 1, ambito: capitolo}         # M:111
   - {id: non_risposi, pattern: '(?i)\bnon risposi\b|\bnon disse niente\b', modalita: avviso, massimo: 1, ambito: capitolo}   # M:112
   - {id: qualcosa_di, pattern: '(?i)\bqualcosa di [a-zà-ù]+', modalita: avviso, massimo: 1, ambito: capitolo}       # M:114 (prende anche i nomi: avviso)
-  - {id: fischiare, pattern: '(?i)\bfisch[a-zà-ù]*', modalita: avviso, massimo: 6, ambito: libro}                  # M:116 (prende anche il fischio della nave: avviso)
+  - {id: fischiare, pattern: '(?i)\bfisch[a-zà-ù]*', modalita: avviso, massimo: 6, ambito: libro, conta_per: unita, consentito_in_capitoli: ["35", "interludio VII", "39"]}                  # M:116 (prende anche il fischio della nave: avviso)
   - {id: disse_piano, pattern: '(?i)\bdisse piano\b', modalita: avviso, massimo: 1, ambito: capitolo}               # M:203
   - {id: beniami, pattern: 'Beniamì', modalita: conta, massimo: 3, ambito: libro}                                   # M:197
   - {id: l_ago, pattern: "(?i)\\bl'ago\\b", modalita: conta, massimo: 3, ambito: libro}                             # M:222
