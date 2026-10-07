@@ -109,8 +109,7 @@ def controlla(percorso):
         if manca:
             ferma('Briefing incompleto. Mancano:\n- ' + '\n- '.join(manca))
     cambiati = [rel for rel, v in stato['documenti_approvati'].items()
-                if not os.path.isfile(os.path.join(cartella, rel))
-                or comune.sha256_file(os.path.join(cartella, rel)) != v['sha256']]
+                if not comune.documento_invariato(os.path.join(cartella, rel), v['sha256'])]
     if cambiati:
         ferma('Documenti approvati cambiati fuori procedura (sha256 diverso da quello registrato):\n- '
               + '\n- '.join(cambiati) + '\nSe la modifica è autorizzata dall\'autore: salvala con un commit, poi '
@@ -160,6 +159,8 @@ def main(argv):
         print(f'Correzione aperta [{c["gate"]}]: {c["testo"]}')
     for a in stato['avvisi_aperti']:
         print(f'Avviso aperto: {a}')
+    for n_int, d in comune.interludi_in_anticipo(cartella, libro):
+        print(f'AVVISO: {n_int} in anticipo (va dopo il capitolo {d}, non ancora scritto).')
     print(fase.prossimo(stato))
     # unica scrittura: il marker di sessione dentro il libro
     sid, fonte = comune.sessione_corrente()

@@ -537,3 +537,18 @@ adozione_libri_esistenti:
   avvio_motore: "2 / True"
   senza_titolo: "2 / True / True"
   con_titolo: "0 / La torre di sale / La torre di sale"
+
+# Correzioni dopo il lotto 11-20 di Mister Provino: (a) interludio in anticipo come AVVISO, mai FERMO;
+# (b) misure del piano parole fuori dall'impronta, aggiornate da zb esito; (c) stato.yaml salvato prima
+# di stampare; (d) parole a inizio frase escluse dal confronto con i nomi; (e) battute canoniche escluse
+# dall'anti-riciclo.
+correzioni_lotto_11_20:
+  a_ordine: ['1', '2', 'interludio I', '3', 'interludio II']
+  a_anticipo: ['interludio II dopo 9']
+  a_comandi: "True / True / 0 / False"   # capitolo.py eseguito / AVVISO «in anticipo» / conta.py / nessun FERMO
+  a_sconosciuto: "2 / True"
+  b_impronta: "True / True"
+  b_esito: "0 / ['| — | 1 | La farmacia | apertura | 1 | 1200 | 1200 | 1186 | -1.2% |'] / True"
+  c_stato: "1 / capitolo 2"
+  d_grafie: ['«Calvo» e «Calvi»']      # «Calvo» a inizio frase e dopo la lineetta: ignorato; a metà frase: segnalato
+  e_riciclo: "1 / ['che la pioggia lava le strade ma non le colpe']"   # la battuta canonica non è più un KO
