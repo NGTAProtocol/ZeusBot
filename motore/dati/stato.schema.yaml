@@ -18,6 +18,8 @@ campi:
   tentativi: {tipo: mappa, altri_campi: true}
   correzioni_aperte: {tipo: lista}
   correzioni_registrate: {tipo: lista}        # correzioni fuori dal gate (zb correggi <unità>: <motivo>)
+  unita_accettate: {tipo: lista}              # prologo, interludi, epilogo che hanno superato «esito»
+  cambi_fase: {tipo: lista}                   # zb fase <libro> stesura --motivo: data, da, a, motivo, mancanti
   parole:
     tipo: mappa
     obbligatorio: true

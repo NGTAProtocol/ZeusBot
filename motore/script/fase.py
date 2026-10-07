@@ -8,6 +8,8 @@ Comandi dell'autore:
   ok [lotti da N]          approva il gate aperto (solo dopo aver mostrato tutti i blocchi)
   correggi <istruzione>    registra una correzione; il gate resta aperto
   riapprova <documento> <motivo>   registra una modifica autorizzata a un documento già approvato
+  fase stesura --motivo <testo>    da «chiusura» torna a «stesura» se nel piano mancano unità (registra data,
+                           motivo e fase precedente)
                            (nuovo sha256 e commit, con data, motivo e sha256 precedente)
 Comandi di Claude Code:
   pronto                   il lavoro della fase è finito: apre il gate (se previsto in libro.yaml) o passa oltre
@@ -15,7 +17,8 @@ Comandi di Claude Code:
                            a un gate «primi_capitoli» o «lotto» con una correzione registrata, rifà i controlli
                            di un capitolo del gate e aggiorna le parole; il gate resta aperto
 
-Fasi: documenti → pagina_campione → stesura → chiusura → chiuso.
+Fasi: documenti → pagina_campione → stesura → chiusura → chiuso. Si passa a «chiusura» solo quando tutte le
+unità del piano parole (prologo, capitoli, interludi, epilogo) sono scritte e accettate.
 Gate (libro.yaml, campo «gate»; predefiniti documenti, pagina_campione, primi_capitoli):
 documenti, pagina_campione, primi_capitoli, lotto; più controllo_fallito, sempre attivo
 (stesso controllo fallito due volte di fila sullo stesso capitolo).
@@ -91,6 +94,50 @@ def capitoli_previsti(cartella):
     if not os.path.isfile(p):
         return 0
     return len(set(re.findall(r'(?m)^\|[^|\n]*\|\s*(\d+)\s*\|', open(p, encoding='utf-8').read())))
+
+
+def unita_del_piano(cartella):
+    """Unità di piano-parole.md (colonna «Cap.») in ordine: «prologo», «1», «interludio I», «epilogo»…"""
+    p = os.path.join(cartella, '03-architettura', 'piano-parole.md')
+    if not os.path.isfile(p):
+        return []
+    intest, out = None, []
+    for r in open(p, encoding='utf-8').read().splitlines():
+        if not r.strip().startswith('|'):
+            continue
+        celle = [c.strip() for c in r.strip().strip('|').split('|')]
+        if intest is None:
+            if 'Cap.' in celle:
+                intest = celle
+            continue
+        if len(celle) != len(intest) or all(set(c) <= set('-: ') for c in celle):
+            continue
+        u = celle[intest.index('Cap.')]
+        u = str(int(u)) if u.isdigit() else u
+        if u and u not in out:
+            out.append(u)
+    return out
+
+
+def accettata(cartella, stato, u):
+    """True se l'unità del piano è scritta e ha superato «esito»."""
+    if u.isdigit():
+        return int(u) <= (stato['ultimo_capitolo_scritto'] or 0)
+    if u.lower() in [str(x).lower() for x in stato.get('unita_accettate') or []]:
+        return True
+    # unità accettate prima del registro «unita_accettate»: il report di capitolo.py dice 0 KO
+    rep = os.path.join(cartella, '06-diagnostica', 'capitoli', revisione.nome_report(u) + '.md')
+    return os.path.isfile(rep) and re.search(r'(?m)^Esito: 0 KO', open(rep, encoding='utf-8').read()) is not None
+
+
+def unita_mancanti(cartella, libro, stato):
+    """Unità del piano non ancora scritte o non accettate, in ordine di piano."""
+    scritte = {n.lower() for n, _ in comune.unita(cartella, libro)}
+    return [u for u in unita_del_piano(cartella) if u.lower() not in scritte or not accettata(cartella, stato, u)]
+
+
+def passo_di(u):
+    return f'capitolo {u}' if u.isdigit() else u
 
 
 def parole_scritte(cartella, libro):
@@ -189,8 +236,14 @@ def dopo_capitolo(cartella, libro, stato):
               '(gate «lotto» non attivo in libro.yaml).')
         stato['lotto']['capitoli'] = []
     if totale and scritto >= totale:
+        mancanti = unita_mancanti(cartella, libro, stato)
+        if mancanti:
+            # la fase resta «stesura» finché manca un'unità del piano (prologo, interludi, epilogo)
+            stato['passo'] = passo_di(mancanti[0])
+            print(f'Capitoli scritti; mancano ancora: {", ".join(mancanti)}. La fase resta «stesura».')
+            return
         stato.update(fase='chiusura', passo='controlli finali', gate_in_attesa=None)
-        print(f'Tutti i {totale} capitoli sono scritti: fase «chiusura».')
+        print(f'Tutte le unità del piano sono scritte e accettate: fase «chiusura».')
 
 
 # ---------------------------------------------------------------- comandi
@@ -316,6 +369,15 @@ def sha_versione(cartella, commit, rel):
     return hashlib.sha256(r.stdout).hexdigest() if r.returncode == 0 else None
 
 
+def nome_precedente(cartella, comando_git, rel):
+    """Nome vecchio di `rel` in un elenco «git diff --name-status -M» (righe R<n> vecchio nuovo); None se non rinominato."""
+    for riga in comune.git(cartella, *comando_git)[1].splitlines():
+        c = riga.split('\t')
+        if len(c) == 3 and c[0].startswith('R') and c[2] == rel:
+            return c[1]
+    return None
+
+
 def registra_correzione(cartella, libro, stato, resto):
     """Correzione fuori dal gate: «<unità o file>: <motivo> [--commit <hash>]». Registra data, file, motivo,
     sha256 precedente e attuale; non apre e non chiude nessun gate.
@@ -341,13 +403,28 @@ def registra_correzione(cartella, libro, stato, resto):
         prima, dopo = sha_versione(cartella, f'{commit}^', rel), sha_versione(cartella, commit, rel)
         if dopo is None:
             raise comune.ErroreMotore(f'Il commit {commit} non contiene {rel}')
+        if prima is None:       # file rinominato in quel commit: la versione precedente sta sotto il nome vecchio
+            vecchio = nome_precedente(cartella, ['diff', '-M', '--name-status', '--relative', f'{commit}^', commit], rel)
+            prima = sha_versione(cartella, f'{commit}^', vecchio) if vecchio else None
     else:
         modificato = comune.git(cartella, 'status', '--porcelain', '--', rel)[1]
         if modificato:
             prima = sha_versione(cartella, 'HEAD', rel)
+            if prima is None:   # rinomina non ancora salvata (git mv)
+                vecchio = nome_precedente(cartella, ['diff', '--cached', '-M', '--name-status', '--relative', 'HEAD'], rel)
+                prima = sha_versione(cartella, 'HEAD', vecchio) if vecchio else None
         else:
-            ultimi = comune.git(cartella, 'log', '-2', '--format=%h', '--', rel)[1].split()
-            prima = sha_versione(cartella, ultimi[1], rel) if len(ultimi) > 1 else None
+            # --follow: la storia continua sotto il nome vecchio, se il file è stato rinominato
+            out = comune.git(cartella, 'log', '--follow', '-M', '-2', '--format=@%h', '--name-only', '--relative',
+                             '--', rel)[1]
+            voci, cur = [], None
+            for riga in out.splitlines():
+                if riga.startswith('@'):
+                    cur = [riga[1:], None]
+                    voci.append(cur)
+                elif riga.strip() and cur and cur[1] is None:
+                    cur[1] = riga.strip()
+            prima = sha_versione(cartella, voci[1][0], voci[1][1] or rel) if len(voci) > 1 else None
         dopo = attuale
     if prima == dopo:
         raise comune.ErroreMotore(f'{rel}: nessuna differenza tra la versione precedente e quella corretta')
@@ -376,6 +453,24 @@ def cmd_correggi(cartella, libro, stato, resto):
           'Il gate resta aperto; dopo la correzione «avanti» riparte dal blocco 1.')
 
 
+def cmd_fase(cartella, libro, stato, resto):
+    """«fase stesura --motivo <testo>»: da «chiusura» torna a «stesura» se nel piano mancano unità."""
+    if '--motivo' not in resto or resto[0:1] != ['stesura']:
+        raise comune.ErroreMotore('Uso: fase <libro> stesura --motivo "<testo>"')
+    motivo = ' '.join(resto[resto.index('--motivo') + 1:]).strip()
+    if not motivo:
+        raise comune.ErroreMotore('Manca il motivo («--motivo "<testo>"»)')
+    if stato['fase'] != 'chiusura':
+        raise comune.ErroreMotore(f'Il libro è in fase «{stato["fase"]}»: si torna a «stesura» solo da «chiusura».')
+    mancanti = unita_mancanti(cartella, libro, stato)
+    if not mancanti:
+        raise comune.ErroreMotore('Tutte le unità del piano sono scritte e accettate: la fase resta «chiusura».')
+    stato.setdefault('cambi_fase', []).append({'data': datetime.date.today().isoformat(), 'da': stato['fase'],
+                                               'a': 'stesura', 'motivo': motivo, 'mancanti': mancanti})
+    stato.update(fase='stesura', passo=passo_di(mancanti[0]), gate_in_attesa=None)
+    print(f'Fase «chiusura» → «stesura»; motivo: {motivo}. Mancano: {", ".join(mancanti)}.')
+
+
 def cmd_riapprova(cartella, stato, resto):
     if len(resto) < 2:
         raise comune.ErroreMotore('Uso: riapprova <documento> <motivo>')
@@ -400,6 +495,14 @@ def accetta_capitolo(cartella, libro, stato, n):
         stato['ultimo_capitolo_scritto'] = max(int(n), prima)
         if int(n) >= prima:      # un capitolo già scritto, ricontrollato, non riporta indietro il passo
             stato['passo'] = f'capitolo {stato["ultimo_capitolo_scritto"] + 1}'
+    else:
+        acc = stato.setdefault('unita_accettate', [])
+        if n.lower() not in [str(x).lower() for x in acc]:
+            acc.append(n)
+        if str(stato.get('passo') or '').lower() == n.lower():
+            mancanti = [u for u in unita_mancanti(cartella, libro, stato) if u.lower() != n.lower()]
+            prossimo_cap = f'capitolo {(stato["ultimo_capitolo_scritto"] or 0) + 1}'
+            stato['passo'] = passo_di(mancanti[0]) if mancanti else prossimo_cap
     if n not in [str(c) for c in stato['lotto']['capitoli']]:
         stato['lotto']['capitoli'].append(int(n) if n.isdigit() else n)
     stato['parole']['scritte'] = parole_scritte(cartella, libro)
@@ -469,7 +572,13 @@ def cmd_esito(cartella, libro, stato, resto, argv):
     n = str(int(n)) if n.isdigit() else n
     gate = stato['gate_in_attesa']
     if stato['fase'] != 'stesura':
-        raise comune.ErroreMotore(f'«esito» vale solo in fase «stesura» (ora: {stato["fase"]}).')
+        mancanti = unita_mancanti(cartella, libro, stato) if stato['fase'] == 'chiusura' else []
+        extra = (f' Mancano unità del piano ({", ".join(mancanti)}): «zb fase <libro> stesura --motivo "…"».'
+                 if mancanti else '')
+        raise comune.ErroreMotore(f'«esito» vale solo in fase «stesura» (ora: {stato["fase"]}).{extra}')
+    piano = unita_del_piano(cartella)
+    if piano and n.lower() not in [u.lower() for u in piano]:
+        raise comune.ErroreMotore(f'«{n}» non è un\'unità del piano parole: {", ".join(piano)}')
     correzione = (gate in ('primi_capitoli', 'lotto') and n in [str(c) for c in stato['lotto']['capitoli']]
                   and any(c['gate'] == gate for c in stato['correzioni_aperte']))
     if gate and not correzione and not (gate == 'controllo_fallito' and str(stato['passo']) == f'capitolo {n}'):
@@ -508,7 +617,7 @@ def cmd_esito(cartella, libro, stato, resto, argv):
 def main(argv):
     args = [a for i, a in enumerate(argv) if a != '--radice' and (i == 0 or argv[i - 1] != '--radice')]
     if len(args) < 2:
-        raise comune.ErroreMotore('Uso: fase.py <libro> stato|avanti|ok|correggi|riapprova|pronto|esito [argomenti]')
+        raise comune.ErroreMotore('Uso: fase.py <libro> stato|avanti|ok|correggi|riapprova|pronto|esito|fase [argomenti]')
     cartella, libro, _ = comune.carica_libro(args[0])
     comando, resto = args[1], args[2:]
     stato = carica_stato(cartella)
@@ -533,9 +642,11 @@ def main(argv):
                 cmd_riapprova(cartella, stato, resto)
             elif comando == 'esito':
                 codice = cmd_esito(cartella, libro, stato, resto, argv)
+            elif comando == 'fase':
+                cmd_fase(cartella, libro, stato, resto)
             else:
                 raise comune.ErroreMotore(f'Comando sconosciuto: {comando}. Comandi: stato, avanti, ok, correggi, '
-                                          'riapprova, pronto, esito.')
+                                          'riapprova, pronto, esito, fase.')
     except comune.ErroreMotore:
         sys.stdout.write(uscita.getvalue())
         raise

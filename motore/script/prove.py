@@ -717,8 +717,11 @@ def passo_5(A):
             break
     p = zb(r, 'ok', 'mini', 'lotti', 'da', '5')
     s = stato(Lm)
-    esito('fase.py', 'ok, lotti da 5: lotti, ultimo approvato, fase', a['ok_lotti'],
-          f'{p.returncode} / {s["lotto"]["dimensione"]} / {s["ultimo_capitolo_approvato"]} / {s["fase"]}', sez)
+    fase_dopo_ok = s['fase']       # manca ancora l'esito dell'interludio I: la fase resta «stesura»
+    zb(r, 'esito', 'mini', 'interludio', 'I')
+    s = stato(Lm)
+    esito('fase.py', 'ok, lotti da 5: lotti, ultimo approvato, fase; fase dopo l\'interludio I', a['ok_lotti'],
+          f'{p.returncode} / {s["lotto"]["dimensione"]} / {s["ultimo_capitolo_approvato"]} / {fase_dopo_ok} / {s["fase"]}', sez)
     p = zb(r, 'pronto', 'mini')
     esito('fase.py', 'chiusura senza report: fermo con elenco', a['chiusura_incompleta'],
           f'{p.returncode} / {len(mancanti(p.stderr))}', sez)
@@ -1755,9 +1758,106 @@ def unita_consentite_e_interludi(A):
            if x.startswith('| — |') and x.split('|')[-2].strip()], sez)
 
 
+def fase_stesura_e_rinomine(A):
+    sez = 'fase e rinomine'
+    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
+    E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def git(cwd, *a):
+        return subprocess.run(['git', *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def zb(cwd, *a):
+        return subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def salva(r):
+        git(r, 'add', '-A')
+        git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'prova')
+        git(r, 'push', '-q', '-u', 'origin', 'prova')
+        return git(r, 'log', '-1', '--format=%h').stdout.strip()
+
+    def libro(**campi):
+        d = tempfile.mkdtemp(dir=TMP)
+        git(d, 'init', '-q', '--bare', 'remoto.git')
+        r = os.path.join(d, 'repo')
+        os.makedirs(r)
+        git(r, 'init', '-q')
+        git(r, 'checkout', '-q', '-b', 'prova')
+        git(r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git'))
+        Lm = shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'mini'))
+        pp = os.path.join(Lm, '03-architettura', 'piano-parole.md')
+        t = open(pp, encoding='utf-8').read().replace('| — | 3 | La stazione | rivelazione | 1 | 900 | 900 | | |',
+                                                      '| — | 3 | La stazione | rivelazione | 1 | 900 | 900 | | |\n' + A['riga_epilogo'])
+        open(pp, 'w', encoding='utf-8').write(t)
+        st = comune.leggi_yaml(os.path.join(M, 'modelli', 'stato.yaml'))
+        st.update(libro='Prova di stampa', fase='stesura', passo='capitolo 4', aggiornato='prova', gate_in_attesa=None,
+                  ultimo_capitolo_scritto=3, ultimo_capitolo_approvato=3)
+        st.update(campi)
+        open(os.path.join(Lm, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(st, sort_keys=False, allow_unicode=True))
+        salva(r)
+        return r, Lm
+
+    def stato(Lm):
+        return comune.leggi_yaml(os.path.join(Lm, 'stato.yaml'))
+
+    # (a) capitoli tutti scritti: la fase resta «stesura» finché mancano interludio ed epilogo
+    r, Lm = libro()
+    p1 = zb(r, 'esito', 'mini', 'interludio', 'I')
+    s1 = stato(Lm)
+    p2 = zb(r, 'esito', 'mini', 'epilogo')        # file non scritto: rifiutato, la fase non cambia
+    open(os.path.join(Lm, '04-manoscritto', 'epilogo.md'), 'w', encoding='utf-8').write(A['testo_epilogo'])
+    salva(r)
+    p3 = zb(r, 'esito', 'mini', 'epilogo')
+    s3 = stato(Lm)
+    esito('fase.py', '(a) interludio, epilogo assente, epilogo scritto: codice / fase / passo', A['a_fasi'],
+          f'{p1.returncode} / {s1["fase"]} / {s1["passo"]} / {p2.returncode} / {p3.returncode} / {s3["fase"]}', sez)
+    p4 = zb(r, 'esito', 'mini', '9')
+    esito('fase.py', '(a) unità fuori dal piano: rifiutata', A['a_fuori_piano'], p4.returncode, sez)
+
+    # (b) zb fase stesura: solo da «chiusura», solo se mancano unità, con motivo registrato
+    r, Lm = libro(fase='chiusura', passo='controlli finali')
+    q1 = zb(r, 'fase', 'mini', 'stesura')
+    q2 = zb(r, 'fase', 'mini', 'stesura', '--motivo', 'manca l\'epilogo')
+    s = stato(Lm)
+    v = (s.get('cambi_fase') or [{}])[-1]
+    q3 = zb(r, 'fase', 'mini', 'stesura', '--motivo', 'di nuovo')
+    esito('fase.py', '(b) senza motivo / con motivo / già in stesura', A['b_codici'],
+          f'{q1.returncode} / {q2.returncode} / {q3.returncode}', sez)
+    esito('fase.py', '(b) registro: da / a / motivo / mancanti / fase / passo', A['b_registro'],
+          f'{v.get("da")} / {v.get("a")} / {v.get("motivo")} / {v.get("mancanti")} / {s["fase"]} / {s["passo"]}', sez)
+    open(os.path.join(Lm, '04-manoscritto', 'epilogo.md'), 'w', encoding='utf-8').write(A['testo_epilogo'])
+    st = stato(Lm)
+    st.update(fase='chiusura', unita_accettate=['interludio I', 'epilogo'])
+    open(os.path.join(Lm, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(st, sort_keys=False, allow_unicode=True))
+    salva(r)
+    q4 = zb(r, 'fase', 'mini', 'stesura', '--motivo', 'niente da scrivere')
+    esito('fase.py', '(b) nessuna unità mancante: rifiutato, resta chiusura', A['b_completo'],
+          f'{q4.returncode} / {stato(Lm)["fase"]}', sez)
+
+    # (c) correggi segue i file rinominati
+    r, Lm = libro()
+    md = os.path.join(Lm, '04-manoscritto')
+    originale = comune.sha256_file(os.path.join(md, '01-la-farmacia.md'))
+    git(r, 'mv', 'mini/04-manoscritto/01-la-farmacia.md', 'mini/04-manoscritto/01-la-bottega.md')
+    open(os.path.join(md, '01-la-bottega.md'), 'a', encoding='utf-8').write('\nUna riga nuova.\n')
+    git(r, 'add', '-A')
+    c1 = zb(r, 'correggi', 'mini', 'capitolo 1: titolo nuovo')
+    v1 = (stato(Lm).get('correzioni_registrate') or [{}])[-1]
+    h = salva(r)
+    c2 = zb(r, 'correggi', 'mini', 'capitolo 1: titolo nuovo, dal commit', '--commit', h)
+    v2 = (stato(Lm).get('correzioni_registrate') or [{}])[-1]
+    salva(r)
+    c3 = zb(r, 'correggi', 'mini', 'capitolo 1: titolo nuovo, dopo il salvataggio')
+    v3 = (stato(Lm).get('correzioni_registrate') or [{}])[-1]
+    esito('fase.py', '(c) rinomina: non salvata / --commit / salvata: codice e sha256 precedente = originale',
+          A['c_rinomina'],
+          ' / '.join(f'{c.returncode} {v.get("sha256_precedente") == originale}' for c, v in ((c1, v1), (c2, v2), (c3, v3))),
+          sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine}
 
 
 def main(argv):
