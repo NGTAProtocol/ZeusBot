@@ -3,31 +3,14 @@ motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
 passo: capitolo 4
-gate_in_attesa: primi_capitoli
+gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 1
-  - 2
-  - 3
-ultimo_capitolo_approvato: null
+  capitoli: []
+ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 3
 tentativi: {}
-correzioni_aperte:
-- gate: primi_capitoli
-  testo: 'capitolo 1: dialogo verso il 22-25% con due scambi in macchina; un solo conto (il letto vuoto); tolta una frase
-    sul sonno mancato'
-  sha256: 9da992b623ca
-  data: '2026-10-07'
-- gate: primi_capitoli
-  testo: 'capitolo 2: paragrafo dell''attesa all''ingresso spostato prima di «Dentro faceva fresco»; «Non toccò nemmeno me»'
-  sha256: ee6458d75194
-  data: '2026-10-07'
-- gate: primi_capitoli
-  testo: 'capitolo 3: intrusione sulla nudità ridotta a «Quel giorno, sotto il neon, non pensai niente»; battuta del padre
-    sulla camicia e risposta di Checco'
-  sha256: fcc0090789aa
-  data: '2026-10-07'
+correzioni_aperte: []
 parole:
   scritte: 5189
   obiettivo: 78000
@@ -71,11 +54,25 @@ documenti_approvati:
   05-revisioni/pagina-campione.md:
     sha256: 9c73760076edaff8922d288a33bc340622a161fd0e1623d072193be824bbca62
     commit: f27c61c
+  04-manoscritto/01-pane-e-pomodoro.md:
+    sha256: d8c3f9c9f7398bddb2525b55b54cfcc6c4136fc71ca8614f42e673b7131eafd9
+    commit: 54ddc37
+  06-diagnostica/capitoli/01.md:
+    sha256: 7198300636f8160cdbeb11815b3ca03b5b8b36b63287809cb8819e8aa82e65c4
+    commit: 54ddc37
+  04-manoscritto/02-napoli.md:
+    sha256: f2c72671d199d17e22a1103c03ab0f01b4637cbe0e42cc6c8b795e1601e865a0
+    commit: ab7e519
+  06-diagnostica/capitoli/02.md:
+    sha256: ce91ce13acbac7d8fecc4f22d4302504311569d1af091977d245ab5bf87c202f
+    commit: ab7e519
+  04-manoscritto/03-trani.md:
+    sha256: 5fb400b6de4158058bfa3503fd532425239b2142c0e0b982ff1d33fb3bd3176a
+    commit: '3206505'
+  06-diagnostica/capitoli/03.md:
+    sha256: a7003a3d9aa6fbf0dd977ddeadc58b2d1f5c3c23f72a06c015c58c696c2cafa0
+    commit: '3206505'
 avvisi_aperti: []
-revisione_in_corso:
-  gate: primi_capitoli
-  blocco: 1
-  blocchi_totali: 9
-  sha256: 9da992b623ca
+revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T02:37:41Z'
+aggiornato: '2026-10-07T02:37:51Z'
