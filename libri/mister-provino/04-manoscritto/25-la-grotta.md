@@ -140,4 +140,6 @@ Venivano da fuori, da lontano, su per il cunicolo, rimbalzando contro la roccia.
 
 — Io ho fretta! Due giorni avevate detto, e sono due giorni!
 
-Una pausa, e passi, e altre voci più basse che dicevano qualcosa in dialetto, e una risata corta. — E il ragazzo? Mio cugino dove sta? Dove sta mio cugino, il ragazzo, dove l'avete messo?
+Una pausa, e passi, e altre voci più basse che dicevano qualcosa in dialetto, e una risata corta.
+
+— E il ragazzo? Mio cugino dove sta? Dove sta mio cugino, il ragazzo, dove l'avete messo?
