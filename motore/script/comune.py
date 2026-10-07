@@ -521,7 +521,7 @@ def testo_piano_senza_misure(testo):
                 celle = [('' if i in idx else c) for i, c in enumerate(celle)]
             out.append('|'.join(c.strip() for c in celle))
         else:
-            out.append(re.sub(r'Totale previsto[^:]*:\s*[\d.]+\.?', 'Totale previsto', r))
+            out.append(re.sub(r'Totale previsto[^:]*:\s*(\d{1,3}(?:\.\d{3})+|\d+)', 'Totale previsto', r))
     return '\n'.join(out)
 
 
@@ -534,9 +534,28 @@ def impronta_documento(percorso):
     return sha256_file(percorso)
 
 
-def documento_invariato(percorso, registrato):
-    """True se il documento corrisponde allo sha256 registrato (impronta attuale o sha256 grezzo dei vecchi stati)."""
-    return os.path.isfile(percorso) and registrato in (impronta_documento(percorso), sha256_file(percorso))
+def documento_invariato(percorso, registrato, commit=None):
+    """True se il documento corrisponde a quanto registrato all'approvazione.
+
+    Vale l'impronta attuale; per gli stati registrati prima delle impronte (sha256 grezzo) si confronta
+    l'impronta della versione salvata nel commit registrato, se quel commit ha proprio lo sha256 grezzo."""
+    import hashlib
+    if not os.path.isfile(percorso):
+        return False
+    if registrato in (impronta_documento(percorso), sha256_file(percorso)):
+        return True
+    if not commit or os.path.basename(percorso) != 'piano-parole.md':
+        return False
+    cartella = os.path.dirname(percorso)
+    rel = os.path.basename(percorso)
+    try:
+        prima = subprocess.run(['git', '-C', cartella, 'show', f'{commit}:./{rel}'], capture_output=True, timeout=60).stdout
+    except (subprocess.TimeoutExpired, FileNotFoundError):
+        return False
+    if hashlib.sha256(prima).hexdigest() != registrato:
+        return False
+    adesso = testo_piano_senza_misure(open(percorso, encoding='utf-8').read())
+    return testo_piano_senza_misure(prima.decode('utf-8')) == adesso
 
 
 def cartella_progetto():
