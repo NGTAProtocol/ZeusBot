@@ -4,9 +4,12 @@ Voci con solo_dialogo: true: ammesse solo nelle righe di dialogo (che cominciano
 lineetta di lingue.yaml); ogni riga fuori dal dialogo che le contiene è KO.
 
 Uso: python3 -B stile.py <libro> [N] [--schermo]
-Per ogni unità (o solo la N): frase media e dialogo % (solo capitoli numerati),
+Per ogni unità (o solo la N): frase media e dialogo % (capitoli numerati; negli interludi
+solo la frase media, come avviso),
 voci con pattern (lista nera di base + voci del libro), parole filtro, candidati
 similitudine, vincoli per capitolo, nomi vietati prima di un punto del libro.
+Voci ad ambito «libro»: contatore cumulato; non contano le unità in consentito_in_capitoli;
+con conta_per: unita il tetto è sul numero di unità in cui la voce compare.
 Esiti: KO (blocca) o AVVISO (da guardare). Report: <libro>/06-diagnostica/stile.md.
 """
 import os
@@ -78,6 +81,11 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
         if n_sim > tetto:
             out.append(risultato(nome, 'similitudini', 'AVVISO', None,
                                  f'{n_sim} candidati, tetto {tetto:.1f} (una ogni {profilo["similitudini_max_per_parole"]} parole)'))
+    if nome.lower().startswith('interludio'):
+        # negli interludi solo un avviso sulla frase media, con l'intervallo dei capitoli
+        a, b = profilo['frase_media']
+        if not a <= met['frase_media'] <= b:
+            out.append(risultato(nome, 'frase_media', 'AVVISO', None, f'{met["frase_media"]} fuori da {a}-{b}'))
     for v in voci:
         if v.get('ambito') == 'libro':
             continue
@@ -146,7 +154,13 @@ def controlla_libro(cartella, libro, profilo):
         for v in voci:
             if v.get('ambito') != 'libro':
                 continue
-            for n, t in occorrenze(prosa, v['pattern']):
+            # nelle unità consentite la voce non si conta e non dà avviso
+            if v.get('consentito_in_capitoli') is not None and comune.in_elenco(nome, v['consentito_in_capitoli']):
+                continue
+            occ = occorrenze(prosa, v['pattern'])
+            if v.get('conta_per') == 'unita':
+                occ = occ[:1]      # il tetto conta le unità in cui la voce compare, non le occorrenze
+            for n, t in occ:
                 contatori[v['id']] = contatori.get(v['id'], 0) + 1
                 if contatori[v['id']] == v.get('massimo', 0) + 1:
                     esito = 'KO' if v['modalita'] in ('vieta', 'conta') else 'AVVISO'

@@ -1715,9 +1715,49 @@ def correzioni_e_passo(A):
     esito('fase.py', '(b) esito di nuovo sul capitolo 1 (scritti fino a 2): codice / passo / scritti', A['b_passo'],
           f'{p5.returncode} / {stato()["passo"]} / {stato()["ultimo_capitolo_scritto"]}', sez)
 
+def unita_consentite_e_interludi(A):
+    import fase
+    import stile
+    sez = 'unità consentite e interludi'
+
+    def avvisi(voce, testi, interludio=None):
+        Lm = copia_libro('mini-libro')
+        py = os.path.join(Lm, 'libro.yaml')
+        lb = yaml.safe_load(open(py, encoding='utf-8'))
+        lb['voci'] = (lb.get('voci') or []) + ([voce] if voce else [])
+        open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+        md = os.path.join(Lm, '04-manoscritto')
+        for f, t in zip(sorted(x for x in os.listdir(md) if x[0].isdigit()), testi):
+            open(os.path.join(md, f), 'a', encoding='utf-8').write('\n' + t + '\n')
+        if interludio is not None:
+            open(os.path.join(md, 'interludio-I.md'), 'w', encoding='utf-8').write('## *La vetrina*\n\n' + interludio + '\n')
+        cartella, libro, profilo = comune.carica_libro(Lm)
+        esiti = stile.controlla_libro(cartella, libro, profilo)
+        return [f'{r["unita"]}|{r["controllo"]}|{r["esito"]}' for u in esiti for r in esiti[u][1]
+                if r['controllo'] == f'voce:{(voce or {}).get("id")}'
+                or (r['controllo'] == 'frase_media' and u.startswith('interludio'))]
+
+    # (a) voce ad ambito «libro»: unità consentite escluse; tetto per unità o per occorrenza
+    for chiave, voce in A['a_voci'].items():
+        esito('stile.py', f'(a) {chiave}', A['a_attesi'][chiave], avvisi(voce, A['a_testi']), sez)
+    # (b) frase media negli interludi: avviso con l'intervallo dei capitoli
+    for chiave, testo in A['b_testi'].items():
+        esito('stile.py', f'(b) interludio: {chiave}', A['b_attesi'][chiave], avvisi(None, [], testo), sez)
+    # (c) piano parole: ogni scarto con la virgola, anche le righe scritte prima
+    Lm = copia_libro('mini-libro')
+    pp = os.path.join(Lm, '03-architettura', 'piano-parole.md')
+    t = open(pp, encoding='utf-8').read().replace('| 150 | 150 | | |', '| 150 | 150 | 167 | +11.5% |')
+    open(pp, 'w', encoding='utf-8').write(t)
+    cartella, libro, _ = comune.carica_libro(Lm)
+    fase.aggiorna_piano(cartella, libro, '1')
+    esito('fase.py', '(c) scarti nel piano parole', A['c_scarti'],
+          [x.split('|')[-2].strip() for x in open(pp, encoding='utf-8').read().splitlines()
+           if x.startswith('| — |') and x.split('|')[-2].strip()], sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi}
 
 
 def main(argv):
