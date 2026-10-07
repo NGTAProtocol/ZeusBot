@@ -9,13 +9,13 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 2 | Napoli | 1.800 | — | — | 1.621 | -9,9% | 163 |
 | Parte prima | 3 | Trani | 2.000 | — | — | 1.870 | -6,5% | 174 |
 | Parte prima | interludio I | I fiori | 400 | — | — | — | — | 185 |
-| Parte prima | 4 | La stanza di Michele | 1.500 | — | — | — | — | 188 |
-| Parte prima | 5 | Il brodetto | 1.350 | — | — | — | — | 199 |
-| Parte prima | 6 | I tre silenzi | 1.600 | — | — | — | — | 205 |
-| Parte prima | 7 | Palese | 1.550 | — | — | — | — | 214 |
-| Parte prima | 8 | O Anjo | 1.600 | — | — | — | — | 225 |
-| Parte prima | 9 | Il giro con Franco | 2.100 | — | — | — | — | 235 |
-| Parte prima | 10 | Il palo | 2.000 | — | — | — | — | 242 |
+| Parte prima | 4 | La stanza di Michele | 1.500 | — | — | 1.383 | -7,8% | 188 |
+| Parte prima | 5 | Il brodetto | 1.350 | — | — | 1.328 | -1,6% | 199 |
+| Parte prima | 6 | I tre silenzi | 1.600 | — | — | 1.421 | -11,2% | 205 |
+| Parte prima | 7 | Palese | 1.550 | — | — | 1.367 | -11,8% | 214 |
+| Parte prima | 8 | O Anjo | 1.600 | — | — | 1.435 | -10,3% | 225 |
+| Parte prima | 9 | Il giro con Franco | 2.100 | — | — | 1.810 | -13,8% | 235 |
+| Parte prima | 10 | Il palo | 2.000 | — | — | 1.736 | -13,2% | 242 |
 | Parte prima | interludio II | La pagina | 400 | — | — | — | — | 253 |
 | Parte prima | 11 | L'ospedale | 1.300 | — | — | — | — | 256 |
 | Parte prima | 12 | La storia di «lei» | 1.700 | — | — | — | — | 264 |
