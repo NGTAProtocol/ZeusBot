@@ -43,7 +43,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte seconda | interludio VI | Il telefono | 400 | — | — | 445 | +11.2% | 407 |
 | Parte terza | 31 | Gli elicotteri | 1.440 | — | — | 1.544 | +7,2% | 414 |
 | Parte terza | 32 | L'ulivo | 1.340 | — | — | 1.368 | +2,1% | 420 |
-| Parte terza | 33 | Il no di Michele | 1.540 | — | — | — | — | 425 |
+| Parte terza | 33 | Il no di Michele | 1.540 | — | — | 1.479 | -4,0% | 425 |
 | Parte terza | 34 | Allora non vado | 1.340 | — | — | — | — | 431 |
 | Parte terza | 35 | L'accendino | 1.750 | — | — | — | — | 435 |
 | Parte terza | interludio VII | Ero io | 400 | — | — | — | — | 442 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.346.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.285.
