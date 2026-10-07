@@ -6,14 +6,13 @@ passo: prologo
 gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - interludio IX
+  capitoli: []
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 43
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 75802
+  scritte: 75801
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -107,7 +106,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T11:02:46Z'
+aggiornato: '2026-10-07T11:03:07Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
@@ -174,6 +173,11 @@ correzioni_registrate:
   motivo: frase media sotto 13 (una frase riscritta)
   sha256_precedente: c71c4ea161d6a3a42c35e03968ade142caad4433e3d0485a331355750f6e06d7
   sha256_corretto: ae05de1ab053455a3f26e64301efae3c4fa8c669e1f81ca66524ae236075229b
+- data: '2026-10-07'
+  file: 04-manoscritto/38-le-firme.md
+  motivo: «Non era X. Era Y.» in eccesso riscritta
+  sha256_precedente: 2d68c8446b6a152003c47d1deebe835fb5977841a7868b0ca23c173ea76bc0c6
+  sha256_corretto: cfe790c759f00d35dad7141239119052d8936ca3d088821635a3670c08e79459
 cambi_fase:
 - data: '2026-10-07'
   da: chiusura

@@ -116,7 +116,7 @@ Rimasi in ginocchio.
 
 — Ma', lascia stare.
 
-— No. Fammi dire. — Chiuse gli occhi e li riaprì. — Quella sera. Quando ti ho detto di stare zitto. Me la ricordo. Sta sempre qua dentro. — Batté due volte sullo sterno, piano, con il dorso della mano. — È che dopo non mi riusciva più di tornare indietro. Non è che non volevo. È cominciata prima. Prima di Nicola, prima di te. Tu già c'eri, dentro, e io…
+— No. Fammi dire. — Chiuse gli occhi e li riaprì. — Quella sera. Quando ti ho detto di stare zitto. Me la ricordo. Sta sempre qua dentro. — Batté due volte sullo sterno, piano, con il dorso della mano. — È che dopo non mi riusciva più di tornare indietro. Volerlo, lo volevo. Però era cominciata prima. Prima di Nicola, prima di te. Tu già c'eri, dentro, e io…
 
 La frase si perse. La guardai cercarla, con la fronte aggrottata, e non la trovò, e non la cercò più.
 
