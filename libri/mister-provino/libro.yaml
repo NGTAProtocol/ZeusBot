@@ -51,11 +51,11 @@ voci:
   - {id: come_se, pattern: '(?i)\bcome se\b', modalita: conta, massimo: 2, ambito: capitolo}                       # M:115
   - {id: una_specie_di, pattern: '(?i)\buna specie di\b', modalita: conta, massimo: 10, ambito: libro}              # M:113
   - {id: era_peggio, pattern: '(?i)\bera peggio\b|\bqualcosa di peggio\b', modalita: conta, massimo: 2, ambito: libro}   # M:110
-  - {id: non_era_x_era_y, pattern: '(?i)\bnon (era|fu) [^.!?]{1,60}[.!?]\s+(era|fu)\b', modalita: avviso, massimo: 5, ambito: libro}   # M:109 (forma approssimata: avviso)
+  - {id: non_era_x_era_y, pattern: '(?:\b[Nn]on (?:era|fu|è|sono|c''era|ci fu) [^.!?]{1,80}[.!?]\s+(?:Era|Fu|È|Sono|C''era|Ci fu)\b)', escludi_pattern: 'non è come quello di Michele', modalita: avviso, massimo: 5, ambito: libro}   # M:109 (forma generica; esclusa la frase del cap. 21, che non è la figura)
   - {id: come_si_verbo, pattern: '(?i)\bcome si [a-zà-ù]+', modalita: avviso, massimo: 1, ambito: capitolo}         # M:111
   - {id: non_risposi, pattern: '(?i)\bnon risposi\b|\bnon disse niente\b', modalita: avviso, massimo: 1, ambito: capitolo}   # M:112
   - {id: qualcosa_di, pattern: '(?i)\bqualcosa di [a-zà-ù]+', modalita: avviso, massimo: 1, ambito: capitolo}       # M:114 (prende anche i nomi: avviso)
-  - {id: fischiare, pattern: '(?i)\bfisch[a-zà-ù]*', modalita: avviso, massimo: 6, ambito: libro, conta_per: unita, consentito_in_capitoli: ["35", "interludio VII", "39"]}                  # M:116 (prende anche il fischio della nave: avviso)
+  - {id: fischiare, pattern: '(?i)\bfisch[a-zà-ù]*', modalita: avviso, massimo: 6, ambito: libro, conta_per: unita, consentito_in_capitoli: ["35", "interludio VII", "39"], escludi_pattern: '(?i)\bfischio della nave\b|\bnave\b[^.!?]{0,30}\bfischio\b'}   # M:116 (il fischio letterale della nave non conta)
   - {id: disse_piano, pattern: '(?i)\bdisse piano\b', modalita: avviso, massimo: 1, ambito: capitolo}               # M:203
   - {id: beniami, pattern: 'Beniamì', modalita: conta, massimo: 3, ambito: libro}                                   # M:197
   - {id: l_ago, pattern: "(?i)\\bl'ago\\b", modalita: conta, massimo: 3, ambito: libro}                             # M:222
