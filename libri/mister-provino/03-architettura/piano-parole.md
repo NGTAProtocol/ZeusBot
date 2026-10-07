@@ -25,7 +25,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | interludio III | La nave | 400 | — | — | — | — | 291 |
 | Parte prima | 16 | Ferragosto | 1.960 | — | — | — | — | 294 |
 | Parte prima | 17 | La busta | 1.850 | — | — | — | — | 300 |
-| Parte prima | 18 | Sette giorni | 2.385 | — | — | — | — | 310 |
+| Parte prima | 18 | Sette giorni | 2.385 | — | — | 2.249 | -5,7% | 310 |
 | Parte prima | 19 | Il settimo giorno | 2.380 | — | — | — | — | 317 |
 | Parte prima | interludio IV | La lettera | 400 | — | — | — | — | 324 |
 | Parte seconda | 20 | La scimmia | 1.750 | — | — | — | — | 331 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.481.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.511.

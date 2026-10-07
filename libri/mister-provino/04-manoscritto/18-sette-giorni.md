@@ -48,7 +48,7 @@ Mio padre si sedette al tavolo con la bottiglia davanti, e non la aprì fino a s
 
 •
 
-Il letto di Checco non c'era più. Lo avevano venduto l'inverno dopo l'arresto, insieme alla bicicletta e alla radio, e dove c'era il suo letto adesso c'era il comò con lo specchio rotto. Quella sera tirai fuori dallo sgabuzzino la brandina di ferro che usavamo per i parenti di Altamura, la aprii accanto al mio letto e ci misi sopra la coperta militare che mi aveva prestato Michele.
+Il letto di Checco non c'era più. Lo avevano venduto l'inverno dopo l'arresto, insieme alla bicicletta e alla radio, e dove c'era il suo letto adesso c'era il comò con lo specchio rotto. Quella sera corsi da Michele, e lui mi prestò la sua brandina di ferro, quella pieghevole che teneva dietro le tele per chi restava a dormire, e la coperta militare piegata in quattro; me le caricò in braccio senza chiedermi per chi fossero. Tornai a casa con il ferro che mi batteva sulle ginocchia, aprii la brandina accanto al mio letto e ci stesi sopra la coperta.
 
 Checco entrò nella stanza con il sacchetto. Si guardò intorno: il comò, la finestra, il letto, il soffitto con la crepa. Poi vide la teca.
 

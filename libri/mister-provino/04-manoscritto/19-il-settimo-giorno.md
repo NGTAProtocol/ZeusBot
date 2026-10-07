@@ -106,7 +106,7 @@ Passai la giornata davanti alla Questura, seduto sul gradino di un portone dall'
 
 La sera andai al bar.
 
-Nicola era al suo tavolino, con due uomini e una bottiglia di vino bianco nel secchiello, e quando mi vide arrivare dalla piazzetta non si scompose. Fece una faccia triste, la faccia della sera della busta in cucina, tre anni prima.
+Nicola era al suo tavolino, con due uomini e una bottiglia di vino bianco nel secchiello, e quando mi vide arrivare dalla piazzetta non si scompose. Fece una faccia triste, la faccia di quella sera in cucina, con la busta.
 
 — Mister Provino. Vieni, siediti. Ho saputo. — Scosse la testa. — Che peccato. Proprio adesso che si stava rimettendo in piedi.
 
@@ -130,7 +130,7 @@ Nicola non mi colpì. Avvicinò la faccia alla mia, così vicino che sentivo il 
 
 Lo disse quasi con curiosità, come se volesse sapere davvero la risposta.
 
-— Dimmelo tu. Mettiamo che l'ho messa io. Che cosa cambia? Vai alla Questura, e gli racconti che tuo cugino ha messo una pistola nella macchina di tuo fratello. E loro ti chiedono come lo sai. E tu che gli dici? Che lavori per me da un anno? Che assaggi la roba al porto? Che sabato diciassette luglio stavi in fondo a una traversa con un involto in mano?
+— Dimmelo tu. Mettiamo che l'ho messa io. Che cosa cambia? Vai alla Questura, e gli racconti che tuo cugino ha messo una pistola nella macchina di tuo fratello. E loro ti chiedono come lo sai. E tu che gli dici? Che lavori per me da mesi? Che assaggi la roba al porto? Che sabato diciassette luglio stavi in fondo a una traversa con un involto in mano?
 
 Mi teneva la spalla contro il muro con il palmo aperto, senza spingere.
 
