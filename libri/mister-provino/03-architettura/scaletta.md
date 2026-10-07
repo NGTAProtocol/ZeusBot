@@ -450,7 +450,7 @@ Gli interludi I-IX sono tutti nuovi.
 - **Il poliziotto con i baffi:** il ragazzo gli dice che il magro è un ladro, venuto per i soldi dei quadri; e, quando gli chiedono chi ha telefonato, che a Bari Vecchia nessuno telefona.
 - **Cambia:** l'incendio senza compiacimento. **Filone:** base. **Chiusura:** B (la battuta al poliziotto).
 
-### Cap. 37 — Lucia · 1.300 · dom 31 ottobre
+### Cap. 37 — Il transatlantico · 1.300 · dom 31 ottobre
 - **All'alba lo zaino** tolto dall'ulivo con le mani bendate; il buco lasciato aperto: due nascondigli vuoti.
 - **Il Policlinico:** il ritratto sul comodino. Michele chiede se i soldi ci sono ancora.
 - Michele ha parlato con lei tutta la notte. **Michele dice il nome di lei: Lucia** (**prima e unica rivelazione del nome**; da qui in avanti sempre Lucia). Dipingere per non guardare la porta (eco del cap. 16). I quadri bruciati come una liberazione. Michele dice di aver amato due volte. **Poi chiede, a modo suo, quando parte la nave: è il sì.**

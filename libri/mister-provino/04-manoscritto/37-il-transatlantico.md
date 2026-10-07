@@ -1,4 +1,4 @@
-# 37 — Lucia
+# 37 — Il transatlantico
 
 *Campagna di Bitonto e Bari — domenica 31 ottobre 1976*
 
