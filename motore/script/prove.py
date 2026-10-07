@@ -7,6 +7,7 @@ esiti e stampa la tabella script | controllo | atteso | ottenuto | OK/KO.
 Alla fine rilancia separazione.py e recinto.py su motore/.
 Codice d'uscita 0 solo se tutto è OK.
 """
+import hashlib
 import json
 import os
 import re
@@ -123,7 +124,7 @@ def passo_1(A):
         for n, p in un:
             esito('conta.py', f'{nome}: parole unità {n}', att['unita'][n],
                   conta.conta_testo(open(p, encoding='utf-8').read()), sez)
-        esegui(os.path.join(S, 'conta.py'), c)
+        esegui(os.path.join(S, 'conta.py'), c, '--scrivi')
         rep = os.path.join(c, '06-diagnostica', 'conteggio.md')
         m = re.search(r'\*\*Totale:\*\* (\d+)', open(rep, encoding='utf-8').read()) if os.path.isfile(rep) else None
         esito('conta.py', f'{nome}: totale nel report', att['totale'], m.group(1) if m else 'nessun report', sez)
@@ -1923,9 +1924,144 @@ def correzioni_dopo_lotto_38_43(A):
           f'{len(s2.get("correzioni_registrate") or [])}', sez)
 
 
+# ---------------------------------------------------------------- titoli, tempi relativi, età, fatti, push
+
+def titoli_tempi_eta_push(A):
+    import compila
+    import continuita
+    sez = 'titoli, tempi, età, push'
+
+    def mini(testi=None, intestazioni=None, cronologia=None, libro_extra=None):
+        Lm = copia_libro('mini-libro')
+        md = os.path.join(Lm, '04-manoscritto')
+        caps = sorted(x for x in os.listdir(md) if x[0].isdigit())
+        for f, t in zip(caps, testi or []):
+            if t:
+                open(os.path.join(md, f), 'a', encoding='utf-8').write('\n' + t + '\n')
+        for f, t in zip(caps, intestazioni or []):
+            if t:
+                righe = open(os.path.join(md, f), encoding='utf-8').read().split('\n')
+                righe[1] = t
+                open(os.path.join(md, f), 'w', encoding='utf-8').write('\n'.join(righe))
+        if cronologia:
+            pc = os.path.join(Lm, 'cronologia.yaml')
+            cron = yaml.safe_load(open(pc, encoding='utf-8'))
+            cron.update(cronologia)
+            open(pc, 'w', encoding='utf-8').write(yaml.safe_dump(cron, allow_unicode=True))
+        if libro_extra:
+            py = os.path.join(Lm, 'libro.yaml')
+            lb = yaml.safe_load(open(py, encoding='utf-8'))
+            lb.update(libro_extra)
+            open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+        return Lm
+
+    def avvisi(Lm, controllo):
+        _, libro, _ = comune.carica_libro(Lm)
+        return [f'{r["unita"]}|{r["esito"]}' for r in continuita.controlla_libro(Lm, libro)[0]
+                if r['controllo'].startswith(controllo)]
+
+    # (a) compila: titolo dall'intestazione sorgente nel testo e nel sommario; senza titolo, avviso
+    Lm = copia_libro('mini-libro')
+    p1 = os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md')
+    t = open(p1, encoding='utf-8').read()
+    open(p1, 'w', encoding='utf-8').write(t.replace('## 1\n', A['a_intestazione'] + '\n', 1))
+    _, libro, _ = comune.carica_libro(Lm)
+    av = []
+    out = compila.compila(Lm, libro, av)
+    esito('compila.py', '(a) capitolo con titolo: sommario | intestazione', A['a_con_titolo'],
+          f'{("- " + A["a_atteso"]) in out.splitlines()} | {("## " + A["a_atteso"]) in out.splitlines()}', sez)
+    esito('compila.py', '(a) capitoli senza titolo: avvisi', A['a_senza_titolo'],
+          [a.split(' senza titolo')[0] for a in av], sez)
+    # (b) tempi relativi: testo inventato aggiunto al capitolo 2 (venerdì 4 marzo 2021)
+    for chiave, prova in A['b_prove'].items():
+        Lm = mini(testi=prova.get('testi'), intestazioni=prova.get('intestazioni'))
+        esito('continuita.py', f'(b) tempi relativi: {chiave}', prova['atteso'], avvisi(Lm, 'tempo_relativo'), sez)
+    # (c) differenze d'età tra personaggi con data di nascita (Irene 1985-06-10, Gemma 1999-09-02: 14 anni)
+    for chiave, frase in A['c_frasi'].items():
+        Lm = mini(testi=[frase])
+        esito('continuita.py', f'(c) differenza d\'età: {chiave}', A['c_attesi'][chiave], avvisi(Lm, 'differenza_eta'), sez)
+    # (d) fatti_incompatibili: avviso con le due righe se compaiono tutti e due
+    for chiave, prova in A['d_prove'].items():
+        Lm = mini(testi=prova['testi'], libro_extra={'fatti_incompatibili': A['d_fatti']})
+        _, libro, _ = comune.carica_libro(Lm)
+        ris = [r for r in continuita.controlla_libro(Lm, libro)[0] if r['controllo'].startswith('fatti_incompatibili')]
+        esito('continuita.py', f'(d) fatti incompatibili: {chiave}', prova['atteso'],
+              [f'{r["unita"]}|{r["esito"]}|{"riga" in r["dettaglio"] and "«" in r["dettaglio"]}' for r in ris], sez)
+    # (e) due correzioni prima dello stesso commit: la seconda registra lo sha256 della prima
+    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
+    E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def git(cwd, *a):
+        return subprocess.run(['git', *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def zb(cwd, *a):
+        return subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    d = tempfile.mkdtemp(dir=TMP)
+    r = os.path.join(d, 'repo')
+    os.makedirs(r)
+    git(r, 'init', '-q')
+    git(r, 'checkout', '-q', '-b', 'prova')
+    Lm = shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'mini'))
+    st = comune.leggi_yaml(os.path.join(M, 'modelli', 'stato.yaml'))
+    st.update(libro='Prova di stampa', fase='chiusura', passo='controlli finali', aggiornato='prova', gate_in_attesa=None,
+              ultimo_capitolo_scritto=3, ultimo_capitolo_approvato=3, unita_accettate=['interludio I'])
+    open(os.path.join(Lm, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(st, sort_keys=False, allow_unicode=True))
+    git(r, 'add', '-A')
+    git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'prova')
+    pc = os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md')
+    sha = [comune.sha256_file(pc)]
+    for riga in ('Prima riga corretta.', 'Seconda riga corretta.'):
+        open(pc, 'a', encoding='utf-8').write('\n' + riga + '\n')
+        sha.append(comune.sha256_file(pc))
+        zb(r, 'correggi', 'mini', f'capitolo 1: {riga}')
+    reg = comune.leggi_yaml(os.path.join(Lm, 'stato.yaml')).get('correzioni_registrate') or []
+    catena = [(v['sha256_precedente'], v['sha256_corretto']) for v in reg]
+    esito('fase.py', '(e) due correzioni prima del commit: precedente della seconda = corretto della prima',
+          A['e_catena'], f'{len(reg)} / {catena == [(sha[0], sha[1]), (sha[1], sha[2])]}', sez)
+    # (f) zb conta non scrive file; zb push: riuscito, ramo alternativo, bundle
+    Lm = copia_libro('mini-libro')
+    prima = sorted(os.path.relpath(os.path.join(a, f), Lm) for a, _, fs in os.walk(Lm) for f in fs)
+    p = esegui(os.path.join(M, 'zb'), 'conta', Lm)
+    dopo = sorted(os.path.relpath(os.path.join(a, f), Lm) for a, _, fs in os.walk(Lm) for f in fs)
+    esito('conta.py', '(f) zb conta: codice | file nuovi | totale a schermo', A['f_conta'],
+          f'{p.returncode} | {len(set(dopo) - set(prima))} | {"**Totale:**" in p.stdout}', sez)
+    risultati = []
+    for caso in ('ok', 'alternativo', 'bundle'):
+        d = tempfile.mkdtemp(dir=TMP)
+        git(d, 'init', '-q', '--bare', 'remoto.git')
+        if caso == 'alternativo':        # il remoto rifiuta il ramo «prova» e accetta gli altri
+            hk = os.path.join(d, 'remoto.git', 'hooks', 'pre-receive')
+            open(hk, 'w').write('#!/bin/sh\nwhile read a b ref; do [ "$ref" = refs/heads/prova ] && exit 1; done\nexit 0\n')
+            os.chmod(hk, 0o755)
+        r = os.path.join(d, 'repo')
+        os.makedirs(r)
+        git(r, 'init', '-q')
+        git(r, 'checkout', '-q', '-b', 'prova')
+        git(r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git') if caso != 'bundle' else os.path.join(d, 'manca.git'))
+        open(os.path.join(r, 'a.txt'), 'w').write('prova\n')
+        git(r, 'add', '-A')
+        git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'prova')
+        bd = os.path.join(d, 'bundle')
+        p = subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), 'push', '--tentativi', '3', '--attesa', '0',
+                            '--bundle-dir', bd], cwd=r, env=E, capture_output=True, text=True)
+        tent = p.stdout.count('non riuscito:')
+        extra = ''
+        if caso == 'alternativo':
+            extra = ' ' + str('-salvataggio-' in git(os.path.join(d, 'remoto.git'), 'branch').stdout)
+        if caso == 'bundle':
+            b = [f for f in os.listdir(bd)] if os.path.isdir(bd) else []
+            ok_sha = bool(b) and hashlib.sha256(open(os.path.join(bd, b[0]), 'rb').read()).hexdigest() in p.stdout
+            extra = f' {len(b)} {ok_sha} {os.path.join(bd, b[0]) in p.stdout if b else False}'
+        risultati.append(f'{caso}: {p.returncode} {tent}{extra}')
+    esito('push.py', '(f) zb push: codice, tentativi falliti, ramo alternativo / bundle (file, sha256, percorso)',
+          A['f_push'], ' / '.join(risultati), sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_dopo_lotto_38_43': correzioni_dopo_lotto_38_43}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_dopo_lotto_38_43': correzioni_dopo_lotto_38_43, 'titoli_tempi_eta_push': titoli_tempi_eta_push}
 
 
 def main(argv):

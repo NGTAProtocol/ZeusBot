@@ -5,7 +5,9 @@ Legge <libro>/cronologia.yaml e controlla nel testo: giorni della settimana
 (su calendario.anni_ammessi), età dei personaggi con data di nascita, durate
 dichiarate in cronologia (nel testo e tra le date degli eventi, unità «cronologia»), cifre
 (KO solo nelle righe con una parola di «contesto»; senza contesto AVVISO), nomi propri scritti
-in due modi, ordine delle date.
+in due modi, ordine delle date. Avvisi: tempi relativi («quattro giorni prima», «due settimane
+dopo», «la terza notte») confrontati con le date delle intestazioni, del testo e della cronologia;
+differenze d'età dichiarate tra personaggi con data di nascita; fatti_incompatibili di libro.yaml.
 Report: <libro>/06-diagnostica/continuita.md, con la tabella di tutte le durate
 trovate e la checklist manuale per capitolo.
 """
@@ -192,6 +194,176 @@ def eta_nella_frase(frase, nascite):
     return out
 
 
+ORDINALI = {'prim': 1, 'second': 2, 'terz': 3, 'quart': 4, 'quint': 5, 'sest': 6, 'settim': 7, 'ottav': 8,
+            'non': 9, 'decim': 10}
+RELATIVO = re.compile(r"(?i)\b([\w']+)\s+(giorni|giorno|settimane|settimana|mesi|mese)\s+(prima|dopo|fa)\b")
+ORDINALE = re.compile(r"(?i)\b(dopo\s+)?(?:la|il)\s+(prim|second|terz|quart|quint|sest|settim|ottav|non|decim)[oa]\s+"
+                      r"(mattina|notte|giorno|sera)\b")
+DIFF_ETA = [
+    (re.compile(r"(?i)\bcon\s+(\w+)\s+anni\s+in\s+(più|meno)\b"), 1, lambda m: m.group(2).lower() == 'più'),
+    (re.compile(r"(?i)\b(?:più|meno)?\s*(grande|vecchi\w*|piccol\w*|giovane|giovani)\s+di\s+(\w+)\s+anni\b"), 2,
+     lambda m: m.group(1).lower()[:3] in ('gra', 'vec')),
+    (re.compile(r"(?i)\b(\w+)\s+anni\s+più\s+(grande|vecchi\w*|piccol\w*|giovane|giovani)\b"), 1,
+     lambda m: m.group(2).lower()[:3] in ('gra', 'vec')),
+]
+
+
+def intervallo_intestazione(testo, cal):
+    """(inizio, fine) dalla riga in corsivo sotto il titolo («— martedì 14 – lunedì 20 settembre 1976»)."""
+    for r in testo.splitlines()[:6]:
+        s = r.strip()
+        if not (s.startswith('*') and s.endswith('*') and len(s) > 2):
+            continue
+        rx = re.compile(r'(?i)(?:\b(' + '|'.join(cal.giorni) + r')\s+)?\b(\d{1,2})(?:\s+(' + '|'.join(cal.mesi)
+                        + r'))?(?:\s+(\d{4}))?\b')
+        parti = [m for m in rx.finditer(s) if m.group(1) or m.group(3)]
+        if not parti:
+            return None
+        mese = anno = None
+        date = []
+        for m in reversed(parti):                    # mese e anno mancanti si prendono dalla data dopo
+            mese = cal.mesi[m.group(3).lower()] if m.group(3) else mese
+            anno = int(m.group(4)) if m.group(4) else anno
+            if mese is None:
+                return None
+            anni = [anno] if anno else cal.anni
+            scelta = None
+            for a in anni:
+                try:
+                    d = datetime.date(a, mese, int(m.group(2)))
+                except ValueError:
+                    continue
+                if scelta is None or (m.group(1) and cal.giorni[d.weekday()] == m.group(1).lower()):
+                    scelta = d
+            if scelta is None:
+                return None
+            date.insert(0, scelta)
+        return date[0], date[-1]
+    return None
+
+
+def piu_mesi(d, n):
+    m = d.month - 1 + n
+    a, m = d.year + m // 12, m % 12 + 1
+    for g in (d.day, 30, 29, 28):
+        try:
+            return datetime.date(a, m, g)
+        except ValueError:
+            continue
+
+
+def tempi_relativi(nome, prosa, inter, note, cal):
+    """Avvisi per «N giorni/settimane/mesi prima/dopo/fa» e «la N-esima mattina/notte/giorno/sera».
+
+    note: {data: unità} con le date delle intestazioni (ogni giorno dell'intervallo), del testo e della
+    cronologia. Giorni e settimane: tolleranza 0; mesi: ±15 giorni. Un «dopo» vale in tutte e due le
+    direzioni (l'unità viene N giorni dopo un fatto, o un fatto viene N giorni dopo l'unità)."""
+    out = []
+    ini, fin = inter
+    for n, r in prosa:
+        for m in RELATIVO.finditer(r):
+            k = numero(m.group(1))
+            if not k:
+                continue
+            u, verso = m.group(2).lower(), m.group(3).lower()
+            if u.startswith('mes'):
+                passo, tol = (lambda d, s: piu_mesi(d, s * k)), 15
+            else:
+                g = k * (7 if u.startswith('settiman') else 1)
+                passo, tol = (lambda d, s, g=g: d + datetime.timedelta(days=s * g)), 0
+            segni = [-1] if verso in ('prima', 'fa') else [-1, 1]
+            finestre = [(passo(ini, s) - datetime.timedelta(days=tol), passo(fin, s) + datetime.timedelta(days=tol))
+                        for s in segni]
+            finestre = [(min(a, b), max(a, b)) for a, b in finestre]
+            if any(a <= d <= b for d in note for a, b in finestre):
+                continue
+            calcolata = passo(ini, segni[0]) if ini == fin else f'{passo(ini, segni[0])} … {passo(fin, segni[0])}'
+            vicina = min(note, key=lambda d: min(abs((d - a).days) for a, _ in finestre)) if note else None
+            out.append(risultato(nome, 'tempo_relativo', 'AVVISO', n,
+                                 f'«{m.group(0)}» (unità datata {ini if ini == fin else f"{ini} – {fin}"}): '
+                                 f'data calcolata {calcolata}' + (' (o dopo l\'unità)' if len(segni) > 1 else '')
+                                 + '; nessuna data delle intestazioni, del testo o della cronologia coincide'
+                                 + (f' (la più vicina: {vicina}, {note[vicina]})' if vicina else '')))
+        if r.lstrip().startswith(('—', '–', '-')):
+            continue                                       # nel dialogo l'ordinale può parlare d'altro
+        for m in ORDINALE.finditer(r):
+            k = ORDINALI[m.group(2).lower()] + (1 if m.group(1) else 0)
+            calcolata = ini + datetime.timedelta(days=k - 1)
+            prima = r[:m.start()].rstrip()
+            inizio = not prima or prima[-1] in '.!?…'
+            if prima.endswith(':'):
+                continue                                   # elenco di ricordi («gli raccontai: il settimo giorno, …»)
+            problemi = []
+            if calcolata > fin and (ini < fin or inizio):
+                problemi.append(f'oltre l\'intestazione ({fin})')
+            dopo = r[m.end():m.end() + 25]
+            g = re.match(r'(?i)\s*,?\s*(?:il|di|la)\s+(' + '|'.join(cal.giorni) + r')\b', dopo)
+            if g and cal.giorni[calcolata.weekday()] != g.group(1).lower():
+                problemi.append(f'il {calcolata} è {cal.giorni[calcolata.weekday()]}, non {g.group(1).lower()}')
+            if problemi:
+                out.append(risultato(nome, 'tempo_relativo', 'AVVISO', n,
+                                     f'«{m.group(0)}» contando dal {ini}: data calcolata {calcolata}; '
+                                     + '; '.join(problemi)))
+    return out
+
+
+def differenze_eta(nome, prosa, nascite):
+    """Avvisi per «con N anni in più/meno», «più grande/piccolo di N anni», «N anni più grande» tra due
+    personaggi con data di nascita nella stessa frase (il primo è il nome più vicino prima della forma)."""
+    out = []
+    for n, r in prosa:
+        for frase in re.split(r'(?<=[.!?…])\s+', r):
+            pos = []
+            for chi in nascite:
+                for m in re.finditer(r'\b(' + re.escape(chi) + '|' + re.escape(chi.split()[0]) + r')\b', frase):
+                    pos.append((m.start(), chi))
+            if len({c for _, c in pos}) < 2:
+                continue
+            for rx, gruppo, maggiore in DIFF_ETA:
+                for m in rx.finditer(frase):
+                    k = numero(m.group(gruppo))
+                    if k is None:
+                        continue
+                    prima = [p for p in pos if p[0] < m.start()]
+                    a = (prima or pos)[-1][1]
+                    altri = sorted((p for p in pos if p[1] != a), key=lambda p: abs(p[0] - m.start()))
+                    b = altri[0][1]
+                    vecchio, giovane = (a, b) if maggiore(m) else (b, a)
+                    vera = eta(nascite[vecchio], nascite[giovane]) if nascite[vecchio] <= nascite[giovane] else \
+                        -eta(nascite[giovane], nascite[vecchio])
+                    if vera != k:
+                        out.append(risultato(nome, 'differenza_eta', 'AVVISO', n,
+                                             f'«{m.group(0).strip()}» ({a} rispetto a {b}): dalle nascite '
+                                             f'{vecchio} ha {vera} anni più di {giovane} '
+                                             f'({nascite[vecchio]}, {nascite[giovane]})'))
+    return out
+
+
+def fatti_incompatibili(cartella, libro):
+    """Avvisi per le coppie di libro.yaml «fatti_incompatibili»: pattern A (nelle sue unità) e pattern B
+    (nelle sue) compaiono tutti e due. L'avviso riporta le due righe."""
+    out = []
+    voci = libro.get('fatti_incompatibili') or []
+    if not voci:
+        return out
+    unita = [(nome, comune.righe_prosa(open(p, encoding='utf-8').read())) for nome, p in comune.unita(cartella, libro)]
+    for f in voci:
+        trovate = []
+        for lato in ('a', 'b'):
+            v = f[lato]
+            rx = re.compile(v['pattern'])
+            trovate.append(next(((nome, n, r.strip()) for nome, prosa in unita
+                                 if v.get('unita') is None or comune.in_elenco(nome, v['unita'])
+                                 for n, r in prosa if rx.search(r)), None))
+        if all(trovate):
+            (ua, na, ra), (ub, nb, rb) = trovate
+            corta = (lambda t: t if len(t) <= 160 else t[:157] + '…')
+            out.append(risultato(ub, f'fatti_incompatibili:{f["id"]}', 'AVVISO', nb,
+                                 f'A, unità {ua} riga {na}: «{corta(ra)}» — B, unità {ub} riga {nb}: «{corta(rb)}»'
+                                 + (f' ({f["nota"]})' if f.get('nota') else '')))
+    return out
+
+
 def controlla_libro(cartella, libro):
     cron = comune.leggi_yaml(os.path.join(cartella, 'cronologia.yaml')) if os.path.isfile(
         os.path.join(cartella, 'cronologia.yaml')) else {}
@@ -205,6 +377,23 @@ def controlla_libro(cartella, libro):
     scaletta = {r.get('Unità', '').lower(): r for r in
                 comune.tabella_md(os.path.join(cartella, '03-architettura', 'scaletta.md'))}
     risultati, durate_trovate, date_unita = [], [], []
+    intervalli, note = {}, {}
+    for e in cron.get('eventi') or []:
+        note.setdefault(e['data'], f'cronologia: {e["id"]}')
+    for nome, p in comune.unita(cartella, libro):
+        testo = open(p, encoding='utf-8').read()
+        inter = intervallo_intestazione(testo, cal)
+        if inter:
+            intervalli[nome] = inter
+            d = inter[0]
+            while d <= inter[1]:
+                note.setdefault(d, f'unità {nome}')
+                d += datetime.timedelta(days=1)
+        for _, r in righe_con_date(testo):
+            for m in cal.trova(r):
+                d = cal.risolvi(m)[0]
+                if d:
+                    note.setdefault(d, f'unità {nome}')
     for nome, p in comune.unita(cartella, libro):
         testo = open(p, encoding='utf-8').read()
         righe = righe_con_date(testo)
@@ -223,6 +412,11 @@ def controlla_libro(cartella, libro):
             if m:
                 data_unita = cal.risolvi(m)[0]
         date_unita.append((nome, data_unita))
+        # tempi relativi, dall'intervallo dell'intestazione (o dalla prima data dell'unità)
+        inter = intervalli.get(nome) or ((data_unita, data_unita) if data_unita else None)
+        if inter:
+            risultati += tempi_relativi(nome, prosa, inter, note, cal)
+        risultati += differenze_eta(nome, prosa, nascite)
         # età (solo forme dichiarative; vedi eta_nella_frase)
         unito = ' '.join(r.strip() for _, r in prosa)
         if data_unita:
@@ -298,6 +492,7 @@ def controlla_libro(cartella, libro):
             risultati.append(risultato('cronologia', 'durata', 'KO', None,
                                        f'«{du["valore"]}» da {du["da"]} a {du["a"]}: dalle date risultano {calcolati} '
                                        f'giorni; tolleranza {tolleranza_giorni(du):.0f} giorni'))
+    risultati += fatti_incompatibili(cartella, libro)
     # ordine delle date
     prec = None
     for nome, d in date_unita:

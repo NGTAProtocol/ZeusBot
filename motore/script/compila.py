@@ -5,7 +5,8 @@ Scrive <libro>/05-output/<titolo>-completo.md: frontespizio, pagina di copyright
 (riga ©, dichiarazione di fantasia, nota dell'autore), sommario, parti e unità
 nell'ordine di lettura. Toglie le righe nascoste <!-- zb: … -->, sostituisce il
 separatore di scena del sorgente con quello di stampa e intitola le unità
-(«Capitolo N», «Prologo», «Epilogo», titolo dell'interludio). Le sezioni sono
+(«N. Titolo» dall'intestazione sorgente «# N — Titolo», «Prologo», «Epilogo», titolo
+dell'interludio; un capitolo senza titolo resta «Capitolo N», con un avviso). Le sezioni sono
 delimitate da commenti <!-- zb:sezione … --> che impagina.py usa per le pagine.
 Il risultato è deterministico: stesso libro, stesso file.
 """
@@ -19,8 +20,23 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 
 
-def titolo_unita(nome, libro):
+def titolo_capitolo(testo):
+    """Titolo dall'intestazione sorgente «# N — Titolo» (anche «## N - Titolo»); None se manca."""
+    for r in testo.splitlines():
+        if r.strip().startswith('#'):
+            m = re.match(r'^#+\s*\d+\s*[—–-]\s*(\S.*?)\s*$', r.strip())
+            return m.group(1) if m else None
+    return None
+
+
+def titolo_unita(nome, libro, testo=None, avvisi=None):
+    """«N. Titolo» per un capitolo con il titolo nell'intestazione; senza titolo «Capitolo N» e un avviso."""
     if nome.isdigit():
+        t = titolo_capitolo(testo or '')
+        if t:
+            return f'{nome}. {t}'
+        if avvisi is not None:
+            avvisi.append(f'AVVISO: capitolo {nome} senza titolo nell\'intestazione («# {nome} — Titolo»): resta «Capitolo {nome}».')
         return f'Capitolo {nome}'
     if nome.startswith('interludio '):
         num = nome.split(' ', 1)[1]
@@ -54,12 +70,14 @@ def corpo_unita(testo, sep_sorgente, sep_stampa):
     return '\n'.join(righe)
 
 
-def compila(cartella, libro):
+def compila(cartella, libro, avvisi=None):
     st = libro.get('struttura') or {}
     sep = st['separatore_scena']
     cop = libro['copyright']
     anno = cop.get('anno') or datetime.date.today().year
     unita = comune.unita(cartella, libro)
+    testi = {nome: open(p, encoding='utf-8').read() for nome, p in unita}
+    titoli = {nome: titolo_unita(nome, libro, testi[nome], avvisi) for nome, _ in unita}
     parti = {p['capitoli'][0]: p['titolo'] for p in st.get('parti') or []}
     pezzi = ['<!-- zb:sezione frontespizio -->', '', f'# {libro["titolo"]}', '']
     if libro.get('sottotitolo'):
@@ -73,14 +91,14 @@ def compila(cartella, libro):
     for nome, _ in unita:
         if nome.isdigit() and int(nome) in parti:
             pezzi.append(f'- **{parti[int(nome)]}**')
-        pezzi.append(f'- {titolo_unita(nome, libro)}')
+        pezzi.append(f'- {titoli[nome]}')
     pezzi.append('')
     for nome, p in unita:
         if nome.isdigit() and int(nome) in parti:
             pezzi += ['<!-- zb:sezione parte -->', '', f'# {parti[int(nome)]}', '']
         tipo = 'capitolo' if nome.isdigit() else nome.split()[0]
-        pezzi += [f'<!-- zb:sezione {tipo} -->', '', f'## {titolo_unita(nome, libro)}', '',
-                  corpo_unita(open(p, encoding='utf-8').read(), sep['sorgente'], sep['stampa']), '']
+        pezzi += [f'<!-- zb:sezione {tipo} -->', '', f'## {titoli[nome]}', '',
+                  corpo_unita(testi[nome], sep['sorgente'], sep['stampa']), '']
     return '\n'.join(pezzi).rstrip() + '\n'
 
 
@@ -89,7 +107,10 @@ def main(argv):
     if not args:
         raise comune.ErroreMotore('Uso: compila.py <libro>')
     cartella, libro, _ = comune.carica_libro(args[0])
-    testo = compila(cartella, libro)
+    avvisi = []
+    testo = compila(cartella, libro, avvisi)
+    for a in avvisi:
+        print(a)
     rel = f'05-output/{comune.nome_file(libro["titolo"])}-completo.md'
     print('scritto', comune.scrivi(cartella, rel, testo))
     return 0

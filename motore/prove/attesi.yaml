@@ -112,6 +112,7 @@ passo_2:
         dialogo: 39.1
         esiti:
           - "scene_numero|KO|"         # 1 scena, il profilo romance ne vuole 2-3
+          - "tempo_relativo|AVVISO|15" # «tre settimane fa» dall'11 giugno: nessuna data al 21 maggio
       "2":
         parole: 1549
         frase_media: 13.2
@@ -619,3 +620,46 @@ correzioni_dopo_lotto_38_43:
     corto: ['AVVISO']
     nel budget: []
   d_chiusura: "0 / True / True / chiusura / controlli finali / 1"   # prima: esito rifiutato in chiusura
+
+# Titoli dei capitoli in compila; tempi relativi, differenze d'età e fatti incompatibili in continuita;
+# catena degli sha256 di più correzioni prima dello stesso commit; zb conta senza file; zb push.
+# Testi inventati aggiunti a copie del mini-libro giallo (cap. 1 martedì 2 marzo 2021, cap. 2 giovedì
+# 4 marzo, cap. 3 martedì 9 marzo; eventi 2020-12-25, 2021-02-28, 2021-03-01).
+titoli_tempi_eta_push:
+  a_intestazione: "## 1 — La farmacia"
+  a_atteso: "1. La farmacia"
+  a_con_titolo: "True | True"                          # prima: «Capitolo 1»
+  a_senza_titolo: ["AVVISO: capitolo 2", "AVVISO: capitolo 3"]
+  b_prove:
+    due giorni prima (cap. 1): {testi: [null, "Irene ci pensava da due giorni prima, dal martedì."], atteso: []}
+    sei giorni prima (nessuna data): {testi: [null, "Gemma l'aveva visto sei giorni prima, al forno."], atteso: ['2|AVVISO']}
+    cinque giorni dopo (cap. 3): {testi: [null, "Cinque giorni dopo la sorella sarebbe tornata."], atteso: []}
+    una settimana dopo (nessuna data): {testi: [null, "Una settimana dopo nessuno ne parlava più."], atteso: ['2|AVVISO']}
+    due mesi fa (Natale, tolleranza 15 giorni): {testi: [null, "La lite era di due mesi fa."], atteso: []}
+    tre mesi fa (nessuna data): {testi: [null, "La chiave era nuova di tre mesi fa."], atteso: ['2|AVVISO']}
+    terza notte di sabato (giusto): {intestazioni: [null, "*Sorvegna — giovedì 4 – sabato 6 marzo*"], testi: [null, "La terza notte, il sabato, Irene non dormì."], atteso: []}
+    seconda notte di sabato (giorno sbagliato): {intestazioni: [null, "*Sorvegna — giovedì 4 – sabato 6 marzo*"], testi: [null, "La seconda notte, il sabato, Irene non dormì."], atteso: ['2|AVVISO']}
+    quinta mattina (oltre l'intestazione): {intestazioni: [null, "*Sorvegna — giovedì 4 – sabato 6 marzo*"], testi: [null, "La quinta mattina Irene tornò in farmacia."], atteso: ['2|AVVISO']}
+  c_frasi:                                             # Irene ha 14 anni più di Gemma
+    in più giusto: "Irene, con quattordici anni in più di Gemma, guidava piano."
+    in più sbagliato: "Irene, con dieci anni in più di Gemma, guidava piano."
+    in meno giusto: "Gemma, con quattordici anni in meno di Irene, guardava la strada."
+    più grande di N anni: "Irene era più grande di quattordici anni rispetto a Gemma."
+    N anni più giovane sbagliato: "Gemma era dodici anni più giovane di Irene."
+    un solo nome: "Irene, con dieci anni in più, guidava piano."
+  c_attesi:
+    in più giusto: []
+    in più sbagliato: ['1|AVVISO']
+    in meno giusto: []
+    più grande di N anni: []
+    N anni più giovane sbagliato: ['1|AVVISO']
+    un solo nome: []
+  d_fatti:
+    - {id: chiave_persa, a: {pattern: '(?i)\bchiave\b.*\bpersa\b', unita: ["1"]}, b: {pattern: '(?i)\bapr\w* con la chiave\b', unita: ["2-3"]}, nota: "la chiave persa non apre più niente"}
+  d_prove:
+    tutti e due: {testi: ["La chiave d'ottone era persa da giorni.", null, "Irene aprì con la chiave il retro."], atteso: ['3|AVVISO|True']}
+    solo A: {testi: ["La chiave d'ottone era persa da giorni."], atteso: []}
+    B fuori dalle sue unità: {testi: ["La chiave era persa. Irene aprì con la chiave il cassetto."], atteso: []}
+  e_catena: "2 / True"                                 # prima: la seconda registrava lo sha256 di HEAD
+  f_conta: "0 | 0 | True"                              # prima: scriveva 06-diagnostica/conteggio.md
+  f_push: "ok: 0 0 / alternativo: 3 3 True / bundle: 4 3 1 True True"

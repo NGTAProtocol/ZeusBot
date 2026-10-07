@@ -20,7 +20,7 @@ SCRIPT = {
     'riciclo': 'riciclo.py', 'compila': 'compila.py', 'impagina': 'impagina.py', 'pdf': 'verifica_pdf.py',
     'kdp': 'conformita_kdp.py', 'pacchetto': 'pacchetto.py', 'prove': 'prove.py',
     'separazione': 'separazione.py', 'recinto': 'recinto.py', 'profili': 'valida_profili.py',
-    'ortografia': 'ortografia.py',
+    'ortografia': 'ortografia.py', 'push': 'push.py',
 }
 FASE = ('stato', 'ok', 'avanti', 'correggi', 'riapprova', 'pronto', 'esito', 'fase')
 AIUTO = """Comandi (il libro è sempre un percorso):
@@ -41,6 +41,7 @@ AIUTO = """Comandi (il libro è sempre un percorso):
   zb verifica KDP fatta [AAAA-MM-GG] | zb verifica KDP stato | zb verifica KDP controlla
   zb hook stato | zb hook attiva [--ok] | zb hook disattiva
   zb pulizia <libro> [--applica]   elenco di temporanei, vuote e copie; cancella solo con --applica
+  zb push [--tentativi 4] [--attesa 2]   push del ramo corrente; poi ramo alternativo, poi git bundle
   zb prove | zb separazione | zb recinto | zb profili"""
 
 

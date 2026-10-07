@@ -383,7 +383,9 @@ def registra_correzione(cartella, libro, stato, resto):
     sha256 precedente e attuale; non apre e non chiude nessun gate.
 
     sha256 precedente: con --commit, la versione prima di quel commit; altrimenti la versione salvata
-    (HEAD) se il file ha modifiche non salvate, o la versione prima dell'ultimo commit che lo tocca."""
+    (HEAD) se il file ha modifiche non salvate, o la versione prima dell'ultimo commit che lo tocca;
+    se per quel file ci sono già correzioni registrate a partire da quella versione (più correzioni prima
+    dello stesso commit), vale l'ultima versione corretta registrata."""
     commit = None
     if '--commit' in resto:
         i = resto.index('--commit')
@@ -426,6 +428,11 @@ def registra_correzione(cartella, libro, stato, resto):
                     cur[1] = riga.strip()
             prima = sha_versione(cartella, voci[1][0], voci[1][1] or rel) if len(voci) > 1 else None
         dopo = attuale
+        # più correzioni prima dello stesso commit: la versione precedente è l'ultima già registrata,
+        # seguendo la catena precedente -> corretto delle registrazioni dello stesso file
+        for v in stato.get('correzioni_registrate') or []:
+            if v.get('file') == rel and v.get('sha256_precedente') == prima and v.get('sha256_corretto') != dopo:
+                prima = v['sha256_corretto']
     if prima == dopo:
         raise comune.ErroreMotore(f'{rel}: nessuna differenza tra la versione precedente e quella corretta')
     voce = {'data': datetime.date.today().isoformat(), 'file': rel, 'motivo': motivo,
