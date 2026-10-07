@@ -6,9 +6,7 @@ passo: capitolo 38
 gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 37
-  - 11
+  capitoli: []
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 37
 tentativi: {}
@@ -94,7 +92,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T10:37:09Z'
+aggiornato: '2026-10-07T10:37:13Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
@@ -141,3 +139,8 @@ correzioni_registrate:
   motivo: «Non era X. Era Y.» riscritta (eccesso nel libro)
   sha256_precedente: f8283e1513f6b3c38c6613f92e3804f68204a23fdd6b88ade0c2f7536c2b7b4a
   sha256_corretto: b22e6bafb7e47274686748650b7fb74c2c7f44d0844f7c96749a5114ecd2e599
+- data: '2026-10-07'
+  file: 04-manoscritto/20-la-scimmia.md
+  motivo: «Non era X. Era Y.» riscritta (eccesso nel libro)
+  sha256_precedente: 94206f271d38ddc04f9efd97f795f369640984a83dd669f0ae8319636fc3057a
+  sha256_corretto: bfffb49d1ff39f27d99691d07e4f5ede127f17d8a055f5df67ea098e7d6901ac

@@ -6,7 +6,7 @@
 
 Il freddo cominciò dai piedi, la seconda notte, e salì piano, come l'acqua che entra in una barca da una tavola sconnessa. A mezzanotte avevo le gambe gelate sotto la coperta e la fronte bagnata di sudore, tutte e due le cose insieme, e non riuscivo a capire se dovevo coprirmi o scoprirmi.
 
-Il martedì mattina, alle sette, Nicola non era venuto. Era venuto Mimmo, a piedi, e mi aveva detto dal vicolo che Nicola era andato a Napoli per qualche giorno, per lavoro, e che io stavo a casa fino a lunedì. Riposati, aveva detto, che hai avuto una settimana brutta. E se n'era andato con le mani in tasca, senza fretta. Io ero risalito in casa e avevo pensato che era una fortuna. Non sapevo ancora che cosa voleva dire avere una settimana intera per stare male.
+Il martedì mattina, alle sette, al posto di Nicola si era presentato Mimmo, a piedi, e mi aveva detto dal vicolo che Nicola era andato a Napoli per qualche giorno, per lavoro, e che io stavo a casa fino a lunedì. Riposati, aveva detto, che hai avuto una settimana brutta. E se n'era andato con le mani in tasca, senza fretta. Io ero risalito in casa e avevo pensato che era una fortuna. Non sapevo ancora che cosa voleva dire avere una settimana intera per stare male.
 
 Il primo giorno non successe quasi niente. Un po' di nervi, la bocca secca, la voglia di uscire e di tornare a casa appena uscito. Il secondo giorno cominciarono gli sbadigli. Venivano uno dietro l'altro, così larghi che mi facevano male le mascelle, e non portavano sonno: portavano solo altri sbadigli, e gli occhi che lacrimavano, e il naso che colava. La sera del secondo giorno arrivò il freddo.
 
