@@ -18,8 +18,13 @@ parole:
   metodo: unico
 documenti_approvati:
   libro.yaml:
-    sha256: 85b5c15b22a383d4680ddf4175d09fca89f7a25a96ee8e3e60eded3e99c77ce8
-    commit: 275ed3e
+    sha256: f2831c321b3a92550d038c64cdbbd0be6b2d0e395d154bf6a3555fde16d21158
+    commit: 0b28ac4
+    riapprovazioni:
+    - data: '2026-10-07'
+      motivo: fischiare contato per unità, consentito in 35, interludio VII e 39
+      sha256_precedente: 85b5c15b22a383d4680ddf4175d09fca89f7a25a96ee8e3e60eded3e99c77ce8
+      commit_precedente: 275ed3e
   02-bibbia/bibbia.md:
     sha256: d3d74000321d325c8273bb05a157a6f1360b106e86436230a3d24dc0d5c71f25
     commit: 3c355aa
@@ -88,7 +93,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T10:23:31Z'
+aggiornato: '2026-10-07T10:36:48Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
