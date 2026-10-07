@@ -13,7 +13,7 @@ ultimo_capitolo_scritto: 10
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 15669
+  scritte: 15635
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -84,4 +84,4 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T02:49:52Z'
+aggiornato: '2026-10-07T02:52:53Z'

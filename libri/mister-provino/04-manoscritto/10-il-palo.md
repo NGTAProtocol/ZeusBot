@@ -32,7 +32,7 @@ Al bar della piazzetta si fermò, entrò, uscì dopo un minuto senza aver preso 
 
 — Il Capo vuole che si faccia pulizia, — disse Nicola a un certo punto, all'aria. — C'è chi si mette in tasca quello che non è suo. Una moneta alla volta, credendo che nessuno se ne accorga.
 
-Nessuno rispose. Io guardavo fuori dal finestrino. Pensavo alle due banconote sotto il mucchio, sulla sabbia di Pane e Pomodoro, e alle mani di Franco che tornavano indietro. Pensai che non poteva essere, e poi pensai che invece poteva, e poi smisi di pensare, perché la macchina aveva infilato una strada dopo l'altra, sempre più stretta, sempre più buia, tra le pareti spellate e le lenzuola stese che quasi toccavano il tetto dell'Alfa, e alla fine si era fermata.
+Nessuno rispose. Io guardavo fuori dal finestrino. Pensavo alle due banconote sotto il mucchio, sulla sabbia di Pane e Pomodoro, e alle mani di Franco che tornavano indietro. Pensai che non poteva essere, e poi che invece poteva, mentre la macchina infilava una strada dopo l'altra, sempre più stretta, sempre più buia, tra le pareti spellate e le lenzuola stese che quasi toccavano il tetto dell'Alfa, e alla fine si fermava.
 
 Eravamo in una traversa stretta dietro la chiesa di San Marco, una di quelle dove il sole non scende mai, nemmeno a luglio. I muri erano umidi e verdi in basso. C'era odore di piscio e di bucato. Nicola spense il motore, e il silenzio ci entrò dentro la macchina tutto in una volta.
 
@@ -70,7 +70,7 @@ Il primo colpo fece un rumore sordo, pieno. Poi un altro. Poi una pausa, e la vo
 
 Non mi girai.
 
-Guardavo la strada. Il gatto sul davanzale si leccava una zampa, con calma, girando la testa ogni tanto verso la traversa, poi tornando alla zampa. Da una finestra aperta più in là arrivava il rumore di una pentola sul fuoco e la voce di una radio che dava i risultati di qualcosa, e qualcuno, dentro quella casa, la spense. Il motorino era sempre appoggiato al muro. Una persiana al primo piano, di fronte a me, si aprì di un dito e si richiuse. Un'altra, più in là, si chiuse del tutto. Il quartiere sapeva, dietro le persiane, e stava zitto. Nessuno uscì. Nessuno venne.
+Guardavo la strada. Il gatto sul davanzale si leccava una zampa, con calma, girando la testa ogni tanto verso la traversa, poi tornando alla zampa. Da una finestra aperta più in là arrivava il rumore di una pentola sul fuoco e la voce di una radio che dava i risultati di qualcosa, e qualcuno, dentro quella casa, la spense. Il motorino era sempre appoggiato al muro. Una persiana, al primo piano di fronte a me, si chiuse del tutto. Nessuno uscì. Nessuno venne.
 
 Le dita mi si chiudevano sull'involto da sole, sempre più strette, fino a sentire gli angoli duri attraverso lo straccio, e quando cominciarono a tremare le lasciai tremare e strinsi ancora, perché tenerlo era la sola cosa che mi era stata data da fare, e la facevo.
 
@@ -110,7 +110,7 @@ In macchina Nicola accese la radio. Trasmettevano una canzone allegra, con le tr
 
 — Sì.
 
-— Franco era tuo amico. Lo so. — Abbassò la radio. — Ma gli amici non ti rubano, a te. Rubano a me. E chi ruba a me ruba pure a te, che mangi grazie a me. Ricordatelo.
+— Gli amici non ti rubano, a te, — disse, e abbassò la radio. — Rubano a me. E chi ruba a me ruba pure a te, che mangi grazie a me. Ricordatelo.
 
 Non dissi niente. Guardavo fuori. Il quartiere passava uguale, come tutti i giorni. Le donne alle finestre, i bambini che correvano dietro a un pallone, un vecchio seduto fuori dalla porta con il bastone tra le ginocchia. Nessuno guardava la macchina. Tutti sapevano. Era la stessa cosa.
 
