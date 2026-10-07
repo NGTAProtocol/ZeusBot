@@ -106,7 +106,9 @@ Le cozze le presi da Pasquale, al banco grande, e lui mi guardò le mani mentre 
 
 — Glielo dico.
 
-— E diglielo bene, che quello è testardo. Poi andai verso il porto, per la strada dei magazzini, perché di lì si arrivava prima al forno.
+— E diglielo bene, che quello è testardo.
+
+Poi andai verso il porto, per la strada dei magazzini, perché di lì si arrivava prima al forno.
 
 Davanti al cancello degli scaricatori c'era il gruppo della mattina, quelli che aspettavano la chiamata: una ventina di uomini con le braccia nude, appoggiati al muro o seduti sui talloni, che fumavano e guardavano il caposquadra. Il caposquadra stava su una cassa con un foglio in mano e chiamava i nomi, e quelli chiamati entravano, e gli altri restavano.
 
