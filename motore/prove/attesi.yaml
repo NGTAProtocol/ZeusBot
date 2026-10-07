@@ -548,7 +548,7 @@ correzioni_lotto_11_20:
   a_comandi: "True / True / 0 / False"   # capitolo.py eseguito / AVVISO «in anticipo» / conta.py / nessun FERMO
   a_sconosciuto: "2 / True"
   b_impronta: "True / True"
-  b_esito: "0 / ['| — | 1 | La farmacia | apertura | 1 | 1200 | 1200 | 1186 | -1.2% |'] / True"
+  b_esito: "0 / ['| — | 1 | La farmacia | apertura | 1 | 1200 | 1200 | 1186 | -1,2% |'] / True"   # libro in italiano: virgola
   b_grezzo: "True / Totale previsto (prova): 2.578."   # sha256 grezzo + commit registrati prima delle impronte
   c_stato: "1 / capitolo 2"
   d_grafie: ['«Calvo» e «Calvi»']      # «Calvo» a inizio frase e dopo la lineetta: ignorato; a metà frase: segnalato
@@ -560,3 +560,24 @@ correzioni_e_passo:
   a_commit: "0 / True / True / True"
   a_rifiuti: "2 / 2 / 2"          # unità inesistente e istruzione senza «:» rifiutate; registrate restano 2
   b_passo: "0 / capitolo 3 / 2"   # prima della correzione il passo tornava a «capitolo 2»
+
+# Voci ad ambito «libro» con consentito_in_capitoli e conta_per; frase media negli interludi; virgola nel piano parole.
+unita_consentite_e_interludi:
+  a_testi: ["Fischiò due volte, poi fischiò ancora.", "Un fischio lungo.", "Si sentì un fischio."]
+  a_voci:
+    per occorrenza: {id: fischio_prova, pattern: '(?i)\bfisch\w*', modalita: avviso, massimo: 1, ambito: libro}
+    per unità: {id: fischio_prova, pattern: '(?i)\bfisch\w*', modalita: avviso, massimo: 1, ambito: libro, conta_per: unita}
+    per unità con consentita la 2: {id: fischio_prova, pattern: '(?i)\bfisch\w*', modalita: avviso, massimo: 1, ambito: libro, conta_per: unita, consentito_in_capitoli: ["2"]}
+    per unità con consentite 1-3: {id: fischio_prova, pattern: '(?i)\bfisch\w*', modalita: avviso, massimo: 1, ambito: libro, conta_per: unita, consentito_in_capitoli: ["1-3"]}
+  a_attesi:
+    per occorrenza: ['1|voce:fischio_prova|AVVISO']     # la seconda occorrenza, nella stessa unità
+    per unità: ['2|voce:fischio_prova|AVVISO']          # seconda unità con la voce
+    per unità con consentita la 2: ['3|voce:fischio_prova|AVVISO']
+    per unità con consentite 1-3: []
+  b_testi:
+    frasi corte: "Piove. Esco. Torno. Chiudo la porta. Mi siedo."
+    frasi giuste: "La sera la piazza resta vuota fino alla chiesa grande. Il fornaio abbassa la saracinesca per ultimo, senza fretta. Nella vetrina la croce verde è spenta da tre giorni."
+  b_attesi:
+    frasi corte: ['interludio I|frase_media|AVVISO']
+    frasi giuste: []
+  c_scarti: ['-1,2%', '+11,5%']

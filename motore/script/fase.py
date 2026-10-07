@@ -436,14 +436,23 @@ def aggiorna_piano(cartella, libro, n):
         grezzo = celle[intest.index('Budget capitolo')]
         cifre = re.sub(r'[^\d]', '', grezzo)
         italiano = '.' in grezzo
+        virgola = italiano or libro.get('lingua') == 'it'
         celle[intest.index('Parole reali')] = f'{parole:,}'.replace(',', '.' if italiano else '')
         if cifre:
             sc = (parole - int(cifre)) / int(cifre) * 100
-            celle[intest.index('Scarto')] = f'{sc:+.1f}%'.replace('.', ',' if italiano else '.')
+            celle[intest.index('Scarto')] = f'{sc:+.1f}%'.replace('.', ',' if virgola else '.')
         righe[i] = '| ' + ' | '.join(celle) + ' |'
         cambiata = righe[i]
     if cambiata is None:
         return None
+    if libro.get('lingua') == 'it':
+        # tutte le percentuali di scarto con la virgola (anche quelle scritte prima)
+        isc = intest.index('Scarto')
+        for i, r in enumerate(righe):
+            celle = [c.strip() for c in r.strip().strip('|').split('|')]
+            if r.strip().startswith('|') and len(celle) == len(intest) and re.fullmatch(r'[+-]\d+\.\d%', celle[isc]):
+                celle[isc] = celle[isc].replace('.', ',')
+                righe[i] = '| ' + ' | '.join(celle) + ' |'
     testo = '\n'.join(righe)
     m = re.search(r'Totale previsto[^:]*:\s*(\d{1,3}(?:\.\d{3})+|\d+)', testo)
     if m:
