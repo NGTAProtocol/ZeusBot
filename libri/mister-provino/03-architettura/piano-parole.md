@@ -36,7 +36,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte seconda | 25 | La grotta | 1.850 | — | — | 1.810 | -2,2% | 365 |
 | Parte seconda | interludio V | Il collo | 400 | — | — | — | — | 372 |
 | Parte seconda | 26 | Il panettiere | 1.850 | — | — | 1.768 | -4,4% | 375 |
-| Parte seconda | 27 | L'ago | 1.440 | — | — | — | — | 382 |
+| Parte seconda | 27 | L'ago | 1.440 | — | — | 1.370 | -4,9% | 382 |
 | Parte seconda | 28 | L'ombra | 1.750 | — | — | — | — | 387 |
 | Parte seconda | 29 | Il circolo | 1.340 | — | — | — | — | 393 |
 | Parte seconda | 30 | Carlo | 1.440 | — | — | — | — | 402 |
