@@ -36,11 +36,16 @@ documenti_approvati:
     sha256: 1cd740f2f5f9af6b5d7f08322cd2949592e3ff245e6cc242a80a203d6c5fc9bd
     commit: 4097b57
   03-architettura/scaletta.md:
-    sha256: 589718b3c0b1d0964f66ed3ade648e56046e289229945c301b0405a6cce442b0
-    commit: 4e3ac5b
+    sha256: c84ab7c8f6e120b49ae7baed4bf13d04cce2f454f345436a44b700e95ddd30c1
+    commit: 3fdce98
+    riapprovazioni:
+    - data: '2026-10-07'
+      motivo: 'titolo del capitolo 37: Il transatlantico'
+      sha256_precedente: 589718b3c0b1d0964f66ed3ade648e56046e289229945c301b0405a6cce442b0
+      commit_precedente: 4e3ac5b
   03-architettura/piano-parole.md:
-    sha256: 4d2217ce160ae37d11da8e3b8f2aebb6e9786a73bab52662a96c4a3c58e757ea
-    commit: 48cfff6
+    sha256: 5a5ad3bb879d179b0822702a692ff35835e20f279c5245d4bf682ce0d1974ebd
+    commit: 3fdce98
     riapprovazioni:
     - data: '2026-10-06'
       motivo: parole reali del capitolo 1
@@ -70,6 +75,10 @@ documenti_approvati:
       motivo: ribilanciamento dei capitoli 11-43 dopo il capitolo 10
       sha256_precedente: 0c725fcdc9b20b74feab510bca093c5529bfea4facb0e225b2ce9c05858e63da
       commit_precedente: bb5970d
+    - data: '2026-10-07'
+      motivo: 'titolo del capitolo 37: Il transatlantico'
+      sha256_precedente: 4d2217ce160ae37d11da8e3b8f2aebb6e9786a73bab52662a96c4a3c58e757ea
+      commit_precedente: 48cfff6
   05-revisioni/pagina-campione.md:
     sha256: 9c73760076edaff8922d288a33bc340622a161fd0e1623d072193be824bbca62
     commit: f27c61c
@@ -94,7 +103,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T10:37:42Z'
+aggiornato: '2026-10-07T10:37:51Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
