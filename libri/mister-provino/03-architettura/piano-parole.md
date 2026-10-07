@@ -31,7 +31,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte seconda | 20 | La scimmia | 1.750 | — | — | 1.684 | -3,8% | 331 |
 | Parte seconda | 21 | Il camion | 1.750 | — | — | 1.688 | -3,5% | 337 |
 | Parte seconda | 22 | Cataldo | 1.850 | — | — | 1.733 | -6,3% | 343 |
-| Parte seconda | 23 | La settimana | 3.000 | 3 | 1.100 / 1.200 / 700 | — | — | 349 |
+| Parte seconda | 23 | La settimana | 3.000 | 3 | 1.100 / 1.200 / 700 | 2.822 | -5,9% | 349 |
 | Parte seconda | 24 | La Jonica | 1.750 | — | — | — | — | 358 |
 | Parte seconda | 25 | La grotta | 1.850 | — | — | — | — | 365 |
 | Parte seconda | interludio V | Il collo | 400 | — | — | — | — | 372 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.375.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.197.
