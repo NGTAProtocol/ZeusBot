@@ -4,7 +4,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 
 | Parte | Cap. | Titolo | Budget capitolo | Scene | Budget per scena | Parole reali | Scarto | Riga |
 |---|---|---|---|---|---|---|---|---|
-| — | prologo | Prologo | 500 | — | — | — | — | 137 |
+| — | prologo | Prologo | 500 | — | — | 485 | -3,0% | 137 |
 | Parte prima | 1 | Pane e Pomodoro | 1.700 | — | — | 1.698 | -0,1% | 149 |
 | Parte prima | 2 | Napoli | 1.800 | — | — | 1.621 | -9,9% | 163 |
 | Parte prima | 3 | Trani | 2.000 | — | — | 1.870 | -6,5% | 174 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | 458 | -8,4% | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.301.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.286.

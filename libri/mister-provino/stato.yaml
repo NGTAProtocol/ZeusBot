@@ -2,17 +2,18 @@ libro: Mister Provino
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
-passo: prologo
+passo: epilogo
 gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli: []
+  capitoli:
+  - prologo
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 43
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 75801
+  scritte: 76286
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -106,7 +107,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T11:03:12Z'
+aggiornato: '2026-10-07T11:04:03Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
@@ -194,3 +195,4 @@ cambi_fase:
   - epilogo
 unita_accettate:
 - interludio IX
+- prologo
