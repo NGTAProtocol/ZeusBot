@@ -44,7 +44,7 @@ Tolsi la camicia stando di spalle, girato verso il muro, e tenni le braccia stre
 
 Si spogliava piano, piegando ogni cosa sulla sedia. Quando restò nudo, sotto quella luce bianca, mi sembrò più piccolo di come lo ricordavo. Aveva la pancia gonfia e le gambe magre, e una cicatrice lunga sulla schiena che non avevo mai visto. La guardia gli disse di aprire la bocca e lui la aprì. Gli disse di alzare le braccia e lui le alzò. Gli disse di girarsi e lui si girò, con gli occhi bassi, come un bambino che si fa lavare.
 
-Quel giorno, sotto il neon, non pensai niente; da vecchio ho capito che è lì che ho smesso di avere paura di lui, e che al posto della paura non è venuto niente di meglio.
+Quel giorno, sotto il neon, non pensai niente.
 
 Ci rivestimmo in silenzio. Mio padre si abbottonò la camicia azzurra sbagliando un bottone, e io non glielo dissi.
 
@@ -57,6 +57,10 @@ Erano più di tre anni che stava lì dentro. Aveva ventidue anni e ne dimostrava
 — Figlio.
 
 Mio padre lo disse con la voce rotta, e Checco abbassò gli occhi.
+
+— Ti hanno dato una camicia buona?
+
+— È quella del lunedì. Va bene così.
 
 Parlarono della casa, del caldo, di un cugino di Bitonto che si era sposato. Mio padre disse che stavamo bene. Checco disse che lì dentro si mangiava male ma si mangiava, e che lavorava in cucina, e che il tempo passava.
 

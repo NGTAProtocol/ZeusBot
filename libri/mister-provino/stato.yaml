@@ -23,8 +23,13 @@ correzioni_aperte:
   testo: 'capitolo 2: paragrafo dell''attesa all''ingresso spostato prima di «Dentro faceva fresco»; «Non toccò nemmeno me»'
   sha256: ee6458d75194
   data: '2026-10-07'
+- gate: primi_capitoli
+  testo: 'capitolo 3: intrusione sulla nudità ridotta a «Quel giorno, sotto il neon, non pensai niente»; battuta del padre
+    sulla camicia e risposta di Checco'
+  sha256: fcc0090789aa
+  data: '2026-10-07'
 parole:
-  scritte: 5203
+  scritte: 5189
   obiettivo: 78000
   metodo: unico
 documenti_approvati:
@@ -73,4 +78,4 @@ revisione_in_corso:
   blocchi_totali: 9
   sha256: 9da992b623ca
 push_in_sospeso: false
-aggiornato: '2026-10-07T02:34:47Z'
+aggiornato: '2026-10-07T02:37:41Z'
