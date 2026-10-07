@@ -39,7 +39,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte seconda | 27 | L'ago | 1.440 | — | — | 1.370 | -4,9% | 382 |
 | Parte seconda | 28 | L'ombra | 1.750 | — | — | 1.860 | +6,3% | 387 |
 | Parte seconda | 29 | Il circolo | 1.340 | — | — | 1.355 | +1,1% | 393 |
-| Parte seconda | 30 | Carlo | 1.440 | — | — | — | — | 402 |
+| Parte seconda | 30 | Carlo | 1.440 | — | — | 1.473 | +2,3% | 402 |
 | Parte seconda | interludio VI | Il telefono | 400 | — | — | — | — | 407 |
 | Parte terza | 31 | Gli elicotteri | 1.440 | — | — | — | — | 414 |
 | Parte terza | 32 | L'ulivo | 1.340 | — | — | — | — | 420 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.107.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.140.
