@@ -8,7 +8,7 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 1 | Pane e Pomodoro | 1.700 | — | — | 1.698 | -0,1% | 149 |
 | Parte prima | 2 | Napoli | 1.800 | — | — | 1.621 | -9,9% | 163 |
 | Parte prima | 3 | Trani | 2.000 | — | — | 1.870 | -6,5% | 174 |
-| Parte prima | interludio I | I fiori | 400 | — | — | — | — | 185 |
+| Parte prima | interludio I | I fiori | 400 | — | — | 418 | +4.5% | 185 |
 | Parte prima | 4 | La stanza di Michele | 1.500 | — | — | 1.383 | -7,8% | 188 |
 | Parte prima | 5 | Il brodetto | 1.350 | — | — | 1.328 | -1,6% | 199 |
 | Parte prima | 6 | I tre silenzi | 1.600 | — | — | 1.421 | -11,2% | 205 |
@@ -59,4 +59,4 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte terza | interludio IX | Le pagine | 500 | — | — | — | — | 509 |
 | — | epilogo | Epilogo | 1.000 | — | — | — | — | 514 |
 
-Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.511.
+Totale del piano (budget): 79.565. Totale previsto (parole reali delle unità scritte + budget delle altre): 77.529.
