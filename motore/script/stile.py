@@ -10,6 +10,7 @@ voci con pattern (lista nera di base + voci del libro), parole filtro, candidati
 similitudine, vincoli per capitolo, nomi vietati prima di un punto del libro.
 Voci ad ambito «libro»: contatore cumulato; non contano le unità in consentito_in_capitoli;
 con conta_per: unita il tetto è sul numero di unità in cui la voce compare.
+Ogni voce può avere escludi_pattern: le occorrenze che cadono dentro una sua corrispondenza non contano.
 Esiti: KO (blocca) o AVVISO (da guardare). Report: <libro>/06-diagnostica/stile.md.
 """
 import os
@@ -54,6 +55,20 @@ def occorrenze(prosa, pattern):
     return [(n, m.group(0)) for n, r in prosa for m in rx.finditer(r)]
 
 
+def occorrenze_voce(prosa, v):
+    """Occorrenze del pattern della voce, tolte quelle che cadono dentro un «escludi_pattern»
+    (per esempio il fischio letterale della nave in una voce che conta il fischio morale)."""
+    occ = []
+    rx = re.compile(v['pattern'])
+    ex = re.compile(v['escludi_pattern']) if v.get('escludi_pattern') else None
+    for n, r in prosa:
+        esclusi = [m.span() for m in ex.finditer(r)] if ex else []
+        for m in rx.finditer(r):
+            if not any(a <= m.start() < b for a, b in esclusi):
+                occ.append((n, m.group(0)))
+    return occ
+
+
 def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
     out = []
     prosa = comune.righe_prosa(testo)
@@ -91,7 +106,7 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
             continue
         if v.get('consentito_in_capitoli') is not None and comune.in_elenco(nome, v['consentito_in_capitoli']):
             continue
-        occ = occorrenze(prosa, v['pattern'])
+        occ = occorrenze_voce(prosa, v)
         if not occ:
             continue
         if v.get('vietato_in_capitoli') and not comune.in_elenco(nome, v['vietato_in_capitoli']):
@@ -157,7 +172,7 @@ def controlla_libro(cartella, libro, profilo):
             # nelle unità consentite la voce non si conta e non dà avviso
             if v.get('consentito_in_capitoli') is not None and comune.in_elenco(nome, v['consentito_in_capitoli']):
                 continue
-            occ = occorrenze(prosa, v['pattern'])
+            occ = occorrenze_voce(prosa, v)
             if v.get('conta_per') == 'unita':
                 occ = occ[:1]      # il tetto conta le unità in cui la voce compare, non le occorrenze
             for n, t in occ:

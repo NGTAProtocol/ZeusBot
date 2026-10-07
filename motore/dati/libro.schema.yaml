@@ -68,6 +68,7 @@ campi:
         ambito: {tipo: scelta, valori: [libro, capitolo]}
         conta_per: {tipo: scelta, valori: [unita, occorrenza]}   # ambito libro: tetto sulle unità in cui compare
         consentito_in_capitoli: {tipo: lista}                    # ambito libro: unità che non contano
+        escludi_pattern: {tipo: testo}                           # occorrenze dentro questo pattern non contano
   vincoli_capitolo:
     tipo: lista
     elementi:

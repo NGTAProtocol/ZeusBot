@@ -592,3 +592,30 @@ fase_stesura_e_rinomine:
   b_registro: "chiusura / stesura / manca l'epilogo / ['interludio I', 'epilogo'] / stesura / interludio I"
   b_completo: "2 / chiusura"
   c_rinomina: "0 True / 0 True / 0 True"              # prima: sha256 precedente «—» (None)
+
+# escludi_pattern; pattern generico «Non era/è X. Era/È Y.»; budget degli interludi; esito e correggi in chiusura.
+correzioni_dopo_lotto_38_43:
+  a_testi: ["Si sentì il fischio della nave, lungo.", "Fischiò forte, una volta.", "Il fischio della nave di nuovo."]
+  a_voci:
+    ambito libro: {id: fischio_x, pattern: '(?i)\bfisch\w*', escludi_pattern: '(?i)\bfischio della nave\b', modalita: avviso, massimo: 0, ambito: libro, conta_per: unita}
+    ambito capitolo: {id: fischio_x, pattern: '(?i)\bfisch\w*', escludi_pattern: '(?i)\bfischio della nave\b', modalita: conta, massimo: 0, ambito: capitolo}
+  a_attesi:
+    ambito libro: ['2|AVVISO']        # il fischio della nave (unità 1 e 3) non conta
+    ambito capitolo: ['2|KO']
+  b_pattern: '(?:\b[Nn]on (?:era|fu|è|sono|c''era|ci fu) [^.!?]{1,80}[.!?]\s+(?:Era|Fu|È|Sono|C''era|Ci fu)\b)'
+  b_frasi:
+    - "Non era la villa di Palese. Era un'altra casa."
+    - "Non è educazione. È la cassa sotto la branda."
+    - "Non c'era rabbia. C'era la stanchezza."
+    - "Non fu un caso. Fu una scelta."
+    - "Non sono parole. Sono pietre."
+    - "La sera non era fredda, e io tornai a casa."
+    - "Era tardi. Non era il caso di parlare."
+  b_attesi: [1, 1, 1, 1, 1, 0, 0]
+  c_testi:
+    corto: "La sera la piazza resta vuota fino alla chiesa grande. Il fornaio abbassa la saracinesca per ultimo."
+    nel budget: "La sera la piazza resta vuota fino alla chiesa grande. Il fornaio abbassa la saracinesca per ultimo, senza fretta, e per qualche minuto l'odore del pane resta sospeso tra i portici. Poi resta solo la fontana, che parla da sola nel buio. Nella vetrina della farmacia la croce verde è spenta da tre giorni. Qualcuno ha lasciato sul gradino un mazzo di fiori bianchi, legato con uno spago da cucina. La pioggia li ha piegati, ma nessuno li ha portati via. Una donna passa con il cane, si ferma, guarda i fiori e la vetrina buia. Poi tira il guinzaglio e se ne va verso la chiesa, senza voltarsi, con il passo di chi ha fretta di rientrare prima che ricominci a piovere sulla piazza. Dietro di lei la fontana continua a parlare da sola, e nessuno la ascolta più fino al mattino."
+  c_attesi:
+    corto: ['AVVISO']
+    nel budget: []
+  d_chiusura: "0 / True / True / chiusura / controlli finali / 1"   # prima: esito rifiutato in chiusura

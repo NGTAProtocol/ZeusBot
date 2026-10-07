@@ -565,12 +565,32 @@ def aggiorna_piano(cartella, libro, n):
     return cambiata
 
 
+def esito_in_chiusura(cartella, libro, stato, n, argv):
+    """In «chiusura», esito su un'unità già scritta (dopo una correzione): rifà i controlli, aggiorna piano e
+    parole, non tocca fase, passo, tentativi e gate."""
+    extra = ['--radice', argv[argv.index('--radice') + 1]] if '--radice' in argv else []
+    r = subprocess.run([sys.executable, '-B', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'capitolo.py'),
+                        cartella, *n.split(), *extra], capture_output=True, text=True)
+    if r.returncode not in (0, 1):
+        raise comune.ErroreMotore(f'capitolo.py {n} non eseguito: {r.stderr.strip() or r.stdout.strip()}')
+    riga_piano = aggiorna_piano(cartella, libro, n)
+    if riga_piano:
+        print(f'Piano parole aggiornato (misure, senza riapprovazione): {riga_piano}')
+    stato['parole']['scritte'] = parole_scritte(cartella, libro)
+    rep = f'06-diagnostica/capitoli/{revisione.nome_report(n)}.md'
+    print(f'Unità {n} ricontrollata in fase «chiusura»: controlli {"OK" if r.returncode == 0 else "KO"} '
+          f'(report: {rep}); la fase non cambia.')
+    return r.returncode
+
+
 def cmd_esito(cartella, libro, stato, resto, argv):
     if not resto:
         raise comune.ErroreMotore('Uso: esito <N>')
     n = ' '.join(resto)
     n = str(int(n)) if n.isdigit() else n
     gate = stato['gate_in_attesa']
+    if stato['fase'] == 'chiusura' and n.lower() in {u.lower() for u, _ in comune.unita(cartella, libro)}:
+        return esito_in_chiusura(cartella, libro, stato, n, argv)
     if stato['fase'] != 'stesura':
         mancanti = unita_mancanti(cartella, libro, stato) if stato['fase'] == 'chiusura' else []
         extra = (f' Mancano unità del piano ({", ".join(mancanti)}): «zb fase <libro> stesura --motivo "…"».'

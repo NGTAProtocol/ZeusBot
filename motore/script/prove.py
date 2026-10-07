@@ -1855,9 +1855,77 @@ def fase_stesura_e_rinomine(A):
           sez)
 
 
+def correzioni_dopo_lotto_38_43(A):
+    import capitolo
+    import stile
+    sez = 'dopo il lotto 38-43'
+
+    def mini_con(voci=None, testi=(), interludio=None):
+        Lm = copia_libro('mini-libro')
+        py = os.path.join(Lm, 'libro.yaml')
+        lb = yaml.safe_load(open(py, encoding='utf-8'))
+        lb['voci'] = (lb.get('voci') or []) + (voci or [])
+        open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+        md = os.path.join(Lm, '04-manoscritto')
+        for f, t in zip(sorted(x for x in os.listdir(md) if x[0].isdigit()), testi):
+            open(os.path.join(md, f), 'a', encoding='utf-8').write('\n' + t + '\n')
+        if interludio is not None:
+            open(os.path.join(md, 'interludio-I.md'), 'w', encoding='utf-8').write('## *La vetrina*\n\n' + interludio + '\n')
+        return comune.carica_libro(Lm)
+
+    # (a) escludi_pattern, sia per ambito «libro» sia per ambito «capitolo»
+    for chiave, voce in A['a_voci'].items():
+        cartella, libro, profilo = mini_con([voce], A['a_testi'])
+        esiti = stile.controlla_libro(cartella, libro, profilo)
+        esito('stile.py', f'(a) escludi_pattern: {chiave}', A['a_attesi'][chiave],
+              [f'{u}|{r["esito"]}' for u in esiti for r in esiti[u][1] if r['controllo'] == f'voce:{voce["id"]}'], sez)
+    # (b) pattern generico «Non era/è X. Era/È Y.»: quante frasi prende
+    esito('stile.py', '(b) pattern generico: frasi prese', A['b_attesi'],
+          [len(stile.occorrenze([(1, f)], A['b_pattern'])) for f in A['b_frasi']], sez)
+    # (c) budget degli interludi: avviso fuori tolleranza
+    for chiave, testo in A['c_testi'].items():
+        cartella, libro, profilo = mini_con(interludio=testo)
+        _, out = capitolo.controlla(cartella, libro, profilo, 'interludio I')
+        esito('capitolo.py', f'(c) budget interludio: {chiave}', A['c_attesi'][chiave],
+              [r['esito'] for r in out if r['controllo'] == 'parole_budget'], sez)
+    # (d) in «chiusura» correggi ed esito funzionano sulle unità scritte e non cambiano la fase
+    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
+    E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def git(cwd, *a):
+        return subprocess.run(['git', *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def zb(cwd, *a):
+        return subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    d = tempfile.mkdtemp(dir=TMP)
+    git(d, 'init', '-q', '--bare', 'remoto.git')
+    r = os.path.join(d, 'repo')
+    os.makedirs(r)
+    git(r, 'init', '-q')
+    git(r, 'checkout', '-q', '-b', 'prova')
+    git(r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git'))
+    Lm = shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'mini'))
+    st = comune.leggi_yaml(os.path.join(M, 'modelli', 'stato.yaml'))
+    st.update(libro='Prova di stampa', fase='chiusura', passo='controlli finali', aggiornato='prova', gate_in_attesa=None,
+              ultimo_capitolo_scritto=3, ultimo_capitolo_approvato=3, unita_accettate=['interludio I'])
+    open(os.path.join(Lm, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(st, sort_keys=False, allow_unicode=True))
+    git(r, 'add', '-A')
+    git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'prova')
+    open(os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write('\nUna riga corretta.\n')
+    p1 = zb(r, 'correggi', 'mini', 'capitolo 1: una riga in più')
+    p2 = zb(r, 'esito', 'mini', '1')
+    p3 = zb(r, 'esito', 'mini', 'interludio', 'I')
+    s2 = comune.leggi_yaml(os.path.join(Lm, 'stato.yaml'))
+    esito('fase.py', '(d) chiusura: correggi / esito 1 / esito interludio: codici, fase, passo, correzioni', A['d_chiusura'],
+          f'{p1.returncode} / {p2.returncode in (0, 1)} / {p3.returncode in (0, 1)} / {s2["fase"]} / {s2["passo"]} / '
+          f'{len(s2.get("correzioni_registrate") or [])}', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_dopo_lotto_38_43': correzioni_dopo_lotto_38_43}
 
 
 def main(argv):
