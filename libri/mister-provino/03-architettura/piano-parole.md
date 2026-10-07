@@ -17,18 +17,18 @@ Ricavato 1:1 dalla scaletta (`03-architettura/scaletta.md`, tabella «Parole per
 | Parte prima | 9 | Il giro con Franco | 2.100 | — | — | 1.810 | -13,8% | 235 |
 | Parte prima | 10 | Il palo | 2.000 | — | — | 1.702 | -14,9% | 242 |
 | Parte prima | interludio II | La pagina | 400 | — | — | — | — | 253 |
-| Parte prima | 11 | L'ospedale | 1.340 | — | — | — | — | 256 |
-| Parte prima | 12 | La storia di «lei» | 1.750 | — | — | — | — | 264 |
-| Parte prima | 13 | Da qualche altra parte | 1.540 | — | — | — | — | 273 |
-| Parte prima | 14 | Le notti di Pane e Pomodoro | 1.960 | — | — | — | — | 278 |
+| Parte prima | 11 | L'ospedale | 1.340 | — | — | 1.461 | +9,0% | 256 |
+| Parte prima | 12 | La storia di «lei» | 1.750 | — | — | 1.706 | -2,5% | 264 |
+| Parte prima | 13 | Da qualche altra parte | 1.540 | — | — | 1.501 | -2,5% | 273 |
+| Parte prima | 14 | Le notti di Pane e Pomodoro | 1.960 | — | — | 1.869 | -4,6% | 278 |
 | Parte prima | 15 | Il mercato | 2.280 | — | — | 2.189 | -4,0% | 284 |
 | Parte prima | interludio III | La nave | 400 | — | — | — | — | 291 |
-| Parte prima | 16 | Ferragosto | 1.960 | — | — | — | — | 294 |
-| Parte prima | 17 | La busta | 1.850 | — | — | — | — | 300 |
+| Parte prima | 16 | Ferragosto | 1.960 | — | — | 1.849 | -5,7% | 294 |
+| Parte prima | 17 | La busta | 1.850 | — | — | 1.879 | +1,6% | 300 |
 | Parte prima | 18 | Sette giorni | 2.385 | — | — | 2.249 | -5,7% | 310 |
 | Parte prima | 19 | Il settimo giorno | 2.380 | — | — | 2.251 | -5,4% | 317 |
 | Parte prima | interludio IV | La lettera | 400 | — | — | — | — | 324 |
-| Parte seconda | 20 | La scimmia | 1.750 | — | — | — | — | 331 |
+| Parte seconda | 20 | La scimmia | 1.750 | — | — | 1.684 | -3,8% | 331 |
 | Parte seconda | 21 | Il camion | 1.750 | — | — | — | — | 337 |
 | Parte seconda | 22 | Cataldo | 1.850 | — | — | — | — | 343 |
 | Parte seconda | 23 | La settimana | 3.000 | 3 | 1.100 / 1.200 / 700 | — | — | 349 |
