@@ -50,9 +50,9 @@ Nicola spense il motore e restò un momento con le mani sul volante.
 
 — No, non va bene. Deve andare bene a loro.
 
-Dentro faceva fresco e c'era odore di olio di motore. Sotto le lampade stavano due macchine smontate a metà, con i sedili per terra, e in fondo c'era un tavolo di ferro con un uomo seduto dietro. Era largo, con la camicia aperta sul petto e una faccia tonda che sembrava quasi gentile, finché non guardavi gli occhi. Gli altri lo chiamavano don Tobia.
+All'ingresso ci fecero aspettare in piedi, vicino al portone, mentre un uomo controllava le tasche di Mimmo e Tonino e posava le loro pistole su una cassetta, una accanto all'altra, con la cura di chi sistema la frutta. Non toccò nemmeno me. Mi guardò dalla testa ai piedi e rise con il naso, e io ebbi vergogna delle mie scarpe ancora bianche di sale.
 
-Prima di lui ci fecero aspettare in piedi, vicino al portone, mentre un uomo controllava le tasche di Mimmo e Tonino e posava le loro pistole su una cassetta, una accanto all'altra, con la cura di chi sistema la frutta. A me non mi toccò nemmeno. Mi guardò dalla testa ai piedi e rise con il naso, e io ebbi vergogna delle mie scarpe ancora bianche di sale.
+Dentro faceva fresco e c'era odore di olio di motore. Sotto le lampade stavano due macchine smontate a metà, con i sedili per terra, e in fondo c'era un tavolo di ferro con un uomo seduto dietro. Era largo, con la camicia aperta sul petto e una faccia tonda che sembrava quasi gentile, finché non guardavi gli occhi. Gli altri lo chiamavano don Tobia.
 
 Si alzò e diede la mano a Nicola. Fu una stretta corta, e io la vidi da vicino: la mano di Nicola rimase tesa un attimo di troppo, dura, come quella di uno che aspetta di sapere se l'altro stringerà forte. Don Tobia strinse piano, e sorrise.
 
