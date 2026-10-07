@@ -27,7 +27,8 @@ Versione 1 (Fase 3). Vale per ogni riga del romanzo nuovo. Tra i valori, quelli 
   - «Allora non vado.» (Beniamino, cap. 34);
   - «Il cugino di Nicola. Una guardia.» (il magro, cap. 36);
   - «Stai zitto.» (la madre, cap. 17);
-  - «A che ora parte questo transatlantico?» (Michele, cap. 37).
+  - «A che ora parte questo transatlantico?» (Michele, cap. 37);
+  - «PER FRANCO. PER LA VESPA, E PER TUTTO IL RESTO.» (la busta gialla, cap. 39).
 
 ---
 
