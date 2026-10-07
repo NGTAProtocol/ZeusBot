@@ -30,7 +30,7 @@ Me lo raccontò così, a pezzi, con le pause lunghe di quando dipingeva, e io lo
 
 Rise, e la risata gli fece venire la tosse.
 
-Attraversò il vicolo con il bottone stretto nel pugno e salì le scale di lei, e quando la madre aprì la porta le disse che gli serviva una sarta. La madre guardò lui, poi il bottone, poi lo strappo sulla camicia, e lo lasciò ad aspettare sul pianerottolo senza dire niente. Venne fuori la figlia con l'ago già infilato, e gli cucì il bottone lì, in piedi sul pianerottolo, con lui ancora dentro la camicia, senza mai alzare gli occhi.
+Attraversò il vicolo con il bottone stretto nel pugno e salì le scale di lei, e quando la madre aprì la porta le disse che gli serviva una sarta. La madre guardò lui, poi il bottone, poi lo strappo sulla camicia, e lo lasciò ad aspettare sul pianerottolo senza dire niente. Venne fuori la figlia con il filo già nella cruna, e gli cucì il bottone lì, in piedi sul pianerottolo, con lui ancora dentro la camicia, senza mai alzare gli occhi.
 
 — Ci mise tanto, — disse Michele. — Io non ho mai visto nessuno metterci tanto per un bottone.
 
