@@ -18,59 +18,59 @@ Bari 1976 è reale; persone, clan e boss sono inventati.
 
 - Prologo
 - **Parte prima — Il cane**
-- Capitolo 1
-- Capitolo 2
-- Capitolo 3
+- 1. Pane e Pomodoro
+- 2. Napoli
+- 3. Trani
 - I fiori
-- Capitolo 4
-- Capitolo 5
-- Capitolo 6
-- Capitolo 7
-- Capitolo 8
-- Capitolo 9
-- Capitolo 10
+- 4. La stanza di Michele
+- 5. Il brodetto
+- 6. I tre silenzi
+- 7. Palese
+- 8. O Anjo
+- 9. Il giro con Franco
+- 10. Il palo
 - La pagina
-- Capitolo 11
-- Capitolo 12
-- Capitolo 13
-- Capitolo 14
-- Capitolo 15
+- 11. L'ospedale
+- 12. La storia di «lei»
+- 13. Da qualche altra parte
+- 14. Le notti di Pane e Pomodoro
+- 15. Il mercato
 - La nave
-- Capitolo 16
-- Capitolo 17
-- Capitolo 18
-- Capitolo 19
+- 16. Ferragosto
+- 17. La busta
+- 18. Sette giorni
+- 19. Il settimo giorno
 - La lettera
 - **Parte seconda — La caccia**
-- Capitolo 20
-- Capitolo 21
-- Capitolo 22
-- Capitolo 23
-- Capitolo 24
-- Capitolo 25
+- 20. La scimmia
+- 21. Il camion
+- 22. Cataldo
+- 23. La settimana
+- 24. La Jonica
+- 25. La grotta
 - Il collo
-- Capitolo 26
-- Capitolo 27
-- Capitolo 28
-- Capitolo 29
-- Capitolo 30
+- 26. Il panettiere
+- 27. L'ago
+- 28. L'ombra
+- 29. Il circolo
+- 30. Carlo
 - Il telefono
 - **Parte terza — Oltre l'orizzonte**
-- Capitolo 31
-- Capitolo 32
-- Capitolo 33
-- Capitolo 34
-- Capitolo 35
+- 31. Gli elicotteri
+- 32. L'ulivo
+- 33. Il no di Michele
+- 34. Allora non vado
+- 35. L'accendino
 - Ero io
-- Capitolo 36
-- Capitolo 37
-- Capitolo 38
+- 36. Il fuoco
+- 37. Il transatlantico
+- 38. Le firme
 - La firma
-- Capitolo 39
-- Capitolo 40
-- Capitolo 41
-- Capitolo 42
-- Capitolo 43
+- 39. I debiti
+- 40. Genova
+- 41. Diciassette giorni
+- 42. Santos
+- 43. Le prime monete
 - Le pagine
 - Epilogo
 
@@ -102,7 +102,7 @@ Comincio da una spiaggia, all'alba, a luglio. C'è un ragazzo magro, con la cami
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 1
+## 1. Pane e Pomodoro
 
 *Pane e Pomodoro — martedì 13 luglio 1976*
 
@@ -249,7 +249,7 @@ Poi andai nella mia stanza e mi sdraiai sul letto così com'ero, con i pantaloni
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 2
+## 2. Napoli
 
 *Napoli — martedì 13 luglio 1976*
 
@@ -384,7 +384,7 @@ A casa la luce delle scale era rotta e salii al buio, contando i gradini con i p
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 3
+## 3. Trani
 
 *Trani — mercoledì 14 luglio 1976*
 
@@ -447,7 +447,7 @@ Mio padre lo disse con la voce rotta, e Checco abbassò gli occhi.
 
 — È quella del lunedì. Va bene così.
 
-Parlarono della casa, del caldo, di un cugino di Bitonto che si era sposato. Mio padre disse che stavamo bene. Checco disse che lì dentro si mangiava male ma si mangiava, e che lavorava in cucina, e che il tempo passava.
+Parlarono della casa, del caldo, di un cugino di Bitonto che si era sposato. Mio padre disse che stavamo bene. Checco disse che lì dentro si mangiava male ma si mangiava, e che lavorava in falegnameria, e che il tempo passava.
 
 — Quanto è che non venite? — chiese.
 
@@ -551,7 +551,7 @@ Dalla cucina arriva l'odore del caffè. Mia moglie non mi chiama. Sa che la prim
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 4
+## 4. La stanza di Michele
 
 *Bari Vecchia — mercoledì 14 luglio 1976*
 
@@ -590,7 +590,7 @@ La stanza era come sempre. Una sola, a livello della strada, con il pavimento di
 
 E alla parete, a destra entrando, appesa bassa, c'era lei.
 
-Era un ritratto piccolo, in una cornice scura, di una ragazza con i capelli raccolti e un colletto bianco. Guardava un po' di lato, come se qualcuno l'avesse chiamata da fuori proprio mentre posava. Sotto, su una mensola stretta, c'era un vasetto di vetro con i fiori di campo: margherite, un papavero, un ciuffo di qualcosa di giallo che di cui non sapevo il nome. Michele li cambiava ogni mattina. Non gli avevo mai chiesto chi fosse lei, e lui non me l'aveva mai detto.
+Era un ritratto piccolo, in una cornice scura, di una ragazza con i capelli raccolti e un colletto bianco. Guardava un po' di lato, come se qualcuno l'avesse chiamata da fuori proprio mentre posava. Sotto, su una mensola stretta, c'era un vasetto di vetro con i fiori di campo: margherite, un papavero, un ciuffo di qualcosa di giallo di cui non sapevo il nome. Michele li cambiava ogni mattina. Non gli avevo mai chiesto chi fosse lei, e lui non me l'aveva mai detto.
 
 Michele posò la spatola e venne a sedersi sulla branda, di fronte a me, appoggiando il bastone tra le ginocchia. Il ginocchio cattivo lo teneva sempre un po' più avanti dell'altro.
 
@@ -660,7 +660,7 @@ Michele piegò il foglio in due e me lo diede, insieme a una banconota presa dal
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 5
+## 5. Il brodetto
 
 *Bari Vecchia — mercoledì 14 luglio 1976*
 
@@ -767,7 +767,7 @@ Allungò le mani e mi aggiustò il colletto della camicia, piano, con due dita p
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 6
+## 6. I tre silenzi
 
 *Bari Vecchia — mercoledì 14 luglio 1976*
 
@@ -892,7 +892,7 @@ Oggi lo so dire con le parole giuste: in quella cucina si erano chiusi due silen
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 7
+## 7. Palese
 
 *Palese — giovedì 15 luglio 1976*
 
@@ -1019,7 +1019,7 @@ Mi voltai un momento verso la veranda. L'uomo vestito di bianco stava parlando c
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 8
+## 8. O Anjo
 
 *Palese — giovedì 15 luglio 1976*
 
@@ -1128,7 +1128,7 @@ Tornai a casa con la teca stretta tra le braccia, attento agli scalini. Nella mi
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 9
+## 9. Il giro con Franco
 
 *Bari — venerdì 16 luglio 1976*
 
@@ -1281,7 +1281,7 @@ Lo riaccompagnai giù. Montò sul motorino, accese il motore con il pedale, e pr
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 10
+## 10. Il palo
 
 *Bari Vecchia — sabato 17 luglio 1976*
 
@@ -1444,7 +1444,7 @@ Dalla cucina mia moglie mi chiede se voglio il caffè. Le dico di sì. Non mi al
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 11
+## 11. L'ospedale
 
 *Bari — martedì 20 luglio 1976*
 
@@ -1511,7 +1511,7 @@ Il nome di quell'ospedale non lo scrivo. Per anni l'ho saputo; poi, da vecchio, 
 
 <p class="scena">•</p>
 
-Il martedì, dopo pranzo, presi il Ciao e uscii dalla parte del porto, per non passare davanti al bar della piazzetta. La strada per Carbonara l'avevo fatta tre giorni prima, dietro la schiena di Franco, e la rifeci tutta da solo: le strade larghe della periferia, gli ulivi che finivano contro i palazzi nuovi, le gru ferme. A ogni incrocio una macchina rossa mi faceva stringere le mani sul manubrio, e non era mai l'Alfa.
+Il martedì, dopo pranzo, presi il Ciao e uscii dalla parte del porto, per non passare davanti al bar della piazzetta. La strada per Carbonara l'avevo fatta quattro giorni prima, dietro la schiena di Franco, e la rifeci tutta da solo: le strade larghe della periferia, gli ulivi che finivano contro i palazzi nuovi, le gru ferme. A ogni incrocio una macchina rossa mi faceva stringere le mani sul manubrio, e non era mai l'Alfa.
 
 L'ospedale stava in mezzo ai campi, bianco e lungo, con le finestre tutte uguali e un piazzale di ghiaia dove aspettava un'ambulanza. Lasciai il Ciao dietro una siepe di oleandri e attraversai il piazzale a piedi, senza correre.
 
@@ -1591,7 +1591,7 @@ Guidai senza guardare la strada, con il vento che mi faceva lacrimare. Quando ar
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 12
+## 12. La storia di «lei»
 
 *Bari Vecchia — martedì 20 luglio 1976*
 
@@ -1696,7 +1696,7 @@ Restò a dipingere, curvo, con il peso sulla gamba buona. Io guardavo la sua sch
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 13
+## 13. Da qualche altra parte
 
 *Bari — mercoledì 21 luglio 1976*
 
@@ -1803,7 +1803,7 @@ Lo so dire solo adesso, da vecchio, e lo dico una volta: in quel mondo, voler be
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 14
+## 14. Le notti di Pane e Pomodoro
 
 *Pane e Pomodoro — martedì 27 – giovedì 29 luglio 1976*
 
@@ -1844,7 +1844,7 @@ La barca arrivò dopo le due, con il motore al minimo. Entrammo in acqua in fila
 
 — Stai zitto e tieni le braccia su.
 
-Me lo sentii uscire dalla bocca con la voce del ragazzo che, la prima notte, l'aveva detto a me.
+Me lo sentii uscire dalla bocca con la voce del ragazzo che me l'aveva detto la mattina della nave ferma.
 
 Quando uscimmo dall'acqua Sabino ci mise in mano la paga, una banconota piegata per uno. Arrivato a me si fermò, con la mia banconota ancora tra le dita.
 
@@ -1972,7 +1972,7 @@ Cataldo era seduto su un tronco portato dal mare, a dieci passi da me, con la si
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 15
+## 15. Il mercato
 
 *Bari Vecchia — martedì 3 agosto 1976*
 
@@ -2175,7 +2175,7 @@ Resto alla finestra finché il cielo dietro la nave non diventa grigio. Le luci 
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 16
+## 16. Ferragosto
 
 *Bari — domenica 15 agosto 1976*
 
@@ -2342,7 +2342,7 @@ Michele rise piano, dal naso, e non si voltò.
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 17
+## 17. La busta
 
 *Bari Vecchia — venerdì 27 – lunedì 30 agosto 1976*
 
@@ -2501,7 +2501,7 @@ Ma quella notte non servì a niente. Mi alzai dal letto e tornai nella stanza di
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 18
+## 18. Sette giorni
 
 *Bari Vecchia — martedì 7 – sabato 11 settembre 1976*
 
@@ -2636,7 +2636,7 @@ La sera la parcheggiò sotto casa, nel vicolo, con due ruote sul marciapiede, e 
 
 Il sabato sera ci sedemmo sul molo, alla fine del lungomare, con i piedi sopra l'acqua. Era quasi buio. Le barche dei pescatori uscivano una dopo l'altra con le lampare accese, e sull'acqua le luci si allungavano e tremavano.
 
-Per tutta la strada fino al molo avevo avuto in bocca una cosa da dirgli. Volevo dirgli del palo, della traversa dietro San Marco, dell'occhio di Franco sopra la mano aperta, e della busta del pane sul tavolo della cucina, dieci giorni prima, con nostra madre che mi diceva di stare zitto. Avevo messo in fila le parole mentre camminavamo, una dopo l'altra, e ogni volta che arrivavo alla prima mi tornava in mente la sua faccia nel parlatorio, quando gli avevo giurato, e la riga storta in fondo alla lettera. Così le parole tornarono indietro, e non le dissi.
+Per tutta la strada fino al molo avevo avuto in bocca una cosa da dirgli. Volevo dirgli del palo, della traversa dietro San Marco, dell'occhio di Franco sopra la mano aperta, e della busta del pane sul tavolo della cucina, dodici giorni prima, con nostra madre che mi diceva di stare zitto. Avevo messo in fila le parole mentre camminavamo, una dopo l'altra, e ogni volta che arrivavo alla prima mi tornava in mente la sua faccia nel parlatorio, quando gli avevo giurato, e la riga storta in fondo alla lettera. Così le parole tornarono indietro, e non le dissi.
 
 Checco stava zitto da un pezzo. Poi parlò senza guardarmi, in italiano, con la voce che usava quando faceva sul serio.
 
@@ -2670,7 +2670,7 @@ Restai sveglio a lungo, sul fianco, con il braccio fuori dal letto, finché la m
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 19
+## 19. Il settimo giorno
 
 *Bari Vecchia — domenica 12 – lunedì 13 settembre 1976*
 
@@ -2867,7 +2867,7 @@ Lei annuisce e va in terrazza a stendere. La scatola resta sul tavolo tutta la s
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 20
+## 20. La scimmia
 
 *Bari Vecchia — martedì 14 – lunedì 20 settembre 1976*
 
@@ -2888,7 +2888,7 @@ Non decisi di andarci. Mi trovai lì, in piedi nel corridoio buio, con la mano s
 
 Restai lì con la mano sulla maniglia finché la mano non mi fece male. Poi la tolsi, un dito alla volta, e tornai nella mia stanza camminando all'indietro, senza staccare gli occhi dalla porta, e mi sdraiai sul letto con le braccia strette intorno al petto. Sopra di me, al buio, sentivo i colpi della traversa con le loro pause uguali, e la faccia di Checco contro il muro, e la voce di Nicola che contava sulle dita. Non dormii.
 
-La quarta mattina, il sabato, uscii di casa prima che facesse giorno, con la coperta di Michele sulle spalle.
+Dopo la quarta notte, il sabato, uscii di casa prima che facesse giorno, con la coperta di Michele sulle spalle.
 
 <p class="scena">•</p>
 
@@ -2974,7 +2974,7 @@ Buttò la cicca in acqua, si staccò dal muro e se ne andò verso la piazzetta s
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 21
+## 21. Il camion
 
 *Da Bari a Torino — martedì 21 settembre – venerdì 1 ottobre 1976*
 
@@ -3121,7 +3121,7 @@ Scese dalla cabina, girò intorno al muso del camion e venne dalla mia parte. Ap
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 22
+## 22. Cataldo
 
 *Bari Vecchia — sabato 2 ottobre 1976*
 
@@ -3282,7 +3282,7 @@ Quando mi girai per andarmene, Giuseppe era sceso dalla cabina e mi stava guarda
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 23
+## 23. La settimana
 
 *Bari — domenica 3 – venerdì 8 ottobre 1976*
 
@@ -3463,7 +3463,7 @@ Nicola finì il caffè e si alzò. Si sistemò la giacca, si sistemò il collett
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 24
+## 24. La Jonica
 
 *Calabria — sabato 9 ottobre 1976*
 
@@ -3594,7 +3594,7 @@ Poi una mano mi tirò via il sacco dalla testa, e non cambiò niente: davanti ai
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 25
+## 25. La grotta
 
 *Aspromonte — sabato 9 – domenica 10 ottobre 1976*
 
@@ -3693,7 +3693,7 @@ Si fermò. Guardò verso il cunicolo, da dove poteva arrivare qualcuno, e poi me
 
 Saro non rispose, e la luce se ne andò su per il cunicolo, e il buio tornò, e la goccia ricominciò a cadere, senza essersi mai fermata.
 
-Pensai a Saro per molto tempo, dopo. Pensai che era uguale a me, con tre anni in più e la torcia dall'altra parte. Che se Nicola fosse nato su quella montagna, avrebbe mandato me a portare l'acqua. E che io non volevo abituarmi. Non a quella grotta, non alla poltrona di mia madre, non al tavolino di Nicola. Da qualche parte, oltre la montagna e oltre Bari e oltre il mare, doveva esserci un posto dove uno non deve abituarsi a niente.
+Pensai a Saro per molto tempo, dopo. Pensai che era uguale a me, con sei anni in più e la torcia dall'altra parte. Che se Nicola fosse nato su quella montagna, avrebbe mandato me a portare l'acqua. E che io non volevo abituarmi. Non a quella grotta, non alla poltrona di mia madre, non al tavolino di Nicola. Da qualche parte, oltre la montagna e oltre Bari e oltre il mare, doveva esserci un posto dove uno non deve abituarsi a niente.
 
 <p class="scena">•</p>
 
@@ -3781,7 +3781,7 @@ Torniamo a casa a mezzanotte. Lei va a letto. Io vado nella stanza in fondo e ac
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 26
+## 26. Il panettiere
 
 *Calabria e Bari — lunedì 11 ottobre 1976*
 
@@ -3916,7 +3916,7 @@ Quella sera tornai a casa a piedi lungo la Muraglia, e il mare era nero, con le 
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 27
+## 27. L'ago
 
 *Bari — giovedì 14 ottobre 1976*
 
@@ -3955,7 +3955,7 @@ Guidava a scatti, frenando tardi. Aveva la barba fatta male e gli occhi gialli d
 
 — Fermati un momento, — disse, a sé stesso più che a me, e girò in una traversa dietro la stazione, quella del pannello, deserta come sempre a quell'ora.
 
-Tolse la chiave. Si chinò sotto il cruscotto dalla mia parte, e io tirai indietro le gambe. Il pannello venne via al primo tentativo. Nel vano c'era meno di quanto ci avessi visto a ottobre: due buste soltanto, una delle quali vuota, e un sacchetto di carta piegato. Prese il sacchetto, rimise il pannello, e se lo posò sulle ginocchia. Le mani gli rimasero ferme sul sacchetto, e gli occhi sul muro del magazzino davanti a noi.
+Tolse la chiave. Si chinò sotto il cruscotto dalla mia parte, e io tirai indietro le gambe. Il pannello venne via al primo tentativo. Nel vano c'era meno di quanto ci avessi visto dieci giorni prima: due buste soltanto, una delle quali vuota, e un sacchetto di carta piegato. Prese il sacchetto, rimise il pannello, e se lo posò sulle ginocchia. Le mani gli rimasero ferme sul sacchetto, e gli occhi sul muro del magazzino davanti a noi.
 
 — Lo sai quanto devo? — disse. — No, non lo sai. Nessuno lo sa, a parte me e uno. E quell'uno non è uno che aspetta. — Si passò la lingua sul labbro spaccato, che non si era ancora chiuso. — Questa roba deve girare in fretta. Deve girare bene. E per girare bene la deve assaggiare chi non sbaglia.
 
@@ -4019,7 +4019,7 @@ Mi rialzai. Avevo le ginocchia dei pantaloni bianche di polvere, e me le battei 
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 28
+## 28. L'ombra
 
 *Bari — venerdì 15 – domenica 17 ottobre 1976*
 
@@ -4194,7 +4194,7 @@ L'Alfa uscì dalla carraia sull'asfalto e sparì verso Bari. Sulla carraia, diet
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 29
+## 29. Il circolo
 
 *Bari Vecchia — martedì 19 ottobre 1976*
 
@@ -4299,7 +4299,7 @@ Quella sera, mentre Carlo gridava nel vicolo e le sirene arrivavano da corso Vit
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 30
+## 30. Carlo
 
 *Bari Vecchia — mercoledì 20 – venerdì 22 ottobre 1976*
 
@@ -4462,7 +4462,7 @@ Riattacco. Resto in piedi nell'ingresso con la mano sulla cornetta, finché non 
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 31
+## 31. Gli elicotteri
 
 *Bari Vecchia — venerdì 22 – sabato 23 ottobre 1976*
 
@@ -4591,7 +4591,7 @@ Da vecchio lo dico così, e non lo dico meglio: quella notte a me era bastato re
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 32
+## 32. L'ulivo
 
 *Campagna di Bitonto — lunedì 25 ottobre 1976*
 
@@ -4696,7 +4696,7 @@ Lui rise piano, una risata stanca, senza cattiveria, e scosse la testa.
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 33
+## 33. Il no di Michele
 
 *Bari e campagna di Bitonto — martedì 26 – mercoledì 27 ottobre 1976*
 
@@ -4809,7 +4809,7 @@ Mi alzai per andarmene. Lui non si mosse. Restò seduto al tavolo, con il piatto
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 34
+## 34. Allora non vado
 
 *Bari Vecchia — venerdì 29 ottobre 1976*
 
@@ -4898,7 +4898,7 @@ Michele non rispose. Si girò sulla sedia verso il cavalletto, piano, e non ripr
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 35
+## 35. L'accendino
 
 *Bari Vecchia — sabato 30 ottobre 1976*
 
@@ -5065,7 +5065,7 @@ Piego il foglio in due e lo metto nella scatola, sotto le fotografie. Di là mia
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 36
+## 36. Il fuoco
 
 *Bari Vecchia — sabato 30 ottobre 1976*
 
@@ -5094,7 +5094,7 @@ Non gli andai dietro, e non mi venne neanche in mente di farlo.
 
 Michele gridava, e non l'avevo mai sentito gridare.
 
-Il fuoco gli era salito sulle scarpe. I pantaloni, fradici di trementina, cominciavano a bruciare dall'orlo, con una fiamma blu che si arrampicava sulla caviglia. Strappai la tenda della cucina dal suo filo, gliela buttai sulle gambe e ci premetti sopra con tutto quello che avevo, i palmi, gli avambracci, il petto, finché la fiamma blu non morì sotto la stoffa. Sentivo la pelle delle mani che sfrigolava, ma il male non arrivava.
+Il fuoco gli era salito sulle scarpe. I pantaloni, fradici di trementina, cominciavano a bruciare dall'orlo, con una fiamma blu che si arrampicava sulla caviglia. Strappai la coperta militare dalla branda, gliela buttai sulle gambe e ci premetti sopra con tutto quello che avevo, i palmi, gli avambracci, il petto, finché la fiamma blu non morì sotto la stoffa. Sentivo la pelle delle mani che sfrigolava, ma il male non arrivava.
 
 — Vattene, — diceva Michele. — Lasciami qua e vattene, figlio mio, che io sono vecchio.
 
@@ -5146,7 +5146,7 @@ Cercava il ritratto.
 
 Non ci pensai, perché se ci pensavo restavo lì. Mi sfilai la camicia, me la girai intorno alla faccia, e tornai dentro.
 
-— Uagliò! — gridò qualcuno. — Fermatelo, quello!
+— Uagnò! — gridò qualcuno. — Fermatelo, quello!
 
 Una mano mi sfiorò la schiena e non mi prese. Dentro, il fumo aveva un peso, e non vedevo niente, e non serviva vedere: in quella stanza ci avevo passato l'estate e l'autunno, e i piedi la sapevano da soli. Tre passi a destra dall'ingresso, contando. Il legno dello stipite sotto la spalla. Più su, all'altezza dei miei occhi, il ferro.
 
@@ -5226,7 +5226,7 @@ Feci spallucce, e il movimento mi tirò la pelle delle mani fino ai gomiti.
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 37
+## 37. Il transatlantico
 
 *Campagna di Bitonto e Bari — domenica 31 ottobre 1976*
 
@@ -5245,7 +5245,7 @@ Il buco lo lasciai aperto. Non c'era più niente da nascondere, e se qualcuno ve
 
 Lo zaino lo legai sul portapacchi con lo spago, facendomi aiutare dai denti.
 
-Tornando passai dalla Vallisa. Non avevo deciso di farlo: il Ciao ci andò da solo, per la strada che faceva da quattro mesi. All'angolo mi fermai con un piede a terra. Il vicolo era bagnato, pieno di pozze nere, e sulle chianche c'erano ancora la tenda della cucina, bruciata a metà, e i cocci della finestrella. La porta verde non c'era più. Al suo posto c'era un buco scuro, con il bordo dei muri annerito fino al primo piano, e dentro, per quanto si poteva vedere, solo cenere e qualche telaio di legno rimasto in piedi senza la tela. Una donna lavava la soglia di casa sua, di fronte, con il secchio e la scopa, e non alzò la testa. Sopra, il balcone con la ringhiera storta aveva le persiane chiuse, come sempre, e un po' di fuliggine sul davanzale.
+Tornando passai dalla Vallisa. Non avevo deciso di farlo: il Ciao ci andò da solo, per la strada che faceva da quattro mesi. All'angolo mi fermai con un piede a terra. Il vicolo era bagnato, pieno di pozze nere, e sulle chianche c'erano ancora la coperta militare della branda, bruciata a metà, e i cocci della finestrella. La porta verde non c'era più. Al suo posto c'era un buco scuro, con il bordo dei muri annerito fino al primo piano, e dentro, per quanto si poteva vedere, solo cenere e qualche telaio di legno rimasto in piedi senza la tela. Una donna lavava la soglia di casa sua, di fronte, con il secchio e la scopa, e non alzò la testa. Sopra, il balcone con la ringhiera storta aveva le persiane chiuse, come sempre, e un po' di fuliggine sul davanzale.
 
 Restai lì poco. Poi girai il manubrio verso il Policlinico, con lo zaino che sbatteva dietro di me a ogni buca, e non mi voltai.
 
@@ -5315,7 +5315,7 @@ Mi ci volle un momento per capire. Poi capii, e lo abbracciai, piano, badando al
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 38
+## 38. Le firme
 
 *Bari — lunedì 1 – sabato 20 novembre 1976*
 
@@ -5358,7 +5358,7 @@ Il giorno dopo decidemmo la strada. Da Bari no: al porto c'erano troppe facce ch
 
 L'impiegato alzò gli occhi dal registro, guardò il vecchio, guardò me, e scrisse. Pagai io, dal portafoglio nuovo che avevo comprato quella mattina al mercato, e uscii dall'agenzia con il biglietto piegato in quattro nella tasca della camicia, sopra il cuore, e lo toccai con le dita fino alla pensione.
 
-Per le carte del Brasile Michele andò a Genova una volta, da solo, in treno, a metà mese. Tornò dopo due giorni con un timbro sul passaporto, un raffreddore e una cartolina della Lanterna che appoggiò al ritratto.
+Per le carte del Brasile bastarono una lettera del signore dei quadri e il lavoro dell'agenzia del corso: il timbro del consolato arrivò per posta, in due settimane, e Michele lo guardò a lungo prima di metterlo in tasca.
 
 Restava la cosa che i soldi non potevano comprare.
 
@@ -5486,7 +5486,7 @@ Rimetto la fotocopia nella busta e la busta in fondo, sotto tutto. Spengo la lam
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 39
+## 39. I debiti
 
 *Bari e Molfetta — giovedì 25 – martedì 30 novembre 1976*
 
@@ -5503,7 +5503,7 @@ Lo misi nella tasca della camicia, insieme al biglietto della nave e al modulo c
 
 <p class="scena">•</p>
 
-Presi la corriera la mattina dopo, con il vento di tramontana che piegava i pini lungo la strada. Nella giacca, contro le costole, avevo una busta gialla, grande, chiusa con lo scotch. Dentro c'erano due mazzette avvolte in un pezzo di tela cerata. Di Franco sapevo una cosa sola, che l'avevano mandato da una sorella di sua madre, in una casa sul mare. Lo aveva lasciato cadere Carlo, la sera del vino, senza che io domandassi niente.
+Presi la corriera la mattina dopo, con il vento di tramontana che piegava i pini lungo la strada. Nella giacca, contro le costole, avevo una busta gialla, grande, chiusa con lo scotch. Dentro c'erano due mazzette avvolte in un pezzo di tela cerata. Di Franco sapevo una cosa sola, che l'avevano mandato da una sorella di sua madre, in una casa sul mare. Lo aveva lasciato cadere Carlo, la sera che venne da Michele, senza che io domandassi niente.
 
 Molfetta era Bari Vecchia rimpicciolita e lavata dal vento. Le stesse chianche, le stesse reti stese, le stesse donne sulle soglie che smettevano di parlare quando passava uno che non conoscevano. Chiesi di Franco a un ragazzino che tirava calci a una lattina, e quello mi squadrò dalle scarpe ai capelli prima di rispondere.
 
@@ -5619,7 +5619,7 @@ Il resto lo lasciai lì. Quando uscii, sul pavimento della stanza restava una te
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 40
+## 40. Genova
 
 *In treno e a Genova — venerdì 3 – sabato 4 dicembre 1976*
 
@@ -5766,7 +5766,7 @@ Restammo così alla ringhiera, il vecchio con il quadro girato verso il largo e 
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 41
+## 41. Diciassette giorni
 
 *In mare — sabato 4 – martedì 21 dicembre 1976*
 
@@ -5781,7 +5781,7 @@ Lui non dormiva. Lo sentivo cambiare posizione, tirarsi su il bavero, sistemare 
 
 Non rispose subito. Il motore batteva sotto di noi, regolare, e il mare passava nero lungo la fiancata.
 
-— Fino a due giorni fa, figlio mio, il punto più lontano dove avevo messo i piedi era Foggia. Una volta, per un funerale, nel trentadue. E adesso guarda. — Allargò una mano verso il buio. — Settant'anni, una valigia di cartone e una ragazza dipinta. Se questo non fa paura, non so che cosa.
+— Fino a ieri, figlio mio, il punto più lontano dove avevo messo i piedi era Foggia. Una volta, per un funerale, nel trentadue. E adesso guarda. — Allargò una mano verso il buio. — Settant'anni, una valigia di cartone e una ragazza dipinta. Se questo non fa paura, non so che cosa.
 
 Mi avvicinai finché le nostre spalle non si toccarono. Restammo così. Più tardi, quando il cielo cominciò a schiarirsi dietro la poppa, parlò di nuovo.
 
@@ -5879,7 +5879,7 @@ Michele arrivò dopo, piano, con il bastone e con il quadro, e si fermò accanto
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 42
+## 42. Santos
 
 *Santos e la costa a sud — dicembre 1976 – gennaio 1977*
 
@@ -5994,7 +5994,7 @@ Quando uscii a vedere, era buio. Lui era ancora seduto sul gradino, nella stessa
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 43
+## 43. Le prime monete
 
 *Il villaggio sulla scogliera — 1977*
 
@@ -6069,7 +6069,7 @@ Me lo ricordavo. La prima sera nel basso, il barattolo giallo, il blu che ci gal
 
 — Me lo ricordo.
 
-— Ecco. Questa è olio, — disse, e mi richiuse la mano con la sua.
+— Ecco. Questo è olio, — disse, e mi richiuse la mano con la sua.
 
 <p class="scena">•</p>
 
@@ -6131,11 +6131,11 @@ I fogli sono tanti, adesso. Stanno sul tavolo in tre pile, legate con l'elastico
 
 Spedirle no. Non saprei a chi. A Bari non c'è più nessuno che mi aspetti. Gli editori sono gente che non conosco. Bruciarle nemmeno: di fuoco, in questa storia, ce n'è stato abbastanza. Tenerle nella scatola con le lettere dell'avvocato mi sembra il modo di non decidere.
 
-Sul muro, di fianco alla finestra, c'è la maglia. È appesa a un chiodo da quasi cinquant'anni, con le spalle un po' allungate dal peso. Il bianco è diventato color latte, il nove sulla schiena si è scolorito, e della dedica a pennarello si leggono solo «amico» e il mio nome. Accanto, all'altezza degli occhi, c'è il ritratto di Lucia, con la cornice nera da una parte. Sotto c'è il vasetto con i fiori di stamattina.
+Accanto alla finestra, appesa al muro, c'è la maglia. È appesa a un chiodo da quasi cinquant'anni, con le spalle un po' allungate dal peso. Il bianco è diventato color latte, il nove sulla schiena si è scolorito, e della dedica a pennarello si leggono solo «amico» e il mio nome. Accanto, all'altezza degli occhi, c'è Lucia, con il legno bruciato in un angolo, e sotto di lei i fiori che ho cambiato stamattina.
 
 Qualche anno fa, sul giornale sportivo che il figlio di Osvaldo lascia al bar del porto, ho trovato un trafiletto. Due righe, in fondo a una pagina. C'era il soprannome che gli davano a Bari, e c'era un ospedale di San Paolo. Era morto vecchio, dopo una malattia lunga. Ho letto le due righe al bancone, in piedi, con il caffè che si raffreddava. Poi ho pensato che in tutti quegli anni non gli avevo mai scritto. Avevo il suo nome e la sua città. Avevo una vita intera. Non gli ho mandato neanche una cartolina. Lui mi aveva regalato una maglia e una frase, e io gli ho restituito il silenzio, che è la cosa che so fare meglio.
 
-Michele lo diceva della sua vita, di sera, nel basso, quando il vino gli scioglieva la lingua: una vita non detta si perde due volte. Una quando finisce, e un'altra quando nessuno se la ricorda più. Lo diceva per lei, credo. Io ci ho messo cinquant'anni per capire che valeva anche per me.
+Michele lo diceva della sua vita, di sera, nel basso, quando aveva bevuto un bicchiere in più: una vita non detta si perde due volte. Una quando finisce, e un'altra quando nessuno se la ricorda più. Lo diceva per lei, credo. Io ci ho messo cinquant'anni per capire che valeva anche per me.
 
 Nella stanza accanto c'è il mobile con il cassetto lungo, quello di sotto, dove tengo le carte della casa. Ci sono l'atto del notaio, le ricevute delle tasse, i fogli della barca, le assicurazioni. Quando morirò, i miei figli apriranno quel cassetto il primo giorno, perché sono figli ordinati e le carte della casa servono subito.
 
