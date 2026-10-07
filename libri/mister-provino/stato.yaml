@@ -88,4 +88,35 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T06:34:13Z'
+aggiornato: '2026-10-07T10:07:11Z'
+correzioni_registrate:
+- data: '2026-10-07'
+  file: 04-manoscritto/12-la-storia-di-lei.md
+  motivo: «l'ago» del cucito riformulato (tetto del libro)
+  sha256_precedente: 1fa06ce27917aa275b70c0c3cc98d11c35d84a7d568f5a34abecbb834fe5c57d
+  sha256_corretto: 70ff4030a6f0811742ab10ea676efc717a472a65a4bf0cd47b8c7eed2e9f73e4
+  commit: 25187c1
+- data: '2026-10-07'
+  file: 04-manoscritto/15-il-mercato.md
+  motivo: niente rivolgimento al lettore; via la frase sul doppio senso
+  sha256_precedente: 2a2c3399b70a926d5a718b0616ce7ac17ef2afb6447731784b2ed2d2a715a77d
+  sha256_corretto: 4410d727c750e657ac89a3fe3518575489305663960467948b9f2c313ac2a159
+  commit: cd9db19
+- data: '2026-10-07'
+  file: 04-manoscritto/15-il-mercato.md
+  motivo: «l'ago» della bilancia riformulato (tetto del libro)
+  sha256_precedente: 4410d727c750e657ac89a3fe3518575489305663960467948b9f2c313ac2a159
+  sha256_corretto: 74659442ee8bc5995dba6ffea6755663a32fb7588c74e7f6172d911a087f91e9
+  commit: afacaf1
+- data: '2026-10-07'
+  file: 04-manoscritto/18-sette-giorni.md
+  motivo: brandina e coperta prestate da Michele
+  sha256_precedente: 832d11e7ff0c5c4f5e2224df6bc9775c7f93230cbfaaadd4cbd19cc2aab4bf7d
+  sha256_corretto: abf42c933305d4457fcce3d8b97be1e3dbd78e30145eecd07b17a6bdc7ace8a3
+  commit: 0ae87f0
+- data: '2026-10-07'
+  file: 04-manoscritto/19-il-settimo-giorno.md
+  motivo: «lavori per me da mesi»; la faccia di quella sera in cucina, con la busta
+  sha256_precedente: 7f8928b3d7d5637dad1af85b15f6047eb3c037316e6724bc986014e967320cae
+  sha256_corretto: c718eb64b374b83922a882c54e18e2dcd602e379928b3ce1214c14c203ff0846
+  commit: 0ae87f0
