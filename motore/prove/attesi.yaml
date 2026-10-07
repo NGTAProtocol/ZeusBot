@@ -306,7 +306,7 @@ passo_5:
     esito_3_gate_aperto: 2
     ok_controllo: "0 / stesura / nessuno / capitolo 3 / {}"
     primi_capitoli: "stesura / primi_capitoli"
-    ok_lotti: "0 / 5 / 3 / chiusura"
+    ok_lotti: "0 / 5 / 3 / stesura / chiusura"   # chiusura solo dopo l'esito dell'interludio I
     chiusura_incompleta: "2 / 7"
   modalita:
     senza_testo: "2 / ['Testo precedente']"
@@ -581,3 +581,14 @@ unita_consentite_e_interludi:
     frasi corte: ['interludio I|frase_media|AVVISO']
     frasi giuste: []
   c_scarti: ['-1,2%', '+11,5%']
+
+# La fase resta «stesura» finché mancano unità del piano; zb fase stesura; correggi segue le rinomine.
+fase_stesura_e_rinomine:
+  riga_epilogo: "| — | epilogo | Epilogo | chiusura | 1 | 300 | 300 | | |"
+  testo_epilogo: "## *Epilogo*\n\nLa sera la piazza resta vuota fino alla chiesa grande. Il fornaio abbassa la saracinesca per ultimo, senza fretta. Nella vetrina la croce verde è spenta da tre giorni.\n"
+  a_fasi: "0 / stesura / epilogo / 2 / 0 / chiusura"   # prima: chiusura subito dopo l'ultimo capitolo
+  a_fuori_piano: 2
+  b_codici: "2 / 0 / 2"
+  b_registro: "chiusura / stesura / manca l'epilogo / ['interludio I', 'epilogo'] / stesura / interludio I"
+  b_completo: "2 / chiusura"
+  c_rinomina: "0 True / 0 True / 0 True"              # prima: sha256 precedente «—» (None)
