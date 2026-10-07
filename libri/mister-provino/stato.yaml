@@ -32,8 +32,13 @@ documenti_approvati:
     sha256: 8012ec1c0e68d7a82bbca2c9ff2fe222da66199fdf5eec9b0029e9a64e7e34ef
     commit: 1dc472f
   03-architettura/manuale-di-stile.md:
-    sha256: 1cd740f2f5f9af6b5d7f08322cd2949592e3ff245e6cc242a80a203d6c5fc9bd
-    commit: 4097b57
+    sha256: 63a0840fd8cae2ee776826be80582ee02a759e06eef2c7800c9d40d870c644de
+    commit: 9ab6003
+    riapprovazioni:
+    - data: '2026-10-07'
+      motivo: battuta canonica della busta gialla del capitolo 39, chiesta dalla scaletta
+      sha256_precedente: 1cd740f2f5f9af6b5d7f08322cd2949592e3ff245e6cc242a80a203d6c5fc9bd
+      commit_precedente: 4097b57
   03-architettura/scaletta.md:
     sha256: c84ab7c8f6e120b49ae7baed4bf13d04cce2f454f345436a44b700e95ddd30c1
     commit: 3fdce98
@@ -102,7 +107,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-07T10:40:44Z'
+aggiornato: '2026-10-07T10:42:25Z'
 correzioni_registrate:
 - data: '2026-10-07'
   file: 04-manoscritto/12-la-storia-di-lei.md
