@@ -18,7 +18,9 @@ Scesi con la camicia ancora sbottonata. Nicola non mi salutò. Mi aprì la porti
 
 Lo disse senza guardarmi, mettendo la prima. Tamburellava con le dita sul volante, piano, sempre lo stesso ritmo. Mimmo e Tonino non ridevano. Tonino si guardava le mani. Mimmo fumava con il finestrino abbassato e buttava la cenere fuori con un colpo secco del dito.
 
-Girammo per il quartiere. Non andavamo da nessuna parte. Nicola rallentava agli angoli, guardava dentro i portoni, guardava le finestre, ripartiva. — Dove andiamo? — chiesi.
+Girammo per il quartiere. Non andavamo da nessuna parte. Nicola rallentava agli angoli, guardava dentro i portoni, guardava le finestre, ripartiva.
+
+— Dove andiamo? — chiesi.
 
 — A fare un giro, — disse Mimmo.
 
@@ -94,7 +96,9 @@ Nicola si mise l'involto sotto la giacca, si sistemò il colletto, e tornò alla
 
 — E Franco?
 
-— Franco mo' lo pigliano quelli di dentro. Cammina. Io li seguii per ultimo, e prima di salire guardai ancora una volta in fondo alla traversa, ma Franco non c'era più sul gradino: qualcuno, da dentro il basso, l'aveva tirato dentro, e la porta adesso era chiusa.
+— Franco mo' lo pigliano quelli di dentro. Cammina.
+
+Io li seguii per ultimo, e prima di salire guardai ancora una volta in fondo alla traversa, ma Franco non c'era più sul gradino: qualcuno, da dentro il basso, l'aveva tirato dentro, e la porta adesso era chiusa.
 
 In macchina Nicola accese la radio. Trasmettevano una canzone allegra, con le trombe, e lui la canticchiò a bocca chiusa, tenendo il ritmo con la mano aperta sul volante. Mimmo accese una sigaretta. Tonino guardava fuori.
 
