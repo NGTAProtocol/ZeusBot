@@ -1,0 +1,96 @@
+---
+import Lines from './Lines.astro';
+const { s, i } = Astro.props;
+const titleLines = s.title_lines || (s.title ? [s.title] : []);
+const id = s.id || `s${i}`;
+---
+{s.type === 'marquee' ? (
+  <div class="marquee" aria-label={s.words.join(', ')} role="img">
+    <div class="marquee__track" aria-hidden="true">
+      {[0, 1].map(() => <div class="marquee__group">{s.words.map((w) => <span>{w}</span>)}</div>)}
+    </div>
+  </div>
+) : (
+<section class={`section ${s.surface ? 'section--surface' : ''}`} id={id} aria-labelledby={`${id}-t`} data-section data-tone={s.tone || ''}>
+  <div class="wrap">
+    {s.type === 'chapter' && (
+      <div class="chapter">
+        <div class="chapter__head section__head">
+          <Lines lines={titleLines} class="section__title" />
+          <span id={`${id}-t`} class="sr-only">{titleLines.join(' ')}</span>
+          {s.aside && <p class="chapter__aside" data-reveal>{s.aside}</p>}
+        </div>
+        <div class="chapter__body">
+          {s.body.map((p) => <p data-reveal>{p}</p>)}
+        </div>
+      </div>
+    )}
+    {s.type !== 'chapter' && s.type !== 'quote' && (
+      <div class="section__head">
+        <Lines lines={titleLines} class="section__title" />
+        <span id={`${id}-t`} class="sr-only">{titleLines.join(' ')}</span>
+        {s.intro && <p class="section__intro" data-reveal>{s.intro}</p>}
+      </div>
+    )}
+    {s.type === 'facts' && (
+      <div class="facts">
+        {s.items.map((it) => (
+          <div class="fact" data-reveal>
+            <p class="fact__value"><span data-count={it.value}>{it.value}</span>{it.unit && <span class="fact__unit">{it.unit}</span>}</p>
+            <p class="fact__label">{it.label}</p>
+          </div>
+        ))}
+      </div>
+    )}
+    {s.type === 'offer' && (
+      <ul class="offer">
+        {s.items.map((it) => (
+          <li class="offer__item" data-reveal>
+            <h3 class="offer__name">{it.name}</h3>
+            <p>{it.detail}</p>
+            <p class="offer__meta">{it.meta}</p>
+          </li>
+        ))}
+      </ul>
+    )}
+    {s.type === 'process' && (
+      <ol class="process">
+        {s.steps.map((st) => (
+          <li class="process__step" data-reveal>
+            <div><p class="process__name">{st.name}</p><p class="muted">{st.detail}</p></div>
+          </li>
+        ))}
+      </ol>
+    )}
+    {s.type === 'quote' && (
+      <figure>
+        <span id={`${id}-t`} class="sr-only">Testimonianza</span>
+        <blockquote class="quote" data-reveal>“{s.text}”</blockquote>
+        <figcaption class="quote__cite" data-reveal>{s.cite}</figcaption>
+      </figure>
+    )}
+    {s.type === 'faq' && (
+      <div class="faq">
+        {s.items.map((it) => (
+          <details><summary>{it.q}</summary><p>{it.a}</p></details>
+        ))}
+      </div>
+    )}
+    {s.type === 'contact' && (
+      <div class="contact">
+        <div class="chapter__body">{s.body.map((p) => <p data-reveal>{p}</p>)}
+          {s.cta && <p data-reveal><a class="btn btn-primary" href={s.cta.href}>{s.cta.label}</a></p>}
+        </div>
+        <dl class="contact__lines">
+          {s.lines.map((l) => (
+            <div data-reveal>
+              <dt class="contact__label">{l.label}</dt>
+              <dd class="contact__value" style="margin:0">{l.href ? <a href={l.href}>{l.value}</a> : l.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    )}
+  </div>
+</section>
+)}

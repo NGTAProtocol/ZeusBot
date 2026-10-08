@@ -1,0 +1,24 @@
+{
+  "slug": "nodo-sicuro",
+  "business": "Nodo: studio di sicurezza informatica per PMI manifatturiere del Nord Est, con audit, formazione del personale e reperibilità in caso di incidente",
+  "sector": "tecnologia sicurezza b2b consulenza",
+  "audience": "titolari e responsabili IT di aziende tra 20 e 250 dipendenti, senza un reparto di sicurezza interno",
+  "goal": "prenotare una prima valutazione gratuita di 45 minuti",
+  "tone": "calmo, preciso, niente allarmismo",
+  "language": "it",
+  "pages": [
+    "home",
+    "contatti"
+  ],
+  "level": "cinematic",
+  "facts": [
+    "sede a Treviso, interventi in Veneto e Friuli",
+    "4 consulenti certificati (OSCP, CISSP, ISO 27001 Lead Auditor)",
+    "prima valutazione gratuita di 45 minuti, online o in azienda",
+    "audit in 2-3 settimane con rapporto in italiano e piano in ordine di priorità",
+    "formazione del personale con simulazioni di phishing trimestrali",
+    "reperibilità per incidenti 24/7 con contratto annuale, intervento remoto entro 1 ora",
+    "supporto per adeguamento alla direttiva NIS2",
+    "email valutazione@nodosicuro.it, telefono 0422 000 309"
+  ]
+}

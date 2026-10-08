@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "fornace-lume",
+    "level": "base",
+    "direction": "argilla",
+    "ms": 3323
+  },
+  {
+    "slug": "fornace-lume",
+    "level": "cinematic",
+    "direction": "argilla",
+    "ms": 2149
+  },
+  {
+    "slug": "fornace-lume",
+    "level": "baseline",
+    "direction": "argilla",
+    "ms": 1480
+  },
+  {
+    "slug": "nodo-sicuro",
+    "level": "base",
+    "direction": "cifra",
+    "ms": 3013
+  },
+  {
+    "slug": "nodo-sicuro",
+    "level": "cinematic",
+    "direction": "cifra",
+    "ms": 2550
+  },
+  {
+    "slug": "nodo-sicuro",
+    "level": "baseline",
+    "direction": "cifra",
+    "ms": 1827
+  },
+  {
+    "slug": "quota-2100",
+    "level": "base",
+    "direction": "quota",
+    "ms": 2784
+  },
+  {
+    "slug": "quota-2100",
+    "level": "cinematic",
+    "direction": "quota",
+    "ms": 2221
+  },
+  {
+    "slug": "quota-2100",
+    "level": "baseline",
+    "direction": "quota",
+    "ms": 1482
+  }
+]

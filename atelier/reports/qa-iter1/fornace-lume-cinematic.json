@@ -1,0 +1,165 @@
+{
+  "id": "fornace-lume-cinematic",
+  "level": "cinematic",
+  "url_tested": "locale, server statico con gzip",
+  "at": "2026-10-08T08:57:56.140Z",
+  "browser": {
+    "viewports": {
+      "375": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": true,
+        "fallback": null,
+        "fonts": [
+          "Young Serif",
+          "Hanken Grotesk"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "768": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": true,
+        "fallback": null,
+        "fonts": [
+          "Young Serif",
+          "Hanken Grotesk"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "1280": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": true,
+        "fallback": null,
+        "fonts": [
+          "Young Serif",
+          "Hanken Grotesk"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      }
+    },
+    "checks": {
+      "reducedMotion": {
+        "fallback": "reduced-motion",
+        "canvas": false,
+        "hiddenContent": 0
+      },
+      "noWebGL": {
+        "fallback": null,
+        "posterVisible": true,
+        "canvas": false
+      },
+      "saveData": {
+        "fallback": "save-data",
+        "canvas": false
+      }
+    }
+  },
+  "lighthouse": {
+    "mobile": {
+      "formFactor": "mobile",
+      "performance": 98,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 1824,
+      "tbtMs": 103,
+      "cls": 0.011,
+      "fcpMs": 1554,
+      "totalBytes": 123746,
+      "failingA11y": [],
+      "failingSeo": [],
+      "runtimeError": null,
+      "runs": [
+        97,
+        98,
+        99
+      ]
+    },
+    "desktop": {
+      "formFactor": "desktop",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 440,
+      "tbtMs": 0,
+      "cls": 0.037,
+      "fcpMs": 377,
+      "totalBytes": 123746,
+      "failingA11y": [],
+      "failingSeo": [],
+      "runtimeError": null,
+      "runs": [
+        100,
+        100,
+        100
+      ]
+    }
+  },
+  "lighthouseForce3d": {
+    "mobile": {
+      "formFactor": "mobile",
+      "performance": 97,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 1812,
+      "tbtMs": 146,
+      "cls": 0.011,
+      "fcpMs": 1545,
+      "totalBytes": 125203,
+      "failingA11y": [],
+      "failingSeo": [],
+      "runtimeError": null
+    },
+    "desktop": {
+      "formFactor": "desktop",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 437,
+      "tbtMs": 0,
+      "cls": 0.037,
+      "fcpMs": 375,
+      "totalBytes": 125203,
+      "failingA11y": [],
+      "failingSeo": [],
+      "runtimeError": null
+    }
+  },
+  "thresholds": {
+    "performanceMobile": {
+      "need": 75,
+      "got": 98,
+      "ok": true
+    },
+    "performanceDesktop": {
+      "need": 85,
+      "got": 100,
+      "ok": true
+    },
+    "accessibility": {
+      "need": 95,
+      "got": 100,
+      "ok": true
+    },
+    "seo": {
+      "need": 95,
+      "got": 100,
+      "ok": true
+    }
+  },
+  "pass": true
+}

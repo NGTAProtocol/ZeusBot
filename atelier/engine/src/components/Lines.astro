@@ -1,0 +1,19 @@
+---
+// Titolo spezzato in righe con maschera; testo accessibile intatto.
+const { lines, tag = 'h2', class: cls = '', kinetic = false } = Astro.props;
+const Tag = tag;
+const full = lines.join(' ');
+const split = (line) => line.split(' ').map((w) => [...w]);
+---
+<Tag class={cls + (kinetic ? ' kinetic' : '')} data-reveal-lines>
+  <span class="sr-only">{full}</span>
+  <span aria-hidden="true">
+    {lines.map((line) => (
+      <span class="mask-line"><span>
+        {kinetic
+          ? split(line).map((w, i) => <><span class="w">{w.map((c) => <span class="ch">{c}</span>)}</span>{i < line.split(' ').length - 1 ? ' ' : ''}</>)
+          : line}
+      </span></span>
+    ))}
+  </span>
+</Tag>

@@ -1,0 +1,6 @@
+{
+  "url": "https://bruno-simon.com/",
+  "studied_at": "2026-10-08T06:40:01.443Z",
+  "reachable": false,
+  "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://bruno-simon.com/"
+}

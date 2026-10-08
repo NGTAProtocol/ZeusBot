@@ -1,0 +1,11 @@
+## Note sulle misure
+- **Accessibilità delle baseline:** Nodo e Quota hanno ottenuto 90 nell'iterazione 1 (audit `color-contrast`) e 100 nell'iterazione 2 senza alcuna modifica al loro codice. La verifica del contrasto su testo sopra sfondi sfumati e trasparenze oscilla fra un run e l'altro. Dati grezzi in `reports/qa-iter1/` (iterazione 1) e `reports/qa/` (finale).
+- **"Contenuti nascosti 1/0/0" nel BASE di Nodo:** non si riproduce in 3 esecuzioni dedicate. È un falso positivo di temporizzazione: con Lighthouse in parallelo, l'observer reagisce dopo la misura.
+- **Peso:** le baseline pesano 4-5 KB perché usano i font di sistema e nessuna immagine. I siti Atelier pesano 73-199 KB senza il 3D, di cui la parte maggiore sono i webfont OFL in locale. L'LCP delle baseline (0,75 s) è **migliore** di quello di Atelier (1,4-2,3 s) proprio per i webfont.
+- **WebGL software:** tutto il 3D è stato renderizzato con SwiftShader (CPU). Su GPU reali è più leggero, ma **non è stato misurato**.
+- **Storia delle prestazioni del CINEMATICO** (misure intermedie):
+  - prima versione: mobile 72, desktop 60 (TBT 1,8 s). Causa: verifica di WebGL con un contesto di prova sincrono;
+  - dopo la correzione e con il 3D al primo gesto: mobile 97-99, desktop 100;
+  - con il 3D forzato all'avvio, ancora nel thread principale: mobile 74, desktop 68;
+  - dopo lo spostamento nel Web Worker: mobile 96-99, desktop 94-100 (vedi l'avvertenza sopra).
+- **Potatura degli asset (dopo la misura finale):** Astro emetteva i chunk del CINEMATICO (GSAP, Lenis, Three.js) anche nell'output del BASE, senza che la pagina li caricasse. `generate.mjs` ora elimina i `.js` non raggiungibili dall'HTML. Il comportamento e i byte scaricati dal browser non cambiano, quindi le misure restano valide; cambia solo lo spazio su disco del deploy (~1,3 MB in meno per il BASE). Il controllo è in `npm test`.

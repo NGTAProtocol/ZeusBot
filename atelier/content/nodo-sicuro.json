@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Nodo — sicurezza informatica per PMI manifatturiere, Treviso",
+    "description": "Nodo protegge le PMI manifatturiere di Veneto e Friuli: audit in 2-3 settimane, formazione anti-phishing, reperibilità 24/7. Prima valutazione gratuita.",
+    "lang": "it",
+    "url": "https://nodosicuro.example"
+  },
+  "brand": { "name": "Nodo" },
+  "nav": [
+    { "label": "Servizi", "href": "#servizi" },
+    { "label": "Metodo", "href": "#metodo" },
+    { "label": "Incidenti", "href": "#incidenti" },
+    { "label": "NIS2", "href": "#domande" }
+  ],
+  "cta": { "label": "Prenota la valutazione gratuita", "href": "contatti", "mobile_hint": "45 minuti, gratis" },
+  "pages": {
+    "home": {
+      "hero": {
+        "title_lines": ["La tua produzione", "non si ferma", "per una mail sbagliata."],
+        "lead": "Nodo è lo studio di sicurezza informatica per le PMI manifatturiere del Nord Est che non hanno un reparto dedicato. Troviamo i punti deboli, formiamo chi lavora con te e rispondiamo quando qualcosa va storto.",
+        "lead_short": "Sicurezza informatica per PMI manifatturiere senza un reparto dedicato.",
+        "cta": { "label": "Prenota la valutazione gratuita", "href": "contatti" },
+        "secondary": { "label": "Come lavoriamo", "href": "#metodo" },
+        "meta": ["Treviso — Veneto e Friuli", "Aziende da 20 a 250 dipendenti"]
+      },
+      "sections": [
+        {
+          "type": "chapter",
+          "id": "perche",
+          "index_label": "Il punto",
+          "title_lines": ["Chi attacca", "non sceglie", "le aziende grandi"],
+          "body": [
+            "Sceglie quelle dove un clic basta. In una PMI con 80 dipendenti spesso l'informatica è affidata a una persona sola, che deve anche far funzionare stampanti, gestionale e macchine in rete.",
+            "Nodo lavora accanto a quella persona, non al suo posto. Le diamo un elenco di priorità chiaro, un team da chiamare e il tempo per occuparsi del resto."
+          ],
+          "aside": "Quattro consulenti certificati OSCP, CISSP e ISO 27001 Lead Auditor."
+        },
+        {
+          "type": "offer",
+          "id": "servizi",
+          "index_label": "Servizi",
+          "title": "Cosa fa Nodo per te",
+          "intro": "Tre servizi che si possono prendere anche separatamente. Molti clienti partono dall'audit.",
+          "items": [
+            { "name": "Audit", "detail": "Analizziamo rete, accessi, backup e macchine collegate. In 2-3 settimane ricevi un rapporto in italiano e un piano ordinato per priorità.", "meta": "2-3 settimane" },
+            { "name": "Formazione", "detail": "Simulazioni di phishing ogni trimestre e incontri brevi con il personale, in ufficio e in reparto. Misuriamo i miglioramenti da una campagna all'altra.", "meta": "ogni trimestre" },
+            { "name": "Reperibilità", "detail": "Con il contratto annuale rispondiamo 24 ore su 24 in caso di incidente e interveniamo da remoto entro un'ora.", "meta": "24/7, entro 1 ora" },
+            { "name": "Adeguamento NIS2", "detail": "Ti aiutiamo a capire se la direttiva NIS2 ti riguarda e cosa serve per adeguarti, partendo dai risultati dell'audit.", "meta": "su richiesta" }
+          ]
+        },
+        {
+          "type": "process",
+          "id": "metodo",
+          "index_label": "Metodo",
+          "title": "Come si comincia",
+          "steps": [
+            { "name": "Valutazione gratuita", "detail": "45 minuti, online o in azienda: capiamo come lavorate e dove siete più esposti." },
+            { "name": "Audit", "detail": "Due o tre settimane di analisi tecnica, concordate per non fermare la produzione." },
+            { "name": "Piano di priorità", "detail": "Un rapporto in italiano: cosa sistemare subito, cosa entro sei mesi, cosa può aspettare." },
+            { "name": "Accompagnamento", "detail": "Formazione del personale e, se lo scegli, reperibilità per gli incidenti." }
+          ]
+        },
+        {
+          "type": "chapter",
+          "id": "incidenti",
+          "index_label": "Incidenti",
+          "tone": "invert",
+          "title_lines": ["Quando succede", "di notte"],
+          "body": [
+            "Un ransomware non aspetta l'orario d'ufficio. Con il contratto di reperibilità, Nodo risponde 24 ore su 24 e interviene da remoto entro un'ora.",
+            "Il primo obiettivo è isolare il problema e far ripartire la produzione; il secondo è capire da dove è entrato, perché non si ripeta."
+          ],
+          "aside": "La reperibilità è inclusa nel contratto annuale."
+        },
+        {
+          "type": "faq",
+          "id": "domande",
+          "index_label": "NIS2",
+          "title": "Domande frequenti",
+          "items": [
+            { "q": "La direttiva NIS2 riguarda la mia azienda?", "a": "Dipende dal settore e dalle dimensioni. Lo verifichiamo durante la valutazione gratuita e, se serve, ti accompagniamo nell'adeguamento." },
+            { "q": "L'audit ferma la produzione?", "a": "No. Le analisi si concordano con te per non toccare le macchine nelle ore di lavoro." },
+            { "q": "Dove lavorate?", "a": "Abbiamo sede a Treviso e interveniamo in Veneto e Friuli; la valutazione si può fare anche online." },
+            { "q": "La valutazione è davvero gratuita?", "a": "Sì: 45 minuti senza impegno. Alla fine sai se e dove intervenire." }
+          ]
+        },
+        {
+          "type": "contact",
+          "id": "contatto",
+          "title": "Prenota 45 minuti con Nodo",
+          "body": ["Scrivi o chiama: fissiamo la valutazione gratuita online o nella tua azienda."],
+          "lines": [
+            { "label": "Email", "value": "valutazione@nodosicuro.it", "href": "mailto:valutazione@nodosicuro.it" },
+            { "label": "Telefono", "value": "0422 000 309", "href": "tel:0422000309" },
+            { "label": "Sede", "value": "Treviso" }
+          ],
+          "cta": { "label": "Prenota la valutazione gratuita", "href": "mailto:valutazione@nodosicuro.it?subject=Valutazione%20gratuita" }
+        }
+      ]
+    },
+    "contatti": {
+      "meta_title": "Prenota la valutazione gratuita — Nodo, Treviso",
+      "meta_description": "Prenota con Nodo una valutazione gratuita di 45 minuti sulla sicurezza informatica della tua PMI, online o in azienda in Veneto e Friuli.",
+      "title_lines": ["Valutazione", "gratuita"],
+      "intro": "Quarantacinque minuti per capire dove la tua azienda è più esposta.",
+      "sections": [
+        {
+          "type": "contact",
+          "id": "scrivici",
+          "title": "Scrivi a Nodo",
+          "body": [
+            "Indica quanti dipendenti avete, chi si occupa oggi dell'informatica e se preferite l'incontro online o in azienda.",
+            "Se state gestendo un incidente in questo momento, chiamate: con il contratto di reperibilità interveniamo da remoto entro un'ora."
+          ],
+          "lines": [
+            { "label": "Email", "value": "valutazione@nodosicuro.it", "href": "mailto:valutazione@nodosicuro.it" },
+            { "label": "Telefono", "value": "0422 000 309", "href": "tel:0422000309" },
+            { "label": "Sede", "value": "Treviso — interventi in Veneto e Friuli" }
+          ]
+        }
+      ]
+    }
+  },
+  "footer": {
+    "closing": "Meno allarmi, più priorità chiare.",
+    "address": "Treviso — interventi in Veneto e Friuli",
+    "email": "valutazione@nodosicuro.it",
+    "phone": "0422 000 309",
+    "hours": ["Ufficio: lunedì-venerdì", "Reperibilità 24/7 con contratto annuale"],
+    "legal": "Nodo è un'attività fittizia: sito dimostrativo generato con Atelier."
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "generated": "2026-10-08",
+  "note": "Skill di terzi installate solo dopo audit (vedi audit-skill.md). commit = SHA del repo al momento del clone.",
+  "skills": [
+    {
+      "name": "frontend-design",
+      "repo": "anthropics/skills",
+      "commit": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+      "path": "skills/frontend-design",
+      "license": "Apache-2.0",
+      "license_file": "LICENSE.txt",
+      "status": "installed",
+      "installed_as": [
+        "frontend-design"
+      ]
+    },
+    {
+      "name": "webapp-testing",
+      "repo": "anthropics/skills",
+      "commit": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+      "path": "skills/webapp-testing",
+      "license": "Apache-2.0",
+      "license_file": "LICENSE.txt",
+      "status": "installed",
+      "installed_as": [
+        "webapp-testing"
+      ]
+    },
+    {
+      "name": "web-design-guidelines",
+      "repo": "vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "path": "skills/web-design-guidelines",
+      "license": "MIT (solo dichiarata nel README, nessun file LICENSE)",
+      "status": "rejected",
+      "installed_as": []
+    },
+    {
+      "name": "ai-ui-ux-motion-engine",
+      "repo": "OpaceDigitalAgency/skills",
+      "commit": "7ac89f9ac08da9dc2f95ec5a6c39cc30550e5f44",
+      "path": "skills/ai-ui-ux-motion-engine",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "status": "installed",
+      "installed_as": [
+        "ai-ui-ux-motion-engine"
+      ]
+    },
+    {
+      "name": "Three.js-Claude-Skill-Package",
+      "repo": "Impertio-Studio/Three.js-Claude-Skill-Package",
+      "commit": "6c190f0db95d6e4b77d7843d181c6d3325c09d0e",
+      "path": "skills/source/*/*",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "status": "installed",
+      "installed_as": [
+        "threejs-agents-model-optimizer",
+        "threejs-agents-scene-builder",
+        "threejs-core-math",
+        "threejs-core-raycaster",
+        "threejs-core-renderer",
+        "threejs-core-scene-graph",
+        "threejs-errors-performance",
+        "threejs-errors-rendering",
+        "threejs-impl-animation",
+        "threejs-impl-audio",
+        "threejs-impl-drei",
+        "threejs-impl-ifc-viewer",
+        "threejs-impl-lighting",
+        "threejs-impl-physics",
+        "threejs-impl-post-processing",
+        "threejs-impl-react-three-fiber",
+        "threejs-impl-shadows",
+        "threejs-impl-webgpu",
+        "threejs-impl-xr",
+        "threejs-syntax-controls",
+        "threejs-syntax-geometries",
+        "threejs-syntax-loaders",
+        "threejs-syntax-materials",
+        "threejs-syntax-shaders"
+      ]
+    },
+    {
+      "name": "threejs-skills",
+      "repo": "CloudAI-X/threejs-skills",
+      "commit": "b1c623076c661fc9b03dac19292e825a5d106823",
+      "path": "skills",
+      "license": "MIT (solo frase nel README, senza file LICENSE né titolare)",
+      "status": "rejected",
+      "installed_as": []
+    },
+    {
+      "name": "gsap-scrolltrigger",
+      "repo": "freshtechbro/claudedesignskills",
+      "commit": "1da73febff0c3e1dfefc07f8a5ef8f7d1dfdb6cd",
+      "path": ".claude/skills/gsap-scrolltrigger",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "status": "installed",
+      "installed_as": [
+        "gsap-scrolltrigger"
+      ]
+    },
+    {
+      "name": "react-three-fiber",
+      "repo": "freshtechbro/claudedesignskills",
+      "commit": "1da73febff0c3e1dfefc07f8a5ef8f7d1dfdb6cd",
+      "path": ".claude/skills/react-three-fiber",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "status": "installed",
+      "installed_as": [
+        "react-three-fiber"
+      ]
+    },
+    {
+      "name": "threejs-webgl",
+      "repo": "freshtechbro/claudedesignskills",
+      "commit": "1da73febff0c3e1dfefc07f8a5ef8f7d1dfdb6cd",
+      "path": ".claude/skills/threejs-webgl",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "status": "installed",
+      "installed_as": [
+        "threejs-webgl"
+      ]
+    }
+  ]
+}

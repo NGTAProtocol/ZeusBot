@@ -1,0 +1,6 @@
+{
+  "url": "https://www.apple.com/",
+  "studied_at": "2026-10-08T06:40:02.444Z",
+  "reachable": false,
+  "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://www.apple.com/"
+}

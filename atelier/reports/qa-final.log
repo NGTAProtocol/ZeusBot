@@ -1,0 +1,10 @@
+fornace-lume-base: LH mob P100 A100 S100 (LCP 1357ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+fornace-lume-cinematic: LH mob P99 A100 S100 (LCP 1818ms TBT 34ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=true | nascosti=0/0/0 | SOGLIE OK | force3d: mob P99 desk P100
+fornace-lume-baseline: LH mob P100 A100 S100 (LCP 754ms TBT 3ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | baseline
+nodo-sicuro-base: LH mob P100 A100 S100 (LCP 1510ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=1/0/0 | SOGLIE OK
+nodo-sicuro-cinematic: LH mob P97 A100 S100 (LCP 1886ms TBT 161ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=true | nascosti=0/0/0 | SOGLIE OK | force3d: mob P99 desk P100
+nodo-sicuro-baseline: LH mob P100 A100 S100 (LCP 753ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | baseline
+quota-2100-base: LH mob P98 A100 S100 (LCP 1879ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+quota-2100-cinematic: LH mob P97 A100 S100 (LCP 2262ms TBT 76ms) | desk P99 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=true | nascosti=0/0/0 | SOGLIE OK | force3d: mob P96 desk P94
+quota-2100-baseline: LH mob P100 A100 S100 (LCP 756ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | baseline
+FINE

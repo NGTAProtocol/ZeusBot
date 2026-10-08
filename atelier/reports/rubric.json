@@ -1,0 +1,260 @@
+{
+  "disclaimer": "**Autovalutazione.** I punteggi sono stati assegnati dallo stesso modello che ha generato sia i siti Atelier sia le baseline, guardando gli screenshot reali a 375/768/1280. Non è un giudizio indipendente: va confermato da un designer o da test con utenti. Le baseline sono state scritte in una sola passata, in buona fede, senza la skill e senza guardare gli screenshot.",
+  "criteria": [
+    "Gerarchia",
+    "Contrasto",
+    "Spazio",
+    "Coerenza",
+    "Originalità",
+    "Movimento",
+    "Mobile"
+  ],
+  "iterations": [
+    {
+      "name": "Iterazione 1 (prima build completa, dopo le correzioni funzionali)",
+      "rows": [
+        {
+          "site": "fornace-lume",
+          "variant": "BASELINE",
+          "scores": [
+            7,
+            8,
+            7,
+            7,
+            3,
+            5,
+            6
+          ]
+        },
+        {
+          "site": "fornace-lume",
+          "variant": "BASE",
+          "scores": [
+            8,
+            8,
+            7,
+            8,
+            6,
+            6,
+            7
+          ]
+        },
+        {
+          "site": "fornace-lume",
+          "variant": "CINEMATICO",
+          "scores": [
+            8,
+            8,
+            7,
+            8,
+            8,
+            8,
+            7
+          ]
+        },
+        {
+          "site": "quota-2100",
+          "variant": "BASELINE",
+          "scores": [
+            7,
+            8,
+            7,
+            7,
+            3,
+            5,
+            6
+          ]
+        },
+        {
+          "site": "quota-2100",
+          "variant": "BASE",
+          "scores": [
+            8,
+            8,
+            7,
+            8,
+            7,
+            6,
+            7
+          ]
+        },
+        {
+          "site": "quota-2100",
+          "variant": "CINEMATICO",
+          "scores": [
+            7,
+            7,
+            6,
+            8,
+            8,
+            8,
+            6
+          ]
+        },
+        {
+          "site": "nodo-sicuro",
+          "variant": "BASELINE",
+          "scores": [
+            7,
+            8,
+            7,
+            7,
+            2,
+            5,
+            6
+          ]
+        },
+        {
+          "site": "nodo-sicuro",
+          "variant": "BASE",
+          "scores": [
+            8,
+            9,
+            7,
+            8,
+            6,
+            6,
+            8
+          ]
+        },
+        {
+          "site": "nodo-sicuro",
+          "variant": "CINEMATICO",
+          "scores": [
+            8,
+            7,
+            6,
+            8,
+            7,
+            7,
+            8
+          ]
+        }
+      ],
+      "notes": "Punti peggiori emersi:\n- Originalità del BASE di Fornace: il poster blob ha bordi spigolosi e sembra una clipart.\n- Spazio nel CINEMATICO di Quota: i titoli di sezione con il font esteso arrivano a 5 righe.\n- Mobile del CINEMATICO di Quota: hero affollato.\n- Contrasto nel CINEMATICO di Nodo: lo scrub di opacità spegneva anche la CTA della sezione contatti (bug).\n\nNelle baseline:\n- originalità bassa: card con emoji, gradienti, hero centrato generico; Nodo usa il gradiente indaco-viola, cliché della lista nera;\n- gerarchia e contrasto sono comunque solidi."
+    },
+    {
+      "name": "Iterazione 2 (finale)",
+      "rows": [
+        {
+          "site": "fornace-lume",
+          "variant": "BASELINE",
+          "scores": [
+            7,
+            8,
+            7,
+            7,
+            3,
+            5,
+            6
+          ]
+        },
+        {
+          "site": "fornace-lume",
+          "variant": "BASE",
+          "scores": [
+            8,
+            8,
+            7,
+            8,
+            7,
+            6,
+            7
+          ]
+        },
+        {
+          "site": "fornace-lume",
+          "variant": "CINEMATICO",
+          "scores": [
+            8,
+            8,
+            7,
+            8,
+            8,
+            8,
+            7
+          ]
+        },
+        {
+          "site": "quota-2100",
+          "variant": "BASELINE",
+          "scores": [
+            7,
+            8,
+            7,
+            7,
+            3,
+            5,
+            6
+          ]
+        },
+        {
+          "site": "quota-2100",
+          "variant": "BASE",
+          "scores": [
+            8,
+            8,
+            7,
+            8,
+            7,
+            6,
+            7
+          ]
+        },
+        {
+          "site": "quota-2100",
+          "variant": "CINEMATICO",
+          "scores": [
+            8,
+            7,
+            7,
+            8,
+            8,
+            8,
+            6
+          ]
+        },
+        {
+          "site": "nodo-sicuro",
+          "variant": "BASELINE",
+          "scores": [
+            7,
+            8,
+            7,
+            7,
+            2,
+            5,
+            6
+          ]
+        },
+        {
+          "site": "nodo-sicuro",
+          "variant": "BASE",
+          "scores": [
+            8,
+            9,
+            7,
+            8,
+            6,
+            6,
+            8
+          ]
+        },
+        {
+          "site": "nodo-sicuro",
+          "variant": "CINEMATICO",
+          "scores": [
+            8,
+            9,
+            7,
+            8,
+            7,
+            7,
+            8
+          ]
+        }
+      ],
+      "notes": "Modifiche dell'''iterazione 2:\n- poster SVG con curve lisce (Catmull-Rom);\n- titoli di sezione scalati in base alla larghezza media dei caratteri del font;\n- scrub di opacità limitato ai soli capitoli (la CTA dei contatti non viene più spenta);\n- l'''indice laterale si aggiorna anche risalendo;\n- spazio sotto il footer per la barra CTA mobile.\n\nPunti rimasti deboli e non risolvibili con ritocchi:\n- Mobile del CINEMATICO di Quota: con un titolo lungo e un font esteso l'''hero resta denso;\n- Originalità del BASE di Nodo: la direzione tech scura è la meno distintiva;\n- Movimento nel BASE: volutamente minimo (6)."
+    }
+  ]
+}

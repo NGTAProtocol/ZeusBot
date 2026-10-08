@@ -1,0 +1,21 @@
+---
+import site from '../generated/site.json';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import Lines from '../components/Lines.astro';
+export function getStaticPaths() {
+  if (site.mode === 'baseline') return [];
+  return Object.keys(site.content.pages).filter((k) => k !== 'home').map((k) => ({ params: { page: k } }));
+}
+const { page: key } = Astro.params;
+const page = site.content.pages[key];
+---
+<Base title={page.meta_title} description={page.meta_description} pageKey={key}>
+  <section class="section" style="padding-top: clamp(9rem, 18vw, 14rem)">
+    <div class="wrap section__head">
+      <Lines lines={page.title_lines} tag="h1" class="hero__title" />
+      {page.intro && <p class="section__intro" data-reveal>{page.intro}</p>}
+    </div>
+  </section>
+  {page.sections.map((s, i) => <Section s={s} i={i} />)}
+</Base>

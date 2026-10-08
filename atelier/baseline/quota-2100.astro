@@ -1,0 +1,108 @@
+---
+// BASELINE: sito prodotto direttamente dal brief, senza skill Atelier né ciclo di qualità.
+import '../styles/baseline.css';
+---
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quota 2100 | Scuola di scialpinismo e rifugio in Val Masino</title>
+    <meta name="description" content="Corsi di scialpinismo con guide alpine UIAGM e notti in rifugio a 2.100 metri in Val Masino. Corso base da 390 euro." />
+    <link rel="canonical" href="https://quota2100.example/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans antialiased">
+    <header class="fixed inset-x-0 top-0 z-50 bg-slate-900/80 backdrop-blur text-white">
+      <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="/" class="text-lg font-bold">⛰️ Quota 2100</a>
+        <nav class="hidden md:flex gap-8 text-sm">
+          <a href="#corsi" class="hover:text-sky-300">Corsi</a>
+          <a href="#rifugio" class="hover:text-sky-300">Rifugio</a>
+          <a href="#sicurezza" class="hover:text-sky-300">Sicurezza</a>
+          <a href="#contatti" class="hover:text-sky-300">Contatti</a>
+        </nav>
+        <a href="#contatti" class="rounded-lg bg-sky-500 px-4 py-2 text-sm font-semibold hover:bg-sky-400">Prenota</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="relative bg-gradient-to-b from-slate-900 via-slate-800 to-sky-900 text-white">
+        <div class="max-w-6xl mx-auto px-6 pt-40 pb-28">
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight max-w-3xl">Scopri la magia dello scialpinismo in Val Masino</h1>
+          <p class="mt-6 text-lg text-slate-300 max-w-2xl">Corsi per principianti con guide alpine certificate e notti in rifugio a 2.100 metri di quota.</p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#corsi" class="rounded-lg bg-sky-500 px-6 py-3 font-semibold hover:bg-sky-400">Scopri i corsi</a>
+            <a href="#rifugio" class="rounded-lg border border-white/40 px-6 py-3 font-semibold hover:bg-white/10">Il rifugio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div><p class="text-4xl font-bold text-sky-600">3</p><p class="mt-1 text-slate-600">weekend di corso</p></div>
+          <div><p class="text-4xl font-bold text-sky-600">6</p><p class="mt-1 text-slate-600">allievi per guida</p></div>
+          <div><p class="text-4xl font-bold text-sky-600">2.100</p><p class="mt-1 text-slate-600">metri di quota</p></div>
+          <div><p class="text-4xl font-bold text-sky-600">22</p><p class="mt-1 text-slate-600">posti letto</p></div>
+        </div>
+      </section>
+
+      <section id="corsi" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center">I nostri corsi</h2>
+          <div class="mt-12 grid md:grid-cols-3 gap-8">
+            <div class="rounded-2xl bg-white p-8 shadow-md">
+              <div class="text-3xl">🎿</div>
+              <h3 class="mt-4 text-xl font-semibold">Corso base</h3>
+              <p class="mt-2 text-slate-600">3 weekend da gennaio ad aprile, massimo 6 allievi per guida. ARTVA, pala e sonda inclusi.</p>
+              <p class="mt-4 text-2xl font-bold text-sky-600">390 €</p>
+            </div>
+            <div class="rounded-2xl bg-white p-8 shadow-md">
+              <div class="text-3xl">🏔️</div>
+              <h3 class="mt-4 text-xl font-semibold">Uscite di gruppo</h3>
+              <p class="mt-2 text-slate-600">Giornate guidate per gruppi di amici e aziende, con pranzo in rifugio.</p>
+              <p class="mt-4 text-2xl font-bold text-sky-600">Su preventivo</p>
+            </div>
+            <div class="rounded-2xl bg-white p-8 shadow-md">
+              <div class="text-3xl">🛏️</div>
+              <h3 class="mt-4 text-xl font-semibold">Notte in rifugio</h3>
+              <p class="mt-2 text-slate-600">Mezza pensione in camerata o camera, a 2 ore da Filorera.</p>
+              <p class="mt-4 text-2xl font-bold text-sky-600">68 €</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rifugio" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          <div class="rounded-2xl bg-gradient-to-br from-sky-200 to-slate-300 aspect-[4/3]"></div>
+          <div>
+            <h2 class="text-3xl font-bold">Il rifugio</h2>
+            <p class="mt-4 text-slate-600 leading-relaxed">Il nostro rifugio si trova a 2.100 metri in Val Masino ed è raggiungibile in circa 2 ore da Filorera. Dispone di 22 posti letto in 4 camerate e 2 camere.</p>
+            <p class="mt-4 text-slate-600 leading-relaxed">Un luogo perfetto per riposare prima di una giornata sulla neve.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sicurezza" class="py-20">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold">La sicurezza prima di tutto</h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">Tutti i nostri corsi sono tenuti da guide alpine UIAGM. Se il bollettino valanghe indica un pericolo di grado 4 o superiore, il corso non parte: puoi scegliere tra rimborso e recupero.</p>
+        </div>
+      </section>
+
+      <section id="contatti" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold">Prenota la tua avventura</h2>
+          <p class="mt-4 text-slate-300">Scrivici per iscriverti a un corso o prenotare una notte in rifugio.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:corsi@quota2100.it" class="rounded-lg bg-sky-500 px-6 py-3 font-semibold hover:bg-sky-400">corsi@quota2100.it</a>
+            <a href="tel:0342000721" class="rounded-lg border border-white/40 px-6 py-3 font-semibold hover:bg-white/10">0342 000 721</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-8 text-center text-sm text-slate-500">© 2026 Quota 2100 — Val Masino (SO). Attività fittizia: sito dimostrativo (baseline).</footer>
+  </body>
+</html>

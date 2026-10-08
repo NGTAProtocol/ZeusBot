@@ -1,0 +1,18 @@
+---
+import site from '../generated/site.json';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+const { content } = site;
+const page = content.pages?.home;
+const index = page ? page.sections.filter((s) => s.type !== 'marquee' && s.index_label) : [];
+---
+<Base title={content.meta.title} description={content.meta.description} pageKey="home">
+  <Hero hero={page.hero} />
+  <nav class="page-index" aria-label="In questa pagina">
+    <ol>{index.map((s) => <li><a href={`#${s.id}`}>{s.index_label}</a></li>)}</ol>
+  </nav>
+  <div class="sections">
+    {page.sections.map((s, i) => <Section s={s} i={i} />)}
+  </div>
+</Base>

@@ -1,0 +1,86 @@
+{
+  "url": "https://nodejs.org/en",
+  "studied_at": "2026-10-08T06:40:38.659Z",
+  "reachable": true,
+  "status": 200,
+  "libraries": {
+    "GSAP": false,
+    "ScrollTrigger": false,
+    "Lenis": false,
+    "Locomotive Scroll": false,
+    "Three.js": false,
+    "Howler": false,
+    "React": false,
+    "Next.js": true,
+    "Nuxt": false,
+    "Astro": false,
+    "SvelteKit": false,
+    "Webflow": false,
+    "Framer": false
+  },
+  "structure": {
+    "sections": 2,
+    "landmarks": [
+      "nav",
+      "main",
+      "footer"
+    ],
+    "headings": {
+      "h1": 1,
+      "h2": 0,
+      "h3": 0
+    },
+    "canvases": 0,
+    "videos": 0,
+    "fontsFamilies": [
+      "OPEN_SANS",
+      "SFMono-Regular"
+    ]
+  },
+  "scroll": {
+    "moved": true,
+    "docHeight": 977,
+    "stickyOrFixed": 0,
+    "htmlClass": "ibm_plex_mono_fa1c4097-module__3uH8Nq__variable open_sans_7e595750-module__pAAqPq__variable"
+  },
+  "network": {
+    "requests": 37,
+    "scripts": 20,
+    "transferBytesDeclared": 33480,
+    "thirdPartyHosts": []
+  },
+  "lighthouse": {
+    "mobile": {
+      "formFactor": "mobile",
+      "performance": 70,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 4829,
+      "tbtMs": 161,
+      "cls": 0,
+      "fcpMs": 2904,
+      "totalBytes": 785046,
+      "failingA11y": [],
+      "failingSeo": [],
+      "runtimeError": null
+    },
+    "desktop": {
+      "formFactor": "desktop",
+      "performance": 91,
+      "accessibility": 96,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 807,
+      "tbtMs": 23,
+      "cls": 0.168,
+      "fcpMs": 366,
+      "totalBytes": 865663,
+      "failingA11y": [
+        "link-in-text-block"
+      ],
+      "failingSeo": [],
+      "runtimeError": null
+    }
+  }
+}

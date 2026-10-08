@@ -1,0 +1,6 @@
+{
+  "url": "https://lusion.co/",
+  "studied_at": "2026-10-08T06:39:59.986Z",
+  "reachable": false,
+  "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://lusion.co/"
+}

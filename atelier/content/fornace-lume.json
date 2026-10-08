@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "title": "Fornace Lume — stoviglie smaltate a mano per ristoranti, Faenza",
+    "description": "Fornace Lume produce a Faenza servizi da tavola smaltati a mano su commissione per ristoranti, da 24 coperti in su. Campionatura in 3 smalti.",
+    "lang": "it",
+    "url": "https://fornacelume.example"
+  },
+  "brand": {
+    "name": "Fornace Lume"
+  },
+  "nav": [
+    {
+      "label": "Laboratorio",
+      "href": "#laboratorio"
+    },
+    {
+      "label": "Per ristoranti",
+      "href": "#ristoranti"
+    },
+    {
+      "label": "Come lavoriamo",
+      "href": "#processo"
+    },
+    {
+      "label": "Domande",
+      "href": "#domande"
+    }
+  ],
+  "cta": {
+    "label": "Chiedi un preventivo",
+    "href": "contatti",
+    "mobile_hint": "Servizi da 24 coperti"
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "title_lines": [
+          "Il piatto",
+          "lo finisce",
+          "il fuoco."
+        ],
+        "lead": "Fornace Lume smalta a mano servizi da tavola per ristoranti che vogliono un piatto riconoscibile: piccole serie, cotte a Faenza, ogni pezzo con la sua colatura.",
+        "lead_short": "Servizi da tavola smaltati a mano a Faenza, per ristoranti da 24 coperti in su.",
+        "cta": {
+          "label": "Chiedi un preventivo",
+          "href": "contatti"
+        },
+        "secondary": {
+          "label": "Come nasce un servizio",
+          "href": "#processo"
+        },
+        "meta": [
+          "Faenza, dal 2016",
+          "Smalti senza piombo, per uso alimentare"
+        ]
+      },
+      "sections": [
+        {
+          "type": "chapter",
+          "id": "laboratorio",
+          "index_label": "Laboratorio",
+          "title_lines": [
+            "Due mani,",
+            "tre forni,",
+            "nessuno stampo uguale"
+          ],
+          "body": [
+            "Irene Malta e Tommaso Ricci hanno aperto Fornace Lume nel 2016, in via Cavina, a Faenza.",
+            "Tornio, smaltatura e cottura avvengono qui. Due forni elettrici cuociono le serie; il forno a gas serve alla riduzione, quando l'ossigeno manca e il rame vira dal verde al rosso sangue di bue.",
+            "Per questo due piatti dello stesso servizio non sono mai identici: lo smalto scende dove vuole, si assottiglia sul bordo e si raccoglie nel cavo. È quello che i vostri ospiti noteranno."
+          ],
+          "aside": "Smalti a base di cenere di legna e ossidi, senza piombo, certificati per il contatto con gli alimenti."
+        },
+        {
+          "type": "marquee",
+          "words": [
+            "cenere",
+            "ossido di ferro",
+            "rame in riduzione",
+            "colatura",
+            "biscotto",
+            "seconda cottura"
+          ]
+        },
+        {
+          "type": "offer",
+          "id": "ristoranti",
+          "index_label": "Per ristoranti",
+          "title": "Un servizio pensato per il vostro menù",
+          "intro": "Partiamo dai piatti che servite, non da un catalogo. Forma, peso e smalto si decidono guardando le vostre porzioni.",
+          "surface": true,
+          "items": [
+            {
+              "name": "Piatti piani e fondi",
+              "detail": "Tese larghe o strette secondo l'impiattamento, con il peso deciso sul campione insieme a chi serve in sala.",
+              "meta": "da 24 coperti"
+            },
+            {
+              "name": "Ciotole e coppette",
+              "detail": "Per crudi, brodi e dessert: pareti spesse che tengono la temperatura, fondo smaltato a contrasto.",
+              "meta": "su misura"
+            },
+            {
+              "name": "Pezzi da centro tavola",
+              "detail": "Vassoi e piatti da condivisione in serie di 4-6, per i menù degustazione e i piatti da dividere.",
+              "meta": "serie brevi"
+            },
+            {
+              "name": "Pezzo singolo",
+              "detail": "Per chi compra a titolo privato: pezzi unici delle serie di prova, in laboratorio il sabato mattina.",
+              "meta": "su appuntamento"
+            }
+          ]
+        },
+        {
+          "type": "process",
+          "id": "processo",
+          "index_label": "Processo",
+          "title": "Dal campione alla consegna",
+          "steps": [
+            {
+              "name": "Assaggio del menù",
+              "detail": "Ci mandate foto e porzioni dei piatti; parliamo di forme, pesi e lavaggio."
+            },
+            {
+              "name": "Campionatura",
+              "detail": "Tre pezzi prova in tre smalti diversi, 180 euro scalati dall'ordine."
+            },
+            {
+              "name": "Approvazione",
+              "detail": "Scegliete forma e smalto sul pezzo vero, alla luce della vostra sala."
+            },
+            {
+              "name": "Produzione e consegna",
+              "detail": "Tornio, biscotto, smaltatura, seconda cottura: 10-14 settimane dal campione approvato."
+            }
+          ]
+        },
+        {
+          "type": "chapter",
+          "id": "fuoco",
+          "index_label": "Il fuoco",
+          "tone": "invert",
+          "title_lines": [
+            "Quello che",
+            "non controlliamo"
+          ],
+          "body": [
+            "Possiamo decidere lo spessore dello smalto, la curva della tesa, la temperatura. Non possiamo decidere dove la cenere farà una goccia.",
+            "Ogni servizio di Fornace Lume ha una tolleranza dichiarata: stesse misure, stesso peso entro pochi grammi, lo smalto con la sua variazione. Ve la mostriamo sul campione, prima di produrre."
+          ],
+          "aside": "Il pezzo che non supera il controllo resta in laboratorio e finisce tra i pezzi singoli del sabato."
+        },
+        {
+          "type": "faq",
+          "id": "domande",
+          "index_label": "Domande",
+          "title": "Domande frequenti",
+          "items": [
+            {
+              "q": "Gli smalti sono adatti al contatto con il cibo?",
+              "a": "Sì. Usiamo smalti a base di cenere di legna e ossidi, senza piombo, certificati per uso alimentare."
+            },
+            {
+              "q": "Qual è l'ordine minimo?",
+              "a": "Per i ristoranti partiamo da un servizio da 24 coperti. Le integrazioni successive, per rotture o nuovi piatti, non hanno minimo."
+            },
+            {
+              "q": "Quanto tempo serve?",
+              "a": "Dalle 10 alle 14 settimane dal campione approvato, a seconda della stagione e del numero di pezzi."
+            },
+            {
+              "q": "Posso venire a vedere il laboratorio?",
+              "a": "Il sabato mattina su appuntamento, in via Cavina 14 a Faenza."
+            }
+          ]
+        },
+        {
+          "type": "contact",
+          "id": "contatto",
+          "title": "Raccontateci il vostro menù",
+          "body": [
+            "Scrivete quanti coperti avete e quali piatti volete servire: rispondiamo con una proposta di campionatura entro una settimana."
+          ],
+          "lines": [
+            {
+              "label": "Email",
+              "value": "studio@fornacelume.it",
+              "href": "mailto:studio@fornacelume.it"
+            },
+            {
+              "label": "Telefono",
+              "value": "0546 000 214",
+              "href": "tel:0546000214"
+            },
+            {
+              "label": "Laboratorio",
+              "value": "Via Cavina 14, Faenza"
+            }
+          ],
+          "cta": {
+            "label": "Chiedi un preventivo",
+            "href": "mailto:studio@fornacelume.it?subject=Preventivo%20servizio%20da%20tavola"
+          }
+        }
+      ]
+    },
+    "contatti": {
+      "meta_title": "Contatti e preventivi — Fornace Lume, Faenza",
+      "meta_description": "Chiedi a Fornace Lume un preventivo per un servizio da tavola su commissione: campionatura in 3 smalti, consegna in 10-14 settimane.",
+      "title_lines": [
+        "Chiedi un",
+        "preventivo"
+      ],
+      "intro": "Una mail con coperti, piatti e tempi ci basta per proporvi una campionatura.",
+      "sections": [
+        {
+          "type": "contact",
+          "id": "scrivici",
+          "title": "Scrivete a Fornace Lume",
+          "body": [
+            "Indicate il numero di coperti, i piatti del menù che volete servire e la data in cui vi serve il servizio.",
+            "Per le visite in laboratorio il sabato mattina, scrivete qualche giorno prima: Fornace Lume è aperta solo su appuntamento."
+          ],
+          "lines": [
+            {
+              "label": "Email",
+              "value": "studio@fornacelume.it",
+              "href": "mailto:studio@fornacelume.it"
+            },
+            {
+              "label": "Telefono",
+              "value": "0546 000 214",
+              "href": "tel:0546000214"
+            },
+            {
+              "label": "Indirizzo",
+              "value": "Via Cavina 14, 48018 Faenza (RA)"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "footer": {
+    "closing": "Un servizio che riconoscete al tatto.",
+    "address": "Via Cavina 14, 48018 Faenza (RA)",
+    "email": "studio@fornacelume.it",
+    "phone": "0546 000 214",
+    "hours": [
+      "Laboratorio: lunedì-venerdì",
+      "Visite: sabato mattina su appuntamento"
+    ],
+    "legal": "Fornace Lume è un'attività fittizia: sito dimostrativo generato con Atelier."
+  }
+}

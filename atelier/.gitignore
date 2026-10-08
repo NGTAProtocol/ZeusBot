@@ -1,0 +1,9 @@
+node_modules
+output
+engine/dist
+engine/.astro
+engine/src/generated
+engine/public
+reports/reference-shots
+*.tmp.mjs
+reports/shots/**/*.png

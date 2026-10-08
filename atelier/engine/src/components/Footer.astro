@@ -1,0 +1,24 @@
+---
+import site from '../generated/site.json';
+const { content } = site;
+const f = content.footer;
+---
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer__big">{f.closing}</p>
+    <div class="footer__grid">
+      <div>
+        <p class="muted-inv">{content.brand.name}</p>
+        <p>{f.address}</p>
+      </div>
+      <div>
+        <p><a href={`mailto:${f.email}`}>{f.email}</a></p>
+        {f.phone && <p><a href={`tel:${f.phone.replace(/\s+/g, '')}`}>{f.phone}</a></p>}
+      </div>
+      <div>
+        {f.hours && f.hours.map((h) => <p>{h}</p>)}
+      </div>
+    </div>
+    <p class="footer__legal">{f.legal}</p>
+  </div>
+</footer>

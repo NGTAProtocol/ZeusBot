@@ -1,0 +1,165 @@
+{
+  "id": "nodo-sicuro-cinematic",
+  "level": "cinematic",
+  "url_tested": "locale, server statico con gzip",
+  "at": "2026-10-08T09:19:21.227Z",
+  "browser": {
+    "viewports": {
+      "375": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": true,
+        "fallback": null,
+        "fonts": [
+          "Familjen Grotesk",
+          "Newsreader"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "768": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": true,
+        "fallback": null,
+        "fonts": [
+          "Familjen Grotesk",
+          "Newsreader"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "1280": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": true,
+        "fallback": null,
+        "fonts": [
+          "Familjen Grotesk",
+          "Newsreader"
+        ],
+        "smallTargets": 5,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      }
+    },
+    "checks": {
+      "reducedMotion": {
+        "fallback": "reduced-motion",
+        "canvas": false,
+        "hiddenContent": 0
+      },
+      "noWebGL": {
+        "fallback": null,
+        "posterVisible": true,
+        "canvas": false
+      },
+      "saveData": {
+        "fallback": "save-data",
+        "canvas": false
+      }
+    }
+  },
+  "lighthouse": {
+    "mobile": {
+      "formFactor": "mobile",
+      "performance": 97,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 1886,
+      "tbtMs": 161,
+      "cls": 0,
+      "fcpMs": 1562,
+      "totalBytes": 126024,
+      "failingA11y": [],
+      "failingSeo": [],
+      "runtimeError": null,
+      "runs": [
+        99,
+        97,
+        95
+      ]
+    },
+    "desktop": {
+      "formFactor": "desktop",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 449,
+      "tbtMs": 0,
+      "cls": 0,
+      "fcpMs": 429,
+      "totalBytes": 126024,
+      "failingA11y": [],
+      "failingSeo": [],
+      "runtimeError": null,
+      "runs": [
+        100,
+        100,
+        100
+      ]
+    }
+  },
+  "lighthouseForce3d": {
+    "mobile": {
+      "formFactor": "mobile",
+      "performance": 99,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 1798,
+      "tbtMs": 71,
+      "cls": 0,
+      "fcpMs": 1548,
+      "totalBytes": 127481,
+      "failingA11y": [],
+      "failingSeo": [],
+      "runtimeError": null
+    },
+    "desktop": {
+      "formFactor": "desktop",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 519,
+      "tbtMs": 0,
+      "cls": 0.017,
+      "fcpMs": 443,
+      "totalBytes": 127481,
+      "failingA11y": [],
+      "failingSeo": [],
+      "runtimeError": null
+    }
+  },
+  "thresholds": {
+    "performanceMobile": {
+      "need": 75,
+      "got": 97,
+      "ok": true
+    },
+    "performanceDesktop": {
+      "need": 85,
+      "got": 100,
+      "ok": true
+    },
+    "accessibility": {
+      "need": 95,
+      "got": 100,
+      "ok": true
+    },
+    "seo": {
+      "need": 95,
+      "got": 100,
+      "ok": true
+    }
+  },
+  "pass": true
+}

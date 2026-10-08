@@ -1,0 +1,97 @@
+{
+  "url": "https://www.anthropic.com/",
+  "studied_at": "2026-10-08T06:40:03.385Z",
+  "reachable": true,
+  "status": 200,
+  "libraries": {
+    "GSAP": false,
+    "ScrollTrigger": false,
+    "Lenis": false,
+    "Locomotive Scroll": false,
+    "Three.js": false,
+    "Howler": false,
+    "React": false,
+    "Next.js": false,
+    "Nuxt": false,
+    "Astro": false,
+    "SvelteKit": false,
+    "Webflow": true,
+    "Framer": false
+  },
+  "structure": {
+    "sections": 6,
+    "landmarks": [
+      "header",
+      "nav",
+      "main",
+      "footer"
+    ],
+    "headings": {
+      "h1": 1,
+      "h2": 5,
+      "h3": 19
+    },
+    "canvases": 2,
+    "videos": 0,
+    "fontsFamilies": [
+      "Times New Roman",
+      "Arial"
+    ]
+  },
+  "scroll": {
+    "moved": true,
+    "docHeight": 32301,
+    "stickyOrFixed": 1,
+    "htmlClass": "w-mod-js"
+  },
+  "network": {
+    "requests": 7,
+    "scripts": 3,
+    "transferBytesDeclared": 0,
+    "thirdPartyHosts": [
+      "claude.com"
+    ]
+  },
+  "lighthouse": {
+    "mobile": {
+      "formFactor": "mobile",
+      "performance": 96,
+      "accessibility": 92,
+      "bestPractices": 73,
+      "seo": 92,
+      "lcpMs": 2169,
+      "tbtMs": 26,
+      "cls": 0,
+      "fcpMs": 2169,
+      "totalBytes": 77817,
+      "failingA11y": [
+        "link-name",
+        "target-size"
+      ],
+      "failingSeo": [
+        "link-text"
+      ],
+      "runtimeError": null
+    },
+    "desktop": {
+      "formFactor": "desktop",
+      "performance": 99,
+      "accessibility": 92,
+      "bestPractices": 73,
+      "seo": 92,
+      "lcpMs": 595,
+      "tbtMs": 0,
+      "cls": 0,
+      "fcpMs": 595,
+      "totalBytes": 77794,
+      "failingA11y": [
+        "link-name",
+        "target-size"
+      ],
+      "failingSeo": [
+        "link-text"
+      ],
+      "runtimeError": null
+    }
+  }
+}
