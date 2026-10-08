@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "test": "node test/unit.mjs"
+    "test": "node --test"
   },
   "dependencies": {
     "cheerio": "^1.0.0"

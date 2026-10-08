@@ -1,5 +1,8 @@
 import * as cheerio from 'cheerio';
-import { assertPublicUrl, UrlError } from './ssrf.js';
+import http from 'node:http';
+import https from 'node:https';
+import zlib from 'node:zlib';
+import { resolvePublicUrl, UrlError } from './ssrf.js';
 
 const USER_AGENT = 'AgentPayBot/0.1 (+https://github.com/agentpay)';
 const TIMEOUT_MS = 8000;
@@ -31,63 +34,101 @@ export function normalizeUrl(input) {
   return url.toString();
 }
 
-async function readCapped(response) {
-  if (!response.body) return '';
-  const reader = response.body.getReader();
-  const chunks = [];
-  let total = 0;
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    const remaining = MAX_BYTES - total;
-    if (value.byteLength >= remaining) {
-      chunks.push(value.subarray(0, remaining));
-      total += remaining;
-      await reader.cancel().catch(() => {});
-      break;
-    }
-    chunks.push(value);
-    total += value.byteLength;
-  }
-  return new TextDecoder('utf-8').decode(Buffer.concat(chunks));
+const ENCODINGS = { gzip: () => zlib.createGunzip(), 'x-gzip': () => zlib.createGunzip(), deflate: () => zlib.createInflate(), br: () => zlib.createBrotliDecompress() };
+
+/** Legge il corpo (decompresso) fino a MAX_BYTES, poi chiude la connessione. */
+function readCapped(res) {
+  return new Promise((resolve, reject) => {
+    const encoding = String(res.headers['content-encoding'] || '').trim().toLowerCase();
+    const stream = ENCODINGS[encoding] ? res.pipe(ENCODINGS[encoding]()) : res;
+    const chunks = [];
+    let total = 0;
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      res.destroy();
+      resolve(new TextDecoder('utf-8').decode(Buffer.concat(chunks)));
+    };
+    stream.on('data', (chunk) => {
+      if (done) return;
+      const remaining = MAX_BYTES - total;
+      if (chunk.length >= remaining) {
+        chunks.push(chunk.subarray(0, remaining));
+        total = MAX_BYTES;
+        finish();
+        return;
+      }
+      chunks.push(chunk);
+      total += chunk.length;
+    });
+    stream.on('end', finish);
+    stream.on('error', (err) => (done ? undefined : chunks.length ? finish() : reject(err)));
+    res.on('error', (err) => (done ? undefined : reject(err)));
+  });
 }
 
 /**
- * fetch con timeout, redirect manuali (max 3, ogni hop validato contro SSRF)
- * e corpo troncato a 1.5 MB.
+ * Richiesta HTTP(S) verso un IP già validato (DNS pinning).
+ * L'URL mantiene l'hostname originale: Node usa l'hostname per l'header Host e per SNI/verifica
+ * del certificato TLS, mentre `lookup` forza la connessione all'IP risolto e controllato.
  */
-export async function safeFetch(url, { accept = '*/*' } = {}) {
+export function requestPinned(url, { address, family }, { accept = '*/*', signal } = {}) {
+  return new Promise((resolve, reject) => {
+    const mod = url.protocol === 'https:' ? https : http;
+    const req = mod.request(
+      url,
+      {
+        method: 'GET',
+        agent: false, // nessun riuso di connessioni verso IP non verificati
+        signal,
+        headers: {
+          'User-Agent': USER_AGENT,
+          Accept: accept,
+          'Accept-Language': 'it,en;q=0.8',
+          'Accept-Encoding': 'gzip, deflate, br'
+        },
+        lookup: (_hostname, opts, cb) => (opts && opts.all ? cb(null, [{ address, family }]) : cb(null, address, family))
+      },
+      resolve
+    );
+    req.on('error', reject);
+    req.end();
+  });
+}
+
+/**
+ * GET sicuro: timeout 8s, redirect manuali (max 3) con validazione SSRF e DNS pinning a ogni hop,
+ * corpo troncato a 1.5 MB. `resolve` è iniettabile solo per i test.
+ */
+export async function safeFetch(url, { accept = '*/*', resolve = resolvePublicUrl } = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
     let current = new URL(url);
     for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
-      await assertPublicUrl(current);
-      const res = await fetch(current, {
-        method: 'GET',
-        redirect: 'manual',
-        signal: controller.signal,
-        headers: { 'User-Agent': USER_AGENT, Accept: accept, 'Accept-Language': 'it,en;q=0.8' }
-      });
-      if (res.status >= 300 && res.status < 400 && res.headers.get('location')) {
-        await res.body?.cancel().catch(() => {});
+      const target = await resolve(current);
+      const res = await requestPinned(target.url, target, { accept, signal: controller.signal });
+      const status = res.statusCode;
+      if (status >= 300 && status < 400 && res.headers.location) {
+        res.destroy();
         if (hop === MAX_REDIRECTS) throw new CrawlError('Troppi redirect.');
-        current = new URL(res.headers.get('location'), current);
+        current = new URL(res.headers.location, current);
         continue;
       }
       const body = await readCapped(res);
       return {
         url: current.toString(),
-        status: res.status,
-        ok: res.ok,
-        contentType: (res.headers.get('content-type') || '').toLowerCase(),
+        status,
+        ok: status >= 200 && status < 300,
+        contentType: String(res.headers['content-type'] || '').toLowerCase(),
         body
       };
     }
     throw new CrawlError('Troppi redirect.');
   } catch (err) {
     if (err instanceof UrlError || err instanceof CrawlError) throw err;
-    if (err.name === 'AbortError') throw new CrawlError('Timeout: il sito non ha risposto entro 8 secondi.');
+    if (err.name === 'AbortError' || controller.signal.aborted) throw new CrawlError('Timeout: il sito non ha risposto entro 8 secondi.');
     throw new CrawlError('Impossibile raggiungere il sito.');
   } finally {
     clearTimeout(timer);
@@ -95,9 +136,9 @@ export async function safeFetch(url, { accept = '*/*' } = {}) {
 }
 
 /** Come safeFetch ma non lancia mai: restituisce null in caso di errore. */
-async function optionalFetch(url, accept) {
+async function optionalFetch(fetcher, url, accept) {
   try {
-    return await safeFetch(url, { accept });
+    return await fetcher(url, { accept });
   } catch {
     return null;
   }
@@ -253,6 +294,8 @@ export function extractHtml(html, pageUrl) {
   const machinePrices = {
     itemprop: $('[itemprop="price"]').length,
     ogProductPrice: $('meta[property="product:price:amount"]').length,
+    ogAmount: meta('meta[property="product:price:amount"]'),
+    ogCurrency: meta('meta[property="product:price:currency"]'),
     jsonld: jsonld.hasPrice
   };
 
@@ -270,6 +313,7 @@ export function extractHtml(html, pageUrl) {
     ogTitle: meta('meta[property="og:title"]'),
     ogImage: absolute(meta('meta[property="og:image"]')),
     ogSiteName: meta('meta[property="og:site_name"]'),
+    ogType: meta('meta[property="og:type"]'),
     h1: $('h1').first().text().replace(/\s+/g, ' ').trim() || null,
     h2: $('h2')
       .map((_, el) => $(el).text().replace(/\s+/g, ' ').trim())
@@ -294,16 +338,15 @@ function isValidSitemap(res) {
 
 // ---------- crawl ----------
 
-export async function crawl(inputUrl) {
+export async function crawl(inputUrl, { fetcher = safeFetch } = {}) {
   const url = normalizeUrl(inputUrl);
-  await assertPublicUrl(url);
   const origin = new URL(url).origin;
 
   const [home, robotsRes, sitemapRes, llmsRes] = await Promise.all([
-    safeFetch(url, { accept: 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.5' }),
-    optionalFetch(`${origin}/robots.txt`, 'text/plain,*/*;q=0.5'),
-    optionalFetch(`${origin}/sitemap.xml`, 'application/xml,text/xml,*/*;q=0.5'),
-    optionalFetch(`${origin}/llms.txt`, 'text/plain,text/markdown,*/*;q=0.5')
+    fetcher(url, { accept: 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.5' }),
+    optionalFetch(fetcher, `${origin}/robots.txt`, 'text/plain,*/*;q=0.5'),
+    optionalFetch(fetcher, `${origin}/sitemap.xml`, 'application/xml,text/xml,*/*;q=0.5'),
+    optionalFetch(fetcher, `${origin}/llms.txt`, 'text/plain,text/markdown,*/*;q=0.5')
   ]);
 
   if (!home.ok) throw new CrawlError(`Il sito ha risposto con stato HTTP ${home.status}.`);
@@ -318,7 +361,7 @@ export async function crawl(inputUrl) {
 
   let sitemap = { found: isValidSitemap(sitemapRes), url: `${origin}/sitemap.xml` };
   if (!sitemap.found && robots.sitemaps.length) {
-    const declared = await optionalFetch(robots.sitemaps[0], 'application/xml,text/xml,*/*;q=0.5');
+    const declared = await optionalFetch(fetcher, robots.sitemaps[0], 'application/xml,text/xml,*/*;q=0.5');
     sitemap = { found: isValidSitemap(declared), url: robots.sitemaps[0] };
   }
 

@@ -60,13 +60,14 @@ export function isPrivateIp(ip) {
 }
 
 /**
- * Verifica che l'URL punti a un host pubblico. Lancia UrlError altrimenti.
- * Restituisce l'oggetto URL normalizzato.
+ * Verifica che l'URL punti a un host pubblico e risolve il DNS UNA sola volta.
+ * Restituisce { url, address, family }: il chiamante deve connettersi a `address`
+ * (DNS pinning, contro il DNS rebinding). Lancia UrlError altrimenti.
  */
-export async function assertPublicUrl(url) {
+export async function resolvePublicUrl(url) {
   let parsed;
   try {
-    parsed = url instanceof URL ? url : new URL(url);
+    parsed = url instanceof URL ? new URL(url.href) : new URL(url);
   } catch {
     throw new UrlError('URL non valido.');
   }
@@ -81,9 +82,10 @@ export async function assertPublicUrl(url) {
   if (BLOCKED_HOSTNAMES.has(host) || BLOCKED_SUFFIXES.some((s) => host.endsWith(s))) {
     throw new UrlError('Indirizzi locali o interni non sono ammessi.');
   }
-  if (isIP(host)) {
+  const literal = isIP(host);
+  if (literal) {
     if (isPrivateIp(host)) throw new UrlError('Indirizzi IP privati o locali non sono ammessi.');
-    return parsed;
+    return { url: parsed, address: host, family: literal };
   }
   if (!host.includes('.')) throw new UrlError('Hostname non valido: serve un dominio pubblico.');
 
@@ -97,5 +99,11 @@ export async function assertPublicUrl(url) {
   if (addresses.some((a) => isPrivateIp(a.address))) {
     throw new UrlError('Il dominio risolve su un indirizzo privato o locale: non ammesso.');
   }
-  return parsed;
+  const preferred = addresses.find((a) => a.family === 4) || addresses[0];
+  return { url: parsed, address: preferred.address, family: preferred.family };
+}
+
+/** Compatibilità: valida l'URL e restituisce l'oggetto URL. */
+export async function assertPublicUrl(url) {
+  return (await resolvePublicUrl(url)).url;
 }

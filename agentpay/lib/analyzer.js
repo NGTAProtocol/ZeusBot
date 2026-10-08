@@ -89,120 +89,163 @@ export function heuristicScan(data) {
   return { score: Math.max(0, Math.min(100, Math.round(score))), issues };
 }
 
+// ---------- Lingua e qualità del Fix Pack ----------
+
+const LANG_NAMES = { it: 'italiano', en: 'inglese', es: 'spagnolo', fr: 'francese', de: 'tedesco', pt: 'portoghese', nl: 'olandese' };
+
+/** Lingua del Fix Pack: quella della pagina (<html lang>), altrimenti italiano. */
+export function fixPackLang(page) {
+  const m = String(page?.lang || '').trim().toLowerCase().match(/^([a-z]{2,3})(?:[-_]|$)/);
+  return m ? m[1] : 'it';
+}
+
+// Testi del template llms.txt. Lingue non presenti: inglese (l'LLM invece segue qualsiasi lingua).
+const TEMPLATE_TEXT = {
+  it: { summary: 'descrivi in una frase cosa offre il sito', main: 'Pagina principale', pages: 'Pagine principali', home: 'pagina iniziale', info: 'Informazioni utili per gli agenti', contacts: 'Contatti', policy: 'Spedizioni e resi' },
+  en: { summary: 'describe in one sentence what the site offers', main: 'Main page', pages: 'Main pages', home: 'home page', info: 'Useful information for agents', contacts: 'Contact', policy: 'Shipping and returns' },
+  es: { summary: 'describe en una frase lo que ofrece el sitio', main: 'Página principal', pages: 'Páginas principales', home: 'página de inicio', info: 'Información útil para agentes', contacts: 'Contacto', policy: 'Envíos y devoluciones' },
+  fr: { summary: 'décrivez en une phrase ce que propose le site', main: 'Page principale', pages: 'Pages principales', home: "page d'accueil", info: 'Informations utiles pour les agents', contacts: 'Contact', policy: 'Livraison et retours' },
+  de: { summary: 'beschreiben Sie in einem Satz, was die Website anbietet', main: 'Hauptseite', pages: 'Wichtige Seiten', home: 'Startseite', info: 'Nützliche Informationen für Agenten', contacts: 'Kontakt', policy: 'Versand und Rückgabe' }
+};
+
+const squash = (v) => String(v || '').replace(/\s+/g, '');
+
+/**
+ * Una sola voce per file (jsonld, llms_txt) e snippet che non ripetono quei contenuti
+ * né si ripetono tra loro.
+ */
+export function dedupeFixPack(fp) {
+  const files = [squash(fp.jsonld), squash(fp.llms_txt)].filter((f) => f.length > 0);
+  const seenCode = new Set();
+  const seenTitle = new Set();
+  const snippets = [];
+  for (const s of fp.snippets || []) {
+    const code = squash(s.code);
+    const title = String(s.title || '').trim().toLowerCase();
+    if (!code) continue;
+    const repeatsFile = files.some((f) => (code.length > 40 && f.includes(code)) || (f.length > 40 && code.includes(f)));
+    let repeatsJsonLd = false;
+    try {
+      const inner = String(s.code).replace(/^\s*<script[^>]*>|<\/script>\s*$/gi, '');
+      repeatsJsonLd = JSON.stringify(JSON.parse(inner)) === JSON.stringify(JSON.parse(fp.jsonld));
+    } catch {}
+    if (repeatsFile || repeatsJsonLd || seenCode.has(code) || (title && seenTitle.has(title))) continue;
+    seenCode.add(code);
+    if (title) seenTitle.add(title);
+    snippets.push(s);
+  }
+  return { ...fp, snippets };
+}
+
 // ---------- Fix pack base da template ----------
 
 function siteName(data) {
   const p = data.page;
   if (p.ogSiteName) return p.ogSiteName;
-  if (p.title) return p.title.split(/\s[|\-–—·:]\s/)[0].trim() || p.title;
-  return new URL(data.finalUrl).hostname.replace(/^www\./, '');
-}
-
-function parsePrice(raw) {
-  const currency = /\$/.test(raw) ? 'USD' : 'EUR';
-  let num = raw.replace(/[^\d.,]/g, '');
-  if (/,\d{1,2}$/.test(num)) num = num.replace(/\./g, '').replace(',', '.');
-  else num = num.replace(/,/g, '');
-  return Number.isFinite(Number(num)) && num ? { price: num, currency } : null;
+  if (p.title) {
+    const parts = p.title.split(/\s[|\\/\-–—·:]\s/).map((x) => x.trim()).filter(Boolean);
+    // "Home | Brand" → Brand; "Brand | Slogan" → Brand
+    if (parts.length > 1 && /^(home|homepage|home page|inicio|accueil|startseite)$/i.test(parts[0])) return parts[1];
+    return parts[0] || p.title;
+  }
+  return PLACEHOLDER;
 }
 
 export function buildTemplateFixPack(data) {
   const { page } = data;
+  const lang = fixPackLang(page);
+  const T = TEMPLATE_TEXT[lang] || TEMPLATE_TEXT.en;
   const name = siteName(data);
   const origin = data.origin;
   const types = page.jsonld.types.map((t) => t.toLowerCase());
+  const mp = page.prices.machineReadable;
 
+  // Solo dati letti dalla pagina; tutto il resto è DA_COMPILARE.
   const org = {
     '@type': 'Organization',
     name,
-    url: origin,
-    logo: page.ogImage || PLACEHOLDER,
+    url: origin + '/',
+    logo: PLACEHOLDER,
     description: page.description || PLACEHOLDER,
-    contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', email: PLACEHOLDER, telephone: PLACEHOLDER },
+    email: PLACEHOLDER,
+    telephone: PLACEHOLDER,
     sameAs: [PLACEHOLDER]
   };
   const graph = [org];
 
-  const looksLikeShop = page.prices.visibleCount > 0 || types.includes('product');
-  if (looksLikeShop) {
-    const first = page.prices.visible.map(parsePrice).find(Boolean);
+  const isProductPage = String(page.ogType || '').toLowerCase().includes('product') || types.includes('product');
+  if (isProductPage || page.prices.visibleCount > 0) {
     graph.push({
       '@type': 'Product',
-      name: page.h1 || page.ogTitle || PLACEHOLDER,
-      description: page.description || PLACEHOLDER,
-      image: page.ogImage || PLACEHOLDER,
-      url: page.canonical || data.finalUrl,
+      name: isProductPage ? page.ogTitle || page.h1 || PLACEHOLDER : PLACEHOLDER,
+      description: isProductPage && page.description ? page.description : PLACEHOLDER,
+      image: isProductPage && page.ogImage ? page.ogImage : PLACEHOLDER,
+      url: isProductPage ? page.canonical || data.finalUrl : PLACEHOLDER,
       sku: PLACEHOLDER,
-      brand: { '@type': 'Brand', name },
+      brand: { '@type': 'Brand', name: PLACEHOLDER },
       offers: {
         '@type': 'Offer',
-        // il prezzo viene copiato solo se è visibile nel testo della pagina
-        price: first ? first.price : PLACEHOLDER,
-        priceCurrency: first ? first.currency : PLACEHOLDER,
-        availability: 'https://schema.org/InStock',
-        url: page.canonical || data.finalUrl
+        // prezzo copiato solo se già pubblicato in forma strutturata (product:price:amount)
+        price: mp.ogAmount || PLACEHOLDER,
+        priceCurrency: mp.ogAmount && mp.ogCurrency ? mp.ogCurrency : PLACEHOLDER,
+        availability: PLACEHOLDER,
+        url: isProductPage ? page.canonical || data.finalUrl : PLACEHOLDER
       }
     });
   }
   const jsonld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 2);
 
-  const lines = [`# ${name}`, '', `> ${page.description || `${PLACEHOLDER}: descrivi in una frase cosa offre il sito.`}`, ''];
-  if (page.h1) lines.push(`Pagina principale: ${page.h1}`, '');
-  lines.push('## Pagine principali', '', `- [Home](${origin}/): pagina iniziale`);
-  for (const h of page.h2.slice(0, 5)) lines.push(`- [${h}](${origin}/${PLACEHOLDER}): ${PLACEHOLDER}`);
-  lines.push('', '## Informazioni utili per gli agenti', '');
+  const lines = [`# ${name}`, '', `> ${page.description || `${PLACEHOLDER}: ${T.summary}`}`, ''];
+  if (page.h1) lines.push(`${T.main}: ${page.h1}`, '');
+  lines.push(`## ${T.pages}`, '', `- [Home](${origin}/): ${T.home}`);
+  const headings = page.h2.map((h) => h.replace(/[[\]()]/g, '').trim()).filter((h) => h.length >= 3);
+  for (const h of headings.slice(0, 5)) lines.push(`- [${h}](${origin}/${PLACEHOLDER}): ${PLACEHOLDER}`);
+  lines.push('', `## ${T.info}`, '');
   if (data.sitemap.found) lines.push(`- [Sitemap](${data.sitemap.url})`);
-  lines.push(`- Contatti: ${PLACEHOLDER}`, `- Politica di reso e spedizione: ${PLACEHOLDER}`);
+  lines.push(`- ${T.contacts}: ${PLACEHOLDER}`, `- ${T.policy}: ${PLACEHOLDER}`);
   const llms_txt = lines.join('\n') + '\n';
 
+  // Snippet: solo istruzioni/codice diversi dai due file sopra.
+  const pricesSeen = page.prices.visible.slice(0, 5).join(', ');
   const snippets = [
     {
-      title: 'Inserisci il JSON-LD nella <head>',
+      title: 'Dove incollare il JSON-LD',
       language: 'html',
-      code: `<script type="application/ld+json">\n${jsonld}\n</script>`,
-      instructions: `Incolla il blocco nella <head> della homepage e sostituisci ogni "${PLACEHOLDER}" con dati reali. Verifica con il Rich Results Test di Google.`
+      code: '<head>\n  <!-- ... tag esistenti ... -->\n  <script type="application/ld+json">\n    <!-- incolla qui il contenuto del file agentpay-jsonld.json -->\n  </script>\n</head>',
+      instructions: `Incolla il file JSON-LD dentro un <script type="application/ld+json"> nella <head> della homepage (o del template del tema). Sostituisci ogni "${PLACEHOLDER}" con dati reali o elimina il campo.${pricesSeen ? ` Prezzi visti nella pagina, da verificare: ${pricesSeen}.` : ''} Poi verifica con il Rich Results Test (https://search.google.com/test/rich-results) e con https://validator.schema.org.`
     }
   ];
   if (!data.llms.found) {
     snippets.push({
-      title: 'Pubblica llms.txt',
+      title: 'Come servire /llms.txt',
       language: 'text',
-      code: llms_txt,
-      instructions: `Salva il contenuto come file "llms.txt" nella radice del sito, raggiungibile su ${origin}/llms.txt, servito come text/plain.`
+      code: `# Nginx\nlocation = /llms.txt {\n  default_type text/plain;\n  charset utf-8;\n}\n\n# Apache (.htaccess)\nAddType "text/plain; charset=utf-8" .txt\n\n# Verifica\ncurl -I ${origin}/llms.txt   # atteso: 200 e Content-Type: text/plain`,
+      instructions: `Carica il file llms.txt nella radice del sito in modo che risponda su ${origin}/llms.txt come testo semplice (non una pagina HTML). Su Shopify/WordPress usa un'app o un plugin per file statici o un redirect verso un file caricato.`
     });
   }
-
   if (data.robots.blockedAiBots.length || !data.robots.found) {
     snippets.push({
       title: 'Consenti i bot AI in robots.txt',
       language: 'text',
       code: [...['GPTBot', 'ClaudeBot', 'OAI-SearchBot', 'PerplexityBot', 'Google-Extended'].map((b) => `User-agent: ${b}\nAllow: /\n`), `Sitemap: ${data.sitemap.found ? data.sitemap.url : `${origin}/sitemap.xml`}`].join('\n'),
-      instructions: 'Aggiungi (o sostituisci le regole Disallow: / esistenti per) questi user-agent nel tuo robots.txt.'
+      instructions: 'Aggiungi questi blocchi al robots.txt (rimuovendo eventuali "Disallow: /" per gli stessi user-agent).'
     });
   }
-
   const metaTags = [];
-  if (!data.page.description) metaTags.push(`<meta name="description" content="${PLACEHOLDER}">`);
-  if (!data.page.canonical) metaTags.push(`<link rel="canonical" href="${data.finalUrl}">`);
-  if (!data.page.lang) metaTags.push('<html lang="it">');
+  if (!page.description) metaTags.push(`<meta name="description" content="${PLACEHOLDER}">`);
+  if (!page.canonical) metaTags.push(`<link rel="canonical" href="${data.finalUrl}">`);
+  if (!page.lang) metaTags.push(`<html lang="${PLACEHOLDER}">  <!-- es. "it" -->`);
   if (metaTags.length) {
+    snippets.push({ title: 'Metadati di base mancanti', language: 'html', code: metaTags.join('\n'), instructions: 'Aggiungi i tag nella <head> e l’attributo lang sul tag <html>.' });
+  }
+  if (page.prices.visibleCount > 0 && !page.prices.hasMachineReadable) {
     snippets.push({
-      title: 'Metadati di base mancanti',
+      title: 'Prezzo leggibile dalle macchine nella scheda prodotto',
       language: 'html',
-      code: metaTags.join('\n'),
-      instructions: 'Aggiungi questi tag nella <head> (o l’attributo lang sul tag <html>).'
+      code: `<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">\n  <span itemprop="price" content="${PLACEHOLDER}">${PLACEHOLDER}</span>\n  <meta itemprop="priceCurrency" content="${PLACEHOLDER}">\n</div>`,
+      instructions: 'Nelle schede prodotto marca prezzo e valuta (es. content="129.90" e "EUR"). Il prezzo deve coincidere con quello mostrato.'
     });
   }
-
-  if (data.page.prices.visibleCount > 0 && !data.page.prices.hasMachineReadable) {
-    snippets.push({
-      title: 'Prezzo leggibile dalle macchine (microdata)',
-      language: 'html',
-      code: `<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">\n  <span itemprop="price" content="${PLACEHOLDER}">${PLACEHOLDER}</span>\n  <meta itemprop="priceCurrency" content="EUR">\n</div>`,
-      instructions: 'In alternativa al JSON-LD, marca il prezzo nella scheda prodotto con gli attributi microdata.'
-    });
-  }
-
   if (!data.sitemap.found) {
     snippets.push({
       title: 'Sitemap XML minima',
@@ -212,12 +255,12 @@ export function buildTemplateFixPack(data) {
     });
   }
 
-  return { jsonld, llms_txt, snippets };
+  return dedupeFixPack({ lang, jsonld, llms_txt, snippets });
 }
 
 // ---------- 2. Analisi LLM ----------
 
-const SYSTEM_PROMPT = `Sei AgentPay, un auditor che valuta quanto un sito web o e-commerce è "Agent-Ready", cioè leggibile e utilizzabile da agenti AI (assistenti di acquisto, motori di risposta, crawler LLM).
+const buildSystemPrompt = (lang) => `Sei AgentPay, un auditor che valuta quanto un sito web o e-commerce è "Agent-Ready", cioè leggibile e utilizzabile da agenti AI (assistenti di acquisto, motori di risposta, crawler LLM).
 
 Riceverai, dentro il tag <site_data>, i dati estratti automaticamente dal sito e, dentro <heuristic_result>, un punteggio euristico già calcolato.
 
@@ -229,7 +272,8 @@ COMPITO:
 3. Genera un fix pack:
    - "jsonld": stringa contenente un JSON-LD valido (schema.org, con "@context") adatto al sito (Organization e, se è un e-commerce, Product/Offer).
    - "llms_txt": contenuto completo di un file llms.txt in markdown per il sito.
-   - "snippets": da 2 a 6 snippet pratici {title, language, code, instructions} per correggere i problemi trovati.
+   - "snippets": da 2 a 6 snippet pratici {title, language, code, instructions} per correggere i problemi trovati. Ogni snippet deve aggiungere istruzioni o codice DIVERSI: non ripetere il contenuto di "jsonld" o "llms_txt" (per indicare dove incollarli usa un segnaposto come "<!-- incolla qui il contenuto del file -->"), e non creare due snippet con lo stesso scopo.
+   LINGUA: scrivi "llms_txt" e i testi descrittivi dentro "jsonld" in lingua "${lang}" (${LANG_NAMES[lang] || lang}), la lingua della pagina. Scrivi invece in italiano issues, titoli e "instructions" degli snippet.
    REGOLA DATI: usa SOLO informazioni realmente presenti nei dati del sito. Non inventare mai prezzi, SKU, indirizzi, telefoni, email, recensioni, rating, profili social o altri dati. Dove un dato manca usa esattamente il segnaposto "${PLACEHOLDER}".
 
 FORMATO: rispondi SOLO con un oggetto JSON valido, senza testo prima o dopo e senza blocchi di codice markdown, con questa forma esatta:
@@ -311,7 +355,7 @@ export async function analyzeWithLLM(data, heuristic) {
         model,
         max_tokens: 16000,
         output_config: { effort: 'low' },
-        system: SYSTEM_PROMPT,
+        system: buildSystemPrompt(fixPackLang(data.page)),
         messages: [{ role: 'user', content: userContent }]
       })
     });
@@ -329,7 +373,9 @@ export async function analyzeWithLLM(data, heuristic) {
     .filter((b) => b.type === 'text')
     .map((b) => b.text)
     .join('');
-  return validateLlmResult(JSON.parse(stripFences(text)));
+  const result = validateLlmResult(JSON.parse(stripFences(text)));
+  result.fix_pack = dedupeFixPack({ lang: fixPackLang(data.page), ...result.fix_pack });
+  return result;
 }
 
 // ---------- 3. Orchestrazione ----------

@@ -2,7 +2,12 @@ import http from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import handler from './api/scan.js';
+import scanHandler from './api/scan.js';
+import unlockHandler from './api/unlock.js';
+import configHandler from './api/config.js';
+import { paymentConfig } from './lib/stripe.js';
+
+const API = { '/api/scan': scanHandler, '/api/unlock': unlockHandler, '/api/config': configHandler };
 
 // Carica .env se presente (senza dipendenze esterne)
 try {
@@ -44,7 +49,7 @@ async function serveStatic(req, res) {
 const server = http.createServer(async (req, res) => {
   try {
     const { pathname } = new URL(req.url, 'http://localhost');
-    if (pathname === '/api/scan') return await handler(req, res);
+    if (API[pathname]) return await API[pathname](req, res);
     if (req.method !== 'GET' && req.method !== 'HEAD') {
       res.writeHead(405).end();
       return;
@@ -58,5 +63,6 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   const mode = process.env.ANTHROPIC_API_KEY ? 'LLM' : 'euristica (nessuna ANTHROPIC_API_KEY)';
-  console.log(`AgentPay in ascolto su http://localhost:${PORT} — modalità ${mode}`);
+  const pay = paymentConfig().mode === 'stripe' ? 'Stripe' : 'DEMO (pagamento simulato)';
+  console.log(`AgentPay in ascolto su http://localhost:${PORT} — analisi: ${mode} — pagamenti: ${pay}`);
 });

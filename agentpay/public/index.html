@@ -11,7 +11,6 @@
     .hidden { display: none !important; }
     .gauge-track { stroke: #e5e7eb; }
     .gauge-value { transition: stroke-dashoffset 1.2s ease-out, stroke .3s; }
-    .blurred { filter: blur(5px); user-select: none; pointer-events: none; }
     pre code { white-space: pre; }
   </style>
 </head>
@@ -21,7 +20,7 @@
       <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white">A</span>
       AgentPay
     </a>
-    <span class="text-xs font-medium text-slate-500">MVP · demo</span>
+    <span id="demo-badge" class="hidden rounded-md bg-amber-400 px-2.5 py-1 text-xs font-extrabold tracking-widest text-amber-950" title="Pagamenti simulati: nessun addebito reale">DEMO</span>
   </header>
 
   <main class="flex-1 max-w-4xl w-full mx-auto px-4 pb-16">
@@ -47,6 +46,12 @@
     <section id="loader" class="hidden text-center py-10" aria-live="polite">
       <div class="mx-auto h-12 w-12 rounded-full border-4 border-indigo-200 border-t-indigo-600 animate-spin"></div>
       <p id="loader-msg" class="mt-4 text-slate-600">Avvio della scansione…</p>
+    </section>
+
+    <!-- AVVISI (ritorno dal pagamento) -->
+    <section id="notice" class="hidden max-w-2xl mx-auto mb-6 rounded-xl border border-sky-200 bg-sky-50 p-4 text-sky-900" role="status">
+      <p id="notice-title" class="font-semibold"></p>
+      <p id="notice-msg" class="text-sm mt-1"></p>
     </section>
 
     <!-- ERRORE -->
@@ -83,17 +88,19 @@
       </div>
 
       <!-- PAYWALL -->
-      <div id="paywall" class="relative rounded-2xl border-2 border-indigo-200 bg-white shadow-sm overflow-hidden">
+      <div id="paywall" class="rounded-2xl border-2 border-indigo-200 bg-white shadow-sm overflow-hidden">
         <div class="p-6 sm:p-8">
-          <h2 class="text-xl font-bold">Sblocca il Fix Pack completo – €9</h2>
-          <p class="mt-1 text-slate-600 text-sm">JSON-LD pronto da incollare, file llms.txt e snippet con istruzioni passo-passo, generati per il tuo sito.</p>
-        </div>
-        <div class="relative px-6 sm:px-8 pb-6">
-          <pre class="blurred rounded-xl bg-slate-900 text-slate-100 text-xs p-4 overflow-hidden h-48" aria-hidden="true"><code id="preview-code"></code></pre>
-          <div class="absolute inset-0 flex items-center justify-center">
-            <button id="unlock-btn" type="button" class="rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white shadow-lg hover:bg-indigo-700">
+          <div class="flex flex-wrap items-center gap-2">
+            <h2 class="text-xl font-bold">Sblocca il Fix Pack completo – €9</h2>
+            <span id="paywall-demo" class="hidden rounded-md bg-amber-400 px-2 py-0.5 text-xs font-extrabold tracking-widest text-amber-950">DEMO</span>
+          </div>
+          <p class="mt-1 text-slate-600 text-sm">File pronti da pubblicare e istruzioni passo-passo, generati per il tuo sito. Ecco cosa contiene:</p>
+          <ul id="teaser" class="mt-4 space-y-3"></ul>
+          <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
+            <button id="unlock-btn" type="button" class="rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white shadow-sm hover:bg-indigo-700 disabled:opacity-60">
               🔓 Sblocca il Fix Pack – €9
             </button>
+            <p id="pay-note" class="text-xs text-slate-500">Pagamento sicuro con Stripe. Torni qui automaticamente dopo il pagamento.</p>
           </div>
         </div>
       </div>
@@ -110,7 +117,7 @@
   <div id="pay-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="pay-title">
     <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
       <h3 id="pay-title" class="text-lg font-bold">Pagamento (demo)</h3>
-      <p class="mt-2 text-sm text-slate-600">Demo: qui andrà Stripe Payment Link. Nessun addebito verrà effettuato.</p>
+      <p class="mt-2 text-sm text-slate-600"><span class="rounded bg-amber-400 px-1.5 py-0.5 text-xs font-extrabold text-amber-950">DEMO</span> Pagamenti Stripe non configurati: il pagamento è simulato e nessun addebito verrà effettuato.</p>
       <div class="mt-4 rounded-xl bg-slate-50 border border-slate-200 p-4 flex justify-between">
         <span>Fix Pack Agent-Ready</span><strong>€9,00</strong>
       </div>
@@ -261,6 +268,7 @@
     const wrap = $('fixpack-blocks');
     wrap.replaceChildren();
     if (!fp) { wrap.append(el('p', 'text-slate-600', 'Fix Pack non disponibile per questa analisi.')); return; }
+    if (fp.lang) wrap.append(el('p', 'text-sm text-slate-500', 'Lingua dei contenuti: ' + fp.lang + ' (dalla lingua della pagina).'));
     if (fp.jsonld) wrap.append(codeBlock({ title: 'JSON-LD (schema.org)', instructions: 'Inseriscilo in un <script type="application/ld+json"> nella <head> e sostituisci i valori DA_COMPILARE.', code: fp.jsonld, filename: 'agentpay-jsonld.json', mime: 'application/ld+json' }));
     if (fp.llms_txt) wrap.append(codeBlock({ title: 'llms.txt', instructions: 'Pubblicalo nella radice del sito come /llms.txt (text/plain).', code: fp.llms_txt, filename: 'llms.txt' }));
     (fp.snippets || []).forEach((s, i) => {
@@ -269,16 +277,77 @@
     });
   }
 
-  function renderPreview(fp) {
-    const sample = fp && fp.jsonld ? fp.jsonld : '{\n  "@context": "https://schema.org",\n  "@type": "Organization"\n}';
-    $('preview-code').textContent = sample.split('\n').slice(0, 14).join('\n');
+  function renderTeaser(teaser) {
+    const list = $('teaser');
+    list.replaceChildren();
+    const files = (teaser && Array.isArray(teaser.files)) ? teaser.files : [];
+    if (!files.length) { list.append(el('li', 'text-sm text-slate-500', 'Anteprima non disponibile.')); return; }
+    for (const f of files) {
+      const li = el('li', 'rounded-xl border border-slate-200 overflow-hidden');
+      const head = el('div', 'flex items-center justify-between gap-3 bg-slate-50 px-3 py-2');
+      head.append(el('span', 'text-sm font-semibold truncate', f.title), el('span', 'text-xs text-slate-500 shrink-0', '🔒 ' + Math.max(0, (f.total_lines || 0) - 3) + ' righe bloccate'));
+      const pre = el('pre', 'bg-slate-900 text-slate-100 text-xs px-3 py-2 overflow-hidden');
+      pre.append(el('code', '', (f.preview || '') + '\n…'));
+      li.append(head, pre);
+      list.append(li);
+    }
+  }
+
+  // ---- stato persistente nella scheda (sessionStorage) ----
+  const STORE_KEY = 'agentpay:last-scan';
+  function saveScan(data) {
+    try { sessionStorage.setItem(STORE_KEY, JSON.stringify(data)); } catch { /* storage non disponibile */ }
+  }
+  function loadScan() {
+    try { const raw = sessionStorage.getItem(STORE_KEY); return raw ? JSON.parse(raw) : null; } catch { return null; }
+  }
+
+  function showNotice(title, msg, tone) {
+    const box = $('notice');
+    const tones = { info: 'border-sky-200 bg-sky-50 text-sky-900', error: 'border-red-200 bg-red-50 text-red-800', ok: 'border-emerald-200 bg-emerald-50 text-emerald-900' };
+    box.className = 'max-w-2xl mx-auto mb-6 rounded-xl border p-4 ' + (tones[tone] || tones.info);
+    $('notice-title').textContent = title;
+    $('notice-msg').textContent = msg;
+  }
+
+  function supportText(sessionId) {
+    const who = appConfig.support_email ? 'scrivi a ' + appConfig.support_email : 'contatta il supporto';
+    return 'Per ricevere il Fix Pack ' + who + (sessionId ? ' indicando questo codice di pagamento: ' + sessionId : '') + '.';
+  }
+
+  function showResult(data) {
+    lastResult = data;
+    renderScore(data);
+    renderIssues(Array.isArray(data.issues) ? data.issues : []);
+    renderTeaser(data.teaser);
+    show($('fixpack'), false);
+    show($('paywall'), true);
+    show(result, true);
+  }
+
+  function showFixPack(fixPack) {
+    show($('paywall'), false);
+    renderFixPack(fixPack);
+    show($('fixpack'), true);
+    $('fixpack').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  async function postUnlock(payload) {
+    const res = await fetch('/api/unlock', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    let data = null;
+    try { data = await res.json(); } catch { /* non JSON */ }
+    if (!res.ok || !data || !data.fix_pack) {
+      const err = new Error((data && data.error) || 'Errore del server (' + res.status + ').');
+      err.status = res.status;
+      throw err;
+    }
+    return data;
   }
 
   async function scan(url) {
     show(errorBox, false);
+    show($('notice'), false);
     show(result, false);
-    show($('fixpack'), false);
-    show($('paywall'), true);
     btn.disabled = true;
     startLoader();
     try {
@@ -286,20 +355,37 @@
       let data = null;
       try { data = await res.json(); } catch { /* risposta non JSON */ }
       if (!res.ok) throw new Error((data && data.error) || 'Errore del server (' + res.status + ').');
-      if (!data || typeof data.score !== 'number') throw new Error('Risposta del server non valida.');
-      lastResult = data;
-      renderScore(data);
-      renderIssues(Array.isArray(data.issues) ? data.issues : []);
-      renderPreview(data.fix_pack);
-      show(result, true);
+      if (!data || typeof data.score !== 'number' || !data.locked || !data.scan_id) throw new Error('Risposta del server non valida.');
+      saveScan(data);
+      showResult(data);
       result.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (err) {
-      errorMsg.textContent = err && err.message ? err.message : 'Errore di rete: controlla la connessione e riprova.';
-      if (err instanceof TypeError) errorMsg.textContent = 'Errore di rete: controlla la connessione e riprova.';
+      errorMsg.textContent = err instanceof TypeError ? 'Errore di rete: controlla la connessione e riprova.' : (err && err.message) || 'Errore imprevisto.';
       show(errorBox, true);
     } finally {
       stopLoader();
       btn.disabled = false;
+    }
+  }
+
+  // Ritorno da Stripe: ?session_id=cs_...
+  async function handlePaymentReturn(sessionId) {
+    const saved = loadScan();
+    if (!saved || !saved.locked) {
+      showNotice('Pagamento ricevuto, ma non troviamo la tua scansione', 'I dati della scansione sono salvati solo nella scheda del browser in cui l’hai avviata (forse l’hai chiusa o stai usando un altro dispositivo). ' + supportText(sessionId), 'error');
+      return;
+    }
+    showResult(saved);
+    showNotice('Verifica del pagamento in corso…', 'Stiamo controllando il pagamento con Stripe.', 'info');
+    try {
+      const data = await postUnlock({ locked: saved.locked, session_id: sessionId });
+      showNotice('Pagamento confermato ✓', 'Ecco il tuo Fix Pack completo. Puoi copiarlo o scaricarlo.', 'ok');
+      showFixPack(data.fix_pack);
+    } catch (err) {
+      const msg = err.status === 402
+        ? err.message + ' Se hai pagato davvero, ' + supportText(sessionId).replace(/^Per ricevere il Fix Pack /, '')
+        : err.message + ' ' + supportText(sessionId);
+      showNotice('Impossibile sbloccare il Fix Pack', msg, 'error');
     }
   }
 
@@ -315,19 +401,50 @@
     scan(url);
   });
 
-  // Pagamento simulato
+  // ---- Pagamento ----
   const modal = $('pay-modal');
-  $('unlock-btn').addEventListener('click', () => show(modal, true));
+  let appConfig = { payments: 'demo', payment_link_url: null, support_email: null };
+
+  $('unlock-btn').addEventListener('click', () => {
+    if (!lastResult) return;
+    if (appConfig.payments === 'stripe' && appConfig.payment_link_url) {
+      const link = new URL(appConfig.payment_link_url);
+      link.searchParams.set('client_reference_id', lastResult.scan_id);
+      saveScan(lastResult);
+      window.location.href = link.toString();
+      return;
+    }
+    show(modal, true);
+  });
   $('pay-cancel').addEventListener('click', () => show(modal, false));
   modal.addEventListener('click', (e) => { if (e.target === modal) show(modal, false); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') show(modal, false); });
-  $('pay-confirm').addEventListener('click', () => {
+  $('pay-confirm').addEventListener('click', async () => {
     show(modal, false);
-    show($('paywall'), false);
-    renderFixPack(lastResult && lastResult.fix_pack);
-    show($('fixpack'), true);
-    $('fixpack').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    try {
+      const data = await postUnlock({ locked: lastResult.locked, demo: true });
+      showFixPack(data.fix_pack);
+    } catch (err) {
+      errorMsg.textContent = err.message;
+      show(errorBox, true);
+    }
   });
+
+  async function init() {
+    try {
+      const res = await fetch('/api/config');
+      if (res.ok) appConfig = await res.json();
+    } catch { /* resta in demo */ }
+    const demo = appConfig.payments !== 'stripe';
+    show($('demo-badge'), demo);
+    show($('paywall-demo'), demo);
+    $('pay-note').textContent = demo
+      ? 'Modalità DEMO: il pagamento è simulato, nessun addebito.'
+      : 'Pagamento sicuro con Stripe. Torni qui automaticamente dopo il pagamento.';
+    const sessionId = new URLSearchParams(window.location.search).get('session_id');
+    if (sessionId) await handlePaymentReturn(sessionId);
+  }
+  init();
 })();
 </script>
 </body>
