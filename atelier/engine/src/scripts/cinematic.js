@@ -119,28 +119,40 @@ function signature(gsap, scope) {
 // reticolo: i segmenti partono ruotati in disordine; lo scroll li allinea, il puntatore calma la zona vicina.
 // Si calcola solo quando arriva un evento (nessun ciclo continuo).
 function lattice(gsap, scope, parts, st) {
-  const base = parts.map((p) => num0(getComputedStyle(p).getPropertyValue('--rot')));
-  const setters = parts.map((p) => gsap.quickSetter(p, 'rotation', 'deg'));
-  parts.forEach((p) => gsap.set(p, { transformOrigin: '50% 50%' }));
+  // Costo basso (v2.1): angoli e centri sono già nell'SVG (data-rot, data-c in coordinate del viewBox),
+  // quindi niente getComputedStyle/getBoundingClientRect per segmento; si scrive solo style.transform,
+  // solo per i segmenti che cambiano, in un unico requestAnimationFrame.
+  const svg = scope.querySelector('svg.sig');
+  const [, , VW, VH] = svg.getAttribute('viewBox').split(' ').map(Number);
+  const base = parts.map((p) => +p.dataset.rot || 0);
+  const pts = parts.map((p) => p.dataset.c.split(' ').map(Number));
+  const last = new Float32Array(parts.length).fill(NaN);
   let order = 0;
   let px = -1e4;
   let py = -1e4;
-  let centers = [];
-  const measure = () => { centers = parts.map((p) => { const r = p.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }); };
+  let box = null;
+  const measure = () => {
+    const r = svg.getBoundingClientRect();
+    const k = Math.max(r.width / VW, r.height / VH); // preserveAspectRatio "xMidYMid slice"
+    box = { x: r.left + (r.width - VW * k) / 2, y: r.top + scrollY + (r.height - VH * k) / 2, k };
+  };
   let raf = 0;
   const draw = () => {
     raf = 0;
+    if (!box) measure();
     for (let i = 0; i < parts.length; i++) {
-      const [x, y] = centers[i] || [0, 0];
-      const near = finePointer ? Math.max(0, 1 - Math.hypot(px - x, py - y) / 180) : 0;
-      setters[i](base[i] * (1 - order) * (1 - near));
+      let near = 0;
+      if (finePointer && px > -1e3) {
+        const d = Math.hypot(px - (box.x + pts[i][0] * box.k), py - (box.y + pts[i][1] * box.k));
+        near = d < 180 ? 1 - d / 180 : 0;
+      }
+      const a = Math.round(base[i] * (1 - order) * (1 - near));
+      if (a !== last[i]) { last[i] = a; parts[i].style.transform = `rotate(${a}deg)`; }
     }
   };
   const ask = () => { if (!raf) raf = requestAnimationFrame(draw); };
-  gsap.to({}, { scrollTrigger: { ...st, scrub: true, onUpdate: (self) => { order = self.progress; ask(); }, onRefresh: () => { measure(); ask(); } } });
-  measure();
-  draw();
-  addEventListener('resize', measure, { passive: true });
+  gsap.to({}, { scrollTrigger: { ...st, onUpdate: (self) => { order = self.progress; ask(); }, onRefresh: () => { box = null; ask(); } } });
+  addEventListener('resize', () => { box = null; }, { passive: true });
   if (finePointer) scope.closest('section')?.addEventListener('pointermove', (e) => { px = e.clientX; py = e.clientY + scrollY; ask(); }, { passive: true });
 }
 function num0(v) { return parseFloat(v) || 0; }

@@ -86,7 +86,7 @@ function lattice(p, r, W, H, q) {
       const cy = sy * (y + 0.5);
       const hot = r() < (q.hot || 0.06);
       const rot = Math.round((r() - 0.5) * 2 * (q.chaos || 70));
-      out.push(`<g data-sig-part style="--rot:${rot}deg"><line x1="${f(cx - len / 2)}" y1="${f(cy)}" x2="${f(cx + len / 2)}" y2="${f(cy)}" stroke="${hot ? p.accent : p.ink}" stroke-width="${hot ? 5 : 2.6}" stroke-linecap="round" opacity="${hot ? 1 : 0.7}"/></g>`);
+      out.push(`<g data-sig-part data-rot="${rot}" data-c="${f(cx)} ${f(cy)}" style="--rot:${rot}deg"><line x1="${f(cx - len / 2)}" y1="${f(cy)}" x2="${f(cx + len / 2)}" y2="${f(cy)}" stroke="${hot ? p.accent : p.ink}" stroke-width="${hot ? 5 : 2.6}" stroke-linecap="round" opacity="${hot ? 1 : 0.7}"/></g>`);
     }
   return out.join('');
 }

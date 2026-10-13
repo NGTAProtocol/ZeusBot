@@ -1,27 +1,98 @@
 {
   "concept": "In fabbrica una macchina ferma si vede subito, mentre una rete violata può lavorare in silenzio per settimane.",
-  "personality": { "adjectives": ["pacata", "concreta", "vigile"], "not": "startup di cybersecurity: niente scudi, neon, globi di rete e paura" },
+  "personality": {
+    "adjectives": [
+      "pacata",
+      "concreta",
+      "vigile"
+    ],
+    "not": "startup di cybersecurity: niente scudi, neon, globi di rete e paura"
+  },
   "signature": {
-    "kind": "css", "id": "lattice", "fallback_id": "lattice",
+    "kind": "css",
+    "id": "lattice",
+    "fallback_id": "lattice",
     "description": "Un reticolo largo come un reparto: i segmenti storti si raddrizzano con lo scroll e pochi punti arancioni restano accesi, quelli da sistemare per primi.",
-    "params": { "cols": 16, "rows": 10, "chaos": 90, "hot": 0.08 }
+    "params": {
+      "cols": 14,
+      "rows": 9,
+      "chaos": 90,
+      "hot": 0.08
+    }
   },
   "tokens": {
-    "palette": { "bg": "#f3f4f6", "surface": "#e5e8ec", "ink": "#16181d", "muted": "#4b5059", "accent": "#b93c0a", "accent2": "#94a3b8" },
-    "palette_source": { "bg": "lamiera verniciata chiara dei capannoni", "ink": "nero dei pannelli di comando", "accent": "arancio del lampeggiante di allarme macchina", "accent2": "grigio dei cavi di rete" },
+    "palette": {
+      "bg": "#f3f4f6",
+      "surface": "#e5e8ec",
+      "ink": "#16181d",
+      "muted": "#4b5059",
+      "accent": "#b93c0a",
+      "accent2": "#94a3b8"
+    },
+    "palette_source": {
+      "bg": "lamiera verniciata chiara dei capannoni",
+      "ink": "nero dei pannelli di comando",
+      "accent": "arancio del lampeggiante di allarme macchina",
+      "accent2": "grigio dei cavi di rete"
+    },
     "color_strategy": "contenuta",
     "fonts": {
-      "display": { "pkg": "@fontsource/bricolage-grotesque", "family": "Bricolage Grotesque", "weights": [700], "fallback": "system-ui, sans-serif" },
-      "body": { "pkg": "@fontsource/public-sans", "family": "Public Sans", "weights": [400, 600], "fallback": "system-ui, sans-serif" }
+      "display": {
+        "pkg": "@fontsource/bricolage-grotesque",
+        "family": "Bricolage Grotesque",
+        "weights": [
+          700
+        ],
+        "fallback": "system-ui, sans-serif"
+      },
+      "body": {
+        "pkg": "@fontsource/public-sans",
+        "family": "Public Sans",
+        "weights": [
+          400,
+          600
+        ],
+        "fallback": "system-ui, sans-serif"
+      }
     },
-    "type": { "scale": 1.24, "body_size": "1.0625rem", "body_leading": 1.6, "display_weight": 700, "display_tracking": "-0.03em", "display_leading": 0.98, "char_width": 0.55, "display_max": "6.25rem" },
-    "space": { "section": "clamp(96px, 11vw, 152px)", "gutter": "clamp(16px, 4vw, 48px)", "measure": "60ch" },
+    "type": {
+      "scale": 1.24,
+      "body_size": "1.0625rem",
+      "body_leading": 1.6,
+      "display_weight": 700,
+      "display_tracking": "-0.03em",
+      "display_leading": 0.98,
+      "char_width": 0.55,
+      "display_max": "6.25rem"
+    },
+    "space": {
+      "section": "clamp(96px, 11vw, 152px)",
+      "gutter": "clamp(16px, 4vw, 48px)",
+      "measure": "60ch"
+    },
     "radius": "6px",
-    "motion": { "micro_ms": 200, "sequence_ms": 800, "distance": 20, "ease": "out" }
+    "motion": {
+      "micro_ms": 200,
+      "sequence_ms": 800,
+      "distance": 20,
+      "ease": "out"
+    }
   },
   "layout": "manifesto",
-  "features": { "browser_surfaces": true, "press": false },
-  "unknowns": ["prezzo dell'audit", "prezzo del contratto di reperibilità", "nomi dei consulenti", "clienti o casi di studio autorizzati"],
-  "skills_used": ["frontend-design", "impeccable", "atelier"],
+  "features": {
+    "browser_surfaces": true,
+    "press": false
+  },
+  "unknowns": [
+    "prezzo dell'audit",
+    "prezzo del contratto di reperibilità",
+    "nomi dei consulenti",
+    "clienti o casi di studio autorizzati"
+  ],
+  "skills_used": [
+    "frontend-design",
+    "impeccable",
+    "atelier"
+  ],
   "method_notes": "impeccable: strategia contenuta (neutri tinti + un arancio da allarme macchina) scelta prima dei colori; niente IBM Plex/Space Grotesk (default da addestramento per la 'tecnologia'); un solo momento di movimento d'autore."
 }

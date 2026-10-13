@@ -106,6 +106,8 @@ a:hover { color: var(--c-accent); }
 .sig [data-sig-part] { transform-box: fill-box; will-change: transform; }
 .sig--drip [data-sig-part] { transform-origin: 50% 0%; }
 .sig--lattice [data-sig-part] { transform-origin: center; }
+/* CINEMATICO: stato iniziale "in disordine" solo se il movimento è attivo; con reduced-motion il reticolo resta allineato */
+.is-cinematic.js-motion .sig--lattice [data-sig-part] { transform: rotate(var(--rot, 0deg)); }
 /* nel BASE le firme usano le animazioni guidate dallo scroll del CSS dove supportate (nessun JS, nessun loop) */
 @supports (animation-timeline: scroll()) {
   @media (prefers-reduced-motion: no-preference) {
