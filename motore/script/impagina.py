@@ -168,13 +168,16 @@ def impagina(cartella, libro):
         formato_esatto(doc, libro)
         font = os.path.join(comune.radice_motore(), 'stampa', 'font', 'EBGaramond-Regular.ttf')
         basso_pt = m.get('basso', 20) / MM * 72
+        # numeri al centro del piede del trim: con il bleed il trim è spostato come il contenuto
+        b = comune.kdp()['cartaceo']['bleed_pollici'] * 72 if libro['formato'].get('bleed') else 0
         for i in range(n_iniz, doc.page_count):
             pg = doc[i]
             num = str(i - n_iniz + 1)
             f = fitz.Font(fontfile=font)
             larg = f.text_length(num, fontsize=9)
+            x0 = b if i % 2 else 0
             pg.insert_font(fontname='ZBNum', fontfile=font)
-            pg.insert_text(((pg.rect.width - larg) / 2, pg.rect.height - basso_pt / 2), num,
+            pg.insert_text((x0 + (pg.rect.width - b - larg) / 2, b + (pg.rect.height - 2 * b) - basso_pt / 2), num,
                            fontname='ZBNum', fontsize=9, color=(0.2, 0.2, 0.2))
         doc.set_metadata({'title': libro['titolo'], 'author': libro['autore'],
                           'subject': libro.get('sottotitolo') or '', 'creator': 'motore', 'producer': 'motore',

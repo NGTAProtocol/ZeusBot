@@ -198,6 +198,9 @@ passo_3:
     parole_per_pagina: 205.8
     esiti: ["pagine_pari|AVVISO"]   # 23 pagine: numero dispari (avviso, da verificare su KDP)
     codice: 0
+  bleed:                          # copia inventata del romance con formato.bleed: true (prove.py, bleed_pdf)
+    soglia_esterno: 0.375         # minimo KDP del margine esterno con bleed (dati/kdp.yaml)
+    margine_esterno: 0.75         # 0,625 senza bleed + 0,125 di bleed; ±0,005
 
 passo_4:
   # conformita_kdp.py sui due mini-libri dopo compila, impagina e pacchetto, con la scheda inventata

@@ -359,6 +359,52 @@ def passo_3(A):
         esito('verifica_pdf.py', f"{nome}: codice d'uscita", att['codice'], r.returncode, sez)
         esito('verifica_pdf.py', f'{nome}: report scritto', 'sì',
               'sì' if os.path.isfile(os.path.join(cart, '06-diagnostica', 'verifica-pdf.md')) else 'no', sez)
+    bleed_pdf(A['bleed'], sez)
+
+
+def pdf_di(c):
+    """compila e impagina una copia di mini-libro; (cartella, libro, pdf)."""
+    esegui(os.path.join(S, 'compila.py'), c)
+    esegui(os.path.join(S, 'impagina.py'), c)
+    cart, libro, _ = comune.carica_libro(c)
+    return cart, libro, os.path.join(cart, '05-output', f'{comune.nome_file(libro["titolo"])}.pdf')
+
+
+def spostamenti(pdf_senza, pdf_con):
+    """{'dispari': {(dx, dy)}, 'pari': {(dx, dy)}} in pollici, arrotondati al millesimo: spostamento di ogni
+    parola dal PDF senza bleed a quello con bleed (coordinate dall'alto a sinistra), per pagina dispari e pari."""
+    import pymupdf
+    out = {'dispari': set(), 'pari': set()}
+    with pymupdf.open(pdf_senza) as a, pymupdf.open(pdf_con) as b:
+        for i, (pa, pb) in enumerate(zip(a, b)):
+            for wa, wb in zip(pa.get_text('words'), pb.get_text('words')):
+                out['pari' if i % 2 else 'dispari'].add((round((wb[0] - wa[0]) / 72, 3), round((wb[1] - wa[1]) / 72, 3)))
+    return {k: sorted(v) for k, v in out.items()}
+
+
+def bleed_pdf(att, sez):
+    """Bleed su una copia inventata del romance con formato.bleed: true, contro la stessa copia senza bleed.
+    Formato = trim + bleed di dati/kdp.yaml; contenuto spostato di un bleed in basso su tutte le pagine e di
+    un bleed a destra solo sulle pagine pari; margine esterno mai sotto il minimo KDP con bleed."""
+    import verifica_pdf
+    nome = 'mini-libro-romance con bleed'
+    _, _, pdf_senza = pdf_di(copia_libro('mini-libro-romance'))
+    c = copia_libro('mini-libro-romance')
+    py = os.path.join(c, 'libro.yaml')
+    testo = open(py, encoding='utf-8').read()
+    open(py, 'w', encoding='utf-8').write(testo.replace('  bleed: false', '  bleed: true'))
+    cart, libro, pdf = pdf_di(c)
+    b = comune.kdp()['cartaceo']['bleed_pollici']
+    s = struttura_pdf(pdf, libro) if os.path.isfile(pdf) else {}
+    esito('impagina.py', f'{nome}: formato = trim + bleed di dati/kdp.yaml', 'uguale al trim KDP', s.get('formato_pollici'), sez)
+    sp = spostamenti(pdf_senza, pdf) if os.path.isfile(pdf) else {}
+    esito('impagina.py', f'{nome}: pagine dispari, contenuto spostato (dx, dy)', [(0.0, b)], sp.get('dispari'), sez)
+    esito('impagina.py', f'{nome}: pagine pari, contenuto spostato (dx, dy)', [(b, b)], sp.get('pari'), sez)
+    misure, _ = verifica_pdf.verifica(cart, libro, pdf)
+    esito('verifica_pdf.py', f'{nome}: soglia KDP margine esterno con bleed', att['soglia_esterno'],
+          misure['margine_esterno_soglia'], sez)
+    esito('verifica_pdf.py', f'{nome}: margine esterno',
+          *controllo_margine(att['margine_esterno'], misure['margine_esterno'], minimi_kdp(libro, misure['pagine'])['esterno']), sez)
 
 
 # ---------------------------------------------------------------- passo 4

@@ -107,7 +107,13 @@ sbagliati di qualche decimo di millimetro (A5, 5,83 × 8,27″, diventa 5,833 ×
 `impagina.py` (`formato_esatto`) riporta ogni pagina al trim di `libro.yaml`, più il bleed di
 `dati/kdp.yaml` se previsto, senza scalare il contenuto. MediaBox e CropBox coincidono e partono
 da 0, 0. Il contenuto resta fermo rispetto all'angolo in alto a sinistra; con il bleed scende di un
-bleed e, sulle pagine pari, si sposta di un bleed a destra.
+bleed e, sulle pagine pari, si sposta di un bleed a destra. I numeri di pagina stanno al centro del
+piede del trim, quindi seguono lo stesso spostamento.
+
+Prova del bleed (passo 3, `bleed_pdf`): copia inventata del romance con `bleed: true`, confrontata con
+la stessa copia senza bleed. Controlla il formato (trim + bleed di `dati/kdp.yaml`), lo spostamento di
+ogni parola (0,125″ in basso su tutte le pagine, 0,125″ a destra solo sulle pari) e il margine esterno:
+0,75″ ±0,005, mai sotto il minimo KDP con bleed (0,375″).
 
 ### LanguageTool
 
