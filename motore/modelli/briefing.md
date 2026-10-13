@@ -23,6 +23,76 @@ Lettore:
 ## Riferimenti
 -
 
+<!-- ==================== Sezioni facoltative: più sono dettagliate, più la voce deve obbedire ====================
+     La voce (banca-voci) decide COME si racconta; questo briefing decide COSA si racconta. Se una
+     regola di questo briefing contrasta con la scheda della voce, vince il briefing: va segnalato.
+     Scrivi ogni voce con un trattino («- Premessa: …»): le righe con il trattino non diventano direttive.
+     Parole chiave dei vincoli:
+       «sempre»        = vincolo rigido: nessuna eccezione, in nessuna scena;
+       «quasi sempre»  = regola con eccezioni rare, ciascuna motivata nella scena in cui avviene;
+       «mai»           = divieto assoluto. -->
+
+## Storia
+
+<!-- Premessa: la situazione di partenza in 1-3 righe. Svolta: l'evento che cambia la direzione.
+     Finale: come si chiude (anche aperto, ma deciso). Tono: due o tre aggettivi, non di più. -->
+- Premessa:
+- Svolta:
+- Finale:
+- Tono:
+
+## Schede dei personaggi
+
+<!-- Una scheda per ogni personaggio di «Personaggi chiave», con lo stesso nome nel titolo «### Nome».
+     Ruolo: funzione nella storia. Aspetto e abiti FISSI: con «sempre» (vincolo rigido).
+     Aspetto e abiti VARIABILI: con «quasi sempre» (eccezioni rare, motivate nella scena).
+     Come parla: lessico, ritmo, intercalari, dialetto. Da solo: cosa fa quando nessuno lo guarda.
+     Mai cambiare: i tratti che restano identici dalla prima all'ultima pagina.
+
+     ESEMPIO (inventato; da non copiare):
+
+     ### Rocco Vetrano
+     - Ruolo: antagonista; psicopatico, imprevedibile, mai pentito.
+     - Fissi (sempre): sporco; capelli all'insù; giubbotto di pelle strappato sempre addosso, anche al chiuso.
+     - Variabili (quasi sempre): jeans neri; abbigliamento dark quasi tutti i giorni. Unica variabile di
+       colore: il biondo [DA CONFERMARE: i capelli o un capo d'abbigliamento?]; ogni eccezione si motiva
+       nella scena (un funerale, una divisa imposta, un travestimento).
+     - Come parla: frasi brevi, tono basso, ride fuori tempo; nessuna parolaccia, il che fa più paura.
+     - Da solo: smonta e rimonta un accendino; conta le macchine che passano.
+     - Mai cambiare: il giubbotto; la calma prima della violenza; non chiede mai scusa. -->
+
+### Nome
+- Ruolo:
+- Fissi (sempre):
+- Variabili (quasi sempre):
+- Come parla:
+- Da solo:
+- Mai cambiare:
+
+## Luoghi ed epoca
+
+<!-- Luoghi principali (uno per riga, con una caratteristica concreta: un odore, un rumore, un oggetto).
+     Epoca: anno o periodo, stagione; tecnologie presenti o assenti. -->
+- Luogo:
+- Epoca:
+
+## Regole del libro
+
+<!-- Mai: ciò che non deve succedere in nessuna pagina (un personaggio che muore, un tema trattato in
+     un certo modo, un'informazione rivelata prima del tempo). Torna: motivi, oggetti o frasi che devono
+     ricomparire (dove, quante volte). -->
+- Mai:
+- Torna:
+
+## Voce scelta e ambientazione
+
+<!-- Voce dalla banca: lo slug di una voce PRONTA della banca-voci (zb voce lista; zb voce verifica <slug>).
+     Ambientazione: regola solo il dialetto della voce (una città o una regione, oppure «altro»), senza
+     toccare il resto della voce. Con questi due campi «zb nuovo» scrive in libro.yaml il blocco
+     «voce: {slug, ambientazione}». Lasciali vuoti per un libro senza voce della banca. -->
+Voce dalla banca:
+Ambientazione:
+
 ## Direttive
 
 <!-- Regole che il motore trasforma da solo in libro.yaml e nel manuale di stile.
