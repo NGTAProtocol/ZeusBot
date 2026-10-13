@@ -10,6 +10,9 @@ Legge <libro>/05-output/<titolo>-completo.md (prima: compila.py) e scrive
 - pagine iniziali (frontespizio, copyright, sommario) senza numero e in numero pari,
   così il corpo comincia su una pagina dispari;
 - sommario con le pagine reali; numeri di pagina stampati con PyMuPDF al piede;
+- formato esatto: Chromium arrotonda la pagina (5,83 × 8,27" diventa 5,833 × 8,263"); ogni pagina
+  è riportata con PyMuPDF al trim di libro.yaml (più il bleed di dati/kdp.yaml, se previsto), senza
+  scalare il contenuto e tenendolo fermo rispetto all'angolo in alto a sinistra;
 - metadati Title, Author, Subject; font sottoinsiemi, senza date di creazione.
 I file di lavoro stanno in una cartella temporanea fuori dal repository.
 """
@@ -91,6 +94,31 @@ def pagine_inizio(pdf, titoli):
     return out
 
 
+def formato_esatto(doc, libro):
+    """Porta ogni pagina al formato esatto in punti PDF: trim di libro.yaml, più il bleed se previsto.
+    Il contenuto non si scala. Resta fermo rispetto all'angolo in alto a sinistra (con il bleed si sposta
+    di un bleed in basso e, sulle pagine pari, a destra, così il trim sta dentro l'area di bleed).
+    MediaBox e CropBox coincidono e partono da 0, 0; TrimBox e BleedBox non si scrivono."""
+    import pymupdf as fitz
+    larg, alt = libro['formato']['pagina_pollici']
+    bleed = comune.kdp()['cartaceo']['bleed_pollici'] if libro['formato'].get('bleed') else 0
+    W, H = (larg + bleed) * 72, (alt + 2 * bleed) * 72
+    for i, pg in enumerate(doc):
+        mb = pg.mediabox
+        # spostamento in coordinate PDF (y verso l'alto): l'alto della pagina passa da mb.y1 a H - bleed
+        dx = (bleed * 72 if i % 2 else 0) - mb.x0
+        dy = (H - bleed * 72) - mb.y1
+        if abs(dx) > 1e-6 or abs(dy) > 1e-6:
+            prima, dopo = doc.get_new_xref(), doc.get_new_xref()
+            for x, s in ((prima, f'q 1 0 0 1 {dx:.4f} {dy:.4f} cm\n'), (dopo, '\nQ\n')):
+                doc.update_object(x, '<<>>')
+                doc.update_stream(x, s.encode())
+            cont = ' '.join(f'{x} 0 R' for x in pg.get_contents())
+            doc.xref_set_key(pg.xref, 'Contents', f'[{prima} 0 R {cont} {dopo} 0 R]')
+        pg.set_mediabox(fitz.Rect(0, 0, W, H))
+        pg.set_cropbox(fitz.Rect(0, 0, W, H))
+
+
 def impagina(cartella, libro):
     import pymupdf as fitz
     md_rel = f'05-output/{comune.nome_file(libro["titolo"])}-completo.md'
@@ -137,6 +165,7 @@ def impagina(cartella, libro):
         n_iniz = doc.page_count
         with fitz.open(pdf_corpo) as dc:
             doc.insert_pdf(dc)
+        formato_esatto(doc, libro)
         font = os.path.join(comune.radice_motore(), 'stampa', 'font', 'EBGaramond-Regular.ttf')
         basso_pt = m.get('basso', 20) / MM * 72
         for i in range(n_iniz, doc.page_count):

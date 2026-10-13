@@ -93,6 +93,15 @@ stesse versioni. Per questo le prove non fissano lo sha256 del PDF, ma controlla
 
   Un margine sotto il minimo KDP fa fallire la prova anche se è dentro la tolleranza.
 
+### Formato esatto delle pagine
+
+Chromium arrotonda il formato della pagina: i formati che non sono multipli di 1/96″ escono
+sbagliati di qualche decimo di millimetro (A5, 5,83 × 8,27″, diventa 5,833 × 8,263″).
+`impagina.py` (`formato_esatto`) riporta ogni pagina al trim di `libro.yaml`, più il bleed di
+`dati/kdp.yaml` se previsto, senza scalare il contenuto. MediaBox e CropBox coincidono e partono
+da 0, 0. Il contenuto resta fermo rispetto all'angolo in alto a sinistra; con il bleed scende di un
+bleed e, sulle pagine pari, si sposta di un bleed a destra.
+
 ### LanguageTool
 
 Il motore non usa un server né un pacchetto Python. Lancia la riga di comando di LanguageTool
