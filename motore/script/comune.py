@@ -420,6 +420,23 @@ def in_elenco(unita, elenco):
     return False
 
 
+def applica_eccezioni(risultati, libro):
+    """Gli AVVISO con un'eccezione motivata in libro.yaml (stile.eccezioni: {unita, controllo, motivo})
+    diventano esito ECCEZIONE, con il motivo nel dettaglio. I KO restano KO."""
+    ecc = (libro.get('stile') or {}).get('eccezioni') or []
+    for r in risultati:
+        if r['esito'] != 'AVVISO':
+            continue
+        for e in ecc:
+            c = str(e.get('controllo') or '')
+            if str(e.get('unita', '')).lower() == str(r['unita']).lower() and (
+                    r['controllo'] == c or r['controllo'].split(':')[0] == c):
+                r['esito'] = 'ECCEZIONE'
+                r['dettaglio'] = f'{r["dettaglio"]} — eccezione: {e.get("motivo", "")}'.strip(' —')
+                break
+    return risultati
+
+
 def tabella_md(percorso):
     """Righe di una tabella Markdown come dizionari {intestazione: cella}."""
     if not os.path.isfile(percorso):

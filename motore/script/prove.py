@@ -2059,9 +2059,32 @@ def titoli_tempi_eta_push(A):
           A['f_push'], ' / '.join(risultati), sez)
 
 
+# ---------------------------------------------------------------- eccezioni motivate e richiami ammessi
+
+def eccezioni_e_richiami(A):
+    import capitolo
+    import riciclo
+    sez = 'eccezioni e richiami'
+    for chiave, prova in A['prove'].items():
+        Lm = copia_libro('mini-libro')
+        md = os.path.join(Lm, '04-manoscritto')
+        for f in ('01-la-farmacia.md', '03-la-stazione.md'):
+            open(os.path.join(md, f), 'a', encoding='utf-8').write('\n' + A['frase'] + '\n')
+        py = os.path.join(Lm, 'libro.yaml')
+        lb = yaml.safe_load(open(py, encoding='utf-8'))
+        if prova.get('stile'):
+            lb['stile'] = prova['stile']
+        open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+        cartella, libro, profilo = comune.carica_libro(Lm)
+        ric = [r['esito'] for r in riciclo.controlla_libro(cartella, libro) if r['controllo'] == 'riciclo:unita_precedenti']
+        _, out = capitolo.controlla(cartella, libro, profilo, '3')
+        ko = [r['esito'] for r in out if r['controllo'] == 'parole_minimo']
+        esito('riciclo.py / capitolo.py', f'{chiave}: riciclo | parole_minimo del cap. 3', prova['atteso'], f'{ric} | {ko}', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_dopo_lotto_38_43': correzioni_dopo_lotto_38_43, 'titoli_tempi_eta_push': titoli_tempi_eta_push}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_dopo_lotto_38_43': correzioni_dopo_lotto_38_43, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami}
 
 
 def main(argv):

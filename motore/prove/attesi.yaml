@@ -663,3 +663,12 @@ titoli_tempi_eta_push:
   e_catena: "2 / True"                                 # prima: la seconda registrava lo sha256 di HEAD
   f_conta: "0 | 0 | True"                              # prima: scriveva 06-diagnostica/conteggio.md
   f_push: "ok: 0 0 / alternativo: 3 3 True / bundle: 4 3 1 True True"
+
+# stile.eccezioni (AVVISO -> ECCEZIONE, KO invariato) e stile.richiami_ammessi (riciclo tra unità).
+# La stessa frase inventata va in coda ai capitoli 1 e 3 del mini-libro giallo (cap. 3 sotto il minimo: KO).
+eccezioni_e_richiami:
+  frase: "Irene guardò la fontana della piazza sotto la pioggia di marzo."
+  prove:
+    senza niente: {atteso: "['AVVISO'] | ['KO']"}
+    richiamo ammesso: {stile: {richiami_ammessi: ["la fontana della piazza sotto la pioggia di marzo"]}, atteso: "[] | ['KO']"}
+    eccezione: {stile: {eccezioni: [{unita: "3", controllo: riciclo, motivo: "eco voluta"}, {unita: "3", controllo: parole_minimo, motivo: "prova: un KO non si scusa"}]}, atteso: "['ECCEZIONE'] | ['KO']"}

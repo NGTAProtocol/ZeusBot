@@ -8,7 +8,8 @@ Le parole si confrontano in minuscolo, senza la punteggiatura ai bordi. Le fines
 consecutive che combaciano formano un solo segmento, riportato con la riga d'inizio.
 Le battute canoniche del manuale (03-architettura/manuale-di-stile.md, voce «Battute canoniche»:
 le frasi tra «» delle righe che la seguono, più rientrate) sono escluse: le loro parole, nel testo
-nuovo e in quello precedente, non combaciano con niente.
+nuovo e in quello precedente, non combaciano con niente. I richiami di libro.yaml (stile.richiami_ammessi)
+sono esclusi allo stesso modo, ma solo nel confronto tra unità dello stesso libro.
 Report: <libro>/06-diagnostica/riciclo.md.
 """
 import os
@@ -103,15 +104,20 @@ def controlla_libro(cartella, libro):
     if libro.get('modalita') == 'riscrittura' and libro.get('testo_precedente'):
         precedente = ngrammi(maschera(gettoni(open(os.path.join(cartella, libro['testo_precedente']),
                                                    encoding='utf-8').read()), canoniche))
+    richiami = [[w for w in (t.strip(BORDI).lower() for t in comune.parole(f)) if w]
+                for f in (libro.get('stile') or {}).get('richiami_ammessi') or []]
     gia_scritti = set()
     for nome, p in comune.unita(cartella, libro):
-        tok = maschera(gettoni(open(p, encoding='utf-8').read()), canoniche)
+        gt = gettoni(open(p, encoding='utf-8').read())
+        tok = maschera(gt, canoniche)
         for riga, testo in segmenti(tok, precedente):
             risultati.append(risultato(nome, 'riciclo:testo_precedente', 'KO', riga, testo))
-        for riga, testo in segmenti(tok, gia_scritti):
+        # i richiami ammessi valgono solo tra unità dello stesso libro, non contro il testo precedente
+        tok_int = maschera(gt, canoniche + richiami)
+        for riga, testo in segmenti(tok_int, gia_scritti):
             risultati.append(risultato(nome, 'riciclo:unita_precedenti', 'AVVISO', riga, testo))
-        gia_scritti |= ngrammi(tok)
-    return risultati
+        gia_scritti |= ngrammi(tok_int)
+    return comune.applica_eccezioni(risultati, libro)
 
 
 def main(argv):

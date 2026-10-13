@@ -181,7 +181,7 @@ def controlla_libro(cartella, libro, profilo):
                     esito = 'KO' if v['modalita'] in ('vieta', 'conta') else 'AVVISO'
                     out.append(risultato(nome, f'voce:{v["id"]}', esito, n,
                                          f'superato il massimo di {v.get("massimo", 0)} nel libro'))
-        esiti[nome] = (met, out)
+        esiti[nome] = (met, comune.applica_eccezioni(out, libro))
     return esiti
 
 
