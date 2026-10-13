@@ -23,3 +23,17 @@ Controllo finale sui nomi reali (titoli, autori, personaggi, luoghi, nome del re
 dei libri, presi dai file dei libri disponibili in sessione; la lista non è salvata nel repository):
 0 occorrenze di riferimenti. Restano 3 parole comuni usate nel loro senso normale nei mini-libri
 inventati (una lanterna, due «a mezzogiorno»): coincidono solo per caso con un nome proprio di un libro.
+
+## Passo D: archivio e rimozione di `ghimoney/`
+
+`ghimoney/` era un progetto separato (misura dell'impatto di repository open-source, 80 file), non il motore.
+
+- Archivio: ramo `archivio/ghimoney` su origin, creato dal commit 572f40f, con `ghimoney/` per intero.
+- Copia fuori dal repository, nello scratchpad della sessione: vive solo nel container. La copia che
+  conta è il ramo su origin.
+- Verifica prima della rimozione, con un manifesto sha256 per ciascuna delle tre fonti (origine su disco,
+  copia, ramo su origin): 80 file in ognuna, manifesti identici riga per riga. Nessun file non tracciato
+  dentro `ghimoney/`.
+- Rimozione: `ghimoney/` tolto dal ramo del motore; da `.gitignore` tolta la riga `.ghimoney/`, che
+  serviva solo a quel progetto.
+- Per recuperarlo: `git checkout origin/archivio/ghimoney -- ghimoney`.
