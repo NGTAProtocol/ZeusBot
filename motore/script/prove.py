@@ -1064,8 +1064,9 @@ def passo_7(A):
           'sì' if os.path.isfile(os.path.join(L, '06-diagnostica', 'controllo-ortografico.md')) else 'no', sez)
     lt = os.environ.get('ZB_LANGUAGETOOL')
     if not lt:
-        saltata('ortografia.py', 'LanguageTool sui refusi inventati', 'ZB_LANGUAGETOOL non impostata', sez)
-        saltata('ortografia.py', 'LanguageTool: livello eseguito nel report', 'ZB_LANGUAGETOOL non impostata', sez)
+        motivo = 'LanguageTool assente (ZB_LANGUAGETOOL non impostata)'
+        saltata('ortografia.py', 'LanguageTool sui refusi inventati', motivo, sez)
+        saltata('ortografia.py', 'LanguageTool: livello eseguito nel report', motivo, sez)
         return
     L = copia_libro('mini-libro')
     with open(os.path.join(L, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8') as f:
@@ -2106,6 +2107,12 @@ def main(argv):
     ok = sum(1 for r in righe if r[5] == 'OK')
     contate = [r for r in righe if r[5] != 'SALTATA']
     print(f'\nProve: {ok}/{len(contate)} OK; saltate: {len(righe) - len(contate)} (non contate nel totale)')
+    for motivo in sorted({r[4] for r in righe if r[5] == 'SALTATA'}):
+        n = sum(1 for r in righe if r[5] == 'SALTATA' and r[4] == motivo)
+        print(f'saltate: {n}, {motivo}')
+        if motivo.startswith('LanguageTool assente'):
+            print('  per eseguirle: installare LanguageTool come in motore/README.md, sezione «LanguageTool»,'
+                  ' e impostare ZB_LANGUAGETOOL')
     for nome, codice, riga in finali:
         print(f'{nome} su motore/: {"OK" if codice == 0 else "KO"} — {riga}')
     tutto_ok = ok == len(contate) and all(c == 0 for _, c, _ in finali)

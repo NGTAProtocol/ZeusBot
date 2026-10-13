@@ -68,3 +68,30 @@ Si lanciano con `python3 motore/zb <comando> …`; il libro è sempre un percors
 
 Altri comandi: `zb verifica KDP fatta [AAAA-MM-GG]` (anche `stato`, `controlla`), `zb riciclo <libro>`,
 `zb separazione`, `zb recinto`, `zb profili`, `zb aiuto`.
+
+## Ambiente
+
+Un container nuovo non conserva quello che è stato installato nelle sessioni precedenti. Prima di
+`zb prove` o di `zb ortografia` servono:
+
+- Python: `pip install pymupdf markdown` (PyMuPDF 1.28.2 negli attesi del passo 3);
+- Hunspell con il dizionario italiano: `apt-get install hunspell hunspell-it`;
+- Node con Playwright e Chromium (già presenti nel container: `/opt/pw-browsers`), `pdfinfo` e `pdftotext`.
+
+### LanguageTool
+
+Il motore non usa un server né un pacchetto Python. Lancia la riga di comando di LanguageTool
+(`org.languagetool.commandline.Main`) con `java -cp <cartella>/*`, e la cartella dei `.jar` la legge
+da `ZB_LANGUAGETOOL`. Senza questa variabile, `zb ortografia` salta il livello (b) e `zb prove`
+salta 2 prove, con il motivo «LanguageTool assente».
+
+Installazione (Java 21 e Maven già presenti nel container):
+
+1. In una cartella temporanea fuori dal repository (per esempio lo scratchpad della sessione), un
+   `pom.xml` con le dipendenze `org.languagetool:languagetool-commandline` e `org.languagetool:language-it`,
+   versione 6.8.
+2. `mvn -q -B dependency:copy-dependencies -DoutputDirectory=lib`: scarica da Maven Central 143 file, 240 MB.
+3. `export ZB_LANGUAGETOOL=<cartella temporanea>/lib`.
+
+Non va nel repository e non si scarica da languagetool.org. Se Maven Central risponde 403 o 429,
+le 2 prove restano saltate. Dettagli in `PROCEDURA.md`, sezione «Ortografia».
