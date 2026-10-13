@@ -21,8 +21,8 @@ Suite dopo la sostituzione: **424/424 OK**. Le prove sostituite danno lo stesso 
 
 Controllo finale sui nomi reali (titoli, autori, personaggi, luoghi, nome del repository e dei rami
 dei libri, presi dai file dei libri disponibili in sessione; la lista non è salvata nel repository):
-0 occorrenze di riferimenti. Restano 3 parole comuni usate nel loro senso normale nei mini-libri
-inventati (una lanterna, due «a mezzogiorno»): coincidono solo per caso con un nome proprio di un libro.
+0 occorrenze di riferimenti. Restano 3 parole comuni della lingua, usate nel loro senso normale nei
+testi dei mini-libri inventati: coincidono solo per caso con un nome proprio di un libro.
 
 ## Passo D: archivio e rimozione di `ghimoney/`
 
