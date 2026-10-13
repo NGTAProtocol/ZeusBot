@@ -299,3 +299,8 @@ picture img { display: block; max-width: 100%; height: auto; }
 .work__meta { color: var(--c-muted); font-size: var(--step--1); }
 .works__pending { grid-column: 1 / -1; color: var(--c-muted); max-width: var(--measure); border-top: 1px solid color-mix(in srgb, var(--c-ink) 30%, transparent); padding-top: var(--s4); }
 .chapter__figure { margin: 0 0 var(--s4); display: grid; gap: var(--s2); }
+/* con un ritratto nell'hero, su mobile nome e "Menu" stanno sopra la foto: fondo leggibile */
+@media (max-width: 860px) {
+  body:has(.hero--photo) .nav__brand, body:has(.hero--photo) .nav__menu-btn { background: color-mix(in srgb, var(--c-bg) 90%, transparent); }
+  body:has(.hero--photo) .nav__brand { padding: var(--s2) var(--s3); border-radius: calc(var(--radius) + 20px); }
+}

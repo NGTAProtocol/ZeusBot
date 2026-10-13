@@ -1,11 +1,27 @@
 [
   {
+    "id": "artista-a-base",
+    "slug": "artista",
+    "config": "a",
+    "level": "base",
+    "signature": "css:turn",
+    "ms": 3830
+  },
+  {
+    "id": "artista-a-cinematic",
+    "slug": "artista",
+    "config": "a",
+    "level": "cinematic",
+    "signature": "css:turn",
+    "ms": 2638
+  },
+  {
     "id": "fornace-lume-baseline-base",
     "slug": "fornace-lume",
     "config": "baseline",
     "level": "base",
     "signature": null,
-    "ms": 2153
+    "ms": 2116
   },
   {
     "id": "fornace-lume-baseline-cinematic",
@@ -13,7 +29,7 @@
     "config": "baseline",
     "level": "cinematic",
     "signature": null,
-    "ms": 2577
+    "ms": 3225
   },
   {
     "id": "fornace-lume-a-base",
@@ -21,7 +37,7 @@
     "config": "a",
     "level": "base",
     "signature": "css:drip",
-    "ms": 1913
+    "ms": 2973
   },
   {
     "id": "fornace-lume-a-cinematic",
@@ -29,7 +45,7 @@
     "config": "a",
     "level": "cinematic",
     "signature": "css:drip",
-    "ms": 2968
+    "ms": 3011
   },
   {
     "id": "fornace-lume-b-base",
@@ -37,7 +53,7 @@
     "config": "b",
     "level": "base",
     "signature": "3d:blob",
-    "ms": 1920
+    "ms": 2051
   },
   {
     "id": "fornace-lume-b-cinematic",
@@ -45,7 +61,7 @@
     "config": "b",
     "level": "cinematic",
     "signature": "3d:blob",
-    "ms": 3593
+    "ms": 3022
   },
   {
     "id": "fornace-lume-c-base",
@@ -53,7 +69,7 @@
     "config": "c",
     "level": "base",
     "signature": "css:layers",
-    "ms": 1833
+    "ms": 1994
   },
   {
     "id": "fornace-lume-c-cinematic",
@@ -61,7 +77,7 @@
     "config": "c",
     "level": "cinematic",
     "signature": "css:layers",
-    "ms": 2465
+    "ms": 2901
   },
   {
     "id": "nodo-sicuro-baseline-base",
@@ -69,7 +85,7 @@
     "config": "baseline",
     "level": "base",
     "signature": null,
-    "ms": 1661
+    "ms": 1911
   },
   {
     "id": "nodo-sicuro-baseline-cinematic",
@@ -77,7 +93,7 @@
     "config": "baseline",
     "level": "cinematic",
     "signature": null,
-    "ms": 2838
+    "ms": 3063
   },
   {
     "id": "nodo-sicuro-a-base",
@@ -85,7 +101,7 @@
     "config": "a",
     "level": "base",
     "signature": "css:lattice",
-    "ms": 1900
+    "ms": 2412
   },
   {
     "id": "nodo-sicuro-a-cinematic",
@@ -93,7 +109,7 @@
     "config": "a",
     "level": "cinematic",
     "signature": "css:lattice",
-    "ms": 2620
+    "ms": 2652
   },
   {
     "id": "nodo-sicuro-b-base",
@@ -101,7 +117,7 @@
     "config": "b",
     "level": "base",
     "signature": "css:lattice",
-    "ms": 1863
+    "ms": 2551
   },
   {
     "id": "nodo-sicuro-b-cinematic",
@@ -109,7 +125,7 @@
     "config": "b",
     "level": "cinematic",
     "signature": "css:lattice",
-    "ms": 2448
+    "ms": 3121
   },
   {
     "id": "nodo-sicuro-c-base",
@@ -117,7 +133,7 @@
     "config": "c",
     "level": "base",
     "signature": "css:lattice",
-    "ms": 1802
+    "ms": 3894
   },
   {
     "id": "nodo-sicuro-c-cinematic",
@@ -125,7 +141,7 @@
     "config": "c",
     "level": "cinematic",
     "signature": "css:lattice",
-    "ms": 2561
+    "ms": 2796
   },
   {
     "id": "quota-2100-baseline-base",
@@ -133,7 +149,7 @@
     "config": "baseline",
     "level": "base",
     "signature": null,
-    "ms": 1960
+    "ms": 1963
   },
   {
     "id": "quota-2100-baseline-cinematic",
@@ -141,7 +157,7 @@
     "config": "baseline",
     "level": "cinematic",
     "signature": null,
-    "ms": 2749
+    "ms": 3556
   },
   {
     "id": "quota-2100-a-base",
@@ -149,7 +165,7 @@
     "config": "a",
     "level": "base",
     "signature": "3d:terrain",
-    "ms": 1852
+    "ms": 2717
   },
   {
     "id": "quota-2100-a-cinematic",
@@ -157,7 +173,7 @@
     "config": "a",
     "level": "cinematic",
     "signature": "3d:terrain",
-    "ms": 4004
+    "ms": 3727
   },
   {
     "id": "quota-2100-b-base",
@@ -165,7 +181,7 @@
     "config": "b",
     "level": "base",
     "signature": "css:contours",
-    "ms": 2021
+    "ms": 3273
   },
   {
     "id": "quota-2100-b-cinematic",
@@ -173,7 +189,7 @@
     "config": "b",
     "level": "cinematic",
     "signature": "css:contours",
-    "ms": 2930
+    "ms": 2739
   },
   {
     "id": "quota-2100-c-base",
@@ -181,7 +197,7 @@
     "config": "c",
     "level": "base",
     "signature": "css:layers",
-    "ms": 1985
+    "ms": 2651
   },
   {
     "id": "quota-2100-c-cinematic",
@@ -189,6 +205,6 @@
     "config": "c",
     "level": "cinematic",
     "signature": "css:layers",
-    "ms": 2767
+    "ms": 2160
   }
 ]
