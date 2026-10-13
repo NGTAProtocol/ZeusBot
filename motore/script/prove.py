@@ -263,6 +263,56 @@ def passo_2(A):
 
 # ---------------------------------------------------------------- passo 3
 
+# Tolleranza sul confronto dei margini con l'atteso (pollici, in più o in meno). Il render di Chromium
+# sposta di qualche millesimo il bordo del testo da un container all'altro, a parità di versioni
+# (Playwright 1.56.1, PyMuPDF 1.28.2, font di stampa/font): differenze osservate sul romance
+# 0,665/0,667 (interno) e 0,624/0,625 (esterno). La tolleranza vale solo contro l'atteso: sotto il
+# minimo KDP il controllo fallisce comunque. Non allargarla senza l'autore.
+TOLLERANZA_MARGINI = 0.005
+
+
+def minimi_kdp(libro, pagine):
+    """{margine: minimo KDP in pollici}, da dati/kdp.yaml (fonte: KDP Help Center, vedi l'intestazione
+    del file). Interno: fascia per numero di pagine; esterno, alto e basso: minimo esterno, con o senza bleed."""
+    _, esterni = comune.kdp_margini()
+    est = esterni['con_bleed' if libro['formato'].get('bleed') else 'senza_bleed']
+    return {'interno': comune.kdp_interno_pollici(pagine), 'esterno': est, 'alto': est, 'basso': est}
+
+
+def controllo_margine(atteso, misurato, minimo):
+    """(atteso, ottenuto) per esito(): uguali se il margine è entro la tolleranza e non sotto il minimo KDP."""
+    regola = f'{atteso} ±{TOLLERANZA_MARGINI}, minimo KDP {minimo}'
+    difetti = []
+    if abs(misurato - atteso) > TOLLERANZA_MARGINI + 1e-9:
+        difetti.append(f'{misurato}: fuori tolleranza')
+    if misurato < minimo:
+        difetti.append(f'{misurato}: sotto il minimo KDP {minimo}')
+    return regola, regola if not difetti else '; '.join(difetti)
+
+
+def struttura_pdf(pdf, libro):
+    """Struttura del PDF confrontabile tra container (al posto dello sha256 del file)."""
+    import pymupdf
+    import verifica_pdf
+    k = comune.kdp()['cartaceo']
+    larg, alt = libro['formato']['pagina_pollici']
+    if libro['formato'].get('bleed'):
+        larg, alt = larg + k['bleed_pollici'], alt + 2 * k['bleed_pollici']
+    fonts = verifica_pdf.pdffonts(pdf)
+    with pymupdf.open(pdf) as d:
+        formati = sorted({(round(p.rect.width / 72, 3), round(p.rect.height / 72, 3)) for p in d})
+        testo = ' '.join(' '.join(p.get_text('text').split()) for p in d)
+        meta = {'Title': d.metadata.get('title'), 'Author': d.metadata.get('author')}
+        pagine = d.page_count
+    return {'pagine': pagine,
+            'formato_pollici': formati if formati != [(round(larg, 3), round(alt, 3))] else 'uguale al trim KDP',
+            'font_non_incorporati': sum(1 for f in fonts if not f['incorporato']),
+            'font_type3': sum(1 for f in fonts if f['tipo'] == 'Type 3'),
+            'metadati_come_libro_yaml': meta == {'Title': libro['titolo'], 'Author': libro['autore']},
+            'testo_parole': len(testo.split()),
+            'testo_sha256': hashlib.sha256(testo.encode('utf-8')).hexdigest()}
+
+
 def passo_3(A):
     import hashlib
     import verifica_pdf
@@ -285,15 +335,20 @@ def passo_3(A):
         esegui(os.path.join(S, 'impagina.py'), c)
         secondo = sha(pdf) if os.path.isfile(pdf) else 'assente'
         esito('impagina.py', f'{nome}: due generazioni, stesso sha256', 'sì', 'sì' if primo == secondo else 'no', sez)
-        esito('impagina.py', f'{nome}: sha256 del PDF', att['pdf_sha256'], primo, sez)
+        esito('impagina.py', f'{nome}: struttura del PDF (pagine, formato, font, metadati, testo)',
+              {'pagine': att['struttura']['pagine'], 'formato_pollici': 'uguale al trim KDP', 'font_non_incorporati': 0,
+               'font_type3': 0, 'metadati_come_libro_yaml': True, 'testo_parole': att['struttura']['testo_parole'],
+               'testo_sha256': att['struttura']['testo_sha256']},
+              struttura_pdf(pdf, libro) if os.path.isfile(pdf) else 'assente', sez)
         misure, ris = verifica_pdf.verifica(cart, libro, pdf)
         esito('verifica_pdf.py', f'{nome}: pagine', att['pagine'], misure['pagine'], sez)
         esito('verifica_pdf.py', f'{nome}: metadati Title e Author', att['metadati'],
               {'Title': misure['Title'], 'Author': misure['Author']}, sez)
         esito('verifica_pdf.py', f'{nome}: font Type3', 0, misure['font_type3'], sez)
         esito('verifica_pdf.py', f'{nome}: font non incorporati', 0, misure['font_non_incorporati'], sez)
+        minimi = minimi_kdp(libro, misure['pagine'])
         for k, v in att['margini'].items():
-            esito('verifica_pdf.py', f'{nome}: margine {k}', v, misure[f'margine_{k}'], sez)
+            esito('verifica_pdf.py', f'{nome}: margine {k}', *controllo_margine(v, misure[f'margine_{k}'], minimi[k]), sez)
         for k, v in att['soglie_kdp'].items():
             esito('verifica_pdf.py', f'{nome}: soglia KDP margine {k}', v, misure[f'margine_{k}_soglia'], sez)
         esito('verifica_pdf.py', f'{nome}: sommario contro pagine reali', att['sommario'], misure['sommario'], sez)

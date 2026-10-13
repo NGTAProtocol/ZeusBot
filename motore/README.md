@@ -78,6 +78,21 @@ Un container nuovo non conserva quello che è stato installato nelle sessioni pr
 - Hunspell con il dizionario italiano: `apt-get install hunspell hunspell-it`;
 - Node con Playwright e Chromium (già presenti nel container: `/opt/pw-browsers`), `pdfinfo` e `pdftotext`.
 
+### PDF nelle prove (passo 3)
+
+Il render di Chromium cambia di qualche millesimo di pollice da un container all'altro, anche con le
+stesse versioni. Per questo le prove non fissano lo sha256 del PDF, ma controllano:
+
+- la struttura: pagine, formato di ogni pagina uguale al trim di `libro.yaml` (più il bleed, se previsto),
+  font tutti incorporati e nessun Type3 (requisito KDP), Title e Author uguali a `libro.yaml`, testo
+  estratto con PyMuPDF uguale all'atteso;
+- i margini, con due condizioni:
+  - entro ±0,005″ dall'atteso (`TOLLERANZA_MARGINI` in `script/prove.py`; non si allarga senza l'autore);
+  - mai sotto i minimi KDP di `dati/kdp.yaml`: interno secondo il numero di pagine; esterno, alto e
+    basso secondo il bleed.
+
+  Un margine sotto il minimo KDP fa fallire la prova anche se è dentro la tolleranza.
+
 ### LanguageTool
 
 Il motore non usa un server né un pacchetto Python. Lancia la riga di comando di LanguageTool

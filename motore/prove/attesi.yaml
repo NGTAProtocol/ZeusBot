@@ -159,14 +159,17 @@ passo_2:
 
 passo_3:
   # PDF dei due mini-libri generati dal motore (compila.py + impagina.py), verificati con verifica_pdf.py.
-  # Lo sha256 del PDF è fissato perché due generazioni consecutive danno lo stesso valore
-  # (Chromium di Playwright 1.56.1, PyMuPDF 1.28.2, font di stampa/font/FONTI.yaml).
+  # Nessuno sha256 del PDF: cambia da un container all'altro a parità di versioni (Chromium di
+  # Playwright 1.56.1, PyMuPDF 1.28.2, font di stampa/font/FONTI.yaml). Al suo posto la struttura:
+  # pagine, formato uguale al trim KDP di libro.yaml, font tutti incorporati e nessun Type3, Title e
+  # Author uguali a libro.yaml, testo estratto con PyMuPDF (spazi normalizzati: numero di parole e sha256).
+  # Margini: atteso ±0,005" (TOLLERANZA_MARGINI in prove.py) e mai sotto il minimo KDP di dati/kdp.yaml.
   mini-libro:
     md_sha256: "2324fc633819fa46b08b111465e3a9ab5267327a131bf744593852d46a0a9daf"
-    pdf_sha256: "cecd5860e1c3a46ff15adbe1901ac254fe7bd8ae1695c8e91c27d64c5b65c884"
+    struttura: {pagine: 16, testo_parole: 2737, testo_sha256: "2d1a2829cd8c6cae6a3cc08bcacec22abf1706b8ce5d4af2acb7520fdc17fad2"}
     pagine: 16                    # 4 iniziali senza numero + 12 numerate
     metadati: {Title: "Prova di stampa", Author: "Autore di Prova"}
-    margini:                      # minimi misurati (pollici); interno a sinistra sulle dispari, a destra sulle pari
+    margini:                      # minimi misurati (pollici), ±0,005; interno a sinistra sulle dispari, a destra sulle pari
       interno: 0.625
       esterno: 0.625
       alto: 0.798
@@ -180,7 +183,7 @@ passo_3:
     codice: 0
   mini-libro-romance:
     md_sha256: "f853e720bf4d8850b1e1f4caa79226724f7d1fc0b2b4d9cd112a17ac95dd2df4"
-    pdf_sha256: "9e54c302eb0f153f7daf9cd5e10f9a405956da3f176a51d240b86a0f77065fde"
+    struttura: {pagine: 23, testo_parole: 4555, testo_sha256: "f621d19fefde21f911750d40d85fe84cfc9b37f6051053c87baf279eb92d44bd"}
     pagine: 23                    # 4 iniziali + 19 numerate
     metadati: {Title: "Prova d'inchiostro", Author: "Autrice di Prova"}
     margini:                      # interno scelto 17 mm, esterno 16 mm: margini a specchio
