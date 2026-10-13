@@ -10,7 +10,12 @@ Uso: python3 -B nuovo.py <percorso-briefing>
   03-architettura/manuale-di-stile.md, scaletta.md, piano-parole.md, e le cartelle standard.
   Le regole (tetti, vietati, vincoli, lunghezze, chiusure) vanno in libro.yaml e nel manuale
   senza riscriverle a mano; i contenuti narrativi li scrive Claude Code al gate «documenti».
-Legge solo motore/ e la cartella del libro.
+Il libro nasce solo in <repo>/libri/<slug>/ su un ramo di libro: rifiutato (prima di creare
+qualsiasi cosa) se la cartella è dentro motore/, è la radice del repository, o il ramo è «motore».
+Unica eccezione: le prove della suite (ZB_PROVE=1) usano cartelle temporanee fuori da libri/, ma
+restano rifiutate dentro motore/, nella radice e sul ramo «motore».
+Legge solo motore/ e la cartella del libro; dopo la nascita in libri/<slug>/ imposta il libro
+attivo (libri/libro-attivo.md, operazione di servizio per hook_recinto.py).
 """
 import datetime
 import os
@@ -22,6 +27,7 @@ import yaml
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
+import hook_recinto  # noqa: E402
 
 GATE_PREDEFINITI = ['documenti', 'pagina_campione', 'primi_capitoli']
 SIGLE = {'gancio_domanda': ['D', 'R', 'P', 'X'], 'gesto_oggetto': ['G', 'O', 'B', 'I'],
@@ -119,6 +125,25 @@ def cartella_dal_briefing(percorso):
     if os.path.basename(d) == '00-progetto' and os.path.basename(p) == 'briefing.md':
         return os.path.dirname(d)
     return d
+
+
+def controlla_posizione(cartella):
+    """Radice del repository se la cartella è <repo>/libri/<slug>/ su un ramo di libro (None nelle prove)."""
+    c = os.path.realpath(cartella)
+    rad = hook_recinto.radice(c)
+    regola = 'Il libro nasce solo in libri/<slug>/ su un ramo di libro.'
+    if comune.dentro(comune.radice_motore(), c) or (rad and comune.dentro(os.path.join(rad, 'motore'), c)):
+        raise comune.ErroreMotore(f'Libro rifiutato: {c} è dentro motore/, che resta sempre pulito. {regola}')
+    if rad and c == rad:
+        raise comune.ErroreMotore(f'Libro rifiutato: {c} è la radice del repository. {regola}')
+    if rad and comune.ramo(rad) == 'motore':
+        raise comune.ErroreMotore('Libro rifiutato: il ramo corrente è «motore», che non contiene mai un libro. '
+                                  f'Passa a un ramo di libro. {regola}')
+    if os.environ.get('ZB_PROVE') == '1':
+        return None
+    if not rad or os.path.dirname(c) != os.path.join(rad, 'libri'):
+        raise comune.ErroreMotore(f'Libro rifiutato: {c} non è libri/<slug>/ del repository. {regola}')
+    return rad
 
 
 # ---------------------------------------------------------------- generazione
@@ -384,6 +409,7 @@ def genera_piano(libro, n_cap):
 
 def crea(percorso_briefing):
     cartella = cartella_dal_briefing(percorso_briefing)
+    rad = controlla_posizione(cartella)
     if os.path.exists(os.path.join(cartella, 'libro.yaml')):
         raise comune.ErroreMotore(f'C\'è già un libro in {cartella}: nuovo.py non sovrascrive un libro esistente')
     b = leggi_briefing(percorso_briefing)
@@ -422,6 +448,8 @@ def crea(percorso_briefing):
     errori = comune.controlla_struttura(cartella, libro['modalita'])
     if errori:
         raise comune.ErroreMotore('Struttura del libro non conforme a dati/struttura-libro.yaml:\n- ' + '\n- '.join(errori))
+    if rad:
+        hook_recinto.imposta_libro_attivo(rad, os.path.basename(cartella))
     return cartella, n_cap
 
 

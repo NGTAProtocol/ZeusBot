@@ -24,6 +24,7 @@ import comune  # noqa: E402
 
 M = comune.radice_motore()
 S = os.path.join(M, 'script')
+os.environ['ZB_PROVE'] = '1'   # nuovo.py: libri di prova fuori da libri/<slug>/ (mai in motore/ né sul ramo motore)
 ENV = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
 TMP = tempfile.mkdtemp(prefix='zb-prove-')
 righe = []
@@ -2359,9 +2360,49 @@ def voce(A):
           f'{"voce dalla banca" in b["campi"] and "ambientazione" in b["campi"]} / {b["personaggi"]}', sez)
 
 
+def recinto_libro(A):
+    """Libro inventato: zb nuovo rifiutato dentro motore/ e sul ramo motore; hook di blocco."""
+    import json
+    sez = 'recinto libro'
+    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
+    briefing = open(os.path.join(M, 'prove', 'briefing', 'briefing-giallo.md'), encoding='utf-8').read()
+
+    def repo(ramo):
+        r = os.path.join(tempfile.mkdtemp(dir=TMP), 'repo')
+        os.makedirs(r)
+        subprocess.run(['git', 'init', '-q', r], capture_output=True)
+        subprocess.run(['git', '-C', r, 'checkout', '-q', '-b', ramo], capture_output=True)
+        return r
+
+    def nuovo_in(r, rel):
+        L = os.path.join(r, rel)
+        os.makedirs(L)
+        open(os.path.join(L, 'briefing.md'), 'w', encoding='utf-8').write(briefing)
+        p = subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), 'nuovo', os.path.join(L, 'briefing.md')],
+                           cwd=r, env=E, capture_output=True, text=True)
+        return f'{p.returncode} / {A["messaggio_" + rel.split("/")[0]] in p.stderr} / {os.listdir(L)}'
+
+    esito('nuovo.py', 'libro inventato dentro motore/: rifiutato, niente creato', A['dentro_motore'],
+          nuovo_in(repo('libro-prova'), 'motore/giallo'), sez)
+    esito('nuovo.py', 'libro inventato in libri/<slug>/ sul ramo motore: rifiutato, niente creato', A['ramo_motore'],
+          nuovo_in(repo('motore'), 'libri/giallo'), sez)
+    r = repo('libro-prova')
+    os.makedirs(os.path.join(r, 'libri', 'giallo'))
+    open(os.path.join(r, 'libri', 'libro-attivo.md'), 'w', encoding='utf-8').write('giallo\n')
+
+    def hook(rel):
+        dati = json.dumps({'tool_name': 'Write', 'cwd': r, 'tool_input': {'file_path': os.path.join(r, rel)}})
+        p = subprocess.run([sys.executable, '-B', os.path.join(S, 'hook_recinto.py')], input=dati,
+                           env=dict(E, CLAUDE_PROJECT_DIR=r), capture_output=True, text=True)
+        return f'{p.returncode} {"RECINTO" in p.stderr}'
+
+    esito('hook_recinto.py', 'Write fuori dal libro attivo (motore/) / dentro libri/<slug>/', A['hook'],
+          f'{hook("motore/nota.md")} / {hook("libri/giallo/02-bibbia/nota.md")}', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro}
 
 
 def main(argv):

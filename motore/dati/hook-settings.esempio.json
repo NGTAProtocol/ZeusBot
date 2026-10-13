@@ -7,7 +7,10 @@
     "PreToolUse": [
       { "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
         "hooks": [ { "type": "command",
-          "command": "python3 -B \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_manoscritto.py" } ] }
+          "command": "python3 -B \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_manoscritto.py" } ] },
+      { "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [ { "type": "command",
+          "command": "python3 -B \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_recinto.py" } ] }
     ]
   }
 }

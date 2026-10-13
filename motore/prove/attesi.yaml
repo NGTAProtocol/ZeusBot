@@ -711,3 +711,10 @@ voce:
   divieti_senza_voce: "[]"
   divieti_senza_banca: "[]"
   divieti_con_voce: "['voce:voce-di-prova:dunque_dunque|AVVISO', 'voce:voce-di-prova:oltremodo|AVVISO', 'voce:voce-di-prova:vecchia_bottega|AVVISO']"
+
+recinto_libro:
+  messaggio_motore: "è dentro motore/, che resta sempre pulito"
+  messaggio_libri: "il ramo corrente è «motore», che non contiene mai un libro"
+  dentro_motore: "2 / True / ['briefing.md']"
+  ramo_motore: "2 / True / ['briefing.md']"
+  hook: "2 True / 0 False"
