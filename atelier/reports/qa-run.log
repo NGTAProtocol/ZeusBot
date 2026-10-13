@@ -7,3 +7,4 @@ fornace-lume-baseline-cinematic: LH mob P78 A100 S100 (LCP 2190ms TBT 871ms) | d
 fornace-lume-c-base: LH mob P100 A100 S100 (LCP 1059ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
 fornace-lume-c-cinematic: LH mob P99 A100 S100 (LCP 1761ms TBT 70ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
 nodo-sicuro-a-base: LH mob P92 A100 S100 (LCP 1357ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+nodo-sicuro-a-cinematic: LH mob P72 A100 S100 (LCP 2492ms TBT 1241ms) | desk P88 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE NON RAGGIUNTE
