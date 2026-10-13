@@ -71,6 +71,13 @@ Altri comandi: `zb verifica KDP fatta [AAAA-MM-GG]` (anche `stato`, `controlla`)
 
 ## Ambiente
 
+### Solo il motore nel repository
+
+Nel ramo del motore stanno solo codice, configurazione, dati KDP e i mini-libri inventati di `prove/`
+(con autori inventati). Nessun manoscritto reale e nessun riferimento a libri reali: niente titoli,
+autori, personaggi, luoghi, frasi o nomi di ramo dei libri, nemmeno nei commenti, nelle prove e negli
+esiti. Le frasi di prova si inventano.
+
 Un container nuovo non conserva quello che è stato installato nelle sessioni precedenti. Prima di
 `zb prove` o di `zb ortografia` servono:
 

@@ -23,7 +23,7 @@ Tutto gira su copie temporanee, cioè repository git con un remoto locale. Il re
 | `PROCEDURA.md` | 185 |
 | `README.md` (aggiornato) | 69 |
 | `zb` | 131 |
-| `CLAUDE.md` (radice di ZeusBot) | 27 |
+| `CLAUDE.md` (radice del repository) | 27 |
 | `prove/briefing/briefing-giallo.md` (inventato) | 48 |
 
 File modificati:

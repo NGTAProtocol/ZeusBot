@@ -1580,13 +1580,13 @@ def adozione_libri_esistenti(A):
           f'{p.returncode} / {yaml.safe_load(open(os.path.join(L, "libro.yaml"), encoding="utf-8"))["titolo"]} / {st["libro"]}', sez)
 
 
-# ---------------------------------------------------------------- correzioni dopo il lotto 11-20
+# ---------------------------------------------------------------- correzioni su interludi, impronte e grafie
 
-def correzioni_lotto_11_20(A):
+def correzioni_interludi_e_grafie(A):
     import continuita
     import fase
     import riciclo
-    sez = 'lotto 11-20'
+    sez = 'interludi e grafie'
     E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
     E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
              GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
@@ -1912,10 +1912,10 @@ def fase_stesura_e_rinomine(A):
           sez)
 
 
-def correzioni_dopo_lotto_38_43(A):
+def correzioni_esclusioni_e_budget(A):
     import capitolo
     import stile
-    sez = 'dopo il lotto 38-43'
+    sez = 'esclusioni e budget'
 
     def mini_con(voci=None, testi=(), interludio=None):
         Lm = copia_libro('mini-libro')
@@ -2140,7 +2140,7 @@ def eccezioni_e_richiami(A):
 
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_lotto_11_20': correzioni_lotto_11_20, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_dopo_lotto_38_43': correzioni_dopo_lotto_38_43, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami}
 
 
 def main(argv):

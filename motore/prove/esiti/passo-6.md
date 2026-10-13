@@ -11,16 +11,16 @@ Prove: `zb prove` **289/289 OK** (12 nuove); separazione OK; recinto OK (44 esec
 - Correzione approvata: `pulizia.py` costruisce il percorso da cancellare con `comune.dentro`, senza
   ricreare cartelle (prima la riga 131 ricreava la cartella appena tolta).
 
-## Audit di ZeusBot (solo elenco, nulla cancellato)
+## Audit del repository (solo elenco, nulla cancellato)
 
-### Radice del ramo di lavoro del motore (con il libro 2)
+### Radice del ramo di lavoro del motore
 
 | Voce | Scopo | Ultimo commit | Dimensione | Candidato alla rimozione |
 |---|---|---|---|---|
 | `.gitignore` | regole git del repository | dd5dc60 2026-09-23 | 4 KB | no |
 | `CLAUDE.md` | regole di avvio delle sessioni | 71fbc62 2026-10-06 | 4 KB | no |
 | `ghimoney/` | progetto separato (analisi repository GitHub) | 28560a6 2026-09-24 | 756 KB | no dal motore: è di un altro progetto; da decidere se tenerlo nei rami dei libri |
-| `libri/` | libri reali, esempi da cui è nato il processo | 7692265 2026-10-01 | 7,1 MB | no (non si tocca) |
+| `libri/` | cartelle dei libri, fuori dal motore | 7692265 2026-10-01 | 7,1 MB | no (non si tocca) |
 | `motore/` | motore editoriale | c3e3964 2026-10-06 | 2,3 MB (font compresi) | no |
 
 ### Rami remoti
@@ -31,16 +31,16 @@ Prove: `zb prove` **289/289 OK** (12 nuove); separazione OK; recinto OK (44 esec
 | `claude/roadmemo-context-review-c9rf26` | sessione chiusa senza modifiche | 28560a6 2026-09-24 | identico al principale | sì: nessun commit proprio (decide l'autore) |
 | `claude/ai-toolkit-reference-setup-b3kel4` | regola .gitignore per un riferimento locale | c047398 2026-09-29 | principale + 1 commit | possibile: un solo commit su .gitignore, da unire o scartare |
 | `claude/manuscript-reader-voice-notes-s0vnee` | app lettore del manoscritto (Android) | 42fa935 2026-09-25 | storia diversa (nato da e7a94cb, prima del principale) | no: progetto a sé |
-| ramo del libro 1 (`…-3f6mfq`) | primo libro reale | d31e84c 2026-10-01 | principale + `libri/` | no |
-| ramo di lavoro del motore (questo ramo, con il libro 2) | secondo libro reale + motore | c3e3964 2026-10-06 | principale + `libri/` + `motore/` + `CLAUDE.md` | no |
+| ramo di un libro | libro | d31e84c 2026-10-01 | principale + `libri/` | no |
+| ramo di lavoro del motore (questo ramo) | motore, insieme a un libro | c3e3964 2026-10-06 | principale + `libri/` + `motore/` + `CLAUDE.md` | no |
 
 ### Cartelle di lavoro nel container (fuori dal repository o non tracciate)
 
 | Cartella | Scopo | Dimensione | Candidato alla rimozione |
 |---|---|---|---|
-| `/home/user/ZeusBot` | checkout principale, ramo del primo libro | 54 MB | no (cartella di sessione) |
-| `/home/user/ZeusBot-mp` | worktree del ramo del motore | 11 MB | no finché si lavora al motore; poi sì (`git worktree remove`) |
-| `/home/user/casa-editrice` | copia in sola lettura di un altro repository | 332 KB | sì a fine lavori |
+| checkout principale | checkout del repository, ramo di un libro | 54 MB | no (cartella di sessione) |
+| worktree del motore | worktree del ramo del motore | 11 MB | no finché si lavora al motore; poi sì (`git worktree remove`) |
+| copia di `casa-editrice` | copia in sola lettura di un altro repository | 332 KB | sì a fine lavori |
 | scratchpad della sessione | file temporanei, LanguageTool (240 MB) | 260 MB | sì a fine sessione |
 | `/tmp/zb-prove-*` (4 cartelle) | resti di prove interrotte | 984 KB | sì |
 

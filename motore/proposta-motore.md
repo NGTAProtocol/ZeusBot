@@ -1443,7 +1443,7 @@ Al gate scrivo: «Consigliata una lettura fuori sessione. Scrivi "prepara per re
 ### C.7 Come il motore arriva ai libri
 
 **Situazione verificata il 2026-10-02 con `git ls-remote --symref origin HEAD`.**
-- Nel repository ZeusBot non esiste un ramo `main`.
+- Nel repository non esiste un ramo `main`.
 - Il ramo principale (HEAD di GitHub) è **`claude/claude-rc-4umw8n`** (ultimo commit 28560a6). Contiene solo `.gitignore` e `ghimoney/`.
 
 **Proposta.**

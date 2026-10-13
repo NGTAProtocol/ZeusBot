@@ -57,7 +57,7 @@ def occorrenze(prosa, pattern):
 
 def occorrenze_voce(prosa, v):
     """Occorrenze del pattern della voce, tolte quelle che cadono dentro un «escludi_pattern»
-    (per esempio il fischio letterale della nave in una voce che conta il fischio morale)."""
+    (per esempio il fischio letterale del treno in una voce che conta il fischio morale)."""
     occ = []
     rx = re.compile(v['pattern'])
     ex = re.compile(v['escludi_pattern']) if v.get('escludi_pattern') else None

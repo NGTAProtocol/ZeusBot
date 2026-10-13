@@ -542,11 +542,11 @@ adozione_libri_esistenti:
   senza_titolo: "2 / True / True"
   con_titolo: "0 / La torre di sale / La torre di sale"
 
-# Correzioni dopo il lotto 11-20 di Mister Provino: (a) interludio in anticipo come AVVISO, mai FERMO;
+# Correzioni su interludi, impronte e grafie: (a) interludio in anticipo come AVVISO, mai FERMO;
 # (b) misure del piano parole fuori dall'impronta, aggiornate da zb esito; (c) stato.yaml salvato prima
 # di stampare; (d) parole a inizio frase escluse dal confronto con i nomi; (e) battute canoniche escluse
 # dall'anti-riciclo.
-correzioni_lotto_11_20:
+correzioni_interludi_e_grafie:
   a_ordine: ['1', '2', 'interludio I', '3', 'interludio II']
   a_anticipo: ['interludio II dopo 9']
   a_comandi: "True / True / 0 / False"   # capitolo.py eseguito / AVVISO «in anticipo» / conta.py / nessun FERMO
@@ -598,18 +598,18 @@ fase_stesura_e_rinomine:
   c_rinomina: "0 True / 0 True / 0 True"              # prima: sha256 precedente «—» (None)
 
 # escludi_pattern; pattern generico «Non era/è X. Era/È Y.»; budget degli interludi; esito e correggi in chiusura.
-correzioni_dopo_lotto_38_43:
-  a_testi: ["Si sentì il fischio della nave, lungo.", "Fischiò forte, una volta.", "Il fischio della nave di nuovo."]
+correzioni_esclusioni_e_budget:
+  a_testi: ["Si sentì il fischio del treno, lungo.", "Fischiò forte, una volta.", "Il fischio del treno di nuovo."]
   a_voci:
-    ambito libro: {id: fischio_x, pattern: '(?i)\bfisch\w*', escludi_pattern: '(?i)\bfischio della nave\b', modalita: avviso, massimo: 0, ambito: libro, conta_per: unita}
-    ambito capitolo: {id: fischio_x, pattern: '(?i)\bfisch\w*', escludi_pattern: '(?i)\bfischio della nave\b', modalita: conta, massimo: 0, ambito: capitolo}
+    ambito libro: {id: fischio_x, pattern: '(?i)\bfisch\w*', escludi_pattern: '(?i)\bfischio del treno\b', modalita: avviso, massimo: 0, ambito: libro, conta_per: unita}
+    ambito capitolo: {id: fischio_x, pattern: '(?i)\bfisch\w*', escludi_pattern: '(?i)\bfischio del treno\b', modalita: conta, massimo: 0, ambito: capitolo}
   a_attesi:
-    ambito libro: ['2|AVVISO']        # il fischio della nave (unità 1 e 3) non conta
+    ambito libro: ['2|AVVISO']        # il fischio del treno (unità 1 e 3) non conta
     ambito capitolo: ['2|KO']
   b_pattern: '(?:\b[Nn]on (?:era|fu|è|sono|c''era|ci fu) [^.!?]{1,80}[.!?]\s+(?:Era|Fu|È|Sono|C''era|Ci fu)\b)'
   b_frasi:
-    - "Non era la villa di Palese. Era un'altra casa."
-    - "Non è educazione. È la cassa sotto la branda."
+    - "Non era la villa di Ardena. Era un'altra casa."
+    - "Non è educazione. È la scatola sotto il letto."
     - "Non c'era rabbia. C'era la stanchezza."
     - "Non fu un caso. Fu una scelta."
     - "Non sono parole. Sono pietre."

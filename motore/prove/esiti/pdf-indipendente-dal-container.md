@@ -24,8 +24,8 @@ Nel passo 3, 4 prove dipendevano dal container in cui era stato fatto il render 
   - Il minimo KDP vale anche dentro la tolleranza.
 - Il numero di prove resta 424. Le altre prove non sono state toccate.
 - Trasparenze: il motore non le gestisce, quindi non sono state aggiunte prove.
-- Autore nei metadati: si confronta con `autore` di `libro.yaml`. Su Mister Provino è «F.R. Faraone»;
-  i mini-libri hanno autori inventati, perché il motore non contiene libri reali.
+- Autore nei metadati: si confronta con l'autore di libro.yaml; i mini-libri hanno autori inventati,
+  perché il motore non contiene libri reali.
 
 ## Prove di regressione
 
@@ -45,7 +45,7 @@ Il mini-libro dichiara 5,83 × 8,27″ (A5), ma il PDF misura 420 × 594,96 pt, 
 - Chromium arrotonda il formato della pagina, anche se lo riceve da `page.pdf` invece che dal CSS
   (provato: 420 × 595,92 pt).
 - I formati multipli di 1/96″ (5,5 × 8,5″, 6 × 9″) escono esatti: il romance passa.
-- Anche Mister Provino è A5.
+- Qualunque libro in A5, compreso un libro di prova, avrebbe lo stesso scarto.
 - La prova «mini-libro: struttura del PDF» resta KO. La correzione, cioè riportare le pagine al trim
   esatto con PyMuPDF in `impagina.py`, cambia il PDF dei libri e sposta i margini di qualche millesimo:
   la decide l'autore.
