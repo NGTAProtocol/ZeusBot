@@ -1,21 +1,5 @@
 [
   {
-    "id": "artista-a-base",
-    "slug": "artista",
-    "config": "a",
-    "level": "base",
-    "signature": "css:turn",
-    "ms": 3830
-  },
-  {
-    "id": "artista-a-cinematic",
-    "slug": "artista",
-    "config": "a",
-    "level": "cinematic",
-    "signature": "css:turn",
-    "ms": 2638
-  },
-  {
     "id": "fornace-lume-baseline-base",
     "slug": "fornace-lume",
     "config": "baseline",
