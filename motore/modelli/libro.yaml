@@ -7,6 +7,7 @@ lingua: it
 modalita: nuovo            # nuovo | riscrittura (con testo_precedente)
 serie: null
 ebook: false
+# voce: {slug: "", ambientazione: altro}   # facoltativo: voce della banca-voci (ZB_BANCA_VOCI); senza, nessun cambiamento
 profilo: ""                # nome di un file in motore/profili/
 override: []               # {campo, valore, motivo}
 gate: [documenti, pagina_campione, primi_capitoli]

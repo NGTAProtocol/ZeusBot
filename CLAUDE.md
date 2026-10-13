@@ -6,9 +6,11 @@ chiedilo prima di toccare qualunque file.
 
 Prima di scrivere: esegui `python3 motore/zb avvio <libro>` e riporta la riga
 «Letto: …». Se si ferma, fermati anche tu e riporta il motivo.
+Prima di ogni capitolo: zb avvio, rileggi la scheda della voce (se libro.yaml
+ha «voce»: zb voce mostra <slug>) e il briefing.
 
-Il motore legge solo `motore/` e la cartella del libro indicato, e scrive solo
-dentro quella cartella.
+Il motore legge solo `motore/`, la cartella del libro indicato e la banca-voci
+(`ZB_BANCA_VOCI`, in sola lettura), e scrive solo dentro la cartella del libro.
 
 Precedenza: manuale del libro (e libro.yaml) > procedura del motore > skill
 dell'autore. Segnala ogni contrasto.

@@ -6,7 +6,7 @@ lineetta di lingue.yaml); ogni riga fuori dal dialogo che le contiene è KO.
 Uso: python3 -B stile.py <libro> [N] [--schermo]
 Per ogni unità (o solo la N): frase media e dialogo % (capitoli numerati; negli interludi
 solo la frase media, come avviso),
-voci con pattern (lista nera di base + voci del libro), parole filtro, candidati
+voci con pattern (lista nera di base + voci del libro + divieti della voce, se libro.yaml ha «voce»), parole filtro, candidati
 similitudine, vincoli per capitolo, nomi vietati prima di un punto del libro.
 Voci ad ambito «libro»: contatore cumulato; non contano le unità in consentito_in_capitoli;
 con conta_per: unita il tetto è sul numero di unità in cui la voce compare.
@@ -20,6 +20,7 @@ import sys
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
+import voce  # noqa: E402
 
 # «come l'» seguito da un verbo («a come l'aveva lasciata») vuol dire «in che modo»: non è una similitudine
 SIMILITUDINE = re.compile(r"(?i)\bcome (un|una|uno|il|la|lo|i|gli|le|se)\b"
@@ -32,8 +33,10 @@ def risultato(unita, controllo, esito, riga=None, dettaglio=''):
 
 
 def voci_del_libro(libro):
+    """Lista nera di base + voci del libro + divieti della voce narrativa (banca-voci, modalità avviso)."""
     base = comune.leggi_yaml(os.path.join(comune.radice_motore(), 'dati', 'lista-nera.yaml'))
-    return (base.get('voci') or []) + (libro.get('voci') or []), base.get('parole_filtro') or []
+    return ((base.get('voci') or []) + (libro.get('voci') or []) + voce.divieti_del_libro(libro),
+            base.get('parole_filtro') or [])
 
 
 def metriche(testo, lingua):

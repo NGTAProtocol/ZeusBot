@@ -65,6 +65,7 @@ Si lanciano con `python3 motore/zb <comando> …`; il libro è sempre un percors
 - `zb pulizia <libro> [--applica]`: elenco di temporanei, cartelle vuote e copie; cancella solo con `--applica`.
 - `zb hook stato|attiva [--ok]|disattiva`: hook di Claude Code (oggi in modalità avviso, non attivi).
 - `zb prove`: tutte le prove sui mini-libri inventati, più separazione e recinto.
+- `zb voce lista|mostra <slug> [N]|verifica <slug>`: voci narrative della banca-voci (`ZB_BANCA_VOCI`); sola lettura.
 
 Altri comandi: `zb verifica KDP fatta [AAAA-MM-GG]` (anche `stato`, `controlla`), `zb riciclo <libro>`,
 `zb separazione`, `zb recinto`, `zb profili`, `zb aiuto`.
@@ -132,3 +133,30 @@ Installazione (Java 21 e Maven già presenti nel container):
 
 Non va nel repository e non si scarica da languagetool.org. Se Maven Central risponde 403 o 429,
 le 2 prove restano saltate. Dettagli in `PROCEDURA.md`, sezione «Ortografia».
+
+### Banca-voci
+
+Le voci narrative (come si racconta) stanno in un repository separato, la banca-voci, mai dentro il
+motore: le pagine-modello e gli eventuali brani di manoscritti restano lì. Il motore legge la banca in
+sola lettura dalla cartella indicata da `ZB_BANCA_VOCI`, come fa con `ZB_LANGUAGETOOL`; nessun percorso
+è scritto nel codice.
+
+```
+export ZB_BANCA_VOCI=<cartella della banca-voci>
+python3 motore/zb voce lista
+python3 motore/zb voce mostra <slug> [N]     # scheda in blocchi di circa 120 righe
+python3 motore/zb voce verifica <slug>       # indice, 7 sezioni, «ambientazione:», ≥ 2 esempi, divieti.yaml, pronta
+```
+
+Struttura della banca: `indice.yaml` (`voci:` con `slug`, `nome`, `genere`, `stato: pronta | da_completare`),
+`voci/<slug>/scheda.md` con le sezioni «## 1. Nome e ruolo», «## 2. Principi», «## 3. Ritmo e sintassi»,
+«## 4. Lessico…», «## 5. Adattamento per genere», «## 6. Campione…», «## 7. Istruzione di esecuzione»
+(con il campo «ambientazione:»), `voci/<slug>/esempi/` con almeno 2 pagine-modello e `voci/<slug>/divieti.yaml`
+(`divieti:` con `id` ed `espressione` o `pattern`): le espressioni vietate della voce.
+
+Un libro sceglie la voce in `libro.yaml` con il blocco facoltativo `voce: {slug, ambientazione}` (dal
+briefing: «Voce dalla banca:» e «Ambientazione:»). Con il blocco, `zb avvio` aggiunge alla riga «Letto»
+il briefing e la scheda della voce; se `ZB_BANCA_VOCI` manca o la voce non verifica stampa un AVVISO e
+non si ferma. `zb stile` e `zb capitolo` aggiungono i divieti della voce alle voci del libro, in modalità
+avviso (controllo `voce:<slug>:<id>`); senza `ZB_BANCA_VOCI` i divieti non si applicano. Senza il blocco nulla cambia. Senza `ZB_BANCA_VOCI`, `zb voce` si ferma con un messaggio
+chiaro. Le prove usano una mini-banca inventata in `prove/banca-voci-prova/`.

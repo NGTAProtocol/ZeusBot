@@ -274,6 +274,8 @@ def genera_libro_yaml(b, profilo):
                                   "o con fatti realmente accaduti è puramente casuale.",
                       'nota_autore': None},
     })
+    if c.get('voce dalla banca'):       # facoltativo: senza, libro.yaml resta quello di sempre
+        libro['voce'] = {'slug': c['voce dalla banca'], 'ambientazione': c.get('ambientazione') or 'altro'}
     return libro
 
 
@@ -301,6 +303,9 @@ def genera_manuale(b, libro, profilo, n_cap):
              'Le regole numeriche stanno in libro.yaml e le controlla capitolo.py: qui sono scritte per esteso.', '',
              '## 1. Voce', '',
              f'- Voce: {b["campi"].get("voce") or "da fissare con la pagina campione"}.']
+    if libro.get('voce'):
+        righe.append(f'- Voce dalla banca-voci: {libro["voce"]["slug"]}, ambientazione {libro["voce"]["ambientazione"]}; '
+                     'scheda e briefing da rileggere prima di ogni capitolo (zb avvio, zb voce mostra).')
     righe += [f'- {t}' for t in b['tono']]
     righe += ['- Voce d\'autore: da completare dopo l\'«ok» alla pagina campione.', '',
               '## 2. Lunghezze', '',

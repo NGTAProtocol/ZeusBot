@@ -12,6 +12,8 @@ Si ferma (codice 2) e non scrive nulla da nessuna parte se:
 - un documento approvato è cambiato fuori procedura (sha256 diverso).
 Se tutto va bene stampa la riga «Letto: …» (file, righe, sha256, ultimo commit; libro e motore)
 e scrive solo il marker <libro>/.zb/letto-<session_id>.
+Con il blocco «voce» in libro.yaml la riga «Letto» include anche il briefing e la scheda della voce
+(banca-voci da ZB_BANCA_VOCI); se la voce non verifica (voce.py) stampa un AVVISO, senza fermarsi.
 """
 import datetime
 import os
@@ -23,6 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 import fase  # noqa: E402
 import nuovo  # noqa: E402
+import voce  # noqa: E402
 
 DA_LEGGERE = {
     'documenti': ['00-progetto/briefing.md', '02-bibbia/bibbia.md', 'cronologia.yaml',
@@ -119,6 +122,8 @@ def controlla(percorso):
     letti, sha = [], {}
     elenco = ['libro.yaml', 'stato.yaml', 'LEGGIMI.md', '03-architettura/manuale-di-stile.md']
     elenco += DA_LEGGERE[stato['fase']]
+    if libro.get('voce'):
+        elenco.append('00-progetto/briefing.md')
     if libro.get('modalita') == 'riscrittura':
         elenco.append(libro['testo_precedente'])
     if stato['fase'] == 'stesura' and stato['ultimo_capitolo_scritto']:
@@ -134,9 +139,28 @@ def controlla(percorso):
     r, s = riga_file(cartella, pp, f'profilo {libro["profilo"]}')
     letti.append(r)
     sha[f'profilo {libro["profilo"]}'] = s
+    avvisi = []
+    if libro.get('voce'):
+        avvisi = scheda_voce(libro['voce'], letti, sha)
     libro_commit = comune.git(cartella, 'log', '-1', '--format=%h «%s»')[1]
     motore_commit = comune.git(comune.radice_motore(), 'log', '-1', '--format=%h')[1] or 'fuori da git'
-    return cartella, libro, stato, letti, sha, libro_commit, motore_commit, ramo
+    return cartella, libro, stato, letti, sha, libro_commit, motore_commit, ramo, avvisi
+
+
+def scheda_voce(v, letti, sha):
+    """Aggiunge la scheda della voce a «Letto»; restituisce gli avvisi (mai un fermo)."""
+    slug = v['slug']
+    try:
+        b = voce.banca()
+        problemi = voce.problemi(b, slug)
+    except comune.ErroreMotore as e:
+        return [f'voce «{slug}» non verificata: {e}'.replace('\n', ' ')]
+    p = voce.scheda(b, slug)
+    if os.path.isfile(p):
+        r, s = riga_file(os.path.dirname(p), p, f'scheda della voce {slug}')
+        letti.append(r)
+        sha[f'voce {slug}'] = s
+    return [f'voce «{slug}»: {x}' for x in problemi]
 
 
 def main(argv):
@@ -144,7 +168,7 @@ def main(argv):
     percorso = args[0] if args else os.environ.get('ZB_LIBRO')
     if not percorso:
         raise comune.ErroreMotore('Uso: avvio.py <libro> (oppure ZB_LIBRO=<libro>)')
-    cartella, libro, stato, letti, sha, libro_commit, motore_commit, ramo = controlla(percorso)
+    cartella, libro, stato, letti, sha, libro_commit, motore_commit, ramo, avvisi_voce = controlla(percorso)
     print(f'Ramo: {ramo}; allineato a origin: sì')
     print('Letto: ' + ', '.join(letti) + ';')
     print(f'libro @ {libro_commit}; motore @ {motore_commit}; fase {stato["fase"]}, '
@@ -159,6 +183,11 @@ def main(argv):
         print(f'Correzione aperta [{c["gate"]}]: {c["testo"]}')
     for a in stato['avvisi_aperti']:
         print(f'Avviso aperto: {a}')
+    if libro.get('voce'):
+        print(f'Voce: {libro["voce"]["slug"]}, ambientazione {libro["voce"].get("ambientazione") or "altro"}. '
+              'Prima di ogni capitolo: rileggi la scheda della voce e il briefing.')
+    for a in avvisi_voce:
+        print(f'AVVISO: {a}')
     for n_int, d in comune.interludi_in_anticipo(cartella, libro):
         print(f'AVVISO: {n_int} in anticipo (va dopo il capitolo {d}, non ancora scritto).')
     print(fase.prossimo(stato))

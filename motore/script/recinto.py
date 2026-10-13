@@ -51,6 +51,7 @@ def comandi(motore):
         ('ortografia.py', 'ortografia.py {libro}'),
         ('fase.py stato', 'fase.py {libro} stato'),
         ('revisione.py', 'revisione.py {libro} 02-bibbia/bibbia.md'),
+        ('voce.py lista', 'voce.py lista'),
     ]
     return [(n, f'{sys.executable} {os.path.join(s, c.split()[0])} ' + ' '.join(c.split()[1:]))
             for n, c in elenco if os.path.isfile(os.path.join(s, c.split()[0]))]

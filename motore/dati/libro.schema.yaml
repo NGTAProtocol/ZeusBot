@@ -19,6 +19,11 @@ campi:
       nome: {tipo: testo, obbligatorio: true}
       numero: {tipo: intero, obbligatorio: true}
   ebook: {tipo: booleano}
+  voce:                                        # facoltativo: voce narrativa della banca-voci (ZB_BANCA_VOCI)
+    tipo: mappa
+    campi:
+      slug: {tipo: testo, obbligatorio: true}  # voci/<slug>/ della banca-voci
+      ambientazione: {tipo: testo}             # regola il dialetto della voce; «altro» se non serve
   profilo: {tipo: testo, obbligatorio: true}
   gate: {tipo: lista, elementi: {tipo: scelta, valori: [documenti, pagina_campione, primi_capitoli, lotto]}}
   override:
