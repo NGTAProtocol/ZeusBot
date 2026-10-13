@@ -1,101 +1,105 @@
-# Prova di valore: Atelier contro baseline
+# Prova di valore (v2): Atelier contro un sito AI generico, e quali skill servono
 
-**Domanda:** a parità di brief, Atelier produce un sito visibilmente migliore di un sito generato da un'AI "senza metodo"?
+**Domande:**
+1. A parità di brief, Atelier produce un sito migliore di un sito AI generico?
+2. Quale combinazione di skill rende di più?
 
 ## Impostazione
-- **3 attività fittizie in 3 settori:** Fornace Lume (ceramica artigianale, Faenza), Quota 2100 (scialpinismo e rifugio, Val Masino), Nodo (sicurezza informatica B2B, Treviso). I brief sono in `briefs/` e includono i dati "forniti dal cliente" (`facts`).
-- **Per ogni attività, tre varianti:**
-  - **BASELINE:** stesso brief e stesso stack (Astro + Tailwind), scritta direttamente in una sola passata, in buona fede, senza skill, senza ciclo di qualità e senza guardare gli screenshot. Font di sistema.
-  - **ATELIER BASE:** skill + direzione artistica + lint + 2 iterazioni di QA, senza WebGL.
-  - **ATELIER CINEMATICO:** come il BASE, più GSAP/ScrollTrigger, Lenis, hero Three.js procedurale nel Worker, grana e audio opzionale.
-- **Strumenti di misura:** Lighthouse 13.5 (mediana di 3 run) e controlli Playwright; tabelle complete in `QUALITY.md`. Rubrica 1-10 su 7 criteri, sugli screenshot reali: `rubric.json` e `QUALITY.md`.
+- **3 attività fittizie in 3 settori:**
+  - Fornace Lume: ceramica artigianale, Faenza;
+  - Quota 2100: scuola di scialpinismo e rifugio, Val Masino;
+  - Nodo: sicurezza informatica B2B, Treviso.
+- **Stesso brief** (`briefs/`, con i soli `facts` utilizzabili) **in 4 configurazioni × 2 livelli = 24 siti:**
 
-### Limiti dell'impostazione (da leggere prima dei numeri)
-1. **Stesso autore, che conosceva l'esperimento.** Baseline e Atelier sono stati scritti dallo stesso modello. Ho cercato di non sabotare la baseline: è ordinata, accessibile, con copy corretto, il tipo di sito che un'AI produce davvero con una richiesta diretta. Ma un osservatore esterno potrebbe giudicarla diversamente.
-2. **La rubrica è un'autovalutazione,** non un giudizio indipendente.
-3. **I siti premiati non sono stati studiati** (rete bloccata): Atelier non è stato confrontato con siti di livello Awwwards, solo con la baseline.
-4. **Un bug iniziale della pipeline** (il CSS di Atelier finiva anche nella baseline) rendeva la baseline rotta e quindi "peggiore". È stato trovato e corretto prima delle misure riportate qui. Lo segnalo perché un confronto non verificato visivamente sarebbe stato falsato a favore di Atelier.
+| Config | Cosa la guida |
+|---|---|
+| **BASELINE** | Nessuna skill, nessuna Bibbia. Tailwind e font di sistema. Il CINEMATICO aggiunge GSAP, Lenis e un oggetto Three.js che ruota, come li scriverebbe un generatore generico |
+| **A** | frontend-design + metodo Atelier (Bibbia, lint, firma) |
+| **B** | A + impeccable |
+| **C** | A + taste-skill + emil-design-eng/emil-animate |
 
-## Risultati misurati (Lighthouse, mediana di 3 run, misura finale)
+- **Interpretazione dichiarata:** A, B e C usano tutte la pipeline e la Bibbia di Atelier. Cambiano solo le skill ausiliarie, e quindi le scelte della fase Bibbia (palette, font, firma, layout) e del copy.
+- **Misure:**
+  - Lighthouse 13.5, una run per profilo e per sito;
+  - controlli Playwright (overflow, errori, host esterni, contenuti nascosti, fallback);
+  - rilevatore di slop sull'HTML compilato;
+  - distanza visiva tra i siti della stessa configurazione;
+  - rubrica 1-10 su 12 criteri (Q1-Q6 + gerarchia, contrasto, spazio, movimento, mobile, effetto template).
+- **Dati completi:** `QUALITY.md` e `metrics.json`.
 
-| Attività | Variante | Perf mobile | Perf desktop | Accessibilità | SEO | LCP mobile | Peso iniziale |
-|---|---|---|---|---|---|---|---|
-| Fornace Lume | Baseline | 100 | 100 | 100 | 100 | 0,75 s | 5 KB |
-| | Atelier BASE | 100 | 100 | 100 | 100 | 1,36 s | 73 KB |
-| | Atelier CINEMATICO | 99 | 100 | 100 | 100 | 1,82 s | 121 KB (+~133 KB del worker 3D al primo gesto) |
-| Quota 2100 | Baseline | 100 | 100 | 100 (90 nel run precedente) | 100 | 0,76 s | 4 KB |
-| | Atelier BASE | 98 | 100 | 100 | 100 | 1,88 s | 152 KB |
-| | Atelier CINEMATICO | 97 | 99 | 100 | 100 | 2,26 s | 199 KB (+ worker) |
-| Nodo | Baseline | 100 | 100 | 100 (90 nel run precedente) | 100 | 0,75 s | 4 KB |
-| | Atelier BASE | 100 | 100 | 100 | 100 | 1,51 s | 76 KB |
-| | Atelier CINEMATICO | 97 | 100 | 100 | 100 | 1,89 s | 123 KB (+ worker) |
+### Limiti (leggere prima dei numeri)
+1. **Stesso autore per tutto.** Baseline, A, B e C sono state scritte dallo stesso modello, nella stessa sessione, sapendo dell'esperimento. Le skill "attive" in una configurazione erano note anche mentre scrivevo le altre. La separazione tra le configurazioni è quindi **imperfetta**.
+2. **La rubrica è un'autovalutazione,** non un giudizio di designer o utenti.
+3. **Una run per sito:** le differenze di pochi punti Lighthouse sono rumore. La stessa baseline ha dato 80 e poi 67.
+4. **Nessun confronto con siti premiati** (rete bloccata), nessun dispositivo reale, WebGL solo software.
+5. **Il confronto della v1 non era valido.** Le baseline v1 uscivano senza CSS (Tailwind non scansionava la cartella generata) e la v1 non se n'era accorta. Ora è corretto e coperto da un test (vedi `quality-notes.md`).
 
-**Lettura onesta dei numeri:**
-- **Lighthouse non distingue i due approcci.** Tutti stanno fra 97 e 100. La baseline è un po' **più veloce** (LCP 0,75 s contro 1,4-2,3 s) perché usa i font di sistema e nessuna grafica.
-- **Soglie richieste:**
-  - BASE: performance ≥ 90 → superata (98-100);
-  - CINEMATICO: ≥ 75 mobile e ≥ 85 desktop → superata (97-99 / 99-100);
-  - accessibilità e SEO ≥ 95 → 100 per tutti i siti Atelier.
-  - Attenzione: nel CINEMATICO il 3D parte al primo gesto. Con il 3D forzato all'avvio si ottiene mobile 96-99 e desktop 94-100, ma Lighthouse non conta il worker (vedi `QUALITY.md`).
-- **Accessibilità:** le baseline di Quota e Nodo hanno fallito il contrasto (90) in un run e l'hanno superato (100) in un altro, senza modifiche. Atelier ha 100 stabile in entrambi i run, perché le palette sono verificate AA nei test.
-- **Robustezza misurata, solo Atelier CINEMATICO:**
-  - fallback no-WebGL → poster;
-  - Save-Data e reduced-motion → nessun canvas e contenuto visibile;
-  - 0 errori in console, 0 host esterni, nessun overflow a 375 px.
+## Risultati (medie sui 3 siti)
 
-## Rubrica (autovalutazione, iterazione finale)
+| Config | Livello | Perf mobile | Perf desktop | A11y | Soglie superate | Slop (HTML) | Distanza visiva tra siti | Rubrica (autoval.) |
+|---|---|---|---|---|---|---|---|---|
+| BASELINE | BASE | 100 | 100 | 93,3 | **1/3** | 40 | 54,6 | **3,9** |
+| BASELINE | CINEMATICO | 68 | 86 | 94 | **0/3** | 40 | 52,3 | **3,9** |
+| A | BASE | 98 | 100 | 100 | 3/3 | 0 | 13,6 | **7,5** |
+| A | CINEMATICO | 98,7 | 99,7 | 100 | 3/3 | 0 | 19,7 | **7,6** |
+| B | BASE | 100 | 100 | 100 | 3/3 | 0 | 49,8 | 7,3 |
+| B | CINEMATICO | 98,7 | 100 | 100 | 3/3 | 0 | 50,1 | 7,4 |
+| C | BASE | 100 | 100 | 100 | 3/3 | 0 | 10,6 | 6,7 |
+| C | CINEMATICO | 97,3 | 100 | 100 | 3/3 | 0 | 10,5 | 6,8 |
 
-Media dei 7 criteri: gerarchia, contrasto, spazio, coerenza, originalità, movimento, mobile.
+**SEO:** 100 per tutti i 24 siti.
 
-| Attività | Baseline | Atelier BASE | Atelier CINEMATICO |
-|---|---|---|---|
-| Fornace Lume | 6,1 | 7,3 | 7,7 |
-| Quota 2100 | 6,1 | 7,3 | 7,4 |
-| Nodo | 6,0 | 7,4 | 7,7 |
+**Tempi e costi:**
 
-La differenza sta quasi tutta in **originalità** (baseline 2-3, Atelier 6-8), **movimento** (5 contro 6-8) e **mobile** (6 contro 6-8). Su gerarchia e contrasto la baseline è già buona (7-8).
+| | BASELINE | A | B | C |
+|---|---|---|---|---|
+| Build per sito | 1,9-2,7 s | 1,9-3,2 s | 1,9-3,0 s | 1,9-2,6 s |
+| Token di output scritti a mano per sito (stima: byte/4) | ~1.900 / 2.400 | ~3.100 | ~2.400 | ~2.100 |
 
-**Cosa si vede negli screenshot** (`reports/shots/`):
-- **Baseline:**
-  - hero centrato con titolo generico ("Ceramiche artigianali fatte a mano", "Scopri la magia dello scialpinismo", "Proteggi la tua azienda dalle minacce informatiche");
-  - tre card con emoji;
-  - gradiente indaco-viola su Nodo;
-  - riquadri colorati al posto delle immagini;
-  - nessuna identità che distingua un settore dall'altro.
-- **Atelier:**
-  - ogni sito ha una direzione propria: Argilla notturna (smalti e cenere), Quota (curve di livello e altimetro), Cifra (reticolo di punti, tono calmo);
-  - titoli scritti per l'attività ("Il piatto lo finisce il fuoco.", "Salire con le pelli, scendere sapendo dove metti gli sci.");
-  - dati del brief usati in modo preciso;
-  - hero 3D procedurale coerente con il settore;
-  - versione mobile dedicata.
+- **Il costo vero in token non è misurato.** Il totale di questa sessione (lettura delle skill, iterazioni, QA) è di vari ordini di grandezza superiore ai token scritti, e non è attribuibile alle singole configurazioni.
+- **Il tempo di scrittura per configurazione non è stato cronometrato.** Il QA completo dei 24 siti richiede circa 75 minuti di macchina.
 
-## Tempi e costi
+### Cosa dicono i numeri
+1. **Prestazioni, accessibilità, SEO:**
+   - tutti i 18 siti Atelier superano le soglie (BASE ≥ 90; CINEMATICO ≥ 75 mobile e ≥ 85 desktop; a11y e SEO ≥ 95);
+   - le baseline ne superano 1 su 6. Le BASE di Quota e Nodo hanno accessibilità 90 (contrasto dei testi su sfumature). Le CINEMATICO stanno a 66-71 su mobile, per il loop 3D infinito nel thread principale (TBT 1,2-2,2 s);
+   - **attenzione:** sul BASE le baseline hanno LCP migliore (font di sistema, 0,75 s contro 1,0-1,4 s).
+2. **Slop:**
+   - baseline: 7-24 segnali per sito (emoji come icone, gradienti viola/indaco, testo sfumato, card in serie);
+   - Atelier: 0;
+   - **ma** il rilevatore controlla regole che il lint di Atelier già impone: è una verifica di conformità, non una prova indipendente.
+3. **Effetto template, il dato scomodo:** per distanza visiva i siti A e C di tre clienti diversi **si somigliano tra loro** (10-20) più delle baseline (52-55). Le cause:
+   - stesso motore e stesso schema di pagina;
+   - fondi chiari;
+   - in C, la stessa firma `layers` su due clienti.
 
-| Voce | Atelier | Baseline |
-|---|---|---|
-| Scrittura dei contenuti di un sito | ~2 min (content JSON 7,6-9,4 KB, ~2,2-2,7k token di output) | ~0,5 min (file .astro 6,4-8,6 KB, ~1,8-2,5k token di output) |
-| Input necessario per sito | SKILL.md + direzioni (~6k token) + brief | brief |
-| Build (misurata) | 2,1-3,3 s per variante | 1,5-1,8 s |
-| QA automatico (misurato) | ~2-3 min per variante con 3 run di Lighthouse | idem (se lo si esegue) |
-| Revisione con rubrica | ~6 screenshot per iterazione × 2 iterazioni ≈ 15-20k token di input per sito (immagini) | nessuna |
-| Costo marginale stimato per sito | **≈ 30-45k token** (soprattutto la lettura degli screenshot) | **≈ 3-5k token** |
-| Costo una tantum (motore, skill, QA, test) | ~143k caratteri di codice e documentazione; sessione intera di sviluppo e prova ≈ **650k token** (dal contatore di sessione) | — |
+   Solo B, con strategie di colore molto diverse per cliente, varia quanto la baseline (50).
+4. **Rubrica:** il salto grande è tra baseline (3,9) e qualsiasi configurazione Atelier (6,7-7,6). Tra A, B e C le differenze sono piccole:
+   - **A** vince di poco: firme più legate al concept (la colatura di Fornace, il rilievo 3D di Quota);
+   - **B** è quasi alla pari: più personalità cromatica, ma la massa 3D di Fornace B è debole;
+   - **C** è la più bassa. Applicare alla lettera regole generiche di gusto (sans ovunque, un accento, hero di 2 righe) ha prodotto siti puliti, ma **più intercambiabili**, ed è l'effetto opposto a quello cercato.
 
-Le stime in token derivano da dimensione dei file / 3,5 e dal contatore di contesto della sessione. Non c'è una fattura misurata.
+## Verdetto
 
-## Giudizio: il salto è netto e visibile?
+| Domanda | Risposta |
+|---|---|
+| Atelier batte un sito AI generico? | **Sì** su tutto ciò che si misura: soglie Lighthouse 18/18 contro 1/6, zero slop, nessun loop infinito, link e contenuti verificati. **Sì** anche nella rubrica, che però è un'autovalutazione |
+| Il salto è netto? | **Sì** tra baseline e Atelier. **No** tra A, B e C: differenze di 0,1-0,9 punti di rubrica, dentro l'incertezza di un giudizio fatto dallo stesso modello |
+| Quale configurazione vince? | **A (frontend-design + Bibbia)** di poco, **B** quasi alla pari. **C non conviene** come predefinita |
+| Cosa produce il valore? | La **Bibbia e la pipeline** (concept → firma, lint dei fatti e dei link, budget, QA), più delle skill aggiuntive |
+| Abbastanza per vendere? | **Dipende.** Vedi sotto |
 
-**Dipende.** In concreto:
-- **Sì, è visibile, su identità e cura:** a colpo d'occhio i siti Atelier non sembrano template. Ogni settore ha una voce visiva propria, il copy è specifico, il 3D è originale e coerente, la versione mobile è progettata. La baseline è competente ma intercambiabile: gli stessi tre blocchi per tre settori diversi.
-- **No, sui numeri tecnici:** Lighthouse è alla pari (anzi la baseline carica prima). Il guadagno misurabile è l'accessibilità stabile al 100 e i fallback verificati, non la velocità.
-- **Non dimostrato, sul livello "premiato":**
-  - non ho potuto confrontarmi con siti Awwwards;
-  - il motore usa un solo template di pagina con 7 archetipi, quindi siti diversi condividono la stessa struttura di sezioni;
-  - mancano fotografia e asset reali del brand, che nei siti premiati fanno metà del lavoro.
-
-### Cosa servirebbe per un salto netto e dimostrato
-1. **Giudizio esterno:** 3-5 designer o clienti che valutino alla cieca baseline e Atelier.
-2. **Studio reale dei riferimenti** (rete libera) e una libreria di layout più varia: più template di pagina, non solo archetipi CSS.
-3. **Asset reali del cliente** (foto, logo) o grafica procedurale più ricca per settore.
-4. **Test su dispositivi reali con GPU,** e su Safari e Firefox.
-5. **Licenza GSAP verificata,** oppure la sostituzione con un'alternativa MIT.
+**Perché "Dipende":**
+- **Basta** per vendere siti vetrina curati a piccole attività: veloci, accessibili, senza cliché, con contenuti veri e una firma riconoscibile. Il livello è superiore a un generatore generico.
+- **Non basta** per vendere siti "di livello Awwwards":
+  - le firme sono 4 parametriche più 5 scene 3D, non disegnate da zero per ogni cliente;
+  - i siti di clienti diversi si somigliano;
+  - non c'è fotografia reale;
+  - non c'è nessun giudizio esterno né confronto con siti premiati;
+  - la licenza GSAP non è verificata per un uso come servizio.
+- **Cosa servirebbe:**
+  - una revisione di un designer umano su un campione;
+  - lo studio dei riferimenti con dati veri (possibile con il connettore Firecrawl, che però è a pagamento e quindi richiede la tua conferma);
+  - nuove firme per ogni cliente;
+  - foto del cliente;
+  - test su telefoni reali.

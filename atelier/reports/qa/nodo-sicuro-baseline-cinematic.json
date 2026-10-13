@@ -3,7 +3,7 @@
   "config": "baseline",
   "level": "cinematic",
   "url_tested": "locale, server statico con gzip",
-  "at": "2026-10-13T12:52:37.751Z",
+  "at": "2026-10-13T13:14:55.814Z",
   "browser": {
     "viewports": {
       "375": {
@@ -60,14 +60,14 @@
   "lighthouse": {
     "mobile": {
       "formFactor": "mobile",
-      "performance": 94,
+      "performance": 66,
       "accessibility": 91,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 2366,
-      "tbtMs": 87,
+      "lcpMs": 2846,
+      "tbtMs": 2179,
       "cls": 0,
-      "fcpMs": 2216,
+      "fcpMs": 1731,
       "totalBytes": 186246,
       "failingA11y": [
         "color-contrast"
@@ -75,17 +75,17 @@
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        94
+        66
       ]
     },
     "desktop": {
       "formFactor": "desktop",
-      "performance": 85,
+      "performance": 86,
       "accessibility": 91,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 610,
-      "tbtMs": 326,
+      "lcpMs": 607,
+      "tbtMs": 321,
       "cls": 0,
       "fcpMs": 382,
       "totalBytes": 186246,
@@ -95,7 +95,7 @@
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        85
+        86
       ]
     }
   },
@@ -103,14 +103,14 @@
   "lighthouseForce3d": {
     "mobile": {
       "formFactor": "mobile",
-      "performance": 68,
+      "performance": 65,
       "accessibility": 91,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 2731,
-      "tbtMs": 1968,
+      "lcpMs": 2985,
+      "tbtMs": 2445,
       "cls": 0,
-      "fcpMs": 1722,
+      "fcpMs": 1737,
       "totalBytes": 186246,
       "failingA11y": [
         "color-contrast"
@@ -120,14 +120,14 @@
     },
     "desktop": {
       "formFactor": "desktop",
-      "performance": 85,
+      "performance": 72,
       "accessibility": 91,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 616,
-      "tbtMs": 336,
+      "lcpMs": 813,
+      "tbtMs": 795,
       "cls": 0,
-      "fcpMs": 383,
+      "fcpMs": 391,
       "totalBytes": 186246,
       "failingA11y": [
         "color-contrast"
@@ -139,12 +139,12 @@
   "thresholds": {
     "performanceMobile": {
       "need": 75,
-      "got": 94,
-      "ok": true
+      "got": 66,
+      "ok": false
     },
     "performanceDesktop": {
       "need": 85,
-      "got": 85,
+      "got": 86,
       "ok": true
     },
     "accessibility": {

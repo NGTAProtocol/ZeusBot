@@ -3,7 +3,7 @@
   "config": "baseline",
   "level": "base",
   "url_tested": "locale, server statico con gzip",
-  "at": "2026-10-13T13:00:20.606Z",
+  "at": "2026-10-13T13:12:17.444Z",
   "browser": {
     "viewports": {
       "375": {
@@ -58,7 +58,7 @@
       "lcpMs": 755,
       "tbtMs": 0,
       "cls": 0,
-      "fcpMs": 712,
+      "fcpMs": 730,
       "totalBytes": 6120,
       "failingA11y": [
         "color-contrast"
@@ -75,10 +75,10 @@
       "accessibility": 90,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 208,
+      "lcpMs": 213,
       "tbtMs": 0,
       "cls": 0,
-      "fcpMs": 199,
+      "fcpMs": 213,
       "totalBytes": 6120,
       "failingA11y": [
         "color-contrast"

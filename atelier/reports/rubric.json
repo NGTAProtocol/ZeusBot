@@ -1,260 +1,943 @@
 {
-  "disclaimer": "**Autovalutazione.** I punteggi sono stati assegnati dallo stesso modello che ha generato sia i siti Atelier sia le baseline, guardando gli screenshot reali a 375/768/1280. Non è un giudizio indipendente: va confermato da un designer o da test con utenti. Le baseline sono state scritte in una sola passata, in buona fede, senza la skill e senza guardare gli screenshot.",
-  "criteria": [
-    "Gerarchia",
-    "Contrasto",
-    "Spazio",
-    "Coerenza",
-    "Originalità",
-    "Movimento",
-    "Mobile"
-  ],
-  "iterations": [
+ "disclaimer": "**Autovalutazione.** Punteggi assegnati dallo stesso modello che ha scritto tutti i siti (baseline, A, B, C), guardando screenshot reali a 375/768/1280 e pagine intere. Non è un giudizio di designer o utenti; serve a rendere esplicito il criterio, non a dimostrare qualcosa da solo.",
+ "criteria": [
+  "Q1 concept",
+  "Q2 personalità",
+  "Q3 firma",
+  "Q4 contenuto vero",
+  "Q5 zero slop",
+  "Q6 memorabile",
+  "gerarchia",
+  "contrasto",
+  "spazio",
+  "movimento",
+  "mobile",
+  "effetto template (10 = nessuno)"
+ ],
+ "iterations": [
+  {
+   "name": "Iterazione 1 (prima build v2)",
+   "rows": [
     {
-      "name": "Iterazione 1 (prima build completa, dopo le correzioni funzionali)",
-      "rows": [
-        {
-          "site": "fornace-lume",
-          "variant": "BASELINE",
-          "scores": [
-            7,
-            8,
-            7,
-            7,
-            3,
-            5,
-            6
-          ]
-        },
-        {
-          "site": "fornace-lume",
-          "variant": "BASE",
-          "scores": [
-            8,
-            8,
-            7,
-            8,
-            6,
-            6,
-            7
-          ]
-        },
-        {
-          "site": "fornace-lume",
-          "variant": "CINEMATICO",
-          "scores": [
-            8,
-            8,
-            7,
-            8,
-            8,
-            8,
-            7
-          ]
-        },
-        {
-          "site": "quota-2100",
-          "variant": "BASELINE",
-          "scores": [
-            7,
-            8,
-            7,
-            7,
-            3,
-            5,
-            6
-          ]
-        },
-        {
-          "site": "quota-2100",
-          "variant": "BASE",
-          "scores": [
-            8,
-            8,
-            7,
-            8,
-            7,
-            6,
-            7
-          ]
-        },
-        {
-          "site": "quota-2100",
-          "variant": "CINEMATICO",
-          "scores": [
-            7,
-            7,
-            6,
-            8,
-            8,
-            8,
-            6
-          ]
-        },
-        {
-          "site": "nodo-sicuro",
-          "variant": "BASELINE",
-          "scores": [
-            7,
-            8,
-            7,
-            7,
-            2,
-            5,
-            6
-          ]
-        },
-        {
-          "site": "nodo-sicuro",
-          "variant": "BASE",
-          "scores": [
-            8,
-            9,
-            7,
-            8,
-            6,
-            6,
-            8
-          ]
-        },
-        {
-          "site": "nodo-sicuro",
-          "variant": "CINEMATICO",
-          "scores": [
-            8,
-            7,
-            6,
-            8,
-            7,
-            7,
-            8
-          ]
-        }
-      ],
-      "notes": "Punti peggiori emersi:\n- Originalità del BASE di Fornace: il poster blob ha bordi spigolosi e sembra una clipart.\n- Spazio nel CINEMATICO di Quota: i titoli di sezione con il font esteso arrivano a 5 righe.\n- Mobile del CINEMATICO di Quota: hero affollato.\n- Contrasto nel CINEMATICO di Nodo: lo scrub di opacità spegneva anche la CTA della sezione contatti (bug).\n\nNelle baseline:\n- originalità bassa: card con emoji, gradienti, hero centrato generico; Nodo usa il gradiente indaco-viola, cliché della lista nera;\n- gerarchia e contrasto sono comunque solidi."
+     "site": "fornace-lume",
+     "config": "baseline",
+     "level": "base",
+     "scores": [
+      2,
+      3,
+      1,
+      5,
+      3,
+      2,
+      6,
+      7,
+      6,
+      5,
+      6,
+      2
+     ]
     },
     {
-      "name": "Iterazione 2 (finale)",
-      "rows": [
-        {
-          "site": "fornace-lume",
-          "variant": "BASELINE",
-          "scores": [
-            7,
-            8,
-            7,
-            7,
-            3,
-            5,
-            6
-          ]
-        },
-        {
-          "site": "fornace-lume",
-          "variant": "BASE",
-          "scores": [
-            8,
-            8,
-            7,
-            8,
-            7,
-            6,
-            7
-          ]
-        },
-        {
-          "site": "fornace-lume",
-          "variant": "CINEMATICO",
-          "scores": [
-            8,
-            8,
-            7,
-            8,
-            8,
-            8,
-            7
-          ]
-        },
-        {
-          "site": "quota-2100",
-          "variant": "BASELINE",
-          "scores": [
-            7,
-            8,
-            7,
-            7,
-            3,
-            5,
-            6
-          ]
-        },
-        {
-          "site": "quota-2100",
-          "variant": "BASE",
-          "scores": [
-            8,
-            8,
-            7,
-            8,
-            7,
-            6,
-            7
-          ]
-        },
-        {
-          "site": "quota-2100",
-          "variant": "CINEMATICO",
-          "scores": [
-            8,
-            7,
-            7,
-            8,
-            8,
-            8,
-            6
-          ]
-        },
-        {
-          "site": "nodo-sicuro",
-          "variant": "BASELINE",
-          "scores": [
-            7,
-            8,
-            7,
-            7,
-            2,
-            5,
-            6
-          ]
-        },
-        {
-          "site": "nodo-sicuro",
-          "variant": "BASE",
-          "scores": [
-            8,
-            9,
-            7,
-            8,
-            6,
-            6,
-            8
-          ]
-        },
-        {
-          "site": "nodo-sicuro",
-          "variant": "CINEMATICO",
-          "scores": [
-            8,
-            9,
-            7,
-            8,
-            7,
-            7,
-            8
-          ]
-        }
-      ],
-      "notes": "Modifiche dell'''iterazione 2:\n- poster SVG con curve lisce (Catmull-Rom);\n- titoli di sezione scalati in base alla larghezza media dei caratteri del font;\n- scrub di opacità limitato ai soli capitoli (la CTA dei contatti non viene più spenta);\n- l'''indice laterale si aggiorna anche risalendo;\n- spazio sotto il footer per la barra CTA mobile.\n\nPunti rimasti deboli e non risolvibili con ritocchi:\n- Mobile del CINEMATICO di Quota: con un titolo lungo e un font esteso l'''hero resta denso;\n- Originalità del BASE di Nodo: la direzione tech scura è la meno distintiva;\n- Movimento nel BASE: volutamente minimo (6)."
+     "site": "fornace-lume",
+     "config": "baseline",
+     "level": "cinematic",
+     "scores": [
+      2,
+      3,
+      2,
+      5,
+      3,
+      2,
+      6,
+      7,
+      6,
+      3,
+      6,
+      2
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "baseline",
+     "level": "base",
+     "scores": [
+      2,
+      3,
+      1,
+      6,
+      4,
+      2,
+      6,
+      6,
+      6,
+      5,
+      6,
+      2
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "baseline",
+     "level": "cinematic",
+     "scores": [
+      2,
+      3,
+      2,
+      6,
+      4,
+      2,
+      6,
+      6,
+      6,
+      3,
+      6,
+      2
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "baseline",
+     "level": "base",
+     "scores": [
+      2,
+      2,
+      1,
+      6,
+      2,
+      2,
+      6,
+      6,
+      6,
+      5,
+      6,
+      1
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "baseline",
+     "level": "cinematic",
+     "scores": [
+      2,
+      2,
+      2,
+      6,
+      2,
+      2,
+      6,
+      6,
+      6,
+      3,
+      6,
+      1
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "a",
+     "level": "base",
+     "scores": [
+      8,
+      7,
+      8,
+      8,
+      9,
+      8,
+      8,
+      8,
+      7,
+      7,
+      7,
+      8
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "a",
+     "level": "cinematic",
+     "scores": [
+      8,
+      7,
+      8,
+      8,
+      9,
+      8,
+      8,
+      8,
+      7,
+      8,
+      7,
+      8
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "a",
+     "level": "base",
+     "scores": [
+      8,
+      8,
+      7,
+      8,
+      9,
+      7,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "a",
+     "level": "cinematic",
+     "scores": [
+      8,
+      8,
+      8,
+      8,
+      9,
+      8,
+      8,
+      8,
+      7,
+      8,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "a",
+     "level": "base",
+     "scores": [
+      7,
+      7,
+      4,
+      8,
+      9,
+      6,
+      7,
+      8,
+      7,
+      7,
+      7,
+      6
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "a",
+     "level": "cinematic",
+     "scores": [
+      7,
+      7,
+      4,
+      8,
+      9,
+      6,
+      7,
+      8,
+      7,
+      4,
+      7,
+      6
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "b",
+     "level": "base",
+     "scores": [
+      7,
+      7,
+      5,
+      8,
+      9,
+      6,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "b",
+     "level": "cinematic",
+     "scores": [
+      7,
+      7,
+      6,
+      8,
+      9,
+      6,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "b",
+     "level": "base",
+     "scores": [
+      7,
+      7,
+      7,
+      8,
+      9,
+      7,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "b",
+     "level": "cinematic",
+     "scores": [
+      7,
+      7,
+      7,
+      8,
+      9,
+      7,
+      8,
+      8,
+      7,
+      8,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "b",
+     "level": "base",
+     "scores": [
+      7,
+      7,
+      4,
+      8,
+      9,
+      6,
+      8,
+      8,
+      7,
+      7,
+      7,
+      6
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "b",
+     "level": "cinematic",
+     "scores": [
+      7,
+      7,
+      4,
+      8,
+      9,
+      6,
+      8,
+      8,
+      7,
+      8,
+      7,
+      6
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "c",
+     "level": "base",
+     "scores": [
+      6,
+      5,
+      4,
+      8,
+      9,
+      4,
+      8,
+      8,
+      7,
+      7,
+      8,
+      5
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "c",
+     "level": "cinematic",
+     "scores": [
+      6,
+      5,
+      4,
+      8,
+      9,
+      4,
+      8,
+      8,
+      7,
+      8,
+      8,
+      5
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "c",
+     "level": "base",
+     "scores": [
+      6,
+      5,
+      5,
+      8,
+      9,
+      4,
+      8,
+      8,
+      7,
+      7,
+      8,
+      5
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "c",
+     "level": "cinematic",
+     "scores": [
+      6,
+      5,
+      5,
+      8,
+      9,
+      4,
+      8,
+      8,
+      7,
+      8,
+      8,
+      5
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "c",
+     "level": "base",
+     "scores": [
+      6,
+      5,
+      3,
+      8,
+      9,
+      5,
+      8,
+      8,
+      7,
+      7,
+      8,
+      4
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "c",
+     "level": "cinematic",
+     "scores": [
+      6,
+      5,
+      3,
+      8,
+      9,
+      5,
+      8,
+      8,
+      7,
+      4,
+      8,
+      4
+     ]
     }
-  ]
+   ],
+   "notes": "Punti peggiori trovati:\n- **Nodo:** il reticolo era quasi invisibile, e nel CINEMATICO A e C costava 1,2-1,8 s di TBT, sotto soglia.\n- **Baseline:** uscivano senza stile per un difetto della pipeline (Tailwind non scansionava `engine/src/generated`). Non sono state valutate in questo stato: il difetto è stato corretto e le baseline rimisurate."
+  },
+  {
+   "name": "Iterazione 2 (finale)",
+   "rows": [
+    {
+     "site": "fornace-lume",
+     "config": "baseline",
+     "level": "base",
+     "scores": [
+      2,
+      3,
+      1,
+      5,
+      3,
+      2,
+      6,
+      7,
+      6,
+      5,
+      6,
+      2
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "baseline",
+     "level": "cinematic",
+     "scores": [
+      2,
+      3,
+      2,
+      5,
+      3,
+      2,
+      6,
+      7,
+      6,
+      3,
+      6,
+      2
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "baseline",
+     "level": "base",
+     "scores": [
+      2,
+      3,
+      1,
+      6,
+      4,
+      2,
+      6,
+      6,
+      6,
+      5,
+      6,
+      2
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "baseline",
+     "level": "cinematic",
+     "scores": [
+      2,
+      3,
+      2,
+      6,
+      4,
+      2,
+      6,
+      6,
+      6,
+      3,
+      6,
+      2
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "baseline",
+     "level": "base",
+     "scores": [
+      2,
+      2,
+      1,
+      6,
+      2,
+      2,
+      6,
+      6,
+      6,
+      5,
+      6,
+      1
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "baseline",
+     "level": "cinematic",
+     "scores": [
+      2,
+      2,
+      2,
+      6,
+      2,
+      2,
+      6,
+      6,
+      6,
+      3,
+      6,
+      1
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "a",
+     "level": "base",
+     "scores": [
+      8,
+      7,
+      8,
+      8,
+      9,
+      8,
+      8,
+      8,
+      7,
+      7,
+      7,
+      8
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "a",
+     "level": "cinematic",
+     "scores": [
+      8,
+      7,
+      8,
+      8,
+      9,
+      8,
+      8,
+      8,
+      7,
+      8,
+      7,
+      8
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "a",
+     "level": "base",
+     "scores": [
+      8,
+      8,
+      7,
+      8,
+      9,
+      7,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "a",
+     "level": "cinematic",
+     "scores": [
+      8,
+      8,
+      8,
+      8,
+      9,
+      8,
+      8,
+      8,
+      7,
+      8,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "a",
+     "level": "base",
+     "scores": [
+      7,
+      7,
+      6,
+      8,
+      9,
+      6,
+      7,
+      8,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "a",
+     "level": "cinematic",
+     "scores": [
+      7,
+      7,
+      6,
+      8,
+      9,
+      6,
+      7,
+      8,
+      7,
+      8,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "b",
+     "level": "base",
+     "scores": [
+      7,
+      7,
+      5,
+      8,
+      9,
+      6,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "b",
+     "level": "cinematic",
+     "scores": [
+      7,
+      7,
+      6,
+      8,
+      9,
+      6,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "b",
+     "level": "base",
+     "scores": [
+      7,
+      7,
+      7,
+      8,
+      9,
+      7,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "b",
+     "level": "cinematic",
+     "scores": [
+      7,
+      7,
+      7,
+      8,
+      9,
+      7,
+      8,
+      8,
+      7,
+      8,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "b",
+     "level": "base",
+     "scores": [
+      7,
+      7,
+      6,
+      8,
+      9,
+      6,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "b",
+     "level": "cinematic",
+     "scores": [
+      7,
+      7,
+      6,
+      8,
+      9,
+      6,
+      8,
+      8,
+      7,
+      8,
+      7,
+      7
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "c",
+     "level": "base",
+     "scores": [
+      6,
+      5,
+      4,
+      8,
+      9,
+      4,
+      8,
+      8,
+      7,
+      7,
+      8,
+      5
+     ]
+    },
+    {
+     "site": "fornace-lume",
+     "config": "c",
+     "level": "cinematic",
+     "scores": [
+      6,
+      5,
+      4,
+      8,
+      9,
+      4,
+      8,
+      8,
+      7,
+      8,
+      8,
+      5
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "c",
+     "level": "base",
+     "scores": [
+      6,
+      5,
+      5,
+      8,
+      9,
+      4,
+      8,
+      8,
+      7,
+      7,
+      8,
+      5
+     ]
+    },
+    {
+     "site": "quota-2100",
+     "config": "c",
+     "level": "cinematic",
+     "scores": [
+      6,
+      5,
+      5,
+      8,
+      9,
+      4,
+      8,
+      8,
+      7,
+      8,
+      8,
+      5
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "c",
+     "level": "base",
+     "scores": [
+      6,
+      5,
+      5,
+      8,
+      9,
+      5,
+      8,
+      8,
+      7,
+      7,
+      8,
+      5
+     ]
+    },
+    {
+     "site": "nodo-sicuro",
+     "config": "c",
+     "level": "cinematic",
+     "scores": [
+      6,
+      5,
+      5,
+      8,
+      9,
+      5,
+      8,
+      8,
+      7,
+      8,
+      8,
+      5
+     ]
+    }
+   ],
+   "notes": "Correzioni applicate:\n- **Reticolo:** più spesso e con meno segmenti, senza misure per segmento. Effetto misurato su Nodo C CINEMATICO: mobile da 68 a 94, TBT da 1.803 a 265 ms.\n- **Baseline:** con lo stile Tailwind corretto.\n\n**Non corretti (limite dichiarato):**\n- la firma `layers` della configurazione C sembra un paesaggio montano generico ed è uguale su Fornace e Quota;\n- la massa 3D di Fornace B ricorda più un frutto che lo smalto;\n- con lo scrub, i paragrafi dei capitoli scendono a opacità 0,35 quando si risale la pagina.\n\nLa terza iterazione non è stata fatta: correggere la firma C vuol dire disegnarne una nuova, non regolare un parametro."
+  }
+ ]
 }
