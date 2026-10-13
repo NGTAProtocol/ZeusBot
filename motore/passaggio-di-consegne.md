@@ -18,8 +18,8 @@ Frase di apertura per la nuova chat: «Leggi motore/passaggio-di-consegne.md e r
 
 | Commit | Cosa |
 |---|---|
-| (pulizia) | `zb voce verifica` non richiede più pagine d'esempio; mini-banca di prova senza esempi; prova «un solo esempio» sostituita da «scheda assente» |
-| ultimo | report, questo file, `prove/esiti/voce-solo-schede.md` |
+| 78b9963 | `zb voce verifica` non richiede più pagine d'esempio; mini-banca di prova senza esempi; prova «un solo esempio» sostituita da «scheda assente» |
+| c49842a | report, questo file, `prove/esiti/voce-solo-schede.md` |
 
 Banca-voci: rimosse le pagine d'esempio; due voci pronte, ciascuna con `scheda.md` e `divieti.yaml`.
 Il contenuto dei libri lo decide l'autore nel briefing.
@@ -31,7 +31,7 @@ Il contenuto dei libri lo decide l'autore nel briefing.
 | fd404a8 | `voce.py`, `zb voce`, `ZB_BANCA_VOCI`, blocco `voce` in libro.yaml, «Letto» con la voce, divieti in `stile.py`, CLAUDE.md |
 | 783216e | `modelli/briefing.md`: storia, schede dei personaggi, luoghi, regole, voce |
 | e619bcf | prove della sezione «voce» (+25), mini-banca inventata |
-| ultimo | report, questo file, `prove/esiti/voce.md` |
+| 80d7f46 | report, questo file, `prove/esiti/voce.md` |
 
 ## Sessioni precedenti (commit sul ramo motore)
 
