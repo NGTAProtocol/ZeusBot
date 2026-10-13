@@ -1,1 +1,7 @@
 artista-a-base: LH mob P97 A100 S100 (LCP 1822ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=1/0/0 | SOGLIE OK
+artista-a-cinematic: LH mob P99 A100 S100 (LCP 1977ms TBT 39ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+fornace-lume-a-base: LH mob P100 A100 S100 (LCP 1211ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+fornace-lume-b-base: LH mob P100 A100 S100 (LCP 1205ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+fornace-lume-c-base: LH mob P100 A100 S100 (LCP 1058ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+quota-2100-a-base: LH mob P94 A100 S100 (LCP 1363ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+quota-2100-b-base: LH mob P100 A100 S100 (LCP 1358ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
