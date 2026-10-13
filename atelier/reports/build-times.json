@@ -5,7 +5,7 @@
     "config": "baseline",
     "level": "base",
     "signature": null,
-    "ms": 2144
+    "ms": 2153
   },
   {
     "id": "fornace-lume-baseline-cinematic",
@@ -13,7 +13,7 @@
     "config": "baseline",
     "level": "cinematic",
     "signature": null,
-    "ms": 2285
+    "ms": 2577
   },
   {
     "id": "fornace-lume-a-base",
@@ -21,7 +21,7 @@
     "config": "a",
     "level": "base",
     "signature": "css:drip",
-    "ms": 2629
+    "ms": 1913
   },
   {
     "id": "fornace-lume-a-cinematic",
@@ -29,7 +29,7 @@
     "config": "a",
     "level": "cinematic",
     "signature": "css:drip",
-    "ms": 2695
+    "ms": 2968
   },
   {
     "id": "fornace-lume-b-base",
@@ -37,7 +37,7 @@
     "config": "b",
     "level": "base",
     "signature": "3d:blob",
-    "ms": 2663
+    "ms": 1920
   },
   {
     "id": "fornace-lume-b-cinematic",
@@ -45,7 +45,7 @@
     "config": "b",
     "level": "cinematic",
     "signature": "3d:blob",
-    "ms": 3014
+    "ms": 3593
   },
   {
     "id": "fornace-lume-c-base",
@@ -53,7 +53,7 @@
     "config": "c",
     "level": "base",
     "signature": "css:layers",
-    "ms": 2961
+    "ms": 1833
   },
   {
     "id": "fornace-lume-c-cinematic",
@@ -61,7 +61,7 @@
     "config": "c",
     "level": "cinematic",
     "signature": "css:layers",
-    "ms": 2698
+    "ms": 2465
   },
   {
     "id": "nodo-sicuro-baseline-base",
@@ -69,7 +69,7 @@
     "config": "baseline",
     "level": "base",
     "signature": null,
-    "ms": 1670
+    "ms": 1661
   },
   {
     "id": "nodo-sicuro-baseline-cinematic",
@@ -77,7 +77,7 @@
     "config": "baseline",
     "level": "cinematic",
     "signature": null,
-    "ms": 2595
+    "ms": 2838
   },
   {
     "id": "nodo-sicuro-a-base",
@@ -85,7 +85,7 @@
     "config": "a",
     "level": "base",
     "signature": "css:lattice",
-    "ms": 2771
+    "ms": 1900
   },
   {
     "id": "nodo-sicuro-a-cinematic",
@@ -93,7 +93,7 @@
     "config": "a",
     "level": "cinematic",
     "signature": "css:lattice",
-    "ms": 3034
+    "ms": 2620
   },
   {
     "id": "nodo-sicuro-b-base",
@@ -101,7 +101,7 @@
     "config": "b",
     "level": "base",
     "signature": "css:lattice",
-    "ms": 2839
+    "ms": 1863
   },
   {
     "id": "nodo-sicuro-b-cinematic",
@@ -109,7 +109,7 @@
     "config": "b",
     "level": "cinematic",
     "signature": "css:lattice",
-    "ms": 2854
+    "ms": 2448
   },
   {
     "id": "nodo-sicuro-c-base",
@@ -117,7 +117,7 @@
     "config": "c",
     "level": "base",
     "signature": "css:lattice",
-    "ms": 2793
+    "ms": 1802
   },
   {
     "id": "nodo-sicuro-c-cinematic",
@@ -125,7 +125,7 @@
     "config": "c",
     "level": "cinematic",
     "signature": "css:lattice",
-    "ms": 2690
+    "ms": 2561
   },
   {
     "id": "quota-2100-baseline-base",
@@ -133,7 +133,7 @@
     "config": "baseline",
     "level": "base",
     "signature": null,
-    "ms": 1901
+    "ms": 1960
   },
   {
     "id": "quota-2100-baseline-cinematic",
@@ -141,7 +141,7 @@
     "config": "baseline",
     "level": "cinematic",
     "signature": null,
-    "ms": 2899
+    "ms": 2749
   },
   {
     "id": "quota-2100-a-base",
@@ -149,7 +149,7 @@
     "config": "a",
     "level": "base",
     "signature": "3d:terrain",
-    "ms": 2779
+    "ms": 1852
   },
   {
     "id": "quota-2100-a-cinematic",
@@ -157,7 +157,7 @@
     "config": "a",
     "level": "cinematic",
     "signature": "3d:terrain",
-    "ms": 3006
+    "ms": 4004
   },
   {
     "id": "quota-2100-b-base",
@@ -165,7 +165,7 @@
     "config": "b",
     "level": "base",
     "signature": "css:contours",
-    "ms": 3068
+    "ms": 2021
   },
   {
     "id": "quota-2100-b-cinematic",
@@ -173,7 +173,7 @@
     "config": "b",
     "level": "cinematic",
     "signature": "css:contours",
-    "ms": 2834
+    "ms": 2930
   },
   {
     "id": "quota-2100-c-base",
@@ -181,7 +181,7 @@
     "config": "c",
     "level": "base",
     "signature": "css:layers",
-    "ms": 3137
+    "ms": 1985
   },
   {
     "id": "quota-2100-c-cinematic",
@@ -189,6 +189,6 @@
     "config": "c",
     "level": "cinematic",
     "signature": "css:layers",
-    "ms": 2635
+    "ms": 2767
   }
 ]

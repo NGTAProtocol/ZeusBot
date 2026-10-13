@@ -1,103 +1,98 @@
-# Atelier
+# Atelier (v2)
 
-Atelier produce **siti web statici** (Astro + Tailwind, zero CDN, deploy gratuito) a partire da un **brief JSON**. Ha tre livelli:
+Atelier produce **siti web statici** (Astro + Tailwind, zero CDN, deploy gratuito) a partire da un **brief JSON**.
 
-- **BASE:** nessun WebGL.
-- **CINEMATICO:** GSAP + ScrollTrigger + Lenis, hero Three.js procedurale in un Web Worker, grana.
-- **VIDEO-SCROLL:** opzionale, solo con asset forniti dal cliente.
+Prima del codice c'è sempre la **fase Bibbia**: concept, personalità, firma (`bibbia/BIBBIA.md`). Poi vengono struttura e copy, poi la build, poi il controllo qualità automatico:
+- screenshot a 375 / 768 / 1280;
+- Lighthouse mobile e desktop;
+- controlli dei fallback;
+- lint di cliché e link finti;
+- rubrica 1-10.
 
-Il controllo qualità è automatico: screenshot a 375 / 768 / 1280, Lighthouse mobile e desktop, controlli dei fallback, lint dei cliché e una rubrica di critica.
+I livelli sono tre:
+- **BASE:** nessun WebGL. La firma si muove con le animazioni CSS legate allo scroll.
+- **CINEMATICO:** GSAP + ScrollTrigger + Lenis pilotano la firma, con la grana. Three.js **solo se la firma è 3D** (Bibbia §14.3).
+- **VIDEO-SCROLL:** solo con asset forniti dal cliente.
 
-> **Esito della prova di valore e limiti:** vedi [`reports/PROVA-DI-VALORE.md`](reports/PROVA-DI-VALORE.md) e [`reports/QUALITY.md`](reports/QUALITY.md). In sintesi: i numeri sono reali; la rubrica è un'autovalutazione; lo studio dei siti premiati **non è stato possibile** (rete bloccata).
+> **Esito della prova di valore:** [`reports/PROVA-DI-VALORE.md`](reports/PROVA-DI-VALORE.md). **Misure:** [`reports/QUALITY.md`](reports/QUALITY.md). Lo studio dei siti premiati non è stato possibile per il blocco di rete (`references/README.md`); la rubrica è un'autovalutazione.
 
 ## Requisiti
-- Node.js ≥ 20 (testato con 22.22).
-- Per il QA: Chromium di Playwright (`npx playwright install chromium` se manca; in questo ambiente era preinstallato) e Lighthouse (dipendenza di sviluppo).
+- Node.js ≥ 20 (testato con 22).
+- Per il QA: Chromium di Playwright e Lighthouse (dipendenze di sviluppo).
 
 ## Comandi
 ```bash
 npm install
-npm run generate -- briefs/fornace-lume.json --level cinematic   # un sito → output/fornace-lume-cinematic/
-npm run generate -- briefs/fornace-lume.json --level base
-npm run generate -- briefs/fornace-lume.json --baseline           # baseline di confronto (baseline/<slug>.astro)
-npm run build:all                                                 # tutti i brief × BASE, CINEMATICO, BASELINE
-npm run qa -- fornace-lume-cinematic --runs 3                     # screenshot + Lighthouse + fallback → reports/
-node scripts/report.mjs                                           # aggrega in reports/QUALITY.md
-npm run study -- https://sito-di-riferimento.example              # studio di un riferimento (solo dati pubblici)
-npm test                                                          # struttura, licenze, CDN, skills.lock, build di tutti gli esempi
+npm run generate -- briefs/fornace-lume.json --config b --level cinematic   # → output/fornace-lume-b-cinematic/
+npm run generate -- briefs/fornace-lume.json --config baseline --level base  # baseline senza skill né Bibbia
+npm run build:all                    # 3 brief × 4 configurazioni × 2 livelli = 24 siti
+npm run qa -- fornace-lume-b-cinematic --runs 3
+node scripts/report.mjs              # reports/QUALITY.md + reports/metrics.json
+npm test                             # struttura, Bibbia, lint, licenze, CDN, skills.lock, build dei 24 siti
 ```
 
-## Come si crea un sito (flusso)
-1. **Brief:** scrivi `briefs/<slug>.json` con questi campi:
-   - obbligatori: `slug`, `business`, `sector`, `audience`, `goal`, `tone`, `language`, `pages`, `level`;
-   - opzionali: `direction`, e `facts` (dati veri forniti dal cliente: il copy non deve inventarne).
-2. **Direzione artistica:** viene scelta automaticamente tra le 8 di `scripts/lib/directions.mjs` in base a settore e tono, oppure impostata nel brief.
-3. **Struttura e copy:** scrivi `content/<slug>.json` seguendo la skill **`.claude/skills/atelier/SKILL.md`**. In Claude Code basta chiedere "usa la skill atelier per il brief X". Il lint (`scripts/lib/lint.mjs`) blocca:
-   - cliché e testo segnaposto;
-   - lingua diversa da quella del cliente;
-   - copy troppo generico;
-   - sezioni a "tre card".
-4. **Build:** `npm run generate`. L'output in `output/<slug>-<level>/` è HTML/CSS/JS statico.
-5. **QA:** `npm run qa` e critica con la rubrica, al massimo 3 iterazioni sui punti peggiori.
+## Flusso per un nuovo cliente
+1. **Brief** → `briefs/<slug>.json`. I `facts` sono gli unici dati che il sito può usare.
+2. **Fase Bibbia** → `bibbia/<slug>-<config>.json`: concept in una frase, 3 aggettivi + cosa NON è, firma (`css` o `3d` con `why_3d`), palette con la provenienza di ogni colore, font OFL, token, layout, `unknowns`. Viene validata da `scripts/lib/bibbia.mjs` (contrasto AA, font installati e open, al massimo 2 famiglie…).
+3. **Struttura e copy** → `content/<slug>-<config>.json`, seguendo `.claude/skills/atelier/SKILL.md` e un archetipo di `references/archetipi.md`. Il lint (`scripts/lib/lint.mjs`) blocca:
+   - cliché;
+   - link finti (ogni `href` deve portare a una sezione o a una pagina esistente, oppure a un'email o a un telefono del brief);
+   - CTA con etichette diverse per la stessa azione;
+   - le regole della configurazione C.
+4. **Build:** `npm run generate`. L'output è statico e include i dati strutturati `LocalBusiness`, generati dai contatti veri.
+5. **QA + rubrica:** al massimo 3 iterazioni sui punti peggiori. Non si dichiara successo se una soglia manca.
+
+## Configurazioni (per la prova di valore)
+| config | Skill | Note |
+|---|---|---|
+| `baseline` | nessuna, nessuna Bibbia | `baseline/<slug>-base.astro` e `-cinematic.astro`, scritte come le scriverebbe un generatore generico |
+| `a` | frontend-design | + metodo Atelier/Bibbia |
+| `b` | frontend-design + impeccable | strategia di colore, niente font "default", superfici del browser tematizzate |
+| `c` | frontend-design + taste-skill + emil-design-eng/emil-animate | sans display, un accento, hero ≤ 2 righe, modo scuro, pressione sui bottoni |
 
 ## Deploy gratuito
-La cartella `output/<slug>-<level>/` è un sito statico autonomo, senza CDN né chiamate esterne.
-- **Cloudflare Pages:** `npx wrangler pages deploy output/<slug>-cinematic`, oppure collega il repo con build command `npm run generate -- briefs/<slug>.json --level cinematic` e output directory `output/<slug>-cinematic`.
-- **Vercel:** stessa build command, output directory come sopra, framework "Other".
-- **GitHub Pages:** pubblica la cartella di output (es. con l'action `upload-pages-artifact`).
-  - Se il sito sta in una sottocartella, imposta `ATELIER_BASE=/nome-repo/` prima della build.
-  - Gli URL interni usano `import.meta.env.BASE_URL`, ma i link dentro il copy (es. `"href": "contatti"`) devono essere relativi.
-- Imposta `meta.url` in `content/<slug>.json` con il dominio reale (serve a canonical e Open Graph).
+`output/<slug>-<config>-<level>/` è un sito statico autonomo, senza CDN né chiamate esterne.
+- **Cloudflare Pages:** `npx wrangler pages deploy output/<id>`.
+- **Vercel:** framework "Other", output directory `output/<id>`.
+- **GitHub Pages:** carica la cartella. Se il sito sta in una sottocartella, imposta `ATELIER_BASE=/repo/` prima della build.
+- Imposta `meta.url` sul dominio reale (serve a canonical, Open Graph e JSON-LD).
 
 ## Struttura
 ```
-.claude/skills/atelier/SKILL.md   skill: principi, 8 direzioni, pattern, lista nera, copy, schema contenuti, rubrica
-.claude/skills/*                  skill di terzi che hanno passato l'audit (vedi skills.lock, audit-skill.md)
-briefs/ content/ baseline/        3 attività fittizie: brief, contenuti Atelier, baseline scritte direttamente
-engine/                           motore Astro condiviso (componenti, CSS, script client, worker 3D)
-engine/baseline-src/              ingresso separato per le baseline (nessuno stile Atelier)
-scripts/generate.mjs              brief → direzione → contenuti → build
-scripts/qa.mjs                    screenshot, Lighthouse, fallback, controlli
-scripts/study-reference.mjs       studio di un sito di riferimento (dati pubblici)
-scripts/lib/                      direzioni, lint, Lighthouse, browser
-references/                       studio dei riferimenti (esito reale), libreria di pattern, statistiche di stack
-reports/                          QA (json), screenshot, QUALITY.md, PROVA-DI-VALORE.md, rubric.json
-tests/                            npm test
-CREDITS.md                        licenze di font, librerie, asset (nessuna immagine o modello di terzi)
+bibbia/BIBBIA.md                 metodo obbligatorio (concept, personalità, firma, regole, checklist Q1-Q6)
+bibbia/<slug>-<config>.json      fase Bibbia di ogni sito di esempio
+.claude/skills/atelier/SKILL.md  skill operativa (riassume Bibbia, pattern, archetipi, direzioni, lista nera)
+.claude/skills/*                 skill di terzi che hanno passato l'audit (skills.lock, audit-skill.md)
+briefs/ content/ baseline/       3 attività fittizie
+engine/                          motore Astro (componenti, firme SVG, script client, worker 3D)
+engine/baseline-src/             ingresso separato per le baseline (nessuno stile Atelier)
+scripts/                         generate, qa, report, build-all, study-reference; lib/ (bibbia, lint, slop, lighthouse…)
+references/                      esito dello studio, pattern, archetipi, statistiche di stack
+reports/                         QUALITY.md, PROVA-DI-VALORE.md, metrics.json, rubric.json, qa/*.json, shots/*.jpg
+tests/                           npm test
+CREDITS.md                       licenze di font, librerie, asset
 ```
 
-## Livelli e fallback
-| Livello | Cosa include | Fallback |
-|---|---|---|
-| BASE | HTML/CSS, poster SVG procedurale, comparse con IntersectionObserver, menu mobile accessibile | contenuto sempre visibile senza JS e con reduced-motion |
-| CINEMATICO | Lenis (solo con puntatore fine), GSAP/ScrollTrigger (comparse, scrub dei capitoli, transizione di tono, testo reattivo al cursore), hero Three.js con shader procedurali in **Web Worker + OffscreenCanvas**, grana, audio opzionale spento | WebGL assente → poster SVG; `deviceMemory` < 4 o `hardwareConcurrency` < 4 → poster; Save-Data o reduced-motion → si comporta come il BASE; GSAP non caricabile → contenuto visibile; nessun OffscreenCanvas → 3D nel thread principale |
-| VIDEO-SCROLL | hero con video o frame legati allo scroll | **non implementato senza asset:** la pipeline rifiuta di partire. Servono media forniti dal cliente (o generati a pagamento solo previa conferma esplicita della spesa) |
+## Fallback
+| Livello | Fallback |
+|---|---|
+| BASE | contenuto sempre visibile senza JS; reduced-motion = firma ferma; senza `animation-timeline` la firma resta statica |
+| CINEMATICO | GSAP non caricabile o reduced-motion o Save-Data → si comporta come il BASE. Con firma 3D: WebGL assente o dispositivo debole → firma CSS di ripiego |
+| VIDEO-SCROLL | la pipeline rifiuta di partire senza asset |
 
-**Scelta di progetto da conoscere:** nel CINEMATICO il 3D parte **alla prima interazione** (mouse, scroll, tocco o tastiera). Fino ad allora si vede il poster SVG con la stessa palette.
-- Lighthouse non interagisce, quindi misura la pagina prima del 3D.
-- Per trasparenza il QA misura anche il costo con il 3D forzato all'avvio (`?force3d`): vedi `reports/QUALITY.md`.
-
-**Mobile curato, non solo ridimensionato:**
-- lead dedicato più corto;
-- arte nella fascia alta con dissolvenza prima del titolo;
-- barra CTA fissa dopo l'hero;
-- dati in fila scorrevole;
-- menu a pagina intera con focus trap ed Esc;
-- bersagli tattili ≥ 44 px;
-- niente Lenis né cursore reattivo su touch.
+Il 3D (dove c'è) parte al primo gesto, in un Worker, e **si ferma quando l'utente è fermo**: ~4 s dopo l'avvio e 2,5 s dopo ogni gesto. Nessun loop infinito.
 
 ## Licenze
-- **Codice di Atelier:** scritto per questo progetto.
-- **Font:** tutti OFL-1.1, serviti in locale.
+- **Codice:** scritto per Atelier.
+- **Font:** OFL-1.1, serviti in locale.
 - **Librerie:** three e lenis sono MIT.
-- **GSAP:** "Standard No-Charge License", **testo non verificabile da questo ambiente**. Va letto prima di vendere il servizio: vedi `CREDITS.md`.
-- **Skill di terzi:** vedi `skills.lock` e `audit-skill.md`.
+- **GSAP:** "Standard No-Charge License", **testo non verificabile da questo ambiente**; va letto prima di vendere il servizio (vedi `CREDITS.md`).
 
 ## Limiti noti
-- **Studio dei riferimenti non eseguito sui siti premiati:** la rete dell'ambiente li blocca tutti. La libreria dei pattern è scritta da conoscenza generale ed è dichiarata come tale (`references/`).
-- **WebGL misurato solo in software (SwiftShader):** su GPU reali creazione del contesto e compilazione degli shader sono molto più rapide; l'aspetto visivo dovrebbe essere identico.
-- **Nessun test su dispositivi reali** (iPhone, Android di fascia bassa) né su Safari o Firefox.
-- **Rubrica autovalutata:** l'ha compilata lo stesso modello che ha generato i siti. Non sostituisce il giudizio di un designer o di utenti.
-- **Copy:** lo scrive l'agente seguendo la skill (nessuna chiamata a un LLM dentro gli script). Senza un agente, la pipeline impagina contenuti già scritti.
-- **Un solo template di pagina con 7 archetipi di layout:** la varietà fra siti viene da direzione, tipografia, motivo 3D e copy, non da layout radicalmente diversi.
-- **VIDEO-SCROLL:** solo predisposto (rifiuto esplicito senza asset), non implementato end-to-end.
+- **Studio dei riferimenti** (siti premiati) non eseguito: la rete li blocca.
+- **WebGL** misurato solo in software (SwiftShader). Nessun test su dispositivi reali, Safari o Firefox.
+- **Rubrica autovalutata** dallo stesso modello che ha scritto i siti.
+- **Contaminazione del confronto:** anche baseline, A, B e C sono state scritte dallo stesso modello, nella stessa sessione.
+- **Firme parametriche:** 4 firme CSS e 5 scene 3D procedurali, parametrizzate dalla Bibbia. Non sono disegnate da zero per ogni cliente; due siti possono condividere lo stesso tipo di firma.
+- **Il copy lo scrive l'agente:** gli script non chiamano nessun LLM.
+- **VIDEO-SCROLL:** non implementato end-to-end.
