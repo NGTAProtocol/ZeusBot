@@ -500,7 +500,7 @@ def controlla_libro(cartella, libro):
             risultati.append(risultato(nome, 'ordine_date', 'AVVISO', None, f'{d} prima di {prec[1]} ({prec[0]})'))
         if d:
             prec = (nome, d)
-    return risultati, durate_trovate, date_unita
+    return comune.applica_eccezioni(risultati, libro), durate_trovate, date_unita
 
 
 def voci_toccate(cartella, libro, nome_unita):

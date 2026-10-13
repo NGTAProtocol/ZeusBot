@@ -456,6 +456,8 @@ Un file per libro, in `<libro>/libro.yaml`. Lo crea `zb nuovo` dal briefing (fas
 | `formato.margini_mm` | no | `alto`, `basso`, `esterno`, `interno_scelto` |
 | `formato.font`, `formato.numerazione` | no | nome, corpo, interlinea; da dove e dove |
 | `stile.*` | no | correzioni a frase media, dialogo, tetti, chiusure (sempre via `override` se cambiano il profilo) |
+| `stile.eccezioni` | no | `{unita, controllo, motivo}`: l'AVVISO di quel controllo in quell'unità diventa ECCEZIONE, con il motivo nel report; un KO resta KO |
+| `stile.richiami_ammessi` | no | frasi ripetute di proposito tra unità: `riciclo.py` non le segnala tra unità del libro (contro il testo precedente sì) |
 | `voci` | no | voci con pattern del libro, aggiunte alla lista nera (sotto) |
 | `vincoli_capitolo` | no | parole o voci con `consentito_in_capitoli` / `vietato_in_capitoli` |
 | `nome_vietato_prima_di` | no | nomi che non compaiono prima di un punto del libro |

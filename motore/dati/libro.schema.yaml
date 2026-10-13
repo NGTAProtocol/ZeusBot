@@ -54,7 +54,19 @@ campi:
           interno_scelto: {tipo: numero}
       font: {tipo: mappa, altri_campi: true}
       numerazione: {tipo: mappa, altri_campi: true}
-  stile: {tipo: mappa, altri_campi: true}
+  stile:
+    tipo: mappa
+    altri_campi: true
+    campi:
+      eccezioni:                                     # AVVISO -> ECCEZIONE, con il motivo; i KO restano KO
+        tipo: lista
+        elementi:
+          tipo: mappa
+          campi:
+            unita: {tipo: testo, obbligatorio: true}
+            controllo: {tipo: testo, obbligatorio: true}
+            motivo: {tipo: testo, obbligatorio: true}
+      richiami_ammessi: {tipo: lista, elementi: {tipo: testo}}   # riciclo.py: esclusi tra unità del libro
   voci:
     tipo: lista
     elementi:

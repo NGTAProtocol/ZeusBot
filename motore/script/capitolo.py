@@ -147,7 +147,7 @@ def controlla(cartella, libro, profilo, nome):
     out += [r for r in riciclo.controlla_libro(cartella, libro) if r['unita'] == nome]
     out += dichiarazioni(cartella, libro, unita, nome)
     met['parole'] = n_parole
-    return met, out
+    return met, comune.applica_eccezioni(out, libro)
 
 
 def main(argv):
