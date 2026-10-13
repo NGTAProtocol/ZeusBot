@@ -8,19 +8,32 @@ Frase di apertura per la nuova chat: «Leggi motore/passaggio-di-consegne.md e r
 - Suite: **454/454 OK**, 0 saltate, 0 KO, con LanguageTool e `ZB_BANCA_VOCI`. Comando:
   `ZB_LANGUAGETOOL=<cartella>/lib ZB_BANCA_VOCI=<banca-voci> python3 -B motore/zb prove`, dalla radice del repository.
 - Banca-voci (repository separato, fuori dal motore, solo schede di voce e divieti): oggi in
-  `/home/user/banca-voci` (commit a22b018, ramo `main`), senza remote (creazione rifiutata: 404 sull'organizzazione, 403 sull'account); copia in git bundle
-  nello scratchpad della sessione, `banca-voci-bundle/banca-voci.bundle`. Il container è effimero: il bundle va
-  salvato altrove, oppure serve un repository privato creato dall'autore (poi `git remote add` e push).
+  `/home/user/banca-voci` (ramo `main`, HEAD 896e7f4 «aggiunte cartelle materiali…», sopra a22b018),
+  senza remote (creazione rifiutata: 404 sull'organizzazione, 403 sull'account). Unica copia fuori dal
+  container: il bundle `banca-voci.bundle` (sha256 `a5d3ad1d…7e7992bffe`) mandato all'autore come file.
+  Il container è effimero: serve quel bundle oppure un repository privato creato dall'autore (poi
+  `git remote add` e push).
 - Ramo `archivio/ghimoney` su origin (572f40f): contiene `ghimoney/`, tolto dal motore.
 - Dettagli completi: `motore/report-motore.md`.
 
-## Fatto nell'ultima sessione: solo schede (commit sul ramo motore)
+## Fatto nell'ultima sessione: ripristino della banca-voci
+
+| Dove | Commit | Cosa |
+|---|---|---|
+| banca-voci | 896e7f4 | `voci/<slug>/materiali/LEGGIMI.md` per le due voci (sopra a22b018) |
+| motore | ultimo | questo file (ripartenza con `ZB_BANCA_VOCI`), `prove/esiti/banca-voci-ripristino.md` |
+
+Banca ripristinata dal bundle dell'autore (sha256 controllato); nuovo bundle mandato all'autore.
+`zb voce` esisteva già: nessuna modifica al codice. Suite 454/454 OK.
+
+## Sessione precedente: solo schede (commit sul ramo motore)
 
 | Commit | Cosa |
 |---|---|
 | 78b9963 | `zb voce verifica` non richiede più pagine d'esempio; mini-banca di prova senza esempi; prova «un solo esempio» sostituita da «scheda assente» |
 | c49842a | report, questo file, `prove/esiti/voce-solo-schede.md` |
-| 8f268c7, ultimo | hash in questo file; sezione «Ripartenza» |
+| 8f268c7 | hash in questo file |
+| d4b4833 | sezione «Ripartenza» |
 
 Banca-voci: rimosse le pagine d'esempio; due voci pronte, ciascuna con `scheda.md` e `divieti.yaml`.
 Il contenuto dei libri lo decide l'autore nel briefing.
@@ -57,9 +70,12 @@ Il contenuto dei libri lo decide l'autore nel briefing.
    `mvn -q -B dependency:copy-dependencies -DoutputDirectory=lib` (143 file) ed
    `export ZB_LANGUAGETOOL=<scratchpad>/lt/lib`.
 3. **Banca-voci.** In un container nuovo `/home/user/banca-voci` non c'è più. Chiedere all'autore il bundle
-   (gli è stato mandato come file, commit a22b018) o l'URL del repository privato, poi
-   `git clone <bundle o URL> /home/user/banca-voci` ed `export ZB_BANCA_VOCI=/home/user/banca-voci`.
-   Controllo: `zb voce lista` (2 voci pronte), `zb voce verifica <slug>` per ciascuna.
+   (ultimo mandato: HEAD 896e7f4, sha256 `a5d3ad1d…7e7992bffe`) o l'URL del repository privato, poi:
+   ```
+   git clone <bundle o URL> /home/user/banca-voci
+   export ZB_BANCA_VOCI=/home/user/banca-voci
+   ```
+   Controllo: `zb voce lista` (2 voci pronte), `zb voce verifica <slug>` per ciascuna (`script/voce.py`).
    Senza la banca la suite passa lo stesso: le prove «voce» usano la mini-banca di `prove/banca-voci-prova/`.
 4. **Suite** (circa 10 minuti: lanciarla in background):
    `ZB_LANGUAGETOOL=… ZB_BANCA_VOCI=… python3 -B motore/zb prove` → atteso 454/454 OK.
