@@ -1,6 +1,6 @@
 # Report del motore editoriale
 
-Stato al 2026-10-13, ramo `motore`. Suite: **429/429 OK**, 0 saltate, 0 KO (con LanguageTool).
+Stato al 2026-10-13, ramo `motore`. Suite: **454/454 OK**, 0 saltate, 0 KO (con LanguageTool e `ZB_BANCA_VOCI`).
 Il motore è una fabbrica generica di romanzi in italiano: procedura, script, modelli vuoti, profili
 di genere, dati KDP e mini-libri inventati per le prove. Non contiene libri reali.
 
@@ -11,12 +11,12 @@ di genere, dati KDP e mini-libri inventati per le prove. Non contiene libri real
 | `CLAUDE.md` | regole di avvio delle sessioni che lavorano su un libro |
 | `.gitignore` | file Python generati, ambienti virtuali |
 | `motore/zb` | punto d'ingresso unico: `python3 motore/zb <comando> …` |
-| `motore/script/` | 26 moduli Python: controlli, fasi, stampa, KDP, prove |
+| `motore/script/` | 27 moduli Python: controlli, fasi, stampa, KDP, voci, prove |
 | `motore/stampa/` | foglio di stile, render con Chromium, font EB Garamond |
 | `motore/dati/` | schemi, dati KDP, lista nera, lingue, struttura standard di un libro |
 | `motore/modelli/` | modelli vuoti per un libro nuovo |
 | `motore/profili/` | 7 profili di genere con i valori predefiniti |
-| `motore/prove/` | mini-libri inventati, `attesi.yaml`, esiti dei passi di sviluppo |
+| `motore/prove/` | mini-libri inventati, mini-banca-voci inventata, `attesi.yaml`, esiti dei passi di sviluppo |
 | `motore/README.md` | regole d'uso, comandi, ambiente |
 | `motore/PROCEDURA.md` | come si lavora su un libro, passo per passo |
 | `motore/proposta-motore.md` | progetto approvato del motore (riferimento delle sigle A.x, B.x, C.x) |
@@ -30,12 +30,13 @@ di genere, dati KDP e mini-libri inventati per le prove. Non contiene libri real
 | `zb` | smista i comandi verso gli script; `zb aiuto` li elenca |
 | `comune.py` | funzioni comuni: lettura e validazione di `libro.yaml`, percorsi dentro il libro, dati KDP, date, sessione |
 | `fase.py` | macchina a stati del libro (documenti, pagina campione, stesura, chiusura), gate, `zb pronto/ok/avanti/correggi/riapprova/esito`; unico script che scrive `stato.yaml` |
-| `avvio.py` | controlli d'avvio e riga «Letto: …» (`zb avvio`) |
+| `avvio.py` | controlli d'avvio e riga «Letto: …» (`zb avvio`); con la voce, anche briefing e scheda della voce |
+| `voce.py` | voci narrative della banca-voci (`ZB_BANCA_VOCI`): `zb voce lista`, `mostra <slug> [N]`, `verifica <slug>`; divieti della voce per `stile.py` |
 | `nuovo.py` | crea un libro dal briefing (`zb nuovo`) |
 | `adotta.py` | bozze di `libro.yaml`, stato, cronologia e nomi per un libro già avviato (`zb adotta`) |
 | `conta.py` | conteggio delle parole con il metodo unico; stampa a schermo, non scrive |
 | `capitolo.py` | tutti i controlli di un capitolo in un colpo solo (`zb capitolo`, usato da `zb esito`) |
-| `stile.py` | frase media, dialogo, lista nera e voci, tetti, similitudini, vincoli, eccezioni motivate |
+| `stile.py` | frase media, dialogo, lista nera e voci, divieti della voce narrativa (avviso), tetti, similitudini, vincoli, eccezioni motivate |
 | `riciclo.py` | anti-riciclo a 7 parole tra unità, con i richiami ammessi |
 | `continuita.py` | date, età, durate, tempi relativi, cifre, nomi scritti in due modi, fatti incompatibili |
 | `ortografia.py` | Hunspell it_IT, LanguageTool se disponibile, checklist per la lettura umana |
@@ -137,7 +138,8 @@ inventati. Autori inventati («Autore di Prova», «Autrice di Prova»).
 | esclusioni e budget | 6 | escludi_pattern, pattern «Non era X. Era Y.», budget degli interludi, chiusura |
 | titoli, tempi, età, push | 23 | titoli, tempi relativi, età, fatti incompatibili, push |
 | eccezioni e richiami | 3 | eccezioni motivate, richiami ammessi |
-| **Totale** | **429** | più `separazione.py` e `recinto.py` |
+| voce | 25 | `zb voce` sulla mini-banca inventata, regressioni della scheda, assenza di `ZB_BANCA_VOCI`, voce non pronta, libro senza voce invariato, «Letto» con la voce, divieti in AVVISO, modello del briefing |
+| **Totale** | **454** | più `separazione.py` e `recinto.py` (48 esecuzioni) |
 
 Non coperto dalle prove: libri oltre le 24 pagine, quindi le fasce interne oltre la prima;
 `zb pacchetto` su un libro completo; un PDF con immagini; i formati citati diversi da 5,5 × 8,5 e A5;
@@ -156,7 +158,8 @@ gli hook in modalità blocco; LanguageTool senza rete (le 2 prove si saltano).
 | LanguageTool 6.8 | livello (b) dell'ortografia | jar da Maven Central fuori dal repository, `export ZB_LANGUAGETOOL=<cartella>/lib` (README, «LanguageTool») |
 | EB Garamond | font di stampa | nel repository (`stampa/font/`) |
 
-Suite: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove`, dalla radice del repository.
+Suite: `ZB_LANGUAGETOOL=<cartella>/lib ZB_BANCA_VOCI=<banca-voci> python3 -B motore/zb prove`, dalla radice del
+repository. Le prove della sezione «voce» impostano da sole la mini-banca inventata di `prove/banca-voci-prova/`.
 Senza `ZB_LANGUAGETOOL`, 2 prove sono saltate con il motivo «LanguageTool assente» e le istruzioni.
 
 ## 8. Lettura da `libro.yaml`
@@ -171,6 +174,7 @@ Senza `ZB_LANGUAGETOOL`, 2 prove sono saltate con il motivo «LanguageTool assen
 - `stile.richiami_ammessi`: frasi ripetute di proposito, ignorate dall'anti-riciclo.
 - `fatti_incompatibili` (`id`, `a`, `b`, `nota`): AVVISO con le due righe se compaiono entrambi.
 - `struttura.interludi`, `gate`, `parole`, `override`, `copyright`, `ortografia`, `checklist_capitolo`.
+- `voce` (facoltativo): `{slug, ambientazione}`, voce della banca-voci. Senza il blocco, nulla cambia.
 - I documenti approvati si cambiano solo con `zb riapprova` (due commit).
 
 ## 9. Tolleranze e decisioni
@@ -185,7 +189,28 @@ Senza `ZB_LANGUAGETOOL`, 2 prove sono saltate con il motivo «LanguageTool assen
   archiviato nel ramo `archivio/ghimoney`.
 - Storia git non riscritta, nessun push forzato.
 
-## 10. Limiti noti e punti aperti (in ordine di importanza)
+## 10. Voci narrative (banca-voci)
+
+La voce (come si racconta) sta in un repository separato, la banca-voci; il briefing (cosa si racconta)
+sta nel libro. Il motore non contiene voci reali né pagine di manoscritti.
+
+- `ZB_BANCA_VOCI`: percorso della banca, accanto a `ZB_LANGUAGETOOL` (README, «Banca-voci»); nessun
+  percorso nel codice.
+- Banca: `indice.yaml`, `voci/<slug>/scheda.md` (7 sezioni: nome e ruolo, principi, ritmo e sintassi,
+  lessico, adattamento per genere, campione, istruzione di esecuzione con «ambientazione:»),
+  `voci/<slug>/divieti.yaml`, `voci/<slug>/esempi/` (almeno 2), `modelli/scheda-vuota.md`.
+- `zb voce verifica`: voce nell'indice, 7 sezioni, «ambientazione:», ≥ 2 esempi, `divieti.yaml` leggibile,
+  stato «pronta». Errori sempre come FERMO o KO, mai traceback.
+- `libro.yaml` → `voce: {slug, ambientazione}`; dal briefing con «Voce dalla banca:» e «Ambientazione:».
+- `zb avvio`: «Letto» con briefing e scheda della voce; voce non verificata o banca assente = AVVISO.
+- `stile.py`: i divieti della voce si sommano alle voci del libro in modalità avviso (`voce:<slug>:<id>`).
+- `modelli/briefing.md`: Storia, Schede dei personaggi (vincoli «sempre» / «quasi sempre» / «mai»),
+  Luoghi ed epoca, Regole del libro, Voce scelta e ambientazione; esempio inventato in un commento.
+- Prove: mini-banca inventata in `prove/banca-voci-prova/` (una voce pronta, una da completare).
+- Banca reale oggi: una sola voce pronta, con 5 pagine-modello originali e 60 divieti. Le altre voci
+  previste sono elencate nel README della banca-voci, non qui.
+
+## 11. Limiti noti e punti aperti (in ordine di importanza)
 
 1. Dati KDP mai riverificati dall'autore (`ultima_verifica: null`): prima di pubblicare va fatta la
    verifica sulle pagine ufficiali e registrata con `zb verifica KDP fatta`.
@@ -204,3 +229,8 @@ Senza `ZB_LANGUAGETOOL`, 2 prove sono saltate con il motivo «LanguageTool assen
 8. Mini-libri sotto le 24 pagine: la sezione 11 della conformità KDP è KO per costruzione; le fasce
    del margine interno oltre la prima non sono provate.
 9. La storia git del ramo contiene ancora i riferimenti tolti e `ghimoney/` (scelta: niente riscrittura).
+10. Banca-voci: aggiungere le altre quattro voci previste (elenco nel README della banca-voci) con i
+    capitoli veri, solo nella banca. La banca non ha ancora un remote privato: oggi esiste come commit
+    locale e git bundle, che vanno salvati fuori dal container.
+11. I divieti della voce si applicano solo con `ZB_BANCA_VOCI` impostata: senza, `zb avvio` avvisa ma
+    `zb stile` non li controlla.
