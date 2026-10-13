@@ -2258,15 +2258,14 @@ def voce(A):
     d = tempfile.mkdtemp(dir=TMP)
     bc = shutil.copytree(banca, os.path.join(d, 'banca'))
     ps = os.path.join(bc, 'voci', 'voce-di-prova', 'scheda.md')
-    pe = os.path.join(bc, 'voci', 'voce-di-prova', 'esempi', '02-pioggia.md')
-    orig, orig_e = open(ps, encoding='utf-8').read(), open(pe, encoding='utf-8').read()
+    orig = open(ps, encoding='utf-8').read()
     pd = os.path.join(bc, 'voci', 'voce-di-prova', 'divieti.yaml')
     orig_d = open(pd, encoding='utf-8').read()
     rotture = {
         'divieti.yaml non leggibile': lambda: open(pd, 'w', encoding='utf-8').write('divieti: [\n'),
         'senza la sezione 4': lambda: open(ps, 'w', encoding='utf-8').write(re.sub(r'(?s)## 4\..*?(?=## 5\.)', '', orig)),
         'senza ambientazione': lambda: open(ps, 'w', encoding='utf-8').write(orig.replace('ambientazione: altro\n', '')),
-        'un solo esempio': lambda: os.remove(pe),
+        'scheda assente': lambda: os.remove(ps),
     }
     for nome, rompi in rotture.items():
         rompi()
@@ -2274,7 +2273,6 @@ def voce(A):
         esito('voce.py', f'(c) scheda rotta, {nome}: codice / problemi', A['rotture'][nome],
               f'{p.returncode} / {[x.strip()[2:] for x in p.stdout.splitlines() if x.startswith("  - ")]}', sez)
         open(ps, 'w', encoding='utf-8').write(orig)
-        open(pe, 'w', encoding='utf-8').write(orig_e)
         open(pd, 'w', encoding='utf-8').write(orig_d)
     p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bc)
     esito('voce.py', '(c) scheda ripristinata: codice', A['ripristinata'], p.returncode, sez)

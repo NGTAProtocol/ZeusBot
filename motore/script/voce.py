@@ -7,13 +7,13 @@ La banca-voci è un repository separato, fuori dal motore: il percorso si legge 
 ZB_BANCA_VOCI, mai scritto nel codice. Struttura attesa:
   indice.yaml                 voci: [{slug, nome, genere, stato: pronta | da_completare}]
   voci/<slug>/scheda.md       7 sezioni «## N. Titolo», nell'ordine di SEZIONI
-  voci/<slug>/esempi/         pagine-modello (.md); LEGGIMI.md non conta
   voci/<slug>/divieti.yaml    divieti: [{id, espressione | pattern, tipo, nota}]: espressioni vietate
                               della voce; stile.py le aggiunge alle voci del libro (modalità avviso)
 - lista: le voci dell'indice, con genere e stato.
 - mostra: la scheda in blocchi di circa 120 righe (come revisione.py); N predefinito 1.
 - verifica: la voce è nell'indice, ha la scheda con le 7 sezioni e il campo «ambientazione:»
-  nella sezione 7, almeno 2 esempi, divieti.yaml leggibile, stato «pronta». Codice 1 con l'elenco dei problemi.
+  nella sezione 7, divieti.yaml leggibile, stato «pronta». Codice 1 con l'elenco dei problemi.
+  Le pagine d'esempio non sono richieste: la banca contiene solo schede.
 Senza ZB_BANCA_VOCI, con una cartella senza indice.yaml o con una voce assente: FERMO (codice 2).
 """
 import os
@@ -27,7 +27,6 @@ import revisione  # noqa: E402
 
 SEZIONI = ['Nome e ruolo', 'Principi', 'Ritmo e sintassi', 'Lessico', 'Adattamento per genere',
            'Campione', 'Istruzione di esecuzione']
-ESEMPI_MINIMI = 2
 STATI = ('pronta', 'da_completare')
 
 
@@ -60,14 +59,6 @@ def voce_in_indice(b, slug):
 
 def scheda(b, slug):
     return os.path.join(b, 'voci', slug, 'scheda.md')
-
-
-def esempi(b, slug):
-    d = os.path.join(b, 'voci', slug, 'esempi')
-    if not os.path.isdir(d):
-        return []
-    return sorted(f for f in os.listdir(d) if f.endswith('.md') and f.upper() != 'LEGGIMI.MD'
-                  and os.path.getsize(os.path.join(d, f)) > 0)
 
 
 def divieti(b, slug):
@@ -141,9 +132,6 @@ def problemi(b, slug):
         divieti(b, slug)
     except comune.ErroreMotore as e:
         out.append(str(e))
-    n = len(esempi(b, slug))
-    if n < ESEMPI_MINIMI:
-        out.append(f'esempi: {n} in voci/{slug}/esempi/, ne servono almeno {ESEMPI_MINIMI}')
     stato = v.get('stato')
     if stato not in STATI:
         out.append(f'stato «{stato}» non ammesso ({" | ".join(STATI)})')
@@ -189,7 +177,7 @@ def verifica(b, slug):
         for x in out:
             print(f'  - {x}')
         return 1
-    print(f'OK voce {slug}: 7 sezioni, {len(esempi(b, slug))} esempi, {len(divieti(b, slug))} divieti, pronta')
+    print(f'OK voce {slug}: 7 sezioni, {len(divieti(b, slug))} divieti, pronta')
     return 0
 
 

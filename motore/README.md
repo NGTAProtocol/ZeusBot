@@ -137,7 +137,8 @@ le 2 prove restano saltate. Dettagli in `PROCEDURA.md`, sezione «Ortografia».
 ### Banca-voci
 
 Le voci narrative (come si racconta) stanno in un repository separato, la banca-voci, mai dentro il
-motore: le pagine-modello e gli eventuali brani di manoscritti restano lì. Il motore legge la banca in
+motore. La banca contiene solo schede di voce e divieti: niente pagine di libri né manoscritti. Il
+contenuto di ogni libro lo decide l'autore nel briefing. Il motore legge la banca in
 sola lettura dalla cartella indicata da `ZB_BANCA_VOCI`, come fa con `ZB_LANGUAGETOOL`; nessun percorso
 è scritto nel codice.
 
@@ -145,13 +146,13 @@ sola lettura dalla cartella indicata da `ZB_BANCA_VOCI`, come fa con `ZB_LANGUAG
 export ZB_BANCA_VOCI=<cartella della banca-voci>
 python3 motore/zb voce lista
 python3 motore/zb voce mostra <slug> [N]     # scheda in blocchi di circa 120 righe
-python3 motore/zb voce verifica <slug>       # indice, 7 sezioni, «ambientazione:», ≥ 2 esempi, divieti.yaml, pronta
+python3 motore/zb voce verifica <slug>       # indice, scheda con 7 sezioni e «ambientazione:», divieti.yaml, pronta
 ```
 
 Struttura della banca: `indice.yaml` (`voci:` con `slug`, `nome`, `genere`, `stato: pronta | da_completare`),
 `voci/<slug>/scheda.md` con le sezioni «## 1. Nome e ruolo», «## 2. Principi», «## 3. Ritmo e sintassi»,
 «## 4. Lessico…», «## 5. Adattamento per genere», «## 6. Campione…», «## 7. Istruzione di esecuzione»
-(con il campo «ambientazione:»), `voci/<slug>/esempi/` con almeno 2 pagine-modello e `voci/<slug>/divieti.yaml`
+(con il campo «ambientazione:») e `voci/<slug>/divieti.yaml`
 (`divieti:` con `id` ed `espressione` o `pattern`): le espressioni vietate della voce.
 
 Un libro sceglie la voce in `libro.yaml` con il blocco facoltativo `voce: {slug, ambientazione}` (dal

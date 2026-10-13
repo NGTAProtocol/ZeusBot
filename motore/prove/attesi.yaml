@@ -686,7 +686,7 @@ voce:
   mostra: "0 / True / True"
   mostra_non_pronta: "0 / True"
   blocco_inesistente: "2 / False"
-  verifica_pronta: "0 / OK voce voce-di-prova: 7 sezioni, 2 esempi, 3 divieti, pronta"
+  verifica_pronta: "0 / OK voce voce-di-prova: 7 sezioni, 3 divieti, pronta"
   verifica_non_pronta: "1 / True / False"
   voce_assente: "2 / False"
   senza_variabile: "2 True False / 2 True False / 2 True False"
@@ -695,7 +695,7 @@ voce:
     divieti.yaml non leggibile: "1 / ['voci/voce-di-prova/divieti.yaml non leggibile: while parsing a flow node']"
     senza la sezione 4: "1 / ['sezione 4 «Lessico» mancante']"
     senza ambientazione: "1 / ['sezione 7: manca il campo «ambientazione:»']"
-    un solo esempio: "1 / ['esempi: 1 in voci/voce-di-prova/esempi/, ne servono almeno 2']"
+    scheda assente: "1 / ['scheda assente: voci/voce-di-prova/scheda.md']"   # al posto di «un solo esempio»: gli esempi non sono più richiesti
   ripristinata: 0
   libro_senza_voce: "0 0 / identica / False / False"
   briefing_voce: "Voce dalla banca: voce-di-prova\nAmbientazione: Borgo di Prova\n"
