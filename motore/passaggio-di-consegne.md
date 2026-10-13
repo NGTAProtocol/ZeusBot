@@ -21,12 +21,13 @@ Frase di apertura per la nuova chat: «Leggi motore/passaggio-di-consegne.md e r
   | blocco `voce` in libro.yaml | esiste |
   | divieti della voce in `stile.py` | esiste |
   | sezioni del briefing | esiste (nell'esempio resta il «biondo» DA CONFERMARE, punto aperto 7) |
-- Banca-voci (repository separato, fuori dal motore, solo schede di voce e divieti): oggi in
-  `/home/user/banca-voci` (ramo `main`, HEAD 896e7f4 «aggiunte cartelle materiali…», sopra a22b018),
-  senza remote (creazione rifiutata: 404 sull'organizzazione, 403 sull'account). Unica copia fuori dal
-  container: il bundle `banca-voci.bundle` (sha256 `a5d3ad1d…7e7992bffe`) mandato all'autore come file.
-  Il container è effimero: serve quel bundle oppure un repository privato creato dall'autore (poi
-  `git remote add` e push).
+- Banca-voci (repository separato, fuori dal motore, solo schede di voce e divieti): remote privato
+  `https://github.com/NGTAProtocol/https-github.com-banca-voci`, ramo `main`, HEAD `08ce720`
+  «aggiunte 7 voci editoriali», allineato a origin. 9 voci: `atkinson-2-0` e `ibrida-pasolini-camilleri`
+  (pronte); `avventura-e-cuore`, `mistero-ed-epicita`, `grande-voce-crossover` (ragazzi, narrativa) e
+  `saggistica-cinematografica`, `saggistica-psicologica-esistenziale`, `saggistica-idee-visione`,
+  `saggistica-corale-sociale` (saggistica e biografia), tutte `da_completare`. Copia di sicurezza: bundle
+  `banca-voci.bundle` (sha256 `5a172d7c…1774802`) mandato all'autore.
 - Ramo `archivio/ghimoney` su origin (572f40f): contiene `ghimoney/`, tolto dal motore.
 - Dettagli completi: `motore/report-motore.md`.
 
@@ -81,6 +82,16 @@ Come funziona l'hook (PreToolUse su Write, Edit, MultiEdit, NotebookEdit):
 - `libro-attivo.md` assente o vuoto: avviso, non blocco (succede sul ramo `motore`, che non ha `libri/`).
 - «lavoro sul motore» → `zb lavoro motore`: consentito il repository tranne `libri/`. `zb lavoro stato` mostra lo stato.
 
+### Stessa sessione: banca-voci (nessun commit nel motore)
+
+| Commit (banca) | Cosa |
+|---|---|
+| 08ce720 | 7 voci editoriali: testo dell'autore invariato nelle sezioni 1, 2, 3 e 7 della scheda; sezioni 4-6 e `divieti.yaml` (vuoto) da completare dall'autore; `ambientazione: altro`; indice.yaml e README a 9 voci |
+
+Remote: push normale di `main` su `NGTAProtocol/https-github.com-banca-voci` (repository vuoto prima).
+La rinomina in `banca-voci` è sospesa: l'autore non riesce ad accedere a GitHub (email di verifica non
+ricevuta); `NGTAProtocol/banca-voci` oggi non esiste per la sessione.
+
 ### Sessione precedente: ripristino della banca-voci
 
 | Dove | Commit | Cosa |
@@ -129,7 +140,10 @@ Il contenuto dei libri lo decide l'autore nel briefing.
    nel repository (per esempio una lista esterna letta da una variabile d'ambiente).
 4. Rigenerare i PDF dei libri A5 già impaginati: solo su richiesta.
 5. Script d'avvio della sessione per installare le dipendenze in un container nuovo.
-6. Repository privato per la banca-voci (da creare a mano: la sessione non ha il permesso).
+6. Banca-voci: repository privato fatto (`NGTAProtocol/https-github.com-banca-voci`); rinomina in
+   `banca-voci` sospesa (accesso a GitHub dell'autore). Le 7 voci nuove restano `da_completare`: servono
+   lessico guida, adattamento per genere, campione-modello e divieti (dall'autore, o scritti da Claude
+   con il suo ok).
 7. Nell'esempio del briefing, il biondo: capelli o capo d'abbigliamento? (segnato «DA CONFERMARE»).
 8. L'hook copre Write, Edit, MultiEdit e NotebookEdit, non Bash: una scrittura via shell non è bloccata
    (resta il recinto dei comandi del motore, `comune.scrivi`).
@@ -139,6 +153,8 @@ Il contenuto dei libri lo decide l'autore nel briefing.
 
 ## Prossimo passo
 
+- Banca-voci: completare le 7 voci nuove (sezioni 4-6 e `divieti.yaml`), poi `stato: pronta` e
+  `zb voce verifica`; rinomina del repository quando l'autore rientra su GitHub.
 - Sul primo ramo di libro: unire il motore (merge, mai rebase), `zb hook attiva --ok` (dopo l'«ok»
   dell'autore, commit a parte sul ramo del libro), poi `zb lavoro libro <slug>` e `zb avvio libri/<slug>`;
   per un briefing nuovo `zb nuovo libri/<slug>/briefing.md`.
@@ -158,20 +174,22 @@ Il contenuto dei libri lo decide l'autore nel briefing.
    `pom.xml` con `org.languagetool:languagetool-commandline` e `org.languagetool:language-it` 6.8, poi
    `mvn -q -B dependency:copy-dependencies -DoutputDirectory=lib` (143 file) ed
    `export ZB_LANGUAGETOOL=<scratchpad>/lt/lib`.
-3. **Banca-voci.** In un container nuovo `/home/user/banca-voci` non c'è più. Chiedere all'autore il bundle
-   (ultimo mandato: HEAD 896e7f4, sha256 `a5d3ad1d…7e7992bffe`) o l'URL del repository privato, poi:
+3. **Banca-voci.** In un container nuovo `/home/user/banca-voci` non c'è più. Collegare alla sessione
+   `NGTAProtocol/https-github.com-banca-voci` (push), poi:
    ```
-   git clone <bundle o URL> /home/user/banca-voci
+   git clone https://github.com/NGTAProtocol/https-github.com-banca-voci /home/user/banca-voci
    export ZB_BANCA_VOCI=/home/user/banca-voci
    ```
-   Controllo: `zb voce lista` (2 voci pronte), `zb voce verifica <slug>` per ciascuna (`script/voce.py`).
+   Se il repository non è raggiungibile: bundle dell'autore (HEAD 08ce720, sha256 `5a172d7c…1774802`).
+   Controllo: `zb voce lista` (9 voci, 2 pronte), `zb voce verifica` OK sulle 2 pronte (`script/voce.py`).
    Senza la banca la suite passa lo stesso: le prove «voce» usano la mini-banca di `prove/banca-voci-prova/`.
 4. **Suite** (circa 10 minuti: lanciarla in background):
    `ZB_LANGUAGETOOL=… ZB_BANCA_VOCI=… python3 -B motore/zb prove` → atteso 457/457 OK.
    Per provare una sola sezione: importare `script/prove.py` e chiamare la funzione con
    `comune.leggi_yaml('prove/attesi.yaml')[<chiave>]`, poi cancellare `prove.TMP`.
-5. **Remote della banca.** `create_repository` (GitHub) è rifiutato: 404 sull'organizzazione, 403
-   sull'account. Non riprovare senza un cambiamento dei permessi: serve un repository creato dall'autore.
+5. **Remote della banca.** `NGTAProtocol/https-github.com-banca-voci`. Se l'autore lo rinomina in
+   `banca-voci`: collegare `NGTAProtocol/banca-voci`, `git remote set-url origin
+   https://github.com/NGTAProtocol/banca-voci.git`, fetch di verifica. `create_repository` resta rifiutato.
 6. **Recinto.** `zb lavoro stato`. Sul ramo `motore` l'hook non è attivo (nessun `.claude/settings.json`);
    dopo «lavoro sul motore» dell'autore: `zb lavoro motore`. Su un libro: ramo del libro,
    `zb hook attiva --ok` se manca `.claude/settings.json`, poi
