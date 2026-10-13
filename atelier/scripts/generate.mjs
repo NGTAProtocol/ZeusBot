@@ -129,7 +129,7 @@ export async function generate({ brief: briefPath, level, config = 'a', out }) {
   await rm(outDir, { recursive: true, force: true });
   const res = spawnSync(process.execPath, [join(ROOT, 'node_modules', 'astro', 'bin', 'astro.mjs'), 'build', '--silent'], {
     cwd: ENGINE,
-    env: { ...process.env, ATELIER_SRC: config === 'baseline' ? './baseline-src' : './src', ATELIER_OUT: outDir, ATELIER_SITE: site.content?.meta?.url || 'https://example.com', ASTRO_TELEMETRY_DISABLED: '1' },
+    env: { ...process.env, ATELIER_SRC: config === 'baseline' ? './baseline-src' : './src', ATELIER_OUT: outDir, ATELIER_SITE: site.content?.meta?.url || 'https://example.com', ATELIER_3D: site.bibbia?.signature.kind === '3d' && level === 'cinematic' ? '1' : '0', ASTRO_TELEMETRY_DISABLED: '1' },
     encoding: 'utf8'
   });
   if (res.status !== 0) throw new Error(`Build Astro fallita:\n${res.stdout}\n${res.stderr}`);

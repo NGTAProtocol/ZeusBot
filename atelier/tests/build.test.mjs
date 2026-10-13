@@ -12,10 +12,10 @@ const files = (dir) => readdirSync(dir, { recursive: true }).map((f) => join(dir
 
 for (const f of readdirSync(join(ROOT, 'briefs')).filter((x) => x.endsWith('.json'))) {
   const slug = f.replace('.json', '');
-  for (const variant of ['base', 'cinematic', 'baseline']) {
-    test(`build ${slug} [${variant}]`, { timeout: 120000 }, async () => {
-      const out = join(OUT, `${slug}-${variant}`);
-      await generate({ brief: join(ROOT, 'briefs', f), level: variant === 'baseline' ? 'base' : variant, baseline: variant === 'baseline', out });
+  for (const config of ['baseline', 'a', 'b', 'c']) for (const level of ['base', 'cinematic']) {
+    test(`build ${slug}-${config}-${level}`, { timeout: 120000 }, async () => {
+      const out = join(OUT, `${slug}-${config}-${level}`);
+      const r = await generate({ brief: join(ROOT, 'briefs', f), level, config, out });
       assert.ok(existsSync(join(out, 'index.html')));
       const html = readFileSync(join(out, 'index.html'), 'utf8');
       assert.match(html, /<html lang="it"/);
@@ -25,9 +25,13 @@ for (const f of readdirSync(join(ROOT, 'briefs')).filter((x) => x.endsWith('.jso
         assert.doesNotMatch(s, /<script[^>]+src="https?:|<link[^>]+href="https?:\/\/(?!(fornacelume|quota2100|nodosicuro)\.example)/, `risorsa esterna in ${file}`);
         assert.doesNotMatch(s, /cdn\.jsdelivr|unpkg\.com|fonts\.googleapis|cdnjs/, `CDN in ${file}`);
       }
+      if (config === 'baseline') return;
       const js = files(out).filter((x) => x.endsWith('.js')).map((x) => x.split('/').pop()).join(' ');
-      if (variant === 'base') assert.doesNotMatch(js, /gsap|lenis|scene|hero-worker/i, 'il BASE non deve includere GSAP/Lenis/Three');
-      if (variant === 'cinematic') assert.match(js, /hero-worker/, 'il CINEMATICO deve avere il worker 3D');
+      if (level === 'base') assert.doesNotMatch(js, /gsap|lenis|scene|hero-worker/i, 'il BASE non deve includere GSAP/Lenis/Three');
+      // Bibbia §14.3: Three.js solo se la firma è 3D
+      if (level === 'cinematic' && r.signature.startsWith('3d')) assert.match(js, /hero-worker/, 'firma 3D: serve il worker 3D');
+      if (level === 'cinematic' && r.signature.startsWith('css')) assert.doesNotMatch(js, /hero-worker|scene/, 'firma CSS: niente Three.js');
+      assert.match(html, /application\/ld\+json/, 'dati strutturati LocalBusiness');
     });
   }
 }

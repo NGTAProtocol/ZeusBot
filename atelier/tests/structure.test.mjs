@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { DIRECTIONS, contrast } from '../scripts/lib/directions.mjs';
 import { lintContent } from '../scripts/lib/lint.mjs';
 import { validateBrief } from '../scripts/generate.mjs';
+import { validateBibbia, CONFIGS } from '../scripts/lib/bibbia.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => readFileSync(join(ROOT, p), 'utf8');
@@ -22,7 +23,8 @@ test('struttura del progetto', () => {
   for (const p of ['README.md', 'CREDITS.md', 'skills.lock', 'audit-skill.md', 'package.json', '.claude/skills/atelier/SKILL.md',
     'scripts/generate.mjs', 'scripts/qa.mjs', 'scripts/build-all.mjs', 'scripts/study-reference.mjs', 'scripts/lib/directions.mjs', 'scripts/lib/lint.mjs',
     'engine/astro.config.mjs', 'engine/src/pages/index.astro', 'engine/src/scripts/cinematic.js', 'engine/src/scripts/scene.js',
-    'references/README.md', 'references/patterns.md', 'references/stack-stats.md'])
+    'references/README.md', 'references/patterns.md', 'references/stack-stats.md', 'references/archetipi.md',
+    'bibbia/BIBBIA.md', 'scripts/lib/bibbia.mjs', 'engine/src/lib/signature.js'])
     assert.ok(existsSync(join(ROOT, p)), `manca ${p}`);
   const skill = read('.claude/skills/atelier/SKILL.md');
   assert.match(skill, /^---\nname: atelier\ndescription: /);
@@ -62,7 +64,12 @@ test('CREDITS presente e copre dipendenze e font', () => {
   const credits = read('CREDITS.md');
   const pkg = JSON.parse(read('package.json'));
   for (const dep of ['three', 'lenis', 'gsap']) assert.ok(credits.includes(dep), `CREDITS non cita ${dep}`);
-  for (const d of DIRECTIONS) for (const f of [d.fonts.display, d.fonts.body]) {
+  const fonts = DIRECTIONS.flatMap((d) => [d.fonts.display, d.fonts.body]);
+  for (const f of readdirSync(join(ROOT, 'bibbia')).filter((x) => x.endsWith('.json'))) {
+    const b = JSON.parse(read(`bibbia/${f}`));
+    fonts.push(b.tokens.fonts.display, b.tokens.fonts.body);
+  }
+  for (const f of fonts) {
     const name = f.family.replace(' Variable', '');
     assert.ok(credits.includes(name), `CREDITS non cita il font ${name}`);
   }
@@ -71,7 +78,7 @@ test('CREDITS presente e copre dipendenze e font', () => {
 
 test('skills.lock coerente con .claude/skills', () => {
   const lock = JSON.parse(read('skills.lock'));
-  const installed = new Set(lock.skills.filter((s) => s.status === 'installed').flatMap((s) => s.installed_as));
+  const installed = new Set(lock.skills.filter((s) => ['installed', 'installed-partial'].includes(s.status)).flatMap((s) => s.installed_as));
   const onDisk = readdirSync(join(ROOT, '.claude/skills')).filter((n) => n !== 'atelier' && statSync(join(ROOT, '.claude/skills', n)).isDirectory());
   assert.deepEqual([...onDisk].sort(), [...installed].sort());
   for (const s of lock.skills) {
@@ -87,14 +94,38 @@ test('skills.lock coerente con .claude/skills', () => {
   for (const s of lock.skills) assert.ok(audit.includes(s.name), `audit-skill.md non cita ${s.name}`);
 });
 
-test('brief e contenuti degli esempi validi (lint dei cliché)', () => {
+test('fase Bibbia e contenuti validi per ogni brief e configurazione', () => {
   const briefs = readdirSync(join(ROOT, 'briefs')).filter((f) => f.endsWith('.json'));
   assert.equal(briefs.length, 3);
   for (const f of briefs) {
     const b = validateBrief(JSON.parse(read(`briefs/${f}`)));
-    const c = JSON.parse(read(`content/${b.slug}.json`));
-    assert.deepEqual(lintContent(c, b), [], `${b.slug}: problemi di contenuto`);
+    for (const config of Object.keys(CONFIGS)) {
+      const bib = JSON.parse(read(`bibbia/${b.slug}-${config}.json`));
+      assert.deepEqual(validateBibbia(bib, ROOT), [], `${b.slug}-${config}: Bibbia non valida`);
+      for (const sk of CONFIGS[config].skills) assert.ok(bib.skills_used.includes(sk), `${b.slug}-${config}: skill ${sk} non dichiarata`);
+      const c = JSON.parse(read(`content/${b.slug}-${config}.json`));
+      assert.deepEqual(lintContent(c, b, { config }), [], `${b.slug}-${config}: problemi di contenuto`);
+    }
+    for (const level of ['base', 'cinematic']) assert.ok(existsSync(join(ROOT, 'baseline', `${b.slug}-${level}.astro`)), `manca la baseline ${b.slug}-${level}`);
   }
+});
+
+test('la Bibbia contiene tutti i capitoli e la checklist Q1-Q6', () => {
+  const md = read('bibbia/BIBBIA.md');
+  for (const h of ['CONCEPT', 'PERSONALITY', 'SIGNATURE', 'Budget di performance', 'Mobile', 'Copy e conversione', 'SEO', 'Licenze degli asset', 'Consegna', '14.3'])
+    assert.ok(md.includes(h), `BIBBIA.md: manca ${h}`);
+  for (let i = 1; i <= 6; i++) assert.match(md, new RegExp(`\\*\\*Q${i}\\*\\*`));
+});
+
+test('il lint blocca i link finti e le regole della configurazione C', () => {
+  const b = { language: 'it', pages: ['home'], facts: ['email vera@esempio.it'] };
+  const c = JSON.parse(read('content/fornace-lume-c.json'));
+  c.pages.home.sections[0].body.push('x');
+  c.nav.push({ label: 'Blog', href: 'blog' }, { label: 'Team', href: '#team' });
+  c.footer.email = 'finta@altro.it';
+  c.pages.home.hero.title_lines = ['uno', 'due', 'tre'];
+  const p = lintContent(c, { ...b, pages: ['home', 'contatti'] }, { config: 'c' }).join('\n');
+  for (const re of [/pagina "blog" non esiste/, /#team non esiste/, /non è nei fatti del brief/, /oltre 2 righe/]) assert.match(p, re);
 });
 
 test('il lint blocca i cliché', () => {

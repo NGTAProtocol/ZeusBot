@@ -22,8 +22,8 @@ if (reduce || saveData) {
   document.documentElement.dataset.fallback = reduce ? 'reduced-motion' : 'save-data';
 } else {
   initMotion();
-  const host3d = document.querySelector('[data-3d]');
-  if (host3d) {
+  const host3d = __ATELIER_3D__ ? document.querySelector('[data-3d]') : null;
+  if (__ATELIER_3D__ && host3d) {
     const can3d = hasWebGL() && !lowMemory && !lowCpu && !q.has('no3d');
     if (!can3d) document.documentElement.dataset.fallback = 'no-webgl-or-weak-device';
     else {
@@ -39,6 +39,7 @@ if (reduce || saveData) {
 }
 
 async function startHero3d(host) {
+  if (!__ATELIER_3D__) return;
   const { mountHero } = await import('./hero3d.js');
   mountHero(host, { palette: cfg.palette, hero3d: { motif: cfg.sig.id, params: cfg.sig.params || {} } }, { mobile: small });
 }

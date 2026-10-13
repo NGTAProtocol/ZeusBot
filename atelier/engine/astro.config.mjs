@@ -13,6 +13,8 @@ export default defineConfig({
   devToolbar: { enabled: false },
   vite: {
     plugins: [tailwindcss()],
+    // Bibbia §14.3: il codice Three.js entra nel bundle solo se la firma del sito è 3D
+    define: { __ATELIER_3D__: JSON.stringify(process.env.ATELIER_3D === '1') },
     build: { assetsInlineLimit: 2048, chunkSizeWarningLimit: 900 }
   }
 });

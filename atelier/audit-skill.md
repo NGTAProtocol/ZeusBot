@@ -109,7 +109,7 @@ Gli SHA dei commit e le licenze sono registrati in `skills.lock`.
 - **Conflitti con Atelier:** la skill suggerisce immagini segnaposto da `picsum.photos`, icone da `cdn.simpleicons.org` e install npm di librerie UI (shadcn, Material…). Sono in conflitto con le regole Atelier (niente hotlinking, niente CDN, niente stock): **in Atelier prevalgono le regole Atelier**.
 - Nessuna chiamata di rete eseguibile, nessuna credenziale, nessuna istruzione sospetta.
 
-### skill di Emil Kowalski — ✅ sottoinsieme web
+### skill di Emil Kowalski (`emil-kowalski-skill` in skills.lock) — ✅ sottoinsieme web
 - **Licenza:** MIT.
 - **Contenuto:** 14 SKILL.md di sola documentazione (nessuno script), controllati con le ricerche automatiche, senza riscontri.
 - **Installate, perché pertinenti al web:** emil-design-eng, animate (+ RECIPES.md), animation-vocabulary, review-animations, improve-animations, find-animation-opportunities.

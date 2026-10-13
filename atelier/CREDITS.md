@@ -6,22 +6,23 @@ Regola di Atelier: **nessun hotlinking, nessuna CDN**. Tutto è servito dal sito
 ## Grafica, 3D, shader, testi
 | Elemento | Origine | Licenza |
 |---|---|---|
-| Poster SVG procedurali (`engine/src/lib/poster.js`) | scritti per Atelier | come il progetto |
-| Geometrie e shader GLSL dell'hero 3D (`engine/src/scripts/hero3d.js`) | scritti per Atelier. Il rumore a valori e la funzione di hash `fract(sin(dot(...)))` sono formule matematiche di uso comune, riscritte qui, non copiate da file di terzi | come il progetto |
+| Firme SVG procedurali `drip`, `layers`, `contours`, `lattice` (`engine/src/lib/signature.js`) | scritte per Atelier | come il progetto |
+| Poster SVG procedurali v1 (`engine/src/lib/poster.js`, non più usati dalle pagine v2) | scritti per Atelier | come il progetto |
+| Geometrie e shader GLSL dell'hero 3D (`engine/src/scripts/scene.js`) | scritti per Atelier. Il rumore a valori e la funzione di hash `fract(sin(dot(...)))` sono formule matematiche di uso comune, riscritte qui, non copiate da file di terzi | come il progetto |
 | Grana (filtro SVG `feTurbulence`) | primitiva standard SVG, scritta per Atelier | come il progetto |
-| Audio d'ambiente | sintetizzato in tempo reale con WebAudio, nessun file audio | come il progetto |
 | Testi dei siti di esempio | scritti per Atelier per attività **fittizie** (Fornace Lume, Quota 2100, Nodo) | come il progetto |
 | Immagini fotografiche / stock | **nessuna** | — |
 | Modelli 3D | **nessuno** | — |
 
 ## Font (tutti SIL Open Font License 1.1, inclusi tramite pacchetti @fontsource da npm)
 Young Serif, Hanken Grotesk, Archivo (variabile), Literata, Familjen Grotesk, Newsreader, Fraunces, Manrope, Syne, Work Sans, Cormorant Garamond, Instrument Sans, Bricolage Grotesque, Libre Caslon Text, Space Grotesk, IBM Plex Sans.
+**Aggiunti in v2 (fase Bibbia):** Gloock, Brygada 1918, Barlow Condensed, Spectral, Schibsted Grotesk, Onest, Geist, Public Sans.
 Licenza verificata dal campo `license` dei pacchetti npm: `OFL-1.1`.
 
 ## Librerie JavaScript incluse nei siti
 | Libreria | Versione | Licenza | Note |
 |---|---|---|---|
-| three | 0.186.1 | MIT | hero 3D (solo livello CINEMATICO) |
+| three | 0.186.1 | MIT | hero 3D: solo CINEMATICO e solo con firma 3D nella Bibbia (fornace-lume-b, quota-2100-a); altrimenti escluso dalla build. La baseline CINEMATICO lo include sempre |
 | lenis | 1.3.26 | MIT | scorrimento fluido (solo CINEMATICO, solo con puntatore fine) |
 | gsap (+ ScrollTrigger) | 3.15.0 | GreenSock "Standard No-Charge License" | vedi avvertenza sotto |
 
@@ -39,6 +40,7 @@ astro 7.3.7 (MIT), tailwindcss 4.3.3 e @tailwindcss/vite (MIT), lighthouse 13.5.
 ## Skill di terzi installate in `.claude/skills/`
 Vedi `skills.lock` (repository, commit SHA, licenza) e `audit-skill.md` (esito dell'audit).
 - **Apache-2.0:** frontend-design, webapp-testing.
-- **MIT:** ai-ui-ux-motion-engine, i 24 pacchetti threejs-* di Impertio, gsap-scrolltrigger, react-three-fiber, threejs-webgl.
+- **MIT:** ai-ui-ux-motion-engine, i 24 pacchetti threejs-* di Impertio, gsap-scrolltrigger, react-three-fiber, threejs-webgl, taste-skill (Leonxlnx), le 6 skill emil-* (emilkowalski/skill).
+- **Apache-2.0 (solo documentazione):** impeccable (pbakaus): installati SKILL.md e `reference/`, esclusi script, hook e agenti (vedi audit).
 
 Nessun codice delle skill di terzi è copiato nei siti generati.
