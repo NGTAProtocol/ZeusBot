@@ -7,14 +7,24 @@ Frase di apertura per la nuova chat: «Leggi motore/passaggio-di-consegne.md e r
 - Ramo `motore` (unico ramo di lavoro), allineato a origin. Ultimo commit: quello di questo file (`git log -1`).
 - Suite: **454/454 OK**, 0 saltate, 0 KO, con LanguageTool e `ZB_BANCA_VOCI`. Comando:
   `ZB_LANGUAGETOOL=<cartella>/lib ZB_BANCA_VOCI=<banca-voci> python3 -B motore/zb prove`, dalla radice del repository.
-- Banca-voci (repository separato, fuori dal motore): oggi in `/home/user/banca-voci` (commit eba0658, ramo
-  `main`), senza remote (creazione rifiutata: 404 sull'organizzazione, 403 sull'account); copia in git bundle
+- Banca-voci (repository separato, fuori dal motore, solo schede di voce e divieti): oggi in
+  `/home/user/banca-voci` (commit a22b018, ramo `main`), senza remote (creazione rifiutata: 404 sull'organizzazione, 403 sull'account); copia in git bundle
   nello scratchpad della sessione, `banca-voci-bundle/banca-voci.bundle`. Il container è effimero: il bundle va
   salvato altrove, oppure serve un repository privato creato dall'autore (poi `git remote add` e push).
 - Ramo `archivio/ghimoney` su origin (572f40f): contiene `ghimoney/`, tolto dal motore.
 - Dettagli completi: `motore/report-motore.md`.
 
-## Fatto nell'ultima sessione (commit sul ramo motore)
+## Fatto nell'ultima sessione: solo schede (commit sul ramo motore)
+
+| Commit | Cosa |
+|---|---|
+| (pulizia) | `zb voce verifica` non richiede più pagine d'esempio; mini-banca di prova senza esempi; prova «un solo esempio» sostituita da «scheda assente» |
+| ultimo | report, questo file, `prove/esiti/voce-solo-schede.md` |
+
+Banca-voci: rimosse le pagine d'esempio; due voci pronte, ciascuna con `scheda.md` e `divieti.yaml`.
+Il contenuto dei libri lo decide l'autore nel briefing.
+
+## Sessione precedente: voci narrative (commit sul ramo motore)
 
 | Commit | Cosa |
 |---|---|
@@ -23,10 +33,7 @@ Frase di apertura per la nuova chat: «Leggi motore/passaggio-di-consegne.md e r
 | e619bcf | prove della sezione «voce» (+25), mini-banca inventata |
 | ultimo | report, questo file, `prove/esiti/voce.md` |
 
-Banca-voci: README, `indice.yaml`, `modelli/scheda-vuota.md`, una sola voce pronta (scheda in 7 sezioni
-con il prompt originale integrale, `divieti.yaml` con 60 voci, 5 pagine-modello originali).
-
-## Sessione precedente (commit sul ramo motore)
+## Sessioni precedenti (commit sul ramo motore)
 
 | Commit | Cosa |
 |---|---|
@@ -51,7 +58,8 @@ Playwright, Chromium e poppler sono già presenti. Per le voci: `export ZB_BANCA
   con autori inventati. Nessun manoscritto reale.
 - Nessun nome reale (autori, titoli, personaggi, luoghi, frasi, nomi di ramo dei libri) in codice,
   prove, commenti, esiti e report. L'Author si confronta sempre con `libro.yaml`.
-- Voci reali, pagine-modello e brani veri dei manoscritti solo nella banca-voci, mai nel motore.
+- La banca-voci contiene solo schede di voce e divieti: niente pagine di libri, manoscritti, nomi di
+  romanzi, personaggi o luoghi reali, né lì né nel motore. Il contenuto dei libri sta nel briefing.
 - Non toccare i libri reali né il loro `libro.yaml`. Niente impagina, pdf, kdp o pacchetto sui libri
   reali senza richiesta esplicita dell'autore.
 - Nessun push forzato, nessuna riscrittura della storia.
@@ -75,8 +83,8 @@ Playwright, Chromium e poppler sono già presenti. Per le voci: `export ZB_BANCA
 
 ## Prossimi passi possibili
 
-- Banca-voci: aggiungere le altre quattro voci previste (elenco nel README della banca) con i capitoli veri,
-  solo nella banca (copiare `modelli/scheda-vuota.md`, stato `da_completare` finché non verifica).
+- Le voci si aggiungono in banca-voci quando l'autore lo decide (copiare `modelli/scheda-vuota.md`,
+  stato `da_completare` finché non verifica).
 - Prove sulle fasce del margine interno oltre la prima (un mini-libro sintetico oltre le 150 pagine).
 - Hook in modalità blocco, dopo l'«ok» dell'autore e la prova dei 14 scenari.
 - Unire il motore ai rami dei libri, se l'autore lo chiede (merge, mai rebase).

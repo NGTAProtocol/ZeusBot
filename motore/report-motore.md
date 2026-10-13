@@ -138,7 +138,7 @@ inventati. Autori inventati («Autore di Prova», «Autrice di Prova»).
 | esclusioni e budget | 6 | escludi_pattern, pattern «Non era X. Era Y.», budget degli interludi, chiusura |
 | titoli, tempi, età, push | 23 | titoli, tempi relativi, età, fatti incompatibili, push |
 | eccezioni e richiami | 3 | eccezioni motivate, richiami ammessi |
-| voce | 25 | `zb voce` sulla mini-banca inventata, regressioni della scheda, assenza di `ZB_BANCA_VOCI`, voce non pronta, libro senza voce invariato, «Letto» con la voce, divieti in AVVISO, modello del briefing |
+| voce | 25 | `zb voce` sulla mini-banca inventata (solo schede), regressioni della scheda, assenza di `ZB_BANCA_VOCI`, voce non pronta, libro senza voce invariato, «Letto» con la voce, divieti in AVVISO, modello del briefing |
 | **Totale** | **454** | più `separazione.py` e `recinto.py` (48 esecuzioni) |
 
 Non coperto dalle prove: libri oltre le 24 pagine, quindi le fasce interne oltre la prima;
@@ -191,24 +191,27 @@ Senza `ZB_LANGUAGETOOL`, 2 prove sono saltate con il motivo «LanguageTool assen
 
 ## 10. Voci narrative (banca-voci)
 
-La voce (come si racconta) sta in un repository separato, la banca-voci; il briefing (cosa si racconta)
-sta nel libro. Il motore non contiene voci reali né pagine di manoscritti.
+La voce (come si racconta) sta in un repository separato, la banca-voci, che contiene solo schede di
+voce e divieti; il contenuto del libro (cosa si racconta) lo decide l'autore nel briefing, libro per
+libro. Né il motore né la banca contengono pagine di libri, manoscritti o nomi di romanzi, personaggi o
+luoghi reali.
 
 - `ZB_BANCA_VOCI`: percorso della banca, accanto a `ZB_LANGUAGETOOL` (README, «Banca-voci»); nessun
   percorso nel codice.
 - Banca: `indice.yaml`, `voci/<slug>/scheda.md` (7 sezioni: nome e ruolo, principi, ritmo e sintassi,
   lessico, adattamento per genere, campione, istruzione di esecuzione con «ambientazione:»),
-  `voci/<slug>/divieti.yaml`, `voci/<slug>/esempi/` (almeno 2), `modelli/scheda-vuota.md`.
-- `zb voce verifica`: voce nell'indice, 7 sezioni, «ambientazione:», ≥ 2 esempi, `divieti.yaml` leggibile,
-  stato «pronta». Errori sempre come FERMO o KO, mai traceback.
+  `voci/<slug>/divieti.yaml`, `modelli/scheda-vuota.md`. Nessuna pagina d'esempio: l'unico testo
+  d'esempio è il campione breve della sezione 6, con nomi inventati.
+- `zb voce verifica`: voce nell'indice, scheda presente con 7 sezioni e «ambientazione:», `divieti.yaml`
+  leggibile, stato «pronta». Errori sempre come FERMO o KO, mai traceback.
 - `libro.yaml` → `voce: {slug, ambientazione}`; dal briefing con «Voce dalla banca:» e «Ambientazione:».
 - `zb avvio`: «Letto» con briefing e scheda della voce; voce non verificata o banca assente = AVVISO.
 - `stile.py`: i divieti della voce si sommano alle voci del libro in modalità avviso (`voce:<slug>:<id>`).
 - `modelli/briefing.md`: Storia, Schede dei personaggi (vincoli «sempre» / «quasi sempre» / «mai»),
   Luoghi ed epoca, Regole del libro, Voce scelta e ambientazione; esempio inventato in un commento.
 - Prove: mini-banca inventata in `prove/banca-voci-prova/` (una voce pronta, una da completare).
-- Banca reale oggi: una sola voce pronta, con 5 pagine-modello originali e 60 divieti. Le altre voci
-  previste sono elencate nel README della banca-voci, non qui.
+- Banca reale oggi: due voci pronte, solo scheda e divieti (60 e 90 voci). I nomi delle voci stanno
+  nella banca, non nel motore.
 
 ## 11. Limiti noti e punti aperti (in ordine di importanza)
 
@@ -229,8 +232,8 @@ sta nel libro. Il motore non contiene voci reali né pagine di manoscritti.
 8. Mini-libri sotto le 24 pagine: la sezione 11 della conformità KDP è KO per costruzione; le fasce
    del margine interno oltre la prima non sono provate.
 9. La storia git del ramo contiene ancora i riferimenti tolti e `ghimoney/` (scelta: niente riscrittura).
-10. Banca-voci: aggiungere le altre quattro voci previste (elenco nel README della banca-voci) con i
-    capitoli veri, solo nella banca. La banca non ha ancora un remote privato: oggi esiste come commit
-    locale e git bundle, che vanno salvati fuori dal container.
+10. Banca-voci: le voci si aggiungono in banca-voci quando l'autore lo decide. La banca non ha ancora
+    un remote privato: oggi esiste come commit locale e git bundle, che vanno salvati fuori dal
+    container. La sua storia git contiene ancora le pagine d'esempio tolte (niente riscrittura).
 11. I divieti della voce si applicano solo con `ZB_BANCA_VOCI` impostata: senza, `zb avvio` avvisa ma
     `zb stile` non li controlla.

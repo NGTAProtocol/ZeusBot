@@ -1,5 +1,7 @@
 # Voci narrative dalla banca-voci: esito
 
+> Superato in parte da `voce-solo-schede.md`: le pagine d'esempio non sono più richieste né presenti.
+
 Data: 2026-10-13. Ramo motore, partendo da b36a438.
 
 ## Correzioni al motore
