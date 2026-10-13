@@ -20,6 +20,7 @@ Frase di apertura per la nuova chat: «Leggi motore/passaggio-di-consegne.md e r
 |---|---|
 | 78b9963 | `zb voce verifica` non richiede più pagine d'esempio; mini-banca di prova senza esempi; prova «un solo esempio» sostituita da «scheda assente» |
 | c49842a | report, questo file, `prove/esiti/voce-solo-schede.md` |
+| 8f268c7, ultimo | hash in questo file; sezione «Ripartenza» |
 
 Banca-voci: rimosse le pagine d'esempio; due voci pronte, ciascuna con `scheda.md` e `divieti.yaml`.
 Il contenuto dei libri lo decide l'autore nel briefing.
@@ -43,7 +44,50 @@ Il contenuto dei libri lo decide l'autore nel briefing.
 | 57f262e | via i riferimenti testuali ai libri reali (frasi di prova inventate, sezioni rinominate) |
 | 572f40f | prova del bleed (+5 prove) e numeri di pagina sul trim |
 | ea464c7 | `ghimoney/` rimosso, dopo la verifica dell'archivio (80 file, sha256 identici) |
-| ultimo | report-motore.md e questo file |
+| b36a438 | report-motore.md e questo file |
+
+## Ripartenza in una chat nuova (passi concreti)
+
+1. **Ramo.** La sessione può partire su un ramo diverso (per esempio `ccr-…`). Se l'autore indica il ramo
+   `motore`: `git fetch origin motore && git checkout -b motore origin/motore` (o `git checkout motore`).
+   Controllo: `git log -1` deve dare l'ultimo commit di questo file.
+2. **Dipendenze** (circa 2 minuti, LanguageTool in background):
+   `pip install pymupdf markdown` · `apt-get install -y hunspell hunspell-it` · nello scratchpad un
+   `pom.xml` con `org.languagetool:languagetool-commandline` e `org.languagetool:language-it` 6.8, poi
+   `mvn -q -B dependency:copy-dependencies -DoutputDirectory=lib` (143 file) ed
+   `export ZB_LANGUAGETOOL=<scratchpad>/lt/lib`.
+3. **Banca-voci.** In un container nuovo `/home/user/banca-voci` non c'è più. Chiedere all'autore il bundle
+   (gli è stato mandato come file, commit a22b018) o l'URL del repository privato, poi
+   `git clone <bundle o URL> /home/user/banca-voci` ed `export ZB_BANCA_VOCI=/home/user/banca-voci`.
+   Controllo: `zb voce lista` (2 voci pronte), `zb voce verifica <slug>` per ciascuna.
+   Senza la banca la suite passa lo stesso: le prove «voce» usano la mini-banca di `prove/banca-voci-prova/`.
+4. **Suite** (circa 10 minuti: lanciarla in background):
+   `ZB_LANGUAGETOOL=… ZB_BANCA_VOCI=… python3 -B motore/zb prove` → atteso 454/454 OK.
+   Per provare una sola sezione: importare `script/prove.py` e chiamare la funzione con
+   `comune.leggi_yaml('prove/attesi.yaml')[<chiave>]`, poi cancellare `prove.TMP`.
+5. **Remote della banca.** `create_repository` (GitHub) è rifiutato: 404 sull'organizzazione, 403
+   sull'account. Non riprovare senza un cambiamento dei permessi: serve un repository creato dall'autore.
+
+### Come funzionano le voci (in breve)
+
+- `zb voce lista | mostra <slug> [N] | verifica <slug>` (`script/voce.py`); verifica = voce
+  nell'indice, scheda con 7 sezioni «## N. Titolo» e campo «ambientazione:» nella 7, `divieti.yaml`
+  leggibile, stato `pronta`. Nessuna pagina d'esempio richiesta.
+- `libro.yaml` → `voce: {slug, ambientazione}` (facoltativo); `zb nuovo` lo scrive dai campi del briefing
+  «Voce dalla banca:» e «Ambientazione:».
+- `zb avvio`: con la voce, «Letto» include `00-progetto/briefing.md` e «scheda della voce <slug>»;
+  banca assente o voce non verificata = AVVISO, mai fermo.
+- `stile.py`: `voce.divieti_del_libro` aggiunge i divieti come voci in modalità avviso
+  (`voce:<slug>:<id>`), solo se `ZB_BANCA_VOCI` è impostata.
+- Il parser del briefing (`nuovo.leggi_briefing`) tratta ogni riga «Campo: valore» senza trattino come
+  direttiva globale: nelle sezioni descrittive del briefing si scrive sempre «- Campo: …».
+
+### Controllo dei nomi reali
+
+`nomi_vietati.txt` è vuoto per regola. Il controllo si fa in memoria: leggere titoli, autori e
+`nomi_propri.txt` dai rami dei libri su origin (`git ls-remote origin`, `git show <ramo>:<file>`),
+cercarli in `git ls-files motore CLAUDE.md`, non salvare la lista. Ultimo esito: zero nomi reali; le
+coincidenze sono parole comuni e nomi inventati del ramo di prova da cui viene il mini-libro romance.
 
 ## Ambiente (container nuovo)
 
