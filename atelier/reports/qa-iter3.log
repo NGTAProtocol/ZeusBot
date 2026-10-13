@@ -6,3 +6,6 @@ fornace-lume-c-base: LH mob P100 A100 S100 (LCP 1058ms TBT 0ms) | desk P100 A100
 quota-2100-a-base: LH mob P94 A100 S100 (LCP 1363ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
 quota-2100-b-base: LH mob P100 A100 S100 (LCP 1358ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
 quota-2100-c-base: LH mob P100 A100 S100 (LCP 1056ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+nodo-sicuro-a-base: LH mob P100 A100 S100 (LCP 1354ms TBT 23ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=4/0/0 | SOGLIE OK
+nodo-sicuro-b-base: LH mob P99 A100 S100 (LCP 1208ms TBT 114ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+nodo-sicuro-c-base: LH mob P88 A100 S100 (LCP 1352ms TBT 473ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=1/0/0 | SOGLIE NON RAGGIUNTE

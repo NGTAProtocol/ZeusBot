@@ -3,7 +3,7 @@
   "config": "c",
   "level": "base",
   "url_tested": "locale, server statico con gzip",
-  "at": "2026-10-13T13:07:53.765Z",
+  "at": "2026-10-13T14:21:40.693Z",
   "browser": {
     "viewports": {
       "375": {
@@ -16,7 +16,7 @@
         ],
         "smallTargets": 0,
         "errors": [],
-        "hiddenAfterScroll": 0,
+        "hiddenAfterScroll": 1,
         "externalHosts": []
       },
       "768": {
@@ -57,20 +57,20 @@
   "lighthouse": {
     "mobile": {
       "formFactor": "mobile",
-      "performance": 100,
+      "performance": 88,
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 1204,
-      "tbtMs": 54,
+      "lcpMs": 1352,
+      "tbtMs": 473,
       "cls": 0.001,
-      "fcpMs": 1140,
-      "totalBytes": 47381,
+      "fcpMs": 1195,
+      "totalBytes": 47914,
       "failingA11y": [],
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        100
+        88
       ]
     },
     "desktop": {
@@ -79,11 +79,11 @@
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 311,
-      "tbtMs": 0,
-      "cls": 0.014,
-      "fcpMs": 308,
-      "totalBytes": 47381,
+      "lcpMs": 335,
+      "tbtMs": 5,
+      "cls": 0.016,
+      "fcpMs": 302,
+      "totalBytes": 47914,
       "failingA11y": [],
       "failingSeo": [],
       "runtimeError": null,
@@ -96,8 +96,8 @@
   "thresholds": {
     "performanceMobile": {
       "need": 90,
-      "got": 100,
-      "ok": true
+      "got": 88,
+      "ok": false
     },
     "performanceDesktop": {
       "need": 90,
@@ -115,5 +115,5 @@
       "ok": true
     }
   },
-  "pass": true
+  "pass": false
 }
