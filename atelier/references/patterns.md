@@ -14,10 +14,10 @@
 | 4 | Testo che reagisce al cursore | Le lettere vicine al puntatore cambiano peso/spaziatura | Font variabile + distanza dal puntatore in `requestAnimationFrame`, solo su `pointer:fine` | M | Nessun effetto su touch; reduced-motion: spento | ✅ CINEMATICO |
 | 5 | Menu che si trasforma | Il menu esteso si compatta in una "capsula" dopo l'hero; su mobile si apre a pagina intera | Classe di stato su scroll (IntersectionObserver sull'hero) + transizioni CSS | B | Su mobile c'è sempre il pulsante "Menu" con overlay accessibile (focus trap, Esc) | ✅ tutti i livelli |
 | 6 | Hero 3D procedurale | Oggetto o campo generato da codice che risponde a scroll e puntatore | Three.js con geometria + `ShaderMaterial` (rumore nei vertici, fresnel); caricato in differita dopo il primo rendering | A | Poster SVG procedurale con la stessa palette se WebGL manca, con dispositivo debole, Save-Data o reduced-motion | ✅ CINEMATICO |
-| 7 | Grana e distorsione leggera | Una grana fine unifica 3D e fondi piatti e toglie l'aspetto "vettoriale da template" | Rumore nello shader + overlay SVG `feTurbulence` con `mix-blend-mode` | B | Overlay statico (senza animazione) con reduced-motion | ✅ CINEMATICO (grana statica nel BASE) |
+| 7 | Grana e distorsione leggera | Una grana fine unifica 3D e fondi piatti e toglie l'aspetto "vettoriale da template" | Rumore nello shader + overlay SVG `feTurbulence` statico (la Bibbia vieta i loop infiniti) | B | Sempre statica | ✅ |
 | 8 | Contatori e dati che "si assestano" | I numeri chiave arrivano al valore finale | Interpolazione numerica all'ingresso nel viewport | B | Valore finale subito visibile | ✅ dove ci sono dati |
-| 9 | Nastro di testo (marquee) | Una parola chiave scorre in loop | Animazione CSS su traccia duplicata, `aria-hidden` sul duplicato | B | Fermo con reduced-motion | ✅ in alcune direzioni |
-| 10 | Transizione di colore tra capitoli | Lo sfondo cambia tono quando si entra in una sezione | ScrollTrigger che aggiorna variabili CSS | B–M | Sezioni con il proprio colore statico | ✅ CINEMATICO |
+| 9 | Nastro di testo (marquee) | Una parola chiave scorre | Traccia duplicata spostata con `transform`, **guidata dallo scroll** (la Bibbia vieta i loop infiniti) | B | Fermo con reduced-motion | ✅ legato allo scroll |
+| 10 | Transizione di colore tra capitoli | Lo sfondo cambia tono quando si entra in una sezione | Era: ScrollTrigger sulle variabili CSS. **Rimossa:** la Bibbia ammette solo transform e opacity | B–M | Sezioni con il proprio colore statico | ❌ sostituita da sezioni a colori invertiti statiche |
 | 11 | Audio d'ambiente opzionale | Suono di sottofondo attivabile dall'utente | WebAudio procedurale (oscillatori + filtro), **spento di default**, interruttore con stato `aria-pressed` | B | Nessun audio senza un gesto esplicito | ✅ CINEMATICO |
 | 12 | Video/sequenza legata allo scroll | Un filmato avanza con lo scroll | Video all-intra o sequenza di frame su canvas | A | Poster + video breve in autoplay muto, oppure solo immagine | ⏸ VIDEO-SCROLL: implementato solo con asset forniti dal cliente (nessun media generato) |
 | 13 | Cursore personalizzato | Il puntatore diventa un elemento grafico | Elemento che segue il puntatore | M | — | ❌ escluso: spesso peggiora usabilità e accessibilità |
@@ -27,3 +27,8 @@
 - Contenuto e azioni devono funzionare **senza JavaScript e senza movimento**: le animazioni partono da uno stato già leggibile.
 - Un solo "momento firma" per pagina: l'hero nel CINEMATICO, la tipografia nel BASE. Il resto resta calmo.
 - WebGL e GSAP si caricano **dopo** il primo rendering e solo se servono (import dinamico), per proteggere LCP e TBT su mobile.
+
+## Aggiornamento con la Bibbia
+- **Firma prima dei pattern:** un pattern si usa solo se serve la firma o guida lo sguardo (Bibbia §5).
+- **3D:** l'hero 3D (pattern 6) si usa solo quando il file Bibbia dichiara `signature.kind = "3d"` (§14.3).
+- **Firme CSS disponibili nel motore** (transform e opacity, guidate da scroll o puntatore, in pausa quando l'utente è fermo): `layers` (strati del poster che si separano con lo scroll), `drip` (colatura che scende con lo scroll), `contours` (curve di livello che salgono di quota), `lattice` (reticolo che si ricompone sotto il puntatore). Ogni sito le parametrizza dal proprio concept; il limite (firme parametriche, non scritte da zero per ogni cliente) è dichiarato nel report.

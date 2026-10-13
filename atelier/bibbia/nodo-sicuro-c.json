@@ -1,0 +1,28 @@
+{
+  "concept": "Una rete aziendale sembra in ordine finché nessuno la guarda da vicino, e Nodo la guarda prima di chi attacca.",
+  "personality": { "adjectives": ["lucida", "misurata", "diretta"], "not": "consulenza in giacca e cravatta: niente stock di strette di mano, sigle e paura" },
+  "signature": {
+    "kind": "css", "id": "lattice", "fallback_id": "lattice",
+    "description": "Un reticolo fitto e quasi in ordine: scorrendo si allinea del tutto, e il puntatore mostra dove un segmento era fuori posto.",
+    "params": { "cols": 26, "rows": 16, "chaos": 45, "hot": 0.04 }
+  },
+  "tokens": {
+    "palette": { "bg": "#f7f8fa", "surface": "#eceff3", "ink": "#0d1117", "muted": "#4a5363", "accent": "#17795a", "accent2": "#c5ced9" },
+    "dark": { "bg": "#0b0f14", "surface": "#131a22", "ink": "#e9eef3", "muted": "#9aa6b5", "accent": "#46c08f", "accent2": "#26313d" },
+    "palette_source": { "bg": "schermo del rapporto in modalità chiara", "ink": "testo del terminale", "accent": "verde dello stato 'risolto'", "accent2": "griglia dei diagrammi di rete" },
+    "color_strategy": "contenuta",
+    "fonts": {
+      "display": { "pkg": "@fontsource/hanken-grotesk", "family": "Hanken Grotesk", "weights": [600], "fallback": "system-ui, sans-serif" },
+      "body": { "pkg": "@fontsource/hanken-grotesk", "family": "Hanken Grotesk", "weights": [400, 500], "fallback": "system-ui, sans-serif" }
+    },
+    "type": { "scale": 1.2, "body_size": "1.0625rem", "body_leading": 1.6, "display_weight": 600, "display_tracking": "-0.035em", "display_leading": 1, "char_width": 0.55, "display_max": "5.75rem" },
+    "space": { "section": "clamp(88px, 10vw, 144px)", "gutter": "clamp(16px, 4vw, 48px)", "measure": "60ch" },
+    "radius": "10px",
+    "motion": { "micro_ms": 180, "sequence_ms": 700, "distance": 16, "ease": "out" }
+  },
+  "layout": "panels",
+  "features": { "browser_surfaces": true, "press": true },
+  "unknowns": ["prezzo dell'audit", "prezzo del contratto di reperibilità", "nomi dei consulenti", "clienti o casi di studio autorizzati"],
+  "skills_used": ["frontend-design", "taste-skill", "emil-design-eng", "emil-animate", "atelier"],
+  "method_notes": "taste-skill: sans display, un accento, hero di 2 righe con sottotesto ≤ 20 parole e una CTA, modo scuro. emil: ease-out, UI < 300 ms, pressione sui bottoni."
+}

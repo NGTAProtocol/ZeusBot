@@ -1,0 +1,6 @@
+{
+  "url": "https://stripe.com/",
+  "studied_at": "2026-10-08T15:34:17.973Z",
+  "reachable": false,
+  "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://stripe.com/"
+}

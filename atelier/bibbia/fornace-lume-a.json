@@ -1,0 +1,27 @@
+{
+  "concept": "Un ristorante chiede cento piatti identici, e lo smalto colato nel forno si rifiuta di farne due uguali.",
+  "personality": { "adjectives": ["materica", "calda", "esatta"], "not": "rustica e nostalgica: niente juta, legno anticato o corsivi da bottega" },
+  "signature": {
+    "kind": "css", "id": "drip", "fallback_id": "drip",
+    "description": "Una fascia di smalto cobalto apre la pagina e, mentre si scorre, cola in gocce di lunghezza diversa: la colata non si ripete mai, come sul piatto.",
+    "params": { "count": 16, "band": 0.2, "width": 30 }
+  },
+  "tokens": {
+    "palette": { "bg": "#f2f1ed", "surface": "#e6e3da", "ink": "#14213d", "muted": "#4b5163", "accent": "#a23b24", "accent2": "#1f4fa0" },
+    "palette_source": { "bg": "smalto stannifero bianco della maiolica faentina", "ink": "blu cobalto cotto ad alta temperatura", "accent": "rosso del rame in riduzione nel forno a gas", "accent2": "cobalto puro della pennellata" },
+    "color_strategy": "impegnata",
+    "fonts": {
+      "display": { "pkg": "@fontsource/gloock", "family": "Gloock", "weights": [400], "fallback": "Georgia, serif" },
+      "body": { "pkg": "@fontsource/hanken-grotesk", "family": "Hanken Grotesk", "weights": [400, 600], "fallback": "system-ui, sans-serif" }
+    },
+    "type": { "scale": 1.25, "body_size": "1.0625rem", "body_leading": 1.6, "display_weight": 400, "display_tracking": "-0.01em", "display_leading": 1, "char_width": 0.52, "display_max": "7rem" },
+    "space": { "section": "clamp(96px, 12vw, 160px)", "gutter": "clamp(16px, 4vw, 48px)", "measure": "62ch" },
+    "radius": "2px",
+    "motion": { "micro_ms": 200, "sequence_ms": 900, "distance": 24, "ease": "out" }
+  },
+  "layout": "editorial",
+  "features": { "browser_surfaces": false, "press": false },
+  "unknowns": ["prezzo per coperto del servizio completo", "foto reali dei pezzi e del laboratorio", "orari esatti delle visite del sabato", "testimonianze di ristoranti clienti"],
+  "skills_used": ["frontend-design", "atelier"],
+  "method_notes": "frontend-design: direzione estetica netta (maiolica: bianco stannifero + cobalto + rosso di rame), display con carattere (Gloock) e testo sobrio; un elemento memorabile (la colatura)."
+}

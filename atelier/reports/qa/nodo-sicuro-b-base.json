@@ -1,0 +1,60 @@
+{
+  "id": "nodo-sicuro-b-base",
+  "config": "b",
+  "level": "base",
+  "url_tested": "locale, server statico con gzip",
+  "at": "2026-10-08T15:59:12.684Z",
+  "browser": {
+    "viewports": {
+      "375": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Bricolage Grotesque",
+          "Public Sans"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "768": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Bricolage Grotesque",
+          "Public Sans"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "1280": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Bricolage Grotesque",
+          "Public Sans"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      }
+    },
+    "checks": {
+      "reducedMotion": {
+        "fallback": null,
+        "canvas": false,
+        "hiddenContent": 0
+      }
+    }
+  }
+}

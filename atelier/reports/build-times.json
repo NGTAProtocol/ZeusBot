@@ -1,56 +1,194 @@
 [
   {
+    "id": "fornace-lume-baseline-base",
     "slug": "fornace-lume",
+    "config": "baseline",
     "level": "base",
-    "direction": "argilla",
-    "ms": 3323
+    "signature": null,
+    "ms": 2144
   },
   {
+    "id": "fornace-lume-baseline-cinematic",
     "slug": "fornace-lume",
+    "config": "baseline",
     "level": "cinematic",
-    "direction": "argilla",
-    "ms": 2149
+    "signature": null,
+    "ms": 2285
   },
   {
+    "id": "fornace-lume-a-base",
     "slug": "fornace-lume",
-    "level": "baseline",
-    "direction": "argilla",
-    "ms": 1480
-  },
-  {
-    "slug": "nodo-sicuro",
+    "config": "a",
     "level": "base",
-    "direction": "cifra",
-    "ms": 3013
+    "signature": "css:drip",
+    "ms": 2629
   },
   {
-    "slug": "nodo-sicuro",
+    "id": "fornace-lume-a-cinematic",
+    "slug": "fornace-lume",
+    "config": "a",
     "level": "cinematic",
-    "direction": "cifra",
-    "ms": 2550
+    "signature": "css:drip",
+    "ms": 2695
   },
   {
-    "slug": "nodo-sicuro",
-    "level": "baseline",
-    "direction": "cifra",
-    "ms": 1827
-  },
-  {
-    "slug": "quota-2100",
+    "id": "fornace-lume-b-base",
+    "slug": "fornace-lume",
+    "config": "b",
     "level": "base",
-    "direction": "quota",
-    "ms": 2784
+    "signature": "3d:blob",
+    "ms": 2663
   },
   {
-    "slug": "quota-2100",
+    "id": "fornace-lume-b-cinematic",
+    "slug": "fornace-lume",
+    "config": "b",
     "level": "cinematic",
-    "direction": "quota",
-    "ms": 2221
+    "signature": "3d:blob",
+    "ms": 3014
   },
   {
+    "id": "fornace-lume-c-base",
+    "slug": "fornace-lume",
+    "config": "c",
+    "level": "base",
+    "signature": "css:layers",
+    "ms": 2961
+  },
+  {
+    "id": "fornace-lume-c-cinematic",
+    "slug": "fornace-lume",
+    "config": "c",
+    "level": "cinematic",
+    "signature": "css:layers",
+    "ms": 2698
+  },
+  {
+    "id": "nodo-sicuro-baseline-base",
+    "slug": "nodo-sicuro",
+    "config": "baseline",
+    "level": "base",
+    "signature": null,
+    "ms": 1670
+  },
+  {
+    "id": "nodo-sicuro-baseline-cinematic",
+    "slug": "nodo-sicuro",
+    "config": "baseline",
+    "level": "cinematic",
+    "signature": null,
+    "ms": 2595
+  },
+  {
+    "id": "nodo-sicuro-a-base",
+    "slug": "nodo-sicuro",
+    "config": "a",
+    "level": "base",
+    "signature": "css:lattice",
+    "ms": 2771
+  },
+  {
+    "id": "nodo-sicuro-a-cinematic",
+    "slug": "nodo-sicuro",
+    "config": "a",
+    "level": "cinematic",
+    "signature": "css:lattice",
+    "ms": 3034
+  },
+  {
+    "id": "nodo-sicuro-b-base",
+    "slug": "nodo-sicuro",
+    "config": "b",
+    "level": "base",
+    "signature": "css:lattice",
+    "ms": 2839
+  },
+  {
+    "id": "nodo-sicuro-b-cinematic",
+    "slug": "nodo-sicuro",
+    "config": "b",
+    "level": "cinematic",
+    "signature": "css:lattice",
+    "ms": 2854
+  },
+  {
+    "id": "nodo-sicuro-c-base",
+    "slug": "nodo-sicuro",
+    "config": "c",
+    "level": "base",
+    "signature": "css:lattice",
+    "ms": 2793
+  },
+  {
+    "id": "nodo-sicuro-c-cinematic",
+    "slug": "nodo-sicuro",
+    "config": "c",
+    "level": "cinematic",
+    "signature": "css:lattice",
+    "ms": 2690
+  },
+  {
+    "id": "quota-2100-baseline-base",
     "slug": "quota-2100",
-    "level": "baseline",
-    "direction": "quota",
-    "ms": 1482
+    "config": "baseline",
+    "level": "base",
+    "signature": null,
+    "ms": 1901
+  },
+  {
+    "id": "quota-2100-baseline-cinematic",
+    "slug": "quota-2100",
+    "config": "baseline",
+    "level": "cinematic",
+    "signature": null,
+    "ms": 2899
+  },
+  {
+    "id": "quota-2100-a-base",
+    "slug": "quota-2100",
+    "config": "a",
+    "level": "base",
+    "signature": "3d:terrain",
+    "ms": 2779
+  },
+  {
+    "id": "quota-2100-a-cinematic",
+    "slug": "quota-2100",
+    "config": "a",
+    "level": "cinematic",
+    "signature": "3d:terrain",
+    "ms": 3006
+  },
+  {
+    "id": "quota-2100-b-base",
+    "slug": "quota-2100",
+    "config": "b",
+    "level": "base",
+    "signature": "css:contours",
+    "ms": 3068
+  },
+  {
+    "id": "quota-2100-b-cinematic",
+    "slug": "quota-2100",
+    "config": "b",
+    "level": "cinematic",
+    "signature": "css:contours",
+    "ms": 2834
+  },
+  {
+    "id": "quota-2100-c-base",
+    "slug": "quota-2100",
+    "config": "c",
+    "level": "base",
+    "signature": "css:layers",
+    "ms": 3137
+  },
+  {
+    "id": "quota-2100-c-cinematic",
+    "slug": "quota-2100",
+    "config": "c",
+    "level": "cinematic",
+    "signature": "css:layers",
+    "ms": 2635
   }
 ]

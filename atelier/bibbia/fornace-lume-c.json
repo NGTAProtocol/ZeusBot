@@ -1,0 +1,28 @@
+{
+  "concept": "Ogni coperto deve sembrare il gemello del vicino, ma l'ultima parola sullo smalto ce l'ha il fuoco.",
+  "personality": { "adjectives": ["netta", "luminosa", "tecnica"], "not": "artigianato da cartolina: niente beige, ottone e caratteri graziati da bottega" },
+  "signature": {
+    "kind": "css", "id": "layers", "fallback_id": "layers",
+    "description": "Gli strati di smalto si sovrappongono nell'hero e, scorrendo, si separano uno dall'altro: si vede di cosa è fatto il colore di un piatto.",
+    "params": { "count": 5, "amp": 0.07, "spread": 24 }
+  },
+  "tokens": {
+    "palette": { "bg": "#f5f7fa", "surface": "#e8edf4", "ink": "#0e1a33", "muted": "#4a5872", "accent": "#2347c9", "accent2": "#a9b8e8" },
+    "dark": { "bg": "#0b1222", "surface": "#121c33", "ink": "#eef2f8", "muted": "#a7b3c9", "accent": "#7d98ff", "accent2": "#2c3f7a" },
+    "palette_source": { "bg": "piatto smaltato bianco sotto luce fredda di cucina", "ink": "cobalto quasi nero dei bordi", "accent": "cobalto saturo, l'unico accento", "accent2": "cobalto diluito delle velature" },
+    "color_strategy": "contenuta",
+    "fonts": {
+      "display": { "pkg": "@fontsource/geist", "family": "Geist", "weights": [600], "fallback": "system-ui, sans-serif" },
+      "body": { "pkg": "@fontsource/geist", "family": "Geist", "weights": [400, 500], "fallback": "system-ui, sans-serif" }
+    },
+    "type": { "scale": 1.2, "body_size": "1.0625rem", "body_leading": 1.6, "display_weight": 600, "display_tracking": "-0.035em", "display_leading": 0.98, "char_width": 0.55, "display_max": "6rem" },
+    "space": { "section": "clamp(88px, 10vw, 144px)", "gutter": "clamp(16px, 4vw, 48px)", "measure": "60ch" },
+    "radius": "10px",
+    "motion": { "micro_ms": 180, "sequence_ms": 700, "distance": 16, "ease": "out" }
+  },
+  "layout": "catalogue",
+  "features": { "browser_surfaces": true, "press": true },
+  "unknowns": ["prezzo per coperto del servizio completo", "foto reali dei pezzi e del laboratorio", "orari esatti delle visite del sabato", "testimonianze di ristoranti clienti"],
+  "skills_used": ["frontend-design", "taste-skill", "emil-design-eng", "emil-animate", "atelier"],
+  "method_notes": "taste-skill: display sans (Geist) invece del serif da 'artigianato', palette fuori dalla famiglia beige/ottone vietata, un solo accento, hero ≤ 2 righe e sottotesto ≤ 20 parole, una sola CTA, modo chiaro e scuro. emil: ease-out deciso, micro-interazioni < 300 ms, pressione scale(.97) sui bottoni."
+}

@@ -1,0 +1,57 @@
+{
+  "id": "fornace-lume-c-base",
+  "config": "c",
+  "level": "base",
+  "url_tested": "locale, server statico con gzip",
+  "at": "2026-10-08T15:57:01.492Z",
+  "browser": {
+    "viewports": {
+      "375": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Geist"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "768": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Geist"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "1280": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Geist"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      }
+    },
+    "checks": {
+      "reducedMotion": {
+        "fallback": null,
+        "canvas": false,
+        "hiddenContent": 0
+      }
+    }
+  }
+}

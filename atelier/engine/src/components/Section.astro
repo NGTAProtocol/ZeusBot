@@ -1,6 +1,11 @@
 ---
+import site from '../generated/site.json';
 import Lines from './Lines.astro';
+import { signatureSvg } from '../lib/signature.js';
 const { s, i } = Astro.props;
+const { bibbia, content } = site;
+const sig = bibbia.signature;
+const sigSvg = s.type === 'signature' ? signatureSvg(sig.kind === '3d' ? sig.fallback_id : sig.id, bibbia.tokens.palette, content.brand.name + ':section', { ...(sig.params || {}), ...(s.params || {}) }) : '';
 const titleLines = s.title_lines || (s.title ? [s.title] : []);
 const id = s.id || `s${i}`;
 ---
@@ -25,7 +30,17 @@ const id = s.id || `s${i}`;
         </div>
       </div>
     )}
-    {s.type !== 'chapter' && s.type !== 'quote' && (
+    {s.type === 'signature' && (
+      <div class="signature-section">
+        <div class="signature-section__art" data-sig-scope set:html={sigSvg} />
+        <div class="section__head" style="margin:0">
+          <Lines lines={titleLines} class="section__title" />
+          <span id={`${id}-t`} class="sr-only">{titleLines.join(' ')}</span>
+          <p class="signature-section__caption" data-reveal>{s.caption}</p>
+        </div>
+      </div>
+    )}
+    {s.type !== 'chapter' && s.type !== 'quote' && s.type !== 'signature' && (
       <div class="section__head">
         <Lines lines={titleLines} class="section__title" />
         <span id={`${id}-t`} class="sr-only">{titleLines.join(' ')}</span>
@@ -52,6 +67,17 @@ const id = s.id || `s${i}`;
           </li>
         ))}
       </ul>
+    )}
+    {s.type === 'prices' && (
+      <dl class="prices">
+        {s.items.map((it) => (
+          <div class="price" data-reveal>
+            <dt class="price__item">{it.item}</dt>
+            <dd class="price__value" style="margin:0">{it.value}</dd>
+            {it.note && <dd class="price__note" style="margin:0">{it.note}</dd>}
+          </div>
+        ))}
+      </dl>
     )}
     {s.type === 'process' && (
       <ol class="process">

@@ -1,0 +1,27 @@
+{
+  "concept": "Chi va in montagna d'estate ha già il fiato, ma d'inverno la stessa salita si decide leggendo un bollettino.",
+  "personality": { "adjectives": ["mattiniera", "metodica", "sobria"], "not": "catalogo di attrezzatura: niente prodotti in posa, niente sconti, niente 'avventura'" },
+  "signature": {
+    "kind": "css", "id": "contours", "fallback_id": "contours",
+    "description": "Le isoipse dell'hero salgono a velocità diverse mentre si scorre, come il versante che si apre all'alba dalla porta del rifugio.",
+    "params": { "rows": 28, "groups": 5, "spread": 16, "peak": 0.7 }
+  },
+  "tokens": {
+    "palette": { "bg": "#0f1b26", "surface": "#172836", "ink": "#eef3f6", "muted": "#a9b8c4", "accent": "#f2a541", "accent2": "#6fb7d6" },
+    "palette_source": { "bg": "cielo prima dell'alba alle 5:30", "ink": "neve sotto la frontale", "accent": "prima luce sulla cresta", "accent2": "ombra blu della neve dura" },
+    "color_strategy": "piena",
+    "fonts": {
+      "display": { "pkg": "@fontsource/schibsted-grotesk", "family": "Schibsted Grotesk", "weights": [700], "fallback": "system-ui, sans-serif" },
+      "body": { "pkg": "@fontsource/schibsted-grotesk", "family": "Schibsted Grotesk", "weights": [400, 500], "fallback": "system-ui, sans-serif" }
+    },
+    "type": { "scale": 1.24, "body_size": "1.0625rem", "body_leading": 1.6, "display_weight": 700, "display_tracking": "-0.025em", "display_leading": 1, "char_width": 0.53, "display_max": "6.25rem" },
+    "space": { "section": "clamp(96px, 11vw, 152px)", "gutter": "clamp(16px, 4vw, 48px)", "measure": "60ch" },
+    "radius": "6px",
+    "motion": { "micro_ms": 200, "sequence_ms": 800, "distance": 20, "ease": "out" }
+  },
+  "layout": "index",
+  "features": { "browser_surfaces": true, "press": false },
+  "unknowns": ["date esatte dei turni 2027", "orari di apertura del rifugio fuori stagione corsi", "prezzo delle uscite aziendali", "foto reali del rifugio e delle uscite"],
+  "skills_used": ["frontend-design", "impeccable", "atelier"],
+  "method_notes": "impeccable: strategia piena (notte, neve, alba, ombra) decisa prima dei colori; una sola famiglia da lavoro (Schibsted Grotesk) perché il sito si legge come una scheda tecnica; indice di pagina per chi torna a cercare prezzi e regole; superfici del browser tematizzate."
+}

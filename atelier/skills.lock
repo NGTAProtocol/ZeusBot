@@ -126,6 +126,54 @@
       "installed_as": [
         "threejs-webgl"
       ]
+    },
+    {
+      "name": "impeccable",
+      "repo": "pbakaus/impeccable",
+      "commit": "778c8a7b71ccd5bfe3ca6ac68c15d9d872d0f87d",
+      "path": "plugin/skills/impeccable (solo SKILL.md e reference/)",
+      "license": "Apache-2.0",
+      "license_file": "LICENSE",
+      "status": "installed-partial",
+      "installed_as": [
+        "impeccable"
+      ],
+      "excluded": [
+        "scripts/ (launcher che scarica ed esegue un binario, live-browser.js minificato)",
+        "plugin/hooks (eseguono il launcher a ogni Edit/Write e a SessionStart/Stop)",
+        "plugin/agents"
+      ]
+    },
+    {
+      "name": "taste-skill",
+      "repo": "Leonxlnx/taste-skill",
+      "commit": "b482f7a970abb98c4108d4a9f761e458c64cefc8",
+      "path": "skills/taste-skill",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "status": "installed",
+      "installed_as": [
+        "taste-skill"
+      ],
+      "note": "le istruzioni di hotlinking (picsum.photos, cdn.simpleicons.org) sono in conflitto con le regole Atelier, che prevalgono"
+    },
+    {
+      "name": "emil-kowalski-skill",
+      "repo": "emilkowalski/skill",
+      "commit": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "path": "skills/{emil-design-eng,animate,animation-vocabulary,review-animations,improve-animations,find-animation-opportunities}",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "status": "installed",
+      "installed_as": [
+        "emil-design-eng",
+        "emil-animate",
+        "emil-animation-vocabulary",
+        "emil-review-animations",
+        "emil-improve-animations",
+        "emil-find-animation-opportunities"
+      ],
+      "note": "installato solo il sottoinsieme web; esclusi write-swift, animate-expo, mobile-native, ask-sonner, pick-ui-library, prototype, break-ui, apple-design (non pertinenti)"
     }
   ]
 }

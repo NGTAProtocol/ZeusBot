@@ -21,9 +21,53 @@ function walkStrings(obj, path = '', out = []) {
 
 const IT_WORDS = /\b(il|la|di|che|per|non|una|con|del|della|sono|nel|alla|gli|le)\b/gi;
 
-export function lintContent(c, brief) {
+// Bibbia §9: mai link finti. Ogni href porta a una sezione esistente, a una pagina del sito,
+// o a mailto:/tel: presenti nei fatti del brief.
+export function lintLinks(c, brief) {
   const problems = [];
-  const need = ['meta.title', 'meta.description', 'brand.name', 'cta.label', 'cta.href', 'footer.email', 'footer.closing', 'pages.home.hero.title_lines', 'pages.home.hero.lead', 'pages.home.hero.lead_short', 'pages.home.sections'];
+  const facts = (brief.facts || []).join(' ').toLowerCase();
+  const digits = facts.replace(/\D/g, '');
+  const ids = new Set(['contenuto']);
+  for (const pg of Object.values(c.pages || {})) for (const s of pg.sections || []) if (s.id) ids.add(s.id);
+  const pages = new Set(Object.keys(c.pages || {}).filter((k) => k !== 'home'));
+  const walk = (o, path) => {
+    if (Array.isArray(o)) return o.forEach((v, i) => walk(v, `${path}[${i}]`));
+    if (!o || typeof o !== 'object') return;
+    for (const [k, v] of Object.entries(o)) {
+      if (k === 'href' && typeof v === 'string') {
+        const h = v.trim();
+        if (h.startsWith('#')) { if (!ids.has(h.slice(1))) problems.push(`link finto in ${path}.href: la sezione ${h} non esiste`); }
+        else if (h.startsWith('mailto:')) { const addr = h.slice(7).split('?')[0].toLowerCase(); if (!facts.includes(addr)) problems.push(`link finto in ${path}.href: ${addr} non è nei fatti del brief`); }
+        else if (h.startsWith('tel:')) { const n = h.slice(4).replace(/\D/g, ''); if (!n || !digits.includes(n)) problems.push(`link finto in ${path}.href: il numero ${h} non è nei fatti del brief`); }
+        else if (/^[a-z]+:/i.test(h)) { if (!facts.includes(h.toLowerCase())) problems.push(`link esterno non presente nel brief in ${path}.href: ${h}`); }
+        else if (h !== '/' && !pages.has(h.replace(/^\//, '').replace(/\/$/, ''))) problems.push(`link finto in ${path}.href: la pagina "${h}" non esiste`);
+      } else walk(v, path ? `${path}.${k}` : k);
+    }
+  };
+  walk(c, '');
+  return problems;
+}
+
+// regole di copy specifiche delle skill di ogni configurazione (verificabili sul testo)
+function lintConfig(c, config) {
+  const problems = [];
+  const h = c.pages.home.hero;
+  const words = (t) => String(t || '').trim().split(/\s+/).filter(Boolean).length;
+  // una sola azione principale con un'etichetta sola (Bibbia §13)
+  if (h.cta.label !== c.cta.label) problems.push(`CTA con etichette diverse per la stessa azione: "${h.cta.label}" / "${c.cta.label}"`);
+  if (config === 'c') {
+    // Taste Skill: titolo ≤ 2 righe, sottotesto ≤ 20 parole, al massimo 4 elementi di testo nell'hero
+    if (h.title_lines.length > 2) problems.push('config C (taste-skill): titolo hero oltre 2 righe');
+    if (words(h.lead) > 20) problems.push('config C (taste-skill): sottotesto hero oltre 20 parole');
+    const els = 3 + (h.secondary ? 1 : 0) + (h.meta ? 1 : 0) + (h.lead_short ? 0 : 0);
+    if (els > 4) problems.push('config C (taste-skill): più di 4 elementi di testo nell\'hero');
+  }
+  return problems;
+}
+
+export function lintContent(c, brief, { config } = {}) {
+  const problems = [];
+  const need = ['meta.title', 'meta.description', 'brand.name', 'cta.label', 'cta.href', 'footer.email', 'footer.closing', 'pages.home.hero.title_lines', 'pages.home.hero.lead', 'pages.home.sections'];
   for (const k of need) {
     const v = k.split('.').reduce((o, p) => (o ? o[p] : undefined), c);
     if (v === undefined || v === '' || (Array.isArray(v) && !v.length)) problems.push(`campo mancante: ${k}`);
@@ -56,6 +100,12 @@ export function lintContent(c, brief) {
   }
   const h = c.pages.home.hero;
   if (h.title_lines.join(' ').length > 70) problems.push('titolo hero oltre 70 caratteri');
-  if (h.lead_short.length > 120) problems.push('lead_short oltre 120 caratteri (versione mobile)');
+  if (h.lead_short && h.lead_short.length > 120) problems.push('lead_short oltre 120 caratteri (versione mobile)');
+  for (const pg of Object.values(c.pages)) for (const s of pg.sections || []) {
+    if (s.type === 'prices' && !(s.items || []).every((it) => it.item && it.value)) problems.push('prezzi: ogni voce richiede item e value (un prezzo sconosciuto si scrive "su preventivo", mai inventato)');
+    if (s.type === 'signature' && !s.caption) problems.push('sezione firma senza didascalia');
+  }
+  problems.push(...lintLinks(c, brief));
+  if (config) problems.push(...lintConfig(c, config));
   return problems;
 }

@@ -1,0 +1,60 @@
+{
+  "id": "quota-2100-a-base",
+  "config": "a",
+  "level": "base",
+  "url_tested": "locale, server statico con gzip",
+  "at": "2026-10-08T16:01:21.000Z",
+  "browser": {
+    "viewports": {
+      "375": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Barlow Condensed",
+          "Work Sans"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "768": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Barlow Condensed",
+          "Work Sans"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "1280": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Barlow Condensed",
+          "Work Sans"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      }
+    },
+    "checks": {
+      "reducedMotion": {
+        "fallback": null,
+        "canvas": false,
+        "hiddenContent": 0
+      }
+    }
+  }
+}

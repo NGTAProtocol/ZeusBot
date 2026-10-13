@@ -1,0 +1,6 @@
+{
+  "url": "https://www.basement.studio/",
+  "studied_at": "2026-10-08T15:34:18.296Z",
+  "reachable": false,
+  "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://www.basement.studio/"
+}

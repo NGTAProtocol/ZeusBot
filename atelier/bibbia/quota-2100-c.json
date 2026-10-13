@@ -1,0 +1,28 @@
+{
+  "concept": "La neve sembra un solo bianco, ma la sicurezza di una gita dipende dagli strati che non si vedono.",
+  "personality": { "adjectives": ["chiara", "asciutta", "affidabile"], "not": "rivista outdoor patinata: niente foto eroiche, gradienti e titoli gridati" },
+  "signature": {
+    "kind": "css", "id": "layers", "fallback_id": "layers",
+    "description": "Il profilo stratigrafico del manto nevoso riempie l'hero e, scorrendo, gli strati si separano: è quello che si legge prima di ogni uscita.",
+    "params": { "count": 6, "amp": 0.05, "spread": 20 }
+  },
+  "tokens": {
+    "palette": { "bg": "#f4f6f8", "surface": "#e6ebf0", "ink": "#0b1420", "muted": "#475466", "accent": "#c8361c", "accent2": "#b9c7d6" },
+    "dark": { "bg": "#0a1119", "surface": "#121c27", "ink": "#edf1f5", "muted": "#a3afbd", "accent": "#ff7a59", "accent2": "#2a3a4c" },
+    "palette_source": { "bg": "neve fresca in luce piatta", "ink": "inchiostro dei profili stratigrafici", "accent": "rosso delle bandierine di sondaggio", "accent2": "strato di brina di superficie" },
+    "color_strategy": "contenuta",
+    "fonts": {
+      "display": { "pkg": "@fontsource/onest", "family": "Onest", "weights": [700], "fallback": "system-ui, sans-serif" },
+      "body": { "pkg": "@fontsource/onest", "family": "Onest", "weights": [400, 500], "fallback": "system-ui, sans-serif" }
+    },
+    "type": { "scale": 1.2, "body_size": "1.0625rem", "body_leading": 1.6, "display_weight": 700, "display_tracking": "-0.03em", "display_leading": 1, "char_width": 0.56, "display_max": "5.75rem" },
+    "space": { "section": "clamp(88px, 10vw, 144px)", "gutter": "clamp(16px, 4vw, 48px)", "measure": "60ch" },
+    "radius": "12px",
+    "motion": { "micro_ms": 180, "sequence_ms": 700, "distance": 16, "ease": "out" }
+  },
+  "layout": "monolith",
+  "features": { "browser_surfaces": true, "press": true },
+  "unknowns": ["date esatte dei turni 2027", "orari di apertura del rifugio fuori stagione corsi", "prezzo delle uscite aziendali", "foto reali del rifugio e delle uscite"],
+  "skills_used": ["frontend-design", "taste-skill", "emil-design-eng", "emil-animate", "atelier"],
+  "method_notes": "taste-skill: sans display, un accento, hero di 2 righe con sottotesto ≤ 20 parole e una CTA, modo scuro. emil: ease-out, UI < 300 ms, pressione sui bottoni."
+}

@@ -284,10 +284,19 @@ export function buildScene(canvas, direction, { mobile = false, dpr = 1, width =
   // compilazione shader asincrona (KHR_parallel_shader_compile dove disponibile)
   (renderer.compileAsync ? renderer.compileAsync(scene, camera) : Promise.resolve()).catch(() => {}).finally(() => { state.ready = true; });
   const speed = direction.hero3d.params?.speed ?? 0.15;
-  const t0 = performance.now();
-  renderer.setAnimationLoop(() => {
-    if (!state.ready || !state.visible) return;
-    const t = ((performance.now() - t0) / 1000) * speed * 6;
+  // Bibbia §5: niente loop infinito. Si rende solo per ~4 s dopo l'avvio e per 2,5 s dopo ogni gesto
+  // (puntatore o scroll); poi il ciclo si ferma e la scena resta immobile finché l'utente non si muove.
+  let clock = 0;
+  let last = performance.now();
+  let activeUntil = last + 4000;
+  let running = false;
+  const frame = () => {
+    const now = performance.now();
+    if (!state.visible || now > activeUntil) { running = false; renderer.setAnimationLoop(null); return; }
+    if (!state.ready) { activeUntil = now + 4000; last = now; return; }
+    clock += Math.min(50, now - last) / 1000;
+    last = now;
+    const t = clock * speed * 6;
     state.px += (state.ptx - state.px) * 0.05;
     state.py += (state.pty - state.py) * 0.05;
     uniforms.uTime.value = t;
@@ -299,11 +308,16 @@ export function buildScene(canvas, direction, { mobile = false, dpr = 1, width =
     motif.tick(t, state.scroll);
     renderer.render(scene, camera);
     if (state.first) { state.first = false; onFirstFrame(); }
-  });
+  };
+  const wake = (ms = 2500) => {
+    activeUntil = Math.max(activeUntil, performance.now() + ms);
+    if (!running && state.visible) { running = true; last = performance.now(); renderer.setAnimationLoop(frame); }
+  };
+  wake(4000);
   return {
     resize,
-    pointer: (x, y) => { state.ptx = x; state.pty = y; },
-    scroll: (s) => { state.scroll = s; },
-    visible: (v) => { state.visible = v; }
+    pointer: (x, y) => { state.ptx = x; state.pty = y; wake(); },
+    scroll: (s) => { state.scroll = s; wake(); },
+    visible: (v) => { state.visible = v; if (v) wake(1200); }
   };
 }

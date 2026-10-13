@@ -1,9 +1,9 @@
 // Ciclo di qualità: screenshot 375/768/1280, Lighthouse mobile+desktop, controlli automatici, fallback.
 // Uso: node scripts/qa.mjs <id-output> [<id-output>...] [--runs 3] [--no-lh]
-//   <id-output> = cartella in output/ (es. fornace-lume-cinematic)
+//   <id-output> = cartella in output/ (es. fornace-lume-b-cinematic, quota-2100-baseline-base)
 import http from 'node:http';
 import { createReadStream, existsSync, statSync } from 'node:fs';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { join, extname, resolve, dirname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import zlib from 'node:zlib';
@@ -17,7 +17,6 @@ const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.
 export const THRESHOLDS = {
   base: { mobile: 90, desktop: 90 },
   cinematic: { mobile: 75, desktop: 85 },
-  baseline: { mobile: 0, desktop: 0 },
   a11y: 95,
   seo: 95
 };
@@ -113,7 +112,7 @@ async function browse(url, id, level) {
       const page = await ctx.newPage();
       await page.goto(url, { waitUntil: 'networkidle' });
       await page.waitForTimeout(2500);
-      out.checks.noWebGL = await page.evaluate(() => ({ fallback: document.documentElement.dataset.fallback || null, posterVisible: !!document.querySelector('.hero__poster svg'), canvas: !!document.querySelector('.hero__art canvas') }));
+      out.checks.noWebGL = await page.evaluate(() => ({ fallback: document.documentElement.dataset.fallback || null, posterVisible: !!document.querySelector('.hero__poster svg, .hero svg'), canvas: !!document.querySelector('.hero__art canvas') }));
       await page.screenshot({ path: join(shotsDir, 'nowebgl-hero.png') });
       await ctx.close();
       // Save-Data
@@ -136,9 +135,10 @@ const median = (xs) => { const s = [...xs].sort((a, b) => a - b); return s[Math.
 export async function qa(id, { runs = 1, lh = true } = {}) {
   const dir = join(ROOT, 'output', id);
   if (!existsSync(dir)) throw new Error(`Manca output/${id}: esegui prima generate.mjs`);
-  const level = id.endsWith('-cinematic') ? 'cinematic' : id.endsWith('-baseline') ? 'baseline' : 'base';
+  const level = id.endsWith('-cinematic') ? 'cinematic' : 'base';
+  const config = id.split('-').at(-2);
   const { server, url } = await serve(dir);
-  const report = { id, level, url_tested: 'locale, server statico con gzip', at: new Date().toISOString() };
+  const report = { id, config, level, url_tested: 'locale, server statico con gzip', at: new Date().toISOString() };
   try {
     report.browser = await browse(url, id, level);
     if (lh) {
@@ -149,7 +149,9 @@ export async function qa(id, { runs = 1, lh = true } = {}) {
         const pick = all.find((r) => r.performance === median(all.map((x) => x.performance)));
         report.lighthouse[ff] = { ...pick, runs: all.map((r) => r.performance) };
       }
-      if (level === 'cinematic') {
+      const has3d = /data-3d=/.test(await readFile(join(dir, 'index.html'), 'utf8')) || config === 'baseline';
+      report.has3d = has3d;
+      if (level === 'cinematic' && has3d) {
         // costo del 3D avviato subito (senza attendere un gesto): riportato per trasparenza
         report.lighthouseForce3d = {
           mobile: await runLighthouse(url + '?force3d', { formFactor: 'mobile' }),
@@ -164,7 +166,7 @@ export async function qa(id, { runs = 1, lh = true } = {}) {
         accessibility: { need: THRESHOLDS.a11y, got: Math.min(L.mobile.accessibility, L.desktop.accessibility), ok: Math.min(L.mobile.accessibility, L.desktop.accessibility) >= THRESHOLDS.a11y },
         seo: { need: THRESHOLDS.seo, got: Math.min(L.mobile.seo, L.desktop.seo), ok: Math.min(L.mobile.seo, L.desktop.seo) >= THRESHOLDS.seo }
       };
-      report.pass = level === 'baseline' ? null : Object.values(report.thresholds).every((x) => x.ok);
+      report.pass = Object.values(report.thresholds).every((x) => x.ok);
     }
   } finally {
     server.close();
@@ -183,6 +185,6 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const r = await qa(id, { runs, lh });
     const L = r.lighthouse;
     const v = r.browser.viewports;
-    console.log(`${id}: ${L ? `LH mob P${L.mobile.performance} A${L.mobile.accessibility} S${L.mobile.seo} (LCP ${L.mobile.lcpMs}ms TBT ${L.mobile.tbtMs}ms) | desk P${L.desktop.performance} A${L.desktop.accessibility} S${L.desktop.seo}` : ''} | overflow375=${v[375].overflowX} errori=${Object.values(v).flatMap((x) => x.errors).length} esterni=${[...new Set(Object.values(v).flatMap((x) => x.externalHosts))].join(',') || 'nessuno'} canvas1280=${v[1280].canvasLive} | nascosti=${Object.values(v).map((x) => x.hiddenAfterScroll).join('/')} | ${!L ? 'Lighthouse non eseguito' : r.pass === null ? 'baseline' : r.pass ? 'SOGLIE OK' : 'SOGLIE NON RAGGIUNTE'}${r.lighthouseForce3d ? ` | force3d: mob P${r.lighthouseForce3d.mobile.performance} desk P${r.lighthouseForce3d.desktop.performance}` : ''}`);
+    console.log(`${id}: ${L ? `LH mob P${L.mobile.performance} A${L.mobile.accessibility} S${L.mobile.seo} (LCP ${L.mobile.lcpMs}ms TBT ${L.mobile.tbtMs}ms) | desk P${L.desktop.performance} A${L.desktop.accessibility} S${L.desktop.seo}` : ''} | overflow375=${v[375].overflowX} errori=${Object.values(v).flatMap((x) => x.errors).length} esterni=${[...new Set(Object.values(v).flatMap((x) => x.externalHosts))].join(',') || 'nessuno'} canvas1280=${v[1280].canvasLive} | nascosti=${Object.values(v).map((x) => x.hiddenAfterScroll).join('/')} | ${!L ? 'Lighthouse non eseguito' : r.pass ? 'SOGLIE OK' : 'SOGLIE NON RAGGIUNTE'}${r.lighthouseForce3d ? ` | force3d: mob P${r.lighthouseForce3d.mobile.performance} desk P${r.lighthouseForce3d.desktop.performance}` : ''}`);
   }
 }

@@ -27,6 +27,9 @@ Gli SHA dei commit e le licenze sono registrati in `skills.lock`.
 | Three.js-Claude-Skill-Package (24 skill) | Impertio-Studio @ `6c190f0` | MIT (LICENSE) | ✅ installata (appiattita) |
 | threejs-skills (10 skill) | CloudAI-X @ `b1c6230` | "MIT" solo come frase nel README | ❌ respinta |
 | gsap-scrolltrigger | freshtechbro/claudedesignskills @ `1da73fe` | MIT (LICENSE) | ✅ installata (con note) |
+| impeccable | pbakaus/impeccable @ `778c8a7` | Apache-2.0 (LICENSE + NOTICE) | ⚠️ installata **parzialmente** (solo testo) |
+| taste-skill | Leonxlnx/taste-skill @ `b482f7a` | MIT (LICENSE) | ✅ installata (con note) |
+| skill di Emil Kowalski (6 su 14) | emilkowalski/skill @ `e8a175d` | MIT (LICENSE) | ✅ installata (sottoinsieme web) |
 | react-three-fiber | freshtechbro/claudedesignskills @ `1da73fe` | MIT (LICENSE) | ✅ installata (non usata dalla pipeline) |
 | threejs-webgl | freshtechbro/claudedesignskills @ `1da73fe` | MIT (LICENSE) | ✅ installata (con note) |
 
@@ -78,6 +81,43 @@ Gli SHA dei commit e le licenze sono registrati in `skills.lock`.
 - Nota: gli starter (`assets/starter_*`) caricano GSAP e Three.js da `cdn.jsdelivr.net`. Atelier vieta le CDN: **gli starter non vanno usati così come sono**.
 - Nota licenza GSAP: le skill descrivono GSAP ma non ne trattano la licenza. Atelier la verifica separatamente (vedi `CREDITS.md`).
 - `react-three-fiber` è installata perché ha passato l'audit, ma la pipeline Atelier usa Three.js "vanilla" in Astro e non React.
+
+### impeccable (Paul Bakaus) — ⚠️ installazione parziale
+- **Licenza:** Apache-2.0, con NOTICE: uso commerciale consentito, NOTICE copiata nell'installazione.
+- **Struttura:** il pacchetto Claude Code (`plugin/`) contiene:
+  - `SKILL.md` e 41 file `reference/*.md` (~400 KB di metodo);
+  - `scripts/` (launcher `impeccable` + `impeccable.cmd`, `live-browser.js` di 548 KB minificato, `modern-screenshot.umd.js`);
+  - `hooks/hooks.json`;
+  - 4 agenti.
+- **Launcher letto integralmente.** Se il binario non è presente, lo **scarica da GitHub Releases ed esegue**. La verifica sha256 usa un file `.sha256` dello stesso rilascio: garantisce l'integrità, non l'autenticità. Non è firmato.
+- **Hook:** `hooks.json` esegue il launcher **automaticamente** a SessionStart, dopo **ogni** Edit/Write e allo Stop.
+- **Codice non leggibile:** `live-browser.js` è minificato (548 KB). Il motore è scritto in Rust (`crates/`, 14 MB) e non è stato verificato.
+- **Testo:** nessuna istruzione sospetta. La generazione di immagini via API compare solo come opzione, da proporre all'utente prima di usarla.
+- **Decisione:**
+  - installati solo `SKILL.md` e `reference/` (testo, nessun eseguibile);
+  - **esclusi** `scripts/`, `hooks/` e `agents/`.
+  - La SKILL.md prevede già il caso "launcher non disponibile": legge il contesto direttamente.
+  - Per usare anche il motore servirebbe compilarlo dai sorgenti dopo una revisione del codice Rust, oppure verificare una firma del binario. Non fatto.
+
+### taste-skill (Leonxlnx) — ✅ con note
+- **Licenza:** MIT.
+- **Installato:** solo `skills/taste-skill/SKILL.md` (87 KB), letto per le parti su tipografia, layout, colore, movimento e anti-pattern.
+- **Non installati:**
+  - gli script in `scripts/`: servono a manutenere il README del repo (sharp sulle immagini) e non c'entrano con la skill;
+  - `skill.sh`, che si limita a stampare un percorso;
+  - le altre 12 varianti (brutalist, minimalist, imagegen…).
+- **Conflitti con Atelier:** la skill suggerisce immagini segnaposto da `picsum.photos`, icone da `cdn.simpleicons.org` e install npm di librerie UI (shadcn, Material…). Sono in conflitto con le regole Atelier (niente hotlinking, niente CDN, niente stock): **in Atelier prevalgono le regole Atelier**.
+- Nessuna chiamata di rete eseguibile, nessuna credenziale, nessuna istruzione sospetta.
+
+### skill di Emil Kowalski — ✅ sottoinsieme web
+- **Licenza:** MIT.
+- **Contenuto:** 14 SKILL.md di sola documentazione (nessuno script), controllati con le ricerche automatiche, senza riscontri.
+- **Installate, perché pertinenti al web:** emil-design-eng, animate (+ RECIPES.md), animation-vocabulary, review-animations, improve-animations, find-animation-opportunities.
+- **Escluse, perché non pertinenti:** write-swift, animate-expo, mobile-native, ask-sonner, pick-ui-library, prototype, break-ui, apple-design.
+
+### Ricontrollo delle candidate già auditate
+- Lo SHA di HEAD dei repo anthropics, vercel-labs, Opace, Impertio e CloudAI-X è **identico** al primo audit.
+- Le decisioni restano valide, comprese le due skill respinte: CloudAI-X non ha ancora un file LICENSE e vercel-labs scarica ancora istruzioni remote.
 
 ## Cosa NON è stato fatto
 

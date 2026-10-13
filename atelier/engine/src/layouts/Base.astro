@@ -4,26 +4,31 @@ import site from '../generated/site.json';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 const { title, description, pageKey = 'home' } = Astro.props;
-const { content, direction, level } = site;
+const { content, bibbia, level, client } = site;
 const lang = content.meta.lang || 'it';
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
-// al client servono solo i parametri della direzione (niente contenuti)
-const clientDir = JSON.stringify({ id: direction.id, palette: direction.palette, motion: direction.motion, hero3d: direction.hero3d });
+const feats = bibbia.features || {};
+const pal = bibbia.tokens.palette;
 ---
 <!doctype html>
-<html lang={lang} data-layout={direction.layout} data-level={level} class={level === 'cinematic' ? 'is-cinematic' : 'is-base'}>
+<html lang={lang} data-layout={bibbia.layout} data-level={level} data-sig={bibbia.signature.id}
+  data-f-surfaces={feats.browser_surfaces ? '' : undefined} data-f-press={feats.press ? '' : undefined}
+  class={level === 'cinematic' ? 'is-cinematic' : 'is-base'}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta name="theme-color" content={direction.palette.bg} />
+    <meta name="theme-color" content={pal.bg} media={bibbia.tokens.dark ? '(prefers-color-scheme: light)' : undefined} />
+    {bibbia.tokens.dark && <meta name="theme-color" content={bibbia.tokens.dark.bg} media="(prefers-color-scheme: dark)" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={lang === 'it' ? 'it_IT' : lang} />
     <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    {pageKey === 'home' && content.schema && <script type="application/ld+json" set:html={JSON.stringify(content.schema)} />}
     <script is:inline>
       // stato iniziale senza flash: movimento solo se JS attivo e non ridotto
       (function () {
@@ -42,13 +47,13 @@ const clientDir = JSON.stringify({ id: direction.id, palette: direction.palette,
     <Footer />
     <div class="mcta" aria-hidden="true" data-mcta>
       <span>{content.cta.mobile_hint || content.brand.name}</span>
-      <a class="btn" href={content.cta.href} tabindex="-1">{content.cta.label}</a>
+      <a class="btn" href={content.cta.href.startsWith('#') || content.cta.href.includes(':') ? content.cta.href : import.meta.env.BASE_URL + content.cta.href} tabindex="-1">{content.cta.label}</a>
     </div>
-    <div class="grain" aria-hidden="true"></div>
+    {(level === 'cinematic' || bibbia.features?.grain) && <div class="grain" aria-hidden="true"></div>}
     <script>
       import '../scripts/base.js';
     </script>
-    {level === 'cinematic' && <script type="application/json" id="atelier-dir" set:html={clientDir} />}
+    {level === 'cinematic' && <script type="application/json" id="atelier-dir" set:html={JSON.stringify(client)} />}
     {level === 'cinematic' && (
       <script>
         import '../scripts/cinematic.js';

@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Nodo — sicurezza informatica per PMI del Nord Est",
+    "description": "Nodo, Treviso: audit in 2-3 settimane, formazione anti-phishing e reperibilità 24/7 per PMI manifatturiere. Valutazione gratuita di 45 minuti.",
+    "lang": "it",
+    "url": "https://nodosicuro.example"
+  },
+  "brand": { "name": "Nodo" },
+  "nav": [
+    { "label": "Metodo", "href": "#metodo" },
+    { "label": "Servizi", "href": "#servizi" },
+    { "label": "Prezzi", "href": "#prezzi" },
+    { "label": "Domande", "href": "#domande" }
+  ],
+  "cta": { "label": "Prenota la valutazione gratuita", "href": "contatti", "mobile_hint": "45 minuti, gratis" },
+  "pages": {
+    "home": {
+      "hero": {
+        "title_lines": ["Sicurezza informatica", "senza allarmismo."],
+        "lead": "Audit, formazione e reperibilità per PMI manifatturiere del Nord Est senza un reparto di sicurezza.",
+        "cta": { "label": "Prenota la valutazione gratuita", "href": "contatti" }
+      },
+      "sections": [
+        {
+          "type": "facts", "id": "numeri", "index_label": "In breve",
+          "title": "Nodo in quattro numeri",
+          "items": [
+            { "value": "45", "unit": "min", "label": "La prima valutazione, gratuita." },
+            { "value": "2-3", "unit": "settimane", "label": "Per un audit completo." },
+            { "value": "1", "unit": "ora", "label": "Intervento da remoto con reperibilità." },
+            { "value": "4", "unit": "consulenti", "label": "OSCP, CISSP, ISO 27001 Lead Auditor." }
+          ]
+        },
+        {
+          "type": "signature", "id": "metodo", "index_label": "Metodo",
+          "title_lines": ["Guardare da vicino,", "poi mettere in ordine"],
+          "caption": "Nodo analizza la rete, poi consegna un rapporto in italiano con un piano in ordine di priorità."
+        },
+        {
+          "type": "offer", "id": "servizi", "index_label": "Servizi",
+          "title": "Servizi",
+          "items": [
+            { "name": "Audit", "detail": "Rapporto in italiano e piano in ordine di priorità.", "meta": "2-3 settimane" },
+            { "name": "Formazione", "detail": "Simulazioni di phishing trimestrali per il personale.", "meta": "ogni trimestre" },
+            { "name": "Reperibilità", "detail": "24/7 con contratto annuale, intervento remoto entro un'ora.", "meta": "24/7" },
+            { "name": "NIS2", "detail": "Supporto per l'adeguamento alla direttiva.", "meta": "su richiesta" }
+          ]
+        },
+        {
+          "type": "prices", "id": "prezzi", "index_label": "Prezzi",
+          "title": "Prezzi",
+          "items": [
+            { "item": "Prima valutazione, 45 minuti", "value": "Gratuita", "note": "Online o in azienda." },
+            { "item": "Audit", "value": "Su preventivo" },
+            { "item": "Reperibilità 24/7", "value": "Su preventivo", "note": "Contratto annuale." }
+          ]
+        },
+        {
+          "type": "faq", "id": "domande", "index_label": "Domande",
+          "title": "Domande",
+          "items": [
+            { "q": "Dove operate?", "a": "Da Treviso, in Veneto e Friuli. La valutazione si può fare online." },
+            { "q": "Per quali aziende?", "a": "PMI manifatturiere tra 20 e 250 dipendenti, senza un reparto di sicurezza interno." },
+            { "q": "Ci aiutate con la NIS2?", "a": "Sì, con supporto per l'adeguamento alla direttiva." },
+            { "q": "La valutazione è gratuita?", "a": "Sì, 45 minuti." }
+          ]
+        },
+        {
+          "type": "contact", "id": "contatto",
+          "title": "Prenota 45 minuti",
+          "body": ["Scrivi a Nodo: fissiamo la valutazione online o in azienda."],
+          "lines": [
+            { "label": "Email", "value": "valutazione@nodosicuro.it", "href": "mailto:valutazione@nodosicuro.it" },
+            { "label": "Telefono", "value": "0422 000 309", "href": "tel:0422000309" }
+          ],
+          "cta": { "label": "Prenota la valutazione gratuita", "href": "mailto:valutazione@nodosicuro.it?subject=Valutazione%20gratuita" }
+        }
+      ]
+    },
+    "contatti": {
+      "meta_title": "Valutazione gratuita — Nodo, Treviso",
+      "meta_description": "Prenota la valutazione gratuita di 45 minuti con Nodo, online o in azienda in Veneto e Friuli: valutazione@nodosicuro.it, 0422 000 309.",
+      "title_lines": ["Valutazione", "gratuita"],
+      "intro": "Quarantacinque minuti, online o in azienda.",
+      "sections": [
+        {
+          "type": "contact", "id": "scrivici",
+          "title": "Contatti",
+          "body": ["Indica numero di dipendenti e se preferisci l'incontro online o in azienda."],
+          "lines": [
+            { "label": "Email", "value": "valutazione@nodosicuro.it", "href": "mailto:valutazione@nodosicuro.it" },
+            { "label": "Telefono", "value": "0422 000 309", "href": "tel:0422000309" },
+            { "label": "Sede", "value": "Treviso" }
+          ]
+        }
+      ]
+    }
+  },
+  "footer": {
+    "closing": "Prima guardiamo. Poi mettiamo in ordine.",
+    "address": "Treviso, interventi in Veneto e Friuli",
+    "email": "valutazione@nodosicuro.it",
+    "phone": "0422 000 309",
+    "hours": ["Reperibilità 24/7 con contratto annuale"],
+    "legal": "Nodo è un'attività fittizia: sito dimostrativo generato con Atelier (configurazione C)."
+  }
+}

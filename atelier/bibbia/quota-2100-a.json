@@ -1,0 +1,28 @@
+{
+  "concept": "Lo scialpinismo promette la libertà fuori dalle piste, e si impara soltanto con regole più rigide di quelle della pista.",
+  "personality": { "adjectives": ["tecnica", "essenziale", "rassicurante"], "not": "estrema o adrenalinica: niente salti, GoPro e linguaggio da sfida" },
+  "signature": {
+    "kind": "3d", "id": "terrain", "fallback_id": "contours",
+    "why_3d": "La quota si capisce in prospettiva: un rilievo procedurale che si inclina con lo scroll mostra la salita da Filorera ai 2.100 metri meglio di un numero.",
+    "description": "Un rilievo a curve di livello occupa l'hero; scorrendo la camera sale di quota e le isoipse maestre restano rosse come i segnavia.",
+    "params": { "speed": 0.1, "rows": 26, "groups": 4 }
+  },
+  "tokens": {
+    "palette": { "bg": "#eef2f4", "surface": "#dde5ea", "ink": "#0f1d2a", "muted": "#465767", "accent": "#c8371f", "accent2": "#2e6f95" },
+    "palette_source": { "bg": "neve all'ombra del mattino", "ink": "roccia bagnata del Masino", "accent": "rosso dei segnavia e della custodia dell'ARTVA", "accent2": "ghiaccio di colata" },
+    "color_strategy": "contenuta",
+    "fonts": {
+      "display": { "pkg": "@fontsource/barlow-condensed", "family": "Barlow Condensed", "weights": [600], "fallback": "Arial Narrow, sans-serif" },
+      "body": { "pkg": "@fontsource/work-sans", "family": "Work Sans", "weights": [400, 600], "fallback": "system-ui, sans-serif" }
+    },
+    "type": { "scale": 1.28, "body_size": "1.0625rem", "body_leading": 1.6, "display_weight": 600, "display_tracking": "-0.005em", "display_leading": 0.95, "char_width": 0.42, "display_max": "7.5rem" },
+    "space": { "section": "clamp(96px, 12vw, 160px)", "gutter": "clamp(16px, 4vw, 48px)", "measure": "62ch" },
+    "radius": "0px",
+    "motion": { "micro_ms": 200, "sequence_ms": 900, "distance": 24, "ease": "out" }
+  },
+  "layout": "blueprint",
+  "features": { "browser_surfaces": false, "press": false },
+  "unknowns": ["date esatte dei turni 2027", "orari di apertura del rifugio fuori stagione corsi", "prezzo delle uscite aziendali", "foto reali del rifugio e delle uscite"],
+  "skills_used": ["frontend-design", "atelier"],
+  "method_notes": "frontend-design: direzione 'carta topografica' (reticolo di fondo, condensato da cartello, rosso segnavia); il 3D è la firma solo perché il concept è la quota."
+}

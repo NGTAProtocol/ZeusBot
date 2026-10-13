@@ -23,6 +23,9 @@ Gli errori sono registrati, sito per sito, in `references/data/*.json` (generati
 
 Non ho usato servizi di scraping a pagamento (es. Firecrawl, disponibile come connettore) per aggirare il blocco: richiederebbero crediti e il brief vieta di spenderli senza conferma.
 
+### Secondo tentativo (seconda versione di Atelier)
+Ritentati con lo stesso esito (`ERR_TUNNEL_CONNECTION_FAILED`): il case study Kode Immersive su awwwards.com, lusion.co, igloo.inc, activetheory.net, locomotive.ca, bruno-simon.com, apple.com, linear.app, stripe.com, basement.studio. Gli errori sono registrati in `references/data/*.json`.
+
 ## Conseguenze (dette chiaramente)
 - **Nessuna scheda di sito premiato contiene misure reali.** Le schede dei siti bloccati riportano solo l'errore.
 - Le **statistiche di stack** sono calcolate sul campione effettivamente misurato (2 siti, non premiati). Sono riportate così come sono e **non sono rappresentative** dei siti premiati: vedi `stack-stats.md`.

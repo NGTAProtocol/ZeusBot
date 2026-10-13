@@ -1,0 +1,28 @@
+{
+  "concept": "Chi cucina vuole piatti che si somigliano tutti, mentre il fuoco in riduzione cambia il colore di ognuno.",
+  "personality": { "adjectives": ["notturna", "minerale", "sicura"], "not": "boutique di lusso: niente oro, niente nero laccato, niente toni da gioielleria" },
+  "signature": {
+    "kind": "3d", "id": "blob", "fallback_id": "layers",
+    "why_3d": "Lo smalto in riduzione cambia colore secondo l'angolo della luce: solo una superficie che ruota sotto il puntatore mostra perché due piatti non sono mai uguali.",
+    "description": "Una massa di smalto procedurale ruota nell'hero e risponde al puntatore: il colore scivola dal cobalto al rame man mano che cambia la luce.",
+    "params": { "detail": 56, "speed": 0.14, "count": 5 }
+  },
+  "tokens": {
+    "palette": { "bg": "#13264a", "surface": "#1b3361", "ink": "#f3efe6", "muted": "#bcc6da", "accent": "#e08a4f", "accent2": "#7fb9a6" },
+    "palette_source": { "bg": "cobalto steso in tre mani, cotto scuro", "ink": "biscotto di argilla chiara", "accent": "ossido di ferro sotto la cenere", "accent2": "verde del rame ossidato" },
+    "color_strategy": "immersa",
+    "fonts": {
+      "display": { "pkg": "@fontsource/brygada-1918", "family": "Brygada 1918", "weights": [600], "fallback": "Georgia, serif" },
+      "body": { "pkg": "@fontsource/public-sans", "family": "Public Sans", "weights": [400, 600], "fallback": "system-ui, sans-serif" }
+    },
+    "type": { "scale": 1.22, "body_size": "1.0625rem", "body_leading": 1.6, "display_weight": 600, "display_tracking": "-0.015em", "display_leading": 1.02, "char_width": 0.54, "display_max": "6.5rem" },
+    "space": { "section": "clamp(96px, 11vw, 152px)", "gutter": "clamp(16px, 4vw, 48px)", "measure": "60ch" },
+    "radius": "4px",
+    "motion": { "micro_ms": 200, "sequence_ms": 800, "distance": 20, "ease": "out" }
+  },
+  "layout": "panels",
+  "features": { "browser_surfaces": true, "press": false },
+  "unknowns": ["prezzo per coperto del servizio completo", "foto reali dei pezzi e del laboratorio", "orari esatti delle visite del sabato", "testimonianze di ristoranti clienti"],
+  "skills_used": ["frontend-design", "impeccable", "atelier"],
+  "method_notes": "impeccable: strategia di colore scelta prima dei colori (immersa: la superficie è il cobalto); font scelti fuori dalla lista dei default da addestramento (niente Fraunces/Cormorant/Newsreader): Brygada 1918 per le grazie tozze dei numeri di serie incisi sul fondo dei piatti; superfici del browser tematizzate; un solo momento di movimento d'autore (la massa di smalto)."
+}

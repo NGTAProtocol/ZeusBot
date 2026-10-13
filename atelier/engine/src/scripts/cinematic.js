@@ -1,7 +1,8 @@
-// Livello CINEMATICO: Lenis + GSAP/ScrollTrigger + hero Three.js procedurale + testo reattivo + audio opzionale.
-// Tutto si carica DOPO il primo rendering e solo se le condizioni lo consentono.
+// Livello CINEMATICO: Lenis + GSAP/ScrollTrigger che pilotano la FIRMA del sito (dal file Bibbia).
+// Three.js si carica solo se la firma è 3D (Bibbia §14.3) e solo al primo gesto dell'utente.
+// Regole: solo transform/opacity, nessun loop infinito, tutto parte da scroll o puntatore.
 
-const dir = JSON.parse(document.getElementById('atelier-dir').textContent);
+const cfg = JSON.parse(document.getElementById('atelier-dir').textContent);
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const conn = navigator.connection || {};
 const saveData = !!conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '');
@@ -11,40 +12,35 @@ const finePointer = matchMedia('(pointer: fine)').matches;
 const small = matchMedia('(max-width: 860px)').matches;
 // parametri di diagnosi per il QA: ?no3d (niente WebGL), ?force3d (3D subito, senza attendere gesti)
 const q = new URLSearchParams(location.search);
-
-// Controllo economico: il contesto WebGL vero si crea una sola volta, in idle, dentro mountHero
-// (che ripiega sul poster SVG se la creazione fallisce).
 const hasWebGL = () => 'WebGLRenderingContext' in window;
-
 const idle = (fn, timeout = 1200) => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout }) : setTimeout(fn, 200));
 const afterLoad = (fn) => (document.readyState === 'complete' ? fn() : addEventListener('load', fn, { once: true }));
 
-// Fallback: con movimento ridotto o Save-Data, niente GSAP/Lenis/WebGL: resta il BASE.
 if (reduce || saveData) {
+  // ripiego: resta il BASE (contenuto già al suo posto, firma statica)
   window.__atelierReveal?.();
   document.documentElement.dataset.fallback = reduce ? 'reduced-motion' : 'save-data';
 } else {
   initMotion();
-  const can3d = hasWebGL() && !lowMemory && !lowCpu && !q.has('no3d');
-  if (!can3d) document.documentElement.dataset.fallback = 'no-webgl-or-weak-device';
-  else {
-    // Il 3D parte alla prima interazione (mouse, scroll, tocco, tastiera): fino ad allora resta il poster.
-    // Protegge LCP/TBT e batteria. ?force3d lo avvia subito (serve al QA per misurarne il costo).
-    const start = () => afterLoad(() => idle(startHero3d));
-    if (q.has('force3d')) start();
+  const host3d = document.querySelector('[data-3d]');
+  if (host3d) {
+    const can3d = hasWebGL() && !lowMemory && !lowCpu && !q.has('no3d');
+    if (!can3d) document.documentElement.dataset.fallback = 'no-webgl-or-weak-device';
     else {
-      let done = false;
-      const go = () => { if (!done) { done = true; start(); } };
-      ['pointermove', 'touchstart', 'scroll', 'keydown', 'wheel'].forEach((ev) => addEventListener(ev, go, { once: true, passive: true }));
+      const start = () => afterLoad(() => idle(() => startHero3d(host3d)));
+      if (q.has('force3d')) start();
+      else {
+        let done = false;
+        const go = () => { if (!done) { done = true; start(); } };
+        ['pointermove', 'touchstart', 'scroll', 'keydown', 'wheel'].forEach((ev) => addEventListener(ev, go, { once: true, passive: true }));
+      }
     }
   }
 }
 
-async function startHero3d() {
-  const host = document.querySelector('[data-hero-art]');
-  if (!host) return;
+async function startHero3d(host) {
   const { mountHero } = await import('./hero3d.js');
-  mountHero(host, dir, { mobile: small });
+  mountHero(host, { palette: cfg.palette, hero3d: { motif: cfg.sig.id, params: cfg.sig.params || {} } }, { mobile: small });
 }
 
 async function initMotion() {
@@ -52,136 +48,98 @@ async function initMotion() {
   try {
     [{ gsap }, { ScrollTrigger }] = await Promise.all([import('gsap'), import('gsap/ScrollTrigger')]);
   } catch {
-    window.__atelierReveal?.(); // se GSAP non si carica, il contenuto resta comunque visibile
+    window.__atelierReveal?.();
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
-  const ease = dir.motion.ease === 'none' ? 'none' : dir.motion.ease;
-  const D = dir.motion.duration;
+  const { ease, dur: D, distance, stagger } = cfg.motion;
 
-  // scorrimento fluido solo con puntatore fine (desktop)
   if (finePointer) {
     const { default: Lenis } = await import('lenis');
-    const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add((t) => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
   }
 
-  // ingresso dell'hero: le lettere salgono di poco ma sono visibili dal primo frame (LCP)
-  const heroChars = document.querySelectorAll('.hero__title .ch');
-  if (heroChars.length) gsap.from(heroChars, { yPercent: 35, duration: D, ease, stagger: { each: 0.018, from: 'start' } });
+  // l'hero è leggibile dal primo frame: nessuna animazione al caricamento
   document.querySelector('.hero [data-reveal-lines]')?.classList.add('is-in');
 
-  // titoli rivelati per righe
   document.querySelectorAll('[data-reveal-lines]:not(.hero__title)').forEach((el) => {
     const lines = el.querySelectorAll('.mask-line > span');
     gsap.fromTo(lines, { yPercent: 105, y: 0 }, {
-      yPercent: 0, y: 0, duration: D, ease, stagger: dir.motion.stagger,
+      yPercent: 0, y: 0, duration: D, ease, stagger,
       scrollTrigger: { trigger: el, start: 'top 88%', once: true },
       onStart: () => el.classList.add('is-in')
     });
   });
-  // paragrafi ed elementi
   gsap.utils.toArray('[data-reveal]').forEach((el) => {
-    gsap.fromTo(el, { autoAlpha: 0, y: dir.motion.distance }, {
+    gsap.fromTo(el, { autoAlpha: 0, y: distance }, {
       autoAlpha: 1, y: 0, duration: D * 0.85, ease,
       scrollTrigger: { trigger: el, start: 'top 90%', once: true },
       onStart: () => el.classList.add('is-in')
     });
   });
 
-  // l'hero si allontana mentre si scorre
+  // il testo dell'hero cede il passo alla firma mentre si scorre
   const heroInner = document.querySelector('.hero__inner');
-  if (heroInner) {
-    gsap.to(heroInner, { yPercent: -12, autoAlpha: 0.2, ease: 'none', scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: 'bottom top', scrub: true } });
-  }
+  if (heroInner) gsap.to(heroInner, { yPercent: -10, autoAlpha: 0.25, ease: 'none', scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: 'bottom top', scrub: true } });
 
-  // capitoli: il corpo del testo si accende progressivamente (scroll narrativo)
-  document.querySelectorAll('.chapter > .chapter__body').forEach((body) => {
+  // capitoli: il testo si accende man mano che si legge
+  if (!small) document.querySelectorAll('.chapter > .chapter__body').forEach((body) => {
     const ps = body.querySelectorAll('p');
-    if (ps.length < 2 || small) return;
+    if (ps.length < 2) return;
     gsap.fromTo(ps, { opacity: 0.35 }, { opacity: 1, stagger: 0.5, ease: 'none', scrollTrigger: { trigger: body, start: 'top 70%', end: 'bottom 55%', scrub: true } });
   });
 
-  // transizione di colore tra capitoli marcati con data-tone="invert"
-  document.querySelectorAll('[data-tone="invert"]').forEach((sec) => {
-    ScrollTrigger.create({
-      trigger: sec, start: 'top 55%', end: 'bottom 45%',
-      onToggle: (self) => document.documentElement.classList.toggle('tone-invert', self.isActive)
-    });
-  });
-
-  if (finePointer) kineticTitle(gsap);
-  audioToggle();
+  document.querySelectorAll('[data-sig-scope]').forEach((scope) => signature(gsap, scope));
 }
 
-// testo che reagisce al cursore (solo desktop)
-function kineticTitle(gsap) {
-  const title = document.querySelector('.hero__title.kinetic');
-  if (!title) return;
-  const chars = [...title.querySelectorAll('.ch')];
-  let rects = [];
-  const measure = () => (rects = chars.map((c) => { const r = c.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }));
-  measure();
-  addEventListener('resize', measure, { passive: true });
-  const setters = chars.map((c) => ({ y: gsap.quickTo(c, 'y', { duration: 0.6, ease: 'power3.out' }), s: gsap.quickTo(c, 'scaleY', { duration: 0.6, ease: 'power3.out' }) }));
+// ---- la firma: un solo momento di movimento d'autore, guidato da scroll (e puntatore per il reticolo) ----
+function signature(gsap, scope) {
+  const svg = scope.querySelector('svg.sig');
+  if (!svg) return;
+  const parts = [...svg.querySelectorAll('[data-sig-part]')];
+  const inHero = scope.matches('[data-hero-art]');
+  const st = inHero
+    ? { trigger: scope, start: 'top top', end: 'bottom top', scrub: 0.6 }
+    : { trigger: scope, start: 'top 85%', end: 'center 40%', scrub: 0.6 };
+  const num = (el, v, d) => parseFloat(getComputedStyle(el).getPropertyValue(v)) || d;
+  const id = cfg.sig.kind === '3d' ? cfg.sig.fallback_id : cfg.sig.id;
+  if (id === 'drip') {
+    parts.forEach((p) => gsap.fromTo(p, { scaleY: num(p, '--from', 0.2) }, { scaleY: 1, ease: 'none', transformOrigin: '50% 0%', scrollTrigger: st }));
+  } else if (id === 'layers' || id === 'contours') {
+    parts.forEach((p) => gsap.fromTo(p, { y: 0 }, { y: num(p, '--rise', -40) * 2.2, ease: 'none', scrollTrigger: st }));
+  } else if (id === 'lattice') {
+    lattice(gsap, scope, parts, st);
+  }
+}
+
+// reticolo: i segmenti partono ruotati in disordine; lo scroll li allinea, il puntatore calma la zona vicina.
+// Si calcola solo quando arriva un evento (nessun ciclo continuo).
+function lattice(gsap, scope, parts, st) {
+  const base = parts.map((p) => num0(getComputedStyle(p).getPropertyValue('--rot')));
+  const setters = parts.map((p) => gsap.quickSetter(p, 'rotation', 'deg'));
+  parts.forEach((p) => gsap.set(p, { transformOrigin: '50% 50%' }));
+  let order = 0;
+  let px = -1e4;
+  let py = -1e4;
+  let centers = [];
+  const measure = () => { centers = parts.map((p) => { const r = p.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }); };
   let raf = 0;
-  addEventListener('pointermove', (e) => {
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      raf = 0;
-      const px = e.clientX;
-      const py = e.clientY + scrollY;
-      rects.forEach(([x, y], i) => {
-        const d = Math.hypot(px - x, py - y);
-        const k = Math.max(0, 1 - d / 220);
-        setters[i].y(-k * 18);
-        setters[i].s(1 + k * 0.18);
-        chars[i].style.color = k > 0.55 ? 'var(--c-accent)' : '';
-      });
-    });
-  }, { passive: true });
-}
-
-// audio d'ambiente procedurale: spento di default, si attiva solo con un clic
-function audioToggle() {
-  const btn = document.createElement('button');
-  btn.className = 'audio-toggle';
-  btn.type = 'button';
-  btn.setAttribute('aria-pressed', 'false');
-  btn.textContent = 'Suono: spento';
-  document.body.appendChild(btn);
-  let ctx = null;
-  let gain = null;
-  btn.addEventListener('click', () => {
-    const on = btn.getAttribute('aria-pressed') !== 'true';
-    btn.setAttribute('aria-pressed', String(on));
-    btn.textContent = on ? 'Suono: acceso' : 'Suono: spento';
-    if (on && !ctx) {
-      ctx = new (window.AudioContext || window.webkitAudioContext)();
-      gain = ctx.createGain();
-      gain.gain.value = 0;
-      const filter = ctx.createBiquadFilter();
-      filter.type = 'lowpass';
-      filter.frequency.value = 520;
-      const roots = { argilla: 98, quota: 110, cifra: 82.4, salmastro: 130.8, manifesto: 73.4, archivio: 87.3, serra: 116.5, officina: 65.4 };
-      const f0 = roots[dir.id] || 98;
-      [1, 1.5, 2.01].forEach((m, i) => {
-        const o = ctx.createOscillator();
-        o.type = i === 0 ? 'sine' : 'triangle';
-        o.frequency.value = f0 * m;
-        const g = ctx.createGain();
-        g.gain.value = [0.5, 0.18, 0.08][i];
-        o.connect(g).connect(filter);
-        o.start();
-      });
-      filter.connect(gain).connect(ctx.destination);
+  const draw = () => {
+    raf = 0;
+    for (let i = 0; i < parts.length; i++) {
+      const [x, y] = centers[i] || [0, 0];
+      const near = finePointer ? Math.max(0, 1 - Math.hypot(px - x, py - y) / 180) : 0;
+      setters[i](base[i] * (1 - order) * (1 - near));
     }
-    if (ctx) {
-      ctx.resume();
-      gain.gain.cancelScheduledValues(ctx.currentTime);
-      gain.gain.linearRampToValueAtTime(on ? 0.08 : 0, ctx.currentTime + 0.8);
-    }
-  });
+  };
+  const ask = () => { if (!raf) raf = requestAnimationFrame(draw); };
+  gsap.to({}, { scrollTrigger: { ...st, scrub: true, onUpdate: (self) => { order = self.progress; ask(); }, onRefresh: () => { measure(); ask(); } } });
+  measure();
+  draw();
+  addEventListener('resize', measure, { passive: true });
+  if (finePointer) scope.closest('section')?.addEventListener('pointermove', (e) => { px = e.clientX; py = e.clientY + scrollY; ask(); }, { passive: true });
 }
+function num0(v) { return parseFloat(v) || 0; }

@@ -1,27 +1,30 @@
-// Pipeline Atelier: brief JSON → direzione artistica → contenuti → sito Astro statico.
+// Pipeline Atelier: brief JSON → fase Bibbia (concept, personalità, firma) → struttura e copy → sito Astro statico.
 // Uso:
-//   node scripts/generate.mjs <brief.json> --level base|cinematic
-//   node scripts/generate.mjs <brief.json> --baseline     (sito "baseline" scritto a mano, stesso stack)
-// I contenuti (struttura + copy) stanno in content/<slug>.json e vengono scritti dall'agente
-// seguendo .claude/skills/atelier/SKILL.md; questo script li valida e li impagina.
+//   node scripts/generate.mjs <brief.json> --config a|b|c --level base|cinematic
+//   node scripts/generate.mjs <brief.json> --config baseline --level base|cinematic   (sito scritto senza skill né Bibbia)
+// La fase Bibbia sta in bibbia/<slug>-<config>.json, struttura e copy in content/<slug>-<config>.json:
+// li scrive l'agente seguendo .claude/skills/atelier/SKILL.md e le skill della configurazione; questo script
+// li valida (Bibbia, contrasto, font, lint dei contenuti e dei link) e li impagina.
 import { readFile, writeFile, mkdir, rm, cp, readdir, unlink } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { pickDirection, getDirection, contrast } from './lib/directions.mjs';
 import { lintContent } from './lib/lint.mjs';
+import { CONFIGS, loadBibbia, tokensCss, GSAP_EASE } from './lib/bibbia.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ENGINE = join(ROOT, 'engine');
 const GEN = join(ENGINE, 'src', 'generated');
+export const LEVELS = ['base', 'cinematic'];
+export const ALL_CONFIGS = ['baseline', ...Object.keys(CONFIGS)];
 
 function parseArgs(argv) {
-  const args = { brief: null, level: 'base', baseline: false, out: null };
+  const args = { brief: null, level: 'base', config: 'a', out: null };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--level') args.level = argv[++i];
-    else if (a === '--baseline') args.baseline = true;
+    else if (a === '--config') args.config = argv[++i];
     else if (a === '--out') args.out = argv[++i];
     else if (!args.brief) args.brief = a;
   }
@@ -36,35 +39,6 @@ export function validateBrief(b) {
   if (!['base', 'cinematic', 'video-scroll'].includes(b.level)) throw new Error('level: base | cinematic | video-scroll');
   if (!Array.isArray(b.pages) || !b.pages.includes('home')) throw new Error('pages deve includere "home"');
   return b;
-}
-
-function themeCss(d) {
-  const imports = [];
-  for (const role of ['display', 'body']) {
-    const f = d.fonts[role];
-    if (f.variable) imports.push(`@import "${f.pkg}/wdth.css";`);
-    else for (const w of f.weights) imports.push(`@import "${f.pkg}/${w}.css";`);
-  }
-  const p = d.palette;
-  const dark = contrast(p.bg, '#000000') < contrast(p.bg, '#ffffff');
-  const easeCss = { 'expo.out': 'cubic-bezier(.16,1,.3,1)', 'power3.inOut': 'cubic-bezier(.65,0,.35,1)', 'power2.out': 'cubic-bezier(.33,1,.68,1)', 'sine.inOut': 'cubic-bezier(.37,0,.63,1)', 'power4.out': 'cubic-bezier(.25,1,.5,1)', 'power2.inOut': 'cubic-bezier(.45,0,.55,1)', 'power1.inOut': 'cubic-bezier(.45,.05,.55,.95)', none: 'linear' };
-  return `${[...new Set(imports)].join('\n')}
-:root {
-  --c-bg: ${p.bg}; --c-surface: ${p.surface}; --c-ink: ${p.ink}; --c-muted: ${p.muted}; --c-accent: ${p.accent}; --c-accent2: ${p.accent2};
-  --f-display: "${d.fonts.display.family}", ${d.fonts.display.fallback};
-  --f-body: "${d.fonts.body.family}", ${d.fonts.body.fallback};
-  --scale: ${d.type.scale}; --body-size: ${d.type.bodySize}; --body-leading: ${d.type.bodyLeading};
-  --display-tracking: ${d.type.displayTracking}; --display-leading: ${d.type.displayLeading};
-  --display-weight: ${d.type.displayWeight || d.fonts.display.weights.filter(Number.isFinite).at(-1) || 400};
-  --display-stretch: ${d.type.displayStretch || '100%'};
-  --char-width: ${d.type.charWidth || 0.56};
-  --section: ${d.space.section}; --gutter: ${d.space.gutter}; --measure: ${d.space.measure};
-  --radius: ${d.radius};
-  --dur: ${d.motion.duration}; --distance: ${d.motion.distance}px; --ease-css: ${easeCss[d.motion.ease] || 'ease'};
-  --scheme: ${dark ? 'dark' : 'light'};
-  --grain: ${dark ? 0.09 : 0.06};
-}
-`;
 }
 
 const BASELINE_STUB = `---\n---\n`;
@@ -99,63 +73,80 @@ export async function pruneUnreferencedJs(outDir) {
   return removed;
 }
 
-export async function generate({ brief: briefPath, level, baseline, out }) {
+// dati strutturati (SEO, Bibbia §17) ricavati dai contatti veri del brief
+function schemaFor(content, brief) {
+  const f = content.footer;
+  const s = { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: content.brand.name, description: content.meta.description, url: content.meta.url };
+  if (f.email) s.email = f.email;
+  if (f.phone) s.telephone = f.phone;
+  if (f.address) s.address = f.address;
+  return s;
+}
+
+export async function generate({ brief: briefPath, level, config = 'a', out }) {
   const brief = validateBrief(JSON.parse(await readFile(resolve(briefPath), 'utf8')));
   const slug = brief.slug;
   if (level === 'video-scroll') throw new Error('VIDEO-SCROLL richiede asset forniti dal cliente in assets/<slug>/scroll/: non generiamo media a pagamento.');
-  const direction = brief.direction ? getDirection(brief.direction) : pickDirection(brief);
+  if (!LEVELS.includes(level)) throw new Error(`level: ${LEVELS.join(' | ')}`);
+  if (!ALL_CONFIGS.includes(config)) throw new Error(`config: ${ALL_CONFIGS.join(' | ')}`);
   const t0 = Date.now();
   await mkdir(GEN, { recursive: true });
-
-  let content = null;
-  let mode = 'atelier';
-  if (baseline) {
-    mode = 'baseline';
-    const src = join(ROOT, 'baseline', `${slug}.astro`);
-    if (!existsSync(src)) throw new Error(`Manca baseline/${slug}.astro`);
+  const id = `${slug}-${config}-${level}`;
+  let site;
+  let favicon;
+  if (config === 'baseline') {
+    const src = join(ROOT, 'baseline', `${slug}-${level}.astro`);
+    if (!existsSync(src)) throw new Error(`Manca baseline/${slug}-${level}.astro`);
     await cp(src, join(GEN, 'Baseline.astro'));
-    content = { meta: { lang: brief.language }, pages: {} };
+    site = { mode: 'baseline', config, level, brief: { slug, language: brief.language } };
+    await writeFile(join(GEN, 'theme.css'), '');
+    favicon = ['#334155', '#e2e8f0'];
   } else {
-    const cpath = join(ROOT, 'content', `${slug}.json`);
-    if (!existsSync(cpath)) {
-      throw new Error(`Manca content/${slug}.json: scrivilo seguendo .claude/skills/atelier/SKILL.md (sezione "Struttura e copy").`);
-    }
-    content = JSON.parse(await readFile(cpath, 'utf8'));
-    const problems = lintContent(content, brief);
-    if (problems.length) throw new Error('Contenuti non validi:\n- ' + problems.join('\n- '));
+    const bibbia = loadBibbia(ROOT, slug, config);
+    const cpath = join(ROOT, 'content', `${slug}-${config}.json`);
+    if (!existsSync(cpath)) throw new Error(`Manca content/${slug}-${config}.json: scrivilo seguendo .claude/skills/atelier/SKILL.md (Struttura e copy).`);
+    const content = JSON.parse(await readFile(cpath, 'utf8'));
+    const problems = lintContent(content, brief, { config, bibbia });
+    if (problems.length) throw new Error(`Contenuti ${slug}-${config} non validi:\n- ` + problems.join('\n- '));
+    content.schema = schemaFor(content, brief);
+    const m = bibbia.tokens.motion || {};
+    const client = {
+      sig: { kind: bibbia.signature.kind, id: bibbia.signature.id, fallback_id: bibbia.signature.fallback_id, params: bibbia.signature.params || {} },
+      palette: bibbia.tokens.palette,
+      motion: { dur: Math.min(1.2, (m.sequence_ms || 900) / 1000), ease: GSAP_EASE[m.ease] || GSAP_EASE.out, distance: m.distance ?? 24, stagger: 0.08 }
+    };
+    site = { mode: 'atelier', config, level, brief: { slug, language: brief.language }, bibbia, content, client };
     await writeFile(join(GEN, 'Baseline.astro'), BASELINE_STUB);
+    await writeFile(join(GEN, 'theme.css'), tokensCss(bibbia));
+    favicon = [bibbia.tokens.palette.ink, bibbia.tokens.palette.accent];
   }
-
-  const site = { mode, level: baseline ? 'baseline' : level, brief: { slug, language: brief.language }, direction, content };
   await writeFile(join(GEN, 'site.json'), JSON.stringify(site, null, 2));
-  await writeFile(join(GEN, 'theme.css'), baseline ? '' : themeCss(direction));
   await mkdir(join(ENGINE, 'public'), { recursive: true });
-  const p = direction.palette;
-  await writeFile(join(ENGINE, 'public', 'favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="${baseline ? '#334155' : p.ink}"/><circle cx="16" cy="16" r="7" fill="${baseline ? '#e2e8f0' : p.accent}"/></svg>`);
+  await writeFile(join(ENGINE, 'public', 'favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="${favicon[0]}"/><circle cx="16" cy="16" r="7" fill="${favicon[1]}"/></svg>`);
   await writeFile(join(ENGINE, 'public', 'robots.txt'), 'User-agent: *\nAllow: /\n');
 
-  const outDir = resolve(out || join(ROOT, 'output', baseline ? `${slug}-baseline` : `${slug}-${level}`));
+  const outDir = resolve(out || join(ROOT, 'output', id));
   await rm(outDir, { recursive: true, force: true });
   const res = spawnSync(process.execPath, [join(ROOT, 'node_modules', 'astro', 'bin', 'astro.mjs'), 'build', '--silent'], {
     cwd: ENGINE,
-    env: { ...process.env, ATELIER_SRC: baseline ? './baseline-src' : './src', ATELIER_OUT: outDir, ATELIER_SITE: (content.meta && content.meta.url) || 'https://example.com', ASTRO_TELEMETRY_DISABLED: '1' },
+    env: { ...process.env, ATELIER_SRC: config === 'baseline' ? './baseline-src' : './src', ATELIER_OUT: outDir, ATELIER_SITE: site.content?.meta?.url || 'https://example.com', ASTRO_TELEMETRY_DISABLED: '1' },
     encoding: 'utf8'
   });
   if (res.status !== 0) throw new Error(`Build Astro fallita:\n${res.stdout}\n${res.stderr}`);
   const pruned = await pruneUnreferencedJs(outDir);
   const ms = Date.now() - t0;
-  return { slug, level: site.level, direction: direction.id, outDir, ms, pruned };
+  return { id, slug, config, level, signature: site.bibbia ? `${site.bibbia.signature.kind}:${site.bibbia.signature.id}` : null, outDir, ms, pruned };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const args = parseArgs(process.argv.slice(2));
   if (!args.brief) {
-    console.error('Uso: node scripts/generate.mjs <brief.json> [--level base|cinematic] [--baseline] [--out dir]');
+    console.error('Uso: node scripts/generate.mjs <brief.json> --config a|b|c|baseline --level base|cinematic [--out dir]');
     process.exit(2);
   }
   try {
     const r = await generate(args);
-    console.log(`✓ ${r.slug} [${r.level}] direzione=${r.direction} → ${r.outDir} (${(r.ms / 1000).toFixed(1)} s)`);
+    console.log(`✓ ${r.id} firma=${r.signature || '—'} → ${r.outDir} (${(r.ms / 1000).toFixed(1)} s)`);
   } catch (err) {
     console.error('✗', err.message);
     process.exit(1);

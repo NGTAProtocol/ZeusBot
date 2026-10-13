@@ -1,0 +1,27 @@
+{
+  "concept": "Una piccola azienda pensa di essere troppo piccola per un attacco, ed è proprio questo a farne un bersaglio facile.",
+  "personality": { "adjectives": ["calma", "precisa", "sobria"], "not": "allarmista: niente lucchetti, codice verde su nero, hacker col cappuccio" },
+  "signature": {
+    "kind": "css", "id": "lattice", "fallback_id": "lattice",
+    "description": "Un reticolo di segmenti parte in disordine e, scorrendo, si allinea; sotto il puntatore la zona vicina si calma: è il lavoro di un audit visto dall'alto.",
+    "params": { "cols": 22, "rows": 14, "chaos": 70, "hot": 0.05 }
+  },
+  "tokens": {
+    "palette": { "bg": "#f4f5f1", "surface": "#e7e9e2", "ink": "#121a17", "muted": "#4a544f", "accent": "#0b7a55", "accent2": "#d9a300" },
+    "palette_source": { "bg": "carta del rapporto stampato", "ink": "grafite dei quadri elettrici", "accent": "verde 'in funzione' delle spie di macchina", "accent2": "giallo delle strisce di sicurezza in reparto" },
+    "color_strategy": "contenuta",
+    "fonts": {
+      "display": { "pkg": "@fontsource/familjen-grotesk", "family": "Familjen Grotesk", "weights": [600], "fallback": "system-ui, sans-serif" },
+      "body": { "pkg": "@fontsource/literata", "family": "Literata", "weights": [400, 600], "fallback": "Georgia, serif" }
+    },
+    "type": { "scale": 1.25, "body_size": "1.0625rem", "body_leading": 1.65, "display_weight": 600, "display_tracking": "-0.02em", "display_leading": 1, "char_width": 0.54, "display_max": "6rem" },
+    "space": { "section": "clamp(96px, 12vw, 160px)", "gutter": "clamp(16px, 4vw, 48px)", "measure": "62ch" },
+    "radius": "2px",
+    "motion": { "micro_ms": 200, "sequence_ms": 900, "distance": 24, "ease": "out" }
+  },
+  "layout": "index",
+  "features": { "browser_surfaces": false, "press": false },
+  "unknowns": ["prezzo dell'audit", "prezzo del contratto di reperibilità", "nomi dei consulenti", "clienti o casi di studio autorizzati"],
+  "skills_used": ["frontend-design", "atelier"],
+  "method_notes": "frontend-design: direzione 'rapporto tecnico stampato' (testo graziato da leggere, titoli grotesk, verde da spia di macchina) contro il cliché nero/verde da hacker."
+}

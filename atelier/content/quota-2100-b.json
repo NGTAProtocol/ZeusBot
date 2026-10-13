@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Quota 2100 — corso base di scialpinismo e rifugio in Val Masino",
+    "description": "Quota 2100: corso base di scialpinismo in 3 weekend con guide alpine UIAGM (390 euro) e rifugio a 2.100 m in Val Masino, mezza pensione a 68 euro.",
+    "lang": "it",
+    "url": "https://quota2100.example"
+  },
+  "brand": { "name": "Quota 2100" },
+  "nav": [
+    { "label": "Il corso", "href": "#corso" },
+    { "label": "Le regole", "href": "#regole" },
+    { "label": "Il rifugio", "href": "#rifugio" },
+    { "label": "Prezzi", "href": "#prezzi" }
+  ],
+  "cta": { "label": "Iscriviti al corso base", "href": "contatti", "mobile_hint": "390 €, 3 weekend" },
+  "pages": {
+    "home": {
+      "hero": {
+        "title_lines": ["Il fiato ce l'hai.", "Il resto si impara."],
+        "lead": "Se d'estate cammini in montagna, il corso base di scialpinismo di Quota 2100 ti porta sulla neve in tre weekend, con una guida alpina ogni sei allievi.",
+        "lead_short": "Corso base di scialpinismo in 3 weekend, una guida ogni 6 allievi.",
+        "cta": { "label": "Iscriviti al corso base", "href": "contatti" },
+        "meta": ["Val Masino (SO)", "Gennaio-aprile"]
+      },
+      "sections": [
+        {
+          "type": "facts", "id": "corso", "index_label": "Il corso",
+          "title": "Il corso base, in numeri",
+          "items": [
+            { "value": "3", "unit": "weekend", "label": "Tra gennaio e aprile." },
+            { "value": "6", "unit": "allievi", "label": "Al massimo, per ogni guida alpina UIAGM." },
+            { "value": "390", "unit": "€", "label": "Con ARTVA, pala e sonda inclusi." }
+          ]
+        },
+        {
+          "type": "chapter", "id": "regole", "index_label": "Le regole",
+          "title_lines": ["Grado 4:", "si resta a casa"],
+          "body": [
+            "Quando il bollettino valanghe indica grado 4 o superiore, il corso non parte. Non si decide caso per caso: è la regola di Quota 2100.",
+            "Se succede, scegli tu tra il rimborso e il recupero in un altro weekend."
+          ],
+          "aside": "ARTVA, pala e sonda sono inclusi nel corso: impari a usarli prima di decidere se comprarli."
+        },
+        {
+          "type": "signature", "id": "versante", "index_label": "Il versante",
+          "title_lines": ["Due ore", "da Filorera"],
+          "caption": "Il rifugio di Quota 2100 è a 2.100 metri: si sale in due ore da Filorera e si dorme in quota, così la mattina si parte già in alto."
+        },
+        {
+          "type": "offer", "id": "rifugio", "index_label": "Il rifugio",
+          "title": "Dormire a 2.100 metri",
+          "items": [
+            { "name": "Camerate", "detail": "Quattro camerate, per gli allievi dei corsi e per i gruppi di amici.", "meta": "22 posti in tutto" },
+            { "name": "Camere", "detail": "Due camere per chi vuole una stanza separata.", "meta": "su richiesta" },
+            { "name": "Uscite per aziende", "detail": "Giornate di gruppo con le guide di Quota 2100.", "meta": "su preventivo" }
+          ]
+        },
+        {
+          "type": "prices", "id": "prezzi", "index_label": "Prezzi",
+          "title": "Prezzi della stagione",
+          "items": [
+            { "item": "Corso base, 3 weekend", "value": "390 €", "note": "ARTVA, pala e sonda inclusi." },
+            { "item": "Notte in rifugio con mezza pensione", "value": "68 €", "note": "A persona." },
+            { "item": "Uscite di gruppo per aziende", "value": "Su preventivo" }
+          ]
+        },
+        {
+          "type": "faq", "id": "domande", "index_label": "Domande",
+          "title": "Domande prima di iscriversi",
+          "items": [
+            { "q": "Cosa succede con il pericolo valanghe alto?", "a": "Con bollettino di grado 4 o superiore il corso non parte: scegli tra rimborso e recupero." },
+            { "q": "Il materiale di sicurezza è compreso?", "a": "Sì: ARTVA, pala e sonda sono inclusi nel corso base." },
+            { "q": "Quanti siamo per guida?", "a": "Al massimo sei allievi per guida alpina UIAGM." },
+            { "q": "Quanti posti ha il rifugio?", "a": "Ventidue, in quattro camerate e due camere." }
+          ]
+        },
+        {
+          "type": "contact", "id": "contatto", "tone": "invert",
+          "title": "Scrivi a Quota 2100",
+          "body": ["Per il corso base o per una notte in rifugio, scrivi o chiama: ti diciamo quali date sono libere."],
+          "lines": [
+            { "label": "Email", "value": "corsi@quota2100.it", "href": "mailto:corsi@quota2100.it" },
+            { "label": "Telefono", "value": "0342 000 721", "href": "tel:0342000721" },
+            { "label": "Partenza", "value": "Filorera, Val Masino (SO)" }
+          ],
+          "cta": { "label": "Iscriviti al corso base", "href": "mailto:corsi@quota2100.it?subject=Iscrizione%20corso%20base" }
+        }
+      ]
+    },
+    "contatti": {
+      "meta_title": "Iscrizioni e prenotazioni — Quota 2100, Val Masino",
+      "meta_description": "Iscriviti al corso base di scialpinismo di Quota 2100 (390 euro) o prenota una notte in rifugio con mezza pensione (68 euro).",
+      "title_lines": ["Iscrizioni e", "prenotazioni"],
+      "intro": "Scrivi il weekend che preferisci e quante persone siete.",
+      "sections": [
+        {
+          "type": "contact", "id": "scrivici",
+          "title": "Contatti di Quota 2100",
+          "body": ["Per il corso base indica il periodo e il tuo livello in pista.", "Per le uscite aziendali indica numero di partecipanti e periodo: prepariamo un preventivo."],
+          "lines": [
+            { "label": "Email", "value": "corsi@quota2100.it", "href": "mailto:corsi@quota2100.it" },
+            { "label": "Telefono", "value": "0342 000 721", "href": "tel:0342000721" },
+            { "label": "Rifugio", "value": "2.100 m, Val Masino (SO), 2 ore da Filorera" }
+          ]
+        }
+      ]
+    }
+  },
+  "footer": {
+    "closing": "Prima il bollettino, poi le pelli.",
+    "address": "Rifugio Quota 2100, Val Masino (SO)",
+    "email": "corsi@quota2100.it",
+    "phone": "0342 000 721",
+    "hours": ["Corsi base: gennaio-aprile", "Rifugio: 22 posti letto"],
+    "legal": "Quota 2100 è un'attività fittizia: sito dimostrativo generato con Atelier (configurazione B)."
+  }
+}
