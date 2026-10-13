@@ -1,8 +1,9 @@
 {
-  "id": "nodo-sicuro-base",
+  "id": "nodo-sicuro-baseline-base",
+  "config": "baseline",
   "level": "base",
   "url_tested": "locale, server statico con gzip",
-  "at": "2026-10-08T09:01:53.842Z",
+  "at": "2026-10-13T12:51:58.296Z",
   "browser": {
     "viewports": {
       "375": {
@@ -10,11 +11,8 @@
         "h1": 1,
         "canvasLive": false,
         "fallback": null,
-        "fonts": [
-          "Familjen Grotesk",
-          "Newsreader"
-        ],
-        "smallTargets": 2,
+        "fonts": [],
+        "smallTargets": 0,
         "errors": [],
         "hiddenAfterScroll": 0,
         "externalHosts": []
@@ -24,11 +22,8 @@
         "h1": 1,
         "canvasLive": false,
         "fallback": null,
-        "fonts": [
-          "Familjen Grotesk",
-          "Newsreader"
-        ],
-        "smallTargets": 2,
+        "fonts": [],
+        "smallTargets": 3,
         "errors": [],
         "hiddenAfterScroll": 0,
         "externalHosts": []
@@ -38,11 +33,8 @@
         "h1": 1,
         "canvasLive": false,
         "fallback": null,
-        "fonts": [
-          "Familjen Grotesk",
-          "Newsreader"
-        ],
-        "smallTargets": 7,
+        "fonts": [],
+        "smallTargets": 3,
         "errors": [],
         "hiddenAfterScroll": 0,
         "externalHosts": []
@@ -60,44 +52,45 @@
     "mobile": {
       "formFactor": "mobile",
       "performance": 100,
-      "accessibility": 100,
+      "accessibility": 90,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 1432,
-      "tbtMs": 0,
+      "lcpMs": 755,
+      "tbtMs": 10,
       "cls": 0,
-      "fcpMs": 1357,
-      "totalBytes": 77350,
-      "failingA11y": [],
+      "fcpMs": 692,
+      "totalBytes": 6338,
+      "failingA11y": [
+        "color-contrast"
+      ],
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        100,
-        100,
         100
       ]
     },
     "desktop": {
       "formFactor": "desktop",
       "performance": 100,
-      "accessibility": 100,
+      "accessibility": 90,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 362,
+      "lcpMs": 204,
       "tbtMs": 0,
       "cls": 0,
-      "fcpMs": 322,
-      "totalBytes": 77350,
-      "failingA11y": [],
+      "fcpMs": 196,
+      "totalBytes": 6338,
+      "failingA11y": [
+        "color-contrast"
+      ],
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        100,
-        100,
         100
       ]
     }
   },
+  "has3d": true,
   "thresholds": {
     "performanceMobile": {
       "need": 90,
@@ -111,8 +104,8 @@
     },
     "accessibility": {
       "need": 95,
-      "got": 100,
-      "ok": true
+      "got": 90,
+      "ok": false
     },
     "seo": {
       "need": 95,
@@ -120,5 +113,5 @@
       "ok": true
     }
   },
-  "pass": true
+  "pass": false
 }

@@ -1,8 +1,9 @@
 {
-  "id": "nodo-sicuro-baseline",
-  "level": "baseline",
+  "id": "quota-2100-c-cinematic",
+  "config": "c",
+  "level": "cinematic",
   "url_tested": "locale, server statico con gzip",
-  "at": "2026-10-08T09:05:41.838Z",
+  "at": "2026-10-13T13:03:00.708Z",
   "browser": {
     "viewports": {
       "375": {
@@ -10,7 +11,9 @@
         "h1": 1,
         "canvasLive": false,
         "fallback": null,
-        "fonts": [],
+        "fonts": [
+          "Onest"
+        ],
         "smallTargets": 0,
         "errors": [],
         "hiddenAfterScroll": 0,
@@ -21,8 +24,10 @@
         "h1": 1,
         "canvasLive": false,
         "fallback": null,
-        "fonts": [],
-        "smallTargets": 3,
+        "fonts": [
+          "Onest"
+        ],
+        "smallTargets": 0,
         "errors": [],
         "hiddenAfterScroll": 0,
         "externalHosts": []
@@ -32,8 +37,10 @@
         "h1": 1,
         "canvasLive": false,
         "fallback": null,
-        "fonts": [],
-        "smallTargets": 3,
+        "fonts": [
+          "Onest"
+        ],
+        "smallTargets": 0,
         "errors": [],
         "hiddenAfterScroll": 0,
         "externalHosts": []
@@ -41,73 +48,75 @@
     },
     "checks": {
       "reducedMotion": {
-        "fallback": null,
+        "fallback": "reduced-motion",
         "canvas": false,
         "hiddenContent": 0
+      },
+      "noWebGL": {
+        "fallback": null,
+        "posterVisible": true,
+        "canvas": false
+      },
+      "saveData": {
+        "fallback": "save-data",
+        "canvas": false
       }
     }
   },
   "lighthouse": {
     "mobile": {
       "formFactor": "mobile",
-      "performance": 100,
-      "accessibility": 90,
+      "performance": 99,
+      "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 754,
-      "tbtMs": 0,
-      "cls": 0,
-      "fcpMs": 723,
-      "totalBytes": 6517,
-      "failingA11y": [
-        "color-contrast"
-      ],
+      "lcpMs": 1652,
+      "tbtMs": 73,
+      "cls": 0.033,
+      "fcpMs": 1325,
+      "totalBytes": 91721,
+      "failingA11y": [],
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        100,
-        100,
-        100
+        99
       ]
     },
     "desktop": {
       "formFactor": "desktop",
       "performance": 100,
-      "accessibility": 90,
+      "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 204,
+      "lcpMs": 423,
       "tbtMs": 0,
       "cls": 0,
-      "fcpMs": 193,
-      "totalBytes": 6517,
-      "failingA11y": [
-        "color-contrast"
-      ],
+      "fcpMs": 348,
+      "totalBytes": 91721,
+      "failingA11y": [],
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        100,
-        100,
         100
       ]
     }
   },
+  "has3d": false,
   "thresholds": {
     "performanceMobile": {
-      "need": 0,
-      "got": 100,
+      "need": 75,
+      "got": 99,
       "ok": true
     },
     "performanceDesktop": {
-      "need": 0,
+      "need": 85,
       "got": 100,
       "ok": true
     },
     "accessibility": {
       "need": 95,
-      "got": 90,
-      "ok": false
+      "got": 100,
+      "ok": true
     },
     "seo": {
       "need": 95,
@@ -115,5 +124,5 @@
       "ok": true
     }
   },
-  "pass": null
+  "pass": true
 }

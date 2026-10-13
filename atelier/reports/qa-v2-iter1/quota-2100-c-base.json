@@ -1,8 +1,9 @@
 {
-  "id": "fornace-lume-baseline",
-  "level": "baseline",
+  "id": "quota-2100-c-base",
+  "config": "c",
+  "level": "base",
   "url_tested": "locale, server statico con gzip",
-  "at": "2026-10-08T09:00:41.589Z",
+  "at": "2026-10-13T13:02:18.649Z",
   "browser": {
     "viewports": {
       "375": {
@@ -10,8 +11,10 @@
         "h1": 1,
         "canvasLive": false,
         "fallback": null,
-        "fonts": [],
-        "smallTargets": 2,
+        "fonts": [
+          "Onest"
+        ],
+        "smallTargets": 0,
         "errors": [],
         "hiddenAfterScroll": 0,
         "externalHosts": []
@@ -21,8 +24,10 @@
         "h1": 1,
         "canvasLive": false,
         "fallback": null,
-        "fonts": [],
-        "smallTargets": 6,
+        "fonts": [
+          "Onest"
+        ],
+        "smallTargets": 0,
         "errors": [],
         "hiddenAfterScroll": 0,
         "externalHosts": []
@@ -32,8 +37,10 @@
         "h1": 1,
         "canvasLive": false,
         "fallback": null,
-        "fonts": [],
-        "smallTargets": 6,
+        "fonts": [
+          "Onest"
+        ],
+        "smallTargets": 0,
         "errors": [],
         "hiddenAfterScroll": 0,
         "externalHosts": []
@@ -54,17 +61,15 @@
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 756,
-      "tbtMs": 29,
-      "cls": 0,
-      "fcpMs": 715,
-      "totalBytes": 6892,
+      "lcpMs": 1055,
+      "tbtMs": 0,
+      "cls": 0.033,
+      "fcpMs": 1055,
+      "totalBytes": 43851,
       "failingA11y": [],
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        100,
-        100,
         100
       ]
     },
@@ -74,29 +79,28 @@
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 205,
+      "lcpMs": 289,
       "tbtMs": 0,
       "cls": 0,
-      "fcpMs": 191,
-      "totalBytes": 6892,
+      "fcpMs": 289,
+      "totalBytes": 43851,
       "failingA11y": [],
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        100,
-        100,
         100
       ]
     }
   },
+  "has3d": false,
   "thresholds": {
     "performanceMobile": {
-      "need": 0,
+      "need": 90,
       "got": 100,
       "ok": true
     },
     "performanceDesktop": {
-      "need": 0,
+      "need": 90,
       "got": 100,
       "ok": true
     },
@@ -111,5 +115,5 @@
       "ok": true
     }
   },
-  "pass": null
+  "pass": true
 }

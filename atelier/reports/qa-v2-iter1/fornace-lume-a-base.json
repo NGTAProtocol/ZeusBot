@@ -1,8 +1,9 @@
 {
-  "id": "fornace-lume-base",
+  "id": "fornace-lume-a-base",
+  "config": "a",
   "level": "base",
   "url_tested": "locale, server statico con gzip",
-  "at": "2026-10-08T08:56:15.241Z",
+  "at": "2026-10-13T12:39:59.842Z",
   "browser": {
     "viewports": {
       "375": {
@@ -11,7 +12,7 @@
         "canvasLive": false,
         "fallback": null,
         "fonts": [
-          "Young Serif",
+          "Gloock",
           "Hanken Grotesk"
         ],
         "smallTargets": 0,
@@ -25,7 +26,7 @@
         "canvasLive": false,
         "fallback": null,
         "fonts": [
-          "Young Serif",
+          "Gloock",
           "Hanken Grotesk"
         ],
         "smallTargets": 0,
@@ -39,7 +40,7 @@
         "canvasLive": false,
         "fallback": null,
         "fonts": [
-          "Young Serif",
+          "Gloock",
           "Hanken Grotesk"
         ],
         "smallTargets": 0,
@@ -63,17 +64,15 @@
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 1438,
+      "lcpMs": 1353,
       "tbtMs": 0,
-      "cls": 0,
-      "fcpMs": 1249,
-      "totalBytes": 75169,
+      "cls": 0.001,
+      "fcpMs": 1203,
+      "totalBytes": 67868,
       "failingA11y": [],
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        100,
-        100,
         100
       ]
     },
@@ -83,21 +82,20 @@
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcpMs": 326,
+      "lcpMs": 299,
       "tbtMs": 0,
-      "cls": 0,
-      "fcpMs": 297,
-      "totalBytes": 75169,
+      "cls": 0.021,
+      "fcpMs": 299,
+      "totalBytes": 67868,
       "failingA11y": [],
       "failingSeo": [],
       "runtimeError": null,
       "runs": [
-        100,
-        100,
         100
       ]
     }
   },
+  "has3d": false,
   "thresholds": {
     "performanceMobile": {
       "need": 90,

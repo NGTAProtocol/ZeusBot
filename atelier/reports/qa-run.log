@@ -21,3 +21,4 @@ quota-2100-b-cinematic: LH mob P98 A100 S100 (LCP 1850ms TBT 127ms) | desk P100 
 quota-2100-baseline-base: LH mob P100 A90 S100 (LCP 755ms TBT 0ms) | desk P100 A90 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE NON RAGGIUNTE
 quota-2100-baseline-cinematic: LH mob P80 A91 S100 (LCP 2224ms TBT 646ms) | desk P88 A91 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE NON RAGGIUNTE | force3d: mob P69 desk P78
 quota-2100-c-base: LH mob P100 A100 S100 (LCP 1055ms TBT 0ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
+quota-2100-c-cinematic: LH mob P99 A100 S100 (LCP 1652ms TBT 73ms) | desk P100 A100 S100 | overflow375=false errori=0 esterni=nessuno canvas1280=false | nascosti=0/0/0 | SOGLIE OK
