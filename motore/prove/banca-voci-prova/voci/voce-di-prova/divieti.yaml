@@ -1,0 +1,6 @@
+# Divieti della voce di prova (inventati): stile.py li aggiunge alle voci del libro, modalità avviso.
+voce: voce-di-prova
+divieti:
+  - {id: dunque_dunque, espressione: "dunque dunque", tipo: tic, nota: "ripetizione da evitare"}
+  - {id: vecchia_bottega, espressione: "vecchia bottega", tipo: cliché}
+  - {id: oltremodo, espressione: "oltremodo", tipo: arcaismo}

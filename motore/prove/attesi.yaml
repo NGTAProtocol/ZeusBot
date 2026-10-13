@@ -678,3 +678,36 @@ eccezioni_e_richiami:
     senza niente: {atteso: "['AVVISO'] | ['KO']"}
     richiamo ammesso: {stile: {richiami_ammessi: ["la fontana della piazza sotto la pioggia di marzo"]}, atteso: "[] | ['KO']"}
     eccezione: {stile: {eccezioni: [{unita: "3", controllo: riciclo, motivo: "eco voluta"}, {unita: "3", controllo: parole_minimo, motivo: "prova: un KO non si scusa"}]}, atteso: "['ECCEZIONE'] | ['KO']"}
+
+# Voci narrative (zb voce) sulla mini-banca inventata prove/banca-voci-prova/, blocco «voce» di libro.yaml,
+# riga «Letto» di zb avvio, modello del briefing. Nessuna voce reale nel motore.
+voce:
+  lista: "0 / ['voce-di-prova|pronta', 'voce-incompleta|da_completare']"
+  mostra: "0 / True / True"
+  mostra_non_pronta: "0 / True"
+  blocco_inesistente: "2 / False"
+  verifica_pronta: "0 / OK voce voce-di-prova: 7 sezioni, 2 esempi, 3 divieti, pronta"
+  verifica_non_pronta: "1 / True / False"
+  voce_assente: "2 / False"
+  senza_variabile: "2 True False / 2 True False / 2 True False"
+  senza_indice: "2 / True / False"
+  rotture:
+    divieti.yaml non leggibile: "1 / ['voci/voce-di-prova/divieti.yaml non leggibile: while parsing a flow node']"
+    senza la sezione 4: "1 / ['sezione 4 «Lessico» mancante']"
+    senza ambientazione: "1 / ['sezione 7: manca il campo «ambientazione:»']"
+    un solo esempio: "1 / ['esempi: 1 in voci/voce-di-prova/esempi/, ne servono almeno 2']"
+  ripristinata: 0
+  libro_senza_voce: "0 0 / identica / False / False"
+  briefing_voce: "Voce dalla banca: voce-di-prova\nAmbientazione: Borgo di Prova\n"
+  blocco_voce: "{'slug': 'voce-di-prova', 'ambientazione': 'Borgo di Prova'}"
+  libro_con_voce: "0 / True / True / 11 / 0"
+  con_voce_senza_variabile: "0 / True / False"
+  con_voce_non_pronta: "0 / True"
+  schema_senza_slug: "True"
+  aiuto: "True"
+  sezioni_briefing: [storia, schede dei personaggi, luoghi ed epoca, regole del libro, voce scelta e ambientazione]
+  modello_briefing: "[] / True / []"
+  frase_divieti: "Dunque dunque, nella vecchia bottega Irene era oltremodo stanca."
+  divieti_senza_voce: "[]"
+  divieti_senza_banca: "[]"
+  divieti_con_voce: "['voce:voce-di-prova:dunque_dunque|AVVISO', 'voce:voce-di-prova:oltremodo|AVVISO', 'voce:voce-di-prova:vecchia_bottega|AVVISO']"

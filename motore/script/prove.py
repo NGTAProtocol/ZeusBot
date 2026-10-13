@@ -2184,9 +2184,186 @@ def eccezioni_e_richiami(A):
         esito('riciclo.py / capitolo.py', f'{chiave}: riciclo | parole_minimo del cap. 3', prova['atteso'], f'{ric} | {ko}', sez)
 
 
+# ---------------------------------------------------------------- voce (banca-voci)
+
+def voce(A):
+    import nuovo
+    sez = 'voce'
+    banca = os.path.join(M, 'prove', 'banca-voci-prova')
+    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE', 'ZB_BANCA_VOCI')}
+    E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def zb(cwd, *a, b=banca):
+        env = dict(E, ZB_BANCA_VOCI=b) if b else E
+        return subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), *a], cwd=cwd, env=env, capture_output=True, text=True)
+
+    def tb(p):
+        return 'Traceback' in p.stdout + p.stderr
+
+    def git(cwd, *a):
+        return subprocess.run(['git', *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+    def repo():
+        d = tempfile.mkdtemp(dir=TMP)
+        git(d, 'init', '-q', '--bare', 'remoto.git')
+        r = os.path.join(d, 'repo')
+        os.makedirs(r)
+        git(r, 'init', '-q')
+        git(r, 'checkout', '-q', '-b', 'prova')
+        git(r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git'))
+        return r
+
+    def salva(r, msg='prova'):
+        git(r, 'add', '-A')
+        git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', msg)
+        return git(r, 'push', '-q', '-u', 'origin', 'prova').returncode
+
+    def letto(p):
+        r = next((x for x in p.stdout.splitlines() if x.startswith('Letto: ')), '')
+        return r
+
+    # (a) zb voce lista | mostra | verifica sulla mini-banca inventata
+    p = zb(M, 'voce', 'lista')
+    voci = [f'{c[1].strip()}|{c[4].strip()}' for c in (x.split('|') for x in p.stdout.splitlines())
+            if len(c) > 4 and c[1].strip().startswith('voce-')]
+    esito('voce.py', '(a) lista: codice / voci|stato', A['lista'], f'{p.returncode} / {voci}', sez)
+    p = zb(M, 'voce', 'mostra', 'voce-di-prova')
+    esito('voce.py', '(a) mostra: codice / intestazione del blocco / 7 sezioni', A['mostra'],
+          f'{p.returncode} / {"Blocco 1 di 1, righe 1-" in p.stdout} / {all(f"## {i}. " in p.stdout for i in range(1, 8))}', sez)
+    p = zb(M, 'voce', 'mostra', 'voce-incompleta')
+    esito('voce.py', '(a) mostra di una voce non pronta: codice / avviso', A['mostra_non_pronta'],
+          f'{p.returncode} / {"AVVISO: voce non pronta" in p.stdout}', sez)
+    p = zb(M, 'voce', 'mostra', 'voce-di-prova', '5')
+    esito('voce.py', '(a) mostra di un blocco inesistente: codice / traceback', A['blocco_inesistente'], f'{p.returncode} / {tb(p)}', sez)
+    p = zb(M, 'voce', 'verifica', 'voce-di-prova')
+    esito('voce.py', '(a) verifica della voce pronta', A['verifica_pronta'], f'{p.returncode} / {p.stdout.strip()}', sez)
+    p = zb(M, 'voce', 'verifica', 'voce-incompleta')
+    esito('voce.py', '(a) verifica della voce non pronta: codice / motivo / traceback', A['verifica_non_pronta'],
+          f'{p.returncode} / {"voce non pronta" in p.stdout} / {tb(p)}', sez)
+    p = zb(M, 'voce', 'verifica', 'voce-inesistente')
+    esito('voce.py', '(a) verifica di una voce assente dall\'indice: codice / traceback', A['voce_assente'], f'{p.returncode} / {tb(p)}', sez)
+    # (b) senza ZB_BANCA_VOCI, o con una cartella che non è una banca
+    out = []
+    for a in (('lista',), ('mostra', 'voce-di-prova'), ('verifica', 'voce-di-prova')):
+        p = zb(M, 'voce', *a, b=None)
+        out.append(f'{p.returncode} {"ZB_BANCA_VOCI" in p.stderr} {tb(p)}')
+    esito('voce.py', '(b) senza ZB_BANCA_VOCI: lista / mostra / verifica (codice, variabile nel messaggio, traceback)',
+          A['senza_variabile'], ' / '.join(out), sez)
+    vuota = tempfile.mkdtemp(dir=TMP)
+    p = zb(M, 'voce', 'lista', b=vuota)
+    esito('voce.py', '(b) ZB_BANCA_VOCI senza indice.yaml: codice / messaggio / traceback', A['senza_indice'],
+          f'{p.returncode} / {"indice.yaml" in p.stderr} / {tb(p)}', sez)
+    # (c) regressione: una scheda rotta fa fallire la verifica; ripristinata, torna OK
+    d = tempfile.mkdtemp(dir=TMP)
+    bc = shutil.copytree(banca, os.path.join(d, 'banca'))
+    ps = os.path.join(bc, 'voci', 'voce-di-prova', 'scheda.md')
+    pe = os.path.join(bc, 'voci', 'voce-di-prova', 'esempi', '02-pioggia.md')
+    orig, orig_e = open(ps, encoding='utf-8').read(), open(pe, encoding='utf-8').read()
+    pd = os.path.join(bc, 'voci', 'voce-di-prova', 'divieti.yaml')
+    orig_d = open(pd, encoding='utf-8').read()
+    rotture = {
+        'divieti.yaml non leggibile': lambda: open(pd, 'w', encoding='utf-8').write('divieti: [\n'),
+        'senza la sezione 4': lambda: open(ps, 'w', encoding='utf-8').write(re.sub(r'(?s)## 4\..*?(?=## 5\.)', '', orig)),
+        'senza ambientazione': lambda: open(ps, 'w', encoding='utf-8').write(orig.replace('ambientazione: altro\n', '')),
+        'un solo esempio': lambda: os.remove(pe),
+    }
+    for nome, rompi in rotture.items():
+        rompi()
+        p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bc)
+        esito('voce.py', f'(c) scheda rotta, {nome}: codice / problemi', A['rotture'][nome],
+              f'{p.returncode} / {[x.strip()[2:] for x in p.stdout.splitlines() if x.startswith("  - ")]}', sez)
+        open(ps, 'w', encoding='utf-8').write(orig)
+        open(pe, 'w', encoding='utf-8').write(orig_e)
+        open(pd, 'w', encoding='utf-8').write(orig_d)
+    p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bc)
+    esito('voce.py', '(c) scheda ripristinata: codice', A['ripristinata'], p.returncode, sez)
+    # (d) libro senza blocco voce: avvio identico con e senza ZB_BANCA_VOCI, nessuna voce letta
+    briefing = open(os.path.join(M, 'prove', 'briefing', 'briefing-giallo.md'), encoding='utf-8').read()
+
+    def libro(testo):
+        r = repo()
+        L = os.path.join(r, 'giallo')
+        os.makedirs(L)
+        open(os.path.join(L, 'briefing.md'), 'w', encoding='utf-8').write(testo)
+        zb(r, 'nuovo', 'giallo/briefing.md')
+        salva(r, 'nuovo libro')
+        return r, L
+
+    r, L = libro(briefing)
+    p1, p2 = zb(r, 'avvio', 'giallo', b=None), zb(r, 'avvio', 'giallo')
+    senza = lambda p: [x for x in p.stdout.splitlines() if not x.startswith('Sessione:')]
+    esito('avvio.py', '(d) libro senza voce: codici / uscita con e senza ZB_BANCA_VOCI / voce in «Letto» / blocco in libro.yaml',
+          A['libro_senza_voce'], f'{p1.returncode} {p2.returncode} / {"identica" if senza(p1) == senza(p2) else "diversa"} / '
+          f'{"voce " in letto(p2)} / {"voce" in comune.leggi_yaml(os.path.join(L, "libro.yaml"))}', sez)
+    # (e) libro con voce dal briefing: blocco in libro.yaml, «Letto» con scheda e briefing
+    r, L = libro(briefing.rstrip('\n') + '\n' + A['briefing_voce'])
+    _, lb, _ = comune.carica_libro(L)
+    esito('nuovo.py', '(e) briefing con la voce: blocco voce in libro.yaml', A['blocco_voce'], lb.get('voce'), sez)
+    p = zb(r, 'avvio', 'giallo')
+    esito('avvio.py', '(e) libro con voce: codice / scheda in «Letto» / briefing in «Letto» / file letti / avvisi',
+          A['libro_con_voce'], f'{p.returncode} / {"scheda della voce voce-di-prova (" in letto(p)} / '
+          f'{"00-progetto/briefing.md (" in letto(p)} / {letto(p).count(" righe, sha256 ")} / '
+          f'{sum(1 for x in p.stdout.splitlines() if x.startswith("AVVISO"))}', sez)
+    p = zb(r, 'avvio', 'giallo', b=None)
+    esito('avvio.py', '(e) libro con voce senza ZB_BANCA_VOCI: codice / avviso / scheda in «Letto»', A['con_voce_senza_variabile'],
+          f'{p.returncode} / {any(x.startswith("AVVISO") and "ZB_BANCA_VOCI" in x for x in p.stdout.splitlines())} / '
+          f'{"scheda della voce" in letto(p)}', sez)
+    py = os.path.join(L, 'libro.yaml')
+    t = open(py, encoding='utf-8').read()
+    open(py, 'w', encoding='utf-8').write(t.replace('slug: voce-di-prova', 'slug: voce-incompleta'))
+    salva(r, 'voce non pronta')
+    p = zb(r, 'avvio', 'giallo')
+    esito('avvio.py', '(e) libro con voce non pronta: codice / avviso (non blocco)', A['con_voce_non_pronta'],
+          f'{p.returncode} / {any(x.startswith("AVVISO") and "voce non pronta" in x for x in p.stdout.splitlines())}', sez)
+    # (g) divieti della voce: AVVISO in stile.py, sommati alle voci del libro; senza voce o senza banca, niente
+    import stile
+    Lm = copia_libro('mini-libro')
+    open(os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write('\n' + A['frase_divieti'] + '\n')
+
+    def divieti_trovati(con_voce, b):
+        if con_voce:
+            py = os.path.join(Lm, 'libro.yaml')
+            lb = yaml.safe_load(open(py, encoding='utf-8'))
+            lb['voce'] = {'slug': 'voce-di-prova', 'ambientazione': 'altro'}
+            open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+        prima = os.environ.pop('ZB_BANCA_VOCI', None)
+        if b:
+            os.environ['ZB_BANCA_VOCI'] = b
+        try:
+            cartella, libro, profilo = comune.carica_libro(Lm)
+            ris = stile.controlla_libro(cartella, libro, profilo)['1'][1]
+        finally:
+            os.environ.pop('ZB_BANCA_VOCI', None)
+            if prima is not None:
+                os.environ['ZB_BANCA_VOCI'] = prima
+        return sorted(f'{r["controllo"]}|{r["esito"]}' for r in ris if r['controllo'].startswith('voce:voce-di-prova:'))
+
+    esito('stile.py', '(g) divieti della voce: libro senza voce', A['divieti_senza_voce'], divieti_trovati(False, banca), sez)
+    esito('stile.py', '(g) divieti della voce: libro con voce, senza ZB_BANCA_VOCI', A['divieti_senza_banca'],
+          divieti_trovati(True, None), sez)
+    esito('stile.py', '(g) divieti della voce: libro con voce e banca', A['divieti_con_voce'], divieti_trovati(True, banca), sez)
+    # (f) schema: voce senza slug rifiutata; zb aiuto; modello del briefing
+    Lm = copia_libro('mini-libro')
+    open(os.path.join(Lm, 'libro.yaml'), 'a', encoding='utf-8').write('voce: {ambientazione: altro}\n')
+    try:
+        comune.carica_libro(Lm)
+        msg = 'accettato'
+    except comune.ErroreMotore as e:
+        msg = 'libro.yaml.voce.slug: campo obbligatorio mancante' in str(e)
+    esito('comune.py', '(f) libro.yaml con voce senza slug: rifiutato con il campo', A['schema_senza_slug'], msg, sez)
+    esito('zb', '(f) zb aiuto elenca zb voce', A['aiuto'], 'zb voce lista' in zb(M, 'aiuto').stdout, sez)
+    pm = os.path.join(M, 'modelli', 'briefing.md')
+    b = nuovo.leggi_briefing(pm)
+    titoli = [x[3:].strip().lower() for x in open(pm, encoding='utf-8').read().splitlines() if x.startswith('## ')]
+    esito('nuovo.py', '(f) modello del briefing: sezioni nuove / campi della voce / esempio fuori dai dati',
+          A['modello_briefing'], f'{[t for t in A["sezioni_briefing"] if t not in titoli]} / '
+          f'{"voce dalla banca" in b["campi"] and "ambientazione" in b["campi"]} / {b["personaggi"]}', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce}
 
 
 def main(argv):

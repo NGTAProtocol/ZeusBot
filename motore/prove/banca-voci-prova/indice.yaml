@@ -1,0 +1,10 @@
+# Indice della banca-voci di prova (inventata)
+voci:
+  - slug: voce-di-prova
+    nome: Voce di prova
+    genere: [giallo, narrativa_letteraria]
+    stato: pronta
+  - slug: voce-incompleta
+    nome: Voce incompleta
+    genere: [thriller]
+    stato: da_completare
