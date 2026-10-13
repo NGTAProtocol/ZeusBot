@@ -25,7 +25,13 @@ for (const f of readdirSync(join(ROOT, 'briefs')).filter((x) => x.endsWith('.jso
         assert.doesNotMatch(s, /<script[^>]+src="https?:|<link[^>]+href="https?:\/\/(?!(fornacelume|quota2100|nodosicuro)\.example)/, `risorsa esterna in ${file}`);
         assert.doesNotMatch(s, /cdn\.jsdelivr|unpkg\.com|fonts\.googleapis|cdnjs/, `CDN in ${file}`);
       }
-      if (config === 'baseline') return;
+      if (config === 'baseline') {
+        // regressione v1: Tailwind non scansionava engine/src/generated (in .gitignore) e la baseline usciva senza stile
+        const bodyClasses = (html.match(/<body class="([^"]+)"/) || [])[1].split(/\s+/);
+        const css = files(out).filter((x) => /\.(css|html)$/.test(x)).map((x) => readFileSync(x, 'utf8')).join('');
+        for (const c of bodyClasses) assert.ok(css.includes(`.${c.replace(/[:/]/g, (m) => '\\' + m)}{`), `baseline senza CSS per la classe ${c}`);
+        return;
+      }
       const js = files(out).filter((x) => x.endsWith('.js')).map((x) => x.split('/').pop()).join(' ');
       if (level === 'base') assert.doesNotMatch(js, /gsap|lenis|scene|hero-worker/i, 'il BASE non deve includere GSAP/Lenis/Three');
       // Bibbia §14.3: Three.js solo se la firma è 3D

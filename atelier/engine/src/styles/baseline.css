@@ -1,1 +1,3 @@
 @import "tailwindcss";
+/* engine/src/generated è in .gitignore: Tailwind 4 non lo scansiona da solo */
+@source "../generated";
