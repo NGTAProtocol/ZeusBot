@@ -67,7 +67,7 @@ function lintConfig(c, config) {
 
 export function lintContent(c, brief, { config } = {}) {
   const problems = [];
-  const need = ['meta.title', 'meta.description', 'brand.name', 'cta.label', 'cta.href', 'footer.email', 'footer.closing', 'pages.home.hero.title_lines', 'pages.home.hero.lead', 'pages.home.sections'];
+  const need = ['meta.title', 'meta.description', 'brand.name', 'cta.label', 'cta.href', 'footer.closing', 'pages.home.hero.title_lines', 'pages.home.hero.lead', 'pages.home.sections'];
   for (const k of need) {
     const v = k.split('.').reduce((o, p) => (o ? o[p] : undefined), c);
     if (v === undefined || v === '' || (Array.isArray(v) && !v.length)) problems.push(`campo mancante: ${k}`);
@@ -104,6 +104,18 @@ export function lintContent(c, brief, { config } = {}) {
   for (const pg of Object.values(c.pages)) for (const s of pg.sections || []) {
     if (s.type === 'prices' && !(s.items || []).every((it) => it.item && it.value)) problems.push('prezzi: ogni voce richiede item e value (un prezzo sconosciuto si scrive "su preventivo", mai inventato)');
     if (s.type === 'signature' && !s.caption) problems.push('sezione firma senza didascalia');
+  }
+  // foto: ogni immagine usata dev'essere dichiarata in content.media con testo alternativo
+  const used = [];
+  const h0 = c.pages.home.hero;
+  if (h0.image) used.push([h0.image, h0.alt]);
+  for (const pg of Object.values(c.pages)) for (const s of pg.sections || []) {
+    if (s.image) used.push([s.image, s.alt]);
+    for (const it of (s.type === 'works' ? s.items : [])) used.push([it.image, it.alt]);
+  }
+  for (const [img, alt] of used) {
+    if (!c.media?.[img]) problems.push(`immagine "${img}" non dichiarata in media`);
+    else if (!(alt || c.media[img].alt)) problems.push(`immagine "${img}" senza testo alternativo`);
   }
   problems.push(...lintLinks(c, brief));
   if (config) problems.push(...lintConfig(c, config));

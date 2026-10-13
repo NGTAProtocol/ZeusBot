@@ -1,0 +1,16 @@
+---
+// Foto del cliente (assets/<slug>/ → /media/): WebP con ripiego JPG, più larghezze, dimensioni esplicite (niente CLS).
+import site from '../generated/site.json';
+const { name, alt, sizes = '100vw', class: cls = '', eager = false } = Astro.props;
+const m = site.content.media?.[name];
+if (!m) throw new Error(`immagine "${name}" non dichiarata in content.media`);
+const base = import.meta.env.BASE_URL + 'media/';
+const set = (ext) => m.widths.map((w) => `${base}${name}-${w}.${ext} ${w}w`).join(', ');
+const largest = m.widths.at(-1);
+const h = Math.round((m.h * largest) / m.w);
+---
+<picture class={cls}>
+  <source type="image/webp" srcset={set('webp')} sizes={sizes} />
+  <img src={`${base}${name}-${largest}.jpg`} srcset={set('jpg')} sizes={sizes} width={largest} height={h} alt={alt ?? m.alt}
+    loading={eager ? 'eager' : 'lazy'} decoding={eager ? 'sync' : 'async'} fetchpriority={eager ? 'high' : undefined} />
+</picture>

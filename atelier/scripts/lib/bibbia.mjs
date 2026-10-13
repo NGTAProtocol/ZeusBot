@@ -8,7 +8,7 @@ export const CONFIGS = {
   b: { label: 'B', skills: ['frontend-design', 'impeccable'] },
   c: { label: 'C', skills: ['frontend-design', 'taste-skill', 'emil-design-eng', 'emil-animate'] }
 };
-export const SIGNATURES_CSS = ['layers', 'drip', 'contours', 'lattice'];
+export const SIGNATURES_CSS = ['layers', 'drip', 'contours', 'lattice', 'turn'];
 export const SIGNATURES_3D = ['blob', 'terrain', 'points', 'ribbons', 'rings'];
 export const LAYOUTS = ['editorial', 'panels', 'index', 'manifesto', 'catalogue', 'monolith', 'blueprint'];
 

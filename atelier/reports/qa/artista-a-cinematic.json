@@ -1,0 +1,69 @@
+{
+  "id": "artista-a-cinematic",
+  "config": "a",
+  "level": "cinematic",
+  "url_tested": "locale, server statico con gzip",
+  "at": "2026-10-13T14:05:50.216Z",
+  "browser": {
+    "viewports": {
+      "375": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Barlow Condensed",
+          "Literata"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "768": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Barlow Condensed",
+          "Literata"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      },
+      "1280": {
+        "overflowX": false,
+        "h1": 1,
+        "canvasLive": false,
+        "fallback": null,
+        "fonts": [
+          "Barlow Condensed",
+          "Literata"
+        ],
+        "smallTargets": 0,
+        "errors": [],
+        "hiddenAfterScroll": 0,
+        "externalHosts": []
+      }
+    },
+    "checks": {
+      "reducedMotion": {
+        "fallback": "reduced-motion",
+        "canvas": false,
+        "hiddenContent": 0
+      },
+      "noWebGL": {
+        "fallback": null,
+        "posterVisible": false,
+        "canvas": false
+      },
+      "saveData": {
+        "fallback": "save-data",
+        "canvas": false
+      }
+    }
+  }
+}

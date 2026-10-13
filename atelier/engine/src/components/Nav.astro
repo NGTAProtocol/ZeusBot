@@ -25,5 +25,5 @@ const href = (h) => (h.startsWith('#') || h.startsWith('http') || h.startsWith('
     {content.nav.map((l) => <li><a href={href(l.href)} data-menu-link>{l.label}</a></li>)}
     <li><a href={href(content.cta.href)} data-menu-link>{content.cta.label}</a></li>
   </ul>
-  <p>{content.footer.email}</p>
+  {content.footer.email && <p>{content.footer.email}</p>}
 </div>

@@ -12,7 +12,8 @@ const files = (dir) => readdirSync(dir, { recursive: true }).map((f) => join(dir
 
 for (const f of readdirSync(join(ROOT, 'briefs')).filter((x) => x.endsWith('.json'))) {
   const slug = f.replace('.json', '');
-  for (const config of ['baseline', 'a', 'b', 'c']) for (const level of ['base', 'cinematic']) {
+  const brief = JSON.parse(readFileSync(join(ROOT, 'briefs', f), 'utf8'));
+  for (const config of brief.configs || ['baseline', 'a', 'b', 'c']) for (const level of ['base', 'cinematic']) {
     test(`build ${slug}-${config}-${level}`, { timeout: 120000 }, async () => {
       const out = join(OUT, `${slug}-${config}-${level}`);
       const r = await generate({ brief: join(ROOT, 'briefs', f), level, config, out });
@@ -22,7 +23,7 @@ for (const f of readdirSync(join(ROOT, 'briefs')).filter((x) => x.endsWith('.jso
       assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, 'un solo h1');
       for (const file of files(out).filter((x) => /\.(html|js|css)$/.test(x))) {
         const s = readFileSync(file, 'utf8');
-        assert.doesNotMatch(s, /<script[^>]+src="https?:|<link[^>]+href="https?:\/\/(?!(fornacelume|quota2100|nodosicuro)\.example)/, `risorsa esterna in ${file}`);
+        assert.doesNotMatch(s, /<script[^>]+src="https?:|<link[^>]+href="https?:\/\/(?!(fornacelume\.example|quota2100\.example|nodosicuro\.example|example\.com)\/)/, `risorsa esterna in ${file}`);
         assert.doesNotMatch(s, /cdn\.jsdelivr|unpkg\.com|fonts\.googleapis|cdnjs/, `CDN in ${file}`);
       }
       if (config === 'baseline') {
@@ -38,6 +39,9 @@ for (const f of readdirSync(join(ROOT, 'briefs')).filter((x) => x.endsWith('.jso
       if (level === 'cinematic' && r.signature.startsWith('3d')) assert.match(js, /hero-worker/, 'firma 3D: serve il worker 3D');
       if (level === 'cinematic' && r.signature.startsWith('css')) assert.doesNotMatch(js, /hero-worker|scene/, 'firma CSS: niente Three.js');
       assert.match(html, /application\/ld\+json/, 'dati strutturati LocalBusiness');
+      // regressione v2: il minificatore fondeva animation-timeline nella shorthand `animation` (dichiarazione non valida)
+      assert.doesNotMatch(html, /animation:[^;}]*\b(scroll|view)\(/, 'animation-timeline dentro la shorthand animation');
+      for (const img of html.matchAll(/<img\b[^>]*>/g)) assert.match(img[0], /\salt="[^"]+"/, 'immagine senza alt');
     });
   }
 }

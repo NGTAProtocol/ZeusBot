@@ -1,0 +1,27 @@
+---
+// Firma "turn": una tela girata verso il muro che, con lo scroll, si volta e mostra il dipinto.
+// Solo transform (rotateY). Senza movimento resta visibile il dipinto.
+import Picture from './Picture.astro';
+const { image, alt } = Astro.props;
+---
+<div class="turn" data-turn>
+  <div class="turn__card">
+    <div class="turn__face turn__back" aria-hidden="true">
+      <svg viewBox="0 0 311 400" preserveAspectRatio="none" focusable="false">
+        <rect width="311" height="400" fill="var(--c-surface)" />
+        <g stroke="var(--c-muted)" stroke-width="1" opacity=".35">
+          {Array.from({ length: 40 }, (_, i) => <line x1="0" y1={i * 10} x2="311" y2={i * 10} />)}
+        </g>
+        <g fill="none" stroke="var(--c-ink)" stroke-width="14" opacity=".85">
+          <rect x="7" y="7" width="297" height="386" />
+          <line x1="155" y1="7" x2="155" y2="393" />
+          <line x1="7" y1="200" x2="304" y2="200" />
+        </g>
+        <text x="30" y="250" font-size="15" fill="var(--c-ink)" font-family="var(--f-body)" opacity=".7">n. 1 — retro</text>
+      </svg>
+    </div>
+    <div class="turn__face turn__front">
+      <Picture name={image} alt={alt} sizes="(min-width: 1024px) 34vw, 80vw" />
+    </div>
+  </div>
+</div>

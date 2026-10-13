@@ -96,17 +96,17 @@ test('skills.lock coerente con .claude/skills', () => {
 
 test('fase Bibbia e contenuti validi per ogni brief e configurazione', () => {
   const briefs = readdirSync(join(ROOT, 'briefs')).filter((f) => f.endsWith('.json'));
-  assert.equal(briefs.length, 3);
-  for (const f of briefs) {
-    const b = validateBrief(JSON.parse(read(`briefs/${f}`)));
-    for (const config of Object.keys(CONFIGS)) {
+  const all = briefs.map((f) => validateBrief(JSON.parse(read(`briefs/${f}`))));
+  assert.equal(all.filter((b) => !b.client).length, 3, '3 attività fittizie per la prova di valore');
+  for (const b of all) {
+    for (const config of b.configs || Object.keys(CONFIGS)) {
       const bib = JSON.parse(read(`bibbia/${b.slug}-${config}.json`));
       assert.deepEqual(validateBibbia(bib, ROOT), [], `${b.slug}-${config}: Bibbia non valida`);
       for (const sk of CONFIGS[config].skills) assert.ok(bib.skills_used.includes(sk), `${b.slug}-${config}: skill ${sk} non dichiarata`);
       const c = JSON.parse(read(`content/${b.slug}-${config}.json`));
       assert.deepEqual(lintContent(c, b, { config }), [], `${b.slug}-${config}: problemi di contenuto`);
     }
-    for (const level of ['base', 'cinematic']) assert.ok(existsSync(join(ROOT, 'baseline', `${b.slug}-${level}.astro`)), `manca la baseline ${b.slug}-${level}`);
+    if (!b.client) for (const level of ['base', 'cinematic']) assert.ok(existsSync(join(ROOT, 'baseline', `${b.slug}-${level}.astro`)), `manca la baseline ${b.slug}-${level}`);
   }
 });
 

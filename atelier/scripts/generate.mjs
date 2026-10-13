@@ -121,6 +121,14 @@ export async function generate({ brief: briefPath, level, config = 'a', out }) {
     favicon = [bibbia.tokens.palette.ink, bibbia.tokens.palette.accent];
   }
   await writeFile(join(GEN, 'site.json'), JSON.stringify(site, null, 2));
+  // foto e media forniti dal cliente: assets/<slug>/ → /media/ (si svuota a ogni build: nessun file di un altro sito)
+  const media = join(ENGINE, 'public', 'media');
+  await rm(media, { recursive: true, force: true });
+  const assets = join(ROOT, 'assets', slug);
+  if (existsSync(assets)) await cp(assets, media, { recursive: true });
+  for (const [name, m] of Object.entries(site.content?.media || {}))
+    for (const w of m.widths) for (const ext of ['webp', 'jpg'])
+      if (!existsSync(join(assets, `${name}-${w}.${ext}`))) throw new Error(`Manca assets/${slug}/${name}-${w}.${ext}`);
   await mkdir(join(ENGINE, 'public'), { recursive: true });
   await writeFile(join(ENGINE, 'public', 'favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="${favicon[0]}"/><circle cx="16" cy="16" r="7" fill="${favicon[1]}"/></svg>`);
   await writeFile(join(ENGINE, 'public', 'robots.txt'), 'User-agent: *\nAllow: /\n');

@@ -9,10 +9,10 @@ const f = content.footer;
     <div class="footer__grid">
       <div>
         <p class="muted-inv">{content.brand.name}</p>
-        <p>{f.address}</p>
+        {f.address && <p>{f.address}</p>}
       </div>
       <div>
-        <p><a href={`mailto:${f.email}`}>{f.email}</a></p>
+        {f.email && <p><a href={`mailto:${f.email}`}>{f.email}</a></p>}
         {f.phone && <p><a href={`tel:${f.phone.replace(/\s+/g, '')}`}>{f.phone}</a></p>}
       </div>
       <div>

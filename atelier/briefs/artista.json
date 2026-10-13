@@ -1,0 +1,22 @@
+{
+  "slug": "artista",
+  "business": "Pittore che ha dipinto per tutta la vita senza mai mostrare le opere; ora, spinto dalla figlia che ha la stessa passione, le mette a disposizione della comunità",
+  "sector": "arte pittura",
+  "audience": "persone della sua comunità, appassionati d'arte, chi vuole vedere o chiedere informazioni sulle opere",
+  "goal": "far vedere le opere per la prima volta e ricevere contatti",
+  "tone": "personale, schietto, caldo",
+  "language": "it",
+  "pages": ["home"],
+  "level": "base",
+  "configs": ["a"],
+  "client": true,
+  "facts": [
+    "dipinge da quando era piccolo, per tutta la vita",
+    "ha un diploma da geometra",
+    "non ha mai mostrato le sue opere a nessuno",
+    "la figlia ha la sua stessa passione per la pittura e lo ha spinto a mostrarle",
+    "ora mette le sue opere a disposizione della comunità",
+    "il cliente ha chiesto di inventare il racconto della sua storia a partire da questi fatti: va riletto e approvato prima della pubblicazione",
+    "foto fornite dal cliente: due ritratti nello studio (con un quadro astratto alle spalle) e un fotomontaggio surreale in piscina"
+  ]
+}

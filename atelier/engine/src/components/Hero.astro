@@ -2,23 +2,28 @@
 import site from '../generated/site.json';
 import Lines from './Lines.astro';
 import { signatureSvg } from '../lib/signature.js';
+import Picture from './Picture.astro';
 const { hero } = Astro.props;
 const { content, bibbia, level } = site;
 const sig = bibbia.signature;
 // firma CSS/SVG: nel BASE è la firma; con una firma 3D è il poster e il ripiego (stessa palette)
 const cssId = sig.kind === '3d' ? sig.fallback_id : sig.id;
-const svg = signatureSvg(cssId, bibbia.tokens.palette, content.brand.name, sig.params || {});
+const svg = hero.image ? '' : signatureSvg(cssId, bibbia.tokens.palette, content.brand.name, sig.params || {});
 // dimensione del titolo in base alla riga più lunga: resta su righe intere e lascia la CTA sopra la piega
 const longest = Math.max(...hero.title_lines.map((l) => l.length));
 const heroStyle = `--hero-chars: ${longest};`;
 const base = import.meta.env.BASE_URL;
 const href = (h) => (h.startsWith('#') || h.includes(':') ? h : base + h.replace(/^\//, ''));
 ---
-<section class="hero" aria-labelledby="hero-title" data-hero style={heroStyle}>
+<section class={hero.image ? 'hero hero--photo' : 'hero'} aria-labelledby="hero-title" data-hero style={heroStyle}>
+  {hero.image ? (
+    <div class="hero__photo"><Picture name={hero.image} alt={hero.alt} sizes="(min-width: 1024px) 45vw, 100vw" eager /></div>
+  ) : (
   <div class="hero__art" data-hero-art data-sig-scope data-3d={sig.kind === '3d' && level === 'cinematic' ? sig.id : undefined}>
     <div class="hero__poster" set:html={svg} />
   </div>
-  <div class="hero__scrim" aria-hidden="true"></div>
+  )}
+  {!hero.image && <div class="hero__scrim" aria-hidden="true"></div>}
   <div class="wrap hero__inner">
     <Lines lines={hero.title_lines} tag="h1" id="hero-title" class="hero__title" />
     <div class="hero__text">

@@ -2,6 +2,8 @@
 import site from '../generated/site.json';
 import Lines from './Lines.astro';
 import { signatureSvg } from '../lib/signature.js';
+import Picture from './Picture.astro';
+import Turn from './Turn.astro';
 const { s, i } = Astro.props;
 const { bibbia, content } = site;
 const sig = bibbia.signature;
@@ -26,6 +28,7 @@ const id = s.id || `s${i}`;
           {s.aside && <p class="chapter__aside" data-reveal>{s.aside}</p>}
         </div>
         <div class="chapter__body">
+          {s.image && <figure class="chapter__figure" data-reveal><Picture name={s.image} alt={s.alt} sizes="(min-width: 1024px) 40vw, 90vw" />{s.figcaption && <figcaption class="work__meta">{s.figcaption}</figcaption>}</figure>}
           {s.body.map((p) => <p data-reveal>{p}</p>)}
         </div>
       </div>
@@ -40,7 +43,18 @@ const id = s.id || `s${i}`;
         </div>
       </div>
     )}
-    {s.type !== 'chapter' && s.type !== 'quote' && s.type !== 'signature' && (
+    {s.type === 'turn' && (
+      <div class="signature-section signature-section--turn">
+        <Turn image={s.image} alt={s.alt} />
+        <div class="section__head" style="margin:0">
+          <Lines lines={titleLines} class="section__title" />
+          <span id={`${id}-t`} class="sr-only">{titleLines.join(' ')}</span>
+          <p class="signature-section__caption" data-reveal>{s.caption}</p>
+          {s.work && <p class="work__meta" data-reveal>{s.work}</p>}
+        </div>
+      </div>
+    )}
+    {s.type !== 'chapter' && s.type !== 'quote' && s.type !== 'signature' && s.type !== 'turn' && (
       <div class="section__head">
         <Lines lines={titleLines} class="section__title" />
         <span id={`${id}-t`} class="sr-only">{titleLines.join(' ')}</span>
@@ -67,6 +81,20 @@ const id = s.id || `s${i}`;
           </li>
         ))}
       </ul>
+    )}
+    {s.type === 'works' && (
+      <div class="works">
+        {s.items.map((it) => (
+          <figure class="work" data-reveal>
+            <Picture name={it.image} alt={it.alt} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" class="work__img" />
+            <figcaption>
+              <span class="work__title">{it.title}</span>
+              {it.meta && <span class="work__meta">{it.meta}</span>}
+            </figcaption>
+          </figure>
+        ))}
+        {s.pending && <p class="works__pending" data-reveal>{s.pending}</p>}
+      </div>
     )}
     {s.type === 'prices' && (
       <dl class="prices">

@@ -94,6 +94,10 @@ async function initMotion() {
   });
 
   document.querySelectorAll('[data-sig-scope]').forEach((scope) => signature(gsap, scope));
+  // firma "turn": la tela si volta mentre entra nel viewport
+  document.querySelectorAll('[data-turn] .turn__card').forEach((card) => {
+    gsap.fromTo(card, { rotationY: -180 }, { rotationY: 0, ease: 'none', scrollTrigger: { trigger: card, start: 'top 85%', end: 'center 45%', scrub: 0.6 } });
+  });
 }
 
 // ---- la firma: un solo momento di movimento d'autore, guidato da scroll (e puntatore per il reticolo) ----
