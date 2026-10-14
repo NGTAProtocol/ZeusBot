@@ -129,6 +129,8 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
   toglie un guardiano della Terravox che pattuglia il ciglio, come cosa sua, senza sapere dei ragazzi (D5,
   proposta sul seguito: si rivela in un capitolo successivo).
 - Gancio: sono sul fondo, senza corda, e lassù nessuno sa che sono lì.
+- Guardiano (decisione dell'autore del 14/10/2026): è lui che ha tolto la corda; il cap. 10 non si riscrive.
+  Identità e capitolo della rivelazione: DA FISSARE. Non si rivela prima del cap. 16, e nel cap. 16 no.
 - Enigma: no.
 
 ### 11 — Tre versioni
@@ -176,6 +178,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Decisione: Pino accusa Checco davanti a tutti; Checco se ne va.
 - Gancio: la banda si spacca.
 - Enigma: no.
+- Stato: scritto il 14/10/2026 (1.238 parole, zb esito OK). Nessuna pagina enigma; il guardiano non compare.
 
 ### 17 — La bottega
 - Scopo: indagine di Pino e Stellina da soli; smascheramento (prima metà).
@@ -197,6 +200,8 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Domanda: le iniziali formano ULIVO, e la seconda riga dice che la settima chiave «dorme nel legno».
 - Gancio: corrono all'ulivo; il recinto è già stato spostato più vicino.
 - Enigma 10: acrostico → ULIVO.
+- Decisione dell'autore del 14/10/2026: «ULIVO» è un acrostico, prime lettere delle righe, come MICHELE nel
+  cap. 15 (metodo già dato in pagina nel cap. 15).
 
 ### 20 — Dentro l'ulivo
 - Scopo: l'Ulivo Pensante restituisce il segreto di Rosa.

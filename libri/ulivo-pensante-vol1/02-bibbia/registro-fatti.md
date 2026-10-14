@@ -179,3 +179,9 @@ Righe aggiunte dal 14/10/2026: fatti del manoscritto nuovo, non del vecchio test
 | ID | Cap. | Fatto | Stato |
 |---|---|---|---|
 | N1 | 9 | Il nonno vieta le uscite notturne: «Di notte, da adesso, non si esce più. Né voi né io.» (dopo la notte del drone) | nuovo |
+| N2 | 16 | Mercoledì 15 luglio: il laboratorio è stato aperto senza forzare la porta e senza che l'allarme suonasse; mancano le tre schede di memoria dei droni, etichettate in verde. Il computer con le foto non è stato toccato | nuovo |
+| N3 | 16 | Sulla prima scheda c'era il video del drone della notte del 10 (luci nel recinto) | nuovo |
+| N4 | 16 | Il nonno va dai carabinieri a denunciare il furto e raccomanda: «prima di accusare qualcuno, si verifica» | nuovo |
+| N5 | 16 | Pino accusa Checco davanti alla banda (il codice lo sa solo lui; ha difeso Gianni). Checco nega di aver dato il codice a nessuno e osserva che chi ha preso solo le schede sapeva del video; se ne va con Ciuffo | nuovo |
+| N6 | 16 | Lucia ipotizza Gianni (entrava nel laboratorio, ripara i droni); Pino risponde che Gianni il codice non lo sa: pista da verificare | nuovo |
+| N7 | 16 | La banda si spacca: Tonio va a cercare Checco; Lucia e Stellina se ne vanno; Pino resta solo | nuovo |

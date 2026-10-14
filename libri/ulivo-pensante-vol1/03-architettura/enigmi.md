@@ -41,7 +41,7 @@ numerate in colonna; la casella è colorata se la pianta è in fiore quel mese.
 | 5 | Rosmarino | 1, 2, 3, 4, 10, 11, 12 |
 | 6 | Iris | 3, 4 |
 
-I mesi sono quelli del calendario di Rosa: da verificare con una fonte botanica prima della stampa.
+I mesi sono quelli del calendario di Rosa. Verifica su fonte botanica: vedi `00-progetto/registro-verifiche.md`, punto (c).
 
 **Mappa di Lucia (cap. 4)**: quadrettata, colonne A-F, righe 1-6; nord in alto; vecchi nomi di contrada.
 Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
@@ -178,6 +178,9 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
   nel laboratorio del nonno?»
 - Indizi già comparsi: cap. 5, Michele etichetta tutto col pennarello verde e taglia il sette (Stellina lo
   disegna); cap. 16, mancano le schede dei droni.
+- Nel cap. 16 (scritto il 14/10/2026): spariscono tre schede di memoria dalla valigetta dei droni, «ognuna con il
+  suo numero scritto in verde, come tutto quello che il nonno etichettava»; sulla prima c'era il video della notte
+  del 10. Nessun numero di scheda è detto.
 - Soluzione: la scheda: scritta in verde, col sette tagliato. La giacca prova solo un legame con la Terravox.
 - Controllo di equità: il sette tagliato è mostrato nel cap. 5. Sì.
 

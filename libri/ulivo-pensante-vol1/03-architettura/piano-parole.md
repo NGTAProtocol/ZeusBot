@@ -17,7 +17,7 @@
 | — | 13 | L'ombra della torre | indizio + enigma | 1 | 1300 | 1300 | 1152 | -11,4% |
 | — | 14 | Il telefono | prova | 1 | 1300 | 1300 | 1187 | -8,7% |
 | — | 15 | Il lucchetto di Rosa | seme finale + enigma | 1 | 1300 | 1300 | 1216 | -6,5% |
-| — | 16 | Il codice | crisi | 1 | 1300 | 1300 |  |  |
+| — | 16 | Il codice | crisi | 1 | 1300 | 1300 | 1238 | -4,8% |
 | — | 17 | La bottega | smascheramento + enigma | 1 | 1300 | 1300 |  |  |
 | — | 18 | Il perché di Gianni | smascheramento | 1 | 1300 | 1300 |  |  |
 | — | 19 | L'Ape torna | ricomposizione + enigma | 1 | 1300 | 1300 |  |  |

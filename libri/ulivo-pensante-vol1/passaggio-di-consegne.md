@@ -1,5 +1,7 @@
 # Passaggio di consegne — Il quaderno nell'ulivo (La Banda della Gravina, 1)
 
+> Aggiornato al cap. 16: lo stato corrente e il prompt di ripartenza sono in `passaggio-di-sessione.md`.
+
 Frase di apertura per la nuova chat: «Leggi libri/ulivo-pensante-vol1/passaggio-di-consegne.md e riprendi da lì».
 
 ## Stato
@@ -98,8 +100,7 @@ Totale: 19.167 / 32.500 parole (metodo unico del motore).
 
 ## Punti aperti / da confermare con l'autore
 1. Lettura dei capitoli 6-15.
-2. Punti botanici da verificare su una fonte, senza affermare nulla nel testo: mesi di fioritura del calendario
-   di Rosa (cappero ed elicriso in fiore ai primi di luglio; asfodelo; pero selvatico; rosmarino; iris).
+2. Punti botanici: vedi `00-progetto/registro-verifiche.md`, punto (c) (elenco unico).
 3. Roccavedere (E6): nel libro non compare ancora in nessun capitolo scritto (1-15). Dettagli attribuiti al luogo,
    tutti da confermare: bibbia, «zona del muro scoperto da Rosa» (invenzione narrativa), «nome vecchio della
    zona», presente sulla carta delle contrade, collocato nella casella D4 dentro il recinto Terravox (scaletta,
