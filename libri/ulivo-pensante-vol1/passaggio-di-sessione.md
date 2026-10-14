@@ -16,7 +16,7 @@ CONTESTO
   spento, dialoghi con la lineetta «—», titoli «# N — Titolo», riga <!-- zb: chiusura=X --> (sigla da scaletta).
 - Il vecchio «L'Ulivo Pensante» (materiale/…docx) è solo registro dei fatti: nessuna frase o scena ripresa.
 
-STATO (al commit COMMIT_CAP16, base 9c2da15)
+STATO (al commit 054e8dd, base 9c2da15)
 - Fase stesura, passo capitolo 17, nessun gate aperto (gate «lotto» non attivo). Capitoli scritti 1-16;
   approvati dal motore 1-3; 4-16 letti e corretti dall'autore fino al 15, il 16 è da leggere.
 - Parole (metodo unico del motore): 1 = 1.366 · 2 = 1.365 · 3 = 1.388 · 4 = 1.320 · 5 = 1.300 · 6 = 1.377 ·
