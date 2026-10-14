@@ -2,17 +2,18 @@ libro: Il quaderno nell'ulivo
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
-passo: capitolo 1
+passo: capitolo 2
 gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli: []
+  capitoli:
+  - 1
 ultimo_capitolo_approvato: null
-ultimo_capitolo_scritto: null
+ultimo_capitolo_scritto: 1
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 0
+  scritte: 1363
   obiettivo: 32500
   metodo: unico
 documenti_approvati:
@@ -58,4 +59,4 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T04:09:57Z'
+aggiornato: '2026-10-14T04:15:01Z'
