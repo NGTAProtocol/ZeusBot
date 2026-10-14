@@ -20,7 +20,7 @@
 | — | 16 | Il codice | crisi | 1 | 1300 | 1300 | 1237 | -4,8% |
 | — | 17 | La bottega | smascheramento + enigma | 1 | 1300 | 1300 | 1255 | -3,5% |
 | — | 18 | Il perché di Gianni | smascheramento | 1 | 1300 | 1300 | 1169 | -10,1% |
-| — | 19 | L'Ape torna | ricomposizione + enigma | 1 | 1300 | 1300 |  |  |
+| — | 19 | L'Ape torna | ricomposizione + enigma | 1 | 1300 | 1300 | 1295 | -0,4% |
 | — | 20 | Dentro l'ulivo | ulivo | 1 | 1300 | 1300 |  |  |
 | — | 21 | Il lucido | scelta + enigma | 1 | 1300 | 1300 |  |  |
 | — | 22 | La notte delle ruspe | climax | 2 | 1300 | 650 |  |  |
