@@ -17,8 +17,8 @@ parole:
   metodo: unico
 documenti_approvati:
   libro.yaml:
-    sha256: bf229cf81b92d98bbba52796c37d0795c78eb7e4add334c8ee37cb4e43861821
-    commit: 41d06e2
+    sha256: 84a3b4af1a65426cda5cb0b767297051b74ec1824f554e84aeae25224d068b08
+    commit: 937c1f1
     riapprovazioni:
     - data: '2026-10-14'
       motivo: decisioni D1-D9 dell'autore del 14/10/2026 dopo la lettura dei capitoli 6-10
@@ -42,6 +42,10 @@ documenti_approvati:
       motivo: nota dell'autore senza Rocca Vetere (D7)
       sha256_precedente: 42e451589aa1485aaa586d682e9ba842d3761f132a9078df9bed36aeab315fbe
       commit_precedente: c561dce
+    - data: '2026-10-14'
+      motivo: 'campo appendici: soluzioni e mappa della gravina'
+      sha256_precedente: bf229cf81b92d98bbba52796c37d0795c78eb7e4add334c8ee37cb4e43861821
+      commit_precedente: 41d06e2
   02-bibbia/bibbia.md:
     sha256: 43d526e3651e77d72741c5eb980b3cec28814aef816b461670b49112a8fb8c87
     commit: 124ddc1
@@ -245,7 +249,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T16:21:30Z'
+aggiornato: '2026-10-14T18:37:17Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
