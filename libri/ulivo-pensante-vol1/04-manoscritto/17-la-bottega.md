@@ -78,7 +78,7 @@ Quale oggetto prova che Gianni è entrato nel laboratorio del nonno?
 
 — Prova che ha una giacca, — disse Stellina.
 
-Stellina scosse la testa. Aprì il quaderno, lo sfogliò all'indietro fino a una pagina in fondo, e glielo mise davanti. In un angolo, piccolo piccolo, c'era il disegno che aveva fatto la sera dei sensori, sotto l'Ulivo Pensante: un sette con il trattino in mezzo, e accanto un pennarello verde.
+Poi aprì il quaderno, lo sfogliò all'indietro fino a una pagina in fondo, e glielo mise davanti. In un angolo, piccolo piccolo, c'era il disegno che aveva fatto la sera dei sensori, sotto l'Ulivo Pensante: un sette con il trattino in mezzo, e accanto un pennarello verde.
 
 — La giacca dice che lavora per loro, — disse Stellina. — La scheda dice che è stato da noi. Nel laboratorio. Dove c'era la valigetta.
 
