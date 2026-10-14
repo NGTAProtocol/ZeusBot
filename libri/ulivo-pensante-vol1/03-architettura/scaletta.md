@@ -41,6 +41,12 @@ giovedì 16 (17-18) · venerdì 17 (19-20) · sabato 18 (21-22) · domenica 19 (
 sabato 25 (25). Intrusione nel laboratorio: domenica 5 luglio, la sera prima dell'arrivo di Pino (verso le undici).
 Notti di scavo: 4, 6, 8, 10, 12 luglio (notti alterne, tra le 2 e le 3).
 
+## Pagine enigma a metà capitolo (14/10/2026)
+
+- Cap. 4: pagina a fine scena 1 (correzione C1 approvata dall'autore).
+- Cap. 8 e 9: pagina a fine scena 1, stesso schema del cap. 4, perché la decisione e il gancio della scaletta
+  mostrano la soluzione (proposta, da confermare alla lettura). Cap. 6: pagina in fondo, come da regola.
+
 ## Dettaglio dei capitoli
 
 Per ogni capitolo: scopo; informazione / pericolo / domanda; gancio finale; enigma (se c'è).

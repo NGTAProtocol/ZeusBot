@@ -39,6 +39,15 @@ crinale nord, riga 3 = fondo e parete sud, riga 4 = ciglio sud (il lato del nonn
 - E5: casa del nonno (casa bianca, porta blu) e laboratorio.
 - F5: curva dell'Ape, sulla strada di terra rossa prima del cancello del nonno.
 
+## Luoghi visitati nei capitoli 6-10 (14/10/2026)
+
+- Cap. 6: cancelletto sul retro del recinto (D4, lato E4); le tracce passano per la strada di terra rossa, la
+  curva dell'Ape (F5) e lo sbocco sulla strada bianca (F4): i furgoni girano verso il cancello grande del
+  recinto, la V va dritta verso il paese (F1-F3).
+- Cap. 7: Piazza dell'Orologio (F3).
+- Cap. 8: drone dal muretto vicino all'Ulivo Pensante (E4), sopra il confine del recinto (D4).
+- Cap. 10: discesa dal ciglio sud (C4) al fondo (C3); chiesa rupestre alla base della Capperaia (C3, sotto C2).
+
 ## Verifica degli enigmi con la mappa
 
 - **Enigma 2 (cap. 4).** «Parti dalla Croce (B2). Va' verso il sole che sorge (est) fino al Pozzo Vecchio
