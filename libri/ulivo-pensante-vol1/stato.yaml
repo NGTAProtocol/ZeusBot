@@ -2,7 +2,7 @@ libro: Il quaderno nell'ulivo
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
-passo: 'pagina campione approvata; prossimo: capitoli 1-5 uno alla volta, stop dopo il 5 (vedi passaggio-di-consegne.md)'
+passo: capitolo 1
 gate_in_attesa: null
 lotto:
   dimensione: 3
