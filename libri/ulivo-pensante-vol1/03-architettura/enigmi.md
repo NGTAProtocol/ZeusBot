@@ -102,6 +102,13 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
   Scosse: notte del 4, del 6, dell'8, tra le 2:10 e le 2:50; nessuna scossa nelle notti 3, 5, 7, 9.
 - Indizi già comparsi: cap. 5, Michele spiega come si legge il grafico e dice «non tutte le notti».
 - Soluzione: la notte di venerdì 10, poco prima delle 2.
+- Nel cap. 8 (scritto il 14/10/2026): la pagina sta a fine scena 1, come nel cap. 4 (proposta, da confermare
+  con l'autore): prima della pagina il testo mostra il grafico notte per notte e il metodo («leggilo come un
+  calendario»), non la regola. Dopo la pagina: «stanotte, prima delle due», il permesso del nonno, il drone,
+  le luci all'una e cinquantasette. La pagina elenca le notti dal 3 al 9 (la notte del 10 non è ancora nel
+  grafico) e ricorda che il 10 è venerdì.
+- Cap. 8: il calendario delle fioriture compare appeso nel laboratorio (mesi in riga, piante numerate in
+  colonna, caselle colorate); Tonio dice che Rosa «numerava le piante in colonna» (indizio dell'enigma 5).
 - Controllo di equità: basta contare le notti alterne e leggere l'asse delle ore. Sì.
 
 ## 5 — Cap. 9: la griglia delle fioriture (griglia a coordinate)

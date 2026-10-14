@@ -4,7 +4,7 @@
 
 Il tablet era appoggiato sul tavolo della cucina, accanto alla caffettiera, e il nonno lo guardava senza bere il caffè.
 
-— Stanotte, — disse, appena Pino entrò ancora in pigiama. — Alle due e venti.
+— Stanotte, — disse, appena Pino entrò ancora in pigiama. — Alle due e dieci.
 
 Sullo schermo c'era la riga dell'ultima notte: piatta per ore, e all'improvviso una punta stretta e alta, seguita da altre più piccole, fino a poco prima delle tre.
 
@@ -22,7 +22,7 @@ La banda aspettava sul muretto, dietro la casa delle sorelle. Lucia aveva già l
 
 — Al forno stamattina lo dicevano tutti, — disse Tonio. — I furgoni della Terravox passano a tutte le ore, pure quando i negozi sono chiusi.
 
-— Stanotte i sensori hanno sentito scavare, — disse Pino. — Alle due e venti.
+— Stanotte i sensori hanno sentito scavare, — disse Pino. — Alle due e dieci.
 
 Nessuno fece altre domande: Lucia scese dal muretto e partì verso l'Ulivo Pensante, e gli altri le andarono dietro.
 
