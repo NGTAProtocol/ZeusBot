@@ -4,7 +4,7 @@
 
 Il giovedì sera Pino aveva raccontato tutto al nonno, seduto al tavolo della cucina con le due schede in mezzo, accanto alla ciotola delle olive. Il nonno le aveva rigirate tra le dita senza dire niente, e alla fine le aveva rimesse nella valigetta, una per una, nei loro buchi nella spugna grigia.
 
-— Gianni, — aveva detto soltanto. E dopo un po': — Domani ci penso. Stanotte no.
+— Gianni, — aveva detto soltanto. E dopo un po': — Domani ci penso. Stanotte no. Aveva guardato Pino, e il biglietto che gli aveva lasciato sul tavolo: — Ti avevo scritto di non fare niente da solo. Ne riparliamo.
 
 Il venerdì mattina Pino si alzò prima del sole. Aveva dormito male, sognando ruspe gialle e porte di ferro, e per tutta la notte gli era rimasta in testa una frase sola: non sai niente di questo paese, ragazzo del lago.
 
@@ -54,7 +54,7 @@ Nel laboratorio, un'ora dopo, c'erano tutti: Lucia seduta sul bancone, Stellina 
 
 Stellina, intanto, aveva preso il sesto quaderno dalla pila. Lo aprì all'ultima pagina e lo mise sul bancone, davanti a tutti.
 
-— Qui c'è una pagina scritta normale, — disse. — Senza piante. L'ho vista il primo giorno, ma nessuno l'ha mai letta.
+— Qui c'è una pagina scritta normale, — disse. — Senza piante. L'ho vista il primo giorno. Pensavamo tutti che fosse una filastrocca, e nessuno l'ha mai letta davvero.
 
 Era vero. In fondo al sesto quaderno, con la calligrafia minuta di Rosa, c'erano cinque righe in lettere normali, una sotto l'altra:
 
@@ -96,7 +96,7 @@ Gli tornò in mente l'apertura scura alla base del tronco, alta quanto Stellina,
 
 Il nonno si era tolto gli occhiali. Li teneva in mano e guardava la pagina, le cinque righe, la calligrafia minuta.
 
-— Vent'anni, — disse. — Vent'anni che gli giro intorno coi miei sensori, e lei mi aveva lasciato la risposta in fondo a un quaderno.
+— Vent'anni, — disse. — Vent'anni che gli giro intorno, e lei mi aveva lasciato la risposta in fondo a un quaderno.
 
 — Allora andiamo, — disse Lucia, ed era già scesa dal bancone.
 
