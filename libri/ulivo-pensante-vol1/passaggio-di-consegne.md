@@ -37,7 +37,7 @@ Totale: 19.167 / 32.500 parole (metodo unico del motore).
 - Pagine enigma a fine scena 1: cap. 4 (C1), cap. 8 e 9 (D1), cap. 13 e 15 (E1).
 - E1-E8 del 14/10 (sessione senza stesura): cap. 6 tagliato a 1.387 parole su descrizioni e similitudini (indizi
   D2 intatti); cap. 8 «L'asfodelo invece, come da noi in campagna» (tolto «in primavera»); cap. 11 con due
-  scene nel piano parole; vincolo del cap. 13 in scaletta (il nonno aiuta, non risolve); Roccavedere luogo
+  scene nel piano parole; vincolo del cap. 13 in scaletta (il nonno aiuta, non risolve); Rocca Vetere luogo
   reale, grafia uniformata in bibbia e scaletta, nota dell'autore che distingue luoghi reali e contrade di
   fantasia.
 - D1-D9 del 14/10 applicate (dettagli nei commit 5e08933 e 0e414c3): regola delle ruote piantata nel cap. 6;
@@ -95,13 +95,13 @@ Totale: 19.167 / 32.500 parole (metodo unico del motore).
 - Applicate le sostituzioni S1-S14 nei cap. 6, 7, 8, 9, 10, 11, 13, 15; nessun'altra modifica al testo.
 - Parole dopo le correzioni: 6 = 1.377, 7 = 1.349, 8 = 1.225, 9 = 1.196, 10 = 1.335, 11 = 1.160, 13 = 1.152,
   15 = 1.216. Totale 1-15: 19.172 / 32.500.
-- Nuovo `00-progetto/registro-verifiche.md` (Piazza dell'Orologio, Roccavedere, mesi di fioritura).
+- Nuovo `00-progetto/registro-verifiche.md` (Piazza dell'Orologio, Rocca Vetere, mesi di fioritura).
 - Registro dei fatti: nuova sezione «Fatti del libro nuovo», riga N1 (cap. 9, divieto di uscite notturne).
 
 ## Punti aperti / da confermare con l'autore
 1. Lettura dei capitoli 6-15.
 2. Punti botanici: vedi `00-progetto/registro-verifiche.md`, punto (c) (elenco unico).
-3. Roccavedere (E6): nel libro non compare ancora in nessun capitolo scritto (1-15). Dettagli attribuiti al luogo,
+3. Rocca Vetere (E6): nel libro non compare ancora in nessun capitolo scritto (1-15). Dettagli attribuiti al luogo,
    tutti da confermare: bibbia, «zona del muro scoperto da Rosa» (invenzione narrativa), «nome vecchio della
    zona», presente sulla carta delle contrade, collocato nella casella D4 dentro il recinto Terravox (scaletta,
    cap. 21). Non verificati: posizione reale rispetto alla gravina e al paese, aspetto, storia, abitanti. Il

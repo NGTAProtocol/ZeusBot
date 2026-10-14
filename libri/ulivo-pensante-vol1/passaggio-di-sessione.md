@@ -39,7 +39,7 @@ DECISIONI PRESE (non rimetterle in discussione)
   la scaletta mostra la soluzione nel capitolo: cap. 4, 8, 9, 13, 15 (scaletta, «Pagine enigma a metà
   capitolo»; manuale § 14). Per ogni nuovo capitolo con enigma: se la soluzione si vede nel capitolo stesso,
   pagina a fine scena 1 e soluzione nella scena 2; altrimenti pagina in fondo. Proporlo all'autore se in dubbio.
-- Nota dell'autore (libro.yaml): «Ginosa, Roccavedere e la Piazza dell'Orologio sono luoghi reali; i fatti che il
+- Nota dell'autore (libro.yaml): «Ginosa, Rocca Vetere e la Piazza dell'Orologio sono luoghi reali; i fatti che il
   romanzo vi ambienta sono invenzione. I nomi di contrada la Croce, il Pozzo Vecchio e la Capperaia sono di
   fantasia.»
 - Altre decisioni attive: mappa canonica 03-architettura/mappa-di-lucia.md; «mezzogiorno» = mezzogiorno del sole
@@ -49,7 +49,7 @@ DECISIONI PRESE (non rimetterle in discussione)
 DA VERIFICARE (00-progetto/registro-verifiche.md)
 - (a) Piazza dell'Orologio, luogo reale: fontana, portici, bar e tre porte intorno alla torre sono invenzione;
   l'enigma 7 dipende dall'orientamento nord/est/sud.
-- (b) Roccavedere: grafia e dettagli DA CONTROLLARE su carta (posizione, «nome vecchio», carta delle contrade).
+- (b) Rocca Vetere: grafia e dettagli DA CONTROLLARE su carta (posizione, «nome vecchio», carta delle contrade).
   Compare solo dal cap. 21: nessun fatto reale va affermato.
 - (c) Mesi di fioritura (cappero, elicriso, asfodelo, pero selvatico, rosmarino, iris): fonte botanica.
 
@@ -76,7 +76,7 @@ VINCOLI DI SCRITTURA E CONTROLLI PER CAPITOLO
   bassi «piano», «poi», «a lungo», «Nessuno disse niente», «sussurrò».
 - Finestra delle scosse: 2:10-2:50, notti alterne (4, 6, 8, 10, 12 luglio). Rispettare cronologia e date della
   scaletta (cap. 17: giovedì 16 luglio).
-- Luoghi reali (Ginosa, Piazza dell'Orologio, Roccavedere): nessun dettaglio reale inventato; coerenza con le
+- Luoghi reali (Ginosa, Piazza dell'Orologio, Rocca Vetere): nessun dettaglio reale inventato; coerenza con le
   scene già scritte (piazza: cap. 3, 7, 13). Croce, Pozzo Vecchio, Capperaia sono di fantasia.
 - Misure del motore: 1.000-1.600 parole (piano 1.300 ±15%), frase media 9-14, dialogo 25-45%, scene 1-2 da almeno
   500 parole, separatore «* * *».

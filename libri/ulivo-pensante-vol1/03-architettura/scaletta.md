@@ -39,7 +39,8 @@ lunedì 6 (cap. 1-2) · martedì 7 (3) · mercoledì 8 (4-5) · giovedì 9 (6-7)
 sabato 11 (10) · domenica 12 (11-12) · lunedì 13 (13) · martedì 14 (14-15) · mercoledì 15 (16) ·
 giovedì 16 (17-18) · venerdì 17 (19-20) · sabato 18 (21-22) · domenica 19 (23) · lunedì 20 (24) ·
 sabato 25 (25). Intrusione nel laboratorio: domenica 5 luglio, la sera prima dell'arrivo di Pino (verso le undici).
-Notti di scavo: 4, 6, 8, 10, 12 luglio (notti alterne, tra le 2 e le 3).
+Notti di scavo: 4, 6, 8, 10, 12, 14 luglio e oltre, sempre le notti pari (notti alterne, tra le 2:10 e le 2:50;
+decisione dell'autore del 14/10/2026).
 
 ## Pagine enigma a metà capitolo (14/10/2026)
 
@@ -130,7 +131,9 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
   proposta sul seguito: si rivela in un capitolo successivo).
 - Gancio: sono sul fondo, senza corda, e lassù nessuno sa che sono lì.
 - Guardiano (decisione dell'autore del 14/10/2026): è lui che ha tolto la corda; il cap. 10 non si riscrive.
-  Identità e capitolo della rivelazione: DA FISSARE. Non si rivela prima del cap. 16, e nel cap. 16 no.
+  Operaio Terravox, guardiano di notte, di giorno vicedirettore dell'ufficio postale; figlia gravemente malata
+  (motivo: soldi; gesto da disagio, non da crudeltà). Nei cap. 17-20 non si rivela; rivelazione non prima del
+  cap. 21 (capitolo da fissare).
 - Enigma: no.
 
 ### 11 — Tre versioni
@@ -186,6 +189,8 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Rivelazione: è Gianni l'informatore.
 - Gancio: Gianni entra e li trova lì.
 - Enigma 9: oggetto fuori posto → la scheda del nonno.
+- Seme (decisione dell'autore del 14/10/2026): la madre di Checco aveva chiesto tre volte il codice (cap. 14);
+  può comparire come indizio nel cap. 17 o 18, senza risolvere il furto. Occhiali da saldatore di Gianni da qui.
 
 ### 18 — Il perché di Gianni
 - Scopo: smascheramento (seconda metà) senza cattivi da fumetto.
@@ -212,7 +217,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 
 ### 21 — Il lucido
 - Scopo: il talento di Stellina decide; la mappa diventa una scelta.
-- Informazione: Stellina ricalca il disegno su carta lucida e lo appoggia sulla mappa di Lucia: tre punti combaciano (l'Ulivo Pensante, la curva dove si rompe l'Ape, la chiesa rupestre). Il muro cade dentro l'area delle ruspe, nella zona che sulla mappa vecchia si chiama Roccavedere (luogo reale nel territorio di Ginosa, E6; la sua
+- Informazione: Stellina ricalca il disegno su carta lucida e lo appoggia sulla mappa di Lucia: tre punti combaciano (l'Ulivo Pensante, la curva dove si rompe l'Ape, la chiesa rupestre). Il muro cade dentro l'area delle ruspe, nella zona che sulla mappa vecchia si chiama Rocca Vetere (luogo reale nel territorio di Ginosa, E6; la sua
   collocazione dentro il recinto, nella casella D4, è narrativa e va confermata dall'autore).
 - Decisione: andare stanotte, con il nonno e Franco avvisati.
 - Gancio: il furgone di Gianni passa davanti alla casa, diretto al cantiere.
