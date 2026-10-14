@@ -44,6 +44,9 @@ Notti di scavo: 4, 6, 8, 10, 12 luglio (notti alterne, tra le 2 e le 3).
 ## Pagine enigma a metà capitolo (14/10/2026)
 
 - Cap. 4: pagina a fine scena 1 (correzione C1 approvata dall'autore).
+- Cap. 13 e 15: pagina a fine scena 1, stesso schema (proposta del 14/10/2026, da confermare: la scaletta mostra
+  la cantina e il baule aperto, cioè le soluzioni degli enigmi 7 e 8). Cap. 11: pagina in fondo; il capitolo
+  ha due scene (sabato 11, uscita dal fondo; domenica 12, tre versioni).
 - Cap. 8 e 9: pagina a fine scena 1, stesso schema del cap. 4 (decisione D1 dell'autore del 14/10/2026). Nel
   cap. 8 la decisione «stanotte» e il volo del drone, nel cap. 9 la parola CAPPERI e la decisione, vengono
   dopo la pagina, nella scena 2. Cap. 6: pagina in fondo, come da regola.

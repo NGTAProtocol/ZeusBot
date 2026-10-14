@@ -16,7 +16,7 @@
 | — | 12 | Guardia al recinto | azione notturna | 2 | 1300 | 650 | 1236 | -4,9% |
 | — | 13 | L'ombra della torre | indizio + enigma | 1 | 1300 | 1300 | 1153 | -11,3% |
 | — | 14 | Il telefono | prova | 1 | 1300 | 1300 | 1187 | -8,7% |
-| — | 15 | Il lucchetto di Rosa | seme finale + enigma | 1 | 1300 | 1300 |  |  |
+| — | 15 | Il lucchetto di Rosa | seme finale + enigma | 1 | 1300 | 1300 | 1217 | -6,4% |
 | — | 16 | Il codice | crisi | 1 | 1300 | 1300 |  |  |
 | — | 17 | La bottega | smascheramento + enigma | 1 | 1300 | 1300 |  |  |
 | — | 18 | Il perché di Gianni | smascheramento | 1 | 1300 | 1300 |  |  |

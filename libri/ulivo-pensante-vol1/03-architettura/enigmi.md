@@ -163,6 +163,11 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
 - Domanda: «Sul baule: "Il mio anno comincia con la prima che fiorisce." Quattro piante dipinte: cappero,
   asfodelo, elicriso, rosmarino. Quali quattro cifre aprono il lucchetto?»
 - Indizi già comparsi: cap. 8 e 9, il calendario (mese della prima fioritura e numero di colonna).
+- Nel cap. 15 (scritto il 14/10/2026): pagina a fine scena 1 (proposta, come il cap. 13). Prima della pagina:
+  la frase in stampatello sul coperchio, le quattro piante, Tonio («quattro piante e quattro rotelle»), Pino
+  («la nonna numerava le piante in colonna»), Lucia che gira a caso. La pagina riporta il calendario intero e
+  ricorda la numerazione in colonna. Dopo la pagina Tonio legge l'ordine e Pino apre. Il biglietto MICHELE
+  (seme dell'enigma 10) è nella scena 1: Pino trova le iniziali, il nonno conferma.
 - Soluzione: in ordine di prima fioritura: rosmarino (gennaio, col. 5), asfodelo (marzo, col. 2), elicriso
   (maggio, col. 4), cappero (giugno, col. 1) → 5241.
 - Controllo di equità: il calendario è già comparso due volte; la regola è scritta sul baule. Sì.
