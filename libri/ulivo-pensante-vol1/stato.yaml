@@ -26,8 +26,8 @@ documenti_approvati:
       sha256_precedente: 9c5115b7bbb0607d8078671e8e303e24480fbb9c4c0a067ae8b0eb9679ce3a41
       commit_precedente: 422702a
   02-bibbia/bibbia.md:
-    sha256: fed94f524526cff264043cd3e48371a632bac0208d07bc786d370ba46e7c0666
-    commit: 5e08933
+    sha256: 3035308c2630ad73c9ceb038c6bf15454875a0e8cc99230c2b80179a46bee4c5
+    commit: 5ed7d63
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -48,12 +48,17 @@ documenti_approvati:
       motivo: decisioni D1-D9 dell'autore del 14/10/2026 dopo la lettura dei capitoli 6-10
       sha256_precedente: 94071160f97ecb35752d4bc1127d657fa31c5fcbc65990fdbd0cbdc1b624a26d
       commit_precedente: '3778095'
+    - data: '2026-10-14'
+      motivo: aggiornamento dei file derivati richiesto dall'autore il 14/10/2026 dopo i capitoli 11-15; voci nuove segnate
+        come proposta
+      sha256_precedente: fed94f524526cff264043cd3e48371a632bac0208d07bc786d370ba46e7c0666
+      commit_precedente: 5e08933
   cronologia.yaml:
     sha256: 51f3977a4de599f2a7b4c3a4e8718b4e0e6a53f5ef89f5d97a63aa442cb935f5
     commit: f85c4db
   03-architettura/manuale-di-stile.md:
-    sha256: f1a1869cd8147896e8ab46906b975363f9c8ed4de25005b446e29493d6e60bb8
-    commit: 5e08933
+    sha256: e88a636eeccc6e624f867cc9b5a7e9da120c43963b867dab850530da07563ab8
+    commit: 5ed7d63
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -74,9 +79,14 @@ documenti_approvati:
       motivo: decisioni D1-D9 dell'autore del 14/10/2026 dopo la lettura dei capitoli 6-10
       sha256_precedente: 7ca59ce954b6a254a39d5aede3528b8f9f0e7cbf30e343b59adeffbf5e011898
       commit_precedente: 2d77a00
+    - data: '2026-10-14'
+      motivo: aggiornamento dei file derivati richiesto dall'autore il 14/10/2026 dopo i capitoli 11-15; voci nuove segnate
+        come proposta
+      sha256_precedente: f1a1869cd8147896e8ab46906b975363f9c8ed4de25005b446e29493d6e60bb8
+      commit_precedente: 5e08933
   03-architettura/scaletta.md:
-    sha256: 53d497ece3478862bad843085f9d7f07906dba9a77943e8a836c0a63c2d0f5b5
-    commit: 5e08933
+    sha256: 71271f22628f45201b22369f4e0064eff00f9b7078413553ddd2fe83dd714c30
+    commit: 5ed7d63
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -97,6 +107,11 @@ documenti_approvati:
       motivo: decisioni D1-D9 dell'autore del 14/10/2026 dopo la lettura dei capitoli 6-10
       sha256_precedente: f8444a5059175e4d517a2f7a5b8e422fa73d21cdada2de7c826f4fef109a0700
       commit_precedente: '3778095'
+    - data: '2026-10-14'
+      motivo: aggiornamento dei file derivati richiesto dall'autore il 14/10/2026 dopo i capitoli 11-15; voci nuove segnate
+        come proposta
+      sha256_precedente: 53d497ece3478862bad843085f9d7f07906dba9a77943e8a836c0a63c2d0f5b5
+      commit_precedente: 5e08933
   03-architettura/piano-parole.md:
     sha256: 40cd56bb2f3e723f5fdaf016c3a8cecf519e26aab5e883a87652a0f60798a9fc
     commit: 2d77a00
@@ -129,7 +144,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T08:20:34Z'
+aggiornato: '2026-10-14T08:20:58Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md

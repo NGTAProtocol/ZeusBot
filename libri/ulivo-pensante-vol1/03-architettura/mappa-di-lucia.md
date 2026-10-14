@@ -53,6 +53,17 @@ crinale nord, riga 3 = fondo e parete sud, riga 4 = ciglio sud (il lato del nonn
 - Cancelletto del recinto (cap. 6): lato est di D4, verso l'Ulivo Pensante (E4). Il muro dell'enigma 11 resta
   dentro D4: il cancelletto non cambia la casella.
 
+## Luoghi visitati nei capitoli 11-15 (14/10/2026)
+
+- Cap. 11: uscita dal fondo col sentiero lungo (C3 → D3 → risalita in E3, campi dalla parte del paese, verso
+  l'una e mezza); terrazza di Franco (A2), dalla strada; bar sotto i portici di Piazza dell'Orologio (F3).
+  Carmela abita «dall'altra parte, sopra la piazza» e vede la lampada rossa di Franco dal balcone.
+- Cap. 12: buca del cane sotto la rete, sul lato degli ulivi (bordo D4/E4, vicino all'Ulivo Pensante); camion e
+  trivella dal cancello grande (strada bianca) fino al ciglio dentro D4; l'Ape aspetta sulla strada di terra
+  rossa; Stellina di vedetta dalla finestra della casa delle sorelle (D5).
+- Cap. 13: Piazza dell'Orologio (F3): porta A a nord della torre = cantina della famiglia di Rosa (proposta).
+- Cap. 14-15: casa del nonno e laboratorio (E5).
+
 ## Verifica degli enigmi con la mappa
 
 - **Enigma 2 (cap. 4).** «Parti dalla Croce (B2). Va' verso il sole che sorge (est) fino al Pozzo Vecchio
