@@ -15,9 +15,9 @@
 | 6 | 2026-07-09 | Tracce di terra rossa; l'Ape si rompe; la banda crede a un furgone Terravox; le tracce portano in paese | D |
 | 7 | 2026-07-09 | Il Dottore in piazza; voto lunedì 20 luglio; sa dei quaderni | R |
 | 8 | 2026-07-10 | Il grafico: scavano a notti alterne; stanotte tocca; il drone vede luci | X |
-| 9 | 2026-07-10 | Il calendario delle fioriture decifra «CAPPERI» | X |
-| 10 | 2026-07-11 | Discesa in gravina; la chiesa rupestre; la piastrella di mezzogiorno; la corda sparisce | P |
-| 11 | 2026-07-12 | Tre versioni: Franco scagionato, Gianni mente; Rosa temeva i tombaroli | D |
+| 9 | 2026-07-10 | Il calendario delle fioriture decifra «CAPPERI» (all'alba di sabato 11); si scende oggi stesso | X |
+| 10 | 2026-07-11 | Discesa in gravina; la chiesa rupestre; la piastrella di mezzogiorno; la corda sparisce; lassù nessuno sa che sono lì | P |
+| 11 | 2026-07-12 | (sabato 11: uscita dal fondo col sentiero lungo) Tre versioni: Franco scagionato, Gianni mente; Rosa temeva i tombaroli | D |
 | 12 | 2026-07-12 | Notte di guardia al recinto; foto delle trivelle; il telefono perso dentro | P |
 | 13 | 2026-07-13 | L'ombra della torre a mezzogiorno; la cantina di Rosa; la cassetta vuota | D |
 | 14 | 2026-07-14 | L'operaio restituisce il telefono; nelle foto c'è il furgone di Gianni | R |
@@ -44,8 +44,9 @@ Notti di scavo: 4, 6, 8, 10, 12 luglio (notti alterne, tra le 2 e le 3).
 ## Pagine enigma a metà capitolo (14/10/2026)
 
 - Cap. 4: pagina a fine scena 1 (correzione C1 approvata dall'autore).
-- Cap. 8 e 9: pagina a fine scena 1, stesso schema del cap. 4, perché la decisione e il gancio della scaletta
-  mostrano la soluzione (proposta, da confermare alla lettura). Cap. 6: pagina in fondo, come da regola.
+- Cap. 8 e 9: pagina a fine scena 1, stesso schema del cap. 4 (decisione D1 dell'autore del 14/10/2026). Nel
+  cap. 8 la decisione «stanotte» e il volo del drone, nel cap. 9 la parola CAPPERI e la decisione, vengono
+  dopo la pagina, nella scena 2. Cap. 6: pagina in fondo, come da regola.
 
 ## Dettaglio dei capitoli
 
@@ -105,26 +106,32 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 ### 8 — Il grafico della notte
 - Scopo: deduzione con i dati; Pino e Tonio lavorano insieme.
 - Informazione: le scosse cadono a notti alterne; Tonio nota sul muro del laboratorio il calendario delle fioriture di Rosa (mesi in riga, piante numerate in colonna).
-- Decisione: andare a vedere stanotte (venerdì 10), col drone del nonno.
-- Gancio: nel video del drone, luci nella zona vietata.
+- Pagina enigma: a fine scena 1, prima della decisione (D1, 14/10/2026).
+- Decisione (scena 2, dopo la pagina): andare a vedere stanotte (venerdì 10), col drone del nonno.
+- Gancio (scena 2): nel video del drone, luci nella zona vietata.
 - Enigma 4: grafico dei sensori → prossima notte di scavo e ora.
 
 ### 9 — Il calendario delle fioriture
 - Scopo: secondo cifrario; talento di Tonio.
 - Informazione: il secondo quaderno ha coppie di numeri; la chiave è il calendario visto nel cap. 8.
-- Decisione: scendere in gravina da soli, domani, senza dirlo al nonno.
-- Gancio: con «CAPPERI» la frase intera: «la stanza di pietra sotto i capperi».
+- Pagina enigma: a fine scena 1, prima della parola (D1, 14/10/2026).
+- Gancio (scena 2, dopo la pagina): con «CAPPERI» la frase intera: «la stanza di pietra sotto i capperi».
+- Decisione (scena 2): è l'alba di sabato 11; scendere in gravina oggi stesso, da soli, senza dirlo al nonno (D4).
 - Enigma 5: griglia mesi × piante → «CAPPERI».
 
 ### 10 — Sotto i capperi
 - Scopo: la gravina come personaggio e pericolo fisico; la paura di Tonio.
 - Informazione: una piccola chiesa rupestre con il segno di Rosa inciso; dentro, una piastrella: «A mezzogiorno, dove la torre indica».
-- Pericolo: la corda per risalire sparisce; un motore in alto.
-- Gancio: qualcuno li sta seguendo.
+- Pericolo: la corda, legata a un picchetto del recinto, sparisce; un motore in alto, nessuno in vista. La
+  toglie un guardiano della Terravox che pattuglia il ciglio, come cosa sua, senza sapere dei ragazzi (D5,
+  proposta sul seguito: si rivela in un capitolo successivo).
+- Gancio: sono sul fondo, senza corda, e lassù nessuno sa che sono lì.
 - Enigma: no.
 
 ### 11 — Tre versioni
 - Scopo: chiudere la prima falsa pista; Franco diventa alleato.
+- Apertura (sabato 11): uscita dal fondo col sentiero lungo dei pastori (cap. 6), che passa dalla chiesa
+  rupestre (C3) e risale dalla parte del paese; costa ore e fatica; Tonio fa da contrappeso (D6).
 - Informazione: Franco, Gianni e Carmela del comune raccontano domenica 5 luglio, la sera prima dell'arrivo di Pino. Franco ha un testimone. Gianni dice di essere stato a letto con la febbre per due giorni: ma lunedì mattina Pino l'ha visto in piazza.
 - Domanda: Franco dice che Rosa non temeva le aziende ma i tombaroli. Perché?
 - Gancio: Checco ride: «Gianni ha la febbre ogni volta che c'è da lavorare». Pino lascia correre: errore.

@@ -26,7 +26,21 @@ La banda aspettava sul muretto, dietro la casa delle sorelle. Lucia aveva già l
 
 Nessuno fece altre domande: Lucia scese dal muretto e partì verso l'Ulivo Pensante, e gli altri le andarono dietro.
 
+Tra gli ulivi c'erano le tracce del trattorino del nonno, passato all'alba per i sensori. Tonio ci camminò sopra apposta, un piede per parte, con l'aria di chi controlla un lavoro fatto bene.
+
+— Quattro ruote e due strisce sole, — disse. — Quando va dritto, le ruote di dietro passano sulle strisce di quelle davanti.
+
+— E allora? — disse Lucia.
+
+— E allora niente. A me le tracce piacciono.
+
 Alla luce del giorno la rete della Terravox era ancora più brutta. Correva tra gli ulivi del nonno e il ciglio della gravina, e dall'altra parte non si vedeva nessuno: solo il container, i tubi e una pala abbandonata. Le cicale riempivano l'aria, e il sole picchiava già sulla nuca.
+
+Lucia si fermò un momento sul ciglio e indicò il fondo, giù, dove il verde seguiva il torrente.
+
+— Laggiù passa il sentiero lungo dei pastori, — disse. — Segue il fondo fin sotto la Capperaia, dove ci sono le grotte vecchie, e risale dalla parte del paese. Mezza giornata di cammino.
+
+— D'estate non lo fa più nessuno, — disse Tonio. — Perché d'estate laggiù si cuoce.
 
 Camminarono lungo la rete, dal lato degli ulivi. Dopo un centinaio di passi trovarono un cancelletto che Pino non aveva mai notato, chiuso con una catena e un lucchetto nuovo, ancora lucido.
 
@@ -130,7 +144,7 @@ Lucia lo raggiunse, guardò per terra e lungo la strada. La strada bianca andava
 
 — Avrà sbagliato strada, — disse Lucia.
 
-— Alle due di notte, con la strada vuota? — Pino scosse la testa. — I furgoni girano verso il cancello grande. Questo è andato dritto.
+— Alle due di notte, con la strada vuota? — Pino scosse la testa. — I furgoni girano verso il cancello grande. La V è andata dritta.
 
 Tonio si era messo accanto a loro e guardava la V, la torre e il recinto alle loro spalle.
 
@@ -154,6 +168,6 @@ Tre veicoli possono essere passati di lì:
 - B: un'Ape, con tre ruote, una sola davanti, in mezzo, e due dietro;
 - C: un veicolo con quattro ruote strette, e una gomma con una toppa a forma di V.
 
-Ricorda: quando un veicolo va dritto, le ruote di dietro passano sulle strisce di quelle davanti.
+Ricorda quello che Tonio ha notato sulle tracce del trattorino del nonno: quando un veicolo va dritto, le ruote di dietro passano sulle strisce di quelle davanti.
 
 Quale veicolo ha lasciato l'impronta? A, B o C?

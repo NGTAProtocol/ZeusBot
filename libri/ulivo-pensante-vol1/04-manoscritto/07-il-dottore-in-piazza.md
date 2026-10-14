@@ -6,6 +6,14 @@ Alle sette di sera Piazza dell'Orologio era piena come Pino non l'aveva mai vist
 
 — Ci sono pure quelli che non escono mai, — disse Checco, che si era seduto sul gradino della fontana con Ciuffo tra le ginocchia. — Vedi la signora col ventaglio? Non scendeva in piazza dal matrimonio di sua nipote.
 
+Poi si girò verso Pino e chiese, a voce alta come sempre: — E i quaderni della nonna? Li avete lasciati nel laboratorio, con l'allarme mio?
+
+— Sì, nel laboratorio, — disse Pino. — Ma non gridarlo.
+
+— Io non grido, io parlo chiaro.
+
+Dietro la fontana, in quel momento, passò un uomo con una giacca grigia sul braccio, diretto verso il palco. Si fermò un attimo a guardare lo striscione e andò avanti. Pino non si girò: stava guardando Ciuffo, che cercava di mangiarsi un tovagliolo di carta.
+
 Il nonno si era messo in piedi in fondo, con le braccia incrociate e il cappello di paglia calato sulla fronte. La banda gli stava intorno: Lucia sul muretto per vedere meglio, Tonio con le mani in tasca, Stellina col quaderno a spirale già aperto su una pagina bianca.
 
 Pino guardava le facce, una dopo l'altra. Da qualche parte, in quella piazza, poteva esserci chi alle due di notte era uscito dal cancelletto del recinto e aveva preso la strada del paese.

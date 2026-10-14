@@ -89,3 +89,10 @@ Regola: i difetti GENERICI del motore non si correggono durante il lavoro sul li
     cap. 9). Lasciate: 2 AVVISI, nessun KO (vedi punto 12).
 18. **`zb riapprova` con l'output in una pipe.** Con `| head -1` lo script chiude con BrokenPipeError dopo aver
     già scritto stato.yaml (registrazione riuscita, traccia d'errore a schermo). Innocuo, ma confonde.
+
+## Aggiunte del 14/10/2026 (decisioni D1-D9)
+
+19. **`zb esito` riscrive LEGGIMI.md.** La riga «Ultimo capitolo approvato» viene rigenerata a ogni esito, e la
+    nota aggiunta a mano («scritti fino al 10…») sparisce. Rimessa a mano dopo gli esiti.
+20. **Commit unico impossibile con `zb riapprova`.** Il comando rifiuta un documento con modifiche non salvate:
+    servono un commit con le modifiche e un secondo commit con stato.yaml aggiornato.

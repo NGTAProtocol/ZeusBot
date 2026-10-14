@@ -30,9 +30,7 @@ Il sentiero partiva da una spaccatura del ciglio e scendeva a zig zag, con gradi
 
 — Tonio, cammina e non pensarci.
 
-Più scendevano, più l'aria cambiava. In alto sapeva di timo e di polvere; giù, tra le pareti, diventava fresca e umida e sapeva di terra e di foglie marce. Le voci rimbalzavano sulla roccia e tornavano indietro un poco più deboli.
-
-A metà discesa il sentiero finiva all'improvviso, su uno scalino di roccia alto più di due metri. Sotto c'era un ripiano di pietra, e da lì il sentiero riprendeva verso il fondo.
+Poco sotto il ciglio, proprio sotto l'angolo del recinto della Terravox, il sentiero finiva all'improvviso, su uno scalino di roccia alto più di due metri. Sotto c'era un ripiano di pietra, e da lì il sentiero riprendeva verso il fondo.
 
 — Una volta qui c'era una scaletta di legno, — disse Lucia. — L'ha portata via l'acqua, due inverni fa.
 
@@ -42,11 +40,13 @@ A metà discesa il sentiero finiva all'improvviso, su uno scalino di roccia alto
 
 — No, — disse Tonio, e la prese per la maglietta, come Pino aveva fatto sul crinale. — Si scende sì, ma col cervello.
 
-Tonio si tolse il rotolo dalla spalla senza dire niente. Trovò un anello di ferro arrugginito piantato nella roccia, vecchissimo, ci passò la corda due volte e fece un nodo complicato, tirandolo con tutto il suo peso per provarlo.
+Tonio si tolse il rotolo dalla spalla senza dire niente. Lì vicino, dove la rete del recinto arrivava fino al bordo, c'era un picchetto di ferro nuovo piantato nella roccia, con un nastro bianco e rosso legato in cima. Tonio ci passò la corda due volte e fece un nodo complicato, tirandolo con tutto il suo peso per provarlo.
 
 — È il nodo dei sacchi di farina, — disse. — Mio padre dice che non si è mai sciolto da solo.
 
 Scesero uno alla volta, con le mani sulla corda e i piedi contro la roccia. Pino arrivò sul ripiano con i palmi che bruciavano e il cuore in gola, ma arrivò. Tonio scese per ultimo, lentamente, senza guardare in giù.
+
+Più scendevano, più l'aria cambiava. In alto sapeva di timo e di polvere; giù, tra le pareti, diventava fresca e umida e sapeva di terra e di foglie marce. Le voci rimbalzavano sulla roccia e tornavano indietro un poco più deboli.
 
 L'ultimo tratto fu facile. Il fondo della gravina era un letto di sassi bianchi, con un filo d'acqua che scorreva tra canne e oleandri. In alto, molto in alto, si vedeva una striscia di cielo azzurro, e un falco che girava.
 
@@ -100,7 +100,7 @@ Tornarono indietro sul letto di sassi, risalirono l'ultimo tratto di sentiero e 
 
 La corda non c'era più.
 
-Lucia guardò in su, verso l'anello di ferro. Era vuoto. Niente corda, niente nodo, niente di niente: solo la roccia liscia, alta più di due metri, e sopra il sentiero che continuava verso il ciglio.
+Lucia guardò in su, verso il picchetto col nastro. Era vuoto. Niente corda, niente nodo, niente di niente: solo la roccia liscia, alta più di due metri, e sopra il sentiero che continuava verso il ciglio.
 
 — Il nodo dei sacchi non si scioglie da solo, — disse Tonio piano.
 
@@ -114,8 +114,8 @@ Lucia guardò in su, verso l'anello di ferro. Era vuoto. Niente corda, niente no
 
 — Sono il più forte, ma non volo.
 
-In quel momento, dall'alto, dal ciglio della gravina, arrivò un rumore di motore. Un motore acceso, al minimo, che girava e girava. Poi qualcuno diede gas, e il rumore cominciò ad allontanarsi lungo il ciglio, verso il paese, finché non lo coprirono le cicale.
+In quel momento, dall'alto, dal ciglio della gravina, arrivò un rumore di motore. Un motore acceso, al minimo, che girava e girava. Poi qualcuno diede gas, e il rumore cominciò ad allontanarsi lungo il ciglio, seguendo la rete del recinto, finché non lo coprirono le cicale. Lassù non si vedeva nessuno: solo il bordo bianco della roccia e il cielo.
 
 Nessuno parlò. Stellina guardava il bordo della gravina, lassù, contro il cielo bianco, con la matita stretta in pugno.
 
-Erano sul fondo, senza corda, con il sole che saliva. E qualcuno sapeva esattamente dove si trovavano.
+Erano sul fondo, senza corda, con il sole che saliva. E lassù nessuno sapeva che erano lì.

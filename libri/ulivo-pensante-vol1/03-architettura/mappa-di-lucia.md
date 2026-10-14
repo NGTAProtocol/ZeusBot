@@ -46,7 +46,12 @@ crinale nord, riga 3 = fondo e parete sud, riga 4 = ciglio sud (il lato del nonn
   recinto, la V va dritta verso il paese (F1-F3).
 - Cap. 7: Piazza dell'Orologio (F3).
 - Cap. 8: drone dal muretto vicino all'Ulivo Pensante (E4), sopra il confine del recinto (D4).
-- Cap. 10: discesa dal ciglio sud (C4) al fondo (C3); chiesa rupestre alla base della Capperaia (C3, sotto C2).
+- Cap. 10: discesa dal ciglio sud (C4), con lo scalino di due metri proprio sotto l'angolo del recinto (bordo
+  C4/D4, picchetto del recinto), fino al fondo (C3); chiesa rupestre alla base della Capperaia (C3, sotto C2).
+- Sentiero lungo dei pastori (cap. 6, uscita nel cap. 11): segue il fondo (righe 3) da ovest a est, passa
+  dalla chiesa rupestre (C3) e da D3, e risale dalla parte del paese (E3, campi, verso F). Mezza giornata.
+- Cancelletto del recinto (cap. 6): lato est di D4, verso l'Ulivo Pensante (E4). Il muro dell'enigma 11 resta
+  dentro D4: il cancelletto non cambia la casella.
 
 ## Verifica degli enigmi con la mappa
 

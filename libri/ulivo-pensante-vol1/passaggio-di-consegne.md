@@ -76,6 +76,17 @@ Totale: 13.031 / 32.500 parole (metodo unico del motore).
 - Cap. 6: primo `zb esito` KO (frase media 8,9); una correzione (frasi unite), poi OK. Allineata l'ora delle
   scosse nel cap. 6 (due e dieci) al grafico del cap. 8.
 
+## Decisioni D1-D9 dell'autore (14/10/2026, dopo la lettura dei cap. 6-10) — applicate
+- D1 pagine dei cap. 8 e 9 a fine scena 1 (confermate); D2 regola delle ruote piantata nel cap. 6 (trattorino);
+  D3 Checco grida in piazza che i quaderni stanno nel laboratorio, mentre passa un uomo con la giacca grigia
+  (spiegazione innocua per il Dottore); D4 «oggi stesso» (alba di sabato 11); D5 corda legata a un picchetto
+  del recinto, tolta da un guardiano Terravox che pattuglia il ciglio (si rivela più avanti); D6 sentiero
+  lungo dei pastori piantato nel cap. 6 (Lucia; Tonio: «d'estate laggiù si cuoce»); D7 Carmela, chiesa
+  rupestre, cancelletto approvati; D8 autore «F.R. Faraone», nota dell'autore sui nomi di contrada.
+- Mesi di fioritura: da verificare su una fonte botanica prima della stampa (soprattutto cappero ed
+  elicriso, scene ai primi di luglio). Nel cap. 8 Tonio dice «l'asfodelo invece in primavera, come da noi in
+  campagna»: è un'affermazione, lasciata in attesa della decisione dell'autore.
+
 ## Punti aperti / da confermare con l'autore
 1. Lettura dei capitoli 4-10.
 2. Pagine enigma dei cap. 8 e 9 a fine scena 1 (come il cap. 4), perché la scaletta mette decisione e gancio

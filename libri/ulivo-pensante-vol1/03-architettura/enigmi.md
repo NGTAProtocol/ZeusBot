@@ -93,6 +93,11 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
   non ricorda dove l'ha già vista. Il testo non dice quante ruote né che è un furgone: la banda dice solo
   «della Terravox». La pagina dà l'impronta (due strisce, larghe un palmo, V a destra), le tre opzioni e la
   regola delle ruote di dietro sulle strisce di quelle davanti.
+- D2 (14/10/2026): la regola delle ruote è piantata in scena nel cap. 6, prima dell'impronta: Tonio sulle
+  tracce del trattorino del nonno («quattro ruote e due strisce sole: quando va dritto, le ruote di dietro
+  passano sulle strisce di quelle davanti»). La pagina la richiama. Nessun indizio da solo dà la risposta:
+  due strisce = A o C; la larghezza (un palmo, non doppia) toglie A; la V toglie ogni dubbio; tre strisce
+  sarebbero B. Nel testo l'impronta resta «della Terravox», senza «furgone» né numero di ruote.
 - Controllo di equità: la toppa a V è nel cap. 1, vista da Pino. Il lettore attento può collegarla a Gianni
   prima della banda, che segue la pista dei furgoni Terravox: voluto. Sì.
 
@@ -102,8 +107,8 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
   Scosse: notte del 4, del 6, dell'8, tra le 2:10 e le 2:50; nessuna scossa nelle notti 3, 5, 7, 9.
 - Indizi già comparsi: cap. 5, Michele spiega come si legge il grafico e dice «non tutte le notti».
 - Soluzione: la notte di venerdì 10, poco prima delle 2.
-- Nel cap. 8 (scritto il 14/10/2026): la pagina sta a fine scena 1, come nel cap. 4 (proposta, da confermare
-  con l'autore): prima della pagina il testo mostra il grafico notte per notte e il metodo («leggilo come un
+- Nel cap. 8 (scritto il 14/10/2026): la pagina sta a fine scena 1, come nel cap. 4 (confermata dall'autore,
+  D1): prima della pagina il testo mostra il grafico notte per notte e il metodo («leggilo come un
   calendario»), non la regola. Dopo la pagina: «stanotte, prima delle due», il permesso del nonno, il drone,
   le luci all'una e cinquantasette. La pagina elenca le notti dal 3 al 9 (la notte del 10 non è ancora nel
   grafico) e ricorda che il 10 è venerdì.
@@ -120,7 +125,7 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
 - Nel cap. 9 (scritto il 14/10/2026): la frase sta nel quinto quaderno; «LA STANZA DI PIETRA SOTTO I» è in
   piante (Pino), l'ultima parola in coppie di numeri, unica in tutti i quaderni. Tonio ricava la regola
   (mese-colonna, iniziale) prima della pagina; la decifrazione e la parola vengono dopo. Pagina a fine scena
-  1, come nei cap. 4 e 8 (proposta, da confermare). Il calendario è riprodotto in elenco (Kindle).
+  1, come nei cap. 4 e 8 (confermata, D1). Il calendario è riprodotto in elenco (Kindle).
 - Controllo di equità: il calendario è riprodotto nella pagina enigma del cap. 9 uguale al cap. 8; ogni
   coppia cade su una casella colorata. Sì.
 
