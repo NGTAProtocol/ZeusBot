@@ -35,9 +35,9 @@ DECISIONI PRESE (non rimetterle in discussione; registro-fatti D1-D6)
   la figlia («la piccola») solo per accenni; nel cap. 25 è alla festa con lei.
 - Codice dell'allarme: la madre di Checco ha trovato nella borsa un foglietto di Checco e l'ha letto ad alta voce
   in bottega a Gianni (radio non ancora pronta); lo racconta Gianni nel cap. 24. Nessun filo aperto nel cap. 25.
-- Rocca Vetere: non compare in nessun capitolo e non è più nella nota dell'autore (D7). Nuova nota: «Ginosa e la
-  Piazza dell'Orologio sono luoghi reali; i fatti che il romanzo vi ambienta sono invenzione. I nomi di contrada
-  la Croce, il Pozzo Vecchio e la Capperaia sono di fantasia.» Si reinserisce solo dopo verifica su carta.
+- Roccavetere (una parola, grafia delle fonti; NON «Rocca Vetere»): contrada reale di Ginosa con una villa romana
+  scavata in parte nel 2004 (fonti riportate dall'autore, da verificare: registro-verifiche, punto b). Non è usata
+  nel testo né nella nota dell'autore (D7): la trama la contraddirebbe. Possibile ambientazione per il volume 2.
 - «Sviluppo Territoriale Sostenibile S.r.l.» solo nel cap. 25 (dietro il biglietto: «Alla prossima estate.»).
 - Archeologia: muro «antico, di grosse pietre squadrate»; solo il funzionario: «Probabilmente di età greca. Ma
   va verificato.» Niente Sparta, niente date. Sette quaderni (più l'ottavo, bianco, regalato a Pino nel cap. 25).
@@ -46,7 +46,7 @@ DECISIONI PRESE (non rimetterle in discussione; registro-fatti D1-D6)
 
 DA VERIFICARE (00-progetto/registro-verifiche.md)
 - (a) Piazza dell'Orologio: fontana, portici, bar, tre porte, luci della festa sono invenzione.
-- (b) Rocca Vetere: non nominata; verifica su carta a cura dell'autore prima di reinserirla.
+- (b) Roccavetere: non nominata; verifica alle fonti a cura dell'autore prima di reinserirla.
 - (c) Botanica: esito del 14/10/2026 invariato (iris non verificato).
 
 AVVIO (in quest'ordine)
@@ -58,13 +58,15 @@ AVVIO (in quest'ordine)
    libri/ulivo-pensante-vol1 (atteso: «Fase: chiusura; passo: controlli finali; gate in attesa: nessuno»).
 5. Leggere questo file, scaletta (cap. 21-25), registro-fatti (N21-N35, D2-D6), registro-verifiche, cap. 21-25.
 
-PRIMA AZIONE NELLA NUOVA SESSIONE (prossimi passi, in quest'ordine, su istruzione dell'autore)
+PRIMA AZIONE NELLA NUOVA SESSIONE (romanzo completo e corretto; prossimi passi, in quest'ordine, su istruzione
+dell'autore)
 1. Lettura dell'autore dei cap. 16-25 e sue correzioni.
 2. Correzione ortografica esterna (zb ortografia qui non gira: hunspell non installato, LanguageTool non configurato).
 3. Pagina delle soluzioni dei 12 enigmi in fondo al libro (enigmi.md, colonna «Soluzione»).
 4. Mappa della gravina in fondo al libro (mappa-di-lucia.md; versione Kindle in testo).
-5. Chiusura con i passi zb (continuita, ortografia, compila, impagina, pdf, pacchetto, kdp, pronto), solo su
-   istruzione dell'autore. Rocca Vetere resta fuori finché non è verificata su carta.
+5. Verifica di Roccavetere alle fonti (registro-verifiche, punto b).
+6. Chiusura con i passi zb (continuita, ortografia, compila, impagina, pdf, pacchetto, kdp, pronto), solo su
+   istruzione dell'autore.
 
 FLUSSO DEL MOTORE E SALVATAGGIO
 - Correzioni a capitoli già scritti: modificare, commit, zb correggi libri/ulivo-pensante-vol1 "N: motivo"

@@ -8,8 +8,7 @@ Fatti e dettagli da controllare su fonte prima della stampa. Si aggiunge in fond
   la fontana, i portici, il bar e le tre porte intorno alla torre (cap. 3, 7, 13). L'enigma 7 dipende
   dall'orientamento delle porte rispetto alla torre (nord / est / sud): da verificare sulla piazza reale o da
   rendere esplicitamente narrativo.
-- (b) **DA CONTROLLARE su fonte.** Rocca Vetere: grafia e dettagli (posizione rispetto alla gravina e al paese,
-  presenza sulla carta delle contrade, «nome vecchio» della zona) ancora da verificare su carta.
+- (b) **DA VERIFICARE alla fonte (aggiornato il 14/10/2026).** Roccavetere (grafia delle fonti riportate dall'autore: una parola; NON «Rocca Vetere») è una contrada reale di Ginosa, con una villa romana scavata in parte nel 2004 (fonti riportate dall'autore, DA VERIFICARE alla fonte: G. Sassi, "Ginosa Genusia Romana", Rete museale Conca delle Gravine; G. Sassi – T. Schojer, "La villa romana di contrada Roccavetere", Matera 2006; Thiasos 2025; BURP Puglia 19/03/2026). Nel romanzo il nome NON è usato, nel testo né nella nota dell'autore: la trama (muro antico mai segnalato, sopralluogo mai fatto) contraddirebbe una zona realmente scavata. Reinserirlo solo dopo verifica dell'autore sulle fonti. Possibile ambientazione reale per il volume 2.
 - (c) **DA CONTROLLARE su fonte botanica.** Elenco unico (unificato il 14/10/2026; negli altri file solo un
   rimando a questo punto). Mesi del calendario di Rosa (cap. 8, 9, 15; enigmi 5 e 8):
   - cappero: 6, 7, 8 (scene ai primi di luglio);
@@ -70,3 +69,10 @@ Fatti e dettagli da controllare su fonte prima della stampa. Si aggiunge in fond
   dell'Orologio sono luoghi reali; i fatti che il romanzo vi ambienta sono invenzione. I nomi di contrada la Croce,
   il Pozzo Vecchio e la Capperaia sono di fantasia.» Si reinserisce, nel testo o nella nota, **solo dopo la
   verifica su carta a cura dell'autore**.
+
+## 14/10/2026 — Roccavetere, grafia e fonti
+
+- Voce (b) aggiornata con le informazioni riportate dall'autore: la grafia corretta delle fonti è «Roccavetere»
+  (una parola); «Rocca Vetere» nelle voci precedenti di questo registro è la grafia sbagliata, lasciata come
+  registro dei fatti. Il nome resta fuori dai capitoli e dalla nota dell'autore; possibile ambientazione reale per
+  il volume 2, dopo verifica sulle fonti.

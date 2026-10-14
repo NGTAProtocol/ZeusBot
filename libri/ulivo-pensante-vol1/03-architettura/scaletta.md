@@ -224,13 +224,13 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 ### 21 — Il lucido
 - Scopo: il talento di Stellina decide; la mappa diventa una scelta.
 - Informazione: Stellina ricalca il disegno su carta lucida e lo appoggia sulla mappa di Lucia: tre punti combaciano (l'Ulivo Pensante, la curva dove si rompe l'Ape, la chiesa rupestre). Il muro cade dentro l'area delle ruspe, nella casella D4 («il muro», «la zona del muro»).
-- Rocca Vetere (decisione dell'autore del 14/10/2026, lotto C): il nome non compare nel testo dei capitoli 21-25 e
+- Roccavetere (grafia delle fonti; non «Rocca Vetere»; decisione dell'autore del 14/10/2026, lotto C): il nome non compare nel testo dei capitoli 21-25 e
   di nessun luogo reale si dà un dettaglio; la nota dell'autore va rivista alla fine (registro-verifiche, punto b).
 - Pagina enigma: a fine scena 1, perché la soluzione (D4) si vede nel capitolo (manuale § 14).
 - Decisione: andare stanotte, con il nonno e Franco avvisati.
 - Gancio: il furgone di Gianni passa davanti alla casa, diretto al cantiere.
 - Enigma 11: sovrapposizione → casella D4.
-- Stato: scritto il 14/10/2026 (1.307 parole, zb esito OK al primo tentativo); pagina enigma a fine scena 1; il nome Rocca Vetere non compare.
+- Stato: scritto il 14/10/2026 (1.307 parole, zb esito OK al primo tentativo); pagina enigma a fine scena 1; il nome Roccavetere non compare.
 
 ### 22 — La notte delle ruspe
 - Scopo: climax; ogni ragazzo usa il suo talento; la gravina decide.

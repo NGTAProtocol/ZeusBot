@@ -50,7 +50,7 @@
   - Funzione: dà gli strumenti, non le soluzioni; non risolve mai al posto dei ragazzi.
 - **Rosa**: nonna di Pino, morta tre anni prima (proposta) — ceramista e osservatrice della gravina (dal registro: P13, P15).
   - Ha lasciato sette quaderni (proposta) scritti in due cifrari suoi: uno con simboli di piante (chiave nelle piastrelle dipinte della cucina), uno col calendario delle fioriture.
-  - Cifrava per proteggere dai tombaroli il posto del muro antico trovato a Rocca Vetere (dal registro: P16; il motivo è proposta; il muro è invenzione narrativa).
+  - Cifrava per proteggere dai tombaroli il posto del muro antico trovato vicino al ciglio (nel vecchio testo a «Rocca Vetere», registro P16; grafia reale «Roccavetere», nome non usato nel romanzo; il motivo è proposta; il muro è invenzione narrativa).
   - Il settimo quaderno lo ha nascosto lei, dentro l'Ulivo Pensante.
 - **Il Dottore**: ingegnere capo della Terravox — 50 circa — capelli argento, completo grigio, cravatta blu (dal registro: P36).
   - Gentile in pubblico, mai una minaccia diretta: offre, promette, sorride.
@@ -90,8 +90,8 @@
 - **Il forno di Sergio**: cupola in tufo (registro L4); all'alba ci passano tutti.
 - **La bottega di Gianni**: sotto un arco, piena di radio e droni da aggiustare (registro L5).
 - **La casa di Franco**: sul crinale, terrazza sulla gravina (registro L6).
-- **Nomi di contrada inventati** (decisione dell'autore del 14/10/2026): Croce, Pozzo Vecchio, Capperaia sono di fantasia. Ginosa e la Piazza dell'Orologio sono luoghi reali (nota dell'autore aggiornata il 14/10/2026: Rocca Vetere tolta, D7). La nota dell'autore in libro.yaml distingue i due casi. Verifiche su fonte: `00-progetto/registro-verifiche.md`.
-- **Rocca Vetere**: luogo reale nel territorio di Ginosa (grafia decisa dall'autore il 14/10/2026: «Rocca Vetere», due parole, maiuscole; il cambio di grafia della revisione E6 era errato). Nel libro, per invenzione narrativa, è la zona del muro scoperto da Rosa (registro L21); compare solo nel cap. 21. Non verificati, da confermare con l'autore: che sia un «nome vecchio» della zona, che compaia sulla carta delle contrade, la sua posizione rispetto alla gravina e alla casa del nonno (casella D4), il suo aspetto. Nessun fatto storico o archeologico va attribuito al luogo reale. Decisione dell'autore del 14/10/2026 (lotto C): il nome non compare nel testo dei capitoli (nei cap. 21-25 si dice «il muro», «la zona del muro»); la nota dell'autore va rivista alla fine e Rocca Vetere va tolta se non verificata.
+- **Nomi di contrada inventati** (decisione dell'autore del 14/10/2026): Croce, Pozzo Vecchio, Capperaia sono di fantasia. Ginosa e la Piazza dell'Orologio sono luoghi reali (nota dell'autore aggiornata il 14/10/2026: Roccavetere tolta, D7). La nota dell'autore in libro.yaml distingue i due casi. Verifiche su fonte: `00-progetto/registro-verifiche.md`.
+- **Roccavetere** (grafia delle fonti riportate dall'autore: una parola; NON «Rocca Vetere») è una contrada reale di Ginosa, con una villa romana scavata in parte nel 2004 (fonti riportate dall'autore, DA VERIFICARE alla fonte: G. Sassi, "Ginosa Genusia Romana", Rete museale Conca delle Gravine; G. Sassi – T. Schojer, "La villa romana di contrada Roccavetere", Matera 2006; Thiasos 2025; BURP Puglia 19/03/2026). Nel romanzo il nome NON è usato, nel testo né nella nota dell'autore: la trama (muro antico mai segnalato, sopralluogo mai fatto) contraddirebbe una zona realmente scavata. Reinserirlo solo dopo verifica dell'autore sulle fonti. Possibile ambientazione reale per il volume 2. Nel libro il muro di Rosa sta «vicino al ciglio», nella casella D4 della mappa di Lucia, senza nome di luogo.
 - **Il muro**: antico, di grosse pietre squadrate. L'epoca la dice solo il funzionario, con prudenza: «probabilmente di età greca, da verificare». Nessun'altra affermazione storica.
 
 ## Oggetti chiave
@@ -187,8 +187,8 @@ KO se vicino a «quaderni» compare un altro numero: «sei quaderni», ma anche 
 L'ottavo quaderno (cap. 25) è quello bianco di Pino.
 
 **Grafia dei luoghi.** Reali: Ginosa, Piazza dell'Orologio (nessun dettaglio reale inventato; fontana, portici,
-bar e porte sono invenzione dichiarata). Di fantasia: la Croce, il Pozzo Vecchio, la Capperaia. Rocca Vetere (due
-parole, maiuscole) non si usa nel testo né nella nota finché l'autore non l'ha verificata su carta. Il muro:
+bar e porte sono invenzione dichiarata). Di fantasia: la Croce, il Pozzo Vecchio, la Capperaia. Roccavetere (una
+parola, grafia delle fonti; non «Rocca Vetere») non si usa nel testo né nella nota finché l'autore non l'ha verificata sulle fonti. Il muro:
 «antico, di grosse pietre squadrate»; «età greca» solo nella battuta del funzionario (cap. 23); niente Sparta,
 niente date. «Sviluppo Territoriale Sostenibile» solo nel cap. 25.
 
