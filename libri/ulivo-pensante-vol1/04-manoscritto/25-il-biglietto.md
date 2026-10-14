@@ -58,15 +58,15 @@ La sera c'era musica in Piazza dell'Orologio. Le luci erano appese tra i lampion
 
 Pino guardò la torre dell'orologio, alta sopra le luci, e l'ombra che la luna le faceva cadere sui tavolini. Tre settimane prima l'aveva vista per la prima volta da quella stessa piazza, seduto sul suo trolley, con il panino in mano e la voglia di tornarsene al lago, e adesso conosceva il nome di quasi tutte le persone che ballavano intorno alla fontana.
 
-La banda stava sul bordo della fontana, con i piedi a penzoloni. Lucia aveva un gelato al limone e raccontava a tutti, per la quinta volta, come aveva sentito la terra aprirsi sotto il piede. Tonio, che l'aveva tirata indietro, diventava rosso ogni volta che lei arrivava a quel punto. Stellina disegnava la piazza sul suo quaderno: le luci, la torre, i ballerini minuscoli tra i tavolini.
+La banda stava sul bordo della fontana, con i piedi a penzoloni. Lucia aveva un gelato al limone e raccontava a tutti, per la quinta volta, come aveva sentito la terra aprirsi sotto il piede. Tonio, che l'aveva tirata indietro, diventava rosso ogni volta che lei arrivava a quel punto. A suo padre aveva raccontato tutto, anche della corda: il padre aveva detto soltanto che una corda si ricompra e un figlio no, e il giovedì ne aveva appesa una nuova al chiodo del forno, «per quando serve». Stellina disegnava la piazza sul suo quaderno: le luci, la torre, i ballerini minuscoli tra i tavolini.
 
-— Settembre torni? — chiese Tonio a Pino.
+— A settembre torni? — chiese Tonio a Pino.
 
 — A settembre c'è la scuola. Ma a Natale sì. E l'estate prossima, tutta.
 
 — L'estate prossima la gravina sarà piena di gente che studia il muro, — disse Lucia. — Col pennello e la paletta. Noi dobbiamo stare in prima fila.
 
-— Cosa scrivi, nel quaderno verde? — chiese Lucia.
+— Cosa scrivi, nel quaderno verde? — chiese Tonio.
 
 — Non lo so ancora. Il nonno dice: quello che vedi.
 

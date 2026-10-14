@@ -105,7 +105,7 @@ Tutti si girarono verso il nonno. Lui tolse gli occhiali, li pulì con il lembo 
 
 — E io porto l'Ape, — disse Checco. — Se serve una strada bloccata, la mia Ape si pianta a comando. È l'unica cosa che le riesce sempre.
 
-Franco rispose al secondo squillo. Il nonno parlò poco: le ruspe, l'ora, il muro. Dall'altra parte la voce del Gufo disse soltanto una frase, abbastanza forte da sentirsi in tutto il laboratorio.
+Franco rispose al secondo squillo. Il nonno parlò poco: le ruspe, l'ora, il muro. Dall'altra parte la voce di Franco disse soltanto una frase, abbastanza forte da sentirsi in tutto il laboratorio.
 
 — Lampada rossa accesa due volte: vuol dire che arrivano.
 

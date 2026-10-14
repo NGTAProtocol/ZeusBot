@@ -8,6 +8,8 @@ Il Dottore guardò la ruspa piegata sul bordo, il drone che ronzava ancora sopra
 
 — Un cantiere autorizzato, di notte, pieno di bambini, — disse. — Ingegnere, dovrebbe vergognarsi.
 
+— Il vostro permesso dice dalle sette alle diciannove, — disse il nonno. — Adesso sono quasi le due.
+
 Se ne andò verso il cancello grande senza correre, con il passo di chi ha un appuntamento altrove. Il vicedirettore, nel buio, non c'era più.
 
 La domenica mattina dormirono tutti fino alle nove, tranne Stellina. Quando Pino scese in cucina, la trovò seduta al tavolo con il settimo quaderno aperto davanti, all'ultima pagina, e una tazza di latte intatta.

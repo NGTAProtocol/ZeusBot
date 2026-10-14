@@ -42,7 +42,7 @@ Il sindaco le fece segno di sedersi, ma non la sgridò. In sala qualcuno cominci
 
 Si alzò un uomo magro, con le spalle curve, il cappellino in mano.
 
-— Nicola, — disse Checco, a mezza voce. — Ve l'avevo detto.
+— Nicola, — disse Checco, a mezza voce, sorpreso.
 
 — Lavoro al cantiere della Terravox, — disse Nicola, e si girò il cappellino tra le dita. — Il telefono del ragazzo l'ho trovato io, dentro il recinto. Le foto sono vere. Di notte, nelle notti pari, la trivella lavorava. Mi hanno detto di stare zitto. Adesso non sto più zitto.
 
@@ -60,13 +60,13 @@ Pino pensò alla bottega sotto l'arco, alla lampadina appesa al filo, alle tre l
 
 La sala si zittì in un colpo. Il Dottore, in prima fila, non si mosse; solo le dita della mano destra smisero di tamburellare sul ginocchio.
 
-— Mi avevano promesso un posto alla cava, — continuò Gianni. — Avevo debiti. Non è una scusa. È soltanto il perché.
+— Mi avevano promesso un posto alla cava, — continuò Gianni. — Avevo debiti. Non è una scusa. È soltanto il perché. Sabato sera sono andato al cantiere a restituire la giacca e a dire che non ci lavoravo più.
 
 — E il codice dell'allarme? — chiese il sindaco. — L'ingegnere dice che lo sapeva soltanto il ragazzo che l'ha montato.
 
 Gianni guardò verso la terza fila, dove c'era Checco con Ciuffo in braccio. Checco si irrigidì.
 
-— Il ragazzo non c'entra, — disse Gianni. — L'ho saputo da sua madre. Senza che lei se ne accorgesse. La settimana scorsa è venuta in bottega a ritirare la radio, che non era ancora pronta, e mentre cercava lo scontrino nella borsa ha trovato un foglietto con quattro numeri, scritto da Checco. L'aveva preso dalla tasca dei suoi pantaloni, prima di lavarli. Me l'ha letto ad alta voce, ridendo: «Guarda che numeri si scrive mio figlio. Chissà che sono.» Io lo sapevo che cos'erano.
+— Il ragazzo non c'entra, — disse Gianni. — L'ho saputo da sua madre. Senza che lei se ne accorgesse. La settimana scorsa è venuta in bottega a ritirare la radio, che non era ancora pronta, e mentre cercava lo scontrino nella borsa ha trovato un foglietto con quattro numeri, scritto da Checco. L'aveva preso dalla tasca dei suoi pantaloni, prima di lavarli. Me l'ha letto ad alta voce, ridendo: «Ecco i numeri che non mi voleva dire, mio figlio!» Io ho capito subito a cosa servivano.
 
 In terza fila, la madre di Checco si portò una mano alla bocca.
 
@@ -90,7 +90,7 @@ Il sindaco si consultò con i consiglieri, chinati uno verso l'altro, per minuti
 
 — Il voto è rinviato. Finché la Soprintendenza non avrà studiato il muro, nella zona non si autorizza niente.
 
-Prima che finisse di parlare, un uomo con la valigetta, seduto accanto al Dottore, si alzò e chiese il microfono. Disse che la Terravox ritirava il progetto, e che l'ingegner capo, da quella sera, non lavorava più per la società.
+Prima che finisse di parlare, un uomo con la valigetta, seduto accanto al Dottore, si alzò e chiese il microfono. Disse che la Terravox ritirava il progetto, e che il Dottore, da quella sera, non lavorava più per la società.
 
 — Lascia la Terravox, — disse Carmela, dietro di loro, arrotolando la settimana enigmistica. — Per andare dove, secondo voi? Uno così non resta senza lavoro una settimana. Vedrete.
 
