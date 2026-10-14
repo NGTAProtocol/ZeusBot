@@ -2,8 +2,8 @@ libro: La Banda della Gravina, vol. 1
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: documenti
-passo: 'passo 3 fatto (tre titoli e pagina di prova); in attesa dell autore: documenti, titolo, pagina di prova'
-gate_in_attesa: null
+passo: in revisione
+gate_in_attesa: documenti
 lotto:
   dimensione: 3
   capitoli: []
@@ -17,6 +17,10 @@ parole:
   metodo: unico
 documenti_approvati: {}
 avvisi_aperti: []
-revisione_in_corso: null
+revisione_in_corso:
+  gate: documenti
+  blocco: 1
+  blocchi_totali: 8
+  sha256: 81b5cb197188
 push_in_sospeso: false
-aggiornato: '2026-10-14T03:26:00Z'
+aggiornato: '2026-10-14T03:33:04Z'
