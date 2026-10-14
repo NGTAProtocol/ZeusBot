@@ -29,6 +29,10 @@ cartelle:
     scopo: pagina campione e materiali di revisione
     modalita: [nuovo, riscrittura]
     creazione: zb ok al gate documenti (pagina-campione.md vuota, da scrivere), fase pagina_campione
+  05-appendici:
+    scopo: appendici dichiarate in libro.yaml (campo appendici), dopo l'ultima unità; .md, .svg, .png, .jpg
+    modalita: [nuovo, riscrittura]
+    creazione: l'autore o Claude Code, quando il libro ha soluzioni, mappe, glossari o note
   05-output:
     scopo: manoscritto completo e PDF
     modalita: [nuovo, riscrittura]

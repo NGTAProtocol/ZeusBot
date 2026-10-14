@@ -31,5 +31,11 @@ section:first-child { break-before: auto; }
 .parte h1 { font-size: 18pt; margin-top: 60mm; }
 .capitolo h2, .prologo h2, .epilogo h2, .interludio h2 { font-size: 15pt; margin-top: 18mm; margin-bottom: 4mm; }
 .interludio h2 { font-weight: 400; font-style: italic; }
+.appendice h2 { font-size: 15pt; margin-top: 18mm; margin-bottom: 6mm; }
+.capitolo h3, .prologo h3, .epilogo h3, .interludio h3, .appendice h3 { font-size: 12pt; margin: 7mm 0 3mm; }
+.appendice p { text-indent: 0; margin-bottom: .6em; }
+figure.immagine { margin: 4mm 0 0; text-align: center; break-inside: avoid; }
+figure.immagine img { max-width: 100%; max-height: 150mm; }
+figure.immagine figcaption { font-size: 9.5pt; font-style: italic; margin-top: 3mm; }
 .capitolo h2 + p, .prologo h2 + p, .epilogo h2 + p { text-align: center; text-indent: 0; margin-bottom: 8mm; font-size: 10pt; }
 p.scena { text-align: center; text-indent: 0; margin: .9em 0; letter-spacing: .3em; }
