@@ -18,7 +18,7 @@ Il nonno lo accese e aprì le tre cartelle delle foto, una dopo l'altra, con le 
 
 — Il computer non l'hanno toccato, — disse. — Hanno preso solo le schede. Sulla prima c'era il video della notte del dieci, con le luci nel recinto.
 
-Lucia, Stellina e Tonio arrivarono pochi minuti dopo, con il pane di Sergio ancora caldo, e si fermarono sulla soglia: bastò la faccia del nonno per capire che era successo qualcosa di brutto.
+Lucia, Stellina e Tonio arrivarono pochi minuti dopo, con il pane del padre di Tonio ancora caldo, e si fermarono sulla soglia: bastò la faccia del nonno per capire che era successo qualcosa di brutto.
 
 — La porta non è rotta, — disse Lucia, dopo aver guardato la serratura da vicino. — E l'allarme non ha suonato.
 
@@ -72,7 +72,7 @@ Checco non si arrabbiò. Fu peggio: rimase calmo.
 
 — L'hai sentito raccontare.
 
-— L'ha sentito raccontare mezzo paese, perché i carabinieri sono venuti qui alle tre di notte coi lampeggianti spenti, e la gente non dorme. — Checco si rimise in tasca le chiavi dell'Ape. — Ma va bene. Hai deciso tu.
+— Del video lo sa chi stava nel recinto, o chi l'ha saputo dall'azienda quando i carabinieri sono andati a chiedere. — Checco si rimise in tasca le chiavi dell'Ape. — Ma va bene. Hai deciso tu.
 
 Si girò verso la porta. Ciuffo lo guardò, guardò Pino, e non si mosse.
 
