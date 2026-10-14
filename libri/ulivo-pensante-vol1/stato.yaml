@@ -179,7 +179,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T09:48:53Z'
+aggiornato: '2026-10-14T09:49:00Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
@@ -273,3 +273,9 @@ correzioni_registrate:
   sha256_precedente: d84b569af2e1f39ab7df85dcc43bc086754b21ead9b87eb3ad65231c2fbc70a7
   sha256_corretto: cd5c7d4208273bdffd108f9488b1e59c3c2aa3bdbc7530e4097cd5395e4239ab
   commit: ab82167
+- data: '2026-10-14'
+  file: 04-manoscritto/16-il-codice.md
+  motivo: Sergio, battuta video
+  sha256_precedente: 8c553d1e9ce75f197562366fc9536eca7d8dcc3b7b6aa0436d62fddef8c55fcf
+  sha256_corretto: 2342ea71ad29d5333e0efa9806d9d56b7358df616b03c0d05f96f7a6d3880e63
+  commit: b90959d
