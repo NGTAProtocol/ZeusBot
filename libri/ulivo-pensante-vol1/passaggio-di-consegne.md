@@ -4,8 +4,9 @@ Frase di apertura per la nuova chat: «Leggi libri/ulivo-pensante-vol1/passaggio
 
 ## Stato
 - Repository `NGTAProtocol/ZeusBot`, ramo `libro/ulivo-pensante-vol1` (nato dal ramo `motore`).
-- Fase «stesura»: documenti e pagina campione approvati dall'autore il 14/10/2026. Nessun capitolo scritto.
-- Parole: 0/32.500. Stato tecnico in `stato.yaml` (il motore usa stato.yaml, non stato.md).
+- Fase «stesura»: documenti e pagina campione approvati dall'autore il 14/10/2026.
+- Capitoli 1-3 scritti, controlli OK; gate «primi_capitoli» APERTO, in attesa dell'autore.
+- Parole: 3.834/32.500. Stato tecnico in `stato.yaml` (il motore usa stato.yaml, non stato.md).
 
 ## Obiettivo del libro
 Romanzo per ragazzi 9-12, avventura investigativa con enigmi, primo volume della serie «La Banda della
@@ -65,11 +66,19 @@ strano (l'Ulivo Pensante), spiegato senza magia; finale che apre il volume 2.
 - Pagina campione scritta, corretta e approvata (383 parole, frase media 9,1, dialogo 25,8%, nessun KO).
 
 ## Prossimo passo
-Scrivere i capitoli 1-5, uno alla volta, con i controlli del motore; fermarsi dopo il 5 per la lettura
-dell'autore. Per ogni capitolo: `zb avvio` (riportare la riga «Letto: …»), `zb voce mostra
+Gate «primi_capitoli» aperto dopo il cap. 3: l'autore legge 1-3 e risponde «ok», «ok, lotti da N» o
+«correggi: …» (zb ok / zb correggi). Il motore rifiuta `zb esito 4` finché il gate è aperto. Dopo l'«ok»:
+capitoli 4-5 (enigma 2 nel cap. 4), poi fermata per la lettura dell'autore.
+Indizi già seminati: piastrelle (cap. 1), toppa a V e furgoni Terravox (cap. 1), tre ruote e curva dell'Ape
+(cap. 1), SETTE (cap. 2-3), allarme col codice montato da Checco (cap. 2, seme del cap. 16), est/ovest,
+ombra a nord a mezzogiorno, terrazza di Franco sopra la Capperaia (cap. 3), disegno di Stellina con
+torcia e due cerchi neri su una cinghia, «domenica, ore 23» (cap. 3).
+
+Procedura per ogni capitolo: `zb avvio` (riportare la riga «Letto: …»), `zb voce mostra
 mistero-ed-epicita`, rileggere briefing, manuale, scaletta, enigmi.md (indizi da seminare); scrivere
 `04-manoscritto/NN-<slug>.md` con `# N — Titolo` e `<!-- zb: chiusura=X -->`; `zb esito <libro> N`; salvataggio.
-Il cap. 1 parte dalla pagina campione approvata.
+Il cap. 1 parte dalla pagina campione approvata (testo invariato). Una sola scena per capitolo dove il piano
+parole dice 1 (niente «* * *»); frase media misurata dal motore, tenerla sopra 10.
 
 ## Ripartenza (sessione nuova)
 1. Repository `NGTAProtocol/ZeusBot`, ramo `libro/ulivo-pensante-vol1`:

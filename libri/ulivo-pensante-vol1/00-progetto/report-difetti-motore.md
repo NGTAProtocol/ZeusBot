@@ -45,3 +45,16 @@ Regola: i difetti GENERICI del motore non si correggono durante il lavoro sul li
 8. **Nessun comando per controllare la pagina campione.** `zb stile`/`zb capitolo` lavorano sulle unità del
    manoscritto; per la pagina campione ho chiamato le stesse funzioni di `stile.py` (`controlla_unita`) da
    fuori. Esito in `06-diagnostica/pagina-campione.md`. Un comando dedicato sarebbe utile.
+
+## Aggiunte del 14/10/2026 (stesura, capitoli 1-3)
+
+9. **Controllo «cifre» troppo largo.** `continuita.py` (cifre con `contesto`) prende come numero anche
+   l'articolo o il pronome «uno/una» entro tre parole da «quaderni»: «raccolse i quaderni uno alla volta»
+   → KO «uno quaderni, atteso 7» (cap. 1, primo tentativo). Inoltre la trama vuole «sei quaderni» sul
+   tavolo (ne manca uno): con `cifre: quaderni = 7` ogni «sei» vicino a «quaderni» è KO. Nel testo ho
+   evitato la vicinanza; nessuna modifica a cronologia.yaml né al motore.
+10. **Gate «primi_capitoli» fisso dopo il capitolo 3.** L'autore aveva chiesto 1-5 con fermata dopo il 5;
+    il motore apre il gate dopo il 3 e rifiuta `zb esito 4` finché l'autore non risponde (ok / correggi).
+    Non è un difetto: è la procedura. Segnalato perché il passaggio di consegne diceva «1-5».
+11. **Avvio senza banca-voci.** Senza clone la riga «Letto: …» esce con un AVVISO e senza la scheda della
+    voce; in ambiente cloud il clone richiede prima di aggiungere il repository alla sessione.
