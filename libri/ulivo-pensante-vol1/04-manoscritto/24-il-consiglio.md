@@ -24,7 +24,7 @@ Il sindaco, alla fine, diede la parola al nonno.
 
 Il nonno non fece discorsi. Appoggiò sul tavolo le foto della trivella, una per una, con l'ora stampata in basso. Mise accanto il tablet con il grafico dei sensori: le scosse delle notti pari, sempre tra le due e dieci e le due e cinquanta. Fece partire il filmato del drone, e nella sala comparve il muro, tre file di blocchi enormi, e la pala della ruspa ferma a un metro.
 
-Per ultimo appoggiò sul tavolo i sette quaderni di Rosa, uno accanto all'altro, con il rametto di rosmarino sulla copertina.
+Per ultimo appoggiò sul tavolo i sette quaderni di Rosa, in fila, con il rametto di rosmarino sulla copertina.
 
 — La pratica 655, — disse. — Segnalazione di Rosa alla Soprintendenza. Ieri mattina il funzionario l'ha ritrovata. La perizia del Dottore dice «nessun ritrovamento». Ci sono un muro e un numero che dicono il contrario.
 
@@ -76,9 +76,9 @@ Checco rimase fermo per un momento lunghissimo, con Ciuffo che gli leccava il me
 
 — Stava nei pantaloni, — disse lei, piccola piccola. — Io i pantaloni li controllo sempre.
 
-— Lo so. — Checco sospirò, e si passò una mano sulla faccia. — Ho montato un allarme col codice segreto, e il codice lo sapeva mezzo paese. Ingegnere, stasera lo cambiamo. E stavolta non lo scrivo da nessuna parte. Me lo tatuo in testa.
+— Lo so. — Checco sospirò e si strofinò la fronte con il polso. — Ho montato un allarme col codice segreto, e il codice lo sapeva mezzo paese. Ingegnere, stasera lo cambiamo. E stavolta non lo scrivo da nessuna parte. Me lo tatuo in testa.
 
-In sala qualcuno rise, e anche Pino rise, ma con un nodo in gola. Checco non rideva. Guardava Gianni, e Gianni guardava lui.
+In sala qualcuno rise, e anche Pino rise, ma soltanto con la bocca. Checco non rideva. Guardava Gianni, e Gianni guardava lui.
 
 — Scusa, — disse Gianni.
 
