@@ -22,12 +22,13 @@ Frase di apertura per la nuova chat: «Leggi motore/passaggio-di-consegne.md e r
   | divieti della voce in `stile.py` | esiste |
   | sezioni del briefing | esiste (nell'esempio resta il «biondo» DA CONFERMARE, punto aperto 7) |
 - Banca-voci (repository separato, fuori dal motore, solo schede di voce e divieti): remote privato
-  `https://github.com/NGTAProtocol/https-github.com-banca-voci`, ramo `main`, HEAD `08ce720`
-  «aggiunte 7 voci editoriali», allineato a origin. 9 voci: `atkinson-2-0` e `ibrida-pasolini-camilleri`
-  (pronte); `avventura-e-cuore`, `mistero-ed-epicita`, `grande-voce-crossover` (ragazzi, narrativa) e
-  `saggistica-cinematografica`, `saggistica-psicologica-esistenziale`, `saggistica-idee-visione`,
-  `saggistica-corale-sociale` (saggistica e biografia), tutte `da_completare`. Copia di sicurezza: bundle
-  `banca-voci.bundle` (sha256 `5a172d7c…1774802`) mandato all'autore.
+  `https://github.com/NGTAProtocol/https-github.com-banca-voci` (NGTAProtocol/https-github.com-banca-voci),
+  ramo `main`, HEAD `375ee5f` «Corretto campione ricerca-alta-tensione: filigrana, non colophon», allineato
+  a origin. 11 voci, 11 pronte: `atkinson-2-0`, `ibrida-pasolini-camilleri`, `avventura-e-cuore`,
+  `mistero-ed-epicita`, `grande-voce-crossover` (ragazzi, narrativa), `saggistica-cinematografica`,
+  `saggistica-psicologica-esistenziale`, `saggistica-idee-visione`, `saggistica-corale-sociale`
+  (saggistica e biografia), `cronista-e-maschera`, `ricerca-alta-tensione`. Copia di sicurezza: bundle
+  `banca-voci.bundle` (HEAD 375ee5f, sha256 `037e5fed…3210f34f`) mandato all'autore.
 - Ramo `archivio/ghimoney` su origin (572f40f): contiene `ghimoney/`, tolto dal motore.
 - Dettagli completi: `motore/report-motore.md`.
 
@@ -141,9 +142,7 @@ Il contenuto dei libri lo decide l'autore nel briefing.
 4. Rigenerare i PDF dei libri A5 già impaginati: solo su richiesta.
 5. Script d'avvio della sessione per installare le dipendenze in un container nuovo.
 6. Banca-voci: repository privato fatto (`NGTAProtocol/https-github.com-banca-voci`); rinomina in
-   `banca-voci` sospesa (accesso a GitHub dell'autore). Le 7 voci nuove restano `da_completare`: servono
-   lessico guida, adattamento per genere, campione-modello e divieti (dall'autore, o scritti da Claude
-   con il suo ok).
+   `banca-voci` sospesa (accesso a GitHub dell'autore). Voci: 11, pronte: 11 (HEAD 375ee5f).
 7. Nell'esempio del briefing, il biondo: capelli o capo d'abbigliamento? (segnato «DA CONFERMARE»).
 8. L'hook copre Write, Edit, MultiEdit e NotebookEdit, non Bash: una scrittura via shell non è bloccata
    (resta il recinto dei comandi del motore, `comune.scrivi`).
@@ -153,8 +152,7 @@ Il contenuto dei libri lo decide l'autore nel briefing.
 
 ## Prossimo passo
 
-- Banca-voci: completare le 7 voci nuove (sezioni 4-6 e `divieti.yaml`), poi `stato: pronta` e
-  `zb voce verifica`; rinomina del repository quando l'autore rientra su GitHub.
+- Banca-voci (11 voci, 11 pronte): rinomina del repository quando l'autore rientra su GitHub.
 - Sul primo ramo di libro: unire il motore (merge, mai rebase), `zb hook attiva --ok` (dopo l'«ok»
   dell'autore, commit a parte sul ramo del libro), poi `zb lavoro libro <slug>` e `zb avvio libri/<slug>`;
   per un briefing nuovo `zb nuovo libri/<slug>/briefing.md`.
@@ -180,8 +178,8 @@ Il contenuto dei libri lo decide l'autore nel briefing.
    git clone https://github.com/NGTAProtocol/https-github.com-banca-voci /home/user/banca-voci
    export ZB_BANCA_VOCI=/home/user/banca-voci
    ```
-   Se il repository non è raggiungibile: bundle dell'autore (HEAD 08ce720, sha256 `5a172d7c…1774802`).
-   Controllo: `zb voce lista` (9 voci, 2 pronte), `zb voce verifica` OK sulle 2 pronte (`script/voce.py`).
+   Se il repository non è raggiungibile: bundle dell'autore (HEAD 375ee5f, sha256 `037e5fed…3210f34f`).
+   Controllo: `zb voce lista` (11 voci, 11 pronte), `zb voce verifica` OK su tutte e 11 (`script/voce.py`).
    Senza la banca la suite passa lo stesso: le prove «voce» usano la mini-banca di `prove/banca-voci-prova/`.
 4. **Suite** (circa 10 minuti: lanciarla in background):
    `ZB_LANGUAGETOOL=… ZB_BANCA_VOCI=… python3 -B motore/zb prove` → atteso 457/457 OK.

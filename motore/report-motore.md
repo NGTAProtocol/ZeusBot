@@ -210,7 +210,8 @@ luoghi reali.
 - `modelli/briefing.md`: Storia, Schede dei personaggi (vincoli «sempre» / «quasi sempre» / «mai»),
   Luoghi ed epoca, Regole del libro, Voce scelta e ambientazione; esempio inventato in un commento.
 - Prove: mini-banca inventata in `prove/banca-voci-prova/` (una voce pronta, una da completare).
-- Banca reale oggi: due voci pronte, solo scheda e divieti (60 e 90 voci). I nomi delle voci stanno
+- Banca reale oggi (NGTAProtocol/https-github.com-banca-voci, ramo `main`, HEAD 375ee5f): 11 voci,
+  11 pronte, solo scheda e divieti (da 60 a 90 divieti per voce). I nomi delle voci stanno
   nella banca, non nel motore.
 
 ## 11. Limiti noti e punti aperti (in ordine di importanza)
