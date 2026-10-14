@@ -1,10 +1,12 @@
-# Titoli e pagina di prova — La Banda della Gravina, vol. 1
+# Titoli e pagina di prova — Il quaderno nell'ulivo
 
 <!-- Per il gate «documenti». La pagina di prova è una prova del romanzo, non il campione-modello della
      voce (quello lo scrive l'autore nella banca-voci). Non è la pagina campione del motore
      (05-revisioni/pagina-campione.md), che arriva dopo l'«ok» ai documenti. -->
 
-## Tre titoli per il volume 1 (sceglie l'autore)
+## Tre titoli per il volume 1
+
+Scelto dall'autore il 14/10/2026: **Il quaderno nell'ulivo**.
 
 Serie in copertina: «La Banda della Gravina» con il numero 1 ben visibile.
 
@@ -13,6 +15,9 @@ Serie in copertina: «La Banda della Gravina» con il numero 1 ben visibile.
 3. **Il cifrario di nonna Rosa**: promette enigmi da risolvere; dice subito che il libro è un gioco.
 
 ## Pagina di prova (capitolo 1, apertura)
+
+Superata: la versione aggiornata (genitori in piazza, Checco) è la pagina campione del motore,
+`05-revisioni/pagina-campione.md`. Il testo qui sotto resta come era stato mandato.
 
 L'Ape si spense a metà salita con un colpo di tosse.
 

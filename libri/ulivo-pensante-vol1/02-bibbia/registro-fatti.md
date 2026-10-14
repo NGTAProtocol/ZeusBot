@@ -143,6 +143,13 @@ cade fuori da una decisione già presa (punto 4 del prompt di avvio); vuota = ne
 | C9 | Il vincolo protegge la terra ma non impedisce la vendita dei terreni intorno | Spazio per la Sviluppo Territoriale Sostenibile S.r.l. | epilogo | DCF |
 | C10 | Antonio falsificò dati vent'anni prima | L'azienda credette morta la rete | c. 8.4 | DCF |
 
+## Note dell'autore (14/10/2026)
+
+- P16 e C6 restano «da confermare». Nel libro nuovo: il muro è «antico, di grosse pietre squadrate»; il
+  funzionario dice solo «probabilmente di età greca, da verificare». Niente Sparta, niente date precise.
+- I2, I3: risolte nel libro nuovo (Rosa nonna di Pino; Michele padre di Antonio). I1, I5, I6: personaggi
+  non presenti nel libro nuovo. Le righe del vecchio testo restano invariate.
+
 ## 7. Incongruenze tra capitoli
 
 | # | Incongruenza | Rif. | Stato |

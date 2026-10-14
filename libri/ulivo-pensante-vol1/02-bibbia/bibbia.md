@@ -1,29 +1,30 @@
-# Bibbia — La Banda della Gravina, vol. 1
+# Bibbia — Il quaderno nell'ulivo (La Banda della Gravina, 1)
 
-<!-- Proposta per il gate «documenti». Età, cognomi, legami e luoghi inventati qui sono PROPOSTE da
-     approvare (segnati «proposta»). I fatti presi dal vecchio testo sono nel registro dei fatti
+<!-- Approvata al gate «documenti» il 14/10/2026 con correzioni. Approvati in modo esplicito dall'autore:
+     età della banda e di Checco, Ciuffo, Michele ex ingegnere e padre di Antonio, banda di quattro più Checco,
+     terza persona vicina a Pino, dialetto spento. Restano «proposta» i dettagli non elencati dall'autore. I fatti presi dal vecchio testo sono nel registro dei fatti
      (02-bibbia/registro-fatti.md) e restano da confermare con Felice. -->
 
 ## Personaggi
 
 ### La banda
 
-- **Pino (Giuseppe)**: protagonista, il ragazzo del Nord — 11 (proposta) — vive a Peschiera del Garda; passa l'estate dal nonno a Ginosa.
+- **Pino (Giuseppe)**: protagonista, il ragazzo del Nord — 11 — vive a Peschiera del Garda; passa l'estate dal nonno a Ginosa.
   - Talento: l'occhio del forestiero. Nota quello che in paese nessuno guarda più, e fotografa tutto col telefono.
   - Difetto: impaziente; parla prima di pensare e accusa troppo in fretta (accusa Checco, cap. 16).
   - Funzione: legge i grafici dei sensori del nonno (cap. 8); trova la chiave del primo cifrario nelle piastrelle di Rosa (cap. 2); filma la prova finale col drone (cap. 22).
   - Come parla: italiano del Nord, domande a raffica; non capisce il dialetto e lo dice.
-- **Lucia**: della banda — 12 (proposta) — sorella maggiore di Stellina (proposta).
+- **Lucia**: della banda — 12 — sorella maggiore di Stellina (proposta); abitano nella casa più vicina a quella del nonno.
   - Talento: mappe e orientamento; conosce la gravina sentiero per sentiero.
   - Difetto: impulsiva, testarda; si butta prima degli altri (rischia grosso nel cap. 12).
   - Funzione: traduce i vecchi nomi di contrada dei quaderni in punti veri sulla mappa (cap. 4, 21); guida la discesa (cap. 10, 22).
   - Come parla: secca, ordini brevi, ironia.
-- **Stellina**: della banda — 10 (proposta) — sorella minore di Lucia.
+- **Stellina**: della banda — 10 — sorella minore di Lucia.
   - Talento: disegna tutto e ricorda ogni segno; vede i dettagli.
   - Difetto: timidissima; davanti agli adulti non parla, e una volta tace una cosa importante (cap. 3-4).
-  - Funzione: ha visto l'intruso dalla finestra e lo ha disegnato (cap. 3); riconosce la calligrafia del nonno sulla scheda rubata (cap. 17); il suo lucido sulla mappa trova Rocca Vetere (cap. 21).
+  - Funzione: ha visto l'intruso dalla finestra, la notte tra il 5 e il 6 luglio, e lo ha disegnato (cap. 3); ha disegnato il sette tagliato del nonno (cap. 5) e lo riconosce sulla scheda rubata (cap. 17); il suo lucido sulla mappa trova il muro (cap. 21).
   - Come parla: poco; risponde con un disegno. Quando parla, tutti si zittiscono.
-- **Tonio**: della banda — 12 (proposta) — figlio del fornaio Sergio Panza (proposta, dal registro: P31).
+- **Tonio**: della banda — 12 — figlio del fornaio Sergio Panza (proposta, dal registro: P31).
   - Talento: forza, pazienza, conosce piante e animali (aiuta in campagna).
   - Difetto: prudente fino alla paura; il buio e le grotte lo bloccano.
   - Funzione: misura e confronta (acqua del pozzo, fioriture); risolve il secondo cifrario col calendario delle fioriture (cap. 9, 15); al forno sente tutte le voci del paese all'alba.
@@ -31,24 +32,24 @@
 
 ### Il personaggio comico fisso
 
-- **Checco**: personaggio comico fisso — 15 (proposta; a 15 anni può guidare l'Ape 50 con la patente AM) — l'Ape scassata.
+- **Checco**: personaggio comico fisso — 15 (a 15 anni può guidare l'Ape 50 con la patente AM) — l'Ape scassata.
   - Fissi (sempre): l'Ape blu piena di adesivi (dal registro: P22), sempre in panne nel momento sbagliato; le mani sporche di grasso.
   - Talento: conosce tutti e tutto; aggiusta qualunque cosa con fil di ferro e nastro.
   - Difetto: chiacchierone e spaccone; racconta storie gonfiate, quindi a volte non gli credono.
   - Funzione: porta la banda e le notizie; viene sospettato a torto (cap. 16); nel finale l'Ape si rompe proprio dove serve e blocca la strada alle ruspe (cap. 22); trova il biglietto della S.r.l. (cap. 25).
   - Comico ma non stupido: le sue chiacchiere contengono sempre un'informazione vera.
   - Come parla: veloce, qualche parola di dialetto, soprannomi per tutti («ragazzo del lago»).
-- **Mascotte (proposta)**: Ciuffo, cane bastardino di Checco, viaggia nel cassone dell'Ape. Comico, mai decisivo da solo. Da confermare (la copertina chiede una mascotte comica visibile).
+- **Mascotte**: Ciuffo, cane bastardino di Checco, viaggia nel cassone dell'Ape. Comico, mai decisivo da solo; visibile in copertina.
 
 ### Adulti
 
-- **Michele**: nonno di Pino, ex ingegnere (proposta: idraulico) — 72 (proposta) — padre di Antonio (proposta: chiarisce l'incongruenza I3 del registro).
-  - Sensori sugli ulivi (flusso della linfa, umidità del terreno, vibrazioni) e un drone con telecamera: strumenti per misurare, non spettacolo.
+- **Michele**: nonno di Pino, ex ingegnere — 72 (proposta) — padre di Antonio.
+  - Sensori nelle radici degli ulivi: misurano acqua e vibrazioni e un drone con telecamera: strumenti per misurare, non spettacolo.
   - Non sa leggere il cifrario di Rosa: lei non glielo ha mai insegnato.
   - Funzione: dà gli strumenti, non le soluzioni; non risolve mai al posto dei ragazzi.
 - **Rosa**: nonna di Pino, morta tre anni prima (proposta) — ceramista e osservatrice della gravina (dal registro: P13, P15).
   - Ha lasciato sette quaderni (proposta) scritti in due cifrari suoi: uno con simboli di piante (chiave nelle piastrelle dipinte della cucina), uno col calendario delle fioriture.
-  - Cifrava per proteggere dai tombaroli il posto dei resti trovati a Rocca Vetere (dal registro: P16; il motivo è proposta).
+  - Cifrava per proteggere dai tombaroli il posto del muro antico trovato a Rocca Vetere (dal registro: P16; il motivo è proposta).
   - Il settimo quaderno lo ha nascosto lei, dentro l'Ulivo Pensante.
 - **Il Dottore**: ingegnere capo della Terravox — 50 circa — capelli argento, completo grigio, cravatta blu (dal registro: P36).
   - Gentile in pubblico, mai una minaccia diretta: offre, promette, sorride.
@@ -57,12 +58,12 @@
 - **Gianni**: aggiustatutto del paese (dal registro: P32, senza oggetti strani) — 50 (proposta).
   - Ripara i droni del nonno ed entra nel laboratorio quando vuole.
   - È l'informatore della Terravox: debiti, bottega che chiude, un lavoro promesso. Non è cattivo; alla fine testimonia.
-  - Indizi leali: giacca Terravox nuova (cap. 6, 17); sa una cosa che sapeva solo il laboratorio (cap. 7); terra rossa sul furgone (cap. 6); scheda di memoria con la calligrafia del nonno (cap. 17).
+  - Indizi leali (vedi enigmi.md): furgone bianco con la gomma rattoppata a V, in piazza lunedì mattina (cap. 1); impronta della gomma nella terra rossa (cap. 6); la bugia sulla febbre (cap. 11); il furgone dentro il recinto nelle foto (cap. 14); giacca Terravox e scheda col sette tagliato (cap. 17).
 - **Franco detto il Gufo**: osservatore di uccelli e collezionista di pietre (dal registro: P33) — 70 (proposta).
   - Falsa pista: gira di notte in gravina con torcia e binocolo (cap. 4).
-  - In realtà sorveglia i nidi del falco grillaio (proposta). Conosceva Rosa; diventa alleato (cap. 11).
+  - In realtà di notte osserva l'assiolo dalla terrazza con una lampada rossa, di giorno sorveglia i nidi del falco grillaio (proposta). Conosceva Rosa; diventa alleato (cap. 11).
 - **Sergio Panza**: fornaio, padre di Tonio (proposta). Il forno all'alba è la radio del paese.
-- **Antonio e Sara**: genitori di Pino (dal registro: P18, P21). Accompagnano Pino e ripartono; tornano nel cap. 25.
+- **Antonio e Sara**: genitori di Pino (dal registro: P18, P21). Lunedì 6 luglio accompagnano Pino a Ginosa, lo lasciano in Piazza dell'Orologio e ripartono per un viaggio di lavoro; Checco lo porta dal nonno in Ape. Tornano sabato 25 (cap. 25).
 - **L'operaio (proposta: Nicola)**: lavora al cantiere Terravox, è a disagio con gli scavi di notte; restituisce il telefono di Pino (cap. 14).
 - **La sindaca / il sindaco**: da decidere; ha preso un contributo per gli studi di fattibilità (dal registro: P38).
 - **Il funzionario della Soprintendenza**: arriva nel cap. 23.
@@ -71,14 +72,15 @@
 
 - **Casa del nonno**: casa bianca tra ulivi secolari, porta blu, pannelli solari (registro L2). In cucina le piastrelle dipinte da Rosa (chiave del primo cifrario). Il laboratorio è un ex magazzino accanto alla casa.
 - **L'Ulivo Pensante**: ulivo di circa mille anni con un volto nella corteccia (registro L15), sul confine del terreno di Rosa, a pochi metri dal recinto Terravox. Tronco cavo alla base. Il nonno ci ha messo i sensori.
-- **La rete di radici (l'unico elemento strano)**: gli ulivi sono collegati da radici e da funghi del suolo (rete micorrizica). I sensori registrano quando l'acqua sotto terra cambia: l'Ulivo Pensante, con le radici più profonde nella vena d'acqua, reagisce per primo agli scavi. Sembra che «pensi» e avvisi; si spiega con acqua, radici e misure.
+- **La rete di radici (l'unico elemento strano)**: i sensori di Michele misurano acqua e vibrazioni nelle radici. L'Ulivo Pensante, con le radici più profonde nella vena d'acqua, reagisce per primo agli scavi: sembra che «pensi» e avvisi. Fatto certo: acqua, radici, misure. Che gli ulivi «si parlino» attraverso i funghi del suolo è solo un'ipotesi di Michele, mai presentata come certa.
 - **La gravina**: canyon di calcare e tufo, pareti a strapiombo, sentieri a gradini, grotte scavate, chiese rupestri (proposta: una piccola chiesa rupestre nel cap. 10), capperi sulle pareti, lentisco e timo, caldo di giorno e fresco di notte, poco segnale. Personaggio: decide dove si passa, quando (luce e caldo), cosa si vede e cosa crolla.
 - **Il recinto Terravox**: rete e cartello «area di studio» (registro L19) sul ciglio della gravina; ufficio nell'ex mattatoio (registro L18).
 - **Il paese vecchio**: vicoli, scale, Piazza dell'Orologio con la torre civica (registro L7); l'ombra della torre a mezzogiorno è un indizio (cap. 13).
 - **Il forno di Sergio**: cupola in tufo (registro L4); all'alba ci passano tutti.
 - **La bottega di Gianni**: sotto un arco, piena di radio e droni da aggiustare (registro L5).
 - **La casa di Franco**: sul crinale, terrazza sulla gravina (registro L6).
-- **Rocca Vetere**: zona della gravina con i resti scoperti da Rosa (registro L21); compare con il suo nome solo nel cap. 21.
+- **Rocca Vetere**: nome vecchio della zona con il muro scoperto da Rosa (registro L21); compare solo nel cap. 21.
+- **Il muro**: antico, di grosse pietre squadrate. L'epoca la dice solo il funzionario, con prudenza: «probabilmente di età greca, da verificare». Nessun'altra affermazione storica.
 
 ## Oggetti chiave
 

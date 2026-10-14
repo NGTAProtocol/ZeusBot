@@ -1,4 +1,4 @@
-# La Banda della Gravina, vol. 1 — LEGGIMI
+# Il quaderno nell'ulivo — LEGGIMI
 
 Libro: /home/user/ZeusBot/libri/ulivo-pensante-vol1
 Ramo: letto da git all'avvio (non scritto qui)

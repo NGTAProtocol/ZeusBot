@@ -1,4 +1,4 @@
-# Piano parole — La Banda della Gravina, vol. 1
+# Piano parole — Il quaderno nell'ulivo
 
 | Parte | Cap. | Titolo | Funzione | Scene | Budget capitolo | Budget per scena | Parole reali | Scarto |
 |---|---|---|---|---|---|---|---|---|

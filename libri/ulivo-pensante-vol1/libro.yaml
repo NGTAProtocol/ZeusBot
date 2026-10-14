@@ -1,4 +1,4 @@
-titolo: La Banda della Gravina, vol. 1
+titolo: Il quaderno nell'ulivo
 sottotitolo: null
 autore: DA CONFERMARE
 lingua: it
@@ -95,7 +95,7 @@ struttura:
   separatore_scena:
     sorgente: '* * *'
     stampa: '* * *'
-  intestazione_capitolo: Luogo — giorno e data
+  intestazione_capitolo: solo titolo del capitolo («# N — Titolo»), senza luogo né data
   parti: []
   interludi: []
 calendario:

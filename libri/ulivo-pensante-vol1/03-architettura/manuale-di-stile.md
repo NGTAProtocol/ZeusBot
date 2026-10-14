@@ -1,4 +1,4 @@
-# Manuale di stile — La Banda della Gravina, vol. 1
+# Manuale di stile — Il quaderno nell'ulivo (La Banda della Gravina, 1)
 
 Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «giallo». Le regole numeriche stanno in libro.yaml e le controlla capitolo.py: qui sono scritte per esteso.
 
@@ -42,7 +42,7 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «giallo
 
 ## 7. Struttura
 
-- Intestazione del capitolo: «Luogo — giorno e data».
+- Intestazione del capitolo: «# N — Titolo» e basta: niente riga di luogo e data (libro per ragazzi; decisione dell'autore del 14/10).
 - Separatore di scena: «* * *».
 - Nomi dei file: NN-<slug>.md in 04-manoscritto/.
 
@@ -77,7 +77,7 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «giallo
 - Da evitare, perché troppo vicino a un libro del 2025: masseria con scheletro, dolmen, leggenda di sangue, reperto preistorico come gancio.
 - Pagina enigma in circa 12 capitoli, non in tutti; soluzioni in fondo al libro; mai un codice in ogni capitolo.
 
-## 11. La voce del libro (proposta, da approvare al gate «documenti»)
+## 11. La voce del libro (approvata al gate «documenti» il 14/10/2026)
 
 Base: «Mistero ed Epicità» (mistero-ed-epicita), sezioni 1, 2, 3 e 7 della scheda (testo dell'autore).
 Le sezioni 4-6 e `divieti.yaml` della banca-voci non sono state scritte dall'autore: non fanno da modello
@@ -103,7 +103,7 @@ Cosa si adatta al libro (precedenza del manuale):
 
 ## 12. Punto di vista e tempo
 
-- Terza persona, vicina a Pino (proposta): il lettore sa quello che sa Pino, non di più.
+- Terza persona, vicina a Pino (approvata): il lettore sa quello che sa Pino, non di più.
 - Passato remoto e imperfetto.
 - Nessun narratore che commenta o fa la morale.
 
@@ -114,7 +114,7 @@ Cosa si adatta al libro (precedenza del manuale):
 - Paura sì, crudeltà no; nessun personaggio muore in scena; adulti cattivi mai violenti in modo esplicito.
 - Umorismo dalle situazioni e dai caratteri (Checco, l'Ape, Ciuffo), mai a spese di chi è debole.
 - Dialetto: spento (ambientazione «altro»); al massimo una o due parole di dialetto per capitolo, solo in
-  bocca a Checco o agli anziani, capibili dal contesto. Da confermare con Felice.
+  bocca a Checco o agli anziani, capibili dal contesto (approvato).
 
 ## 14. Enigmi e pagine enigma
 
@@ -135,3 +135,21 @@ Cosa si adatta al libro (precedenza del manuale):
 - Vietato: masseria con scheletro, dolmen, leggenda di sangue, reperto preistorico come gancio.
 - Vietato: frasi, descrizioni, metafore o ordine dei capitoli del vecchio testo.
 - Tetto: similitudini, al massimo una ogni 400 parole (profilo); meglio meno.
+
+## 16. Rete di radici: cosa è certo e cosa no
+
+- Certo, nel libro: i sensori di Michele misurano acqua e vibrazioni nelle radici. Le scosse degli scavi e il
+  calo dell'acqua si vedono nei grafici. L'Ulivo Pensante reagisce per primo perché ha le radici più profonde.
+- Ipotesi, solo di Michele: che gli ulivi «si parlino» attraverso i funghi del suolo. Lo dice sempre come
+  ipotesi («Secondo me…», «Non lo sa nessuno, ma…»), mai il narratore, mai come fatto.
+
+## 17. Archeologia: prudenza
+
+- Il muro è «antico, di grosse pietre squadrate». Nessuno dice di più finché non arriva il funzionario.
+- Il funzionario parla con prudenza: «probabilmente di età greca, da verificare».
+- Vietato: Sparta, date precise, popoli o fondazioni nominati, ogni affermazione storica non verificata.
+
+## 18. Enigmi
+
+- Testo, indizi da seminare, soluzioni e controlli di equità: `03-architettura/enigmi.md`. Gli indizi elencati
+  lì vanno messi nei capitoli indicati, prima della pagina enigma.

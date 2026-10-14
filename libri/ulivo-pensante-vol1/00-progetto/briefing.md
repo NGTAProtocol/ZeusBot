@@ -4,13 +4,13 @@
      Il vecchio testo (materiale/L_Ulivo_Pensante_IT_COMPLETO.docx) è solo un registro dei fatti:
      02-bibbia/registro-fatti.md. Il libro si scrive da zero. -->
 
-Titolo di lavoro: La Banda della Gravina, vol. 1
+Titolo di lavoro: Il quaderno nell'ulivo (serie «La Banda della Gravina», numero 1)
 Autore: DA CONFERMARE
 Lettore: ragazzi 9-12 anni; lettura su carta, anche ad alta voce in famiglia
 
 ## Idea (massimo 5 righe)
 
-Estate a Ginosa. Pino, undici anni, arriva dal Lago di Garda a casa del nonno Michele, tra ulivi secolari, droni e sensori.
+Estate a Ginosa. Pino, undici anni, arriva dal Lago di Garda: i genitori lo lasciano in piazza e Checco lo porta in Ape dal nonno Michele, tra ulivi secolari, droni e sensori.
 Nei primi giorni qualcuno entra nel laboratorio del nonno e cerca i quaderni cifrati della nonna Rosa, mentre la Terravox recinta la gravina.
 Pino e la banda decifrano i quaderni pagina dopo pagina, leggono la gravina e smascherano chi mente.
 L'ultima pagina dei quaderni porta a una scoperta archeologica che ferma il cantiere.
@@ -84,7 +84,7 @@ Motivo override: libro per ragazzi 9-12 anni (30.000-35.000 parole, 25 capitoli 
 Capitoli: 1000 | 1200-1400 | 1600
 Scene: 1-2 | 500-1400
 Voce:
-Intestazione capitolo: Luogo — giorno e data
+Intestazione capitolo: solo titolo del capitolo
 Separatore di scena: * * *
 Formato: 5.5 x 8.5
 Anni ammessi:

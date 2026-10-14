@@ -1,4 +1,4 @@
-libro: La Banda della Gravina, vol. 1
+libro: Il quaderno nell'ulivo
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: documenti
@@ -10,7 +10,13 @@ lotto:
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: null
 tentativi: {}
-correzioni_aperte: []
+correzioni_aperte:
+- gate: documenti
+  testo: 'correzioni dell''autore del 14/10: 1 date e giorni (cap. 18 sabato notte); 2 cap. 1 genitori lasciano Pino in piazza,
+    Checco lo porta dal nonno; 3 funghi solo ipotesi di Michele; 4 muro antico, epoca prudente, niente Sparta; 5 titolo Il
+    quaderno nell''ulivo; 6 proposte della bibbia approvate; 7 intestazione solo titolo; più enigmi.md'
+  sha256: 81b5cb197188
+  data: '2026-10-14'
 parole:
   scritte: 0
   obiettivo: 32500
@@ -23,4 +29,4 @@ revisione_in_corso:
   blocchi_totali: 8
   sha256: 81b5cb197188
 push_in_sospeso: false
-aggiornato: '2026-10-14T03:33:04Z'
+aggiornato: '2026-10-14T03:46:59Z'

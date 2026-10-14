@@ -12,8 +12,13 @@ Regola: i difetti GENERICI del motore non si correggono durante il lavoro sul li
    (`git branch --unset-upstream`). La procedura potrebbe indicare `--no-track` o il push esplicito.
 3. **Formato di stampa predefinito.** `zb nuovo` scrive sempre EB Garamond 11,5 pt: per un libro per
    ragazzi serve un carattere più grande e leggibile. Da decidere alla fase PDF (non toccato ora).
-4. **Intestazione del capitolo predefinita** «Luogo — giorno e data»: pensata per romanzi adulti; per
-   ragazzi forse basta il titolo del capitolo. Lasciata com'è, da decidere con l'autore.
+4. **Intestazione del capitolo predefinita** «Luogo — giorno e data»: pensata per romanzi adulti.
+   Risolto senza toccare il motore: è un campo di testo del libro (`struttura.intestazione_capitolo` in
+   libro.yaml), che nessuno script usa come regola; ora dice «solo titolo». Nei capitoli resta solo
+   «# N — Titolo» (lo usa `compila.py`). Effetto: `continuita.py`, senza la riga di luogo e data, prende la
+   data del capitolo dalla scaletta o dalla prima data nel testo. Nessuna modifica al motore.
+5. **`zb correggi` al gate**: una correzione con più punti va registrata come una sola istruzione; il
+   motore non tiene l'elenco dei singoli punti. Solo un'osservazione, nessun blocco.
 
 ## Segnalazioni sulla banca-voci (solo lettura, nulla modificato)
 
