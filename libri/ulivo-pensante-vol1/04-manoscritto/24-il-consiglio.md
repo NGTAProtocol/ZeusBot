@@ -66,7 +66,7 @@ La sala si zittì in un colpo. Il Dottore, in prima fila, non si mosse; solo le 
 
 Gianni guardò verso la terza fila, dove c'era Checco con Ciuffo in braccio. Checco si irrigidì.
 
-— Il ragazzo non c'entra, — disse Gianni. — L'ho saputo da sua madre. Senza che lei se ne accorgesse. È venuta in bottega a ritirare la radio, e mentre cercava i soldi nella borsa ha trovato un foglietto con quattro numeri, scritto da Checco. L'aveva preso dalla tasca dei suoi pantaloni, prima di lavarli. Me l'ha letto ad alta voce, ridendo: «Guarda che numeri si scrive mio figlio. Chissà che sono.» Io lo sapevo che cos'erano.
+— Il ragazzo non c'entra, — disse Gianni. — L'ho saputo da sua madre. Senza che lei se ne accorgesse. La settimana scorsa è venuta in bottega a ritirare la radio, che non era ancora pronta, e mentre cercava lo scontrino nella borsa ha trovato un foglietto con quattro numeri, scritto da Checco. L'aveva preso dalla tasca dei suoi pantaloni, prima di lavarli. Me l'ha letto ad alta voce, ridendo: «Guarda che numeri si scrive mio figlio. Chissà che sono.» Io lo sapevo che cos'erano.
 
 In terza fila, la madre di Checco si portò una mano alla bocca.
 
