@@ -219,3 +219,7 @@ Righe aggiunte dal 14/10/2026: fatti del manoscritto nuovo, non del vecchio test
 | N33 | 25 | Sabato 25: tornano i genitori di Pino; la rete Terravox tolta il mercoledì; il nonno regala a Pino l'ottavo quaderno, bianco, copertina di tela verde | nuovo |
 | N34 | 25 | Festa in Piazza dell'Orologio; Gianni e Checco hanno smontato insieme la frizione il giovedì; il vicedirettore con la sua bambina (cappellino di cotone) | nuovo |
 | N35 | 25 | Nel cassone dell'Ape un biglietto da visita: «Sviluppo Territoriale Sostenibile S.r.l. — Progetti per il territorio»; dietro, a penna: «Alla prossima estate.» | nuovo |
+| N36 | 23 | Il nonno al Dottore: «Il vostro permesso dice dalle sette alle diciannove. Adesso sono quasi le due.» | nuovo |
+| N37 | 24 | La madre di Checco legge il foglietto in bottega: «Ecco i numeri che non mi voleva dire, mio figlio!»; Gianni: sabato sera è andato al cantiere a restituire la giacca e a dire che non ci lavorava più (spiega il furgone del cap. 21) | nuovo |
+| N38 | 25 | Tonio ha raccontato tutto al padre, anche della corda; il padre ha appeso una corda nuova al chiodo del forno, «per quando serve» | nuovo |
+| D7 | — | Decisione d'autore (14/10/2026): Rocca Vetere non è nominata nel libro; tolta dalla nota dell'autore; si reinserisce solo dopo verifica su carta | decisione |

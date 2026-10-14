@@ -15,15 +15,18 @@ CONTESTO
   vicina a Pino, dialetto spento, lineetta «—», titoli «# N — Titolo», riga <!-- zb: chiusura=X -->.
 - Il vecchio «L'Ulivo Pensante» (materiale/…docx) è solo registro dei fatti.
 
-STATO (dopo il lotto C; ultimo commit: vedi git log -1)
-- Tutti i 25 capitoli scritti e accettati dal motore. Fase «chiusura», passo «controlli finali», nessun gate.
-  Approvati dal motore 1-3; 4-15 letti e corretti dall'autore; 16-25 da leggere.
+STATO (dopo le correzioni M1-M9; ultimo commit: vedi git log -1)
+- Romanzo completo e corretto in bozza: 25 capitoli scritti e accettati dal motore (zb esito OK anche dopo
+  M1-M9). Fase «chiusura», passo «controlli finali», nessun gate. Approvati dal motore 1-3; 4-15 letti e
+  corretti dall'autore; 16-25 in lettura (correzioni K1-K5 e M1-M9 già applicate).
 - Parole (metodo unico del motore): 1 = 1.366 · 2 = 1.365 · 3 = 1.388 · 4 = 1.320 · 5 = 1.300 · 6 = 1.377 ·
   7 = 1.349 · 8 = 1.225 · 9 = 1.196 · 10 = 1.335 · 11 = 1.160 · 12 = 1.236 · 13 = 1.152 · 14 = 1.187 ·
   15 = 1.216 · 16 = 1.237 · 17 = 1.252 · 18 = 1.170 · 19 = 1.322 · 20 = 1.212 · 21 = 1.307 · 22 = 1.294 ·
-  23 = 1.274 · 24 = 1.270 · 25 = 1.249. Totale 31.759 / 32.500 (-2,3%).
-- Lotto C: correzioni K1 (cap. 17), K2 (cap. 18), K3-K5 (cap. 19); cap. 21-25 scritti; cap. 24 corretto due
-  volte (KO «cifra quaderni» al primo esito; poi la radio «non ancora pronta» per coerenza con il cap. 17).
+  23 = 1.290 · 24 = 1.288 · 25 = 1.288. Totale 31.832 / 32.500.
+- Protocollo di lavoro e salvataggio: ora è nella bibbia (02-bibbia/bibbia.md, ultima sezione). Leggerlo prima
+  di ogni intervento: sostituisce le istruzioni ripetute nei prompt.
+- zb continuita (--schermo): nessun KO e nessun avviso. zb ortografia: non eseguibile (hunspell non installato,
+  LanguageTool non configurato).
 
 DECISIONI PRESE (non rimetterle in discussione; registro-fatti D1-D6)
 - Guardiano: si rivela nel cap. 22, sul ciglio; «il vicedirettore», senza nome; alto, dritto, capelli grigi alle
@@ -31,8 +34,9 @@ DECISIONI PRESE (non rimetterle in discussione; registro-fatti D1-D6)
   la figlia («la piccola») solo per accenni; nel cap. 25 è alla festa con lei.
 - Codice dell'allarme: la madre di Checco ha trovato nella borsa un foglietto di Checco e l'ha letto ad alta voce
   in bottega a Gianni (radio non ancora pronta); lo racconta Gianni nel cap. 24. Nessun filo aperto nel cap. 25.
-- Rocca Vetere: il nome non compare in nessun capitolo («il muro», «la zona del muro»). La nota dell'autore in
-  libro.yaml lo cita ancora: DA RIVEDERE (toglierlo se non verificato su carta).
+- Rocca Vetere: non compare in nessun capitolo e non è più nella nota dell'autore (D7). Nuova nota: «Ginosa e la
+  Piazza dell'Orologio sono luoghi reali; i fatti che il romanzo vi ambienta sono invenzione. I nomi di contrada
+  la Croce, il Pozzo Vecchio e la Capperaia sono di fantasia.» Si reinserisce solo dopo verifica su carta.
 - «Sviluppo Territoriale Sostenibile S.r.l.» solo nel cap. 25 (dietro il biglietto: «Alla prossima estate.»).
 - Archeologia: muro «antico, di grosse pietre squadrate»; solo il funzionario: «Probabilmente di età greca. Ma
   va verificato.» Niente Sparta, niente date. Sette quaderni (più l'ottavo, bianco, regalato a Pino nel cap. 25).
@@ -41,7 +45,7 @@ DECISIONI PRESE (non rimetterle in discussione; registro-fatti D1-D6)
 
 DA VERIFICARE (00-progetto/registro-verifiche.md)
 - (a) Piazza dell'Orologio: fontana, portici, bar, tre porte, luci della festa sono invenzione.
-- (b) Rocca Vetere: nota dell'autore da rivedere.
+- (b) Rocca Vetere: non nominata; verifica su carta a cura dell'autore prima di reinserirla.
 - (c) Botanica: esito del 14/10/2026 invariato (iris non verificato).
 
 AVVIO (in quest'ordine)
@@ -53,11 +57,13 @@ AVVIO (in quest'ordine)
    libri/ulivo-pensante-vol1 (atteso: «Fase: chiusura; passo: controlli finali; gate in attesa: nessuno»).
 5. Leggere questo file, scaletta (cap. 21-25), registro-fatti (N21-N35, D2-D6), registro-verifiche, cap. 21-25.
 
-PRIMA AZIONE NELLA NUOVA SESSIONE
-Aspettare la lettura dell'autore dei cap. 16-25 e le sue correzioni. Il motore propone i passi di chiusura
-(zb continuita, zb ortografia, zb compila, zb impagina, zb pdf, zb pacchetto, zb kdp, zb pronto): non lanciarli
-senza istruzione dell'autore. Da fare prima della chiusura: nota dell'autore (Rocca Vetere), pagina delle
-soluzioni dei 12 enigmi e mappa della gravina in fondo al libro (scaletta, cap. 25).
+PRIMA AZIONE NELLA NUOVA SESSIONE (prossimi passi, in quest'ordine, su istruzione dell'autore)
+1. Lettura dell'autore dei cap. 16-25 e sue correzioni.
+2. Pagina delle soluzioni dei 12 enigmi in fondo al libro (enigmi.md, colonna «Soluzione»).
+3. Mappa della gravina in fondo al libro (mappa-di-lucia.md; versione Kindle in testo).
+4. Verifica su carta di Rocca Vetere (registro-verifiche, punto b); reinserirla solo se confermata.
+5. Chiusura con i passi zb: continuita, ortografia, compila, impagina, pdf, pacchetto, kdp, pronto.
+Nessun passo di chiusura senza istruzione dell'autore.
 
 FLUSSO DEL MOTORE E SALVATAGGIO
 - Correzioni a capitoli già scritti: modificare, commit, zb correggi libri/ulivo-pensante-vol1 "N: motivo"

@@ -62,3 +62,11 @@ Fatti e dettagli da controllare su fonte prima della stampa. Si aggiunge in fond
 - Esito del controllo sui cap. 1-25: «Rocca Vetere» non compare in nessun capitolo; «Sviluppo Territoriale
   Sostenibile» solo nel cap. 25; nessuna Sparta, nessuna data archeologica; «età greca» solo nella battuta del
   funzionario (cap. 23).
+
+## 14/10/2026 — correzioni M1-M9 e nota dell'autore
+
+- (b) Rocca Vetere: **non è nominata nel libro** (zero occorrenze nei cap. 1-25, controllato con grep anche per
+  «Roccavedere» e «Rocca Vedere»). Tolta dalla nota dell'autore in libro.yaml, che ora dice: «Ginosa e la Piazza
+  dell'Orologio sono luoghi reali; i fatti che il romanzo vi ambienta sono invenzione. I nomi di contrada la Croce,
+  il Pozzo Vecchio e la Capperaia sono di fantasia.» Si reinserisce, nel testo o nella nota, **solo dopo la
+  verifica su carta a cura dell'autore**.

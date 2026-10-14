@@ -90,7 +90,7 @@
 - **Il forno di Sergio**: cupola in tufo (registro L4); all'alba ci passano tutti.
 - **La bottega di Gianni**: sotto un arco, piena di radio e droni da aggiustare (registro L5).
 - **La casa di Franco**: sul crinale, terrazza sulla gravina (registro L6).
-- **Nomi di contrada inventati** (decisione dell'autore del 14/10/2026): Croce, Pozzo Vecchio, Capperaia sono di fantasia. Ginosa, Rocca Vetere e la Piazza dell'Orologio sono luoghi reali (E6; nota dell'autore aggiornata il 14/10/2026). La nota dell'autore in libro.yaml distingue i due casi. Verifiche su fonte: `00-progetto/registro-verifiche.md`.
+- **Nomi di contrada inventati** (decisione dell'autore del 14/10/2026): Croce, Pozzo Vecchio, Capperaia sono di fantasia. Ginosa e la Piazza dell'Orologio sono luoghi reali (nota dell'autore aggiornata il 14/10/2026: Rocca Vetere tolta, D7). La nota dell'autore in libro.yaml distingue i due casi. Verifiche su fonte: `00-progetto/registro-verifiche.md`.
 - **Rocca Vetere**: luogo reale nel territorio di Ginosa (grafia decisa dall'autore il 14/10/2026: «Rocca Vetere», due parole, maiuscole; il cambio di grafia della revisione E6 era errato). Nel libro, per invenzione narrativa, è la zona del muro scoperto da Rosa (registro L21); compare solo nel cap. 21. Non verificati, da confermare con l'autore: che sia un «nome vecchio» della zona, che compaia sulla carta delle contrade, la sua posizione rispetto alla gravina e alla casa del nonno (casella D4), il suo aspetto. Nessun fatto storico o archeologico va attribuito al luogo reale. Decisione dell'autore del 14/10/2026 (lotto C): il nome non compare nel testo dei capitoli (nei cap. 21-25 si dice «il muro», «la zona del muro»); la nota dell'autore va rivista alla fine e Rocca Vetere va tolta se non verificata.
 - **Il muro**: antico, di grosse pietre squadrate. L'epoca la dice solo il funzionario, con prudenza: «probabilmente di età greca, da verificare». Nessun'altra affermazione storica.
 
@@ -126,3 +126,69 @@
 - Banda di quattro ragazzi più Checco: Mimmo (registro P29) non c'è; la ragazzina «Rosa» della piazza (registro P17, I1) non c'è.
 - Michele Tricheco, Ferdinando, grotta che si apre da sola, sorgente con visioni, «vero nome»: fuori (decisione 4a).
 - Rosa nonna di Pino soltanto; Antonio figlio di Michele (registro I2, I3).
+
+## Protocollo di lavoro e salvataggio
+
+Regole fisse del lavoro su questo libro (raccolte il 14/10/2026 da quello che si ripeteva in ogni prompt).
+
+**Ramo e repository.** Repository NGTAProtocol/ZeusBot, ramo libro/ulivo-pensante-vol1, cartella
+libri/ulivo-pensante-vol1/. motore/ e banca-voci (ZB_BANCA_VOCI) in sola lettura. Si salva sui percorsi
+esistenti, senza copie parallele.
+
+**Percorsi.**
+- Capitoli: 04-manoscritto/NN-slug.md («# N — Titolo», riga <!-- zb: chiusura=X -->, separatore «* * *»).
+- Report del motore: 06-diagnostica/capitoli/NN.md (scritti da zb esito; non si modificano a mano).
+- Derivati e da cosa dipendono:
+  - stato.yaml: scritto dal motore (esito, correggi, riapprova); si committa sempre.
+  - 03-architettura/piano-parole.md: misure riscritte da zb esito per il capitolo controllato.
+  - 03-architettura/scaletta.md: riga «Stato» di ogni capitolo scritto o corretto.
+  - 03-architettura/enigmi.md: note dei capitoli con enigma (2, 4, 6, 8, 9, 11, 13, 15, 17, 19, 21, 23).
+  - 03-architettura/mappa-di-lucia.md: luoghi visitati, da ogni capitolo che cambia posto.
+  - 02-bibbia/registro-fatti.md: righe N (fatti nuovi del capitolo) e D (decisioni dell'autore).
+  - 00-progetto/registro-verifiche.md: luoghi reali, botanica, archeologia, da ogni capitolo che li tocca.
+  - 02-bibbia/bibbia.md, cronologia.yaml, libro.yaml: solo su decisione dell'autore.
+  - passaggio-di-sessione.md: rigenerato alla fine di ogni lotto.
+  - LEGGIMI.md: riscritto dal motore.
+
+**Sequenza zb.** export ZB_BANCA_VOCI=…; python3 motore/zb avvio libri/ulivo-pensante-vol1 (riportare la riga
+«Letto: …»; se si ferma, fermarsi); zb stato; per ogni capitolo: zb voce mostra mistero-ed-epicita, scrittura,
+misura (parole, frase media 9-14, dialogo 25-45%, scene da almeno 500 parole), zb esito <libro> N. Per un
+capitolo già scritto: modifica, commit, zb esito, zb correggi <libro> "N: motivo" --commit <hash>. Per un
+documento approvato (bibbia, scaletta, manuale, piano-parole, cronologia.yaml, libro.yaml): commit, zb riapprova
+<libro> <documento> "<motivo>". zb registra solo se il motore lo chiede. In fase chiusura i passi zb continuita,
+ortografia, compila, impagina, pdf, pacchetto, kdp, pronto si lanciano solo su istruzione dell'autore
+(continuita e ortografia con --schermo non scrivono file).
+
+**Regola del KO.** Il primo KO di zb esito vale come tentativo: una sola correzione mirata sul punto indicato, poi
+di nuovo zb esito. Al secondo KO ci si ferma (gate controllo_fallito) e si riporta il motivo. Nessun messaggio di
+commit dichiara «zb esito OK» prima di averlo lanciato.
+
+**Commit.** Uno per capitolo (o per lotto di correzioni, se l'autore lo chiede), uno per stato.yaml dopo
+correggi o riapprova, uno finale per i derivati. Trailer di attribuzione in coda; nessun identificativo di modello.
+
+**Push.** Sempre esplicito: git push origin libro/ulivo-pensante-vol1. Mai push forzato, mai riscrivere la
+storia. Se il push fallisce o un file non si salva: fermarsi e riportare l'errore. Non dire «fatto» se non è su
+origin.
+
+**Resoconto finale.** Hash di ogni commit, git status, git log -3 --stat, parole per capitolo e totale su
+32.500, «branch allineato a origin: sì/no».
+
+**Formato del report.** Compatto, nell'ordine chiesto dall'autore; tabelle uniche; niente ristampa dei capitoli
+salvo richiesta; sezioni fisse «PROBLEMI RILEVATI, NON CORRETTI» e, se servono, «SCELTE DA CONFERMARE». Metodo:
+proporre → l'autore approva → applicare; mai approvare da soli. Una correzione richiesta con VECCHIO → NUOVO si
+applica solo se il VECCHIO compare esattamente una volta; altrimenti ci si ferma su quella voce.
+
+**Soglie dei tic (per capitolo).** «contare» al massimo 3; «tutto insieme» al massimo 1; tenere bassi «piano»,
+«poi», «a lungo», «Nessuno disse niente», «sussurrò», «a bassa voce»; similitudini al massimo una ogni 400 parole,
+mai a grappolo.
+
+**Cifre dei quaderni.** I quaderni di Rosa sono sette (cronologia.yaml, controllo «cifra:quaderni»). Il motore dà
+KO se vicino a «quaderni» compare un altro numero: «sei quaderni», ma anche «uno accanto all'altro» (cap. 24).
+L'ottavo quaderno (cap. 25) è quello bianco di Pino.
+
+**Grafia dei luoghi.** Reali: Ginosa, Piazza dell'Orologio (nessun dettaglio reale inventato; fontana, portici,
+bar e porte sono invenzione dichiarata). Di fantasia: la Croce, il Pozzo Vecchio, la Capperaia. Rocca Vetere (due
+parole, maiuscole) non si usa nel testo né nella nota finché l'autore non l'ha verificata su carta. Il muro:
+«antico, di grosse pietre squadrate»; «età greca» solo nella battuta del funzionario (cap. 23); niente Sparta,
+niente date. «Sviluppo Territoriale Sostenibile» solo nel cap. 25.
+
