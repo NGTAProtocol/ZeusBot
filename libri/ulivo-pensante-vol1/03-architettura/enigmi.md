@@ -139,6 +139,9 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
 - Indizi già comparsi: cap. 1, «Era lunedì mattina» nelle prime righe; Gianni scarica il furgone in piazza e
   saluta Checco.
 - Soluzione: Gianni mente: lunedì mattina era in piazza.
+- Nel cap. 11 (scritto il 14/10/2026): Franco sulla terrazza (domenica mattina), Carmela al bar sotto i portici e
+  Gianni al tavolino con Checco (domenica pomeriggio) dicono le tre frasi esatte della pagina. Pino ride alla
+  battuta di Checco e pensa ad altro; il testo non collega la febbre al lunedì in piazza.
 - Controllo di equità: il cap. 1 dice in chiaro che è lunedì mattina; le testimonianze dicono la data. Sì.
 
 ## 7 — Cap. 13: l'ombra della torre (ombra e punti cardinali)

@@ -12,7 +12,7 @@
 | — | 8 | Il grafico della notte | deduzione + enigma | 1 | 1300 | 1300 | 1225 | -5,8% |
 | — | 9 | Il calendario delle fioriture | cifrario + enigma | 1 | 1300 | 1300 | 1182 | -9,1% |
 | — | 10 | Sotto i capperi | pericolo | 2 | 1300 | 650 | 1328 | +2,2% |
-| — | 11 | Tre versioni | falsa pista chiusa + enigma | 1 | 1300 | 1300 |  |  |
+| — | 11 | Tre versioni | falsa pista chiusa + enigma | 1 | 1300 | 1300 | 1176 | -9,5% |
 | — | 12 | Guardia al recinto | azione notturna | 2 | 1300 | 650 |  |  |
 | — | 13 | L'ombra della torre | indizio + enigma | 1 | 1300 | 1300 |  |  |
 | — | 14 | Il telefono | prova | 1 | 1300 | 1300 |  |  |
