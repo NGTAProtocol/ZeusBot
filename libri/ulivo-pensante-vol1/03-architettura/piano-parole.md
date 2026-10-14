@@ -22,7 +22,7 @@
 | — | 18 | Il perché di Gianni | smascheramento | 1 | 1300 | 1300 | 1169 | -10,1% |
 | — | 19 | L'Ape torna | ricomposizione + enigma | 1 | 1300 | 1300 | 1295 | -0,4% |
 | — | 20 | Dentro l'ulivo | ulivo | 1 | 1300 | 1300 | 1212 | -6,8% |
-| — | 21 | Il lucido | scelta + enigma | 1 | 1300 | 1300 |  |  |
+| — | 21 | Il lucido | scelta + enigma | 1 | 1300 | 1300 | 1307 | +0,5% |
 | — | 22 | La notte delle ruspe | climax | 2 | 1300 | 650 |  |  |
 | — | 23 | La lettera di Rosa | rivelazione + enigma | 1 | 1300 | 1300 |  |  |
 | — | 24 | Il consiglio | risoluzione | 1 | 1300 | 1300 |  |  |
