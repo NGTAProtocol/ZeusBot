@@ -56,7 +56,7 @@ Gianni lo guardò dritto, e per la prima volta nei suoi occhi ci fu qualcosa di 
 
 — Questo non te lo dico. C'è di mezzo una persona che non sa niente, e non voglio metterla nei guai per colpa mia.
 
-A Pino tornò in mente Checco fermo sulla porta di ferro, con le chiavi dell'Ape strette in mano, alle parole che lui gli aveva buttato addosso davanti a tutti. Sentì lo stomaco stringersi, e per un momento non riuscì a dire niente.
+A Pino tornò in mente Checco fermo sulla porta di ferro, con le chiavi dell'Ape strette in mano, e le parole che lui gli aveva buttato addosso davanti a tutti. Sentì lo stomaco stringersi, e per un momento non riuscì a dire niente.
 
 — Il furgone, — disse alla fine. — La notte dell'otto. Le tracce col segno a V davanti al cancelletto del recinto erano sue.
 
