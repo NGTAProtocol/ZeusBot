@@ -176,6 +176,11 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto).
 5. Blocco di salvataggio (sezione 8).
 
+**Titoli interni al capitolo.** Il capitolo comincia con il suo titolo («# N — Titolo»), che `zb compila`
+riscrive («N. Titolo») e porta nel sommario. Dentro il capitolo sono ammessi titoli di secondo livello
+(«## …», per esempio una pagina di enigma): il motore li conserva nel manoscritto compilato, un livello sotto
+il titolo del capitolo («### …»). Si scartano solo il titolo del capitolo e i commenti `<!-- zb: … -->`.
+
 **Checklist di capitolo.** Il report di `capitolo.py` chiude con una checklist manuale per l'autore:
 i tic fissi del motore, le voci di cronologia che il capitolo tocca e le voci proprie del libro scritte in
 `libro.yaml` come `checklist_capitolo` (esempio neutro: `checklist_capitolo: ["Il diario non si apre prima del capitolo 5"]`).
@@ -237,6 +242,33 @@ perché la frase può parlare d'altro («tre settimane di lavoro»).
 - (c) Checklist per la lettura umana, sempre, in fondo al report: i correttori automatici non
   rilevano «e» per «è», gli accordi sbagliati, le parole vere usate al posto di altre.
 - Il report (`06-diagnostica/controllo-ortografico.md`) dice quali livelli sono stati eseguiti.
+
+**Appendici.** Materiali che stanno dopo l'ultima unità del libro (epilogo compreso): soluzioni di enigmi,
+mappe, glossari, note. Stanno nella cartella `05-appendici/` del libro e si dichiarano in `libro.yaml`, in
+ordine di lettura:
+
+```yaml
+appendici:
+  - {titolo: "Le soluzioni", file: soluzioni.md}
+  - {titolo: "La mappa", file: mappa.svg, didascalia: "Riga sotto l'immagine."}
+```
+
+- `titolo`: titolo della pagina e voce del sommario; `file`: nome in `05-appendici/`; `didascalia`: solo per
+  le immagini, facoltativa.
+- Formati: testo `.md` (il suo primo titolo si scarta, gli altri titoli restano un livello sotto); immagini
+  `.svg`, `.png`, `.jpg`. Un `.svg` si converte in PNG con Chromium (`stampa/svg_png.js`, scala 2) in
+  `05-output/appendici/`; `.png` e `.jpg` si copiano lì. Ogni appendice comincia su una pagina nuova.
+- Un libro senza il campo si compila come prima. Un file di `05-appendici/` non dichiarato dà un AVVISO e non
+  entra nel libro; un file dichiarato e assente ferma `zb compila`. Le appendici non vanno mai in
+  `04-manoscritto/`, che accetta solo le unità (prologo, capitoli, interludi, epilogo).
+- Un'appendice non anticipa nulla: le soluzioni stanno solo in appendice, mai nel testo prima della pagina
+  dell'enigma, e una mappa in appendice non mostra la soluzione di un enigma (per esempio un punto da trovare).
+
+**Indice e sommario.** Il sommario lo genera `zb compila`, sempre, e non si scrive a mano: contiene, in ordine,
+le parti (se `struttura.parti` le dichiara), il prologo, i capitoli («N. Titolo»), gli interludi, l'epilogo e
+le appendici dichiarate. `zb impagina` mette accanto a ogni voce la pagina reale e `zb pdf` controlla che
+ogni voce corrisponda alla pagina su cui l'unità comincia. Per cambiare una voce si cambia la sua fonte
+(intestazione del capitolo, `struttura` o `appendici` in `libro.yaml`), poi si rilancia `zb compila`.
 
 ## 8. Blocco di salvataggio
 
