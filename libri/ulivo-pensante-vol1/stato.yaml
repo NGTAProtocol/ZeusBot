@@ -39,8 +39,8 @@ documenti_approvati:
     sha256: 51f3977a4de599f2a7b4c3a4e8718b4e0e6a53f5ef89f5d97a63aa442cb935f5
     commit: f85c4db
   03-architettura/manuale-di-stile.md:
-    sha256: 434d952b62dbd795d6e71fc447e76ac46889391794bd46c2d84172ed468ecfb1
-    commit: 1d4633d
+    sha256: 7ca59ce954b6a254a39d5aede3528b8f9f0e7cbf30e343b59adeffbf5e011898
+    commit: 2d77a00
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -52,6 +52,11 @@ documenti_approvati:
         del cap. 2, mappa canonica, mezzogiorno del sole, occhiali da saldatore di Gianni, allarme col codice)'
       sha256_precedente: 951e4e39b094e3354231d4e02e037bc381caf942fb1ff81f0b77dc0b346c1a7f
       commit_precedente: 1f1803f
+    - data: '2026-10-14'
+      motivo: 'correzione C1 dell''autore del 14/10/2026: pagina enigma del cap. 4 a fine scena 1; soluzione mai spiegata
+        prima della pagina'
+      sha256_precedente: 434d952b62dbd795d6e71fc447e76ac46889391794bd46c2d84172ed468ecfb1
+      commit_precedente: 1d4633d
   03-architettura/scaletta.md:
     sha256: cef01d06d0fec6c14ccb1d67c2bc42fc4c0fc48c17aaf8c75f0236212d743e97
     commit: 1d4633d
@@ -67,8 +72,13 @@ documenti_approvati:
       sha256_precedente: d5e7a0e720adaa7bb544acfbab8a17a54f45d13991eaa77e1e7b3475f79c836e
       commit_precedente: 1f1803f
   03-architettura/piano-parole.md:
-    sha256: f10ae49b321b81cdaa5538516f603f0dfc920a43f0c38be99b42038b79f558da
-    commit: 422702a
+    sha256: 40cd56bb2f3e723f5fdaf016c3a8cecf519e26aab5e883a87652a0f60798a9fc
+    commit: 2d77a00
+    riapprovazioni:
+    - data: '2026-10-14'
+      motivo: 'correzione C1 dell''autore del 14/10/2026: cap. 4 con due scene (budget per scena 650)'
+      sha256_precedente: f10ae49b321b81cdaa5538516f603f0dfc920a43f0c38be99b42038b79f558da
+      commit_precedente: 422702a
   05-revisioni/pagina-campione.md:
     sha256: 77aa7c48c90ad00421923b33519689638b5fac536a4e5741d2df5bea0bad8a4d
     commit: 1f1803f
@@ -93,4 +103,19 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T05:37:08Z'
+aggiornato: '2026-10-14T05:38:03Z'
+correzioni_registrate:
+- data: '2026-10-14'
+  file: 04-manoscritto/04-il-gufo.md
+  motivo: correzioni C1-C4 dell'autore del 14/10/2026 (pagina enigma a fine scena 1, cerchi all'altezza del petto, carta delle
+    contrade già quadrettata, «tutto insieme» una volta)
+  sha256_precedente: 7a60aee499df347bf296c6cbc74674e0d0d5b6c5cd37aa7752505a9017cd1daf
+  sha256_corretto: bbb08aa8907b7af7854bc1ec035cec0494bf28695f1e06cb8ad0d378a8915086
+  commit: 2d77a00
+- data: '2026-10-14'
+  file: 04-manoscritto/05-l-albero-che-pensa.md
+  motivo: correzioni C5-C6 dell'autore del 14/10/2026 (tolto «alla maniera degli ingegneri», interruzione di Lucia sulle radici,
+    «da qualche giorno», «mancava un quarto alle undici»)
+  sha256_precedente: 2ec762c546763834f35b40f346f6956c37d58a9b7b20793242ee5916732c123f
+  sha256_corretto: 413bcd3b3230182c1b4e2b47ef8fdbe9360e619aac1b638ec4a3ad563ad1d81c
+  commit: 2d77a00
