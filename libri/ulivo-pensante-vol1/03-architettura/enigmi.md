@@ -43,6 +43,7 @@ numerate in colonna; la casella è colorata se la pianta è in fiore quel mese.
 I mesi sono quelli del calendario di Rosa: da verificare con una fonte botanica prima della stampa.
 
 **Mappa di Lucia (cap. 4)**: quadrettata, colonne A-F, righe 1-6; nord in alto; vecchi nomi di contrada.
+Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
 
 **Poesia di Rosa (cap. 19)**, cinque righe:
 1. Un segreto si custodisce con pazienza,
@@ -54,7 +55,10 @@ I mesi sono quelli del calendario di Rosa: da verificare con una fonte botanica 
 ## 1 — Cap. 2: l'alfabeto delle piante (cifrario a simboli)
 - Domanda: «Rosa ha disegnato cinque piante in fila sulla prima pagina del quaderno. Che parola ha scritto?»
   Simboli: salvia, elicriso, timo, timo, elicriso.
-- Indizi già comparsi: cap. 1, le piastrelle con piante e nomi; cap. 1-2, Pino conta sei quaderni.
+- Indizi già comparsi: cap. 1, le piastrelle con piante e nomi (l'elicriso descritto: ciuffo di fiori gialli a
+  pallina in cima a steli dritti); cap. 2, l'elicriso nominato; cap. 1-2, Pino conta i quaderni sul banco.
+  La pagina enigma ha la tavola delle 14 piastrelle (nome + disegno) e i 5 simboli, in elenco (Kindle).
+- Il cap. 2 finisce senza la parola: il nonno conta la pila e si ferma. SETTE compare all'inizio del cap. 3.
 - Soluzione: S-E-T-T-E = SETTE. I quaderni erano sette: ne manca uno.
 - Controllo di equità: la tabella delle piastrelle è nel cap. 1; i disegni sono abbastanza chiari da
   riconoscere la pianta. Il lettore può dire «era lì!»: sì.
@@ -63,7 +67,9 @@ I mesi sono quelli del calendario di Rosa: da verificare con una fonte botanica 
 - Domanda: «Parti dalla Croce. Va' verso il sole che sorge fino al Pozzo Vecchio, poi verso dove tramonta
   il sole, due caselle oltre la Capperaia. Dove arrivi?»
 - Indizi già comparsi: cap. 3, Lucia spiega che il sole sorge a est e tramonta a ovest; cap. 3, la terrazza
-  di Franco vista dal sentiero, sopra la Capperaia; la mappa quadrettata di Lucia.
+  di Franco vista dal ciglio, più a ovest della Capperaia sullo stesso crinale; la mappa quadrettata di Lucia.
+- Posizioni (mappa-di-lucia.md): Croce B2, Capperaia C2, Pozzo Vecchio E2, terrazza di Franco A2. Da B2 a
+  est fino a E2; poi a ovest: D2, C2 (Capperaia), B2, A2 (due caselle oltre) = terrazza.
 - Soluzione: la casella della terrazza di Franco (falsa pista: Rosa ci andava a guardare gli uccelli, si
   saprà nel cap. 11).
 - Controllo di equità: la mappa della pagina enigma ha tutti i nomi; le direzioni sono state spiegate
@@ -112,7 +118,9 @@ I mesi sono quelli del calendario di Rosa: da verificare con una fonte botanica 
 ## 7 — Cap. 13: l'ombra della torre (ombra e punti cardinali)
 - Domanda: «"A mezzogiorno, dove la torre indica." Sulla pianta della piazza ci sono tre porte: A a nord
   della torre, B a est, C a sud. Quale?»
-- Indizi già comparsi: cap. 3, Lucia: «A mezzogiorno l'ombra punta a nord»; cap. 10, la piastrella.
+- Indizi già comparsi: cap. 3, Lucia: «A mezzogiorno sta a sud, e l'ombra punta a nord», e il mezzogiorno del
+  sole d'estate cade verso l'una (ora legale); cap. 10, la piastrella. Nel cap. 13 i ragazzi vanno in piazza
+  verso l'una.
 - Soluzione: A, la porta a nord (la cantina della famiglia di Rosa).
 - Controllo di equità: la regola è detta in chiaro due capitoli prima. Sì.
 
@@ -147,7 +155,8 @@ I mesi sono quelli del calendario di Rosa: da verificare con una fonte botanica 
   Nel libro cartaceo: disegno su pagina chiara da ricalcare; su Kindle: le stesse distanze date in caselle.
 - Indizi già comparsi: cap. 1 e 6, la curva dove si rompe l'Ape; cap. 5, l'Ulivo Pensante; cap. 10, la
   chiesa rupestre; cap. 4, la mappa quadrettata.
-- Soluzione: D4, dentro l'area delle ruspe.
+- Soluzione: D4, dentro l'area delle ruspe (recinto Terravox). Punti: Ulivo Pensante E4, curva dell'Ape F5,
+  chiesa rupestre C3 (mappa-di-lucia.md).
 - Controllo di equità: i tre punti di riferimento sono tutti luoghi già visitati. Sì.
 
 ## 12 — Cap. 23: il numero della pratica (conteggio a riferimenti)

@@ -160,3 +160,13 @@ Cosa si adatta al libro (precedenza del manuale):
   È anche la forma che il motore misura: con le virgolette il dialogo risulterebbe 0% (vedi
   `00-progetto/report-difetti-motore.md`).
 - Inciso: «— Battuta, — disse Checco. — Seguito.»
+
+## 20. Mezzogiorno, mappa, tic (correzioni dell'autore del 14/10/2026)
+
+- «Mezzogiorno» nel libro è il mezzogiorno del sole: il sole è più alto, l'ombra è la più corta e punta a
+  nord. D'estate, con l'ora legale, cade verso l'una dell'orologio (cap. 3; vale per l'enigma 7 e il cap. 13).
+- Mappa canonica: `03-architettura/mappa-di-lucia.md`. Ogni posizione nei capitoli e nelle pagine enigma la
+  segue; un cambiamento di posizione si fa prima lì.
+- Tic da tenere bassi: il verbo «contare» al massimo 3 volte per capitolo, nei punti chiave; «poi» e
+  «senza dire niente» con parsimonia.
+- Pagine enigma leggibili anche su Kindle: elenchi brevi, niente tabelle larghe.

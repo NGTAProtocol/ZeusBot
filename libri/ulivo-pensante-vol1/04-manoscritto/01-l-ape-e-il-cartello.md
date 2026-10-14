@@ -60,9 +60,9 @@ Pino scese anche lui e guardò l'Ape da davanti: una ruota sola sotto il muso, d
 
 — A lei. — Checco attorcigliò un pezzo di fil di ferro intorno a qualcosa che Pino non riusciva a vedere. — Adesso spingi, ragazzo del lago.
 
-Pino spinse. Il cassone era caldo e sapeva di gasolio e di cane, e dopo tre metri il motore tossì, poi ripartì con uno scoppio, e Ciuffo tornò su con un salto.
+Pino spinse. Il cassone era caldo e sapeva di gasolio e di cane, e dopo tre metri il motore tossì e ripartì con uno scoppio, e Ciuffo tornò su con un salto.
 
-Il nonno Michele li aspettava davanti a una casa bianca con la porta blu e i pannelli solari sul tetto. Era alto e magro, con un cappello di paglia e un tablet sotto il braccio. Abbracciò Pino forte, senza dire niente, e poi lo tenne un po' lontano per guardarlo meglio.
+Il nonno Michele li aspettava davanti a una casa bianca con la porta blu e i pannelli solari sul tetto. Era alto e magro, con un cappello di paglia e un tablet sotto il braccio. Abbracciò Pino forte, a lungo, e lo tenne un po' lontano per guardarlo meglio.
 
 — Sei cresciuto. L'ultima volta mi arrivavi alla cintura.
 
@@ -74,7 +74,7 @@ Il nonno Michele li aspettava davanti a una casa bianca con la porta blu e i pan
 
 — Allora è tutto normale.
 
-Checco scaricò il trolley, fece un saluto militare e ripartì. L'Ape tossì fino in fondo agli ulivi, poi il rumore sparì e restarono soltanto le cicale.
+Checco scaricò il trolley, fece un saluto militare e ripartì. L'Ape tossì fino in fondo agli ulivi, il rumore sparì e restarono soltanto le cicale.
 
 — Scusa se non sono venuto in piazza, — disse il nonno. — Stamattina sono arrivati quelli della Terravox e volevo vedere cosa facevano vicino ai miei alberi.
 
@@ -88,15 +88,15 @@ Checco scaricò il trolley, fece un saluto militare e ripartì. L'Ape tossì fin
 
 In casa l'aria era fresca e c'era odore di pane e di pomodoro. Sul tavolo della cucina aspettavano due piatti, una bottiglia d'acqua e una ciotola di olive nere.
 
-Una parete intera era coperta di piastrelle dipinte a mano: ognuna aveva una pianta disegnata in blu e il suo nome scritto sotto, in stampatello. Pino si avvicinò e le lesse una per una, a mezza voce: asfodelo, cappero, elicriso, finocchio, lentisco, mirto, origano, pero, rosmarino, salvia, timo, iris, ulivo, vite.
+Una parete intera era coperta di piastrelle dipinte a mano: ognuna aveva una pianta dipinta a colori e il suo nome scritto sotto, in stampatello blu. Pino si avvicinò e le lesse una per una, a mezza voce: asfodelo, cappero, elicriso, finocchio, lentisco, mirto, origano, pero, rosmarino, salvia, timo, iris, ulivo, vite.
 
-Il cappero aveva i fiori con i fili lunghi, il timo era un cespuglietto pieno di puntini, la salvia aveva foglie larghe e pelose, disegnate col pennello sottile.
+Il cappero aveva i fiori con i fili lunghi. L'elicriso era un ciuffo di fiori gialli a pallina, in cima a steli dritti. Il timo era un cespuglietto pieno di puntini, la salvia aveva foglie larghe e pelose, dipinte col pennello sottile.
 
 — Le ha fatte la nonna?
 
 — Tutte e quattordici, in un inverno intero. — Il nonno toccò la piastrella dell'ulivo con un dito. — Diceva che una cucina senza piante è una cucina senza memoria.
 
-Pino tirò fuori il telefono e fotografò la parete, prima tutta intera e poi piastrella per piastrella. Lo faceva sempre, con tutto, e sua madre diceva che un giorno avrebbe finito la memoria del telefono e anche la sua.
+Pino tirò fuori il telefono e fotografò la parete, prima tutta intera e dopo piastrella per piastrella. Lo faceva sempre, con tutto, e sua madre diceva che un giorno avrebbe finito la memoria del telefono e anche la sua.
 
 Mangiarono pane, pomodori e un formaggio bianco che si scioglieva in bocca. Il nonno faceva domande sulla scuola, sul lago e sul calcio, e ascoltava le risposte con attenzione, ma ogni tanto guardava il tablet appoggiato accanto al piatto.
 
@@ -106,7 +106,7 @@ Mangiarono pane, pomodori e un formaggio bianco che si scioglieva in bocca. Il n
 
 Il laboratorio era un vecchio magazzino attaccato alla casa, con una porta di ferro verde, e dentro faceva più caldo che fuori. C'erano scaffali pieni di scatole, due droni appoggiati su un banco, rotoli di cavi, un computer acceso e un odore di polvere e di plastica bruciata.
 
-Il nonno si fermò sulla soglia e Pino per poco non gli andò addosso. Poi guardò dove guardava lui.
+Il nonno si fermò sulla soglia e Pino per poco non gli andò addosso. Guardò dove guardava lui.
 
 In fondo al laboratorio c'era una cassettiera di legno scuro con il primo cassetto aperto. Per terra, proprio lì sotto, c'erano dei quaderni con la copertina di tela, sparsi a ventaglio, alcuni aperti a faccia in giù.
 
@@ -116,9 +116,9 @@ In fondo al laboratorio c'era una cassettiera di legno scuro con il primo casset
 
 Il nonno attraversò il laboratorio piano, guardando il pavimento a ogni passo. Si chinò, raccolse i quaderni con calma, li girò, li chiuse e li mise in pila sul banco.
 
-Pino li contò da lontano, e il conto gli tornò subito: erano sei.
+Pino li contò da lontano: erano sei.
 
-Il nonno li contò anche lui, toccandoli con l'indice. Poi li contò un'altra volta, dal basso verso l'alto, e restò fermo con la mano sopra la pila.
+Il nonno li contò anche lui, toccandoli con l'indice, e li contò un'altra volta, dal basso verso l'alto. Restò fermo con la mano sopra la pila.
 
 — Sono quelli della nonna?
 
@@ -132,7 +132,7 @@ Il nonno li contò anche lui, toccandoli con l'indice. Poi li contò un'altra vo
 
 — Era chiusa, e non è rotta.
 
-Pino guardò la porta di ferro, poi la cassettiera, poi la pila sul banco. La copertina in cima era consumata agli angoli, e sopra c'era un disegno a penna, piccolissimo: un rametto con le foglie strette.
+Pino guardò la porta di ferro, la cassettiera e la pila sul banco. La copertina in cima era consumata agli angoli, e sopra c'era un disegno a penna, piccolissimo: un rametto con le foglie strette.
 
 — Allora qualcuno è entrato con la chiave, — disse Pino. — E ha cercato soltanto in quel cassetto.
 

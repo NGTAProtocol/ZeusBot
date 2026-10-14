@@ -13,9 +13,18 @@ lotto:
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: 3
 tentativi: {}
-correzioni_aperte: []
+correzioni_aperte:
+- gate: primi_capitoli
+  testo: 'A1 elicriso descritto (cap. 1) e nominato (cap. 2), tavola delle 14 piastrelle e dei 5 simboli nella pagina enigma;
+    A2 fine cap. 2 senza numero: il nonno conta e si ferma, SETTE all''inizio del cap. 3; A3 mappa canonica 03-architettura/mappa-di-lucia.md
+    e cap. 3 coerente (Capperaia, terrazza, ombra), verifica enigmi 2, 7, 11; A4 mezzogiorno del sole verso l''una (ora legale),
+    nota nel manuale; A5 battuta di Lucia sul telefono dopo Tonio; A6 tic: contare max 3 per capitolo, meno poi e senza dire
+    niente; A7 zb esito 1-3. Approvati: allarme col codice (cap. 2); i due cerchi neri sono gli occhiali da saldatore di Gianni
+    (bibbia; non a casa di Gianni prima del cap. 12, poi cap. 17).'
+  sha256: 066dc9b71114
+  data: '2026-10-14'
 parole:
-  scritte: 3834
+  scritte: 4119
   obiettivo: 32500
   metodo: unico
 documenti_approvati:
@@ -65,4 +74,4 @@ revisione_in_corso:
   blocchi_totali: 8
   sha256: 066dc9b71114
 push_in_sospeso: false
-aggiornato: '2026-10-14T04:18:43Z'
+aggiornato: '2026-10-14T05:24:52Z'

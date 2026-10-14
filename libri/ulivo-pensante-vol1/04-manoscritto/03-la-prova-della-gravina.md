@@ -2,7 +2,11 @@
 
 <!-- zb: chiusura=R -->
 
-La mattina dopo il tovagliolo era ancora sul tavolo della cucina, sotto la ciotola delle olive, con le cinque lettere scritte a matita: SETTE. Pino lo rilesse mentre beveva il latte, e poi contò di nuovo la pila sul banco del laboratorio, anche se sapeva già il risultato.
+La mattina dopo il tovagliolo era ancora sul tavolo della cucina, sotto la ciotola delle olive, con le cinque lettere scritte a matita: SETTE.
+
+La sera prima il nonno aveva contato la pila tre volte. Alla fine si era tolto gli occhiali e aveva detto soltanto: — Erano sette. Rosa ne ha scritti sette.
+
+Pino rilesse la parola mentre beveva il latte. I quaderni della nonna erano sette, e sul banco del laboratorio ne mancava uno. Era quello che cercava chi era entrato, e non l'aveva trovato: altrimenti perché buttare gli altri per terra?
 
 Il nonno era uscito presto, col tablet e il cappello, a controllare i sensori, e sul frigo aveva lasciato un biglietto: «Le vicine passano alle nove. Fidati di Lucia, non fidarti di Lucia quando corre.»
 
@@ -34,17 +38,27 @@ Era una spaccatura enorme nella terra, profonda e lunga, con le pareti di roccia
 
 Il caldo saliva dalle pietre e si sentiva attraverso le suole delle scarpe, e l'aria sapeva di timo e di polvere.
 
+Camminarono sul ciglio per tutta la mattina finché le ombre degli ulivi non diventarono piccolissime.
+
 — Il telefono qui non prende, — disse Lucia. — Allora, ragazzo del lago: dov'è il nord?
 
-Pino guardò il telefono, che non aveva nemmeno una tacca, e poi il cielo, che era tutto uguale, bianco di luce.
+Pino guardò il telefono, che non aveva nemmeno una tacca, e il cielo, che era tutto uguale, bianco di luce.
 
 — Non lo so.
 
-— Almeno lo dici. — Lucia raccolse un bastoncino dritto, lo piantò in una fessura della roccia e guardò l'orologio. — Mancano cinque minuti a mezzogiorno. Il sole sorge da là, a est, dietro il paese. Tramonta da quella parte, a ovest, dietro la Capperaia. — Indicò un tratto di parete coperto di capperi, sull'altro lato della gravina. — A mezzogiorno sta a sud, quindi l'ombra punta a nord. Sempre.
+— Almeno lo dici. — Lucia raccolse un bastoncino dritto, lo piantò in una fessura della roccia e guardò l'orologio. — È quasi l'una. Il sole sorge da là, a est, dietro il paese, e tramonta da quella parte, a ovest, in fondo alla gravina. A mezzogiorno sta a sud, e l'ombra punta a nord. Sempre.
 
-Pino guardò l'ombra del bastoncino, corta e nera sulla pietra chiara. Puntava verso una casa sul crinale, sopra la Capperaia, con una terrazza larga affacciata sul vuoto.
+— Ma è l'una, non mezzogiorno.
 
-— Quella di chi è?
+— L'una dell'orologio. D'estate, con l'ora legale, il mezzogiorno del sole arriva verso l'una. — Lucia batté un dito sul vetro dell'orologio. — Il sole non lo guarda, l'orologio. Il suo mezzogiorno è quando sta più in alto, e l'ombra è la più corta di tutta la giornata.
+
+Pino guardò l'ombra del bastoncino, corta e nera sulla pietra chiara. Puntava dritta verso l'altra riva, verso una parete coperta di capperi.
+
+— Quella è la Capperaia, — disse Lucia.
+
+Più a ovest, sullo stesso crinale, oltre la Capperaia, c'era una casa con una terrazza larga affacciata sul vuoto.
+
+— E quella di chi è?
 
 — Di Franco, — disse Tonio. — Lo chiamano il Gufo. Sta sempre lì sopra, anche di notte.
 
@@ -62,6 +76,10 @@ Lucia ci infilò la testa. Stellina la seguì. Tonio invece si fermò fuori, a t
 
 — E poi come usciamo, se crolla? — disse Tonio. — Io aspetto qui. Qualcuno deve restare fuori per chiamare aiuto.
 
+— Chiamare con cosa? — disse Lucia dalla grotta. — Qui il telefono non prende.
+
+— Allora grido, — disse Tonio. — Ho una voce fortissima. Mia madre mi sente dal forno fino a casa.
+
 Lo disse con calma, come una cosa ovvia, ma Pino si accorse che non guardava l'ingresso della grotta. Guardava le sue scarpe.
 
 Più avanti il sentiero si stringeva. In un punto la roccia sporgeva in fuori e il passaggio diventava largo appena quanto una scarpa, con la parete da un lato e il vuoto dall'altro. Più sotto, molto più sotto, un falco girava piano nell'aria calda.
@@ -78,17 +96,17 @@ Pino non si mosse e guardò il passaggio. La roccia non era tutta uguale: al cen
 
 — Si rompe da cent'anni, — disse Lucia. — Muoviti.
 
-Pino si girò con la faccia alla parete e mise le mani nelle fessure, una alla volta. Mise il piede prima della crepa, poi lo allungò e lo appoggiò dopo, sulla pietra scura e dura. Non corse, e contò i passi a mezza voce fino a otto. Poi Tonio lo prese per il polso e lo tirò dall'altra parte.
+Pino si girò con la faccia alla parete e mise le mani nelle fessure, una alla volta. Mise il piede prima della crepa, lo allungò e lo appoggiò dopo, sulla pietra scura e dura. Non corse, e contò i passi a mezza voce fino a otto. Poi Tonio lo prese per il polso e lo tirò dall'altra parte.
 
 Lucia lo guardava con le braccia incrociate.
 
-— Lento, — disse. Poi guardò la crepa, dove adesso il pezzo di pietra mancante si vedeva bene. — Però hai guardato.
+— Lento, — disse, e guardò la crepa, dove adesso il pezzo di pietra mancante si vedeva bene. — Però hai guardato.
 
 — Guardo sempre.
 
 — Sì, — disse Tonio. — Si vede.
 
-Si sedettero all'ombra di un carrubo, sul ciglio, a mangiare il pane di Tonio, mentre il falco era sceso più in basso e girava sopra il fondo della gravina.
+Risalirono sul ciglio e si sedettero all'ombra di un carrubo, a mangiare il pane di Tonio, mentre il falco era sceso più in basso e girava sopra il fondo della gravina.
 
 — Perché sei venuto in pieno luglio? — chiese Tonio. — Al lago non si sta bene?
 
@@ -96,7 +114,7 @@ Si sedettero all'ombra di un carrubo, sul ciglio, a mangiare il pane di Tonio, m
 
 — E nel frattempo?
 
-Pino guardò Stellina, poi Lucia, poi il pane che aveva in mano, e alla fine raccontò tutto: il laboratorio, il cassetto aperto, i quaderni per terra, le piastrelle, il tovagliolo con le cinque lettere e la pila sul banco a cui ne mancava uno.
+Pino guardò Stellina, Lucia e il pane che aveva in mano, e alla fine raccontò tutto: il laboratorio, il cassetto aperto, i quaderni per terra, le piastrelle, il tovagliolo con le cinque lettere e la pila sul banco a cui ne mancava uno.
 
 Quando finì, per un po' nessuno parlò. Lucia guardava la terrazza di Franco, con gli occhi stretti per il sole.
 
@@ -112,6 +130,6 @@ Stellina fece sì con la testa.
 
 — Domenica. La sera prima che arrivassi tu.
 
-Stellina fece sì un'altra volta. Poi, per la prima volta da quella mattina, parlò, con una voce così bassa che tutti si zittirono per sentirla.
+Stellina fece sì un'altra volta. E per la prima volta da quella mattina parlò, con una voce così bassa che tutti si zittirono per sentirla.
 
 — Non l'ho detto a nessuno, — disse. — Nemmeno a Lucia.

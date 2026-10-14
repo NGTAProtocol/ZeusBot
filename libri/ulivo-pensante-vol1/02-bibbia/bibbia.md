@@ -22,7 +22,7 @@
 - **Stellina**: della banda — 10 — sorella minore di Lucia.
   - Talento: disegna tutto e ricorda ogni segno; vede i dettagli.
   - Difetto: timidissima; davanti agli adulti non parla, e una volta tace una cosa importante (cap. 3-4).
-  - Funzione: ha visto l'intruso dalla finestra, domenica 5 luglio, la sera prima dell'arrivo di Pino, e lo ha disegnato (cap. 3); ha disegnato il sette tagliato del nonno (cap. 5) e lo riconosce sulla scheda rubata (cap. 17); il suo lucido sulla mappa trova il muro (cap. 21).
+  - Funzione: ha visto l'intruso dalla finestra, domenica 5 luglio, la sera prima dell'arrivo di Pino, e lo ha disegnato (cap. 3: torcia accesa, faccia vuota, due cerchi neri appesi a una cinghia, «domenica, ore 23»); ha disegnato il sette tagliato del nonno (cap. 5) e lo riconosce sulla scheda rubata (cap. 17); il suo lucido sulla mappa trova il muro (cap. 21).
   - Come parla: poco; risponde con un disegno. Quando parla, tutti si zittiscono.
 - **Tonio**: della banda — 12 — figlio del fornaio Sergio Panza (proposta, dal registro: P31).
   - Talento: forza, pazienza, conosce piante e animali (aiuta in campagna).
@@ -36,7 +36,7 @@
   - Fissi (sempre): l'Ape blu piena di adesivi (dal registro: P22), sempre in panne nel momento sbagliato; le mani sporche di grasso.
   - Talento: conosce tutti e tutto; aggiusta qualunque cosa con fil di ferro e nastro.
   - Difetto: chiacchierone e spaccone; racconta storie gonfiate, quindi a volte non gli credono.
-  - Funzione: porta la banda e le notizie; viene sospettato a torto (cap. 16); nel finale l'Ape si rompe proprio dove serve e blocca la strada alle ruspe (cap. 22); trova il biglietto della S.r.l. (cap. 25).
+  - Funzione: porta la banda e le notizie; monta al laboratorio l'allarme col codice (cap. 2, approvato dall'autore il 14/10/2026), per questo conosce il codice; viene sospettato a torto (cap. 16); nel finale l'Ape si rompe proprio dove serve e blocca la strada alle ruspe (cap. 22); trova il biglietto della S.r.l. (cap. 25).
   - Comico ma non stupido: le sue chiacchiere contengono sempre un'informazione vera.
   - Come parla: veloce, qualche parola di dialetto, soprannomi per tutti («ragazzo del lago»).
 - **Mascotte**: Ciuffo, cane bastardino di Checco, viaggia nel cassone dell'Ape. Comico, mai decisivo da solo; visibile in copertina.
@@ -58,6 +58,7 @@
 - **Gianni**: aggiustatutto del paese (dal registro: P32, senza oggetti strani) — 50 (proposta) — barba grigia (proposta, dalla pagina campione).
   - Ripara i droni del nonno ed entra nel laboratorio quando vuole.
   - È l'informatore della Terravox: debiti, bottega che chiude, un lavoro promesso. Non è cattivo; alla fine testimonia.
+  - Occhiali da saldatore (approvato dall'autore il 14/10/2026): due lenti tonde e scure su una cinghia. Sono i «due cerchi neri» del disegno di Stellina (cap. 3), che la banda scambia per il binocolo di Franco (cap. 4). Non compaiono a casa o in bottega di Gianni prima del cap. 12; poi dove serve (cap. 17).
   - Indizi leali (vedi enigmi.md): furgone bianco con la toppa a V sulla gomma, in piazza lunedì mattina, notata solo da Pino, in silenzio (cap. 1); impronta della gomma nella terra rossa (cap. 6); la bugia sulla febbre (cap. 11); il furgone dentro il recinto nelle foto (cap. 14); giacca Terravox e scheda col sette tagliato (cap. 17).
 - **Franco detto il Gufo**: osservatore di uccelli e collezionista di pietre (dal registro: P33) — 70 (proposta).
   - Falsa pista: gira di notte in gravina con torcia e binocolo (cap. 4).
@@ -70,7 +71,8 @@
 
 ## Luoghi
 
-- **Casa del nonno**: casa bianca tra ulivi secolari, porta blu, pannelli solari (registro L2). In cucina le piastrelle dipinte da Rosa (chiave del primo cifrario). Il laboratorio è un ex magazzino accanto alla casa.
+- **Posizioni**: mappa canonica in `03-architettura/mappa-di-lucia.md` (griglia A-F × 1-6, nord in alto); i capitoli e gli enigmi la seguono.
+- **Casa del nonno**: casa bianca tra ulivi secolari, porta blu, pannelli solari (registro L2). In cucina le piastrelle dipinte da Rosa (chiave del primo cifrario): pianta dipinta a colori, nome in stampatello blu. Il laboratorio è un ex magazzino accanto alla casa.
 - **L'Ulivo Pensante**: ulivo di circa mille anni con un volto nella corteccia (registro L15), sul confine del terreno di Rosa, a pochi metri dal recinto Terravox. Tronco cavo alla base. Il nonno ci ha messo i sensori.
 - **La rete di radici (l'unico elemento strano)**: i sensori di Michele misurano acqua e vibrazioni nelle radici. L'Ulivo Pensante, con le radici più profonde nella vena d'acqua, reagisce per primo agli scavi: sembra che «pensi» e avvisi. Fatto certo: acqua, radici, misure. Che gli ulivi «si parlino» attraverso i funghi del suolo è solo un'ipotesi di Michele, mai presentata come certa.
 - **La gravina**: canyon di calcare e tufo, pareti a strapiombo, sentieri a gradini, grotte scavate, chiese rupestri (proposta: una piccola chiesa rupestre nel cap. 10), capperi sulle pareti, lentisco e timo, caldo di giorno e fresco di notte, poco segnale. Personaggio: decide dove si passa, quando (luce e caldo), cosa si vede e cosa crolla.

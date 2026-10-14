@@ -8,8 +8,8 @@
 | Unità | Data | Contenuto | Chiusura |
 |---|---|---|---|
 | 1 | 2026-07-06 | I genitori lasciano Pino in piazza; Checco lo porta dal nonno in Ape; recinto Terravox; il laboratorio è stato frugato | D |
-| 2 | 2026-07-06 | I quaderni cifrati di Rosa; con le piastrelle Pino decifra «SETTE»: ne manca uno | R |
-| 3 | 2026-07-07 | La banda mette alla prova Pino in gravina; Stellina ha disegnato l'intruso | R |
+| 2 | 2026-07-06 | I quaderni cifrati di Rosa; con le piastrelle Pino decifra una parola; il nonno conta la pila e si ferma | R |
+| 3 | 2026-07-07 | «SETTE»: ne manca uno; la banda mette alla prova Pino in gravina; Stellina ha disegnato l'intruso | R |
 | 4 | 2026-07-08 | Falsa pista: la mappa di Rosa porta alla terrazza di Franco; lui li scopre | P |
 | 5 | 2026-07-08 | L'Ulivo Pensante; i sensori registrano scosse di notte, non tutte le notti | D |
 | 6 | 2026-07-09 | Tracce di terra rossa; l'Ape si rompe; la banda crede a un furgone Terravox; le tracce portano in paese | D |
@@ -57,12 +57,13 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Scopo: il mistero diventa personale: i quaderni di Rosa, scritti in un cifrario che nessuno sa leggere.
 - Informazione: i quaderni sono sei; il ladro non ha preso niente. Pino riconosce i simboli delle piastrelle.
 - Domanda: dov'è il quaderno che manca, e perché qualcuno lo vuole?
-- Gancio: la prima parola decifrata dice che i quaderni sono sette.
+- Gancio: Pino non dice la parola; il nonno legge il tovagliolo, tace, conta la pila e si ferma: un conto che
+  non torna (correzione dell'autore del 14/10/2026).
 - Enigma 1: alfabeto delle piante → «SETTE».
 
 ### 3 — La prova della gravina
 - Scopo: presentare Lucia, Stellina, Tonio; la gravina come personaggio (caldo, pareti, sentieri).
-- Informazione: la banda diffida del «ragazzo del lago» e lo mette alla prova su un sentiero. Lucia si orienta senza bussola: a mezzogiorno l'ombra punta a nord. Le due sorelle abitano nella casa più vicina a quella del nonno.
+- Informazione: all'inizio, SETTE sul tovagliolo: i quaderni erano sette, ne manca uno, ed è quello che cercava chi è entrato. La banda diffida del «ragazzo del lago» e lo mette alla prova su un sentiero. Lucia si orienta senza bussola: a mezzogiorno del sole (verso l'una, con l'ora legale) l'ombra punta a nord, verso la Capperaia; la terrazza di Franco è più a ovest, oltre la Capperaia (mappa-di-lucia.md). Le due sorelle abitano nella casa più vicina a quella del nonno.
 - Pericolo: un passaggio stretto sopra il vuoto; Pino lo supera guardando, non correndo.
 - Gancio: Stellina mostra un disegno: un uomo con una torcia davanti al laboratorio, la notte prima dell'arrivo di Pino.
 - Enigma: no.

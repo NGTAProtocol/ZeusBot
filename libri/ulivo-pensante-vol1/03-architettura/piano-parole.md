@@ -2,9 +2,9 @@
 
 | Parte | Cap. | Titolo | Funzione | Scene | Budget capitolo | Budget per scena | Parole reali | Scarto |
 |---|---|---|---|---|---|---|---|---|
-| — | 1 | L'Ape e il cartello | apertura, mistero | 1 | 1300 | 1300 | 1363 | +4,8% |
-| — | 2 | Le piastrelle della nonna | mistero + enigma | 1 | 1300 | 1300 | 1230 | -5,4% |
-| — | 3 | La prova della gravina | banda | 1 | 1300 | 1300 | 1241 | -4,5% |
+| — | 1 | L'Ape e il cartello | apertura, mistero | 1 | 1300 | 1300 | 1366 | +5,1% |
+| — | 2 | Le piastrelle della nonna | mistero + enigma | 1 | 1300 | 1300 | 1365 | +5,0% |
+| — | 3 | La prova della gravina | banda | 1 | 1300 | 1300 | 1388 | +6,8% |
 | — | 4 | Il Gufo | falsa pista + enigma | 1 | 1300 | 1300 |  |  |
 | — | 5 | L'albero che pensa | elemento strano | 1 | 1300 | 1300 |  |  |
 | — | 6 | Terra rossa | indagine + enigma | 1 | 1300 | 1300 |  |  |
