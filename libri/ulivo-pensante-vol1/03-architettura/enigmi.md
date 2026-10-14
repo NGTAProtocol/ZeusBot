@@ -205,6 +205,11 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
   chiesa rupestre; cap. 4, la mappa quadrettata.
 - Soluzione: D4, dentro l'area delle ruspe (recinto Terravox). Punti: Ulivo Pensante E4, curva dell'Ape F5,
   chiesa rupestre C3 (mappa-di-lucia.md).
+- Nel cap. 21 (scritto il 14/10/2026): pagina a fine scena 1. Il nonno dà lo strumento (la fotocopiatrice che
+  ingrandisce: «prima si portano alla stessa misura»); Stellina ricalca; Pino riconosce l'archetto (l'arco sopra la
+  porta della chiesa, cap. 10), Tonio la curva. In pagina, per Kindle: la croce una casella a ovest dell'alberello,
+  l'archetto una a ovest e una a nord della croce, la curva una a est e una a sud dell'alberello; caselle C3, C4,
+  D3, D4, D5, E4, E5, F5. La croce in D4 viene mostrata dopo la pagina, nella scena 2.
 - Controllo di equità: i tre punti di riferimento sono tutti luoghi già visitati. Sì.
 
 ## 12 — Cap. 23: il numero della pratica (conteggio a riferimenti)
@@ -214,6 +219,9 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
 - Soluzione: 6 parole; «legno» ha 5 lettere; 5 righe → 655.
 - Controllo di equità: la poesia è riportata intera nel cap. 19. «La parola che dorme» è «legno» (la chiave
   dorme nel legno). Sì.
+- Nel cap. 23 (scritto il 14/10/2026): pagina a fine scena 1, con la poesia riportata e l'indicazione «tre cifre,
+  una per ogni indicazione, nell'ordine». Anche «dorme» ha cinque lettere: le due letture danno 655 (lo dice
+  Stellina nella scena 2). Il funzionario ritrova la pratica dopo il calcolo dei ragazzi.
 
 ## Controllo dei tipi
 

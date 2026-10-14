@@ -230,6 +230,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Decisione: andare stanotte, con il nonno e Franco avvisati.
 - Gancio: il furgone di Gianni passa davanti alla casa, diretto al cantiere.
 - Enigma 11: sovrapposizione → casella D4.
+- Stato: scritto il 14/10/2026 (1.307 parole, zb esito OK al primo tentativo); pagina enigma a fine scena 1; il nome Rocca Vetere non compare.
 
 ### 22 — La notte delle ruspe
 - Scopo: climax; ogni ragazzo usa il suo talento; la gravina decide.
@@ -243,6 +244,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
   da Nicola (cap. 14: magro, spalle curve, cappellino). Paura sì, crudeltà no.
 - Date: sabato 18 luglio, notte pari; le scosse dei sabati tra le 2:10 e le 2:50.
 - Enigma: no.
+- Stato: scritto il 14/10/2026 (1.294 parole, zb esito OK al primo tentativo); due scene; il vicedirettore si rivela sul ciglio; la ruspa si pianta nel fango del bordo franato (temporale del cap. 20).
 
 ### 23 — La lettera di Rosa
 - Scopo: rivelazione finale; la storia emerge dall'azione, non da una lezione.
@@ -253,6 +255,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
   greca, da verificare». Niente Sparta, niente date.
 - Pagina enigma: a fine scena 1, perché la pratica 655 si vede nel capitolo (manuale § 14).
 - Enigma 12: conta le parole → pratica 655.
+- Stato: scritto il 14/10/2026 (1.274 parole, zb esito OK al primo tentativo); pagina enigma a fine scena 1; il funzionario dice «Probabilmente di età greca. Ma va verificato.»
 
 ### 24 — Il consiglio
 - Scopo: la soluzione è dei ragazzi e del paese; smascheramento pubblico.
@@ -265,6 +268,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
   stupida. Nel cap. 25 nessun filo aperto su questo.
 - Data: lunedì 20 luglio.
 - Enigma: no.
+- Stato: scritto il 14/10/2026 (1.270 parole, zb esito KO al primo tentativo per «cifra quaderni», OK dopo una correzione); testimonianze di Nicola e di Gianni; il codice raccontato da Gianni; la radio non era ancora pronta (coerenza con il cap. 17).
 
 ### 25 — Il biglietto
 - Scopo: chiusura calda; apertura del volume 2.
@@ -274,3 +278,4 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Il nome «Sviluppo Territoriale Sostenibile» compare solo qui (libro.yaml, nome vietato nei cap. 1-24). Data:
   sabato 25 luglio. Sette quaderni; il calendario delle fioriture di Rosa (colonne 1-6) non si tocca.
 - Enigma: no (in fondo al libro: soluzioni dei 12 enigmi e mappa della gravina).
+- Stato: scritto il 14/10/2026 (1.249 parole, zb esito OK al primo tentativo); «Sviluppo Territoriale Sostenibile S.r.l.» solo qui; dietro il biglietto «Alla prossima estate.»

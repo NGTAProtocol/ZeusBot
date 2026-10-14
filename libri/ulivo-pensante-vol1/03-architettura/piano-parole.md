@@ -18,14 +18,14 @@
 | — | 14 | Il telefono | prova | 1 | 1300 | 1300 | 1187 | -8,7% |
 | — | 15 | Il lucchetto di Rosa | seme finale + enigma | 1 | 1300 | 1300 | 1216 | -6,5% |
 | — | 16 | Il codice | crisi | 1 | 1300 | 1300 | 1237 | -4,8% |
-| — | 17 | La bottega | smascheramento + enigma | 1 | 1300 | 1300 | 1255 | -3,5% |
-| — | 18 | Il perché di Gianni | smascheramento | 1 | 1300 | 1300 | 1169 | -10,1% |
-| — | 19 | L'Ape torna | ricomposizione + enigma | 1 | 1300 | 1300 | 1295 | -0,4% |
+| — | 17 | La bottega | smascheramento + enigma | 1 | 1300 | 1300 | 1252 | -3,7% |
+| — | 18 | Il perché di Gianni | smascheramento | 1 | 1300 | 1300 | 1170 | -10,0% |
+| — | 19 | L'Ape torna | ricomposizione + enigma | 1 | 1300 | 1300 | 1322 | +1,7% |
 | — | 20 | Dentro l'ulivo | ulivo | 1 | 1300 | 1300 | 1212 | -6,8% |
 | — | 21 | Il lucido | scelta + enigma | 1 | 1300 | 1300 | 1307 | +0,5% |
 | — | 22 | La notte delle ruspe | climax | 2 | 1300 | 650 | 1294 | -0,5% |
 | — | 23 | La lettera di Rosa | rivelazione + enigma | 1 | 1300 | 1300 | 1274 | -2,0% |
-| — | 24 | Il consiglio | risoluzione | 1 | 1300 | 1300 | 1262 | -2,9% |
+| — | 24 | Il consiglio | risoluzione | 1 | 1300 | 1300 | 1270 | -2,3% |
 | — | 25 | Il biglietto | apertura vol. 2 | 1 | 1300 | 1300 | 1249 | -3,9% |
 
 Totale: 32500.

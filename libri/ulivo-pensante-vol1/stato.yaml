@@ -221,7 +221,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T13:39:49Z'
+aggiornato: '2026-10-14T13:40:32Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
@@ -339,3 +339,9 @@ correzioni_registrate:
   sha256_precedente: 631e51e2c96edf638e9c05de5358e3c71adf9962e7f7e81c1b42ca6ad657627c
   sha256_corretto: 81cc56b2729b0c000977f7859f80cd5c4f34d019a1a055fcb8cf4dcc77ad4bf4
   commit: 9de955b
+- data: '2026-10-14'
+  file: 04-manoscritto/24-il-consiglio.md
+  motivo: radio non ancora pronta, coerenza con il cap. 17
+  sha256_precedente: b480a5132402cf9051f0be3a0ba137487eaf3a252243306dce2e107ce5110320
+  sha256_corretto: 0a52704dd846f0ea331b8a1b9a85c7cd1129f6373da6e30549b4cd217fbf981f
+  commit: 9227ce1

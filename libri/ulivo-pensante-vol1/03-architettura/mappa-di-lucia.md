@@ -83,3 +83,13 @@ crinale nord, riga 3 = fondo e parete sud, riga 4 = ciglio sud (il lato del nonn
 - Cap. 3: da C4 il sole sorge a est, dietro il paese; tramonta a ovest, in fondo alla gravina. L'ombra
   di mezzogiorno del sole punta a nord, verso la Capperaia (C2); la terrazza di Franco è più a ovest
   sullo stesso crinale, oltre la Capperaia (A2).
+
+## Luoghi visitati nei capitoli 21-25 (14/10/2026)
+
+- Cap. 21: laboratorio (E5); il lucido mette la croce in D4 (Ulivo E4, curva F5, chiesa C3). Dalla finestra di
+  casa il furgone di Gianni sulla strada bianca (F4), verso il cancello grande.
+- Cap. 22: sentiero degli ulivi fino all'Ulivo Pensante (E4); buca sotto la rete (bordo D4/E4); il muro e la
+  frana sul ciglio dentro D4; l'Ape blocca il punto stretto della strada bianca prima del cancello grande.
+- Cap. 23: cucina della casa del nonno (E5); il muro in D4.
+- Cap. 24: sala del consiglio comunale (paese, F1-F3), nessun dettaglio reale.
+- Cap. 25: curva della strada di terra rossa (F5); laboratorio (E5); Piazza dell'Orologio (F3).

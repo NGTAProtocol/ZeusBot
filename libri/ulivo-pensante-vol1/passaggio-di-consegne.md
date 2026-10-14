@@ -1,6 +1,6 @@
 # Passaggio di consegne — Il quaderno nell'ulivo (La Banda della Gravina, 1)
 
-> Aggiornato al cap. 16: lo stato corrente e il prompt di ripartenza sono in `passaggio-di-sessione.md`.
+> Aggiornato al cap. 25 (lotto C): lo stato corrente e il prompt di ripartenza sono in `passaggio-di-sessione.md`.
 
 Frase di apertura per la nuova chat: «Leggi libri/ulivo-pensante-vol1/passaggio-di-consegne.md e riprendi da lì».
 

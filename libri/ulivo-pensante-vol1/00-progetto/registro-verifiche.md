@@ -56,3 +56,9 @@ Fatti e dettagli da controllare su fonte prima della stampa. Si aggiunge in fond
   il nome va tolto se non verificato su carta.
 - Archeologia: il muro è «antico, di grosse pietre squadrate»; solo il funzionario della Soprintendenza (cap. 23)
   dice «probabilmente di età greca, da verificare». Nessuna data, nessun popolo nominato.
+- Cap. 24: sala del consiglio comunale descritta solo con elementi generici (sedie di plastica, ventilatore,
+  tavolo con i microfoni); nessun dettaglio reale del municipio. Cap. 25: in Piazza dell'Orologio solo elementi già
+  dichiarati invenzione al punto (a) (fontana, bar, tavolini) più luci appese e musica; nessuna chiesa nominata.
+- Esito del controllo sui cap. 1-25: «Rocca Vetere» non compare in nessun capitolo; «Sviluppo Territoriale
+  Sostenibile» solo nel cap. 25; nessuna Sparta, nessuna data archeologica; «età greca» solo nella battuta del
+  funzionario (cap. 23).
