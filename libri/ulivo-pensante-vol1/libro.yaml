@@ -112,3 +112,8 @@ copyright:
 voce:
   slug: mistero-ed-epicita
   ambientazione: altro
+appendici:
+- titolo: Le soluzioni della banda
+  file: soluzioni.md
+- titolo: La gravina di Lucia
+  file: mappa-gravina.svg

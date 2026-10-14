@@ -60,9 +60,11 @@ AVVIO (in quest'ordine)
 
 APPENDICI E BOZZA DI LETTURA
 - 05-appendici/soluzioni.md («Le soluzioni della banda», 12 enigmi) e 05-appendici/mappa-gravina.svg («La gravina
-  di Lucia», senza croce né muro). zb compila NON le include da solo (vedi passaggio successivo per dichiararle).
-- 07-export/ contiene la bozza di lettura, da rigenerare quando cambiano i capitoli (manoscritto-completo.md, .docx,
-  .epub, .html, .pdf; non è il file per KDP).
+  di Lucia», senza croce né muro), dichiarate in libro.yaml (campo appendici). Con il motore unito sul ramo del
+  libro (merge di origin/motore), zb compila le mette dopo il cap. 25, ciascuna su pagina nuova e nel sommario;
+  la mappa diventa PNG con Chromium. compila conserva anche i titoli «## L'enigma della banda».
+- 07-export/ contiene la bozza di lettura, da rigenerare quando cambiano i capitoli (manoscritto-completo.md con
+  indice dopo la nota dell'autore, .docx, .epub, .html, .pdf e mappa-gravina.png; non è il file per KDP).
 
 PRIMA AZIONE NELLA NUOVA SESSIONE (romanzo completo e corretto; prossimi passi, in quest'ordine, su istruzione
 dell'autore)

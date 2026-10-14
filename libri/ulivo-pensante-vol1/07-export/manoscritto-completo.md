@@ -6,13 +6,48 @@
 
 ### F.R. Faraone
 
-<div style="page-break-after: always;"></div>
+<div style="page-break-before: always;"></div>
 
 ## Nota dell'autore
 
 Ginosa e la Piazza dell'Orologio sono luoghi reali; i fatti che il romanzo vi ambienta sono invenzione. I nomi di contrada la Croce, il Pozzo Vecchio e la Capperaia sono di fantasia.
 
-<div style="page-break-after: always;"></div>
+<div style="page-break-before: always;"></div>
+
+## Indice
+
+- 1 — L'Ape e il cartello
+- 2 — Le piastrelle della nonna
+- 3 — La prova della gravina
+- 4 — Il Gufo
+- 5 — L'albero che pensa
+- 6 — Terra rossa
+- 7 — Il Dottore in piazza
+- 8 — Il grafico della notte
+- 9 — Il calendario delle fioriture
+- 10 — Sotto i capperi
+- 11 — Tre versioni
+- 12 — Guardia al recinto
+- 13 — L'ombra della torre
+- 14 — Il telefono
+- 15 — Il lucchetto di Rosa
+- 16 — Il codice
+- 17 — La bottega
+- 18 — Il perché di Gianni
+- 19 — L'Ape torna
+- 20 — Dentro l'ulivo
+- 21 — Il lucido
+- 22 — La notte delle ruspe
+- 23 — La lettera di Rosa
+- 24 — Il consiglio
+- 25 — Il biglietto
+
+Appendici:
+
+- Le soluzioni della banda
+- La gravina di Lucia
+
+<div style="page-break-before: always;"></div>
 
 # 1 — L'Ape e il cartello
 
@@ -3155,3 +3190,9 @@ L'alberello è l'Ulivo Pensante (E4), la curva è la curva dove l'Ape si pianta 
 La seconda riga della poesia, «la settima chiave dorme nel legno», ha 6 parole. La parola che dorme ha 5 lettere, sia che si scelga «legno» sia che si scelga «dorme». E la poesia ha 5 righe.
 
 La poesia intera compare nel capitolo 19, quando Stellina la mostra a tutti nel laboratorio.
+
+<div style="page-break-before: always;"></div>
+
+# La gravina di Lucia
+
+![La gravina di Lucia](mappa-gravina.png)\
