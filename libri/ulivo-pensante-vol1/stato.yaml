@@ -1,21 +1,16 @@
 libro: Il quaderno nell'ulivo
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: pagina_campione
-passo: in revisione
-gate_in_attesa: pagina_campione
+fase: stesura
+passo: 'pagina campione approvata; prossimo: capitoli 1-5 uno alla volta, stop dopo il 5 (vedi passaggio-di-consegne.md)'
+gate_in_attesa: null
 lotto:
   dimensione: 3
   capitoli: []
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: null
 tentativi: {}
-correzioni_aperte:
-- gate: pagina_campione
-  testo: 'correzioni dell''autore: lunedì mattina esplicito; toppa a V notata solo da Pino, Terravox usa furgoni bianchi;
-    data delle testimonianze (domenica 5 luglio); frase della madre; dialoghi con lineetta'
-  sha256: 89c104a4dc67
-  data: '2026-10-14'
+correzioni_aperte: []
 parole:
   scritte: 0
   obiettivo: 32500
@@ -57,11 +52,10 @@ documenti_approvati:
   03-architettura/piano-parole.md:
     sha256: f10ae49b321b81cdaa5538516f603f0dfc920a43f0c38be99b42038b79f558da
     commit: 422702a
+  05-revisioni/pagina-campione.md:
+    sha256: 77aa7c48c90ad00421923b33519689638b5fac536a4e5741d2df5bea0bad8a4d
+    commit: 1f1803f
 avvisi_aperti: []
-revisione_in_corso:
-  gate: pagina_campione
-  blocco: 1
-  blocchi_totali: 1
-  sha256: ceb9181b4259
+revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T04:09:49Z'
+aggiornato: '2026-10-14T04:09:57Z'
