@@ -255,7 +255,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
   greca, da verificare». Niente Sparta, niente date.
 - Pagina enigma: a fine scena 1, perché la pratica 655 si vede nel capitolo (manuale § 14).
 - Enigma 12: conta le parole → pratica 655.
-- Stato: scritto il 14/10/2026 (1.274 parole, zb esito OK al primo tentativo); pagina enigma a fine scena 1; il funzionario dice «Probabilmente di età greca. Ma va verificato.»
+- Stato: scritto il 14/10/2026 (1.290 parole dopo la correzione M2; zb esito OK); pagina enigma a fine scena 1; il funzionario dice «Probabilmente di età greca. Ma va verificato.»
 
 ### 24 — Il consiglio
 - Scopo: la soluzione è dei ragazzi e del paese; smascheramento pubblico.
@@ -268,7 +268,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
   stupida. Nel cap. 25 nessun filo aperto su questo.
 - Data: lunedì 20 luglio.
 - Enigma: no.
-- Stato: scritto il 14/10/2026 (1.270 parole, zb esito KO al primo tentativo per «cifra quaderni», OK dopo una correzione); testimonianze di Nicola e di Gianni; il codice raccontato da Gianni; la radio non era ancora pronta (coerenza con il cap. 17).
+- Stato: scritto il 14/10/2026 (1.288 parole dopo le correzioni M3-M6; zb esito KO al primo tentativo per «cifra quaderni», OK dopo una correzione); testimonianze di Nicola e di Gianni; il codice raccontato da Gianni; la radio non era ancora pronta (coerenza con il cap. 17).
 
 ### 25 — Il biglietto
 - Scopo: chiusura calda; apertura del volume 2.
@@ -278,4 +278,4 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Il nome «Sviluppo Territoriale Sostenibile» compare solo qui (libro.yaml, nome vietato nei cap. 1-24). Data:
   sabato 25 luglio. Sette quaderni; il calendario delle fioriture di Rosa (colonne 1-6) non si tocca.
 - Enigma: no (in fondo al libro: soluzioni dei 12 enigmi e mappa della gravina).
-- Stato: scritto il 14/10/2026 (1.249 parole, zb esito OK al primo tentativo); «Sviluppo Territoriale Sostenibile S.r.l.» solo qui; dietro il biglietto «Alla prossima estate.»
+- Stato: scritto il 14/10/2026 (1.330 parole dopo le correzioni M7-M9 e N1, conseguenze per Gianni; zb esito OK); «Sviluppo Territoriale Sostenibile S.r.l.» solo qui; dietro il biglietto «Alla prossima estate.»

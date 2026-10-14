@@ -15,14 +15,15 @@ CONTESTO
   vicina a Pino, dialetto spento, lineetta «—», titoli «# N — Titolo», riga <!-- zb: chiusura=X -->.
 - Il vecchio «L'Ulivo Pensante» (materiale/…docx) è solo registro dei fatti.
 
-STATO (dopo le correzioni M1-M9; ultimo commit: vedi git log -1)
+STATO (dopo le correzioni M1-M9 e N1; ultimo commit: vedi git log -1)
 - Romanzo completo e corretto in bozza: 25 capitoli scritti e accettati dal motore (zb esito OK anche dopo
   M1-M9). Fase «chiusura», passo «controlli finali», nessun gate. Approvati dal motore 1-3; 4-15 letti e
-  corretti dall'autore; 16-25 in lettura (correzioni K1-K5 e M1-M9 già applicate).
+  corretti dall'autore; 16-25 in lettura (correzioni K1-K5, M1-M9 e N1 già applicate). N1: il maresciallo
+  non procede contro Gianni (cap. 25). D8: la scheda col video data al Dottore non viene recuperata (gancio vol. 2).
 - Parole (metodo unico del motore): 1 = 1.366 · 2 = 1.365 · 3 = 1.388 · 4 = 1.320 · 5 = 1.300 · 6 = 1.377 ·
   7 = 1.349 · 8 = 1.225 · 9 = 1.196 · 10 = 1.335 · 11 = 1.160 · 12 = 1.236 · 13 = 1.152 · 14 = 1.187 ·
   15 = 1.216 · 16 = 1.237 · 17 = 1.252 · 18 = 1.170 · 19 = 1.322 · 20 = 1.212 · 21 = 1.307 · 22 = 1.294 ·
-  23 = 1.290 · 24 = 1.288 · 25 = 1.288. Totale 31.832 / 32.500.
+  23 = 1.290 · 24 = 1.288 · 25 = 1.330. Totale 31.874 / 32.500.
 - Protocollo di lavoro e salvataggio: ora è nella bibbia (02-bibbia/bibbia.md, ultima sezione). Leggerlo prima
   di ogni intervento: sostituisce le istruzioni ripetute nei prompt.
 - zb continuita (--schermo): nessun KO e nessun avviso. zb ortografia: non eseguibile (hunspell non installato,
@@ -59,11 +60,11 @@ AVVIO (in quest'ordine)
 
 PRIMA AZIONE NELLA NUOVA SESSIONE (prossimi passi, in quest'ordine, su istruzione dell'autore)
 1. Lettura dell'autore dei cap. 16-25 e sue correzioni.
-2. Pagina delle soluzioni dei 12 enigmi in fondo al libro (enigmi.md, colonna «Soluzione»).
-3. Mappa della gravina in fondo al libro (mappa-di-lucia.md; versione Kindle in testo).
-4. Verifica su carta di Rocca Vetere (registro-verifiche, punto b); reinserirla solo se confermata.
-5. Chiusura con i passi zb: continuita, ortografia, compila, impagina, pdf, pacchetto, kdp, pronto.
-Nessun passo di chiusura senza istruzione dell'autore.
+2. Correzione ortografica esterna (zb ortografia qui non gira: hunspell non installato, LanguageTool non configurato).
+3. Pagina delle soluzioni dei 12 enigmi in fondo al libro (enigmi.md, colonna «Soluzione»).
+4. Mappa della gravina in fondo al libro (mappa-di-lucia.md; versione Kindle in testo).
+5. Chiusura con i passi zb (continuita, ortografia, compila, impagina, pdf, pacchetto, kdp, pronto), solo su
+   istruzione dell'autore. Rocca Vetere resta fuori finché non è verificata su carta.
 
 FLUSSO DEL MOTORE E SALVATAGGIO
 - Correzioni a capitoli già scritti: modificare, commit, zb correggi libri/ulivo-pensante-vol1 "N: motivo"

@@ -223,3 +223,5 @@ Righe aggiunte dal 14/10/2026: fatti del manoscritto nuovo, non del vecchio test
 | N37 | 24 | La madre di Checco legge il foglietto in bottega: «Ecco i numeri che non mi voleva dire, mio figlio!»; Gianni: sabato sera è andato al cantiere a restituire la giacca e a dire che non ci lavorava più (spiega il furgone del cap. 21) | nuovo |
 | N38 | 25 | Tonio ha raccontato tutto al padre, anche della corda; il padre ha appeso una corda nuova al chiodo del forno, «per quando serve» | nuovo |
 | D7 | — | Decisione d'autore (14/10/2026): Rocca Vetere non è nominata nel libro; tolta dalla nota dell'autore; si reinserisce solo dopo verifica su carta | decisione |
+| N39 | 25 | Il maresciallo non procede contro Gianni (cap. 25): il martedì il nonno gli dice che le schede sono tornate al loro posto e che Gianni ha già confessato davanti al paese; il maresciallo scrive una riga sul taccuino e non chiede altro | nuovo |
+| D8 | — | Decisione d'autore (14/10/2026): la scheda col video data al Dottore non viene recuperata: gancio per il volume 2 | decisione |
