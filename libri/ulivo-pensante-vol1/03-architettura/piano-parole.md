@@ -26,6 +26,6 @@
 | — | 22 | La notte delle ruspe | climax | 2 | 1300 | 650 | 1294 | -0,5% |
 | — | 23 | La lettera di Rosa | rivelazione + enigma | 1 | 1300 | 1300 | 1290 | -0,8% |
 | — | 24 | Il consiglio | risoluzione | 1 | 1300 | 1300 | 1288 | -0,9% |
-| — | 25 | Il biglietto | apertura vol. 2 | 1 | 1300 | 1300 | 1288 | -0,9% |
+| — | 25 | Il biglietto | apertura vol. 2 | 1 | 1300 | 1300 | 1330 | +2,3% |
 
 Totale: 32500.

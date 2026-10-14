@@ -12,7 +12,7 @@ ultimo_capitolo_scritto: 25
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 31832
+  scritte: 31874
   obiettivo: 32500
   metodo: unico
 documenti_approvati:
@@ -233,7 +233,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T16:09:08Z'
+aggiornato: '2026-10-14T16:13:03Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
@@ -381,3 +381,9 @@ correzioni_registrate:
   sha256_precedente: 6aed06e56a5b15d68b080eb1461e54f1325a6170d91602cdb5cb829c39a1367f
   sha256_corretto: a592e60d0c2807138e57b58429fad8f2ddbf6aa0bccc72e1ff8b74c6eecaf53f
   commit: 5ff391e
+- data: '2026-10-14'
+  file: 04-manoscritto/25-il-biglietto.md
+  motivo: conseguenze per Gianni
+  sha256_precedente: a592e60d0c2807138e57b58429fad8f2ddbf6aa0bccc72e1ff8b74c6eecaf53f
+  sha256_corretto: 26cf6118189b589eb9f35ec7e882b56692352a7b9440bc3b27b11bcb442fa829
+  commit: 03931bd
