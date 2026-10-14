@@ -17,16 +17,20 @@ parole:
   metodo: unico
 documenti_approvati:
   libro.yaml:
-    sha256: 0013dbe235a66b34d772c84de747b73e85252061a0a6f70d7744a517fbdf7806
-    commit: 5e08933
+    sha256: e24d06e4594f7f5216b92e955f05fa5989d680342d4a5d9b81a1f2d51a86a415
+    commit: c4e2236
     riapprovazioni:
     - data: '2026-10-14'
       motivo: decisioni D1-D9 dell'autore del 14/10/2026 dopo la lettura dei capitoli 6-10
       sha256_precedente: 9c5115b7bbb0607d8078671e8e303e24480fbb9c4c0a067ae8b0eb9679ce3a41
       commit_precedente: 422702a
+    - data: '2026-10-14'
+      motivo: decisioni E1-E8 dell'autore del 14/10/2026 sui capitoli 6-15
+      sha256_precedente: 0013dbe235a66b34d772c84de747b73e85252061a0a6f70d7744a517fbdf7806
+      commit_precedente: 5e08933
   02-bibbia/bibbia.md:
-    sha256: 3035308c2630ad73c9ceb038c6bf15454875a0e8cc99230c2b80179a46bee4c5
-    commit: 5ed7d63
+    sha256: 9172fb767557e212b71011456b533995661db39c0a52280d1a282a9474930800
+    commit: c4e2236
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -52,12 +56,16 @@ documenti_approvati:
         come proposta
       sha256_precedente: fed94f524526cff264043cd3e48371a632bac0208d07bc786d370ba46e7c0666
       commit_precedente: 5e08933
+    - data: '2026-10-14'
+      motivo: decisioni E1-E8 dell'autore del 14/10/2026 sui capitoli 6-15
+      sha256_precedente: 3035308c2630ad73c9ceb038c6bf15454875a0e8cc99230c2b80179a46bee4c5
+      commit_precedente: 5ed7d63
   cronologia.yaml:
     sha256: 51f3977a4de599f2a7b4c3a4e8718b4e0e6a53f5ef89f5d97a63aa442cb935f5
     commit: f85c4db
   03-architettura/manuale-di-stile.md:
-    sha256: e88a636eeccc6e624f867cc9b5a7e9da120c43963b867dab850530da07563ab8
-    commit: 5ed7d63
+    sha256: 7d8039b5a7c8ee9880c1a69b467ca3c924163bd8a65ebb426be061a011ff7219
+    commit: c4e2236
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -83,9 +91,13 @@ documenti_approvati:
         come proposta
       sha256_precedente: f1a1869cd8147896e8ab46906b975363f9c8ed4de25005b446e29493d6e60bb8
       commit_precedente: 5e08933
+    - data: '2026-10-14'
+      motivo: decisioni E1-E8 dell'autore del 14/10/2026 sui capitoli 6-15
+      sha256_precedente: e88a636eeccc6e624f867cc9b5a7e9da120c43963b867dab850530da07563ab8
+      commit_precedente: 5ed7d63
   03-architettura/scaletta.md:
-    sha256: 71271f22628f45201b22369f4e0064eff00f9b7078413553ddd2fe83dd714c30
-    commit: 5ed7d63
+    sha256: 44d2277932a1fd41a9fd6858e8a17a209578d6e37f208e9cb8a83edfb6b7ee2c
+    commit: c4e2236
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -111,14 +123,22 @@ documenti_approvati:
         come proposta
       sha256_precedente: 53d497ece3478862bad843085f9d7f07906dba9a77943e8a836c0a63c2d0f5b5
       commit_precedente: 5e08933
+    - data: '2026-10-14'
+      motivo: decisioni E1-E8 dell'autore del 14/10/2026 sui capitoli 6-15
+      sha256_precedente: 71271f22628f45201b22369f4e0064eff00f9b7078413553ddd2fe83dd714c30
+      commit_precedente: 5ed7d63
   03-architettura/piano-parole.md:
-    sha256: 40cd56bb2f3e723f5fdaf016c3a8cecf519e26aab5e883a87652a0f60798a9fc
-    commit: 2d77a00
+    sha256: 7703b13a5451c07f25fa61b3bc3e30b19d38edf4dad79ac296b1647eed3755cc
+    commit: c4e2236
     riapprovazioni:
     - data: '2026-10-14'
       motivo: 'correzione C1 dell''autore del 14/10/2026: cap. 4 con due scene (budget per scena 650)'
       sha256_precedente: f10ae49b321b81cdaa5538516f603f0dfc920a43f0c38be99b42038b79f558da
       commit_precedente: 422702a
+    - data: '2026-10-14'
+      motivo: decisioni E1-E8 dell'autore del 14/10/2026 sui capitoli 6-15
+      sha256_precedente: 40cd56bb2f3e723f5fdaf016c3a8cecf519e26aab5e883a87652a0f60798a9fc
+      commit_precedente: 2d77a00
   05-revisioni/pagina-campione.md:
     sha256: 77aa7c48c90ad00421923b33519689638b5fac536a4e5741d2df5bea0bad8a4d
     commit: 1f1803f
@@ -143,7 +163,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T08:41:38Z'
+aggiornato: '2026-10-14T08:42:41Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
@@ -177,3 +197,15 @@ correzioni_registrate:
   sha256_precedente: d124f38c7b6be3bcc3bdc7a8846b2f540bdb344a97f3a43a6b6384b46d98654f
   sha256_corretto: 8008d9908f81cfdf9082bd815c631120f9263082e76f7234044bed92953fbb5c
   commit: 5e08933
+- data: '2026-10-14'
+  file: 04-manoscritto/06-terra-rossa.md
+  motivo: E2 (tagli su descrizioni e similitudini, indizi D2 intatti)
+  sha256_precedente: 339f3c9c644a0b504b46b18ba1aec6f45253a11ce42531e1ed2859fde6d0e8d2
+  sha256_corretto: dc8165f9ddfb8b92ea4eea028238d1a375f46e4744073ac7a59c632b2e46a33f
+  commit: c4e2236
+- data: '2026-10-14'
+  file: 04-manoscritto/08-il-grafico-della-notte.md
+  motivo: E3 (tolto «in primavera» nella battuta di Tonio sull'asfodelo)
+  sha256_precedente: 7d2d3b80f97f72224a5ea56eb306b698e328f4f84c7e12aefb61712c27d27f42
+  sha256_corretto: c549ea50416aa595e527e49478938e1f5286a5d1f72d5951508d86e6e227d6f2
+  commit: c4e2236
