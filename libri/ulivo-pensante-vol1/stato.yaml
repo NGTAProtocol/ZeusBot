@@ -1,32 +1,40 @@
 libro: Il quaderno nell'ulivo
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: documenti
-passo: in revisione
-gate_in_attesa: documenti
+fase: pagina_campione
+passo: da completare
+gate_in_attesa: null
 lotto:
   dimensione: 3
   capitoli: []
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: null
 tentativi: {}
-correzioni_aperte:
-- gate: documenti
-  testo: 'correzioni dell''autore del 14/10: 1 date e giorni (cap. 18 sabato notte); 2 cap. 1 genitori lasciano Pino in piazza,
-    Checco lo porta dal nonno; 3 funghi solo ipotesi di Michele; 4 muro antico, epoca prudente, niente Sparta; 5 titolo Il
-    quaderno nell''ulivo; 6 proposte della bibbia approvate; 7 intestazione solo titolo; più enigmi.md'
-  sha256: 81b5cb197188
-  data: '2026-10-14'
+correzioni_aperte: []
 parole:
   scritte: 0
   obiettivo: 32500
   metodo: unico
-documenti_approvati: {}
+documenti_approvati:
+  libro.yaml:
+    sha256: 9c5115b7bbb0607d8078671e8e303e24480fbb9c4c0a067ae8b0eb9679ce3a41
+    commit: 422702a
+  02-bibbia/bibbia.md:
+    sha256: 37a169bfc1a180c3f9e1b3cbfa698c47682dcb7b40f1c13056f4f7ae92aba402
+    commit: 422702a
+  cronologia.yaml:
+    sha256: 51f3977a4de599f2a7b4c3a4e8718b4e0e6a53f5ef89f5d97a63aa442cb935f5
+    commit: f85c4db
+  03-architettura/manuale-di-stile.md:
+    sha256: edb5470d1f79783508aaf394ab658852acf5c68f95c9ecb8b7a3a66f6792b19f
+    commit: 422702a
+  03-architettura/scaletta.md:
+    sha256: 4857293d626f16e8f5b8ec4ba79f72da73ac40230a2714e384b5700a36df99eb
+    commit: 422702a
+  03-architettura/piano-parole.md:
+    sha256: f10ae49b321b81cdaa5538516f603f0dfc920a43f0c38be99b42038b79f558da
+    commit: 422702a
 avvisi_aperti: []
-revisione_in_corso:
-  gate: documenti
-  blocco: 1
-  blocchi_totali: 8
-  sha256: 81b5cb197188
+revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T03:46:59Z'
+aggiornato: '2026-10-14T03:50:01Z'
