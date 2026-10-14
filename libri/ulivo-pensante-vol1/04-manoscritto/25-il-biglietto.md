@@ -72,7 +72,7 @@ La banda stava sul bordo della fontana, con i piedi a penzoloni. Lucia aveva un 
 
 — Scrivi anche di noi, — disse Stellina, senza alzare la matita. — Però non tutto.
 
-Gianni era sotto il palco ad aggiustare un amplificatore che fischiava. Ogni tanto alzava la testa, vedeva i ragazzi e la riabbassava. Il giovedì, Pino lo sapeva da Checco, lui e Checco avevano passato tutto il pomeriggio sotto l'Ape, a smontare la frizione, senza parlare di niente. Era stato il loro dopo.
+Gianni era sotto il palco ad aggiustare un amplificatore che fischiava. Ogni tanto alzava la testa, vedeva i ragazzi e la riabbassava. Il giovedì, Pino lo sapeva da Checco, lui e Checco avevano passato tutto il pomeriggio sotto l'Ape, a smontare la frizione, senza parlare di niente. Era stato il loro dopo. Il nonno era andato dal maresciallo il martedì: le schede erano tornate al loro posto, aveva detto, e Gianni aveva già detto a tutto il paese quello che doveva. Il maresciallo aveva scritto una riga sul taccuino e non aveva chiesto altro.
 
 Vicino al bar, a un tavolino, Pino riconobbe la camicia azzurra. Il vicedirettore era seduto accanto a una bambina piccola, con un cappellino di cotone in testa e una granita in mano, e la guardava mangiare. Incontrò lo sguardo di Tonio, fece un cenno con la testa, uno solo, e tornò a guardare la bambina.
 
