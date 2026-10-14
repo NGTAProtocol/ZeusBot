@@ -46,3 +46,13 @@ Fatti e dettagli da controllare su fonte prima della stampa. Si aggiunge in fond
   Rosa, «nome vecchio» della zona, casella D4 della mappa di Lucia, presenza sulla carta delle contrade). Finché
   non sono confermati, nel testo non si afferma nulla di reale su Rocca Vetere. Nei cap. 1-20 il nome non compare.
 - Ufficio postale (cap. 19): nessun dettaglio reale (indirizzo, edificio) è descritto; solo lo sportello.
+
+## 14/10/2026 — lotto C (cap. 21-25)
+
+- (b) Rocca Vetere, decisione dell'autore: nei cap. 21-25 il nome **non è usato**; nel testo si dice «il muro» o
+  «la zona del muro», senza nessun dettaglio reale. Nei cap. 1-20 il nome non compare. Quindi nel libro il nome
+  non compare in nessun capitolo.
+- **DA RIVEDERE alla fine:** la nota dell'autore in libro.yaml cita Rocca Vetere tra i luoghi reali; va rivista e
+  il nome va tolto se non verificato su carta.
+- Archeologia: il muro è «antico, di grosse pietre squadrate»; solo il funzionario della Soprintendenza (cap. 23)
+  dice «probabilmente di età greca, da verificare». Nessuna data, nessun popolo nominato.

@@ -51,6 +51,8 @@ decisione dell'autore del 14/10/2026).
 - Cap. 8 e 9: pagina a fine scena 1, stesso schema del cap. 4 (decisione D1 dell'autore del 14/10/2026). Nel
   cap. 8 la decisione «stanotte» e il volo del drone, nel cap. 9 la parola CAPPERI e la decisione, vengono
   dopo la pagina, nella scena 2. Cap. 6: pagina in fondo, come da regola.
+- Cap. 21 e 23 (decisione dell'autore del 14/10/2026, lotto C): si applica la regola del manuale § 14. La
+  soluzione si vede nel capitolo (la croce in D4; la pratica 655), quindi pagina a fine scena 1.
 
 ## Dettaglio dei capitoli
 
@@ -221,8 +223,10 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 
 ### 21 — Il lucido
 - Scopo: il talento di Stellina decide; la mappa diventa una scelta.
-- Informazione: Stellina ricalca il disegno su carta lucida e lo appoggia sulla mappa di Lucia: tre punti combaciano (l'Ulivo Pensante, la curva dove si rompe l'Ape, la chiesa rupestre). Il muro cade dentro l'area delle ruspe, nella zona che sulla mappa vecchia si chiama Rocca Vetere (luogo reale nel territorio di Ginosa, E6; la sua
-  collocazione dentro il recinto, nella casella D4, è narrativa e va confermata dall'autore).
+- Informazione: Stellina ricalca il disegno su carta lucida e lo appoggia sulla mappa di Lucia: tre punti combaciano (l'Ulivo Pensante, la curva dove si rompe l'Ape, la chiesa rupestre). Il muro cade dentro l'area delle ruspe, nella casella D4 («il muro», «la zona del muro»).
+- Rocca Vetere (decisione dell'autore del 14/10/2026, lotto C): il nome non compare nel testo dei capitoli 21-25 e
+  di nessun luogo reale si dà un dettaglio; la nota dell'autore va rivista alla fine (registro-verifiche, punto b).
+- Pagina enigma: a fine scena 1, perché la soluzione (D4) si vede nel capitolo (manuale § 14).
 - Decisione: andare stanotte, con il nonno e Franco avvisati.
 - Gancio: il furgone di Gianni passa davanti alla casa, diretto al cantiere.
 - Enigma 11: sovrapposizione → casella D4.
@@ -232,6 +236,12 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Informazione: Lucia guida, Tonio vince la paura, Stellina riconosce il muro della foto, Pino filma col drone, Checco blocca la strada con l'Ape in panne.
 - Pericolo: una ruspa sul ciglio, terra che frana, il Dottore che arriva.
 - Gancio: la ruspa si ferma a un metro dal muro; il Dottore chiede «Chi vi ha detto di questo posto?».
+- Guardiano (decisione dell'autore del 14/10/2026, lotto C): si rivela qui, sul ciglio, la notte delle ruspe.
+  Senza nome: «il vicedirettore», come lo chiama Checco nel cap. 19 (stesso uomo dello sportello: camicia
+  azzurra, «la piccola»). Riconosce i ragazzi e non li ferma; è a disagio. Il gesto della corda (cap. 10) si
+  spiega col disagio, non con la crudeltà. La figlia malata: solo accenni discreti. Descrizione fisica diversa
+  da Nicola (cap. 14: magro, spalle curve, cappellino). Paura sì, crudeltà no.
+- Date: sabato 18 luglio, notte pari; le scosse dei sabati tra le 2:10 e le 2:50.
 - Enigma: no.
 
 ### 23 — La lettera di Rosa
@@ -239,6 +249,9 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Informazione: l'ultima pagina del settimo quaderno è una lettera di Rosa: anni fa ha segnalato il muro, e indica come ricavare il numero della pratica. Domenica mattina i carabinieri chiamano il funzionario di turno della Soprintendenza. Lui guarda il muro e dice soltanto: «Antico. Probabilmente di età greca, ma va verificato.»
 - Rivelazione: la pratica 655 esiste; la perizia della Terravox («nessun ritrovamento») non regge.
 - Gancio: la zona è fermata, ma il voto è domani.
+- Archeologia: il muro è «antico, di grosse pietre squadrate»; solo il funzionario dice «probabilmente di età
+  greca, da verificare». Niente Sparta, niente date.
+- Pagina enigma: a fine scena 1, perché la pratica 655 si vede nel capitolo (manuale § 14).
 - Enigma 12: conta le parole → pratica 655.
 
 ### 24 — Il consiglio
@@ -246,6 +259,11 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Informazione: foto, video, quaderni, testimonianza di Gianni e di Nicola; il voto salta; la Terravox si ritira.
 - Domanda: il Dottore lascia la Terravox. Per andare dove?
 - Gancio: uscendo, sorride a Pino: «Alla prossima estate».
+- Codice dell'allarme (decisione dell'autore del 14/10/2026, lotto C): lo racconta Gianni nella sua
+  testimonianza. La madre di Checco lo aveva letto da sola, su un foglietto di Checco, e lo aveva detto ad alta
+  voce nella bottega mentre ritirava la radio, senza sapere niente. Reazione di Checco comica e amara, mai
+  stupida. Nel cap. 25 nessun filo aperto su questo.
+- Data: lunedì 20 luglio.
 - Enigma: no.
 
 ### 25 — Il biglietto
@@ -253,4 +271,6 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Informazione: Antonio e Sara tornano dal viaggio di lavoro; festa in piazza; il nonno dà a Pino un quaderno nuovo, bianco.
 - Rivelazione: nel cassone dell'Ape, Checco trova un biglietto da visita: Sviluppo Territoriale Sostenibile S.r.l. L'ultima riga lega la società a un ex dirigente della Terravox.
 - Gancio: «L'estate prossima» dice Pino. Ciuffo abbaia all'Ape che non parte.
+- Il nome «Sviluppo Territoriale Sostenibile» compare solo qui (libro.yaml, nome vietato nei cap. 1-24). Data:
+  sabato 25 luglio. Sette quaderni; il calendario delle fioriture di Rosa (colonne 1-6) non si tocca.
 - Enigma: no (in fondo al libro: soluzioni dei 12 enigmi e mappa della gravina).

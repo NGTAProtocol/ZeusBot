@@ -123,6 +123,8 @@ Cosa si adatta al libro (precedenza del manuale):
   e una domanda sola. Eccezione approvata dall'autore il 14/10/2026 (correzione C1): nel cap. 4 la pagina
   chiude la scena 1, prima della partenza per la terrazza; la scena 2 riparte dal dito di Lucia che si ferma.
   Stesso schema nei cap. 8 e 9 (decisione D1 dell'autore del 14/10/2026) e nei cap. 13 e 15 (decisione E1).
+  Regola generale (lotto C, 14/10/2026): se la soluzione si vede nel capitolo, la pagina chiude la scena 1;
+  altrimenti sta in fondo. Così nei cap. 17, 19, 21 e 23.
 - La soluzione non è mai spiegata nel testo prima della pagina enigma (nessun percorso casella per casella,
   nessun calcolo mostrato).
 - Equità: tutto quello che serve è già comparso nel testo prima della pagina enigma. Il lettore deve poter
