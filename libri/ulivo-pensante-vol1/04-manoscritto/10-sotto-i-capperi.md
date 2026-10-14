@@ -90,7 +90,7 @@ Stellina guardava il sole giallo dipinto sopra la torre, e non disse niente.
 
 — Tonio! — chiamò Pino. — Vieni a vedere!
 
-Fuori ci fu silenzio. Poi un passo, e un altro. Tonio comparve sulla soglia, grande e scuro contro la luce, con Stellina che lo teneva per mano. Era pallido, ma entrò. Fece tre passi, guardò la piastrella, guardò la faccia sbiadita sul muro.
+Stellina uscì in punta di piedi. Fuori ci fu silenzio. Poi un passo, e un altro, e Tonio comparve sulla soglia, grande e scuro contro la luce, con Stellina che lo teneva per mano. Era pallido, ma entrò. Fece tre passi, guardò la piastrella, guardò la faccia sbiadita sul muro.
 
 — Va bene, — disse con la voce stretta. — L'ho vista. Adesso usciamo.
 

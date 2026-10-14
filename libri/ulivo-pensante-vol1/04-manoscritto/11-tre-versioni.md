@@ -16,7 +16,7 @@ Dopo mezz'ora il fresco del mattino era finito. Il sole stava ormai sopra la gra
 
 A un certo punto Lucia si fermò davanti a una spaccatura che saliva dritta nella parete, piena di pietre smosse.
 
-— Da qui si taglia, — disse. — Mezz'ora invece di due ore.
+— Da qui si taglia, — disse. — Un'ora invece di tre.
 
 Tonio guardò la spaccatura, i sassi in bilico, e scosse la testa.
 
@@ -28,7 +28,7 @@ Tonio guardò la spaccatura, i sassi in bilico, e scosse la testa.
 
 Lucia lo guardò con rabbia per un lungo momento. Poi si girò e riprese a camminare sul fondo, senza dire niente.
 
-Tonio comandava le soste. Ogni volta che trovava un pezzo d'ombra sotto una sporgenza li faceva fermare e bere due sorsi, non di più, perché l'acqua doveva bastare. Stellina camminava con la mano di Pino nella sua e non si lamentò una sola volta, ma a metà strada aveva le guance rosse come i pomodori della madre.
+Tonio comandava le soste. Ogni volta che trovava un pezzo d'ombra sotto una sporgenza li faceva fermare e bere due sorsi, non di più, perché l'acqua doveva bastare. Stellina camminava con la mano di Pino nella sua e non si lamentò una sola volta, ma a metà strada aveva le guance rosse.
 
 In un punto il sentiero passava sopra una lastra di roccia liscia, inclinata verso il torrente secco. Stellina mise il piede sulla polvere e scivolò, e per un attimo Pino sentì la sua mano tirare verso il basso. Tonio, dietro, l'afferrò per una spallina e la rimise in piedi con un braccio solo, come si rimette dritto un sacco di farina.
 
@@ -36,7 +36,7 @@ In un punto il sentiero passava sopra una lastra di roccia liscia, inclinata ver
 
 — Di niente, — disse Tonio. — Però adesso bevi.
 
-Pino camminava e pensava al motore sul ciglio. Qualcuno era stato lassù, accanto al picchetto del recinto, mentre loro erano dentro la chiesa. Qualcuno che aveva tolto la corda e se n'era andato senza guardare giù. O forse guardando, e decidendo che non erano affari suoi. Pensava anche al biglietto sotto la ciotola delle olive, «torno per pranzo», e all'ora che continuava a passare.
+Pino camminava e pensava al motore sul ciglio. Qualcuno era stato lassù, accanto al picchetto del recinto, mentre loro erano dentro la chiesa. Qualcuno che aveva tolto la corda e se n'era andato senza guardare giù. Pensava anche al biglietto sotto la ciotola delle olive, «torno per pranzo», e all'ora che continuava a passare.
 
 Il sentiero, quando finalmente cominciò a salire, era fatto di gradini bassi e consumati, che giravano e rigiravano lungo la parete. Salirono in fila, piano, con il fiato corto e la piastrella della nonna che batteva contro la schiena di Pino nello zaino.
 

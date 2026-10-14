@@ -7,16 +7,16 @@
 | — | 3 | La prova della gravina | banda | 1 | 1300 | 1300 | 1388 | +6,8% |
 | — | 4 | Il Gufo | falsa pista + enigma | 2 | 1300 | 650 | 1320 | +1,5% |
 | — | 5 | L'albero che pensa | elemento strano | 1 | 1300 | 1300 | 1300 | +0,0% |
-| — | 6 | Terra rossa | indagine + enigma | 1 | 1300 | 1300 | 1387 | +6,7% |
-| — | 7 | Il Dottore in piazza | svolta atto I | 1 | 1300 | 1300 | 1339 | +3,0% |
-| — | 8 | Il grafico della notte | deduzione + enigma | 1 | 1300 | 1300 | 1223 | -5,9% |
-| — | 9 | Il calendario delle fioriture | cifrario + enigma | 1 | 1300 | 1300 | 1182 | -9,1% |
-| — | 10 | Sotto i capperi | pericolo | 2 | 1300 | 650 | 1328 | +2,2% |
-| — | 11 | Tre versioni | falsa pista chiusa + enigma | 2 | 1300 | 650 | 1176 | -9,5% |
+| — | 6 | Terra rossa | indagine + enigma | 1 | 1300 | 1300 | 1377 | +5,9% |
+| — | 7 | Il Dottore in piazza | svolta atto I | 1 | 1300 | 1300 | 1349 | +3,8% |
+| — | 8 | Il grafico della notte | deduzione + enigma | 1 | 1300 | 1300 | 1225 | -5,8% |
+| — | 9 | Il calendario delle fioriture | cifrario + enigma | 1 | 1300 | 1300 | 1196 | -8,0% |
+| — | 10 | Sotto i capperi | pericolo | 2 | 1300 | 650 | 1335 | +2,7% |
+| — | 11 | Tre versioni | falsa pista chiusa + enigma | 2 | 1300 | 650 | 1160 | -10,8% |
 | — | 12 | Guardia al recinto | azione notturna | 2 | 1300 | 650 | 1236 | -4,9% |
-| — | 13 | L'ombra della torre | indizio + enigma | 1 | 1300 | 1300 | 1153 | -11,3% |
+| — | 13 | L'ombra della torre | indizio + enigma | 1 | 1300 | 1300 | 1152 | -11,4% |
 | — | 14 | Il telefono | prova | 1 | 1300 | 1300 | 1187 | -8,7% |
-| — | 15 | Il lucchetto di Rosa | seme finale + enigma | 1 | 1300 | 1300 | 1217 | -6,4% |
+| — | 15 | Il lucchetto di Rosa | seme finale + enigma | 1 | 1300 | 1300 | 1216 | -6,5% |
 | — | 16 | Il codice | crisi | 1 | 1300 | 1300 |  |  |
 | — | 17 | La bottega | smascheramento + enigma | 1 | 1300 | 1300 |  |  |
 | — | 18 | Il perché di Gianni | smascheramento | 1 | 1300 | 1300 |  |  |

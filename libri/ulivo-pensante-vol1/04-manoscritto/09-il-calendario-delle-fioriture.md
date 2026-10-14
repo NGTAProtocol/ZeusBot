@@ -10,7 +10,7 @@ Il nonno chiamò i carabinieri alle due e cinque, dal muretto, con la voce bassa
 
 Lucia e Stellina tornarono a casa, accompagnate dal nonno fino alla porta. Tonio invece restò: a quell'ora suo padre era già al forno, e sua madre sapeva che era dal nonno di Pino.
 
-Nessuno dei due aveva sonno. Il nonno andò a letto brontolando, e loro si sedettero nel laboratorio, sotto la lampada del bancone, con i quaderni della nonna davanti e il ventilatore spento.
+Nessuno dei due aveva sonno. Il nonno andò a letto brontolando. — Di notte, da adesso, non si esce più, — disse dalla porta. — Né voi né io. — Loro si sedettero nel laboratorio, sotto la lampada del bancone, con i quaderni della nonna davanti e il ventilatore spento.
 
 Pino li sfogliava uno dopo l'altro, senza un piano preciso. Ormai i disegnini delle piante li leggeva quasi senza guardare le piastrelle sul telefono. Nel quinto quaderno, a metà, si fermò.
 

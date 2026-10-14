@@ -6,13 +6,15 @@ passo: capitolo 16
 gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli: []
+  capitoli:
+  - 13
+  - 15
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 15
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 19167
+  scritte: 19172
   obiettivo: 32500
   metodo: unico
 documenti_approvati:
@@ -163,7 +165,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T08:42:41Z'
+aggiornato: '2026-10-14T09:00:30Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md

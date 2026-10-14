@@ -166,7 +166,7 @@ Tre veicoli possono essere passati di lì:
 
 - A: un camion, con le gomme larghe e doppie, due per parte;
 - B: un'Ape, con tre ruote, una sola davanti, in mezzo, e due dietro;
-- C: un veicolo con quattro ruote strette, e una gomma con una toppa a forma di V.
+- C: un veicolo con quattro ruote strette.
 
 Ricorda quello che Tonio ha notato sulle tracce del trattorino del nonno: quando un veicolo va dritto, le ruote di dietro passano sulle strisce di quelle davanti.
 

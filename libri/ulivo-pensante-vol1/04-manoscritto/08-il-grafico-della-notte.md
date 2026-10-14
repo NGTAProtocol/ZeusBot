@@ -22,11 +22,11 @@ Si girò verso la parete del laboratorio, dove tra una mensola di cavi e un orol
 
 Era una tabella fatta a mano. In alto, a sinistra, c'era scritto in stampatello: FIORITURE. Lungo il lato c'erano i mesi, dall'uno al dodici, uno per riga. In cima a ogni colonna c'era un numero e il nome di una pianta, con la calligrafia minuta della nonna: 1 cappero, 2 asfodelo, 3 pero selvatico, 4 elicriso, 5 rosmarino, 6 iris. Alcune caselle erano colorate a matita, altre erano bianche.
 
-— Questo sì che lo capisco, — disse Tonio. — La nonna segnava quando fioriscono. Guarda il cappero: giugno, luglio, agosto, colorati. L'asfodelo invece, come da noi in campagna. Numerava le piante in colonna, una per una, così bastava dire un numero.
+— Questo sì che lo capisco, — disse Tonio. — La nonna segnava quando fioriscono. Guarda il cappero: giugno, luglio, agosto, colorati. L'asfodelo ha la sua colonna e il suo tempo. Numerava le piante in colonna, una per una, così bastava dire un numero.
 
 — Bello, — disse Pino, senza guardarlo davvero. — Ma a noi serve il grafico.
 
-— Anche il calendario è una tabella di giorni, — disse Tonio, lento. — Una casella colorata, una bianca. Tu leggi il grafico come un disegno. Leggilo come un calendario, una notte alla volta.
+— Anche il calendario è una tabella di giorni, — disse Tonio, lento. — Tu leggi il grafico come un disegno. Leggilo come un calendario, una notte alla volta.
 
 Pino si girò di nuovo verso il foglio. Prese l'evidenziatore giallo e lo tenne sospeso sopra la prima riga, poi sopra la seconda, poi più giù, notte dopo notte, fino all'ultima, quella del 9. Tonio venne accanto a lui, si chinò sul foglio e mise il righello sotto le ore, all'altezza delle due.
 
@@ -102,4 +102,4 @@ Poi un'altra, accanto. Erano due fari, bassi, che si muovevano piano tra i mucch
 
 — Lo vedo.
 
-Sul tablet la riga della notte tremò, e cominciò a salire.
+Sul tablet la riga della notte era ancora piatta. Mancavano tredici minuti alle due e dieci.

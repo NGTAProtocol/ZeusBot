@@ -82,8 +82,8 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
 
 ## 3 — Cap. 6: tre impronte (confronto di impronte)
 - Domanda: «Nella terra rossa c'è un'impronta. Quale veicolo l'ha lasciata? A, B o C?»
-  A: gomme larghe doppie (camion). B: tre ruote, una sola traccia davanti (Ape). C: quattro ruote strette,
-  una gomma con una toppa a forma di V.
+  A: gomme larghe doppie (camion). B: tre ruote, una sola traccia davanti (Ape). C: quattro ruote strette
+  (S1, 14/10/2026: l'opzione C non nomina più la toppa; la V resta nel testo e tra le osservazioni della pagina).
 - Indizi già comparsi: cap. 1, lunedì mattina Pino nota in silenzio la toppa a V sulla gomma del furgone
   bianco di Gianni (Checco non ne parla); cap. 1 e 6, l'Ape ha tre ruote. Depistaggio leale: cap. 1 e 6, la
   Terravox usa furgoni bianchi, e la banda crede a lungo che la traccia sia di un mezzo Terravox.

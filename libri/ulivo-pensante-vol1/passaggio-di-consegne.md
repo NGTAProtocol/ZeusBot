@@ -89,6 +89,13 @@ Totale: 19.167 / 32.500 parole (metodo unico del motore).
   manuale, libro.yaml.
 - Capitoli 11-15 scritti uno alla volta (zb avvio, zb voce mostra, zb esito, commit e push per ognuno).
 
+## Correzioni S1-S14 (14/10/2026, dopo la lettura dei cap. 6-15)
+- Applicate le sostituzioni S1-S14 nei cap. 6, 7, 8, 9, 10, 11, 13, 15; nessun'altra modifica al testo.
+- Parole dopo le correzioni: 6 = 1.377, 7 = 1.349, 8 = 1.225, 9 = 1.196, 10 = 1.335, 11 = 1.160, 13 = 1.152,
+  15 = 1.216. Totale 1-15: 19.172 / 32.500.
+- Nuovo `00-progetto/registro-verifiche.md` (Piazza dell'Orologio, Roccavedere, mesi di fioritura).
+- Registro dei fatti: nuova sezione «Fatti del libro nuovo», riga N1 (cap. 9, divieto di uscite notturne).
+
 ## Punti aperti / da confermare con l'autore
 1. Lettura dei capitoli 6-15.
 2. Punti botanici da verificare su una fonte, senza affermare nulla nel testo: mesi di fioritura del calendario

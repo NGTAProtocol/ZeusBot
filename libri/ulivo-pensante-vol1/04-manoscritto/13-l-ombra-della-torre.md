@@ -6,7 +6,7 @@ Il lunedì mattina Pino raccontò tutto al nonno, a colazione, prima ancora di b
 
 Il nonno ascoltò senza interromperlo una sola volta. Quando Pino finì, restò in silenzio così a lungo che il caffè nella tazza smise di fumare.
 
-— Due notti fuori, — disse alla fine. — E una discesa in gravina col sole di luglio, senza dirlo a nessuno.
+— Una notte fuori casa, — disse alla fine. — E una discesa in gravina col sole di luglio, senza dirlo a nessuno.
 
 — Lo so.
 
@@ -40,7 +40,7 @@ Intorno alla torre c'erano tre porte vecchie, sulle facciate delle case. Una era
 
 Stellina si sedette sul gradino della fontana e disegnò la piazza vista dall'alto: la torre al centro, le tre porte, una freccia per il nord. Ci mise le lettere, per non confonderle. Tonio guardava l'ombra, il nonno guardava l'orologio.
 
-All'una meno cinque la campana suonò una volta sola, e le rondini scapparono tutte dalla cella.
+All'una la campana suonò una volta sola, e le rondini scapparono tutte dalla cella.
 
 L'ombra della torre era diventata cortissima, quasi tutta raccolta ai piedi del muro. Lucia piantò il suo bastoncino tra due pietre, come aveva fatto sul ciglio della gravina, e guardò la sua ombra accanto a quella della torre.
 

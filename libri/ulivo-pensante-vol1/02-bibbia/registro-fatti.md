@@ -171,3 +171,11 @@ cade fuori da una decisione già presa (punto 4 del prompt di avvio); vuota = ne
 | I15 | «Cinque estranei» nell'ultimo capitolo, ma la banda conta sei ragazzi con Pino | c. 10.4 | DCF |
 | I16 | Pino porta via due quaderni; nell'epilogo arriva con il terzo, già decifrato: non si dice quando l'ha avuto | c. 10.4, epilogo | DCF |
 | I17 | Il «pane di Sergio» e le «storie di Franco» citati da Pino all'assemblea; Franco non torna dopo il capitolo 2 | c. 10.3 | DCF |
+
+## Fatti del libro nuovo (aggiunti su richiesta dell'autore)
+
+Righe aggiunte dal 14/10/2026: fatti del manoscritto nuovo, non del vecchio testo.
+
+| ID | Cap. | Fatto | Stato |
+|---|---|---|---|
+| N1 | 9 | Il nonno vieta le uscite notturne: «Di notte, da adesso, non si esce più. Né voi né io.» (dopo la notte del drone) | nuovo |

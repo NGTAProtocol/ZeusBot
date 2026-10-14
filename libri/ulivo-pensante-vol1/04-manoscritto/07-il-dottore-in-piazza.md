@@ -108,4 +108,4 @@ Il nonno non rispose subito. Guardò la piazza, la gente che rideva e beveva ara
 
 Pino guardò Checco, che tornava verso di loro con i bicchieri di carta in mano, fischiettando. Poi guardò il fondo della piazza, dove il Dottore stava stringendo l'ennesima mano.
 
-Qualcuno in paese gli aveva parlato dei quaderni della nonna. E quel qualcuno era stato nel laboratorio.
+Qualcuno in paese sapeva dei quaderni della nonna, e di dove stavano. Pino ripensò al «non gridarlo» di poco prima, e a quante orecchie c'erano in piazza.

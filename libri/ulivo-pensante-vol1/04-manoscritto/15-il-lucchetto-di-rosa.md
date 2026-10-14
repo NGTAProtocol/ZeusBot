@@ -20,7 +20,7 @@ IL MIO ANNO COMINCIA CON LA PRIMA CHE FIORISCE.
 
 — Rosa e le sue frasi, — disse il nonno, e finalmente sorrise. Si alzò, aprì un cassetto della scrivania e tirò fuori una busta ingiallita. — Guardate cosa mi aveva scritto per il mio compleanno, tanti anni fa.
 
-Dentro c'era un biglietto d'auguri con un ramo d'ulivo dipinto sopra. Sotto, sette righe scritte con la calligrafia minuta di Rosa:
+Dentro c'era un biglietto d'auguri con un mazzetto di lavanda dipinto sopra. Sotto, sette righe scritte con la calligrafia minuta di Rosa:
 
 «Mille giorni non bastano a dirti grazie,
 il tuo caffè la mattina è il mio primo sole,
@@ -103,7 +103,7 @@ Era Rosa. Pino non l'aveva mai vista così giovane, col cappello di paglia, lo z
 
 Il nonno prese la foto e la guardò a lungo, avvicinandola agli occhiali.
 
-— Non lo so, — disse a bassa voce. — Non me l'ha mai fatta vedere. Eppure questa foto l'ho scattata io, a giudicare dal cappello. Quel cappello gliel'ho regalato io, alla fiera di settembre, il primo anno che stavamo insieme.
+— Non lo so, — disse a bassa voce. — Non sapevo che l'avesse tenuta. Questa foto l'ho scattata io, a giudicare dal cappello. Quel cappello gliel'ho regalato io, alla fiera di settembre, il primo anno che stavamo insieme.
 
 — E non ti ricordi dove l'hai scattata?
 
