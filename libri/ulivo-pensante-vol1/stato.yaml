@@ -17,8 +17,8 @@ parole:
   metodo: unico
 documenti_approvati:
   libro.yaml:
-    sha256: 42e451589aa1485aaa586d682e9ba842d3761f132a9078df9bed36aeab315fbe
-    commit: c561dce
+    sha256: bf229cf81b92d98bbba52796c37d0795c78eb7e4add334c8ee37cb4e43861821
+    commit: 41d06e2
     riapprovazioni:
     - data: '2026-10-14'
       motivo: decisioni D1-D9 dell'autore del 14/10/2026 dopo la lettura dei capitoli 6-10
@@ -38,9 +38,13 @@ documenti_approvati:
         seme madre di Checco, nota dell''autore'
       sha256_precedente: 292c56aecb31853a27c49f04f0b5e8ae5bde4aec513b189a5d281baebee3d5ad
       commit_precedente: 054e8dd
+    - data: '2026-10-14'
+      motivo: nota dell'autore senza Rocca Vetere (D7)
+      sha256_precedente: 42e451589aa1485aaa586d682e9ba842d3761f132a9078df9bed36aeab315fbe
+      commit_precedente: c561dce
   02-bibbia/bibbia.md:
-    sha256: cb1623748d3a7fa01022894445df05b8fc02cbf8e4b2065604712a18876a46d5
-    commit: 01589a6
+    sha256: 47016670e7c33d274fa79834d79cbf24a03647c7f2e25b9156c6e6aefa928b85
+    commit: 41d06e2
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -89,6 +93,10 @@ documenti_approvati:
       motivo: 'lotto C: decisioni a-g dell''autore'
       sha256_precedente: 6a7823c36caf8f3ca3dd0994be2821cce36b3bb7760d1ba799c104a8be2ab235
       commit_precedente: e65a212
+    - data: '2026-10-14'
+      motivo: protocollo di lavoro e salvataggio; Rocca Vetere tolta dai luoghi reali
+      sha256_precedente: cb1623748d3a7fa01022894445df05b8fc02cbf8e4b2065604712a18876a46d5
+      commit_precedente: 01589a6
   cronologia.yaml:
     sha256: c76cf83356d814cea6df279ee319ddbf66512666971ae0a3d50239d37c7383ad
     commit: e65a212
@@ -225,7 +233,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T16:04:38Z'
+aggiornato: '2026-10-14T16:09:08Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
