@@ -2402,7 +2402,58 @@ def recinto_libro(A):
 
 # ---------------------------------------------------------------- tabella
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro}
+# ---------------------------------------------------------------- appendici e titoli interni
+
+def appendici(A):
+    """compila su una copia di mini-libro con le appendici di prove/appendici/ e un titolo interno «##»."""
+    import compila
+    sez = 'appendici'
+    Lm = copia_libro('mini-libro')
+    dir_a = os.path.join(Lm, '05-appendici')
+    os.makedirs(dir_a)
+    for f in ('soluzioni-prova.md', 'nota-in-piu.md', 'piantina-prova.svg'):
+        shutil.copyfile(os.path.join(M, 'prove', 'appendici', f), os.path.join(dir_a, f))
+    p2 = os.path.join(Lm, '04-manoscritto', '02-l-officina.md')
+    open(p2, 'a', encoding='utf-8').write('\n' + A['titolo_interno'] + '\n\nQuale chiave apre la vetrina?\n')
+    py = os.path.join(Lm, 'libro.yaml')
+    lb = yaml.safe_load(open(py, encoding='utf-8'))
+    lb['appendici'] = A['dichiarate']
+    open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+    _, libro, _ = comune.carica_libro(Lm)
+    av = []
+    out = compila.compila(Lm, libro, av).splitlines()
+    i = out.index('## Sommario')
+    sommario = []
+    for r in out[i + 2:]:
+        if not r.startswith('- '):
+            break
+        sommario.append(r[2:])
+    esito('compila.py', 'sommario: ultime voci', A['sommario_coda'], sommario[-len(A['sommario_coda']):], sez)
+    esito('compila.py', 'titolo interno conservato, un livello sotto', A['titolo_compilato'],
+          [r for r in out if 'indovinello' in r], sez)
+    sezioni_app = [k for k, r in enumerate(out) if r == '<!-- zb:sezione appendice -->']
+    esito('compila.py', 'appendici dopo l\'ultima unità, nell\'ordine dichiarato', A['titoli_appendici'],
+          [out[k + 2] for k in sezioni_app], sez)
+    esito('compila.py', 'avviso per il file non dichiarato', A['avviso_non_dichiarato'],
+          [a for a in av if 'non è dichiarato' in a], sez)
+    png = os.path.join(Lm, '05-output', 'appendici', 'piantina-prova.png')
+    if shutil.which('node'):
+        esito('compila.py', 'SVG convertito in PNG, con didascalia', A['immagine'],
+              f'{os.path.isfile(png)} / {any("<figcaption>" in r and "piantina-prova.png" in r for r in out)}', sez)
+    else:
+        saltata('compila.py', 'SVG convertito in PNG, con didascalia', 'node assente', sez)
+    lb['appendici'] = lb['appendici'] + [{'titolo': 'Mancante', 'file': 'non-esiste.md'}]
+    open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+    _, libro, _ = comune.carica_libro(Lm)
+    try:
+        compila.compila(Lm, libro, [])
+        ottenuto = 'nessun errore'
+    except comune.ErroreMotore as e:
+        ottenuto = str(e)
+    esito('compila.py', 'appendice dichiarata e assente: FERMO', A['fermo_assente'], ottenuto, sez)
+
+
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici}
 
 
 def main(argv):

@@ -160,5 +160,13 @@ campi:
       anno: {tipo: intero}                          # anno per {anno} nella riga; senza, l'anno corrente
       fantasia: {tipo: testo, obbligatorio: true}
       nota_autore: {tipo: testo, nullo: true}
+  appendici:                                   # facoltativo: file di 05-appendici/ dopo l'ultima unità, in quest'ordine
+    tipo: lista
+    elementi:
+      tipo: mappa
+      campi:
+        titolo: {tipo: testo, obbligatorio: true}  # titolo nella pagina e nel sommario
+        file: {tipo: testo, obbligatorio: true}    # nome del file in 05-appendici/ (.md, .svg, .png, .jpg)
+        didascalia: {tipo: testo}                  # solo immagini: riga sotto l'immagine
   manuale: {tipo: testo}
   checklist_capitolo: {tipo: lista, elementi: {tipo: testo}}   # voci in più della checklist manuale di capitolo.py

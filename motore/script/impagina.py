@@ -67,11 +67,13 @@ def css(libro, interno_mm):
     return t
 
 
-def render(html_corpo, stile, tmp, nome):
+def render(html_corpo, stile, tmp, nome, base=None):
+    """base: cartella da cui risolvere i percorsi relativi (immagini delle appendici in 05-output/)."""
     h = os.path.join(tmp, nome + '.html')
     p = os.path.join(tmp, nome + '.pdf')
+    testa = f'<base href="file://{base.rstrip("/")}/">' if base else ''
     with open(h, 'w', encoding='utf-8') as f:
-        f.write(f'<!doctype html><html lang="it"><head><meta charset="utf-8"><style>{stile}</style>'
+        f.write(f'<!doctype html><html lang="it"><head><meta charset="utf-8">{testa}<style>{stile}</style>'
                 f'</head><body>{html_corpo}</body></html>')
     env = dict(os.environ, NODE_PATH=node_path())
     r = subprocess.run(['node', os.path.join(comune.radice_motore(), 'stampa', 'print.js'), h, p],
@@ -138,7 +140,7 @@ def impagina(cartella, libro):
         html_corpo = '\n'.join(html_sezione(t, s) for t, s in corpo)
         interno = scelto
         for _ in range(3):
-            pdf_corpo = render(html_corpo, css(libro, interno), tmp, 'corpo')
+            pdf_corpo = render(html_corpo, css(libro, interno), tmp, 'corpo', os.path.dirname(md_path))
             with fitz.open(pdf_corpo) as d:
                 n_corpo = d.page_count
             stima = n_corpo + 4

@@ -382,7 +382,7 @@ passo_5b:
 
 passo_6:
   struttura:
-    cartelle: ['00-progetto', '01-originale', '02-bibbia', '03-architettura', '04-manoscritto', '05-revisioni',
+    cartelle: ['00-progetto', '01-originale', '02-bibbia', '03-architettura', '04-manoscritto', '05-revisioni', '05-appendici',
                '05-output', '06-diagnostica', '06-pubblicazione', '.zb']
     nuovo: ['00-progetto', '02-bibbia', '03-architettura']
     riscrittura: "0 / ['00-progetto', '01-originale', '02-bibbia', '03-architettura']"
@@ -718,3 +718,16 @@ recinto_libro:
   dentro_motore: "2 / True / ['briefing.md']"
   ramo_motore: "2 / True / ['briefing.md']"
   hook: "2 True / 0 False"
+
+appendici:
+  # compila su mini-libro con le appendici di prove/appendici/ e un titolo interno «##» nel capitolo 2
+  titolo_interno: "## L'indovinello della farmacia"
+  dichiarate:
+    - {titolo: "Le soluzioni di prova", file: soluzioni-prova.md}
+    - {titolo: "La piantina di prova", file: piantina-prova.svg, didascalia: "La farmacia e l'officina."}
+  sommario_coda: ['Capitolo 3', 'Le soluzioni di prova', 'La piantina di prova']
+  titolo_compilato: ["### L'indovinello della farmacia"]
+  titoli_appendici: ['## Le soluzioni di prova', '## La piantina di prova']
+  avviso_non_dichiarato: ["AVVISO: 05-appendici/nota-in-piu.md non è dichiarato in libro.yaml (appendici): non entra nel libro."]
+  immagine: "True / True"
+  fermo_assente: "Appendice dichiarata in libro.yaml ma assente: 05-appendici/non-esiste.md"
