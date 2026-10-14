@@ -185,3 +185,17 @@ Righe aggiunte dal 14/10/2026: fatti del manoscritto nuovo, non del vecchio test
 | N5 | 16 | Pino accusa Checco davanti alla banda (il codice lo sa solo lui; ha difeso Gianni). Checco nega di aver dato il codice a nessuno e osserva che chi ha preso solo le schede sapeva del video; se ne va con Ciuffo | nuovo |
 | N6 | 16 | Lucia ipotizza Gianni (entrava nel laboratorio, ripara i droni); Pino risponde che Gianni il codice non lo sa: pista da verificare | nuovo |
 | N7 | 16 | La banda si spacca: Tonio va a cercare Checco; Lucia e Stellina se ne vanno; Pino resta solo | nuovo |
+| D1 | — | Decisione d'autore (14/10/2026): il guardiano della Terravox che ha tolto la corda nel cap. 10 è un operaio della Terravox, guardiano di notte e di giorno vicedirettore dell'ufficio postale; ha bisogno di soldi perché la figlia è gravemente malata; il gesto nasce dal disagio, non dalla crudeltà. Rivelazione non prima del cap. 21 | decisione |
+| N8 | 17 | Stellina rivela a Pino che i cerchi del disegno stanno sul petto, mentre il binocolo di Franco arriva alla pancia: non era un binocolo | nuovo |
+| N9 | 17 | Nella bottega di Gianni (porta socchiusa, «TORNO SUBITO»): cartellini delle riparazioni, tra cui «Radio — mamma di Checco — pronta» | nuovo |
+| N10 | 17 | Sul banco: radio aperta, saldatore, giacca Terravox col cartellino, drone senza eliche, scheda col sette verde tagliato; sul chiodo gli occhiali da saldatore (i due cerchi del disegno). Pino fotografa tutto; Gianni entra | nuovo |
+| N11 | 18 | Gianni confessa: domenica 5 davanti al laboratorio con gli occhiali al collo, cercava il settimo quaderno; ha buttato i quaderni per rabbia; la scheda col video l'ha data al Dottore; restituisce le altre due schede | nuovo |
+| N12 | 18 | Gianni: debiti (tre lettere «ultimo avviso»), bottega che chiude, posto promesso alla cava; ha detto lui al Dottore dei quaderni e del laboratorio; la notte dell'8 portava pezzi per la trivella | nuovo |
+| N13 | 18 | Gianni non dice come ha saputo il codice: «C'è di mezzo una persona che non sa niente» | nuovo |
+| N14 | 18 | Il Dottore vuole il settimo quaderno per farlo sparire; sabato notte le ruspe spianano la zona sul ciglio dentro il recinto, prima del voto di lunedì | nuovo |
+| N15 | 19 | Pino chiede scusa a Checco all'ufficio postale; scuse accettate. Allo sportello il vicedirettore (camicia azzurra): Checco gli chiede «Come sta la piccola?», «Meglio, oggi» | nuovo |
+| N16 | 19 | Il cugino di Checco, camionista per una ditta di fuori, è stato chiamato per lavoro di ruspe sabato notte | nuovo |
+| N17 | 19 | In fondo al sesto quaderno, in lettere normali, la poesia di Rosa (cinque righe); Stellina l'aveva vista il primo giorno | nuovo |
+| N18 | 19 | Nella notte del 16 la rete del recinto è stata spostata: l'Ulivo Pensante è a sette passi dalla rete; tracce di cingoli di una ruspa piccola | nuovo |
+| N19 | 20 | Temporale: il nonno vieta di stare sotto l'albero; dopo, Pino entra nel tronco tenuto da Tonio; in una nicchia alta, un pacco in tela cerata | nuovo |
+| N20 | 20 | Cassetta di terracotta sigillata con argilla e firma di rosmarino; dentro il settimo quaderno, asciutto; al centro un disegno della gravina con alberello, curva, archetto, muro a blocchi e croce, senza nessun nome | nuovo |

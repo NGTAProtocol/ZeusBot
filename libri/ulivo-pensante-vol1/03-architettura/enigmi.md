@@ -181,6 +181,9 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
 - Nel cap. 16 (scritto il 14/10/2026): spariscono tre schede di memoria dalla valigetta dei droni, «ognuna con il
   suo numero scritto in verde, come tutto quello che il nonno etichettava»; sulla prima c'era il video della notte
   del 10. Nessun numero di scheda è detto.
+- Nel cap. 17 (scritto il 14/10/2026): pagina a fine scena 1 (la soluzione si vede nel capitolo). La scheda in
+  pagina è descritta come «una scheda di memoria con un sette scritto in verde, tagliato da un trattino»
+  (senza «IRIS»); gli occhiali da saldatore compaiono solo dopo la pagina.
 - Soluzione: la scheda: scritta in verde, col sette tagliato. La giacca prova solo un legame con la Terravox.
 - Controllo di equità: il sette tagliato è mostrato nel cap. 5. Sì.
 
@@ -189,6 +192,8 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
   chiave?»
 - Indizi già comparsi: cap. 15, il biglietto d'auguri di Rosa a Michele con le iniziali che formano MICHELE;
   cap. 5, l'Ulivo Pensante, «l'albero che pensa».
+- Nel cap. 19 (scritto il 14/10/2026): pagina a fine scena 1; la poesia è nel testo e nella pagina; la pagina
+  ricorda il biglietto d'auguri per il nonno. ULIVO e la corsa all'albero vengono dopo la pagina.
 - Soluzione: U-L-I-V-O = ULIVO; la seconda e la terza riga dicono «nel legno che pensa»: l'Ulivo Pensante.
 - Controllo di equità: il trucco delle iniziali è mostrato quattro capitoli prima. Sì.
 

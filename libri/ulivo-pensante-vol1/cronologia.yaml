@@ -1,5 +1,7 @@
 # Cronologia del libro (proposta B.2.1). Proposta per il gate «documenti»: date dell'estate 2026, da confermare.
 nascite: []        # età dei personaggi ancora da confermare (bibbia: proposte); si aggiungono dopo l'«ok»
+# Scavi notturni (decisione dell'autore del 14/10/2026): notti pari 4, 6, 8, 10, 12, 14, 16 luglio e oltre,
+# sempre tra le 2:10 e le 2:50; sabato 18 notte arrivano le ruspe (cap. 18, 22).
 eventi:
   - {id: arrivo, data: 2026-07-06, capitolo: 1, descrizione: arrivo di Pino; laboratorio frugato}
   - {id: assemblea_dottore, data: 2026-07-09, capitolo: 7, descrizione: il Dottore presenta il progetto in piazza}

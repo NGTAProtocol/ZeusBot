@@ -2,19 +2,17 @@ libro: Il quaderno nell'ulivo
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
-passo: capitolo 20
+passo: capitolo 21
 gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 18
-  - 19
+  capitoli: []
 ultimo_capitolo_approvato: 3
-ultimo_capitolo_scritto: 19
+ultimo_capitolo_scritto: 20
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 24128
+  scritte: 25340
   obiettivo: 32500
   metodo: unico
 documenti_approvati:
@@ -195,7 +193,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T09:56:09Z'
+aggiornato: '2026-10-14T09:57:52Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md

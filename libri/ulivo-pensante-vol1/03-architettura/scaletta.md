@@ -191,6 +191,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Enigma 9: oggetto fuori posto → la scheda del nonno.
 - Seme (decisione dell'autore del 14/10/2026): la madre di Checco aveva chiesto tre volte il codice (cap. 14);
   può comparire come indizio nel cap. 17 o 18, senza risolvere il furto. Occhiali da saldatore di Gianni da qui.
+- Stato: scritto il 14/10/2026 (1.255 parole, zb esito OK dopo una correzione); pagina enigma a fine scena 1.
 
 ### 18 — Il perché di Gianni
 - Scopo: smascheramento (seconda metà) senza cattivi da fumetto.
@@ -198,6 +199,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Pericolo: sabato notte le ruspe spianeranno la zona, «prima del voto» di lunedì.
 - Gancio: mancano due giorni.
 - Enigma: no.
+- Stato: scritto il 14/10/2026 (1.169 parole, zb esito OK); nessuna pagina enigma.
 
 ### 19 — L'Ape torna
 - Scopo: Pino chiede scusa; la banda si ricompone; la rete di Checco in paese.
@@ -207,6 +209,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Enigma 10: acrostico → ULIVO.
 - Decisione dell'autore del 14/10/2026: «ULIVO» è un acrostico, prime lettere delle righe, come MICHELE nel
   cap. 15 (metodo già dato in pagina nel cap. 15).
+- Stato: scritto il 14/10/2026 (1.295 parole, zb esito OK); pagina enigma a fine scena 1; vicedirettore dell'ufficio postale come presenza neutra.
 
 ### 20 — Dentro l'ulivo
 - Scopo: l'Ulivo Pensante restituisce il segreto di Rosa.
@@ -214,6 +217,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Pericolo: temporale estivo, fulmini, il tronco scivoloso.
 - Gancio: il quaderno ha un disegno del muro e dei contorni della gravina, ma nessun nome.
 - Enigma: no.
+- Stato: scritto il 14/10/2026 (1.212 parole, zb esito OK dopo una correzione); nessuna pagina enigma.
 
 ### 21 — Il lucido
 - Scopo: il talento di Stellina decide; la mappa diventa una scelta.
