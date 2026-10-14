@@ -117,6 +117,10 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
 - Indizi già comparsi: cap. 8, il calendario delle fioriture con mesi e colonne; Tonio dice che Rosa
   numerava le piante in colonna.
 - Soluzione: C-A-P-P-E-R-I = CAPPERI («la stanza di pietra sotto i capperi»).
+- Nel cap. 9 (scritto il 14/10/2026): la frase sta nel quinto quaderno; «LA STANZA DI PIETRA SOTTO I» è in
+  piante (Pino), l'ultima parola in coppie di numeri, unica in tutti i quaderni. Tonio ricava la regola
+  (mese-colonna, iniziale) prima della pagina; la decifrazione e la parola vengono dopo. Pagina a fine scena
+  1, come nei cap. 4 e 8 (proposta, da confermare). Il calendario è riprodotto in elenco (Kindle).
 - Controllo di equità: il calendario è riprodotto nella pagina enigma del cap. 9 uguale al cap. 8; ogni
   coppia cade su una casella colorata. Sì.
 

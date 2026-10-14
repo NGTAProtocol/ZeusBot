@@ -10,7 +10,7 @@
 | — | 6 | Terra rossa | indagine + enigma | 1 | 1300 | 1300 | 1347 | +3,6% |
 | — | 7 | Il Dottore in piazza | svolta atto I | 1 | 1300 | 1300 | 1255 | -3,5% |
 | — | 8 | Il grafico della notte | deduzione + enigma | 1 | 1300 | 1300 | 1225 | -5,8% |
-| — | 9 | Il calendario delle fioriture | cifrario + enigma | 1 | 1300 | 1300 |  |  |
+| — | 9 | Il calendario delle fioriture | cifrario + enigma | 1 | 1300 | 1300 | 1182 | -9,1% |
 | — | 10 | Sotto i capperi | pericolo | 2 | 1300 | 650 |  |  |
 | — | 11 | Tre versioni | falsa pista chiusa + enigma | 1 | 1300 | 1300 |  |  |
 | — | 12 | Guardia al recinto | azione notturna | 2 | 1300 | 650 |  |  |
