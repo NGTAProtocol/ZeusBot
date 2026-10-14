@@ -58,6 +58,12 @@ AVVIO (in quest'ordine)
    libri/ulivo-pensante-vol1 (atteso: «Fase: chiusura; passo: controlli finali; gate in attesa: nessuno»).
 5. Leggere questo file, scaletta (cap. 21-25), registro-fatti (N21-N35, D2-D6), registro-verifiche, cap. 21-25.
 
+APPENDICI E BOZZA DI LETTURA
+- 05-appendici/soluzioni.md («Le soluzioni della banda», 12 enigmi) e 05-appendici/mappa-gravina.svg («La gravina
+  di Lucia», senza croce né muro). zb compila NON le include da solo (vedi passaggio successivo per dichiararle).
+- 07-export/ contiene la bozza di lettura, da rigenerare quando cambiano i capitoli (manoscritto-completo.md, .docx,
+  .epub, .html, .pdf; non è il file per KDP).
+
 PRIMA AZIONE NELLA NUOVA SESSIONE (romanzo completo e corretto; prossimi passi, in quest'ordine, su istruzione
 dell'autore)
 1. Lettura dell'autore dei cap. 16-25 e sue correzioni.
