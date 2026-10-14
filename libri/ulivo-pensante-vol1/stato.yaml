@@ -1,0 +1,22 @@
+libro: La Banda della Gravina, vol. 1
+motore_commit: null
+ramo_ultimo_salvataggio: null
+fase: documenti
+passo: 'passo 1 fatto (struttura, briefing, ricerca di mercato, registro dei fatti); prossimo: bibbia, manuale di stile, scaletta'
+gate_in_attesa: null
+lotto:
+  dimensione: 3
+  capitoli: []
+ultimo_capitolo_approvato: null
+ultimo_capitolo_scritto: null
+tentativi: {}
+correzioni_aperte: []
+parole:
+  scritte: 0
+  obiettivo: 32500
+  metodo: unico
+documenti_approvati: {}
+avvisi_aperti: []
+revisione_in_corso: null
+push_in_sospeso: false
+aggiornato: '2026-10-14T03:26:00Z'

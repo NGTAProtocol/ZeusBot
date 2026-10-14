@@ -1,0 +1,113 @@
+titolo: La Banda della Gravina, vol. 1
+sottotitolo: null
+autore: DA CONFERMARE
+lingua: it
+modalita: nuovo
+serie:
+  nome: La Banda della Gravina
+  numero: 1
+ebook: true
+profilo: giallo
+override:
+- campo: capitoli.minimo
+  valore: 1000
+  motivo: 'libro per ragazzi 9-12 anni (30.000-35.000 parole, 25 capitoli da 1.200-1.400): manca un profilo ragazzi, si usa
+    il più vicino (giallo) — Capitoli (minimo): 1000 invece di 800 del profilo'
+- campo: capitoli.media
+  valore:
+  - 1200
+  - 1400
+  motivo: 'libro per ragazzi 9-12 anni (30.000-35.000 parole, 25 capitoli da 1.200-1.400): manca un profilo ragazzi, si usa
+    il più vicino (giallo) — Capitoli (media): [1200, 1400] invece di [1500, 2500] del profilo'
+- campo: capitoli.massimo
+  valore: 1600
+  motivo: 'libro per ragazzi 9-12 anni (30.000-35.000 parole, 25 capitoli da 1.200-1.400): manca un profilo ragazzi, si usa
+    il più vicino (giallo) — Capitoli (massimo): 1600 invece di 3500 del profilo'
+- campo: capitoli.scene_per_capitolo
+  valore:
+  - 1
+  - 2
+  motivo: 'libro per ragazzi 9-12 anni (30.000-35.000 parole, 25 capitoli da 1.200-1.400): manca un profilo ragazzi, si usa
+    il più vicino (giallo) — Scene (numero): [1, 2] invece di [1, 3] del profilo'
+- campo: scene.lunghezza
+  valore:
+  - 500
+  - 1400
+  motivo: 'libro per ragazzi 9-12 anni (30.000-35.000 parole, 25 capitoli da 1.200-1.400): manca un profilo ragazzi, si usa
+    il più vicino (giallo) — Scene (lunghezza): [500, 1400] invece di [800, 2500] del profilo'
+gate:
+- documenti
+- pagina_campione
+- primi_capitoli
+parole:
+  metodo: unico
+  target_totale: 32500
+  motivo_fuori_profilo: 'libro per ragazzi 9-12 anni (30.000-35.000 parole, 25 capitoli da 1.200-1.400): manca un profilo
+    ragazzi, si usa il più vicino (giallo) — Lunghezza: 32500 fuori dai formati del profilo (40000-180000)'
+formato:
+  pagina_pollici:
+  - 5.5
+  - 8.5
+  carta: crema
+  bleed: false
+  margini_mm:
+    alto: 20
+    basso: 20
+    esterno: 16
+    interno_scelto: 16
+  font:
+    nome: EB Garamond
+    corpo_pt: 11.5
+    interlinea: 1.5
+  numerazione:
+    da: capitolo_1
+    pagine_iniziali: senza_numero
+    posizione: piede_centro
+voci:
+- id: ologramma
+  espressione: ologramma
+  pattern: (?i)(?<!\w)ologramma(?!\w)
+  modalita: vieta
+- id: cristallo_luminoso
+  espressione: cristallo luminoso
+  pattern: (?i)(?<!\w)cristallo\ luminoso(?!\w)
+  modalita: vieta
+- id: onde_neurali
+  espressione: onde neurali
+  pattern: (?i)(?<!\w)onde\ neurali(?!\w)
+  modalita: vieta
+vincoli_capitolo: []
+nome_vietato_prima_di:
+- nome: Sviluppo Territoriale Sostenibile
+  pattern: \bSviluppo\ Territoriale\ Sostenibile\b
+  vietato_in:
+  - 1-24
+  obbligatorio_in: []
+dichiarazioni:
+  chiusura:
+    sigle:
+    - D
+    - R
+    - P
+    - X
+    prevista_da: scaletta
+struttura:
+  separatore_scena:
+    sorgente: '* * *'
+    stampa: '* * *'
+  intestazione_capitolo: Luogo — giorno e data
+  parti: []
+  interludi: []
+calendario:
+  anni_ammessi: []
+ortografia:
+  parole_ammesse_file: nomi_propri.txt
+copyright:
+  riga: © {anno} {autore}. Tutti i diritti riservati.
+  anno: 2026
+  fantasia: Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzione dell'autore o usati in modo
+    fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale.
+  nota_autore: null
+voce:
+  slug: mistero-ed-epicita
+  ambientazione: altro
