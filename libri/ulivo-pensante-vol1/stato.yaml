@@ -17,11 +17,16 @@ parole:
   metodo: unico
 documenti_approvati:
   libro.yaml:
-    sha256: 9c5115b7bbb0607d8078671e8e303e24480fbb9c4c0a067ae8b0eb9679ce3a41
-    commit: 422702a
+    sha256: 0013dbe235a66b34d772c84de747b73e85252061a0a6f70d7744a517fbdf7806
+    commit: 5e08933
+    riapprovazioni:
+    - data: '2026-10-14'
+      motivo: decisioni D1-D9 dell'autore del 14/10/2026 dopo la lettura dei capitoli 6-10
+      sha256_precedente: 9c5115b7bbb0607d8078671e8e303e24480fbb9c4c0a067ae8b0eb9679ce3a41
+      commit_precedente: 422702a
   02-bibbia/bibbia.md:
-    sha256: 94071160f97ecb35752d4bc1127d657fa31c5fcbc65990fdbd0cbdc1b624a26d
-    commit: '3778095'
+    sha256: fed94f524526cff264043cd3e48371a632bac0208d07bc786d370ba46e7c0666
+    commit: 5e08933
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -38,12 +43,16 @@ documenti_approvati:
         come proposta
       sha256_precedente: 2a28055577012e7f30a0ebafeec26b50d78a0acc8fe3b404d9f0ee4e4e6443f1
       commit_precedente: 1d4633d
+    - data: '2026-10-14'
+      motivo: decisioni D1-D9 dell'autore del 14/10/2026 dopo la lettura dei capitoli 6-10
+      sha256_precedente: 94071160f97ecb35752d4bc1127d657fa31c5fcbc65990fdbd0cbdc1b624a26d
+      commit_precedente: '3778095'
   cronologia.yaml:
     sha256: 51f3977a4de599f2a7b4c3a4e8718b4e0e6a53f5ef89f5d97a63aa442cb935f5
     commit: f85c4db
   03-architettura/manuale-di-stile.md:
-    sha256: 7ca59ce954b6a254a39d5aede3528b8f9f0e7cbf30e343b59adeffbf5e011898
-    commit: 2d77a00
+    sha256: f1a1869cd8147896e8ab46906b975363f9c8ed4de25005b446e29493d6e60bb8
+    commit: 5e08933
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -60,9 +69,13 @@ documenti_approvati:
         prima della pagina'
       sha256_precedente: 434d952b62dbd795d6e71fc447e76ac46889391794bd46c2d84172ed468ecfb1
       commit_precedente: 1d4633d
+    - data: '2026-10-14'
+      motivo: decisioni D1-D9 dell'autore del 14/10/2026 dopo la lettura dei capitoli 6-10
+      sha256_precedente: 7ca59ce954b6a254a39d5aede3528b8f9f0e7cbf30e343b59adeffbf5e011898
+      commit_precedente: 2d77a00
   03-architettura/scaletta.md:
-    sha256: f8444a5059175e4d517a2f7a5b8e422fa73d21cdada2de7c826f4fef109a0700
-    commit: '3778095'
+    sha256: 53d497ece3478862bad843085f9d7f07906dba9a77943e8a836c0a63c2d0f5b5
+    commit: 5e08933
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -79,6 +92,10 @@ documenti_approvati:
         8, 9 (8 e 9 proposta)'
       sha256_precedente: cef01d06d0fec6c14ccb1d67c2bc42fc4c0fc48c17aaf8c75f0236212d743e97
       commit_precedente: 1d4633d
+    - data: '2026-10-14'
+      motivo: decisioni D1-D9 dell'autore del 14/10/2026 dopo la lettura dei capitoli 6-10
+      sha256_precedente: f8444a5059175e4d517a2f7a5b8e422fa73d21cdada2de7c826f4fef109a0700
+      commit_precedente: '3778095'
   03-architettura/piano-parole.md:
     sha256: 40cd56bb2f3e723f5fdaf016c3a8cecf519e26aab5e883a87652a0f60798a9fc
     commit: 2d77a00
@@ -111,7 +128,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T08:09:38Z'
+aggiornato: '2026-10-14T08:11:21Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
@@ -127,3 +144,21 @@ correzioni_registrate:
   sha256_precedente: 2ec762c546763834f35b40f346f6956c37d58a9b7b20793242ee5916732c123f
   sha256_corretto: 413bcd3b3230182c1b4e2b47ef8fdbe9360e619aac1b638ec4a3ad563ad1d81c
   commit: 2d77a00
+- data: '2026-10-14'
+  file: 04-manoscritto/06-terra-rossa.md
+  motivo: D2 (regola delle ruote col trattorino del nonno) e D6 (sentiero lungo dei pastori)
+  sha256_precedente: 8e562c3387fef4980077ea1106cab8e96ba6d177b9990219d0c293632ab56bb2
+  sha256_corretto: 339f3c9c644a0b504b46b18ba1aec6f45253a11ce42531e1ed2859fde6d0e8d2
+  commit: 5e08933
+- data: '2026-10-14'
+  file: 04-manoscritto/07-il-dottore-in-piazza.md
+  motivo: D3 (Checco grida in piazza che i quaderni stanno nel laboratorio)
+  sha256_precedente: 3acb1b3720b29b770202eca291ea519f39bc740b755d45173718ec38b2baed64
+  sha256_corretto: cc11b46d2c999d505ad68e5eaf599dc7fa8b99975dacf4e11c1869e6d46c04b8
+  commit: 5e08933
+- data: '2026-10-14'
+  file: 04-manoscritto/10-sotto-i-capperi.md
+  motivo: D5 (picchetto del recinto, motore lungo la rete, nessuno sa che sono lì)
+  sha256_precedente: d124f38c7b6be3bcc3bdc7a8846b2f540bdb344a97f3a43a6b6384b46d98654f
+  sha256_corretto: 8008d9908f81cfdf9082bd815c631120f9263082e76f7234044bed92953fbb5c
+  commit: 5e08933
