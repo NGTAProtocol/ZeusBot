@@ -15,9 +15,9 @@ Frase di apertura per la nuova chat: «Leggi libri/ulivo-pensante-vol1/passaggio
 | 3 | La prova della gravina | 1.388 | 10,0 | 28,7% | OK | approvato |
 | 4 | Il Gufo (enigma 2) | 1.320 | 10,0 | 26,8% | OK | da leggere |
 | 5 | L'albero che pensa | 1.300 | 9,8 | 43,1% | OK, 1 avviso (falso positivo) | da leggere |
-| 6 | Terra rossa (enigma 3) | 1.486 | 10,5 | 33,3% | OK, 1 avviso (scena oltre 1.400) | da leggere (D2, D6) |
+| 6 | Terra rossa (enigma 3) | 1.387 | 10,0 | 35,7% | OK | da leggere (D2, D6, E2) |
 | 7 | Il Dottore in piazza | 1.339 | 11,2 | 39,0% | OK | da leggere (D3) |
-| 8 | Il grafico della notte (enigma 4) | 1.225 | 10,8 | 31,5% | OK | da leggere (D1) |
+| 8 | Il grafico della notte (enigma 4) | 1.223 | 10,8 | 31,4% | OK | da leggere (D1, E3) |
 | 9 | Il calendario delle fioriture (enigma 5) | 1.182 | 11,5 | 33,4% | OK | da leggere (D1, D4) |
 | 10 | Sotto i capperi | 1.328 | 10,1 | 29,2% | OK, 2 avvisi voluti | da leggere (D5) |
 | 11 | Tre versioni (enigma 6) | 1.176 | 10,8 | 34,0% | OK | da leggere |
@@ -26,13 +26,18 @@ Frase di apertura per la nuova chat: «Leggi libri/ulivo-pensante-vol1/passaggio
 | 14 | Il telefono | 1.187 | 10,2 | 36,2% | OK | da leggere |
 | 15 | Il lucchetto di Rosa (enigma 8) | 1.217 | 10,4 | 29,7% | OK, 2 avvisi voluti | da leggere |
 
-Totale: 19.268 / 32.500 parole (metodo unico del motore).
+Totale: 19.167 / 32.500 parole (metodo unico del motore).
 
 ## Decisioni prese
 - Titolo, serie, voce `mistero-ed-epicita` (sezioni 1-2-3-7), 25 capitoli, 12 enigmi (`enigmi.md`), terza persona
   vicina a Pino, dialetto spento, lineetta, «# N — Titolo». Mappa canonica; «mezzogiorno» del sole.
 - Occhiali da saldatore di Gianni: mai da Gianni prima del cap. 12, poi cap. 17. Nei cap. 12-15 non compaiono.
-- Pagine enigma a fine scena 1: cap. 4 (C1), cap. 8 e 9 (D1); cap. 13 e 15 come proposta.
+- Pagine enigma a fine scena 1: cap. 4 (C1), cap. 8 e 9 (D1), cap. 13 e 15 (E1).
+- E1-E8 del 14/10 (sessione senza stesura): cap. 6 tagliato a 1.387 parole su descrizioni e similitudini (indizi
+  D2 intatti); cap. 8 «L'asfodelo invece, come da noi in campagna» (tolto «in primavera»); cap. 11 con due
+  scene nel piano parole; vincolo del cap. 13 in scaletta (il nonno aiuta, non risolve); Roccavedere luogo
+  reale, grafia uniformata in bibbia e scaletta, nota dell'autore che distingue luoghi reali e contrade di
+  fantasia.
 - D1-D9 del 14/10 applicate (dettagli nei commit 5e08933 e 0e414c3): regola delle ruote piantata nel cap. 6;
   sentiero lungo dei pastori; Checco grida in piazza dei quaderni nel laboratorio (spiegazione innocua per il
   Dottore); «oggi stesso» nel cap. 9; corda legata a un picchetto del recinto e tolta da un guardiano Terravox
@@ -85,29 +90,26 @@ Totale: 19.268 / 32.500 parole (metodo unico del motore).
 - Capitoli 11-15 scritti uno alla volta (zb avvio, zb voce mostra, zb esito, commit e push per ognuno).
 
 ## Punti aperti / da confermare con l'autore
-1. Lettura dei capitoli 4-15.
-2. Pagine enigma dei cap. 13 e 15 a fine scena 1 (come D1): la scaletta mostra la cantina e il baule aperto.
-3. Cap. 6: con le aggiunte D2 e D6 la scena unica è di 1.486 parole (AVVISO oltre 1.400). Tagliare altrove o
-   accettare?
-4. Cap. 8: Tonio dice «l'asfodelo invece in primavera, come da noi in campagna»: affermazione botanica.
-   Togliere o lasciare? I mesi di fioritura del calendario vanno verificati su una fonte botanica prima della
-   stampa (soprattutto cappero ed elicriso, scene ai primi di luglio).
-5. Cap. 11: due scene (sabato 11 uscita dal fondo, domenica 12 tre versioni). Il nonno non vede i ragazzi al
-   ritorno di sabato: la questione resta aperta fino al cap. 13.
-6. Cap. 12: i ragazzi escono di notte senza il nonno (Pino dalla finestra); fuga nel cassone dell'Ape. Il
-   guardiano D5 non è ancora rivelato: la vigilanza del cap. 12 resta anonima.
-7. Cap. 13: Pino racconta tutto al nonno; la cantina è della famiglia di Rosa e le chiavi le ha il nonno.
-8. Cap. 14: Checco difende Gianni e se ne va in Ape verso il paese (seme della falsa pista del cap. 16).
-9. Cap. 15: dietro la foto c'è la firma di rosmarino (la scaletta dice «un simbolo di pianta»): scelta per non
-   anticipare ULIVO (enigma 10). La foto l'ha scattata Michele, che non ricorda dove.
-10. Rocca Vetere (registro L21): da segnare anche questo come nome di fantasia?
-11. Registro dei fatti, dettagli «proposta» in bibbia, sezioni 4-6 della voce: ancora aperti.
+1. Lettura dei capitoli 6-15.
+2. Punti botanici da verificare su una fonte, senza affermare nulla nel testo: mesi di fioritura del calendario
+   di Rosa (cappero ed elicriso in fiore ai primi di luglio; asfodelo; pero selvatico; rosmarino; iris).
+3. Roccavedere (E6): nel libro non compare ancora in nessun capitolo scritto (1-15). Dettagli attribuiti al luogo,
+   tutti da confermare: bibbia, «zona del muro scoperto da Rosa» (invenzione narrativa), «nome vecchio della
+   zona», presente sulla carta delle contrade, collocato nella casella D4 dentro il recinto Terravox (scaletta,
+   cap. 21). Non verificati: posizione reale rispetto alla gravina e al paese, aspetto, storia, abitanti. Il
+   registro dei fatti (P16, L21, C6) riporta il vecchio testo con la grafia «Rocca Vetere»: lasciato com'è,
+   perché registra il vecchio testo (C6 parla di coloni spartani: già escluso dalla bibbia).
+4. Guardiano della Terravox (D5): la scaletta non fissa il capitolo della rivelazione. Opzioni (non prima del
+   cap. 16): (a) cap. 18, quando Gianni confessa e racconta come lavora la Terravox di notte, il guardiano è
+   l'uomo che fa i giri sul ciglio e ha tolto la corda «come roba del cantiere»; (b) cap. 22, la notte delle
+   ruspe: il guardiano è sul ciglio, riconosce i ragazzi del fondo e, a disagio come Nicola, non li ferma.
+5. Registro dei fatti, dettagli «proposta» in bibbia, sezioni 4-6 della voce: ancora aperti.
 
 ## Prossimo passo
-Aspettare la lettura dell'autore dei capitoli 4-15 («ok» o «correggi: …»). Poi capitoli 16-20: cap. 16 il codice
+Aspettare la lettura dell'autore dei capitoli 6-15 («ok» o «correggi: …»). Poi capitoli 16-20: cap. 16 il codice
 (falsa pista su Checco, la banda si spacca), cap. 17 la bottega (enigma 9; occhiali da saldatore di Gianni qui),
-cap. 18 il perché di Gianni, cap. 19 l'Ape torna (enigma 10, ULIVO), cap. 20 dentro l'ulivo. Il guardiano D5 va
-rivelato in uno di questi capitoli (da decidere con l'autore).
+cap. 18 il perché di Gianni, cap. 19 l'Ape torna (enigma 10, ULIVO), cap. 20 dentro l'ulivo. Il guardiano D5: scelta dell'autore
+tra le opzioni del punto 4.
 
 ## Ripartenza (sessione nuova)
 1. `git fetch origin libro/ulivo-pensante-vol1 && git checkout libro/ulivo-pensante-vol1`

@@ -44,8 +44,8 @@ Notti di scavo: 4, 6, 8, 10, 12 luglio (notti alterne, tra le 2 e le 3).
 ## Pagine enigma a metà capitolo (14/10/2026)
 
 - Cap. 4: pagina a fine scena 1 (correzione C1 approvata dall'autore).
-- Cap. 13 e 15: pagina a fine scena 1, stesso schema (proposta del 14/10/2026, da confermare: la scaletta mostra
-  la cantina e il baule aperto, cioè le soluzioni degli enigmi 7 e 8). Cap. 11: pagina in fondo; il capitolo
+- Cap. 13 e 15: pagina a fine scena 1, stesso schema (confermato dall'autore il 14/10/2026, E1: la scaletta
+  mostra la cantina e il baule aperto, cioè le soluzioni degli enigmi 7 e 8). Cap. 11: pagina in fondo; il capitolo
   ha due scene (sabato 11, uscita dal fondo; domenica 12, tre versioni).
 - Cap. 8 e 9: pagina a fine scena 1, stesso schema del cap. 4 (decisione D1 dell'autore del 14/10/2026). Nel
   cap. 8 la decisione «stanotte» e il volo del drone, nel cap. 9 la parola CAPPERI e la decisione, vengono
@@ -153,6 +153,8 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 - Domanda: la cassetta nella cantina è vuota: chi l'ha svuotata?
 - Gancio: Stellina nota che la polvere è vecchia: l'ha svuotata Rosa stessa, anni fa.
 - Enigma 7: ombra della torre → la porta a nord.
+- Vincolo (E5, 14/10/2026): il nonno resta un aiuto (racconto ascoltato, chiavi della cantina), non risolve gli
+  enigmi: la porta la trovano i ragazzi, la cassetta vuota la spiegano Stellina e Pino.
 
 ### 14 — Il telefono
 - Scopo: un adulto della Terravox con la coscienza sporca; la prova fotografica.
@@ -205,7 +207,8 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 
 ### 21 — Il lucido
 - Scopo: il talento di Stellina decide; la mappa diventa una scelta.
-- Informazione: Stellina ricalca il disegno su carta lucida e lo appoggia sulla mappa di Lucia: tre punti combaciano (l'Ulivo Pensante, la curva dove si rompe l'Ape, la chiesa rupestre). Il muro cade dentro l'area delle ruspe, nella zona che sulla mappa vecchia si chiama Rocca Vetere.
+- Informazione: Stellina ricalca il disegno su carta lucida e lo appoggia sulla mappa di Lucia: tre punti combaciano (l'Ulivo Pensante, la curva dove si rompe l'Ape, la chiesa rupestre). Il muro cade dentro l'area delle ruspe, nella zona che sulla mappa vecchia si chiama Roccavedere (luogo reale nel territorio di Ginosa, E6; la sua
+  collocazione dentro il recinto, nella casella D4, è narrativa e va confermata dall'autore).
 - Decisione: andare stanotte, con il nonno e Franco avvisati.
 - Gancio: il furgone di Gianni passa davanti alla casa, diretto al cantiere.
 - Enigma 11: sovrapposizione → casella D4.

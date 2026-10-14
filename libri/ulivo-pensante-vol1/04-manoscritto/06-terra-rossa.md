@@ -2,11 +2,11 @@
 
 <!-- zb: chiusura=D -->
 
-Il tablet era appoggiato sul tavolo della cucina, accanto alla caffettiera, e il nonno lo guardava senza bere il caffè.
+Il nonno guardava il tablet, in cucina, senza bere il caffè.
 
 — Stanotte, — disse, appena Pino entrò ancora in pigiama. — Alle due e dieci.
 
-Sullo schermo c'era la riga dell'ultima notte: piatta per ore, e all'improvviso una punta stretta e alta, seguita da altre più piccole, fino a poco prima delle tre.
+Sullo schermo la riga dell'ultima notte era piatta per ore; all'improvviso saliva in punte strette e alte, fino a poco prima delle tre.
 
 — Allora ha toccato.
 
@@ -34,9 +34,9 @@ Tra gli ulivi c'erano le tracce del trattorino del nonno, passato all'alba per i
 
 — E allora niente. A me le tracce piacciono.
 
-Alla luce del giorno la rete della Terravox era ancora più brutta. Correva tra gli ulivi del nonno e il ciglio della gravina, e dall'altra parte non si vedeva nessuno: solo il container, i tubi e una pala abbandonata. Le cicale riempivano l'aria, e il sole picchiava già sulla nuca.
+La rete della Terravox correva tra gli ulivi del nonno e il ciglio della gravina; dall'altra parte c'erano solo il container, i tubi e una pala abbandonata.
 
-Lucia si fermò un momento sul ciglio e indicò il fondo, giù, dove il verde seguiva il torrente.
+Lucia si fermò un momento sul ciglio e indicò il fondo.
 
 — Laggiù passa il sentiero lungo dei pastori, — disse. — Segue il fondo fin sotto la Capperaia, dove ci sono le grotte vecchie, e risale dalla parte del paese. Mezza giornata di cammino.
 
@@ -80,7 +80,7 @@ Pino la fissò a lungo. Quella V l'aveva già vista, ne era sicuro: l'aveva sull
 
 — Questa no, questa ha una toppa.
 
-Stellina si era seduta per terra, a gambe incrociate. Disegnava le due strisce, le zolle e la V, con la lingua tra i denti, esattamente come faceva il nonno col pennarello verde.
+Stellina, seduta per terra a gambe incrociate, disegnava le due strisce, le zolle e la V.
 
 — È della Terravox, — disse Lucia. — Chi altro entra lì dentro di notte? Hanno il cancello grande davanti, e questo qui dietro per quando non vogliono farsi vedere.
 
@@ -102,7 +102,7 @@ Checco scese, guardò le zolle e il lucchetto nuovo, e per una volta non fece ba
 
 Stellina salì in cabina accanto a Checco, col quaderno sulle ginocchia. Gli altri tre camminarono dietro l'Ape, curvi, gli occhi sulle strisce. Le zolle scure c'erano ancora, sempre più rare, e la V tornava testarda a ogni giro di ruota.
 
-Quando la strada cominciò a salire, il caldo salì con lei, e la polvere si attaccava al sudore delle braccia.
+La strada cominciò a salire, sotto il sole.
 
 Alla curva prima del cancello del nonno, l'Ape tossì, diede un colpo secco e si fermò.
 
@@ -114,7 +114,7 @@ Alla curva prima del cancello del nonno, l'Ape tossì, diede un colpo secco e si
 
 — Ve lo dico adesso. E adesso spingete.
 
-Spinsero in tre, con le mani sul cassone rovente, mentre Checco teneva il volante e dava ordini. Stellina era scesa e spingeva anche lei, con una mano sola, perché nell'altra teneva il quaderno. Ciuffo era rimasto nel cassone e guardava tutti dall'alto, con la lingua di fuori.
+Spinsero in tre, con le mani sul cassone rovente, mentre Checco teneva il volante e dava ordini. Stellina era scesa e spingeva anche lei, con una mano sola. Ciuffo era rimasto nel cassone e guardava tutti dall'alto.
 
 — Più forte! Col cuore! — gridava Checco.
 
@@ -126,9 +126,9 @@ La salita non finiva mai, e a metà Pino aveva le braccia che tremavano e il sud
 
 In cima, dove la strada di terra rossa incontrava quella bianca, il motore scoppiò, tossì e ripartì. Checco alzò un pugno al cielo e Ciuffo abbaiò una volta sola, per educazione.
 
-Si buttarono all'ombra di un ulivo, senza fiato, con le mani nere di polvere.
+Si buttarono all'ombra di un ulivo, senza fiato.
 
-Mentre riprendevano fiato, sulla strada bianca passarono due furgoni della Terravox, con il nome scritto in grande. Rallentarono, girarono verso il cancello grande del recinto e sparirono dentro, in una nuvola di polvere chiara.
+Mentre riprendevano fiato, sulla strada bianca passarono due furgoni della Terravox, con il nome scritto in grande. Rallentarono, girarono verso il cancello grande del recinto e sparirono dentro.
 
 — Visto? — disse Lucia, ancora ansimante. — Furgoni bianchi, che entrano ed escono tutto il giorno.
 
@@ -140,7 +140,7 @@ Girava dall'altra parte.
 
 — Lucia, — disse.
 
-Lucia lo raggiunse, guardò per terra e lungo la strada. La strada bianca andava dritta verso il paese, tra i muretti a secco, fino alla torre dell'orologio che spuntava sopra i tetti.
+Lucia lo raggiunse, guardò per terra e lungo la strada. La strada bianca andava dritta verso il paese, fino alla torre dell'orologio che spuntava sopra i tetti.
 
 — Avrà sbagliato strada, — disse Lucia.
 

@@ -22,7 +22,7 @@ Si girò verso la parete del laboratorio, dove tra una mensola di cavi e un orol
 
 Era una tabella fatta a mano. In alto, a sinistra, c'era scritto in stampatello: FIORITURE. Lungo il lato c'erano i mesi, dall'uno al dodici, uno per riga. In cima a ogni colonna c'era un numero e il nome di una pianta, con la calligrafia minuta della nonna: 1 cappero, 2 asfodelo, 3 pero selvatico, 4 elicriso, 5 rosmarino, 6 iris. Alcune caselle erano colorate a matita, altre erano bianche.
 
-— Questo sì che lo capisco, — disse Tonio. — La nonna segnava quando fioriscono. Guarda il cappero: giugno, luglio, agosto, colorati. L'asfodelo invece in primavera, come da noi in campagna. Numerava le piante in colonna, una per una, così bastava dire un numero.
+— Questo sì che lo capisco, — disse Tonio. — La nonna segnava quando fioriscono. Guarda il cappero: giugno, luglio, agosto, colorati. L'asfodelo invece, come da noi in campagna. Numerava le piante in colonna, una per una, così bastava dire un numero.
 
 — Bello, — disse Pino, senza guardarlo davvero. — Ma a noi serve il grafico.
 

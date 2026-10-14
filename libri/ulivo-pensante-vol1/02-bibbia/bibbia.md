@@ -49,7 +49,7 @@
   - Funzione: dà gli strumenti, non le soluzioni; non risolve mai al posto dei ragazzi.
 - **Rosa**: nonna di Pino, morta tre anni prima (proposta) — ceramista e osservatrice della gravina (dal registro: P13, P15).
   - Ha lasciato sette quaderni (proposta) scritti in due cifrari suoi: uno con simboli di piante (chiave nelle piastrelle dipinte della cucina), uno col calendario delle fioriture.
-  - Cifrava per proteggere dai tombaroli il posto del muro antico trovato a Rocca Vetere (dal registro: P16; il motivo è proposta).
+  - Cifrava per proteggere dai tombaroli il posto del muro antico trovato a Roccavedere (dal registro: P16, dove il vecchio testo scrive «Rocca Vetere»; il motivo è proposta; il muro è invenzione narrativa).
   - Il settimo quaderno lo ha nascosto lei, dentro l'Ulivo Pensante.
 - **Il Dottore**: ingegnere capo della Terravox — 50 circa — capelli argento, completo grigio, cravatta blu (dal registro: P36).
   - Gentile in pubblico, mai una minaccia diretta: offre, promette, sorride.
@@ -86,8 +86,8 @@
 - **Il forno di Sergio**: cupola in tufo (registro L4); all'alba ci passano tutti.
 - **La bottega di Gianni**: sotto un arco, piena di radio e droni da aggiustare (registro L5).
 - **La casa di Franco**: sul crinale, terrazza sulla gravina (registro L6).
-- **Nomi di contrada inventati** (decisione dell'autore del 14/10/2026): Croce, Pozzo Vecchio, Capperaia sono di fantasia; lo dice la nota dell'autore in libro.yaml.
-- **Rocca Vetere**: nome vecchio della zona con il muro scoperto da Rosa (registro L21); compare solo nel cap. 21.
+- **Nomi di contrada inventati** (decisione dell'autore del 14/10/2026): Croce, Pozzo Vecchio, Capperaia sono di fantasia. Ginosa e Roccavedere sono luoghi reali (E6). La nota dell'autore in libro.yaml distingue i due casi.
+- **Roccavedere**: luogo reale nel territorio di Ginosa (decisione E6 dell'autore del 14/10/2026: grafia reale, non è un nome di fantasia). Nel libro, per invenzione narrativa, è la zona del muro scoperto da Rosa (registro L21, dove il vecchio testo scrive «Rocca Vetere»); compare solo nel cap. 21. Non verificati, da confermare con l'autore: che sia un «nome vecchio» della zona, che compaia sulla carta delle contrade, la sua posizione rispetto alla gravina e alla casa del nonno (casella D4), il suo aspetto. Nessun fatto storico o archeologico va attribuito al luogo reale.
 - **Il muro**: antico, di grosse pietre squadrate. L'epoca la dice solo il funzionario, con prudenza: «probabilmente di età greca, da verificare». Nessun'altra affermazione storica.
 
 ## Oggetti chiave
