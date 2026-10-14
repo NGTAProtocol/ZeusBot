@@ -1,6 +1,18 @@
-# Cronologia del libro (proposta B.2.1). Si compila nella fase dei documenti.
-nascite: []        # - {chi: <personaggio>, data: AAAA-MM-GG}
-eventi: []         # - {id: <id>, data: AAAA-MM-GG, capitolo: <N>, descrizione: <breve>}
-durate: []         # - {da: <id evento>, a: <id evento>, valore: "<N anni|mesi|settimane|giorni>", tolleranza_giorni: 3 (oppure tolleranza_mesi / tolleranza_anni)}
-cifre: []          # - {id: <id>, valore: <numero>, unita: <unità>, forme_ammesse: [<cifre>, <in lettere>], contesto: [<parole della frase>]}
+# Cronologia del libro (proposta B.2.1). Proposta per il gate «documenti»: date dell'estate 2026, da confermare.
+nascite: []        # età dei personaggi ancora da confermare (bibbia: proposte); si aggiungono dopo l'«ok»
+eventi:
+  - {id: arrivo, data: 2026-07-06, capitolo: 1, descrizione: arrivo di Pino; laboratorio frugato}
+  - {id: assemblea_dottore, data: 2026-07-09, capitolo: 7, descrizione: il Dottore presenta il progetto in piazza}
+  - {id: guardia_recinto, data: 2026-07-12, capitolo: 12, descrizione: notte al recinto; telefono perso}
+  - {id: accusa_checco, data: 2026-07-15, capitolo: 16, descrizione: Pino accusa Checco}
+  - {id: confessione_gianni, data: 2026-07-16, capitolo: 18, descrizione: Gianni confessa}
+  - {id: settimo_quaderno, data: 2026-07-17, capitolo: 20, descrizione: il quaderno nell'ulivo}
+  - {id: notte_ruspe, data: 2026-07-18, capitolo: 22, descrizione: la notte delle ruspe}
+  - {id: soprintendenza, data: 2026-07-19, capitolo: 23, descrizione: lettera di Rosa; Soprintendenza}
+  - {id: consiglio, data: 2026-07-20, capitolo: 24, descrizione: consiglio comunale; voto saltato}
+  - {id: partenza, data: 2026-07-25, capitolo: 25, descrizione: festa e partenza}
+durate:
+  - {da: assemblea_dottore, a: consiglio, valore: "11 giorni", tolleranza_giorni: 0}
+cifre:
+  - {id: quaderni, valore: 7, unita: quaderni, forme_ammesse: ["7", "sette"], contesto: [quaderni]}
 eta_per_capitolo: {calcolata: true}

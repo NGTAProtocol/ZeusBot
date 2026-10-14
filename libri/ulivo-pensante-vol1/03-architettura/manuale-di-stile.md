@@ -76,3 +76,62 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «giallo
 - Nessuna lezione di storia: la storia emerge dall'azione.
 - Da evitare, perché troppo vicino a un libro del 2025: masseria con scheletro, dolmen, leggenda di sangue, reperto preistorico come gancio.
 - Pagina enigma in circa 12 capitoli, non in tutti; soluzioni in fondo al libro; mai un codice in ogni capitolo.
+
+## 11. La voce del libro (proposta, da approvare al gate «documenti»)
+
+Base: «Mistero ed Epicità» (mistero-ed-epicita), sezioni 1, 2, 3 e 7 della scheda (testo dell'autore).
+Le sezioni 4-6 e `divieti.yaml` della banca-voci non sono state scritte dall'autore: non fanno da modello
+(vedi `00-progetto/report-difetti-motore.md`). Dove la voce contrasta con il libro vince il libro.
+
+Cosa si prende dalla voce:
+- Ritmo serrato; ogni capitolo avanza con un indizio che si incastra nel precedente; gancio a fine capitolo.
+- Lavoro di squadra: ogni ragazzo parla e agisce con la voce del suo talento.
+- Dialoghi rapidi, fatti di intuizioni e di aiuto reciproco nel pericolo.
+- Ogni enigma si risolve con ingegno e cooperazione, mai per coincidenza.
+- Nessuno spiegone: il luogo si svela mentre i ragazzi agiscono.
+- Personaggi non infallibili.
+- Senso di scoperta e di meraviglia.
+
+Cosa si adatta al libro (precedenza del manuale):
+- Niente fantasy, niente spade, niente meccanismi magici: la meraviglia viene da cose vere (la gravina, un
+  ulivo di mille anni, un muro antico, un cifrario risolto, un falco grillaio).
+- Lessico concreto del luogo invece di quello epico: tufo, calcare, gravina, ciglio, muretto a secco,
+  cappero, lentisco, timo, carrubo, cisterna, chiesa rupestre, Ape, quaderno, sensore, drone, scheda.
+- «Evocativo» vuol dire preciso, non solenne: una parola giusta invece di tre aggettivi.
+- Descrizioni corte: al massimo due o tre frasi, poi un gesto o una battuta; almeno due sensi (caldo,
+  odore, rumore) quando si entra in un luogo nuovo.
+
+## 12. Punto di vista e tempo
+
+- Terza persona, vicina a Pino (proposta): il lettore sa quello che sa Pino, non di più.
+- Passato remoto e imperfetto.
+- Nessun narratore che commenta o fa la morale.
+
+## 13. Lettore 9-12
+
+- Frasi brevi e chiare; una sola subordinata per frase quando serve.
+- Parole difficili solo se il contesto le spiega (oppure le spiega un personaggio in una battuta).
+- Paura sì, crudeltà no; nessun personaggio muore in scena; adulti cattivi mai violenti in modo esplicito.
+- Umorismo dalle situazioni e dai caratteri (Checco, l'Ape, Ciuffo), mai a spese di chi è debole.
+- Dialetto: spento (ambientazione «altro»); al massimo una o due parole di dialetto per capitolo, solo in
+  bocca a Checco o agli anziani, capibili dal contesto. Da confermare con Felice.
+
+## 14. Enigmi e pagine enigma
+
+- Pagina enigma in 12 capitoli: 2, 4, 6, 8, 9, 11, 13, 15, 17, 19, 21, 23 (scaletta). Negli altri no.
+- La pagina enigma sta alla fine del capitolo, dopo il gancio, con un titolo fisso («L'enigma della banda»)
+  e una domanda sola.
+- Equità: tutto quello che serve è già comparso nel testo prima della pagina enigma. Il lettore deve poter
+  dire «era lì!».
+- Il capitolo successivo mostra la soluzione trovata dai ragazzi; la soluzione spiegata sta in fondo al libro.
+- Tipi diversi, mai due uguali di fila: cifrario, mappa, scheda indizio, grafico, testimonianze, ombra.
+- Mappe e schede indizio: disegni semplici, leggibili su carta e su Kindle (da impaginare a parte).
+
+## 15. Divieti del libro
+
+- Vietato: magia, poteri, oggetti che si illuminano da soli, visioni.
+- Vietato: soluzioni per coincidenza o per fortuna; un adulto che risolve al posto dei ragazzi.
+- Vietato: lezioni di storia o di scienza; la storia emerge dall'azione.
+- Vietato: masseria con scheletro, dolmen, leggenda di sangue, reperto preistorico come gancio.
+- Vietato: frasi, descrizioni, metafore o ordine dei capitoli del vecchio testo.
+- Tetto: similitudini, al massimo una ogni 400 parole (profilo); meglio meno.

@@ -99,7 +99,8 @@ struttura:
   parti: []
   interludi: []
 calendario:
-  anni_ammessi: []
+  anni_ammessi:
+  - 2026
 ortografia:
   parole_ammesse_file: nomi_propri.txt
 copyright:
