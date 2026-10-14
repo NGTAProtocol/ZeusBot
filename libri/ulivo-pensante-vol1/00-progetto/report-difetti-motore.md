@@ -78,3 +78,14 @@ Regola: i difetti GENERICI del motore non si correggono durante il lavoro sul li
 15. **Pagina enigma a metà capitolo.** Il motore non conosce la pagina «L'enigma della banda»: la conta come
     prosa della scena in cui sta. Nel cap. 4 la pagina chiude la scena 1 (correzione C1): ammessa, ma le sue
     parole entrano nel conteggio della scena e del capitolo, e le righe in elenco abbassano la frase media.
+
+## Aggiunte del 14/10/2026 (capitoli 6-10)
+
+16. **Colonna «Scene» del piano parole solo informativa.** `capitolo.py` controlla il numero di scene sul
+    profilo (1-2), non sulla colonna «Scene» di piano-parole.md: i cap. 8 e 9 hanno due scene (pagina enigma a
+    metà) con il piano che dice 1, senza avvisi. Utile un AVVISO quando il numero di scene differisce dal piano.
+17. **Ripetizioni volute segnalate come riciclo.** Cap. 10: «un rametto con le foglie strette e appuntite» (la
+    firma di Rosa, uguale apposta al cap. 1-2) e «la stanza di pietra sotto i capperi» (la frase decifrata nel
+    cap. 9). Lasciate: 2 AVVISI, nessun KO (vedi punto 12).
+18. **`zb riapprova` con l'output in una pipe.** Con `| head -1` lo script chiude con BrokenPipeError dopo aver
+    già scritto stato.yaml (registrazione riuscita, traccia d'errore a schermo). Innocuo, ma confonde.

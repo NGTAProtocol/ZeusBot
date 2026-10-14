@@ -21,8 +21,8 @@ documenti_approvati:
     sha256: 9c5115b7bbb0607d8078671e8e303e24480fbb9c4c0a067ae8b0eb9679ce3a41
     commit: 422702a
   02-bibbia/bibbia.md:
-    sha256: 2a28055577012e7f30a0ebafeec26b50d78a0acc8fe3b404d9f0ee4e4e6443f1
-    commit: 1d4633d
+    sha256: 94071160f97ecb35752d4bc1127d657fa31c5fcbc65990fdbd0cbdc1b624a26d
+    commit: '3778095'
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -34,6 +34,11 @@ documenti_approvati:
         del cap. 2, mappa canonica, mezzogiorno del sole, occhiali da saldatore di Gianni, allarme col codice)'
       sha256_precedente: d179c9a2bdd9fbd73c9a227854687620382f52701fd734da33054553f692805d
       commit_precedente: 1f1803f
+    - data: '2026-10-14'
+      motivo: aggiornamento dei file derivati richiesto dall'autore il 14/10/2026 dopo i capitoli 6-10; voci nuove segnate
+        come proposta
+      sha256_precedente: 2a28055577012e7f30a0ebafeec26b50d78a0acc8fe3b404d9f0ee4e4e6443f1
+      commit_precedente: 1d4633d
   cronologia.yaml:
     sha256: 51f3977a4de599f2a7b4c3a4e8718b4e0e6a53f5ef89f5d97a63aa442cb935f5
     commit: f85c4db
@@ -57,8 +62,8 @@ documenti_approvati:
       sha256_precedente: 434d952b62dbd795d6e71fc447e76ac46889391794bd46c2d84172ed468ecfb1
       commit_precedente: 1d4633d
   03-architettura/scaletta.md:
-    sha256: cef01d06d0fec6c14ccb1d67c2bc42fc4c0fc48c17aaf8c75f0236212d743e97
-    commit: 1d4633d
+    sha256: f8444a5059175e4d517a2f7a5b8e422fa73d21cdada2de7c826f4fef109a0700
+    commit: '3778095'
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -70,6 +75,11 @@ documenti_approvati:
         del cap. 2, mappa canonica, mezzogiorno del sole, occhiali da saldatore di Gianni, allarme col codice)'
       sha256_precedente: d5e7a0e720adaa7bb544acfbab8a17a54f45d13991eaa77e1e7b3475f79c836e
       commit_precedente: 1f1803f
+    - data: '2026-10-14'
+      motivo: 'aggiornamento dei file derivati richiesto dall''autore il 14/10/2026: nota sulle pagine enigma dei cap. 4,
+        8, 9 (8 e 9 proposta)'
+      sha256_precedente: cef01d06d0fec6c14ccb1d67c2bc42fc4c0fc48c17aaf8c75f0236212d743e97
+      commit_precedente: 1d4633d
   03-architettura/piano-parole.md:
     sha256: 40cd56bb2f3e723f5fdaf016c3a8cecf519e26aab5e883a87652a0f60798a9fc
     commit: 2d77a00
@@ -102,7 +112,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T07:23:34Z'
+aggiornato: '2026-10-14T07:24:39Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
