@@ -7,7 +7,7 @@
 | — | 3 | La prova della gravina | banda | 1 | 1300 | 1300 | 1388 | +6,8% |
 | — | 4 | Il Gufo | falsa pista + enigma | 2 | 1300 | 650 | 1320 | +1,5% |
 | — | 5 | L'albero che pensa | elemento strano | 1 | 1300 | 1300 | 1300 | +0,0% |
-| — | 6 | Terra rossa | indagine + enigma | 1 | 1300 | 1300 |  |  |
+| — | 6 | Terra rossa | indagine + enigma | 1 | 1300 | 1300 | 1347 | +3,6% |
 | — | 7 | Il Dottore in piazza | svolta atto I | 1 | 1300 | 1300 |  |  |
 | — | 8 | Il grafico della notte | deduzione + enigma | 1 | 1300 | 1300 |  |  |
 | — | 9 | Il calendario delle fioriture | cifrario + enigma | 1 | 1300 | 1300 |  |  |

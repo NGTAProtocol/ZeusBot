@@ -88,6 +88,11 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
   bianco di Gianni (Checco non ne parla); cap. 1 e 6, l'Ape ha tre ruote. Depistaggio leale: cap. 1 e 6, la
   Terravox usa furgoni bianchi, e la banda crede a lungo che la traccia sia di un mezzo Terravox.
 - Soluzione: C, un furgone piccolo con la toppa a V (invariata). Di chi sia, la banda non lo sa ancora.
+- Nel cap. 6 (scritto il 14/10/2026): l'impronta è davanti a un cancelletto sul retro del recinto, con zolle di
+  terra «di sotto» umida (Tonio); misura col palmo di Tonio; la V nella striscia di destra, vista da Pino, che
+  non ricorda dove l'ha già vista. Il testo non dice quante ruote né che è un furgone: la banda dice solo
+  «della Terravox». La pagina dà l'impronta (due strisce, larghe un palmo, V a destra), le tre opzioni e la
+  regola delle ruote di dietro sulle strisce di quelle davanti.
 - Controllo di equità: la toppa a V è nel cap. 1, vista da Pino. Il lettore attento può collegarla a Gianni
   prima della banda, che segue la pista dei furgoni Terravox: voluto. Sì.
 
