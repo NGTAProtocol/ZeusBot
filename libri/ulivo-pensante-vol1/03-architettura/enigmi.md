@@ -151,6 +151,12 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
   sole d'estate cade verso l'una (ora legale); cap. 10, la piastrella. Nel cap. 13 i ragazzi vanno in piazza
   verso l'una.
 - Soluzione: A, la porta a nord (la cantina della famiglia di Rosa).
+- Nel cap. 13 (scritto il 14/10/2026): pagina a fine scena 1, come nei cap. 4, 8, 9 (proposta: D1 vale per 8 e 9,
+  qui va confermata). Prima della pagina: la piazza verso le dodici e mezza, l'ombra che si accorcia, le tre
+  porte descritte senza direzioni, la campana dell'una meno cinque, il bastoncino di Lucia. Le direzioni stanno
+  solo nella pianta di Stellina sulla pagina. Dopo la pagina: l'ombra punta alla porta a nord, Lucia ripete la
+  sua regola, il nonno ha le chiavi della cantina; cassetta di latta con la firma, vuota; polvere e ragnatela
+  intatte (Stellina) → l'ha svuotata Rosa (lo dice Pino).
 - Controllo di equità: la regola è detta in chiaro due capitoli prima. Sì.
 
 ## 8 — Cap. 15: il lucchetto (sequenza in ordine)

@@ -14,7 +14,7 @@
 | — | 10 | Sotto i capperi | pericolo | 2 | 1300 | 650 | 1328 | +2,2% |
 | — | 11 | Tre versioni | falsa pista chiusa + enigma | 1 | 1300 | 1300 | 1176 | -9,5% |
 | — | 12 | Guardia al recinto | azione notturna | 2 | 1300 | 650 | 1236 | -4,9% |
-| — | 13 | L'ombra della torre | indizio + enigma | 1 | 1300 | 1300 |  |  |
+| — | 13 | L'ombra della torre | indizio + enigma | 1 | 1300 | 1300 | 1153 | -11,3% |
 | — | 14 | Il telefono | prova | 1 | 1300 | 1300 |  |  |
 | — | 15 | Il lucchetto di Rosa | seme finale + enigma | 1 | 1300 | 1300 |  |  |
 | — | 16 | Il codice | crisi | 1 | 1300 | 1300 |  |  |
