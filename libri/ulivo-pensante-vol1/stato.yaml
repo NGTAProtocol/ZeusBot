@@ -143,8 +143,8 @@ documenti_approvati:
       sha256_precedente: 7d8039b5a7c8ee9880c1a69b467ca3c924163bd8a65ebb426be061a011ff7219
       commit_precedente: c4e2236
   03-architettura/scaletta.md:
-    sha256: 587ccc6fa66ee38b02e199edd0f48f4465922c69ade65f42f212c944536bb884
-    commit: 3cfa5e0
+    sha256: 966700bc77c74ce29845f8268511cf96e162a41f72698fa7217c0a2bcc6fbfcf
+    commit: '3124676'
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -197,6 +197,10 @@ documenti_approvati:
       motivo: 'lotto C: righe Stato dei cap. 21-25'
       sha256_precedente: ef3c3330f51c987a596d3d01a6ab1a882eb329ce7d0e427d0882c5e6b300cb98
       commit_precedente: 01589a6
+    - data: '2026-10-14'
+      motivo: righe Stato dei cap. 23-25 con le parole attuali
+      sha256_precedente: 587ccc6fa66ee38b02e199edd0f48f4465922c69ade65f42f212c944536bb884
+      commit_precedente: 3cfa5e0
   03-architettura/piano-parole.md:
     sha256: 7703b13a5451c07f25fa61b3bc3e30b19d38edf4dad79ac296b1647eed3755cc
     commit: c4e2236
@@ -233,7 +237,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T16:13:03Z'
+aggiornato: '2026-10-14T16:13:38Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
