@@ -5,8 +5,8 @@
 | — | 1 | L'Ape e il cartello | apertura, mistero | 1 | 1300 | 1300 | 1366 | +5,1% |
 | — | 2 | Le piastrelle della nonna | mistero + enigma | 1 | 1300 | 1300 | 1365 | +5,0% |
 | — | 3 | La prova della gravina | banda | 1 | 1300 | 1300 | 1388 | +6,8% |
-| — | 4 | Il Gufo | falsa pista + enigma | 1 | 1300 | 1300 | 1339 | +3,0% |
-| — | 5 | L'albero che pensa | elemento strano | 1 | 1300 | 1300 | 1290 | -0,8% |
+| — | 4 | Il Gufo | falsa pista + enigma | 2 | 1300 | 650 | 1320 | +1,5% |
+| — | 5 | L'albero che pensa | elemento strano | 1 | 1300 | 1300 | 1300 | +0,0% |
 | — | 6 | Terra rossa | indagine + enigma | 1 | 1300 | 1300 |  |  |
 | — | 7 | Il Dottore in piazza | svolta atto I | 1 | 1300 | 1300 |  |  |
 | — | 8 | Il grafico della notte | deduzione + enigma | 1 | 1300 | 1300 |  |  |

@@ -28,11 +28,11 @@ Era la calligrafia minuta della nonna, ma questa volta con le lettere normali, s
 
 Lucia scese dal bancone con un salto e aprì il suo zaino. Tirò fuori un foglio grande, piegato tante volte, con le pieghe ormai consumate.
 
-— Queste. È la vecchia carta delle contrade, quella appesa nel forno del padre di Tonio. L'ho ricopiata a quadretti l'anno scorso: colonne dalla A alla F, righe dall'uno al sei, il nord in alto. I vecchi la usano ancora, con questi nomi.
+— Queste. È la vecchia carta delle contrade, quella appesa nel forno del padre di Tonio. Le caselle ce le aveva già: colonne dalla A alla F, righe dall'uno al sei, il nord in alto. Io l'ho solo ricopiata in pulito, l'anno scorso. I vecchi la usano ancora, con questi nomi.
 
 Stese la mappa sul banco e la tenne ferma con due cacciaviti. Pino lesse i nomi scritti a matita nelle caselle: la Croce, il Pozzo Vecchio, la Capperaia, la torre dell'orologio, il recinto della Terravox, che Lucia aveva aggiunto in rosso.
 
-Stellina, intanto, aveva aperto il suo quaderno a spirale sul disegno della domenica. Lo mise accanto alla mappa e puntò la matita sui due cerchi neri appesi alla cinghia.
+Stellina, intanto, aveva aperto il suo quaderno a spirale sul disegno della domenica. Lo mise accanto alla mappa e puntò la matita sui due cerchi neri appesi alla cinghia, all'altezza del petto.
 
 — Che cos'è? — chiese Pino.
 
@@ -40,21 +40,57 @@ Stellina, intanto, aveva aperto il suo quaderno a spirale sul disegno della dome
 
 — Il Gufo ha un binocolo, — disse Tonio piano. — Glielo vedo sempre al collo, quando passa dal forno.
 
-— E sta sveglio di notte, — disse Pino. Sentì il sangue salirgli alla faccia, tutto insieme. — L'hai detto tu, ieri: anche di notte, lui è lassù. È lui. È entrato lui.
+— E sta sveglio di notte, — disse Pino. Sentì il sangue salirgli alla faccia. — L'hai detto tu, ieri: anche di notte, lui è lassù. È lui. È entrato lui.
 
 — Piano, — disse Tonio. — Hai visto un disegno. Non hai visto lui.
 
 — Allora andiamo a vederlo.
 
-Lucia aveva già il dito sulla Croce. Lo fece scorrere verso destra, verso est, casella dopo casella, fino al Pozzo Vecchio. Lì si fermò, tornò indietro verso ovest, passò sopra la Capperaia e andò ancora avanti di due caselle.
+Lucia aveva già il dito sulla Croce.
 
-— Il Pozzo Vecchio lo conosco, — disse Tonio, mentre il dito di Lucia andava avanti. — Ha ancora la carrucola. Mio nonno ci prendeva l'acqua per le bestie.
+— Datemi un minuto, — disse.
 
-Il dito si fermò. Nessuno disse niente. Stellina guardò la casella, guardò il suo disegno, e chiuse il quaderno.
+— Il Pozzo Vecchio lo conosco, — disse Tonio, mentre lei guardava la mappa. — Ha ancora la carrucola. Mio nonno ci prendeva l'acqua per le bestie.
 
-— Al tramonto, — disse Lucia. — Di giorno ci vede da un chilometro.
+## L'enigma della banda
+
+Il foglio di Rosa dice: «Parti dalla Croce. Va' verso il sole che sorge fino al Pozzo Vecchio, poi verso dove tramonta il sole, due caselle oltre la Capperaia.»
+
+La mappa di Lucia ha le colonne dalla A alla F, da ovest a est, e le righe dall'1 al 6, da nord a sud. Il nord è in alto.
+
+Riga 2, da ovest a est:
+- A2: terrazza di Franco
+- B2: Croce
+- C2: Capperaia
+- D2: parete della gravina
+- E2: Pozzo Vecchio
+- F2: paese
+
+Riga 3, da ovest a est:
+- A3: fondo della gravina
+- B3: grotta
+- C3: fondo della gravina
+- D3: fondo della gravina
+- E3: campi
+- F3: torre dell'orologio
+
+Riga 4, da ovest a est:
+- A4: ciglio
+- B4: carrubo
+- C4: ciglio
+- D4: recinto Terravox
+- E4: ulivi del nonno
+- F4: strada bianca
+
+Ricorda quello che Lucia ha insegnato a Pino: il sole sorge a est e tramonta a ovest.
+
+In quale casella finisce il percorso di Rosa?
 
 * * *
+
+Il dito di Lucia si fermò. Nessuno disse niente. Stellina guardò la casella, guardò il suo disegno, e chiuse il quaderno.
+
+— Al tramonto, — disse Lucia. — Di giorno ci vede da un chilometro.
 
 Partirono alle otto meno un quarto, quando il caldo cominciava a calare. Per arrivare sull'altro lato della gravina bisognava girarle intorno dalla parte del paese, passare vicino al Pozzo Vecchio e prendere il sentiero del crinale verso ovest.
 
@@ -117,37 +153,3 @@ Pino si girò, con il braccio davanti agli occhi. Dietro la torcia c'era Franco,
 — Di notte la gravina non perdona, — disse Franco. Aveva una voce bassa e lenta, senza rabbia. — Non avvisa e non perdona. State lontani da qui, di notte. Tutti e quattro.
 
 Spense la torcia, e il buio cadde su di loro tutto insieme.
-
-## L'enigma della banda
-
-Il foglio di Rosa dice: «Parti dalla Croce. Va' verso il sole che sorge fino al Pozzo Vecchio, poi verso dove tramonta il sole, due caselle oltre la Capperaia.»
-
-La mappa di Lucia ha le colonne dalla A alla F, da ovest a est, e le righe dall'1 al 6, da nord a sud. Il nord è in alto.
-
-Riga 2, da ovest a est:
-- A2: terrazza di Franco
-- B2: Croce
-- C2: Capperaia
-- D2: parete della gravina
-- E2: Pozzo Vecchio
-- F2: paese
-
-Riga 3, da ovest a est:
-- A3: fondo della gravina
-- B3: grotta
-- C3: fondo della gravina
-- D3: fondo della gravina
-- E3: campi
-- F3: torre dell'orologio
-
-Riga 4, da ovest a est:
-- A4: ciglio
-- B4: carrubo
-- C4: ciglio
-- D4: recinto Terravox
-- E4: ulivi del nonno
-- F4: strada bianca
-
-Ricorda quello che Lucia ha insegnato a Pino: il sole sorge a est e tramonta a ovest.
-
-In quale casella finisce il percorso di Rosa?

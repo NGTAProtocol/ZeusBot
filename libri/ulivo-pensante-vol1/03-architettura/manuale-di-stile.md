@@ -120,7 +120,10 @@ Cosa si adatta al libro (precedenza del manuale):
 
 - Pagina enigma in 12 capitoli: 2, 4, 6, 8, 9, 11, 13, 15, 17, 19, 21, 23 (scaletta). Negli altri no.
 - La pagina enigma sta alla fine del capitolo, dopo il gancio, con un titolo fisso («L'enigma della banda»)
-  e una domanda sola.
+  e una domanda sola. Eccezione approvata dall'autore il 14/10/2026 (correzione C1): nel cap. 4 la pagina
+  chiude la scena 1, prima della partenza per la terrazza; la scena 2 riparte dal dito di Lucia che si ferma.
+- La soluzione non è mai spiegata nel testo prima della pagina enigma (nessun percorso casella per casella,
+  nessun calcolo mostrato).
 - Equità: tutto quello che serve è già comparso nel testo prima della pagina enigma. Il lettore deve poter
   dire «era lì!».
 - Il capitolo successivo mostra la soluzione trovata dai ragazzi; la soluzione spiegata sta in fondo al libro.

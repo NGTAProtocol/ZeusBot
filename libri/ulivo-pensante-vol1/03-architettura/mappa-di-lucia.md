@@ -2,8 +2,9 @@
 
 <!-- Creata il 14/10/2026 su richiesta dell'autore (correzione A3 al gate «primi_capitoli»).
      Fonte unica delle posizioni: capitoli, enigmi (2, 7, 11) e pagine enigma la seguono.
-     Lucia l'ha ricopiata a quadretti dalla vecchia carta delle contrade (proposta: appesa nel forno di
-     Sergio). Nessuna scala fissa: le distanze nel testo restano vaghe («cento metri», «poco più in là»). -->
+     La vecchia carta delle contrade, appesa nel forno del padre di Tonio, ha già le caselle; Lucia l'ha
+     solo ricopiata in pulito (cap. 4; approvato dall'autore il 14/10/2026, correzione C3). Posizioni
+     approvate dall'autore il 14/10/2026. Nessuna scala fissa: le distanze nel testo restano vaghe («cento metri», «poco più in là»). -->
 
 Griglia: colonne A-F da ovest a est, righe 1-6 da nord a sud. Nord in alto.
 

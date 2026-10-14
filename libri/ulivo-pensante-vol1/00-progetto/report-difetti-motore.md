@@ -67,3 +67,14 @@ Regola: i difetti GENERICI del motore non si correggono durante il lavoro sul li
 13. **Gate dopo una correzione.** Dopo `zb correggi` e `zb esito`, `zb ok` va solo se tutti i blocchi del gate
     sono stati rimostrati con `zb avanti` (9 blocchi per tre capitoli). Funziona, ma non è detto da nessuna
     parte nell'output di `zb esito`.
+
+## Aggiunte del 14/10/2026 (correzioni C1-C7 ai capitoli 4-5)
+
+14. **Falso positivo «si_sentiva» (divieti della voce).** Con la banca-voci a `375ee5f`, il divieto
+    `si_sentiva` (emozione diretta) prende anche «si sentivano solo i grilli» (cap. 5): lì «solo» vuol dire
+    «soltanto», non è un'emozione. AVVISO, nessun KO; testo lasciato com'è. Il pattern andrebbe limitato
+    (per esempio escludendo «solo» seguito da articolo o nome). I divieti non sono dell'autore (punto 10 del
+    passaggio di consegne).
+15. **Pagina enigma a metà capitolo.** Il motore non conosce la pagina «L'enigma della banda»: la conta come
+    prosa della scena in cui sta. Nel cap. 4 la pagina chiude la scena 1 (correzione C1): ammessa, ma le sue
+    parole entrano nel conteggio della scena e del capitolo, e le righe in elenco abbassano la frase media.

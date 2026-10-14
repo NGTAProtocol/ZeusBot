@@ -3,7 +3,8 @@
 <!-- 12 enigmi, capitoli 2, 4, 6, 8, 9, 11, 13, 15, 17, 19, 21, 23. Dodici tipi diversi, mai due uguali
      di fila. Ogni indizio deve comparire nel testo PRIMA del capitolo dell'enigma (colonna «Dove compare»):
      chi scrive i capitoli lo semina lì. La pagina enigma sta in fondo al capitolo, dopo il gancio, col titolo
-     «L'enigma della banda». Soluzioni spiegate in fondo al libro. -->
+     «L'enigma della banda» (eccezione: cap. 4, dove chiude la scena 1). La soluzione non è mai spiegata
+     nel testo prima della pagina. Soluzioni spiegate in fondo al libro. -->
 
 ## Riepilogo
 
@@ -72,6 +73,10 @@ Posizioni canoniche in `03-architettura/mappa-di-lucia.md`.
   est fino a E2; poi a ovest: D2, C2 (Capperaia), B2, A2 (due caselle oltre) = terrazza.
 - Soluzione: la casella della terrazza di Franco (falsa pista: Rosa ci andava a guardare gli uccelli, si
   saprà nel cap. 11).
+- Pagina (correzione C1 del 14/10/2026): sta a fine scena 1 del cap. 4, subito dopo «Datemi un minuto» di
+  Lucia e la battuta di Tonio sul pozzo con la carrucola; il testo non mostra il percorso. Dopo la pagina, il
+  dito di Lucia si ferma, Stellina guarda la casella e chiude il quaderno; nella scena 2 la banda va alla
+  terrazza.
 - Controllo di equità: la mappa della pagina enigma ha tutti i nomi; le direzioni sono state spiegate
   prima. Sì.
 

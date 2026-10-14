@@ -24,7 +24,7 @@ Nel laboratorio c'era la luce bianca delle lampade sul banco e un odore di colla
 
 — Il buio viene sempre dopo il tramonto, Pino. È il suo lavoro.
 
-Scrisse un altro numero, un sette, e ci fece un trattino orizzontale in mezzo, alla maniera degli ingegneri. Stellina, seduta in un angolo, aveva già il quaderno a spirale sulle ginocchia. Copiò il sette tagliato, piccolo, in fondo alla pagina, e accanto disegnò il pennarello verde.
+Scrisse un altro numero, un sette, e ci fece un trattino orizzontale in mezzo. Stellina, seduta in un angolo, aveva già il quaderno a spirale sulle ginocchia. Copiò il sette tagliato, piccolo, in fondo alla pagina, e accanto disegnò il pennarello verde.
 
 — Perché lo tagli? — chiese Pino.
 
@@ -90,7 +90,11 @@ Pino non rispose. Anche quello, pensò, era un motivo per volere i quaderni dell
 
 Il nonno spense lo schermo e restò in silenzio. Nel buio si sentivano solo i grilli e, lontano, un cane. Oltre la rete della Terravox non c'era nessuna luce: solo la sagoma scura di un container, un mucchio di tubi e il cartello giallo, che la torcia faceva brillare per un attimo ogni volta che il nonno si muoveva.
 
-— Sapete cosa penso? — disse alla fine. — Secondo me questi alberi si parlano, sotto terra. Le radici si toccano, e in mezzo ci sono i funghi del suolo, fili sottilissimi che vanno da un albero all'altro. Non lo sa nessuno, eh. È una mia idea. Ma quando la terra si muove, l'Ulivo Pensante è sempre il primo a sentirlo. Prima degli altri, anche di quelli più vicini al recinto.
+— Sapete cosa penso? — disse alla fine. — Secondo me questi alberi si parlano, sotto terra. Le radici si toccano, e in mezzo ci sono i funghi del suolo.
+
+— I funghi? — disse Lucia. — Quelli che si mangiano?
+
+— Parenti loro. Fili sottilissimi, più di un capello, che vanno da un albero all'altro. Non lo sa nessuno, eh. È una mia idea. Ma quando la terra si muove, l'Ulivo Pensante è sempre il primo a sentirlo. Prima degli altri, anche di quelli più vicini al recinto.
 
 — Perché?
 
@@ -100,8 +104,8 @@ Stellina aveva appoggiato la mano sul tronco, vicino all'apertura scura, e la to
 
 — Da quanto succede? — chiese Pino.
 
-— Da una settimana. — Il nonno guardò la faccia nel legno, con gli occhi chiusi. — In vent'anni che lo misuro, non era mai successo.
+— Da qualche giorno. — Il nonno guardò la faccia nel legno, con gli occhi chiusi. — In vent'anni che lo misuro, non era mai successo.
 
-Pino guardò l'ora sul tablet. Mancava un quarto a mezzanotte.
+Pino guardò l'ora sul tablet: mancava un quarto alle undici.
 
 — E stanotte? — chiese. — Stanotte toccherà?
