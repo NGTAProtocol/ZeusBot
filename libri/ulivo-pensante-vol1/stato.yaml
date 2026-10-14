@@ -2,8 +2,8 @@ libro: Il quaderno nell'ulivo
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: pagina_campione
-passo: da completare
-gate_in_attesa: null
+passo: in revisione
+gate_in_attesa: pagina_campione
 lotto:
   dimensione: 3
   capitoli: []
@@ -35,6 +35,10 @@ documenti_approvati:
     sha256: f10ae49b321b81cdaa5538516f603f0dfc920a43f0c38be99b42038b79f558da
     commit: 422702a
 avvisi_aperti: []
-revisione_in_corso: null
+revisione_in_corso:
+  gate: pagina_campione
+  blocco: 1
+  blocchi_totali: 1
+  sha256: ceb9181b4259
 push_in_sospeso: false
-aggiornato: '2026-10-14T03:50:01Z'
+aggiornato: '2026-10-14T03:50:36Z'

@@ -32,3 +32,13 @@ Regola: i difetti GENERICI del motore non si correggono durante il lavoro sul li
   Da confermare con Felice.
 - Contrasto voce/libro: la voce prevede fantasy, spade, meccanismi antichi e meraviglia; il libro è
   realistico, senza magia (decisione 4a). Vince il manuale del libro (precedenza).
+
+## Aggiunte del 14/10/2026 (pagina campione)
+
+6. **Dialogo misurato solo con la lineetta.** `stile.py` conta come dialogo solo le righe che iniziano con
+   «—» (`dati/lingue.yaml`, `lineetta_dialogo`); le virgolette «» sono dichiarate in lingue.yaml ma non usate.
+   Con i caporali ogni capitolo darebbe dialogo 0% = KO. Difetto generico, non corretto: la pagina campione
+   usa la lineetta. Da confermare con l'autore (vedi punto aperto nel passaggio di consegne).
+7. **Frase media del profilo giallo (9-14) e lettori 9-12.** La pagina campione sta a 9,1 (metodo del motore,
+   `stile.metriche`): dentro, ma al limite. Se l'autore vuole frasi più corte serve un override motivato
+   («Frase media: a-b» nel briefing → libro.yaml), da approvare. Nessuna modifica fatta.
