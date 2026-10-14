@@ -10,7 +10,12 @@ lotto:
 ultimo_capitolo_approvato: null
 ultimo_capitolo_scritto: null
 tentativi: {}
-correzioni_aperte: []
+correzioni_aperte:
+- gate: pagina_campione
+  testo: 'correzioni dell''autore: lunedì mattina esplicito; toppa a V notata solo da Pino, Terravox usa furgoni bianchi;
+    data delle testimonianze (domenica 5 luglio); frase della madre; dialoghi con lineetta'
+  sha256: 89c104a4dc67
+  data: '2026-10-14'
 parole:
   scritte: 0
   obiettivo: 32500
@@ -41,4 +46,4 @@ revisione_in_corso:
   blocchi_totali: 1
   sha256: ceb9181b4259
 push_in_sospeso: false
-aggiornato: '2026-10-14T03:50:36Z'
+aggiornato: '2026-10-14T04:08:30Z'

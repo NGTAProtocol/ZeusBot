@@ -3,12 +3,12 @@
 <!-- Scritta secondo 03-architettura/manuale-di-stile.md e la voce mistero-ed-epicita (sezioni 1, 2, 3, 7).
      Apertura del capitolo 1 «L'Ape e il cartello» (scaletta). Semina l'indizio dell'enigma 3 (la toppa a V)
      e la scena di Gianni in piazza lunedì mattina (enigma 6). -->
-<!-- Dialoghi con la lineetta «—» a inizio riga: è la forma che il motore misura (lingue.yaml); con le
-     virgolette «» il dialogo risulterebbe 0%. Scelta da confermare con l'autore. -->
+<!-- Dialoghi con la lineetta «—» a inizio riga (confermato dall'autore). Toppa a V: la nota solo Pino, in
+     silenzio. Lunedì mattina detto in apertura (enigma 6). -->
 
-La macchina dei suoi genitori sparì dietro la torre dell'orologio, e Pino restò in piazza con un trolley e un panino ancora incartato.
+Era lunedì mattina quando la macchina dei suoi genitori sparì dietro la torre dell'orologio, e Pino restò in piazza con un trolley e un panino ancora incartato.
 
-— Il venticinque siamo qui, — aveva detto sua madre dal finestrino. — Il nonno ti aspetta.
+— Il venticinque torniamo a prenderti, — aveva detto sua madre dal finestrino. — Il nonno ti aspetta.
 
 Il nonno, però, non c'era. C'erano soltanto tre anziani su una panchina, un piccione zoppo e un furgone bianco parcheggiato storto davanti a una bottega. Un uomo con la barba grigia ne scaricava scatoloni pieni di fili.
 
@@ -20,15 +20,21 @@ Poi arrivò il rumore: un ronzio, un colpo, un altro ronzio, sempre più vicino.
 
 — Con questa. — Checco batté una mano sul cruscotto. — Non guardare com'è, guarda che parte.
 
-Pino caricò il trolley accanto al cane. L'uomo del furgone alzò una mano verso di loro.
+Pino caricò il trolley accanto al cane.
 
-— Ciao, Gianni! — gridò Checco. — Con quella gomma rattoppata resti a piedi prima di me!
+— Morde?
 
-Pino guardò la ruota: sulla gomma di dietro c'era una toppa nera a forma di V.
+— Solo i panini incartati, — disse Checco. — Tienilo stretto.
+
+L'uomo del furgone alzò una mano verso di loro.
+
+— Ciao, Gianni! — gridò Checco, e l'uomo rispose con un cenno.
+
+Mentre l'Ape faceva manovra, Pino guardò il furgone. Sulla gomma di dietro c'era una toppa nera a forma di V. Non disse niente: era il tipo di dettaglio che notava sempre, anche quando non serviva a nulla.
 
 L'Ape partì tossendo, e Ciuffo non aprì nemmeno un occhio.
 
-Fuori dal paese la strada diventò bianca, tra muretti a secco e ulivi, con un caldo che entrava nelle scarpe. Poi, all'improvviso, una rete alta due metri, nuova, con un cartello giallo: TERRAVOX — AREA DI STUDIO — VIETATO L'ACCESSO.
+Fuori dal paese la strada diventò bianca, tra muretti a secco e ulivi, con un caldo che entrava nelle scarpe. Incrociarono due furgoni bianchi con la scritta TERRAVOX sulla fiancata, che andavano verso il paese. Poi, all'improvviso, una rete alta due metri, nuova, con un cartello giallo: TERRAVOX — AREA DI STUDIO — VIETATO L'ACCESSO.
 
 Oltre la rete la terra si apriva in un canyon di pietra chiara, con le pareti bucate di grotte e i capperi attaccati alla roccia. In fondo, lontanissimo, scorreva un filo verde.
 

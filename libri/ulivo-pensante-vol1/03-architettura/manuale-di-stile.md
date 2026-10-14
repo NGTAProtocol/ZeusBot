@@ -153,3 +153,10 @@ Cosa si adatta al libro (precedenza del manuale):
 
 - Testo, indizi da seminare, soluzioni e controlli di equità: `03-architettura/enigmi.md`. Gli indizi elencati
   lì vanno messi nei capitoli indicati, prima della pagina enigma.
+
+## 19. Dialoghi
+
+- Sempre con la lineetta «—» a inizio riga (decisione dell'autore del 14/10/2026), mai con le virgolette «».
+  È anche la forma che il motore misura: con le virgolette il dialogo risulterebbe 0% (vedi
+  `00-progetto/report-difetti-motore.md`).
+- Inciso: «— Battuta, — disse Checco. — Seguito.»

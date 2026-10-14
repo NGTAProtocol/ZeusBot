@@ -12,7 +12,7 @@
 | 3 | 2026-07-07 | La banda mette alla prova Pino in gravina; Stellina ha disegnato l'intruso | R |
 | 4 | 2026-07-08 | Falsa pista: la mappa di Rosa porta alla terrazza di Franco; lui li scopre | P |
 | 5 | 2026-07-08 | L'Ulivo Pensante; i sensori registrano scosse di notte, non tutte le notti | D |
-| 6 | 2026-07-09 | Tracce di terra rossa; l'Ape si rompe; la gomma rattoppata porta in paese | D |
+| 6 | 2026-07-09 | Tracce di terra rossa; l'Ape si rompe; la banda crede a un furgone Terravox; le tracce portano in paese | D |
 | 7 | 2026-07-09 | Il Dottore in piazza; voto lunedì 20 luglio; sa dei quaderni | R |
 | 8 | 2026-07-10 | Il grafico: scavano a notti alterne; stanotte tocca; il drone vede luci | X |
 | 9 | 2026-07-10 | Il calendario delle fioriture decifra «CAPPERI» | X |
@@ -38,7 +38,7 @@
 lunedì 6 (cap. 1-2) · martedì 7 (3) · mercoledì 8 (4-5) · giovedì 9 (6-7) · venerdì 10 (8-9) ·
 sabato 11 (10) · domenica 12 (11-12) · lunedì 13 (13) · martedì 14 (14-15) · mercoledì 15 (16) ·
 giovedì 16 (17-18) · venerdì 17 (19-20) · sabato 18 (21-22) · domenica 19 (23) · lunedì 20 (24) ·
-sabato 25 (25). Intrusione nel laboratorio: notte tra domenica 5 e lunedì 6.
+sabato 25 (25). Intrusione nel laboratorio: domenica 5 luglio, la sera prima dell'arrivo di Pino (verso le undici).
 Notti di scavo: 4, 6, 8, 10, 12 luglio (notti alterne, tra le 2 e le 3).
 
 ## Dettaglio dei capitoli
@@ -48,7 +48,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 
 ### 1 — L'Ape e il cartello
 - Scopo: aprire sull'azione; presentare Pino, Checco, il nonno, la Terravox e il primo mistero.
-- Informazione: Antonio e Sara lasciano Pino in Piazza dell'Orologio e ripartono per un viaggio di lavoro; il nonno non può venire, manda Checco con l'Ape. In piazza Gianni scarica il suo furgone bianco (gomma rattoppata, battuta di Checco). Sulla strada, il recinto Terravox e un uomo in grigio che fotografa gli ulivi del nonno. In cucina le piastrelle dipinte da Rosa, ognuna con una pianta e il suo nome.
+- Informazione: Antonio e Sara lasciano Pino in Piazza dell'Orologio e ripartono per un viaggio di lavoro; il nonno non può venire, manda Checco con l'Ape. È lunedì mattina (detto nelle prime righe). In piazza Gianni scarica il suo furgone bianco: Pino nota in silenzio la toppa a V sulla gomma di dietro; Checco saluta Gianni e non dice niente della gomma. Sulla strada incrociano due furgoni bianchi con la scritta TERRAVOX. Poi il recinto Terravox e un uomo in grigio che fotografa gli ulivi del nonno. In cucina le piastrelle dipinte da Rosa, ognuna con una pianta e il suo nome.
 - Domanda: chi è entrato nel laboratorio, e cosa cercava?
 - Gancio: il cassetto dei quaderni di Rosa è aperto, i quaderni sparsi a terra; il nonno li conta due volte.
 - Enigma: no.
@@ -83,7 +83,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 
 ### 6 — Terra rossa
 - Scopo: indagine sul campo; la comicità dell'Ape; indizio leale su Gianni.
-- Informazione: tracce di pneumatici con terra rossa del recinto; un veicolo a quattro ruote piccolo, con una gomma rattoppata.
+- Informazione: tracce di pneumatici con terra rossa del recinto; un veicolo a quattro ruote piccolo, con una toppa a V su una gomma. Al cantiere entrano ed escono furgoni bianchi Terravox: la banda è convinta che la traccia sia di uno di loro (lo crederà a lungo). Pino ricorda la toppa ma non ricorda dove l'ha vista.
 - Pericolo: l'Ape si rompe sulla salita, la banda spinge sotto il sole.
 - Gancio: le tracce non vanno al cantiere ma verso il paese.
 - Enigma 3: confronto di tre impronte di pneumatici.
@@ -118,7 +118,7 @@ Gli indizi da seminare per gli enigmi sono in `enigmi.md` (colonna «Dove compar
 
 ### 11 — Tre versioni
 - Scopo: chiudere la prima falsa pista; Franco diventa alleato.
-- Informazione: Franco, Gianni e Carmela del comune raccontano la notte tra il 5 e il 6. Franco ha un testimone. Gianni dice di essere stato a letto con la febbre per due giorni: ma lunedì mattina Pino l'ha visto in piazza.
+- Informazione: Franco, Gianni e Carmela del comune raccontano domenica 5 luglio, la sera prima dell'arrivo di Pino. Franco ha un testimone. Gianni dice di essere stato a letto con la febbre per due giorni: ma lunedì mattina Pino l'ha visto in piazza.
 - Domanda: Franco dice che Rosa non temeva le aziende ma i tombaroli. Perché?
 - Gancio: Checco ride: «Gianni ha la febbre ogni volta che c'è da lavorare». Pino lascia correre: errore.
 - Enigma 6: testimonianze → chi mente.

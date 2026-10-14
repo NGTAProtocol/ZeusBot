@@ -22,7 +22,7 @@
 - **Stellina**: della banda — 10 — sorella minore di Lucia.
   - Talento: disegna tutto e ricorda ogni segno; vede i dettagli.
   - Difetto: timidissima; davanti agli adulti non parla, e una volta tace una cosa importante (cap. 3-4).
-  - Funzione: ha visto l'intruso dalla finestra, la notte tra il 5 e il 6 luglio, e lo ha disegnato (cap. 3); ha disegnato il sette tagliato del nonno (cap. 5) e lo riconosce sulla scheda rubata (cap. 17); il suo lucido sulla mappa trova il muro (cap. 21).
+  - Funzione: ha visto l'intruso dalla finestra, domenica 5 luglio, la sera prima dell'arrivo di Pino, e lo ha disegnato (cap. 3); ha disegnato il sette tagliato del nonno (cap. 5) e lo riconosce sulla scheda rubata (cap. 17); il suo lucido sulla mappa trova il muro (cap. 21).
   - Come parla: poco; risponde con un disegno. Quando parla, tutti si zittiscono.
 - **Tonio**: della banda — 12 — figlio del fornaio Sergio Panza (proposta, dal registro: P31).
   - Talento: forza, pazienza, conosce piante e animali (aiuta in campagna).
@@ -55,10 +55,10 @@
   - Gentile in pubblico, mai una minaccia diretta: offre, promette, sorride.
   - Vuole il settimo quaderno prima del voto del consiglio comunale, perché la sua perizia dice «nessun ritrovamento».
   - Antagonista che ritorna: a fine libro lascia la Terravox; nell'ultima pagina risulta dietro la Sviluppo Territoriale Sostenibile S.r.l.
-- **Gianni**: aggiustatutto del paese (dal registro: P32, senza oggetti strani) — 50 (proposta).
+- **Gianni**: aggiustatutto del paese (dal registro: P32, senza oggetti strani) — 50 (proposta) — barba grigia (proposta, dalla pagina campione).
   - Ripara i droni del nonno ed entra nel laboratorio quando vuole.
   - È l'informatore della Terravox: debiti, bottega che chiude, un lavoro promesso. Non è cattivo; alla fine testimonia.
-  - Indizi leali (vedi enigmi.md): furgone bianco con la gomma rattoppata a V, in piazza lunedì mattina (cap. 1); impronta della gomma nella terra rossa (cap. 6); la bugia sulla febbre (cap. 11); il furgone dentro il recinto nelle foto (cap. 14); giacca Terravox e scheda col sette tagliato (cap. 17).
+  - Indizi leali (vedi enigmi.md): furgone bianco con la toppa a V sulla gomma, in piazza lunedì mattina, notata solo da Pino, in silenzio (cap. 1); impronta della gomma nella terra rossa (cap. 6); la bugia sulla febbre (cap. 11); il furgone dentro il recinto nelle foto (cap. 14); giacca Terravox e scheda col sette tagliato (cap. 17).
 - **Franco detto il Gufo**: osservatore di uccelli e collezionista di pietre (dal registro: P33) — 70 (proposta).
   - Falsa pista: gira di notte in gravina con torcia e binocolo (cap. 4).
   - In realtà di notte osserva l'assiolo dalla terrazza con una lampada rossa, di giorno sorveglia i nidi del falco grillaio (proposta). Conosceva Rosa; diventa alleato (cap. 11).
@@ -74,7 +74,7 @@
 - **L'Ulivo Pensante**: ulivo di circa mille anni con un volto nella corteccia (registro L15), sul confine del terreno di Rosa, a pochi metri dal recinto Terravox. Tronco cavo alla base. Il nonno ci ha messo i sensori.
 - **La rete di radici (l'unico elemento strano)**: i sensori di Michele misurano acqua e vibrazioni nelle radici. L'Ulivo Pensante, con le radici più profonde nella vena d'acqua, reagisce per primo agli scavi: sembra che «pensi» e avvisi. Fatto certo: acqua, radici, misure. Che gli ulivi «si parlino» attraverso i funghi del suolo è solo un'ipotesi di Michele, mai presentata come certa.
 - **La gravina**: canyon di calcare e tufo, pareti a strapiombo, sentieri a gradini, grotte scavate, chiese rupestri (proposta: una piccola chiesa rupestre nel cap. 10), capperi sulle pareti, lentisco e timo, caldo di giorno e fresco di notte, poco segnale. Personaggio: decide dove si passa, quando (luce e caldo), cosa si vede e cosa crolla.
-- **Il recinto Terravox**: rete e cartello «area di studio» (registro L19) sul ciglio della gravina; ufficio nell'ex mattatoio (registro L18).
+- **Il recinto Terravox**: rete e cartello «area di studio» (registro L19) sul ciglio della gravina; ufficio nell'ex mattatoio (registro L18). La Terravox usa furgoni bianchi con la scritta sulla fiancata (cap. 1, 6): per questo la banda crede a lungo che la traccia della toppa a V sia di un mezzo Terravox.
 - **Il paese vecchio**: vicoli, scale, Piazza dell'Orologio con la torre civica (registro L7); l'ombra della torre a mezzogiorno è un indizio (cap. 13).
 - **Il forno di Sergio**: cupola in tufo (registro L4); all'alba ci passano tutti.
 - **La bottega di Gianni**: sotto un arco, piena di radio e droni da aggiustare (registro L5).

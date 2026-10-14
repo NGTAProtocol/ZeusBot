@@ -73,11 +73,12 @@ I mesi sono quelli del calendario di Rosa: da verificare con una fonte botanica 
 - Domanda: «Nella terra rossa c'è un'impronta. Quale veicolo l'ha lasciata? A, B o C?»
   A: gomme larghe doppie (camion). B: tre ruote, una sola traccia davanti (Ape). C: quattro ruote strette,
   una gomma con una toppa a forma di V.
-- Indizi già comparsi: cap. 1, Checco scherza sulla gomma rattoppata del furgone bianco di Gianni; cap. 1 e
-  6, l'Ape ha tre ruote.
-- Soluzione: C, un furgone piccolo con la gomma rattoppata.
-- Controllo di equità: la toppa a V è nominata nel cap. 1. Il lettore può collegarla a Gianni prima della
-  banda: voluto. Sì.
+- Indizi già comparsi: cap. 1, lunedì mattina Pino nota in silenzio la toppa a V sulla gomma del furgone
+  bianco di Gianni (Checco non ne parla); cap. 1 e 6, l'Ape ha tre ruote. Depistaggio leale: cap. 1 e 6, la
+  Terravox usa furgoni bianchi, e la banda crede a lungo che la traccia sia di un mezzo Terravox.
+- Soluzione: C, un furgone piccolo con la toppa a V (invariata). Di chi sia, la banda non lo sa ancora.
+- Controllo di equità: la toppa a V è nel cap. 1, vista da Pino. Il lettore attento può collegarla a Gianni
+  prima della banda, che segue la pista dei furgoni Terravox: voluto. Sì.
 
 ## 4 — Cap. 8: il grafico della notte (lettura di un grafico)
 - Domanda: «Il grafico mostra le scosse delle notti dal 3 al 10 luglio. Quando torneranno a scavare, e a
@@ -98,12 +99,15 @@ I mesi sono quelli del calendario di Rosa: da verificare con una fonte botanica 
 
 ## 6 — Cap. 11: tre versioni (testimonianze)
 - Domanda: «Uno dei tre dice una cosa che non può essere vera. Chi, e come lo sai?»
-  Franco: «Dalle dieci a mezzanotte ero sulla terrazza col binocolo.»
-  Carmela: «Alle undici Franco era sulla terrazza: la lampada rossa era accesa, la vedo da casa mia.»
-  Gianni: «Domenica sera avevo la febbre. Sono rimasto a letto fino a martedì.»
-- Indizi già comparsi: cap. 1, lunedì mattina Gianni scarica il furgone in piazza e saluta Checco.
+  Tutti parlano di domenica 5 luglio, la sera prima dell'arrivo di Pino.
+  Franco: «Domenica 5 luglio, dalle dieci a mezzanotte, ero sulla terrazza col binocolo.»
+  Carmela: «Domenica 5, alle undici, Franco era sulla terrazza: la lampada rossa era accesa, la vedo da casa mia.»
+  Gianni: «Domenica 5 luglio, la sera prima che arrivasse il ragazzo, avevo la febbre. Sono rimasto a letto
+  fino a martedì.»
+- Indizi già comparsi: cap. 1, «Era lunedì mattina» nelle prime righe; Gianni scarica il furgone in piazza e
+  saluta Checco.
 - Soluzione: Gianni mente: lunedì mattina era in piazza.
-- Controllo di equità: la scena di Gianni in piazza è nel cap. 1, il giorno e l'ora sono detti. Sì.
+- Controllo di equità: il cap. 1 dice in chiaro che è lunedì mattina; le testimonianze dicono la data. Sì.
 
 ## 7 — Cap. 13: l'ombra della torre (ombra e punti cardinali)
 - Domanda: «"A mezzogiorno, dove la torre indica." Sulla pianta della piazza ci sono tre porte: A a nord

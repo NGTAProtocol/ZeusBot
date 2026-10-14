@@ -37,8 +37,11 @@ Regola: i difetti GENERICI del motore non si correggono durante il lavoro sul li
 
 6. **Dialogo misurato solo con la lineetta.** `stile.py` conta come dialogo solo le righe che iniziano con
    «—» (`dati/lingue.yaml`, `lineetta_dialogo`); le virgolette «» sono dichiarate in lingue.yaml ma non usate.
-   Con i caporali ogni capitolo darebbe dialogo 0% = KO. Difetto generico, non corretto: la pagina campione
-   usa la lineetta. Da confermare con l'autore (vedi punto aperto nel passaggio di consegne).
-7. **Frase media del profilo giallo (9-14) e lettori 9-12.** La pagina campione sta a 9,1 (metodo del motore,
+   Con i caporali ogni capitolo darebbe dialogo 0% = KO. Difetto generico, non corretto: **la misura del
+   dialogo non riconosce le virgolette «»**. Il libro usa la lineetta (decisione dell'autore del 14/10/2026).
+7. **Frase media del profilo giallo (9-14) e lettori 9-12.** La pagina campione (versione finale) sta a 9,1 (metodo del motore,
    `stile.metriche`): dentro, ma al limite. Se l'autore vuole frasi più corte serve un override motivato
    («Frase media: a-b» nel briefing → libro.yaml), da approvare. Nessuna modifica fatta.
+8. **Nessun comando per controllare la pagina campione.** `zb stile`/`zb capitolo` lavorano sulle unità del
+   manoscritto; per la pagina campione ho chiamato le stesse funzioni di `stile.py` (`controlla_unita`) da
+   fuori. Esito in `06-diagnostica/pagina-campione.md`. Un comando dedicato sarebbe utile.
