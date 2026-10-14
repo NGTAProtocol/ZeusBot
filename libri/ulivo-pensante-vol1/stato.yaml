@@ -221,7 +221,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T13:27:09Z'
+aggiornato: '2026-10-14T13:27:34Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
@@ -321,3 +321,21 @@ correzioni_registrate:
   sha256_precedente: 8c553d1e9ce75f197562366fc9536eca7d8dcc3b7b6aa0436d62fddef8c55fcf
   sha256_corretto: 2342ea71ad29d5333e0efa9806d9d56b7358df616b03c0d05f96f7a6d3880e63
   commit: b90959d
+- data: '2026-10-14'
+  file: 04-manoscritto/17-la-bottega.md
+  motivo: K1, Stellina scuoteva due volte la testa
+  sha256_precedente: b35347cc51112ba09aef64a77919d752d0c2e1ebfbab93ca1dcf256922a901a2
+  sha256_corretto: 07bd84feff0222cab17803507840638ed3f2f50df4678183fdf45c9da36d9c00
+  commit: 26349c3
+- data: '2026-10-14'
+  file: 04-manoscritto/18-il-perche-di-gianni.md
+  motivo: K2, sintassi della frase sul ricordo di Checco
+  sha256_precedente: e6145fd5ee58bcf8f50870a37fc7307864df2386c447b627a835540fb9a58e4b
+  sha256_corretto: 7a94b3528f20ec3405367986a254705d805213205780f7eebb75de3bf2d72d0d
+  commit: 259e565
+- data: '2026-10-14'
+  file: 04-manoscritto/19-l-ape-torna.md
+  motivo: K3-K5, rimprovero del nonno per il biglietto, sensori, filastrocca
+  sha256_precedente: 631e51e2c96edf638e9c05de5358e3c71adf9962e7f7e81c1b42ca6ad657627c
+  sha256_corretto: 81cc56b2729b0c000977f7859f80cd5c4f34d019a1a055fcb8cf4dcc77ad4bf4
+  commit: 9de955b
