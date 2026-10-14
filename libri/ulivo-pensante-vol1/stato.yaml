@@ -3,26 +3,14 @@ motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
 passo: capitolo 4
-gate_in_attesa: primi_capitoli
+gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 1
-  - 2
-  - 3
-ultimo_capitolo_approvato: null
+  capitoli: []
+ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 3
 tentativi: {}
-correzioni_aperte:
-- gate: primi_capitoli
-  testo: 'A1 elicriso descritto (cap. 1) e nominato (cap. 2), tavola delle 14 piastrelle e dei 5 simboli nella pagina enigma;
-    A2 fine cap. 2 senza numero: il nonno conta e si ferma, SETTE all''inizio del cap. 3; A3 mappa canonica 03-architettura/mappa-di-lucia.md
-    e cap. 3 coerente (Capperaia, terrazza, ombra), verifica enigmi 2, 7, 11; A4 mezzogiorno del sole verso l''una (ora legale),
-    nota nel manuale; A5 battuta di Lucia sul telefono dopo Tonio; A6 tic: contare max 3 per capitolo, meno poi e senza dire
-    niente; A7 zb esito 1-3. Approvati: allarme col codice (cap. 2); i due cerchi neri sono gli occhiali da saldatore di Gianni
-    (bibbia; non a casa di Gianni prima del cap. 12, poi cap. 17).'
-  sha256: 066dc9b71114
-  data: '2026-10-14'
+correzioni_aperte: []
 parole:
   scritte: 4119
   obiettivo: 32500
@@ -82,11 +70,25 @@ documenti_approvati:
   05-revisioni/pagina-campione.md:
     sha256: 77aa7c48c90ad00421923b33519689638b5fac536a4e5741d2df5bea0bad8a4d
     commit: 1f1803f
+  04-manoscritto/01-l-ape-e-il-cartello.md:
+    sha256: da680fc34dab4aadfb186fe3aa0204635656e2dad1dcb5e83cef043e485271f1
+    commit: 1d4633d
+  06-diagnostica/capitoli/01.md:
+    sha256: 18d245fe096ef4c9457dc4c0505f3a939cc4ca183312843678b5f59c0626eb5b
+    commit: 1d4633d
+  04-manoscritto/02-le-piastrelle-della-nonna.md:
+    sha256: ae609914be03902c57791373855abf70ae9da704c74a2b06d46a8bcbc2088e4b
+    commit: 1d4633d
+  06-diagnostica/capitoli/02.md:
+    sha256: 4460c64172f4a991d96b1c7a7e443d6669e29b6eefd22f09d691017507b20be0
+    commit: 1d4633d
+  04-manoscritto/03-la-prova-della-gravina.md:
+    sha256: a0c7aee4a907903d6dc8614e52134ea74f51dfd6232ba4d0024bac24528ff40f
+    commit: 1d4633d
+  06-diagnostica/capitoli/03.md:
+    sha256: 8f09bece928773273febd21cdb37788f8db94242d682efac8ec2c311091dc0ce
+    commit: 1d4633d
 avvisi_aperti: []
-revisione_in_corso:
-  gate: primi_capitoli
-  blocco: 1
-  blocchi_totali: 8
-  sha256: 066dc9b71114
+revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T05:25:03Z'
+aggiornato: '2026-10-14T05:25:19Z'
