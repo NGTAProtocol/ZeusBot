@@ -39,8 +39,8 @@ documenti_approvati:
       sha256_precedente: 292c56aecb31853a27c49f04f0b5e8ae5bde4aec513b189a5d281baebee3d5ad
       commit_precedente: 054e8dd
   02-bibbia/bibbia.md:
-    sha256: 3ea75a3115ece54180954e55cbce365c1cce0cf18f6c9aae9b8c7d64a06b0da8
-    commit: c561dce
+    sha256: 6a7823c36caf8f3ca3dd0994be2821cce36b3bb7760d1ba799c104a8be2ab235
+    commit: e65a212
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -80,9 +80,20 @@ documenti_approvati:
         seme madre di Checco, nota dell''autore'
       sha256_precedente: b3bf3b5e8806b2ba3e09120c4a3d46319fd01231de7e735ae93476c323aab251
       commit_precedente: 054e8dd
+    - data: '2026-10-14'
+      motivo: 'lotto B, decisioni dell''autore del 14/10/2026: Rocca Vetere, guardiano con motivo, scavi sulle notti pari,
+        stato dei cap. 17-20'
+      sha256_precedente: 3ea75a3115ece54180954e55cbce365c1cce0cf18f6c9aae9b8c7d64a06b0da8
+      commit_precedente: c561dce
   cronologia.yaml:
-    sha256: 51f3977a4de599f2a7b4c3a4e8718b4e0e6a53f5ef89f5d97a63aa442cb935f5
-    commit: f85c4db
+    sha256: c76cf83356d814cea6df279ee319ddbf66512666971ae0a3d50239d37c7383ad
+    commit: e65a212
+    riapprovazioni:
+    - data: '2026-10-14'
+      motivo: 'lotto B, decisioni dell''autore del 14/10/2026: Rocca Vetere, guardiano con motivo, scavi sulle notti pari,
+        stato dei cap. 17-20'
+      sha256_precedente: 51f3977a4de599f2a7b4c3a4e8718b4e0e6a53f5ef89f5d97a63aa442cb935f5
+      commit_precedente: f85c4db
   03-architettura/manuale-di-stile.md:
     sha256: 7d8039b5a7c8ee9880c1a69b467ca3c924163bd8a65ebb426be061a011ff7219
     commit: c4e2236
@@ -116,8 +127,8 @@ documenti_approvati:
       sha256_precedente: e88a636eeccc6e624f867cc9b5a7e9da120c43963b867dab850530da07563ab8
       commit_precedente: 5ed7d63
   03-architettura/scaletta.md:
-    sha256: 2b5b3b56cce4b2dc731c5b3bc4e3ac33c93e6e3c6ce7c915d3d05d8e77e812d5
-    commit: c561dce
+    sha256: 931dd57126c6df6b4d25e9a2a526a59dc58d5b18c64d7f510b82091c500e52c6
+    commit: e65a212
     riapprovazioni:
     - data: '2026-10-14'
       motivo: correzioni dell'autore del 14/10 alla pagina campione e agli enigmi (toppa a V, furgoni Terravox, data delle
@@ -157,6 +168,11 @@ documenti_approvati:
         seme madre di Checco, nota dell''autore'
       sha256_precedente: 6a94f0d40becb6bb4703b4a192e6c6c341fdfc055b99df3b51f9411991c2316b
       commit_precedente: 054e8dd
+    - data: '2026-10-14'
+      motivo: 'lotto B, decisioni dell''autore del 14/10/2026: Rocca Vetere, guardiano con motivo, scavi sulle notti pari,
+        stato dei cap. 17-20'
+      sha256_precedente: 2b5b3b56cce4b2dc731c5b3bc4e3ac33c93e6e3c6ce7c915d3d05d8e77e812d5
+      commit_precedente: c561dce
   03-architettura/piano-parole.md:
     sha256: 7703b13a5451c07f25fa61b3bc3e30b19d38edf4dad79ac296b1647eed3755cc
     commit: c4e2236
@@ -193,7 +209,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T09:57:52Z'
+aggiornato: '2026-10-14T09:59:41Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
