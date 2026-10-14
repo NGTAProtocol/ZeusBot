@@ -58,3 +58,12 @@ Regola: i difetti GENERICI del motore non si correggono durante il lavoro sul li
     Non è un difetto: è la procedura. Segnalato perché il passaggio di consegne diceva «1-5».
 11. **Avvio senza banca-voci.** Senza clone la riga «Letto: …» esce con un AVVISO e senza la scheda della
     voce; in ambiente cloud il clone richiede prima di aggiungere il repository alla sessione.
+
+## Aggiunte del 14/10/2026 (correzioni al gate primi_capitoli, capitoli 4-5)
+
+12. **Riciclo e pagine enigma.** Il controllo di riciclo segnala come AVVISO le ripetizioni volute: la tavola
+    dell'enigma 1 (cap. 2) ripete apposta la descrizione dell'elicriso del cap. 1, perché l'enigma sia leale.
+    Lasciate (3 avvisi, nessun KO). Utile poter escludere dal controllo la sezione «L'enigma della banda».
+13. **Gate dopo una correzione.** Dopo `zb correggi` e `zb esito`, `zb ok` va solo se tutti i blocchi del gate
+    sono stati rimostrati con `zb avanti` (9 blocchi per tre capitoli). Funziona, ma non è detto da nessuna
+    parte nell'output di `zb esito`.
