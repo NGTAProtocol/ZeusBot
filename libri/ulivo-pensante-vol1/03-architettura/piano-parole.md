@@ -24,8 +24,8 @@
 | — | 20 | Dentro l'ulivo | ulivo | 1 | 1300 | 1300 | 1212 | -6,8% |
 | — | 21 | Il lucido | scelta + enigma | 1 | 1300 | 1300 | 1307 | +0,5% |
 | — | 22 | La notte delle ruspe | climax | 2 | 1300 | 650 | 1294 | -0,5% |
-| — | 23 | La lettera di Rosa | rivelazione + enigma | 1 | 1300 | 1300 | 1274 | -2,0% |
-| — | 24 | Il consiglio | risoluzione | 1 | 1300 | 1300 | 1270 | -2,3% |
-| — | 25 | Il biglietto | apertura vol. 2 | 1 | 1300 | 1300 | 1249 | -3,9% |
+| — | 23 | La lettera di Rosa | rivelazione + enigma | 1 | 1300 | 1300 | 1290 | -0,8% |
+| — | 24 | Il consiglio | risoluzione | 1 | 1300 | 1300 | 1288 | -0,9% |
+| — | 25 | Il biglietto | apertura vol. 2 | 1 | 1300 | 1300 | 1288 | -0,9% |
 
 Totale: 32500.

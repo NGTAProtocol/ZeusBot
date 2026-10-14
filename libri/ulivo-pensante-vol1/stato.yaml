@@ -12,7 +12,7 @@ ultimo_capitolo_scritto: 25
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 31751
+  scritte: 31832
   obiettivo: 32500
   metodo: unico
 documenti_approvati:
@@ -225,7 +225,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T13:42:18Z'
+aggiornato: '2026-10-14T16:04:38Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
@@ -349,3 +349,27 @@ correzioni_registrate:
   sha256_precedente: b480a5132402cf9051f0be3a0ba137487eaf3a252243306dce2e107ce5110320
   sha256_corretto: 0a52704dd846f0ea331b8a1b9a85c7cd1129f6373da6e30549b4cd217fbf981f
   commit: 9227ce1
+- data: '2026-10-14'
+  file: 04-manoscritto/21-il-lucido.md
+  motivo: M1, Franco al posto di Gufo
+  sha256_precedente: c1bfe0fa135a6c8dc674fa05825c10e03f1cafb5ba7a9b22c2263ea937412d44
+  sha256_corretto: 2fc7545d421edcd3623c74fe86d3e82fe75b5cf1c76acf6193774c2274dd0457
+  commit: 5ff391e
+- data: '2026-10-14'
+  file: 04-manoscritto/23-la-lettera-di-rosa.md
+  motivo: M2, il nonno ricorda gli orari del permesso
+  sha256_precedente: 2781aacbf040f442fe5d8ddbd72d6b71b2c5b4d4d142984864ef50bf7e6c1593
+  sha256_corretto: 216c8560cb7fbf5943505af45c0674287691825616a65fb1a1d5eb09e365bdc6
+  commit: 5ff391e
+- data: '2026-10-14'
+  file: 04-manoscritto/24-il-consiglio.md
+  motivo: M3-M6, frase della madre, Nicola, il Dottore, Gianni al cantiere sabato
+  sha256_precedente: 0a52704dd846f0ea331b8a1b9a85c7cd1129f6373da6e30549b4cd217fbf981f
+  sha256_corretto: d4c0fea89f7b09896047c874e0f3aa55240f8509e96fb4631640757f48f302b2
+  commit: 5ff391e
+- data: '2026-10-14'
+  file: 04-manoscritto/25-il-biglietto.md
+  motivo: M7-M9, settembre, battuta a Tonio, la corda del padre di Tonio
+  sha256_precedente: 6aed06e56a5b15d68b080eb1461e54f1325a6170d91602cdb5cb829c39a1367f
+  sha256_corretto: a592e60d0c2807138e57b58429fad8f2ddbf6aa0bccc72e1ff8b74c6eecaf53f
+  commit: 5ff391e
