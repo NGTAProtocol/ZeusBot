@@ -165,7 +165,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-14T09:00:30Z'
+aggiornato: '2026-10-14T09:01:08Z'
 correzioni_registrate:
 - data: '2026-10-14'
   file: 04-manoscritto/04-il-gufo.md
@@ -211,3 +211,51 @@ correzioni_registrate:
   sha256_precedente: 7d2d3b80f97f72224a5ea56eb306b698e328f4f84c7e12aefb61712c27d27f42
   sha256_corretto: c549ea50416aa595e527e49478938e1f5286a5d1f72d5951508d86e6e227d6f2
   commit: c4e2236
+- data: '2026-10-14'
+  file: 04-manoscritto/06-terra-rossa.md
+  motivo: correzioni da revisione S1-S14 dell'autore del 14/10/2026
+  sha256_precedente: dc8165f9ddfb8b92ea4eea028238d1a375f46e4744073ac7a59c632b2e46a33f
+  sha256_corretto: 862886bb9c06dc7b1f22cad1fa00bd59a643d40a6c9dd8f3db21dd2b0a782cf2
+  commit: ab82167
+- data: '2026-10-14'
+  file: 04-manoscritto/07-il-dottore-in-piazza.md
+  motivo: correzioni da revisione S1-S14 dell'autore del 14/10/2026
+  sha256_precedente: cc11b46d2c999d505ad68e5eaf599dc7fa8b99975dacf4e11c1869e6d46c04b8
+  sha256_corretto: 5193972376ae36a0fa73c35fab1410374e3bfe71988db97765230c9c2d6ab3bb
+  commit: ab82167
+- data: '2026-10-14'
+  file: 04-manoscritto/08-il-grafico-della-notte.md
+  motivo: correzioni da revisione S1-S14 dell'autore del 14/10/2026
+  sha256_precedente: c549ea50416aa595e527e49478938e1f5286a5d1f72d5951508d86e6e227d6f2
+  sha256_corretto: ebcd4dfc2d953016d8c3736483215345d671672f2c551ec86e50a6fa76c81cec
+  commit: ab82167
+- data: '2026-10-14'
+  file: 04-manoscritto/09-il-calendario-delle-fioriture.md
+  motivo: correzioni da revisione S1-S14 dell'autore del 14/10/2026
+  sha256_precedente: 9ebe7a1ead176e4ff5c7178ee0f42782a1cbf8c0224916a56fbed48ddac0558e
+  sha256_corretto: e4d4ea39821b7008602e23f3b7206bf61509354ddb1804319284758b40282f55
+  commit: ab82167
+- data: '2026-10-14'
+  file: 04-manoscritto/10-sotto-i-capperi.md
+  motivo: correzioni da revisione S1-S14 dell'autore del 14/10/2026
+  sha256_precedente: 8008d9908f81cfdf9082bd815c631120f9263082e76f7234044bed92953fbb5c
+  sha256_corretto: c449e68bbfb0d5157f69e93fb58c6a5ef9cdaf20cd1750d579998ef0d179d095
+  commit: ab82167
+- data: '2026-10-14'
+  file: 04-manoscritto/11-tre-versioni.md
+  motivo: correzioni da revisione S1-S14 dell'autore del 14/10/2026
+  sha256_precedente: bba2265087910e09a5f82c5968a9a1808904e8a33acf9a4791179ada5a6ecded
+  sha256_corretto: 5581db18b22b1738594e96b37c7b7a49c96d16f506c873cda93921f6249f3ad1
+  commit: ab82167
+- data: '2026-10-14'
+  file: 04-manoscritto/13-l-ombra-della-torre.md
+  motivo: correzioni da revisione S1-S14 dell'autore del 14/10/2026
+  sha256_precedente: 7e882a0c0b28cd0a46cb06038a5af551ba92bd86f4760c32f94e2087e793bc6c
+  sha256_corretto: 682f75947bb4f35526c6403e7a487b5b8b0aa7dfefa73b6ec45cfcbb0ba34c13
+  commit: ab82167
+- data: '2026-10-14'
+  file: 04-manoscritto/15-il-lucchetto-di-rosa.md
+  motivo: correzioni da revisione S1-S14 dell'autore del 14/10/2026
+  sha256_precedente: d84b569af2e1f39ab7df85dcc43bc086754b21ead9b87eb3ad65231c2fbc70a7
+  sha256_corretto: cd5c7d4208273bdffd108f9488b1e59c3c2aa3bdbc7530e4097cd5395e4239ab
+  commit: ab82167
