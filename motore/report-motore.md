@@ -1,7 +1,7 @@
 # Report del motore editoriale
 
-Stato al 2026-10-13, ramo `motore`. Suite: **454/454 OK**, 0 saltate, 0 KO (con LanguageTool e `ZB_BANCA_VOCI`).
-Il motore è una fabbrica generica di romanzi in italiano: procedura, script, modelli vuoti, profili
+Stato al 2026-10-15 (lavoro sul motore: casa editrice). Esito della suite: sezione 13.
+Il motore è una casa editrice generica di romanzi in italiano e in inglese: procedura, script, modelli vuoti, profili
 di genere, dati KDP e mini-libri inventati per le prove. Non contiene libri reali.
 
 ## 1. Struttura
@@ -11,7 +11,8 @@ di genere, dati KDP e mini-libri inventati per le prove. Non contiene libri real
 | `CLAUDE.md` | regole di avvio delle sessioni che lavorano su un libro |
 | `.gitignore` | file Python generati, ambienti virtuali |
 | `motore/zb` | punto d'ingresso unico: `python3 motore/zb <comando> …` |
-| `motore/script/` | 27 moduli Python: controlli, fasi, stampa, KDP, voci, prove |
+| `motore/script/` | 43 moduli Python: controlli, fasi e percorso editoriale, recinto, agenti, capsule, anti-IA, traduzione, stampa, KDP, voci, prove |
+| `motore/editoriale/` | livello editoriale: percorso, struttura, diagnosi, 8 ruoli, 9 agenti, catalogo anti-IA, criteri del correttore, risparmio-token; lingue it/en e traduzione; comandi di Claude Code |
 | `motore/stampa/` | foglio di stile, render con Chromium, font EB Garamond |
 | `motore/dati/` | schemi, dati KDP, lista nera, lingue, struttura standard di un libro |
 | `motore/modelli/` | modelli vuoti per un libro nuovo |
@@ -238,3 +239,30 @@ luoghi reali.
     container. La sua storia git contiene ancora le pagine d'esempio tolte (niente riscrittura).
 11. I divieti della voce si applicano solo con `ZB_BANCA_VOCI` impostata: senza, `zb avvio` avvisa ma
     `zb stile` non li controlla.
+
+## 12. Livello editoriale (lavoro del 2026-10-15)
+
+| Modulo | A cosa serve |
+|---|---|
+| `percorso.py` | fasi e gate del percorso editoriale (struttura … bozze; traduzione: guida … fedeltà), proposte e applicazione, canone |
+| `struttura.py` | modelli e controlli dei nove file di `03-struttura/` (`zb struttura`) |
+| `codex.py` | schede `@char`/`@loc`, filtro per tag, personaggi morti (`zb codex`) |
+| `prepara.py` | preparazione del capitolo per lo scrittore (`zb prepara`) |
+| `capsula.py` | capsule di continuità e registro delle promesse (`zb capsula`) |
+| `compatto.py` | stato compatto del libro (`zb compatto`) |
+| `ruolo.py` | ruolo ammesso nella fase e prima riga del rapporto (`zb ruolo`) |
+| `agenti.py` | installa subagenti e comandi sui rami dei libri (`zb agenti`) |
+| `consumo.py` | misura per sessione e confronto con e senza capsule (`zb consumo`) |
+| `antiia.py` | audit anti-IA, estrazione del vocabolario, taratura (`zb antiia`) |
+| `traduci.py` | traduzione e controlli meccanici (`zb traduci`) |
+| `languagetool.py` | installazione e verifica di LanguageTool (`zb languagetool`) |
+| `precommit.py`, `salva.py` | recinto su git e salvataggio (`zb salva`) |
+| `prove_editoriale.py` | prove del percorso, del recinto, degli agenti, delle capsule, della traduzione, del correttore |
+
+Misure reali (mini-libro editoriale, 3 capitoli di circa 420 parole): per scrivere il capitolo 3 si leggono 1.127
+parole con le capsule e 1.694 senza (`zb consumo confronto 3`). Il dato vale per questo mini-libro; su capitoli più
+lunghi non è stato misurato.
+
+## 13. Esito della suite
+
+Vedi `motore/passaggio-di-consegne.md`, «Stato».

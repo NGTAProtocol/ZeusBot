@@ -19,6 +19,42 @@ Regole di lavoro per qualsiasi libro. Comandi: `python3 motore/zb <comando> <lib
 7. **Prima di scrivere in `04-manoscritto/`** si riporta la riga «Letto: …» di `zb avvio`
    (file, righe, sha256, ultimo commit).
 
+## 1b. Percorso da casa editrice (libri con `percorso: editoriale`)
+
+Il percorso e i ruoli sono in `editoriale/` (fonte di verità; questa procedura ne descrive la meccanica).
+
+| Fase in `stato.yaml` | Lavoro (agente) | Gate | Controlli di `zb pronto` |
+|---|---|---|---|
+| `struttura` | architetto-struttura: i nove file di `03-struttura/`; poi diagnosta e editor-strutturale | `struttura` | nove file senza `<!-- zb: modello -->`, macrostruttura dichiarata e motivata, schede complete, budget non tutti uguali; `rapporto-struttura.md` e `piano-revisione-struttura.md` sulla struttura attuale, in commit che non la toccano |
+| `documenti` | direttore-editoriale: bibbia, codex, cronologia, manuale | `documenti` | `zb codex verifica` |
+| `pagina_campione` | scrittore-voce | `pagina_campione` | pagina non vuota |
+| `stesura` | scrittore-voce (un capitolo, in sequenza), poi capsula | `primi_capitoli`, `lotto`, `controllo_fallito` | `zb esito`: capitolo, audit anti-IA, lunghezze quasi uguali, capsula N-1 presente, nessun rapporto di line o copy |
+| `struttura_manoscritto` | diagnosta, editor-strutturale | `struttura_manoscritto` | rapporto e piano sul manoscritto attuale |
+| `line` | line-editor per capitolo (fino a 3 in parallelo) | `line` | un rapporto per capitolo, intestato e separato |
+| `copy` | correttore-italiano per capitolo | `copy` | come sopra |
+| `bozze` | `zb compila` e `zb impagina`, poi correttore-bozze | `bozze` | PDF presente, rapporto |
+| `chiusura` | motore | — | sezione 7 |
+
+**Fasi di revisione in due tempi** (`sottofase`): «proposte» (rapporti → `zb pronto` apre il gate) e
+«applicazione» (dopo l'«ok» si applicano solo le proposte approvate; `zb esito N` rimisura; `zb pronto` passa
+alla fase successiva e registra di nuovo i capitoli cambiati). Ogni rapporto comincia con la riga data da
+`zb ruolo <libro> <ruolo> [N]`, che si rifiuta per un ruolo fuori dalla sua fase.
+
+**Capsule, codex, canone, stato compatto.** Dopo ogni capitolo accettato: `zb capsula <libro> N` e l'agente
+capsula (`07-capsule/NN.md`, registro delle promesse `@prom:`). `zb prepara <libro> N` dà allo scrittore la
+scheda, il codex filtrato per i tag `@char`/`@loc`, il canone e le capsule. Il canone sta in `stato.yaml`
+(`fatti_bloccati`) e cambia solo con `zb canone <libro> proponi|togli …` e il gate `canone`. `zb compatto`
+scrive `stato-compatto.md` (15-20 righe); `zb salva` lo rigenera.
+
+**Agenti e comandi di Claude Code**: `zb agenti attiva --ok` (solo sui rami dei libri) installa i subagenti e
+i comandi `/scrivi-capitolo`, `/revisiona`, `/diagnosi`, `/handover`. Modelli per ruolo: `dati/modelli-ruoli.yaml`.
+
+**Traduzione**: `zb traduci <libro> --a <lingua> inizia`, poi il libro di traduzione `08-traduzione-<lingua>/`
+segue guida → stesura → line → copy → fedelta → chiusura (`editoriale/lingue/traduzione.md`).
+
+**Lingua**: «Lingua: it|en» nel briefing; per l'inglese le stesse fasi e gli stessi ruoli, con i profili di
+`editoriale/lingue/en/` (catalogo, criteri, glossario) e Hunspell/LanguageTool in inglese.
+
 ## 2. Due modalità
 
 | Modalità | Quando | Differenze |
@@ -130,6 +166,13 @@ Se tutto va bene stampa:
 `Letto: <file> (N righe, sha256 …, commit …), …; libro @ <commit>; motore @ <commit>; fase, gate`,
 poi passo, capitoli, parole, revisione in corso, correzioni e avvisi aperti, e scrive solo il
 marker `<libro>/.zb/letto-<session_id>` (la cartella `.zb/` ignora sé stessa in git).
+
+Controlli in più: file modificati fuori da `libri/<slug>/` (anche da Bash) → si ferma; un altro libro attivo →
+si ferma (un solo libro per sessione; per cambiare `zb lavoro libro <slug>` e nuovo avvio); commit del ramo che
+cambiano file fuori dai libri rispetto a origin/motore → avviso; percorso editoriale: capsule mancanti → avviso,
+report di sessione non aggiornato da più di 10 salvataggi → avviso.
+`zb avvio` senza libro (solo con «lavoro sul motore»): controlli del ramo del motore (nessun `libri/`, nessun
+`.claude/`, controllo pre-commit) e riga «Letto» con CLAUDE.md, PROCEDURA, passaggio di consegne e livello editoriale.
 
 ## 5. Fasi e gate
 
@@ -273,11 +316,12 @@ ogni voce corrisponda alla pagina su cui l'unità comincia. Per cambiare una voc
 
 ## 8. Blocco di salvataggio
 
-Dopo ogni passo che scrive: report in `<libro>/06-diagnostica/`, `git add`, commit, push,
-`git status -sb`, `git log -1`. Se il push fallisce o un file non si salva: fermarsi e riportare
+Dopo ogni passo che scrive: report in `<libro>/06-diagnostica/`, poi `zb salva <libro> "<messaggio>"`
+(controllo su git di tutti i file modificati: rifiuta se uno sta fuori dal recinto; rigenera lo stato compatto;
+sul motore lancia prima `zb prove`; poi commit e push con ripiego), `git status -sb`, `git log -1`. Se il push fallisce o un file non si salva: fermarsi e riportare
 l'errore esatto; mai dire «fatto» se non è su origin; niente altri rami, tag o push forzati.
 Resoconto: hash, file, parole o pagine, «branch allineato a origin: sì/no».
-Nessun comando del motore fa commit o push da solo.
+Nessun comando del motore fa commit o push da solo, tranne `zb salva` e `zb push` quando li si lancia.
 
 ## 9. Ripresa dopo un'interruzione
 
@@ -285,7 +329,24 @@ Solo da file: `zb avvio <libro>`. Se si ferma per modifiche non salvate, mostro 
 chiedo «tieni» o «scarta» (non scarto nulla da solo). Se c'era una revisione in corso, `avanti`
 riprende dal blocco registrato (o dal blocco 1 se i documenti sono cambiati).
 
-## 10. Hook (protezione in più, non una garanzia)
+## 10. Recinto e hook
+
+**Recinto (blocco).** `script/hook_recinto.py` (PreToolUse su Write, Edit, MultiEdit, NotebookEdit e Bash):
+con un libro attivo (`libri/libro-attivo.md`) consente solo `libri/<slug>/`; con «lavoro sul motore»
+(`zb lavoro motore`) consente il repository tranne `libri/`. Per Bash controlla i percorsi che il comando
+probabilmente scrive (stessa euristica dell'hook del manoscritto: redirezioni, tee, sed -i, cp, mv, rm, touch,
+mkdir…), solo dentro il repository. Limiti residui (falsi permessi): script che scrivono senza nominare il
+percorso, variabili o `cd` di comandi precedenti, sostituzioni di comando, strumenti non elencati.
+Li coprono:
+- il **controllo pre-commit di git** (`script/precommit.py`, installato da `zb lavoro motore|libro`): rifiuta
+  un commit con file fuori dal recinto, qualunque strumento li abbia scritti (eccezione dichiarata: merge del
+  motore, MERGE_HEAD raggiungibile da origin/motore);
+- **`zb avvio`**: si ferma con file modificati fuori dal libro e avvisa se i commit del ramo cambiano file
+  fuori dai libri rispetto a origin/motore (pre-commit aggirato con `--no-verify`);
+- **`zb salva`**: stesso controllo prima del commit.
+Sul ramo `motore` hook, agenti e comandi restano spenti (nessun `.claude/`); `zb avvio` senza libro lo verifica.
+
+**Hook del manoscritto e della sessione (avviso).**
 
 - `script/hook_sessione.py` (SessionStart): scrive il `session_id` in
   `$CLAUDE_PROJECT_DIR/.zb/sessione-corrente`; dopo una compattazione registra l'ora, e i marker
@@ -335,4 +396,5 @@ ancora approvato a un gate, non la rileva nessuno dei due: resta visibile solo n
 
 ## 11. Comandi
 
-`python3 motore/zb aiuto` elenca tutti i comandi; la tabella completa è in `README.md`.
+`python3 motore/zb aiuto` elenca tutti i comandi, `zb aiuto <comando>` ne dà l'uso: unica fonte
+`dati/comandi.yaml` (README e guide non ripetono l'elenco).
