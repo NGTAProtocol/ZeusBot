@@ -13,8 +13,17 @@ vogliono scrivere.
 - libro-attivo.md assente o vuoto (lavoro su un libro): avviso, non blocco.
 Lo stato del lavoro sta in <git-dir>/zb-lavoro («libro» o «motore»), fuori dai file tracciati.
 
+Bash: i percorsi che il comando probabilmente scrive (redirezioni >, >>, tee, sed -i, perl -i, cp e rsync
+verso, mv, rm, touch, truncate, dd, mkdir, ln, git checkout/restore, python -c con un percorso) si controllano
+con la stessa regola, solo se stanno dentro il repository (/tmp, /dev/null e lo scratchpad restano liberi).
+Limiti residui (falsi permessi, li coprono il controllo pre-commit e «zb avvio»): script che scrivono senza
+nominare il percorso, variabili o «cd» di comandi precedenti, sostituzioni di comando, strumenti non elencati
+(awk -i inplace, ed, vim -c, find -delete, xargs rm).
+
 Uso come comando: hook_recinto.py lavoro stato | lavoro motore | lavoro libro <slug>
 («zb lavoro …»). «lavoro libro <slug>» scrive libri/libro-attivo.md: si rifiuta sul ramo «motore».
+Ogni «zb lavoro motore|libro» installa anche il controllo pre-commit di git (precommit.py), che rifiuta un
+commit con file fuori dal recinto qualunque strumento li abbia scritti.
 """
 import json
 import os
@@ -117,15 +126,25 @@ def hook():
     except ValueError:
         return 0
     ti = dati.get('tool_input') or {}
-    percorso = ti.get('file_path') or ti.get('notebook_path')
-    if not percorso:
-        return 0
     cwd = dati.get('cwd') or os.getcwd()
-    percorso = os.path.realpath(os.path.join(cwd, percorso))
     base = os.environ.get('CLAUDE_PROJECT_DIR') or cwd
     rad = radice(base)
     if not rad:
         return 0
+    if dati.get('tool_name') == 'Bash':
+        import hook_manoscritto
+        bersagli = [os.path.realpath(p) for p in hook_manoscritto.bersagli_bash(ti.get('command') or '', cwd, solo=None)]
+        for p in bersagli:
+            if dentro(rad, p) and not dentro(os.path.join(rad, '.git'), p):
+                esito, msg = decidi(p, rad)
+                if esito == 'blocca':
+                    print(msg + ' (comando Bash)', file=sys.stderr)
+                    return 2
+        return 0
+    percorso = ti.get('file_path') or ti.get('notebook_path')
+    if not percorso:
+        return 0
+    percorso = os.path.realpath(os.path.join(cwd, percorso))
     esito, msg = decidi(percorso, rad)
     if esito == 'blocca':
         print(msg, file=sys.stderr)
@@ -141,12 +160,15 @@ def comando(args):
         print('FERMO: non sono in un repository git.', file=sys.stderr)
         return 2
     azione = args[1] if len(args) > 1 else 'stato'
+    import precommit
     if azione == 'stato':
-        print(f'Lavoro: {lavoro(rad)}; libro attivo: {slug_attivo(rad) or "nessuno"}')
+        print(f'Lavoro: {lavoro(rad)}; libro attivo: {slug_attivo(rad) or "nessuno"}; '
+              f'controllo pre-commit: {precommit.stato(rad)}')
         return 0
     if azione == 'motore':
         imposta_lavoro(rad, 'motore')
         print('Lavoro sul motore: consentito il repository tranne libri/. Per tornare: zb lavoro libro <slug>.')
+        print(precommit.installa(rad))
         return 0
     if azione == 'libro' and len(args) > 2:
         slug = os.path.basename(args[2].rstrip('/'))
@@ -154,7 +176,8 @@ def comando(args):
             print('FERMO: il ramo «motore» non contiene mai un libro; passa a un ramo di libro.', file=sys.stderr)
             return 2
         imposta_libro_attivo(rad, slug)
-        print(f'Libro attivo: libri/{slug}/; si scrive solo lì dentro.')
+        print(f'Libro attivo: libri/{slug}/; si scrive solo lì dentro. Poi: zb avvio libri/{slug}.')
+        print(precommit.installa(rad))
         return 0
     print('Uso: zb lavoro stato | zb lavoro motore | zb lavoro libro <slug>', file=sys.stderr)
     return 2

@@ -55,17 +55,19 @@ def espandi(t, variabili):
     return re.sub(r'\$\{?(\w+)\}?', lambda m: variabili.get(m.group(1), m.group(0)), t)
 
 
-def bersagli_bash(comando, cwd):
-    """Percorsi che il comando Bash probabilmente scrive (solo se nomina 04-manoscritto)."""
-    if CARTELLA not in comando:
+def bersagli_bash(comando, cwd, solo=CARTELLA):
+    """Percorsi che il comando Bash probabilmente scrive (con solo=None: tutti; altrimenti solo se il comando
+    nomina quella cartella). Lo usa anche hook_recinto.py per il recinto sul libro attivo."""
+    if solo and solo not in comando:
         return []
     try:
         lex = shlex.shlex(comando, posix=True, punctuation_chars=';&|()<>')
         lex.whitespace_split = True
         lex.commenters = ''
         token = list(lex)
-    except ValueError:            # virgolette sbilanciate: ogni percorso col manoscritto
-        return [risolvi(p, cwd) for p in re.findall(r'[^\s\'"`;|&<>]*' + CARTELLA + r'[^\s\'"`;|&<>]*', comando)]
+    except ValueError:            # virgolette sbilanciate: ogni percorso col manoscritto (o con una barra)
+        chiave = re.escape(solo) if solo else '/'
+        return [risolvi(p, cwd) for p in re.findall(r'[^\s\'"`;|&<>]*' + chiave + r'[^\s\'"`;|&<>]*', comando)]
     segmenti, cur = [], []
     for t in token:
         if t in SEPARATORI:
@@ -98,7 +100,7 @@ def bersagli_bash(comando, cwd):
         file_args = [a for a in args[1:] if not a.startswith('-')]
         if prog == 'cd' and file_args:
             base = risolvi(file_args[0], base)
-        elif prog == 'tee' or prog in ('rm', 'truncate', 'mv', 'dd', 'touch'):
+        elif prog == 'tee' or prog in ('rm', 'truncate', 'mv', 'dd', 'touch', 'mkdir', 'rmdir', 'ln'):
             out += [risolvi(a.split('=', 1)[-1], base) for a in file_args]
         elif prog in ('sed', 'perl') and any(re.match(r'^-\w*i', a) for a in args[1:]):
             out += [risolvi(a, base) for a in file_args]
@@ -107,11 +109,12 @@ def bersagli_bash(comando, cwd):
         elif prog == 'git' and len(args) > 1 and args[1] in ('checkout', 'restore'):
             out += [risolvi(a, base) for a in args[2:] if not a.startswith('-')]
         elif prog.startswith('python'):
+            chiave = re.escape(solo) if solo else r'[\w.\-]*/'
             if '-c' in args and args.index('-c') + 1 < len(args):
                 codice = args[args.index('-c') + 1]
-                out += [risolvi(p, base) for p in re.findall(r'[^\s\'"`,()]*' + CARTELLA + r'[^\s\'"`,()]*', codice)]
-            else:
-                out += [risolvi(a, base) for a in file_args if CARTELLA in a]
+                out += [risolvi(p, base) for p in re.findall(r'[^\s\'"`,()]*' + chiave + r'[^\s\'"`,()]*', codice)]
+            elif solo:
+                out += [risolvi(a, base) for a in file_args if solo in a]
     return out
 
 
