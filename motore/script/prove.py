@@ -2835,6 +2835,36 @@ def anti_ia_prove(A):
     esito('anti_ia.py', 'chiusure uguali di fila oltre la soglia del libro', A['chiusure'], [e['controllo'] for e in es], sez)
 
 
+# ---------------------------------------------------------------- correttore di italiano
+
+def correttore(A):
+    import ortografia
+    sez = 'correttore'
+    crit = os.path.join(M, 'editoriale', 'correttore', 'criteri-correttore.md')
+    puntati = sum(1 for r in open(crit, encoding='utf-8').read().split('## 7.')[0].splitlines() if r.startswith('- '))
+    voci = ortografia.checklist()
+    esito('ortografia.py', 'lista di controllo = punti delle sezioni 1-6 di criteri-correttore.md', 'sì',
+          'sì' if len(voci) == puntati and voci[0].startswith('Accenti e apostrofi:') else f'no ({len(voci)}/{puntati})', sez)
+    L = copia_libro('mini-libro')
+    p = esegui(os.path.join(S, 'ortografia.py'), L, '--schermo')
+    esito('ortografia.py', 'report: sezione (c) con le voci dei criteri', A['report'],
+          f'{"criteri-correttore.md" in p.stdout} / {sum(1 for v in voci if v.replace("|", "/") in p.stdout)}', sez)
+    d = os.path.join(M, 'prova-languagetool-vietata')
+    p = esegui(os.path.join(S, 'installa_languagetool.py'), 'installa', '--cartella', d)
+    esito('installa_languagetool.py', 'installazione dentro il repository: rifiutata, niente creato', A['dentro_repo'],
+          f'{p.returncode} / {os.path.exists(d)}', sez)
+    lt = os.environ.get('ZB_LANGUAGETOOL')
+    if not lt:
+        saltata('installa_languagetool.py', 'verifica: frase di prova segnalata', 'LanguageTool assente (ZB_LANGUAGETOOL non impostata)', sez)
+        return
+    p = esegui(os.path.join(S, 'ortografia.py'), 'verifica')
+    esito('installa_languagetool.py', 'verifica: frase di prova segnalata con una regola grammaticale italiana', A['verifica'],
+          f'{p.returncode} / {"GR_04_001" in p.stdout}', sez)
+    p = esegui(os.path.join(S, 'installa_languagetool.py'), 'installa', '--cartella', os.path.dirname(os.path.realpath(lt)))
+    esito('installa_languagetool.py', 'installazione già pronta: niente riscaricato', A['gia_pronto'],
+          f'{p.returncode} / {"già pronto" in p.stdout} / {"export ZB_LANGUAGETOOL=" in p.stdout}', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
 # ---------------------------------------------------------------- appendici e titoli interni
@@ -2888,7 +2918,7 @@ def appendici(A):
     esito('compila.py', 'appendice dichiarata e assente: FERMO', A['fermo_assente'], ottenuto, sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove, 'anti_ia': anti_ia_prove}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove, 'anti_ia': anti_ia_prove, 'correttore': correttore}
 
 
 def main(argv):

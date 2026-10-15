@@ -6,7 +6,10 @@ Uso: python3 -B ortografia.py <libro> [--schermo]
     motore (dati/parole-ammesse-it.txt). Le elisioni (l', dell', anch'…) non si controllano.
 (b) LanguageTool, solo se ZB_LANGUAGETOOL indica la cartella dei suoi .jar (scaricati fuori dal
     repository; come, in PROCEDURA.md). Mai scaricato da questo script.
-(c) Checklist manuale per la lettura umana, sempre, in fondo al report.
+(c) Lista di controllo per la lettura umana, sempre, in fondo al report: le voci delle sezioni 1-6 di
+    motore/editoriale/correttore/criteri-correttore.md (fonte unica), per il correttore di italiano.
+Installazione e verifica di LanguageTool: zb ortografia installa | zb ortografia verifica
+(installa_languagetool.py).
 Report: <libro>/06-diagnostica/controllo-ortografico.md (con --schermo solo a schermo).
 Il report dice quali livelli sono stati eseguiti. Codice 1 se (a) o (b) trovano qualcosa;
 2 se Hunspell o il dizionario it_IT mancano.
@@ -26,16 +29,29 @@ import comune  # noqa: E402
 
 PAROLA = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ]+(?:['’][A-Za-zÀ-ÖØ-öø-ÿ]+)*['’]?")
 ENV = dict(os.environ, LC_ALL='C.UTF-8')
-CHECKLIST = [
+CRITERI = os.path.join('editoriale', 'correttore', 'criteri-correttore.md')
+CHECKLIST_MINIMA = [      # se il file dei criteri mancasse: i controlli che i correttori automatici non vedono
     '«e» congiunzione al posto di «è» verbo (e viceversa)',
     'accordi di genere e numero (soggetto e verbo, nome e aggettivo)',
-    'apostrofi: «qual è», «un amico» / «un\'amica», «po\'»',
-    'accenti: «perché», «poiché», «né», «sé», «lì», «là», «dà»',
     'parole vere al posto sbagliato (per esempio «anno» per «hanno», «a» per «ha»)',
-    'concordanza dei tempi verbali nella stessa scena',
-    'virgolette e lineette dei dialoghi coerenti in tutto il libro',
-    'maiuscole dopo i due punti e nei titoli dei capitoli',
 ]
+
+
+def checklist():
+    """Lista di controllo del correttore, letta da editoriale/correttore/criteri-correttore.md (sezioni 1-6):
+    una voce per punto elenco, con il titolo della sezione. Fonte unica: il file dei criteri."""
+    p = os.path.join(comune.radice_motore(), CRITERI)
+    if not os.path.isfile(p):
+        return list(CHECKLIST_MINIMA)
+    out, sezione = [], None
+    for r in open(p, encoding='utf-8'):
+        m = re.match(r'^##\s+(\d+)\.\s+(.+)$', r.strip())
+        if m:
+            sezione = m.group(2) if int(m.group(1)) <= 6 else None
+            continue
+        if sezione and r.startswith('- '):
+            out.append(f'{sezione}: {r[2:].strip().rstrip(";")}')
+    return out or list(CHECKLIST_MINIMA)
 
 
 def ammesse(cartella, libro):
@@ -138,15 +154,18 @@ def report(libro, trovate, errore_h, lt, motivo_lt):
             r += ['| File:riga | Regola | Testo | Messaggio |', '|---|---|---|---|']
             r += [f'| {f}:{n} | {reg} | {t} | {msg} |' for f, n, reg, msg, t in lt]
         r.append('')
-    r += ['## (c) Checklist per la lettura umana', '',
+    r += ['## (c) Lista di controllo del correttore (editoriale/correttore/criteri-correttore.md)', '',
           'I correttori automatici non rilevano errori come «e» al posto di «è», gli accordi sbagliati '
           'o una parola vera usata al posto di un\'altra. Questi controlli li fa chi legge.', '',
           '| Controllo | Fatto |', '|---|---|']
-    r += [f'| {c} | [ ] |' for c in CHECKLIST]
+    r += [f'| {c.replace("|", "/")} | [ ] |' for c in checklist()]
     return '\n'.join(r) + '\n'
 
 
 def main(argv):
+    if argv[:1] and argv[0] in ('installa', 'verifica'):
+        import installa_languagetool
+        return installa_languagetool.main(argv)
     args = comune.argomenti(argv)
     if not args:
         raise comune.ErroreMotore('Uso: ortografia.py <libro> [--schermo]')

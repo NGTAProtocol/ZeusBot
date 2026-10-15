@@ -125,16 +125,24 @@ Il motore non usa un server né un pacchetto Python. Lancia la riga di comando d
 da `ZB_LANGUAGETOOL`. Senza questa variabile, `zb ortografia` salta il livello (b) e `zb prove`
 salta 2 prove, con il motivo «LanguageTool assente».
 
-Installazione (Java 21 e Maven già presenti nel container):
+Installazione stabile, un comando (Java e Maven già presenti nel container):
 
-1. In una cartella temporanea fuori dal repository (per esempio lo scratchpad della sessione), un
-   `pom.xml` con le dipendenze `org.languagetool:languagetool-commandline` e `org.languagetool:language-it`,
-   versione 6.8.
-2. `mvn -q -B dependency:copy-dependencies -DoutputDirectory=lib`: scarica da Maven Central 143 file, 240 MB.
-3. `export ZB_LANGUAGETOOL=<cartella temporanea>/lib`.
+```
+python3 motore/zb ortografia installa            # scarica in ~/.cache/zb-languagetool, mai nel repository
+export ZB_LANGUAGETOOL=~/.cache/zb-languagetool/lib   # la riga esatta la stampa il comando
+python3 motore/zb ortografia verifica            # OK solo se la frase di prova «Qual'è il problema?» è segnalata
+```
 
-Non va nel repository e non si scarica da languagetool.org. Se Maven Central risponde 403 o 429,
-le 2 prove restano saltate. Dettagli in `PROCEDURA.md`, sezione «Ortografia».
+- Versioni: 6.8, poi 6.7 (su Maven Central `languagetool-commandline` 6.4-6.6 non esiste); `--versione X` per
+  sceglierne un'altra, `--cartella <dir>` per un'altra cartella fuori dal repository.
+- Prima prova la cache locale di Maven (`~/.m2`, senza rete), poi Maven Central. Scarica in `lib.nuova` e
+  sostituisce `lib` solo dopo la verifica: una cartella che funziona non si perde.
+- Già pronta e verificata: non riscarica niente, quindi si può lanciare a ogni sessione nuova.
+- `ZB_LANGUAGETOOL` va impostata nell'ambiente della sessione (per le sessioni nel cloud: variabili
+  d'ambiente dell'ambiente o script di avvio). Senza, `zb ortografia` salta il livello (b) e lo dice nel report.
+- Se Maven Central risponde 403 o 429 il comando si ferma: non insistere, si resta con Hunspell e la lista di
+  controllo del correttore (livelli a e c) e si riprova più tardi.
+- Circa 143 file, 240 MB. Non si scarica mai da languagetool.org.
 
 ### Banca-voci
 

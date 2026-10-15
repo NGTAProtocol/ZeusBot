@@ -232,16 +232,12 @@ perché la frase può parlare d'altro («tre settimane di lavoro»).
 - (a) Hunspell it_IT, sempre. Parole ammesse: quelle del libro (`nomi_propri.txt`) e quelle generiche
   del motore (`dati/parole-ammesse-it.txt`: forme italiane valide che il dizionario non conosce, mai
   nomi di personaggi o luoghi). Le elisioni (l', dell', anch') non si controllano.
-- (b) LanguageTool, solo se `ZB_LANGUAGETOOL` indica la cartella dei suoi `.jar`. Non va nel
-  repository e non si scarica mai da languagetool.org. Si scarica da Maven Central (serve Java e
-  Maven) in una cartella temporanea:
-  1. in una cartella temporanea, un `pom.xml` con le dipendenze `org.languagetool:languagetool-commandline`
-     e `org.languagetool:language-it` (stessa versione, per esempio 6.8);
-  2. `mvn -q -B dependency:copy-dependencies -DoutputDirectory=lib` (circa 140 file, 240 MB);
-  3. `export ZB_LANGUAGETOOL=<cartella temporanea>/lib`.
-  Se Maven Central risponde 403 o 429, non insistere: si resta con Hunspell e la checklist.
-- (c) Checklist per la lettura umana, sempre, in fondo al report: i correttori automatici non
-  rilevano «e» per «è», gli accordi sbagliati, le parole vere usate al posto di altre.
+- (b) LanguageTool, solo se `ZB_LANGUAGETOOL` indica la cartella dei suoi `.jar`, mai nel repository.
+  Installazione e verifica: `zb ortografia installa` (stampa la riga `export ZB_LANGUAGETOOL=…`) e
+  `zb ortografia verifica` (README, «LanguageTool»). Con 403 o 429 da Maven Central non si insiste.
+- (c) Lista di controllo del correttore, sempre, in fondo al report: le voci delle sezioni 1-6 di
+  `editoriale/correttore/criteri-correttore.md` (fonte unica). I correttori automatici non rilevano «e» per
+  «è», gli accordi sbagliati, le parole vere usate al posto di altre: le controlla il correttore di italiano.
 - Il report (`06-diagnostica/controllo-ortografico.md`) dice quali livelli sono stati eseguiti.
 
 **Appendici.** Materiali che stanno dopo l'ultima unità del libro (epilogo compreso): soluzioni di enigmi,
