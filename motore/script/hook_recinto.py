@@ -15,6 +15,8 @@ NotebookEdit o Bash vogliono scrivere.
   comando precedente, sostituzioni $(…), awk -i, ed, vim, find -delete, xargs, git checkout <ramo>;
   li coprono zb avvio e zb push, che controllano su git i file modificati. I bersagli fuori dal
   repository (/tmp, /dev/null) non contano: la cartella unica riguarda il ramo.
+- Revisori (agent_type o ruolo della sessione: editor strutturale, line editor, correttori): un Write su un
+  capitolo già esistente di 04-manoscritto/ è rifiutato; si corregge con Edit, a modifiche puntuali.
 - Scritture dentro il libro (Write, Edit) in 03-struttura/, 04-manoscritto/, 06-diagnostica/, 07-capsule/:
   annotate in <libro>/.zb/scritture.log con la sessione (separazione dei ruoli, ruoli.py).
   Nascita di un libro: è consentito anche <repo>/libri/<slug>/briefing.md (o 00-progetto/briefing.md)
@@ -188,6 +190,33 @@ def annota_scrittura(percorso, rad, dati):
         pass
 
 
+REVISORI = {'editor-strutturale', 'line-editor', 'correttore-italiano', 'correttore-bozze'}
+
+
+def riscrittura_da_revisore(percorso, rad, dati):
+    """Messaggio se un revisore riscrive per intero (Write) un capitolo esistente; None altrimenti.
+    I revisori correggono con modifiche puntuali (Edit), mai riscrivendo il capitolo (risparmio-token.md, 5)."""
+    if dati.get('tool_name') != 'Write' or not os.path.isfile(percorso):
+        return None
+    libri = os.path.join(rad, 'libri')
+    if not dentro(libri, percorso):
+        return None
+    parti = os.path.relpath(percorso, libri).split(os.sep)
+    if len(parti) < 3 or parti[1] != '04-manoscritto':
+        return None
+    chi = dati.get('agent_type')
+    if chi not in REVISORI:
+        try:
+            import ruoli
+            chi = (ruoli.leggi_ruoli(os.path.join(libri, parti[0])).get(str(dati.get('session_id'))) or {}).get('ruolo')
+        except Exception:
+            chi = None
+    if chi in REVISORI:
+        return (f'RECINTO: {chi} non riscrive per intero {os.path.relpath(percorso, rad)}: correzioni puntuali con Edit, '
+                'solo dopo l\'«ok» dell\'autore.')
+    return None
+
+
 def hook():
     try:
         dati = json.load(sys.stdin)
@@ -221,6 +250,11 @@ def hook():
         if esito == 'avviso':
             avvisi.append(msg)
     if dati.get('tool_name') != 'Bash':
+        for percorso in percorsi:
+            msg = riscrittura_da_revisore(percorso, rad, dati)
+            if msg:
+                print(msg, file=sys.stderr)
+                return 2
         for percorso in percorsi:
             annota_scrittura(percorso, rad, dati)
     if avvisi:

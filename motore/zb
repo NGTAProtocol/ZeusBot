@@ -21,6 +21,7 @@ SCRIPT = {
     'kdp': 'conformita_kdp.py', 'pacchetto': 'pacchetto.py', 'prove': 'prove.py',
     'separazione': 'separazione.py', 'recinto': 'recinto.py', 'profili': 'valida_profili.py',
     'ortografia': 'ortografia.py', 'push': 'push.py', 'voce': 'voce.py', 'ruoli': 'ruoli.py', 'cartella': 'cartella_unica.py',
+    'capsula': 'capsule.py', 'agenti': 'agenti.py', 'consumo': 'consumo.py',
 }
 FASE = ('stato', 'ok', 'avanti', 'correggi', 'riapprova', 'pronto', 'esito', 'fase')
 AIUTO = """Comandi (il libro è sempre un percorso):
@@ -44,6 +45,10 @@ revisione_manoscritto → line → copy → bozze → chiusura. Ogni gate si apr
   zb capitolo|conta|stile|continuita|riciclo|compila|impagina|pdf|kdp|pacchetto <libro>
   zb verifica KDP fatta [AAAA-MM-GG] | zb verifica KDP stato | zb verifica KDP controlla
   zb ortografia installa | zb ortografia verifica   LanguageTool fuori dal repository (ZB_LANGUAGETOOL)
+  zb capsula <libro> <N>           capsula di continuità 07-capsule/NN.md (agente capsula), dopo ogni capitolo
+  zb agenti stato | attiva [--ok] | disattiva   subagenti in .claude/agents/ (solo sui rami dei libri)
+  zb agenti prossimo <libro>       chiamate del passo: scrittura in sequenza, line/copy a gruppi di 3
+  zb consumo <libro> [--registra]  letture, righe, subagenti, capitoli, durata della sessione (.zb/consumo.log)
   zb hook stato | zb hook attiva [--ok] | zb hook disattiva
   zb lavoro stato | zb lavoro motore | zb lavoro libro <slug>   recinto dell'hook (libro attivo o motore)
   zb pulizia <libro> [--applica]   elenco di temporanei, vuote e copie; cancella solo con --applica
@@ -52,12 +57,65 @@ revisione_manoscritto → line → copy → bozze → chiusura. Ogni gate si apr
   zb prove | zb separazione | zb recinto | zb profili"""
 
 
-def lancia(script, args):
+def output_regole():
+    """(righe_max, esenti) da dati/output.yaml; senza PyYAML, lettura semplice delle due righe."""
+    righe, esenti = 40, []
+    try:
+        for r in open(os.path.join(MOTORE, 'dati', 'output.yaml'), encoding='utf-8'):
+            if r.startswith('righe_max:'):
+                righe = int(r.split(':', 1)[1].split('#')[0])
+            elif r.startswith('esenti:'):
+                esenti = [x.strip() for x in r.split(':', 1)[1].split('#')[0].strip(' []\n').split(',') if x.strip()]
+    except (OSError, ValueError):
+        pass
+    return righe, esenti
+
+
+def compatta(testo, righe_max, dove):
+    """Al massimo righe_max righe: inizio, righe con KO/FERMO/ERRORE, fine; l'intero testo nel file `dove`."""
+    righe = testo.splitlines()
+    if len(righe) <= righe_max:
+        return testo
+    with open(dove, 'w', encoding='utf-8') as f:
+        f.write(testo)
+    import re
+    import collections
+    fine = righe[-4:]
+    gravi = [r for r in righe[:-4] if re.search(r'\bKO\b|FERMO|ERRORE', r)]
+    spazio = max(0, righe_max - len(fine) - 2 - min(len(gravi), righe_max // 2))
+    tenute = collections.OrderedDict((i, r) for i, r in enumerate(righe[:spazio]))
+    for i, r in enumerate(righe[:-4]):
+        if r in gravi and len(tenute) < righe_max - len(fine) - 1:
+            tenute[i] = r
+    corpo = [tenute[i] for i in sorted(tenute)]
+    omesse = len(righe) - len(corpo) - len(fine)
+    return '\n'.join(corpo + [f'… {omesse} righe omesse (KO e FERMO restano a schermo); output intero: {dove}'] + fine) + '\n'
+
+
+def lancia(script, args, comando=None):
     p = os.path.join(S, script)
     if not os.path.isfile(p):
         print(f'FERMO: {script} non esiste ancora nel motore.', file=sys.stderr)
         return 2
-    return subprocess.run([sys.executable, '-B', p, *args]).returncode
+    righe_max, esenti = output_regole()
+    if os.environ.get('ZB_OUTPUT_COMPLETO') == '1' or (comando or '') in esenti:
+        return subprocess.run([sys.executable, '-B', p, *args]).returncode
+    r = subprocess.run([sys.executable, '-B', p, *args], stdout=subprocess.PIPE, text=True)
+    testo = r.stdout or ''
+    if len(testo.splitlines()) > righe_max:
+        libro = next((os.path.realpath(a) for a in args if os.path.isfile(os.path.join(a, 'libro.yaml'))), None)
+        if libro and not (libro + os.sep).startswith(MOTORE + os.sep):     # mai file dentro motore/
+            d = os.path.join(libro, '.zb')
+            os.makedirs(d, exist_ok=True)
+            if not os.path.isfile(os.path.join(d, '.gitignore')):
+                open(os.path.join(d, '.gitignore'), 'w', encoding='utf-8').write('*\n')
+        else:
+            import tempfile
+            d = tempfile.gettempdir()
+        testo = compatta(testo, righe_max, os.path.join(d, 'ultimo-output.txt'))
+    sys.stdout.write(testo)
+    sys.stdout.flush()
+    return r.returncode
 
 
 def progetto(args):
@@ -126,7 +184,7 @@ def main(argv):
         if not args:
             print(f'Uso: zb {cmd} <libro> …', file=sys.stderr)
             return 2
-        return lancia('fase.py', [args[0], cmd, *args[1:]])
+        return lancia('fase.py', [args[0], cmd, *args[1:]], cmd)
     if cmd == 'verifica':
         resto = [a for a in args if a.upper() != 'KDP']
         return lancia('kdp_verifica.py', resto)
@@ -137,7 +195,7 @@ def main(argv):
     if cmd in SCRIPT:
         if cmd in ('avvio',) and not args and os.environ.get('ZB_LIBRO'):
             args = [os.environ['ZB_LIBRO']]
-        return lancia(SCRIPT[cmd], args)
+        return lancia(SCRIPT[cmd], args, cmd)
     print(f'Comando sconosciuto: {cmd}\n\n{AIUTO}', file=sys.stderr)
     return 2
 

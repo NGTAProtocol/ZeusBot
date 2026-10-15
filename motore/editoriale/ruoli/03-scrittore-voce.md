@@ -4,7 +4,7 @@
 Scrivere i capitoli seguendo struttura, voce e manuale di stile, con prosa viva e non da IA.
 
 ## Input per ogni capitolo
-`LEGGIMI.md`, manuale di stile, scheda della voce, scaletta del capitolo, piano parole, cronologia, capitolo precedente. Poi `zb avvio` e riga "Letto".
+`LEGGIMI.md`, manuale di stile, scheda della voce, scaletta del capitolo, piano parole, cronologia, le capsule dei capitoli precedenti (`07-capsule/`) e solo l'ultima pagina del capitolo precedente (non i capitoli interi). Poi `zb avvio` e riga "Letto".
 
 ## Output
 `04-manoscritto/NN-<slug>.md`, poi `zb esito <libro> N`.

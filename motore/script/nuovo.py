@@ -278,7 +278,7 @@ def genera_libro_yaml(b, profilo):
     anni = [int(a) for a in re.findall(r'\d{4}', c.get('anni ammessi', ''))]
     libro = {
         'titolo': c['titolo di lavoro'], 'sottotitolo': None, 'autore': c['autore'], 'lingua': 'it',
-        'modalita': c.get('modalità') or 'nuovo',
+        'modalita': c.get('modalità') or 'nuovo', 'capsule': 'obbligatorie',
     }
     if libro['modalita'] == 'riscrittura':
         libro['testo_precedente'] = c['testo precedente']

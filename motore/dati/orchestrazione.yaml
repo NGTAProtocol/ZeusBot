@@ -1,0 +1,22 @@
+# Orchestrazione dei subagenti (editoriale/risparmio-token.md, sezioni 2 e 4). Lo legge script/agenti.py.
+# La sessione principale non scrive prosa: chiama l'agente del passo con slug e numero di capitolo e legge
+# solo la risposta breve (massimo righe_risposta righe).
+righe_risposta: 10
+# lavori in parallelo su capitoli diversi, al massimo «parallelo_max» alla volta; con limiti d'uso o
+# errori 429 si scende al valore successivo di «riduzione» (scriverlo qui, commit a parte)
+parallelo_max: 3
+riduzione: [2, 1]
+# sempre in sequenza: ogni capitolo dipende dal precedente
+in_sequenza: [scrittore-voce]
+# per capitolo, in parallelo
+in_parallelo: [line-editor, correttore-italiano, capsula]
+# fase → agente del passo (un solo agente per fase; l'editor strutturale lavora anche nel gate struttura)
+agente_di_fase:
+  struttura: architetto-struttura
+  documenti: direttore-editoriale
+  pagina_campione: scrittore-voce
+  stesura: scrittore-voce
+  revisione_manoscritto: editor-strutturale
+  line: line-editor
+  copy: correttore-italiano
+  bozze: correttore-bozze

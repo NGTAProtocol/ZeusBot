@@ -1,0 +1,15 @@
+# Modello di ogni agente (editoriale/agenti/*.md, campo «model»): fonte unica, modificabile.
+# zb agenti attiva copia gli agenti in .claude/agents/ con questi valori; zb prove controlla che i file
+# degli agenti abbiano gli stessi. Valori ammessi (documentazione ufficiale dei subagenti di Claude Code,
+# verificata il 2026-10-15): opus, sonnet, haiku, fable, inherit, oppure un identificativo completo.
+# Regola (risparmio-token.md): forte per giudizio (struttura, editing strutturale), medio per scrittura e
+# revisione di frase, leggero per le capsule. Se il leggero sbaglia, si alza solo quel ruolo.
+modelli:
+  architetto-struttura: opus
+  editor-strutturale: opus
+  direttore-editoriale: sonnet
+  scrittore-voce: sonnet
+  line-editor: sonnet
+  correttore-italiano: sonnet
+  correttore-bozze: sonnet
+  capsula: haiku

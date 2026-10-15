@@ -169,5 +169,6 @@ campi:
         file: {tipo: testo, obbligatorio: true}    # nome del file in 05-appendici/ (.md, .svg, .png, .jpg)
         didascalia: {tipo: testo}                  # solo immagini: riga sotto l'immagine
   manuale: {tipo: testo}
+  capsule: {tipo: scelta, valori: [obbligatorie, avviso]}   # capsule di continuità (capsule.py); senza il campo: avviso
   anti_ia: {tipo: mappa, altri_campi: true}    # facoltativo: soglie anti-IA del libro (sopra quelle del profilo), con motivo nel manuale
   checklist_capitolo: {tipo: lista, elementi: {tipo: testo}}   # voci in più della checklist manuale di capitolo.py

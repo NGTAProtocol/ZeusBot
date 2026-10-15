@@ -148,10 +148,21 @@ def controlla(percorso):
         elenco.append('00-progetto/briefing.md')
     if libro.get('modalita') == 'riscrittura':
         elenco.append(libro['testo_precedente'])
+    import capsule
+    if stato['fase'] in capsule.FASI_CON_CAPSULE:
+        avviso_capsule = capsule.controlla(cartella, libro, stato)       # FERMO con capsule: obbligatorie
+        if avviso_capsule:
+            print(avviso_capsule)
     if stato['fase'] == 'stesura' and stato['ultimo_capitolo_scritto']:
-        u = dict(comune.unita(cartella, libro)).get(str(stato['ultimo_capitolo_scritto']))
-        if u:
-            elenco.append(os.path.relpath(u, cartella))
+        # si leggono le capsule dei capitoli già scritti, non i capitoli interi (risparmio-token.md);
+        # il capitolo precedente intero solo se la sua capsula manca
+        caps = [capsule.percorso(n) for n in range(1, stato['ultimo_capitolo_scritto'] + 1)
+                if os.path.isfile(os.path.join(cartella, capsule.percorso(n)))]
+        elenco += caps
+        if capsule.percorso(stato['ultimo_capitolo_scritto']) not in caps:
+            u = dict(comune.unita(cartella, libro)).get(str(stato['ultimo_capitolo_scritto']))
+            if u:
+                elenco.append(os.path.relpath(u, cartella))
     for rel in dict.fromkeys(elenco):
         if os.path.isfile(os.path.join(cartella, rel)):
             r, s = riga_file(cartella, rel)

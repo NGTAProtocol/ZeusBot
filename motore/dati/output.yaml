@@ -1,0 +1,6 @@
+# Output compatto di zb (editoriale/risparmio-token.md, punto 8): al massimo «righe_max» righe a schermo,
+# il resto in un file (in <libro>/.zb/ultimo-output.txt, oppure nella cartella temporanea di sistema).
+# Le righe con KO, FERMO o ERRORE restano sempre a schermo. Con ZB_OUTPUT_COMPLETO=1 niente taglio.
+righe_max: 40
+# comandi che mostrano testo da leggere per intero (blocchi di revisione, schede, aiuto): non si tagliano
+esenti: [aiuto, avanti, pronto, revisione, voce, correggi, ok, prove]   # prove: compatto da sé (solo KO)

@@ -696,6 +696,11 @@ def cmd_esito(cartella, libro, stato, resto, argv):
         extra = (f' Mancano unità del piano ({", ".join(mancanti)}): «zb fase <libro> stesura --motivo "…"».'
                  if mancanti else '')
         raise comune.ErroreMotore(f'«esito» vale solo in fase «stesura» (ora: {stato["fase"]}).{extra}')
+    if n.isdigit() and int(n) > 1:
+        import capsule
+        avviso_capsule = capsule.controlla(cartella, libro, stato, fino_a=int(n), contesto=f'esito {n}')
+        if avviso_capsule:
+            print(avviso_capsule)
     piano = unita_del_piano(cartella)
     if piano and n.lower() not in [u.lower() for u in piano]:
         raise comune.ErroreMotore(f'«{n}» non è un\'unità del piano parole: {", ".join(piano)}')

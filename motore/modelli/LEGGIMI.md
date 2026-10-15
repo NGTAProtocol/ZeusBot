@@ -15,5 +15,8 @@ Da leggere a ogni avvio, in quest'ordine:
 Decisioni fisse (non si toccano senza richiesta esplicita):
 {decisioni}
 
+Non leggere: docs/ del repository (esportazioni, guida, analisi), salvo richiesta dell'autore; i capitoli
+precedenti interi, quando c'è la loro capsula in 07-capsule/.
+
 Non toccare: 00-progetto/briefing.md dopo l'«ok» ai documenti; i documenti approvati in stato.yaml.
 Avvisi aperti: vedi stato.yaml.
