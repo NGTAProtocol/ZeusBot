@@ -43,7 +43,7 @@ def conta_testo(testo):
 
 def budget(cartella):
     """Budget per unità da 03-architettura/piano-parole.md (colonne «Cap.» e «Budget capitolo»)."""
-    p = os.path.join(cartella, '03-architettura', 'piano-parole.md')
+    p = os.path.join(cartella, comune.rel_piano(cartella))
     if not os.path.isfile(p):
         return {}
     righe = [r for r in open(p, encoding='utf-8').read().splitlines() if r.strip().startswith('|')]

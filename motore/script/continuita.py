@@ -375,7 +375,7 @@ def controlla_libro(cartella, libro):
     nomi = [r.strip() for r in open(pn, encoding='utf-8')] if os.path.isfile(pn) else []
     nomi = [n for n in nomi if n and not n.startswith('#')]
     scaletta = {r.get('Unità', '').lower(): r for r in
-                comune.tabella_md(os.path.join(cartella, '03-architettura', 'scaletta.md'))}
+                comune.tabella_md(os.path.join(cartella, comune.rel_scaletta(cartella)))}
     risultati, durate_trovate, date_unita = [], [], []
     intervalli, note = {}, {}
     for e in cron.get('eventi') or []:

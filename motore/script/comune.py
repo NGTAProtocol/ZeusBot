@@ -149,9 +149,8 @@ def controlla_lingua(dati):
     codice = dati.get('lingua') if isinstance(dati, dict) else None
     if codice not in lingue():
         raise ErroreMotore(
-            f'Lingua «{codice}» non supportata. Il motore oggi lavora solo in italiano (lingua: it):\n'
-            'ortografia Hunspell it_IT, giorni e mesi in italiano. Correggi libro.yaml oppure\n'
-            'chiedi di aggiungere la lingua in motore/dati/lingue.yaml.')
+            f'Lingua «{codice}» non supportata. Lingue del motore: {", ".join(lingue())} (dati/lingue.yaml e\n'
+            'motore/editoriale/lingue/). Correggi libro.yaml oppure chiedi di aggiungere la lingua.')
 
 
 def _prendi(d, campo):
@@ -223,6 +222,40 @@ def carica_libro(percorso):
         if orig != valore and campo not in con_override:
             raise ErroreMotore(f'valore del profilo cambiato senza override: {campo}')
     return cartella, dati, effettivo
+
+
+# ---------------------------------------------------------------- percorso editoriale
+
+STRUTTURA = '03-struttura'
+FILE_STRUTTURA = ['01-premessa.md', '02-logline-tema.md', '03-personaggi-chiave.md', '04-atti-svolte.md',
+                  '05-scaletta.md', '06-sottotrame-promesse.md', '07-tensione-ritmo.md', '08-piano-parole.md',
+                  '09-scelte-fisse.md']
+MODELLO = '<!-- zb: modello -->'
+
+
+def editoriale(libro):
+    """True per i libri del percorso da casa editrice (campo «percorso: editoriale» di libro.yaml)."""
+    return (libro or {}).get('percorso') == 'editoriale'
+
+
+def rel_piano(cartella):
+    """Piano parole: 03-struttura/08-piano-parole.md (percorso editoriale) o 03-architettura/piano-parole.md."""
+    nuovo = os.path.join(STRUTTURA, '08-piano-parole.md')
+    return nuovo if os.path.isfile(os.path.join(cartella, nuovo)) else os.path.join('03-architettura', 'piano-parole.md')
+
+
+def rel_scaletta(cartella):
+    """Scaletta: 03-struttura/05-scaletta.md (percorso editoriale) o 03-architettura/scaletta.md."""
+    nuovo = os.path.join(STRUTTURA, '05-scaletta.md')
+    return nuovo if os.path.isfile(os.path.join(cartella, nuovo)) else os.path.join('03-architettura', 'scaletta.md')
+
+
+def lingua_di(libro):
+    """Voce di dati/lingue.yaml per la lingua del libro, con «dialogo» come tupla di prefissi delle battute."""
+    l = dict(lingue()[libro['lingua']])
+    d = l.get('lineetta_dialogo')
+    l['dialogo'] = tuple(d) if isinstance(d, list) else (d,)
+    return l
 
 
 # ---------------------------------------------------------------- scrittura recintata
@@ -546,7 +579,7 @@ def impronta_documento(percorso):
     """sha256 con cui un documento approvato si registra e si confronta. Per piano-parole.md le misure del
     manoscritto restano fuori dall'impronta (zb esito le aggiorna senza riapprovazione)."""
     import hashlib
-    if os.path.basename(percorso) == 'piano-parole.md':
+    if os.path.basename(percorso).endswith('piano-parole.md'):
         return hashlib.sha256(testo_piano_senza_misure(open(percorso, encoding='utf-8').read()).encode()).hexdigest()
     return sha256_file(percorso)
 
@@ -561,7 +594,7 @@ def documento_invariato(percorso, registrato, commit=None):
         return False
     if registrato in (impronta_documento(percorso), sha256_file(percorso)):
         return True
-    if not commit or os.path.basename(percorso) != 'piano-parole.md':
+    if not commit or not os.path.basename(percorso).endswith('piano-parole.md'):
         return False
     cartella = os.path.dirname(percorso)
     rel = os.path.basename(percorso)
@@ -619,12 +652,17 @@ def controlla_struttura(cartella, modalita):
         p = os.path.join(cartella, d)
         if not os.path.isdir(p) or d == '.git':
             continue
-        if d not in s:
+        import fnmatch
+        chiave = d if d in s else next((k for k in s if '*' in k and fnmatch.fnmatch(d, k)), None)
+        if chiave is None:
             errori.append(f'{d}/: cartella non prevista')
+            continue
+        if chiave != d:
+            continue        # cartella di traduzione: ha la sua struttura (libro di traduzione)
         elif modalita not in s[d]['modalita']:
             errori.append(f'{d}/: prevista solo in {", ".join(s[d]["modalita"])}')
     for radice, dirs, files in os.walk(cartella):
-        dirs[:] = [x for x in dirs if x != '.git']
+        dirs[:] = [x for x in dirs if x != '.git' and not x.startswith('08-traduzione-')]
         rel = os.path.relpath(radice, cartella)
         if '.gitkeep' in files:
             errori.append(f'{os.path.join(rel, ".gitkeep")}: .gitkeep non ammesso')

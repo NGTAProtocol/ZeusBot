@@ -83,7 +83,7 @@ def passo_1(A):
         esito('comune.py', f'libro.yaml {nome} contro lo schema', att, o, sez)
 
     casi = {
-        'lingua_en': lambda y: y.replace('lingua: it', 'lingua: en'),
+        'lingua_en': lambda y: y.replace('lingua: it', 'lingua: fr'),
         'lingua_mancante': lambda y: y.replace('lingua: it\n', ''),
         'override_senza_motivo': lambda y: y.replace(
             'override: []', 'override:\n  - {campo: capitoli.minimo, valore: 700, motivo: ""}'),
@@ -2351,7 +2351,7 @@ def voce(A):
     except comune.ErroreMotore as e:
         msg = 'libro.yaml.voce.slug: campo obbligatorio mancante' in str(e)
     esito('comune.py', '(f) libro.yaml con voce senza slug: rifiutato con il campo', A['schema_senza_slug'], msg, sez)
-    esito('zb', '(f) zb aiuto elenca zb voce', A['aiuto'], 'zb voce lista' in zb(M, 'aiuto').stdout, sez)
+    esito('zb', '(f) zb aiuto elenca zb voce', A['aiuto'], 'zb voce lista' in zb(M, 'aiuto', 'voce').stdout, sez)
     pm = os.path.join(M, 'modelli', 'briefing.md')
     b = nuovo.leggi_briefing(pm)
     titoli = [x[3:].strip().lower() for x in open(pm, encoding='utf-8').read().splitlines() if x.startswith('## ')]
@@ -2458,29 +2458,43 @@ SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4'
 
 def main(argv):
     A = comune.leggi_yaml(os.path.join(M, 'prove', 'attesi.yaml'))
+    solo = argv[argv.index('--solo') + 1] if '--solo' in argv else None
     try:
         for chiave, funz in SEZIONI.items():
-            if chiave in A:
+            if chiave in A and (not solo or solo == chiave):
                 funz(A[chiave])
+        import prove_editoriale
+        prove_editoriale.TMP = tempfile.mkdtemp(dir=TMP)
+        for f in prove_editoriale.SEZIONI:
+            prove_editoriale.esegui_sezione(f)
+        righe.extend(prove_editoriale.righe)
         finali = []
         for nome in ('separazione.py', 'recinto.py'):
             p = esegui(os.path.join(S, nome), '--radice', M)
             finali.append((nome, p.returncode, (p.stdout.strip().splitlines() or [''])[-1]))
     finally:
         shutil.rmtree(TMP, ignore_errors=True)
-    print('| Sezione | Script | Controllo | Atteso | Ottenuto | Esito |')
-    print('|---|---|---|---|---|---|')
-    for r in righe:
-        print('| ' + ' | '.join(r) + ' |')
+    tabella = ['| Sezione | Script | Controllo | Atteso | Ottenuto | Esito |', '|---|---|---|---|---|---|']
+    tabella += ['| ' + ' | '.join(r) + ' |' for r in righe]
+    report = os.path.join(tempfile.gettempdir(), 'zb-prove-ultimo.md')
+    with open(report, 'w', encoding='utf-8') as f:
+        f.write('# Prove del motore\n\n' + '\n'.join(tabella) + '\n')
     ok = sum(1 for r in righe if r[5] == 'OK')
     contate = [r for r in righe if r[5] != 'SALTATA']
-    print(f'\nProve: {ok}/{len(contate)} OK; saltate: {len(righe) - len(contate)} (non contate nel totale)')
+    ko = [r for r in righe if r[5] == 'KO']
+    if '--tutto' in argv:
+        print('\n'.join(tabella))
+    for r in ko[:20]:
+        print(f'KO [{r[0]}] {r[1]}: {r[2]} — atteso {r[3][:80]}, ottenuto {r[4][:80]}')
+    if len(ko) > 20:
+        print(f'… altri {len(ko) - 20} KO nel report')
+    print(f'Prove: {ok}/{len(contate)} OK; saltate: {len(righe) - len(contate)} (non contate nel totale). '
+          f'Tabella completa: {report}')
     for motivo in sorted({r[4] for r in righe if r[5] == 'SALTATA'}):
         n = sum(1 for r in righe if r[5] == 'SALTATA' and r[4] == motivo)
         print(f'saltate: {n}, {motivo}')
         if motivo.startswith('LanguageTool assente'):
-            print('  per eseguirle: installare LanguageTool come in motore/README.md, sezione «LanguageTool»,'
-                  ' e impostare ZB_LANGUAGETOOL')
+            print('  per eseguirle: python3 motore/zb languagetool installa, poi ZB_LANGUAGETOOL come indicato')
     for nome, codice, riga in finali:
         print(f'{nome} su motore/: {"OK" if codice == 0 else "KO"} — {riga}')
     tutto_ok = ok == len(contate) and all(c == 0 for _, c, _ in finali)

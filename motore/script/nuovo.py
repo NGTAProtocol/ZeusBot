@@ -75,7 +75,12 @@ def leggi_briefing(percorso):
     personaggi = [p.lstrip('-').strip() for p in sezioni.get('personaggi chiave', [])
                   if p.startswith('-') and p.lstrip('-').strip() and p.lstrip('-').strip() != SEGNAPOSTO]
     elenco = lambda nome: [x.lstrip('-').strip() for x in sezioni.get(nome, []) if x.lstrip('-').strip()]
-    return {'campi': campi, 'liste': liste, 'idea': sezioni.get('idea', []),
+    schede = {}
+    for m in re.finditer(r'(?m)^###\s+(.+?)\s*\n((?:[ \t]*-.*\n?)*)', testo):
+        nome = m.group(1).strip()
+        if nome and nome != 'Nome':
+            schede[nome] = [r.strip().lstrip('-').strip() for r in m.group(2).splitlines() if r.strip().lstrip('-').strip()]
+    return {'campi': campi, 'liste': liste, 'idea': sezioni.get('idea', []), 'schede': schede,
             'tono': sezioni.get('tono e voce desiderati', []), 'personaggi': personaggi,
             'fatti': elenco('fatti canonici'), 'non_cambiare': elenco('cose da non cambiare'),
             'riferimenti': elenco('riferimenti')}
@@ -103,6 +108,14 @@ def mancanze(b, cartella_libro):
         out.append(f'Idea: servono da 1 a 5 righe (ora {len(b["idea"])})')
     if not any('—' in p for p in b['personaggi']):
         out.append('Personaggi chiave: almeno uno, nella forma «Nome — ruolo — …»')
+    lingua = (c.get('lingua') or 'it').strip()
+    if lingua not in comune.lingue():
+        out.append(f'Lingua: «{lingua}» non supportata (ammesse: {", ".join(comune.lingue())})')
+    for t in lingue_target(c):
+        if t not in comune.lingue() or t == lingua:
+            out.append(f'Lingue target: «{t}» non ammessa (una lingua di dati/lingue.yaml diversa da {lingua})')
+    if (c.get('percorso') or 'editoriale').strip() not in ('editoriale', 'breve'):
+        out.append(f'Percorso: «{c.get("percorso")}» non ammesso (editoriale | breve)')
     mod = c.get('modalità', 'nuovo') or 'nuovo'
     if mod not in ('nuovo', 'riscrittura'):
         out.append(f'Modalità: «{mod}» non ammessa (nuovo | riscrittura)')
@@ -117,6 +130,18 @@ def mancanze(b, cartella_libro):
     elif os.path.isdir(os.path.join(cartella_libro, '01-originale')):
         out.append('Modalità: 01-originale/ esiste solo in riscrittura (scrivi «Modalità: riscrittura» o togli la cartella)')
     return out[:5] if len(out) > 5 else out
+
+
+def lingue_target(c):
+    return [x.strip() for x in (c.get('lingue target') or '').split(',') if x.strip()]
+
+
+def percorso_di(c):
+    return (c.get('percorso') or 'editoriale').strip()
+
+
+GATE_EDITORIALI = ['struttura', 'documenti', 'pagina_campione', 'primi_capitoli', 'revisione_manoscritto',
+                   'line', 'copy', 'bozze']
 
 
 def cartella_dal_briefing(percorso):
@@ -267,12 +292,15 @@ def genera_libro_yaml(b, profilo):
             nomi.append({'nome': nome, 'pattern': r'\b' + re.escape(nome) + r'\b',
                          'vietato_in': ([f'1-{n - 1}'] if n > 2 else ['1']) if n > 1 else [], 'obbligatorio_in': []})
     fm = re.findall(r'[\d.]+', c.get('formato', '') or '5.5 x 8.5')
-    gate = [g.strip() for g in (c.get('gate') or '').split(',') if g.strip()] or GATE_PREDEFINITI
+    gate = [g.strip() for g in (c.get('gate') or '').split(',') if g.strip()] or (
+        GATE_EDITORIALI if percorso_di(c) == 'editoriale' else GATE_PREDEFINITI)
     anni = [int(a) for a in re.findall(r'\d{4}', c.get('anni ammessi', ''))]
     libro = {
-        'titolo': c['titolo di lavoro'], 'sottotitolo': None, 'autore': c['autore'], 'lingua': 'it',
-        'modalita': c.get('modalità') or 'nuovo',
+        'titolo': c['titolo di lavoro'], 'sottotitolo': None, 'autore': c['autore'],
+        'lingua': (c.get('lingua') or 'it').strip(), 'modalita': c.get('modalità') or 'nuovo',
     }
+    if percorso_di(c) == 'editoriale':
+        libro.update({'percorso': 'editoriale', 'lingua_originale': libro['lingua'], 'lingue_target': lingue_target(c)})
     if libro['modalita'] == 'riscrittura':
         libro['testo_precedente'] = c['testo precedente']
     libro.update({
@@ -427,21 +455,33 @@ def crea(percorso_briefing):
     comune.scrivi(cartella, '.gitignore', '.zb/\n')
     m = os.path.join(comune.radice_motore(), 'modelli')
     stato = comune.leggi_yaml(os.path.join(m, 'stato.yaml'))
-    stato.update({'libro': libro['titolo'], 'fase': 'documenti', 'passo': 'da completare', 'gate_in_attesa': None,
+    stato.update({'libro': libro['titolo'], 'fase': 'documenti' if not comune.editoriale(libro) else 'struttura', 'passo': 'da completare', 'gate_in_attesa': None,
                   'parole': {'scritte': 0, 'obiettivo': libro['parole']['target_totale'], 'metodo': 'unico'},
                   'aggiornato': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')})
+    if comune.editoriale(libro):
+        stato.update({'sottofase': None, 'fatti_bloccati': list(b['fatti'])})
     comune.scrivi(cartella, 'stato.yaml', yaml.safe_dump(stato, sort_keys=False, allow_unicode=True))
     comune.scrivi(cartella, 'cronologia.yaml', open(os.path.join(m, 'cronologia.yaml'), encoding='utf-8').read())
     nomi = sorted({w for p in b['personaggi'] for w in p.split('—')[0].split() if w[:1].isupper()})
     comune.scrivi(cartella, 'nomi_propri.txt', '\n'.join(nomi) + '\n')
     comune.scrivi(cartella, '02-bibbia/bibbia.md', genera_bibbia(b, libro))
     comune.scrivi(cartella, '03-architettura/manuale-di-stile.md', genera_manuale(b, libro, profilo, n_cap))
-    comune.scrivi(cartella, '03-architettura/scaletta.md',
-                  genera_scaletta(libro, n_cap, libro['dichiarazioni']['chiusura']['sigle'][0]))
-    comune.scrivi(cartella, '03-architettura/piano-parole.md', genera_piano(libro, n_cap))
+    sigla = libro['dichiarazioni']['chiusura']['sigle'][0]
+    fase_iniziale = 'documenti'
+    if comune.editoriale(libro):
+        import codex
+        import struttura
+        fase_iniziale = 'struttura'
+        for f, testo in struttura.modelli(libro, n_cap, sigla, round(libro['parole']['target_totale'] / n_cap)).items():
+            comune.scrivi(cartella, f'{comune.STRUTTURA}/{f}', testo)
+        for rel, testo in codex.dal_briefing(b).items():
+            comune.scrivi(cartella, rel, testo)
+    else:
+        comune.scrivi(cartella, '03-architettura/scaletta.md', genera_scaletta(libro, n_cap, sigla))
+        comune.scrivi(cartella, '03-architettura/piano-parole.md', genera_piano(libro, n_cap))
     decisioni = '\n'.join(f'- {f}' for f in b['fatti'] + b['non_cambiare']) or '- nessuna'
     leggimi = open(os.path.join(m, 'LEGGIMI.md'), encoding='utf-8').read().format(
-        titolo=libro['titolo'], percorso=cartella, modalita=libro['modalita'], fase='documenti',
+        titolo=libro['titolo'], percorso=cartella, modalita=libro['modalita'], fase=fase_iniziale,
         gate='nessuno', ultimo='—', decisioni=decisioni)
     comune.scrivi(cartella, 'LEGGIMI.md', leggimi)
     comune.carica_libro(cartella)          # libro.yaml generato valido (schema, override con motivo)
@@ -458,9 +498,15 @@ def main(argv):
     if not args:
         raise comune.ErroreMotore('Uso: nuovo.py <percorso-briefing>')
     cartella, n_cap = crea(args[0])
-    print(f'libro creato in {cartella} ({n_cap} capitoli previsti); fase «documenti».')
-    print('Prossimo passo: completare bibbia, cronologia, scaletta e piano parole; poi «zb pronto <libro>»,'
-          ' che apre il gate «documenti».')
+    libro = comune.leggi_yaml(os.path.join(cartella, 'libro.yaml'))
+    if comune.editoriale(libro):
+        print(f'libro creato in {cartella} ({n_cap} capitoli previsti, da rivedere nella struttura); fase «struttura».')
+        print('Prossimo passo: architetto-struttura scrive i nove file di 03-struttura/; poi diagnosta ed '
+              'editor-strutturale (agenti separati); poi «zb pronto <libro>», che apre il gate «struttura».')
+    else:
+        print(f'libro creato in {cartella} ({n_cap} capitoli previsti); fase «documenti».')
+        print('Prossimo passo: completare bibbia, cronologia, scaletta e piano parole; poi «zb pronto <libro>»,'
+              ' che apre il gate «documenti».')
     return 0
 
 

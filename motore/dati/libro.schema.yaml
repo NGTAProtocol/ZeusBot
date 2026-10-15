@@ -11,7 +11,7 @@ campi:
   sottotitolo: {tipo: testo, nullo: true}
   autore: {tipo: testo, obbligatorio: true}
   lingua: {tipo: testo, obbligatorio: true}
-  modalita: {tipo: scelta, valori: [nuovo, riscrittura], obbligatorio: true}
+  modalita: {tipo: scelta, valori: [nuovo, riscrittura, traduzione], obbligatorio: true}
   serie:
     tipo: mappa
     nullo: true
@@ -25,7 +25,16 @@ campi:
       slug: {tipo: testo, obbligatorio: true}  # voci/<slug>/ della banca-voci
       ambientazione: {tipo: testo}             # regola il dialetto della voce; «altro» se non serve
   profilo: {tipo: testo, obbligatorio: true}
-  gate: {tipo: lista, elementi: {tipo: scelta, valori: [documenti, pagina_campione, primi_capitoli, lotto]}}
+  gate: {tipo: lista, elementi: {tipo: scelta, valori: [struttura, documenti, pagina_campione, primi_capitoli, lotto,
+                                                        revisione_manoscritto, line, copy, bozze, guida]}}
+  percorso: {tipo: scelta, valori: [editoriale, breve]}   # editoriale: motore/editoriale/00-percorso.md
+  lingua_originale: {tipo: testo}
+  lingue_target: {tipo: lista, elementi: {tipo: testo}}
+  traduzione:                                    # solo nel libro della traduzione, 08-traduzione-<lingua>/libro.yaml
+    tipo: mappa
+    campi:
+      da: {tipo: testo, obbligatorio: true}      # cartella del libro originale, relativa (di solito «..»)
+      lingua_originale: {tipo: testo, obbligatorio: true}
   override:
     tipo: lista
     elementi:

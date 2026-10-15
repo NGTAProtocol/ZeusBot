@@ -28,7 +28,7 @@ passo_1:
     mini-libro: OK
     mini-libro-romance: OK
   rifiuti:                       # comune.carica_libro su copie modificate
-    lingua_en: "Lingua «en» non supportata"
+    lingua_en: "Lingua «fr» non supportata"
     lingua_mancante: "Lingua «None» non supportata"
     override_senza_motivo: "override senza motivo"
     profilo_cambiato_senza_override: "valore del profilo cambiato senza override"
@@ -382,8 +382,8 @@ passo_5b:
 
 passo_6:
   struttura:
-    cartelle: ['00-progetto', '01-originale', '02-bibbia', '03-architettura', '04-manoscritto', '05-revisioni', '05-appendici',
-               '05-output', '06-diagnostica', '06-pubblicazione', '.zb']
+    cartelle: ['00-progetto', '01-originale', '02-bibbia', '03-struttura', '03-architettura', '04-manoscritto', '05-revisioni',
+               '05-appendici', '05-output', '06-diagnostica', '06-pubblicazione', '07-capsule', '08-traduzione-*', '.zb']
     nuovo: ['00-progetto', '02-bibbia', '03-architettura']
     riscrittura: "0 / ['00-progetto', '01-originale', '02-bibbia', '03-architettura']"
     nuovo_con_originale: "2 / True / False"

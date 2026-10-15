@@ -3,7 +3,7 @@
 
 Il libro è sempre un percorso: zb <comando> <libro> [argomenti] (oppure ZB_LIBRO=<libro>).
 Ogni comando lancia lo script di motore/script/ con python3 -B e ne restituisce il codice d'uscita.
-Elenco completo: python3 motore/zb aiuto
+Elenco completo: python3 motore/zb aiuto (fonte unica: motore/dati/comandi.yaml)
 """
 import filecmp
 import os
@@ -14,37 +14,25 @@ sys.dont_write_bytecode = True
 MOTORE = os.path.dirname(os.path.abspath(__file__))
 S = os.path.join(MOTORE, 'script')
 
-SCRIPT = {
-    'nuovo': 'nuovo.py', 'adotta': 'adotta.py', 'pulizia': 'pulizia.py', 'avvio': 'avvio.py', 'revisione': 'revisione.py',
-    'capitolo': 'capitolo.py', 'conta': 'conta.py', 'stile': 'stile.py', 'continuita': 'continuita.py',
-    'riciclo': 'riciclo.py', 'compila': 'compila.py', 'impagina': 'impagina.py', 'pdf': 'verifica_pdf.py',
-    'kdp': 'conformita_kdp.py', 'pacchetto': 'pacchetto.py', 'prove': 'prove.py',
-    'separazione': 'separazione.py', 'recinto': 'recinto.py', 'profili': 'valida_profili.py',
-    'ortografia': 'ortografia.py', 'push': 'push.py', 'voce': 'voce.py',
-}
-FASE = ('stato', 'ok', 'avanti', 'correggi', 'riapprova', 'pronto', 'esito', 'fase')
-AIUTO = """Comandi (il libro è sempre un percorso):
-  zb nuovo <briefing>              crea il libro dal briefing
-  zb adotta <cartella>             bozze di libro.yaml, stato, cronologia, nomi da documenti esistenti
-  zb avvio <libro>                 avvio obbligatorio: controlli e riga «Letto: …»
-  zb stato <libro>                 stato del libro (non scrive)
-  zb pronto <libro>                fine del lavoro di una fase: apre il gate o passa oltre
-  zb avanti <libro>                blocco successivo dei documenti del gate
-  zb ok <libro> [lotti da N]       approva il gate aperto
-  zb correggi <libro> <istruzione> registra una correzione; il gate resta aperto
-  zb correggi <libro> <unità>: <motivo> [--commit H]   fuori dal gate: registra data, file, motivo, sha256 precedente
-  zb esito <libro> <N>             controlli del capitolo N e registrazione dell'esito
-  zb riapprova <libro> <documento> <motivo>   modifica autorizzata a un documento già approvato
-  zb fase <libro> stesura --motivo "<testo>"   da «chiusura» a «stesura» se nel piano mancano unità
-  zb revisione <libro> <documento|gate> [N]   blocco N di un documento (non scrive)
-  zb capitolo|conta|stile|continuita|riciclo|compila|impagina|pdf|kdp|pacchetto <libro>
-  zb verifica KDP fatta [AAAA-MM-GG] | zb verifica KDP stato | zb verifica KDP controlla
-  zb hook stato | zb hook attiva [--ok] | zb hook disattiva
-  zb lavoro stato | zb lavoro motore | zb lavoro libro <slug>   recinto dell'hook (libro attivo o motore)
-  zb pulizia <libro> [--applica]   elenco di temporanei, vuote e copie; cancella solo con --applica
-  zb voce lista | zb voce mostra <slug> [N] | zb voce verifica <slug>   banca-voci (ZB_BANCA_VOCI)
-  zb push [--tentativi 4] [--attesa 2]   push del ramo corrente; poi ramo alternativo, poi git bundle
-  zb prove | zb separazione | zb recinto | zb profili"""
+def comandi():
+    """{nome: voce} da dati/comandi.yaml, unica fonte dei comandi."""
+    import yaml
+    with open(os.path.join(MOTORE, 'dati', 'comandi.yaml'), encoding='utf-8') as f:
+        d = yaml.safe_load(f)
+    return {c['nome']: dict(c, gruppo=g['nome']) for g in d['gruppi'] for c in g['comandi']}, d['gruppi']
+
+
+def aiuto(args):
+    elenco, gruppi = comandi()
+    if args and args[0] in elenco:
+        c = elenco[args[0]]
+        print(f'zb {c["uso"]}\n  {c["aiuto"]} (gruppo «{c["gruppo"]}»; script: {c["script"]})')
+        return 0
+    righe = ['Comandi (python3 motore/zb <comando> …; il libro è sempre un percorso). Dettaglio: zb aiuto <comando>']
+    for g in gruppi:
+        righe.append(f'{g["nome"]}: ' + ', '.join(c['nome'] for c in g['comandi']))
+    print('\n'.join(righe))
+    return 0
 
 
 def lancia(script, args):
@@ -112,10 +100,11 @@ def hook(args):
 
 def main(argv):
     if not argv or argv[0] in ('aiuto', '-h', '--help'):
-        print(AIUTO)
-        return 0
+        return aiuto(argv[1:])
     cmd, args = argv[0], argv[1:]
-    if cmd in FASE:
+    elenco, _ = comandi()
+    voce = elenco.get(cmd)
+    if voce and voce['script'] == 'fase':
         if not args and os.environ.get('ZB_LIBRO'):
             args = [os.environ['ZB_LIBRO']]
         if not args:
@@ -129,11 +118,11 @@ def main(argv):
         return hook(args)
     if cmd == 'lavoro':
         return lancia('hook_recinto.py', ['lavoro', *args])
-    if cmd in SCRIPT:
+    if voce and voce['script'].endswith('.py'):
         if cmd in ('avvio',) and not args and os.environ.get('ZB_LIBRO'):
             args = [os.environ['ZB_LIBRO']]
-        return lancia(SCRIPT[cmd], args)
-    print(f'Comando sconosciuto: {cmd}\n\n{AIUTO}', file=sys.stderr)
+        return lancia(voce['script'], args)
+    print(f'Comando sconosciuto: {cmd}. Elenco: zb aiuto', file=sys.stderr)
     return 2
 
 

@@ -36,6 +36,16 @@ DA_LEGGERE = {
     'chiusura': ['03-architettura/scaletta.md', 'cronologia.yaml'],
     'chiuso': [],
 }
+# percorso editoriale: nelle sessioni nuove si legge lo stato compatto e il necessario della fase
+DA_LEGGERE_EDITORIALE = {
+    'struttura': ['00-progetto/briefing.md'],
+    'documenti': ['00-progetto/briefing.md', '03-struttura/01-premessa.md', '03-struttura/09-scelte-fisse.md'],
+    'pagina_campione': ['03-struttura/09-scelte-fisse.md', '05-revisioni/pagina-campione.md'],
+    'stesura': ['03-struttura/09-scelte-fisse.md', '07-capsule/registro.md'],
+    'revisione_manoscritto': ['07-capsule/registro.md'], 'line': [], 'copy': [], 'bozze': [],
+    'guida': ['00-progetto/guida-traduzione.md', '00-progetto/glossario.yaml'], 'fedelta': [],
+    'chiusura': [], 'chiuso': [],
+}
 
 
 def ferma(msg):
@@ -53,6 +63,39 @@ def briefing_senza_libro(percorso):
                 ferma(f'Nessun libro.yaml: c\'è solo il briefing {c}, incompleto. Mancano:\n- ' + '\n- '.join(manca))
             ferma(f'Nessun libro.yaml: il briefing {c} è completo. Per creare il libro: zb nuovo {c}')
     return None
+
+
+def recinto_git(cartella):
+    """Cartella unica: nessun file modificato fuori da libri/<slug>/ (modifiche non salvate in tutto il repository,
+    anche scritte da Bash o da uno script) e nessun file fuori dal libro cambiato dai commit del ramo rispetto a
+    origin/motore (esclusi i file che il motore stesso installa). Solo per un libro in libri/<slug>/."""
+    import hook_recinto
+    import precommit
+    rad = comune.radice_git(cartella)
+    if os.path.dirname(cartella) != os.path.join(rad, 'libri'):
+        return
+    slug = os.path.basename(cartella)
+    attivo = hook_recinto.slug_attivo(rad)
+    if attivo and attivo != slug:
+        ferma(f'Libro attivo: libri/{attivo}/, non libri/{slug}/. Un solo libro per sessione: per cambiare '
+              f'«zb lavoro libro {slug}» e un nuovo zb avvio.')
+    if hook_recinto.lavoro(rad) == 'motore':
+        ferma('Lavoro sul motore in corso: per lavorare sul libro «zb lavoro libro ' + slug + '».')
+    fuori = [p for p in precommit.modificati(rad)
+             if not p.startswith(f'libri/{slug}/') and p not in precommit.EXTRA_LIBRO]
+    if fuori:
+        ferma('Modifiche fuori dalla cartella del libro (il libro non scrive altrove):\n- ' + '\n- '.join(fuori[:20]))
+    if comune.git(rad, 'rev-parse', '-q', '--verify', 'origin/motore')[0] == 0:
+        diff = comune.git(rad, 'diff', '--name-only', 'origin/motore...HEAD')[1].splitlines()
+        altri = [p for p in diff if not p.startswith('libri/') and not any(
+            p == e or (e.endswith('/') and p.startswith(e)) for e in precommit.EXTRA_LIBRO)]
+        libri_altri = sorted({p.split('/')[1] for p in diff if p.startswith('libri/') and p.count('/') > 1
+                              and p.split('/')[1] != slug})
+        if altri:
+            print('AVVISO: il ramo cambia file fuori dai libri rispetto a origin/motore: ' + ', '.join(altri[:8])
+                  + ' (se non è un merge del motore dichiarato, va riportato all\'autore).')
+        if libri_altri:
+            print(f'AVVISO: il ramo contiene altri libri ({", ".join(libri_altri)}): questo libro non li legge.')
 
 
 def riga_file(cartella, rel, etichetta=None):
@@ -92,6 +135,7 @@ def controlla(percorso):
     codice, out, _ = comune.git(cartella, 'status', '--porcelain', '--', '.')
     if out:
         ferma('Modifiche non salvate nel libro (tieni o scarta? non scarto nulla da solo):\n' + out)
+    recinto_git(cartella)
     codice, conti, err = comune.git(cartella, 'rev-list', '--left-right', '--count', 'HEAD...@{u}')
     if codice != 0:
         ferma(f'Nessun ramo remoto collegato a «{ramo}»: {err}')
@@ -113,6 +157,14 @@ def controlla(percorso):
             ferma('Briefing incompleto. Mancano:\n- ' + '\n- '.join(manca))
     cambiati = [rel for rel, v in stato['documenti_approvati'].items()
                 if not comune.documento_invariato(os.path.join(cartella, rel), v['sha256'], v.get('commit'))]
+    import percorso
+    in_revisione = []
+    if percorso.attivo(libro) and stato['fase'] in percorso.REVISIONI:
+        in_revisione = [rel for rel in cambiati if percorso.testo_in_revisione(rel)]
+        cambiati = [rel for rel in cambiati if rel not in in_revisione]
+    if in_revisione:
+        print(f'AVVISO: {len(in_revisione)} capitoli cambiati nella fase «{stato["fase"]}» (li registra «zb pronto» '
+              'a fine fase).')
     if cambiati:
         ferma('Documenti approvati cambiati fuori procedura (sha256 diverso da quello registrato):\n- '
               + '\n- '.join(cambiati) + '\nSe la modifica è autorizzata dall\'autore: salvala con un commit, poi '
@@ -120,13 +172,24 @@ def controlla(percorso):
 
     # 4. file da leggere
     letti, sha = [], {}
+    avvisi_capsule = []
     elenco = ['libro.yaml', 'stato.yaml', 'LEGGIMI.md', '03-architettura/manuale-di-stile.md']
-    elenco += DA_LEGGERE[stato['fase']]
+    if comune.editoriale(libro):
+        elenco += ['stato-compatto.md'] + DA_LEGGERE_EDITORIALE[stato['fase']]
+    else:
+        elenco += DA_LEGGERE[stato['fase']]
     if libro.get('voce'):
         elenco.append('00-progetto/briefing.md')
     if libro.get('modalita') == 'riscrittura':
         elenco.append(libro['testo_precedente'])
-    if stato['fase'] == 'stesura' and stato['ultimo_capitolo_scritto']:
+    if comune.editoriale(libro) and stato['fase'] == 'stesura':
+        import capsula
+        senza = [n for n in range(1, (stato['ultimo_capitolo_scritto'] or 0) + 1)
+                 if capsula.problemi_capsula(cartella, libro, n)]
+        if senza:
+            avvisi_capsule.append('capsule mancanti o incomplete: ' + ', '.join(map(str, senza))
+                                  + ' (zb capsula <libro> N; zb esito non va avanti senza)')
+    if stato['fase'] == 'stesura' and stato['ultimo_capitolo_scritto'] and not comune.editoriale(libro):
         u = dict(comune.unita(cartella, libro)).get(str(stato['ultimo_capitolo_scritto']))
         if u:
             elenco.append(os.path.relpath(u, cartella))
@@ -139,9 +202,9 @@ def controlla(percorso):
     r, s = riga_file(cartella, pp, f'profilo {libro["profilo"]}')
     letti.append(r)
     sha[f'profilo {libro["profilo"]}'] = s
-    avvisi = []
+    avvisi = list(avvisi_capsule)
     if libro.get('voce'):
-        avvisi = scheda_voce(libro['voce'], letti, sha)
+        avvisi += scheda_voce(libro['voce'], letti, sha)
     libro_commit = comune.git(cartella, 'log', '-1', '--format=%h «%s»')[1]
     motore_commit = comune.git(comune.radice_motore(), 'log', '-1', '--format=%h')[1] or 'fuori da git'
     return cartella, libro, stato, letti, sha, libro_commit, motore_commit, ramo, avvisi
@@ -163,11 +226,43 @@ def scheda_voce(v, letti, sha):
     return [f'voce «{slug}»: {x}' for x in problemi]
 
 
+def avvio_motore():
+    """«zb avvio» senza libro: lavoro sul motore. Controlli e riga «Letto»; non scrive nulla."""
+    import hook_recinto
+    import precommit
+    rad = comune.radice_git(comune.radice_motore())
+    if hook_recinto.lavoro(rad) != 'motore':
+        ferma('Nessun libro indicato e lavoro sul motore non dichiarato. Per un libro: zb avvio libri/<slug>. '
+              'Per il motore, solo se l\'autore ha scritto «lavoro sul motore»: zb lavoro motore.')
+    ramo = comune.ramo(rad)
+    codice, out, err = comune.git(rad, 'status', '--porcelain')
+    problemi = []
+    if os.path.isdir(os.path.join(rad, 'libri')):
+        problemi.append('c\'è una cartella libri/: il ramo del motore non contiene libri')
+    for rel in ('.claude/agents', '.claude/commands', '.claude/settings.json'):
+        if os.path.exists(os.path.join(rad, rel)):
+            problemi.append(f'{rel}: agenti, comandi e hook restano spenti sul ramo del motore')
+    c2, conti, _ = comune.git(rad, 'rev-list', '--left-right', '--count', 'HEAD...@{u}')
+    allineato = 'sì' if c2 == 0 and conti.split() == ['0', '0'] else (f'no ({conti})' if c2 == 0 else 'nessun remoto')
+    letti = []
+    for rel in ('CLAUDE.md', 'motore/PROCEDURA.md', 'motore/passaggio-di-consegne.md', 'motore/editoriale/LEGGIMI.md'):
+        p = os.path.join(rad, rel)
+        if os.path.isfile(p):
+            letti.append(riga_file(rad, p, rel)[0])
+    print(f'Lavoro sul motore. Ramo: {ramo}; allineato a origin: {allineato}; modifiche non salvate: '
+          f'{len(out.splitlines()) if out else 0}; controllo pre-commit: {precommit.stato(rad)}.')
+    print('Letto: ' + ', '.join(letti) + ';')
+    print(f'motore @ {comune.git(rad, "log", "-1", "--format=%h «%s»")[1]}.')
+    for x in problemi:
+        print(f'FERMO: {x}')
+    return 2 if problemi else 0
+
+
 def main(argv):
     args = comune.argomenti(argv)
     percorso = args[0] if args else os.environ.get('ZB_LIBRO')
     if not percorso:
-        raise comune.ErroreMotore('Uso: avvio.py <libro> (oppure ZB_LIBRO=<libro>)')
+        return avvio_motore()
     cartella, libro, stato, letti, sha, libro_commit, motore_commit, ramo, avvisi_voce = controlla(percorso)
     print(f'Ramo: {ramo}; allineato a origin: sì')
     print('Letto: ' + ', '.join(letti) + ';')

@@ -7,7 +7,7 @@ radice:
 cartelle:
   00-progetto:
     scopo: briefing e note dell'autore
-    modalita: [nuovo, riscrittura]
+    modalita: [nuovo, riscrittura, traduzione]
     creazione: zb nuovo (briefing.md)
   01-originale:
     scopo: testo precedente da riscrivere (registro dei fatti, mai modificato dal motore)
@@ -17,13 +17,17 @@ cartelle:
     scopo: bibbia (personaggi, luoghi, fatti canonici)
     modalita: [nuovo, riscrittura]
     creazione: zb nuovo (bibbia.md)
+  03-struttura:
+    scopo: i nove file della fase struttura (percorso editoriale), tra cui scaletta e piano parole
+    modalita: [nuovo, riscrittura, traduzione]
+    creazione: zb nuovo (modelli da scrivere), fase struttura
   03-architettura:
-    scopo: manuale di stile, scaletta, piano parole
-    modalita: [nuovo, riscrittura]
+    scopo: manuale di stile; nel percorso breve anche scaletta e piano parole
+    modalita: [nuovo, riscrittura, traduzione]
     creazione: zb nuovo
   04-manoscritto:
     scopo: capitoli (NN-slug.md, prologo, interludi, epilogo)
-    modalita: [nuovo, riscrittura]
+    modalita: [nuovo, riscrittura, traduzione]
     creazione: primo capitolo, fase stesura
   05-revisioni:
     scopo: pagina campione e materiali di revisione
@@ -35,17 +39,25 @@ cartelle:
     creazione: l'autore o Claude Code, quando il libro ha soluzioni, mappe, glossari o note
   05-output:
     scopo: manoscritto completo e PDF
-    modalita: [nuovo, riscrittura]
+    modalita: [nuovo, riscrittura, traduzione]
     creazione: zb compila / zb impagina, fase chiusura
   06-diagnostica:
     scopo: report dei controlli (capitoli, stile, continuità, ortografia, adozione)
-    modalita: [nuovo, riscrittura]
+    modalita: [nuovo, riscrittura, traduzione]
     creazione: primo report (zb esito, zb adotta, …)
   06-pubblicazione:
     scopo: pacchetto KDP e conformità
-    modalita: [nuovo, riscrittura]
+    modalita: [nuovo, riscrittura, traduzione]
     creazione: zb pacchetto / zb kdp, fase chiusura
+  07-capsule:
+    scopo: capsule di continuità (NN.md, circa 180 parole) e registro.md (promesse e fatti stabiliti)
+    modalita: [nuovo, riscrittura, traduzione]
+    creazione: zb capsula, dopo ogni capitolo accettato
+  08-traduzione-*:
+    scopo: traduzione in una lingua (libro di traduzione con il suo libro.yaml); per esempio 08-traduzione-en
+    modalita: [nuovo, riscrittura]
+    creazione: zb traduci <libro> --a <lingua>
   .zb:
     scopo: marker di sessione e log degli hook (ignorata da git)
-    modalita: [nuovo, riscrittura]
+    modalita: [nuovo, riscrittura, traduzione]
     creazione: zb avvio

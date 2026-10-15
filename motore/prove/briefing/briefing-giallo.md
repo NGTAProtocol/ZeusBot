@@ -38,6 +38,7 @@ Intestazione capitolo: Luogo — giorno e data
 Separatore di scena: * * *
 Formato: 5.5 x 8.5
 Anni ammessi: 2019
+Percorso: breve
 Gate: documenti, pagina_campione, primi_capitoli
 Tetti:
 - come se | 2 | capitolo

@@ -39,9 +39,10 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 import conta  # noqa: E402
+import percorso  # noqa: E402
 import revisione  # noqa: E402
 
-FASI = ['documenti', 'pagina_campione', 'stesura', 'chiusura', 'chiuso']
+FASI = percorso.FASI          # il percorso breve usa documenti, pagina_campione, stesura, chiusura, chiuso
 GATE_PREDEFINITI = ['documenti', 'pagina_campione', 'primi_capitoli']
 CHIUSURA = [('06-diagnostica/continuita.md', 'zb continuita'),
             ('06-diagnostica/controllo-ortografico.md', 'zb ortografia'),
@@ -90,7 +91,7 @@ def gate_attivi(libro):
 
 
 def capitoli_previsti(cartella):
-    p = os.path.join(cartella, '03-architettura', 'piano-parole.md')
+    p = os.path.join(cartella, comune.rel_piano(cartella))
     if not os.path.isfile(p):
         return 0
     return len(set(re.findall(r'(?m)^\|[^|\n]*\|\s*(\d+)\s*\|', open(p, encoding='utf-8').read())))
@@ -98,7 +99,7 @@ def capitoli_previsti(cartella):
 
 def unita_del_piano(cartella):
     """Unità di piano-parole.md (colonna «Cap.») in ordine: «prologo», «1», «interludio I», «epilogo»…"""
-    p = os.path.join(cartella, '03-architettura', 'piano-parole.md')
+    p = os.path.join(cartella, comune.rel_piano(cartella))
     if not os.path.isfile(p):
         return []
     intest, out = None, []
@@ -148,6 +149,9 @@ def prossimo(stato):
     g, f = stato['gate_in_attesa'], stato['fase']
     if g:
         return f'Gate «{g}» aperto: avanti, ok, correggi: … oppure stato.'
+    e = percorso.prossimo(stato)
+    if e:
+        return e
     return {'documenti': 'Completa bibbia, cronologia, scaletta e piano parole; poi «zb pronto <libro>».',
             'pagina_campione': 'Scrivi 05-revisioni/pagina-campione.md secondo il manuale; poi «zb pronto <libro>».',
             'stesura': f'Prossimo: {stato["passo"]}. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».',
@@ -242,6 +246,9 @@ def dopo_capitolo(cartella, libro, stato):
             stato['passo'] = passo_di(mancanti[0])
             print(f'Capitoli scritti; mancano ancora: {", ".join(mancanti)}. La fase resta «stesura».')
             return
+        if percorso.attivo(libro):
+            percorso.dopo_stesura(stato, libro)
+            return
         stato.update(fase='chiusura', passo='controlli finali', gate_in_attesa=None)
         print(f'Tutte le unità del piano sono scritte e accettate: fase «chiusura».')
 
@@ -283,6 +290,8 @@ def cmd_pronto(cartella, libro, stato):
     if stato['gate_in_attesa']:
         raise comune.ErroreMotore(f'Gate «{stato["gate_in_attesa"]}» già aperto: avanti, ok o correggi.')
     fase = stato['fase']
+    if percorso.attivo(libro) and percorso.pronto(cartella, libro, stato, fase):
+        return
     if fase in ('documenti', 'pagina_campione'):
         docs = revisione.documenti_del_gate(cartella, libro, stato, fase)
         manca = [d for d in docs if not os.path.isfile(os.path.join(cartella, d))]
@@ -335,7 +344,9 @@ def cmd_ok(cartella, libro, stato, resto):
     stato['revisione_in_corso'] = None
     stato['gate_in_attesa'] = None
     print(f'Gate «{gate}» approvato: {len(docs)} documenti registrati con sha256 e commit.')
-    if gate in ('documenti', 'pagina_campione'):
+    if percorso.dopo_ok(cartella, libro, stato, gate):
+        pass
+    elif gate in ('documenti', 'pagina_campione'):
         chiudi_fase(cartella, libro, stato)
     elif gate in ('primi_capitoli', 'lotto'):
         numerici = [int(c) for c in stato['lotto']['capitoli'] if str(c).isdigit()]
@@ -523,7 +534,7 @@ def aggiorna_piano(cartella, libro, n):
     """Scrive in piano-parole.md le misure dell'unità n («Parole reali», «Scarto») e il «Totale previsto».
 
     Sono colonne di misura, escluse dall'impronta del documento approvato: nessuna riapprovazione."""
-    rel = '03-architettura/piano-parole.md'
+    rel = comune.rel_piano(cartella)
     p = os.path.join(cartella, rel)
     u = dict(comune.unita(cartella, libro)).get(n)
     if not os.path.isfile(p) or not u:
@@ -572,12 +583,19 @@ def aggiorna_piano(cartella, libro, n):
     return cambiata
 
 
+def comando_controlli(cartella, libro, n, extra):
+    """capitolo.py; per un libro di traduzione i controlli meccanici della traduzione (traduci.py controlla)."""
+    d = os.path.dirname(os.path.abspath(__file__))
+    if percorso.traduzione(libro):
+        return [sys.executable, '-B', os.path.join(d, 'traduci.py'), cartella, '--a', libro['lingua'], 'controlla', n, *extra]
+    return [sys.executable, '-B', os.path.join(d, 'capitolo.py'), cartella, *n.split(), *extra]
+
+
 def esito_in_chiusura(cartella, libro, stato, n, argv):
     """In «chiusura», esito su un'unità già scritta (dopo una correzione): rifà i controlli, aggiorna piano e
     parole, non tocca fase, passo, tentativi e gate."""
     extra = ['--radice', argv[argv.index('--radice') + 1]] if '--radice' in argv else []
-    r = subprocess.run([sys.executable, '-B', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'capitolo.py'),
-                        cartella, *n.split(), *extra], capture_output=True, text=True)
+    r = subprocess.run(comando_controlli(cartella, libro, n, extra), capture_output=True, text=True)
     if r.returncode not in (0, 1):
         raise comune.ErroreMotore(f'capitolo.py {n} non eseguito: {r.stderr.strip() or r.stdout.strip()}')
     riga_piano = aggiorna_piano(cartella, libro, n)
@@ -585,9 +603,38 @@ def esito_in_chiusura(cartella, libro, stato, n, argv):
         print(f'Piano parole aggiornato (misure, senza riapprovazione): {riga_piano}')
     stato['parole']['scritte'] = parole_scritte(cartella, libro)
     rep = f'06-diagnostica/capitoli/{revisione.nome_report(n)}.md'
-    print(f'Unità {n} ricontrollata in fase «chiusura»: controlli {"OK" if r.returncode == 0 else "KO"} '
+    print(f'Unità {n} ricontrollata in fase «{stato["fase"]}»: controlli {"OK" if r.returncode == 0 else "KO"} '
           f'(report: {rep}); la fase non cambia.')
     return r.returncode
+
+
+def controlli_editoriali_stesura(cartella, stato, n):
+    """Percorso editoriale, fase stesura: la scrittura non include revisione; capsula del capitolo precedente."""
+    for d in ('line', 'copy'):
+        p = os.path.join(cartella, '06-diagnostica', d)
+        if os.path.isdir(p) and any(f.endswith('.md') for f in os.listdir(p)):
+            raise comune.ErroreMotore(f'06-diagnostica/{d}/ ha già dei rapporti in fase «stesura»: la scrittura non '
+                                      'include line editing né copyediting (fasi «line» e «copy», dopo la revisione '
+                                      'del manoscritto). Togli quei rapporti.')
+    if n.isdigit() and int(n) > 1:
+        cap = os.path.join(cartella, '07-capsule', f'{int(n) - 1:02d}.md')
+        if not os.path.isfile(cap) or comune.MODELLO in open(cap, encoding='utf-8').read():
+            raise comune.ErroreMotore(f'Manca la capsula del capitolo {int(n) - 1} (07-capsule/{int(n) - 1:02d}.md): '
+                                      f'«zb capsula <libro> {int(n) - 1}» e l\'agente capsula, prima del capitolo {n}.')
+
+
+def avviso_lunghezze(cartella, libro):
+    """Varietà strutturale: AVVISO se gli ultimi tre capitoli scritti hanno lunghezze quasi uguali (±5% dalla media)."""
+    num = [(int(u), p) for u, p in comune.unita(cartella, libro) if u.isdigit()]
+    num.sort()
+    if len(num) < 3:
+        return None
+    ult = [conta.conta_testo(open(p, encoding='utf-8').read()) for _, p in num[-3:]]
+    media = sum(ult) / 3
+    if media and max(abs(x - media) for x in ult) <= 0.05 * media:
+        return (f'AVVISO lunghezze_uguali: capitoli {", ".join(str(n) for n, _ in num[-3:])} di lunghezza quasi uguale '
+                f'({", ".join(map(str, ult))} parole): la lunghezza nasce dalla funzione del capitolo.')
+    return None
 
 
 def cmd_esito(cartella, libro, stato, resto, argv):
@@ -596,8 +643,13 @@ def cmd_esito(cartella, libro, stato, resto, argv):
     n = ' '.join(resto)
     n = str(int(n)) if n.isdigit() else n
     gate = stato['gate_in_attesa']
-    if stato['fase'] == 'chiusura' and n.lower() in {u.lower() for u, _ in comune.unita(cartella, libro)}:
+    scritte = {u.lower() for u, _ in comune.unita(cartella, libro)}
+    if stato['fase'] == 'chiusura' and n.lower() in scritte:
         return esito_in_chiusura(cartella, libro, stato, n, argv)
+    if percorso.attivo(libro) and stato['fase'] in percorso.REVISIONI and n.lower() in scritte:
+        return esito_in_chiusura(cartella, libro, stato, n, argv)
+    if percorso.attivo(libro) and stato['fase'] == 'stesura' and not percorso.traduzione(libro):
+        controlli_editoriali_stesura(cartella, stato, n)
     if stato['fase'] != 'stesura':
         mancanti = unita_mancanti(cartella, libro, stato) if stato['fase'] == 'chiusura' else []
         extra = (f' Mancano unità del piano ({", ".join(mancanti)}): «zb fase <libro> stesura --motivo "…"».'
@@ -611,13 +663,21 @@ def cmd_esito(cartella, libro, stato, resto, argv):
     if gate and not correzione and not (gate == 'controllo_fallito' and str(stato['passo']) == f'capitolo {n}'):
         raise comune.ErroreMotore(f'Gate «{gate}» aperto: prima ok o correggi.')
     extra = ['--radice', argv[argv.index('--radice') + 1]] if '--radice' in argv else []
-    r = subprocess.run([sys.executable, '-B', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'capitolo.py'),
-                        cartella, *n.split(), *extra], capture_output=True, text=True)
+    r = subprocess.run(comando_controlli(cartella, libro, n, extra), capture_output=True, text=True)
     if r.returncode not in (0, 1):
         raise comune.ErroreMotore(f'capitolo.py {n} non eseguito: {r.stderr.strip() or r.stdout.strip()}')
     riga_piano = aggiorna_piano(cartella, libro, n)
     if riga_piano:
         print(f'Piano parole aggiornato (misure, senza riapprovazione): {riga_piano}')
+    if percorso.attivo(libro) and not percorso.traduzione(libro):
+        a = avviso_lunghezze(cartella, libro)
+        if a:
+            print(a)
+        import antiia
+        es = antiia.audit(cartella, libro, n).get(n)
+        if es:
+            print('Anti-IA (audit, testo intatto): ' + ('; '.join(f'{g} {k}' for k, g, _ in es[1]) or 'nessuna segnalazione')
+                  + f' (06-diagnostica/anti-ia/{revisione.nome_report(n)}.md).')
     if correzione:
         stato['parole']['scritte'] = parole_scritte(cartella, libro)
         print(f'Capitolo {n} corretto al gate «{gate}»: controlli {"OK" if r.returncode == 0 else "KO"}; '
@@ -671,9 +731,14 @@ def main(argv):
                 codice = cmd_esito(cartella, libro, stato, resto, argv)
             elif comando == 'fase':
                 cmd_fase(cartella, libro, stato, resto)
+            elif comando == 'canone':
+                if resto[:1] == ['gate']:
+                    percorso.apri_gate_canone(cartella, libro, stato)
+                else:
+                    percorso.canone(cartella, libro, stato, resto)
             else:
                 raise comune.ErroreMotore(f'Comando sconosciuto: {comando}. Comandi: stato, avanti, ok, correggi, '
-                                          'riapprova, pronto, esito, fase.')
+                                          'riapprova, pronto, esito, fase, canone.')
     except comune.ErroreMotore:
         sys.stdout.write(uscita.getvalue())
         raise

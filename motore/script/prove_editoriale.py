@@ -1,0 +1,483 @@
+"""Prove del percorso da casa editrice (le lancia prove.py; da sola: python3 -B prove_editoriale.py).
+
+Mini-libro inventato prove/mini-libro-editoriale/ (autrice inventata) in un repository temporaneo con origin:
+struttura e gate, ruoli e separazione scrittore/revisore, capsule, codex, canone, stato compatto, fasi di
+revisione (manoscritto, line, copy, bozze), cartella unica e recinto (anche Bash e pre-commit), agenti spenti
+sul ramo motore, comandi di Claude Code, anti-IA, correttore, traduzione in inglese con i controlli meccanici.
+Gli attesi stanno accanto a ogni controllo.
+"""
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+
+import yaml
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import comune  # noqa: E402
+
+M = comune.radice_motore()
+S = os.path.join(M, 'script')
+F = os.path.join(M, 'prove', 'mini-libro-editoriale')
+SLUG = 'lanterna'
+TOGLI = ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')
+E = {k: v for k, v in os.environ.items() if k not in TOGLI}
+E.update(ZB_PROVE='1', PYTHONDONTWRITEBYTECODE='1', GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+         GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+righe = []
+TMP = None
+
+
+def esito(script, controllo, atteso, ottenuto, sezione):
+    righe.append((sezione, script, controllo, str(atteso), str(ottenuto), 'OK' if str(atteso) == str(ottenuto) else 'KO'))
+
+
+def saltata(script, controllo, motivo, sezione):
+    righe.append((sezione, script, controllo, '—', motivo, 'SALTATA'))
+
+
+def zb(cwd, *a, env=None):
+    return subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), *a], cwd=cwd, env=env or E,
+                          capture_output=True, text=True)
+
+
+def git(cwd, *a):
+    return subprocess.run(['git', *a], cwd=cwd, env=E, capture_output=True, text=True)
+
+
+def repo(ramo='prova'):
+    d = tempfile.mkdtemp(dir=TMP)
+    git(d, 'init', '-q', '--bare', 'remoto.git')
+    r = os.path.join(d, 'repo')
+    os.makedirs(r)
+    git(r, 'init', '-q')
+    git(r, 'checkout', '-q', '-b', ramo)
+    git(r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git'))
+    open(os.path.join(r, 'LEGGIMI.md'), 'w').write('repository di prova\n')
+    salva(r, 'inizio')
+    return r
+
+
+def salva(r, msg='prova', *percorsi):
+    git(r, 'add', *(percorsi or ['-A']))
+    p = git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', msg)
+    git(r, 'push', '-q', '-u', 'origin', 'HEAD')
+    return p
+
+
+def copia(src, dest):
+    os.makedirs(dest, exist_ok=True)
+    for f in sorted(os.listdir(src)):
+        if os.path.isfile(os.path.join(src, f)):
+            shutil.copyfile(os.path.join(src, f), os.path.join(dest, f))
+
+
+def stato(L):
+    return comune.leggi_yaml(os.path.join(L, 'stato.yaml'))
+
+
+def fino_alla_fine(L):
+    """«avanti» finché i documenti del gate sono mostrati tutti (poi «ok» è ammesso)."""
+    for _ in range(200):
+        p = zb(L, 'avanti', '.')
+        if 'Fine dei documenti' in p.stdout or p.returncode:
+            return p
+    return p
+
+
+def intesta(L, sorgente, dest, ruolo, n=None):
+    """Copia un rapporto di prova con la prima riga data da «zb ruolo»."""
+    p = zb(L, 'ruolo', '.', ruolo, *([str(n)] if n else []))
+    riga = next((x.split('Prima riga: ', 1)[1] for x in p.stdout.splitlines() if x.startswith('Prima riga: ')), None)
+    if riga is None:
+        return p
+    testo = open(sorgente, encoding='utf-8').read().split('\n', 1)[1]
+    os.makedirs(os.path.dirname(os.path.join(L, dest)), exist_ok=True)
+    open(os.path.join(L, dest), 'w', encoding='utf-8').write(riga + '\n' + testo)
+    return p
+
+
+def nasce(r):
+    L = os.path.join(r, 'libri', SLUG)
+    os.makedirs(L)
+    shutil.copyfile(os.path.join(F, 'briefing.md'), os.path.join(L, 'briefing.md'))
+    p = zb(r, 'nuovo', f'libri/{SLUG}/briefing.md')
+    return L, p
+
+
+# ---------------------------------------------------------------- percorso completo
+
+def percorso(sez='percorso editoriale'):
+    r = repo()
+    L, p = nasce(r)
+    esito('nuovo.py', 'nascita: codice / fase / file di 03-struttura con il modello',
+          '0 / struttura / 9', f'{p.returncode} / {stato(L)["fase"]} / '
+          f'{sum(comune.MODELLO in open(os.path.join(L, "03-struttura", f)).read() for f in comune.FILE_STRUTTURA)}', sez)
+    lb = comune.leggi_yaml(os.path.join(L, 'libro.yaml'))
+    esito('nuovo.py', 'libro.yaml: percorso, lingua, lingue_target, gate', "editoriale / it / ['en'] / 8",
+          f'{lb.get("percorso")} / {lb["lingua_originale"]} / {lb["lingue_target"]} / {len(lb["gate"])}', sez)
+    esito('nuovo.py', 'codex dal briefing (schede @char)', 3, len(os.listdir(os.path.join(L, '02-bibbia', 'codex'))), sez)
+    esito('nuovo.py', 'canone iniziale dai fatti canonici', 1, len(stato(L)['fatti_bloccati']), sez)
+    salva(r, 'nascita')
+    p = zb(L, 'pronto', '.')
+    esito('fase.py', 'pronto con la struttura ancora modello: FERMO', '2 / True',
+          f'{p.returncode} / {"ancora modello" in p.stderr}', sez)
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'nessun capitolo prima del gate struttura', '2 / True', f'{p.returncode} / {"stesura" in p.stderr}', sez)
+    p = zb(L, 'ruolo', '.', 'line-editor', '1')
+    esito('ruolo.py', 'line-editor in fase struttura: rifiutato', '2 / True', f'{p.returncode} / {"non lavora" in p.stderr}', sez)
+    copia(os.path.join(F, 'struttura'), os.path.join(L, '03-struttura'))
+    copia(os.path.join(F, 'codex'), os.path.join(L, '02-bibbia', 'codex'))
+    p = zb(L, 'struttura', '.', 'verifica')
+    esito('struttura.py', 'struttura scritta: verifica', '0 / Struttura: OK', f'{p.returncode} / {p.stdout.strip().splitlines()[-1]}', sez)
+    salva(r, 'architetto: struttura')
+    p = zb(L, 'pronto', '.')
+    esito('percorso.py', 'pronto senza diagnosi e piano: FERMO', '2 / True', f'{p.returncode} / {"diagnosi-struttura.md: manca" in p.stderr}', sez)
+    # separazione: diagnosi salvata nello stesso commit di una modifica alla struttura
+    intesta(L, os.path.join(F, 'rapporti', 'diagnosi-struttura.md'), '06-diagnostica/diagnosi-struttura.md', 'diagnosta')
+    intesta(L, os.path.join(F, 'rapporti', 'revisione-struttura.md'), '06-diagnostica/revisione-struttura.md',
+            'editor-strutturale')
+    open(os.path.join(L, '03-struttura', '07-tensione-ritmo.md'), 'a').write('\n')
+    intesta(L, os.path.join(F, 'rapporti', 'diagnosi-struttura.md'), '06-diagnostica/diagnosi-struttura.md', 'diagnosta')
+    intesta(L, os.path.join(F, 'rapporti', 'revisione-struttura.md'), '06-diagnostica/revisione-struttura.md',
+            'editor-strutturale')
+    salva(r, 'struttura e diagnosi insieme')
+    p = zb(L, 'pronto', '.')
+    esito('percorso.py', 'diagnosi nello stesso commit della struttura: FERMO (chi scrive non rivede)', '2 / True',
+          f'{p.returncode} / {"stesso commit" in p.stderr}', sez)
+    git(r, 'rm', '-q', f'libri/{SLUG}/06-diagnostica/diagnosi-struttura.md', f'libri/{SLUG}/06-diagnostica/revisione-struttura.md')
+    salva(r, 'tolti i rapporti')
+    intesta(L, os.path.join(F, 'rapporti', 'diagnosi-struttura.md'), '06-diagnostica/diagnosi-struttura.md', 'diagnosta')
+    salva(r, 'diagnosta')
+    intesta(L, os.path.join(F, 'rapporti', 'revisione-struttura.md'), '06-diagnostica/revisione-struttura.md',
+            'editor-strutturale')
+    salva(r, 'editor strutturale')
+    p = zb(L, 'pronto', '.')
+    esito('fase.py', 'pronto: gate struttura aperto', '0 / struttura', f'{p.returncode} / {stato(L)["gate_in_attesa"]}', sez)
+    p = zb(L, 'ok', '.')
+    esito('fase.py', 'ok prima di aver mostrato tutto: rifiutato', 2, p.returncode, sez)
+    fino_alla_fine(L)
+    p = zb(L, 'ok', '.')
+    esito('fase.py', 'ok al gate struttura: fase documenti', '0 / documenti', f'{p.returncode} / {stato(L)["fase"]}', sez)
+    salva(r, 'gate struttura')
+    p = zb(L, 'pronto', '.')
+    fino_alla_fine(L)
+    p = zb(L, 'ok', '.')
+    esito('fase.py', 'gate documenti (bibbia, codex, cronologia, manuale): ok', '0 / pagina_campione',
+          f'{p.returncode} / {stato(L)["fase"]}', sez)
+    open(os.path.join(L, '05-revisioni', 'pagina-campione.md'), 'w').write(
+        '# Pagina campione\n\nIl molo era grigio. Nives contò i colpi della catena fino a dieci.\n')
+    salva(r, 'pagina campione')
+    zb(L, 'pronto', '.')
+    fino_alla_fine(L)
+    zb(L, 'ok', '.')
+    salva(r, 'gate pagina campione')
+    esito('fase.py', 'dopo la pagina campione: stesura', 'stesura', stato(L)['fase'], sez)
+    # stesura con capsule
+    p = zb(L, 'prepara', '.', '1')
+    esito('prepara.py', 'prepara 1: scheda completa', 0, p.returncode, sez)
+    prep = open(os.path.join(L, '06-diagnostica', 'preparazione', '01.md')).read()
+    esito('prepara.py', 'prepara 1: codex filtrato per i tag della scena', '3 / False',
+          f'{prep.count("02-bibbia/codex/")} / {"elda-corte" in prep}', sez)
+    m = os.path.join(L, '04-manoscritto')
+    os.makedirs(m)
+    shutil.copyfile(os.path.join(F, 'capitoli', '01-il-molo.md'), os.path.join(m, '01-il-molo.md'))
+    salva(r, 'scrittore: capitolo 1')
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'esito 1: controlli OK', 0, p.returncode, sez)
+    salva(r, 'esito 1')
+    p = zb(L, 'prepara', '.', '2')
+    esito('prepara.py', 'prepara 2 senza la capsula 1: FERMO', '2 / True', f'{p.returncode} / {"Capsula" in p.stderr}', sez)
+    shutil.copyfile(os.path.join(F, 'capitoli', '02-il-registro.md'), os.path.join(m, '02-il-registro.md'))
+    p = zb(L, 'esito', '.', '2')
+    esito('fase.py', 'esito 2 senza la capsula 1: FERMO', '2 / True', f'{p.returncode} / {"capsula" in p.stderr}', sez)
+    os.remove(os.path.join(m, '02-il-registro.md'))
+    p = zb(L, 'capsula', '.', '1')
+    esito('capsula.py', 'capsula 1: modello preparato con il codex nominato', '0 / True',
+          f'{p.returncode} / {"@char:basilio-corte" in open(os.path.join(L, "07-capsule", "01.md")).read()}', sez)
+    p = zb(L, 'capsula', '.', '1', '--verifica')
+    esito('capsula.py', 'capsula 1 ancora modello: KO', 1, p.returncode, sez)
+    for n in (1, 2, 3):
+        if n > 1:
+            nome = {2: '02-il-registro.md', 3: '03-la-lanterna.md'}[n]
+            zb(L, 'prepara', '.', str(n))
+            shutil.copyfile(os.path.join(F, 'capitoli', nome), os.path.join(m, nome))
+            salva(r, f'scrittore: capitolo {n}')
+            p = zb(L, 'esito', '.', str(n))
+            if os.environ.get('ZB_DEBUG'):
+                print('DEBUG esito', n, p.returncode, p.stdout[-600:], p.stderr[-600:])
+            if n == 3:
+                esito('fase.py', 'esito 3: avviso capitoli di lunghezza quasi uguale', True,
+                      'lunghezze_uguali' in p.stdout, sez)
+                esito('fase.py', 'esito 3: gate primi_capitoli', 'primi_capitoli', stato(L)['gate_in_attesa'], sez)
+                salva(r, 'esito 3')
+                break
+            zb(L, 'capsula', '.', str(n))
+        shutil.copyfile(os.path.join(F, 'capsule', f'0{n}.md'), os.path.join(L, '07-capsule', f'0{n}.md'))
+        p = zb(L, 'capsula', '.', str(n), '--verifica')
+        if n == 1:
+            esito('capsula.py', 'capsula 1 compilata: OK e registro', '0 / True',
+                  f'{p.returncode} / {os.path.isfile(os.path.join(L, "07-capsule", "registro.md"))}', sez)
+        salva(r, f'capsula {n}')
+    p = zb(L, 'compatto', '.')
+    n_righe = len(open(os.path.join(L, 'stato-compatto.md')).read().splitlines())
+    if os.environ.get('ZB_DEBUG'):
+        print('DEBUG compatto', p.stdout, p.stderr, open(os.path.join(L, 'stato-compatto.md')).read())
+    esito('compatto.py', 'stato compatto: 15-20 righe', True, 15 <= n_righe <= 20, sez)
+    fino_alla_fine(L)
+    zb(L, 'ok', '.')
+    salva(r, 'gate primi capitoli')
+    esito('fase.py', 'stesura finita: revisione_manoscritto', 'revisione_manoscritto', stato(L)['fase'], sez)
+    # capsula 3 e registro: promesse tutte chiuse
+    zb(L, 'capsula', '.', '3')
+    shutil.copyfile(os.path.join(F, 'capsule', '03.md'), os.path.join(L, '07-capsule', '03.md'))
+    p = zb(L, 'capsula', '.', '3', '--verifica')
+    esito('capsula.py', 'registro: nessuna promessa aperta dopo il capitolo 3', True, 'promesse aperte: nessuna' in p.stdout, sez)
+    salva(r, 'capsula 3')
+    # revisioni
+    for fs, rap in (('revisione_manoscritto', [('diagnosi-manoscritto.md', 'diagnosta', None),
+                                              ('revisione-manoscritto.md', 'editor-strutturale', None)]),
+                    ('line', [(f'line/0{n}.md', 'line-editor', n) for n in (1, 2, 3)]),
+                    ('copy', [(f'copy/0{n}.md', 'correttore-italiano', n) for n in (1, 2, 3)])):
+        if fs == 'line':
+            # separazione: un rapporto di line editing nello stesso commit di una modifica al capitolo
+            intesta(L, os.path.join(F, 'rapporti', 'line', '01.md'), '06-diagnostica/line/01.md', 'line-editor', 1)
+            open(os.path.join(m, '01-il-molo.md'), 'a').write('\n')
+            intesta(L, os.path.join(F, 'rapporti', 'line', '01.md'), '06-diagnostica/line/01.md', 'line-editor', 1)
+            salva(r, 'capitolo e line insieme')
+            for x, ru, n in rap[1:]:
+                intesta(L, os.path.join(F, 'rapporti', x), f'06-diagnostica/{x}', ru, n)
+                salva(r, ru)
+            p = zb(L, 'pronto', '.')
+            esito('percorso.py', 'line: rapporto nello stesso commit del capitolo: FERMO', '2 / True',
+                  f'{p.returncode} / {"stesso commit" in p.stderr}', sez)
+            git(r, 'rm', '-q', f'libri/{SLUG}/06-diagnostica/line/01.md')
+            salva(r, 'tolto line 1')
+            for x, ru, n in rap[1:]:
+                intesta(L, os.path.join(F, 'rapporti', x), f'06-diagnostica/{x}', ru, n)
+            salva(r, 'line 2-3 sul capitolo attuale')
+            rap = rap[:1]
+        for x, ru, n in rap:
+            intesta(L, os.path.join(F, 'rapporti', x), f'06-diagnostica/{x}', ru, n)
+            salva(r, ru)
+        p = zb(L, 'pronto', '.')
+        esito('fase.py', f'{fs}: pronto apre il gate', f'0 / {fs}', f'{p.returncode} / {stato(L)["gate_in_attesa"]}', sez)
+        fino_alla_fine(L)
+        zb(L, 'ok', '.')
+        esito('fase.py', f'{fs}: ok → applicazione', 'applicazione', stato(L).get('sottofase'), sez)
+        p = zb(L, 'esito', '.', '1')
+        esito('fase.py', f'{fs}: esito rimisura un capitolo senza cambiare fase', f'True / {fs}',
+              f'{"ricontrollata" in p.stdout} / {stato(L)["fase"]}', sez)
+        salva(r, f'{fs} applicato')
+        zb(L, 'pronto', '.')
+        salva(r, f'fine {fs}')
+    esito('fase.py', 'dopo copy: fase bozze', 'bozze', stato(L)['fase'], sez)
+    p = zb(L, 'pronto', '.')
+    esito('percorso.py', 'bozze senza PDF: FERMO', '2 / True', f'{p.returncode} / {"PDF" in p.stderr}', sez)
+    p = zb(L, 'canone', '.', 'proponi', 'Il pescatore non sa chi ha spento la lanterna.')
+    salva(r, 'proposta di canone')
+    zb(L, 'canone', '.', 'gate')
+    fino_alla_fine(L)
+    zb(L, 'ok', '.')
+    esito('percorso.py', 'canone: un fatto in più solo dopo il gate', '2 / bozze', f'{len(stato(L)["fatti_bloccati"])} / {stato(L)["fase"]}', sez)
+    salva(r, 'canone')
+    p = zb(L, 'avvio', '.')
+    if os.environ.get('ZB_DEBUG'):
+        print('DEBUG avvio', p.stdout[-800:], p.stderr[-800:])
+    esito('avvio.py', 'avvio dopo il canone (proposte non più tra i documenti approvati)', 0, p.returncode, sez)
+    if shutil.which('node'):
+        zb(L, 'compila', '.')
+        zb(L, 'impagina', '.')
+        salva(r, 'bozze impaginate')
+        intesta(L, os.path.join(F, 'rapporti', 'bozze.md'), '06-diagnostica/bozze.md', 'correttore-bozze')
+        salva(r, 'correttore bozze')
+        p = zb(L, 'pronto', '.')
+        fino_alla_fine(L)
+        zb(L, 'ok', '.')
+        salva(r, 'gate bozze')
+        zb(L, 'pronto', '.')
+        esito('fase.py', 'bozze: gate, applicazione, poi chiusura', 'chiusura', stato(L)['fase'], sez)
+    else:
+        saltata('fase.py', 'bozze: gate, applicazione, poi chiusura', 'node assente', sez)
+    return r, L
+
+
+def hook_bash(r, comando):
+    dati = json.dumps({'tool_name': 'Bash', 'cwd': r, 'tool_input': {'command': comando}})
+    p = subprocess.run([sys.executable, '-B', os.path.join(S, 'hook_recinto.py')], input=dati,
+                       env=dict(E, CLAUDE_PROJECT_DIR=r), capture_output=True, text=True)
+    return p.returncode
+
+
+def cartella_unica(sez='cartella unica e recinto'):
+    """Due mini-libri nello stesso repository (con una copia del motore): lavorare sul primo non tocca il
+    secondo né il motore. Recinto su Bash, controllo pre-commit, avvio, salva."""
+    r = repo()
+    shutil.copytree(M, os.path.join(r, 'motore'), ignore=shutil.ignore_patterns('__pycache__'))
+    salva(r, 'motore')
+    git(r, 'branch', '-f', 'motore')
+    git(r, 'push', '-q', 'origin', 'motore')
+    git(r, 'fetch', '-q', 'origin')
+    mz = os.path.join(r, 'motore', 'zb')
+    zbr = lambda *a: subprocess.run([sys.executable, '-B', mz, *a], cwd=r, env=E, capture_output=True, text=True)
+    for slug in ('primo', 'secondo'):
+        L = os.path.join(r, 'libri', slug)
+        os.makedirs(L)
+        shutil.copyfile(os.path.join(F, 'briefing.md'), os.path.join(L, 'briefing.md'))
+        p = zbr('nuovo', f'libri/{slug}/briefing.md')
+    salva(r, 'due libri')
+    p = zbr('lavoro', 'libro', 'primo')
+    esito('hook_recinto.py', 'zb lavoro libro: installa il controllo pre-commit', True, 'pre-commit installato' in p.stdout, sez)
+    prima = {f: open(os.path.join(dp, f), 'rb').read() for dp, _, fs in os.walk(os.path.join(r, 'libri', 'secondo'))
+             for f in fs}
+    p = zbr('avvio', 'libri/primo')
+    esito('avvio.py', 'avvio sul primo libro', 0, p.returncode, sez)
+    p = zbr('avvio', 'libri/secondo')
+    esito('avvio.py', 'avvio sul secondo libro con il primo attivo: FERMO (un solo libro per sessione)', '2 / True',
+          f'{p.returncode} / {"Un solo libro" in p.stderr}', sez)
+    esito('hook_recinto.py', 'Bash: echo > libri/secondo/… / > motore/… / > libri/primo/… / > /tmp/…',
+          '2 / 2 / 0 / 0', f'{hook_bash(r, "echo x > libri/secondo/nota.md")} / {hook_bash(r, "echo x >> motore/nota.md")} / '
+          f'{hook_bash(r, "echo x > libri/primo/02-bibbia/nota.md")} / {hook_bash(r, "echo x > /tmp/zb-nota.txt")}', sez)
+    esito('hook_recinto.py', 'Bash: sed -i, cp verso, mv, rm, tee fuori dal libro attivo', '2 / 2 / 2 / 2 / 2',
+          f'{hook_bash(r, "sed -i s/a/b/ libri/secondo/libro.yaml")} / {hook_bash(r, "cp libri/primo/libro.yaml libri/secondo/x.yaml")} / '
+          f'{hook_bash(r, "mv libri/secondo/stato.yaml /tmp/s.yaml")} / {hook_bash(r, "rm -f motore/zb")} / '
+          f'{hook_bash(r, "date | tee motore/dati/x.txt")}', sez)
+    # scrittura che il recinto non vede (script): la ferma il pre-commit e la vede zb avvio
+    open(os.path.join(r, 'libri', 'secondo', 'scritto-da-script.md'), 'w').write('fuori\n')
+    p = zbr('avvio', 'libri/primo')
+    esito('avvio.py', 'file modificato fuori dal libro attivo: FERMO', '2 / True',
+          f'{p.returncode} / {"scritto-da-script.md" in p.stderr}', sez)
+    git(r, 'add', '-A')
+    p = git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'tentativo')
+    esito('precommit.py', 'commit con un file del secondo libro: rifiutato dal pre-commit', '1 / True',
+          f'{p.returncode} / {"RECINTO (pre-commit)" in p.stderr}', sez)
+    git(r, 'reset', '-q')
+    p = zbr('salva', 'libri/primo', 'prova')
+    esito('salva.py', 'zb salva con un file fuori dal recinto: rifiutato', '2 / True',
+          f'{p.returncode} / {"fuori dal recinto" in p.stderr}', sez)
+    os.remove(os.path.join(r, 'libri', 'secondo', 'scritto-da-script.md'))
+    open(os.path.join(r, 'libri', 'primo', '02-bibbia', 'nota.md'), 'w').write('nota del primo libro\n')
+    p = zbr('salva', 'libri/primo', 'nota')
+    esito('salva.py', 'zb salva dentro il libro: commit e push', '0 / True',
+          f'{p.returncode} / {"libri/primo/02-bibbia/nota.md" in git(r, "show", "--name-only", "--format=").stdout}', sez)
+    dopo = {f: open(os.path.join(dp, f), 'rb').read() for dp, _, fs in os.walk(os.path.join(r, 'libri', 'secondo'))
+            for f in fs}
+    esito('recinto', 'il secondo libro è identico dopo il lavoro sul primo', True, prima == dopo, sez)
+    c = git(r, 'diff', '--name-only', 'origin/motore', 'HEAD', '--', 'motore').stdout.strip()
+    esito('recinto', 'il motore è identico dopo il lavoro sul primo', '', c, sez)
+    # commit di un file fuori dal libro fatto aggirando il pre-commit: lo vede zb avvio (rispetto a origin/motore)
+    open(os.path.join(r, 'motore', 'nota.md'), 'w').write('x\n')
+    git(r, 'add', '-A')
+    git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '--no-verify', '-m', 'aggirato')
+    git(r, 'push', '-q')
+    p = zbr('avvio', 'libri/primo')
+    esito('avvio.py', 'commit fuori dal libro (pre-commit aggirato): AVVISO rispetto a origin/motore', True,
+          'motore/nota.md' in p.stdout, sez)
+    # lavoro sul motore: libri/ fuori dal recinto
+    zbr('lavoro', 'motore')
+    esito('hook_recinto.py', 'lavoro sul motore: Bash su libri/ bloccato, su motore/ consentito', '2 / 0',
+          f'{hook_bash(r, "echo x > libri/primo/n.md")} / {hook_bash(r, "echo x > motore/n.md")}', sez)
+
+
+def agenti_e_comandi(sez='agenti e comandi'):
+    """Sul ramo «motore» gli agenti restano spenti; sul ramo di un libro si installano con l'ok."""
+    r = repo('motore')
+    p = zb(r, 'agenti', 'attiva', '--ok', '--progetto', r)
+    esito('agenti.py', 'ramo motore: attiva rifiutato, nessun .claude/', '2 / False',
+          f'{p.returncode} / {os.path.exists(os.path.join(r, ".claude"))}', sez)
+    esito('agenti.py', 'repository del motore (questo): nessun .claude/agents né .claude/commands', 'False / False',
+          f'{os.path.exists(os.path.join(comune.radice_git(M), ".claude", "agents"))} / '
+          f'{os.path.exists(os.path.join(comune.radice_git(M), ".claude", "commands"))}', sez)
+    r = repo('libro-prova')
+    p = zb(r, 'agenti', 'attiva', '--progetto', r)
+    esito('agenti.py', 'ramo del libro senza --ok: niente scritto', '0 / False',
+          f'{p.returncode} / {os.path.exists(os.path.join(r, ".claude"))}', sez)
+    p = zb(r, 'agenti', 'attiva', '--ok', '--progetto', r)
+    ag = sorted(os.listdir(os.path.join(r, '.claude', 'agents')))
+    co = sorted(os.listdir(os.path.join(r, '.claude', 'commands')))
+    esito('agenti.py', 'installati: agenti / comandi', '11 / [\'diagnosi.md\', \'handover.md\', \'revisiona.md\', \'scrivi-capitolo.md\']',
+          f'{len(ag)} / {co}', sez)
+    fm = []
+    for f in ag:
+        testo = open(os.path.join(r, '.claude', 'agents', f), encoding='utf-8').read()
+        d = yaml.safe_load(testo.split('---')[1])
+        fm.append(bool(d.get('name')) and bool(d.get('description')) and d.get('model') in ('opus', 'sonnet', 'haiku'))
+    esito('agenti.py', 'frontmatter: name, description e model (da modelli-ruoli.yaml) in ogni agente', True, all(fm), sez)
+    cap = yaml.safe_load(open(os.path.join(r, '.claude', 'agents', 'capsula.md')).read().split('---')[1])
+    arch = yaml.safe_load(open(os.path.join(r, '.claude', 'agents', 'architetto-struttura.md')).read().split('---')[1])
+    esito('agenti.py', 'modelli: capsula leggero, architetto forte', 'haiku / opus', f'{cap["model"]} / {arch["model"]}', sez)
+    testi = {f: open(os.path.join(r, '.claude', 'commands', f), encoding='utf-8').read() for f in co}
+    esito('comandi', '/scrivi-capitolo: avvio, prepara, scrittore-voce, esito, capsula, compatto, salva; poi si ferma',
+          True, all(x in testi['scrivi-capitolo.md'] for x in ('zb avvio', 'zb prepara', 'scrittore-voce', 'zb esito',
+                                                            'zb capsula', 'zb compatto', 'zb salva', '/revisiona')), sez)
+    esito('comandi', '/revisiona: line-editor e correttore-italiano separati, solo dopo l\'ok, filtri sotto il manuale',
+          True, all(x in testi['revisiona.md'] for x in ('line-editor', 'correttore-italiano', 'ok', 'manuale', 'Edit')), sez)
+    esito('comandi', '/diagnosi: sola lettura, solo il rapporto', True,
+          'Nessuna modifica al testo' in testi['diagnosi.md'] and 'diagnosta' in testi['diagnosi.md'], sez)
+    esito('comandi', '/handover: sette sezioni, salva, dichiara che non azzera il contesto', True,
+          'non può azzerare il contesto' in testi['handover.md'] and 'Ripartenza' in testi['handover.md']
+          and 'zb salva' in testi['handover.md'], sez)
+    p = zb(r, 'agenti', 'disattiva', '--progetto', r)
+    esito('agenti.py', 'disattiva: tolti i file del motore', False, os.path.exists(os.path.join(r, '.claude', 'agents')), sez)
+
+
+def consumo_capsule(sez='consumo e capsule'):
+    """Misura reale sul mini-libro: righe e parole da leggere per il capitolo 3 con e senza capsule."""
+    r = repo()
+    L, _ = nasce(r)
+    copia(os.path.join(F, 'struttura'), os.path.join(L, '03-struttura'))
+    copia(os.path.join(F, 'codex'), os.path.join(L, '02-bibbia', 'codex'))
+    m = os.path.join(L, '04-manoscritto')
+    os.makedirs(m)
+    for f in ('01-il-molo.md', '02-il-registro.md'):
+        shutil.copyfile(os.path.join(F, 'capitoli', f), os.path.join(m, f))
+    os.makedirs(os.path.join(L, '07-capsule'))
+    for f in ('01.md', '02.md'):
+        shutil.copyfile(os.path.join(F, 'capsule', f), os.path.join(L, '07-capsule', f))
+    p = zb(L, 'consumo', '.', 'confronto', '3')
+    numeri = [int(x) for x in re.findall(r'(\d+) (?:righe|parole)', p.stdout)]
+    esito('consumo.py', 'confronto capitolo 3: misura eseguita (4 numeri)', 4, len(numeri), sez)
+    if len(numeri) == 4:
+        esito('consumo.py', 'con le capsule si leggono meno parole che senza', True, numeri[1] < numeri[3], sez)
+        MISURE['consumo'] = p.stdout.strip()
+    salva(r, 'libro')
+    zb(L, 'avvio', '.', env=dict(E, ZB_SESSIONE='misura'))
+    p = zb(L, 'consumo', '.', 'registra', '--capitoli', '1,2', '--subagenti', '2', env=dict(E, ZB_SESSIONE='misura'))
+    d = comune.leggi_yaml(os.path.join(L, '06-diagnostica', 'consumo.yaml'))['sessioni'][-1]
+    esito('consumo.py', 'registra: capitoli, parole, righe lette, subagenti, durata', "['1', '2'] / True / True / 2 / True",
+          f'{d["capitoli"]} / {d["parole_capitoli"] > 0} / {d["righe_lette"] > 0} / {d["subagenti"]} / {d["durata_minuti"] is not None}', sez)
+
+
+MISURE = {}
+SEZIONI = [percorso, cartella_unica, agenti_e_comandi, consumo_capsule]
+
+
+def esegui_sezione(f):
+    try:
+        f()
+    except Exception as e:      # una sezione che si rompe è un KO, non ferma le altre
+        import traceback
+        righe.append((f.__name__, 'prove_editoriale.py', 'sezione completata', 'sì',
+                      f'eccezione: {type(e).__name__}: {e} @ {traceback.extract_tb(e.__traceback__)[-1].lineno}', 'KO'))
+
+
+def main():
+    global TMP
+    TMP = tempfile.mkdtemp(prefix='zb-prove-ed-')
+    try:
+        for f in SEZIONI:
+            esegui_sezione(f)
+    finally:
+        shutil.rmtree(TMP, ignore_errors=True)
+    return righe
+
+
+if __name__ == '__main__':
+    for r in main():
+        if r[5] != 'OK' or '--tutto' in sys.argv:
+            print(' | '.join(r))
+    print(f'{sum(1 for r in righe if r[5] == "OK")}/{sum(1 for r in righe if r[5] != "SALTATA")} OK')

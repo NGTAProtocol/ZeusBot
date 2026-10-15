@@ -1,0 +1,58 @@
+# Unica fonte dei comandi di zb: la leggono «zb aiuto» e «zb aiuto <comando>».
+# README, PROCEDURA e guide rimandano a «zb aiuto», senza ripetere l'elenco.
+# script: file di motore/script/ (fase = fase.py con il comando come secondo argomento; speciale = gestito in zb).
+gruppi:
+  - nome: Libro e fasi
+    comandi:
+      - {nome: nuovo, script: nuovo.py, uso: "nuovo <briefing>", aiuto: "crea il libro in libri/<slug>/ dal briefing"}
+      - {nome: adotta, script: adotta.py, uso: "adotta <cartella>", aiuto: "bozze di libro.yaml e stato da documenti esistenti"}
+      - {nome: avvio, script: avvio.py, uso: "avvio [<libro>]", aiuto: "avvio obbligatorio e riga «Letto»; senza libro: lavoro sul motore"}
+      - {nome: stato, script: fase, uso: "stato <libro>", aiuto: "fase, gate, capitoli, parole; non scrive"}
+      - {nome: pronto, script: fase, uso: "pronto <libro>", aiuto: "fine del lavoro di una fase: apre il gate o passa oltre"}
+      - {nome: avanti, script: fase, uso: "avanti <libro>", aiuto: "blocco successivo dei documenti del gate"}
+      - {nome: ok, script: fase, uso: "ok <libro> [lotti da N]", aiuto: "approva il gate aperto"}
+      - {nome: correggi, script: fase, uso: "correggi <libro> <istruzione> | <unità>: <motivo> [--commit H]", aiuto: "correzione al gate o fuori dal gate"}
+      - {nome: esito, script: fase, uso: "esito <libro> <N>", aiuto: "controlli del capitolo N, audit anti-IA, registrazione"}
+      - {nome: riapprova, script: fase, uso: "riapprova <libro> <documento> <motivo>", aiuto: "modifica autorizzata a un documento approvato"}
+      - {nome: fase, script: fase, uso: "fase <libro> stesura --motivo <testo>", aiuto: "da chiusura a stesura se mancano unità"}
+      - {nome: canone, script: fase, uso: "canone <libro> proponi|togli <fatto> | gate | mostra", aiuto: "fatti bloccati: cambiano solo con il gate «canone»"}
+      - {nome: revisione, script: revisione.py, uso: "revisione <libro> <documento|gate> [N]", aiuto: "un documento in blocchi; non scrive"}
+  - nome: Percorso editoriale e agenti
+    comandi:
+      - {nome: struttura, script: struttura.py, uso: "struttura <libro> verifica", aiuto: "controlli meccanici dei nove file di 03-struttura/"}
+      - {nome: codex, script: codex.py, uso: "codex <libro> verifica | filtra @char:<id> … | filtra --capitolo N", aiuto: "schede di personaggi e luoghi per tag"}
+      - {nome: prepara, script: prepara.py, uso: "prepara <libro> <N>", aiuto: "preparazione del capitolo N: scheda, codex filtrato, canone, capsule"}
+      - {nome: capsula, script: capsula.py, uso: "capsula <libro> <N> [--verifica]", aiuto: "capsula di continuità 07-capsule/NN.md e registro"}
+      - {nome: compatto, script: compatto.py, uso: "compatto <libro>", aiuto: "stato compatto (15-20 righe) per le sessioni nuove"}
+      - {nome: ruolo, script: ruolo.py, uso: "ruolo <libro> <ruolo> [N]", aiuto: "prima riga del rapporto di un ruolo; rifiuta il ruolo fuori fase"}
+      - {nome: agenti, script: agenti.py, uso: "agenti stato | attiva [--ok] | disattiva", aiuto: "subagenti e comandi di Claude Code (solo rami dei libri)"}
+      - {nome: consumo, script: consumo.py, uso: "consumo <libro> registra|mostra [opzioni]", aiuto: "misura per sessione: capitoli, parole, righe lette, subagenti, durata"}
+      - {nome: antiia, script: antiia.py, uso: "antiia <libro> [N] | estrai --ia <dir> --umano <dir> | taratura --umano <dir>", aiuto: "audit anti-IA non distruttivo e vocabolario dai dati"}
+      - {nome: traduci, script: traduci.py, uso: "traduci <libro> --a <lingua> [inizia|stato|prepara N|controlla N|ritraduci N]", aiuto: "traduzione in 08-traduzione-<lingua>/"}
+  - nome: Controlli e chiusura
+    comandi:
+      - {nome: capitolo, script: capitolo.py, uso: "capitolo <libro> <N>", aiuto: "tutti i controlli di un capitolo"}
+      - {nome: conta, script: conta.py, uso: "conta <libro>", aiuto: "parole con il metodo unico"}
+      - {nome: stile, script: stile.py, uso: "stile <libro> [N]", aiuto: "frase media, dialogo, lista nera, tetti"}
+      - {nome: continuita, script: continuita.py, uso: "continuita <libro>", aiuto: "date, età, durate, cifre, grafie"}
+      - {nome: riciclo, script: riciclo.py, uso: "riciclo <libro>", aiuto: "anti-riciclo a 7 parole (riscrittura)"}
+      - {nome: ortografia, script: ortografia.py, uso: "ortografia <libro>", aiuto: "Hunspell, LanguageTool, checklist"}
+      - {nome: languagetool, script: languagetool.py, uso: "languagetool stato | installa [--cartella D]", aiuto: "installazione stabile di LanguageTool (fuori dal repository)"}
+      - {nome: compila, script: compila.py, uso: "compila <libro>", aiuto: "manoscritto completo in 05-output/"}
+      - {nome: impagina, script: impagina.py, uso: "impagina <libro>", aiuto: "PDF di stampa"}
+      - {nome: pdf, script: verifica_pdf.py, uso: "pdf <libro>", aiuto: "verifica del PDF"}
+      - {nome: pacchetto, script: pacchetto.py, uso: "pacchetto <libro>", aiuto: "06-pubblicazione/ per KDP"}
+      - {nome: kdp, script: conformita_kdp.py, uso: "kdp <libro>", aiuto: "conformità KDP, sezioni 1-15"}
+      - {nome: verifica, script: speciale, uso: "verifica KDP fatta [AAAA-MM-GG] | stato | controlla", aiuto: "verifica dei dati KDP da parte dell'autore"}
+  - nome: Recinto, salvataggio, motore
+    comandi:
+      - {nome: lavoro, script: speciale, uso: "lavoro stato | motore | libro <slug>", aiuto: "recinto: libro attivo o motore (installa il controllo pre-commit)"}
+      - {nome: salva, script: salva.py, uso: "salva [<libro>] <messaggio>", aiuto: "controllo dei file fuori dal recinto, prove (motore), commit e push"}
+      - {nome: push, script: push.py, uso: "push [--tentativi 4] [--attesa 2]", aiuto: "push del ramo corrente con ripiego"}
+      - {nome: hook, script: speciale, uso: "hook stato | attiva [--ok] | disattiva", aiuto: "hook di Claude Code (rami dei libri)"}
+      - {nome: pulizia, script: pulizia.py, uso: "pulizia <libro> [--applica]", aiuto: "temporanei, vuote, copie; cancella solo con --applica"}
+      - {nome: voce, script: voce.py, uso: "voce lista | mostra <slug> [N] | verifica <slug>", aiuto: "banca-voci in sola lettura (ZB_BANCA_VOCI)"}
+      - {nome: prove, script: prove.py, uso: "prove", aiuto: "tutte le prove; tabella completa nel report"}
+      - {nome: separazione, script: separazione.py, uso: "separazione", aiuto: "il ramo motore non contiene libri né nomi vietati"}
+      - {nome: recinto, script: recinto.py, uso: "recinto", aiuto: "gli script scrivono solo nel libro"}
+      - {nome: profili, script: valida_profili.py, uso: "profili", aiuto: "valida i profili di genere"}

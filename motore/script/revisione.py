@@ -42,6 +42,9 @@ def unita_con_report(cartella, libro, nomi):
 
 
 def documenti_del_gate(cartella, libro, stato, gate):
+    import percorso
+    if percorso.attivo(libro) and gate in ('struttura', 'documenti', 'canone', *percorso.REVISIONI):
+        return percorso.documenti_gate(cartella, libro, stato, gate)
     if gate == 'documenti':
         return list(DOCUMENTI)
     if gate == 'pagina_campione':

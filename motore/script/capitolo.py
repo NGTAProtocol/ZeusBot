@@ -40,7 +40,7 @@ def dichiarazioni(cartella, libro, unita, nome):
         return []
     out = []
     scaletta = {r.get('Unità', '').lower(): r for r in
-                comune.tabella_md(os.path.join(cartella, '03-architettura', 'scaletta.md'))}
+                comune.tabella_md(os.path.join(cartella, comune.rel_scaletta(cartella)))}
     capitoli = [(n, comune.dichiarazioni_unita(open(p, encoding='utf-8').read()), p)
                 for n, p in unita if n.isdigit()]
     idx = [n for n, _, _ in capitoli].index(nome)

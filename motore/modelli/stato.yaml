@@ -2,7 +2,9 @@
 libro: ""
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: documenti               # documenti | pagina_campione | stesura | chiusura | chiuso
+fase: documenti               # percorso breve: documenti | pagina_campione | stesura | chiusura | chiuso
+                              # percorso editoriale: struttura | documenti | pagina_campione | stesura |
+                              # revisione_manoscritto | line | copy | bozze | chiusura | chiuso
 passo: null
 gate_in_attesa: null          # nome del gate aperto; null se nessuno
 lotto: {dimensione: 3, capitoli: []}

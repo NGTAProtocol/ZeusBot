@@ -1,0 +1,363 @@
+"""Percorso da casa editrice (libri con «percorso: editoriale» in libro.yaml). Lo usa fase.py.
+
+Fasi: struttura → documenti → pagina_campione → stesura → revisione_manoscritto → line → copy → bozze →
+chiusura → chiuso (motore/editoriale/00-percorso.md). I libri senza il campo restano sul percorso breve.
+
+Fasi di revisione (revisione_manoscritto, line, copy, bozze) in due tempi, in stato.yaml «sottofase»:
+- «proposte»: i ruoli scrivono i rapporti; «zb pronto» controlla che ci siano tutti, con la prima riga
+  «<!-- zb: ruolo=<ruolo>; su=<impronta> -->» uguale all'impronta attuale del testo rivisto, e che ogni
+  rapporto sia stato salvato in un commit che non tocca il testo rivisto (chi scrive non rivede); poi apre il
+  gate della fase, che mostra i rapporti;
+- «applicazione»: dopo l'«ok» si applicano solo le proposte approvate (modifiche puntuali); «zb esito N»
+  rimisura un capitolo; «zb pronto» passa alla fase successiva senza un secondo gate.
+Canone: «fatti_bloccati» in stato.yaml; cambia solo con «zb canone <libro> proponi|togli …» e il gate «canone».
+"""
+import datetime
+import os
+import re
+
+import comune
+
+FASI = ['struttura', 'documenti', 'pagina_campione', 'guida', 'stesura', 'revisione_manoscritto', 'line', 'copy',
+        'bozze', 'fedelta', 'chiusura', 'chiuso']
+REVISIONI = ['revisione_manoscritto', 'line', 'copy', 'bozze', 'fedelta']
+SUCCESSIVA = {'revisione_manoscritto': 'line', 'line': 'copy', 'copy': 'bozze', 'bozze': 'chiusura'}
+# libro di traduzione (modalita: traduzione, 08-traduzione-<lingua>/): guida → stesura → line → copy → fedelta
+SUCCESSIVA_TRADUZIONE = {'line': 'copy', 'copy': 'fedelta', 'fedelta': 'chiusura'}
+GATE = ['struttura', 'documenti', 'pagina_campione', 'primi_capitoli', 'lotto', 'revisione_manoscritto',
+        'line', 'copy', 'bozze', 'canone', 'guida', 'fedelta']
+INTESTAZIONE = re.compile(r'^<!--\s*zb:\s*ruolo=([\w\-]+);\s*su=([0-9a-f]{12})\s*-->')
+CANONE = '06-diagnostica/canone-proposte.md'
+# ruolo -> fasi in cui può lavorare (zb ruolo lo controlla: la scrittura non include revisione)
+FASI_RUOLO = {'architetto-struttura': ['struttura'], 'diagnosta': ['struttura', 'revisione_manoscritto'],
+              'editor-strutturale': ['struttura', 'revisione_manoscritto'], 'direttore-editoriale': ['documenti'],
+              'scrittore-voce': ['pagina_campione', 'stesura', 'revisione_manoscritto'],
+              'capsula': ['stesura', 'revisione_manoscritto'], 'line-editor': ['line'],
+              'correttore-italiano': ['copy'], 'correttore-bozze': ['bozze'],
+              'traduttore': ['stesura'], 'revisore-fedelta': ['fedelta']}
+
+
+def traduzione(libro):
+    return (libro or {}).get('modalita') == 'traduzione'
+
+
+def successiva(libro, fs):
+    return (SUCCESSIVA_TRADUZIONE if traduzione(libro) else SUCCESSIVA)[fs]
+
+
+def attivo(libro):
+    return comune.editoriale(libro)
+
+
+# ---------------------------------------------------------------- testi rivisti e rapporti
+
+def file_struttura():
+    return [f'{comune.STRUTTURA}/{f}' for f in comune.FILE_STRUTTURA]
+
+
+def capitoli(cartella, libro):
+    return [(n, os.path.relpath(p, cartella)) for n, p in comune.unita(cartella, libro)]
+
+
+def nn(n):
+    return f'{int(n):02d}' if str(n).isdigit() else str(n).replace(' ', '-')
+
+
+def rapporti(cartella, libro, fase):
+    """[(rapporto, ruolo, [testi rivisti])] attesi in una fase."""
+    if fase == 'struttura':
+        s = file_struttura()
+        return [('06-diagnostica/diagnosi-struttura.md', 'diagnosta', s),
+                ('06-diagnostica/revisione-struttura.md', 'editor-strutturale', s)]
+    tutti = [r for _, r in capitoli(cartella, libro)]
+    if fase == 'revisione_manoscritto':
+        return [('06-diagnostica/diagnosi-manoscritto.md', 'diagnosta', tutti),
+                ('06-diagnostica/revisione-manoscritto.md', 'editor-strutturale', tutti)]
+    if fase in ('line', 'copy'):
+        ruolo = 'line-editor' if fase == 'line' else 'correttore-italiano'
+        return [(f'06-diagnostica/{fase}/{nn(n)}.md', ruolo, [r]) for n, r in capitoli(cartella, libro)]
+    if fase == 'bozze':
+        return [('06-diagnostica/bozze.md', 'correttore-bozze', tutti)]
+    if fase == 'fedelta':
+        return [('06-diagnostica/fedelta.md', 'revisore-fedelta', tutti)]
+    raise comune.ErroreMotore(f'Fase senza rapporti: {fase}')
+
+
+def impronta(cartella, testi):
+    import revisione
+    return revisione.impronta(cartella, testi)
+
+
+def intestazione(cartella, rel):
+    p = os.path.join(cartella, rel)
+    if not os.path.isfile(p):
+        return None
+    with open(p, encoding='utf-8') as f:
+        m = INTESTAZIONE.match(f.readline().strip())
+    return (m.group(1), m.group(2)) if m else None
+
+
+def commit_di_nascita(cartella, rel):
+    """Hash del commit che ha aggiunto `rel` (None se non salvato)."""
+    out = comune.git(cartella, 'log', '--diff-filter=A', '--format=%H', '--', rel)[1].split()
+    return out[0] if out else None          # l'ultima nascita (un rapporto tolto e rifatto conta da capo)
+
+
+def file_del_commit(cartella, commit):
+    """File toccati da un commit, relativi alla cartella del libro."""
+    radice = comune.radice_git(cartella)
+    out = comune.git(cartella, 'show', '--name-only', '--format=', commit)[1].splitlines()
+    rel = os.path.relpath(cartella, radice)
+    pref = '' if rel == '.' else rel + '/'
+    return {x[len(pref):] for x in out if x.startswith(pref)}
+
+
+def problemi_rapporto(cartella, rel, ruolo, testi):
+    """Controlli di un rapporto: esiste, intestazione, impronta attuale, salvato a parte dal testo rivisto."""
+    if not os.path.isfile(os.path.join(cartella, rel)):
+        return [f'{rel}: manca (ruolo {ruolo}; prima riga da «zb ruolo <libro> {ruolo}»)']
+    out = []
+    i = intestazione(cartella, rel)
+    if not i:
+        out.append(f'{rel}: prima riga «<!-- zb: ruolo=…; su=… -->» mancante')
+    elif i[0] != ruolo:
+        out.append(f'{rel}: scritto dal ruolo «{i[0]}», atteso «{ruolo}»')
+    elif i[1] != impronta(cartella, testi):
+        out.append(f'{rel}: scritto su una versione diversa del testo (su={i[1]}, ora {impronta(cartella, testi)}): '
+                   'rifallo sul testo attuale')
+    c = commit_di_nascita(cartella, rel)
+    if not c:
+        out.append(f'{rel}: non ancora salvato in un commit')
+    else:
+        comuni = file_del_commit(cartella, c) & set(testi)
+        if comuni:
+            out.append(f'{rel}: salvato nello stesso commit del testo rivisto ({", ".join(sorted(comuni))}): '
+                       'chi scrive non rivede; salva il testo e il rapporto in commit separati')
+    return out
+
+
+def problemi_fase(cartella, libro, fase):
+    out = []
+    for rel, ruolo, testi in rapporti(cartella, libro, fase):
+        out += problemi_rapporto(cartella, rel, ruolo, testi)
+    if fase in ('revisione_manoscritto', 'struttura'):
+        rel = rapporti(cartella, libro, fase)[1][0]
+        p = os.path.join(cartella, rel)
+        if os.path.isfile(p) and not re.search(r'(?m)^##\s+Piano di revisione', open(p, encoding='utf-8').read()):
+            out.append(f'{rel}: manca la sezione «## Piano di revisione»')
+    return out
+
+
+def documenti_gate(cartella, libro, stato, gate):
+    if gate == 'struttura':
+        return file_struttura() + [r for r, _, _ in rapporti(cartella, libro, 'struttura')]
+    if gate == 'documenti':
+        import codex
+        d = ['libro.yaml', '02-bibbia/bibbia.md', 'cronologia.yaml', '03-architettura/manuale-di-stile.md']
+        return d + [v['file'] for v in codex.schede(cartella).values()]
+    if gate in REVISIONI:
+        return [r for r, _, _ in rapporti(cartella, libro, gate)]
+    if gate == 'canone':
+        return [CANONE]
+    if gate == 'guida':
+        return ['00-progetto/guida-traduzione.md', '00-progetto/glossario.yaml']
+    raise comune.ErroreMotore(f'Gate sconosciuto: {gate}')
+
+
+# ---------------------------------------------------------------- pronto e ok
+
+def pronto(cartella, libro, stato, f):
+    """«zb pronto» nelle fasi del percorso editoriale. True se ha gestito la fase."""
+    import fase as F
+    import struttura
+    fs = stato['fase']
+    if fs == 'guida':
+        import traduci
+        p = []
+        g = os.path.join(cartella, '00-progetto', 'guida-traduzione.md')
+        if not os.path.isfile(g) or comune.MODELLO in open(g, encoding='utf-8').read():
+            p.append('00-progetto/guida-traduzione.md: ancora modello')
+        p += traduci.problemi_glossario(cartella)
+        if p:
+            raise comune.ErroreMotore('Guida e glossario non pronti:\n- ' + '\n- '.join(p[:30]))
+        if 'guida' in F.gate_attivi(libro):
+            F.apri_gate(cartella, libro, stato, 'guida', passo='guida in revisione')
+        else:
+            F.registra(cartella, stato, documenti_gate(cartella, libro, stato, 'guida'), senza_gate=True)
+            stato.update(fase='stesura', passo='capitolo 1', gate_in_attesa=None)
+        return True
+    if fs == 'struttura':
+        p = struttura.verifica(cartella) + problemi_fase(cartella, libro, 'struttura')
+        if p:
+            raise comune.ErroreMotore('Struttura non pronta:\n- ' + '\n- '.join(p[:30]))
+        if 'struttura' in F.gate_attivi(libro):
+            F.apri_gate(cartella, libro, stato, 'struttura', passo='in revisione')
+        else:
+            F.registra(cartella, stato, documenti_gate(cartella, libro, stato, 'struttura'), senza_gate=True)
+            chiudi_struttura(stato)
+            print('Gate «struttura» non previsto: struttura registrata senza fermata; fase «documenti».')
+        return True
+    if fs == 'documenti':
+        import codex
+        p = codex.verifica(cartella)
+        if p:
+            raise comune.ErroreMotore('Codex non pronto:\n- ' + '\n- '.join(p[:30]))
+        return False            # il resto lo fa fase.py come sempre
+    if fs in REVISIONI:
+        sotto = stato.get('sottofase') or 'proposte'
+        if sotto == 'proposte':
+            if fs == 'bozze':
+                nome = comune.nome_file(libro['titolo'])
+                if not os.path.isfile(os.path.join(cartella, '05-output', f'{nome}.pdf')):
+                    raise comune.ErroreMotore('Bozze: prima «zb compila» e «zb impagina» (il PDF delle bozze manca).')
+            p = problemi_fase(cartella, libro, fs)
+            if p:
+                raise comune.ErroreMotore(f'Fase «{fs}», proposte incomplete:\n- ' + '\n- '.join(p[:30]))
+            if fs in F.gate_attivi(libro):
+                F.apri_gate(cartella, libro, stato, fs, passo='proposte in revisione')
+            else:
+                F.registra(cartella, stato, documenti_gate(cartella, libro, stato, fs), senza_gate=True)
+                stato['sottofase'] = 'applicazione'
+                print(f'Gate «{fs}» non previsto: proposte registrate senza fermata; applicazione.')
+            return True
+        # applicazione finita
+        cod, out, _ = comune.git(cartella, 'status', '--porcelain', '--', '.')
+        if out:
+            raise comune.ErroreMotore('Modifiche non salvate nel libro: salva prima di chiudere la fase.\n' + out)
+        n = riregistra_testi(cartella, stato, fs)
+        if n:
+            print(f'Testi cambiati dalle proposte approvate e registrati di nuovo: {n}.')
+        nuova = successiva(libro, fs)
+        stato.update(fase=nuova, sottofase=None if nuova == 'chiusura' else 'proposte',
+                     passo='controlli finali' if nuova == 'chiusura' else 'proposte', gate_in_attesa=None)
+        print(f'Fase «{fs}» chiusa (proposte approvate e applicate): fase «{nuova}».')
+        return True
+    return False
+
+
+def testo_in_revisione(rel):
+    """Capitoli e loro report: cambiano per scelta nelle fasi di revisione (proposte approvate al gate)."""
+    return rel.startswith('04-manoscritto/') or rel.startswith('06-diagnostica/capitoli/')
+
+
+def riregistra_testi(cartella, stato, fs):
+    """Registra di nuovo i capitoli approvati cambiati nell'applicazione delle proposte (autorizzati dal gate)."""
+    import fase as F
+    cambiati = [rel for rel, v in stato['documenti_approvati'].items() if testo_in_revisione(rel)
+                and os.path.isfile(os.path.join(cartella, rel))
+                and not comune.documento_invariato(os.path.join(cartella, rel), v['sha256'], v.get('commit'))]
+    for rel in cambiati:
+        prima = stato['documenti_approvati'][rel]
+        F.registra(cartella, stato, [rel])
+        stato['documenti_approvati'][rel]['riapprovazioni'] = (prima.get('riapprovazioni') or []) + [
+            {'data': datetime.date.today().isoformat(), 'motivo': f'fase «{fs}»: proposte approvate al gate',
+             'sha256_precedente': prima['sha256'], 'commit_precedente': prima.get('commit')}]
+    return len(cambiati)
+
+
+def chiudi_struttura(stato):
+    stato.update(fase='documenti', passo='da completare', gate_in_attesa=None, sottofase=None)
+    stato['revisione_in_corso'] = None
+
+
+def dopo_ok(cartella, libro, stato, gate):
+    """Effetti dell'«ok» sui gate del percorso editoriale. True se ha gestito il gate."""
+    if gate == 'guida':
+        stato.update(fase='stesura', passo='capitolo 1', gate_in_attesa=None)
+        stato['revisione_in_corso'] = None
+        print('Guida e glossario approvati: traduzione del capitolo 1 (agente traduttore, in sequenza).')
+        return True
+    if gate == 'struttura':
+        chiudi_struttura(stato)
+        print('Struttura approvata: fase «documenti» (direttore-editoriale: bibbia, codex, cronologia, manuale).')
+        return True
+    if gate in REVISIONI:
+        stato['sottofase'] = 'applicazione'
+        stato['passo'] = 'applicazione delle proposte approvate'
+        print(f'Proposte della fase «{gate}» approvate: applicale con modifiche puntuali, «zb esito <libro> N» '
+              'per rimisurare, poi «zb pronto <libro>».')
+        return True
+    if gate == 'canone':
+        fb = stato.setdefault('fatti_bloccati', [])
+        for p in stato.pop('canone_proposte', []):
+            if p['azione'] == 'aggiungi' and p['testo'] not in fb:
+                fb.append(p['testo'])
+            elif p['azione'] == 'togli' and p['testo'] in fb:
+                fb.remove(p['testo'])
+        stato['documenti_approvati'].pop(CANONE, None)    # il file delle proposte si riscrive alla prossima
+        stato.setdefault('canone_modifiche', []).append({'data': datetime.date.today().isoformat(),
+                                                          'fatti': len(fb)})
+        print(f'Canone aggiornato: {len(fb)} fatti bloccati.')
+        return True
+    return False
+
+
+def dopo_stesura(stato, libro=None):
+    """Tutte le unità scritte: nel percorso editoriale si passa alla revisione strutturale del manoscritto;
+    in una traduzione al line editing nella lingua di arrivo."""
+    if traduzione(libro):
+        stato.update(fase='line', sottofase='proposte', passo='line editing nella lingua di arrivo', gate_in_attesa=None)
+        print('Tutti i capitoli tradotti e controllati: fase «line» (line-editor nella lingua di arrivo).')
+        return
+    stato.update(fase='revisione_manoscritto', sottofase='proposte', passo='diagnosi e piano di revisione',
+                 gate_in_attesa=None)
+    print('Tutte le unità del piano sono scritte e accettate: fase «revisione_manoscritto» '
+          '(diagnosta, poi editor-strutturale).')
+
+
+def prossimo(stato):
+    fs, sotto = stato['fase'], stato.get('sottofase') or 'proposte'
+    if fs == 'guida':
+        return 'Traduzione: guida e glossario (un termine = una traduzione); poi «zb pronto <traduzione>».'
+    if fs == 'struttura':
+        return ('Architetto: i nove file di 03-struttura/; poi diagnosta ed editor-strutturale (commit separati); '
+                'poi «zb pronto <libro>».')
+    if fs in REVISIONI:
+        chi = {'revisione_manoscritto': 'diagnosta, poi editor-strutturale', 'line': 'line-editor per ogni capitolo',
+               'copy': 'correttore-italiano per ogni capitolo', 'bozze': 'zb compila, zb impagina, poi correttore-bozze',
+               'fedelta': 'revisore-fedelta (affiancata e ritraduzione a campione, sessione nuova)'}[fs]
+        if sotto == 'proposte':
+            return f'Fase «{fs}»: rapporti di {chi} (commit separati dal testo); poi «zb pronto <libro>».'
+        return f'Fase «{fs}»: applica solo le proposte approvate, «zb esito <libro> N»; poi «zb pronto <libro>».'
+    return None
+
+
+# ---------------------------------------------------------------- canone
+
+def canone(cartella, libro, stato, resto):
+    """«canone proponi <fatto>» | «canone togli <fatto>» | «canone mostra»."""
+    import fase as F
+    azione = resto[0] if resto else 'mostra'
+    if azione == 'mostra':
+        fb = stato.get('fatti_bloccati') or []
+        print(f'Fatti bloccati: {len(fb)}')
+        for i, x in enumerate(fb, 1):
+            print(f'{i}. {x}')
+        for p in stato.get('canone_proposte') or []:
+            print(f'proposta: {p["azione"]} «{p["testo"]}»')
+        return
+    testo = ' '.join(resto[1:]).strip()
+    if azione not in ('proponi', 'togli') or not testo:
+        raise comune.ErroreMotore('Uso: canone <libro> proponi <fatto> | togli <fatto> | mostra')
+    if stato['gate_in_attesa'] and stato['gate_in_attesa'] != 'canone':
+        raise comune.ErroreMotore(f'Gate «{stato["gate_in_attesa"]}» aperto: chiudilo prima di cambiare il canone.')
+    if azione == 'togli' and testo not in (stato.get('fatti_bloccati') or []):
+        raise comune.ErroreMotore(f'«{testo}» non è tra i fatti bloccati.')
+    prop = stato.setdefault('canone_proposte', [])
+    prop.append({'azione': 'aggiungi' if azione == 'proponi' else 'togli', 'testo': testo,
+                 'data': datetime.date.today().isoformat()})
+    righe = ['# Proposte di modifica del canone', '', 'Fatti bloccati attuali:', '']
+    righe += [f'- {x}' for x in stato.get('fatti_bloccati') or []] or ['- nessuno']
+    righe += ['', 'Proposte (si applicano solo con «ok»):', '']
+    righe += [f'- {p["azione"]}: {p["testo"]}' for p in prop]
+    comune.scrivi(cartella, CANONE, '\n'.join(righe) + '\n')
+    print(f'Proposta registrata in {CANONE}. Salva il file (commit), poi «zb canone <libro> gate».')
+
+
+def apri_gate_canone(cartella, libro, stato):
+    import fase as F
+    if not stato.get('canone_proposte'):
+        raise comune.ErroreMotore('Nessuna proposta di canone da approvare.')
+    if stato['gate_in_attesa']:
+        raise comune.ErroreMotore(f'Gate «{stato["gate_in_attesa"]}» già aperto.')
+    F.apri_gate(cartella, libro, stato, 'canone')
