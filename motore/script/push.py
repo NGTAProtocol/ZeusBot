@@ -6,8 +6,10 @@ Uso: push.py [--cartella <dir>] [--remoto origin] [--tentativi 4] [--attesa 2] [
 3. se non riesce neppure quello: git bundle del ramo in --bundle-dir (predefinito: la cartella temporanea
    di sistema, fuori dal repository), con percorso e sha256;
 4. messaggio finale chiaro: dove sta il commit e se il ramo è allineato a <remoto>.
-Codice d'uscita: 0 ramo allineato; 3 salvato solo sul ramo alternativo; 4 salvato solo nel bundle;
-5 niente salvato. Non fa commit e non cambia ramo.
+Prima del push, sul ramo di un libro (lavoro «libro», libro attivo con libro.yaml): controllo della
+cartella unica (cartella_unica.py); se fallisce non fa niente e esce con 2.
+Codice d'uscita: 0 ramo allineato; 2 cartella unica violata; 3 salvato solo sul ramo alternativo;
+4 salvato solo nel bundle; 5 niente salvato. Non fa commit e non cambia ramo.
 """
 import datetime
 import hashlib
@@ -44,6 +46,19 @@ def main(argv):
         print(f'FERMO: nessun ramo corrente in {cartella} ({ramo}).', file=sys.stderr)
         return 5
     _, commit = git(cartella, 'rev-parse', 'HEAD')
+    # cartella unica sul ramo di un libro: nessun file o commit misto fuori da libri/<slug>/
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import hook_recinto
+    rad = hook_recinto.radice(cartella)
+    slug = hook_recinto.slug_attivo(rad) if rad and hook_recinto.lavoro(rad) == 'libro' else None
+    if slug and os.path.isfile(os.path.join(rad, 'libri', slug, 'libro.yaml')):
+        import cartella_unica
+        import comune
+        titolo = comune.leggi_yaml(os.path.join(rad, 'libri', slug, 'libro.yaml')).get('titolo')
+        err = cartella_unica.controlla(rad, slug, titolo)
+        if err:
+            print(f'FERMO: cartella unica (libri/{slug}/); push non eseguito:\n- ' + '\n- '.join(err[:20]), file=sys.stderr)
+            return 2
     errore = ''
     for i in range(1, tentativi + 1):
         c, out = git(cartella, 'push', '-u', remoto, ramo)

@@ -1,0 +1,13 @@
+# Cartella unica (script/cartella_unica.py): tutto ciò che riguarda un libro vive in libri/<slug>/.
+# File che sul ramo di un libro possono stare fuori dalla cartella del libro: la configurazione della
+# radice del ramo (CLAUDE.md del ramo per scelta dell'autore, hook e agenti attivati con zb hook / zb agenti).
+# Una voce che finisce con «/» vale per tutta la cartella. I merge del motore (commit di merge) sono
+# sempre esclusi: il contenuto del motore arriva da origin/motore.
+ammessi_fuori:
+  - CLAUDE.md
+  - .gitignore
+  - .claude/settings.json
+  - .claude/agents/
+# Commit misti già salvati (la storia non si riscrive): li dichiara l'autore, uno per voce, con il motivo.
+# Esempio: - {commit: 1a2b3c4, motivo: "correzione al motore fatta per errore sul ramo del libro"}
+commit_dichiarati: []

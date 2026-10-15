@@ -55,9 +55,13 @@ def espandi(t, variabili):
     return re.sub(r'\$\{?(\w+)\}?', lambda m: variabili.get(m.group(1), m.group(0)), t)
 
 
-def bersagli_bash(comando, cwd):
-    """Percorsi che il comando Bash probabilmente scrive (solo se nomina 04-manoscritto)."""
-    if CARTELLA not in comando:
+def bersagli_bash(comando, cwd, recinto=False):
+    """Percorsi che il comando Bash probabilmente scrive (solo se nomina 04-manoscritto).
+
+    recinto=True (hook_recinto.py): ogni percorso, senza l'euristica su python (un programma lanciato non è
+    un file scritto) e con git checkout/restore solo sui percorsi dopo «--» (git checkout <ramo> non scrive
+    un file del libro)."""
+    if not recinto and CARTELLA not in comando:
         return []
     try:
         lex = shlex.shlex(comando, posix=True, punctuation_chars=';&|()<>')
@@ -101,12 +105,26 @@ def bersagli_bash(comando, cwd):
         elif prog == 'tee' or prog in ('rm', 'truncate', 'mv', 'dd', 'touch'):
             out += [risolvi(a.split('=', 1)[-1], base) for a in file_args]
         elif prog in ('sed', 'perl') and any(re.match(r'^-\w*i', a) for a in args[1:]):
-            out += [risolvi(a, base) for a in file_args]
+            # l'espressione non è un file: valore di -e/-f, oppure il primo argomento di sed senza -e
+            pos, salta, con_e = [], False, False
+            for a in args[1:]:
+                if salta:
+                    salta = False
+                    continue
+                if re.match(r'^-\w*[ef]$', a):
+                    salta, con_e = True, True
+                    continue
+                if not a.startswith('-'):
+                    pos.append(a)
+            if prog == 'sed' and not con_e:
+                pos = pos[1:]
+            out += [risolvi(a, base) for a in pos]
         elif prog in ('cp', 'install', 'rsync') and file_args:
             out.append(risolvi(file_args[-1], base))
         elif prog == 'git' and len(args) > 1 and args[1] in ('checkout', 'restore'):
-            out += [risolvi(a, base) for a in args[2:] if not a.startswith('-')]
-        elif prog.startswith('python'):
+            dopo = args[args.index('--') + 1:] if '--' in args else ([] if recinto and args[1] == 'checkout' else args[2:])
+            out += [risolvi(a, base) for a in dopo if not a.startswith('-')]
+        elif prog.startswith('python') and not recinto:
             if '-c' in args and args.index('-c') + 1 < len(args):
                 codice = args[args.index('-c') + 1]
                 out += [risolvi(p, base) for p in re.findall(r'[^\s\'"`,()]*' + CARTELLA + r'[^\s\'"`,()]*', codice)]

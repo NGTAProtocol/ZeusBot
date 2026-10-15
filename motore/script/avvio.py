@@ -113,6 +113,16 @@ def controlla(percorso):
     if avanti:
         ferma(f'Il ramo «{ramo}» ha {avanti} commit non pushati: prima git push (C.5).')
 
+    # 2b. cartella unica: niente fuori da libri/<slug>/ (file modificati e commit del libro, nome del libro)
+    import cartella_unica
+    rad, slug = cartella_unica.per_libro(cartella)
+    if slug:
+        err = cartella_unica.controlla(rad, slug, libro.get('titolo'))
+        if err:
+            ferma(f'CARTELLA UNICA: tutto il libro vive solo in libri/{slug}/. Problemi:\n- ' + '\n- '.join(err[:30]))
+    elif os.environ.get('ZB_PROVE') != '1':
+        ferma(f'{cartella} non è libri/<slug>/ del repository: il libro vive solo lì (cartella unica).')
+
     # 3. stato, briefing, documenti approvati
     stato = fase.carica_stato(cartella)
     if stato['push_in_sospeso']:

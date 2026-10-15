@@ -17,7 +17,7 @@ qualsiasi cosa) se la cartella è dentro motore/, è la radice del repository, o
 Unica eccezione: le prove della suite (ZB_PROVE=1) usano cartelle temporanee fuori da libri/, ma
 restano rifiutate dentro motore/, nella radice e sul ramo «motore».
 Legge solo motore/ e la cartella del libro; dopo la nascita in libri/<slug>/ imposta il libro
-attivo (libri/libro-attivo.md, operazione di servizio per hook_recinto.py).
+attivo (<git-dir>/zb-libro-attivo, fuori dai file tracciati; operazione di servizio per hook_recinto.py).
 """
 import datetime
 import os
