@@ -756,3 +756,11 @@ cartella_unica:
   # echo fuori, echo dentro, sed -i dentro, cp verso motore/, rm CLAUDE.md, python lanciato con 2>/dev/null,
   # redirezione in /tmp (fuori dal repository), git checkout di un ramo
   bash: [2, 0, 0, 2, 2, 0, 0, 0]
+ruoli:
+  dalla_fase: "0 / architetto-struttura / True"
+  secondo_ruolo: "2 / True"
+  stessa_sessione: "2 / True / None"
+  avviso: "0 / True / struttura"
+  altra_sessione: "0 / struttura"
+  scrittore_revisore: "2 / True"
+  stato: "0 / True / True"

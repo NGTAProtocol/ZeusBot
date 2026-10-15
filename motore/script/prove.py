@@ -2710,6 +2710,74 @@ def cartella_unica_prove(A):
     esito('hook_recinto.py', 'lavoro sul motore, file di libri/ in stage: commit bloccato', 2, hook('git commit -m x'), sez)
 
 
+# ---------------------------------------------------------------- ruoli e separazione
+
+def ruoli_prove(A):
+    import json
+    import hook_recinto
+    sez = 'ruoli'
+    b = Banco()
+    r = b.r
+    os.makedirs(os.path.join(r, 'libri'))
+    L, _ = b.nuovo('briefing-romance.md', 'libri/romance')
+    hook_recinto.imposta_libro_attivo(r, 'romance')
+    nome = 'libri/romance'
+
+    def scrive(sessione, rel):
+        """Write di Claude Code (hook del recinto, che annota la sessione)."""
+        dati = {'session_id': sessione, 'tool_name': 'Write', 'cwd': r,
+                'tool_input': {'file_path': os.path.join(L, rel), 'content': 'x'}}
+        return subprocess.run([sys.executable, '-B', os.path.join(S, 'hook_recinto.py')], input=json.dumps(dati),
+                              env=dict(b.E, CLAUDE_PROJECT_DIR=r), capture_output=True, text=True).returncode
+
+    p = b.zb('avvio', nome, sessione='s1')
+    ruoli_reg = comune.leggi_yaml(os.path.join(L, '.zb', 'ruoli.yaml'))
+    esito('avvio.py', 'avvio senza --ruolo: ruolo dalla fase, registrato in .zb/ruoli.yaml, file del ruolo letto', A['dalla_fase'],
+          f'{p.returncode} / {ruoli_reg["s1"]["ruolo"]} / {"ruolo architetto-struttura" in p.stdout}', sez)
+    p = b.zb('avvio', nome, '--ruolo', 'editor-strutturale', sessione='s1')
+    esito('avvio.py', 'stessa sessione, secondo ruolo: fermo (un ruolo per sessione)', A['secondo_ruolo'],
+          f'{p.returncode} / {"un ruolo per sessione" in p.stderr}', sez)
+    p = b.zb('avvio', nome, '--ruolo', 'redattore', sessione='s9')
+    esito('avvio.py', 'ruolo sconosciuto: fermo', 2, p.returncode, sez)
+    compila_struttura(L)
+    scrive('s1', '03-struttura/01-premessa.md')
+    scrive('s1', '06-diagnostica/revisione-struttura.md')
+    b.salva('struttura e revisione nella stessa sessione')
+    p = b.zb('pronto', nome)
+    esito('fase.py', 'revisione della struttura scritta dalla sessione dell\'architetto (blocco): fermo, gate chiuso',
+          A['stessa_sessione'], f'{p.returncode} / {"SEPARAZIONE DEI RUOLI" in p.stderr} / {b.stato(nome)["gate_in_attesa"]}', sez)
+    hy = os.path.join(M, 'dati', 'hook.yaml')
+    orig = open(hy, encoding='utf-8').read()
+    try:
+        open(hy, 'w', encoding='utf-8').write(orig.replace('separazione_ruoli: blocco', 'separazione_ruoli: avviso'))
+        p = b.zb('pronto', nome)
+        esito('fase.py', 'stessa situazione con separazione_ruoli: avviso: avviso e gate aperto', A['avviso'],
+              f'{p.returncode} / {"AVVISO separazione dei ruoli" in p.stdout} / {b.stato(nome)["gate_in_attesa"]}', sez)
+    finally:
+        open(hy, 'w', encoding='utf-8').write(orig)
+    # ripartenza pulita: la revisione la scrive un'altra sessione
+    open(os.path.join(L, '.zb', 'scritture.log'), 'w', encoding='utf-8').write('')
+    st = comune.leggi_yaml(os.path.join(L, 'stato.yaml'))
+    st.update(gate_in_attesa=None, revisione_in_corso=None)
+    open(os.path.join(L, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(st, sort_keys=False, allow_unicode=True))
+    scrive('s1', '03-struttura/01-premessa.md')
+    scrive('s2', '06-diagnostica/revisione-struttura.md')
+    b.salva('revisione da un\'altra sessione')
+    p = b.zb('pronto', nome)
+    esito('fase.py', 'revisione scritta da un\'altra sessione: gate aperto', A['altra_sessione'],
+          f'{p.returncode} / {b.stato(nome)["gate_in_attesa"]}', sez)
+    b.salva('gate struttura aperto')
+    scrive('s4', '04-manoscritto/01-prova.md')
+    p = b.zb('avvio', nome, '--ruolo', 'line-editor', sessione='s4')
+    esito('avvio.py', 'sessione che ha scritto un capitolo chiede il ruolo di line editor: fermo', A['scrittore_revisore'],
+          f'{p.returncode} / {"SEPARAZIONE DEI RUOLI" in p.stderr}', sez)
+    p = b.zb('avvio', nome, '--ruolo', 'line-editor', sessione='s5')
+    esito('avvio.py', 'altra sessione, ruolo di line editor: avvio', 0, p.returncode, sez)
+    p = b.zb('ruoli', nome, 'stato')
+    esito('ruoli.py', 'zb ruoli stato: modalità e sessioni', A['stato'],
+          f'{p.returncode} / {"Modalità della separazione (dati/hook.yaml): blocco" in p.stdout} / {"s5: line-editor" in p.stdout}', sez)
+
+
 # ---------------------------------------------------------------- tabella
 
 # ---------------------------------------------------------------- appendici e titoli interni
@@ -2763,7 +2831,7 @@ def appendici(A):
     esito('compila.py', 'appendice dichiarata e assente: FERMO', A['fermo_assente'], ottenuto, sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove}
 
 
 def main(argv):
