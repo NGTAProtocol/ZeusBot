@@ -1,0 +1,8 @@
+# Language profile: English. Roles read these three files when the book's language (libro.yaml, «lingua») is en.
+codice: en
+catalogo_anti_ia: motore/editoriale/lingue/en/catalogo-anti-ia.md
+criteri_correttore: motore/editoriale/lingue/en/criteri-correttore.md
+glossario_editoriale: motore/editoriale/lingue/en/glossario-editoriale.md
+dialogo: double quotation marks (“ ”), single quotes for quotes within quotes
+varianti: {americano: en-US, britannico: en-GB}   # chosen in the translation guide or in the style manual
+ortografia: {hunspell: en_US, languagetool: en-US}

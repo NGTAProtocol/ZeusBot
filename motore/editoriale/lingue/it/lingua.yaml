@@ -1,0 +1,7 @@
+# Profilo di lingua: italiano. I ruoli leggono questi tre file secondo la lingua del libro (libro.yaml, «lingua»).
+codice: it
+catalogo_anti_ia: motore/editoriale/anti-ia/catalogo-it.md
+criteri_correttore: motore/editoriale/correttore/criteri-correttore.md
+glossario_editoriale: motore/editoriale/lingue/it/glossario-editoriale.md
+dialogo: lineette (—), oppure caporali «» se il manuale lo sceglie
+ortografia: {hunspell: it_IT, languagetool: it}

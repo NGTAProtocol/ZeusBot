@@ -1,7 +1,13 @@
-# Lingue supportate dal motore (proposta B.3). Per ora solo l'italiano.
+# Lingue supportate dal motore: italiano e inglese. Profili editoriali in motore/editoriale/lingue/<codice>/
 it:
-  ortografia: {hunspell: it_IT, opzioni: "-i utf-8"}
+  ortografia: {hunspell: it_IT, opzioni: "-i utf-8", languagetool: it}
   mesi: [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre]
   giorni: [lunedì, martedì, mercoledì, giovedì, venerdì, sabato, domenica]
   lineetta_dialogo: "—"
   virgolette: ["«", "»"]
+en:
+  ortografia: {hunspell: en_US, opzioni: "-i utf-8", languagetool: en-US}
+  mesi: [january, february, march, april, may, june, july, august, september, october, november, december]
+  giorni: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
+  lineetta_dialogo: ["“", "\""]          # una battuta comincia con le virgolette
+  virgolette: ["“", "”"]
