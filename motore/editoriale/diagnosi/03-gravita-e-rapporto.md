@@ -19,3 +19,10 @@ Aggiungere una conseguenza; spostare un'informazione; tagliare una ripetizione; 
 
 ## Limiti
 La diagnosi non scrive soluzioni: le sceglie l'autore o il ruolo di stesura dopo l'ok.
+
+## Note per il motore
+- Prima riga di ogni rapporto e piano: `<!-- zb: ruolo=<ruolo>; su=<impronta> -->`, data da `zb ruolo <libro> <ruolo>`;
+  `zb pronto` rifiuta un rapporto scritto su una versione diversa del testo o salvato nello stesso commit del testo.
+- Nomi: `rapporto-struttura.md` e `rapporto-manoscritto.md` (diagnosta), `piano-revisione-struttura.md` e
+  `piano-revisione-manoscritto.md` (editor strutturale).
+- Gravità della prosa: le misure anti-IA usano P0/P1/P2 (catalogo anti-IA), una scala separata da questa.

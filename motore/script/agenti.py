@@ -53,8 +53,9 @@ def generato(src, dest, mod):
             if not fm.get(k):
                 raise comune.ErroreMotore(f'{src}: campo obbligatorio «{k}» mancante nel frontmatter')
         nome = fm['name']
-        if nome in mod and not re.search(r'(?m)^model:', m.group(1)):
-            t = t.replace(m.group(0), f'---\n{m.group(1)}\nmodel: {mod[nome]}\n---\n', 1)
+        if nome in mod:     # unica fonte dei modelli: dati/modelli-ruoli.yaml (sostituisce un «model:» del file)
+            corpo = re.sub(r'(?m)^model:.*\n?', '', m.group(1)).rstrip('\n')
+            t = t.replace(m.group(0), f'---\n{corpo}\nmodel: {mod[nome]}\n---\n', 1)
     return t.rstrip('\n') + '\n\n' + FIRMA + '\n'
 
 

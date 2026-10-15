@@ -8,6 +8,8 @@ Garantire che il libro abbia un'identità, un lettore e una promessa chiari, e c
 
 ## Output
 - `02-bibbia/bibbia.md` (personaggi, luoghi, fatti, regole del mondo)
+- schede del codex in `02-bibbia/codex/<id>.md`, una per personaggio o luogo, con la riga `@char:<id>` o `@loc:<id>`
+  (`zb codex <libro> verifica`)
 - `cronologia.yaml`
 - `06-diagnostica/nota-direzione.md`: posizionamento, lettore, rischi, cosa rende il libro riconoscibile.
 

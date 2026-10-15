@@ -7,7 +7,7 @@ Dopo il rapporto del diagnosta (ruolo 0), trasformare la diagnosi in un piano di
 `06-diagnostica/rapporto-<ambito>.md` e `contratto.md`, struttura approvata, capsule dei capitoli; i capitoli solo dove il piano lo richiede.
 
 ## Output
-`06-diagnostica/piano-revisione.md`: lavori in ordine, dipendenze (cosa va fatto prima perché altro regga), capitoli coinvolti, stima delle parole da riscrivere, cosa non toccare. Il piano è una proposta: si applica solo dopo l'ok dell'autore al gate.
+`06-diagnostica/piano-revisione-<ambito>.md` (`struttura` o `manoscritto`; prima riga da `zb ruolo <libro> editor-strutturale`): lavori in ordine, dipendenze (cosa va fatto prima perché altro regga), capitoli coinvolti, stima delle parole da riscrivere, cosa non toccare. Il piano è una proposta: si applica solo dopo l'ok dell'autore al gate.
 
 ## Cosa NON fa
 Non riscrive, non propone frasi o scene, non corregge la lingua. Non lavora nella stessa sessione di chi ha scritto.

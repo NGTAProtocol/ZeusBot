@@ -42,7 +42,7 @@ DA_LEGGERE_EDITORIALE = {
     'documenti': ['00-progetto/briefing.md', '03-struttura/01-premessa.md', '03-struttura/09-scelte-fisse.md'],
     'pagina_campione': ['03-struttura/09-scelte-fisse.md', '05-revisioni/pagina-campione.md'],
     'stesura': ['03-struttura/09-scelte-fisse.md', '07-capsule/registro.md'],
-    'revisione_manoscritto': ['07-capsule/registro.md'], 'line': [], 'copy': [], 'bozze': [],
+    'struttura_manoscritto': ['07-capsule/registro.md'], 'line': [], 'copy': [], 'bozze': [],
     'guida': ['00-progetto/guida-traduzione.md', '00-progetto/glossario.yaml'], 'fedelta': [],
     'chiusura': [], 'chiuso': [],
 }

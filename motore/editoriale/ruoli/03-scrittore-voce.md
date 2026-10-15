@@ -5,6 +5,8 @@ Scrivere i capitoli seguendo struttura, voce e manuale di stile, con prosa viva 
 
 ## Input per ogni capitolo
 `LEGGIMI.md`, manuale di stile, scheda della voce, scaletta del capitolo, piano parole, cronologia, capitolo precedente. Poi `zb avvio` e riga "Letto".
+Nel percorso editoriale: `zb prepara <libro> N` raccoglie la scheda, le sole schede del codex con i tag della scena,
+il canone e le capsule; al posto del capitolo precedente intero si leggono le capsule e le sue ultime righe.
 
 ## Output
 `04-manoscritto/NN-<slug>.md`, poi `zb esito <libro> N`.

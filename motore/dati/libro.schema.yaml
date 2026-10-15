@@ -26,7 +26,7 @@ campi:
       ambientazione: {tipo: testo}             # regola il dialetto della voce; «altro» se non serve
   profilo: {tipo: testo, obbligatorio: true}
   gate: {tipo: lista, elementi: {tipo: scelta, valori: [struttura, documenti, pagina_campione, primi_capitoli, lotto,
-                                                        revisione_manoscritto, line, copy, bozze, guida]}}
+                                                        struttura_manoscritto, line, copy, bozze, guida]}}
   percorso: {tipo: scelta, valori: [editoriale, breve]}   # editoriale: motore/editoriale/00-percorso.md
   lingua_originale: {tipo: testo}
   lingue_target: {tipo: lista, elementi: {tipo: testo}}

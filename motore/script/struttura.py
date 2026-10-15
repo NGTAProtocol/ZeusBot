@@ -27,11 +27,12 @@ CAMPI_SCHEDA = [
     ('pov', 'Punto di vista, luogo e tempo', 'Point of view, place and time'),
     ('tag', 'Personaggi e luoghi (tag del codex)', 'Characters and places (codex tags)'),
     ('conflitto', 'Conflitto (chi vuole cosa, chi si oppone)', 'Conflict (who wants what, who opposes)'),
-    ('cambiamento', 'Cambiamento (situazione, conoscenza, relazione)', 'Change (situation, knowledge, relationship)'),
+    ('cambiamento', 'Cosa cambia alla fine (situazione, conoscenza, relazione)', 'Change (situation, knowledge, relationship)'),
     ('informazione', 'Informazione data al lettore (e cosa viene taciuto)', 'Information given to the reader (and what is withheld)'),
     ('polarita', 'Polarità emotiva (da cosa a cosa cambia la carica della scena)', 'Emotional polarity (from what to what the charge shifts)'),
     ('sottotesto', 'Sottotesto dei dialoghi principali', 'Subtext of the main dialogues'),
     ('promesse', 'Promesse aperte / chiuse', 'Promises opened / closed'),
+    ('emozione', 'Emozione dominante', 'Dominant emotion'),
     ('gancio', 'Gancio finale', 'Final hook'),
     ('parole', 'Parole previste', 'Planned words'),
 ]
@@ -40,12 +41,12 @@ OBBLIGATORI = ('funzione', 'conflitto', 'cambiamento', 'informazione', 'gancio',
 TITOLI = {
     'it': {'01-premessa.md': 'Premessa e promessa al lettore', '02-logline-tema.md': 'Logline e tema',
            '03-personaggi-chiave.md': 'Personaggi chiave', '04-atti-svolte.md': 'Macrostruttura e svolte',
-           '05-scaletta.md': 'Scaletta per capitolo', '06-sottotrame-promesse.md': 'Sottotrame e promesse',
+           '05-scaletta.md': 'Scaletta per capitolo', '06-sottotrame-temi.md': 'Sottotrame e promesse',
            '07-tensione-ritmo.md': 'Tensione e ritmo', '08-piano-parole.md': 'Piano parole',
            '09-scelte-fisse.md': 'Scelte fisse: punto di vista, tempo, voce'},
     'en': {'01-premessa.md': 'Premise and promise to the reader', '02-logline-tema.md': 'Logline and theme',
            '03-personaggi-chiave.md': 'Key characters', '04-atti-svolte.md': 'Macrostructure and turning points',
-           '05-scaletta.md': 'Chapter outline', '06-sottotrame-promesse.md': 'Subplots and promises',
+           '05-scaletta.md': 'Chapter outline', '06-sottotrame-temi.md': 'Subplots and promises',
            '07-tensione-ritmo.md': 'Tension and pacing', '08-piano-parole.md': 'Word plan',
            '09-scelte-fisse.md': 'Fixed choices: point of view, tense, voice'},
 }
@@ -56,7 +57,7 @@ GUIDA = {
                                       '## Antagonista o forza antagonista\n- Cosa vuole:\n\n## Posta in gioco\n-\n',
            '04-atti-svolte.md': f'Macrostruttura: <una tra: {", ".join(MACRO)}>\nMotivo:\n\n## Svolte\n'
                                 '| Svolta | Capitolo | Cosa la rende necessaria |\n|---|---|---|\n',
-           '06-sottotrame-promesse.md': '| Sottotrama o promessa | Si apre | Si sviluppa | Si chiude |\n|---|---|---|---|\n',
+           '06-sottotrame-temi.md': '| Sottotrama o promessa | Si apre | Si sviluppa | Si chiude |\n|---|---|---|---|\n',
            '07-tensione-ritmo.md': '| Cap. | Tensione (1-10) | Respiro voluto? |\n|---|---|---|\n',
            '09-scelte-fisse.md': '- Punto di vista:\n- Tempo verbale:\n- Voce:\n- Sistema del dialogo:\n'},
     'en': {'01-premessa.md': '- Reader (in concrete terms):\n- Promise of the book:\n- Why they will finish it:\n',
@@ -65,7 +66,7 @@ GUIDA = {
                                       '## Antagonist or opposing force\n- What it wants:\n\n## Stakes\n-\n',
            '04-atti-svolte.md': f'Macrostruttura: <one of: {", ".join(MACRO)}>\nMotivo:\n\n## Turning points\n'
                                 '| Turning point | Chapter | What makes it necessary |\n|---|---|---|\n',
-           '06-sottotrame-promesse.md': '| Subplot or promise | Opens | Develops | Closes |\n|---|---|---|---|\n',
+           '06-sottotrame-temi.md': '| Subplot or promise | Opens | Develops | Closes |\n|---|---|---|---|\n',
            '07-tensione-ritmo.md': '| Cap. | Tension (1-10) | Deliberate breather? |\n|---|---|---|\n',
            '09-scelte-fisse.md': '- Point of view:\n- Tense:\n- Voice:\n- Dialogue punctuation system:\n'},
 }
@@ -76,7 +77,10 @@ def lingua_doc(libro):
 
 
 def scheda_vuota(n, lingua='it'):
-    i = 1 if lingua == 'it' else 2
+    if lingua == 'it':          # fonte unica: il modello del livello editoriale
+        m = os.path.join(comune.radice_motore(), 'editoriale', 'struttura', 'modelli', 'scaletta-capitolo.md')
+        return open(m, encoding='utf-8').read().rstrip('\n').replace('Capitolo N ', f'Capitolo {n} ', 1)
+    i = 2
     titolo = 'Capitolo' if lingua == 'it' else 'Chapter'
     righe = [f'## {titolo} {n} - <titolo di lavoro>']
     for c in CAMPI_SCHEDA:
@@ -109,16 +113,31 @@ def modelli(libro, n_cap, sigla, budget):
 
 # ---------------------------------------------------------------- lettura della scaletta
 
+# riconoscimento dei campi per parola iniziale: vale per il modello del livello editoriale
+# (motore/editoriale/struttura/modelli/scaletta-capitolo.md) e per le etichette inglesi
+PREFISSI = [('funzione', ('funzione', 'narrative function')), ('pov', ('punto di vista', 'point of view')),
+            ('tag', ('personaggi e luoghi', 'characters and places')), ('conflitto', ('conflitto', 'conflict')),
+            ('cambiamento', ('cambiamento', 'cosa cambia', 'change', 'what changes')),
+            ('informazione', ('informazione', 'information')), ('polarita', ('polarità', 'polarita', 'emotional polarity')),
+            ('sottotesto', ('sottotesto', 'subtext')), ('promesse', ('promesse', 'promises')),
+            ('emozione', ('emozione', 'dominant emotion')), ('gancio', ('gancio', 'final hook', 'hook')),
+            ('parole', ('parole', 'planned words', 'words'))]
+
+
+def chiave_campo(etichetta):
+    e = etichetta.strip().lower()
+    for chiave, pref in PREFISSI:
+        if e.startswith(pref):
+            return chiave
+    return None
+
+
 def schede(cartella):
     """{numero capitolo (str): {chiave campo: valore}} dai blocchi «## Capitolo N» / «## Chapter N» di 05-scaletta.md."""
     p = os.path.join(cartella, comune.STRUTTURA, '05-scaletta.md')
     if not os.path.isfile(p):
         return {}
     out, cur = {}, None
-    etichette = {}
-    for c in CAMPI_SCHEDA:
-        etichette[c[1].lower()] = c[0]
-        etichette[c[2].lower()] = c[0]
     for r in open(p, encoding='utf-8').read().splitlines():
         m = re.match(r'^##\s+(?:Capitolo|Chapter)\s+(\d+)\b(.*)$', r.strip())
         if m:
@@ -127,7 +146,7 @@ def schede(cartella):
             continue
         if cur and r.strip().startswith('- ') and ':' in r:
             k, v = r.strip()[2:].split(':', 1)
-            chiave = etichette.get(k.strip().lower())
+            chiave = chiave_campo(k)
             if chiave:
                 out[cur][chiave] = v.strip()
     return out

@@ -1,10 +1,13 @@
 ## Capitolo N - <titolo di lavoro>
 - Funzione narrativa:
 - Punto di vista, luogo e tempo:
+- Personaggi e luoghi (tag del codex): @char:<id> @loc:<id>
 - Conflitto (chi vuole cosa, chi si oppone):
 - Cosa cambia alla fine (situazione, conoscenza, relazione):
 - Informazione data al lettore (e cosa viene taciuto):
 - Promesse aperte / chiuse:
 - Emozione dominante:
+- Polarità emotiva (da cosa a cosa cambia la carica della scena):
+- Sottotesto dei dialoghi principali:
 - Gancio finale:
 - Parole previste:

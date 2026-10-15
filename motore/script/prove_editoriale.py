@@ -136,24 +136,24 @@ def percorso(sez='percorso editoriale'):
     esito('struttura.py', 'struttura scritta: verifica', '0 / Struttura: OK', f'{p.returncode} / {p.stdout.strip().splitlines()[-1]}', sez)
     salva(r, 'architetto: struttura')
     p = zb(L, 'pronto', '.')
-    esito('percorso.py', 'pronto senza diagnosi e piano: FERMO', '2 / True', f'{p.returncode} / {"diagnosi-struttura.md: manca" in p.stderr}', sez)
+    esito('percorso.py', 'pronto senza diagnosi e piano: FERMO', '2 / True', f'{p.returncode} / {"rapporto-struttura.md: manca" in p.stderr}', sez)
     # separazione: diagnosi salvata nello stesso commit di una modifica alla struttura
-    intesta(L, os.path.join(F, 'rapporti', 'diagnosi-struttura.md'), '06-diagnostica/diagnosi-struttura.md', 'diagnosta')
-    intesta(L, os.path.join(F, 'rapporti', 'revisione-struttura.md'), '06-diagnostica/revisione-struttura.md',
+    intesta(L, os.path.join(F, 'rapporti', 'rapporto-struttura.md'), '06-diagnostica/rapporto-struttura.md', 'diagnosta')
+    intesta(L, os.path.join(F, 'rapporti', 'piano-revisione-struttura.md'), '06-diagnostica/piano-revisione-struttura.md',
             'editor-strutturale')
     open(os.path.join(L, '03-struttura', '07-tensione-ritmo.md'), 'a').write('\n')
-    intesta(L, os.path.join(F, 'rapporti', 'diagnosi-struttura.md'), '06-diagnostica/diagnosi-struttura.md', 'diagnosta')
-    intesta(L, os.path.join(F, 'rapporti', 'revisione-struttura.md'), '06-diagnostica/revisione-struttura.md',
+    intesta(L, os.path.join(F, 'rapporti', 'rapporto-struttura.md'), '06-diagnostica/rapporto-struttura.md', 'diagnosta')
+    intesta(L, os.path.join(F, 'rapporti', 'piano-revisione-struttura.md'), '06-diagnostica/piano-revisione-struttura.md',
             'editor-strutturale')
     salva(r, 'struttura e diagnosi insieme')
     p = zb(L, 'pronto', '.')
     esito('percorso.py', 'diagnosi nello stesso commit della struttura: FERMO (chi scrive non rivede)', '2 / True',
           f'{p.returncode} / {"stesso commit" in p.stderr}', sez)
-    git(r, 'rm', '-q', f'libri/{SLUG}/06-diagnostica/diagnosi-struttura.md', f'libri/{SLUG}/06-diagnostica/revisione-struttura.md')
+    git(r, 'rm', '-q', f'libri/{SLUG}/06-diagnostica/rapporto-struttura.md', f'libri/{SLUG}/06-diagnostica/piano-revisione-struttura.md')
     salva(r, 'tolti i rapporti')
-    intesta(L, os.path.join(F, 'rapporti', 'diagnosi-struttura.md'), '06-diagnostica/diagnosi-struttura.md', 'diagnosta')
+    intesta(L, os.path.join(F, 'rapporti', 'rapporto-struttura.md'), '06-diagnostica/rapporto-struttura.md', 'diagnosta')
     salva(r, 'diagnosta')
-    intesta(L, os.path.join(F, 'rapporti', 'revisione-struttura.md'), '06-diagnostica/revisione-struttura.md',
+    intesta(L, os.path.join(F, 'rapporti', 'piano-revisione-struttura.md'), '06-diagnostica/piano-revisione-struttura.md',
             'editor-strutturale')
     salva(r, 'editor strutturale')
     p = zb(L, 'pronto', '.')
@@ -231,7 +231,7 @@ def percorso(sez='percorso editoriale'):
     fino_alla_fine(L)
     zb(L, 'ok', '.')
     salva(r, 'gate primi capitoli')
-    esito('fase.py', 'stesura finita: revisione_manoscritto', 'revisione_manoscritto', stato(L)['fase'], sez)
+    esito('fase.py', 'stesura finita: struttura_manoscritto', 'struttura_manoscritto', stato(L)['fase'], sez)
     # capsula 3 e registro: promesse tutte chiuse
     zb(L, 'capsula', '.', '3')
     shutil.copyfile(os.path.join(F, 'capsule', '03.md'), os.path.join(L, '07-capsule', '03.md'))
@@ -239,8 +239,8 @@ def percorso(sez='percorso editoriale'):
     esito('capsula.py', 'registro: nessuna promessa aperta dopo il capitolo 3', True, 'promesse aperte: nessuna' in p.stdout, sez)
     salva(r, 'capsula 3')
     # revisioni
-    for fs, rap in (('revisione_manoscritto', [('diagnosi-manoscritto.md', 'diagnosta', None),
-                                              ('revisione-manoscritto.md', 'editor-strutturale', None)]),
+    for fs, rap in (('struttura_manoscritto', [('rapporto-manoscritto.md', 'diagnosta', None),
+                                              ('piano-revisione-manoscritto.md', 'editor-strutturale', None)]),
                     ('line', [(f'line/0{n}.md', 'line-editor', n) for n in (1, 2, 3)]),
                     ('copy', [(f'copy/0{n}.md', 'correttore-italiano', n) for n in (1, 2, 3)])):
         if fs == 'line':

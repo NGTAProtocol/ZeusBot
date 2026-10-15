@@ -1,9 +1,9 @@
 """Percorso da casa editrice (libri con «percorso: editoriale» in libro.yaml). Lo usa fase.py.
 
-Fasi: struttura → documenti → pagina_campione → stesura → revisione_manoscritto → line → copy → bozze →
+Fasi: struttura → documenti → pagina_campione → stesura → struttura_manoscritto → line → copy → bozze →
 chiusura → chiuso (motore/editoriale/00-percorso.md). I libri senza il campo restano sul percorso breve.
 
-Fasi di revisione (revisione_manoscritto, line, copy, bozze) in due tempi, in stato.yaml «sottofase»:
+Fasi di revisione (struttura_manoscritto, line, copy, bozze) in due tempi, in stato.yaml «sottofase»:
 - «proposte»: i ruoli scrivono i rapporti; «zb pronto» controlla che ci siano tutti, con la prima riga
   «<!-- zb: ruolo=<ruolo>; su=<impronta> -->» uguale all'impronta attuale del testo rivisto, e che ogni
   rapporto sia stato salvato in un commit che non tocca il testo rivisto (chi scrive non rivede); poi apre il
@@ -18,21 +18,21 @@ import re
 
 import comune
 
-FASI = ['struttura', 'documenti', 'pagina_campione', 'guida', 'stesura', 'revisione_manoscritto', 'line', 'copy',
+FASI = ['struttura', 'documenti', 'pagina_campione', 'guida', 'stesura', 'struttura_manoscritto', 'line', 'copy',
         'bozze', 'fedelta', 'chiusura', 'chiuso']
-REVISIONI = ['revisione_manoscritto', 'line', 'copy', 'bozze', 'fedelta']
-SUCCESSIVA = {'revisione_manoscritto': 'line', 'line': 'copy', 'copy': 'bozze', 'bozze': 'chiusura'}
+REVISIONI = ['struttura_manoscritto', 'line', 'copy', 'bozze', 'fedelta']
+SUCCESSIVA = {'struttura_manoscritto': 'line', 'line': 'copy', 'copy': 'bozze', 'bozze': 'chiusura'}
 # libro di traduzione (modalita: traduzione, 08-traduzione-<lingua>/): guida → stesura → line → copy → fedelta
 SUCCESSIVA_TRADUZIONE = {'line': 'copy', 'copy': 'fedelta', 'fedelta': 'chiusura'}
-GATE = ['struttura', 'documenti', 'pagina_campione', 'primi_capitoli', 'lotto', 'revisione_manoscritto',
+GATE = ['struttura', 'documenti', 'pagina_campione', 'primi_capitoli', 'lotto', 'struttura_manoscritto',
         'line', 'copy', 'bozze', 'canone', 'guida', 'fedelta']
 INTESTAZIONE = re.compile(r'^<!--\s*zb:\s*ruolo=([\w\-]+);\s*su=([0-9a-f]{12})\s*-->')
 CANONE = '06-diagnostica/canone-proposte.md'
 # ruolo -> fasi in cui può lavorare (zb ruolo lo controlla: la scrittura non include revisione)
-FASI_RUOLO = {'architetto-struttura': ['struttura'], 'diagnosta': ['struttura', 'revisione_manoscritto'],
-              'editor-strutturale': ['struttura', 'revisione_manoscritto'], 'direttore-editoriale': ['documenti'],
-              'scrittore-voce': ['pagina_campione', 'stesura', 'revisione_manoscritto'],
-              'capsula': ['stesura', 'revisione_manoscritto'], 'line-editor': ['line'],
+FASI_RUOLO = {'architetto-struttura': ['struttura'], 'diagnosta': ['struttura', 'struttura_manoscritto'],
+              'editor-strutturale': ['struttura', 'struttura_manoscritto'], 'direttore-editoriale': ['documenti'],
+              'scrittore-voce': ['pagina_campione', 'stesura', 'struttura_manoscritto'],
+              'capsula': ['stesura', 'struttura_manoscritto'], 'line-editor': ['line'],
               'correttore-italiano': ['copy'], 'correttore-bozze': ['bozze'],
               'traduttore': ['stesura'], 'revisore-fedelta': ['fedelta']}
 
@@ -67,12 +67,12 @@ def rapporti(cartella, libro, fase):
     """[(rapporto, ruolo, [testi rivisti])] attesi in una fase."""
     if fase == 'struttura':
         s = file_struttura()
-        return [('06-diagnostica/diagnosi-struttura.md', 'diagnosta', s),
-                ('06-diagnostica/revisione-struttura.md', 'editor-strutturale', s)]
+        return [('06-diagnostica/rapporto-struttura.md', 'diagnosta', s),
+                ('06-diagnostica/piano-revisione-struttura.md', 'editor-strutturale', s)]
     tutti = [r for _, r in capitoli(cartella, libro)]
-    if fase == 'revisione_manoscritto':
-        return [('06-diagnostica/diagnosi-manoscritto.md', 'diagnosta', tutti),
-                ('06-diagnostica/revisione-manoscritto.md', 'editor-strutturale', tutti)]
+    if fase == 'struttura_manoscritto':
+        return [('06-diagnostica/rapporto-manoscritto.md', 'diagnosta', tutti),
+                ('06-diagnostica/piano-revisione-manoscritto.md', 'editor-strutturale', tutti)]
     if fase in ('line', 'copy'):
         ruolo = 'line-editor' if fase == 'line' else 'correttore-italiano'
         return [(f'06-diagnostica/{fase}/{nn(n)}.md', ruolo, [r]) for n, r in capitoli(cartella, libro)]
@@ -98,9 +98,10 @@ def intestazione(cartella, rel):
 
 
 def commit_di_nascita(cartella, rel):
-    """Hash del commit che ha aggiunto `rel` (None se non salvato)."""
-    out = comune.git(cartella, 'log', '--diff-filter=A', '--format=%H', '--', rel)[1].split()
-    return out[0] if out else None          # l'ultima nascita (un rapporto tolto e rifatto conta da capo)
+    """Hash dell'ultimo commit che ha cambiato `rel` (None se non salvato): quel commit non deve toccare il testo
+    rivisto, così anche un rapporto riscritto dopo resta separato dal testo."""
+    out = comune.git(cartella, 'log', '-1', '--format=%H', '--', rel)[1].split()
+    return out[0] if out else None
 
 
 def file_del_commit(cartella, commit):
@@ -140,11 +141,6 @@ def problemi_fase(cartella, libro, fase):
     out = []
     for rel, ruolo, testi in rapporti(cartella, libro, fase):
         out += problemi_rapporto(cartella, rel, ruolo, testi)
-    if fase in ('revisione_manoscritto', 'struttura'):
-        rel = rapporti(cartella, libro, fase)[1][0]
-        p = os.path.join(cartella, rel)
-        if os.path.isfile(p) and not re.search(r'(?m)^##\s+Piano di revisione', open(p, encoding='utf-8').read()):
-            out.append(f'{rel}: manca la sezione «## Piano di revisione»')
     return out
 
 
@@ -299,9 +295,9 @@ def dopo_stesura(stato, libro=None):
         stato.update(fase='line', sottofase='proposte', passo='line editing nella lingua di arrivo', gate_in_attesa=None)
         print('Tutti i capitoli tradotti e controllati: fase «line» (line-editor nella lingua di arrivo).')
         return
-    stato.update(fase='revisione_manoscritto', sottofase='proposte', passo='diagnosi e piano di revisione',
+    stato.update(fase='struttura_manoscritto', sottofase='proposte', passo='diagnosi e piano di revisione',
                  gate_in_attesa=None)
-    print('Tutte le unità del piano sono scritte e accettate: fase «revisione_manoscritto» '
+    print('Tutte le unità del piano sono scritte e accettate: fase «struttura_manoscritto» '
           '(diagnosta, poi editor-strutturale).')
 
 
@@ -313,7 +309,7 @@ def prossimo(stato):
         return ('Architetto: i nove file di 03-struttura/; poi diagnosta ed editor-strutturale (commit separati); '
                 'poi «zb pronto <libro>».')
     if fs in REVISIONI:
-        chi = {'revisione_manoscritto': 'diagnosta, poi editor-strutturale', 'line': 'line-editor per ogni capitolo',
+        chi = {'struttura_manoscritto': 'diagnosta, poi editor-strutturale', 'line': 'line-editor per ogni capitolo',
                'copy': 'correttore-italiano per ogni capitolo', 'bozze': 'zb compila, zb impagina, poi correttore-bozze',
                'fedelta': 'revisore-fedelta (affiancata e ritraduzione a campione, sessione nuova)'}[fs]
         if sotto == 'proposte':

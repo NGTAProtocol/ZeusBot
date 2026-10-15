@@ -101,7 +101,7 @@ Ambientazione:
      Lingua: it oppure en (lingua in cui si scrive il libro). Lingue target: traduzioni previste, separate da virgole.
      Percorso: editoriale (struttura, revisioni, line, copy, bozze; motore/editoriale/00-percorso.md) oppure breve.
      Gate (facoltativo; vuoto = tutti quelli del percorso): struttura, documenti, pagina_campione, primi_capitoli,
-     lotto, revisione_manoscritto, line, copy, bozze.
+     lotto, struttura_manoscritto, line, copy, bozze.
      Testo precedente (solo riscrittura): un file in 01-originale/, per esempio 01-originale/testo.md.
      Motivo override: obbligatorio se un valore è fuori dal profilo di genere (lunghezza, capitoli…).
      Capitoli: «minimo | media | massimo» in parole; obbligatorio se la lunghezza è fuori profilo.

@@ -140,7 +140,7 @@ def percorso_di(c):
     return (c.get('percorso') or 'editoriale').strip()
 
 
-GATE_EDITORIALI = ['struttura', 'documenti', 'pagina_campione', 'primi_capitoli', 'revisione_manoscritto',
+GATE_EDITORIALI = ['struttura', 'documenti', 'pagina_campione', 'primi_capitoli', 'struttura_manoscritto',
                    'line', 'copy', 'bozze']
 
 

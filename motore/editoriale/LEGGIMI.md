@@ -1,15 +1,20 @@
 # Livello editoriale del motore
 
 Questa cartella è il livello che trasforma il motore da linea di produzione in casa editrice.
-Va copiata in `motore/editoriale/` del ramo motore. Non contiene libri, né nomi di libri o autori reali.
+Non contiene libri, né nomi di libri o autori reali, né contenuti di un libro (manoscritto, codex, schede e stato
+stanno solo in `libri/<slug>/` del ramo del libro).
 
 ## Contenuto
 - `00-percorso.md`: il percorso completo con le fermate (gate).
 - `struttura/01-fase-struttura.md`: la prima fase dopo il briefing.
 - `struttura/modelli/`: i documenti vuoti della fase struttura.
-- `ruoli/`: sette ruoli editoriali, uno per file.
+- `ruoli/`: otto ruoli editoriali, uno per file (diagnosta compreso).
+- `diagnosi/`: principi, contratto del libro, passaggi di analisi, gravità e rapporto.
+- `agenti/`: nove subagenti di Claude Code (fonte unica; `zb agenti attiva` li installa sui rami dei libri).
+- `risparmio-token.md`: subagenti, capsule e regole per pochi token.
 - `anti-ia/catalogo-it.md`: schemi da IA in italiano e regole di ritmo.
 - `correttore/criteri-correttore.md`: criteri del correttore di italiano.
+- Estensioni: `lingue/` (profili it/en, traduzione, agenti di traduzione), `comandi/` (comandi di Claude Code).
 
 ## Regole
 1. Una fonte di verità: queste regole sostituiscono ogni skill citata ma assente.

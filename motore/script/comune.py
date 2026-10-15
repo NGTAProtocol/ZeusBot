@@ -228,7 +228,7 @@ def carica_libro(percorso):
 
 STRUTTURA = '03-struttura'
 FILE_STRUTTURA = ['01-premessa.md', '02-logline-tema.md', '03-personaggi-chiave.md', '04-atti-svolte.md',
-                  '05-scaletta.md', '06-sottotrame-promesse.md', '07-tensione-ritmo.md', '08-piano-parole.md',
+                  '05-scaletta.md', '06-sottotrame-temi.md', '07-tensione-ritmo.md', '08-piano-parole.md',
                   '09-scelte-fisse.md']
 MODELLO = '<!-- zb: modello -->'
 

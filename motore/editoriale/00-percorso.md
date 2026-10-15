@@ -24,3 +24,11 @@ Chiusura meccanica, in ordine: continuita, ortografia, compila, impagina, pdf, p
 
 ## Separazione dei ruoli
 Una sessione di Claude Code = un ruolo. Per cambiare ruolo: salvare, aprire sessione nuova, `zb avvio`, riga "Letto".
+
+## Note per il motore
+- Vale per i libri con `percorso: editoriale` in `libro.yaml` (lo scrive `zb nuovo`); i libri nati prima seguono il
+  percorso breve (documenti, pagina campione, stesura, chiusura).
+- Revisione della struttura: prima il diagnosta (`rapporto-struttura.md`), poi l'editor strutturale
+  (`piano-revisione-struttura.md`), in commit che non toccano `03-struttura/`; `zb pronto` lo controlla.
+- Fasi 8-11 in due tempi: rapporti (proposte) → gate → applicazione delle sole proposte approvate → `zb pronto`.
+- Il canone (fatti bloccati) cambia solo con il gate `canone`. Traduzione: `lingue/traduzione.md`.

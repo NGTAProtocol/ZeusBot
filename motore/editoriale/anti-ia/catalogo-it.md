@@ -57,3 +57,26 @@ Le soglie vanno tarate sui mini-libri di prova e scritte nel profilo di genere.
 
 ## I. Modalità audit
 Il controllo non riscrive: produce un elenco (posizione, schema, proposta) in `06-diagnostica/`. Le correzioni si applicano dopo `ok`.
+
+## Note per il motore (integrazioni)
+- **Gravità della prosa**: P0 rompe la lettura o la voce (terzo capitolo di fila con la stessa chiusura; dialogo che
+  dichiara il sottotesto); P1 schema evidente e ripetuto; P2 da guardare.
+- **Profili**: «narrativa» (prosa fuori dal dialogo: sezioni A, C, E) e «dialogo» (sezione D; le misure di ritmo non
+  si applicano al parlato).
+- **Vocabolario per livelli** (L1 da sostituire sempre, L2 da segnalare in gruppo, L3 da segnalare per densità): per
+  l'italiano i livelli restano vuoti in `motore/dati/antiia.yaml` finché non sono estratti dai dati
+  (`zb antiia estrai`, corpus da fornire). Le formule della sezione B sono esempi per lo scrittore e il line editor,
+  non una lista che il motore misura.
+- **Difetti automatici del modello** (da haowjy/creative-writing-skills, Apache-2.0, riscritti): allargare la scena
+  oltre il compito; appiattire la voce in un registro competente; spiegoni; nominare le emozioni; risolvere la
+  tensione troppo presto; personaggi tutti ugualmente eloquenti; commento emotivo dopo il momento; chiudere
+  un'ambiguità voluta; lingua troppo intensa; ignorare lo stile del progetto.
+- **Come si corregge** (da chi-feng/humanizer, MIT, riscritto): per sottrazione, non per sostituzione; rileggere ciò
+  che la correzione introduce; non aggiungere dettagli che il testo non ha; non omogeneizzare la voce; un tic conta
+  anche se compare una sola volta per capitolo, se torna in ogni capitolo.
+- **Lineette nella narrazione**: dove la lineetta apre la battuta, usarla anche per gli incisi della narrazione
+  confonde la pagina (idea di book-genesis-studio, MIT); misura `lineette_narrazione`.
+- **Misure implementate** (sezione H): `motore/script/antiia.py`, lanciato da `zb esito` (variazione delle frasi,
+  aperture uguali, formule per mille, lineette nella narrazione, varietà lessicale, chiusure uguali); soglie in
+  `motore/dati/antiia.yaml`, tarate sui mini-libri; report in `06-diagnostica/anti-ia/NN.md`.
+

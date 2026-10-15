@@ -27,7 +27,20 @@ Architetto della struttura (vedi `ruoli/02-architetto-struttura.md`).
 - la fine è coerente con la promessa.
 
 ## Revisione
-L'editor strutturale (sessione separata) legge solo `03-struttura/` e il briefing e scrive `06-diagnostica/revisione-struttura.md`: punti forti, problemi in ordine di gravità, proposte. Non riscrive la struttura.
+Prima il diagnosta (sessione separata) scrive `06-diagnostica/contratto.md` e `06-diagnostica/rapporto-struttura.md`;
+poi l'editor strutturale (sessione separata) legge solo `03-struttura/`, il briefing e il rapporto e scrive
+`06-diagnostica/piano-revisione-struttura.md`: punti forti, problemi in ordine di gravità, proposte. Non riscrive la
+struttura. I rapporti stanno in commit che non toccano `03-struttura/` (lo controlla `zb pronto`).
 
 ## Gate `struttura`
 L'autore risponde `ok`, `correggi` o `avanti`. Con `correggi`, l'architetto applica solo le correzioni richieste.
+
+## Note per il motore
+- `zb nuovo` crea i nove file con la riga `<!-- zb: modello -->`; l'architetto la toglie a file scritto (`zb pronto`
+  rifiuta i file che la contengono ancora; `zb struttura <libro> verifica` dice cosa manca).
+- `05-scaletta.md` comincia con la tabella `| Unità | Data | Contenuto | Chiusura |`; `08-piano-parole.md` ha le colonne
+  `Cap.` e `Budget capitolo` (le leggono gli script).
+- `04-atti-svolte.md` dichiara `Macrostruttura:` (una tra 3 atti, 4 atti, 5 atti, dittico, in medias res, mosaico,
+  slow-burn, circolare) e `Motivo:`. Le svolte non stanno sui quarti esatti per regola; numero e lunghezza dei capitoli
+  nascono dal contenuto (budget non tutti uguali); niente etichette automatiche «Atto 1/2/3». `zb esito` segnala
+  capitoli di lunghezza quasi uguale.

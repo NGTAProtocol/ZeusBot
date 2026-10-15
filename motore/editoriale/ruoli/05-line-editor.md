@@ -16,7 +16,11 @@ Il capitolo, la scheda della voce, `anti-ia/catalogo-it.md`, i divieti della voc
 - protegge la voce del libro e dei personaggi.
 
 ## Principio
-Intervento minimo efficace: se una frase funziona, non si tocca.
+Intervento minimo efficace: se una frase funziona, non si tocca. Si corregge per sottrazione, non per sostituzione;
+si rilegge ciò che la correzione introduce; non si aggiungono dettagli che il testo non ha; ambiguità, omissioni e
+ripetizioni volute restano (idee di chi-feng/humanizer, MIT, e haowjy/creative-writing-skills, Apache-2.0,
+riscritte). Il catalogo anti-IA non sta sopra manuale, voce e briefing. Prima riga del rapporto:
+`zb ruolo <libro> line-editor N`; il ruolo lavora solo in fase `line`.
 
 ## Cosa NON fa
 Non cambia i fatti, la struttura, il punto di vista. Non corregge ortografia e grammatica: è il compito del ruolo successivo.
