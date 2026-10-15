@@ -6,7 +6,7 @@ Data: 2026-10-13. Ramo motore, partendo da d4b4833.
 
 - Bundle caricato dall'autore: sha256 `9b9718fe…dada3b`, combacia. `git bundle verify`: storia completa.
 - Clonato in `/home/user/banca-voci`, ramo `main`: due commit (eba0658, a22b018 = HEAD), due voci
-  (`atkinson-2-0`, `ibrida-pasolini-camilleri`). Nessun file esistente modificato. Tolto il remote
+  (gli slug stanno nell'indice della banca-voci, non nel motore). Nessun file esistente modificato. Tolto il remote
   `origin` che puntava al file del bundle.
 - `export ZB_BANCA_VOCI=/home/user/banca-voci` (scritto nella «Ripartenza» di `passaggio-di-consegne.md`).
 

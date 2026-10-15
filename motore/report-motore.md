@@ -1,8 +1,9 @@
 # Report del motore editoriale
 
-Stato al 2026-10-13, ramo `motore`. Suite: **454/454 OK**, 0 saltate, 0 KO (con LanguageTool e `ZB_BANCA_VOCI`).
+Stato al 2026-10-15, ramo `motore`. Suite: **520/520 OK**, 0 saltate, 0 KO (con LanguageTool 6.8).
 Il motore è una fabbrica generica di romanzi in italiano: procedura, script, modelli vuoti, profili
-di genere, dati KDP e mini-libri inventati per le prove. Non contiene libri reali.
+di genere, dati KDP, il livello editoriale (`editoriale/`) e mini-libri inventati per le prove. Non contiene
+libri reali.
 
 ## 1. Struttura
 
@@ -11,7 +12,9 @@ di genere, dati KDP e mini-libri inventati per le prove. Non contiene libri real
 | `CLAUDE.md` | regole di avvio delle sessioni che lavorano su un libro |
 | `.gitignore` | file Python generati, ambienti virtuali |
 | `motore/zb` | punto d'ingresso unico: `python3 motore/zb <comando> …` |
-| `motore/script/` | 27 moduli Python: controlli, fasi, stampa, KDP, voci, prove |
+| `motore/script/` | 33 moduli Python: controlli, fasi, ruoli, cartella unica, anti-IA, agenti, capsule, consumo, stampa, KDP, voci, prove |
+| `motore/editoriale/` | livello editoriale dell'autore: percorso, ruoli (con riferimenti), agenti, struttura e modelli, anti-IA, correttore, risparmio di token, glossario |
+| `motore/requirements.txt` | dipendenze Python |
 | `motore/stampa/` | foglio di stile, render con Chromium, font EB Garamond |
 | `motore/dati/` | schemi, dati KDP, lista nera, lingue, struttura standard di un libro |
 | `motore/modelli/` | modelli vuoti per un libro nuovo |
@@ -29,13 +32,18 @@ di genere, dati KDP e mini-libri inventati per le prove. Non contiene libri real
 |---|---|
 | `zb` | smista i comandi verso gli script; `zb aiuto` li elenca |
 | `comune.py` | funzioni comuni: lettura e validazione di `libro.yaml`, percorsi dentro il libro, dati KDP, date, sessione |
-| `fase.py` | macchina a stati del libro (documenti, pagina campione, stesura, chiusura), gate, `zb pronto/ok/avanti/correggi/riapprova/esito`; unico script che scrive `stato.yaml` |
+| `fase.py` | macchina a stati del libro (struttura, documenti, pagina campione, stesura, revisione del manoscritto, line, copy, bozze, chiusura), gate con controlli della struttura, `zb pronto/ok/avanti/correggi/riapprova/esito`; unico script che scrive `stato.yaml` |
+| `ruoli.py` | un ruolo per sessione, separazione tra chi scrive e chi revisiona (`zb ruoli`) |
+| `cartella_unica.py` | niente fuori da `libri/<slug>/`: file modificati, commit misti, nome del libro (`zb cartella`, `avvio`, `push`) |
+| `anti_ia.py` | misure della sezione H del catalogo anti-IA, in audit, dentro `zb esito` |
+| `installa_languagetool.py` | `zb ortografia installa|verifica`: LanguageTool fuori dal repository |
+| `agenti.py`, `capsule.py`, `consumo.py` | subagenti (`zb agenti`), capsule di continuità (`zb capsula`), misura della sessione (`zb consumo`) | |
 | `avvio.py` | controlli d'avvio e riga «Letto: …» (`zb avvio`); con la voce, anche briefing e scheda della voce |
 | `voce.py` | voci narrative della banca-voci (`ZB_BANCA_VOCI`): `zb voce lista`, `mostra <slug> [N]`, `verifica <slug>`; divieti della voce per `stile.py` |
 | `nuovo.py` | crea un libro dal briefing (`zb nuovo`) |
 | `adotta.py` | bozze di `libro.yaml`, stato, cronologia e nomi per un libro già avviato (`zb adotta`) |
 | `conta.py` | conteggio delle parole con il metodo unico; stampa a schermo, non scrive |
-| `capitolo.py` | tutti i controlli di un capitolo in un colpo solo (`zb capitolo`, usato da `zb esito`) |
+| `capitolo.py` | tutti i controlli di un capitolo in un colpo solo (dentro `zb esito`), più anti-IA e Gulpease informativo |
 | `stile.py` | frase media, dialogo, lista nera e voci, divieti della voce narrativa (avviso), tetti, similitudini, vincoli, eccezioni motivate |
 | `riciclo.py` | anti-riciclo a 7 parole tra unità, con i richiami ammessi |
 | `continuita.py` | date, età, durate, tempi relativi, cifre, nomi scritti in due modi, fatti incompatibili |
@@ -47,9 +55,8 @@ di genere, dati KDP e mini-libri inventati per le prove. Non contiene libri real
 | `conformita_kdp.py` | conformità KDP in 15 sezioni, report in `06-pubblicazione/` |
 | `kdp_verifica.py` | registra la verifica delle direttive KDP fatta dall'autore (`zb verifica KDP fatta`) |
 | `pacchetto.py` | struttura di `06-pubblicazione/` per KDP |
-| `pulizia.py` | elenca temporanei, cartelle vuote e copie; cancella solo con `--applica` |
-| `push.py` | push con 4 tentativi, poi ramo di salvataggio, poi git bundle (`zb push`) |
-| `hook_sessione.py`, `hook_manoscritto.py` | hook di Claude Code (SessionStart, PreToolUse); oggi in modalità avviso |
+| `push.py` | cartella unica e prove (sul motore) prima del push; push con 4 tentativi, poi ramo di salvataggio, poi git bundle (`zb push`) |
+| `hook_sessione.py`, `hook_manoscritto.py`, `hook_recinto.py` | hook di Claude Code (SessionStart, PreToolUse): sessione, manoscritto (avviso), recinto e cartella unica anche su Bash (blocco) |
 | `separazione.py` | controlla che `motore/` non contenga libri |
 | `recinto.py` | controlla che i comandi scrivano solo dentro il libro indicato |
 | `valida_profili.py` | valida i profili di genere contro lo schema |
@@ -69,7 +76,7 @@ di genere, dati KDP e mini-libri inventati per le prove. Non contiene libri real
 | `dati/lista-nera.yaml` | espressioni da evitare (base); il libro aggiunge le sue voci | `stile.py` |
 | `dati/parole-ammesse-it.txt` | forme italiane valide ignote a Hunspell; mai nomi propri | `ortografia.py` |
 | `dati/nomi_vietati.txt` | nomi che non devono comparire in `motore/`; vuoto | `separazione.py` |
-| `dati/struttura-libro.yaml` | cartelle standard di un libro, con scopo e momento di creazione | `nuovo.py`, `pulizia.py` |
+| `dati/struttura-libro.yaml` | cartelle standard di un libro, con scopo e momento di creazione | `nuovo.py`, `comune.py` |
 | `dati/hook.yaml`, `hook-settings.esempio.json` | modalità degli hook e impostazioni d'esempio | hook, `zb hook` |
 | `modelli/` | `briefing.md`, `libro.yaml`, `stato.yaml`, `cronologia.yaml`, `LEGGIMI.md`, `conferme-autore.yaml` | `nuovo.py`, `adotta.py`, `conformita_kdp.py` |
 | `profili/` | fantascienza, fantasy, giallo, narrativa letteraria, romance, thriller, young adult: valori predefiniti di lunghezze, stile, scene | `nuovo.py`, `stile.py`, `capitolo.py` |
@@ -120,9 +127,9 @@ inventati. Autori inventati («Autore di Prova», «Autrice di Prova»).
 | passo 2 | 52 | stile, riciclo, capitolo |
 | passo 3 | 45 | compila, impagina, verifica PDF: struttura, margini con tolleranza e minimi KDP, bleed |
 | passo 4 | 38 | conformità KDP, sezioni 1-15 |
-| passo 5 | 96 | fasi, gate, avvio, hook, CLAUDE.md |
+| passo 5 | 97 | fasi, gate, avvio, hook, CLAUDE.md |
 | passo 5b | 18 | `zb adotta` |
-| passo 6 | 12 | struttura e pulizia |
+| passo 6 | 6 | struttura (le prove di pulizia sono su archivio/motore-ritirati) |
 | passo 7 | 11 | ortografia, LanguageTool |
 | override | 8 | override motivati sulla lunghezza |
 | scene | 12 | controllo delle scene |
@@ -139,7 +146,15 @@ inventati. Autori inventati («Autore di Prova», «Autrice di Prova»).
 | titoli, tempi, età, push | 23 | titoli, tempi relativi, età, fatti incompatibili, push |
 | eccezioni e richiami | 3 | eccezioni motivate, richiami ammessi |
 | voce | 25 | `zb voce` sulla mini-banca inventata (solo schede), regressioni della scheda, assenza di `ZB_BANCA_VOCI`, voce non pronta, libro senza voce invariato, «Letto» con la voce, divieti in AVVISO, modello del briefing |
-| **Totale** | **454** | più `separazione.py` e `recinto.py` (48 esecuzioni) |
+| recinto libro | 3 |  |
+| appendici | 6 |  |
+| fase struttura | 18 | fase struttura e gate su due briefing inventati |
+| cartella unica | 13 | cartella unica, recinto su Bash, push |
+| ruoli | 9 | un ruolo per sessione, separazione tra chi scrive e chi revisiona |
+| anti-IA | 7 | misure della sezione H, audit, blocco |
+| correttore | 5 | lista di controllo dai criteri, installazione e verifica di LanguageTool |
+| agenti e capsule | 10 | subagenti, modelli centrali, capsule, revisori con Edit, consumo, output compatto |
+| **Totale** | **520** | più `separazione.py` e `recinto.py` (46 esecuzioni) |
 
 Non coperto dalle prove: libri oltre le 24 pagine, quindi le fasce interne oltre la prima;
 `zb pacchetto` su un libro completo; un PDF con immagini; i formati citati diversi da 5,5 × 8,5 e A5;
@@ -218,23 +233,22 @@ luoghi reali.
 
 1. Dati KDP mai riverificati dall'autore (`ultima_verifica: null`): prima di pubblicare va fatta la
    verifica sulle pagine ufficiali e registrata con `zb verifica KDP fatta`.
-2. TrimBox e BleedBox non scritti; trasparenze e immagini non controllate. KDP usa il MediaBox, ma
-   un controllo preflight esterno potrebbe chiederli.
-3. I PDF dei libri già impaginati prima del formato esatto (A5) vanno rigenerati, ma solo quando
-   l'autore lo chiede.
-4. Ambiente non persistente: in un container nuovo vanno reinstallati PyMuPDF, markdown, Hunspell e
-   LanguageTool. Uno script d'avvio della sessione eviterebbe il lavoro a mano.
-5. `dati/nomi_vietati.txt` è vuoto: `separazione.py` non trova da solo i nomi dei libri reali. Per
-   riempirlo bisognerebbe scrivere quei nomi nel repository, contro la regola. Da decidere (per
-   esempio una lista fuori dal repository, letta da una variabile d'ambiente).
-6. Continuità: i tempi relativi si controllano solo se nessuna data nota coincide; le differenze
+2. Soglie anti-IA (campo `anti_ia` dei profili) tarate solo sui due mini-libri, uguali per ogni genere:
+   da rivedere su testi veri. Sono avvisi, non blocchi.
+3. Gli hook sono una protezione in più: su Bash il recinto non vede script che scrivono senza nominare il
+   percorso, variabili di comandi precedenti, `$(…)`, `awk -i`, `find -delete`, `xargs`. Restano i controlli
+   su git di `zb avvio` e `zb push` (cartella unica).
+4. La separazione dei ruoli distingue le sessioni solo con l'hook SessionStart o `ZB_SESSIONE`; con la
+   sessione «locale» dà un avviso. I log in `.zb/` sono locali al container.
+5. Il consumo misura ciò che è letto attraverso gli strumenti (file, righe, parole), non i token.
+   Misura di prova sul mini-libro (scrittore del capitolo 3): senza capsule 2444 parole lette in 4 file,
+   con capsule 796 parole in 5 file.
+6. TrimBox e BleedBox non scritti; trasparenze e immagini non controllate.
+7. Ambiente non persistente: in un container nuovo vanno reinstallati i requisiti (`motore/requirements.txt`,
+   Hunspell, LanguageTool con `zb ortografia installa`).
+8. `dati/nomi_vietati.txt` è vuoto: `separazione.py` non trova da solo i nomi dei libri reali; la cartella
+   unica controlla invece il titolo del libro attivo sul suo ramo.
+9. Continuità: i tempi relativi si controllano solo se nessuna data nota coincide; le differenze
    d'età solo per i personaggi con data di nascita completa in `cronologia.yaml`.
-7. Hook di Claude Code in modalità avviso, non bloccanti.
-8. Mini-libri sotto le 24 pagine: la sezione 11 della conformità KDP è KO per costruzione; le fasce
-   del margine interno oltre la prima non sono provate.
-9. La storia git del ramo contiene ancora i riferimenti tolti e `ghimoney/` (scelta: niente riscrittura).
-10. Banca-voci: le voci si aggiungono in banca-voci quando l'autore lo decide. La banca non ha ancora
-    un remote privato: oggi esiste come commit locale e git bundle, che vanno salvati fuori dal
-    container. La sua storia git contiene ancora le pagine d'esempio tolte (niente riscrittura).
-11. I divieti della voce si applicano solo con `ZB_BANCA_VOCI` impostata: senza, `zb avvio` avvisa ma
-    `zb stile` non li controlla.
+10. Mini-libri sotto le 24 pagine: la sezione 11 della conformità KDP è KO per costruzione.
+11. La storia git del ramo contiene ancora i documenti spostati sui rami d'archivio (niente riscrittura).
