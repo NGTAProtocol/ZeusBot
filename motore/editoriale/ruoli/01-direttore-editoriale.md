@@ -19,3 +19,6 @@ Garantire che il libro abbia un'identità, un lettore e una promessa chiari, e c
 
 ## Cosa NON fa
 Non scrive prosa del libro. Non cambia la struttura approvata. Non decide da solo su titolo, copertina o prezzo: propone.
+
+## Riferimenti (letti solo quando servono)
+`ruoli/riferimenti/continuita-e-serie.md` (registro dei fatti, promesse, serie e canone).

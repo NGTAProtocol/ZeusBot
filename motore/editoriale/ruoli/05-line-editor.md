@@ -20,3 +20,6 @@ Intervento minimo efficace: se una frase funziona, non si tocca.
 
 ## Cosa NON fa
 Non cambia i fatti, la struttura, il punto di vista. Non corregge ortografia e grammatica: è il compito del ruolo successivo.
+
+## Riferimenti (letti solo quando servono)
+`ruoli/riferimenti/critica-manoscritto.md`, sezione «Tre livelli di intervento sulla frase»; `anti-ia/catalogo-it-esteso.md` e il report di `06-diagnostica/anti-ia/`.

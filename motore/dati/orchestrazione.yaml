@@ -10,6 +10,17 @@ riduzione: [2, 1]
 in_sequenza: [scrittore-voce]
 # per capitolo, in parallelo
 in_parallelo: [line-editor, correttore-italiano, capsula]
+# dipendenze (da cosa dipende ogni lavoro): si lancia in parallelo solo ciò che ha le stesse dipendenze già
+# soddisfatte; un compito per agente mai più grande di un capitolo; un'uscita non valida si rifà una volta
+# sola, poi si ferma e decide l'autore (mai passare un errore come input al passo successivo)
+dipendenze:
+  scrittore-voce: [capitolo precedente accettato da zb esito, capsula del capitolo precedente]
+  capsula: [capitolo accettato da zb esito]
+  editor-strutturale: [tutte le unità del piano accettate, capsule di tutti i capitoli]
+  lettore-cieco: [ok dell'autore al passo opzionale, gate struttura_manoscritto approvato]
+  line-editor: [gate struttura_manoscritto approvato]
+  correttore-italiano: [gate line approvato, interventi applicati, zb ortografia]
+  correttore-bozze: [gate copy approvato, zb compila, zb impagina, zb pdf]
 # fase → agente del passo (un solo agente per fase; l'editor strutturale lavora anche nel gate struttura)
 agente_di_fase:
   struttura: architetto-struttura

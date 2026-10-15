@@ -392,6 +392,15 @@ def genera_bibbia(b, libro):
     righe += [f'- {f}' for f in b['fatti']] or ['-']
     righe += ['', '## Cose da non cambiare', '']
     righe += [f'- {f}' for f in b['non_cambiare']] or ['-']
+    # registro di continuità (editoriale/ruoli/riferimenti/continuita-e-serie.md): un solo record per setup
+    righe += ['', '## Regole del mondo', '', '-', '',
+              '## Registro dei fatti (chi sa che cosa, da quale capitolo)', '',
+              '| Id | Fatto | Chi lo sa | Da quale capitolo, e come | Data di storia |', '|---|---|---|---|---|',
+              '|  |  |  |  |  |', '',
+              '## Promesse, indizi e domande', '',
+              '| Id | Tipo (promessa, indizio, domanda) | Seminata al cap. | Ultimo cap. toccato | Pagamento atteso | Stato |',
+              '|---|---|---|---|---|---|', '|  |  |  |  |  | aperta |', '',
+              '## Esenzioni motivate (scelte dell\'autore)', '', '-']
     return '\n'.join(righe) + '\n'
 
 

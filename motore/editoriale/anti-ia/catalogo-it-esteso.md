@@ -7,13 +7,13 @@ l'italiano, non tradotti; esempi inventati. Tra parentesi la provenienza dell'id
 Le formule misurabili stanno in `formule.yaml` e le conta `zb esito` (script/anti_ia.py).
 
 ## J. Soggetto e pronomi
-- **Pronome soggetto ripetuto** (blader, aperture ripetute; adattato). Si riconosce: tre o più frasi di seguito che aprono con «Lui», «Lei», «Egli», o con il nome proprio, dove l'italiano taccerebbe il soggetto. Es.: «Lei aprì la porta. Lei guardò il corridoio. Lei non vide nessuno.» Fare: sottintendere il soggetto, unire le frasi («Aprì la porta e guardò il corridoio: nessuno»), aprire con l'azione o con l'oggetto.
+- **Pronome soggetto ripetuto** (blader, aperture ripetute; adattato). Si riconosce: tre o più frasi di seguito che aprono con «Lui», «Lei», «Egli», o con il nome proprio, dove l'italiano sottintenderebbe il soggetto. Es.: «Lei aprì la porta. Lei guardò il corridoio. Lei non vide nessuno.» Fare: sottintendere il soggetto, unire le frasi («Aprì la porta e guardò il corridoio: nessuno»), aprire con l'azione o con l'oggetto.
 - **Possessivo al posto dell'articolo** (nostro). Si riconosce: «alzò la sua mano», «scosse la sua testa», calco dell'inglese. Es.: «Si passò la sua mano tra i capelli.» Fare: «Si passò la mano tra i capelli», con il riflessivo.
 - **Ripresa del soggetto nella subordinata** (nostro). Es.: «Marta sapeva che lei non avrebbe mai potuto dirglielo.» Fare: «Marta sapeva di non poterglielo mai dire.»
 
 ## K. Messa in scena del contrasto e della profondità
 - **«Non è X, è Y»** (blader, «Not X but Y»; chi-feng, parallelismo negativo). Si riconosce: «Non era solo una casa, era un rifugio»; «Non era paura. Era qualcosa di più antico.» Una volta è prosa, due sono un tic. Fare: dire Y e basta («La casa era l'unico posto in cui non doveva spiegarsi»).
-- **«Il vero X era»** (chi-feng, pivot). Es.: «La vera domanda non era dove fosse andato, ma perché fosse tornato.» Fare: porre la domanda reale, senza il bersaglio di paglia.
+- **«Il vero X era»** (chi-feng, pivot). Es.: «La vera domanda non era dove fosse andato, ma perché fosse tornato.» Fare: porre la domanda reale, senza la falsa domanda di comodo.
 - **Rincorsa** (blader, chi-feng, falsa suspense). Es.: «Ecco il punto.» «Parliamoci chiaro.» «La verità è che...» Fare: tagliare la cornice e dire il fatto.
 - **Domanda retorica con risposta** (chi-feng, ipofora). Es.: «E il risultato? Un disastro.» Fare: affermare.
 - **Conto alla rovescia** (chi-feng). Es.: «Niente rumore. Niente luce. Solo il vento.» Fare: un elemento specifico, o la frase intera.
@@ -30,13 +30,13 @@ Le formule misurabili stanno in `formule.yaml` e le conta `zb esito` (script/ant
 - **Verbi e nomi solenni** (blader, evitare la copula e inflazione di significato; adattato). Es.: «Il campanile si erge sulla piazza»; «era un vero e proprio incubo»; «la casa è testimonianza di un'epoca». Fare: «Il campanile sta sulla piazza», «era un incubo».
 - **«Andare a + infinito»** (nostro; calco di «going to»). Es.: «Questo va a cambiare tutto.» Fare: «Cambia tutto» / «cambierà tutto».
 - **Calchi** (nostro). «Realizzò che era tardi» (per «si rese conto»), «supportare», «focalizzarsi», «assolutamente sì». Fare: «si rese conto», «sostenere/aiutare», «concentrarsi», «sì, certo».
-- **Inflazione d'apertura** (blader, chi-feng, significato gonfiato e futurismo). Es.: «In un mondo in cui tutto corre, vale la pena sottolineare il valore del silenzio.» Fare: entrare nella scena; in narrativa queste frasi non servono.
+- **Inflazione d'apertura** (blader, chi-feng, significato gonfiato e promesse sul futuro). Es.: «In un mondo in cui tutto corre, vale la pena sottolineare il valore del silenzio.» Fare: entrare nella scena; in narrativa queste frasi non servono.
 - **Metafore astratte in serie** (blader, linguaggio promozionale). Es.: «un arazzo di ricordi», «una sinfonia di profumi». Fare: il ricordo preciso, il profumo preciso.
-- **Equilibrio di facciata** (chi-feng, falsa vulnerabilità e balance-performance). Es.: «Nonostante le difficoltà, Anna trovò la forza di andare avanti.» Fare: far pesare la difficoltà, lasciarla in parte irrisolta.
+- **Equilibrio di facciata** (chi-feng, falsa vulnerabilità ed equilibrio esibito). Es.: «Nonostante le difficoltà, Anna trovò la forza di andare avanti.» Fare: far pesare la difficoltà, lasciarla in parte irrisolta.
 
 ## N. Tipografia e dialogo
 - **Trattino all'inglese** (ghanemzadeh, densità dei trattini; chi-feng, trattino-connettore). Si riconosce: «la casa — vuota da anni — era fredda» o «casa—vuota» usato al posto della virgola. Le lineette d'apertura del dialogo sono legittime. Fare: virgola, due punti, parentesi o punto, variando.
-- **Virgolette miste** (ghanemzadeh, miscuglio di virgolette; chi-feng, virgolette curve). Si riconosce: dritte "..." inglesi, curve “...” inglesi, o caporali e lineette mescolati nello stesso libro. Fare: scegliere una convenzione (caporali o lineette) e uniformare; apostrofo sempre ’ o sempre '.
+- **Virgolette miste** (ghanemzadeh, miscuglio di virgolette; chi-feng, virgolette curve). Si riconosce: dritte "..." all'inglese, oppure due sistemi (caporali, virgolette alte “...”, lineette) mescolati nello stesso libro. Fare: scegliere una convenzione (caporali o lineette) e uniformare; apostrofo sempre ’ o sempre '.
 - **Maiuscole nei titoli all'inglese** (blader, titoli decorativi; chi-feng, title case). Es.: «Il Silenzio Dopo La Pioggia». Fare: «Il silenzio dopo la pioggia».
 - **Verbo di dire + stato d'animo** (nostro, estende C). Es.: «disse con tono triste», «rispose seccamente». Fare: il gesto o la battuta stessa.
 

@@ -84,6 +84,19 @@ def dichiarazioni(cartella, libro, unita, nome):
     return out
 
 
+def gulpease(testo):
+    """Indice Gulpease (GULP, Università di Roma, 1988): 89 + (300 × frasi − 10 × lettere) / parole, sulla prosa.
+    Informativo: nessuna soglia, nessun esito. «—» se il testo è vuoto."""
+    import re
+    prosa = ' '.join(r for _, r in comune.righe_prosa(testo))
+    parole = re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿ0-9]+", prosa)
+    frasi = len([f for f in re.split(r'[.!?…]+', prosa) if re.search(r'\w', f)])
+    if not parole:
+        return '—'
+    lettere = sum(len(re.sub(r'[0-9]', '', p)) for p in parole)
+    return round(89 + (300 * frasi - 10 * lettere) / len(parole))
+
+
 def scene(testo, libro):
     """[(riga di inizio, parole)] delle scene, separate da struttura.separatore_scena.sorgente."""
     sep = ((libro.get('struttura') or {}).get('separatore_scena') or {}).get('sorgente') or '* * *'
@@ -159,6 +172,7 @@ def main(argv):
     cartella, libro, profilo = comune.carica_libro(args[0])
     nome = ' '.join(args[1:])
     met, out = controlla(cartella, libro, profilo, nome)
+    testo_unita = open(dict(comune.unita(cartella, libro))[nome], encoding='utf-8').read()
     met_ia, esiti_ia, _ = anti_ia.esegui(cartella, libro, profilo, nome, scrivi='--schermo' not in argv)
     out += comune.applica_eccezioni(esiti_ia, libro)
     ko = sum(1 for r in out if r['esito'] == 'KO')
@@ -168,6 +182,7 @@ def main(argv):
              f'Anti-IA (audit): deviazione delle frasi {met_ia["frase_dev"]}, apertura più frequente '
              f'«{met_ia["apertura_parola"]}» {met_ia["apertura_quota"]:.0%}, formule {met_ia["formule_per_1000"]}/1000, '
              f'ripetizioni {met_ia["echi_per_1000"]}/1000; elenco in 06-diagnostica/anti-ia/.', '',
+             f'Leggibilità (indice Gulpease, solo informativo: 0-100, più alto = più facile): {gulpease(testo_unita)}.', '',
              f'Esito: {ko} KO, {sum(1 for r in out if r["esito"] == "AVVISO")} avvisi.', '']
     righe += tabella(out) if out else ['Nessun KO e nessun avviso.']
     righe += ['', '## Checklist manuale', '',

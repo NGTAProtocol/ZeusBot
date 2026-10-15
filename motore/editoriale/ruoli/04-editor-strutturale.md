@@ -22,3 +22,6 @@ Punti forti; problemi per gravità (bloccante, serio, minore) con capitolo e mot
 
 ## Cosa NON fa
 Non riscrive. Non corregge la lingua. Non lavora nella stessa sessione di chi ha scritto.
+
+## Riferimenti (letti solo quando servono)
+`ruoli/riferimenti/critica-manoscritto.md` (critica dell'intero manoscritto, gravità, centro che cede); `ruoli/riferimenti/continuita-e-serie.md`; passo opzionale dei lettori ciechi: `ruoli/riferimenti/lettori-e-panel.md`.

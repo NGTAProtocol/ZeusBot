@@ -13,3 +13,4 @@ modelli:
   correttore-italiano: sonnet
   correttore-bozze: sonnet
   capsula: haiku
+  lettore-cieco: sonnet                  # passo opzionale dopo la revisione strutturale

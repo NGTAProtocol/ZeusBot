@@ -747,6 +747,7 @@ cartella_unica:
   # echo fuori, echo dentro, sed -i dentro, cp verso motore/, rm CLAUDE.md, python lanciato con 2>/dev/null,
   # redirezione in /tmp (fuori dal repository), git checkout di un ramo
   bash: [2, 0, 0, 2, 2, 0, 0, 0]
+  push_senza_prove: "2 / True"
 ruoli:
   dalla_fase: "0 / architetto-struttura / True"
   secondo_ruolo: "2 / True"
@@ -767,7 +768,7 @@ correttore:
   verifica: "0 / True"
   gia_pronto: "0 / True / True"
 agenti_capsule:
-  attiva: "2 / 0 False / 0 8 / True / 0 False"
+  attiva: "2 / 0 False / 0 9 / True / 0 False"
   modello_centrale: "0 True / True / 1 True"
   capsula: "1 True / 1 / 0 / 1 True"
   controllo: "fermo / True"

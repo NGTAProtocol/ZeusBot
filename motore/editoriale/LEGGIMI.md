@@ -10,6 +10,10 @@ Va copiata in `motore/editoriale/` del ramo motore. Non contiene libri, né nomi
 - `ruoli/`: sette ruoli editoriali, uno per file.
 - `anti-ia/catalogo-it.md`: schemi da IA in italiano e regole di ritmo.
 - `correttore/criteri-correttore.md`: criteri del correttore di italiano.
+- `ruoli/riferimenti/`: riferimenti letti solo quando servono (critica del manoscritto, lettori e panel, continuità e serie).
+- `agenti/`: i ruoli come subagenti di Claude Code; `risparmio-token.md`: subagenti, capsule, misura.
+- `anti-ia/catalogo-it-esteso.md`, `anti-ia/formule.yaml`: schemi J-P e formule misurate da `zb esito`.
+- `glossario.md`: termini editoriali inglese-italiano usati in tutti i file.
 
 ## Regole
 1. Una fonte di verità: queste regole sostituiscono ogni skill citata ma assente.

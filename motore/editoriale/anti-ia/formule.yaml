@@ -1,6 +1,7 @@
 # Formule misurabili del catalogo anti-IA (catalogo-it.md, sezioni A-C, J-N), lette da script/anti_ia.py.
 # Espressioni regolari Python, senza distinzione di maiuscole; \x27 è l'apostrofo dritto, ’ quello tipografico.
 # tipo «formula»: conta per mille parole (soglia anti_ia.formule_max_per_1000 del profilo di genere);
+# (tolta la formula sulle virgolette alte “ ”: in italiano sono ammesse, se sono il sistema del libro)
 # tipo «coerenza»: va confrontata con il sistema di dialogo del libro (09-scelte-fisse.md), si segnala a parte.
 # Le formule si contano solo fuori dalle righe di dialogo (il parlato può usarle per scelta della voce).
 formule:
@@ -39,6 +40,5 @@ formule:
   - {id: metafora_astratta, sezione: M, tipo: formula, regex: '\b(?:un|una|un[\x27’])\s*(?:arazzo|sinfonia|mosaico|caleidoscopio|vortice|ondata)\s+di\s+(?:emozioni|sensazioni|ricordi|colori|sentimenti|pensieri|suoni|profumi|dubbi|speranze|paure)\b'}
   - {id: trattino_inglese, sezione: N, tipo: coerenza, regex: '(?m)^(?![ \t]*[—–])[^\n]*?[^\s—–][ ]?[—–][ ]?[^\s—–]'}
   - {id: virgolette_dritte, sezione: N, tipo: coerenza, regex: '"[^"\n]+"'}
-  - {id: virgolette_curve_inglesi, sezione: N, tipo: coerenza, regex: '[“”]'}
   - {id: disse_con_tono, sezione: C, tipo: formula, regex: '\b(?:disse|rispose|replicò|sussurrò|mormorò|ribatté|esclamò)\s+(?:con|in)\s+(?:un\s+)?(?:tono|modo)\s+(?:\w+\s+)?(?:triste|arrabbiat\w+|freddo|duro|dolce|ansioso|gelido|rassegnat\w+|deciso|stanco)\b'}
   - {id: disse_avverbio, sezione: C, tipo: formula, regex: '\b(?:disse|rispose|replicò|sussurrò|mormorò|ribatté|esclamò)\s+\w{3,}mente\b'}
