@@ -61,7 +61,7 @@ svg { width: 100%; height: auto; }
 
 <p class="copertina-sotto">Per Felice, autore. Ottobre 2026.</p>
 
-<p class="copertina-sotto">Fotografia del ramo <code>motore</code> al commit <code>f7decc4</code>.</p>
+<p class="copertina-sotto">Fotografia del ramo <code>motore</code> al commit <code>138db51</code>.</p>
 
 <div class="nota">
 
@@ -73,16 +73,16 @@ svg { width: 100%; height: auto; }
 
 <div class="indice">
 <ol>
-<li><a href="#parole">0. Le parole da sapere</a><span>3</span></li>
-<li><a href="#cap1">1. A cosa serve il sistema</a><span>5</span></li>
-<li><a href="#cap2">2. Organigramma: chi fa cosa</a><span>7</span></li>
-<li><a href="#cap3">3. Il percorso di un libro</a><span>18</span></li>
-<li><a href="#cap4">4. Le regole</a><span>30</span></li>
-<li><a href="#cap5">5. I rami</a><span>38</span></li>
-<li><a href="#cap6">6. Cosa non esiste</a><span>42</span></li>
-<li><a href="#cap7">7. Appendici e indice</a><span>45</span></li>
-<li><a href="#cap8">8. I 27 punti deboli</a><span>49</span></li>
-<li><a href="#cap9">9. Dove trovare le cose</a><span>55</span></li>
+<li><a href="#parole">0. Le parole da sapere</a><span>p. 3</span></li>
+<li><a href="#cap1">1. A cosa serve il sistema</a><span>p. 6</span></li>
+<li><a href="#cap2">2. Organigramma: chi fa cosa</a><span>p. 8</span></li>
+<li><a href="#cap3">3. Il percorso di un libro</a><span>p. 23</span></li>
+<li><a href="#cap4">4. Le regole</a><span>p. 40</span></li>
+<li><a href="#cap5">5. I rami</a><span>p. 48</span></li>
+<li><a href="#cap6">6. Cosa non esiste</a><span>p. 51</span></li>
+<li><a href="#cap7">7. Appendici e indice</a><span>p. 54</span></li>
+<li><a href="#cap8">8. I 17 punti deboli</a><span>p. 58</span></li>
+<li><a href="#cap9">9. Dove trovare le cose</a><span>p. 63</span></li>
 </ol>
 </div>
 
@@ -92,31 +92,40 @@ Poche parole tecniche tornano spesso. Eccole, una volta per tutte.
 
 - **Repository**: l'archivio del progetto su GitHub, con tutta la storia delle modifiche. Qui si chiama ZeusBot.
 - **Ramo**: una versione parallela del repository. Ogni ramo ha i suoi file. Il ramo `motore` contiene la macchina; ogni libro vive su un ramo suo.
-- **Commit**: un salvataggio con nome e data. Ha un codice breve, per esempio `f7decc4`.
+- **Commit**: un salvataggio con nome e data. Ha un codice breve, per esempio `138db51`.
 - **Push**: l'invio dei salvataggi su GitHub (su «origin», la copia in rete). Finché non c'è il push, il lavoro esiste solo nel computer di lavoro.
 - **Merge**: l'unione di un ramo dentro un altro.
 - **Script**: un piccolo programma che fa un lavoro preciso (contare parole, fare il PDF…).
 - **Hook**: un guardiano automatico. Claude Code lo chiama prima di certe azioni; l'hook può lasciar passare, avvisare o bloccare.
 - **Claude Code**: l'assistente che lavora nel repository, legge le regole e lancia i comandi.
 - **YAML**: un formato di testo per i dati, fatto di righe «nome: valore». I file finiscono in `.yaml`.
-- **Gate**: una fermata obbligata. Il lavoro si ferma finché l'autore non approva.
+- **Gate** (fermata): una fermata obbligata. Il lavoro si ferma finché l'autore non approva. Si apre con `zb pronto`.
+- **Struttura**: la prima fase dopo il briefing. Prima della prosa si fissano premessa, personaggi, atti, scaletta, ritmo e scelte fisse (punto di vista, tempo, voce).
+- **Gate struttura**: la fermata che chiude la fase struttura. È sempre attivo: senza il tuo ok non nasce nessun documento e nessun capitolo.
+- **Cartella unica**: tutto ciò che riguarda un libro vive in `libri/<slug>/`, e il nome del libro non compare altrove.
+- **Ruolo**: un mestiere editoriale (direttore, architetto, scrittore, editor, correttori). Una sessione di Claude Code svolge un ruolo solo.
+- **Subagente** (o agente): un ruolo che Claude Code chiama come aiutante, con un contesto suo e pulito. Restituisce al massimo 10 righe.
+- **Capsula**: il riassunto di continuità di un capitolo, al massimo 180 parole, in `07-capsule/NN.md`. Chi scrive legge le capsule, non i capitoli interi.
+- **Audit anti-IA**: il controllo che segnala i segni di scrittura da IA. Il motore segnala e propone; non riscrive.
 - **sha256**: l'«impronta digitale» di un file. Se cambia anche una virgola, l'impronta cambia.
 - **KDP**: Kindle Direct Publishing, il servizio di Amazon per pubblicare.
 - **Metadati del PDF**: dati nascosti nel file, come Title (titolo) e Author (autore).
 - **Slug**: il nome breve di un libro usato nei percorsi, senza spazi né accenti.
 
+<p class="fonte">(motore/editoriale/glossario.md; motore/editoriale/risparmio-token.md)</p>
+
 # 1. A cosa serve il sistema {#cap1}
 
-Il sistema è una fabbrica di libri. Serve per romanzi di qualsiasi genere (<span class="fonte">motore/README.md</span>).
+Il sistema è una fabbrica di libri, anzi una casa editrice. Serve per romanzi di qualsiasi genere (<span class="fonte">motore/README.md</span>).
 
-Il cuore è il **motore**: procedura, script, modelli vuoti, profili di genere e dati KDP. Il motore non contiene libri veri (<span class="fonte">motore/README.md</span>).
+Il cuore è il **motore**: procedura, script, modelli vuoti, profili di genere, dati KDP e il livello editoriale (percorso, ruoli, agenti, anti-IA, correttore). Il motore non contiene libri veri (<span class="fonte">motore/README.md</span>).
 
-Il percorso è sempre lo stesso. L'autore scrive un briefing. Il motore crea la cartella del libro. Claude Code scrive i documenti e poi i capitoli, uno alla volta. A ogni tappa importante l'autore approva. Alla fine il motore controlla il testo, compone il libro, fa il PDF di stampa e prepara il pacchetto per KDP (<span class="fonte">motore/README.md, «Dal briefing al PDF»</span>).
+Il percorso è sempre lo stesso. L'autore scrive un briefing. Il motore crea la cartella del libro. Prima si fa la struttura, poi i documenti, poi i capitoli, uno alla volta. Seguono le revisioni, la chiusura meccanica, il PDF di stampa e il pacchetto per KDP. A ogni tappa importante l'autore approva (<span class="fonte">motore/editoriale/00-percorso.md</span>).
 
 Tre idee reggono tutto (<span class="fonte">CLAUDE.md</span>):
 
 1. **Il motore resta pulito.** Il ramo `motore` non contiene mai un libro.
-2. **Si scrive solo nella cartella del libro.** Mai nel motore, mai altrove.
+2. **Il libro vive solo nella sua cartella.** Mai nel motore, mai altrove.
 3. **Proponi, l'autore approva, poi applica.** Claude Code non approva mai da solo.
 
 # 2. Organigramma: chi fa cosa {#cap2}
@@ -131,11 +140,11 @@ Tre idee reggono tutto (<span class="fonte">CLAUDE.md</span>):
 <line x1="160" y1="50" x2="160" y2="72" stroke="#444" stroke-width="1.5" marker-end="url(#fr)"/>
 <rect x="60" y="74" width="200" height="46" rx="8" fill="#dbe7f3" stroke="#123d6a" stroke-width="1.5"/>
 <text x="160" y="94" text-anchor="middle" font-size="15" font-weight="bold">Claude Code</text>
-<text x="160" y="112" text-anchor="middle" font-size="12">propone, scrive, lancia zb</text>
+<text x="160" y="112" text-anchor="middle" font-size="12">orchestra, chiama gli agenti, lancia zb</text>
 <rect x="4" y="142" width="150" height="62" rx="8" fill="#eef2f6" stroke="#123d6a"/>
 <text x="79" y="162" text-anchor="middle" font-size="13" font-weight="bold">Regole</text>
-<text x="79" y="180" text-anchor="middle" font-size="11.5">CLAUDE.md</text>
-<text x="79" y="196" text-anchor="middle" font-size="11.5">PROCEDURA.md</text>
+<text x="79" y="180" text-anchor="middle" font-size="11.5">CLAUDE.md, PROCEDURA.md</text>
+<text x="79" y="196" text-anchor="middle" font-size="11.5">editoriale/ (7 ruoli)</text>
 <rect x="166" y="142" width="150" height="62" rx="8" fill="#f6e3e3" stroke="#a33" />
 <text x="241" y="162" text-anchor="middle" font-size="13" font-weight="bold">Hook (guardiani)</text>
 <text x="241" y="180" text-anchor="middle" font-size="11.5">recinto: blocca</text>
@@ -169,62 +178,104 @@ Tre idee reggono tutto (<span class="fonte">CLAUDE.md</span>):
 <text x="160" y="453" text-anchor="middle" font-size="12">sul ramo del libro</text>
 </svg>
 
-<p class="fonte">Schema ricavato da CLAUDE.md, motore/README.md e docs/INFRASTRUTTURA_COMPLETA.md §3 e §8.4.</p>
+<p class="fonte">Schema ricavato da CLAUDE.md, motore/README.md e motore/editoriale/LEGGIMI.md.</p>
 
 ## Chi fa cosa, in breve
 
 | Chi | Che cosa fa | Dove sta |
 |---|---|---|
 | Felice | Scrive il briefing, risponde ok / avanti / correggi, decide | — |
-| Claude Code | Legge le regole, propone, scrive nel libro, lancia `zb` | — |
+| Sessione principale (Claude Code) | Orchestra: chiama l'agente del passo, legge la sua risposta breve, lancia `zb`. **Non scrive prosa** | — |
+| Ruoli e agenti | Fanno il lavoro editoriale | `motore/editoriale/` |
 | Motore | Crea, controlla, compone, impagina | `motore/` |
-| Regole | Dicono come si lavora | `CLAUDE.md`, `motore/PROCEDURA.md` |
+| Regole | Dicono come si lavora | `CLAUDE.md`, `motore/PROCEDURA.md`, `motore/editoriale/` |
 | Hook | Sorvegliano le scritture | `motore/script/hook_*.py` |
 | Libro | Il lavoro vero | `libri/<slug>/` |
 
-<p class="fonte">(CLAUDE.md; motore/README.md; docs/INFRASTRUTTURA_COMPLETA.md §8.4)</p>
+<p class="fonte">(CLAUDE.md; motore/README.md; motore/editoriale/risparmio-token.md)</p>
+
+## I sette ruoli editoriali
+
+Ogni ruolo ha un file in `motore/editoriale/ruoli/`. Legge solo i file del suo «Input» e scrive un report in `06-diagnostica/` del libro. Non modifica il manoscritto, salvo la correzione, e solo dopo il tuo ok (<span class="fonte">motore/editoriale/LEGGIMI.md</span>).
+
+| # | Ruolo | Lavoro | Fermata |
+|---|---|---|---|
+| 1 | Direttore editoriale | identità e promessa del libro; bibbia, cronologia, nota di direzione | `documenti` |
+| 2 | Architetto della struttura | atti, svolte, scaletta, sottotrame, ritmo | `struttura` |
+| 3 | Scrittore con voce | pagina campione e capitoli, con voce e manuale di stile | `pagina_campione`, `primi_capitoli` |
+| 4 | Editor strutturale | giudica la struttura e poi il manoscritto intero | nel gate `struttura`; `struttura_manoscritto` |
+| 5 | Line editor | frase per frase: ritmo, voce, tic da IA | `line` |
+| 6 | Correttore di italiano | grammatica, accenti, punteggiatura, coerenza | `copy` |
+| 7 | Correttore di bozze | ultimo controllo sul libro impaginato | `bozze` |
+
+<p class="fonte">(motore/editoriale/ruoli/; motore/editoriale/00-percorso.md)</p>
+
+## Gli agenti
+
+Ogni ruolo ha il suo **subagente** in `motore/editoriale/agenti/`, più due: il **lettore cieco** (passo opzionale) e la **capsula**. In tutto nove (<span class="fonte">motore/dati/modelli-agenti.yaml</span>).
+
+- **Modelli.** Forte (opus) per architetto ed editor strutturale; medio (sonnet) per direttore, scrittore, line editor, correttori e lettore cieco; leggero (haiku) per la capsula. La scelta sta in `motore/dati/modelli-agenti.yaml`.
+- **In sequenza:** lo scrittore, un capitolo per volta. **In parallelo:** line editor, correttore di italiano e capsula, al massimo 3 alla volta (se arrivano i limiti d'uso, 2 poi 1).
+- **Il lettore cieco** legge un campione da lettore, in sola lettura. Solo con il tuo ok.
+- **La capsula** riassume un capitolo accettato in massimo 180 parole.
+- Gli agenti non fanno commit né push: li fa la sessione principale con `zb push`.
+- `zb agenti attiva --ok` li copia in `.claude/agents/`, solo sui rami dei libri.
+
+<p class="fonte">(motore/dati/orchestrazione.yaml; motore/editoriale/risparmio-token.md; motore/editoriale/agenti/)</p>
 
 ## Il motore: `zb` e gli script
 
-`zb` è il comando unico. Si scrive `python3 motore/zb <comando> <libro>`. Il libro si indica sempre con il percorso della sua cartella (<span class="fonte">motore/zb; motore/README.md, «Comandi»</span>).
+`zb` è il comando unico. Si scrive `python3 motore/zb <comando> <libro>`. Il libro si indica sempre con il percorso della sua cartella. L'elenco dei comandi è uno solo, nel codice: `python3 motore/zb aiuto` (<span class="fonte">motore/README.md, «Comandi»</span>).
 
-Ogni comando di `zb` lancia uno script della cartella `motore/script/`. Gli script sono 28 file (<span class="fonte">motore/zb, tabella SCRIPT; cartella motore/script/</span>).
+Gli script sono 34 file in `motore/script/`. Ogni comando stampa al massimo 40 righe e rimanda a un file per il resto; le righe con KO o FERMO restano sempre a schermo (<span class="fonte">motore/dati/output.yaml</span>).
 
-I comandi principali (<span class="fonte">motore/README.md, «Comandi»</span>):
+I comandi di oggi (<span class="fonte">zb aiuto</span>):
 
-- `zb nuovo`: crea il libro dal briefing.
-- `zb avvio`: controlli di inizio sessione e riga «Letto: …».
-- `zb stato`: mostra a che punto è il libro. Non scrive nulla.
-- `zb pronto`: chiude il lavoro di una fase e apre la fermata.
-- `zb ok`, `zb avanti`, `zb correggi`: le risposte dell'autore.
-- `zb esito`: controlla un capitolo appena scritto.
-- `zb continuita`, `zb ortografia`, `zb compila`, `zb impagina`, `zb pdf`, `zb pacchetto`, `zb kdp`: la chiusura.
-- `zb prove`: le prove del motore sui mini-libri inventati.
+- `zb nuovo`, `zb adotta`: crea il libro dal briefing (fase struttura); prepara le bozze dei dati per un libro già scritto.
+- `zb avvio` (con `--ruolo`), `zb ruoli`, `zb cartella`, `zb stato`: controlli di inizio sessione, ruoli, cartella unica, stato. Non scrivono testi.
+- `zb pronto`, `zb avanti`, `zb ok`, `zb correggi`, `zb revisione`, `zb riapprova`, `zb fase`: i gate e le risposte dell'autore.
+- `zb esito`: i controlli di un capitolo. Dentro ci sono i conteggi, lo stile, il riciclo e l'audit anti-IA.
+- `zb capsula`: la capsula di continuità, dopo ogni capitolo.
+- `zb continuita`, `zb ortografia`, `zb compila`, `zb impagina`, `zb pdf`, `zb pacchetto`, `zb kdp`: la chiusura meccanica.
+- `zb verifica KDP`: registra o ricorda la verifica dei dati KDP.
+- `zb agenti`, `zb consumo`, `zb hook`, `zb lavoro`, `zb voce`: agenti, misura delle letture, hook, recinto, banca-voci.
+- `zb push`: il push, con le prove sul motore (capitolo 4).
+- `zb prove`, `zb separazione`, `zb recinto`, `zb profili`: le prove del motore.
 
-Nessun comando del motore fa commit o push da solo (<span class="fonte">motore/PROCEDURA.md §8</span>).
+I comandi `pulizia`, `conta`, `stile`, `riciclo` e `capitolo` **non esistono più** come comandi: `conta`, `stile`, `riciclo` e `capitolo` sono diventati parti di `zb esito`, `pulizia` è stato tolto (<span class="fonte">motore/passaggio-di-consegne.md, «Decisioni prese»</span>).
+
+Nessun comando del motore fa commit da solo (<span class="fonte">motore/PROCEDURA.md §8</span>).
 
 ## La «Bibbia editor»
 
-Nel repository «Bibbia editor» è il nome dato all'insieme delle regole editoriali valide per ogni libro. Il commit `668afc2` si chiama proprio «Bibbia editor: appendici e indice» e modifica `motore/PROCEDURA.md` (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §4</span>).
+Il nome «Bibbia editor» indicava l'insieme delle regole editoriali. Oggi quell'insieme sta in due posti (<span class="fonte">motore/README.md; motore/editoriale/LEGGIMI.md</span>):
 
-Le regole stanno in due file (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §4</span>):
+- `motore/editoriale/`: percorso, ruoli, agenti, struttura, anti-IA, correttore, glossario;
+- `motore/PROCEDURA.md`: la procedura completa.
 
-- `CLAUDE.md`: le regole di avvio. Claude Code le legge a ogni sessione.
-- `motore/PROCEDURA.md`: la procedura completa, in 11 sezioni.
+Le aiutano alcuni file di dati, per esempio la lista nera di base (`motore/dati/lista-nera.yaml`) e le parole italiane ammesse (`motore/dati/parole-ammesse-it.txt`).
 
-Le aiutano alcuni file di dati, per esempio la lista nera di base (`motore/dati/lista-nera.yaml`) e le parole italiane ammesse (`motore/dati/parole-ammesse-it.txt`) (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §4</span>).
+**Precedenza: una sola scala**, in `motore/editoriale/LEGGIMI.md` (dall'alto, vince la prima):
+
+1. manuale del libro e `libro.yaml`
+2. briefing e scheda della voce (se contrastano vince il briefing; il contrasto si segnala)
+3. profilo di genere
+4. ruoli editoriali
+5. procedura del motore
+
+Ogni contrasto si segnala (<span class="fonte">motore/editoriale/LEGGIMI.md; CLAUDE.md</span>).
 
 <div class="nota">
 
-Attenzione: la `bibbia.md` di ogni libro (personaggi, luoghi, fatti) è un'altra cosa. Sta nella cartella del libro, in `02-bibbia/` (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §4</span>).
+Attenzione: la `bibbia.md` di ogni libro (personaggi, luoghi, fatti) è un'altra cosa. Sta nella cartella del libro, in `02-bibbia/`.
 
 </div>
 
 ## Profili di genere
 
-Un profilo dà i valori predefiniti di un genere: lunghezza, capitoli, scene, frase media, dialogo (<span class="fonte">motore/PROCEDURA.md §3</span>).
+Un profilo dà i valori predefiniti di un genere: lunghezza, capitoli, scene, frase media, dialogo e soglie anti-IA (<span class="fonte">motore/PROCEDURA.md §3 e §6</span>).
 
-Sono 7, nella cartella `motore/profili/`: fantascienza, fantasy, giallo, narrativa letteraria, romance, thriller, young adult (<span class="fonte">cartella motore/profili/</span>).
+Sono 7, nella cartella `motore/profili/`: fantascienza, fantasy, giallo, narrativa letteraria, romance, thriller, young adult.
 
 Un valore del briefing fuori dal profilo è accettato solo con un «Motivo override:» scritto nel briefing. Senza motivo, `zb nuovo` si ferma (<span class="fonte">motore/PROCEDURA.md §3</span>).
 
@@ -232,132 +283,138 @@ Un valore del briefing fuori dal profilo è accettato solo con un «Motivo overr
 
 Una voce dice **come** si racconta. Il **cosa** lo decide l'autore nel briefing (<span class="fonte">motore/README.md, «Banca-voci»</span>).
 
-Le voci stanno in un repository separato, la banca-voci, mai dentro il motore. Il motore le legge in sola lettura dalla cartella indicata da `ZB_BANCA_VOCI` (<span class="fonte">motore/README.md, «Banca-voci»</span>).
+Le voci stanno in un repository separato, la banca-voci, mai dentro il motore. Il motore le legge in sola lettura dalla cartella indicata da `ZB_BANCA_VOCI`. L'elenco è nel suo `indice.yaml`; questa guida non nomina le voci, perché alcune hanno nomi reali (<span class="fonte">motore/passaggio-di-consegne.md, «Stato»</span>).
 
-Oggi le voci sono 11, tutte pronte. L'elenco è in `indice.yaml` della banca-voci e in `motore/passaggio-di-consegne.md`, «Stato» (<span class="fonte">motore/passaggio-di-consegne.md</span>). Questa guida non le nomina.
-
-Ogni voce ha una scheda in 7 sezioni e un elenco di espressioni vietate, `divieti.yaml` (<span class="fonte">motore/README.md, «Banca-voci»</span>).
-
-Un libro sceglie la voce nel briefing («Voce dalla banca:», «Ambientazione:»); `zb nuovo` la scrive in `libro.yaml` (<span class="fonte">motore/README.md, «Banca-voci»</span>).
-
-Se il briefing contrasta con la voce, vince il briefing, e il contrasto si segnala (<span class="fonte">motore/modelli/briefing.md; README della banca-voci, copiato in docs/INFRASTRUTTURA_COMPLETA.md §6</span>).
+Un libro sceglie la voce nel briefing; `zb nuovo` la scrive in `libro.yaml`. `zb voce lista`, `zb voce mostra <slug>` e `zb voce verifica <slug>` le leggono. Se il briefing contrasta con la voce, vince il briefing e il contrasto si segnala (<span class="fonte">motore/editoriale/LEGGIMI.md</span>).
 
 ## Modelli
 
-I modelli sono i file vuoti da cui nasce un libro. Stanno in `motore/modelli/` e sono 6 (<span class="fonte">cartella motore/modelli/</span>):
-
-| File | A cosa serve |
-|---|---|
-| `briefing.md` | Il modulo che compila l'autore |
-| `libro.yaml` | Le regole del libro |
-| `stato.yaml` | A che punto è il libro |
-| `cronologia.yaml` | Date ed eventi |
-| `LEGGIMI.md` | Cosa leggere a ogni avvio |
-| `conferme-autore.yaml` | Le conferme per KDP |
-
-<p class="fonte">(motore/modelli/; docs/INFRASTRUTTURA_COMPLETA.md §3.3)</p>
+I modelli sono i file vuoti da cui nasce un libro. Stanno in `motore/modelli/` e sono 6: `briefing.md` (il modulo dell'autore), `libro.yaml` (le regole del libro), `stato.yaml` (a che punto è), `cronologia.yaml` (date ed eventi), `LEGGIMI.md` (cosa leggere a ogni avvio), `conferme-autore.yaml` (le conferme per KDP). I modelli dei documenti della struttura stanno a parte, in `motore/editoriale/struttura/modelli/` (<span class="fonte">cartelle motore/modelli/ e motore/editoriale/struttura/</span>).
 
 ## Hook
 
-Gli hook sono tre. Stanno nel modello `motore/dati/hook-settings.esempio.json` (<span class="fonte">motore/dati/hook-settings.esempio.json</span>):
+Gli hook sono quattro, nel modello `motore/dati/hook-settings.esempio.json`. Gli effetti sono nel capitolo 4 (<span class="fonte">motore/README.md, «Hook di Claude Code»</span>).
 
 | Hook | Quando | Cosa fa |
 |---|---|---|
-| recinto | prima di ogni scrittura di file | **Blocca** le scritture fuori dal libro attivo |
+| recinto | prima di ogni scrittura, anche via Bash, e prima di `git commit` e `git push` | **Blocca** |
 | manoscritto | prima di scrivere in `04-manoscritto/` | Oggi **avvisa** se manca `zb avvio` |
 | sessione | all'inizio della sessione | Annota la sessione |
+| consumo | dopo le letture e le chiamate agli agenti | Conta, non blocca |
 
-<p class="fonte">(motore/script/hook_recinto.py; motore/script/hook_manoscritto.py; motore/dati/hook.yaml; motore/PROCEDURA.md §10)</p>
-
-Gli hook si accendono solo sui rami dei libri, con `zb hook attiva --ok`. Sul ramo `motore` sono spenti per scelta (<span class="fonte">motore/passaggio-di-consegne.md, «Stato»</span>). Dettagli nel capitolo 4.
+Si accendono solo sui rami dei libri, con `zb hook attiva --ok`. Sul ramo `motore` sono spenti per scelta.
 
 ## CLAUDE.md
 
-È il foglio delle regole di avvio. Sta nella radice del repository e Claude Code lo legge a ogni sessione (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §4 e §9</span>).
-
-Ha al massimo 30 righe e nessun nome di libro: lo controlla una prova del motore (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §9; motore/script/prove.py</span>). Cosa dice: capitolo 4.
+È il foglio delle regole di avvio. Sta nella radice del repository e Claude Code lo legge a ogni sessione. Dev'essere breve (sotto le 30 righe) e senza nomi di libri (<span class="fonte">motore/editoriale/risparmio-token.md</span>). Cosa dice: capitolo 4.
 
 ## Rami dei libri
 
-Ogni libro vive su un ramo suo, nella cartella `libri/<slug>/`. Quel ramo porta anche una copia del motore (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §8.3</span>). Dettagli nel capitolo 5.
+Ogni libro vive su un ramo suo, nella cartella `libri/<slug>/`. Dettagli nel capitolo 5.
 
 # 3. Il percorso di un libro {#cap3}
 
-Dall'idea a KDP ci sono quattro tratti: nascita, documenti, stesura, chiusura (<span class="fonte">motore/PROCEDURA.md §3-7</span>).
+Dall'idea a KDP il percorso ha dodici passi. Il motore lo fa rispettare: i gate sono nel codice (<span class="fonte">motore/editoriale/00-percorso.md; motore/PROCEDURA.md §5</span>).
 
-## Tratto 1. La nascita
+| # | Fase | Chi lavora | Fermata |
+|---|---|---|---|
+| 1 | Briefing | autore | — |
+| 2 | Apertura della cartella unica (`zb nuovo`) | motore | — |
+| 3 | Struttura | architetto | gate `struttura` |
+| 4 | Revisione della struttura | editor strutturale, **sessione separata** | nel gate `struttura` |
+| 5 | Documenti | direttore editoriale | gate `documenti` |
+| 6 | Pagina campione | scrittore con voce | gate `pagina_campione` |
+| 7 | Stesura | scrittore con voce | gate `primi_capitoli` |
+| 8 | Revisione strutturale del manoscritto | editor strutturale | gate `struttura_manoscritto` |
+| 9 | Line editing | line editor | gate `line` |
+| 10 | Copyediting | correttore di italiano | gate `copy` |
+| 11 | Bozze | correttore di bozze | gate `bozze` |
+| 12 | Chiusura meccanica | motore | — |
 
-1. Sul ramo del libro, mai sul ramo `motore`, l'autore compila il modello `motore/modelli/briefing.md` e lo mette in `libri/<slug>/briefing.md` (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §3.3</span>).
-2. Claude Code lancia `zb nuovo libri/<slug>/briefing.md` (<span class="fonte">CLAUDE.md; motore/PROCEDURA.md §3</span>).
-3. Se il briefing è incompleto, `zb nuovo` elenca al massimo 5 cose mancanti e **non crea nulla** (<span class="fonte">motore/PROCEDURA.md §3</span>).
-4. Se è completo, crea la cartella con `libro.yaml`, `stato.yaml`, `LEGGIMI.md`, `cronologia.yaml`, `nomi_propri.txt`, la bibbia, il manuale di stile, la scaletta e il piano parole (<span class="fonte">motore/PROCEDURA.md §3</span>).
-5. Scrive `libri/libro-attivo.md`, così il recinto sa qual è il libro attivo (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §3.3</span>).
+Dopo il passo 8 c'è un **passo opzionale**: i lettori ciechi e il panel di mercato. Solo con il tuo ok (<span class="fonte">motore/PROCEDURA.md §5</span>).
 
-Per un libro che ha già dei documenti, ma non `libro.yaml`, c'è `zb adotta`: prepara delle bozze con la fonte di ogni valore (<span class="fonte">motore/PROCEDURA.md §3b</span>).
+## Come funziona un gate
 
-## Prima di ogni sessione: `zb avvio`
-
-A ogni sessione, e dopo ogni compattazione della memoria di Claude Code, si lancia `zb avvio <libro>` (<span class="fonte">motore/PROCEDURA.md §4</span>).
-
-Si ferma senza scrivere nulla se qualcosa non va. Per esempio: modifiche non salvate, ramo sbagliato, ramo non allineato a GitHub, un documento approvato cambiato di nascosto (<span class="fonte">motore/PROCEDURA.md §4</span>).
-
-Se tutto va bene stampa la riga «Letto: …», con i file letti, le righe e le impronte. Claude Code deve riportarla prima di scrivere (<span class="fonte">motore/PROCEDURA.md §4; CLAUDE.md</span>).
-
-## Tratto 2. Documenti e pagina campione
-
-| Fase | Lavoro | Fermata |
-|---|---|---|
-| documenti | bibbia, cronologia, scaletta, piano parole | gate «documenti» |
-| pagina campione | `05-revisioni/pagina-campione.md` | gate «pagina_campione» |
-
-<p class="fonte">(motore/PROCEDURA.md §5)</p>
-
-Quando una fase è finita, Claude Code lancia `zb pronto`. Il motore apre la fermata e mostra il primo blocco di circa 120 righe (<span class="fonte">motore/PROCEDURA.md §5</span>).
-
-Le risposte dell'autore (<span class="fonte">motore/PROCEDURA.md §5</span>):
+Quando il lavoro di una fase è finito, Claude Code lancia `zb pronto`. Il motore apre la fermata e mostra il primo blocco di circa 120 righe. Le risposte dell'autore (<span class="fonte">motore/PROCEDURA.md §5</span>):
 
 - **avanti**: il blocco dopo. Non approva nulla.
-- **ok**: approva. Vale solo se l'autore ha visto tutti i blocchi.
+- **ok**: approva. Vale solo se hai visto tutti i blocchi.
 - **ok, lotti da N**: approva e fissa quanti capitoli scrivere di fila.
 - **correggi: …**: registra una correzione. La fermata resta aperta.
 - **stato**: mostra lo stato, senza cambiare nulla.
 
-Qualunque altra frase è una domanda: non cambia lo stato (<span class="fonte">motore/PROCEDURA.md §5</span>).
+Qualunque altra frase è una domanda: non cambia lo stato. Non si passa alla fase dopo senza `ok`. Se un ruolo trova un problema grave, si ferma e lo segnala (<span class="fonte">motore/editoriale/00-percorso.md</span>).
 
-## Tratto 3. La stesura
+I gate attivi sono nel campo `gate` di `libro.yaml`. Il gate `struttura` e il gate `controllo_fallito` sono **sempre attivi** (<span class="fonte">motore/PROCEDURA.md §5</span>).
 
-Per ogni capitolo (<span class="fonte">motore/PROCEDURA.md §6</span>):
+## Prima di ogni sessione: `zb avvio`
 
-1. Claude Code rilegge LEGGIMI, manuale, direttive, scaletta, piano, cronologia e capitolo precedente.
-2. Riporta la riga «Letto».
-3. Scrive `04-manoscritto/NN-<slug>.md`.
-4. Lancia `zb esito <libro> N`: parole, stile, continuità, ripetizioni. Il report va in `06-diagnostica/capitoli/`.
-5. Salva: commit e push.
+A ogni sessione, e dopo ogni compattazione della memoria di Claude Code, si lancia `zb avvio <libro> [--ruolo R]`. Si ferma senza scrivere nulla se qualcosa non va: modifiche non salvate, ramo sbagliato, ramo non allineato a GitHub, un documento approvato cambiato di nascosto, due ruoli nella stessa sessione (<span class="fonte">motore/PROCEDURA.md §4</span>).
 
-Se un controllo fallisce: **una sola** correzione mirata, poi di nuovo `zb esito`. Al secondo fallimento di fila ci si ferma e decide l'autore (<span class="fonte">motore/PROCEDURA.md §6</span>).
+Se tutto va bene stampa la riga «Letto: …», con i file letti, le righe e le impronte. Claude Code la riporta prima di scrivere.
 
-Dopo il capitolo 3 c'è la fermata «primi_capitoli». Con l'ok l'autore sceglie i lotti; poi i capitoli si scrivono di fila (<span class="fonte">motore/PROCEDURA.md §6</span>).
+**Un ruolo per sessione.** Per cambiare ruolo: salvare, aprire una sessione nuova, `zb avvio`. Chi ha scritto un testo non lo revisiona nella stessa sessione (<span class="fonte">motore/editoriale/00-percorso.md; motore/dati/hook.yaml</span>).
 
-Scritto l'ultimo capitolo del piano parole, la fase passa da sola a «chiusura» (<span class="fonte">motore/PROCEDURA.md §5-6</span>).
+## Passi 1-2. La nascita
 
-## Tratto 4. La chiusura
+1. Sul ramo del libro, mai sul ramo `motore`, l'autore compila il modello `motore/modelli/briefing.md`.
+2. Claude Code lancia `zb nuovo <briefing>`.
+3. Se il briefing è incompleto, `zb nuovo` elenca al massimo 5 cose mancanti e **non crea nulla**.
+4. Se è completo, crea la cartella unica `libri/<slug>/` con `libro.yaml`, `stato.yaml`, `LEGGIMI.md`, `cronologia.yaml`, `nomi_propri.txt`, e la fase **struttura**: dentro `03-struttura/` nascono solo i modelli della struttura. I documenti nascono dopo l'ok.
 
-L'ordine è fisso (<span class="fonte">motore/PROCEDURA.md §7</span>):
+Per un libro che ha già dei documenti c'è `zb adotta`: prepara delle bozze con la fonte di ogni valore (<span class="fonte">motore/PROCEDURA.md §3 e §3b; motore/passaggio-di-consegne.md</span>).
 
-1. continuita
-2. ortografia
-3. compila
-4. impagina
-5. pdf
-6. pacchetto
-7. kdp
-8. pronto
+## Passi 3-4. Struttura e sua revisione
 
-`pacchetto` va prima di `kdp`: il controllo KDP legge la scheda del pacchetto (<span class="fonte">motore/PROCEDURA.md §7</span>).
+L'architetto scrive nove file in `03-struttura/`: premessa (con il contratto della storia), logline e tema, personaggi chiave, atti e svolte, scaletta, sottotrame, tensione e ritmo, piano parole, scelte fisse. Poi l'editor strutturale la giudica **in una sessione separata**, in `06-diagnostica/revisione-struttura.md` (<span class="fonte">motore/editoriale/struttura/01-fase-struttura.md; motore/PROCEDURA.md §5</span>).
 
-Nelle pagine seguenti, un passo per pagina. «`<titolo>`» è il titolo del libro trasformato in nome di file.
+Il gate `struttura` è sempre attivo. Finché non dici `ok`, non c'è nessun documento e nessun capitolo.
 
-### Passo 1. `zb continuita`
+## Passi 5-6. Documenti e pagina campione
+
+| Fase | Lavoro | Fermata |
+|---|---|---|
+| documenti | bibbia, cronologia, nota di direzione, manuale di stile | gate `documenti` |
+| pagina campione | `05-revisioni/pagina-campione.md` | gate `pagina_campione` |
+
+<p class="fonte">(motore/PROCEDURA.md §5)</p>
+
+## Passo 7. La stesura
+
+Per ogni capitolo, l'agente scrittore (chiamato dalla sessione principale, mai due capitoli in parallelo) (<span class="fonte">motore/PROCEDURA.md §6</span>):
+
+1. rilegge `LEGGIMI`, manuale, scheda della voce, scaletta, piano parole, cronologia, **le capsule** dei capitoli precedenti e solo l'ultima pagina del precedente;
+2. riporta la riga «Letto»;
+3. scrive `04-manoscritto/NN-<slug>.md`;
+4. `zb esito <libro> N`: parole, stile, continuità, ripetizioni vicine e **audit anti-IA** (report in `06-diagnostica/capitoli/` e `06-diagnostica/anti-ia/`);
+5. `zb capsula <libro> N`: l'agente capsula scrive `07-capsule/NN.md`, di nuovo `zb capsula` per controllarla;
+6. salva: commit e push.
+
+Se un controllo fallisce: **una sola** correzione mirata, poi di nuovo `zb esito`. Al secondo fallimento di fila si apre il gate `controllo_fallito` e decidi tu.
+
+Dopo il capitolo 3 c'è la fermata `primi_capitoli`. Con l'ok scegli i lotti; poi i capitoli si scrivono di fila. Scritte tutte le unità del piano, la fase passa a «revisione_manoscritto».
+
+## Passo 8. Revisione strutturale del manoscritto
+
+L'editor strutturale (sessione separata) legge struttura e capsule, e solo dove serve i capitoli segnalati. Scrive `06-diagnostica/revisione-manoscritto.md`. Gate `struttura_manoscritto`. Dopo l'ok, gli interventi si applicano con modifiche puntuali; poi `zb esito` sui capitoli toccati (<span class="fonte">motore/PROCEDURA.md §5</span>).
+
+**Passo opzionale: lettori ciechi.** Con il tuo ok, l'agente `lettore-cieco` legge un campione e riferisce l'esperienza di lettura (<span class="fonte">motore/editoriale/agenti/lettore-cieco.md</span>).
+
+## Passi 9-11. Line, copy, bozze
+
+| Fase | Chi | Report | Gate |
+|---|---|---|---|
+| line | line editor, per capitolo (max 3 in parallelo) | `06-diagnostica/line/NN.md` | `line` |
+| copy | correttore di italiano, per capitolo | `06-diagnostica/copy/NN.md` | `copy` |
+| bozze | correttore di bozze, a testo fermo (`compila`, `impagina`, `pdf`) | `06-diagnostica/bozze.md` | `bozze` |
+
+Dopo l'`ok` a `line` e `copy` si applicano gli interventi approvati, con modifiche puntuali: l'hook rifiuta la riscrittura intera di un capitolo da parte di un revisore (<span class="fonte">motore/PROCEDURA.md §5 e §11</span>).
+
+## Passo 12. La chiusura meccanica
+
+L'ordine è fisso (<span class="fonte">motore/PROCEDURA.md §7</span>): continuita, ortografia, compila, impagina, pdf, pacchetto, kdp, pronto. `pacchetto` va prima di `kdp`: il controllo KDP legge la scheda del pacchetto.
+
+### Chiusura 1: `zb continuita`
 
 - **Cosa fa.** Controlla date, giorni della settimana, età dei personaggi, durate, cifre, nomi scritti in due modi, ordine delle date.
 - **Cosa serve prima.** I capitoli in `04-manoscritto/` e il file `cronologia.yaml` del libro.
@@ -365,7 +422,7 @@ Nelle pagine seguenti, un passo per pagina. «`<titolo>`» è il titolo del libr
 
 <p class="fonte">(motore/script/continuita.py; motore/PROCEDURA.md §7)</p>
 
-### Passo 2. `zb ortografia`
+### Chiusura 2: `zb ortografia`
 
 - **Cosa fa.** Tre livelli: (a) Hunspell, un dizionario italiano automatico, sempre; (b) LanguageTool, un correttore più fine, solo se installato; (c) una lista di controllo per la lettura umana, sempre.
 - **Cosa serve prima.** Hunspell con il dizionario italiano; le parole ammesse del libro (`nomi_propri.txt`). Per il livello (b), LanguageTool e la variabile `ZB_LANGUAGETOOL`.
@@ -373,7 +430,7 @@ Nelle pagine seguenti, un passo per pagina. «`<titolo>`» è il titolo del libr
 
 <p class="fonte">(motore/script/ortografia.py; motore/PROCEDURA.md §7)</p>
 
-### Passo 3. `zb compila`
+### Chiusura 3: `zb compila`
 
 - **Cosa fa.** Mette insieme il libro: frontespizio, pagina del copyright, sommario, parti, capitoli in ordine, appendici. Il sommario lo genera sempre il motore.
 - **Cosa serve prima.** `libro.yaml` e i capitoli. Le appendici dichiarate in `libro.yaml` e presenti in `05-appendici/`.
@@ -381,7 +438,7 @@ Nelle pagine seguenti, un passo per pagina. «`<titolo>`» è il titolo del libr
 
 <p class="fonte">(motore/script/compila.py; motore/PROCEDURA.md §7)</p>
 
-### Passo 4. `zb impagina`
+### Chiusura 4: `zb impagina`
 
 - **Cosa fa.** Fa il PDF di stampa con Chromium (un navigatore web usato come tipografo). Margini dalla tabella KDP, pagine iniziali senza numero, sommario con le pagine vere, formato esatto della pagina, metadati Title e Author.
 - **Cosa serve prima.** Il file compilato del passo 3; nel computer di lavoro Chromium, PyMuPDF e markdown.
@@ -389,7 +446,7 @@ Nelle pagine seguenti, un passo per pagina. «`<titolo>`» è il titolo del libr
 
 <p class="fonte">(motore/script/impagina.py; motore/README.md, «Ambiente»)</p>
 
-### Passo 5. `zb pdf`
+### Chiusura 5: `zb pdf`
 
 - **Cosa fa.** Verifica il PDF: numero di pagine; Title e Author uguali a `libro.yaml`; font incorporati; margini contro i minimi KDP; ogni voce del sommario sulla pagina giusta.
 - **Cosa serve prima.** Il PDF del passo 4; gli strumenti `pdfinfo`, `pdffonts`, `pdftotext`.
@@ -397,7 +454,7 @@ Nelle pagine seguenti, un passo per pagina. «`<titolo>`» è il titolo del libr
 
 <p class="fonte">(motore/script/verifica_pdf.py)</p>
 
-### Passo 6. `zb pacchetto`
+### Chiusura 6: `zb pacchetto`
 
 - **Cosa fa.** Prepara la cartella per KDP con modelli già compilati con i dati di `libro.yaml`. **Non** scrive testi commerciali (descrizione, quarta, parole chiave, categorie): li scrive Claude Code dopo. Non sovrascrive mai un file che c'è già.
 - **Cosa serve prima.** `libro.yaml`.
@@ -405,15 +462,15 @@ Nelle pagine seguenti, un passo per pagina. «`<titolo>`» è il titolo del libr
 
 <p class="fonte">(motore/script/pacchetto.py)</p>
 
-### Passo 7. `zb kdp`
+### Chiusura 7: `zb kdp`
 
 - **Cosa fa.** Controlla la conformità a KDP in 15 sezioni: titolo, sottotitolo, serie, descrizione, autore, editore, parole chiave, categorie, copertina, ISBN, cartaceo, eBook, dichiarazione sull'IA, contenuti, recensioni. Ciò che deve confermare l'autore, finché non è confermato, risulta KO.
 - **Cosa serve prima.** `libro.yaml`, la scheda del passo 6, il file compilato, il PDF, `conferme-autore.yaml`, i dati KDP del motore; l'eBook `ebook.docx` se il libro lo prevede.
 - **Cosa produce.** `06-pubblicazione/conformita-kdp.md`, una riga OK/KO per sezione.
 
-<p class="fonte">(motore/script/conformita_kdp.py; docs/INFRASTRUTTURA_COMPLETA.md §3.6)</p>
+<p class="fonte">(motore/script/conformita_kdp.py)</p>
 
-### Passo 8. `zb pronto`
+### Chiusura 8: `zb pronto`
 
 - **Cosa fa.** Controlla che ci siano tutti i risultati dei passi 1-7. Se sì, il libro passa a «chiuso».
 - **Cosa serve prima.** I sette file: `continuita.md`, `controllo-ortografico.md`, il compilato, il PDF, `verifica-pdf.md`, `checklist.md`, `conformita-kdp.md`.
@@ -429,59 +486,69 @@ Nelle pagine seguenti, un passo per pagina. «`<titolo>`» è il titolo del libr
 
 ## Dopo ogni passo: il salvataggio
 
-Dopo ogni passo che scrive: report in `06-diagnostica/`, commit, push, controllo dello stato. Se il push fallisce, ci si ferma e si riporta l'errore. Mai dire «fatto» se il lavoro non è su GitHub (<span class="fonte">CLAUDE.md; motore/PROCEDURA.md §8</span>).
+Dopo ogni passo che scrive: report in `06-diagnostica/`, commit, push (con `zb push`), controllo dello stato. Se il push fallisce, ci si ferma e si riporta l'errore. Mai dire «fatto» se il lavoro non è su GitHub (<span class="fonte">CLAUDE.md; motore/PROCEDURA.md §8</span>).
+
 
 # 4. Le regole {#cap4}
 
 ## Cosa dice CLAUDE.md
 
-Il file ha 29 righe (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §4</span>). In parole semplici dice (<span class="fonte">CLAUDE.md</span>):
+In parole semplici dice (<span class="fonte">CLAUDE.md</span>):
 
 1. **Regola madre.** Il motore resta pulito; il ramo `motore` non contiene mai un libro.
-2. **Prima azione per un briefing nuovo:** `zb nuovo`, che crea la cartella del libro. Da lì si scrive solo nella cartella del libro.
-3. **Recinto.** L'hook blocca le scritture fuori dal libro attivo. Solo se l'autore scrive «lavoro sul motore», Claude Code lancia `zb lavoro motore`.
-4. **Letture.** Per lavorare su un libro: `motore/PROCEDURA.md` e il `LEGGIMI.md` del libro. Se manca il percorso del libro, Claude Code lo chiede prima di toccare file.
-5. **Avvio.** Prima di scrivere: `zb avvio <libro>` e la riga «Letto». Se l'avvio si ferma, Claude Code si ferma e dice perché.
-6. **Prima di ogni capitolo:** di nuovo `zb avvio`, la scheda della voce (se c'è) e il briefing.
-7. **Cosa legge il motore:** solo `motore/`, la cartella del libro e la banca-voci (in sola lettura).
-8. **Report di sessione** ogni 5 scambi, o quando l'autore scrive «passaggio». Va nella cartella del libro (`passaggio-di-consegne.md`). Sette sezioni fisse: Stato; Decisioni prese; Regole da non violare; Fatto in questa sessione; Punti aperti; Prossimo passo; Ripartenza.
-9. **Precedenza** delle regole (vedi più avanti).
+2. **Briefing nuovo:** prima azione `zb nuovo`. Tutto ciò che riguarda il libro vive solo nella sua cartella; il suo nome non compare altrove.
+3. **Recinto.** L'hook blocca le scritture fuori dal libro attivo. Solo se scrivi «lavoro sul motore», Claude Code lancia `zb lavoro motore`.
+4. **Letture.** Per lavorare su un libro: `motore/PROCEDURA.md` e il `LEGGIMI.md` del libro. Se manca il percorso, Claude Code lo chiede prima di toccare file.
+5. **Avvio.** Prima di scrivere: `zb avvio <libro> [--ruolo R]` e la riga «Letto». Se si ferma, Claude Code si ferma e dice perché. **Un ruolo per sessione.**
+6. **Cosa legge il motore:** solo `motore/`, la cartella del libro e la banca-voci (sola lettura). `docs/` non si legge, se non lo chiedi tu.
+7. **Orchestrazione.** La sessione principale non scrive prosa. `zb agenti prossimo <libro>` dice quale agente chiamare. Capitoli sempre in sequenza; line, copy e capsule in parallelo, al massimo come in `motore/dati/orchestrazione.yaml`.
+8. **Report di sessione** ogni 5 scambi, o quando scrivi «passaggio». Va nella cartella del libro (`passaggio-di-consegne.md`); quello del motore solo per il lavoro sul motore. Sette sezioni fisse: Stato; Decisioni prese; Regole da non violare; Fatto in questa sessione; Punti aperti; Prossimo passo; Ripartenza.
+9. **Precedenza:** una sola scala, in `motore/editoriale/LEGGIMI.md`.
 10. **Metodo:** proponi, l'autore approva, applica. Mai approvare da solo.
 11. **Risposte dell'autore:** ok, avanti, correggi, stato.
-12. **Ramo:** quello della sessione, letto da git.
-13. **Tono:** il testo precedente è un registro dei fatti. Non si giudica.
-14. **Salvataggio** a ogni passo: commit, push, controllo. Resoconto con codice del commit, file e «branch allineato a origin: sì/no».
+12. **Ramo:** quello della sessione, letto da git. **Tono:** il testo precedente è un registro dei fatti.
+13. **Salvataggio** a ogni passo: add, commit, push (`zb push`), controllo. Resoconto con codice, file e «branch allineato a origin: sì/no».
 
 ## Gli hook
 
-### Il recinto: l'unico che blocca
+### Il recinto: blocca
 
-- **Cosa guarda.** Ogni volta che Claude Code vuole scrivere un file (con gli strumenti Write, Edit, MultiEdit, NotebookEdit).
-- **Regola.** Si può scrivere solo in `libri/<slug-attivo>/`. Tutto il resto, `motore/` compreso, è rifiutato con il messaggio «RECINTO: …». Lo strumento non parte.
-- **Libro attivo.** È la prima riga di `libri/libro-attivo.md`. Lo scrivono `zb nuovo` e `zb lavoro libro <slug>`.
-- **Nascita.** È permesso anche scrivere il briefing di un libro che non ha ancora `libro.yaml`.
-- **Lavoro sul motore.** Quando l'autore scrive «lavoro sul motore», Claude Code lancia `zb lavoro motore`: allora si può scrivere nel repository, tranne `libri/`.
-- **Senza libro attivo** (succede sul ramo `motore`): solo un avviso, nessun blocco.
+- **Cosa guarda.** Ogni scrittura di file (Write, Edit, MultiEdit, NotebookEdit) e anche i comandi di shell (**Bash**): redirezioni, `tee`, `sed -i`, `cp`, `mv`, `rm`.
+- **Regola.** Si può scrivere solo in `libri/<slug-attivo>/`. Il resto è rifiutato con il messaggio «RECINTO: …».
+- **Prima di `git commit` e `git push`** controlla la cartella unica: un commit che tocca il libro e altro è bloccato.
+- **Revisori.** Un revisore non può riscrivere un capitolo per intero: solo modifiche puntuali.
+- **Libro attivo.** Lo scrivono `zb nuovo` e `zb lavoro libro <slug>`; sta nella cartella git, non in un file tracciato.
+- **Lavoro sul motore.** Con «lavoro sul motore», Claude Code lancia `zb lavoro motore`: si può scrivere nel motore, ma non in `libri/`.
 
-<p class="fonte">(motore/script/hook_recinto.py; docs/INFRASTRUTTURA_COMPLETA.md §3.2)</p>
+<p class="fonte">(motore/PROCEDURA.md §10-11; motore/README.md, «Hook di Claude Code»)</p>
 
-**Limiti dichiarati.** Il recinto non controlla i comandi di shell (Bash): una scrittura fatta così passa. E non può sapere chi ha chiesto «lavoro sul motore» (<span class="fonte">motore/passaggio-di-consegne.md, «Punti aperti» 8 e 9</span>).
+**Limiti dichiarati.** Su Bash il recinto non vede tutto: script che scrivono senza nominare il percorso, variabili di comandi precedenti, `$(…)`, `awk -i`, `find -delete`, `xargs`. Restano i controlli su git di `zb avvio` e `zb push` (<span class="fonte">motore/report-motore.md §11, punto 3</span>).
 
 ### Il manoscritto: avvisa
 
-Se si scrive in `04-manoscritto/` senza aver fatto `zb avvio` in quella sessione, oggi stampa «ATTENZIONE: …» e lascia passare. Lo annota in `.zb/avvisi-hook.log` del libro (<span class="fonte">motore/PROCEDURA.md §10</span>).
+Se si scrive in `04-manoscritto/` senza aver fatto `zb avvio` in quella sessione, oggi stampa «ATTENZIONE: …» e lascia passare. Lo annota in `.zb/avvisi-hook.log` del libro. La modalità sta in `motore/dati/hook.yaml`: oggi `avviso`. Il passaggio a `blocco` sarà un commit a parte, dopo il tuo ok (<span class="fonte">motore/PROCEDURA.md §11</span>).
 
-La modalità sta in `motore/dati/hook.yaml`: oggi `avviso`. Il passaggio a `blocco` sarà un commit a parte, dopo l'ok dell'autore (<span class="fonte">motore/dati/hook.yaml; motore/PROCEDURA.md §10</span>).
+### La separazione dei ruoli: blocco
 
-### La sessione: prende nota
+Chi ha scritto un testo non lo revisiona nella stessa sessione. Il recinto annota chi scrive in `.zb/scritture.log`. In `motore/dati/hook.yaml` la scelta attuale è `separazione_ruoli: blocco`: il motore **si ferma** al `zb pronto` del gate e all'avvio del ruolo di revisione. Puoi tornare ad `avviso` con un commit a parte (<span class="fonte">motore/dati/hook.yaml</span>).
 
-All'inizio di ogni sessione scrive il codice della sessione. Dopo una compattazione della memoria, i vecchi «avvio fatto» non valgono più (<span class="fonte">motore/PROCEDURA.md §10</span>).
+### Il consumo e la sessione
+
+L'hook di sessione scrive il codice della sessione; dopo una compattazione, i vecchi «avvio fatto» non valgono più. L'hook di consumo conta file letti, righe e agenti chiamati, per `zb consumo`. Misura le letture, non i token (<span class="fonte">motore/PROCEDURA.md §11; motore/report-motore.md §11</span>).
 
 ### Come si accendono
 
-`zb hook attiva --ok`, solo sui rami dei libri e solo dopo l'ok dell'autore. Crea `.claude/settings.json`. `zb hook stato` dice se sono accesi; `zb hook disattiva` li spegne (<span class="fonte">motore/PROCEDURA.md §10; docs/INFRASTRUTTURA_COMPLETA.md §3.2</span>).
+`zb hook attiva --ok`, solo sui rami dei libri e solo dopo il tuo ok. Crea `.claude/settings.json`. `zb hook stato` dice se sono accesi; `zb hook disattiva` li spegne. Gli hook sono «una protezione in più, non una garanzia» (<span class="fonte">motore/PROCEDURA.md §11</span>).
 
-Gli hook sono «una protezione in più, non una garanzia» (<span class="fonte">motore/PROCEDURA.md §10, titolo</span>). I controlli che non dipendono dagli hook li fa `zb avvio`, a ogni sessione.
+## La cartella unica
+
+Tutto ciò che riguarda un libro vive in `libri/<slug>/`. `zb cartella <libro>`, e da soli `zb avvio` e `zb push`, controllano su git: file modificati fuori dal libro, commit «misti», titolo del libro in file fuori dalla cartella (<span class="fonte">motore/PROCEDURA.md §10</span>).
+
+Le eccezioni sono dichiarate in `motore/dati/cartella-unica.yaml`: `CLAUDE.md`, `.gitignore`, `.claude/settings.json`, `.claude/agents/` e i merge del motore. I commit misti già fatti li dichiari tu, con il motivo: la storia non si riscrive.
+
+## `zb push` e le prove sul motore
+
+`zb push` fa il push del ramo corrente; se fallisce riprova, poi tenta un ramo alternativo, poi un `git bundle`. Prima controlla la cartella unica. Sul **lavoro del motore** vuole `zb prove` intera e tutta OK sullo stato attuale (<span class="fonte">zb aiuto; motore/passaggio-di-consegne.md, «Decisioni prese»</span>). Oggi le prove sono 520 su 520 OK.
 
 ## Altre protezioni, senza hook
 
@@ -492,117 +559,71 @@ Gli hook sono «una protezione in più, non una garanzia» (<span class="fonte">
 | `zb recinto` | Prova che i comandi non scrivano fuori dal libro |
 | `zb separazione` | Prova che in `motore/` non ci siano pezzi di libri veri |
 
-<p class="fonte">(docs/INFRASTRUTTURA_COMPLETA.md §3.1)</p>
+## La precedenza
 
-## L'ordine di precedenza
-
-Quando due regole si contraddicono, vince quella più in alto. Il repository ne dà due versioni.
-
-**In `motore/PROCEDURA.md` §1:**
-
-1. manuale del libro e `libro.yaml`
-2. profilo di genere
-3. la procedura del motore
-4. skill dell'autore
-
-**In `CLAUDE.md`:**
-
-1. manuale del libro (e `libro.yaml`)
-2. procedura del motore
-3. skill dell'autore
-
-In tutti e due i casi: **ogni contrasto si segnala** (<span class="fonte">motore/PROCEDURA.md §1; CLAUDE.md</span>).
-
-La differenza: `CLAUDE.md` non nomina il profilo di genere. Ma le due scale non si contraddicono: il profilo sta sotto il libro e sopra la procedura (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §10, punto 11</span>).
-
-C'è poi una regola a parte per la voce: se il briefing contrasta con la scheda della voce, vince il briefing (<span class="fonte">motore/modelli/briefing.md</span>). Nessuna delle due scale dice dove stanno voce e briefing (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §10, punto 11</span>).
-
-Le «skill dell'autore» sono nominate, ma nel repository non esistono (capitolo 6).
+Quando due regole si contraddicono, vince quella più in alto. Una sola scala, quella del capitolo 2: libro e `libro.yaml`, poi briefing e voce, poi profilo di genere, poi ruoli, poi procedura. **Ogni contrasto si segnala** (<span class="fonte">motore/editoriale/LEGGIMI.md; CLAUDE.md</span>).
 
 # 5. I rami {#cap5}
 
 ## Il ramo `motore`
 
-- Contiene solo `motore/`, `CLAUDE.md`, `.gitignore` e la cartella `docs/` con i documenti di lettura.
+- Contiene `motore/`, `CLAUDE.md`, `.gitignore` e la cartella `docs/` con i documenti di lettura.
 - Mai un libro, mai una cartella `libri/`.
 - È l'unico ramo dove si lavora sul motore.
 - Qui gli hook sono spenti: non c'è `.claude/settings.json`, e una prova lo richiede.
 - Qui `zb nuovo` e `zb lavoro libro` si rifiutano.
 
-<p class="fonte">(docs/INFRASTRUTTURA_COMPLETA.md §8.3; motore/passaggio-di-consegne.md, «Stato» e «Decisioni prese»; contenuto del ramo al commit f7decc4)</p>
+<p class="fonte">(motore/passaggio-di-consegne.md, «Stato» e «Decisioni prese»; motore/README.md)</p>
 
 ## I rami dei libri
 
-- Un libro per ramo, nella cartella `libri/<slug>/`, con `libri/libro-attivo.md`.
+- Un libro per ramo, nella cartella `libri/<slug>/`.
 - Ogni ramo porta una copia di `motore/`. Il motore aggiornato arriva con un merge dal ramo `motore`, mai con un rebase.
-- Con gli hook accesi c'è anche `.claude/settings.json`.
+- Con gli hook e gli agenti accesi ci sono anche `.claude/settings.json` e `.claude/agents/`.
+- Ogni ramo di libro ha il suo `CLAUDE.md`, per tua scelta. Non si toccano da qui.
 
-<p class="fonte">(docs/INFRASTRUTTURA_COMPLETA.md §8.3; motore/passaggio-di-consegne.md, «Prossimo passo»)</p>
+I nomi dei rami dei libri non si scrivono sul ramo `motore`: lo vieta la regola sui nomi reali (<span class="fonte">motore/passaggio-di-consegne.md, «Regole da non violare»</span>).
 
-Al momento della scansione, su GitHub c'erano 5 rami con una cartella `libri/`. Uno solo aveva il motore aggiornato e gli hook accesi. Gli altri 4 hanno un motore più vecchio, o nessun motore, e un `CLAUDE.md` diverso. Uno di questi usa modelli propri in `libri/_modelli/`, un sistema di prima del motore (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §8.3 e §10, punto 17</span>).
-
-I nomi dei rami dei libri non si scrivono sul ramo `motore`: lo vieta la regola sui nomi reali (<span class="fonte">motore/README.md, «Solo il motore nel repository»</span>).
-
-## I libri vecchi: una scelta, non un errore
-
-I rami dei libri vecchi sono **copie di lavoro per la riscrittura**. Hanno un `CLAUDE.md` proprio **per scelta**, e non vanno riallineati al motore.
-
-<div class="nota">
-
-Fonte di questa scelta: la decisione dell'autore, comunicata nella richiesta di questa guida. Nel repository non è scritta in nessun file. L'archivio `docs/INFRASTRUTTURA_COMPLETA.md` la elenca tra i punti deboli (§10, punto 17); qui va letta come scelta dichiarata.
-
-</div>
-
-Cosa comporta, in pratica:
-
-- Le regole di questa guida valgono pienamente solo sul ramo `motore` e sul ramo del libro aggiornato (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §10, punto 17</span>).
-- Su un ramo vecchio comanda il suo `CLAUDE.md`.
-- Un aggiornamento del motore non arriva a un ramo di libro finché non si fa il merge, ramo per ramo (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §10, punto 18</span>).
-
-## Altri rami
+## I rami d'archivio
 
 | Ramo | Cosa contiene |
 |---|---|
+| `archivio/motore-ritirati` | Lo script `pulizia.py`, ritirato, con le sue prove e gli attesi |
+| `archivio/motore-docs` | Le esportazioni precedenti di `docs/`, con la banca-voci integrale |
 | `archivio/ghimoney` | Un progetto separato tolto dal motore. Solo archivio |
-| `ccr-*`, `claude/*` | Lavori di sessione non legati al motore, o libri di vecchio formato |
 
-<p class="fonte">(docs/INFRASTRUTTURA_COMPLETA.md §8.3)</p>
+<p class="fonte">(motore/passaggio-di-consegne.md, «Stato»)</p>
+
+I rami di sessione (`ccr-*`, `claude/*`) sono lavori di sessione non legati al motore.
+
+## I libri vecchi: una scelta, non un errore
+
+I rami dei libri vecchi sono copie di lavoro per la riscrittura. Hanno un `CLAUDE.md` proprio **per tua scelta** e non vanno riallineati al motore (<span class="fonte">motore/passaggio-di-consegne.md, «Regole da non violare»</span>). Su un ramo vecchio comanda il suo `CLAUDE.md`. Un aggiornamento del motore arriva a un ramo di libro solo con un merge, ramo per ramo.
 
 # 6. Cosa non esiste {#cap6}
 
-Alcune cose sono nominate o attese, ma nel repository non ci sono.
+## Skill e comandi slash: restano non usati
 
-## Skill e comandi slash: non esistono
+Non c'è `.claude/skills/`, non c'è `.claude/commands/`, non c'è un `SKILL.md` del sistema. I «comandi» del sistema sono i comandi `zb`. Il livello editoriale **sostituisce ogni skill citata ma assente**: la sua prima regola è «una fonte di verità» (<span class="fonte">motore/editoriale/LEGGIMI.md, «Regole», punto 1</span>).
 
-Non c'è `.claude/skills/`, non c'è `.claude/commands/`, non c'è un `SKILL.md` del sistema, su nessun ramo del sistema (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §7 e §10, punto 3</span>).
+## Anti-IA: ora esiste
 
-`CLAUDE.md` e `PROCEDURA.md` citano le «skill dell'autore» nella precedenza, ma il repository non ne contiene. I «comandi» del sistema sono i comandi `zb` (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §7</span>).
+Una sezione anti-scrittura-da-IA c'è, in `motore/editoriale/anti-ia/` (<span class="fonte">motore/editoriale/LEGGIMI.md; motore/PROCEDURA.md §6</span>):
 
-## Sezione anti-scrittura-da-IA: non esiste
+- `catalogo-it.md`: gli schemi da IA in italiano (ritmo, formule vuote, spiegare ciò che si è mostrato, dialogo…) e le regole di ritmo. Lo usano scrittore e line editor;
+- `catalogo-it-esteso.md` e `formule.yaml`: altri schemi e 37 espressioni misurate da `zb esito`;
+- l'**audit**: `zb esito` misura monotonia delle frasi, aperture uguali, formule per mille parole, chiusure uguali, ripetizioni ravvicinate. Sono avvisi, con riga e proposta; il motore non riscrive. Con `anti_ia: {modalita: blocco}` in `libro.yaml` diventano KO.
 
-Nessuna regola chiede di alternare frasi lunghe e corte per evitare un testo «da IA». Nessuna regola chiede «imperfezioni naturali» (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §4 e §10, punto 1</span>).
+## Correttore di italiano: ora esiste
 
-Esistono solo strumenti vicini (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §4</span>):
+Esistono il ruolo 6 e i criteri in `motore/editoriale/correttore/criteri-correttore.md` (accenti e apostrofi, accordi, tempi e modi, punteggiatura, coppie di parole…). Il ruolo lavora insieme a `zb ortografia`, a tre livelli: Hunspell, LanguageTool se installato, lista per la lettura umana (<span class="fonte">motore/PROCEDURA.md §7</span>). LanguageTool si installa con `zb ortografia installa`, fuori dal repository, e si indica con `ZB_LANGUAGETOOL`.
 
-- frase media e percentuale di dialogo per genere, nei profili, controllate da `stile.py`;
-- la lista nera di base, `motore/dati/lista-nera.yaml`;
-- i tetti e le parole vietate del libro;
-- i divieti e le regole di ritmo delle singole voci.
+## Cosa davvero non c'è
 
-## Correttore professionale per l'italiano: non esiste
-
-Non c'è un documento o uno strumento con questo nome (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §4 e §10, punto 2</span>).
-
-Esiste solo il **controllo ortografico a tre livelli** di `zb ortografia`: Hunspell, LanguageTool se installato, lista per la lettura umana (<span class="fonte">motore/PROCEDURA.md §7</span>).
-
-LanguageTool non è installato di default. Senza la variabile `ZB_LANGUAGETOOL` il secondo livello salta (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §10, punto 2</span>).
-
-Stile, «e» al posto di «è», accordi sbagliati e parole vere usate al posto di altre restano alla lettura umana (<span class="fonte">motore/PROCEDURA.md §7</span>).
-
-## Anche questo non esiste
-
-- Un file con l'elenco delle dipendenze (`requirements.txt` o simili). Stanno solo scritte in `motore/README.md` (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §8.1</span>).
-- Un controllo automatico che lanci le prove a ogni modifica: le prove si lanciano a mano (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §7</span>).
+- La **griglia a cinque assi** e la **lettura a freddo**: il repository da cui dovevano venire non era accessibile (<span class="fonte">motore/passaggio-di-consegne.md, «Punti aperti» 4</span>).
+- Un controllo automatico che lanci le prove a ogni modifica: si lanciano a mano con `zb prove`.
+- Un ambiente che resti da una sessione all'altra: in un container nuovo si reinstallano i requisiti (<span class="fonte">motore/report-motore.md §11, punto 7</span>).
+- I nomi dei libri reali in `motore/dati/nomi_vietati.txt`: il file è vuoto.
 
 # 7. Appendici e indice {#cap7}
 
@@ -610,7 +631,7 @@ Stile, «e» al posto di «è», accordi sbagliati e parole vere usate al posto 
 
 <div class="nota">
 
-Oggi il motore **include** le appendici. Lo fa dal commit `71a36cc` («Motore: appendici dichiarate in libro.yaml e sommario completo», 14 ottobre 2026). Le regole sono in `motore/PROCEDURA.md` §7 dal commit `668afc2` (<span class="fonte">storia git del ramo motore; motore/script/compila.py</span>).
+Oggi il motore **include** le appendici. Lo fa dal commit `71a36cc` («Motore: appendici dichiarate in libro.yaml e sommario completo», 14 ottobre 2026). Le regole sono in `motore/PROCEDURA.md` §7 (<span class="fonte">storia git del ramo motore; motore/script/compila.py</span>).
 
 </div>
 
@@ -641,75 +662,53 @@ Oggi il motore **include** le appendici. Lo fa dal commit `71a36cc` («Motore: a
 
 <p class="fonte">(motore/dati/struttura-libro.yaml; motore/PROCEDURA.md §7; motore/README.md; CLAUDE.md)</p>
 
-**Resta un dettaglio.** Il modello `motore/modelli/libro.yaml` non mostra il campo `appendici`, anche se lo schema lo prevede (<span class="fonte">docs/INFRASTRUTTURA_COMPLETA.md §10, punto 15</span>).
+# 8. I 17 punti deboli {#cap8}
 
-# 8. I 27 punti deboli {#cap8}
+Sono i limiti noti di `motore/report-motore.md` (§11), i punti aperti di `motore/passaggio-di-consegne.md` e le scelte in attesa di `docs/DA_VERIFICARE_AUTORE.md`. Ordine: dal più serio al più lieve. È una valutazione di questa guida.
 
-Sono i punti della sezione 10 di `docs/INFRASTRUTTURA_COMPLETA.md`, riscritti in parole semplici. Sono ordinati per importanza, dal più serio al più lieve. Tra parentesi quadre il numero originale. L'ordine è una valutazione di questa guida, non del repository.
+## Importanti: prima di pubblicare o fidarsi
 
-## Importanti: possono lasciar passare un errore
+**1. I dati KDP non sono mai stati verificati da te.** In `motore/dati/kdp.yaml` c'è `ultima_verifica: null`. Vanno controllati sulle pagine ufficiali e registrati con `zb verifica KDP fatta`. `zb kdp` lo segnala.
 
-**1. Il recinto non vede la shell.** Una scrittura fatta con un comando di shell (Bash) fuori dal libro non viene bloccata [6].
+**2. Le soglie anti-IA sono provvisorie.** Sono tarate solo sui due mini-libri di prova e sono uguali per ogni genere. Sono avvisi, non blocchi. Vanno riviste su testi veri, genere per genere.
 
-**2. Sul ramo `motore` non c'è recinto.** Lì gli hook sono spenti per scelta. Restano la prova di separazione e la disciplina [8].
+**3. Gli hook sono una protezione in più, non una garanzia.** Su Bash il recinto non vede alcune scritture (capitolo 4). Restano i controlli su git di `zb avvio` e `zb push`.
 
-**3. «Lavoro sul motore»: nessuno verifica chi lo dice.** Claude Code lancia `zb lavoro motore` quando legge la frase. L'hook non può sapere se l'ha scritta davvero l'autore [7].
+**4. La separazione dei ruoli distingue le sessioni solo con l'hook di sessione** (o con `ZB_SESSIONE`). Con la sessione «locale» dà solo un avviso. I log in `.zb/` stanno solo nel container.
 
-**4. Gli aggiornamenti del motore non arrivano da soli ai libri.** Ogni ramo di libro ha la sua copia del motore. Serve un merge, ramo per ramo [18].
+**5. Il lavoro si perde se non è su origin.** L'ambiente non è persistente: in un container nuovo vanno reinstallati requisiti, Hunspell e LanguageTool.
 
-**5. Le voci copiate sul ramo `motore`.** La banca-voci dice che le voci non vanno mai nel repository del motore. L'archivio `INFRASTRUTTURA_COMPLETA.md` le copia per intero in `docs/`, su richiesta esplicita. Il controllo di separazione guarda solo `motore/` e non se ne accorge [24].
+## Medi: misure e controlli incompleti
 
-**6. Nomi reali sul ramo `motore`.** Le schede delle voci copiate nell'archivio nominano autori reali. Il motore vieta i nomi reali; l'archivio sta fuori da `motore/`, ma sullo stesso ramo [25].
+**6. Il consumo misura le letture, non i token.** Nella prova sul mini-libro, per lo scrittore del capitolo 3: 2444 parole lette in 4 file senza capsule, 796 parole in 5 file con le capsule.
 
-**7. Il report ogni 5 scambi non lo controlla nessuno.** È solo una regola scritta in `CLAUDE.md` [5].
+**7. La continuità ha limiti.** I tempi relativi si controllano solo se nessuna data nota coincide; le differenze d'età solo per i personaggi con data di nascita completa in `cronologia.yaml`.
 
-**8. Due scale di precedenza.** `PROCEDURA.md` mette il profilo di genere; `CLAUDE.md` no. E nessuna dice dove stanno voce e briefing [11].
+**8. `nomi_vietati.txt` è vuoto.** Il controllo di separazione non trova da solo i nomi dei libri reali. La cartella unica controlla il titolo del libro attivo sul suo ramo.
 
-**9. Nessuna regola anti-scrittura-da-IA.** Ci sono solo strumenti vicini (capitolo 6) [1].
+**9. PDF: TrimBox e BleedBox non sono scritti.** Trasparenze e immagini non sono controllate.
 
-**10. Nessun correttore professionale.** C'è il controllo a tre livelli; LanguageTool non è installato di default [2].
+**10. I mini-libri sotto le 24 pagine** hanno la sezione 11 della conformità KDP in KO per costruzione.
 
-**11. Nessun elenco delle dipendenze in un file.** In un computer di lavoro nuovo, gli strumenti si reinstallano a mano leggendo il README [4].
+**11. LanguageTool: il ramo di scarico da Maven Central** è stato provato prima dell'errore 429 del 15 ottobre 2026. Dopo, solo la cache locale.
 
-## Medi: testi vecchi o doppi
+## Scelte tue ancora da confermare
 
-**12. Il README sbaglia sugli hook.** Dice «oggi in modalità avviso, non attivi». Vale per l'hook del manoscritto, ma il recinto blocca [9].
+**12. Separazione dei ruoli in blocco e capsule obbligatorie.** Sono scelte del motore: `separazione_ruoli: blocco`, `capsule: obbligatorie` per i libri nuovi (nei vecchi, solo un avviso). Se preferisci, si torna ad avviso.
 
-**13. `PROCEDURA.md` non descrive il recinto.** La sezione 10 parla degli hook di sessione e del manoscritto, non del recinto né di `zb lavoro` [10].
+**13. Ripetizioni ravvicinate.** Finestra di 60 parole piene, 3 occorrenze, al massimo 12 gruppi ogni mille parole. È un algoritmo nostro: il repository indicato non lo conteneva.
 
-**14. L'archivio è una fotografia.** `INFRASTRUTTURA_COMPLETA.md` copia i file al commit `668afc2`. Ogni modifica successiva lo rende vecchio, e nessun controllo lo segnala [26].
+**14. Due dubbi nei testi.** Nei criteri del correttore la coppia «avvenire/avvenire» è ripetuta: forse un refuso. Nel modello della scaletta si scrive «promesse aperte / chiuse», il glossario dice «pagate».
 
-**15. Due esportazioni parallele in `docs/`.** Ci sono anche `ESPORTAZIONE_COMPLETA_1…6.md`, un'altra copia del progetto, senza verifica di allineamento [27].
+**15. Il modello leggero non è provato sul copyediting.** Il copyediting usa già il modello medio; il leggero fa solo le capsule.
 
-**16. I comandi sono elencati tre volte.** Nell'aiuto di `zb`, nel README e in `PROCEDURA.md`. Già oggi non coincidono: `zb lavoro`, `zb push`, `zb fase` mancano nella lista principale del README [23].
+## Lievi
 
-**17. Istruzioni di LanguageTool due volte.** Nel README e in `PROCEDURA.md`: vanno aggiornate insieme [22].
+**16. La storia git contiene ancora i documenti spostati** sui rami d'archivio: non si riscrive.
 
-**18. Arcaismi copiati in 10 file.** Lo stesso elenco di arcaismi vietati è ripetuto nei divieti di molte voci. Una modifica va fatta in ogni file [20].
+**17. Cose non prese.** La griglia a cinque assi e la lettura a freddo (repository non accessibile).
 
-**19. Lo stesso `materiali/LEGGIMI.md` in 11 voci.** File identici, ripetuti [21].
-
-**20. Il modello di `libro.yaml` non mostra le appendici.** Il campo c'è nello schema e nella procedura, non nel modello [15].
-
-## Lievi: dettagli
-
-**21. 14 o 19 scenari?** `dati/hook.yaml` parla di «14 scenari»; la tabella di `PROCEDURA.md` §10 ne ha 19 [12].
-
-**22. Un commento sbagliato.** `dati/struttura-libro.yaml` dice di essere usata da `pulizia.py`, che invece non la legge [13].
-
-**23. Un nome di ramo vecchio.** `proposta-motore.md` §B.4 parla di un ramo `claude/motore` con richieste di unione; oggi il ramo è `motore` [14].
-
-**24. Numeri di cartella doppi.** `05-revisioni`, `05-appendici`, `05-output` hanno lo stesso numero; così `06-diagnostica` e `06-pubblicazione`. Funziona, ma l'ordine alfabetico non è quello di lavoro [16].
-
-**25. Un ramo di sessione sbagliato.** Il ramo assegnato alla sessione dell'archivio conteneva un altro progetto, non il motore [19].
-
-**26. Skill citate ma assenti.** Vedi capitolo 6 [3].
-
-## Una scelta dichiarata, non un difetto
-
-**27. `CLAUDE.md` diversi nei rami dei libri vecchi.** L'archivio lo elenca come punto debole. È invece una scelta dell'autore: i libri vecchi sono copie di lavoro per la riscrittura, con un `CLAUDE.md` proprio, da non riallineare (capitolo 5) [17].
-
-<p class="fonte">(Tutto il capitolo: docs/INFRASTRUTTURA_COMPLETA.md §10, punti 1-27.)</p>
+<p class="fonte">(motore/report-motore.md §11; motore/passaggio-di-consegne.md, «Punti aperti»; docs/DA_VERIFICARE_AUTORE.md)</p>
 
 # 9. Dove trovare le cose {#cap9}
 
@@ -719,37 +718,49 @@ Ramo «motore» vuol dire anche: nella copia del motore di ogni ramo di libro ag
 |-------|----------|-----|
 | Regole di avvio | `CLAUDE.md` | motore (ogni ramo di libro ha il suo) |
 | Procedura completa | `motore/PROCEDURA.md` | motore |
-| Elenco dei comandi | `motore/README.md`, «Comandi»; `python3 motore/zb aiuto` | motore |
+| Percorso e fermate | `motore/editoriale/00-percorso.md` | motore |
+| Precedenza (una scala) e regole editoriali | `motore/editoriale/LEGGIMI.md` | motore |
+| I sette ruoli | `motore/editoriale/ruoli/` | motore |
+| Gli agenti | `motore/editoriale/agenti/` | motore |
+| Modelli degli agenti | `motore/dati/modelli-agenti.yaml` | motore |
+| Orchestrazione e parallelo | `motore/dati/orchestrazione.yaml` | motore |
+| Fase struttura e suoi modelli | `motore/editoriale/struttura/` | motore |
+| Anti-IA | `motore/editoriale/anti-ia/` | motore |
+| Criteri del correttore | `motore/editoriale/correttore/criteri-correttore.md` | motore |
+| Glossario | `motore/editoriale/glossario.md` | motore |
+| Risparmio di token | `motore/editoriale/risparmio-token.md` | motore |
+| Elenco dei comandi | `python3 motore/zb aiuto` | motore |
+| Regole d'uso e hook | `motore/README.md` | motore |
 | Stato del lavoro sul motore | `motore/passaggio-di-consegne.md` | motore |
 | Limiti noti del motore | `motore/report-motore.md` §11 | motore |
+| Scelte da confermare | `docs/DA_VERIFICARE_AUTORE.md` | motore |
+| Analisi dei repository esterni | `docs/ANALISI_REPOSITORY.md` | motore |
 | Progetto originale | `motore/proposta-motore.md` | motore |
 | Profili di genere | `motore/profili/` | motore |
 | Modelli vuoti | `motore/modelli/` | motore |
-| Modulo del briefing | `motore/modelli/briefing.md` | motore |
 | Dati KDP | `motore/dati/kdp.yaml` | motore |
-| Lista nera | `motore/dati/lista-nera.yaml` | motore |
-| Parole italiane ammesse | `motore/dati/parole-ammesse-it.txt` | motore |
-| Cartelle di un libro | `motore/dati/struttura-libro.yaml` | motore |
-| Campi di `libro.yaml` | `motore/dati/libro.schema.yaml` | motore |
-| Hook | `motore/script/hook_*.py`, `motore/dati/hook-settings.esempio.json` | motore |
-| Modalità dell'hook del manoscritto | `motore/dati/hook.yaml` | motore |
-| Hook accesi | `.claude/settings.json` | ramo del libro |
+| Lista nera, parole ammesse | `motore/dati/lista-nera.yaml`, `parole-ammesse-it.txt` | motore |
+| Cartelle di un libro, campi di `libro.yaml` | `motore/dati/struttura-libro.yaml`, `libro.schema.yaml` | motore |
+| Hook: script e modalità | `motore/script/hook_*.py`, `motore/dati/hook.yaml` | motore |
+| Cartella unica: eccezioni | `motore/dati/cartella-unica.yaml` | motore |
+| Output compatto | `motore/dati/output.yaml` | motore |
+| Hook e agenti accesi | `.claude/settings.json`, `.claude/agents/` | ramo del libro |
 | Impaginazione e font | `motore/stampa/` | motore |
 | Prove e mini-libri inventati | `motore/script/prove.py`, `motore/prove/` | motore |
-| Libro attivo | `libri/libro-attivo.md` | ramo del libro |
 | Un libro | `libri/<slug>/` | ramo del libro |
-| Briefing del libro | `libri/<slug>/00-progetto/briefing.md` | ramo del libro |
+| Struttura del libro | `libri/<slug>/03-struttura/` | ramo del libro |
 | Bibbia del libro | `libri/<slug>/02-bibbia/bibbia.md` | ramo del libro |
 | Capitoli | `libri/<slug>/04-manoscritto/` | ramo del libro |
+| Capsule | `libri/<slug>/07-capsule/` | ramo del libro |
 | Appendici | `libri/<slug>/05-appendici/` | ramo del libro |
 | PDF e libro compilato | `libri/<slug>/05-output/` | ramo del libro |
-| Report dei controlli | `libri/<slug>/06-diagnostica/` | ramo del libro |
+| Report dei controlli e dei ruoli | `libri/<slug>/06-diagnostica/` | ramo del libro |
 | Pacchetto KDP | `libri/<slug>/06-pubblicazione/` | ramo del libro |
 | Report di sessione del libro | `libri/<slug>/passaggio-di-consegne.md` | ramo del libro |
-| Voci narranti | `indice.yaml`, `voci/<slug>/` | banca-voci, ramo `main` (repository a parte) |
-| Archivio completo | `docs/INFRASTRUTTURA_COMPLETA.md` | motore |
+| Voci narranti | `indice.yaml`, `voci/<slug>/` | banca-voci (repository a parte) |
+| Esportazioni precedenti di `docs/` | ramo `archivio/motore-docs` | archivio |
 | Questa guida | `docs/GUIDA_AL_SISTEMA.pdf` e `.md` | motore |
 
-<p class="fonte">(docs/INFRASTRUTTURA_COMPLETA.md §8.4 e §9; motore/dati/struttura-libro.yaml; motore/README.md)</p>
+<p class="fonte">(motore/README.md; motore/editoriale/; motore/dati/struttura-libro.yaml)</p>
 
 Fine della guida.
