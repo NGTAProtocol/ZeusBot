@@ -1,26 +1,35 @@
 # Percorso di un libro
 
-| # | Fase | Chi lavora | Fermata |
+Vale per i libri con `percorso: editoriale` in `libro.yaml` (lo scrive `zb nuovo`). I libri nati prima
+(senza il campo) seguono il percorso breve: documenti, pagina campione, stesura, chiusura.
+
+| # | Fase (`stato.yaml`) | Chi lavora (agente) | Gate |
 |---|------|-----------|---------|
-| 1 | Briefing | Autore | - |
-| 2 | Apertura cartella unica `libri/<slug>/` | motore (`zb nuovo`) | - |
-| 3 | Struttura | architetto della struttura | gate `struttura` |
-| 4 | Revisione della struttura | editor strutturale (sessione separata) | nel gate `struttura` |
-| 5 | Documenti (bibbia, cronologia, piano parole) | direttore editoriale | gate `documenti` |
-| 6 | Pagina campione | scrittore con voce | gate `pagina_campione` |
-| 7 | Stesura capitolo per capitolo | scrittore con voce | gate `primi_capitoli` |
-| 8 | Revisione strutturale del manoscritto | editor strutturale | gate `struttura_manoscritto` |
-| 9 | Line editing | line editor | gate `line` |
-| 10 | Copyediting | correttore di italiano | gate `copy` |
-| 11 | Bozze | correttore di bozze | gate `bozze` |
-| 12 | Chiusura meccanica | motore | - |
+| 1 | Briefing | autore | - |
+| 2 | Apertura della cartella unica `libri/<slug>/` | motore (`zb nuovo`) | - |
+| 3 | `struttura` | architetto-struttura | - |
+| 4 | revisione della struttura (dentro `struttura`) | diagnosta, poi editor-strutturale (piano di revisione) | `struttura` |
+| 5 | `documenti` (bibbia, codex, cronologia, manuale) | direttore-editoriale | `documenti` |
+| 6 | `pagina_campione` | scrittore-voce | `pagina_campione` |
+| 7 | `stesura`, capitolo per capitolo | scrittore-voce, poi capsula | `primi_capitoli`, `lotto`, `controllo_fallito` |
+| 8 | `revisione_manoscritto` | diagnosta, poi editor-strutturale | `revisione_manoscritto` (sul piano) |
+| 9 | `line` | line-editor | `line` |
+| 10 | `copy` | correttore-italiano | `copy` |
+| 11 | `bozze` | correttore-bozze | `bozze` |
+| 12 | `chiusura` meccanica | motore | - |
 
 Chiusura meccanica, in ordine: continuita, ortografia, compila, impagina, pdf, pacchetto, kdp, pronto.
+Traduzione (facoltativa, dopo la chiusura): `lingue/traduzione.md`.
 
 ## Regole di fermata
-- La fermata si apre con `zb pronto`; risposte dell'autore: `avanti`, `ok`, `correggi`, `stato`.
+- Ogni gate si apre con `zb pronto`; risposte dell'autore: `avanti`, `ok`, `correggi: …`, `stato`.
 - Non si passa alla fase successiva senza `ok`.
-- Se un ruolo trova un problema grave (continuità, struttura rotta), si ferma e lo segnala; non lo risolve da solo.
+- Fasi 8-11 in due tempi: proposte (rapporti) → gate → applicazione delle sole proposte approvate →
+  `zb pronto` (passa alla fase successiva senza un secondo gate).
+- Se un ruolo trova un problema G1 (bloccante), si ferma e lo segnala; non lo risolve da solo.
+- Il canone (fatti bloccati in `stato.yaml`) cambia solo con il gate `canone` (`zb canone`).
 
 ## Separazione dei ruoli
-Una sessione di Claude Code = un ruolo. Per cambiare ruolo: salvare, aprire sessione nuova, `zb avvio`, riga "Letto".
+Un subagente = un ruolo, in contesto pulito. Chi scrive non rivede: i rapporti di revisione stanno in
+un commit che non tocca il testo rivisto (lo controlla `zb pronto`), e durante la `stesura` non
+esistono rapporti di line editing o copyediting (lo controlla `zb esito`).
