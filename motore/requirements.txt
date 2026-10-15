@@ -1,0 +1,6 @@
+# Dipendenze Python del motore: pip install -r motore/requirements.txt
+# Il resto dell'ambiente (Hunspell it_IT, Node con Playwright e Chromium, poppler, Java e Maven per
+# LanguageTool) è in motore/README.md, «Ambiente».
+PyYAML>=6.0
+PyMuPDF==1.28.2     # versione degli attesi del passo 3 (estrazione del testo dai PDF)
+Markdown>=3.5

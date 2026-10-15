@@ -1,11 +1,10 @@
 # Motore editoriale
 
-Fabbrica generica per romanzi di qualsiasi genere: procedura, script, modelli vuoti,
-profili di genere e dati KDP. Non contiene libri reali. Il progetto completo è in
-`proposta-motore.md` (approvata). Come si lavora su un libro: `PROCEDURA.md`.
-Questo file raccoglie le regole d'uso e i comandi. Copia integrale di tutta l'infrastruttura
-(motore, regole, voci, hook), con mappa e guida alla modifica: `docs/INFRASTRUTTURA_COMPLETA.md`.
-Guida di lettura per l'autore (organigramma, percorso di un libro, regole), in PDF per telefono: `docs/GUIDA_AL_SISTEMA.pdf` (sorgente `docs/GUIDA_AL_SISTEMA.md`).
+Fabbrica generica per romanzi di qualsiasi genere: procedura, script, modelli vuoti, profili di genere,
+dati KDP e il livello editoriale (`editoriale/`: percorso, ruoli, agenti, anti-IA, correttore). Non
+contiene libri reali. Come si lavora su un libro: `PROCEDURA.md`. Percorso e ruoli: `editoriale/00-percorso.md`
+e `editoriale/LEGGIMI.md` (che ha anche l'unica scala di precedenza). Questo file raccoglie le regole d'uso,
+l'ambiente e gli hook. Documenti per l'autore in `docs/` (non letti nelle sessioni di lavoro).
 
 ## Regole d'uso
 
@@ -29,48 +28,35 @@ Un file con un nome diverso ferma il motore.
 
 ## Dal briefing al PDF
 
-1. L'autore compila `modelli/briefing.md` nella cartella del libro; `zb nuovo <briefing>` crea il libro.
-   Per un libro già avviato con documenti propri: `zb adotta <cartella>`.
-2. A ogni sessione: `zb avvio <libro>` e la riga «Letto: …».
-3. Fase documenti: bibbia, cronologia, scaletta e piano parole; `zb pronto`, poi `avanti` e `ok`.
-4. Fase pagina campione: `05-revisioni/pagina-campione.md`; `zb pronto`, poi `ok`.
-5. Stesura: un capitolo alla volta, `zb esito <libro> N`; fermata dopo il capitolo 3, poi lotti di N.
-6. Due controlli falliti di fila sullo stesso capitolo: fermata e decisione dell'autore.
-7. Chiusura: `continuita`, `ortografia`, `compila`, `impagina`, `pdf`, `pacchetto`, `kdp`; `zb pronto`.
-8. A ogni passo: commit, push, `git status -sb`, `git log -1` (blocco di salvataggio, `PROCEDURA.md`).
+Il percorso completo, con chi lavora e le fermate, è `editoriale/00-percorso.md`. In breve:
+`zb nuovo` (cartella unica `libri/<slug>/`, fase struttura) → struttura e revisione della struttura
+(gate `struttura`) → documenti → pagina campione → stesura capitolo per capitolo con `zb esito` e
+`zb capsula` → revisione strutturale del manoscritto → line → copy → bozze → chiusura meccanica
+(`continuita`, `ortografia`, `compila`, `impagina`, `pdf`, `pacchetto`, `kdp`, `pronto`). Ogni gate si apre
+con `zb pronto` e si chiude con `ok` (o `avanti`, `correggi`). A ogni passo il blocco di salvataggio.
 
 ## Comandi
 
-Si lanciano con `python3 motore/zb <comando> …`; il libro è sempre un percorso (oppure `ZB_LIBRO`).
+L'elenco dei comandi è uno solo, nel codice: `python3 motore/zb aiuto`. Il libro è sempre un percorso
+(oppure `ZB_LIBRO`). Ogni comando stampa al massimo 40 righe (`dati/output.yaml`) e rimanda al file con
+l'output intero; le righe con KO o FERMO restano a schermo.
 
-- `zb nuovo <briefing>`: crea il libro dal briefing; se è incompleto elenca cosa manca e non crea nulla.
-- `zb avvio <libro>`: controlli di avvio e riga «Letto: …»; si ferma se qualcosa non va.
-- `zb stato <libro>`: fase, gate, capitoli, parole, allineamento con origin; non scrive.
-- `zb pronto <libro>`: fine del lavoro di una fase; apre il gate o passa oltre.
-- `zb esito <libro> N`: controlli del capitolo N e registrazione dell'esito.
-- `zb ok <libro> [lotti da N]`: approva il gate aperto, dopo aver mostrato tutti i blocchi.
-- `zb avanti <libro>`: blocco successivo dei documenti del gate.
-- `zb correggi <libro> <istruzione>`: registra una correzione; il gate resta aperto.
-- `zb riapprova <libro> <documento> <motivo>`: registra una modifica autorizzata a un documento già approvato.
-- `zb adotta <cartella>`: bozze di libro.yaml, stato, cronologia e nomi da documenti esistenti, con le fonti.
-- `zb conta <libro>`: parole con il metodo unico, per capitolo e totale.
-- `zb stile <libro> [N]`: frase media, dialogo, lista nera, tetti, similitudini, vincoli.
-- `zb continuita <libro>`: date, età, durate, cifre, nomi scritti in due modi.
-- `zb capitolo <libro> N`: tutti i controlli di un capitolo, con report.
-- `zb ortografia <libro>`: Hunspell, LanguageTool se disponibile, checklist per la lettura umana.
-- `zb compila <libro>`: manoscritto completo in `05-output/`.
-- `zb impagina <libro>`: PDF di stampa in `05-output/`.
-- `zb pdf <libro>`: verifica del PDF (pagine, font, margini, indice).
-- `zb kdp <libro>`: conformità KDP, sezioni 1-15.
-- `zb pacchetto <libro>`: struttura di `06-pubblicazione/` per KDP.
-- `zb revisione <libro> <documento|gate> [N]`: un documento in blocchi di circa 120 righe; non scrive.
-- `zb pulizia <libro> [--applica]`: elenco di temporanei, cartelle vuote e copie; cancella solo con `--applica`.
-- `zb hook stato|attiva [--ok]|disattiva`: hook di Claude Code (oggi in modalità avviso, non attivi).
-- `zb prove`: tutte le prove sui mini-libri inventati, più separazione e recinto.
-- `zb voce lista|mostra <slug> [N]|verifica <slug>`: voci narrative della banca-voci (`ZB_BANCA_VOCI`); sola lettura.
+## Hook di Claude Code
 
-Altri comandi: `zb verifica KDP fatta [AAAA-MM-GG]` (anche `stato`, `controlla`), `zb riciclo <libro>`,
-`zb separazione`, `zb recinto`, `zb profili`, `zb aiuto`.
+Si attivano solo sul ramo di un libro, con l'ok dell'autore: `zb hook attiva --ok` copia
+`dati/hook-settings.esempio.json` in `.claude/settings.json`. Sul ramo `motore` restano spenti (lo
+controlla `zb prove`). Sono una protezione in più, non una garanzia: i controlli che contano sono quelli di
+`zb avvio` e `zb push`, che guardano git.
+
+| Hook | Script | Cosa fa | Modalità |
+|---|---|---|---|
+| SessionStart | `hook_sessione.py` | registra il session_id; dopo una compattazione chiede un nuovo `zb avvio` | mai blocca |
+| PreToolUse Write, Edit, MultiEdit, NotebookEdit, Bash | `hook_manoscritto.py` | scrittura nel manoscritto senza `zb avvio` della sessione | `dati/hook.yaml`, `modalita` (oggi avviso) |
+| PreToolUse Write, Edit, MultiEdit, NotebookEdit, Bash | `hook_recinto.py` | recinto sul libro attivo (anche redirezioni, tee, sed -i, cp, mv, rm), cartella unica prima di git commit e git push, nessuna riscrittura intera di un capitolo da parte di un revisore, annota chi scrive (separazione dei ruoli) | blocco |
+| PostToolUse Read, Agent, Task | `consumo.py` | file e righe letti, subagenti chiamati, per `zb consumo` | mai blocca |
+
+Separazione dei ruoli: `dati/hook.yaml`, `separazione_ruoli` (oggi `blocco`). Limiti del rilevamento su
+Bash: docstring di `hook_recinto.py` e `PROCEDURA.md`, «Hook». Subagenti: `zb agenti attiva --ok`, come gli hook.
 
 ## Ambiente
 
@@ -84,7 +70,7 @@ esiti. Le frasi di prova si inventano.
 Un container nuovo non conserva quello che è stato installato nelle sessioni precedenti. Prima di
 `zb prove` o di `zb ortografia` servono:
 
-- Python: `pip install pymupdf markdown` (PyMuPDF 1.28.2 negli attesi del passo 3);
+- Python: `pip install -r motore/requirements.txt` (PyYAML, PyMuPDF 1.28.2 degli attesi del passo 3, markdown);
 - Hunspell con il dizionario italiano: `apt-get install hunspell hunspell-it`;
 - Node con Playwright e Chromium (già presenti nel container: `/opt/pw-browsers`), `pdfinfo` e `pdftotext`.
 
@@ -168,6 +154,6 @@ Struttura della banca: `indice.yaml` (`voci:` con `slug`, `nome`, `genere`, `sta
 Un libro sceglie la voce in `libro.yaml` con il blocco facoltativo `voce: {slug, ambientazione}` (dal
 briefing: «Voce dalla banca:» e «Ambientazione:»). Con il blocco, `zb avvio` aggiunge alla riga «Letto»
 il briefing e la scheda della voce; se `ZB_BANCA_VOCI` manca o la voce non verifica stampa un AVVISO e
-non si ferma. `zb stile` e `zb capitolo` aggiungono i divieti della voce alle voci del libro, in modalità
+non si ferma. `zb esito` aggiunge i divieti della voce alle voci del libro, in modalità
 avviso (controllo `voce:<slug>:<id>`); senza `ZB_BANCA_VOCI` i divieti non si applicano. Senza il blocco nulla cambia. Senza `ZB_BANCA_VOCI`, `zb voce` si ferma con un messaggio
 chiaro. Le prove usano una mini-banca inventata in `prove/banca-voci-prova/`.

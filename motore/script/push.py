@@ -7,7 +7,9 @@ Uso: push.py [--cartella <dir>] [--remoto origin] [--tentativi 4] [--attesa 2] [
    di sistema, fuori dal repository), con percorso e sha256;
 4. messaggio finale chiaro: dove sta il commit e se il ramo è allineato a <remoto>.
 Prima del push, sul ramo di un libro (lavoro «libro», libro attivo con libro.yaml): controllo della
-cartella unica (cartella_unica.py); se fallisce non fa niente e esce con 2.
+cartella unica (cartella_unica.py); sul lavoro del motore (o sul ramo «motore») vuole zb prove intera e
+tutta OK sullo stato attuale di motore/ (impronta in <git-dir>/zb-prove-ok). Se fallisce non fa niente
+e esce con 2.
 Codice d'uscita: 0 ramo allineato; 2 cartella unica violata; 3 salvato solo sul ramo alternativo;
 4 salvato solo nel bundle; 5 niente salvato. Non fa commit e non cambia ramo.
 """
@@ -58,6 +60,15 @@ def main(argv):
         err = cartella_unica.controlla(rad, slug, titolo)
         if err:
             print(f'FERMO: cartella unica (libri/{slug}/); push non eseguito:\n- ' + '\n- '.join(err[:20]), file=sys.stderr)
+            return 2
+    # lavoro sul motore: prima del push, zb prove intera e tutta OK sullo stato attuale di motore/
+    if rad and (hook_recinto.lavoro(rad) == 'motore' or ramo == 'motore') and os.path.isdir(os.path.join(rad, 'motore')):
+        import comune
+        f = comune.file_prove_ok(rad)
+        registrata = open(f, encoding='utf-8').read().strip() if f and os.path.isfile(f) else ''
+        if registrata != (comune.impronta_motore(rad) or '-'):
+            print('FERMO: lavoro sul motore: prima del push lancia zb prove (suite intera, tutta OK) sullo stato '
+                  'attuale di motore/; push non eseguito.', file=sys.stderr)
             return 2
     errore = ''
     for i in range(1, tentativi + 1):

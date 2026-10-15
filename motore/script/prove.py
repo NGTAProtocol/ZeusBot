@@ -2679,6 +2679,11 @@ def cartella_unica_prove(A):
     open(os.path.join(L, 'nomi_propri.txt'), 'a', encoding='utf-8').write('Prova\n')
     b.git(r, 'add', '-A')
     esito('hook_recinto.py', 'lavoro sul motore, file di libri/ in stage: commit bloccato', 2, hook('git commit -m x'), sez)
+    b.git(r, 'reset', '-q')
+    b.git(r, 'checkout', '--', '.')
+    p = b.zb('push')
+    esito('push.py', 'lavoro sul motore senza zb prove sullo stato attuale: push non eseguito', A['push_senza_prove'],
+          f'{p.returncode} / {"zb prove" in p.stderr}', sez)
 
 
 # ---------------------------------------------------------------- ruoli e separazione
@@ -3081,6 +3086,12 @@ def main(argv):
         print(f'{nome} su motore/: {"OK" if codice == 0 else "KO"} — {riga}')
     tutto_ok = ok == len(contate) and all(c == 0 for _, c, _ in finali)
     print('ESITO: ' + ('tutto OK' if tutto_ok else 'CI SONO KO'))
+    # suite intera tutta OK: impronta di motore/ per zb push (prove sempre prima del push sul motore)
+    f = comune.file_prove_ok()
+    if tutto_ok and not scelte and f:
+        with open(f, 'w', encoding='utf-8') as h:
+            h.write((comune.impronta_motore() or '') + '\n')
+        print('Impronta del motore registrata per zb push.')
     return 0 if tutto_ok else 1
 
 

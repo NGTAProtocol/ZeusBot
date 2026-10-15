@@ -34,3 +34,9 @@ copyright:
   riga: "© {anno} {autore}. Tutti i diritti riservati."
   fantasia: "Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzione dell'autore o usati in modo fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale."
   nota_autore: null
+capsule: obbligatorie      # capsule di continuità (zb capsula): obbligatorie | avviso
+# anti_ia: {modalita: avviso}   # facoltativo: soglie anti-IA del libro sopra quelle del profilo (motivo nel manuale)
+# appendici (facoltativo): file di 05-appendici/ dopo l'ultima unità, nell'ordine di lettura (PROCEDURA.md, «Appendici»)
+# appendici:
+#   - {titolo: "Le soluzioni", file: soluzioni.md}
+#   - {titolo: "La mappa", file: mappa.svg, didascalia: "Riga sotto l'immagine."}

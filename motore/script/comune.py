@@ -5,6 +5,7 @@ valida con gli schemi di motore/dati/, legge il ramo da git e scrive solo
 dentro la cartella del libro (scrittura recintata).
 """
 import copy
+import hashlib
 import os
 import subprocess
 import sys
@@ -573,6 +574,29 @@ def documento_invariato(percorso, registrato, commit=None):
         return False
     adesso = testo_piano_senza_misure(open(percorso, encoding='utf-8').read())
     return testo_piano_senza_misure(prima.decode('utf-8')) == adesso
+
+
+def impronta_motore(rad=None):
+    """sha256 dei file di motore/ nel working tree (tracciati e nuovi, esclusi gli ignorati): l'impronta su cui
+    zb prove dichiara «tutto OK» e che zb push confronta sul lavoro del motore. None fuori da git."""
+    rad = rad or radice_git(radice_motore())
+    if rad == '/':
+        return None
+    codice, out, _ = git(rad, 'ls-files', '-co', '--exclude-standard', '--', 'motore')
+    if codice != 0:
+        return None
+    h = hashlib.sha256()
+    for rel in sorted(set(out.splitlines())):
+        p = os.path.join(rad, rel)
+        if os.path.isfile(p):
+            h.update(rel.encode() + b'\0' + sha256_file(p).encode() + b'\n')
+    return h.hexdigest()
+
+
+def file_prove_ok(rad=None):
+    rad = rad or radice_git(radice_motore())
+    codice, g, _ = git(rad, 'rev-parse', '--absolute-git-dir')
+    return os.path.join(g, 'zb-prove-ok') if codice == 0 and g else None
 
 
 def cartella_progetto():
