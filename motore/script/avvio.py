@@ -1,6 +1,6 @@
 """Avvio obbligatorio prima di lavorare su un libro (proposta B.4, C.4, C.5).
 
-Uso: python3 -B avvio.py <libro>        (oppure ZB_LIBRO=<libro>)
+Uso: python3 -B avvio.py <libro> [--ruolo <ruolo>]        (oppure ZB_LIBRO=<libro>)
 Si ferma (codice 2) e non scrive nulla da nessuna parte se:
 - il percorso non contiene un libro (se c'è un briefing, elenca cosa manca);
 - la cartella del libro non è scrivibile o «git push --dry-run» fallisce (errore esatto);
@@ -10,8 +10,13 @@ Si ferma (codice 2) e non scrive nulla da nessuna parte se:
 - in fase «documenti»: briefing incompleto (non per un libro in riscrittura senza briefing nel formato
   del motore, cioè senza la riga «Titolo di lavoro:»: è un libro adottato con i suoi documenti);
 - un documento approvato è cambiato fuori procedura (sha256 diverso).
+- in fase «struttura» o «documenti»: briefing incompleto;
+- la sessione ha già un altro ruolo (un ruolo per sessione), o un ruolo di revisione è chiesto da una
+  sessione che ha scritto il testo da revisionare (con separazione_ruoli: blocco in dati/hook.yaml);
+- un file della sessione o un commit del ramo è fuori da libri/<slug>/ (cartella_unica.py).
+Ruolo: --ruolo <ruolo> (ruoli.py); senza, quello della fase. Registrato in <libro>/.zb/ruoli.yaml.
 Se tutto va bene stampa la riga «Letto: …» (file, righe, sha256, ultimo commit; libro e motore)
-e scrive solo il marker <libro>/.zb/letto-<session_id>.
+e scrive solo in <libro>/.zb/ (marker letto-<session_id>, ruoli.yaml).
 Con il blocco «voce» in libro.yaml la riga «Letto» include anche il briefing e la scheda della voce
 (banca-voci da ZB_BANCA_VOCI); se la voce non verifica (voce.py) stampa un AVVISO, senza fermarsi.
 """
@@ -25,9 +30,16 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 import fase  # noqa: E402
 import nuovo  # noqa: E402
+import ruoli  # noqa: E402
 import voce  # noqa: E402
 
+STRUTTURA = ['03-struttura/' + f for f in nuovo.FILE_STRUTTURA]
 DA_LEGGERE = {
+    'struttura': ['00-progetto/briefing.md'] + STRUTTURA,
+    'revisione_manoscritto': ['03-struttura/05-scaletta.md', '03-struttura/06-sottotrame-temi.md', 'cronologia.yaml'],
+    'line': ['02-bibbia/bibbia.md'],
+    'copy': ['nomi_propri.txt', 'cronologia.yaml'],
+    'bozze': [],
     'documenti': ['00-progetto/briefing.md', '02-bibbia/bibbia.md', 'cronologia.yaml',
                   '03-architettura/scaletta.md', '03-architettura/piano-parole.md'],
     'pagina_campione': ['02-bibbia/bibbia.md', '05-revisioni/pagina-campione.md'],
@@ -107,7 +119,7 @@ def controlla(percorso):
         ferma('stato.yaml: push_in_sospeso è vero. Prima il push.')
     pb = os.path.join(cartella, '00-progetto', 'briefing.md')
     briefing_motore = os.path.isfile(pb) and re.search(r'(?m)^Titolo di lavoro:', open(pb, encoding='utf-8').read())
-    if stato['fase'] == 'documenti' and (libro.get('modalita') != 'riscrittura' or briefing_motore):
+    if stato['fase'] in ('struttura', 'documenti') and (libro.get('modalita') != 'riscrittura' or briefing_motore):
         manca = nuovo.mancanze(nuovo.leggi_briefing(os.path.join(cartella, '00-progetto', 'briefing.md')), cartella)
         if manca:
             ferma('Briefing incompleto. Mancano:\n- ' + '\n- '.join(manca))
@@ -169,6 +181,22 @@ def main(argv):
     if not percorso:
         raise comune.ErroreMotore('Uso: avvio.py <libro> (oppure ZB_LIBRO=<libro>)')
     cartella, libro, stato, letti, sha, libro_commit, motore_commit, ramo, avvisi_voce = controlla(percorso)
+    sid, fonte = comune.sessione_corrente()
+    ruolo = argv[argv.index('--ruolo') + 1] if '--ruolo' in argv and argv.index('--ruolo') + 1 < len(argv) \
+        else ruoli.DA_FASE.get(stato['fase'], 'motore')
+    if ruolo not in ruoli.RUOLI:
+        raise comune.ErroreMotore(f'Ruolo «{ruolo}» sconosciuto. Ruoli: {", ".join(ruoli.RUOLI)}')
+    precedente = (ruoli.leggi_ruoli(cartella).get(sid) or {}).get('ruolo')
+    if precedente and precedente != ruolo and sid != 'locale':
+        raise comune.ErroreMotore(f'Questa sessione ha già il ruolo «{precedente}»: un ruolo per sessione. Per fare '
+                                  f'«{ruolo}»: salva, apri una sessione nuova, zb avvio, riga «Letto».')
+    ruoli.controlla_avvio(cartella, sid, ruolo)
+    f_ruolo = ruoli.RUOLI[ruolo]['file']
+    if f_ruolo:
+        p_ruolo = os.path.join(comune.radice_motore(), 'editoriale', 'ruoli', f_ruolo)
+        r, s = riga_file(os.path.dirname(p_ruolo), p_ruolo, f'ruolo {ruolo}')
+        letti.append(r)
+        sha[f'ruolo {ruolo}'] = s
     print(f'Ramo: {ramo}; allineato a origin: sì')
     print('Letto: ' + ', '.join(letti) + ';')
     print(f'libro @ {libro_commit}; motore @ {motore_commit}; fase {stato["fase"]}, '
@@ -191,8 +219,10 @@ def main(argv):
     for n_int, d in comune.interludi_in_anticipo(cartella, libro):
         print(f'AVVISO: {n_int} in anticipo (va dopo il capitolo {d}, non ancora scritto).')
     print(fase.prossimo(stato))
-    # unica scrittura: il marker di sessione dentro il libro
-    sid, fonte = comune.sessione_corrente()
+    # uniche scritture: ruolo della sessione e marker, dentro <libro>/.zb/
+    ruoli.registra_ruolo(cartella, sid, ruolo)
+    print(f'Ruolo della sessione: {ruolo}' + ('' if '--ruolo' in argv else ' (dalla fase; un altro: --ruolo <ruolo>)')
+          + '. Un ruolo per sessione.')
     d = comune.prepara_zb(cartella)
     marker = os.path.join(d, f'letto-{sid}')
     corpo = [f'data: {datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}',

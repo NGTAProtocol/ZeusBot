@@ -2,7 +2,8 @@
 
 Uso: python3 -B revisione.py <libro> <documento|gate> [N]
 - <documento>: percorso relativo al libro (per esempio 02-bibbia/bibbia.md).
-- <gate>: documenti | pagina_campione | primi_capitoli | lotto | controllo_fallito:
+- <gate>: struttura | documenti | pagina_campione | primi_capitoli | lotto | controllo_fallito |
+  struttura_manoscritto | line | copy | bozze:
   tutti i documenti del gate, uno dopo l'altro.
 - N: numero del blocco (predefinito 1).
 Blocchi di circa 120 righe, tagliati a fine paragrafo. Ogni blocco si apre con
@@ -22,6 +23,14 @@ MARGINE = 40
 DOCUMENTI = ['libro.yaml', '02-bibbia/bibbia.md', 'cronologia.yaml', '03-architettura/manuale-di-stile.md',
              '03-architettura/scaletta.md', '03-architettura/piano-parole.md']
 PAGINA_CAMPIONE = '05-revisioni/pagina-campione.md'
+STRUTTURA = ['03-struttura/' + f for f in ('01-premessa.md', '02-logline-tema.md', '03-personaggi-chiave.md',
+             '04-atti-svolte.md', '05-scaletta.md', '06-sottotrame-temi.md', '07-tensione-ritmo.md',
+             '08-piano-parole.md', '09-scelte-fisse.md')]
+REVISIONE_STRUTTURA = '06-diagnostica/revisione-struttura.md'
+NOTA_DIREZIONE = '06-diagnostica/nota-direzione.md'
+REPORT_DI_GATE = {'struttura_manoscritto': ['06-diagnostica/revisione-manoscritto.md'],
+                  'bozze': ['06-diagnostica/bozze.md']}
+PER_CAPITOLO = {'line': '06-diagnostica/line', 'copy': '06-diagnostica/copy'}
 
 
 def nome_report(nome):
@@ -41,9 +50,22 @@ def unita_con_report(cartella, libro, nomi):
     return out
 
 
+def report_per_unita(cartella, libro, cartella_report):
+    """Un report per ogni unità scritta (line, copy): <cartella_report>/NN.md."""
+    return [f'{cartella_report}/{nome_report(n)}.md' for n, _ in comune.unita(cartella, libro)]
+
+
 def documenti_del_gate(cartella, libro, stato, gate):
+    if gate == 'struttura':
+        return STRUTTURA + [REVISIONE_STRUTTURA]
     if gate == 'documenti':
-        return list(DOCUMENTI)
+        # libro nato con la fase struttura: anche la nota di direzione del direttore editoriale
+        nuovo_percorso = os.path.isdir(os.path.join(cartella, '03-struttura'))
+        return list(DOCUMENTI) + ([NOTA_DIREZIONE] if nuovo_percorso else [])
+    if gate in REPORT_DI_GATE:
+        return list(REPORT_DI_GATE[gate])
+    if gate in PER_CAPITOLO:
+        return report_per_unita(cartella, libro, PER_CAPITOLO[gate])
     if gate == 'pagina_campione':
         return [PAGINA_CAMPIONE]
     if gate == 'primi_capitoli':

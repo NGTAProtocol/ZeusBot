@@ -17,11 +17,13 @@ Comandi di Claude Code:
                            a un gate «primi_capitoli» o «lotto» con una correzione registrata, rifà i controlli
                            di un capitolo del gate e aggiorna le parole; il gate resta aperto
 
-Fasi: documenti → pagina_campione → stesura → chiusura → chiuso. Si passa a «chiusura» solo quando tutte le
+Fasi (motore/editoriale/00-percorso.md): struttura → documenti → pagina_campione → stesura →
+revisione_manoscritto → line → copy → bozze → chiusura → chiuso. Si lascia «stesura» solo quando tutte le
 unità del piano parole (prologo, capitoli, interludi, epilogo) sono scritte e accettate.
-Gate (libro.yaml, campo «gate»; predefiniti documenti, pagina_campione, primi_capitoli):
-documenti, pagina_campione, primi_capitoli, lotto; più controllo_fallito, sempre attivo
-(stesso controllo fallito due volte di fila sullo stesso capitolo).
+Gate (libro.yaml, campo «gate»): struttura, documenti, pagina_campione, primi_capitoli, lotto,
+struttura_manoscritto, line, copy, bozze; più controllo_fallito, sempre attivo (stesso controllo fallito
+due volte di fila sullo stesso capitolo) e struttura, sempre attivo. Un gate di fase non attivo non ferma: i documenti si registrano
+con senza_gate e si passa oltre. Ogni gate si apre con «pronto» e si chiude con ok (avanti, correggi).
 Scrive solo <libro>/stato.yaml e <libro>/LEGGIMI.md (e il report di capitolo.py). Nessun commit:
 il salvataggio lo fa Claude Code secondo il blocco di salvataggio.
 """
@@ -39,10 +41,16 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 import conta  # noqa: E402
+import nuovo  # noqa: E402
 import revisione  # noqa: E402
 
-FASI = ['documenti', 'pagina_campione', 'stesura', 'chiusura', 'chiuso']
-GATE_PREDEFINITI = ['documenti', 'pagina_campione', 'primi_capitoli']
+FASI = ['struttura', 'documenti', 'pagina_campione', 'stesura', 'revisione_manoscritto', 'line', 'copy', 'bozze',
+        'chiusura', 'chiuso']
+DOPO_STESURA = ['revisione_manoscritto', 'line', 'copy', 'bozze', 'chiusura']
+GATE_DI_FASE = {'struttura': 'struttura', 'documenti': 'documenti', 'pagina_campione': 'pagina_campione',
+                'revisione_manoscritto': 'struttura_manoscritto', 'line': 'line', 'copy': 'copy', 'bozze': 'bozze'}
+GATE_PREDEFINITI = nuovo.GATE_PREDEFINITI
+CAMPO_VUOTO = re.compile(r'^- ([^:\n]+):\s*$')
 CHIUSURA = [('06-diagnostica/continuita.md', 'zb continuita'),
             ('06-diagnostica/controllo-ortografico.md', 'zb ortografia'),
             ('05-output/{nome}-completo.md', 'zb compila'),
@@ -86,19 +94,23 @@ def salva_stato(cartella, stato):
 
 
 def gate_attivi(libro):
-    return libro['gate'] if libro.get('gate') is not None else GATE_PREDEFINITI
+    """Gate di libro.yaml (o i predefiniti); «struttura» è sempre attivo: nessun documento prima dell'ok."""
+    g = list(libro['gate'] if libro.get('gate') is not None else GATE_PREDEFINITI)
+    return g if 'struttura' in g else ['struttura'] + g
 
 
 def capitoli_previsti(cartella):
     p = os.path.join(cartella, '03-architettura', 'piano-parole.md')
     if not os.path.isfile(p):
+        p = os.path.join(cartella, '03-struttura', '08-piano-parole.md')
+    if not os.path.isfile(p):
         return 0
     return len(set(re.findall(r'(?m)^\|[^|\n]*\|\s*(\d+)\s*\|', open(p, encoding='utf-8').read())))
 
 
-def unita_del_piano(cartella):
+def unita_del_piano(cartella, rel='03-architettura/piano-parole.md'):
     """Unità di piano-parole.md (colonna «Cap.») in ordine: «prologo», «1», «interludio I», «epilogo»…"""
-    p = os.path.join(cartella, '03-architettura', 'piano-parole.md')
+    p = os.path.join(cartella, rel)
     if not os.path.isfile(p):
         return []
     intest, out = None, []
@@ -148,7 +160,15 @@ def prossimo(stato):
     g, f = stato['gate_in_attesa'], stato['fase']
     if g:
         return f'Gate «{g}» aperto: avanti, ok, correggi: … oppure stato.'
-    return {'documenti': 'Completa bibbia, cronologia, scaletta e piano parole; poi «zb pronto <libro>».',
+    return {'struttura': 'Architetto: compila i nove file di 03-struttura/; editor strutturale (altra sessione): '
+                         '06-diagnostica/revisione-struttura.md; poi «zb pronto <libro>».',
+            'documenti': 'Direttore editoriale: completa bibbia, cronologia, scaletta e piano parole (e la nota di '
+                         'direzione, se c\'è 03-struttura/); poi «zb pronto <libro>».',
+            'revisione_manoscritto': 'Editor strutturale (sessione separata): 06-diagnostica/revisione-manoscritto.md '
+                                     '(capsule e capitoli segnalati); poi «zb pronto <libro>».',
+            'line': 'Line editor: 06-diagnostica/line/NN.md per ogni capitolo (max 3 in parallelo); poi «zb pronto <libro>».',
+            'copy': 'Correttore di italiano: zb ortografia, poi 06-diagnostica/copy/NN.md per ogni capitolo; poi «zb pronto».',
+            'bozze': 'Testo fermo: zb compila, zb impagina, zb pdf; correttore di bozze: 06-diagnostica/bozze.md; poi «zb pronto».',
             'pagina_campione': 'Scrivi 05-revisioni/pagina-campione.md secondo il manuale; poi «zb pronto <libro>».',
             'stesura': f'Prossimo: {stato["passo"]}. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».',
             'chiusura': 'Esegui ' + ', '.join(c for _, c in CHIUSURA) + '; poi «zb pronto <libro>».',
@@ -208,8 +228,19 @@ def registra(cartella, stato, documenti, senza_gate=False):
 
 
 def chiudi_fase(cartella, libro, stato):
-    """Dopo l'approvazione dei documenti o della pagina campione: fase successiva."""
-    if stato['fase'] == 'documenti':
+    """Dopo l'approvazione del gate di una fase: fase successiva (FASI)."""
+    if stato['fase'] == 'struttura':
+        stato.update(fase='documenti', passo='da completare', gate_in_attesa=None)
+        creati = nuovo.genera_documenti(cartella)
+        print('Struttura approvata: fase «documenti». Creati: ' + (', '.join(creati) or 'nessun file nuovo') + '.')
+    elif stato['fase'] in DOPO_STESURA[:-1]:
+        succ = FASI[FASI.index(stato['fase']) + 1]
+        stato.update(fase=succ, passo='da completare', gate_in_attesa=None)
+        if succ in ('line', 'copy', 'bozze', 'chiusura'):
+            print('Prima di procedere: applica gli interventi approvati (modifiche puntuali, mai il capitolo intero), '
+                  'poi «zb esito <libro> N» sui capitoli toccati.')
+        print(f'Fase «{succ}». ' + prossimo(stato))
+    elif stato['fase'] == 'documenti':
         stato.update(fase='pagina_campione', passo='da completare', gate_in_attesa=None)
         if not os.path.isfile(os.path.join(cartella, revisione.PAGINA_CAMPIONE)):
             comune.scrivi(cartella, revisione.PAGINA_CAMPIONE, PAGINA_DA_SCRIVERE)
@@ -242,8 +273,8 @@ def dopo_capitolo(cartella, libro, stato):
             stato['passo'] = passo_di(mancanti[0])
             print(f'Capitoli scritti; mancano ancora: {", ".join(mancanti)}. La fase resta «stesura».')
             return
-        stato.update(fase='chiusura', passo='controlli finali', gate_in_attesa=None)
-        print(f'Tutte le unità del piano sono scritte e accettate: fase «chiusura».')
+        stato.update(fase='revisione_manoscritto', passo='revisione del manoscritto', gate_in_attesa=None)
+        print('Tutte le unità del piano sono scritte e accettate: fase «revisione_manoscritto».')
 
 
 # ---------------------------------------------------------------- comandi
@@ -279,24 +310,84 @@ def cmd_stato(cartella, libro, stato):
     print('\n'.join(righe))
 
 
+def controlli_struttura(cartella):
+    """Controlli meccanici prima del gate «struttura» (editoriale/struttura/01-fase-struttura.md):
+    campi vuoti, un blocco di scaletta per ogni capitolo del piano, budget numerici, promesse senza
+    pagamento, una riga di tensione per capitolo, scelte fisse compilate, revisione dell'editor presente."""
+    err = []
+    p = os.path.join(cartella, revisione.REVISIONE_STRUTTURA)
+    if not os.path.isfile(p) or not conta.conta_testo(open(p, encoding='utf-8').read()):
+        err.append(f'{revisione.REVISIONE_STRUTTURA}: manca la revisione dell\'editor strutturale (sessione separata)')
+    for rel in revisione.STRUTTURA:
+        p = os.path.join(cartella, rel)
+        if not os.path.isfile(p):
+            err.append(f'{rel}: manca')
+            continue
+        testo = re.sub(r'<!--.*?-->', lambda m: '\n' * m.group(0).count('\n'), open(p, encoding='utf-8').read(), flags=re.S)
+        for i, r in enumerate(testo.splitlines(), 1):
+            m = CAMPO_VUOTO.match(r.strip())
+            if m:
+                err.append(f'{rel}:{i}: campo vuoto «{m.group(1).strip()}»')
+    piano = unita_del_piano(cartella, '03-struttura/08-piano-parole.md')
+    numerici = [u for u in piano if u.isdigit()]
+    if not piano:
+        err.append('03-struttura/08-piano-parole.md: nessuna riga con la colonna «Cap.»')
+    p = os.path.join(cartella, '03-struttura', '05-scaletta.md')
+    if os.path.isfile(p):
+        blocchi = re.findall(r'(?m)^##\s+Capitolo\s+(\d+)', open(p, encoding='utf-8').read())
+        if sorted(set(blocchi), key=int) != sorted(set(numerici), key=int):
+            err.append(f'03-struttura/05-scaletta.md: blocchi per i capitoli {", ".join(blocchi) or "nessuno"}, '
+                       f'il piano parole ne prevede {", ".join(numerici) or "nessuno"}')
+    for r in comune.tabella_md(os.path.join(cartella, '03-struttura', '08-piano-parole.md')):
+        if r.get('Cap.') and not re.sub(r'[^\d]', '', r.get('Budget capitolo', '')):
+            err.append(f'03-struttura/08-piano-parole.md: capitolo {r["Cap."]} senza budget')
+    righe = [r for r in comune.tabella_md(os.path.join(cartella, '03-struttura', '06-sottotrame-temi.md'))
+             if any(v.strip() for v in r.values())]
+    if not righe:
+        err.append('03-struttura/06-sottotrame-temi.md: nessuna promessa o sottotrama')
+    for r in righe:
+        if not (r.get('Si paga (cap.)') or '').strip():
+            err.append(f'03-struttura/06-sottotrame-temi.md: «{r.get("Promessa o sottotrama", "?")}» senza pagamento')
+    tens = {(r.get('Cap.') or '').strip(): (r.get('Tensione (1-10)') or '').strip()
+            for r in comune.tabella_md(os.path.join(cartella, '03-struttura', '07-tensione-ritmo.md'))}
+    for u in numerici:
+        v = tens.get(u, '')
+        if not (v.isdigit() and 1 <= int(v) <= 10):
+            err.append(f'03-struttura/07-tensione-ritmo.md: capitolo {u} senza tensione da 1 a 10')
+    return err
+
+
+def report_mancanti(cartella, libro, stato, gate):
+    docs = revisione.documenti_del_gate(cartella, libro, stato, gate)
+    return docs, [d for d in docs if not os.path.isfile(os.path.join(cartella, d))]
+
+
 def cmd_pronto(cartella, libro, stato):
     if stato['gate_in_attesa']:
         raise comune.ErroreMotore(f'Gate «{stato["gate_in_attesa"]}» già aperto: avanti, ok o correggi.')
     fase = stato['fase']
-    if fase in ('documenti', 'pagina_campione'):
-        docs = revisione.documenti_del_gate(cartella, libro, stato, fase)
-        manca = [d for d in docs if not os.path.isfile(os.path.join(cartella, d))]
+    if fase in GATE_DI_FASE:
+        gate = GATE_DI_FASE[fase]
+        if fase == 'struttura':
+            errori = controlli_struttura(cartella)
+            if errori:
+                raise comune.ErroreMotore(f'Struttura non pronta ({len(errori)} problemi):\n- ' + '\n- '.join(errori[:30]))
+        docs, manca = report_mancanti(cartella, libro, stato, gate)
+        if fase in ('line', 'copy') and not docs:
+            raise comune.ErroreMotore('Nessuna unità in 04-manoscritto: niente da rivedere.')
         if manca:
             raise comune.ErroreMotore('Documenti mancanti: ' + ', '.join(manca))
         pc = os.path.join(cartella, revisione.PAGINA_CAMPIONE)
         if fase == 'pagina_campione' and not conta.conta_testo(open(pc, encoding='utf-8').read()):
             raise comune.ErroreMotore(f'{revisione.PAGINA_CAMPIONE} è ancora vuota: scrivila, poi «zb pronto <libro>».')
-        if fase in gate_attivi(libro):
-            apri_gate(cartella, libro, stato, fase, passo='in revisione')
+        import ruoli
+        ruoli.controlla_separazione_gate(cartella, gate, docs)
+        if gate in gate_attivi(libro):
+            apri_gate(cartella, libro, stato, gate, passo='in revisione')
         else:
             registra(cartella, stato, docs, senza_gate=True)
             chiudi_fase(cartella, libro, stato)
-            print(f'Gate «{fase}» non previsto in libro.yaml: documenti registrati senza fermata; fase «{stato["fase"]}».')
+            print(f'Gate «{gate}» non previsto in libro.yaml: documenti registrati senza fermata; fase «{stato["fase"]}».')
     elif fase == 'chiusura':
         nome = comune.nome_file(libro['titolo'])
         manca = [f'{p.format(nome=nome)} ({c})' for p, c in CHIUSURA
@@ -335,7 +426,7 @@ def cmd_ok(cartella, libro, stato, resto):
     stato['revisione_in_corso'] = None
     stato['gate_in_attesa'] = None
     print(f'Gate «{gate}» approvato: {len(docs)} documenti registrati con sha256 e commit.')
-    if gate in ('documenti', 'pagina_campione'):
+    if gate in GATE_DI_FASE.values():
         chiudi_fase(cartella, libro, stato)
     elif gate in ('primi_capitoli', 'lotto'):
         numerici = [int(c) for c in stato['lotto']['capitoli'] if str(c).isdigit()]
@@ -467,15 +558,17 @@ def cmd_fase(cartella, libro, stato, resto):
     motivo = ' '.join(resto[resto.index('--motivo') + 1:]).strip()
     if not motivo:
         raise comune.ErroreMotore('Manca il motivo («--motivo "<testo>"»)')
-    if stato['fase'] != 'chiusura':
-        raise comune.ErroreMotore(f'Il libro è in fase «{stato["fase"]}»: si torna a «stesura» solo da «chiusura».')
+    if stato['fase'] not in DOPO_STESURA:
+        raise comune.ErroreMotore(f'Il libro è in fase «{stato["fase"]}»: si torna a «stesura» solo dalle fasi '
+                                  f'dopo la stesura ({", ".join(DOPO_STESURA)}).')
     mancanti = unita_mancanti(cartella, libro, stato)
     if not mancanti:
-        raise comune.ErroreMotore('Tutte le unità del piano sono scritte e accettate: la fase resta «chiusura».')
+        raise comune.ErroreMotore(f'Tutte le unità del piano sono scritte e accettate: la fase resta «{stato["fase"]}».')
+    cambi_da = stato['fase']
     stato.setdefault('cambi_fase', []).append({'data': datetime.date.today().isoformat(), 'da': stato['fase'],
                                                'a': 'stesura', 'motivo': motivo, 'mancanti': mancanti})
     stato.update(fase='stesura', passo=passo_di(mancanti[0]), gate_in_attesa=None)
-    print(f'Fase «chiusura» → «stesura»; motivo: {motivo}. Mancano: {", ".join(mancanti)}.')
+    print(f'Fase «{cambi_da}» → «stesura»; motivo: {motivo}. Mancano: {", ".join(mancanti)}.')
 
 
 def cmd_riapprova(cartella, stato, resto):
@@ -585,7 +678,7 @@ def esito_in_chiusura(cartella, libro, stato, n, argv):
         print(f'Piano parole aggiornato (misure, senza riapprovazione): {riga_piano}')
     stato['parole']['scritte'] = parole_scritte(cartella, libro)
     rep = f'06-diagnostica/capitoli/{revisione.nome_report(n)}.md'
-    print(f'Unità {n} ricontrollata in fase «chiusura»: controlli {"OK" if r.returncode == 0 else "KO"} '
+    print(f'Unità {n} ricontrollata in fase «{stato["fase"]}»: controlli {"OK" if r.returncode == 0 else "KO"} '
           f'(report: {rep}); la fase non cambia.')
     return r.returncode
 
@@ -596,10 +689,10 @@ def cmd_esito(cartella, libro, stato, resto, argv):
     n = ' '.join(resto)
     n = str(int(n)) if n.isdigit() else n
     gate = stato['gate_in_attesa']
-    if stato['fase'] == 'chiusura' and n.lower() in {u.lower() for u, _ in comune.unita(cartella, libro)}:
+    if stato['fase'] in DOPO_STESURA and n.lower() in {u.lower() for u, _ in comune.unita(cartella, libro)}:
         return esito_in_chiusura(cartella, libro, stato, n, argv)
     if stato['fase'] != 'stesura':
-        mancanti = unita_mancanti(cartella, libro, stato) if stato['fase'] == 'chiusura' else []
+        mancanti = unita_mancanti(cartella, libro, stato) if stato['fase'] in DOPO_STESURA else []
         extra = (f' Mancano unità del piano ({", ".join(mancanti)}): «zb fase <libro> stesura --motivo "…"».'
                  if mancanti else '')
         raise comune.ErroreMotore(f'«esito» vale solo in fase «stesura» (ora: {stato["fase"]}).{extra}')
@@ -615,6 +708,10 @@ def cmd_esito(cartella, libro, stato, resto, argv):
                         cartella, *n.split(), *extra], capture_output=True, text=True)
     if r.returncode not in (0, 1):
         raise comune.ErroreMotore(f'capitolo.py {n} non eseguito: {r.stderr.strip() or r.stdout.strip()}')
+    u = dict(comune.unita(cartella, libro)).get(n)
+    if u:       # chi ha scritto il capitolo (separazione dei ruoli)
+        import ruoli
+        ruoli.registra_scrittura(cartella, comune.sessione_corrente()[0], os.path.relpath(u, cartella))
     riga_piano = aggiorna_piano(cartella, libro, n)
     if riga_piano:
         print(f'Piano parole aggiornato (misure, senza riapprovazione): {riga_piano}')

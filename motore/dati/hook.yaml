@@ -2,3 +2,7 @@
 # avviso: stampa un avviso e lascia passare (codice 0). blocco: ferma lo strumento (codice 2).
 # Il passaggio a «blocco» è un commit a parte, dopo l'«ok» dell'autore e la prova dei 14 scenari.
 modalita: avviso
+# Separazione dei ruoli (script/ruoli.py): chi ha scritto un testo non lo revisiona nella stessa sessione.
+# avviso: AVVISO e si prosegue; blocco: FERMO al «pronto» del gate e all'avvio del ruolo di revisione.
+# Scelta attuale: blocco (l'autore può tornare ad «avviso» con un commit a parte).
+separazione_ruoli: blocco

@@ -20,13 +20,16 @@ SCRIPT = {
     'riciclo': 'riciclo.py', 'compila': 'compila.py', 'impagina': 'impagina.py', 'pdf': 'verifica_pdf.py',
     'kdp': 'conformita_kdp.py', 'pacchetto': 'pacchetto.py', 'prove': 'prove.py',
     'separazione': 'separazione.py', 'recinto': 'recinto.py', 'profili': 'valida_profili.py',
-    'ortografia': 'ortografia.py', 'push': 'push.py', 'voce': 'voce.py',
+    'ortografia': 'ortografia.py', 'push': 'push.py', 'voce': 'voce.py', 'ruoli': 'ruoli.py',
 }
 FASE = ('stato', 'ok', 'avanti', 'correggi', 'riapprova', 'pronto', 'esito', 'fase')
 AIUTO = """Comandi (il libro è sempre un percorso):
-  zb nuovo <briefing>              crea il libro dal briefing
+Percorso (motore/editoriale/00-percorso.md): struttura → documenti → pagina_campione → stesura →
+revisione_manoscritto → line → copy → bozze → chiusura. Ogni gate si apre con «zb pronto» e si chiude con ok.
+  zb nuovo <briefing>              crea il libro dal briefing: fase «struttura» (solo 03-struttura/)
   zb adotta <cartella>             bozze di libro.yaml, stato, cronologia, nomi da documenti esistenti
-  zb avvio <libro>                 avvio obbligatorio: controlli e riga «Letto: …»
+  zb avvio <libro> [--ruolo R]     avvio obbligatorio: controlli, ruolo della sessione, riga «Letto: …»
+  zb ruoli <libro> stato           ruoli delle sessioni e scritture registrate (separazione dei ruoli)
   zb stato <libro>                 stato del libro (non scrive)
   zb pronto <libro>                fine del lavoro di una fase: apre il gate o passa oltre
   zb avanti <libro>                blocco successivo dei documenti del gate
@@ -35,7 +38,7 @@ AIUTO = """Comandi (il libro è sempre un percorso):
   zb correggi <libro> <unità>: <motivo> [--commit H]   fuori dal gate: registra data, file, motivo, sha256 precedente
   zb esito <libro> <N>             controlli del capitolo N e registrazione dell'esito
   zb riapprova <libro> <documento> <motivo>   modifica autorizzata a un documento già approvato
-  zb fase <libro> stesura --motivo "<testo>"   da «chiusura» a «stesura» se nel piano mancano unità
+  zb fase <libro> stesura --motivo "<testo>"   da una fase dopo la stesura a «stesura» se nel piano mancano unità
   zb revisione <libro> <documento|gate> [N]   blocco N di un documento (non scrive)
   zb capitolo|conta|stile|continuita|riciclo|compila|impagina|pdf|kdp|pacchetto <libro>
   zb verifica KDP fatta [AAAA-MM-GG] | zb verifica KDP stato | zb verifica KDP controlla

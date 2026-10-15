@@ -1,15 +1,17 @@
-"""Crea un libro dal briefing (proposta B.4, C.1 fase «documenti», C.3).
+"""Crea un libro dal briefing (proposta B.4, C.1, C.3; percorso in motore/editoriale/00-percorso.md).
 
 Uso: python3 -B nuovo.py <percorso-briefing>
 - Il libro è <x> se il briefing sta in <x>/00-progetto/briefing.md; altrimenti è la cartella
   del briefing, e il briefing viene spostato in 00-progetto/briefing.md.
 - Si ferma se c'è già un libro.yaml, o se il briefing è incompleto (elenca cosa manca, al massimo
   5 domande): in quel caso non crea nulla.
-- Dal briefing (sezione «Direttive») e dal profilo di genere genera: libro.yaml, stato.yaml,
-  LEGGIMI.md, cronologia.yaml, nomi_propri.txt, 02-bibbia/bibbia.md,
-  03-architettura/manuale-di-stile.md, scaletta.md, piano-parole.md, e le cartelle standard.
-  Le regole (tetti, vietati, vincoli, lunghezze, chiusure) vanno in libro.yaml e nel manuale
-  senza riscriverle a mano; i contenuti narrativi li scrive Claude Code al gate «documenti».
+- Dal briefing (sezione «Direttive») e dal profilo di genere genera: libro.yaml, stato.yaml (fase
+  «struttura»), LEGGIMI.md, nomi_propri.txt e 03-struttura/ con i nove file della fase struttura
+  (modelli di motore/editoriale/struttura/modelli/; scaletta e piano parole già divisi per capitolo).
+  Nessun documento e nessun capitolo prima del gate «struttura»: bibbia, cronologia, manuale di stile,
+  scaletta operativa e piano parole li crea genera_documenti(), chiamata da fase.py all'«ok» della
+  struttura. Le regole (tetti, vietati, vincoli, lunghezze, chiusure) vanno in libro.yaml e nel manuale
+  senza riscriverle a mano.
 Il libro nasce solo in <repo>/libri/<slug>/ su un ramo di libro: rifiutato (prima di creare
 qualsiasi cosa) se la cartella è dentro motore/, è la radice del repository, o il ramo è «motore».
 Unica eccezione: le prove della suite (ZB_PROVE=1) usano cartelle temporanee fuori da libri/, ma
@@ -29,7 +31,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 import hook_recinto  # noqa: E402
 
-GATE_PREDEFINITI = ['documenti', 'pagina_campione', 'primi_capitoli']
+GATE_PREDEFINITI = ['struttura', 'documenti', 'pagina_campione', 'primi_capitoli', 'struttura_manoscritto',
+                    'line', 'copy', 'bozze']
+MODELLI_STRUTTURA = os.path.join('editoriale', 'struttura', 'modelli')
+FILE_STRUTTURA = ['01-premessa.md', '02-logline-tema.md', '03-personaggi-chiave.md', '04-atti-svolte.md',
+                  '05-scaletta.md', '06-sottotrame-temi.md', '07-tensione-ritmo.md', '08-piano-parole.md',
+                  '09-scelte-fisse.md']
 SIGLE = {'gancio_domanda': ['D', 'R', 'P', 'X'], 'gesto_oggetto': ['G', 'O', 'B', 'I'],
          'misto': ['G', 'O', 'B', 'D', 'R']}
 SIGNIFICATO_SIGLE = {'G': 'gesto', 'O': 'oggetto', 'B': 'battuta', 'D': 'domanda', 'R': 'rivelazione',
@@ -407,6 +414,60 @@ def genera_piano(libro, n_cap):
     return '\n'.join(righe) + '\n'
 
 
+def genera_struttura(libro, n_cap):
+    """I nove file di 03-struttura/ dai modelli dell'editoriale: {nome: testo}."""
+    m = os.path.join(comune.radice_motore(), MODELLI_STRUTTURA)
+    out = {}
+    for nome in FILE_STRUTTURA:
+        p = os.path.join(m, nome)
+        if nome == '05-scaletta.md':
+            blocco = open(os.path.join(m, 'scaletta-capitolo.md'), encoding='utf-8').read().rstrip('\n')
+            testo = (f'# Scaletta — {libro["titolo"]}\n\n<!-- Un blocco per capitolo; ogni campo va compilato. -->\n\n'
+                     + '\n\n'.join(blocco.replace('Capitolo N', f'Capitolo {i}') for i in range(1, n_cap + 1)) + '\n')
+        elif nome == '08-piano-parole.md':
+            testo = genera_piano(libro, n_cap)
+        else:
+            testo = open(p, encoding='utf-8').read()
+        out[nome] = testo
+    return out
+
+
+def capitoli_della_struttura(cartella):
+    """Numero di capitoli fissato in 03-struttura/ (piano parole, poi scaletta); 0 se non si ricava."""
+    p = os.path.join(cartella, '03-struttura', '08-piano-parole.md')
+    if os.path.isfile(p):
+        n = len(set(re.findall(r'(?m)^\|[^|\n]*\|\s*(\d+)\s*\|', open(p, encoding='utf-8').read())))
+        if n:
+            return n
+    p = os.path.join(cartella, '03-struttura', '05-scaletta.md')
+    if os.path.isfile(p):
+        return len(re.findall(r'(?m)^##\s+Capitolo\s+\d+', open(p, encoding='utf-8').read()))
+    return 0
+
+
+def genera_documenti(cartella):
+    """Documenti della fase «documenti», dopo l'«ok» alla struttura: bibbia, cronologia, manuale di stile,
+    scaletta operativa (date e chiusure) e piano parole (copiato da 03-struttura/08-piano-parole.md).
+    Non sovrascrive un file esistente. Restituisce i percorsi creati."""
+    cartella, libro, profilo = comune.carica_libro(cartella)
+    b = leggi_briefing(os.path.join(cartella, '00-progetto', 'briefing.md'))
+    n_cap = capitoli_della_struttura(cartella) or numero_capitoli(libro, profilo)
+    m = os.path.join(comune.radice_motore(), 'modelli')
+    piano = os.path.join(cartella, '03-struttura', '08-piano-parole.md')
+    testi = {'02-bibbia/bibbia.md': genera_bibbia(b, libro),
+             'cronologia.yaml': open(os.path.join(m, 'cronologia.yaml'), encoding='utf-8').read(),
+             '03-architettura/manuale-di-stile.md': genera_manuale(b, libro, profilo, n_cap),
+             '03-architettura/scaletta.md': genera_scaletta(libro, n_cap, libro['dichiarazioni']['chiusura']['sigle'][0]),
+             '03-architettura/piano-parole.md': (open(piano, encoding='utf-8').read() if os.path.isfile(piano)
+                                                 else genera_piano(libro, n_cap))}
+    creati = []
+    for rel, testo in testi.items():
+        if not os.path.exists(os.path.join(cartella, rel)):
+            comune.scrivi(cartella, rel, testo)
+            creati.append(rel)
+    return creati
+
+
 def crea(percorso_briefing):
     cartella = cartella_dal_briefing(percorso_briefing)
     rad = controlla_posizione(cartella)
@@ -427,21 +488,17 @@ def crea(percorso_briefing):
     comune.scrivi(cartella, '.gitignore', '.zb/\n')
     m = os.path.join(comune.radice_motore(), 'modelli')
     stato = comune.leggi_yaml(os.path.join(m, 'stato.yaml'))
-    stato.update({'libro': libro['titolo'], 'fase': 'documenti', 'passo': 'da completare', 'gate_in_attesa': None,
+    stato.update({'libro': libro['titolo'], 'fase': 'struttura', 'passo': 'da completare', 'gate_in_attesa': None,
                   'parole': {'scritte': 0, 'obiettivo': libro['parole']['target_totale'], 'metodo': 'unico'},
                   'aggiornato': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')})
     comune.scrivi(cartella, 'stato.yaml', yaml.safe_dump(stato, sort_keys=False, allow_unicode=True))
-    comune.scrivi(cartella, 'cronologia.yaml', open(os.path.join(m, 'cronologia.yaml'), encoding='utf-8').read())
     nomi = sorted({w for p in b['personaggi'] for w in p.split('—')[0].split() if w[:1].isupper()})
     comune.scrivi(cartella, 'nomi_propri.txt', '\n'.join(nomi) + '\n')
-    comune.scrivi(cartella, '02-bibbia/bibbia.md', genera_bibbia(b, libro))
-    comune.scrivi(cartella, '03-architettura/manuale-di-stile.md', genera_manuale(b, libro, profilo, n_cap))
-    comune.scrivi(cartella, '03-architettura/scaletta.md',
-                  genera_scaletta(libro, n_cap, libro['dichiarazioni']['chiusura']['sigle'][0]))
-    comune.scrivi(cartella, '03-architettura/piano-parole.md', genera_piano(libro, n_cap))
+    for rel, testo in genera_struttura(libro, n_cap).items():
+        comune.scrivi(cartella, f'03-struttura/{rel}', testo)
     decisioni = '\n'.join(f'- {f}' for f in b['fatti'] + b['non_cambiare']) or '- nessuna'
     leggimi = open(os.path.join(m, 'LEGGIMI.md'), encoding='utf-8').read().format(
-        titolo=libro['titolo'], percorso=cartella, modalita=libro['modalita'], fase='documenti',
+        titolo=libro['titolo'], percorso=cartella, modalita=libro['modalita'], fase='struttura',
         gate='nessuno', ultimo='—', decisioni=decisioni)
     comune.scrivi(cartella, 'LEGGIMI.md', leggimi)
     comune.carica_libro(cartella)          # libro.yaml generato valido (schema, override con motivo)
@@ -458,9 +515,9 @@ def main(argv):
     if not args:
         raise comune.ErroreMotore('Uso: nuovo.py <percorso-briefing>')
     cartella, n_cap = crea(args[0])
-    print(f'libro creato in {cartella} ({n_cap} capitoli previsti); fase «documenti».')
-    print('Prossimo passo: completare bibbia, cronologia, scaletta e piano parole; poi «zb pronto <libro>»,'
-          ' che apre il gate «documenti».')
+    print(f'libro creato in {cartella} ({n_cap} capitoli previsti); fase «struttura».')
+    print('Prossimo passo: l\'architetto compila i nove file di 03-struttura/; l\'editor strutturale, in un\'altra '
+          'sessione, scrive 06-diagnostica/revisione-struttura.md; poi «zb pronto <libro>» apre il gate «struttura».')
     return 0
 
 

@@ -261,12 +261,14 @@ passo_5:
   # (repository git con un remoto locale), mai sul repository del motore.
   nuovo:
     codice: 0
-    file: ['.gitignore', '00-progetto/briefing.md', '02-bibbia/bibbia.md', '03-architettura/manuale-di-stile.md',
-           '03-architettura/piano-parole.md', '03-architettura/scaletta.md', 'LEGGIMI.md', 'cronologia.yaml',
-           'libro.yaml', 'nomi_propri.txt', 'stato.yaml']
+    # fase struttura: nessun documento né capitolo prima del gate «struttura», solo i nove file di 03-struttura/
+    file: ['.gitignore', '00-progetto/briefing.md', '03-struttura/01-premessa.md', '03-struttura/02-logline-tema.md',
+           '03-struttura/03-personaggi-chiave.md', '03-struttura/04-atti-svolte.md', '03-struttura/05-scaletta.md',
+           '03-struttura/06-sottotrame-temi.md', '03-struttura/07-tensione-ritmo.md', '03-struttura/08-piano-parole.md',
+           '03-struttura/09-scelte-fisse.md', 'LEGGIMI.md', 'libro.yaml', 'nomi_propri.txt', 'stato.yaml']
     fuori: []
     libro_valido: "sì"
-    stato: "documenti / nessuno"
+    stato: "struttura / nessuno"
     capitoli: 30
     voci: ['come_se', 'all_improvviso', 'un_brivido_le_percorse_la_schiena']
     vincolo: ['1']
@@ -279,7 +281,7 @@ passo_5:
     avvio_libro: "2 / ['Autore']"
   avvio:
     codice: 0
-    file_letti: 10
+    file_letti: 11          # anche il file del ruolo della sessione (editoriale/ruoli/)
     git_status: pulito
     non_scrivibile: "2 / True"
     fuori_git: "2 / []"
@@ -287,7 +289,7 @@ passo_5:
     ramo: "2 / True"
   gate_documenti:
     ok_senza_gate: 2
-    pronto: "documenti / documenti / blocco 1 di 6"
+    pronto: "documenti / documenti / blocco 1 di 7"   # 6 documenti + nota di direzione
     ok_presto: "2 / True"
     ultimo_blocco: "True / True"
     correggi: "0 / 1 / documenti / documenti"
@@ -296,14 +298,14 @@ passo_5:
     riparte: "True / 1"
     ok_non_salvati: "2 / True"
     stato: "0 / True"
-    ok: "0 / pagina_campione / nessuno / 6 / 0"
+    ok: "0 / pagina_campione / nessuno / 17 / 0"   # 10 della struttura + 7 dei documenti
     leggimi: "Fase: pagina_campione; gate in attesa: nessuno"
     avvio_dopo_ok: 0
     approvato_cambiato: "2 / True"
     gate_pagina: "pagina_campione / pagina_campione"
     ok_pagina: "0 / stesura / nessuno / capitolo 1"
   gate_configurabili:
-    senza_gate_documenti: "0 / pagina_campione / nessuno / 6"
+    senza_gate_documenti: "0 / pagina_campione / nessuno / 7"
     lotto_attivo: "stesura / lotto"
     lotto_senza_gate: "stesura / nessuno / True"
   stesura:
@@ -313,7 +315,8 @@ passo_5:
     esito_3_gate_aperto: 2
     ok_controllo: "0 / stesura / nessuno / capitolo 3 / {}"
     primi_capitoli: "stesura / primi_capitoli"
-    ok_lotti: "0 / 5 / 3 / stesura / chiusura"   # chiusura solo dopo l'esito dell'interludio I
+    ok_lotti: "0 / 5 / 3 / stesura / revisione_manoscritto"   # dopo la stesura solo dopo l'esito dell'interludio I
+    dopo_stesura: "revisione_manoscritto:2:True | line:0:struttura_manoscritto | line senza report:2:4:4 | copy:0:line | bozze:0:copy | chiusura:0:bozze"
     chiusura_incompleta: "2 / 7"
   modalita:
     senza_testo: "2 / ['Testo precedente']"
@@ -324,8 +327,8 @@ passo_5:
     righe_max_30: "sì"
     nomi: []
     frasi: []
-    frasi_obbligatorie: ['motore/PROCEDURA.md', 'LEGGIMI.md', 'zb avvio', 'Letto', 'manuale del libro',
-                         'procedura del motore', 'skill', "proponi → l'autore approva → applica", 'Ramo',
+    frasi_obbligatorie: ['motore/PROCEDURA.md', 'LEGGIMI.md', 'zb avvio', 'Letto', 'Precedenza',
+                         'motore/editoriale/LEGGIMI.md', "proponi → l'autore approva → applica", 'Ramo',
                          'cartella del libro indicato', 'git status -sb', 'Non dire «fatto»']
   hook:
     scenari:
@@ -382,10 +385,10 @@ passo_5b:
 
 passo_6:
   struttura:
-    cartelle: ['00-progetto', '01-originale', '02-bibbia', '03-architettura', '04-manoscritto', '05-revisioni', '05-appendici',
-               '05-output', '06-diagnostica', '06-pubblicazione', '.zb']
-    nuovo: ['00-progetto', '02-bibbia', '03-architettura']
-    riscrittura: "0 / ['00-progetto', '01-originale', '02-bibbia', '03-architettura']"
+    cartelle: ['00-progetto', '01-originale', '02-bibbia', '03-struttura', '03-architettura', '04-manoscritto', '05-revisioni',
+               '05-appendici', '05-output', '06-diagnostica', '06-pubblicazione', '07-capsule', '.zb']
+    nuovo: ['00-progetto', '03-struttura']
+    riscrittura: "0 / ['00-progetto', '01-originale', '03-struttura']"
     nuovo_con_originale: "2 / True / False"
     testo_altrove: "2 / True"
   pulizia:
@@ -593,7 +596,7 @@ unita_consentite_e_interludi:
 fase_stesura_e_rinomine:
   riga_epilogo: "| — | epilogo | Epilogo | chiusura | 1 | 300 | 300 | | |"
   testo_epilogo: "## *Epilogo*\n\nLa sera la piazza resta vuota fino alla chiesa grande. Il fornaio abbassa la saracinesca per ultimo, senza fretta. Nella vetrina la croce verde è spenta da tre giorni.\n"
-  a_fasi: "0 / stesura / epilogo / 2 / 0 / chiusura"   # prima: chiusura subito dopo l'ultimo capitolo
+  a_fasi: "0 / stesura / epilogo / 2 / 0 / revisione_manoscritto"   # prima: fase dopo la stesura subito dopo l'ultimo capitolo
   a_fuori_piano: 2
   b_codici: "2 / 0 / 2"
   b_registro: "chiusura / stesura / manca l'epilogo / ['interludio I', 'epilogo'] / stesura / interludio I"
@@ -700,7 +703,7 @@ voce:
   libro_senza_voce: "0 0 / identica / False / False"
   briefing_voce: "Voce dalla banca: voce-di-prova\nAmbientazione: Borgo di Prova\n"
   blocco_voce: "{'slug': 'voce-di-prova', 'ambientazione': 'Borgo di Prova'}"
-  libro_con_voce: "0 / True / True / 11 / 0"
+  libro_con_voce: "0 / True / True / 16 / 0"   # fase struttura: briefing, 9 file di 03-struttura, ruolo
   con_voce_senza_variabile: "0 / True / False"
   con_voce_non_pronta: "0 / True"
   schema_senza_slug: "True"
@@ -731,3 +734,16 @@ appendici:
   avviso_non_dichiarato: ["AVVISO: 05-appendici/nota-in-piu.md non è dichiarato in libro.yaml (appendici): non entra nel libro."]
   immagine: "True / True"
   fermo_assente: "Appendice dichiarata in libro.yaml ma assente: 05-appendici/non-esiste.md"
+fase_struttura:
+  # due briefing inventati (giallo con i gate predefiniti di un tempo, romance con tutti i gate):
+  # il gate «struttura» è sempre attivo e nessun documento nasce prima del suo «ok»
+  giallo: &struttura
+    nascita: "['00-progetto', '03-struttura'] / struttura / True"
+    vuota: "2 / True / True / None"
+    prima_del_gate: [2, 2, 2]
+    incompleta: "2 / True / True"
+    gate: "0 / struttura / True / True"
+    ok_presto: 2
+    ok: "0 / documenti / 5 / 9"
+    scelte_cambiate: "2 / True"
+  romance: *struttura

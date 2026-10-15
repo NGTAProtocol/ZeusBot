@@ -98,7 +98,7 @@ Ambientazione:
 <!-- Regole che il motore trasforma da solo in libro.yaml e nel manuale di stile.
      Genere = nome di un profilo di motore/profili/. Tetti: «espressione | massimo | capitolo o libro».
      Vietati: un'espressione per riga. Vincoli: «Nome | vietato prima del N».
-     Gate (facoltativo): documenti, pagina_campione, primi_capitoli, lotto.
+     Gate (facoltativo): struttura, documenti, pagina_campione, primi_capitoli, lotto, struttura_manoscritto, line, copy, bozze.
      Testo precedente (solo riscrittura): un file in 01-originale/, per esempio 01-originale/testo.md.
      Motivo override: obbligatorio se un valore è fuori dal profilo di genere (lunghezza, capitoli…).
      Capitoli: «minimo | media | massimo» in parole; obbligatorio se la lunghezza è fuori profilo.
@@ -116,7 +116,7 @@ Intestazione capitolo: Luogo — giorno e data
 Separatore di scena: * * *
 Formato: 5.5 x 8.5
 Anni ammessi:
-Gate: documenti, pagina_campione, primi_capitoli
+Gate: struttura, documenti, pagina_campione, primi_capitoli, struttura_manoscritto, line, copy, bozze
 Tetti:
 -
 Vietati:

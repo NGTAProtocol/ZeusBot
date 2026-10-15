@@ -10,7 +10,7 @@ ebook: false
 # voce: {slug: "", ambientazione: altro}   # facoltativo: voce della banca-voci (ZB_BANCA_VOCI); senza, nessun cambiamento
 profilo: ""                # nome di un file in motore/profili/
 override: []               # {campo, valore, motivo}
-gate: [documenti, pagina_campione, primi_capitoli]
+gate: [struttura, documenti, pagina_campione, primi_capitoli, struttura_manoscritto, line, copy, bozze]
 parole: {metodo: unico, target_totale: 0}
 formato:
   pagina_pollici: [5.5, 8.5]

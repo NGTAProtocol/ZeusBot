@@ -3,7 +3,7 @@
 # Nessuna cartella vuota e nessun .gitkeep: una cartella nasce con il suo primo file.
 radice:
   file: [libro.yaml, stato.yaml, LEGGIMI.md, cronologia.yaml, nomi_propri.txt, .gitignore]
-  creazione: zb nuovo (o zb adotta, in bozza)
+  creazione: zb nuovo (o zb adotta, in bozza); cronologia.yaml all'«ok» del gate struttura
 cartelle:
   00-progetto:
     scopo: briefing e note dell'autore
@@ -16,11 +16,15 @@ cartelle:
   02-bibbia:
     scopo: bibbia (personaggi, luoghi, fatti canonici)
     modalita: [nuovo, riscrittura]
-    creazione: zb nuovo (bibbia.md)
-  03-architettura:
-    scopo: manuale di stile, scaletta, piano parole
+    creazione: zb ok al gate struttura (bibbia.md)
+  03-struttura:
+    scopo: i nove file della fase struttura (motore/editoriale/struttura/01-fase-struttura.md)
     modalita: [nuovo, riscrittura]
-    creazione: zb nuovo
+    creazione: zb nuovo, dai modelli di motore/editoriale/struttura/modelli/
+  03-architettura:
+    scopo: manuale di stile, scaletta operativa (date e chiusure), piano parole
+    modalita: [nuovo, riscrittura]
+    creazione: zb ok al gate struttura
   04-manoscritto:
     scopo: capitoli (NN-slug.md, prologo, interludi, epilogo)
     modalita: [nuovo, riscrittura]
@@ -45,7 +49,11 @@ cartelle:
     scopo: pacchetto KDP e conformità
     modalita: [nuovo, riscrittura]
     creazione: zb pacchetto / zb kdp, fase chiusura
+  07-capsule:
+    scopo: capsule di continuità, una per capitolo (NN.md, massimo 180 parole)
+    modalita: [nuovo, riscrittura]
+    creazione: zb capsula <libro> N, dopo ogni capitolo accettato
   .zb:
-    scopo: marker di sessione e log degli hook (ignorata da git)
+    scopo: marker di sessione, ruoli della sessione, scritture, consumo e log degli hook (ignorata da git)
     modalita: [nuovo, riscrittura]
     creazione: zb avvio
