@@ -28,13 +28,24 @@ SIMILITUDINE = re.compile(r"(?i)\bcome (un|una|uno|il|la|lo|i|gli|le|se)\b"
                           r"abbia\w*|ebbe|ebbero|era|erano|è)\b)|\bsembrava\b|\bpareva\b")
 
 
+def _dialogo(lingua):
+    """Prefisso (o tupla di prefissi) delle righe di dialogo della lingua."""
+    d = lingua['lineetta_dialogo']
+    return tuple(d) if isinstance(d, list) else d
+
+
+SIMILITUDINE_EN = re.compile(r"(?i)\b(like|as if|as though) (a|an|the|he|she|it|they|someone)\b|\bseemed\b")
+
+
 def risultato(unita, controllo, esito, riga=None, dettaglio=''):
     return {'unita': unita, 'controllo': controllo, 'esito': esito, 'riga': riga, 'dettaglio': dettaglio}
 
 
 def voci_del_libro(libro):
     """Lista nera di base + voci del libro + divieti della voce narrativa (banca-voci, modalità avviso)."""
-    base = comune.leggi_yaml(os.path.join(comune.radice_motore(), 'dati', 'lista-nera.yaml'))
+    nome = 'lista-nera.yaml' if libro.get('lingua', 'it') == 'it' else f'lista-nera-{libro["lingua"]}.yaml'
+    p = os.path.join(comune.radice_motore(), 'dati', nome)
+    base = comune.leggi_yaml(p) if os.path.isfile(p) else {}
     return ((base.get('voci') or []) + (libro.get('voci') or []) + voce.divieti_del_libro(libro),
             base.get('parole_filtro') or [])
 
@@ -42,7 +53,7 @@ def voci_del_libro(libro):
 def metriche(testo, lingua):
     prosa = comune.righe_prosa(testo)
     tot = sum(len(comune.parole(r)) for _, r in prosa)
-    dial = sum(len(comune.parole(r)) for _, r in prosa if r.lstrip().startswith(lingua['lineetta_dialogo']))
+    dial = sum(len(comune.parole(r)) for _, r in prosa if r.lstrip().startswith(_dialogo(lingua)))
     unito = ' '.join(r.strip() for _, r in prosa)
     frasi = [f for f in re.split(r'(?<=[.!?…])\s+', unito) if comune.parole(f)]
     return {
@@ -93,7 +104,7 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
             esito = 'KO' if pf['modalita'] in ('vieta', 'conta') else 'AVVISO'
             out.append(risultato(nome, 'parole_filtro', esito, None,
                                  f'{densita:.1f} ogni 1000 parole (massimo {pf["massimo_per_1000_parole"]})'))
-        n_sim = len(occorrenze(prosa, SIMILITUDINE.pattern))
+        n_sim = len(occorrenze(prosa, (SIMILITUDINE_EN if libro.get('lingua') == 'en' else SIMILITUDINE).pattern))
         met['candidati_similitudine'] = n_sim
         tetto = met['parole'] / profilo['similitudini_max_per_parole']
         if n_sim > tetto:
@@ -117,7 +128,7 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
         if v.get('solo_dialogo'):
             # Ammessa solo nel discorso diretto: fuori dal dialogo è KO (una riga per riga di testo);
             # nel dialogo vale la modalità della voce.
-            dialogo = {n for n, r in prosa if r.lstrip().startswith(lingua['lineetta_dialogo'])}
+            dialogo = {n for n, r in prosa if r.lstrip().startswith(_dialogo(lingua))}
             fuori = sorted({n for n, _ in occ if n not in dialogo})
             out += [risultato(nome, f'voce:{v["id"]}:fuori_dialogo', 'KO', n, 'fuori dal discorso diretto')
                     for n in fuori]

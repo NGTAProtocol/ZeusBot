@@ -1,0 +1,25 @@
+# Soglie dell'audit anti-IA (script/antiia.py) e vocabolario per lingua.
+# Valori di progetto tarati sui mini-libri di prove/ (2026-10-15): nessun capitolo dei mini-libri li supera,
+# salvo dove la prova lo vuole. Non sono norme misurate su prosa umana: per misurare i falsi positivi su un
+# corpus umano «zb antiia taratura --umano <cartella>». L'autore può cambiarli; il catalogo della lingua
+# dice cosa fare di ogni segnalazione.
+soglie:
+  frasi_minime: 12                 # sotto questo numero di frasi di narrazione la variazione non si valuta
+  variazione_frasi_min: 0.25       # deviazione standard / media; sui mini-libri segnala solo il capitolo con difetti voluti (0,198)
+  aperture_uguali_max: 20          # % di frasi consecutive con la stessa prima parola
+  formule_per_mille_max: 1.0       # voci di lista nera e vocabolario L1-L3 per mille parole
+  lineette_narrazione_max: 3       # lineette fuori dal dialogo per mille parole di narrazione (lingue con la lineetta)
+  varieta_lessicale_min: 0.55      # MATTR, finestre di 100 parole
+lingue:
+  it:
+    # Vocabolario: vuoto finché non è estratto dai dati (zb antiia estrai). Regola 6.2 del lavoro sul motore.
+    vocabolario: {L1: [], L2: [], L3: []}
+  en:
+    # Da fonte esterna (VoltAgent/awesome-claude-code-subagents, ai-writing-auditor, MIT; a sua volta da
+    # conorbronsdon/avoid-ai-writing, MIT): elenco di preferenze di stile, NON verificato su testi di Claude
+    # (haowjy/creative-writing-skills avverte che gli elenchi di parole non sono segnali affidabili). Per questo
+    # tutte le voci danno al massimo P2 (formule_per_mille), mai un KO. Docs/ATTRIBUZIONI.md.
+    vocabolario:
+      L1: [delve, tapestry, testament to, embark, beacon, nestled, realm, paradigm]
+      L2: [harness, navigate, foster, elevate, unleash, resonate, multifaceted, myriad]
+      L3: []
