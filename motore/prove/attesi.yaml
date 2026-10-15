@@ -324,9 +324,9 @@ passo_5:
     righe_max_30: "sì"
     nomi: []
     frasi: []
-    frasi_obbligatorie: ['motore/PROCEDURA.md', 'LEGGIMI.md', 'zb avvio', 'Letto', 'manuale del libro',
-                         'procedura del motore', 'skill', "proponi → l'autore approva → applica", 'Ramo',
-                         'cartella del libro indicato', 'git status -sb', 'Non dire «fatto»']
+    frasi_obbligatorie: ['motore/PROCEDURA.md', 'LEGGIMI.md', 'zb avvio', 'Letto', 'motore/editoriale/LEGGIMI.md',
+                         'una sola scala', 'Chi scrive non rivede', "proponi → l'autore approva → applica", 'Ramo',
+                         'cartella del libro indicato', 'git status -sb', 'Non dire «fatto»', 'zb salva']
   hook:
     scenari:
       Write: "avviso / 0"

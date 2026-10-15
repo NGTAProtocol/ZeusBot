@@ -3,14 +3,17 @@
 titolo: ""
 sottotitolo: null
 autore: ""
-lingua: it
+lingua: it                 # it | en: lingua in cui si scrive il libro
+lingua_originale: it       # percorso editoriale: uguale a lingua
+lingue_target: []          # traduzioni previste (zb traduci <libro> --a <lingua>)
+percorso: editoriale       # editoriale (motore/editoriale/00-percorso.md) | breve
 modalita: nuovo            # nuovo | riscrittura (con testo_precedente)
 serie: null
 ebook: false
 # voce: {slug: "", ambientazione: altro}   # facoltativo: voce della banca-voci (ZB_BANCA_VOCI); senza, nessun cambiamento
 profilo: ""                # nome di un file in motore/profili/
 override: []               # {campo, valore, motivo}
-gate: [documenti, pagina_campione, primi_capitoli]
+gate: [struttura, documenti, pagina_campione, primi_capitoli, struttura_manoscritto, line, copy, bozze]
 parole: {metodo: unico, target_totale: 0}
 formato:
   pagina_pollici: [5.5, 8.5]
@@ -34,3 +37,7 @@ copyright:
   riga: "© {anno} {autore}. Tutti i diritti riservati."
   fantasia: "Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzione dell'autore o usati in modo fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale."
   nota_autore: null
+# appendici: facoltativo, file di 05-appendici/ dopo l'ultima unità, in ordine di lettura (PROCEDURA.md, «Appendici»)
+appendici: []
+#  - {titolo: "Le soluzioni", file: soluzioni.md}
+#  - {titolo: "La mappa", file: mappa.svg, didascalia: "Riga sotto l'immagine."}

@@ -203,6 +203,11 @@ def controlla(percorso):
     letti.append(r)
     sha[f'profilo {libro["profilo"]}'] = s
     avvisi = list(avvisi_capsule)
+    pc = os.path.join(cartella, 'passaggio-di-consegne.md')
+    da_ultimo = comune.git(cartella, 'rev-list', '--count', f'{comune.ultimo_commit(cartella, pc) or "HEAD"}..HEAD', '--', '.')[1]
+    if comune.editoriale(libro) and (not os.path.isfile(pc) or (da_ultimo.isdigit() and int(da_ultimo) > 10)):
+        avvisi.append('report di sessione (passaggio-di-consegne.md) assente o non aggiornato da più di 10 salvataggi '
+                      '(regola: ogni 5 scambi o a «passaggio»; /handover)')
     if libro.get('voce'):
         avvisi += scheda_voce(libro['voce'], letti, sha)
     libro_commit = comune.git(cartella, 'log', '-1', '--format=%h «%s»')[1]

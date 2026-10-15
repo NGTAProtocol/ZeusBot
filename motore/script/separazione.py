@@ -12,6 +12,7 @@ Eccezione: i font di stampa/font/ elencati in FONTI.yaml con lo sha256 registrat
 import hashlib
 import os
 import re
+import subprocess
 import sys
 
 sys.dont_write_bytecode = True
@@ -48,10 +49,39 @@ def font_ammessi(motore):
     return ok
 
 
+def nomi_dinamici(motore):
+    """Nomi da non scrivere mai, ricavati senza scriverli: rami di libro di origin (con libri/…/libro.yaml; ultima parte del nome,
+    senza il suffisso casuale, solo se di più parole) e slug della banca-voci (se ZB_BANCA_VOCI è impostata)."""
+    out = set()
+    c = subprocess.run(['git', '-C', motore, 'for-each-ref', '--format=%(refname:short)', 'refs/remotes/origin'],
+                       capture_output=True, text=True)
+    attuale = subprocess.run(['git', '-C', motore, 'branch', '--show-current'], capture_output=True, text=True).stdout.strip()
+    for r in c.stdout.split():
+        nome = r.split('/', 1)[1] if '/' in r else r
+        if nome in ('HEAD', 'motore', attuale) or nome.startswith('ccr-'):
+            continue
+        albero = subprocess.run(['git', '-C', motore, 'ls-tree', '-r', '--name-only', r], capture_output=True, text=True).stdout
+        if not re.search(r'(?m)^libri/', albero) and not re.search(r'(?m)^(?!motore/).*libro\.yaml$', albero):
+            continue                # non è un ramo di libro: il suo nome non è un nome di libro
+        ultimo = re.sub(r'-[a-z0-9]{6}$', '', nome.split('/')[-1])
+        if ultimo.count('-') >= 1 and len(ultimo) >= 8:
+            out.add(ultimo)
+    banca = os.environ.get('ZB_BANCA_VOCI')
+    if banca and os.path.isfile(os.path.join(banca, 'indice.yaml')):
+        for v in (comune.leggi_yaml(os.path.join(banca, 'indice.yaml')) or {}).get('voci') or []:
+            if v.get('slug') and v['slug'].count('-') >= 1:
+                out.add(v['slug'])
+    return out
+
+
 def controlla(motore):
     errori = []
     motore = os.path.realpath(motore)
     file_motore = list(file_sotto(motore))
+    # docs/ e CLAUDE.md del ramo del motore: valgono le stesse regole sui nomi
+    radice = os.path.dirname(motore)
+    extra = [os.path.join(radice, 'CLAUDE.md')] + list(file_sotto(os.path.join(radice, 'docs')))
+    extra = [p for p in extra if os.path.isfile(p)]
     rel = {p: os.path.relpath(p, motore) for p in file_motore}
     # 1a. segmento «libri»
     for p, r in rel.items():
@@ -85,9 +115,12 @@ def controlla(motore):
             riga = riga.strip()
             if riga and not riga.startswith('#'):
                 voci.append(riga)
+    voci += sorted(nomi_dinamici(motore))
     if voci:
         regex = re.compile(r'(?i)(?<!\w)(' + '|'.join(re.escape(v) for v in voci) + r')(?!\w)')
-        for p, r in rel.items():
+        tutti = dict(rel)
+        tutti.update({p: os.path.relpath(p, radice) for p in extra})
+        for p, r in tutti.items():
             if os.path.realpath(p) == os.path.realpath(nv):
                 continue
             try:
@@ -97,7 +130,7 @@ def controlla(motore):
             for n, riga in enumerate(righe, 1):
                 m = regex.search(riga)
                 if m:
-                    errori.append(f'{r}:{n}: nome vietato «{m.group(1)}»')
+                    errori.append(f'{r}:{n}: nome vietato (voce {voci.index(next(v for v in voci if v.lower() == m.group(1).lower())) + 1} dell\'elenco)')
     # 3. libro.yaml fuori posto
     for p, r in rel.items():
         if os.path.basename(p) == 'libro.yaml' and r.replace(os.sep, '/') not in AMMESSI_LIBRO_YAML:

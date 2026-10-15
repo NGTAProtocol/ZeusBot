@@ -1,5 +1,9 @@
 # Motore editoriale — proposta
 
+> Documento storico (proposta approvata all'inizio del motore): non è normativo. Le regole valide stanno in
+> `PROCEDURA.md` e `editoriale/`; la precedenza ha una sola scala, in `editoriale/LEGGIMI.md`.
+
+
 Stato: **proposta approvata dall'autore** (2026-10-02). Nessun file del motore è ancora stato creato oltre a questo; la costruzione segue B.7.
 
 **Principio.** Il motore è una fabbrica vuota e generica, per qualsiasi romanzo o manoscritto di qualsiasi genere. Contiene solo: procedura, script, modelli vuoti, profili di genere, dati KDP e un mini-libro inventato per le prove. **Non contiene nessun libro reale**, nemmeno come esempio o caso di prova. Il libro si indica a ogni comando con un percorso; tutto ciò che il motore produce per un libro va nella cartella di quel libro, e il motore non scrive in nessuna cartella di libro che non gli sia stata indicata.
@@ -704,7 +708,7 @@ Ogni comando che opera su un libro scrive **solo** dentro `<libro>` (B.9). Nessu
 1. **Tono.** Il testo precedente di un libro, se c'è, è un registro dei fatti: non si commenta né si giudica, nei report come in chat.
 2. **Proponi → approvo → applica.** Ogni modifica al testo o ai dati di un libro si propone, voce per voce; si applica solo dopo l'«ok». Mai nuovi oggetti o persone in una scena senza richiesta.
 3. **Metodo unico di conteggio** (predefinito): token separati da spazi; esclusi le righe che cominciano con «#» e i token senza lettere né cifre (lineette di dialogo, separatori, segni isolati). Niente `wc -w`, che cambia con la lingua di sistema. Ogni report dichiara il metodo.
-4. **Precedenza.** Manuale e `libro.yaml` del libro > profilo di genere > procedura del motore e riferimenti > skill dell'autore. In caso di contrasto vince il livello più alto e il report lo segnala.
+4. **Precedenza.** (superata) Vale la scala unica di `editoriale/LEGGIMI.md`.
 5. **Ramo.** Si lavora solo sul ramo assegnato dalla sessione; `comune.py` lo legge da git. Se il checkout del libro è su un altro ramo, il motore si ferma.
 6. **Recinto.** Un comando su un libro scrive solo dentro `<libro>` (B.9). Il motore non contiene libri (B.9).
 7. **Dichiarazione AI.** Promemoria fisso in ogni pacchetto e in ogni report KDP (A.6).
@@ -1259,8 +1263,7 @@ Prima di toccare qualunque file:
    Se si ferma, fermati anche tu e riporta il motivo.
 3. Leggi il `LEGGIMI.md` del libro.
 
-Precedenza: manuale e libro.yaml del libro > profilo di genere >
-procedura del motore > skill dell'autore. Segnala ogni contrasto nel report.
+Precedenza: (superata) una sola scala, in motore/editoriale/LEGGIMI.md. Segnala ogni contrasto nel report.
 
 Metodo: proponi → l'autore approva → applica. Mai approvare da solo.
 Risposte dell'autore: ok, avanti, correggi: …, stato, prepara per revisione

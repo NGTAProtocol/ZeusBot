@@ -1,0 +1,6 @@
+# Dipendenze Python del motore (pip install -r motore/requirements.txt). Versioni con cui girano le prove (2026-10-15).
+PyYAML==6.0.1
+pymupdf==1.28.2
+Markdown==3.11.1
+# Fuori da pip: hunspell con hunspell-it e hunspell-en-us (apt); Node con Playwright e Chromium (stampa);
+# Java e Maven per LanguageTool (python3 motore/zb languagetool installa).
