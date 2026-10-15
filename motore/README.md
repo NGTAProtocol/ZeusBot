@@ -3,7 +3,8 @@
 Fabbrica generica per romanzi di qualsiasi genere: procedura, script, modelli vuoti,
 profili di genere e dati KDP. Non contiene libri reali. Il progetto completo è in
 `proposta-motore.md` (approvata). Come si lavora su un libro: `PROCEDURA.md`.
-Questo file raccoglie le regole d'uso e i comandi.
+Questo file raccoglie le regole d'uso e i comandi. Copia integrale di tutta l'infrastruttura
+(motore, regole, voci, hook), con mappa e guida alla modifica: `docs/INFRASTRUTTURA_COMPLETA.md`.
 
 ## Regole d'uso
 
