@@ -19,8 +19,8 @@ Report di sessione ogni 5 scambi o a «passaggio»: nella cartella del libro
 lavoro sul motore. Sezioni: Stato; Decisioni prese; Regole da non violare; Fatto in questa
 sessione; Punti aperti; Prossimo passo; Ripartenza (comandi e frase di apertura).
 
-Precedenza: manuale del libro (e libro.yaml) > procedura del motore > skill dell'autore;
-segnala ogni contrasto. Metodo: proponi → l'autore approva → applica; mai approvare da solo.
+Precedenza: una sola scala, in `motore/editoriale/LEGGIMI.md`; segnala ogni contrasto.
+Metodo: proponi → l'autore approva → applica; mai approvare da solo.
 Risposte dell'autore: ok, avanti, correggi: …, stato (PROCEDURA.md). Ramo: quello della
 sessione, letto da git. Tono: il testo precedente è un registro dei fatti, non si giudica.
 

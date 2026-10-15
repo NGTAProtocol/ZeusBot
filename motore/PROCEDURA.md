@@ -7,8 +7,9 @@ Regole di lavoro per qualsiasi libro. Comandi: `python3 motore/zb <comando> <lib
 
 1. **Il libro è un percorso** indicato dall'autore (oppure `ZB_LIBRO`). Il motore legge solo
    `motore/` e la cartella di quel libro, e scrive solo dentro quella cartella.
-2. **Precedenza:** manuale del libro e `libro.yaml` > profilo di genere > questa procedura >
-   skill dell'autore. Ogni contrasto si segnala.
+2. **Precedenza:** una sola scala, quella di `editoriale/LEGGIMI.md` (manuale del libro e
+   `libro.yaml` > briefing e scheda della voce > profilo di genere > ruoli editoriali > questa
+   procedura). Ogni contrasto si segnala.
 3. **Proponi → approvo → applica.** Mai approvare da solo; mai nuovi oggetti o persone in una
    scena senza richiesta.
 4. **Ramo:** solo quello assegnato dalla sessione, letto da git. Con `ZB_RAMO` impostato,
