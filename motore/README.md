@@ -5,6 +5,7 @@ profili di genere e dati KDP. Non contiene libri reali. Il progetto completo è 
 `proposta-motore.md` (approvata). Come si lavora su un libro: `PROCEDURA.md`.
 Questo file raccoglie le regole d'uso e i comandi. Copia integrale di tutta l'infrastruttura
 (motore, regole, voci, hook), con mappa e guida alla modifica: `docs/INFRASTRUTTURA_COMPLETA.md`.
+Guida di lettura per l'autore (organigramma, percorso di un libro, regole), in PDF per telefono: `docs/GUIDA_AL_SISTEMA.pdf` (sorgente `docs/GUIDA_AL_SISTEMA.md`).
 
 ## Regole d'uso
 
