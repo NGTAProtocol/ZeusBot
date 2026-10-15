@@ -19,6 +19,7 @@ Uso: python3 -B traduci.py <libro> --a <lingua> inizia | stato | prepara N | con
   cartelle di capitoli tradotti, per scegliere tra traduzione in sequenza e a blocchi con ancora di stile.
 Fedeltà: niente aggiunte, niente note o didascalie inventate, errori dell'autore resi come scritti.
 """
+import datetime
 import os
 import re
 import shutil
@@ -93,7 +94,7 @@ def inizia(cartella, libro, lingua):
     st.update({'libro': libro['titolo'], 'fase': 'guida', 'passo': 'guida e glossario', 'sottofase': None,
                'parole': {'scritte': 0, 'obiettivo': 0, 'metodo': 'unico'},
                'fatti_bloccati': comune.leggi_yaml(os.path.join(cartella, 'stato.yaml')).get('fatti_bloccati') or [],
-               'aggiornato': ''})
+               'aggiornato': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')})
     comune.scrivi(T, os.path.join(T, 'stato.yaml'), yaml.safe_dump(st, sort_keys=False, allow_unicode=True))
     comune.scrivi(T, os.path.join(T, '00-progetto', 'guida-traduzione.md'), GUIDA_MODELLO.format(
         modello=comune.MODELLO, titolo=libro['titolo'], da=libro['lingua'], a=lingua))
@@ -130,13 +131,18 @@ def corpo(testo):
 
 
 def paragrafi(testo):
-    blocchi, cur = [], []
-    for r in corpo(testo) + ['']:
-        if r.strip():
-            cur.append(r)
-        elif cur:
+    """Paragrafi di prosa: righe di prosa consecutive (righe vuote, titolo, intestazione e commenti separano)."""
+    blocchi, cur, prec = [], [], None
+    for n, r in comune.righe_prosa(testo):
+        if not r.strip():
+            continue
+        if prec is not None and n != prec + 1 and cur:
             blocchi.append(' '.join(cur))
             cur = []
+        cur.append(r.strip())
+        prec = n
+    if cur:
+        blocchi.append(' '.join(cur))
     return blocchi
 
 

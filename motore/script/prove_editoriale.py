@@ -452,8 +452,95 @@ def consumo_capsule(sez='consumo e capsule'):
           f'{d["capitoli"]} / {d["parole_capitoli"] > 0} / {d["righe_lette"] > 0} / {d["subagenti"]} / {d["durata_minuti"] is not None}', sez)
 
 
+def traduzione(sez='traduzione in inglese'):
+    """Mini-libro italiano tradotto in inglese: gate «guida» prima del capitolo 1, controlli meccanici per capitolo,
+    line e copy nella lingua di arrivo, scheda di fedeltà e ritraduzione a campione, chiusura in inglese."""
+    r = repo()
+    L, _ = nasce(r)
+    copia(os.path.join(F, 'struttura'), os.path.join(L, '03-struttura'))
+    copia(os.path.join(F, 'codex'), os.path.join(L, '02-bibbia', 'codex'))
+    copia(os.path.join(F, 'capitoli'), os.path.join(L, '04-manoscritto'))
+    copia(os.path.join(F, 'capsule'), os.path.join(L, '07-capsule'))
+    salva(r, 'libro italiano')
+    TR = os.path.join(F, 'traduzione-en')
+    p = zb(L, 'traduci', '.', '--a', 'en', 'inizia')
+    T = os.path.join(L, '08-traduzione-en')
+    lt = comune.leggi_yaml(os.path.join(T, 'libro.yaml'))
+    esito('traduci.py', 'inizia: libro di traduzione in 08-traduzione-en/', '0 / traduzione / en / guida',
+          f'{p.returncode} / {lt["modalita"]} / {lt["lingua"]} / {stato(T)["fase"]}', sez)
+    salva(r, 'traduzione avviata')
+    p = zb(T, 'pronto', '.')
+    esito('percorso.py', 'gate guida: guida modello e glossario vuoto: FERMO', '2 / True / True',
+          f'{p.returncode} / {"ancora modello" in p.stderr} / {"traduzione mancante" in p.stderr}', sez)
+    p = zb(T, 'esito', '.', '1')
+    esito('fase.py', 'nessun capitolo tradotto prima del gate guida', 2, p.returncode, sez)
+    shutil.copyfile(os.path.join(TR, 'guida-traduzione.md'), os.path.join(T, '00-progetto', 'guida-traduzione.md'))
+    shutil.copyfile(os.path.join(TR, 'glossario.yaml'), os.path.join(T, '00-progetto', 'glossario.yaml'))
+    salva(r, 'guida e glossario')
+    zb(T, 'pronto', '.')
+    fino_alla_fine(T)
+    p = zb(T, 'ok', '.')
+    esito('percorso.py', 'gate guida approvato: stesura (capitolo 1)', 'stesura', stato(T)['fase'], sez)
+    salva(r, 'gate guida')
+    p = zb(T, 'traduci', '.', '--a', 'en', 'prepara', '1')
+    prep = open(os.path.join(T, '06-diagnostica', 'preparazione', '01.md')).read()
+    esito('traduci.py', 'prepara 1: voci del glossario presenti nel capitolo', True,
+          'Basilio Corte → Basilio Corte' in prep and 'Il molo → the pier' in prep, sez)
+    m = os.path.join(T, '04-manoscritto')
+    os.makedirs(m, exist_ok=True)
+    # capitolo 2 tradotto male: paragrafo tolto, numero cambiato, nota aggiunta, parola italiana rimasta
+    giusto2 = open(os.path.join(TR, 'capitoli', '02-il-registro.md')).read()
+    for n, f in ((1, '01-il-molo.md'), (2, '02-il-registro.md'), (3, '03-la-lanterna.md')):
+        if n == 2:
+            sbagliato = giusto2.replace('“And after eleven?”\n\n', '').replace('“Did he write this?” asked Nives.\n\n', '').replace('thirty-one boats', 'thirty-one boats (31)')
+            sbagliato = sbagliato.replace('Elda closed the diesel register.', 'Elda closed the diesel register della barca.')
+            sbagliato += '\n[N. d. T.] Vallorna is an invented village.\n'
+            open(os.path.join(m, f), 'w').write(sbagliato)
+            salva(r, 'traduttore: capitolo 2 (sbagliato)')
+            p = zb(T, 'esito', '.', '2')
+            rep = open(os.path.join(T, '06-diagnostica', 'capitoli', '02.md')).read()
+            ko = sorted(re.findall(r'(?m)^\| ([^|]+?) \| KO \|', rep))
+            esito('traduci.py', 'capitolo tradotto male: KO su battute, paragrafi, numeri, residue, note', 
+                  "1 / ['battute', 'note aggiunte', 'numeri e date', 'paragrafi', 'parole residue']", f'{p.returncode} / {ko}', sez)
+        zb(T, 'traduci', '.', '--a', 'en', 'prepara', str(n))
+        shutil.copyfile(os.path.join(TR, 'capitoli', f), os.path.join(m, f))
+        salva(r, f'traduttore: capitolo {n}')
+        p = zb(T, 'esito', '.', str(n))
+        esito('fase.py', f'esito {n} della traduzione: controlli meccanici OK', 0, p.returncode, sez)
+        salva(r, f'esito {n}')
+    esito('fase.py', 'traduzione finita: line nella lingua di arrivo', 'line', stato(T)['fase'], sez)
+    for fs, rap in (('line', [(f'line/0{n}.md', 'line-editor', n) for n in (1, 2, 3)]),
+                    ('copy', [(f'copy/0{n}.md', 'correttore-italiano', n) for n in (1, 2, 3)]),
+                    ('fedelta', [('fedelta.md', 'revisore-fedelta', None)])):
+        for x, ru, n in rap:
+            intesta(T, os.path.join(TR, 'rapporti', x), f'06-diagnostica/{x}', ru, n)
+            salva(r, ru)
+        p = zb(T, 'pronto', '.')
+        esito('fase.py', f'traduzione, {fs}: gate', f'0 / {fs}', f'{p.returncode} / {stato(T)["gate_in_attesa"]}', sez)
+        fino_alla_fine(T)
+        zb(T, 'ok', '.')
+        if fs == 'fedelta':
+            os.makedirs(os.path.join(T, '06-diagnostica', 'ritraduzione'), exist_ok=True)
+            shutil.copyfile(os.path.join(TR, 'ritraduzione', '01.md'), os.path.join(T, '06-diagnostica', 'ritraduzione', '01.md'))
+            p = zb(T, 'traduci', '.', '--a', 'en', 'ritraduci', '1')
+            esito('traduci.py', 'ritraduzione a campione: numeri uguali, nessun nome perso', 'True / True',
+                  f'{"numeri_uguali True" in p.stdout} / {"nomi_persi []" in p.stdout}', sez)
+        salva(r, f'{fs} applicato')
+        zb(T, 'pronto', '.')
+        salva(r, f'fine {fs}')
+    esito('fase.py', 'traduzione: dopo la fedeltà, chiusura', 'chiusura', stato(T)['fase'], sez)
+    if shutil.which('node'):
+        p1, p2 = zb(T, 'compila', '.'), zb(T, 'impagina', '.')
+        esito('compila.py', 'edizione inglese: compila e impagina', '0 / 0', f'{p1.returncode} / {p2.returncode}', sez)
+    else:
+        saltata('compila.py', 'edizione inglese: compila e impagina', 'node assente', sez)
+    p = zb(L, 'traduci', '.', '--a', 'en', 'confronta', os.path.join(F, 'capitoli'), os.path.join(TR, 'capitoli'))
+    esito('traduci.py', 'confronta: misure di voce di due cartelle', 0, p.returncode, sez)
+    MISURE['confronto_voce'] = p.stdout.strip()
+
+
 MISURE = {}
-SEZIONI = [percorso, cartella_unica, agenti_e_comandi, consumo_capsule]
+SEZIONI = [percorso, cartella_unica, agenti_e_comandi, consumo_capsule, traduzione]
 
 
 def esegui_sezione(f):
@@ -481,3 +568,5 @@ if __name__ == '__main__':
         if r[5] != 'OK' or '--tutto' in sys.argv:
             print(' | '.join(r))
     print(f'{sum(1 for r in righe if r[5] == "OK")}/{sum(1 for r in righe if r[5] != "SALTATA")} OK')
+    for k, v in MISURE.items():
+        print(f'MISURA {k}: {v}')
