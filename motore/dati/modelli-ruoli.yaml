@@ -1,0 +1,18 @@
+# Modelli per ruolo: unica fonte (la legge «zb agenti attiva», che scrive «model:» negli agenti installati).
+# Alias verificati sulla documentazione ufficiale dei subagenti di Claude Code (2026-10-15):
+# sonnet, opus, haiku, fable, inherit, oppure un identificativo completo.
+# Regola: se il modello leggero sbaglia nel copyediting, si alza solo quel ruolo (qui, una riga).
+parallelo_massimo: 3          # line editing, copyediting e controlli per capitolo: al massimo 3 subagenti alla volta
+livelli: {forte: opus, medio: sonnet, leggero: haiku}
+ruoli:
+  architetto-struttura: forte
+  editor-strutturale: forte
+  diagnosta: forte
+  direttore-editoriale: medio
+  scrittore-voce: medio
+  line-editor: medio
+  correttore-italiano: medio
+  correttore-bozze: medio
+  capsula: leggero
+  traduttore: medio
+  revisore-fedelta: medio
