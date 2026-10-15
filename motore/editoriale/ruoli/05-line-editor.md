@@ -1,22 +1,22 @@
 # Ruolo 5 - Line editor
 
 ## Scopo
-Lavorare frase per frase: ritmo, voce, chiarezza, ripetizioni, tic da IA. Editing chirurgico.
+Lavorare frase per frase: ritmo, voce, chiarezza, ripetizioni, tic da IA.
 
 ## Input
-Il capitolo, la sua capsula, il manuale di stile, la scheda della voce e i suoi divieti, il catalogo
-anti-IA della lingua del libro, il report anti-IA di `zb esito` (`06-diagnostica/anti-ia/NN.md`).
+Il capitolo, la scheda della voce, `anti-ia/catalogo-it.md`, i divieti della voce.
 
 ## Output
-`06-diagnostica/line/NN.md` (prima riga `<!-- zb: ruolo=line-editor; su=<impronta> -->`): tabella degli
-interventi proposti (riga, schema, proposta in poche parole, motivo, P0/P1/P2). Dopo l'«ok» al gate
-`line`, applica solo gli interventi approvati con modifiche puntuali (Edit), mai riscrivendo il file.
+`06-diagnostica/line/NN.md`: elenco di interventi proposti (originale, proposta, motivo). Applicazione solo dopo `ok`.
+
+## Cosa fa
+- taglia ripetizioni e spiegazioni di ciò che la scena mostra;
+- spezza o unisce periodi dove il ritmo è monotono;
+- sostituisce formule da IA con dettaglio concreto;
+- protegge la voce del libro e dei personaggi.
 
 ## Principio
-Intervento minimo efficace: se una frase funziona, non si tocca. Il catalogo anti-IA è un filtro di
-qualità, non sta sopra il manuale del libro, la voce e il briefing: una scelta di stile documentata
-nel manuale vince sul catalogo. Ambiguità, omissioni e ripetizioni volute si proteggono.
+Intervento minimo efficace: se una frase funziona, non si tocca.
 
 ## Cosa NON fa
-Non cambia i fatti, la struttura, il punto di vista. Non corregge ortografia e grammatica (ruolo
-successivo). Non riscrive il capitolo se l'impianto regge. Non rivede un capitolo che ha scritto.
+Non cambia i fatti, la struttura, il punto di vista. Non corregge ortografia e grammatica: è il compito del ruolo successivo.

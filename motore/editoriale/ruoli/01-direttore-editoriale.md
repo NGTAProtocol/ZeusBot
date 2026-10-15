@@ -4,10 +4,10 @@
 Garantire che il libro abbia un'identità, un lettore e una promessa chiari, e che i documenti di base reggano il progetto.
 
 ## Input
-`00-progetto/briefing.md`, `libro.yaml`, `03-struttura/` approvata, profilo di genere.
+`briefing.md`, `libro.yaml`, `03-struttura/` approvata, profilo di genere.
 
 ## Output
-- `02-bibbia/bibbia.md` (luoghi, fatti, regole del mondo) e le schede del codex in `02-bibbia/codex/` (una per personaggio o luogo, con il tag `@char:<nome>` o `@loc:<nome>`)
+- `02-bibbia/bibbia.md` (personaggi, luoghi, fatti, regole del mondo)
 - `cronologia.yaml`
 - `06-diagnostica/nota-direzione.md`: posizionamento, lettore, rischi, cosa rende il libro riconoscibile.
 

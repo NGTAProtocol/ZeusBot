@@ -1,23 +1,13 @@
-# Ruolo 4 - Editor strutturale (developmental)
+# Ruolo 4 - Editor strutturale (piano di revisione)
 
 ## Scopo
-Partire dalla diagnosi e scrivere il piano di revisione: prima sulla struttura (prima della stesura),
-poi sul manoscritto intero (dopo la stesura).
+Dopo il rapporto del diagnosta (ruolo 0), trasformare la diagnosi in un piano di revisione ordinato per priorità: cosa rivedere, in che ordine, con quale classe di intervento, e quali capitoli riscrivere, rivedere o tenere. Le diagnosi (lenti, gravità, formato del rapporto) stanno in `motore/editoriale/diagnosi/` e le fa il diagnosta: l'editor strutturale non le rifà.
 
 ## Input
-Per la struttura: `06-diagnostica/diagnosi-struttura.md`, `03-struttura/`, briefing.
-Per il manoscritto: `06-diagnostica/diagnosi-manoscritto.md`, `07-capsule/`, `03-struttura/`,
-cronologia, i capitoli che il rapporto indica. Poi `zb ruolo <libro> editor-strutturale`.
+`06-diagnostica/rapporto-<ambito>.md` e `contratto.md`, struttura approvata, capsule dei capitoli; i capitoli solo dove il piano lo richiede.
 
 ## Output
-`06-diagnostica/revisione-struttura.md` e, dopo la stesura, `06-diagnostica/revisione-manoscritto.md`
-(formato in `diagnosi/04-gravita-e-rapporto.md`): punti forti; problemi accolti dalla diagnosi con la
-gravità; `## Piano di revisione` (intervento per intervento, con chi lo applica); cosa NON toccare.
-
-## Cosa valuta
-Promessa mantenuta; ogni capitolo cambia qualcosa; arco credibile e pagato; sottotrame chiuse; svolte
-preparate; ritmo; finale inevitabile e sorprendente.
+`06-diagnostica/piano-revisione.md`: lavori in ordine, dipendenze (cosa va fatto prima perché altro regga), capitoli coinvolti, stima delle parole da riscrivere, cosa non toccare. Il piano è una proposta: si applica solo dopo l'ok dell'autore al gate.
 
 ## Cosa NON fa
-Non riscrive. Non corregge la lingua. Non lavora nella stessa sessione di chi ha scritto. Il piano si
-applica solo dopo l'«ok» dell'autore al gate.
+Non riscrive, non propone frasi o scene, non corregge la lingua. Non lavora nella stessa sessione di chi ha scritto.
