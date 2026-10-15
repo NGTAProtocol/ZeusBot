@@ -14,9 +14,9 @@ assegnato alla sessione; l'unione nel ramo `motore` la decide l'autore).
 | 3 | Percorso da casa editrice (fasi e gate) | fatto | cc57896 |
 | 4 | Cartella unica del libro e controlli veri | fatto | 4872779 |
 | 5 | Ruoli come subagenti, capsule, risparmio di token | fatto | add1f4f |
-| 6 | Anti-IA | fatto | 6a383c6 |
+| 6 | Anti-IA | fatto | 787ae5e, 6a383c6 |
 | 7 | Correttore professionale italiano | fatto | 6a383c6 |
-| 8 | Lingue e traduzione | fatto (8.4 parziale, DA_FORNIRE §6) | d73221b, d73221b |
+| 8 | Lingue e traduzione | fatto (8.4 parziale, DA_FORNIRE §6) | 742dcf7, d73221b |
 | 9 | Repository esterni (`docs/ANALISI_REPOSITORY.md`) | fatto | 7f97ddb |
 | 10 | Pulizia | fatto | 138ef20 |
 | 11 | Prove | fatto | 6a383c6 (560/560) |
