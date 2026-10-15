@@ -1,0 +1,12 @@
+# Voce «pulizia» di prove/attesi.yaml (sezione passo_6), tolta con il ritiro di pulizia.py.
+passo_6:
+  pulizia:
+    # 04-manoscritto/02-l-officina.md.tmp è messo apposta: il manoscritto non si tocca mai, quindi non compare.
+    # 05-revisioni/ resta vuota dopo aver tolto la copia: è proposta anche lei.
+    elenco: ['.zb/letto-vecchia', '05-output/libro-bozza.pdf', '05-output/libro-copia.pdf', '05-output/vuota/',
+             '05-revisioni/', '05-revisioni/01-copia.md', '__pycache__/', '_build/']
+    dry_run: "0 / [] / True"
+    applica: ['.zb/letto-vecchia', '05-output/libro-bozza.pdf', '05-output/libro-copia.pdf', '05-revisioni/01-copia.md',
+              '__pycache__/a.pyc', '_build/b.html', '05-output/vuota/', '05-revisioni/', '__pycache__/', '_build/']
+    protetti: "True / True / True"
+    dopo: 0

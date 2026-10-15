@@ -1083,7 +1083,7 @@ def passo_5(A):
     esito('revisione.py', 'sola lettura', [], diff(Lv, prima), sez)
     p = zb(Lv, 'ortografia', Lv)
     esito('zb', 'ortografia ora costruito (codice, «non esiste ancora»)', a['ortografia'], f'{p.returncode} / {"non esiste ancora" in p.stderr}', sez)
-    esito('zb', 'conta <libro> --schermo', a['conta'], zb(Lv, 'conta', Lv, '--schermo').returncode, sez)
+    esito('zb', 'conta <libro>: comando ritirato (conta.py resta dentro zb esito)', a['conta'], zb(Lv, 'conta', Lv, '--schermo').returncode, sez)
 
 
 # ---------------------------------------------------------------- passo 5b
@@ -1201,37 +1201,6 @@ def passo_6(A):
     L, p = nuovo_in(ris.replace('Testo precedente:\n', 'Testo precedente: 00-progetto/testo.md\n'), altrove)
     esito('nuovo.py', 'testo precedente fuori da 01-originale: rifiutato', a['testo_altrove'],
           f'{p.returncode} / {"01-originale" in p.stderr}', sez)
-
-    # pulizia
-    a = A['pulizia']
-    L = copia_libro('mini-libro')
-    for d in ('__pycache__', '_build', '.zb', '05-output/vuota', '05-revisioni'):
-        os.makedirs(os.path.join(L, d), exist_ok=True)
-    for rel, dati in (('__pycache__/a.pyc', b'x'), ('_build/b.html', b'y'), ('.zb/letto-vecchia', b'm'),
-                      ('.zb/letto-sessione-prova', b'm'), ('05-output/libro.pdf', b'PDFDATA'),
-                      ('05-output/libro-copia.pdf', b'PDFDATA'), ('05-output/libro-bozza.pdf', b'BOZZA')):
-        open(os.path.join(L, rel), 'wb').write(dati)
-    shutil.copyfile(os.path.join(L, '04-manoscritto', '01-la-farmacia.md'), os.path.join(L, '05-revisioni', '01-copia.md'))
-    shutil.copyfile(os.path.join(L, '04-manoscritto', '02-l-officina.md'), os.path.join(L, '04-manoscritto', '02-l-officina.md.tmp'))
-    env = dict(E, ZB_SESSIONE='sessione-prova')
-    prima = recinto.foto(L)
-    vuote_prima = sorted(r for r, ds, fs in os.walk(L) if not ds and not fs)
-    p = subprocess.run([sys.executable, '-B', os.path.join(S, 'pulizia.py'), L], env=env, capture_output=True, text=True)
-    elenco = [r[2:].split(' — ')[0] for r in p.stdout.splitlines() if r.startswith('- ')]
-    esito('pulizia.py', 'elenco (dry-run)', a['elenco'], elenco, sez)
-    esito('pulizia.py', 'dry-run: niente cancellato', a['dry_run'],
-          f'{p.returncode} / {recinto.differenze(prima, recinto.foto(L))} / '
-          f'{sorted(r for r, ds, fs in os.walk(L) if not ds and not fs) == vuote_prima}', sez)
-    esito('pulizia.py', 'peso dichiarato', 'sì', 'sì' if re.search(r'elementi, [\d.]+ (B|KB|MB)', p.stdout) else 'no', sez)
-    man = {r: v for r, v in prima.items() if r.startswith('04-manoscritto/')}
-    p = subprocess.run([sys.executable, '-B', os.path.join(S, 'pulizia.py'), L, '--applica'], env=env, capture_output=True, text=True)
-    dopo = recinto.foto(L)
-    esito('pulizia.py', '--applica: tolti esattamente gli elementi elencati', a['applica'],
-          sorted(r for r in prima if r not in dopo) + sorted(e for e in elenco if e.endswith('/') and not os.path.exists(os.path.join(L, e))), sez)
-    esito('pulizia.py', '--applica: manoscritto, libro.yaml e marker corrente intatti', a['protetti'],
-          f'{all(dopo.get(r) == v for r, v in man.items())} / {"libro.yaml" in dopo} / {".zb/letto-sessione-prova" in dopo}', sez)
-    p = subprocess.run([sys.executable, '-B', os.path.join(S, 'pulizia.py'), L], env=env, capture_output=True, text=True)
-    esito('pulizia.py', 'dopo --applica: niente da pulire', a['dopo'], p.stdout.count('\n- '), sez)
 
 
 # ---------------------------------------------------------------- passo 7
@@ -2238,7 +2207,7 @@ def titoli_tempi_eta_push(A):
     # (f) zb conta non scrive file; zb push: riuscito, ramo alternativo, bundle
     Lm = copia_libro('mini-libro')
     prima = sorted(os.path.relpath(os.path.join(a, f), Lm) for a, _, fs in os.walk(Lm) for f in fs)
-    p = esegui(os.path.join(M, 'zb'), 'conta', Lm)
+    p = esegui(os.path.join(S, 'conta.py'), Lm)     # zb conta ritirato: conta.py resta il modulo di zb esito
     dopo = sorted(os.path.relpath(os.path.join(a, f), Lm) for a, _, fs in os.walk(Lm) for f in fs)
     esito('conta.py', '(f) zb conta: codice | file nuovi | totale a schermo', A['f_conta'],
           f'{p.returncode} | {len(set(dopo) - set(prima))} | {"**Totale:**" in p.stdout}', sez)

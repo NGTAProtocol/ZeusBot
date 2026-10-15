@@ -1,4 +1,4 @@
-# Struttura standard di un libro (passo 6). La legge nuovo.py; la usano pulizia.py e PROCEDURA.md.
+# Struttura standard di un libro (passo 6). La legge nuovo.py; la usano comune.controlla_struttura e PROCEDURA.md.
 # modalita: per quali modalità esiste la cartella. creazione: chi la crea e quando.
 # Nessuna cartella vuota e nessun .gitkeep: una cartella nasce con il suo primo file.
 radice:
