@@ -75,6 +75,17 @@ campi:
     campi:
       modalita: {tipo: scelta, valori: [vieta, conta, avviso], obbligatorio: true}
       massimo_per_1000_parole: {tipo: intero, obbligatorio: true}
+  anti_ia:                 # misure della sezione H di editoriale/anti-ia/catalogo-it.md (script/anti_ia.py)
+    uso: controllo
+    tipo: mappa
+    campi:
+      modalita: {tipo: scelta, valori: [avviso, blocco], obbligatorio: true}
+      frase_dev_min: {tipo: numero, obbligatorio: true}
+      apertura_max: {tipo: numero, obbligatorio: true}
+      apertura_min_frasi: {tipo: intero, obbligatorio: true}
+      formule_max_per_1000: {tipo: numero, obbligatorio: true}
+      chiusura_max_consecutivi: {tipo: intero, obbligatorio: true}
+      echi_max_per_1000: {tipo: numero, obbligatorio: true}
   lista_nera: {tipo: testo, obbligatorio: true, uso: informativo}
   parole_per_pagina: {tipo: intero, obbligatorio: true, uso: informativo}
   scene_obbligatorie: {tipo: lista, elementi: {tipo: testo}, obbligatorio: true, uso: generazione}

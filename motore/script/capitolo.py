@@ -9,6 +9,7 @@ continuità di continuita.py; anti-riciclo di riciclo.py; dichiarazioni della ri
 nascosta <!-- zb: … --> secondo «dichiarazioni» di libro.yaml; scene (solo capitoli numerati), contate
 dal separatore struttura.separatore_scena.sorgente: numero fuori da capitoli.scene_per_capitolo (KO),
 scena sotto il minimo di scene.lunghezza (KO) o sopra il massimo (AVVISO). Il sequel è informativo.
+misure anti-IA di anti_ia.py (catalogo-it.md, sezione H; AVVISO, audit in 06-diagnostica/anti-ia/NN.md).
 Report: <libro>/06-diagnostica/capitoli/NN.md, con la checklist manuale (tic fissi, voci di cronologia
 toccate e le voci del libro in checklist_capitolo di libro.yaml). Codice 1 se c'è almeno un KO.
 """
@@ -17,6 +18,7 @@ import sys
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import anti_ia  # noqa: E402
 import comune  # noqa: E402
 import conta  # noqa: E402
 import continuita  # noqa: E402
@@ -157,10 +159,15 @@ def main(argv):
     cartella, libro, profilo = comune.carica_libro(args[0])
     nome = ' '.join(args[1:])
     met, out = controlla(cartella, libro, profilo, nome)
+    met_ia, esiti_ia, _ = anti_ia.esegui(cartella, libro, profilo, nome, scrivi='--schermo' not in argv)
+    out += comune.applica_eccezioni(esiti_ia, libro)
     ko = sum(1 for r in out if r['esito'] == 'KO')
     righe = [f'# Capitolo {nome} — controlli', '', f'Libro: {libro["titolo"]} — profilo: {libro["profilo"]}.', '',
              f'Parole (metodo unico): {met["parole"]} · frase media: {met["frase_media"]} · '
              f'dialogo: {met["dialogo_percento"]}%', '',
+             f'Anti-IA (audit): deviazione delle frasi {met_ia["frase_dev"]}, apertura più frequente '
+             f'«{met_ia["apertura_parola"]}» {met_ia["apertura_quota"]:.0%}, formule {met_ia["formule_per_1000"]}/1000, '
+             f'ripetizioni {met_ia["echi_per_1000"]}/1000; elenco in 06-diagnostica/anti-ia/.', '',
              f'Esito: {ko} KO, {sum(1 for r in out if r["esito"] == "AVVISO")} avvisi.', '']
     righe += tabella(out) if out else ['Nessun KO e nessun avviso.']
     righe += ['', '## Checklist manuale', '',

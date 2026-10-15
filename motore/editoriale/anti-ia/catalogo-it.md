@@ -57,3 +57,7 @@ Le soglie vanno tarate sui mini-libri di prova e scritte nel profilo di genere.
 
 ## I. Modalità audit
 Il controllo non riscrive: produce un elenco (posizione, schema, proposta) in `06-diagnostica/`. Le correzioni si applicano dopo `ok`.
+
+## Riferimenti (letti solo quando servono)
+- `catalogo-it-esteso.md`: sezioni J-P (soggetto e pronomi, contrasto, connettivi, calchi, tipografia, falsi positivi).
+- `formule.yaml`: le formule misurabili che `zb esito` conta (script/anti_ia.py); soglie nel profilo di genere (`anti_ia`).

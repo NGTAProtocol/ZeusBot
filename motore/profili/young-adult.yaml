@@ -28,6 +28,14 @@ frase_media: [10, 15]                         # PROPOSTA approvata
 dialogo_percento: [30, 50]                    # PROPOSTA approvata
 similitudini_max_per_parole: 300              # PROPOSTA da confermare: valore non presente nelle tabelle approvate
 parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21; il numero è PROPOSTA approvata
+anti_ia:                                      # editoriale/anti-ia/catalogo-it.md, sezione H; soglie PROPOSTA tarate sui mini-libri di prova (anti_ia.py)
+  modalita: avviso                            # PROPOSTA: audit, non blocca
+  frase_dev_min: 4.0                          # PROPOSTA: mini-libri 4,9-19,9
+  apertura_max: 0.30                          # PROPOSTA: mini-libri 0,12-0,23
+  apertura_min_frasi: 20                      # PROPOSTA: sotto le 20 frasi la quota non è affidabile
+  formule_max_per_1000: 3.0                   # PROPOSTA: mini-libri 0,0-0,6
+  chiusura_max_consecutivi: 3                 # PROPOSTA: mini-libri fino a 3
+  echi_max_per_1000: 12.0                     # PROPOSTA: mini-libri 2,2-9,7
 lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20 · informativo, non controllato
 parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA approvata) · informativo, non controllato
 scene_obbligatorie:

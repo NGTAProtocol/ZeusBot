@@ -2778,6 +2778,63 @@ def ruoli_prove(A):
           f'{p.returncode} / {"Modalità della separazione (dati/hook.yaml): blocco" in p.stdout} / {"s5: line-editor" in p.stdout}', sez)
 
 
+# ---------------------------------------------------------------- anti-IA (sezione H del catalogo)
+
+TESTO_IA = """# 3 — La stazione
+
+<!-- zb: chiusura=G -->
+
+Lei arrivò alla stazione in quel momento. Lei guardò il binario vuoto senza parlare. Lei sentì un turbinio di emozioni dentro.
+Lei pensò alla lettera della sorella. Lei non sapeva ancora che tutto sarebbe cambiato. Lei strinse la valigia con forza.
+All'improvviso il treno entrò in stazione. Lei salì sulla carrozza in fondo. Lei trovò un posto accanto al finestrino.
+Lei osservò la città che spariva piano. Lei provò un misto di paura e speranza. Lei chiuse gli occhi per un attimo.
+In quel momento il controllore entrò nella carrozza. Lei mostrò il biglietto con un sorriso. Lei ripose il biglietto nella borsa.
+Non era solo un viaggio, era una fuga verso casa. Lei sapeva che nulla sarebbe stato più come prima. Lei guardò ancora fuori.
+All'improvviso la luce cambiò sulle colline. Lei sentì il cuore che batteva forte nel petto. Lei respirò piano per calmarsi.
+Lei pensò di nuovo alla sorella lontana. Lei ricordò la casa vicino al fiume. Lei sorrise senza un motivo preciso.
+Sul biglietto c'era scritto "torno presto" con la sua calligrafia.
+"""
+
+
+def anti_ia_prove(A):
+    import anti_ia
+    sez = 'anti-IA'
+    for nome in ('mini-libro', 'mini-libro-romance'):
+        L = copia_libro(nome)
+        _, libro, profilo = comune.carica_libro(L)
+        segnalati = []
+        for n, _ in comune.unita(L, libro):
+            _, _, esiti = anti_ia.misura(L, libro, profilo, n)
+            segnalati += [f'{n}:{e["controllo"]}' for e in esiti]
+        esito('anti_ia.py', f'{nome}: taratura, nessuna segnalazione sui capitoli di prova', [], segnalati, sez)
+    L = copia_libro('mini-libro')
+    _, libro, profilo = comune.carica_libro(L)
+    p3 = dict(comune.unita(L, libro))['3']
+    open(p3, 'w', encoding='utf-8').write(TESTO_IA)
+    sha = comune.sha256_file(p3)
+    met, audit, esiti = anti_ia.misura(L, libro, profilo, '3')
+    esito('anti_ia.py', 'capitolo inventato «da IA»: misure accese', A['ia_controlli'],
+          sorted({e['controllo'] for e in esiti}), sez)
+    esito('anti_ia.py', 'capitolo inventato «da IA»: apertura più frequente / formule per mille sopra 3', A['ia_misure'],
+          f'{met["apertura_parola"]} / {met["formule_per_1000"] > 3}', sez)
+    p = esegui(os.path.join(S, 'capitolo.py'), L, '3')
+    rep = os.path.join(L, '06-diagnostica', 'anti-ia', '03.md')
+    righe_audit = [r for r in open(rep, encoding='utf-8').read().splitlines() if r.startswith('| ') and 'formula' in r]
+    esito('capitolo.py', 'audit non distruttivo: report anti-ia scritto, capitolo intatto, avvisi non bloccanti', A['audit'],
+          f'{os.path.isfile(rep)} / {len(righe_audit) >= 5} / {comune.sha256_file(p3) == sha} / '
+          f'{"anti-ia:formule" in open(os.path.join(L, "06-diagnostica", "capitoli", "03.md"), encoding="utf-8").read()}', sez)
+    ly = os.path.join(L, 'libro.yaml')
+    open(ly, 'a', encoding='utf-8').write('anti_ia: {modalita: blocco}\n')
+    p2 = esegui(os.path.join(S, 'capitolo.py'), L, '3')
+    esito('capitolo.py', 'anti_ia.modalita: blocco in libro.yaml: KO e codice 1', A['blocco'],
+          f'{p2.returncode} / {"anti-ia:aperture | KO" in open(os.path.join(L, "06-diagnostica", "capitoli", "03.md"), encoding="utf-8").read()}', sez)
+    R = copia_libro('mini-libro-romance')
+    open(os.path.join(R, 'libro.yaml'), 'a', encoding='utf-8').write('anti_ia: {chiusura_max_consecutivi: 2}\n')
+    _, lr, pr = comune.carica_libro(R)
+    _, _, es = anti_ia.misura(R, lr, pr, '3')
+    esito('anti_ia.py', 'chiusure uguali di fila oltre la soglia del libro', A['chiusure'], [e['controllo'] for e in es], sez)
+
+
 # ---------------------------------------------------------------- tabella
 
 # ---------------------------------------------------------------- appendici e titoli interni
@@ -2831,7 +2888,7 @@ def appendici(A):
     esito('compila.py', 'appendice dichiarata e assente: FERMO', A['fermo_assente'], ottenuto, sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove, 'anti_ia': anti_ia_prove}
 
 
 def main(argv):

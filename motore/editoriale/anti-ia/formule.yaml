@@ -1,0 +1,44 @@
+# Formule misurabili del catalogo anti-IA (catalogo-it.md, sezioni A-C, J-N), lette da script/anti_ia.py.
+# Espressioni regolari Python, senza distinzione di maiuscole; \x27 è l'apostrofo dritto, ’ quello tipografico.
+# tipo «formula»: conta per mille parole (soglia anti_ia.formule_max_per_1000 del profilo di genere);
+# tipo «coerenza»: va confrontata con il sistema di dialogo del libro (09-scelte-fisse.md), si segnala a parte.
+# Le formule si contano solo fuori dalle righe di dialogo (il parlato può usarle per scelta della voce).
+formule:
+  - {id: un_misto_di, sezione: B, tipo: formula, regex: '\bun(?:\s+strano)?\s+misto\s+di\s+(?:paura|rabbia|tristezza|gioia|dolore|sollievo|rassegnazione|speranza|eccitazione|ansia|stupore|nostalgia|colpa|vergogna|rimpianto|meraviglia|terrore|disperazione|tenerezza|curiosità|desiderio|incredulità|euforia|timore|orgoglio)\b'}
+  - {id: turbinio_di, sezione: B, tipo: formula, regex: '\bun\s+turbinio\s+di\b'}
+  - {id: sensazione_indescrivibile, sezione: B, tipo: formula, regex: '\b(?:sensazione|emozione|sentimento)\s+(?:quasi\s+)?indescrivibile\b|\bindescrivibile\s+(?:sensazione|emozione)\b'}
+  - {id: cuore_batteva_forte, sezione: B, tipo: formula, regex: '\bcuore\s+(?:(?:che|gli|le|mi|ti|ci)\s+)*(?:batteva|battevano|martellava)\s+(?:forte|all[\x27’]impazzata)\b'}
+  - {id: non_sapeva_ancora_che, sezione: B, tipo: formula, regex: '\bnon\s+(?:sapeva|sapevano|immaginava|immaginavano)\s+ancora\s+che\b|\bnon\s+poteva\s+ancora\s+(?:sapere|immaginare)\b'}
+  - {id: il_destino_stava_per, sezione: B, tipo: formula, regex: '\bil\s+destino\s+(?:stava\s+per|era\s+sul\s+punto\s+di|aveva\s+in\s+serbo)\b'}
+  - {id: nulla_piu_come_prima, sezione: B, tipo: formula, regex: '\b(?:nulla|niente)\s+sarebbe\s+(?:più\s+)?(?:stato|tornato|rimasto)\s+(?:più\s+)?(?:come|uguale|lo\s+stesso)\b'}
+  - {id: silenzio_carico_di, sezione: B, tipo: formula, regex: '\bsilenzio\s+(?:carico|pesante|denso|gravido)\s+di\b'}
+  - {id: aria_densa_di, sezione: B, tipo: formula, regex: '\bl[\x27’]aria\s+(?:era|sembrava|pareva|si\s+era\s+fatta)\s+(?:densa|carica|satura|impregnata|piena)\s+di\b'}
+  - {id: in_quel_momento, sezione: B, tipo: formula, regex: '\bin\s+quel\s+(?:preciso\s+)?momento\b'}
+  - {id: all_improvviso, sezione: B, tipo: formula, regex: '\b(?:all[\x27’]improvviso|improvvisamente)\b'}
+  - {id: non_solo_ma_anche, sezione: A, tipo: formula, regex: '\bnon\s+(?:solo|soltanto)\b[^.!?\n]{0,100}?\bma\s+anche\b'}
+  - {id: non_e_x_e_y, sezione: K, tipo: formula, regex: '\bnon\s+(?:è|era|fu|sono|erano)\s+(?:solo\s+|soltanto\s+|semplicemente\s+)?[^.!?\n,;]{1,60}[,;]\s*(?:ma\s+)?(?:è|era|fu|sono|erano)\b'}
+  - {id: la_vera_x_era, sezione: K, tipo: formula, regex: '\bla\s+(?:vera|reale)\s+(?:domanda|questione|paura|storia|ragione|differenza)\s+(?:non\s+)?(?:è|era|fu)\b'}
+  - {id: rincorsa, sezione: K, tipo: formula, regex: '\b(?:ecco\s+il\s+punto|parliamoci\s+chiaro|la\s+verità\s+è\s+che|la\s+cosa\s+(?:più\s+)?(?:strana|interessante|importante)\s+è\s+che)\b'}
+  - {id: tuttavia_inizio, sezione: L, tipo: formula, regex: '(?m)(?:^|(?<=[.!?»])\s+)(?:tuttavia|ciononostante|pertanto)\s*,'}
+  - {id: inoltre_inizio, sezione: L, tipo: formula, regex: '(?m)(?:^|(?<=[.!?»])\s+)(?:inoltre|per\s+di\s+più|in\s+aggiunta)\s*,'}
+  - {id: in_definitiva, sezione: L, tipo: formula, regex: '\bin\s+(?:definitiva|sintesi|ultima\s+analisi)\b|\balla\s+fine\s+della\s+giornata\b'}
+  - {id: gerundi_a_catena, sezione: L, tipo: formula, regex: '(?:\b(?!quando\b)\w{2,}(?:ando|endo)\b[^.!?;\n]{0,80}){3}'}
+  - {id: gerundio_di_commento, sezione: L, tipo: formula, regex: '\b(?:sottolineando|evidenziando|testimoniando|riflettendo|confermando|rimarcando)\s+(?:così\s+|ancora\s+una\s+volta\s+)?(?:la|il|lo|l[\x27’]|i|le|gli|come|che|quanto)\b'}
+  - {id: pronome_soggetto_apertura, sezione: J, tipo: formula, regex: '(?m)(?:^|(?<=[.!?»])\s+)(?:lui|lei|egli|ella)\s+(?!stess[oa]\b)[a-zàèéìòù]+(?:va|vano|ò|rono|ì|é)\b'}
+  - {id: possessivo_parte_corpo, sezione: J, tipo: formula, regex: '\b(?:alz|scoss|mosse|piegò|girò|abbassò)\w*\s+(?:la|il|le|i)\s+(?:sua|suo|sue|suoi)\s+(?:mano|mani|testa|spalle|occhi|braccio|braccia|piede|piedi|dito|dita)\b'}
+  - {id: vale_la_pena_sottolineare, sezione: M, tipo: formula, regex: '\b(?:vale\s+la\s+pena|è\s+(?:importante|fondamentale|doveroso)|occorre|bisogna)\s+(?:sottolineare|evidenziare|notare)\b'}
+  - {id: in_un_mondo_in_cui, sezione: M, tipo: formula, regex: '\bin\s+un\s+(?:mondo|tempo|epoca|era)\s+in\s+cui\b|\bnel\s+(?:panorama|contesto)\s+(?:attuale|odierno|contemporaneo)\b'}
+  - {id: si_erge, sezione: M, tipo: formula, regex: '\bsi\s+(?:erge|ergeva|ergono|ergevano|staglia|stagliava|stagliano)\b'}
+  - {id: un_vero_e_proprio, sezione: M, tipo: formula, regex: '\b(?:un|uno|una|dei|delle|degli)\s+(?:vera|vero|veri|vere)\s+e\s+propri[oaie]\b'}
+  - {id: testimonianza_di, sezione: M, tipo: formula, regex: '\btestimonianza\s+(?:di|del|della|dell[\x27’])\s*(?:forza|resilienza|coraggio|potere|bellezza|tenacia|amore|determinazione|passione|ingegno|creatività|spirito|tempo|volontà|umanità|dedizione|talento|lealtà|devozione)\b'}
+  - {id: andare_a_infinito, sezione: M, tipo: formula, regex: '\b(?:va|vanno|andrà|andranno|andava|andavano)\s+a\s+(?:cambiare|influenzare|ridefinire|incidere|sottolineare|evidenziare|rappresentare|costituire|creare|definire)\b'}
+  - {id: calco_realizzare, sezione: M, tipo: formula, regex: '\brealizz(?:ò|ai|ava|ammo|arono|ando)\s+(?:che|di\s+(?:aver|essere|non))\b'}
+  - {id: calco_supportare, sezione: M, tipo: formula, regex: '\bsupport(?:are|ava|avano|ato|ata|ando|erà|ò)\b|\b(?:mi|ti|ci|lo|la)\s+supporta\b'}
+  - {id: calco_focalizzarsi, sezione: M, tipo: formula, regex: '\bfocalizz\w*\b'}
+  - {id: assolutamente_si, sezione: M, tipo: formula, regex: '\bassolutamente\s+sì\b'}
+  - {id: metafora_astratta, sezione: M, tipo: formula, regex: '\b(?:un|una|un[\x27’])\s*(?:arazzo|sinfonia|mosaico|caleidoscopio|vortice|ondata)\s+di\s+(?:emozioni|sensazioni|ricordi|colori|sentimenti|pensieri|suoni|profumi|dubbi|speranze|paure)\b'}
+  - {id: trattino_inglese, sezione: N, tipo: coerenza, regex: '(?m)^(?![ \t]*[—–])[^\n]*?[^\s—–][ ]?[—–][ ]?[^\s—–]'}
+  - {id: virgolette_dritte, sezione: N, tipo: coerenza, regex: '"[^"\n]+"'}
+  - {id: virgolette_curve_inglesi, sezione: N, tipo: coerenza, regex: '[“”]'}
+  - {id: disse_con_tono, sezione: C, tipo: formula, regex: '\b(?:disse|rispose|replicò|sussurrò|mormorò|ribatté|esclamò)\s+(?:con|in)\s+(?:un\s+)?(?:tono|modo)\s+(?:\w+\s+)?(?:triste|arrabbiat\w+|freddo|duro|dolce|ansioso|gelido|rassegnat\w+|deciso|stanco)\b'}
+  - {id: disse_avverbio, sezione: C, tipo: formula, regex: '\b(?:disse|rispose|replicò|sussurrò|mormorò|ribatté|esclamò)\s+\w{3,}mente\b'}

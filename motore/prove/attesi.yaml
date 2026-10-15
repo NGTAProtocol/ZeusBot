@@ -456,7 +456,7 @@ scene:
       scene_con_motivo: "0 / [('capitoli.scene_per_capitolo', [1, 1]), ('scene.lunghezza', [400, 1200])]"
   informativi: ['battiti', 'capitoli.coerenza', 'lista_nera', 'lunghezza_totale.consigliata', 'lunghezza_totale.parti_obbligatorie',
                 'lunghezza_totale.parti_sopra', 'parole_per_atto', 'parole_per_pagina', 'scene.budget_interno', 'scene.sequel']
-  controllati: ['capitoli.minimo', 'capitoli.scene_per_capitolo', 'capitoli.tolleranza_budget', 'capitoli.tolleranza_totale',
+  controllati: ['anti_ia', 'capitoli.minimo', 'capitoli.scene_per_capitolo', 'capitoli.tolleranza_budget', 'capitoli.tolleranza_totale',
                 'dialogo_percento', 'frase_media', 'parole_filtro', 'scene.lunghezza', 'similitudini_max_per_parole']
 
 manuale_leggibile:
@@ -764,3 +764,9 @@ ruoli:
   altra_sessione: "0 / struttura"
   scrittore_revisore: "2 / True"
   stato: "0 / True / True"
+anti_ia:
+  ia_controlli: ['anti-ia:aperture', 'anti-ia:coerenza', 'anti-ia:formule', 'anti-ia:monotonia']
+  ia_misure: "lei / True"
+  audit: "True / True / True / True"
+  blocco: "1 / True"
+  chiusure: ['anti-ia:chiusure']
