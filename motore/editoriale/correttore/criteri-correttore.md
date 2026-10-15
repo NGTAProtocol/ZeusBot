@@ -26,7 +26,7 @@
 - trattini: lineetta (–) per incisi, trattino (-) per composti.
 
 ## 5. Parole vere al posto di altre
-- affetto/effetto, accettare/eccepire, prescindere/presumere, eminente/imminente;
+- affetto/effetto, accettare/eccepire, prescindere/presumere, avvenire/avvenire;
 - "piuttosto che" non vale "oppure";
 - "qual è", "tal quale", "quant'è";
 - anglicismi inutili e calchi: segnalare, non correggere se la voce lo richiede.
