@@ -539,8 +539,65 @@ def traduzione(sez='traduzione in inglese'):
     MISURE['confronto_voce'] = p.stdout.strip()
 
 
+def correttore(sez='correttore e anti-IA'):
+    """zb ortografia (italiano e inglese, livelli a e b) e audit anti-IA su testi con errori e schemi voluti."""
+    r = repo()
+    L, _ = nasce(r)
+    copia(os.path.join(F, 'struttura'), os.path.join(L, '03-struttura'))
+    copia(os.path.join(F, 'capitoli'), os.path.join(L, '04-manoscritto'))
+    c1 = os.path.join(L, '04-manoscritto', '01-il-molo.md')
+    open(c1, 'a').write('\nQuesta e la prova di un errrore voluto.\n')
+    p = zb(L, 'ortografia', '.')
+    rep = open(os.path.join(L, '06-diagnostica', 'controllo-ortografico.md')).read()
+    esito('ortografia.py', 'italiano, livello a: refuso trovato da Hunspell it_IT', 'True / True',
+          f'{"| errrore |" in rep} / {"(a) Hunspell it_IT | sì" in rep}', sez)
+    if os.environ.get('ZB_LANGUAGETOOL'):
+        esito('ortografia.py', 'italiano, livello b: LanguageTool eseguito sul libro', True, '(b) LanguageTool | sì' in rep, sez)
+    else:
+        saltata('ortografia.py', 'italiano, livello b: LanguageTool eseguito sul libro', 'LanguageTool assente (ZB_LANGUAGETOOL non impostata)', sez)
+    esito('ortografia.py', 'checklist per la lettura mirata (e/è, accordi, parole vere)', True, 'e/è' in rep or '«è»' in rep, sez)
+    # audit anti-IA: capitolo con frasi uguali e aperture uguali; tre chiusure uguali di fila
+    shutil.copyfile(os.path.join(F, 'capitoli', '01-il-molo.md'), c1)
+    monotono = '## 2\n*Vallorna — mercoledì 5 ottobre*\n<!-- zb: chiusura=D -->\n\n' + ' '.join(
+        ['Nives guardò il mare dal molo grigio.'] * 30) + ' Chi era stato?\n'
+    open(os.path.join(L, '04-manoscritto', '02-il-registro.md'), 'w').write(monotono)
+    for f, sig in (('03-la-lanterna.md', 'D'),):
+        t = open(os.path.join(L, '04-manoscritto', f)).read().replace('chiusura=X', 'chiusura=' + sig)
+        t = t.rstrip('\n').rstrip('.') + '?\n'
+        open(os.path.join(L, '04-manoscritto', f), 'w').write(t)
+    p = zb(L, 'antiia', '.')
+    righe_out = {x.split(':')[0]: x for x in p.stdout.splitlines()}
+    esito('antiia.py', 'capitolo monotono: P1 variazione_frasi e P2 aperture_uguali', 'True / True',
+          f'{"P1 variazione_frasi" in righe_out.get("2", "")} / {"P2 aperture_uguali" in righe_out.get("2", "")}', sez)
+    esito('antiia.py', 'tre capitoli di fila con la stessa chiusura: P0 al terzo', True,
+          'P0 chiusure_uguali' in righe_out.get('3', ''), sez)
+    esito('antiia.py', 'audit non distruttivo: il capitolo resta identico', monotono,
+          open(os.path.join(L, '04-manoscritto', '02-il-registro.md')).read(), sez)
+    p = zb(L, 'antiia', '.', '1')
+    esito('antiia.py', 'capitolo del mini-libro: nessuna P0/P1 (soglie tarate)', True,
+          'P0' not in p.stdout.splitlines()[0] and 'P1' not in p.stdout.splitlines()[0], sez)
+    # inglese
+    T = os.path.join(r, 'libri', 'inglese')
+    os.makedirs(T)
+    b = open(os.path.join(F, 'briefing.md')).read().replace('Lingua: it', 'Lingua: en').replace('Lingue target: en', 'Lingue target:')
+    open(os.path.join(T, 'briefing.md'), 'w').write(b)
+    p = zb(r, 'nuovo', 'libri/inglese/briefing.md')
+    esito('nuovo.py', 'libro scritto direttamente in inglese: struttura con modelli in inglese', '0 / True',
+          f'{p.returncode} / {"Chapter outline" in open(os.path.join(T, "03-struttura", "05-scaletta.md")).read()}', sez)
+    copia(os.path.join(F, 'traduzione-en', 'capitoli'), os.path.join(T, '04-manoscritto'))
+    c = os.path.join(T, '04-manoscritto', '01-il-molo.md')
+    open(c, 'a').write('\nThis is a tset of the speling.\n')
+    zb(T, 'ortografia', '.')
+    rep = open(os.path.join(T, '06-diagnostica', 'controllo-ortografico.md')).read()
+    esito('ortografia.py', 'inglese, livello a: refusi trovati con Hunspell en_US', 'True / True',
+          f'{"| tset |" in rep and "| speling |" in rep} / {"(a) Hunspell en_US | sì" in rep}', sez)
+    p = zb(T, 'capitolo', '.', '1')
+    esito('capitolo.py', 'inglese: controlli del capitolo eseguiti (battute con le virgolette)', True,
+          os.path.isfile(os.path.join(T, '06-diagnostica', 'capitoli', '01.md')), sez)
+
+
 MISURE = {}
-SEZIONI = [percorso, cartella_unica, agenti_e_comandi, consumo_capsule, traduzione]
+SEZIONI = [percorso, cartella_unica, agenti_e_comandi, consumo_capsule, traduzione, correttore]
 
 
 def esegui_sezione(f):

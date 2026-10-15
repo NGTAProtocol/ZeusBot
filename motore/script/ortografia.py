@@ -56,18 +56,18 @@ def parole_della_riga(riga):
                 yield x
 
 
-def hunspell(parole):
+def hunspell(parole, dizionario='it_IT'):
     if not shutil.which('hunspell'):
         return None, 'hunspell non installato'
     r = subprocess.run(['hunspell', '-D'], capture_output=True, text=True, env=ENV, input='')
-    if 'it_IT' not in r.stdout + r.stderr:
-        return None, 'dizionario it_IT non trovato'
-    r = subprocess.run(['hunspell', '-l', '-i', 'UTF-8', '-d', 'it_IT'], input='\n'.join(sorted(parole)),
+    if dizionario not in r.stdout + r.stderr:
+        return None, f'dizionario {dizionario} non trovato'
+    r = subprocess.run(['hunspell', '-l', '-i', 'UTF-8', '-d', dizionario], input='\n'.join(sorted(parole)),
                        capture_output=True, text=True, env=ENV)
     return set(r.stdout.split()), None
 
 
-def languagetool(testi):
+def languagetool(testi, codice='it'):
     """[(unita, riga, regola, messaggio, testo)] oppure (None, motivo)."""
     d = os.environ.get('ZB_LANGUAGETOOL')
     if not d:
@@ -82,7 +82,7 @@ def languagetool(testi):
             f = os.path.join(tmp, 'unita.txt')
             open(f, 'w', encoding='utf-8').write(testo)
             r = subprocess.run(['java', '-cp', os.path.join(d, '*'), 'org.languagetool.commandline.Main',
-                                '-l', 'it', '--json', f], capture_output=True, text=True, env=ENV, timeout=600)
+                                '-l', codice, '--json', f], capture_output=True, text=True, env=ENV, timeout=600)
             try:
                 dati = json.loads(r.stdout[r.stdout.index('{'):])
             except ValueError:
@@ -107,22 +107,24 @@ def controlla(cartella, libro):
             for w in parole_della_riga(riga):
                 posizioni.setdefault(w, []).append(f'{os.path.relpath(p, cartella)}:{n}')
         testi.append((os.path.relpath(p, cartella), testo, prosa))
-    sconosciute, errore_h = hunspell(set(posizioni))
+    orto = comune.lingue()[libro.get('lingua', 'it')]['ortografia']
+    sconosciute, errore_h = hunspell(set(posizioni), orto.get('hunspell', 'it_IT'))
     trovate = {}
     if sconosciute is not None:
         trovate = {w: posizioni[w] for w in sorted(sconosciute)
                    if w in posizioni and w not in am and w.lower() not in am_min}
-    lt, motivo_lt = languagetool(testi)
+    lt, motivo_lt = languagetool(testi, orto.get('languagetool', 'it'))
     if lt is not None:
         lt = [x for x in lt if not (x[2].startswith('MORFOLOGIK') and (x[4] in am or x[4].lower() in am_min))]
     return trovate, errore_h, lt, motivo_lt
 
 
 def report(libro, trovate, errore_h, lt, motivo_lt):
+    orto = comune.lingue()[libro.get('lingua', 'it')]['ortografia']
     r = [f'# Controllo ortografico — {libro["titolo"]}', '', '## Livelli eseguiti', '',
          '| Livello | Eseguito | Note |', '|---|---|---|',
-         f'| (a) Hunspell it_IT | {"no" if errore_h else "sì"} | {errore_h or "parole ammesse: libro + dati/parole-ammesse-it.txt"} |',
-         f'| (b) LanguageTool | {"no" if lt is None else "sì"} | {motivo_lt or "regole italiane, solo righe di prosa"} |',
+         f'| (a) Hunspell {orto.get("hunspell", "it_IT")} | {"no" if errore_h else "sì"} | {errore_h or "parole ammesse: libro + dati/parole-ammesse-it.txt"} |',
+         f'| (b) LanguageTool | {"no" if lt is None else "sì"} | {motivo_lt or "regole " + orto.get("languagetool", "it") + ", solo righe di prosa"} |',
          '| (c) Checklist manuale | sì | in fondo al report, per la lettura umana |', '']
     if not errore_h:
         r += ['## (a) Parole non riconosciute da Hunspell', '',
