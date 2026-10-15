@@ -11,17 +11,17 @@ assegnato alla sessione; l'unione nel ramo `motore` la decide l'autore).
 |---|---|---|---|
 | 1 | Avvio e fotografia dei ruderi (`docs/STATO_ATTUALE.md`) | fatto | 6b59a9d |
 | 2 | Livello editoriale (`motore/editoriale/`) | fatto | cc58ae6, cc12973 |
-| 3 | Percorso da casa editrice (fasi e gate) | in corso | cc57896 |
-| 4 | Cartella unica del libro e controlli veri | in corso | 4872779 |
-| 5 | Ruoli come subagenti, capsule, risparmio di token | in corso | add1f4f |
-| 6 | Anti-IA | in corso | 787ae5e |
-| 7 | Correttore professionale italiano | da fare | — |
-| 8 | Lingue e traduzione | in corso | 742dcf7 |
-| 9 | Repository esterni (`docs/ANALISI_REPOSITORY.md`) | in corso | — |
-| 10 | Pulizia | da fare | — |
-| 11 | Prove | da fare | — |
-| 12 | File derivati | da fare | — |
-| 13 | Comandi mobile e flusso di scrittura | in corso | add1f4f |
+| 3 | Percorso da casa editrice (fasi e gate) | fatto | cc57896 |
+| 4 | Cartella unica del libro e controlli veri | fatto | 4872779 |
+| 5 | Ruoli come subagenti, capsule, risparmio di token | fatto | add1f4f |
+| 6 | Anti-IA | fatto | 6a383c6 |
+| 7 | Correttore professionale italiano | fatto | 6a383c6 |
+| 8 | Lingue e traduzione | fatto (8.4 parziale, DA_FORNIRE §6) | d73221b, d73221b |
+| 9 | Repository esterni (`docs/ANALISI_REPOSITORY.md`) | fatto | 7f97ddb |
+| 10 | Pulizia | fatto | 138ef20 |
+| 11 | Prove | fatto | 6a383c6 (560/560) |
+| 12 | File derivati | fatto | 9ee2466 |
+| 13 | Comandi mobile e flusso di scrittura | fatto | add1f4f |
 
 ## Note per sezione
 
@@ -41,4 +41,4 @@ assegnato alla sessione; l'unione nel ramo `motore` la decide l'autore).
 ### 3-8 (stato al 2026-10-15)
 - Codice: fasi editoriali, struttura, codex, canone, capsule, compatto, prepara, ruolo, agenti, consumo,
   recinto Bash e pre-commit, salva, anti-IA, traduci. Prove editoriali: 70/70 OK.
-- Da fare: fixture e prova della traduzione in inglese; LanguageTool (script e livello b); confronto 8.4.
+- Suite finale: 560/560 OK con LanguageTool (zb salva, commit della documentazione).
