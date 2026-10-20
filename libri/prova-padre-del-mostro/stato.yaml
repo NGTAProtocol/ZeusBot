@@ -1,7 +1,7 @@
 libro: Il padre del mostro
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: documenti
+fase: pagina_campione
 passo: da completare
 gate_in_attesa: null
 lotto:
@@ -60,10 +60,114 @@ documenti_approvati:
     sha256: 6438522125d667abf2fc40e4715211f13e1a1f4e459cdd31778cb069ab9fff10
     commit: bdd8ba5
     senza_gate: true
+  libro.yaml:
+    sha256: aeb8fd34490160204c9d55bce4ea9fe6762ecfb7866ece493e0eb841141d2438
+    commit: da81e89
+    senza_gate: true
+  02-bibbia/bibbia.md:
+    sha256: c2e28acbd43297ca13c6dbe75ce03820cd2523ec7cd64c3752388f0f4b0f3e69
+    commit: 1c413c3
+    senza_gate: true
+  cronologia.yaml:
+    sha256: 1e3c4b4dcda148d3260aab5830f88d158d0a80f5d4fdae5353847fb08a072db7
+    commit: 1c413c3
+    senza_gate: true
+  03-architettura/manuale-di-stile.md:
+    sha256: 12e2d8c73e698ddbbeb7eb308bdf8505a79cfaa31f44f86ef62161e3d5d9b84e
+    commit: 9d6cc05
+    senza_gate: true
+  06-diagnostica/nota-direzione.md:
+    sha256: 3fa148260296560dc6cb8e4ad56b2d015ae052f19dbec8a3fd044c2d12754b9e
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/alfredo-giorgi.md:
+    sha256: 3e2101be08e70ee14d9ebdc6c695a4dd997aad9bf6904272d1718199202d9992
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/caporedattore.md:
+    sha256: b2e09ad9ca98e7f954b44e4d63dc4aae569c0c0597d47012095fbba55d48e3f6
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/carcere.md:
+    sha256: 0714d21ee7ff360a295dda0f206a40f5eeaf1a56e97804419edaa93e739eec11
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/carlo-de-stefano.md:
+    sha256: a22e7990d26f72a89ff7537849aabc628aab544108d02b08d40958e6d54f22f9
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/caserma-squadra.md:
+    sha256: f57efd71e3923eccb9cd6be0d47034ccf84b9f8ba25c0b3bb6cba9e9d1e1025a
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/dalia.md:
+    sha256: 3714a6be004cbf03081b1fc1e508be3bc824c453cfaaed04b3cfa7536120fff0
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/ex-funzionario-anziano.md:
+    sha256: 04da6a1cbf31099fdf8a1a7230c98a75be012b77415e398f790695579172fead
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/flora-notarangelo.md:
+    sha256: bf5096673f6b026eb0d68635dddd7c167cd2bbeb2175b1d8eac2aea924fbe68e
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/fonte-fondo.md:
+    sha256: 0f89a8ad37af7c4370b988c7b82f407d01933b888dc3b605d8c45e0a6ec25924
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/francesco-de-biasi.md:
+    sha256: 292be123672e96a699c0e502c5902f60f0d7a45f7aecdfd489b82a0238526451
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/luigi-bertola.md:
+    sha256: e00bc25f11e1a16efdb8caebe4809ca594dea2cbf843207f08e15bf85e67e862
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/luogo-appuntamento.md:
+    sha256: 2f067988005b7f0f47ae3d6a87e9ff6f05ce7655cad3dfbd315034c9db272b22
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/luogo-incontro.md:
+    sha256: 522e5517199b5b05843cf08e1ed720253f8b817767e4c8158e16bb50e5a52c26
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/luogo-prima-strage.md:
+    sha256: f7332fc78b9742d7f69f52900411e08960e9ba5fc21f696933e44512393da475
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/luogo-seconda-strage.md:
+    sha256: e5f1f165cf96a6a658928764c4c9a01bdb660bfb9d5c5ec57b235608699a985f
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/procura.md:
+    sha256: 4a7125149311f46233ef7342e2fc4455b1f0948343cbdcb3af3afa0d7fc6de57
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/redazione.md:
+    sha256: a0a90a5246d135495317d985596952b331454af39d262262b39ad64f9c95d6ca
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/sede-fondo.md:
+    sha256: 41c2e3cc926ba82d373db5e27c51a2c51d4879c57585d719297c1d2c20e0ed9e
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/sottufficiale-squadra.md:
+    sha256: 1f331bf7d5a6bd1dfc0fc4b02490edbf49d97e29a4f53227db186f6537291d79
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/territorio-organizzazione.md:
+    sha256: 543bef3838f1cf7b546edd1974149af4f18ad5f5a897b4b525d6e5225e094c21
+    commit: 1c413c3
+    senza_gate: true
+  02-bibbia/codex/vito-kurgan.md:
+    sha256: 6e3f2fbf5ed388e9b0b1c8eed8bd6b60182b37aab91c689f26e23594a57e8e76
+    commit: 1c413c3
+    senza_gate: true
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-20T15:27:39Z'
+aggiornato: '2026-10-20T15:31:20Z'
 sottofase: null
 fatti_bloccati:
 - Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
