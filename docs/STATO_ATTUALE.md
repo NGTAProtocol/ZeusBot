@@ -84,7 +84,7 @@ Note:
 |---|---|
 | Il recinto non vede Bash | il matcher PreToolUse di `dati/hook-settings.esempio.json` comprende `Bash`; in più `precommit.py` |
 | Hook spenti sul ramo motore | nel repository non c'è `.claude/`; `avvio_motore()` ferma se ci sono `.claude/agents`, `.claude/commands` o `.claude/settings.json` |
-| «Lavoro sul motore» non verificabile | in `avvio.py` c'è `avvio_motore()` («zb avvio» senza libro: controlli e riga «Letto»); il punto 12 dell'integrazione è ancora «da fare» |
+| «Lavoro sul motore» non verificabile | in `avvio.py` c'è `avvio_motore()` («zb avvio» senza libro: controlli e riga «Letto»); punto 12 dell'integrazione: funzione di ccr tenuta identica e coperta da 4 prove (sezione `avvio motore`, D15) |
 | requirements mancante | c'è `motore/requirements.txt` (PyYAML, pymupdf, Markdown) |
 | Prove non automatiche | `zb push` sul lavoro del motore vuole l'impronta di una `zb prove` intera e tutta OK (D7) |
 | Modello libro.yaml senza appendici | `motore/modelli/libro.yaml` riga 41: `appendici: []` |
@@ -112,5 +112,5 @@ Note:
 
 ## 5. Prove
 
-Ultimo totale registrato: 633 prove, 633 OK, 0 saltate (punto 8b, commit `06cbb70`: 632 del punto 9, D12, più 1 di D16).
+Ultimo totale registrato: 637 prove, 637 OK, 0 saltate (punto 12: 632 del punto 9, D12, più 1 di D16 e 4 di D15).
 Questa fotografia non ha lanciato `zb prove`.

@@ -8,10 +8,10 @@ riprendi da lì».
 - Lavoro sul motore del 2026-10-20: integrazione nel ramo `integrazione-editoriale` (repository
   `NGTAProtocol/ZeusBot`, D1). Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore`
   (`origin/motore`, 971b6df). I rami `motore` e `main` non sono toccati (`main` in questo repository non esiste, D2).
-  Ultimo commit: `git log -1` (prima del commit del punto 11: 06cbb70, allineato a origin).
-- Punti dell'integrazione: 1-10 e 8b fatti e su origin; 11 (documentazione rigenerata, D14) nel commit che porta
-  questo file; 12 (`avvio_motore()` con la riga «Letto:», D15) da fare.
-- Suite: **633/633 OK** al punto 8b (06cbb70), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+  Ultimo commit: `git log -1` (prima del commit del punto 12: 286f793, allineato a origin).
+- Punti dell'integrazione: 1-11 e 8b fatti e su origin; 12 (`avvio_motore()` con la riga «Letto:», D15) nel commit
+  che porta questo file. Resta `zb salva`.
+- Suite: **637/637 OK** al punto 12 (633 del punto 11 più le 4 di `avvio motore`), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
@@ -43,7 +43,7 @@ riprendi da lì».
   (D9).
 - Anti-IA: `antiia.py` di ccr con soglie per profilo e `libro.yaml`, `formule.yaml`, modalità `blocco`; sezione B
   non contata (`formule_sezione_b: false`). Un solo comando LanguageTool: `zb languagetool` (D10).
-- Prove: tutte quelle dei due rami (632) più 1 del punto 8b (633); `prove.py` con `--solo` e `--sezione` (D12).
+- Prove: tutte quelle dei due rami (632) più 1 del punto 8b e 4 del punto 12 (637); `prove.py` con `--solo` e `--sezione` (D12).
 - Licenze Apache-2.0: solo idee, nessun testo (D13).
 
 ## Regole da non violare
@@ -79,14 +79,14 @@ Commit su `integrazione-editoriale` (tra parentesi le prove della suite a quel c
 - 06cbb70 (633) punto 8b: le note della pausa di lettura arrivano allo scrittore con `zb prepara` (D16).
 Punto 11 (D14), nel commit che porta questo file: `docs/INFRASTRUTTURA_COMPLETA.md` dal generatore, guida (md e pdf),
 README, PROCEDURA, STATO_ATTUALE, AVANZAMENTO_LAVORO, questo file e `motore/report-motore.md`; nomi
-`formule_catalogo_per_mille` corretti; `[--ruolo R]` nell'uso di `zb avvio`. Da fare: punto 12 (D15: sezione di
-prove `avvio motore`).
+`formule_catalogo_per_mille` corretti; `[--ruolo R]` nell'uso di `zb avvio`: commit 286f793 (633).
+Punto 12 (D15), nel commit che porta questo file: `avvio_motore()` di ccr tenuta identica; sezione di prove
+`avvio motore` (4 prove).
 
 ## Punti aperti
 
-1. Punto 11: documentazione rigenerata (D14), salvato con questo file.
-2. Punto 12: `avvio_motore()` con la riga «Letto:» (da fare, D15); il totale delle prove con la sezione
-   `avvio motore` si legge alla suite di `zb salva`.
+1. Punto 11: documentazione rigenerata (D14), commit 286f793.
+2. Punto 12: `avvio_motore()` con la riga «Letto:» (D15), salvato con questo file.
 3. Poi `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
 4. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
    anti-IA; coppia «avvenire/avvenire» nei criteri del correttore; licenza di APODICTIC; verifica dei dati KDP
@@ -98,7 +98,7 @@ prove `avvio motore`).
 
 ## Prossimo passo
 
-Chiudere i punti 11 e 12, poi `zb salva` e controllo con `git status -sb` e `git log -1`. Dopo, l'autore legge
+`zb salva` e controllo con `git status -sb` e `git log -1`. Dopo, l'autore legge
 `docs/DA_VERIFICARE_AUTORE.md` e decide se unire il ramo nel `motore`.
 
 ## Ripartenza

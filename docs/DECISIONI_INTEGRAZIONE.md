@@ -289,3 +289,19 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
   `script/capsula.py`. Le stesse incoerenze dentro i 28 file (subagenti «nove», capsula 180 / 150-180) sono elencate in
   `docs/DA_VERIFICARE_AUTORE.md`, non corrette. PROCEDURA e guida dicono che `zb prepara` passa le note della
   pausa allo scrittore (D16).
+
+## D15. Punto 12: `avvio_motore()` con la riga «Letto:»
+- La funzione di ccr è nel ramo integrato identica a d2b8814 (confronto con `diff`): «zb avvio» senza libro, solo con
+  «lavoro sul motore», controlli e riga «Letto» con CLAUDE.md, PROCEDURA, passaggio di consegne e LEGGIMI editoriale.
+- Nessuna prova la copriva: aggiunta la sezione `avvio motore` (4 prove, su una copia del motore in un repository
+  temporaneo): fermo senza «lavoro sul motore»; riga «Letto» con i quattro file, righe e sha256 giusti, allineato a
+  origin; nessuna scrittura; fermo con una cartella `libri/`.
+- Nomi superati: `catalogo-it-esteso.md` (riga 7), `formule.yaml` (riga 3) e `DA_VERIFICARE_AUTORE.md` dicevano ancora
+  misura `formule_per_mille` / soglia `formule_per_mille_max` (adattamento del punto 2); dal punto 7 la misura è
+  `formule_catalogo_per_mille` con soglia `formule_catalogo_per_mille_max` (`script/antiia.py`). Corretti i nomi, nessun
+  altro testo.
+- Tre testi del motore rimasti indietro (segnalati rileggendo il codice per README e PROCEDURA), corretti: l'uso di
+  `zb avvio` in `dati/comandi.yaml` ora mostra `[--ruolo R]` (avvio.py lo accettava dal punto 5); il docstring di
+  `percorso.py` dice che i libri nuovi nascono con `gate: [lettura]` (punto 8), non `gate: []`; il titolo della sezione
+  9 del manuale generato da `nuovo.py` dice che gli override si approvano al gate «documenti» solo se libro.yaml lo
+  elenca.

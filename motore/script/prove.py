@@ -2704,6 +2704,40 @@ def cartella_unica_prove(A):
           f'{p.returncode} / {"zb prove" in p.stderr}', sez)
 
 
+def avvio_motore_letto(A):
+    """«zb avvio» senza libro (avvio_motore di ccr, tenuta nell'integrazione, punto 12): fermo senza «lavoro sul
+    motore»; con «zb lavoro motore» riga «Letto» con CLAUDE.md, PROCEDURA, passaggio di consegne e LEGGIMI
+    editoriale (righe, sha256, commit) e allineamento a origin; fermo se il ramo del motore contiene libri/."""
+    sez = 'avvio motore'
+    b = Banco()
+    r = b.r
+    shutil.copytree(M, os.path.join(r, 'motore'), ignore=shutil.ignore_patterns('__pycache__'))
+    shutil.copy(os.path.join(os.path.dirname(M), 'CLAUDE.md'), os.path.join(r, 'CLAUDE.md'))
+    b.salva('motore')
+    zb = os.path.join(r, 'motore', 'zb')
+
+    def avvio():
+        return subprocess.run([sys.executable, '-B', zb, 'avvio'], cwd=r, env=b.E, capture_output=True, text=True)
+    p = avvio()
+    esito('avvio.py', 'zb avvio senza libro e senza «lavoro sul motore»: fermo', A['senza_lavoro'],
+          f'{p.returncode} / {"lavoro sul motore non dichiarato" in p.stderr + p.stdout}', sez)
+    subprocess.run([sys.executable, '-B', zb, 'lavoro', 'motore'], cwd=r, env=b.E, capture_output=True, text=True)
+    p = avvio()
+    letto = next((x for x in p.stdout.splitlines() if x.startswith('Letto: ')), '')
+    file_letti = re.findall(r'([\w./-]+) \((\d+) righe, sha256 ([0-9a-f]{12}), commit [0-9a-f]+\)', letto)
+    giusti = bool(file_letti) and all(comune.sha256_file(os.path.join(r, f))[:12] == h and
+                 len(open(os.path.join(r, f), encoding='utf-8').read().splitlines()) == int(n) for f, n, h in file_letti)
+    esito('avvio.py', 'lavoro sul motore: riga «Letto» con i quattro file (righe e sha256 giusti), allineato a origin',
+          A['letto'], f'{p.returncode} / {", ".join(f for f, _, _ in file_letti)} / {giusti} / '
+          f'{"allineato a origin: sì" in p.stdout}', sez)
+    esito('avvio.py', 'zb avvio sul motore non scrive nulla', 'pulito',
+          b.git(r, 'status', '--porcelain').stdout.strip() or 'pulito', sez)
+    os.makedirs(os.path.join(r, 'libri'))
+    p = avvio()
+    esito('avvio.py', 'ramo del motore con una cartella libri/: fermo', A['con_libri'],
+          f'{p.returncode} / {"cartella libri/" in p.stdout}', sez)
+
+
 def ruoli_prove(A):
     """Un ruolo per sessione e separazione tra chi scrive e chi revisiona (da motore, 971b6df), con i nomi del
     pacchetto (rapporto-struttura.md del diagnosta) e il comando unico «zb ruolo»."""
@@ -3037,7 +3071,7 @@ def correttore(A):
           f'{p.returncode} / {"già pronto" in p.stdout} / {"export ZB_LANGUAGETOOL=" in p.stdout}', sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore}
 
 
 def main(argv):

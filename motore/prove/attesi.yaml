@@ -759,6 +759,12 @@ cartella_unica:
   bash: [2, 0, 0, 2, 2, 0, 0, 0]
   push_senza_prove: "2 / True"
 
+avvio_motore_letto:
+  # punto 12 dell'integrazione: avvio_motore() di ccr, riga «Letto» sul lavoro del motore
+  senza_lavoro: "2 / True"
+  letto: "0 / CLAUDE.md, motore/PROCEDURA.md, motore/passaggio-di-consegne.md, motore/editoriale/LEGGIMI.md / True / True"
+  con_libri: "2 / True"
+
 ruoli:
   # da motore (971b6df), con il gate «struttura» automatico: dopo il «pronto» riuscito la fase è «documenti»
   dalla_fase: "0 / architetto-struttura / True"

@@ -1,7 +1,7 @@
 # Infrastruttura completa del sistema casa editrice
 
 - **Data:** 2026-10-20
-- **Ramo:** `integrazione-editoriale`; **commit di partenza:** `06cbb7055e32f58c8fb7778b681ca4170bc3e6f7 «integrazione 8b: le note della pausa di lettura arrivano allo scrittore»`: tutti i file sono copiati da questo stato.
+- **Ramo:** `integrazione-editoriale`; **commit di partenza:** `286f793425e07fab1f0b84c5c4db1be506ef454d «integrazione 11: documentazione rigenerata sul motore integrato»`: tutti i file sono copiati da questo stato.
 - **File inclusi:** 250 file tracciati (esclusa `docs/`); i binari sono descritti con dimensione e sha256.
 - **Esclusi per regola:** `libri/` e ogni manoscritto (mai sul ramo `motore`); la banca-voci (repository separato, contiene nomi reali: non si copia qui); le esportazioni precedenti, nella storia git e sul ramo d'archivio dei documenti.
 - **Rigenerazione:** `python3 -B docs/genera_infrastruttura.py`. Verifica in fondo.
@@ -4405,7 +4405,7 @@ aggiornato: ""
 <a id="file-motore-passaggio-di-consegne-md"></a>
 #### FILE: motore/passaggio-di-consegne.md
 
-114 righe, sha256 `1389633d7a7dd41c81c056164cb792375e7cfa750d8cd5662774f4dd0e5e496f`.
+114 righe, sha256 `916714fd3fa4ce53989d2b177662026c6ab6dd04e2a0b05716d58bb51f763064`.
 
 `````markdown
 # Passaggio di consegne: motore
@@ -4418,10 +4418,10 @@ riprendi da lì».
 - Lavoro sul motore del 2026-10-20: integrazione nel ramo `integrazione-editoriale` (repository
   `NGTAProtocol/ZeusBot`, D1). Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore`
   (`origin/motore`, 971b6df). I rami `motore` e `main` non sono toccati (`main` in questo repository non esiste, D2).
-  Ultimo commit: `git log -1` (prima del commit del punto 11: 06cbb70, allineato a origin).
-- Punti dell'integrazione: 1-10 e 8b fatti e su origin; 11 (documentazione rigenerata, D14) nel commit che porta
-  questo file; 12 (`avvio_motore()` con la riga «Letto:», D15) da fare.
-- Suite: **633/633 OK** al punto 8b (06cbb70), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+  Ultimo commit: `git log -1` (prima del commit del punto 12: 286f793, allineato a origin).
+- Punti dell'integrazione: 1-11 e 8b fatti e su origin; 12 (`avvio_motore()` con la riga «Letto:», D15) nel commit
+  che porta questo file. Resta `zb salva`.
+- Suite: **637/637 OK** al punto 12 (633 del punto 11 più le 4 di `avvio motore`), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
@@ -4453,7 +4453,7 @@ riprendi da lì».
   (D9).
 - Anti-IA: `antiia.py` di ccr con soglie per profilo e `libro.yaml`, `formule.yaml`, modalità `blocco`; sezione B
   non contata (`formule_sezione_b: false`). Un solo comando LanguageTool: `zb languagetool` (D10).
-- Prove: tutte quelle dei due rami (632) più 1 del punto 8b (633); `prove.py` con `--solo` e `--sezione` (D12).
+- Prove: tutte quelle dei due rami (632) più 1 del punto 8b e 4 del punto 12 (637); `prove.py` con `--solo` e `--sezione` (D12).
 - Licenze Apache-2.0: solo idee, nessun testo (D13).
 
 ## Regole da non violare
@@ -4489,14 +4489,14 @@ Commit su `integrazione-editoriale` (tra parentesi le prove della suite a quel c
 - 06cbb70 (633) punto 8b: le note della pausa di lettura arrivano allo scrittore con `zb prepara` (D16).
 Punto 11 (D14), nel commit che porta questo file: `docs/INFRASTRUTTURA_COMPLETA.md` dal generatore, guida (md e pdf),
 README, PROCEDURA, STATO_ATTUALE, AVANZAMENTO_LAVORO, questo file e `motore/report-motore.md`; nomi
-`formule_catalogo_per_mille` corretti; `[--ruolo R]` nell'uso di `zb avvio`. Da fare: punto 12 (D15: sezione di
-prove `avvio motore`).
+`formule_catalogo_per_mille` corretti; `[--ruolo R]` nell'uso di `zb avvio`: commit 286f793 (633).
+Punto 12 (D15), nel commit che porta questo file: `avvio_motore()` di ccr tenuta identica; sezione di prove
+`avvio motore` (4 prove).
 
 ## Punti aperti
 
-1. Punto 11: documentazione rigenerata (D14), salvato con questo file.
-2. Punto 12: `avvio_motore()` con la riga «Letto:» (da fare, D15); il totale delle prove con la sezione
-   `avvio motore` si legge alla suite di `zb salva`.
+1. Punto 11: documentazione rigenerata (D14), commit 286f793.
+2. Punto 12: `avvio_motore()` con la riga «Letto:» (D15), salvato con questo file.
 3. Poi `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
 4. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
    anti-IA; coppia «avvenire/avvenire» nei criteri del correttore; licenza di APODICTIC; verifica dei dati KDP
@@ -4508,7 +4508,7 @@ prove `avvio motore`).
 
 ## Prossimo passo
 
-Chiudere i punti 11 e 12, poi `zb salva` e controllo con `git status -sb` e `git log -1`. Dopo, l'autore legge
+`zb salva` e controllo con `git status -sb` e `git log -1`. Dopo, l'autore legge
 `docs/DA_VERIFICARE_AUTORE.md` e decide se unire il ramo nel `motore`.
 
 ## Ripartenza
@@ -6430,7 +6430,7 @@ La chiave grande è quella del retro; la vetrina si apre con la chiave piccola.
 <a id="file-motore-prove-attesi-yaml"></a>
 #### FILE: motore/prove/attesi.yaml
 
-796 righe, sha256 `cc8568e428292f3f35b6cbdabceebcb5434c038156ab287391635d8a93dcecc0`.
+802 righe, sha256 `f5d5547aff6fbd1bccff1c759a96a1842644bbd1f40e89fa1ef5a85f62b06fd2`.
 
 `````yaml
 # Esiti attesi delle prove del motore sui due mini-libri inventati (proposta B.2.2, B.7).
@@ -7193,6 +7193,12 @@ cartella_unica:
   # redirezione in /tmp (fuori dal repository), git checkout di un ramo
   bash: [2, 0, 0, 2, 2, 0, 0, 0]
   push_senza_prove: "2 / True"
+
+avvio_motore_letto:
+  # punto 12 dell'integrazione: avvio_motore() di ccr, riga «Letto» sul lavoro del motore
+  senza_lavoro: "2 / True"
+  letto: "0 / CLAUDE.md, motore/PROCEDURA.md, motore/passaggio-di-consegne.md, motore/editoriale/LEGGIMI.md / True / True"
+  con_libri: "2 / True"
 
 ruoli:
   # da motore (971b6df), con il gate «struttura» automatico: dopo il «pronto» riuscito la fase è «documenti»
@@ -10761,7 +10767,7 @@ La pensione è chiusa, la proprietaria è in ospedale e ad aprire la porta c'è 
 <a id="file-motore-report-motore-md"></a>
 #### FILE: motore/report-motore.md
 
-325 righe, sha256 `81538923f40b6bcbbdbd998880cb34762ffb47a72a14f1d102f5adbf0c85216f`.
+324 righe, sha256 `4957704e37bb90387cf3a2ad53ab68d650ce209ae5892414352e0e06251cfcde`.
 
 `````markdown
 # Report del motore editoriale
@@ -10907,8 +10913,8 @@ Mini-libri inventati in `prove/`: giallo (`mini-libro`, A5, 16 pagine), romance 
 5,5 × 8,5, 23 pagine), adozione (`mini-libro-adozione`), editoriale (`mini-libro-editoriale`, con traduzione in
 inglese), più briefing e schede di pubblicazione inventati. Autori inventati («Autore di Prova», «Autrice di Prova»).
 
-Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella cartella temporanea, al commit
-06cbb70, punto 8b):
+Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella cartella temporanea, al punto 12,
+637 righe):
 
 | Sezione | Prove | Sezione | Prove |
 |---|---|---|---|
@@ -10930,13 +10936,13 @@ Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella c
 | interludi e grafie | 10 | traduzione in inglese | 17 |
 | correggi e passo | 4 | correttore e anti-IA | 10 |
 | unità consentite e interludi | 7 | | |
-| fase e rinomine | 6 | | |
-| esclusioni e budget | 6 | **Totale** | **633** |
+| fase e rinomine | 6 | avvio motore | 4 |
+| esclusioni e budget | 6 | **Totale** | **637** |
 
 Da dove vengono (D12): ccr 560 prove (d2b8814), `motore` 520 (971b6df); le 65 prove che esistevano solo in
 `motore` sono tutte presenti; in più 5 prove della pausa di lettura e 2 nate dalla divisione di prove esistenti.
-Il punto 12 (D15, non ancora salvato) aggiunge la sezione `avvio motore` con 4 prove su `zb avvio` senza libro; il
-totale con queste prove non è verificato in questo report.
+Dopo il punto 9: 1 prova delle note della pausa allo scrittore (punto 8b, D16, in «percorso editoriale») e la sezione
+`avvio motore` con 4 prove su `zb avvio` senza libro (punto 12, D15).
 
 Non coperto dalle prove: libri oltre le 24 pagine, quindi le fasce interne oltre la prima;
 `zb pacchetto` su un libro completo; un PDF con immagini; i formati citati diversi da 5,5 × 8,5 e A5.
@@ -11086,9 +11092,8 @@ luoghi reali.
 
 ## 13. Esito della suite
 
-633 prove, 633 OK, 0 saltate (commit 06cbb70, punto 8b: le 632 del punto 9, D12, più 1 di D16), con
-LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza `ZB_BANCA_VOCI`. Le 4 prove della sezione `avvio motore` (punto 12)
-si contano alla prossima suite intera, quella di `zb salva`.
+637 prove, 637 OK, 0 saltate (punto 12: le 632 del punto 9, D12, più 1 di D16 e 4 della sezione `avvio motore`,
+D15), con LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza `ZB_BANCA_VOCI`.
 `````
 
 <a id="file-motore-requirements-txt"></a>
@@ -18723,7 +18728,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-prove-py"></a>
 #### FILE: motore/script/prove.py
 
-3098 righe, sha256 `bb29ae3433113d8ff0685416a3b9aee8f968e0a6f75874f4c15fb2d0e60bac92`.
+3132 righe, sha256 `9a7cd9ed252e51fdde9d1809333eb2a637269cbcbb5c932780dab1f80336d7bf`.
 
 `````python
 """Prove ripetibili del motore (comando «zb prove»).
@@ -21432,6 +21437,40 @@ def cartella_unica_prove(A):
           f'{p.returncode} / {"zb prove" in p.stderr}', sez)
 
 
+def avvio_motore_letto(A):
+    """«zb avvio» senza libro (avvio_motore di ccr, tenuta nell'integrazione, punto 12): fermo senza «lavoro sul
+    motore»; con «zb lavoro motore» riga «Letto» con CLAUDE.md, PROCEDURA, passaggio di consegne e LEGGIMI
+    editoriale (righe, sha256, commit) e allineamento a origin; fermo se il ramo del motore contiene libri/."""
+    sez = 'avvio motore'
+    b = Banco()
+    r = b.r
+    shutil.copytree(M, os.path.join(r, 'motore'), ignore=shutil.ignore_patterns('__pycache__'))
+    shutil.copy(os.path.join(os.path.dirname(M), 'CLAUDE.md'), os.path.join(r, 'CLAUDE.md'))
+    b.salva('motore')
+    zb = os.path.join(r, 'motore', 'zb')
+
+    def avvio():
+        return subprocess.run([sys.executable, '-B', zb, 'avvio'], cwd=r, env=b.E, capture_output=True, text=True)
+    p = avvio()
+    esito('avvio.py', 'zb avvio senza libro e senza «lavoro sul motore»: fermo', A['senza_lavoro'],
+          f'{p.returncode} / {"lavoro sul motore non dichiarato" in p.stderr + p.stdout}', sez)
+    subprocess.run([sys.executable, '-B', zb, 'lavoro', 'motore'], cwd=r, env=b.E, capture_output=True, text=True)
+    p = avvio()
+    letto = next((x for x in p.stdout.splitlines() if x.startswith('Letto: ')), '')
+    file_letti = re.findall(r'([\w./-]+) \((\d+) righe, sha256 ([0-9a-f]{12}), commit [0-9a-f]+\)', letto)
+    giusti = bool(file_letti) and all(comune.sha256_file(os.path.join(r, f))[:12] == h and
+                 len(open(os.path.join(r, f), encoding='utf-8').read().splitlines()) == int(n) for f, n, h in file_letti)
+    esito('avvio.py', 'lavoro sul motore: riga «Letto» con i quattro file (righe e sha256 giusti), allineato a origin',
+          A['letto'], f'{p.returncode} / {", ".join(f for f, _, _ in file_letti)} / {giusti} / '
+          f'{"allineato a origin: sì" in p.stdout}', sez)
+    esito('avvio.py', 'zb avvio sul motore non scrive nulla', 'pulito',
+          b.git(r, 'status', '--porcelain').stdout.strip() or 'pulito', sez)
+    os.makedirs(os.path.join(r, 'libri'))
+    p = avvio()
+    esito('avvio.py', 'ramo del motore con una cartella libri/: fermo', A['con_libri'],
+          f'{p.returncode} / {"cartella libri/" in p.stdout}', sez)
+
+
 def ruoli_prove(A):
     """Un ruolo per sessione e separazione tra chi scrive e chi revisiona (da motore, 971b6df), con i nomi del
     pacchetto (rapporto-struttura.md del diagnosta) e il comando unico «zb ruolo»."""
@@ -21765,7 +21804,7 @@ def correttore(A):
           f'{p.returncode} / {"già pronto" in p.stdout} / {"export ZB_LANGUAGETOOL=" in p.stdout}', sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore}
 
 
 def main(argv):

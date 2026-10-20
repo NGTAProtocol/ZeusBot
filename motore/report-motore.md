@@ -141,8 +141,8 @@ Mini-libri inventati in `prove/`: giallo (`mini-libro`, A5, 16 pagine), romance 
 5,5 × 8,5, 23 pagine), adozione (`mini-libro-adozione`), editoriale (`mini-libro-editoriale`, con traduzione in
 inglese), più briefing e schede di pubblicazione inventati. Autori inventati («Autore di Prova», «Autrice di Prova»).
 
-Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella cartella temporanea, al commit
-06cbb70, punto 8b):
+Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella cartella temporanea, al punto 12,
+637 righe):
 
 | Sezione | Prove | Sezione | Prove |
 |---|---|---|---|
@@ -164,13 +164,13 @@ Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella c
 | interludi e grafie | 10 | traduzione in inglese | 17 |
 | correggi e passo | 4 | correttore e anti-IA | 10 |
 | unità consentite e interludi | 7 | | |
-| fase e rinomine | 6 | | |
-| esclusioni e budget | 6 | **Totale** | **633** |
+| fase e rinomine | 6 | avvio motore | 4 |
+| esclusioni e budget | 6 | **Totale** | **637** |
 
 Da dove vengono (D12): ccr 560 prove (d2b8814), `motore` 520 (971b6df); le 65 prove che esistevano solo in
 `motore` sono tutte presenti; in più 5 prove della pausa di lettura e 2 nate dalla divisione di prove esistenti.
-Il punto 12 (D15, non ancora salvato) aggiunge la sezione `avvio motore` con 4 prove su `zb avvio` senza libro; il
-totale con queste prove non è verificato in questo report.
+Dopo il punto 9: 1 prova delle note della pausa allo scrittore (punto 8b, D16, in «percorso editoriale») e la sezione
+`avvio motore` con 4 prove su `zb avvio` senza libro (punto 12, D15).
 
 Non coperto dalle prove: libri oltre le 24 pagine, quindi le fasce interne oltre la prima;
 `zb pacchetto` su un libro completo; un PDF con immagini; i formati citati diversi da 5,5 × 8,5 e A5.
@@ -320,6 +320,5 @@ luoghi reali.
 
 ## 13. Esito della suite
 
-633 prove, 633 OK, 0 saltate (commit 06cbb70, punto 8b: le 632 del punto 9, D12, più 1 di D16), con
-LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza `ZB_BANCA_VOCI`. Le 4 prove della sezione `avvio motore` (punto 12)
-si contano alla prossima suite intera, quella di `zb salva`.
+637 prove, 637 OK, 0 saltate (punto 12: le 632 del punto 9, D12, più 1 di D16 e 4 della sezione `avvio motore`,
+D15), con LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza `ZB_BANCA_VOCI`.

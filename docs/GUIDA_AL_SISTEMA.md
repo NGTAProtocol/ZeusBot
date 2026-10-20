@@ -597,7 +597,7 @@ Le eccezioni sono in `motore/dati/cartella-unica.yaml`: `CLAUDE.md`, `.gitignore
 
 `zb push` fa il push del ramo corrente; se fallisce riprova, poi tenta un ramo alternativo, poi un `git bundle`. Sul ramo di un libro controlla prima la cartella unica. Sul **lavoro del motore** vuole una `zb prove` intera e tutta OK sullo stato attuale: le prove lasciano un'impronta, e senza quell'impronta il push non parte (<span class="fonte">motore/script/push.py; motore/script/prove.py</span>).
 
-Al punto 9 dell'integrazione le prove erano 632, tutte OK; al punto 8b, 633 (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, D12 e D16</span>).
+Al punto 9 dell'integrazione le prove erano 632, tutte OK; al punto 8b, 633; al punto 12, 637 (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, D12, D15 e D16</span>).
 
 ## Altre protezioni, senza hook
 

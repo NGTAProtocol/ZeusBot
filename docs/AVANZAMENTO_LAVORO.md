@@ -63,8 +63,8 @@ Fotografia del motore integrato: `docs/STATO_ATTUALE.md`.
 | 9 | Prove | fatto | 7770e6c | 632 |
 | 10 | Attribuzioni e analisi dei repository | fatto | 078b9b3 | 632 |
 | 8b | Note della pausa di lettura passate allo scrittore (D16) | fatto | 06cbb70 | 633 |
-| 11 | Documentazione rigenerata | fatto (commit dopo 06cbb70: `git log`) | — | 633 |
-| 12 | `avvio_motore()` con la riga «Letto:» | da fare | — | — |
+| 11 | Documentazione rigenerata | fatto | 286f793 | 633 |
+| 12 | `avvio_motore()` con la riga «Letto:» | fatto (commit dopo 286f793: `git log`) | — | 637 |
 
 Dopo il punto 12: `zb salva`.
 
