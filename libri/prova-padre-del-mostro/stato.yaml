@@ -6,14 +6,14 @@ passo: pausa di lettura
 gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli: []
+  capitoli:
+  - 1
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 3
-tentativi:
-  '1': 1
+tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 6412
+  scritte: 6389
   obiettivo: 70000
   metodo: unico
 documenti_approvati:
@@ -201,7 +201,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-20T16:29:00Z'
+aggiornato: '2026-10-20T23:58:34Z'
 sottofase: null
 fatti_bloccati:
 - Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
@@ -235,3 +235,8 @@ correzioni_registrate:
   motivo: riscrittura con la voce aggiornata (note di lettura dell'autore ai capitoli 1-3)
   sha256_precedente: a8c2d725bf8821701d32c63d71e397b5dc4033bd9af2e7b4ab7665c87d96f316
   sha256_corretto: f7ad8fa466715c7f0f5e34ce2938e9592dd79c4b3a66c46924c17f96501b0f09
+- data: '2026-10-20'
+  file: 04-manoscritto/01-l-ultimo-appuntamento.md
+  motivo: correzione unica dopo il KO frase_media 5.7 (frasi brevi unite)
+  sha256_precedente: f7ad8fa466715c7f0f5e34ce2938e9592dd79c4b3a66c46924c17f96501b0f09
+  sha256_corretto: 7e92b8720b3167acaff19dbf2037ba70f45692208d60038e7d47e0f51bc03d50
