@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0b0d17;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+        color: #f4f4f5;
+      }
+      /* Background graphics */
+      #bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(160deg, #0b0d17 0%, #1b1446 55%, #3a0f3f 100%);
+      }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(40px);
+        opacity: 0.55;
+      }
+      #orb-a {
+        width: 620px;
+        height: 620px;
+        left: -160px;
+        top: 180px;
+        background: #6d5dfc;
+      }
+      #orb-b {
+        width: 520px;
+        height: 520px;
+        right: -140px;
+        bottom: 260px;
+        background: #ff4fa3;
+      }
+      /* Text layout */
+      #content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 56px;
+        padding: 0 96px;
+        text-align: center;
+      }
+      #title {
+        display: block;
+        width: 100%;
+        font-size: 148px;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+      #title-text {
+        display: block;
+      }
+      #bar {
+        display: block;
+        width: 280px;
+        height: 12px;
+        border-radius: 6px;
+        background: linear-gradient(90deg, #6d5dfc, #ff4fa3);
+      }
+      .sub {
+        display: block;
+        width: 100%;
+        min-height: 72px;
+      }
+      .sub-text {
+        display: block;
+        font-size: 56px;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #d4d4f8;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-txxr"
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="10"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div data-hf-id="hf-pf0e" id="bg" class="clip" data-start="0" data-duration="10" data-track-index="0"></div>
+      <div data-hf-id="hf-kb9k" id="orb-a" class="orb clip" data-start="0" data-duration="10" data-track-index="6" data-layout-allow-overflow></div>
+      <div data-hf-id="hf-j2yk" id="orb-b" class="orb clip" data-start="0" data-duration="10" data-track-index="7" data-layout-allow-overflow></div>
+
+      <div data-hf-id="hf-lb60" id="content">
+        <div data-hf-id="hf-vrdo" id="title" class="clip" data-start="0" data-duration="10" data-track-index="1">
+          <span data-hf-id="hf-dvsk" id="title-text">HyperFrames</span>
+        </div>
+        <div data-hf-id="hf-63p7" id="bar-clip" class="clip" data-start="0" data-duration="10" data-track-index="2">
+          <span data-hf-id="hf-11fl" id="bar"></span>
+        </div>
+        <div data-hf-id="hf-jwl9" id="sub-1" class="sub clip" data-start="0" data-duration="10" data-track-index="3">
+          <span data-hf-id="hf-8uxs" class="sub-text">Scrivi HTML.</span>
+        </div>
+        <div data-hf-id="hf-3xeu" id="sub-2" class="sub clip" data-start="0" data-duration="10" data-track-index="4">
+          <span data-hf-id="hf-uyg3" class="sub-text">Animalo con GSAP.</span>
+        </div>
+        <div data-hf-id="hf-hi9x" id="sub-3" class="sub clip" data-start="0" data-duration="10" data-track-index="5">
+          <span data-hf-id="hf-2ggr" class="sub-text">Renderizza in MP4.</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // Background orbs drift slowly for the whole video
+      tl.fromTo("#orb-a", { x: 0, y: 0 }, { x: 220, y: 160, duration: 10, ease: "sine.inOut" }, 0);
+      tl.fromTo("#orb-b", { x: 0, y: 0 }, { x: -200, y: -180, duration: 10, ease: "sine.inOut" }, 0);
+
+      // Title: fade + rise + scale in
+      tl.fromTo(
+        "#title-text",
+        { opacity: 0, y: 80, scale: 0.9 },
+        { opacity: 1, y: 0, scale: 1, duration: 1.0, ease: "power3.out" },
+        0.2,
+      );
+      // Accent bar grows from the center
+      tl.fromTo("#bar", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.out" }, 1.0);
+
+      // Subtitles slide up one after another
+      tl.fromTo(".sub-text", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out", stagger: 1.5 }, 2.0);
+
+      // Gentle outro fade on the last second
+      tl.to(["#title-text", "#bar", ".sub-text"], { opacity: 0, duration: 0.8, ease: "power1.in" }, 9.1);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
