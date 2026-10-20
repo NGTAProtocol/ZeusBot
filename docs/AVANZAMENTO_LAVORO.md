@@ -46,7 +46,7 @@ assegnato alla sessione; l'unione nel ramo `motore` la decide l'autore).
 ## Integrazione editoriale (ramo `integrazione-editoriale`, 2026-10-20)
 
 Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte da `origin/motore` (971b6df). Scelte e motivi in
-`docs/DECISIONI_INTEGRAZIONE.md` (D1-D13); file da leggere dall'autore in `docs/DA_VERIFICARE_AUTORE.md`.
+`docs/DECISIONI_INTEGRAZIONE.md` (D1-D18); file da leggere dall'autore in `docs/DA_VERIFICARE_AUTORE.md`.
 Fotografia del motore integrato: `docs/STATO_ATTUALE.md`.
 
 | # | Punto | Stato | Commit | Prove |
@@ -64,9 +64,12 @@ Fotografia del motore integrato: `docs/STATO_ATTUALE.md`.
 | 10 | Attribuzioni e analisi dei repository | fatto | 078b9b3 | 632 |
 | 8b | Note della pausa di lettura passate allo scrittore (D16) | fatto | 06cbb70 | 633 |
 | 11 | Documentazione rigenerata | fatto | 286f793 | 633 |
-| 12 | `avvio_motore()` con la riga «Letto:» | fatto (commit dopo 286f793: `git log`) | — | 637 |
+| 12 | `avvio_motore()` con la riga «Letto:» | fatto | 2ed341e | 637 |
+| D17 | `CLAUDE.md` allineato al flusso attuale | fatto | 05facce | 637 |
+| D18 | Subagenti (12) e capsula (120-250 parole) nei file del pacchetto | fatto | 951a42c | 637 |
+| — | Documenti derivati, PDF, INFRASTRUTTURA dopo D17-D18 | fatto (commit dopo 951a42c: `git log`) | — | 637 |
 
-Dopo il punto 12: `zb salva`.
+Dopo ogni passo: `zb salva`.
 
 Ripartenza: apri una nuova chat e scrivi «riprendi da docs/AVANZAMENTO_LAVORO.md, sezione Integrazione
 editoriale»; si legge `docs/DECISIONI_INTEGRAZIONE.md`, si controlla il ramo (`git branch --show-current`:

@@ -1,7 +1,7 @@
 # Infrastruttura completa del sistema casa editrice
 
 - **Data:** 2026-10-20
-- **Ramo:** `integrazione-editoriale`; **commit di partenza:** `286f793425e07fab1f0b84c5c4db1be506ef454d «integrazione 11: documentazione rigenerata sul motore integrato»`: tutti i file sono copiati da questo stato.
+- **Ramo:** `integrazione-editoriale`; **commit di partenza:** `951a42c6bf04cb20959a4bb81fcea377ba1adb2c «Subagenti (12) e capsula (120-250 parole) allineati al motore (D18)»`: tutti i file sono copiati da questo stato.
 - **File inclusi:** 250 file tracciati (esclusa `docs/`); i binari sono descritti con dimensione e sha256.
 - **Esclusi per regola:** `libri/` e ogni manoscritto (mai sul ramo `motore`); la banca-voci (repository separato, contiene nomi reali: non si copia qui); le esportazioni precedenti, nella storia git e sul ramo d'archivio dei documenti.
 - **Rigenerazione:** `python3 -B docs/genera_infrastruttura.py`. Verifica in fondo.
@@ -644,38 +644,39 @@ __pycache__/
 <a id="file-claude-md"></a>
 #### FILE: CLAUDE.md
 
-29 righe, sha256 `3f939b1c755bfc901ee47d5254af43890d2e85d37c79259238d2a27511746834`.
+30 righe, sha256 `73acad393116eadcd67394aa3b5ec97dd89a68925d2380bad2a6848ad7205df0`.
 
 `````markdown
 # Regole di avvio
 
-Regola madre: il motore resta sempre pulito; il ramo `motore` non contiene mai un libro.
-Per ogni briefing nuovo: prima azione «zb nuovo», che apre una sola cartella del libro. Da quel momento
-scrivi solo nella cartella del libro, sottocartelle comprese; mai in motore/, nella banca-voci o altrove.
-Recinto: hook su Write/Edit/Bash, controllo pre-commit e `zb avvio` rifiutano i file fuori dal libro attivo;
-solo se l'autore scrive «lavoro sul motore»: `zb lavoro motore`. Percorsi: `motore/passaggio-di-consegne.md`.
+Regola madre: il motore resta sempre pulito; il ramo `motore` non contiene mai un libro. Per ogni briefing nuovo: prima
+azione «zb nuovo», che apre una sola cartella del libro. Da quel momento scrivi solo nella cartella del libro, sottocartelle
+comprese; mai in motore/, nella banca-voci o altrove. Recinto: hook su Write/Edit/Bash, controllo pre-commit e `zb avvio`
+rifiutano i file fuori dal libro attivo; solo se l'autore scrive «lavoro sul motore»: `zb lavoro motore`.
 
-Per qualsiasi lavoro su un libro leggi `motore/PROCEDURA.md` e il `LEGGIMI.md` del libro indicato
-(un percorso: se manca, chiedilo prima di toccare qualunque file). `docs/` non si legge durante il lavoro.
-Prima di scrivere: `python3 motore/zb avvio <libro>` e riporta la riga «Letto: …»; se si ferma, fermati e
-riporta il motivo. Nelle sessioni nuove leggi lo stato compatto del libro e la scheda del capitolo.
-Il motore legge solo `motore/`, la cartella del libro indicato e la banca-voci (`ZB_BANCA_VOCI`, sola lettura).
+Per qualsiasi lavoro su un libro leggi `motore/PROCEDURA.md` e il `LEGGIMI.md` del libro indicato (un percorso: se manca,
+chiedilo prima di toccare qualunque file). `docs/` non si legge durante il lavoro. Prima di scrivere:
+`python3 motore/zb avvio <libro> [--ruolo R]` e riporta la riga «Letto: …»; se si ferma, fermati e riporta il motivo.
+Un ruolo per sessione (senza `--ruolo`, quello della fase; `<libro>/.zb/ruoli.yaml`). Nelle sessioni nuove leggi lo stato
+compatto del libro e la scheda del capitolo. Il motore legge solo `motore/`, la cartella del libro indicato e la
+banca-voci (`ZB_BANCA_VOCI`, sola lettura). Lavoro sul motore: `motore/passaggio-di-consegne.md`.
 
-Percorso da casa editrice: `motore/editoriale/00-percorso.md`. La sessione principale orchestra e non
-scrive prosa: chiama l'agente del ruolo (un subagente per capitolo) e legge solo la sua risposta breve.
-Chi scrive non rivede. Comandi: `zb aiuto` (fonte unica: motore/dati/comandi.yaml).
+Percorso da casa editrice: `motore/editoriale/00-percorso.md`. La sessione principale orchestra e non scrive prosa:
+chiama l'agente indicato da `zb agenti prossimo <libro>` (un subagente per capitolo) e legge solo la sua risposta breve.
+Chi scrive non rivede (`separazione_ruoli`, `motore/dati/hook.yaml`). Comandi: `zb aiuto` (fonte: `dati/comandi.yaml`).
 
-Report di sessione ogni 5 scambi o a «passaggio»: nella cartella del libro (passaggio-di-consegne.md),
-mai in motore/. Sezioni: Stato; Decisioni prese; Regole da non violare; Fatto in questa sessione;
-Punti aperti; Prossimo passo; Ripartenza (comandi e frase di apertura).
+Report di sessione ogni 5 scambi o a «passaggio»: nella cartella del libro (passaggio-di-consegne.md), mai in motore/.
+Sezioni: Stato; Decisioni prese; Regole da non violare; Fatto in questa sessione; Punti aperti; Prossimo passo;
+Ripartenza (comandi e frase di apertura).
 
 Precedenza: una sola scala, in `motore/editoriale/LEGGIMI.md`; segnala ogni contrasto.
-Metodo: proponi → l'autore approva → applica; mai approvare da solo.
-Risposte dell'autore: ok, avanti, correggi: …, stato. Ramo: quello della sessione, letto da git.
+Metodo: proponi → l'autore approva → applica; mai approvare da solo. Modo automatico (PROCEDURA, regola 10): sul percorso
+editoriale nessuna approvazione tra le fasi; ci si ferma solo alla pausa di lettura (`pausa_lettura`, 3-5 capitoli in
+libro.yaml), a `controllo_fallito` e a `canone`. Risposte dell'autore: ok, avanti, correggi: …, stato (alla pausa: ok o
+correggi <note>). Ramo: quello della sessione, letto da git.
 
-Salvataggio a ogni passo: `zb salva` (recinto, commit, push), poi git status -sb, git log -1. Se il push
-fallisce: fermati e riporta l'errore. Non dire «fatto» se non è su origin. Resoconto con hash, file e
-«branch allineato a origin: sì/no».
+Salvataggio a ogni passo: `zb salva` (recinto, commit, push), poi git status -sb, git log -1. Se il push fallisce:
+fermati e riporta l'errore. Non dire «fatto» se non è su origin. Resoconto con hash, file e «branch allineato a origin: sì/no».
 `````
 
 <a id="file-motore-procedura-md"></a>
@@ -2246,7 +2247,7 @@ campi:
 <a id="file-motore-dati-struttura-libro-yaml"></a>
 #### FILE: motore/dati/struttura-libro.yaml
 
-63 righe, sha256 `49a85c6a3c73c7b20b64f76295dbf82629eadf3fdd092fdf0ec1e7ecca0531c3`.
+63 righe, sha256 `aeec70aabc157d58dfa86fcd43733f7e2dcf1304f00b31bfed682653bd3fb90a`.
 
 `````yaml
 # Struttura standard di un libro (passo 6). La legge nuovo.py; la usano pulizia.py e PROCEDURA.md.
@@ -2301,7 +2302,7 @@ cartelle:
     modalita: [nuovo, riscrittura, traduzione]
     creazione: zb pacchetto / zb kdp, fase chiusura
   07-capsule:
-    scopo: capsule di continuità (NN.md, circa 180 parole) e registro.md (promesse e fatti stabiliti)
+    scopo: capsule di continuità (NN.md, 120-250 parole, circa 180) e registro.md (promesse e fatti stabiliti)
     modalita: [nuovo, riscrittura, traduzione]
     creazione: zb capsula, dopo ogni capitolo accettato
   08-traduzione-*:
@@ -2375,7 +2376,7 @@ Una sessione di Claude Code = un ruolo. Per cambiare ruolo: salvare, aprire sess
 <a id="file-motore-editoriale-leggimi-md"></a>
 #### FILE: motore/editoriale/LEGGIMI.md
 
-31 righe, sha256 `83f61b407705cdc027c897d94af39bdef1a5f970da8de290e928712a1f98a34a`.
+31 righe, sha256 `e39c05a28bfe24f698093aee5029d4dccea58b8851bbd6d9c34a1af73aa72377`.
 
 `````markdown
 # Livello editoriale del motore
@@ -2390,7 +2391,7 @@ stanno solo in `libri/<slug>/` del ramo del libro).
 - `struttura/modelli/`: i documenti vuoti della fase struttura.
 - `ruoli/`: otto ruoli editoriali, uno per file (diagnosta compreso).
 - `diagnosi/`: principi, contratto del libro, passaggi di analisi, gravità e rapporto.
-- `agenti/`: nove subagenti di Claude Code (fonte unica; `zb agenti attiva` li installa sui rami dei libri).
+- `agenti/` e `lingue/agenti/`: dodici subagenti di Claude Code (10 + 2 per la traduzione; fonte unica; `zb agenti attiva` li installa sui rami dei libri).
 - `risparmio-token.md`: subagenti, capsule e regole per pochi token.
 - `anti-ia/catalogo-it.md`: schemi da IA in italiano e regole di ritmo.
 - `correttore/criteri-correttore.md`: criteri del correttore di italiano.
@@ -2429,7 +2430,7 @@ Sei l'architetto della struttura. Segui motore/editoriale/ruoli/02-architetto-st
 <a id="file-motore-editoriale-agenti-capsula-md"></a>
 #### FILE: motore/editoriale/agenti/capsula.md
 
-7 righe, sha256 `f9e49dbf607c5f901894e8abbc0326aa2747e6430d10643ae8f1847150dd50a7`.
+7 righe, sha256 `94dc85bff69dd0bce19177b59da1b06f902c178c4e39708646d87d3944b504df`.
 
 `````markdown
 ---
@@ -2438,7 +2439,7 @@ description: Riassume un capitolo finito in una capsula di continuità compatta.
 tools: Read, Write, Glob
 model: haiku
 ---
-Leggi il capitolo indicato e scrivi 07-capsule/NN.md in massimo 180 parole con questi campi fissi: eventi; personaggi presenti e cosa sanno; informazioni date al lettore; promesse aperte e chiuse; cosa cambia; stato emotivo finale; ultima immagine. Niente giudizi, niente citazioni lunghe, solo fatti. Regole comuni: lavora solo in libri/<slug>/ del libro indicato nel compito (mai altrove, mai in altri libri). Leggi SOLO i file elencati nel tuo ruolo; non rileggere capitoli interi se esiste la capsula. Scrivi il lavoro nei file del libro e rispondi al chiamante con al massimo 10 righe: cosa hai fatto, dove sta il report, eventuali problemi bloccanti. Non incollare testo lungo nella risposta. Non fare commit né push: li fa il chiamante con zb. Se manca un input, dillo e fermati. Prima: python3 motore/zb capsula <libro> N (modello con i dati meccanici); scrivi le promesse con il tag @prom:<id> e togli la riga <!-- zb: modello -->; poi python3 motore/zb capsula <libro> N --verifica.
+Leggi il capitolo indicato e scrivi 07-capsule/NN.md in 120-250 parole (circa 180) con questi campi fissi: eventi; personaggi presenti e cosa sanno; informazioni date al lettore; promesse aperte e chiuse; cosa cambia; stato emotivo finale; ultima immagine. Niente giudizi, niente citazioni lunghe, solo fatti. Regole comuni: lavora solo in libri/<slug>/ del libro indicato nel compito (mai altrove, mai in altri libri). Leggi SOLO i file elencati nel tuo ruolo; non rileggere capitoli interi se esiste la capsula. Scrivi il lavoro nei file del libro e rispondi al chiamante con al massimo 10 righe: cosa hai fatto, dove sta il report, eventuali problemi bloccanti. Non incollare testo lungo nella risposta. Non fare commit né push: li fa il chiamante con zb. Se manca un input, dillo e fermati. Prima: python3 motore/zb capsula <libro> N (modello con i dati meccanici); scrivi le promesse con il tag @prom:<id> e togli la riga <!-- zb: modello -->; poi python3 motore/zb capsula <libro> N --verifica.
 `````
 
 <a id="file-motore-editoriale-agenti-correttore-bozze-md"></a>
@@ -3267,7 +3268,7 @@ Copyediting fixes errors; it does not change the style documented in the manual.
 <a id="file-motore-editoriale-lingue-en-glossario-editoriale-md"></a>
 #### FILE: motore/editoriale/lingue/en/glossario-editoriale.md
 
-21 righe, sha256 `6b36114dd4c9726e282310c3b059f3febfc470153b8f99c7d657f379c9ca9832`.
+21 righe, sha256 `5f45b8fda37beaa54226fd3b3054c964aefad3ecf0bf5b7ada94857d751dc297`.
 
 `````markdown
 # Editorial glossary (English)
@@ -3283,7 +3284,7 @@ file and command names stay in Italian; this table gives the English meaning.
 | scheda del capitolo | chapter card | the chapter's block in `05-scaletta.md` |
 | codex | codex | character and place cards tagged `@char` / `@loc` |
 | canone | canon | locked facts; changed only through the `canone` gate |
-| capsula | continuity capsule | about 180 words per chapter |
+| capsula | continuity capsule | 120-250 words per chapter (about 180) |
 | stato compatto | compact state | 15-20 lines read at the start of a session |
 | diagnosi | diagnostic read | describes and measures; does not rewrite |
 | piano di revisione | revision plan | structural editor's interventions, approved at the gate |
@@ -3312,7 +3313,7 @@ ortografia: {hunspell: en_US, languagetool: en-US}
 <a id="file-motore-editoriale-lingue-it-glossario-editoriale-md"></a>
 #### FILE: motore/editoriale/lingue/it/glossario-editoriale.md
 
-21 righe, sha256 `8750eac0940b57c81e6864c0f1ab16a8772a8d9cace7a4b33d73bc8939d221b9`.
+21 righe, sha256 `b761dd22cf979631f378fc368d2401a67913aa0c715cadeb883e68464839de48`.
 
 `````markdown
 # Glossario editoriale (italiano)
@@ -3327,7 +3328,7 @@ Termini del mestiere usati da ruoli, rapporti e comandi. Un termine, un signific
 | scheda del capitolo | il blocco del capitolo in `05-scaletta.md` |
 | codex | schede di personaggi e luoghi con i tag `@char` e `@loc` |
 | canone | fatti bloccati in `stato.yaml`; cambiano solo con il gate `canone` |
-| capsula | sintesi di continuità di un capitolo, circa 180 parole |
+| capsula | sintesi di continuità di un capitolo, 120-250 parole (circa 180) |
 | stato compatto | 15-20 righe da leggere all'inizio di una sessione |
 | diagnosi | lettura che descrive e misura, senza riscrivere |
 | piano di revisione | interventi decisi dall'editor strutturale, approvati al gate |
@@ -3409,7 +3410,7 @@ fredchu/book-translator). Confronto delle due strade: `zb traduci … confronta 
 <a id="file-motore-editoriale-risparmio-token-md"></a>
 #### FILE: motore/editoriale/risparmio-token.md
 
-39 righe, sha256 `1561223bcaa4aa4f04827f0f767030f9b4a8a760516bca64a461269b56af9205`.
+39 righe, sha256 `5750bd156025e9237a1d778b34a9d8a4649bfccd6ef55706e02d38738f7a5f86`.
 
 `````markdown
 # Risparmio di token e subagenti
@@ -3419,7 +3420,7 @@ Non si promettono percentuali: il risparmio si misura (vedi "Misura").
 
 ## 1. Cosa costa meno
 1. **Gli script fanno tutto ciò che è meccanico** (conteggi, continuità, ortografia, compilazione, PDF, KDP): zero token di ragionamento. Niente LLM per ciò che uno script sa fare.
-2. **Capsule di continuità** (`07-capsule/NN.md`, circa 150-180 parole per capitolo): chi scrive o revisiona legge le capsule dei capitoli precedenti, non i capitoli interi. È il risparmio più grande su libri lunghi.
+2. **Capsule di continuità** (`07-capsule/NN.md`, 120-250 parole per capitolo, circa 180): chi scrive o revisiona legge le capsule dei capitoli precedenti, non i capitoli interi. È il risparmio più grande su libri lunghi.
 3. **Un ruolo = un subagente con contesto proprio**: legge solo i suoi file, lavora, restituisce al chiamante al massimo 10 righe. Il contesto principale non si riempie di testo dei capitoli.
 4. **Modelli per compito**: modello forte solo dove serve giudizio (struttura, editing strutturale); modello medio per scrittura e revisione di frase; modello leggero per capsule e lavori di riassunto. Scelta scritta in un solo file di dati, `motore/dati/modelli-ruoli.yaml`, che `zb agenti attiva` riporta nel campo `model` di ciascun agente; tarata con la prova (vedi "Misura").
 5. **Modifiche puntuali**: i revisori applicano correzioni con modifiche mirate (str_replace/Edit), non riscrivono il capitolo intero.
@@ -4405,7 +4406,7 @@ aggiornato: ""
 <a id="file-motore-passaggio-di-consegne-md"></a>
 #### FILE: motore/passaggio-di-consegne.md
 
-114 righe, sha256 `916714fd3fa4ce53989d2b177662026c6ab6dd04e2a0b05716d58bb51f763064`.
+117 righe, sha256 `d6b771024da99713b0822ea88d56266d88e3dfce0d218c6acc60844cf8b559a3`.
 
 `````markdown
 # Passaggio di consegne: motore
@@ -4418,10 +4419,10 @@ riprendi da lì».
 - Lavoro sul motore del 2026-10-20: integrazione nel ramo `integrazione-editoriale` (repository
   `NGTAProtocol/ZeusBot`, D1). Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore`
   (`origin/motore`, 971b6df). I rami `motore` e `main` non sono toccati (`main` in questo repository non esiste, D2).
-  Ultimo commit: `git log -1` (prima del commit del punto 12: 286f793, allineato a origin).
-- Punti dell'integrazione: 1-11 e 8b fatti e su origin; 12 (`avvio_motore()` con la riga «Letto:», D15) nel commit
-  che porta questo file. Resta `zb salva`.
-- Suite: **637/637 OK** al punto 12 (633 del punto 11 più le 4 di `avvio motore`), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+  Ultimo commit: `git log -1` (prima del commit dei documenti derivati: 951a42c, allineato a origin).
+- Punti dell'integrazione: 1-12 e 8b fatti e su origin; dopo: `CLAUDE.md` allineato (D17, 05facce), subagenti e
+  capsula nei file del pacchetto (D18, 951a42c); documenti derivati nel commit che porta questo file.
+- Suite: **637/637 OK** (dal punto 12; invariata con D17 e D18), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
@@ -4430,7 +4431,7 @@ riprendi da lì».
 - Livello editoriale in `motore/editoriale/`: pacchetto da 28 file non toccato, più le 14 aggiunte da `motore`
   adattate ai nomi del pacchetto (`docs/DA_VERIFICARE_AUTORE.md`).
 - Banca-voci: repository separato, letto in sola lettura da `ZB_BANCA_VOCI`; i nomi delle voci stanno solo lì.
-- Documenti per l'autore: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D13), `docs/DA_VERIFICARE_AUTORE.md`,
+- Documenti per l'autore: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D18), `docs/DA_VERIFICARE_AUTORE.md`,
   `docs/ATTRIBUZIONI.md`, `docs/ANALISI_REPOSITORY.md`. Stato del motore per esteso: `motore/report-motore.md`.
 
 ## Decisioni prese
@@ -4444,6 +4445,8 @@ riprendi da lì».
 - Pausa di lettura: `zb ok <libro>` = capitoli letti, si riparte; `zb correggi <libro> <note>` = note in
   `06-diagnostica/note-lettura.md`, si riparte (D11).
 - Contrasto tra i 28 file (fermate con l'«ok») e il modo automatico: segnalato, non corretto nei 28 file (D4).
+  `CLAUDE.md` descrive `--ruolo` e il modo automatico (D17). Nei 28 file, su autorizzazione dell'autore, solo:
+  dodici subagenti in `editoriale/LEGGIMI.md`; capsula 120-250 parole in `agenti/capsula.md` e `risparmio-token.md` (D18).
 - Recinto di ccr più, da `motore`: libro attivo in `<git-dir>/zb-libro-attivo`, cartella unica (`zb cartella`),
   impronta di una `zb prove` intera e tutta OK per `zb push` sul motore (D7).
 - Ruoli: un solo comando, `zb ruolo` (controllo per fase di ccr e un ruolo per sessione di `motore`);
@@ -4462,7 +4465,7 @@ riprendi da lì».
 - Nessun nome reale (autori, titoli, personaggi, luoghi, frasi, nomi dei rami dei libri) in codice, prove,
   commenti, esiti, report e documenti, anche in `docs/`. Controllo: `zb separazione`.
 - Non toccare i rami dei libri, né `motore` e `main`: l'unione nel ramo `motore` la decide l'autore.
-- I 28 file del pacchetto non si cambiano senza l'autore.
+- I 28 file del pacchetto non si cambiano senza l'autore (eccezione autorizzata: D18).
 - `dati/kdp.yaml`: `ultima_verifica` resta `null` finché l'autore non registra la sua verifica
   (`zb verifica KDP fatta AAAA-MM-GG`); il motore non la scrive.
 - Agenti, comandi e hook spenti sul ramo del motore (`zb avvio` senza libro si ferma se ci sono); si accendono solo
@@ -4490,21 +4493,22 @@ Commit su `integrazione-editoriale` (tra parentesi le prove della suite a quel c
 Punto 11 (D14), nel commit che porta questo file: `docs/INFRASTRUTTURA_COMPLETA.md` dal generatore, guida (md e pdf),
 README, PROCEDURA, STATO_ATTUALE, AVANZAMENTO_LAVORO, questo file e `motore/report-motore.md`; nomi
 `formule_catalogo_per_mille` corretti; `[--ruolo R]` nell'uso di `zb avvio`: commit 286f793 (633).
-Punto 12 (D15), nel commit che porta questo file: `avvio_motore()` di ccr tenuta identica; sezione di prove
-`avvio motore` (4 prove).
+- 2ed341e (637) punto 12: `avvio_motore()` di ccr tenuta identica; sezione di prove `avvio motore` (D15);
+- 05facce (637) `CLAUDE.md` allineato al flusso attuale (D17);
+- 951a42c (637) subagenti (12) e capsula (120-250 parole) nei file del pacchetto (D18).
+Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_LAVORO, report, questo file,
+`docs/INFRASTRUTTURA_COMPLETA.md` rigenerata.
 
 ## Punti aperti
 
-1. Punto 11: documentazione rigenerata (D14), commit 286f793.
-2. Punto 12: `avvio_motore()` con la riga «Letto:» (D15), salvato con questo file.
-3. Poi `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
-4. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
+1. Punti 11 e 12 fatti (286f793, 2ed341e); D17 e D18 fatti (05facce, 951a42c).
+2. Dopo ogni passo `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
+3. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
    anti-IA; coppia «avvenire/avvenire» nei criteri del correttore; licenza di APODICTIC; verifica dei dati KDP
-   (`ultima_verifica: null`, non verificati dall'autore); `CLAUDE.md` ancora con «proponi → l'autore approva →
-   applica» e senza `--ruolo` nella riga di avvio (D14); unione nel ramo `motore`.
-5. Soglie anti-IA uguali per ogni genere, tarate sui mini-libri; vocabolario italiano vuoto finché non c'è un corpus
+   (`ultima_verifica: null`, non verificati dall'autore); unione nel ramo `motore`.
+4. Soglie anti-IA uguali per ogni genere, tarate sui mini-libri; vocabolario italiano vuoto finché non c'è un corpus
    (`docs/DA_FORNIRE.md`).
-6. Divergenza lasciata visibile in `docs/ANALISI_REPOSITORY.md`: kindle-book-agency (D13).
+5. Divergenza lasciata visibile in `docs/ANALISI_REPOSITORY.md`: kindle-book-agency (D13).
 
 ## Prossimo passo
 
@@ -10767,14 +10771,14 @@ La pensione è chiusa, la proprietaria è in ospedale e ad aprire la porta c'è 
 <a id="file-motore-report-motore-md"></a>
 #### FILE: motore/report-motore.md
 
-324 righe, sha256 `4957704e37bb90387cf3a2ad53ab68d650ce209ae5892414352e0e06251cfcde`.
+323 righe, sha256 `8829ec4918c184730f5584dc32316e1b083f39fea54a670ee9ec8afaa94130b8`.
 
 `````markdown
 # Report del motore editoriale
 
 Stato al 2026-10-20, ramo `integrazione-editoriale` (lavoro sul motore: integrazione). Base: ramo ccr
 (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore` (`origin/motore`, 971b6df). Scelte
-dell'integrazione: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D13). Esito della suite: sezione 13.
+dell'integrazione: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D18). Esito della suite: sezione 13.
 Il motore è una casa editrice generica di romanzi in italiano e in inglese: procedura, script, modelli vuoti, profili
 di genere, dati KDP, il livello editoriale (`editoriale/`) e mini-libri inventati per le prove. Non contiene libri
 reali.
@@ -10994,7 +10998,7 @@ l'impronta `<git-dir>/zb-prove-ok`, che `zb push` chiede sul lavoro del motore.
 - Solo il motore nel repository: nessun manoscritto né riferimento a libri reali. Ciò che è stato tolto sta nei
   rami `archivio/…` su origin.
 - Storia git non riscritta, nessun push forzato.
-- Le scelte dell'integrazione, con il perché, sono in `docs/DECISIONI_INTEGRAZIONE.md` (D1-D13).
+- Le scelte dell'integrazione, con il perché, sono in `docs/DECISIONI_INTEGRAZIONE.md` (D1-D18).
 
 ## 10. Voci narrative (banca-voci)
 
@@ -11030,9 +11034,8 @@ luoghi reali.
    dell'autore (`00-percorso.md`, `struttura/01-fase-struttura.md`, «solo dopo il mio ok» nei ruoli); il motore,
    per decisione dell'autore del 2026-10-20, scrive in automatico con la sola pausa di lettura. La scala di
    precedenza (`editoriale/LEGGIMI.md`) mette i ruoli sopra la procedura del motore: il contrasto è segnalato in
-   `docs/DA_VERIFICARE_AUTORE.md`, non corretto nei 28 file. L'autore aggiorna il pacchetto se vuole. Lo stesso
-   vale per `CLAUDE.md` (non toccato): dice ancora «Metodo: proponi → l'autore approva → applica» e la riga di
-   avvio non ha `--ruolo` (D14).
+   `docs/DA_VERIFICARE_AUTORE.md`, non corretto nei 28 file. L'autore aggiorna il pacchetto se vuole. `CLAUDE.md`
+   invece è allineato: riga di avvio con `--ruolo` e modo automatico accanto al «Metodo» (D17).
 3. Soglie anti-IA (blocco `anti_ia` dei profili) uguali per ogni genere e tarate solo sui mini-libri: PROPOSTA da
    rivedere su testi veri. In modalità avviso sono segnalazioni, non blocchi. Il vocabolario italiano L1-L3 è vuoto
    finché non c'è un corpus (`zb antiia estrai`); la sezione B del catalogo non si conta

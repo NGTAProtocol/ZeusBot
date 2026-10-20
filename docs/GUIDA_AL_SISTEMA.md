@@ -61,7 +61,7 @@ svg { width: 100%; height: auto; }
 
 <p class="copertina-sotto">Per Felice, autore. Ottobre 2026.</p>
 
-<p class="copertina-sotto">Fotografia del ramo <code>integrazione-editoriale</code> al commit <code>06cbb70</code>.</p>
+<p class="copertina-sotto">Fotografia del ramo <code>integrazione-editoriale</code> al commit <code>951a42c</code>.</p>
 
 <div class="nota">
 
@@ -71,7 +71,7 @@ svg { width: 100%; height: auto; }
 
 <div class="nota">
 
-**Questa edizione** descrive il ramo `integrazione-editoriale` (commit `06cbb70`): la base del ramo di sessione ccr con le aggiunte del ramo `motore`. Le scelte dell'unione sono in `docs/DECISIONI_INTEGRAZIONE.md` (D1-D16) (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, introduzione</span>).
+**Questa edizione** descrive il ramo `integrazione-editoriale` (commit `951a42c`): la base del ramo di sessione ccr con le aggiunte del ramo `motore`. Le scelte dell'unione sono in `docs/DECISIONI_INTEGRAZIONE.md` (D1-D18) (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, introduzione</span>).
 
 </div>
 
@@ -139,7 +139,7 @@ Tre idee reggono tutto (<span class="fonte">CLAUDE.md</span>):
 
 <div class="nota">
 
-La terza regola e il modo automatico vanno letti insieme: nei libri nuovi l'unica approvazione durante la scrittura è la tua risposta alla pausa di lettura. I file del livello editoriale e `CLAUDE.md` descrivono ancora le fermate di un tempo: il contrasto è segnalato in `docs/DA_VERIFICARE_AUTORE.md` (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, D4 e D14</span>).
+La terza regola e il modo automatico vanno letti insieme: nei libri nuovi l'unica approvazione durante la scrittura è la tua risposta alla pausa di lettura. I file del livello editoriale descrivono ancora le fermate di un tempo: il contrasto è segnalato in `docs/DA_VERIFICARE_AUTORE.md`. `CLAUDE.md` invece dice tutte e due le cose, la regola e il modo automatico (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, D4 e D17</span>).
 
 </div>
 
@@ -542,13 +542,13 @@ In parole semplici (<span class="fonte">CLAUDE.md</span>):
 2. **Briefing nuovo:** prima azione `zb nuovo`, che apre una sola cartella del libro. Da lì si scrive solo in quella cartella.
 3. **Recinto.** Hook, controllo prima del commit e `zb avvio` rifiutano i file fuori dal libro attivo. Solo se scrivi «lavoro sul motore», Claude Code lancia `zb lavoro motore`.
 4. **Letture.** Per un libro: `motore/PROCEDURA.md` e il `LEGGIMI.md` del libro; se manca il percorso, Claude Code lo chiede. `docs/` non si legge durante il lavoro.
-5. **Avvio.** Prima di scrivere: `zb avvio <libro>` e la riga «Letto». Se si ferma, Claude Code si ferma e dice perché.
+5. **Avvio.** Prima di scrivere: `zb avvio <libro> [--ruolo R]` e la riga «Letto». Se si ferma, Claude Code si ferma e dice perché. Un ruolo per sessione: senza `--ruolo` vale quello della fase.
 6. **Cosa legge il motore:** solo `motore/`, la cartella del libro e la banca-voci (sola lettura).
-7. **Orchestrazione.** La sessione principale non scrive prosa: chiama l'agente del ruolo, un subagente per capitolo. Chi scrive non rivede.
+7. **Orchestrazione.** La sessione principale non scrive prosa: chiama l'agente che indica `zb agenti prossimo <libro>`, un subagente per capitolo. Chi scrive non rivede (`separazione_ruoli`).
 8. **Report di sessione** ogni 5 scambi o quando scrivi «passaggio», nella cartella del libro, con sette sezioni fisse.
 9. **Precedenza:** una sola scala, in `motore/editoriale/LEGGIMI.md`; ogni contrasto si segnala.
-10. **Metodo:** proponi, l'autore approva, applica. Mai approvare da solo.
-11. **Risposte dell'autore:** ok, avanti, correggi, stato. **Ramo:** quello della sessione, letto da git.
+10. **Metodo:** proponi, l'autore approva, applica. Mai approvare da solo. **Modo automatico:** sul percorso editoriale nessuna approvazione tra le fasi; ci si ferma solo alla pausa di lettura (3-5 capitoli), a un controllo fallito e per il canone.
+11. **Risposte dell'autore:** ok, avanti, correggi, stato; alla pausa, ok oppure correggi con le note. **Ramo:** quello della sessione, letto da git.
 12. **Salvataggio** a ogni passo con `zb salva`, poi `git status -sb` e `git log -1`. Resoconto con codice, file e «branch allineato a origin: sì/no».
 
 ## Gli hook, uno per uno
@@ -718,7 +718,7 @@ Sono i limiti noti di `motore/report-motore.md` §11, le scelte in attesa di `do
 
 ## Scelte tue ancora aperte
 
-10. **Il pacchetto editoriale e `CLAUDE.md` descrivono ancora le fermate con l'ok** (`00-percorso.md`, la fase struttura, «solo dopo il mio ok» nei ruoli; in `CLAUDE.md` «proponi → l'autore approva → applica» e la riga di avvio senza `--ruolo`), mentre il motore scrive in automatico. Se vuoi, aggiorna quei file (<span class="fonte">docs/DA_VERIFICARE_AUTORE.md</span>).
+10. **Il pacchetto editoriale descrive ancora le fermate con l'ok** (`00-percorso.md`, la fase struttura, «solo dopo il mio ok» nei ruoli), mentre il motore scrive in automatico. `CLAUDE.md` è già allineato (D17). Se vuoi, aggiorna quei file (<span class="fonte">docs/DA_VERIFICARE_AUTORE.md</span>).
 11. **Sezione B del catalogo anti-IA.** Le sue formule stanno in `formule.yaml` ma non si contano finché `formule_sezione_b: false` (<span class="fonte">motore/dati/antiia.yaml; docs/DA_VERIFICARE_AUTORE.md</span>).
 12. **Coppia «avvenire/avvenire»** nei criteri del correttore, sezione 5: forse un refuso, non toccata.
 13. **Licenza di APODICTIC** (CC BY-NC-SA 4.0): nessun testo copiato.

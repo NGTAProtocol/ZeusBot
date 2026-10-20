@@ -2,7 +2,7 @@
 
 Stato al 2026-10-20, ramo `integrazione-editoriale` (lavoro sul motore: integrazione). Base: ramo ccr
 (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore` (`origin/motore`, 971b6df). Scelte
-dell'integrazione: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D13). Esito della suite: sezione 13.
+dell'integrazione: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D18). Esito della suite: sezione 13.
 Il motore è una casa editrice generica di romanzi in italiano e in inglese: procedura, script, modelli vuoti, profili
 di genere, dati KDP, il livello editoriale (`editoriale/`) e mini-libri inventati per le prove. Non contiene libri
 reali.
@@ -222,7 +222,7 @@ l'impronta `<git-dir>/zb-prove-ok`, che `zb push` chiede sul lavoro del motore.
 - Solo il motore nel repository: nessun manoscritto né riferimento a libri reali. Ciò che è stato tolto sta nei
   rami `archivio/…` su origin.
 - Storia git non riscritta, nessun push forzato.
-- Le scelte dell'integrazione, con il perché, sono in `docs/DECISIONI_INTEGRAZIONE.md` (D1-D13).
+- Le scelte dell'integrazione, con il perché, sono in `docs/DECISIONI_INTEGRAZIONE.md` (D1-D18).
 
 ## 10. Voci narrative (banca-voci)
 
@@ -258,9 +258,8 @@ luoghi reali.
    dell'autore (`00-percorso.md`, `struttura/01-fase-struttura.md`, «solo dopo il mio ok» nei ruoli); il motore,
    per decisione dell'autore del 2026-10-20, scrive in automatico con la sola pausa di lettura. La scala di
    precedenza (`editoriale/LEGGIMI.md`) mette i ruoli sopra la procedura del motore: il contrasto è segnalato in
-   `docs/DA_VERIFICARE_AUTORE.md`, non corretto nei 28 file. L'autore aggiorna il pacchetto se vuole. Lo stesso
-   vale per `CLAUDE.md` (non toccato): dice ancora «Metodo: proponi → l'autore approva → applica» e la riga di
-   avvio non ha `--ruolo` (D14).
+   `docs/DA_VERIFICARE_AUTORE.md`, non corretto nei 28 file. L'autore aggiorna il pacchetto se vuole. `CLAUDE.md`
+   invece è allineato: riga di avvio con `--ruolo` e modo automatico accanto al «Metodo» (D17).
 3. Soglie anti-IA (blocco `anti_ia` dei profili) uguali per ogni genere e tarate solo sui mini-libri: PROPOSTA da
    rivedere su testi veri. In modalità avviso sono segnalazioni, non blocchi. Il vocabolario italiano L1-L3 è vuoto
    finché non c'è un corpus (`zb antiia estrai`); la sezione B del catalogo non si conta

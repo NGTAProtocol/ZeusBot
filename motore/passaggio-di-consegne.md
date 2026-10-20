@@ -8,10 +8,10 @@ riprendi da lì».
 - Lavoro sul motore del 2026-10-20: integrazione nel ramo `integrazione-editoriale` (repository
   `NGTAProtocol/ZeusBot`, D1). Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore`
   (`origin/motore`, 971b6df). I rami `motore` e `main` non sono toccati (`main` in questo repository non esiste, D2).
-  Ultimo commit: `git log -1` (prima del commit del punto 12: 286f793, allineato a origin).
-- Punti dell'integrazione: 1-11 e 8b fatti e su origin; 12 (`avvio_motore()` con la riga «Letto:», D15) nel commit
-  che porta questo file. Resta `zb salva`.
-- Suite: **637/637 OK** al punto 12 (633 del punto 11 più le 4 di `avvio motore`), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+  Ultimo commit: `git log -1` (prima del commit dei documenti derivati: 951a42c, allineato a origin).
+- Punti dell'integrazione: 1-12 e 8b fatti e su origin; dopo: `CLAUDE.md` allineato (D17, 05facce), subagenti e
+  capsula nei file del pacchetto (D18, 951a42c); documenti derivati nel commit che porta questo file.
+- Suite: **637/637 OK** (dal punto 12; invariata con D17 e D18), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
@@ -20,7 +20,7 @@ riprendi da lì».
 - Livello editoriale in `motore/editoriale/`: pacchetto da 28 file non toccato, più le 14 aggiunte da `motore`
   adattate ai nomi del pacchetto (`docs/DA_VERIFICARE_AUTORE.md`).
 - Banca-voci: repository separato, letto in sola lettura da `ZB_BANCA_VOCI`; i nomi delle voci stanno solo lì.
-- Documenti per l'autore: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D13), `docs/DA_VERIFICARE_AUTORE.md`,
+- Documenti per l'autore: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D18), `docs/DA_VERIFICARE_AUTORE.md`,
   `docs/ATTRIBUZIONI.md`, `docs/ANALISI_REPOSITORY.md`. Stato del motore per esteso: `motore/report-motore.md`.
 
 ## Decisioni prese
@@ -34,6 +34,8 @@ riprendi da lì».
 - Pausa di lettura: `zb ok <libro>` = capitoli letti, si riparte; `zb correggi <libro> <note>` = note in
   `06-diagnostica/note-lettura.md`, si riparte (D11).
 - Contrasto tra i 28 file (fermate con l'«ok») e il modo automatico: segnalato, non corretto nei 28 file (D4).
+  `CLAUDE.md` descrive `--ruolo` e il modo automatico (D17). Nei 28 file, su autorizzazione dell'autore, solo:
+  dodici subagenti in `editoriale/LEGGIMI.md`; capsula 120-250 parole in `agenti/capsula.md` e `risparmio-token.md` (D18).
 - Recinto di ccr più, da `motore`: libro attivo in `<git-dir>/zb-libro-attivo`, cartella unica (`zb cartella`),
   impronta di una `zb prove` intera e tutta OK per `zb push` sul motore (D7).
 - Ruoli: un solo comando, `zb ruolo` (controllo per fase di ccr e un ruolo per sessione di `motore`);
@@ -52,7 +54,7 @@ riprendi da lì».
 - Nessun nome reale (autori, titoli, personaggi, luoghi, frasi, nomi dei rami dei libri) in codice, prove,
   commenti, esiti, report e documenti, anche in `docs/`. Controllo: `zb separazione`.
 - Non toccare i rami dei libri, né `motore` e `main`: l'unione nel ramo `motore` la decide l'autore.
-- I 28 file del pacchetto non si cambiano senza l'autore.
+- I 28 file del pacchetto non si cambiano senza l'autore (eccezione autorizzata: D18).
 - `dati/kdp.yaml`: `ultima_verifica` resta `null` finché l'autore non registra la sua verifica
   (`zb verifica KDP fatta AAAA-MM-GG`); il motore non la scrive.
 - Agenti, comandi e hook spenti sul ramo del motore (`zb avvio` senza libro si ferma se ci sono); si accendono solo
@@ -80,21 +82,22 @@ Commit su `integrazione-editoriale` (tra parentesi le prove della suite a quel c
 Punto 11 (D14), nel commit che porta questo file: `docs/INFRASTRUTTURA_COMPLETA.md` dal generatore, guida (md e pdf),
 README, PROCEDURA, STATO_ATTUALE, AVANZAMENTO_LAVORO, questo file e `motore/report-motore.md`; nomi
 `formule_catalogo_per_mille` corretti; `[--ruolo R]` nell'uso di `zb avvio`: commit 286f793 (633).
-Punto 12 (D15), nel commit che porta questo file: `avvio_motore()` di ccr tenuta identica; sezione di prove
-`avvio motore` (4 prove).
+- 2ed341e (637) punto 12: `avvio_motore()` di ccr tenuta identica; sezione di prove `avvio motore` (D15);
+- 05facce (637) `CLAUDE.md` allineato al flusso attuale (D17);
+- 951a42c (637) subagenti (12) e capsula (120-250 parole) nei file del pacchetto (D18).
+Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_LAVORO, report, questo file,
+`docs/INFRASTRUTTURA_COMPLETA.md` rigenerata.
 
 ## Punti aperti
 
-1. Punto 11: documentazione rigenerata (D14), commit 286f793.
-2. Punto 12: `avvio_motore()` con la riga «Letto:» (D15), salvato con questo file.
-3. Poi `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
-4. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
+1. Punti 11 e 12 fatti (286f793, 2ed341e); D17 e D18 fatti (05facce, 951a42c).
+2. Dopo ogni passo `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
+3. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
    anti-IA; coppia «avvenire/avvenire» nei criteri del correttore; licenza di APODICTIC; verifica dei dati KDP
-   (`ultima_verifica: null`, non verificati dall'autore); `CLAUDE.md` ancora con «proponi → l'autore approva →
-   applica» e senza `--ruolo` nella riga di avvio (D14); unione nel ramo `motore`.
-5. Soglie anti-IA uguali per ogni genere, tarate sui mini-libri; vocabolario italiano vuoto finché non c'è un corpus
+   (`ultima_verifica: null`, non verificati dall'autore); unione nel ramo `motore`.
+4. Soglie anti-IA uguali per ogni genere, tarate sui mini-libri; vocabolario italiano vuoto finché non c'è un corpus
    (`docs/DA_FORNIRE.md`).
-6. Divergenza lasciata visibile in `docs/ANALISI_REPOSITORY.md`: kindle-book-agency (D13).
+5. Divergenza lasciata visibile in `docs/ANALISI_REPOSITORY.md`: kindle-book-agency (D13).
 
 ## Prossimo passo
 

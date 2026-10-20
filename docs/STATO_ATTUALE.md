@@ -1,6 +1,6 @@
 # Stato attuale del motore (fotografia del ramo integrato)
 
-Data: 2026-10-20. Ramo `integrazione-editoriale` @ `06cbb70` (punto 8b dell'integrazione). Nessun libro, nessun
+Data: 2026-10-20. Ramo `integrazione-editoriale` @ `951a42c` (dopo D17 e D18). Nessun libro, nessun
 nome di libro o di autore reale.
 
 La fotografia di prima (ccr, scritta prima del suo lavoro sul ramo motore @ `dce3774`) resta nella storia git:
@@ -95,7 +95,7 @@ Note:
 | # | Punto debole | Dove si vede |
 |---|---|---|
 | 1 | Dati KDP mai riverificati dall'autore | `motore/dati/kdp.yaml` riga 5: `ultima_verifica: null`; `report-motore.md` §11.1 |
-| 2 | Contrasto tra il pacchetto da 28 file (fermate con l'«ok» dell'autore) e il modo automatico | D4; `docs/DA_VERIFICARE_AUTORE.md`; i 28 file non sono stati corretti |
+| 2 | Contrasto tra il pacchetto da 28 file (fermate con l'«ok» dell'autore) e il modo automatico | D4; `docs/DA_VERIFICARE_AUTORE.md`; i 28 file non sono stati corretti su questo punto (`CLAUDE.md` allineato, D17; subagenti e capsula corretti, D18) |
 | 3 | Decisioni dell'autore ancora aperte | «avvenire/avvenire» (`correttore/criteri-correttore.md` §5); sezione B del catalogo anti-IA (`formule_sezione_b: false`, D10); licenza di APODICTIC (CC BY-NC-SA 4.0) |
 | 4 | I ruoli del pacchetto non rimandano ai tre file di `ruoli/riferimenti/` | `docs/DA_VERIFICARE_AUTORE.md` |
 | 5 | `separazione.py` non trova da solo i nomi dei libri reali | `motore/dati/nomi_vietati.txt` senza righe di nomi; `report-motore.md` §11.5 |
@@ -108,7 +108,6 @@ Note:
 | 12 | Misura con e senza capsule fatta solo sul mini-libro editoriale (1.127 contro 1.694 parole lette) | `report-motore.md` §12 |
 | 13 | Prova dell'output compatto solo con soglia 10: nessun comando supera oggi 40 righe in modo stabile | D9 |
 | 14 | Divergenza lasciata visibile su kindle-book-agency (ccr: non trovato; motore: trovato a c1d75dc) | D13 |
-| 15 | `report-motore.md` non aggiornato all'integrazione | datato 2026-10-15; §1 «43 moduli» (oggi 44); §3 `dati/lingue.yaml` «solo `it`» (il file dice italiano e inglese); §2 hook «oggi in modalità avviso» (il recinto è in blocco) |
 
 ## 5. Prove
 
