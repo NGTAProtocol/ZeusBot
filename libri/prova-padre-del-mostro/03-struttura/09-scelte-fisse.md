@@ -1,8 +1,7 @@
-<!-- zb: modello -->
 # Scelte fisse: punto di vista, tempo, voce — Il padre del mostro
 
 <!-- Fissate qui: dopo la chiusura della fase struttura non si cambiano (zb avvio si ferma se cambiano). -->
-- Punto di vista (prima/terza persona; uno o più; quali personaggi):
-- Tempo verbale della narrazione:
-- Voce (registro, distanza, eventuale voce della banca-voci):
-- Sistema del dialogo (caporali «», virgolette alte, lineette):
+- Punto di vista (prima/terza persona; uno o più; quali personaggi): terza persona ravvicinata, un solo punto di vista per capitolo e per scena; il libro è corale. Punti di vista: Vito Kurgan (cap. 1), Alfredo Giorgi (2, 9, 17, 23, 27), Luigi Bertola (3, 6, 13, 20, 30, 33, 35), Flora Notarangelo (4, 8, 12, 16, 21, 24, 29, 34), Dalia (5, 11, 15, 22, 26, 28), Francesco De Biasi (14, 31), un sottufficiale senza nome della squadra di De Biasi (7, 10, 19, 25, 32), il più anziano dei quattro ex alti funzionari senza nome (18). Carlo De Stefano: nessun punto di vista finché il suo ruolo non è indicato.
+- Tempo verbale della narrazione: passato remoto di base; presente solo nei capitoli d'azione interi (1, 7, 10, 19, 25, 32) o in una scena d'azione separata da uno stacco bianco; dopo una scena al presente si torna al passato remoto; mai cambi a metà paragrafo.
+- Voce (registro, distanza, eventuale voce della banca-voci): voce della banca «sistema-nell-ombra». Base (italiano medio parlato, indiretto libero almeno una volta per scena) per Flora, Bertola e l'ex funzionario; registro freddo per le scene di potere, finanza e servizi e per i capitoli di Alfredo Giorgi, di Dalia e di De Biasi (cose non dette, understatement, nessun esclamativo); registro corto per l'azione e i personaggi d'azione (Kurgan nel cap. 1, il sottufficiale): frasi e paragrafi brevi, presente. Il cap. 33 è una scena di potere: registro freddo anche dal punto di vista di Bertola. Cambio di registro solo a uno stacco (nuovo capitolo o riga bianca). Nessun dialetto (ambientazione: altro). Violenza senza aggettivi e senza compiacimento.
+- Sistema del dialogo (caporali «», virgolette alte, lineette): caporali «», con «disse» o nessun verbo dichiarativo; separatore di scena «* * *»; intestazione di capitolo «Luogo — giorno e data» (date da fissare con l'autore: epoca non indicata nel briefing).

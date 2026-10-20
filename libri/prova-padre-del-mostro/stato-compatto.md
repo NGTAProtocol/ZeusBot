@@ -2,8 +2,8 @@
 
 - Fase: struttura; gate: nessuno.
 - Ultimo capitolo salvato: —; parole 0/70000.
-- Macrostruttura: motivo:.
-- Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi):; Tempo verbale della narrazione:; Voce (registro, distanza, eventuale voce della b….
+- Macrostruttura: mosaico.
+- Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): terza persona ravvicinata, un solo punto di vista per capitolo e per scena; il lib….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
 - Personaggi (capsula —): —
@@ -14,6 +14,6 @@
   - Kurgan viene sacrificato e al suo posto subentra Bertola.
   - I sottoposti di Kurgan vengono convocati dalla squadra di De Biasi, che impone le linee guida di una nuova organizzazio…
 - Promesse aperte: nessuna.
-- Prossimo capitolo 1: ; cambiamento: .
+- Prossimo capitolo 1: incidente scatenante; mostrare chi era Kurgan nel momento in cui il sistema lo sacrifica.; cambiamento: Kurgan è sacrificato; l'organizzazione che ha unificato resta senza c….
 - Prossimo passo: Architetto: i nove file di 03-struttura/; poi diagnosta ed editor-strutturale (commit separati); poi «zb pronto <libro>» (il motore verifica la struttura, senz…
 - Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 1.
