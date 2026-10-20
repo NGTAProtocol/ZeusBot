@@ -1,0 +1,19 @@
+# Stato compatto — Il padre del mostro
+
+- Fase: struttura; gate: nessuno.
+- Ultimo capitolo salvato: —; parole 0/70000.
+- Macrostruttura: motivo:.
+- Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi):; Tempo verbale della narrazione:; Voce (registro, distanza, eventuale voce della b….
+- Gate attivi: lettura.
+- Libro: it, profilo thriller.
+- Personaggi (capsula —): —
+- Fatti bloccati: 9 (elenco in stato.yaml):
+  - Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
+  - Kurgan è stato congedato senza onore in Serbia dopo aver ucciso tre alti ufficiali per salvare i suoi uomini.
+  - Luigi Bertola è il fidato di Alfredo Giorgi da 13 anni ed è da sempre informatore dell'élite.
+  - Kurgan viene sacrificato e al suo posto subentra Bertola.
+  - I sottoposti di Kurgan vengono convocati dalla squadra di De Biasi, che impone le linee guida di una nuova organizzazio…
+- Promesse aperte: nessuna.
+- Prossimo capitolo 1: ; cambiamento: .
+- Prossimo passo: Architetto: i nove file di 03-struttura/; poi diagnosta ed editor-strutturale (commit separati); poi «zb pronto <libro>» (il motore verifica la struttura, senz…
+- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 1.

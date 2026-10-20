@@ -1,0 +1,40 @@
+libro: Il padre del mostro
+motore_commit: null
+ramo_ultimo_salvataggio: null
+fase: struttura
+passo: da completare
+gate_in_attesa: null
+lotto:
+  dimensione: 3
+  capitoli: []
+ultimo_capitolo_approvato: null
+ultimo_capitolo_scritto: null
+tentativi: {}
+correzioni_aperte: []
+parole:
+  scritte: 0
+  obiettivo: 70000
+  metodo: unico
+documenti_approvati: {}
+avvisi_aperti: []
+revisione_in_corso: null
+push_in_sospeso: false
+aggiornato: '2026-10-20T15:11:55Z'
+sottofase: null
+fatti_bloccati:
+- Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
+- Kurgan è stato congedato senza onore in Serbia dopo aver ucciso tre alti ufficiali
+  per salvare i suoi uomini.
+- Luigi Bertola è il fidato di Alfredo Giorgi da 13 anni ed è da sempre informatore
+  dell'élite.
+- Kurgan viene sacrificato e al suo posto subentra Bertola.
+- I sottoposti di Kurgan vengono convocati dalla squadra di De Biasi, che impone le
+  linee guida di una nuova organizzazione paramilitare e territoriale guidata da Bertola.
+- 'Circa due mesi dopo quattro ex alti funzionari di Kurgan tentano un golpe contro
+  Bertola: viene sventato dai reparti speciali, due muoiono e due vengono incarcerati.'
+- L'unificazione tra Camorra e 'Ndrangheta è stata resa possibile da Kurgan con l'intervento
+  di Giorgi presso i servizi militari.
+- Giorgi voleva controllare le due organizzazioni tramite Kurgan, ma Kurgan ha cambiato
+  posizione.
+- Dalia collega le stragi alle posizioni del fondo e sceglie di pubblicare; per ritorsione
+  i servizi rendono pubblico qualcosa del suo passato e lei è costretta a dimettersi.

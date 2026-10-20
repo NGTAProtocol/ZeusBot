@@ -1,0 +1,68 @@
+titolo: Il padre del mostro
+sottotitolo: null
+autore: F.R. Faraone
+lingua: it
+modalita: nuovo
+percorso: editoriale
+lingua_originale: it
+lingue_target: []
+pausa_lettura: 3
+serie: null
+ebook: false
+profilo: thriller
+override: []
+gate:
+- lettura
+parole:
+  metodo: unico
+  target_totale: 70000
+formato:
+  pagina_pollici:
+  - 5.5
+  - 8.5
+  carta: crema
+  bleed: false
+  margini_mm:
+    alto: 20
+    basso: 20
+    esterno: 16
+    interno_scelto: 16
+  font:
+    nome: EB Garamond
+    corpo_pt: 11.5
+    interlinea: 1.5
+  numerazione:
+    da: capitolo_1
+    pagine_iniziali: senza_numero
+    posizione: piede_centro
+voci: []
+vincoli_capitolo: []
+nome_vietato_prima_di: []
+dichiarazioni:
+  chiusura:
+    sigle:
+    - D
+    - R
+    - P
+    - X
+    prevista_da: scaletta
+struttura:
+  separatore_scena:
+    sorgente: '* * *'
+    stampa: '* * *'
+  intestazione_capitolo: Luogo — giorno e data
+  parti: []
+  interludi: []
+calendario:
+  anni_ammessi: []
+ortografia:
+  parole_ammesse_file: nomi_propri.txt
+copyright:
+  riga: © {anno} {autore}. Tutti i diritti riservati.
+  anno: 2026
+  fantasia: Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzione dell'autore o usati in modo
+    fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale.
+  nota_autore: null
+voce:
+  slug: sistema-nell-ombra
+  ambientazione: altro
