@@ -1,6 +1,17 @@
-# Cronologia del libro (proposta B.2.1). Si compila nella fase dei documenti.
+# Cronologia del libro (proposta B.2.1). Compilata nella fase dei documenti (direttore editoriale).
+# Il briefing NON indica epoca, anni, date né età: nascite ed eventi restano vuoti finché l'autore non li fissa.
+# Tempo relativo (solo promemoria, non controllato): giorno 1 = sacrificio di Kurgan (cap. 1); giorno 2 =
+# convocazione (cap. 3); golpe «circa due mesi dopo» il subentro di Bertola (cap. 19, fatto canonico).
+# Durata «circa due mesi» (subentro di Bertola -> golpe): da registrare in «durate» quando esisteranno gli eventi
+# datati «subentro-bertola» e «golpe» (una durata senza date di eventi non è verificabile).
 nascite: []        # - {chi: <personaggio>, data: AAAA-MM-GG}
 eventi: []         # - {id: <id>, data: AAAA-MM-GG, capitolo: <N>, descrizione: <breve>}
 durate: []         # - {da: <id evento>, a: <id evento>, valore: "<N anni|mesi|settimane|giorni>", tolleranza_giorni: 3 (oppure tolleranza_mesi / tolleranza_anni)}
-cifre: []          # - {id: <id>, valore: <numero>, unita: <unità>, forme_ammesse: [<cifre>, <in lettere>], contesto: [<parole della frase>]}
+cifre:             # - {id: <id>, valore: <numero>, unita: <unità>, forme_ammesse: [<cifre>, <in lettere>], contesto: [<parole della frase>]}
+  - {id: anni-fiducia-bertola-giorgi, valore: 13, unita: anni, forme_ammesse: ['13', tredici], contesto: [fiducia, fidato, conosciamo]}
+  - {id: ufficiali-uccisi-serbia, valore: 3, unita: ufficiali, forme_ammesse: ['3', tre], contesto: [Serbia, congedo, congedato]}
+  - {id: ex-funzionari-golpe, valore: 4, unita: funzionari, forme_ammesse: ['4', quattro], contesto: [golpe, Kurgan, Vito]}
+  - {id: morti-golpe, valore: 2, unita: morti, forme_ammesse: ['2', due], contesto: [golpe]}
+  - {id: incarcerati-golpe, valore: 2, unita: incarcerati, forme_ammesse: ['2', due], contesto: [golpe]}
+  - {id: arrestati-golpe, valore: 2, unita: arrestati, forme_ammesse: ['2', due], contesto: [golpe]}
 eta_per_capitolo: {calcolata: true}
