@@ -1,6 +1,6 @@
 # Stato compatto — Il padre del mostro
 
-- Fase: pagina_campione; gate: nessuno.
+- Fase: stesura; gate: nessuno.
 - Ultimo capitolo salvato: —; parole 0/70000.
 - Macrostruttura: mosaico.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): terza persona ravvicinata, un solo punto di vista per capitolo e per scena; il lib….
@@ -15,5 +15,5 @@
   - I sottoposti di Kurgan vengono convocati dalla squadra di De Biasi, che impone le linee guida di una nuova organizzazio…
 - Promesse aperte: nessuna.
 - Prossimo capitolo 1: incidente scatenante; mostrare chi era Kurgan nel momento in cui il sistema lo sacrifica.; cambiamento: Kurgan è sacrificato; l'organizzazione che ha unificato resta senza c….
-- Prossimo passo: Scrivi 05-revisioni/pagina-campione.md secondo il manuale; poi «zb pronto <libro>».
+- Prossimo passo: Prossimo: capitolo 1. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
 - Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 1.

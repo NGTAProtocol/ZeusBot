@@ -1,8 +1,8 @@
 libro: Il padre del mostro
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: pagina_campione
-passo: da completare
+fase: stesura
+passo: capitolo 1
 gate_in_attesa: null
 lotto:
   dimensione: 3
@@ -164,10 +164,14 @@ documenti_approvati:
     sha256: 6e3f2fbf5ed388e9b0b1c8eed8bd6b60182b37aab91c689f26e23594a57e8e76
     commit: 1c413c3
     senza_gate: true
+  05-revisioni/pagina-campione.md:
+    sha256: 01448fb167d5d15d6ffc8757b858e4a907174d8ee82e3a444e54ffd756ebf7bc
+    commit: 90c4ce2
+    senza_gate: true
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-20T15:31:20Z'
+aggiornato: '2026-10-20T15:33:04Z'
 sottofase: null
 fatti_bloccati:
 - Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
