@@ -352,6 +352,10 @@ def pausa_note(r, L, sez):
     esito('fase.py', 'pausa di lettura con «correggi <note>»: note scritte, gate chiuso, la scrittura riparte',
           '0 / True / None / 1', f'{p.returncode} / {os.path.isfile(note) and "di notte" in open(note).read()} / '
           f'{stato(L2)["gate_in_attesa"]} / {len(stato(L2).get("note_lettura") or [])}', sez)
+    pp = zb(L2, 'prepara', '.', '3')      # il mini-libro ha 3 capitoli: le note valgono per ogni preparazione dopo la pausa
+    prep = os.path.join(L2, '06-diagnostica', 'preparazione', '03.md')
+    esito('prepara.py', 'dopo la pausa con le note: zb prepara le mette tra i file da leggere dello scrittore', '0 / True',
+          f'{pp.returncode} / {os.path.isfile(prep) and "- 06-diagnostica/note-lettura.md" in open(prep).read()}', sez)
     ly = os.path.join(L2, 'libro.yaml')
     orig = open(ly, encoding='utf-8').read()
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 6'))

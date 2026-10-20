@@ -9,6 +9,7 @@ scrittore deve leggere, e nient'altro:
 - il canone (fatti bloccati di stato.yaml);
 - le capsule dei capitoli precedenti e il registro delle promesse; si ferma se manca la capsula N-1;
 - le ultime righe del capitolo precedente (per la continuità del ritmo, al massimo 6 righe di prosa);
+- le note dell'autore alla pausa di lettura (06-diagnostica/note-lettura.md), se ci sono;
 - il conteggio delle righe da leggere (per «zb consumo»).
 """
 import os
@@ -53,6 +54,9 @@ def prepara(cartella, libro, n):
         prosa = [r for _, r in comune.righe_prosa(open(prec, encoding='utf-8').read()) if r.strip()]
         coda = prosa[-6:]
     leggere = ['03-architettura/manuale-di-stile.md', f'{comune.STRUTTURA}/09-scelte-fisse.md'] + file_codex + capsule
+    note = '06-diagnostica/note-lettura.md'           # note dell'autore alla pausa di lettura (fase.chiudi_pausa)
+    if os.path.isfile(os.path.join(cartella, note)):
+        leggere.append(note)
     totale = sum(righe(cartella, r) for r in leggere) + len(sk) + len(coda)
     out = [f'# Preparazione del capitolo {n} — {libro["titolo"]}', '',
            'Generata da «zb prepara»: lo scrittore legge solo questo file e i file elencati.', '',
@@ -61,6 +65,8 @@ def prepara(cartella, libro, n):
     out += [f'- {etichette[k]}: {v}' for k, v in sk.items() if k in etichette]
     out += ['', '## Canone (fatti bloccati: non si cambiano)', '']
     out += [f'- {x}' for x in stato.get('fatti_bloccati') or []] or ['- nessuno']
+    if note in leggere:
+        out += ['', '## Note dell\'autore alla pausa di lettura', '', f'Valgono per questo capitolo: {note} (nei file da leggere).']
     out += ['', '## File da leggere', ''] + [f'- {r}' for r in leggere]
     out += [f'- AVVISO {x}: nessuna scheda nel codex' for x in ignoti]
     if coda:

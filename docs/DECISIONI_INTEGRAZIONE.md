@@ -253,3 +253,14 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
 - `separazione.py` ha fermato la prima prova completa: la riga di `pulizia.py` della tabella di `motore` nomina il ramo
   d'archivio, e i nomi dei rami di libro sono vietati nei file del motore. Il nome è sostituito da «ramo d'archivio di
   `motore`» nelle due righe che lo citavano; nessun'altra parola cambia.
+
+## D16. Punto 8b: le note della pausa di lettura arrivano allo scrittore
+- Trovato rileggendo il codice per la guida (punto 11): dopo «zb correggi <libro> <note>» alla pausa di lettura le
+  note vanno in `06-diagnostica/note-lettura.md` e `fase.py` dice che lo scrittore le legge prima del blocco
+  successivo, ma `zb prepara` (l'unico file che lo scrittore legge, con i file che elenca) non le nominava: le note
+  dell'autore non arrivavano a chi scrive.
+- Correzione: `prepara.py` mette `06-diagnostica/note-lettura.md` tra i file da leggere, con una riga che lo dice, quando
+  il file esiste. Nessun altro cambiamento.
+- Prova nuova (percorso editoriale, alla stessa pausa con le note): `zb prepara` del capitolo 3 (il mini-libro ha 3
+  capitoli) elenca le note tra i file da leggere. Commit a parte, prima della documentazione, perché i documenti del
+  punto 11 descrivano il motore com'è.
