@@ -231,3 +231,25 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
   chiusura della struttura, D6; «ok» rifiutato dopo la struttura automatica, D6).
 - `prove.py`: `--solo` (ccr) e `--sezione` (motore, anche più volte) scelgono le sezioni; l'impronta per `zb push` si
   scrive solo con la suite intera tutta OK.
+
+## D13. Punto 10: attribuzioni e analisi dei repository
+- `docs/ATTRIBUZIONI.md`: unione delle due tabelle (ccr 13 voci; `motore` 13 adattate, 8 «solo idee», 1 non
+  accessibile) più le 8 voci consultate che stavano solo nelle schede di ccr. Ogni voce ha licenza dichiarata, fonte
+  della licenza («LICENSE letto», «solo README/metadati», «non verificato»), commit letto quando c'è, uso (adattato,
+  solo idea, nulla preso, strumento esterno). Nota di provenienza dei 28 file, di APODICTIC e di fiction-skills in testa.
+- Regola per Apache-2.0: ccr la trattava come MIT (adattamento con attribuzione), `motore` come «solo idee». Scelta: la
+  più stretta, «solo idee, nessun testo», perché è compatibile con entrambe (nessuno dei due rami ha copiato testo) e non
+  richiede di cambiare file del motore. haowjy e Velith passano nella tabella «solo idee».
+- `docs/ANALISI_REPOSITORY.md`: una scheda per repository (36) con le due letture una sotto l'altra, invariate tranne i
+  nomi cambiati nell'integrazione (`anti_ia.py` → `antiia.py`, `zb ortografia installa` → `zb languagetool installa`,
+  `revisione_manoscritto` → `struttura_manoscritto`), segnati nel testo. La tabella degli script di `motore` resta com'era;
+  accanto, la tabella di cosa vale nel ramo integrato. Il confronto con Novel-OS e Book-pipeline ha una colonna in più.
+- Controllo: ogni riga non vuota delle due versioni di `ANALISI_REPOSITORY.md` è nel file unito, tranne le righe di
+  metodo riscritte in testa e i prefissi «Modifiche fatte nel motore» con la nota sui nomi; ogni repository delle due
+  `ATTRIBUZIONI.md` compare nel file unito.
+- Divergenza lasciata visibile: kindle-book-agency (ccr: non trovato; `motore`: Harshil-Jani/kindle-book-agency a c1d75dc).
+- Riletto in questa integrazione solo `tools/apodictic/LICENSE` di Book-pipeline (c4e781f); gli altri dati vengono dalle
+  due versioni.
+- `separazione.py` ha fermato la prima prova completa: la riga di `pulizia.py` della tabella di `motore` nomina il ramo
+  d'archivio, e i nomi dei rami di libro sono vietati nei file del motore. Il nome è sostituito da «ramo d'archivio di
+  `motore`» nelle due righe che lo citavano; nessun'altra parola cambia.
