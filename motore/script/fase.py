@@ -665,6 +665,10 @@ def cmd_esito(cartella, libro, stato, resto, argv):
     if gate and not correzione and not (gate == 'controllo_fallito' and str(stato['passo']) == f'capitolo {n}'):
         raise comune.ErroreMotore(f'Gate «{gate}» aperto: prima ok o correggi.')
     extra = ['--radice', argv[argv.index('--radice') + 1]] if '--radice' in argv else []
+    u = dict(comune.unita(cartella, libro)).get(n)
+    if u:                       # chi ha scritto l'unità (separazione dei ruoli, ruolo.py; da motore)
+        import ruolo
+        ruolo.registra_scrittura(cartella, comune.sessione_corrente()[0], os.path.relpath(u, cartella))
     r = subprocess.run(comando_controlli(cartella, libro, n, extra), capture_output=True, text=True)
     if r.returncode not in (0, 1):
         raise comune.ErroreMotore(f'capitolo.py {n} non eseguito: {r.stderr.strip() or r.stdout.strip()}')

@@ -279,7 +279,7 @@ passo_5:
     avvio_libro: "2 / ['Autore']"
   avvio:
     codice: 0
-    file_letti: 10
+    file_letti: 11          # anche il file del ruolo della sessione (editoriale/ruoli/; da motore)
     git_status: pulito
     non_scrivibile: "2 / True"
     fuori_git: "2 / []"
@@ -700,7 +700,7 @@ voce:
   libro_senza_voce: "0 0 / identica / False / False"
   briefing_voce: "Voce dalla banca: voce-di-prova\nAmbientazione: Borgo di Prova\n"
   blocco_voce: "{'slug': 'voce-di-prova', 'ambientazione': 'Borgo di Prova'}"
-  libro_con_voce: "0 / True / True / 11 / 0"
+  libro_con_voce: "0 / True / True / 12 / 0"      # con il file del ruolo della sessione
   con_voce_senza_variabile: "0 / True / False"
   con_voce_non_pronta: "0 / True"
   schema_senza_slug: "True"
@@ -758,3 +758,13 @@ cartella_unica:
   # redirezione in /tmp (fuori dal repository), git checkout di un ramo
   bash: [2, 0, 0, 2, 2, 0, 0, 0]
   push_senza_prove: "2 / True"
+
+ruoli:
+  # da motore (971b6df), con il gate «struttura» automatico: dopo il «pronto» riuscito la fase è «documenti»
+  dalla_fase: "0 / architetto-struttura / True"
+  secondo_ruolo: "2 / True"
+  stessa_sessione: "2 / True / None"
+  avviso: "0 / True / documenti"
+  altra_sessione: "0 / documenti"
+  scrittore_revisore: "2 / True"
+  stato: "0 / True / True"

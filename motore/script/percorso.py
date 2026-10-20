@@ -186,6 +186,9 @@ def pronto(cartella, libro, stato, f):
             F.registra(cartella, stato, documenti_gate(cartella, libro, stato, 'guida'), senza_gate=True)
             stato.update(fase='stesura', passo='capitolo 1', gate_in_attesa=None)
         return True
+    if fs in ('struttura', *REVISIONI) and (fs == 'struttura' or (stato.get('sottofase') or 'proposte') == 'proposte'):
+        import ruolo
+        ruolo.controlla_separazione_gate(cartella, fs)      # un ruolo per sessione (da motore)
     if fs == 'struttura':
         p = struttura.verifica(cartella) + problemi_fase(cartella, libro, 'struttura')
         if p:

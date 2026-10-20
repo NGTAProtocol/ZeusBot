@@ -24,6 +24,11 @@ Limiti residui (falsi permessi, li coprono il controllo pre-commit e «zb avvio�
 nominare il percorso, variabili o «cd» di comandi precedenti, sostituzioni di comando, strumenti non elencati
 (awk -i inplace, ed, vim -c, find -delete, xargs rm).
 
+Revisori (agent_type o ruolo della sessione in <libro>/.zb/ruoli.yaml): un Write su un capitolo già esistente di
+04-manoscritto/ è rifiutato; si corregge con Edit, a modifiche puntuali. Scritture dentro il libro (Write, Edit) in
+03-struttura/, 04-manoscritto/, 06-diagnostica/, 07-capsule/: annotate in <libro>/.zb/scritture.log con la sessione
+(separazione dei ruoli, ruolo.py). Da motore, 971b6df.
+
 Uso come comando: hook_recinto.py lavoro stato | lavoro motore | lavoro libro <slug>
 («zb lavoro …»). «lavoro libro <slug>» scrive <git-dir>/zb-libro-attivo: si rifiuta sul ramo «motore».
 Ogni «zb lavoro motore|libro» installa anche il controllo pre-commit di git (precommit.py), che rifiuta un
@@ -166,6 +171,49 @@ def decidi(percorso, rad):
                       'Se l\'autore ha scritto «lavoro sul motore»: zb lavoro motore.')
 
 
+def annota_scrittura(percorso, rad, dati):
+    """Scrittura dentro un libro: <libro>/.zb/scritture.log (separazione dei ruoli)."""
+    try:
+        libri = os.path.join(rad, 'libri')
+        if not dentro(libri, percorso):
+            return
+        slug = os.path.relpath(percorso, libri).split(os.sep, 1)[0]
+        cartella = os.path.join(libri, slug)
+        if not os.path.isfile(os.path.join(cartella, 'libro.yaml')):
+            return
+        import ruolo
+        ruolo.registra_scrittura(cartella, str(dati.get('session_id') or 'locale'), os.path.relpath(percorso, cartella))
+    except Exception:       # l'annotazione non deve mai fermare lo strumento
+        pass
+
+
+def riscrittura_da_revisore(percorso, rad, dati):
+    """Messaggio se un revisore riscrive per intero (Write) un capitolo esistente; None altrimenti.
+    I revisori correggono con modifiche puntuali (Edit), mai riscrivendo il capitolo (risparmio-token.md)."""
+    if dati.get('tool_name') != 'Write' or not os.path.isfile(percorso):
+        return None
+    libri = os.path.join(rad, 'libri')
+    if not dentro(libri, percorso):
+        return None
+    parti = os.path.relpath(percorso, libri).split(os.sep)
+    if len(parti) < 3 or parti[1] != '04-manoscritto':
+        return None
+    try:
+        import ruolo
+    except Exception:
+        return None
+    chi = dati.get('agent_type')
+    if chi not in ruolo.REVISORI:
+        try:
+            chi = (ruolo.leggi_ruoli(os.path.join(libri, parti[0])).get(str(dati.get('session_id'))) or {}).get('ruolo')
+        except Exception:
+            chi = None
+    if chi in ruolo.REVISORI:
+        return (f'RECINTO: {chi} non riscrive per intero {os.path.relpath(percorso, rad)}: correzioni puntuali con Edit, '
+                'solo sulle proposte registrate.')
+    return None
+
+
 def hook():
     try:
         dati = json.load(sys.stdin)
@@ -199,6 +247,11 @@ def hook():
     if esito == 'blocca':
         print(msg, file=sys.stderr)
         return 2
+    msg_rev = riscrittura_da_revisore(percorso, rad, dati)
+    if msg_rev:
+        print(msg_rev, file=sys.stderr)
+        return 2
+    annota_scrittura(percorso, rad, dati)
     if esito == 'avviso':
         print(json.dumps({'systemMessage': msg}, ensure_ascii=False))
     return 0

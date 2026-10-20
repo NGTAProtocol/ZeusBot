@@ -100,3 +100,24 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
 - Il controllo del titolo guarda solo i file fuori da `libri/` diversi da `origin/motore` (scritti sul ramo del
   libro): il motore arriva da `origin/motore`, e le prove di ccr ne copiano uno intero con i mini-libri inventati.
 - Prove: la sezione `cartella unica` di `motore` (13 prove) è portata in `prove.py`.
+
+## D8. Punto 5: ruoli
+- Due controlli, tutti e due tenuti:
+  - per fase (ccr): `zb ruolo <libro> <ruolo> [N]` rifiuta un ruolo fuori dalla sua fase (`percorso.FASI_RUOLO`) e dà
+    la prima riga del rapporto con l'impronta del testo rivisto; `zb pronto` rifiuta rapporti con un'altra impronta o
+    salvati nello stesso commit del testo;
+  - per sessione (`motore`): `zb avvio <libro> [--ruolo R]` registra un ruolo per sessione in `<libro>/.zb/ruoli.yaml`
+    (senza `--ruolo`, quello della fase) e mette il file del ruolo nella riga «Letto»; l'hook del recinto e `zb esito`
+    annotano chi scrive in `.zb/scritture.log`; al «pronto» delle fasi con rapporti e all'avvio di un ruolo di
+    revisione, chi ha scritto il testo non può aver scritto la revisione. Modalità `separazione_ruoli: blocco` in
+    `dati/hook.yaml` (scelta fatta in `motore`; l'autore può tornare ad `avviso`).
+- Un solo nome di comando: `zb ruoli` (motore) e `zb ruolo` (ccr) hanno la stessa lunghezza (5 lettere); scelgo
+  `ruolo`, che i 28 file del pacchetto già citano (`zb ruolo <libro> …` in `ruoli/04` e `diagnosi/03`). Il vecchio
+  `zb ruoli <libro> stato` diventa `zb ruolo <libro> stato`; un solo modulo, `script/ruolo.py`.
+- Nomi del pacchetto: il diagnosta è un ruolo di revisione (non scrive in `03-struttura/` né in `04-manoscritto/`);
+  le revisioni controllate sono `rapporto-*.md` e `piano-revisione-*.md`. Ruolo della fase `struttura_manoscritto`:
+  diagnosta (il primo dei due).
+- `zb avvio` non controlla la fase del ruolo (come in `motore`): quel controllo resta in `zb ruolo` (come in ccr).
+- I revisori non riscrivono per intero un capitolo esistente (Write rifiutato dall'hook, si corregge con Edit).
+- Prove: la sezione `ruoli` di `motore` (9 prove) è portata; con il gate «struttura» automatico, dopo un «pronto»
+  riuscito la fase è «documenti» (in `motore` si apriva il gate).

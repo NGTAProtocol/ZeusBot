@@ -287,7 +287,7 @@ def argomenti(argv):
         if salta:
             salta = False
             continue
-        if a in ('--radice', '--oggi', '--pdf', '--titolo'):
+        if a in ('--radice', '--oggi', '--pdf', '--titolo', '--ruolo'):
             salta = True
             continue
         if a.startswith('--'):

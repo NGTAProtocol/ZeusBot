@@ -1,6 +1,6 @@
 """Avvio obbligatorio prima di lavorare su un libro (proposta B.4, C.4, C.5).
 
-Uso: python3 -B avvio.py <libro>        (oppure ZB_LIBRO=<libro>)
+Uso: python3 -B avvio.py <libro> [--ruolo <ruolo>]        (oppure ZB_LIBRO=<libro>)
 Si ferma (codice 2) e non scrive nulla da nessuna parte se:
 - il percorso non contiene un libro (se c'è un briefing, elenca cosa manca);
 - la cartella del libro non è scrivibile o «git push --dry-run» fallisce (errore esatto);
@@ -9,7 +9,11 @@ Si ferma (codice 2) e non scrive nulla da nessuna parte se:
 - stato.yaml manca o non è valido, oppure push_in_sospeso è vero;
 - in fase «documenti»: briefing incompleto (non per un libro in riscrittura senza briefing nel formato
   del motore, cioè senza la riga «Titolo di lavoro:»: è un libro adottato con i suoi documenti);
-- un documento approvato è cambiato fuori procedura (sha256 diverso).
+- un documento approvato è cambiato fuori procedura (sha256 diverso);
+- la sessione ha già un altro ruolo (un ruolo per sessione), o un ruolo di revisione è chiesto da una sessione che
+  ha scritto il testo da revisionare (con «separazione_ruoli: blocco» in dati/hook.yaml; ruolo.py, da motore).
+Ruolo: --ruolo <ruolo>; senza, quello della fase (ruolo.DA_FASE). Registrato in <libro>/.zb/ruoli.yaml; il file del
+ruolo (motore/editoriale/) entra nella riga «Letto».
 Se tutto va bene stampa la riga «Letto: …» (file, righe, sha256, ultimo commit; libro e motore)
 e scrive solo il marker <libro>/.zb/letto-<session_id>.
 Con il blocco «voce» in libro.yaml la riga «Letto» include anche il briefing e la scheda della voce
@@ -278,6 +282,23 @@ def main(argv):
     if not percorso:
         return avvio_motore()
     cartella, libro, stato, letti, sha, libro_commit, motore_commit, ramo, avvisi_voce = controlla(percorso)
+    # un ruolo per sessione (da motore): controlli prima di qualunque scrittura
+    import ruolo as R
+    sid, fonte = comune.sessione_corrente()
+    ruolo = argv[argv.index('--ruolo') + 1] if '--ruolo' in argv and argv.index('--ruolo') + 1 < len(argv) \
+        else R.DA_FASE.get(stato['fase'], 'motore')
+    if ruolo not in R.RUOLI:
+        ferma(f'Ruolo «{ruolo}» sconosciuto. Ruoli: {", ".join(R.RUOLI)}')
+    precedente = (R.leggi_ruoli(cartella).get(sid) or {}).get('ruolo')
+    if precedente and precedente != ruolo and sid != 'locale':
+        ferma(f'Questa sessione ha già il ruolo «{precedente}»: un ruolo per sessione. Per fare «{ruolo}»: salva, '
+              'apri una sessione nuova, zb avvio, riga «Letto».')
+    R.controlla_avvio(cartella, sid, ruolo)
+    if R.RUOLI[ruolo]['file']:
+        p_ruolo = os.path.join(comune.radice_motore(), 'editoriale', R.RUOLI[ruolo]['file'])
+        r, s = riga_file(os.path.dirname(p_ruolo), p_ruolo, f'ruolo {ruolo}')
+        letti.append(r)
+        sha[f'ruolo {ruolo}'] = s
     print(f'Ramo: {ramo}; allineato a origin: sì')
     print('Letto: ' + ', '.join(letti) + ';')
     print(f'libro @ {libro_commit}; motore @ {motore_commit}; fase {stato["fase"]}, '
@@ -300,8 +321,10 @@ def main(argv):
     for n_int, d in comune.interludi_in_anticipo(cartella, libro):
         print(f'AVVISO: {n_int} in anticipo (va dopo il capitolo {d}, non ancora scritto).')
     print(fase.prossimo(stato))
-    # unica scrittura: il marker di sessione dentro il libro
-    sid, fonte = comune.sessione_corrente()
+    # uniche scritture: ruolo della sessione e marker, dentro <libro>/.zb/
+    R.registra_ruolo(cartella, sid, ruolo)
+    print(f'Ruolo della sessione: {ruolo}' + ('' if '--ruolo' in argv else ' (dalla fase; un altro: --ruolo <ruolo>)')
+          + '. Un ruolo per sessione.')
     d = comune.prepara_zb(cartella)
     marker = os.path.join(d, f'letto-{sid}')
     corpo = [f'data: {datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}',
