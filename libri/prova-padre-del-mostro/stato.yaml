@@ -1,7 +1,7 @@
 libro: Il padre del mostro
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: struttura
+fase: documenti
 passo: da completare
 gate_in_attesa: null
 lotto:
@@ -15,26 +15,66 @@ parole:
   scritte: 0
   obiettivo: 70000
   metodo: unico
-documenti_approvati: {}
+documenti_approvati:
+  03-struttura/01-premessa.md:
+    sha256: 75c86d26398688abd3928be09cc958448bcca9f533634f0cf06c8d4f3a09296a
+    commit: 9f0f3a8
+    senza_gate: true
+  03-struttura/02-logline-tema.md:
+    sha256: f1fe6f87d7b39365fc9fca126fde4d03a24cee1978677bc1351afc168c9dd103
+    commit: 9f0f3a8
+    senza_gate: true
+  03-struttura/03-personaggi-chiave.md:
+    sha256: 57eaefa80ab3b9f2d0eaaaa6170b210d591a66235cd463cdbe610e5f55336768
+    commit: 9f0f3a8
+    senza_gate: true
+  03-struttura/04-atti-svolte.md:
+    sha256: 6a346e648687417931e5e8c9d79dd8005d943bf5d9439aec006c0350d4dac3cf
+    commit: 9f0f3a8
+    senza_gate: true
+  03-struttura/05-scaletta.md:
+    sha256: 9b97f291ced78ad1deb3876e12da6f6f6eac7186eb731e36ac497897c1b66ee1
+    commit: 9f0f3a8
+    senza_gate: true
+  03-struttura/06-sottotrame-temi.md:
+    sha256: 63febd2b306bc43922c1814ca6357c072f526368b13e326ec8540b20f88ae4a1
+    commit: 9f0f3a8
+    senza_gate: true
+  03-struttura/07-tensione-ritmo.md:
+    sha256: 11826ac6502ef82b2ed200a0587c206c9c07f54cd1ad346d665f6d119a7dff27
+    commit: 9f0f3a8
+    senza_gate: true
+  03-struttura/08-piano-parole.md:
+    sha256: d1eb614b17d721d34b52c0946eebdb15ba148787d791435a8c4a35d401ccdb2f
+    commit: 9f0f3a8
+    senza_gate: true
+  03-struttura/09-scelte-fisse.md:
+    sha256: b95292d30446005490a4ac845971bab094a77488fa50fca8698381366c2f8751
+    commit: 9f0f3a8
+    senza_gate: true
+  06-diagnostica/rapporto-struttura.md:
+    sha256: d4923b49bc690463e24b42f6efc2e00ab03940cbfba56595aeb886f56145c8aa
+    commit: '7052862'
+    senza_gate: true
+  06-diagnostica/piano-revisione-struttura.md:
+    sha256: 6438522125d667abf2fc40e4715211f13e1a1f4e459cdd31778cb069ab9fff10
+    commit: bdd8ba5
+    senza_gate: true
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-20T15:11:55Z'
+aggiornato: '2026-10-20T15:27:39Z'
 sottofase: null
 fatti_bloccati:
 - Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
-- Kurgan è stato congedato senza onore in Serbia dopo aver ucciso tre alti ufficiali
-  per salvare i suoi uomini.
-- Luigi Bertola è il fidato di Alfredo Giorgi da 13 anni ed è da sempre informatore
-  dell'élite.
+- Kurgan è stato congedato senza onore in Serbia dopo aver ucciso tre alti ufficiali per salvare i suoi uomini.
+- Luigi Bertola è il fidato di Alfredo Giorgi da 13 anni ed è da sempre informatore dell'élite.
 - Kurgan viene sacrificato e al suo posto subentra Bertola.
-- I sottoposti di Kurgan vengono convocati dalla squadra di De Biasi, che impone le
-  linee guida di una nuova organizzazione paramilitare e territoriale guidata da Bertola.
-- 'Circa due mesi dopo quattro ex alti funzionari di Kurgan tentano un golpe contro
-  Bertola: viene sventato dai reparti speciali, due muoiono e due vengono incarcerati.'
-- L'unificazione tra Camorra e 'Ndrangheta è stata resa possibile da Kurgan con l'intervento
-  di Giorgi presso i servizi militari.
-- Giorgi voleva controllare le due organizzazioni tramite Kurgan, ma Kurgan ha cambiato
-  posizione.
-- Dalia collega le stragi alle posizioni del fondo e sceglie di pubblicare; per ritorsione
-  i servizi rendono pubblico qualcosa del suo passato e lei è costretta a dimettersi.
+- I sottoposti di Kurgan vengono convocati dalla squadra di De Biasi, che impone le linee guida di una nuova organizzazione
+  paramilitare e territoriale guidata da Bertola.
+- 'Circa due mesi dopo quattro ex alti funzionari di Kurgan tentano un golpe contro Bertola: viene sventato dai reparti speciali,
+  due muoiono e due vengono incarcerati.'
+- L'unificazione tra Camorra e 'Ndrangheta è stata resa possibile da Kurgan con l'intervento di Giorgi presso i servizi militari.
+- Giorgi voleva controllare le due organizzazioni tramite Kurgan, ma Kurgan ha cambiato posizione.
+- Dalia collega le stragi alle posizioni del fondo e sceglie di pubblicare; per ritorsione i servizi rendono pubblico qualcosa
+  del suo passato e lei è costretta a dimettersi.
