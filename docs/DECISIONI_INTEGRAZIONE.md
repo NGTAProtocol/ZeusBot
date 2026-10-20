@@ -38,3 +38,13 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
   la decisione dell'autore è successiva ed esplicita, e il punto 1 vieta altre modifiche ai 28 file. Il motore segue la
   decisione dell'autore; il contrasto è elencato in `docs/DA_VERIFICARE_AUTORE.md` perché l'autore aggiorni il
   pacchetto se vuole.
+
+## D5. Punto 2: aggiunte da `motore`
+- I 14 file sono copiati da 971b6df e adattati ai nomi del pacchetto (elenco e adattamenti in
+  `docs/DA_VERIFICARE_AUTORE.md`). Nessuno dei 28 file è cambiato.
+- Due glossari restano entrambi: `editoriale/glossario.md` (inglese → italiano, da `motore`) e
+  `lingue/it/glossario-editoriale.md` (significato dei termini, da ccr); il primo rimanda al secondo.
+- `lettore-cieco`: livello «medio» in `dati/modelli-ruoli.yaml`, come il valore `sonnet` che aveva in `motore`.
+- `ruoli/riferimenti/critica-manoscritto.md`: nel pacchetto la diagnosi la fa il diagnosta e le proposte l'editor
+  strutturale; il riferimento ora indica `rapporto-manoscritto.md` e `piano-revisione-manoscritto.md`, e la colonna
+  «Proposta» del rapporto diventa «Classe di intervento» (`diagnosi/00-principi.md`: la diagnosi non scrive soluzioni).

@@ -14,5 +14,6 @@ ruoli:
   correttore-italiano: medio
   correttore-bozze: medio
   capsula: leggero
+  lettore-cieco: medio      # passo opzionale (editoriale/agenti/lettore-cieco.md)
   traduttore: medio
   revisore-fedelta: medio

@@ -399,7 +399,7 @@ def agenti_e_comandi(sez='agenti e comandi'):
     p = zb(r, 'agenti', 'attiva', '--ok', '--progetto', r)
     ag = sorted(os.listdir(os.path.join(r, '.claude', 'agents')))
     co = sorted(os.listdir(os.path.join(r, '.claude', 'commands')))
-    esito('agenti.py', 'installati: agenti / comandi', '11 / [\'diagnosi.md\', \'handover.md\', \'revisiona.md\', \'scrivi-capitolo.md\']',
+    esito('agenti.py', 'installati: agenti / comandi (10 + 2 di traduzione)', '12 / [\'diagnosi.md\', \'handover.md\', \'revisiona.md\', \'scrivi-capitolo.md\']',
           f'{len(ag)} / {co}', sez)
     fm = []
     for f in ag:
