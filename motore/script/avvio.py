@@ -196,12 +196,13 @@ def controlla(percorso):
     if libro.get('modalita') == 'riscrittura':
         elenco.append(libro['testo_precedente'])
     if comune.editoriale(libro) and stato['fase'] == 'stesura':
-        import capsula
-        senza = [n for n in range(1, (stato['ultimo_capitolo_scritto'] or 0) + 1)
-                 if capsula.problemi_capsula(cartella, libro, n)]
-        if senza:
-            avvisi_capsule.append('capsule mancanti o incomplete: ' + ', '.join(map(str, senza))
-                                  + ' (zb capsula <libro> N; zb esito non va avanti senza)')
+        import capsula      # «capsule: obbligatorie» in libro.yaml: fermo; altrimenti avviso (da motore)
+        try:
+            msg = capsula.controlla(cartella, libro, stato)
+        except comune.ErroreMotore as e:
+            ferma(str(e))
+        if msg:
+            avvisi_capsule.append(msg[len('AVVISO: '):])
     if stato['fase'] == 'stesura' and stato['ultimo_capitolo_scritto'] and not comune.editoriale(libro):
         u = dict(comune.unita(cartella, libro)).get(str(stato['ultimo_capitolo_scritto']))
         if u:

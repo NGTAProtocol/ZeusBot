@@ -4,6 +4,9 @@
 Il libro è sempre un percorso: zb <comando> <libro> [argomenti] (oppure ZB_LIBRO=<libro>).
 Ogni comando lancia lo script di motore/script/ con python3 -B e ne restituisce il codice d'uscita.
 Elenco completo: python3 motore/zb aiuto (fonte unica: motore/dati/comandi.yaml)
+Output compatto (da motore, dati/output.yaml): al massimo righe_max righe a schermo, il resto in
+<libro>/.zb/ultimo-output.txt (o nella cartella temporanea); KO, FERMO ed ERRORE restano sempre a schermo.
+Con ZB_OUTPUT_COMPLETO=1 niente taglio.
 """
 import filecmp
 import os
@@ -35,12 +38,64 @@ def aiuto(args):
     return 0
 
 
-def lancia(script, args):
+def output_regole():
+    """(righe_max, esenti) da dati/output.yaml; senza PyYAML, lettura semplice delle due righe."""
+    righe, esenti = 40, []
+    try:
+        for r in open(os.path.join(MOTORE, 'dati', 'output.yaml'), encoding='utf-8'):
+            if r.startswith('righe_max:'):
+                righe = int(r.split(':', 1)[1].split('#')[0])
+            elif r.startswith('esenti:'):
+                esenti = [x.strip() for x in r.split(':', 1)[1].split('#')[0].strip(' []\n').split(',') if x.strip()]
+    except (OSError, ValueError):
+        pass
+    return righe, esenti
+
+
+def compatta(testo, righe_max, dove):
+    """Al massimo righe_max righe: inizio, righe con KO/FERMO/ERRORE, fine; l'intero testo nel file `dove`."""
+    righe = testo.splitlines()
+    if len(righe) <= righe_max:
+        return testo
+    with open(dove, 'w', encoding='utf-8') as f:
+        f.write(testo)
+    import re
+    import collections
+    fine = righe[-4:]
+    gravi = [r for r in righe[:-4] if re.search(r'\bKO\b|FERMO|ERRORE', r)]
+    spazio = max(0, righe_max - len(fine) - 2 - min(len(gravi), righe_max // 2))
+    tenute = collections.OrderedDict((i, r) for i, r in enumerate(righe[:spazio]))
+    for i, r in enumerate(righe[:-4]):
+        if r in gravi and len(tenute) < righe_max - len(fine) - 1:
+            tenute[i] = r
+    corpo = [tenute[i] for i in sorted(tenute)]
+    omesse = len(righe) - len(corpo) - len(fine)
+    return '\n'.join(corpo + [f'… {omesse} righe omesse (KO e FERMO restano a schermo); output intero: {dove}'] + fine) + '\n'
+
+
+def lancia(script, args, comando=None):
     p = os.path.join(S, script)
     if not os.path.isfile(p):
         print(f'FERMO: {script} non esiste ancora nel motore.', file=sys.stderr)
         return 2
-    return subprocess.run([sys.executable, '-B', p, *args]).returncode
+    righe_max, esenti = output_regole()
+    if os.environ.get('ZB_OUTPUT_COMPLETO') == '1' or (comando or '') in esenti:
+        return subprocess.run([sys.executable, '-B', p, *args]).returncode
+    r = subprocess.run([sys.executable, '-B', p, *args], stdout=subprocess.PIPE, text=True)
+    testo = r.stdout or ''
+    if len(testo.splitlines()) > righe_max:
+        libro = next((os.path.realpath(a) for a in args if os.path.isfile(os.path.join(a, 'libro.yaml'))), None)
+        if libro and not (libro + os.sep).startswith(MOTORE + os.sep):     # mai file dentro motore/
+            import importlib
+            sys.path.insert(0, S)
+            d = importlib.import_module('comune').prepara_zb(libro)
+        else:
+            import tempfile
+            d = tempfile.gettempdir()
+        testo = compatta(testo, righe_max, os.path.join(d, 'ultimo-output.txt'))
+    sys.stdout.write(testo)
+    sys.stdout.flush()
+    return r.returncode
 
 
 def progetto(args):
@@ -110,7 +165,7 @@ def main(argv):
         if not args:
             print(f'Uso: zb {cmd} <libro> …', file=sys.stderr)
             return 2
-        return lancia('fase.py', [args[0], cmd, *args[1:]])
+        return lancia('fase.py', [args[0], cmd, *args[1:]], cmd)
     if cmd == 'verifica':
         resto = [a for a in args if a.upper() != 'KDP']
         return lancia('kdp_verifica.py', resto)
@@ -121,7 +176,7 @@ def main(argv):
     if voce and voce['script'].endswith('.py'):
         if cmd in ('avvio',) and not args and os.environ.get('ZB_LIBRO'):
             args = [os.environ['ZB_LIBRO']]
-        return lancia(voce['script'], args)
+        return lancia(voce['script'], args, cmd)
     print(f'Comando sconosciuto: {cmd}. Elenco: zb aiuto', file=sys.stderr)
     return 2
 

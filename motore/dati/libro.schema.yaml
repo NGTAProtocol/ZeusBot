@@ -28,6 +28,7 @@ campi:
   gate: {tipo: lista, elementi: {tipo: scelta, valori: [struttura, documenti, pagina_campione, primi_capitoli, lotto,
                                                         struttura_manoscritto, line, copy, bozze, guida, fedelta]}}
   percorso: {tipo: scelta, valori: [editoriale, breve]}   # editoriale: motore/editoriale/00-percorso.md
+  capsule: {tipo: scelta, valori: [obbligatorie, avviso]}  # zb avvio: obbligatorie ferma, avviso (predefinito) avvisa
   lingua_originale: {tipo: testo}
   lingue_target: {tipo: lista, elementi: {tipo: testo}}
   traduzione:                                    # solo nel libro della traduzione, 08-traduzione-<lingua>/libro.yaml

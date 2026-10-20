@@ -109,6 +109,30 @@ def problemi_capsula(cartella, libro, n):
     return out
 
 
+def mancanti(cartella, libro, stato, fino_a=None):
+    """Capitoli numerati già scritti (fino a ultimo_capitolo_scritto, o fino_a escluso) senza capsula valida."""
+    ultimo = (fino_a - 1) if fino_a else (stato.get('ultimo_capitolo_scritto') or 0)
+    scritti = [int(u) for u, _ in comune.unita(cartella, libro) if u.isdigit() and int(u) <= ultimo]
+    return [n for n in scritti if problemi_capsula(cartella, libro, n)]
+
+
+def regola(libro):
+    """Campo «capsule» di libro.yaml: obbligatorie (zb avvio si ferma) | avviso (predefinito). Da motore."""
+    return libro.get('capsule') or 'avviso'
+
+
+def controlla(cartella, libro, stato, fino_a=None, contesto='avvio'):
+    """Messaggio sulle capsule mancanti o incomplete; ErroreMotore con «capsule: obbligatorie». None se tutto c'è."""
+    m = mancanti(cartella, libro, stato, fino_a)
+    if not m:
+        return None
+    msg = (f'capsule di continuità mancanti o incomplete: capitoli {", ".join(map(str, m))} '
+           '(zb capsula <libro> N e l\'agente capsula; zb esito non va avanti senza)')
+    if regola(libro) == 'obbligatorie':
+        raise comune.ErroreMotore(f'{contesto}: {msg}')
+    return f'AVVISO: {msg}'
+
+
 def registro(cartella, libro):
     """Riscrive 07-capsule/registro.md; restituisce (aperte, errori)."""
     l = lingua(libro)

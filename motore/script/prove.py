@@ -2769,7 +2769,180 @@ def ruoli_prove(A):
           f'{p.returncode} / {"Modalità della separazione (dati/hook.yaml): blocco" in p.stdout} / {"s5: line-editor" in p.stdout}', sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove}
+# capsule di prova per il mini-libro (storia di motore, 971b6df), nelle otto sezioni di capsula.py e
+# nella misura di ccr (120-250 parole nelle sezioni)
+CAPSULE_PROVA = {
+    1: ['Irene apre la farmacia di turno all\'alba e trova il registro dei veleni con una pagina strappata; '
+        'controlla gli scaffali, conta le boccette e scopre che manca un flacone di laudano.',
+        'Irene e il farmacista anziano: sanno della pagina strappata, non sanno chi l\'ha tolta; il farmacista '
+        'ricorda un cliente forestiero della sera prima ma non ne dice il nome.',
+        'Il registro manca della pagina del 3 marzo; la chiave dell\'armadio dei veleni l\'hanno in due; la '
+        'pagina è stata tagliata con una lama, non strappata con le mani.',
+        '@prom:pagina (chi ha tolto la pagina e perché proprio quella data).',
+        'nessuna.',
+        'Da errore di registro a furto: Irene decide di non avvisare subito i carabinieri e di cercare da sola.',
+        'Irene diffidente e curiosa; il farmacista stanco, quasi offeso dalle domande.',
+        'La pagina mancante guardata controluce: si vedono ancora le righe premute dalla penna.'],
+    2: ['Irene porta l\'auto in officina e vede sul banco la stessa carta del registro, piegata in quattro sotto '
+        'una chiave inglese; il meccanico la copre con uno straccio quando lei si avvicina.',
+        'Irene e il meccanico: il meccanico tace sulla carta e dice di non conoscere il farmacista; Irene sa che '
+        'mente perché li ha visti insieme al bar la domenica.',
+        'La carta del registro è finita in officina; il meccanico ha una ricevuta della farmacia dello stesso giorno.',
+        '@prom:officina (perché il meccanico ha la carta).',
+        '@prom:pagina (la pagina è in officina, non distrutta).',
+        'Irene passa dal sospetto sul farmacista al sospetto sul meccanico, e capisce che i due si coprono.',
+        'Irene tesa e decisa; il meccanico nervoso, troppo gentile.',
+        'Le mani sporche di grasso del meccanico sul foglio bianco del registro.'],
+}
+
+
+def agenti_capsule_consumo(A):
+    """Agenti (formato e modello centrale), capsule, revisori, consumo e output compatto: da motore (971b6df),
+    sulla base ccr (agenti.py con dati/modelli-ruoli.yaml, capsula.py a otto sezioni, consumo.py unico)."""
+    import agenti
+    import capsula
+    import consumo
+    import hook_recinto
+    sez = 'agenti e capsule'
+    err = agenti.controlla_formato(M)
+    esito('agenti.py', 'formato degli agenti (name, description, model) e modelli = dati/modelli-ruoli.yaml',
+          [], err, sez)
+    tracciati = subprocess.run(['git', '-C', os.path.dirname(M), 'ls-files', '.claude'], capture_output=True, text=True).stdout.split()
+    esito('agenti.py', 'ramo del motore: nessun agente attivo (.claude/ non tracciato)', [], tracciati, sez)
+    # attiva solo sul ramo di un libro e con --ok
+    b = Banco()
+    os.makedirs(os.path.join(b.r, 'libri'))
+    b.nuovo('briefing-giallo.md', 'libri/giallo')
+    ag = os.path.join(S, 'agenti.py')
+    b.git(b.r, 'branch', '-m', 'motore')
+    p1 = esegui(ag, 'attiva', '--ok', '--progetto', b.r)
+    b.git(b.r, 'branch', '-m', 'libro-prova')
+    p2 = esegui(ag, 'attiva', '--progetto', b.r)
+    dest = os.path.join(b.r, '.claude', 'agents')
+    senza_ok = os.path.isdir(dest)
+    p3 = esegui(ag, 'attiva', '--ok', '--progetto', b.r)
+    attivi = sorted(os.listdir(dest)) if os.path.isdir(dest) else []
+    cap = open(os.path.join(dest, 'capsula.md'), encoding='utf-8').read() if attivi else ''
+    p4 = esegui(ag, 'disattiva', '--progetto', b.r)
+    esito('agenti.py', 'attiva: ramo motore fermo / senza --ok niente / con --ok tutti gli agenti / modello capsula / disattiva',
+          A['attiva'], f'{p1.returncode} / {p2.returncode} {senza_ok} / {p3.returncode} {len(attivi)} / '
+          f'{"model: haiku" in cap} / {p4.returncode} {os.path.isdir(dest)}', sez)
+    # modello centrale: si alza solo il ruolo indicato nel file di dati
+    mc = copia_motore()
+    pm = os.path.join(mc, 'dati', 'modelli-ruoli.yaml')
+    testo_m = open(pm, encoding='utf-8').read()
+    open(pm, 'w', encoding='utf-8').write(testo_m.replace('  capsula: leggero', '  capsula: medio'))
+    p5 = esegui(os.path.join(mc, 'script', 'agenti.py'), 'attiva', '--ok', '--progetto', b.r)
+    cap = open(os.path.join(dest, 'capsula.md'), encoding='utf-8').read()
+    lin = open(os.path.join(dest, 'line-editor.md'), encoding='utf-8').read()
+    p6 = esegui(os.path.join(mc, 'script', 'agenti.py'), 'stato', '--progetto', b.r)
+    esito('agenti.py', 'modello alzato solo per la capsula nel file di dati: copiato / altri invariati / stato segnala il file',
+          A['modello_centrale'], f'{p5.returncode} {"model: sonnet" in cap} / {"model: sonnet" in lin} / '
+          f'{p6.returncode} {"diverso da dati/modelli-ruoli.yaml" in p6.stdout}', sez)
+    esegui(os.path.join(mc, 'script', 'agenti.py'), 'disattiva', '--progetto', b.r)
+    # capsule (capsula.py di ccr: modello, sezioni, 120-250 parole)
+    L = copia_libro('mini-libro')
+    st = comune.leggi_yaml(os.path.join(M, 'modelli', 'stato.yaml'))
+    st.update(libro='mini-libro', fase='stesura', ultimo_capitolo_scritto=3, gate_in_attesa=None)
+    open(os.path.join(L, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(st, sort_keys=False, allow_unicode=True))
+    _, libro, _ = comune.carica_libro(L)
+    cp = os.path.join(S, 'capsula.py')
+    q1 = esegui(cp, L, '1')
+    q2 = esegui(cp, L, '1', '--verifica')
+
+    def scrivi_capsula(n, extra=''):
+        righe = [f'# Capsula {n} — prova', ''] + [f'- {s}: {v}' for s, v in zip(capsula.SEZIONI['it'], CAPSULE_PROVA[n])]
+        open(os.path.join(L, capsula.rel(n)), 'w', encoding='utf-8').write('\n'.join(righe) + '\n' + extra)
+    scrivi_capsula(1)
+    q3 = esegui(cp, L, '1', '--verifica')
+    scrivi_capsula(2, 'parola ' * 200 + '\n')
+    q4 = esegui(cp, L, '2', '--verifica')
+    esito('capsula.py', 'zb capsula: prepara il modello / ancora modello KO / compilata OK / oltre 250 parole KO',
+          A['capsula'], f'{q1.returncode} {os.path.isfile(os.path.join(L, "07-capsule", "01.md"))} / {q2.returncode} / '
+          f'{q3.returncode} / {q4.returncode} {"parole" in q4.stdout}', sez)
+    stato_f = {'ultimo_capitolo_scritto': 3}
+    try:
+        capsula.controlla(L, dict(libro, capsule='obbligatorie'), stato_f)
+        ob = 'passa'
+    except comune.ErroreMotore as e:
+        ob = 'fermo' if 'capitoli 2' in str(e) and '3' in str(e) else str(e)
+    av = capsula.controlla(L, libro, stato_f) or ''
+    esito('capsula.py', 'capsule mancanti o incomplete (2, 3): obbligatorie ferma / senza il campo avviso', A['controllo'],
+          f'{ob} / {av.startswith("AVVISO")}', sez)
+    # revisori: correzioni puntuali con Edit, mai Write su un capitolo esistente
+    r = b.r
+    hook_recinto.imposta_libro_attivo(r, 'giallo')
+    cap1 = os.path.join(r, 'libri', 'giallo', '04-manoscritto', '01-prova.md')
+    os.makedirs(os.path.dirname(cap1), exist_ok=True)
+    open(cap1, 'w', encoding='utf-8').write('# 1 — Prova\n\nTesto.\n')
+
+    def h(strumento, agente=None):
+        dati = {'session_id': 's7', 'tool_name': strumento, 'cwd': r, 'tool_input': {'file_path': cap1}}
+        if agente:
+            dati['agent_type'] = agente
+        return subprocess.run([sys.executable, '-B', os.path.join(S, 'hook_recinto.py')], input=json.dumps(dati),
+                              env=dict(b.E, CLAUDE_PROJECT_DIR=r), capture_output=True, text=True).returncode
+    esito('hook_recinto.py', 'capitolo esistente: Write del line editor / Edit del line editor / Write dello scrittore',
+          A['revisori'], [h('Write', 'line-editor'), h('Edit', 'line-editor'), h('Write', 'scrittore-voce')], sez)
+    # consumo: lo scrittore del capitolo 3 con e senza capsule (letture simulate secondo l'Input del ruolo)
+    Lr = os.path.join(r, 'libri', 'giallo')
+    os.makedirs(os.path.join(Lr, '07-capsule'), exist_ok=True)
+    for f in sorted(os.listdir(os.path.join(L, '04-manoscritto'))):
+        shutil.copy(os.path.join(L, '04-manoscritto', f), os.path.join(Lr, '04-manoscritto', f))
+    for n in (1, 2):
+        shutil.copy(os.path.join(L, capsula.rel(1)), os.path.join(Lr, capsula.rel(n)))
+    comuni_letti = ['LEGGIMI.md', 'libro.yaml', '03-architettura/manuale-di-stile.md', '03-struttura/05-scaletta.md',
+                    '03-struttura/08-piano-parole.md', 'cronologia.yaml']
+    comuni_letti = [x for x in comuni_letti if os.path.isfile(os.path.join(Lr, x))]
+    precedenti = [os.path.join('04-manoscritto', f) for f in ('01-la-farmacia.md', '02-l-officina.md')]
+
+    def legge(sid, rel, limite=None):
+        ti = {'file_path': os.path.join(Lr, rel)}
+        if limite:
+            ti['offset'] = max(1, sum(1 for _ in open(os.path.join(Lr, rel), encoding='utf-8')) - limite + 1)
+            ti['limit'] = limite
+        consumo.annota({'session_id': sid, 'tool_name': 'Read', 'tool_input': ti, 'cwd': r},
+                       ora='2026-10-15T10:00:00Z')
+    for rel in comuni_letti + precedenti:
+        legge('senza-capsule', rel)
+    for rel in comuni_letti + [capsula.rel(1), capsula.rel(2)]:
+        legge('con-capsule', rel)
+    legge('con-capsule', precedenti[-1], limite=25)          # solo l'ultima pagina del capitolo precedente
+    consumo.annota({'session_id': 'con-capsule', 'tool_name': 'Agent', 'tool_input': {'subagent_type': 'scrittore-voce'},
+                    'cwd': r}, ora='2026-10-15T10:05:00Z')
+    _, lb, _ = comune.carica_libro(Lr)
+    senza, con = consumo.riassunto(Lr, lb, 'senza-capsule'), consumo.riassunto(Lr, lb, 'con-capsule')
+    misura = (f'senza capsule {senza["righe_lette"]} righe, {senza["parole_lette"]} parole in {senza["file_letti"]} file; '
+              f'con capsule {con["righe_lette"]} righe, {con["parole_lette"]} parole in {con["file_letti"]} file; '
+              f'subagenti {con["subagenti"]}, durata {con["durata"]}')
+    print('MISURA CAPSULE (mini-libro, scrittore del capitolo 3): ' + misura)
+    esito('consumo.py', 'scrittore del capitolo 3: con le capsule si leggono meno righe dei capitoli precedenti', 'sì',
+          'sì' if con['parole_lette'] < senza['parole_lette'] else f'no ({misura})', sez)
+    p = subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), 'consumo', Lr, '--sessione', 'con-capsule', '--registra'],
+                       env=b.E, capture_output=True, text=True)
+    esito('consumo.py', 'zb consumo <libro> --sessione S --registra: riga in .zb/consumo.log', A['consumo'],
+          f'{p.returncode} / {os.path.isfile(os.path.join(Lr, ".zb", "consumo.log"))} / {"subagenti 1" in p.stdout}', sez)
+    # output compatto: al massimo righe_max righe, KO a schermo, output intero nel .zb del libro
+    # (soglia abbassata a 10 righe in una copia del motore: «zb conta» stampa 17 righe sul mini-libro, così la prova
+    # non dipende da quante righe stampa oggi un comando)
+    Lk = copia_libro('mini-libro')
+    mk = copia_motore()
+    po = os.path.join(mk, 'dati', 'output.yaml')
+    testo_o = open(po, encoding='utf-8').read()
+    open(po, 'w', encoding='utf-8').write(testo_o.replace('righe_max: 40', 'righe_max: 10'))
+    p = subprocess.run([sys.executable, '-B', os.path.join(mk, 'zb'), 'conta', Lk], env=ENV, capture_output=True, text=True)
+    pieno = os.path.join(Lk, '.zb', 'ultimo-output.txt')
+    import importlib.machinery
+    zbm = importlib.machinery.SourceFileLoader('zb_comando', os.path.join(M, 'zb')).load_module()
+    finto = '\n'.join([f'riga {i}' for i in range(1, 100)] + ['| 3 | frase_media | KO | — | prova |'] +
+                      [f'coda {i}' for i in range(1, 30)]) + '\n'
+    corto = zbm.compatta(finto, 40, os.path.join(TMP, 'finto-output.txt'))
+    esito('zb', 'output compatto: righe a schermo / riga KO tenuta / output intero salvato con più righe', A['compatto'],
+          f'{len(p.stdout.splitlines()) <= 11 and len(corto.splitlines()) <= 41} / {"| KO |" in corto} / '
+          f'{os.path.isfile(pieno) and len(open(pieno, encoding="utf-8").read().splitlines()) > 11}', sez)
+
+
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo}
 
 
 def main(argv):

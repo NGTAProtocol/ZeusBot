@@ -25,8 +25,8 @@ gruppi:
       - {nome: capsula, script: capsula.py, uso: "capsula <libro> <N> [--verifica]", aiuto: "capsula di continuità 07-capsule/NN.md e registro"}
       - {nome: compatto, script: compatto.py, uso: "compatto <libro>", aiuto: "stato compatto (15-20 righe) per le sessioni nuove"}
       - {nome: ruolo, script: ruolo.py, uso: "ruolo <libro> <ruolo> [N] | ruolo <libro> stato", aiuto: "prima riga del rapporto di un ruolo; rifiuta il ruolo fuori fase; stato: ruoli delle sessioni e separazione"}
-      - {nome: agenti, script: agenti.py, uso: "agenti stato | attiva [--ok] | disattiva", aiuto: "subagenti e comandi di Claude Code (solo rami dei libri)"}
-      - {nome: consumo, script: consumo.py, uso: "consumo <libro> registra|mostra [opzioni]", aiuto: "misura per sessione: capitoli, parole, righe lette, subagenti, durata"}
+      - {nome: agenti, script: agenti.py, uso: "agenti stato | attiva [--ok] | disattiva | prossimo <libro>", aiuto: "subagenti e comandi di Claude Code (solo rami dei libri); prossimo: chi chiamare ora, in sequenza o a gruppi"}
+      - {nome: consumo, script: consumo.py, uso: "consumo <libro> [sessione] [--sessione S] [--registra] | registra|mostra|confronto <N>", aiuto: "misura per sessione: capitoli, parole, righe lette (hook PostToolUse), subagenti, durata; confronto con e senza capsule"}
       - {nome: antiia, script: antiia.py, uso: "antiia <libro> [N] | estrai --ia <dir> --umano <dir> | taratura --umano <dir>", aiuto: "audit anti-IA non distruttivo e vocabolario dai dati"}
       - {nome: traduci, script: traduci.py, uso: "traduci <libro> --a <lingua> [inizia|stato|prepara N|controlla N|ritraduci N]", aiuto: "traduzione in 08-traduzione-<lingua>/"}
   - nome: Controlli e chiusura

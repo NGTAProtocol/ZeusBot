@@ -1,0 +1,36 @@
+# Orchestrazione dei subagenti (editoriale/risparmio-token.md). Lo legge script/agenti.py («zb agenti prossimo»).
+# Da motore (971b6df), con i nomi del pacchetto. Il parallelo massimo sta in dati/modelli-ruoli.yaml
+# (parallelo_massimo): una sola fonte.
+# La sessione principale non scrive prosa: chiama l'agente del passo con slug e numero di capitolo e legge
+# solo la risposta breve (massimo righe_risposta righe).
+righe_risposta: 10
+# con limiti d'uso o errori 429 si scende al valore successivo di «riduzione» (scriverlo qui, commit a parte)
+riduzione: [2, 1]
+# sempre in sequenza: ogni capitolo dipende dal precedente
+in_sequenza: [scrittore-voce, traduttore]
+# per capitolo, in parallelo
+in_parallelo: [line-editor, correttore-italiano, capsula]
+# dipendenze (da cosa dipende ogni lavoro): si lancia in parallelo solo ciò che ha le stesse dipendenze già
+# soddisfatte; un compito per agente mai più grande di un capitolo; un'uscita non valida si rifà una volta
+# sola, poi si ferma e decide l'autore (mai passare un errore come input al passo successivo)
+dipendenze:
+  scrittore-voce: [capitolo precedente accettato da zb esito, capsula del capitolo precedente]
+  capsula: [capitolo accettato da zb esito]
+  diagnosta: [tutte le unità del piano accettate, capsule di tutti i capitoli]
+  editor-strutturale: [rapporto del diagnosta salvato in un commit a parte]
+  lettore-cieco: [ok dell'autore al passo opzionale, fase struttura_manoscritto chiusa]
+  line-editor: [fase struttura_manoscritto chiusa]
+  correttore-italiano: [fase line chiusa, interventi applicati, zb ortografia]
+  correttore-bozze: [fase copy chiusa, zb compila, zb impagina, zb pdf]
+# fase → agente del passo (in struttura e struttura_manoscritto poi diagnosta ed editor-strutturale)
+agente_di_fase:
+  struttura: architetto-struttura
+  documenti: direttore-editoriale
+  pagina_campione: scrittore-voce
+  guida: traduttore
+  stesura: scrittore-voce
+  struttura_manoscritto: diagnosta
+  line: line-editor
+  copy: correttore-italiano
+  bozze: correttore-bozze
+  fedelta: revisore-fedelta

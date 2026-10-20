@@ -1,16 +1,45 @@
 {
   "hooks": {
     "SessionStart": [
-      { "hooks": [ { "type": "command",
-        "command": "python3 -B \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_sessione.py" } ] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_sessione.py"
+          }
+        ]
+      }
     ],
     "PreToolUse": [
-      { "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
-        "hooks": [ { "type": "command",
-          "command": "python3 -B \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_manoscritto.py" } ] },
-      { "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
-        "hooks": [ { "type": "command",
-          "command": "python3 -B \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_recinto.py" } ] }
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_manoscritto.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B \"$CLAUDE_PROJECT_DIR\"/motore/script/hook_recinto.py"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Read|Agent|Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B \"$CLAUDE_PROJECT_DIR\"/motore/script/consumo.py"
+          }
+        ]
+      }
     ]
   }
 }

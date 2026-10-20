@@ -121,3 +121,27 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
 - I revisori non riscrivono per intero un capitolo esistente (Write rifiutato dall'hook, si corregge con Edit).
 - Prove: la sezione `ruoli` di `motore` (9 prove) è portata; con il gate «struttura» automatico, dopo un «pronto»
   riuscito la fase è «documenti» (in `motore` si apriva il gate).
+
+## D9. Punto 6: agenti, capsule, consumo
+- `agenti.py` unico, base ccr (agenti e comandi installati con il modello di `dati/modelli-ruoli.yaml`, fonte unica dei
+  modelli; `dati/modelli-agenti.yaml` di `motore` non entra). Da `motore`: controllo del formato degli agenti in
+  `zb agenti stato` e prima di `attiva` (name uguale al file, description, model ammesso, agente presente nel file di
+  dati); un «model:» del file diverso dal file di dati è un avviso e vale il file di dati; `zb agenti prossimo <libro>`
+  (chi chiamare ora: scrittura in sequenza, line, copy e capsule a gruppi) con le regole in
+  `dati/orchestrazione.yaml` (nomi del pacchetto; il parallelo massimo resta `parallelo_massimo` di
+  `modelli-ruoli.yaml`, una sola fonte).
+- Capsule: base ccr (`capsula.py`, otto sezioni, registro delle promesse `@prom`, 120-250 parole «circa 180»,
+  `prepara`, `compatto`, codex). Da `motore` il campo `capsule: obbligatorie | avviso` di libro.yaml (`zb avvio` si
+  ferma o avvisa) e le funzioni `mancanti`/`controlla`. I libri nuovi non hanno il campo: avviso a `zb avvio`, mentre
+  `zb esito` si ferma già senza la capsula del capitolo precedente (come in ccr). Il tetto di 180 parole di `motore`
+  non entra: vale l'intervallo di ccr.
+- `consumo.py` unico: comandi di ccr (`registra`, `mostra`, `confronto <N>`) e, da `motore`, l'hook PostToolUse
+  (`Read|Agent|Task` → `<libro>/.zb/letture.log`, in `dati/hook-settings.esempio.json`) con il riassunto per sessione
+  (`zb consumo <libro> [sessione] [--sessione S] [--registra]` → `.zb/consumo.log`).
+- Output compatto di `zb` (da `motore`, `dati/output.yaml`, 40 righe; KO e FERMO sempre a schermo). Esenti, oltre a
+  quelli di `motore`: `canone` (apre un gate con i documenti in blocchi) ed `esito` (può aprire la pausa di lettura o il
+  controllo fallito, che si leggono per intero).
+- Prove: la sezione `agenti e capsule` di `motore` (10 prove) è portata sulla base ccr: 12 agenti, capsule a otto
+  sezioni con 120-250 parole, controllo di `zb agenti stato` con codice 0 quando il solo problema è il modello (vale il
+  file di dati). La prova dell'output compatto usa una copia del motore con soglia 10 e `zb conta` (17 righe), perché
+  nessun comando di ccr supera oggi 40 righe in modo stabile.
