@@ -305,3 +305,17 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
   `percorso.py` dice che i libri nuovi nascono con `gate: [lettura]` (punto 8), non `gate: []`; il titolo della sezione
   9 del manuale generato da `nuovo.py` dice che gli override si approvano al gate «documenti» solo se libro.yaml lo
   elenca.
+
+## D17. `CLAUDE.md` allineato al flusso attuale (dopo l'integrazione, richiesta dell'autore)
+- Fonti lette: `CLAUDE.md` (29 righe), `motore/PROCEDURA.md` (regole 3, 8, 9, 10; §1b «Gate attivi»), `script/avvio.py`
+  (`--ruolo`: righe 286-328; senza `--ruolo` vale `ruolo.DA_FASE` della fase; un ruolo per sessione; registrato in
+  `<libro>/.zb/ruoli.yaml`), `dati/hook.yaml` (`separazione_ruoli`), `prove.py` (prova di `CLAUDE.md`: massimo 30
+  righe e 13 frasi obbligatorie in `prove/attesi.yaml`).
+- Cambiato in `CLAUDE.md`, senza regole nuove e senza toccare il motore: riga di avvio con `[--ruolo R]` e un ruolo per
+  sessione; l'agente da chiamare lo dice `zb agenti prossimo <libro>`; «chi scrive non rivede» rimanda a
+  `separazione_ruoli`; il «Metodo» resta (è la regola 3 di PROCEDURA e una frase obbligatoria della prova) e accanto c'è
+  il modo automatico come nella regola 10 (fermate: pausa di lettura con `pausa_lettura` 3-5, `controllo_fallito`,
+  `canone`); alla pausa l'autore risponde ok o correggi <note>; il rimando a `motore/passaggio-di-consegne.md` è
+  indicato come «lavoro sul motore», come dice PROCEDURA.
+- Lunghezza: 30 righe (prima 29), il massimo della prova; righe più lunghe per restare nel limite.
+- `docs/DA_VERIFICARE_AUTORE.md`: la voce su `CLAUDE.md` si segna risolta nel commit di D18 (ordine dei commit chiesto).
