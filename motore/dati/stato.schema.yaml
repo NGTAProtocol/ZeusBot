@@ -23,7 +23,8 @@ campi:
   sottofase: {tipo: scelta, valori: [proposte, applicazione], nullo: true}   # fasi di revisione del percorso editoriale
   fatti_bloccati: {tipo: lista, elementi: {tipo: testo}}   # canone: cambia solo con il gate «canone»
   canone_proposte: {tipo: lista}
-  canone_modifiche: {tipo: lista}                   # zb fase <libro> stesura --motivo: data, da, a, motivo, mancanti
+  canone_modifiche: {tipo: lista}
+  note_lettura: {tipo: lista}                       # pausa di lettura: note dell'autore (data, capitoli, testo)                   # zb fase <libro> stesura --motivo: data, da, a, motivo, mancanti
   parole:
     tipo: mappa
     obbligatorio: true

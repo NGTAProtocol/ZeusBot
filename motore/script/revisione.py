@@ -53,6 +53,10 @@ def documenti_del_gate(cartella, libro, stato, gate):
         return unita_con_report(cartella, libro, ['1', '2', '3'])
     if gate == 'lotto':
         return unita_con_report(cartella, libro, (stato.get('lotto') or {}).get('capitoli') or [])
+    if gate == 'lettura':           # pausa di lettura: i capitoli del blocco (fase.apri_pausa)
+        unita = dict(comune.unita(cartella, libro))
+        return [os.path.relpath(unita[str(c)], cartella) for c in (stato.get('lotto') or {}).get('capitoli') or []
+                if str(c) in unita]
     if gate == 'controllo_fallito':
         return unita_con_report(cartella, libro, [str(stato.get('passo') or '').replace('capitolo ', '')])
     raise comune.ErroreMotore(f'Gate sconosciuto: {gate}')

@@ -118,9 +118,10 @@ def percorso(sez='percorso editoriale'):
           '0 / struttura / 9', f'{p.returncode} / {stato(L)["fase"]} / '
           f'{sum(comune.MODELLO in open(os.path.join(L, "03-struttura", f)).read() for f in comune.FILE_STRUTTURA)}', sez)
     lb = comune.leggi_yaml(os.path.join(L, 'libro.yaml'))
-    esito('nuovo.py', 'libro.yaml: percorso, lingua, lingue_target, gate (modo automatico: nessuno)',
-          "editoriale / it / ['en'] / 0",
-          f'{lb.get("percorso")} / {lb["lingua_originale"]} / {lb["lingue_target"]} / {len(lb["gate"])}', sez)
+    esito('nuovo.py', 'libro.yaml: percorso, lingua, lingue_target, gate (modo automatico: solo la pausa di lettura), '
+          'pausa_lettura', "editoriale / it / ['en'] / ['lettura'] / 3",
+          f'{lb.get("percorso")} / {lb["lingua_originale"]} / {lb["lingue_target"]} / {lb["gate"]} / '
+          f'{lb.get("pausa_lettura")}', sez)
     esito('nuovo.py', 'nessun documento prima della struttura: bibbia / codex / cronologia / manuale',
           'False / False / False / False',
           ' / '.join(str(os.path.exists(os.path.join(L, x))) for x in
@@ -217,8 +218,16 @@ def percorso(sez='percorso editoriale'):
             if n == 3:
                 esito('fase.py', 'esito 3: avviso capitoli di lunghezza quasi uguale', True,
                       'lunghezze_uguali' in p.stdout, sez)
-                esito('fase.py', 'esito 3: nessuna fermata (gate primi_capitoli non in libro.yaml)', 'None',
-                      str(stato(L)['gate_in_attesa']), sez)
+                esito('fase.py', 'esito 3: nessuna fermata (gate primi_capitoli non in libro.yaml)', 'True',
+                      str('primi_capitoli' != stato(L)['gate_in_attesa']), sez)
+                # pausa di lettura (modo automatico): dopo 3 capitoli si ferma ed elenca i file da leggere
+                elenco = [f'- 04-manoscritto/{x}' for x in ('01-il-molo.md', '02-il-registro.md', '03-la-lanterna.md')]
+                esito('fase.py', 'pausa di lettura dopo 3 capitoli: si ferma (gate «lettura») ed elenca i file da leggere',
+                      'lettura / True / True', f'{stato(L)["gate_in_attesa"]} / {"PAUSA DI LETTURA" in p.stdout} / '
+                      f'{all(x in p.stdout for x in elenco)}', sez)
+                q = zb(L, 'esito', '.', '3')
+                esito('fase.py', 'durante la pausa di lettura il motore non scrive: esito rifiutato', '2 / True',
+                      f'{q.returncode} / {"lettura" in q.stderr}', sez)
                 salva(r, 'esito 3')
                 break
             zb(L, 'capsula', '.', str(n))
@@ -234,6 +243,11 @@ def percorso(sez='percorso editoriale'):
         print('DEBUG compatto', p.stdout, p.stderr, open(os.path.join(L, 'stato-compatto.md')).read())
     esito('compatto.py', 'stato compatto: 15-20 righe', True, 15 <= n_righe <= 20, sez)
     salva(r, 'stesura')
+    pausa_note(r, L, sez)
+    p = zb(L, 'ok', '.')
+    esito('fase.py', 'pausa di lettura: «ok» continua (capitoli registrati come letti)', '0 / None / 3',
+          f'{p.returncode} / {stato(L)["gate_in_attesa"]} / {stato(L)["ultimo_capitolo_approvato"]}', sez)
+    salva(r, 'pausa di lettura chiusa')
     esito('fase.py', 'stesura finita: struttura_manoscritto', 'struttura_manoscritto', stato(L)['fase'], sez)
     # capsula 3 e registro: promesse tutte chiuse
     zb(L, 'capsula', '.', '3')
@@ -304,6 +318,26 @@ def percorso(sez='percorso editoriale'):
     else:
         saltata('fase.py', 'bozze: proposte senza fermata, applicazione, poi chiusura', 'node assente', sez)
     return r, L
+
+
+def pausa_note(r, L, sez):
+    """Pausa di lettura con le note (su una copia del repository, alla stessa pausa) e valori di pausa_lettura."""
+    d = tempfile.mkdtemp(dir=TMP)
+    r2 = shutil.copytree(r, os.path.join(d, 'repo'), symlinks=True)
+    L2 = os.path.join(r2, os.path.relpath(L, r))
+    p = zb(L2, 'correggi', '.', 'il molo va descritto di notte, come nel capitolo 1')
+    note = os.path.join(L2, '06-diagnostica', 'note-lettura.md')
+    esito('fase.py', 'pausa di lettura con «correggi <note>»: note scritte, gate chiuso, la scrittura riparte',
+          '0 / True / None / 1', f'{p.returncode} / {os.path.isfile(note) and "di notte" in open(note).read()} / '
+          f'{stato(L2)["gate_in_attesa"]} / {len(stato(L2).get("note_lettura") or [])}', sez)
+    ly = os.path.join(L2, 'libro.yaml')
+    orig = open(ly, encoding='utf-8').read()
+    open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 6'))
+    p6 = zb(L2, 'stato', '.')
+    open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 5'))
+    p5 = zb(L2, 'stato', '.')
+    esito('fase.py', 'pausa_lettura 6 in libro.yaml: rifiutato (3-5) / 5: accettato', '2 / True / 0',
+          f'{p6.returncode} / {"pausa_lettura" in p6.stderr and "3, 4, 5" in p6.stderr} / {p5.returncode}', sez)
 
 
 def hook_bash(r, comando):

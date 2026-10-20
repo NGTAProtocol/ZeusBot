@@ -17,6 +17,10 @@ Comandi di Claude Code:
                            a un gate «primi_capitoli» o «lotto» con una correzione registrata, rifà i controlli
                            di un capitolo del gate e aggiorna le parole; il gate resta aperto
 
+Pausa di lettura (gate «lettura», modo automatico dei libri nuovi): dopo pausa_lettura capitoli (libro.yaml, 3-5,
+predefinito 3) e a fine stesura il motore si ferma, elenca i file da leggere e aspetta l'autore: «ok» = continua;
+«correggi <note>» = note in 06-diagnostica/note-lettura.md e in stato.yaml, poi continua. Nessun'altra domanda.
+
 Fasi: documenti → pagina_campione → stesura → chiusura → chiuso. Si passa a «chiusura» solo quando tutte le
 unità del piano parole (prologo, capitoli, interludi, epilogo) sono scritte e accettate.
 Gate (libro.yaml, campo «gate»; predefiniti documenti, pagina_campione, primi_capitoli):
@@ -92,6 +96,44 @@ def gate_attivi(libro):
     return [x for x in g if not (x == 'struttura' and percorso.attivo(libro))]
 
 
+def pausa_lettura(libro):
+    """Capitoli tra una pausa di lettura e l'altra (libro.yaml pausa_lettura, 3-5; lo schema rifiuta altri valori)."""
+    return int(libro.get('pausa_lettura') or 3)
+
+
+def apri_pausa(cartella, libro, stato):
+    """Pausa di lettura: si ferma, elenca i file da leggere e aspetta l'autore (ok o correggi con le note)."""
+    caps = [str(c) for c in stato['lotto']['capitoli']]
+    docs = revisione.documenti_del_gate(cartella, libro, stato, 'lettura')
+    stato.update(gate_in_attesa='lettura', passo='pausa di lettura', revisione_in_corso=None)
+    print(f'PAUSA DI LETTURA: {len(caps)} capitoli scritti ({", ".join(caps)}). Il motore si ferma. Da leggere:')
+    for d in docs:
+        print(f'- {d}')
+    print('Poi: «ok» per continuare, oppure «correggi <note>» (le note vanno al blocco successivo); '
+          'nessun\'altra domanda.')
+
+
+def chiudi_pausa(cartella, libro, stato, note=None):
+    """Fine della pausa di lettura: registra i capitoli letti, salva le note e riparte."""
+    caps = [c for c in stato['lotto']['capitoli']]
+    docs = revisione.documenti_del_gate(cartella, libro, stato, 'lettura')
+    registra(cartella, stato, docs)
+    if note:
+        oggi = datetime.date.today().isoformat()
+        stato.setdefault('note_lettura', []).append({'data': oggi, 'capitoli': caps, 'testo': note})
+        rel = '06-diagnostica/note-lettura.md'
+        p = os.path.join(cartella, rel)
+        prima = open(p, encoding='utf-8').read() if os.path.isfile(p) else '# Note di lettura dell\'autore\n'
+        comune.scrivi(cartella, rel, prima.rstrip('\n') + f'\n\n## {oggi}, capitoli {", ".join(map(str, caps))}\n\n{note}\n')
+        print(f'Note di lettura registrate in {rel}: lo scrittore le legge prima del blocco successivo.')
+    numerici = [int(c) for c in caps if str(c).isdigit()]
+    stato['ultimo_capitolo_approvato'] = max(numerici + [stato['ultimo_capitolo_approvato'] or 0])
+    stato['lotto']['capitoli'] = []
+    stato.update(gate_in_attesa=None, revisione_in_corso=None)
+    print(f'Pausa di lettura chiusa: {len(docs)} capitoli letti; la scrittura riparte.')
+    dopo_capitolo(cartella, libro, stato)
+
+
 def capitoli_previsti(cartella):
     p = os.path.join(cartella, comune.rel_piano(cartella))
     if not os.path.isfile(p):
@@ -149,6 +191,9 @@ def parole_scritte(cartella, libro):
 
 def prossimo(stato):
     g, f = stato['gate_in_attesa'], stato['fase']
+    if g == 'lettura':
+        return ('Pausa di lettura: l\'autore legge i capitoli elencati, poi «ok» (continua) oppure «correggi <note>» '
+                '(note al blocco successivo).')
     if g:
         return f'Gate «{g}» aperto: avanti, ok, correggi: … oppure stato.'
     e = percorso.prossimo(stato)
@@ -231,6 +276,9 @@ def dopo_capitolo(cartella, libro, stato):
     totale = capitoli_previsti(cartella)
     scritto = stato['ultimo_capitolo_scritto'] or 0
     numerici = [int(c) for c in stato['lotto']['capitoli'] if str(c).isdigit()]
+    if 'lettura' in gate and numerici and (len(numerici) >= pausa_lettura(libro) or (totale and scritto >= totale)):
+        apri_pausa(cartella, libro, stato)
+        return
     if 'primi_capitoli' in gate and stato['ultimo_capitolo_approvato'] is None and scritto >= min(3, totale or 3):
         apri_gate(cartella, libro, stato, 'primi_capitoli')
         return
@@ -324,6 +372,9 @@ def cmd_ok(cartella, libro, stato, resto):
     gate = stato['gate_in_attesa']
     if not gate:
         raise comune.ErroreMotore('Nessun gate aperto: niente da approvare. ' + prossimo(stato))
+    if gate == 'lettura':           # pausa di lettura: l'autore ha letto i file elencati; niente blocchi da mostrare
+        chiudi_pausa(cartella, libro, stato)
+        return
     docs = revisione.documenti_del_gate(cartella, libro, stato, gate)
     imp = revisione.impronta(cartella, docs)
     rc = stato.get('revisione_in_corso')
@@ -465,6 +516,9 @@ def cmd_correggi(cartella, libro, stato, resto):
     testo = ' '.join(resto).strip().lstrip(':').strip()
     if not testo:
         raise comune.ErroreMotore('Uso: correggi <istruzione>')
+    if gate == 'lettura':           # note della pausa di lettura: si registrano e la scrittura riparte
+        chiudi_pausa(cartella, libro, stato, note=testo)
+        return
     docs = revisione.documenti_del_gate(cartella, libro, stato, gate)
     stato['correzioni_aperte'].append({'gate': gate, 'testo': testo, 'sha256': revisione.impronta(cartella, docs),
                                        'data': datetime.date.today().isoformat()})

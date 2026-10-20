@@ -173,3 +173,25 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
 - Prove: le sezioni `anti-IA` (7) e `correttore` (5) di `motore` sono portate con i nomi delle misure di ccr; la
   taratura sui mini-libri guarda le misure portate da `motore` (le misure di ccr segnalano di proposito il capitolo
   con difetti voluti, come dice `dati/antiia.yaml`).
+
+## D11. Punto 8: pausa di lettura
+- Verifica di ciò che c'era: ccr aveva il gate `primi_capitoli` (fermata dopo i primi 3 capitoli) e il gate `lotto`
+  (fermata ogni N capitoli, N in `stato.yaml`, «ok lotti da N»). Entrambi sono gate dell'autore con i documenti
+  mostrati a blocchi e l'«ok» obbligatorio dopo l'ultimo blocco; nessuno dei due ha il numero in `libro.yaml` né il
+  limite 3-5, e nessuno «elenca i file e basta».
+- Nuovo gate `lettura`, che riusa il conteggio del lotto (`stato.lotto.capitoli`): dopo `pausa_lettura` capitoli
+  accettati da `zb esito` (libro.yaml, valori ammessi 3, 4, 5, predefinito 3) e a fine stesura il motore si ferma,
+  stampa «PAUSA DI LETTURA» con l'elenco dei file da leggere e non accetta altri `zb esito`. L'autore risponde:
+  - `zb ok <libro>`: i capitoli sono registrati come letti (sha256 e commit) e la scrittura riparte;
+  - `zb correggi <libro> <note>`: le note vanno in `06-diagnostica/note-lettura.md` e in `stato.yaml`
+    (`note_lettura`), poi la scrittura riparte (le note valgono per il blocco successivo; un capitolo già scritto si
+    corregge con `zb correggi <unità>: <motivo>`).
+  Nessun blocco da mostrare: «ok» non chiede di aver letto i blocchi in chat (l'autore legge i file). `zb avanti` li
+  mostra comunque, se servono.
+- Valore fuori intervallo: lo schema di `libro.yaml` ammette solo 3, 4, 5; con 6 ogni comando si ferma con
+  «libro.yaml.pausa_lettura: valore «6» non ammesso (ammessi: 3, 4, 5)».
+- I libri nuovi del percorso editoriale nascono con `gate: [lettura]` e `pausa_lettura: 3`; i libri del percorso breve
+  e quelli già esistenti non cambiano (la pausa vale solo se `lettura` è nei gate).
+- Prove nuove (5, in `prove_editoriale.py`, percorso completo sul mini-libro): pausa dopo 3 capitoli con i tre file
+  elencati; `zb esito` rifiutato durante la pausa; «ok» continua; «correggi <note>» (su una copia del repository alla
+  stessa pausa) scrive le note e riparte; `pausa_lettura: 6` rifiutato, 5 accettato.

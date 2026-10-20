@@ -25,9 +25,10 @@ campi:
       slug: {tipo: testo, obbligatorio: true}  # voci/<slug>/ della banca-voci
       ambientazione: {tipo: testo}             # regola il dialetto della voce; «altro» se non serve
   profilo: {tipo: testo, obbligatorio: true}
-  gate: {tipo: lista, elementi: {tipo: scelta, valori: [struttura, documenti, pagina_campione, primi_capitoli, lotto,
+  gate: {tipo: lista, elementi: {tipo: scelta, valori: [struttura, documenti, pagina_campione, primi_capitoli, lotto, lettura,
                                                         struttura_manoscritto, line, copy, bozze, guida, fedelta]}}
   percorso: {tipo: scelta, valori: [editoriale, breve]}   # editoriale: motore/editoriale/00-percorso.md
+  pausa_lettura: {tipo: scelta, valori: [3, 4, 5]}    # gate «lettura»: capitoli tra una pausa di lettura e l'altra (predefinito 3)
   capsule: {tipo: scelta, valori: [obbligatorie, avviso]}  # zb avvio: obbligatorie ferma, avviso (predefinito) avvisa
   anti_ia:                                       # facoltativo: soglie dell'audit anti-IA per questo libro (vince sul profilo)
     tipo: mappa

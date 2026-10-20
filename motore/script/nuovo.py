@@ -14,8 +14,8 @@ Uso: python3 -B nuovo.py <percorso-briefing>
   scaletta.md e piano-parole.md subito.
   Le regole (tetti, vietati, vincoli, lunghezze, chiusure) vanno in libro.yaml e nel manuale
   senza riscriverle a mano; i contenuti narrativi li scrive Claude Code nella fase «documenti».
-Gate: i libri del percorso editoriale nascono senza fermate dell'autore (gate: []): i controlli li fa il motore;
-la sola pausa è quella di lettura (fase.py). Un briefing può ancora chiedere dei gate («Gate: …»); il gate
+Gate: i libri del percorso editoriale nascono con una sola fermata, la pausa di lettura (gate: [lettura],
+pausa_lettura: 3; 3-5 in libro.yaml): i controlli li fa il motore. Un briefing può ancora chiedere dei gate («Gate: …»); il gate
 «struttura» resta comunque automatico.
 Il libro nasce solo in <repo>/libri/<slug>/ su un ramo di libro: rifiutato (prima di creare
 qualsiasi cosa) se la cartella è dentro motore/, è la radice del repository, o il ramo è «motore».
@@ -147,8 +147,10 @@ def percorso_di(c):
     return (c.get('percorso') or 'editoriale').strip()
 
 
-# modo automatico (decisione dell'autore del 2026-10-20): nessuna fermata predefinita sul percorso editoriale
-GATE_EDITORIALI = []
+# modo automatico (decisione dell'autore del 2026-10-20): una sola fermata, la pausa di lettura ogni
+# PAUSA_LETTURA capitoli (pausa_lettura in libro.yaml, 3-5)
+GATE_EDITORIALI = ['lettura']
+PAUSA_LETTURA = 3
 
 
 def cartella_dal_briefing(percorso):
@@ -308,6 +310,8 @@ def genera_libro_yaml(b, profilo):
     }
     if percorso_di(c) == 'editoriale':
         libro.update({'percorso': 'editoriale', 'lingua_originale': libro['lingua'], 'lingue_target': lingue_target(c)})
+        if 'lettura' in gate:
+            libro['pausa_lettura'] = PAUSA_LETTURA
     if libro['modalita'] == 'riscrittura':
         libro['testo_precedente'] = c['testo precedente']
     libro.update({
