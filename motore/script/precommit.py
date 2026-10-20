@@ -2,7 +2,7 @@
 
 Come hook di git (.git/hooks/pre-commit, installato da «zb lavoro motore|libro»): legge i file in stage e
 rifiuta il commit (codice 1) se
-- lavoro su un libro: un file sta fuori da libri/<slug-attivo>/ (ammessi anche libri/libro-attivo.md e i file
+- lavoro su un libro: un file sta fuori da libri/<slug-attivo>/ (ammessi anche libri/libro-attivo.md dei rami creati prima e i file
   che installano «zb agenti» e «zb hook»: .claude/agents/, .claude/commands/, .claude/settings.json);
 - lavoro sul motore: un file sta in libri/.
 Eccezione dichiarata: un merge del motore in corso (MERGE_HEAD raggiungibile da origin/motore) può portare

@@ -68,7 +68,9 @@ def briefing_senza_libro(percorso):
 def recinto_git(cartella):
     """Cartella unica: nessun file modificato fuori da libri/<slug>/ (modifiche non salvate in tutto il repository,
     anche scritte da Bash o da uno script) e nessun file fuori dal libro cambiato dai commit del ramo rispetto a
-    origin/motore (esclusi i file che il motore stesso installa). Solo per un libro in libri/<slug>/."""
+    origin/motore (esclusi i file che il motore stesso installa). Solo per un libro in libri/<slug>/.
+    Poi cartella_unica.controlla: commit misti (libro e altro nello stesso commit, merge del motore esclusi) e
+    titolo del libro fuori da libri/ fermano l'avvio."""
     import hook_recinto
     import precommit
     rad = comune.radice_git(cartella)
@@ -85,6 +87,13 @@ def recinto_git(cartella):
              if not p.startswith(f'libri/{slug}/') and p not in precommit.EXTRA_LIBRO]
     if fuori:
         ferma('Modifiche fuori dalla cartella del libro (il libro non scrive altrove):\n- ' + '\n- '.join(fuori[:20]))
+    import cartella_unica           # da motore: commit misti e titolo del libro fuori dal libro
+    titolo = comune.leggi_yaml(os.path.join(cartella, 'libro.yaml')).get('titolo')
+    err = cartella_unica.controlla(rad, slug, titolo)
+    if err:
+        ferma(f'CARTELLA UNICA: {len(err)} problemi (tutto il libro vive solo in libri/{slug}/):\n- '
+              + '\n- '.join(err[:20]) + '\nUn commit misto già fatto si dichiara, con il motivo, in '
+              'motore/dati/cartella-unica.yaml (commit_dichiarati): la storia non si riscrive.')
     if comune.git(rad, 'rev-parse', '-q', '--verify', 'origin/motore')[0] == 0:
         diff = comune.git(rad, 'diff', '--name-only', 'origin/motore...HEAD')[1].splitlines()
         altri = [p for p in diff if not p.startswith('libri/') and not any(

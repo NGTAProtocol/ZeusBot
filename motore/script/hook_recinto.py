@@ -4,7 +4,8 @@ Uso come hook (da .claude/settings.json): legge da stdin il JSON dell'hook
 ({tool_name, tool_input, cwd}) e controlla il file che Write, Edit, MultiEdit o NotebookEdit
 vogliono scrivere.
 - Lavoro su un libro (predefinito): consente solo <repo>/libri/<slug-attivo>/, con slug letto da
-  <repo>/libri/libro-attivo.md (prima riga non vuota; vale anche «libri/<slug>»). Tutto il resto,
+  <git-dir>/zb-libro-attivo (fuori dai file tracciati: il nome del libro non compare fuori da libri/<slug>/; da
+  motore); per i rami creati prima, anche da <repo>/libri/libro-attivo.md, in sola lettura. Tutto il resto,
   motore/ compreso, è rifiutato: messaggio su stderr, codice 2 (lo strumento non viene eseguito).
   Nascita di un libro: è consentito anche <repo>/libri/<slug>/briefing.md (o 00-progetto/briefing.md)
   se <repo>/libri/<slug>/libro.yaml non esiste ancora; poi «zb nuovo» lo rende il libro attivo.
@@ -16,12 +17,15 @@ Lo stato del lavoro sta in <git-dir>/zb-lavoro («libro» o «motore»), fuori d
 Bash: i percorsi che il comando probabilmente scrive (redirezioni >, >>, tee, sed -i, perl -i, cp e rsync
 verso, mv, rm, touch, truncate, dd, mkdir, ln, git checkout/restore, python -c con un percorso) si controllano
 con la stessa regola, solo se stanno dentro il repository (/tmp, /dev/null e lo scratchpad restano liberi).
+Prima di «git commit» e «git push» (anche dopo && o ;) controlla la cartella unica (cartella_unica.py): file in
+stage o commit misti fuori da libri/<slug>/, titolo del libro fuori dal libro → blocco; lavoro sul motore con
+file di libri/ da salvare → blocco (da motore).
 Limiti residui (falsi permessi, li coprono il controllo pre-commit e «zb avvio»): script che scrivono senza
 nominare il percorso, variabili o «cd» di comandi precedenti, sostituzioni di comando, strumenti non elencati
 (awk -i inplace, ed, vim -c, find -delete, xargs rm).
 
 Uso come comando: hook_recinto.py lavoro stato | lavoro motore | lavoro libro <slug>
-(«zb lavoro …»). «lavoro libro <slug>» scrive libri/libro-attivo.md: si rifiuta sul ramo «motore».
+(«zb lavoro …»). «lavoro libro <slug>» scrive <git-dir>/zb-libro-attivo: si rifiuta sul ramo «motore».
 Ogni «zb lavoro motore|libro» installa anche il controllo pre-commit di git (precommit.py), che rifiuta un
 commit con file fuori dal recinto qualunque strumento li abbia scritti.
 """
@@ -31,6 +35,7 @@ import subprocess
 import sys
 
 sys.dont_write_bytecode = True
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ATTIVO = os.path.join('libri', 'libro-attivo.md')
 BRIEFING = ('briefing.md', os.path.join('00-progetto', 'briefing.md'))
 
@@ -74,25 +79,66 @@ def imposta_lavoro(rad, valore):
             h.write(valore + '\n')
 
 
+def file_attivo(rad):
+    g = _git(rad, 'rev-parse', '--absolute-git-dir')
+    return os.path.join(g, 'zb-libro-attivo') if g else None
+
+
 def slug_attivo(rad):
-    try:
-        for riga in open(os.path.join(rad, ATTIVO), encoding='utf-8'):
-            riga = riga.strip().strip('`').rstrip('/')
-            if riga and not riga.startswith('#'):
-                return os.path.basename(riga)
-    except OSError:
-        pass
+    for p in (file_attivo(rad), os.path.join(rad, ATTIVO)):      # il secondo: rami creati prima
+        try:
+            for riga in open(p, encoding='utf-8'):
+                riga = riga.strip().strip('`').rstrip('/')
+                if riga and not riga.startswith('#'):
+                    return os.path.basename(riga)
+        except (OSError, TypeError):
+            pass
     return None
 
 
 def imposta_libro_attivo(rad, slug):
-    """Libro attivo = libri/<slug>/ e lavoro = libro. Operazione di servizio di zb (nuovo, lavoro)."""
-    p = os.path.join(rad, ATTIVO)
-    if slug_attivo(rad) != slug:
-        os.makedirs(os.path.dirname(p), exist_ok=True)
+    """Libro attivo = libri/<slug>/ e lavoro = libro, in <git-dir>/zb-libro-attivo (mai in un file tracciato).
+    Operazione di servizio di zb (nuovo, lavoro)."""
+    p = file_attivo(rad)
+    if p:
         with open(p, 'w', encoding='utf-8') as h:
             h.write(slug + '\n')
     imposta_lavoro(rad, 'libro')
+
+
+def git_commit_o_push(comando):
+    """{«commit», «push»} se il comando Bash contiene git commit / git push (anche dopo && o ;)."""
+    import re
+    return set(re.findall(r'(?:^|[;&|(]\s*|\s)git\s+(?:-C\s+\S+\s+)?(commit|push)\b', comando))
+
+
+def controlla_git(comando, rad):
+    """Cartella unica prima di git commit / git push: (blocca?, messaggio). Da motore (971b6df)."""
+    azioni = git_commit_o_push(comando)
+    if not azioni:
+        return False, ''
+    import cartella_unica
+    if lavoro(rad) == 'motore':
+        fuori = [f for f in cartella_unica.file_modificati(rad, solo_stage='commit' in azioni and ' -a' not in comando)
+                 if f.startswith('libri/')]
+        if fuori:
+            return True, ('RECINTO: lavoro sul motore, ma ci sono file di libri/ da salvare: ' + ', '.join(fuori[:5]))
+        return False, ''
+    slug = slug_attivo(rad)
+    if not slug or not os.path.isdir(os.path.join(rad, 'libri', slug)):
+        return False, ''
+    titolo = None
+    try:
+        import comune
+        titolo = comune.leggi_yaml(os.path.join(rad, 'libri', slug, 'libro.yaml')).get('titolo')
+    except Exception:
+        pass
+    solo_stage = 'commit' in azioni and ' -a' not in comando and 'push' not in azioni
+    err = cartella_unica.controlla(rad, slug, titolo, solo_stage=solo_stage)
+    if err:
+        return True, (f'CARTELLA UNICA: {" e ".join(sorted(azioni))} rifiutato, tutto il libro vive in libri/{slug}/:\n- '
+                      + '\n- '.join(err[:10]))
+    return False, ''
 
 
 def decidi(percorso, rad):
@@ -132,6 +178,10 @@ def hook():
     if not rad:
         return 0
     if dati.get('tool_name') == 'Bash':
+        blocca, msg = controlla_git(ti.get('command') or '', rad)
+        if blocca:
+            print(msg, file=sys.stderr)
+            return 2
         import hook_manoscritto
         bersagli = [os.path.realpath(p) for p in hook_manoscritto.bersagli_bash(ti.get('command') or '', cwd, solo=None)]
         for p in bersagli:

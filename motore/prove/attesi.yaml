@@ -746,3 +746,15 @@ fase_struttura:
     ok: "documenti / 3 / 9"
     scelte_cambiate: "2 / True"
   romance: *struttura
+
+cartella_unica:
+  # da motore (971b6df)
+  attivo: "giallo / pulito"
+  modificato: "2 / True"
+  misto: "2 / True"
+  push: "2 / True"
+  nome: "2 / True"
+  # echo fuori, echo dentro, sed -i dentro, cp verso motore/, rm CLAUDE.md, python lanciato con 2>/dev/null,
+  # redirezione in /tmp (fuori dal repository), git checkout di un ramo
+  bash: [2, 0, 0, 2, 2, 0, 0, 0]
+  push_senza_prove: "2 / True"

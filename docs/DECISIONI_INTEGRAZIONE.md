@@ -78,3 +78,25 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
   Nel percorso completo di `prove_editoriale.py` le prove dei gate (struttura, documenti, pagina campione,
   primi capitoli, revisioni) restano una per una con gli attesi senza fermata; la prova del codex alla nascita
   diventa «nessun documento prima della struttura» e il conteggio del codex si fa alla chiusura della struttura.
+
+## D7. Punto 4: recinto, hook e cartella unica
+- Base ccr (`hook_recinto.py`, `precommit.py`, `zb salva`, avviso di `zb avvio` sui file cambiati rispetto a
+  `origin/motore`); da `motore` si aggiunge ciò che ccr non aveva:
+  - libro attivo in `<git-dir>/zb-libro-attivo`, fuori dai file tracciati (il nome del libro non compare fuori dal
+    libro); `libri/libro-attivo.md` dei rami creati prima si legge ancora;
+  - `cartella_unica.py` (`zb cartella`), usato da `zb avvio`, `zb push` e dall'hook prima di `git commit` /
+    `git push` da Bash: commit misti (libro e altro nello stesso commit) e titolo del libro fuori dal libro fermano;
+    i merge del motore e i commit dichiarati in `dati/cartella-unica.yaml` sono ammessi;
+  - `zb push` sul lavoro del motore vuole l'impronta di una `zb prove` intera e tutta OK (`<git-dir>/zb-prove-ok`,
+    scritta da `prove.py`);
+  - in `hook_manoscritto.py`: l'espressione di `sed -i`/`perl -i` non è un file; in modalità recinto
+    `git checkout <ramo>` non è una scrittura (contano i percorsi dopo `--`). Il controllo di ccr su `python -c`
+    resta.
+- Adattamenti: `dati/cartella-unica.yaml` ammette fuori dal libro gli stessi file del pre-commit di ccr
+  (`libri/libro-attivo.md`, `.claude/commands/` in più); il controllo del titolo non guarda le cartelle di altri libri
+  (due libri sullo stesso ramo li segnala già `zb avvio` con un avviso, e le prove di ccr usano due libri con lo
+  stesso briefing); per la stessa ragione un commit che tocca anche un altro libro non è «misto» (in `motore` era
+  sempre un errore): contano i file fuori da `libri/`, e gli altri libri restano l'avviso di ccr in `zb avvio`.
+- Il controllo del titolo guarda solo i file fuori da `libri/` diversi da `origin/motore` (scritti sul ramo del
+  libro): il motore arriva da `origin/motore`, e le prove di ccr ne copiano uno intero con i mini-libri inventati.
+- Prove: la sezione `cartella unica` di `motore` (13 prove) è portata in `prove.py`.

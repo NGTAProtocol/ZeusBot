@@ -2609,7 +2609,97 @@ def fase_struttura(A):
               f'{p.returncode} / {"09-scelte-fisse.md" in p.stderr}', sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura}
+def cartella_unica_prove(A):
+    """Cartella unica su git (avvio, push, hook su Bash e git commit), da motore (971b6df)."""
+    import hook_recinto
+    sez = 'cartella unica'
+    b = Banco()
+    r = b.r
+    os.makedirs(os.path.join(r, 'motore'))
+    open(os.path.join(r, 'motore', 'x.txt'), 'w', encoding='utf-8').write('motore di prova\n')
+    b.salva('motore')
+    b.git(r, 'push', '-q', 'origin', 'HEAD:motore')
+    b.git(r, 'fetch', '-q', 'origin')
+    os.makedirs(os.path.join(r, 'libri'))
+    L, p = b.nuovo('briefing-giallo.md', 'libri/giallo')
+    hook_recinto.imposta_libro_attivo(r, 'giallo')
+    titolo = comune.leggi_yaml(os.path.join(L, 'libro.yaml'))['titolo']
+    esito('hook_recinto.py', 'libro attivo fuori dai file tracciati (git-dir) / git status pulito', A['attivo'],
+          f'{hook_recinto.slug_attivo(r)} / {b.git(r, "status", "--porcelain").stdout.strip() or "pulito"}', sez)
+    esito('avvio.py', 'libro in libri/<slug>/, niente fuori: avvio', 0, b.zb('avvio', 'libri/giallo').returncode, sez)
+    open(os.path.join(r, 'motore', 'x.txt'), 'a', encoding='utf-8').write('modifica\n')
+    p = b.zb('avvio', 'libri/giallo')
+    esito('avvio.py', 'file modificato fuori dal libro: fermo', A['modificato'],
+          f'{p.returncode} / {"motore/x.txt" in p.stderr}', sez)
+    b.git(r, 'checkout', '--', 'motore/x.txt')
+    # commit misto: libro e motore nello stesso commit
+    open(os.path.join(L, 'nomi_propri.txt'), 'a', encoding='utf-8').write('Ottavio\n')
+    open(os.path.join(r, 'motore', 'x.txt'), 'a', encoding='utf-8').write('misto\n')
+    b.salva('commit misto')
+    misto = b.git(r, 'log', '-1', '--format=%h').stdout.strip()
+    p = b.zb('avvio', 'libri/giallo')
+    esito('avvio.py', 'commit misto (libro + motore): fermo', A['misto'], f'{p.returncode} / {"misto" in p.stderr}', sez)
+    p = b.zb('push')
+    esito('push.py', 'commit misto: push non eseguito', A['push'], f'{p.returncode} / {"cartella unica" in p.stderr}', sez)
+    reg = os.path.join(M, 'dati', 'cartella-unica.yaml')
+    orig = open(reg, encoding='utf-8').read()
+    try:
+        open(reg, 'w', encoding='utf-8').write(orig.replace('commit_dichiarati: []',
+                                                            f'commit_dichiarati: [{{commit: {misto}, motivo: prova}}]'))
+        p = b.zb('avvio', 'libri/giallo')
+        esito('avvio.py', 'commit misto dichiarato in cartella-unica.yaml: avvio', 0, p.returncode, sez)
+    finally:
+        open(reg, 'w', encoding='utf-8').write(orig)
+    b.git(r, 'reset', '-q', '--hard', 'HEAD~1')
+    b.git(r, 'push', '-q', '-f', 'origin', 'prova')
+    # merge del motore: ammesso
+    b.git(r, 'checkout', '-q', '-b', 'm', 'origin/motore')
+    open(os.path.join(r, 'motore', 'y.txt'), 'w', encoding='utf-8').write('nuovo nel motore\n')
+    b.git(r, 'add', '-A')
+    b.git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'motore nuovo')
+    b.git(r, 'push', '-q', 'origin', 'HEAD:motore')
+    b.git(r, 'checkout', '-q', 'prova')
+    b.git(r, 'fetch', '-q', 'origin')
+    b.git(r, '-c', 'commit.gpgsign=false', 'merge', '-q', '--no-edit', 'origin/motore')
+    b.git(r, 'push', '-q', 'origin', 'prova')
+    esito('avvio.py', 'merge del motore nel ramo del libro: avvio', 0, b.zb('avvio', 'libri/giallo').returncode, sez)
+    # nome del libro fuori dalla cartella
+    open(os.path.join(r, 'motore', 'nota.md'), 'w', encoding='utf-8').write(f'Appunto su {titolo}\n')
+    b.salva('nome fuori')
+    p = b.zb('avvio', 'libri/giallo')
+    esito('avvio.py', 'titolo del libro in un file fuori dal libro: fermo', A['nome'],
+          f'{p.returncode} / {"motore/nota.md" in p.stderr}', sez)
+    os.remove(os.path.join(r, 'motore', 'nota.md'))
+    b.salva('via il nome')
+    # hook su Bash e git commit
+    E = dict(b.E, CLAUDE_PROJECT_DIR=r)
+
+    def hook(comando):
+        dati = {'session_id': 's1', 'tool_name': 'Bash', 'tool_input': {'command': comando}, 'cwd': r}
+        return subprocess.run([sys.executable, '-B', os.path.join(S, 'hook_recinto.py')], input=json.dumps(dati),
+                              env=E, capture_output=True, text=True).returncode
+    casi = ['echo x > motore/a.txt', 'echo x > libri/giallo/a.md', 'sed -i s/a/b/ libri/giallo/libro.yaml',
+            'cp libri/giallo/libro.yaml motore/copia.yaml', 'rm CLAUDE.md', 'python3 motore/zb avvio libri/giallo 2>/dev/null',
+            'grep -r x libri > /tmp/fuori.txt', 'git checkout prova']
+    esito('hook_recinto.py', 'Bash: ' + ' | '.join(casi), A['bash'], [hook(c) for c in casi], sez)
+    open(os.path.join(r, 'motore', 'x.txt'), 'a', encoding='utf-8').write('in stage\n')
+    b.git(r, 'add', 'motore/x.txt')
+    esito('hook_recinto.py', 'git commit con un file del motore in stage: bloccato', 2, hook('git commit -m prova'), sez)
+    b.git(r, 'reset', '-q', 'motore/x.txt')
+    b.git(r, 'checkout', '--', 'motore/x.txt')
+    esito('hook_recinto.py', 'git commit con il solo libro: consentito', 0, hook('git add libri/giallo && git commit -m ok'), sez)
+    hook_recinto.imposta_lavoro(r, 'motore')
+    open(os.path.join(L, 'nomi_propri.txt'), 'a', encoding='utf-8').write('Prova\n')
+    b.git(r, 'add', '-A')
+    esito('hook_recinto.py', 'lavoro sul motore, file di libri/ in stage: commit bloccato', 2, hook('git commit -m x'), sez)
+    b.git(r, 'reset', '-q')
+    b.git(r, 'checkout', '--', '.')
+    p = b.zb('push')
+    esito('push.py', 'lavoro sul motore senza zb prove sullo stato attuale: push non eseguito', A['push_senza_prove'],
+          f'{p.returncode} / {"zb prove" in p.stderr}', sez)
+
+
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove}
 
 
 def main(argv):
@@ -2655,6 +2745,13 @@ def main(argv):
         print(f'{nome} su motore/: {"OK" if codice == 0 else "KO"} — {riga}')
     tutto_ok = ok == len(contate) and all(c == 0 for _, c, _ in finali)
     print('ESITO: ' + ('tutto OK' if tutto_ok else 'CI SONO KO'))
+    f = comune.file_prove_ok()
+    if f and not solo:          # impronta per zb push sul lavoro del motore (da motore): solo suite intera e tutta OK
+        if tutto_ok:
+            open(f, 'w', encoding='utf-8').write((comune.impronta_motore() or '') + '\n')
+            print('Impronta del motore registrata per zb push.')
+        elif os.path.isfile(f):
+            os.remove(f)
     return 0 if tutto_ok else 1
 
 

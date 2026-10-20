@@ -608,6 +608,31 @@ def documento_invariato(percorso, registrato, commit=None):
     return testo_piano_senza_misure(prima.decode('utf-8')) == adesso
 
 
+def impronta_motore(rad=None):
+    """sha256 dei file di motore/ nel working tree (tracciati e nuovi, esclusi gli ignorati): l'impronta su cui
+    zb prove dichiara «tutto OK» e che zb push confronta sul lavoro del motore. None fuori da git. (Da motore.)"""
+    import hashlib
+    rad = rad or radice_git(radice_motore())
+    if rad == '/':
+        return None
+    codice, out, _ = git(rad, 'ls-files', '-co', '--exclude-standard', '--', 'motore')
+    if codice != 0:
+        return None
+    h = hashlib.sha256()
+    for rel in sorted(set(out.splitlines())):
+        p = os.path.join(rad, rel)
+        if os.path.isfile(p):
+            h.update(rel.encode() + b'\0' + sha256_file(p).encode() + b'\n')
+    return h.hexdigest()
+
+
+def file_prove_ok(rad=None):
+    """<git-dir>/zb-prove-ok: impronta del motore dell'ultima «zb prove» tutta OK."""
+    rad = rad or radice_git(radice_motore())
+    codice, g, _ = git(rad, 'rev-parse', '--absolute-git-dir')
+    return os.path.join(g, 'zb-prove-ok') if codice == 0 and g else None
+
+
 def cartella_progetto():
     """Radice della sessione: $CLAUDE_PROJECT_DIR, altrimenti la radice git della cartella corrente."""
     return os.environ.get('CLAUDE_PROJECT_DIR') or radice_git(os.getcwd())

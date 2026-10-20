@@ -48,7 +48,8 @@ gruppi:
     comandi:
       - {nome: lavoro, script: speciale, uso: "lavoro stato | motore | libro <slug>", aiuto: "recinto: libro attivo o motore (installa il controllo pre-commit)"}
       - {nome: salva, script: salva.py, uso: "salva [<libro>] <messaggio>", aiuto: "controllo dei file fuori dal recinto, prove (motore), commit e push"}
-      - {nome: push, script: push.py, uso: "push [--tentativi 4] [--attesa 2]", aiuto: "push del ramo corrente con ripiego"}
+      - {nome: push, script: push.py, uso: "push [--tentativi 4] [--attesa 2]", aiuto: "push del ramo corrente con ripiego; prima cartella unica (libro) o impronta delle prove (motore)"}
+      - {nome: cartella, script: cartella_unica.py, uso: "cartella <libro> [--commit]", aiuto: "cartella unica: niente fuori da libri/<slug>/, commit misti, titolo fuori dal libro (lo fanno anche avvio e push)"}
       - {nome: hook, script: speciale, uso: "hook stato | attiva [--ok] | disattiva", aiuto: "hook di Claude Code (rami dei libri)"}
       - {nome: pulizia, script: pulizia.py, uso: "pulizia <libro> [--applica]", aiuto: "temporanei, vuote, copie; cancella solo con --applica"}
       - {nome: voce, script: voce.py, uso: "voce lista | mostra <slug> [N] | verifica <slug>", aiuto: "banca-voci in sola lettura (ZB_BANCA_VOCI)"}

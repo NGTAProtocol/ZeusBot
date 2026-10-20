@@ -103,11 +103,26 @@ def bersagli_bash(comando, cwd, solo=CARTELLA):
         elif prog == 'tee' or prog in ('rm', 'truncate', 'mv', 'dd', 'touch', 'mkdir', 'rmdir', 'ln'):
             out += [risolvi(a.split('=', 1)[-1], base) for a in file_args]
         elif prog in ('sed', 'perl') and any(re.match(r'^-\w*i', a) for a in args[1:]):
-            out += [risolvi(a, base) for a in file_args]
+            # l'espressione non è un file: valore di -e/-f, oppure il primo argomento di sed senza -e (da motore)
+            pos, salta, con_e = [], False, False
+            for a in args[1:]:
+                if salta:
+                    salta = False
+                    continue
+                if re.match(r'^-\w*[ef]$', a):
+                    salta, con_e = True, True
+                    continue
+                if not a.startswith('-'):
+                    pos.append(a)
+            if prog == 'sed' and not con_e:
+                pos = pos[1:]
+            out += [risolvi(a, base) for a in pos]
         elif prog in ('cp', 'install', 'rsync') and file_args:
             out.append(risolvi(file_args[-1], base))
         elif prog == 'git' and len(args) > 1 and args[1] in ('checkout', 'restore'):
-            out += [risolvi(a, base) for a in args[2:] if not a.startswith('-')]
+            # recinto (solo=None): «git checkout <ramo>» non scrive un file del libro; contano i percorsi dopo «--»
+            dopo = args[args.index('--') + 1:] if '--' in args else ([] if solo is None and args[1] == 'checkout' else args[2:])
+            out += [risolvi(a, base) for a in dopo if not a.startswith('-')]
         elif prog.startswith('python'):
             chiave = re.escape(solo) if solo else r'[\w.\-]*/'
             if '-c' in args and args.index('-c') + 1 < len(args):
