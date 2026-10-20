@@ -453,7 +453,7 @@ scene:
       scene_con_motivo: "0 / [('capitoli.scene_per_capitolo', [1, 1]), ('scene.lunghezza', [400, 1200])]"
   informativi: ['battiti', 'capitoli.coerenza', 'lista_nera', 'lunghezza_totale.consigliata', 'lunghezza_totale.parti_obbligatorie',
                 'lunghezza_totale.parti_sopra', 'parole_per_atto', 'parole_per_pagina', 'scene.budget_interno', 'scene.sequel']
-  controllati: ['capitoli.minimo', 'capitoli.scene_per_capitolo', 'capitoli.tolleranza_budget', 'capitoli.tolleranza_totale',
+  controllati: ['anti_ia', 'capitoli.minimo', 'capitoli.scene_per_capitolo', 'capitoli.tolleranza_budget', 'capitoli.tolleranza_totale',
                 'dialogo_percento', 'frase_media', 'parole_filtro', 'scene.lunghezza', 'similitudini_max_per_parole']
 
 manuale_leggibile:
@@ -780,3 +780,17 @@ agenti_capsule:
   revisori: [2, 0, 0]
   consumo: "0 / True / True"
   compatto: "True / True / True"
+
+anti_ia:
+  # da motore (971b6df), sull'audit di ccr (antiia.py): nomi delle misure di ccr; la sezione B conta solo con
+  # formule_sezione_b (decisione aperta dell'autore)
+  ia_controlli: ['aperture_uguali', 'coerenza', 'formule_catalogo', 'formule_per_mille', 'variazione_frasi']
+  ia_misure: "True / True"
+  audit: "True / True / True / True"
+  blocco: "1 / True"
+  chiusure: "P2 / P0"
+correttore:
+  report: "True / 25"
+  dentro_repo: "2 / False"
+  verifica: "0 / True"
+  gia_pronto: "0 / True / True"

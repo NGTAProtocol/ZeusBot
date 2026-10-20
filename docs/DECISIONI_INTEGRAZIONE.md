@@ -145,3 +145,31 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
   sezioni con 120-250 parole, controllo di `zb agenti stato` con codice 0 quando il solo problema è il modello (vale il
   file di dati). La prova dell'output compatto usa una copia del motore con soglia 10 e `zb conta` (17 righe), perché
   nessun comando di ccr supera oggi 40 righe in modo stabile.
+
+## D10. Punto 7: anti-IA e correttore
+- Motore di misura: `antiia.py` di ccr (variazione delle frasi, aperture uguali, formule per mille, lineette nella
+  narrazione, varietà lessicale MATTR, chiusure uguali; P0/P1/P2; `estrai` e `taratura`). Da `motore`:
+  - soglie per genere nel blocco `anti_ia` dei sette profili (PROPOSTA uguale per tutti, valori di
+    `dati/antiia.yaml`) e in `libro.yaml` (`anti_ia`), sopra `dati/antiia.yaml`;
+  - `editoriale/anti-ia/formule.yaml` contata come misura a sé, `formule_catalogo_per_mille` (P2, soglia 3,0 come in
+    `motore`), fuori dal dialogo; non si somma alla lista nera già contata in `formule_per_mille`, per non cambiare gli
+    esiti tarati di ccr;
+  - coerenza tipografica (virgolette dritte, trattino all'inglese) e ripetizioni ravvicinate (solo italiano), P2;
+  - chiusure uguali con soglia `chiusure_uguali_max` (predefinita 2: stesso comportamento di ccr, P0 al terzo);
+  - modalità `blocco` (`anti_ia.modalita`): ogni segnalazione è un KO in `capitolo.py`;
+  - `capitolo.py` lancia l'audit per ogni libro (percorso breve compreso) e scrive le righe `anti-ia:<misura>` e
+    l'indice Gulpease informativo nel report; i risultati di `capitolo.controlla()` non cambiano (come in `motore`).
+- Sezione B del catalogo (decisione aperta dell'autore): le sue 11 formule stanno in `formule.yaml` ma non si contano
+  finché `formule_sezione_b: false` (`dati/antiia.yaml`), così vale ancora la nota di `catalogo-it.md` («non una lista
+  che il motore misura»). Nessun testo della sezione B è cambiato.
+- Correttore: criteri di ccr con la sezione 9 e i criteri inglesi (`lingue/en/`); la lista di controllo di
+  `zb ortografia` (c) viene dalle sezioni 1-6 dei criteri della lingua (fonte unica, da `motore`; 25 voci per
+  l'italiano); la coppia «avvenire/avvenire» non è toccata.
+- LanguageTool: un solo comando, `zb languagetool` (nome di ccr), con l'installatore di `motore` (cache locale poi
+  Maven Central, `lib.nuova` sostituita solo dopo la verifica, mai dentro il repository, «già pronto» senza
+  riscaricare, versioni 6.8 e 6.7) e le lingue di ccr (`language-it` e `language-en`); `verifica` usa la frase di prova
+  di `motore` («Qual'è il problema?», regola GR_…); `stato` resta come in ccr. `installa_languagetool.py` e
+  `zb ortografia installa|verifica` di `motore` non entrano.
+- Prove: le sezioni `anti-IA` (7) e `correttore` (5) di `motore` sono portate con i nomi delle misure di ccr; la
+  taratura sui mini-libri guarda le misure portate da `motore` (le misure di ccr segnalano di proposito il capitolo
+  con difetti voluti, come dice `dati/antiia.yaml`).

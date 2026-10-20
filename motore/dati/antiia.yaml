@@ -10,6 +10,14 @@ soglie:
   formule_per_mille_max: 1.0       # voci di lista nera e vocabolario L1-L3 per mille parole
   lineette_narrazione_max: 3       # lineette fuori dal dialogo per mille parole di narrazione (lingue con la lineetta)
   varieta_lessicale_min: 0.55      # MATTR, finestre di 100 parole
+  # da motore (971b6df): misure P2 in più; il profilo di genere (blocco anti_ia) e libro.yaml (anti_ia) vincono su questi
+  modalita: avviso                 # avviso: audit; blocco: ogni segnalazione è un KO in capitolo.py
+  formule_catalogo_per_mille_max: 3.0   # formule di editoriale/anti-ia/formule.yaml (tipo formula, fuori dal dialogo)
+  ripetizioni_per_mille_max: 12.0  # gruppi di parole con la stessa radice, 3 volte in 60 parole piene (solo italiano)
+  chiusure_uguali_max: 2           # oltre questo numero di capitoli di fila con la stessa chiusura: P0
+  # Sezione B del catalogo (formule emotive): decisione aperta dell'autore. Le sue voci stanno in formule.yaml ma si
+  # contano solo con «true» (qui, nel profilo o in libro.yaml); finché è «false» vale la nota di catalogo-it.md.
+  formule_sezione_b: false
 lingue:
   it:
     # Vocabolario: vuoto finché non è estratto dai dati (zb antiia estrai). Regola 6.2 del lavoro sul motore.

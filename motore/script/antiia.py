@@ -13,7 +13,16 @@ del catalogo della lingua (motore/editoriale/anti-ia/catalogo-it.md; lingue/en/c
   lineetta apre la battuta (idea di book-genesis-studio, MIT, riscritta: il segno del dialogo usato anche
   per gli incisi della narrazione confonde la pagina);
 - varieta_lessicale: MATTR su finestre di 100 parole (idea di haowjy/creative-writing-skills, Apache-2.0);
-- chiusure_uguali: capitoli consecutivi con la stessa sigla di chiusura e la stessa punteggiatura finale.
+- chiusure_uguali: capitoli consecutivi con la stessa sigla di chiusura e la stessa punteggiatura finale (P2 al
+  secondo, P0 oltre chiusure_uguali_max).
+Da motore (971b6df), misure P2 in più:
+- formule_catalogo_per_mille: formule di editoriale/anti-ia/formule.yaml (tipo «formula», fuori dal dialogo) per
+  mille parole; le voci della sezione B si contano solo con formule_sezione_b: true (decisione aperta dell'autore);
+- coerenza: segni tipografici all'inglese (virgolette dritte, trattino al posto della virgola; tipo «coerenza»);
+- ripetizioni_per_mille: gruppi di parole piene con la stessa radice almeno 3 volte in 60 parole (solo italiano).
+Soglie: dati/antiia.yaml, poi la lingua, poi il blocco anti_ia del profilo di genere, poi anti_ia di libro.yaml.
+Modalità (anti_ia.modalita): avviso (audit, predefinita) | blocco (capitolo.py: ogni segnalazione è un KO).
+Il report elenca anche le posizioni (riga, schema, dove) per il line editor.
 Le soglie stanno in motore/dati/antiia.yaml, tarate sui mini-libri di prove/ (valori di progetto, non norme
 misurate su prosa umana: «taratura» misura i falsi positivi su un corpus umano, idea di avoid-ai-writing, MIT).
 Estrai: confronto delle frequenze (log-odds con prior, parole e bigrammi) tra testi scritti da un modello e
@@ -33,12 +42,100 @@ import comune  # noqa: E402
 PAROLA = re.compile(r"[^\W\d_]+(?:['’][^\W\d_]+)?", re.U)
 
 
-def soglie(lingua):
+FORMULE = os.path.join('editoriale', 'anti-ia', 'formule.yaml')
+PREDEFINITE = {'modalita': 'avviso', 'formule_catalogo_per_mille_max': 3.0, 'ripetizioni_per_mille_max': 12.0,
+               'chiusure_uguali_max': 2, 'formule_sezione_b': False}
+FINESTRA, SOGLIA_ECO = 60, 3
+FUNZIONE = set('''il lo la i gli le un uno una di a da in con su per tra fra del dello della dei degli delle al allo alla
+ai agli alle dal dallo dalla dai dagli dalle nel nello nella nei negli nelle sul sullo sulla sui sugli sulle col e ed o
+oppure ma però anzi eppure perché poiché sebbene benché mentre quando come se che anche pure né neanche nemmeno non più
+meno già ancora sempre mai poi dopo prima ora allora così quindi dunque comunque infatti cioè ecco molto poco troppo
+tanto tutto tutta tutti tutte ogni qualche io tu lui lei noi voi loro egli ella essi esse me te sé mi ti ci vi si li ne
+mio tuo suo nostro vostro mia tua sua miei tuoi suoi mie tue sue questo questa questi queste quello quella quelli quelle
+cui chi quale quali dove essere sono era erano stato stata fu furono sarà avere aveva avevano ebbe hanno abbiamo stare
+stava fare fece faceva andare andò andava potere poteva volere voleva dovere doveva disse dire detto niente nulla qui
+lì là sopra sotto dentro fuori senza verso contro fosse fossi fossero stesso stessa'''.split())
+SUFFISSI = sorted('''issimo issima issimi issime zioni zione mente eranno erebbe avamo evano ivano assero asse ando endo
+ato ata ati ate uto uta uti ute ito ita iti ite are ere ire iamo ano ono ava eva iva ai ò i e o a'''.split(), key=len, reverse=True)
+
+
+def soglie(lingua, profilo=None, libro=None):
+    """(soglie, vocabolario): dati/antiia.yaml, la lingua, il profilo di genere (anti_ia), libro.yaml (anti_ia)."""
     d = comune.leggi_yaml(os.path.join(comune.radice_motore(), 'dati', 'antiia.yaml'))
-    s = dict(d['soglie'])
+    s = dict(PREDEFINITE)
+    s.update(d['soglie'])
     s.update((d.get('lingue') or {}).get(lingua, {}).get('soglie') or {})
+    s.update((profilo or {}).get('anti_ia') or {})
+    s.update((libro or {}).get('anti_ia') or {})
     voc = (d.get('lingue') or {}).get(lingua, {}).get('vocabolario') or {}
     return s, voc
+
+
+def formule(con_b=False):
+    """[(id, sezione, tipo, regex)] di editoriale/anti-ia/formule.yaml (da motore)."""
+    p = os.path.join(comune.radice_motore(), FORMULE)
+    d = comune.leggi_yaml(p) if os.path.isfile(p) else {}
+    return [(f['id'], f['sezione'], f['tipo'], re.compile(f['regex'], re.I | re.M)) for f in (d or {}).get('formule') or []
+            if con_b or f['sezione'] != 'B']
+
+
+def radice(p):
+    import unicodedata
+    p = unicodedata.normalize('NFC', p.lower())
+    for x in SUFFISSI:
+        if p.endswith(x) and len(p) - len(x) >= 4:
+            return p[:-len(x)]
+    return p
+
+
+def echi(prosa):
+    """[(radice, [righe])]: stessa radice almeno SOGLIA_ECO volte in FINESTRA parole piene (da motore)."""
+    piene = []
+    for n, r in prosa:
+        for w in re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿ]+", r.replace('’', "'")):
+            wl = w.lower()
+            if len(wl) >= 4 and wl not in FUNZIONE and not w[0].isupper():     # maiuscole: nomi propri (e attacchi)
+                piene.append((radice(wl), n))
+    gruppi, visti = [], set()
+    for i in range(len(piene)):
+        rad = piene[i][0]
+        if (rad, i) in visti:
+            continue
+        fin = [j for j in range(i, min(i + FINESTRA, len(piene))) if piene[j][0] == rad]
+        if len(fin) >= SOGLIA_ECO:
+            for j in range(i, len(piene)):
+                if piene[j][0] == rad:
+                    visti.add((rad, j))
+            gruppi.append((rad, sorted({piene[j][1] for j in fin})))
+    unici, ultimo = [], {}
+    for rad, righe in gruppi:
+        if rad in ultimo and righe[0] <= ultimo[rad]:
+            continue
+        unici.append((rad, righe))
+        ultimo[rad] = righe[-1]
+    return unici
+
+
+def misure_catalogo(testo, lingua, con_b=False):
+    """(misure, posizioni) delle misure da motore: formule del catalogo, coerenza, ripetizioni ravvicinate."""
+    prosa = comune.righe_prosa(testo)
+    pre = dialogo_di(lingua) + ('«', '"', '“')
+    trovate = []
+    for fid, sez, tipo, rx in formule(con_b):
+        for n, r in prosa:
+            if tipo == 'formula' and r.lstrip().startswith(pre):
+                continue
+            for m in rx.finditer(r):
+                trovate.append((n, f'formula {fid} ({sez})' if tipo == 'formula' else f'coerenza {fid} ({sez})',
+                                m.group(0)[:60]))
+    parole = sum(len(PAROLA.findall(r)) for _, r in prosa) or 1
+    n_formule = sum(1 for x in trovate if x[1].startswith('formula'))
+    gruppi = echi(prosa) if lingua == 'it' else []
+    m = {'formule_catalogo_per_mille': round(1000 * n_formule / parole, 2),
+         'coerenza': sum(1 for x in trovate if x[1].startswith('coerenza')),
+         'ripetizioni_per_mille': round(1000 * len(gruppi) / parole, 2)}
+    pos = trovate + [(righe[0], 'ripetizione', f'«{rad}…» alle righe {", ".join(map(str, righe))}') for rad, righe in gruppi]
+    return m, sorted(pos, key=lambda x: x[0])
 
 
 def dialogo_di(lingua):
@@ -99,6 +196,14 @@ def regex_voci(libro, voc):
 def valuta(m, s):
     """[(misura, gravità, dettaglio)] secondo le soglie."""
     out = []
+    if m.get('formule_catalogo_per_mille', 0) > s['formule_catalogo_per_mille_max']:
+        out.append(('formule_catalogo', 'P2', f'{m["formule_catalogo_per_mille"]} per mille sopra '
+                                              f'{s["formule_catalogo_per_mille_max"]} (editoriale/anti-ia/formule.yaml)'))
+    if m.get('coerenza'):
+        out.append(('coerenza', 'P2', f'{m["coerenza"]} segni tipografici all\'inglese (virgolette o trattini)'))
+    if m.get('ripetizioni_per_mille', 0) > s['ripetizioni_per_mille_max']:
+        out.append(('ripetizioni_ravvicinate', 'P2', f'{m["ripetizioni_per_mille"]} gruppi per mille sopra '
+                                                     f'{s["ripetizioni_per_mille_max"]}'))
     if m['variazione_frasi'] is not None and m['frasi_narrazione'] >= s['frasi_minime'] \
             and m['variazione_frasi'] < s['variazione_frasi_min']:
         out.append(('variazione_frasi', 'P1', f'{m["variazione_frasi"]} sotto {s["variazione_frasi_min"]}: frasi di lunghezza simile'))
@@ -113,7 +218,7 @@ def valuta(m, s):
     return out
 
 
-def chiusure(cartella, libro):
+def chiusure(cartella, libro, massimo=2):
     """{capitolo: (gravità, dettaglio)} per le chiusure uguali in capitoli consecutivi."""
     numerati = sorted((int(u), p) for u, p in comune.unita(cartella, libro) if u.isdigit())
     firme = []
@@ -126,22 +231,32 @@ def chiusure(cartella, libro):
     for i in range(1, len(firme)):
         uguali = firme[i][1] and firme[i][1] == firme[i - 1][1] and firme[i][2] == firme[i - 1][2]
         serie = serie + 1 if uguali else 1
-        if serie >= 3:
-            out[firme[i][0]] = ('P0', f'terzo capitolo di fila con chiusura {firme[i][1]} e la stessa punteggiatura finale')
+        if serie > massimo:
+            out[firme[i][0]] = ('P0', f'{serie} capitoli di fila con chiusura {firme[i][1]} e la stessa punteggiatura '
+                                      f'finale (massimo {massimo})')
         elif serie == 2:
             out[firme[i][0]] = ('P2', f'stessa chiusura ({firme[i][1]}) e punteggiatura finale del capitolo precedente')
     return out
 
 
-def audit(cartella, libro, scelta=None):
-    s, voc = soglie(libro.get('lingua', 'it'))
+def audit(cartella, libro, scelta=None, profilo=None, scrivi=True):
+    if profilo is None:
+        try:
+            profilo = comune.carica_libro(cartella)[2]
+        except comune.ErroreMotore:
+            profilo = {}
+    lingua = libro.get('lingua', 'it')
+    s, voc = soglie(lingua, profilo, libro)
     rx = regex_voci(libro, voc)
-    ch = chiusure(cartella, libro)
+    ch = chiusure(cartella, libro, int(s['chiusure_uguali_max']))
     esiti = {}
     for u, p in comune.unita(cartella, libro):
         if scelta and u != scelta:
             continue
-        m = misure(open(p, encoding='utf-8').read(), libro.get('lingua', 'it'), rx)
+        testo = open(p, encoding='utf-8').read()
+        m = misure(testo, lingua, rx)
+        m_cat, posizioni = misure_catalogo(testo, lingua, bool(s.get('formule_sezione_b')))
+        m.update(m_cat)
         v = valuta(m, s)
         if u.isdigit() and int(u) in ch:
             v.append(('chiusure_uguali', *ch[int(u)]))
@@ -152,8 +267,13 @@ def audit(cartella, libro, scelta=None):
                  '| Misura | Valore |', '|---|---|'] + [f'| {k} | {x} |' for k, x in m.items()]
         righe += ['', '## Segnalazioni', '']
         righe += [f'- {g} {k}: {d}' for k, g, d in v] or ['- nessuna']
-        nome = f'{int(u):02d}' if u.isdigit() else u.replace(' ', '-')
-        comune.scrivi(cartella, f'06-diagnostica/anti-ia/{nome}.md', '\n'.join(righe) + '\n')
+        righe += ['', f'## Elenco per il line editor (modalità {s["modalita"]})', '',
+                  'Posizione, schema, dove. Si applica solo con modifiche puntuali; una ripetizione o una formula voluta '
+                  'dalla voce resta.', '', '| Riga | Schema | Dove |', '|---|---|---|']
+        righe += [f'| {n} | {sch} | {d.replace("|", "/")} |' for n, sch, d in posizioni] or ['| — | — | nessuno |']
+        if scrivi:
+            nome = f'{int(u):02d}' if u.isdigit() else u.replace(' ', '-')
+            comune.scrivi(cartella, f'06-diagnostica/anti-ia/{nome}.md', '\n'.join(righe) + '\n')
     return esiti
 
 

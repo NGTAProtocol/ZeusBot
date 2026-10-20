@@ -75,6 +75,17 @@ campi:
     campi:
       modalita: {tipo: scelta, valori: [vieta, conta, avviso], obbligatorio: true}
       massimo_per_1000_parole: {tipo: intero, obbligatorio: true}
+  anti_ia:                 # soglie dell'audit anti-IA (script/antiia.py), sopra dati/antiia.yaml; libro.yaml anti_ia vince
+    uso: controllo
+    tipo: mappa
+    campi:
+      modalita: {tipo: scelta, valori: [avviso, blocco]}
+      variazione_frasi_min: {tipo: numero}
+      aperture_uguali_max: {tipo: numero}
+      formule_per_mille_max: {tipo: numero}
+      formule_catalogo_per_mille_max: {tipo: numero}
+      ripetizioni_per_mille_max: {tipo: numero}
+      chiusure_uguali_max: {tipo: intero}
   lista_nera: {tipo: testo, obbligatorio: true, uso: informativo}
   parole_per_pagina: {tipo: intero, obbligatorio: true, uso: informativo}
   scene_obbligatorie: {tipo: lista, elementi: {tipo: testo}, obbligatorio: true, uso: generazione}

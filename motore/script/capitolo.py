@@ -9,6 +9,9 @@ continuità di continuita.py; anti-riciclo di riciclo.py; dichiarazioni della ri
 nascosta <!-- zb: … --> secondo «dichiarazioni» di libro.yaml; scene (solo capitoli numerati), contate
 dal separatore struttura.separatore_scena.sorgente: numero fuori da capitoli.scene_per_capitolo (KO),
 scena sotto il minimo di scene.lunghezza (KO) o sopra il massimo (AVVISO). Il sequel è informativo.
+Audit anti-IA di antiia.py (catalogo anti-IA della lingua, report in 06-diagnostica/anti-ia/NN.md): righe
+«anti-ia:<misura>» AVVISO, KO solo con anti_ia.modalita: blocco (profilo o libro.yaml); indice Gulpease
+informativo, senza esito. Da motore (971b6df); non entrano nei risultati di controlla(), solo nel report.
 Report: <libro>/06-diagnostica/capitoli/NN.md, con la checklist manuale (tic fissi, voci di cronologia
 toccate e le voci del libro in checklist_capitolo di libro.yaml). Codice 1 se c'è almeno un KO.
 """
@@ -80,6 +83,28 @@ def dichiarazioni(cartella, libro, unita, nome):
                     out.append(risultato(nome, f'dichiarazione:{campo}', 'KO', n,
                                          f'ultima riga di {len(comune.parole(r))} parole: «{r.strip()}»'))
     return out
+
+
+def gulpease(testo):
+    """Indice Gulpease (GULP, Università di Roma, 1988): 89 + (300 × frasi − 10 × lettere) / parole, sulla prosa.
+    Informativo: nessuna soglia, nessun esito. «—» se il testo è vuoto."""
+    import re
+    prosa = ' '.join(r for _, r in comune.righe_prosa(testo))
+    parole = re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿ0-9]+", prosa)
+    frasi = len([f for f in re.split(r'[.!?…]+', prosa) if re.search(r'\w', f)])
+    if not parole:
+        return '—'
+    lettere = sum(len(re.sub(r'[0-9]', '', p)) for p in parole)
+    return round(89 + (300 * frasi - 10 * lettere) / len(parole))
+
+
+def anti_ia(cartella, libro, profilo, nome, scrivi=True):
+    """(misure, righe del report) dell'audit anti-IA dell'unità (antiia.py)."""
+    import antiia
+    m, v = antiia.audit(cartella, libro, nome, profilo=profilo, scrivi=scrivi).get(nome, ({}, []))
+    s, _ = antiia.soglie(libro.get('lingua', 'it'), profilo, libro)
+    esito = 'KO' if s.get('modalita') == 'blocco' else 'AVVISO'
+    return m, [risultato(nome, f'anti-ia:{k}', esito, None, f'{g} {d}') for k, g, d in v]
 
 
 def scene(testo, libro):
@@ -157,10 +182,18 @@ def main(argv):
     cartella, libro, profilo = comune.carica_libro(args[0])
     nome = ' '.join(args[1:])
     met, out = controlla(cartella, libro, profilo, nome)
+    met_ia, esiti_ia = anti_ia(cartella, libro, profilo, nome, scrivi='--schermo' not in argv)
+    out += comune.applica_eccezioni(esiti_ia, libro)
+    testo_unita = open(dict(comune.unita(cartella, libro))[nome], encoding='utf-8').read()
     ko = sum(1 for r in out if r['esito'] == 'KO')
     righe = [f'# Capitolo {nome} — controlli', '', f'Libro: {libro["titolo"]} — profilo: {libro["profilo"]}.', '',
              f'Parole (metodo unico): {met["parole"]} · frase media: {met["frase_media"]} · '
              f'dialogo: {met["dialogo_percento"]}%', '',
+             f'Anti-IA (audit): variazione delle frasi {met_ia.get("variazione_frasi")}, aperture uguali '
+             f'{met_ia.get("aperture_uguali")}%, formule {met_ia.get("formule_per_mille")}/1000 (catalogo '
+             f'{met_ia.get("formule_catalogo_per_mille")}/1000), ripetizioni {met_ia.get("ripetizioni_per_mille")}/1000; '
+             'elenco in 06-diagnostica/anti-ia/.', '',
+             f'Leggibilità (indice Gulpease, solo informativo: 0-100, più alto = più facile): {gulpease(testo_unita)}.', '',
              f'Esito: {ko} KO, {sum(1 for r in out if r["esito"] == "AVVISO")} avvisi.', '']
     righe += tabella(out) if out else ['Nessun KO e nessun avviso.']
     righe += ['', '## Checklist manuale', '',

@@ -29,6 +29,17 @@ campi:
                                                         struttura_manoscritto, line, copy, bozze, guida, fedelta]}}
   percorso: {tipo: scelta, valori: [editoriale, breve]}   # editoriale: motore/editoriale/00-percorso.md
   capsule: {tipo: scelta, valori: [obbligatorie, avviso]}  # zb avvio: obbligatorie ferma, avviso (predefinito) avvisa
+  anti_ia:                                       # facoltativo: soglie dell'audit anti-IA per questo libro (vince sul profilo)
+    tipo: mappa
+    campi:
+      modalita: {tipo: scelta, valori: [avviso, blocco]}
+      variazione_frasi_min: {tipo: numero}
+      aperture_uguali_max: {tipo: numero}
+      formule_per_mille_max: {tipo: numero}
+      formule_catalogo_per_mille_max: {tipo: numero}
+      ripetizioni_per_mille_max: {tipo: numero}
+      chiusure_uguali_max: {tipo: intero}
+      formule_sezione_b: {tipo: booleano}
   lingua_originale: {tipo: testo}
   lingue_target: {tipo: lista, elementi: {tipo: testo}}
   traduzione:                                    # solo nel libro della traduzione, 08-traduzione-<lingua>/libro.yaml

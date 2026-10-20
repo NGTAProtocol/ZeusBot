@@ -37,7 +37,7 @@ gruppi:
       - {nome: continuita, script: continuita.py, uso: "continuita <libro>", aiuto: "date, età, durate, cifre, grafie"}
       - {nome: riciclo, script: riciclo.py, uso: "riciclo <libro>", aiuto: "anti-riciclo a 7 parole (riscrittura)"}
       - {nome: ortografia, script: ortografia.py, uso: "ortografia <libro>", aiuto: "Hunspell, LanguageTool, checklist"}
-      - {nome: languagetool, script: languagetool.py, uso: "languagetool stato | installa [--cartella D]", aiuto: "installazione stabile di LanguageTool (fuori dal repository)"}
+      - {nome: languagetool, script: languagetool.py, uso: "languagetool stato | installa [--cartella <dir>] [--versione X] | verifica", aiuto: "LanguageTool fuori dal repository (cache locale, poi Maven Central; sostituisce lib/ solo dopo la verifica); verifica: frase di prova con una regola grammaticale italiana"}
       - {nome: compila, script: compila.py, uso: "compila <libro>", aiuto: "manoscritto completo in 05-output/"}
       - {nome: impagina, script: impagina.py, uso: "impagina <libro>", aiuto: "PDF di stampa"}
       - {nome: pdf, script: verifica_pdf.py, uso: "pdf <libro>", aiuto: "verifica del PDF"}

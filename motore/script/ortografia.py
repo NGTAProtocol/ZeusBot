@@ -6,7 +6,10 @@ Uso: python3 -B ortografia.py <libro> [--schermo]
     motore (dati/parole-ammesse-it.txt). Le elisioni (l', dell', anch'…) non si controllano.
 (b) LanguageTool, solo se ZB_LANGUAGETOOL indica la cartella dei suoi .jar (scaricati fuori dal
     repository; come, in PROCEDURA.md). Mai scaricato da questo script.
-(c) Checklist manuale per la lettura umana, sempre, in fondo al report.
+(c) Lista di controllo per la lettura umana, sempre, in fondo al report: per l'italiano le voci delle sezioni 1-6
+    di motore/editoriale/correttore/criteri-correttore.md (fonte unica, da motore); per le altre lingue le voci di
+    lingue/<lingua>/criteri-correttore.md se ha sezioni numerate, altrimenti la lista minima qui sotto.
+Installazione e verifica di LanguageTool: zb languagetool installa | verifica | stato (languagetool.py).
 Report: <libro>/06-diagnostica/controllo-ortografico.md (con --schermo solo a schermo).
 Il report dice quali livelli sono stati eseguiti. Codice 1 se (a) o (b) trovano qualcosa;
 2 se Hunspell o il dizionario it_IT mancano.
@@ -36,6 +39,27 @@ CHECKLIST = [
     'virgolette e lineette dei dialoghi coerenti in tutto il libro',
     'maiuscole dopo i due punti e nei titoli dei capitoli',
 ]
+
+
+CRITERI = {'it': os.path.join('editoriale', 'correttore', 'criteri-correttore.md')}
+
+
+def checklist(lingua='it'):
+    """Lista di controllo del correttore: una voce per punto elenco delle sezioni 1-6 dei criteri della lingua, con il
+    titolo della sezione; senza sezioni numerate, CHECKLIST. Da motore (971b6df)."""
+    rel = CRITERI.get(lingua) or os.path.join('editoriale', 'lingue', lingua, 'criteri-correttore.md')
+    p = os.path.join(comune.radice_motore(), rel)
+    if not os.path.isfile(p):
+        return list(CHECKLIST)
+    out, sezione = [], None
+    for r in open(p, encoding='utf-8'):
+        m = re.match(r'^##\s+(\d+)\.\s+(.+)$', r.strip())
+        if m:
+            sezione = m.group(2) if int(m.group(1)) <= 6 else None
+            continue
+        if sezione and r.startswith('- '):
+            out.append(f'{sezione}: {r[2:].strip().rstrip(";")}')
+    return out or list(CHECKLIST)
 
 
 def ammesse(cartella, libro):
@@ -140,11 +164,15 @@ def report(libro, trovate, errore_h, lt, motivo_lt):
             r += ['| File:riga | Regola | Testo | Messaggio |', '|---|---|---|---|']
             r += [f'| {f}:{n} | {reg} | {t} | {msg} |' for f, n, reg, msg, t in lt]
         r.append('')
+    lingua = libro.get('lingua', 'it')
+    voci = checklist(lingua)
+    fonte = (CRITERI.get(lingua) or f'editoriale/lingue/{lingua}/criteri-correttore.md') if voci != CHECKLIST else 'lista minima'
     r += ['## (c) Checklist per la lettura umana', '',
           'I correttori automatici non rilevano errori come «e» al posto di «è», gli accordi sbagliati '
-          'o una parola vera usata al posto di un\'altra. Questi controlli li fa chi legge.', '',
+          'o una parola vera usata al posto di un\'altra. Questi controlli li fa chi legge.',
+          f'Voci da motore/{fonte} (sezioni 1-6).' if voci != CHECKLIST else 'Voci della lista minima.', '',
           '| Controllo | Fatto |', '|---|---|']
-    r += [f'| {c} | [ ] |' for c in CHECKLIST]
+    r += [f'| {c.replace("|", "/")} | [ ] |' for c in voci]
     return '\n'.join(r) + '\n'
 
 

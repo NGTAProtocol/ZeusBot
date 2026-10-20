@@ -28,6 +28,14 @@ frase_media: [12, 17]                         # PROPOSTA
 dialogo_percento: [35, 55]                    # PROPOSTA
 similitudini_max_per_parole: 300              # PROPOSTA
 parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21; il numero è PROPOSTA
+anti_ia:                                      # soglie dell'audit anti-IA (script/antiia.py; da motore); PROPOSTA uguale per tutti i generi
+  modalita: avviso                            # PROPOSTA: audit, non blocca (blocco: ogni segnalazione è un KO in capitolo.py)
+  variazione_frasi_min: 0.25                  # PROPOSTA: come dati/antiia.yaml (mini-libri: solo il capitolo con difetti voluti sotto)
+  aperture_uguali_max: 20                     # PROPOSTA: come dati/antiia.yaml
+  formule_per_mille_max: 1.0                  # PROPOSTA: come dati/antiia.yaml
+  formule_catalogo_per_mille_max: 3.0         # PROPOSTA (motore): formule.yaml senza la sezione B; mini-libri 0,0-0,6
+  ripetizioni_per_mille_max: 12.0             # PROPOSTA (motore): mini-libri 2,2-9,7
+  chiusure_uguali_max: 2                      # PROPOSTA: oltre 2 capitoli di fila con la stessa chiusura, P0
 lista_nera: dati/lista-nera.yaml              # 05 rr. 19-20 · informativo, non controllato
 parole_per_pagina: 250                        # 12 r. 7 (PROPOSTA il valore dentro il range) · informativo, non controllato
 scene_obbligatorie:

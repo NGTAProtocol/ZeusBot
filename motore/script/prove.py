@@ -2942,7 +2942,97 @@ def agenti_capsule_consumo(A):
           f'{os.path.isfile(pieno) and len(open(pieno, encoding="utf-8").read().splitlines()) > 11}', sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo}
+# ---------------------------------------------------------------- anti-IA e correttore (da motore, 971b6df)
+
+TESTO_IA = """# 3 — La stazione
+
+<!-- zb: chiusura=G -->
+
+Lei arrivò alla stazione in quel momento. Lei guardò il binario vuoto senza parlare. Lei sentì un turbinio di emozioni dentro.
+Lei pensò alla lettera della sorella. Lei non sapeva ancora che tutto sarebbe cambiato. Lei strinse la valigia con forza.
+All'improvviso il treno entrò in stazione. Lei salì sulla carrozza in fondo. Lei trovò un posto accanto al finestrino.
+Lei osservò la città che spariva piano. Lei provò un misto di paura e speranza. Lei chiuse gli occhi per un attimo.
+In quel momento il controllore entrò nella carrozza. Lei mostrò il biglietto con un sorriso. Lei ripose il biglietto nella borsa.
+Non era solo un viaggio, era una fuga verso casa. Lei sapeva che nulla sarebbe stato più come prima. Lei guardò ancora fuori.
+All'improvviso la luce cambiò sulle colline. Lei sentì il cuore che batteva forte nel petto. Lei respirò piano per calmarsi.
+Lei pensò di nuovo alla sorella lontana. Lei ricordò la casa vicino al fiume. Lei sorrise senza un motivo preciso.
+Sul biglietto c'era scritto "torno presto" con la sua calligrafia.
+"""
+
+
+def anti_ia_prove(A):
+    """Audit anti-IA (antiia.py di ccr con le misure, le soglie per profilo e formule.yaml di motore)."""
+    import antiia
+    sez = 'anti-IA'
+    nuove = ('formule_catalogo', 'coerenza', 'ripetizioni_ravvicinate')
+    for nome in ('mini-libro', 'mini-libro-romance'):
+        L = copia_libro(nome)
+        _, libro, profilo = comune.carica_libro(L)
+        segnalati = [f'{u}:{k}' for u, (m, v) in antiia.audit(L, libro, profilo=profilo, scrivi=False).items()
+                     for k, g, d in v if k in nuove]
+        esito('antiia.py', f'{nome}: taratura, nessuna segnalazione delle misure di motore sui capitoli di prova', [],
+              segnalati, sez)
+    L = copia_libro('mini-libro')
+    _, libro, profilo = comune.carica_libro(L)
+    p3 = dict(comune.unita(L, libro))['3']
+    open(p3, 'w', encoding='utf-8').write(TESTO_IA)
+    sha = comune.sha256_file(p3)
+    m, v = antiia.audit(L, libro, '3', profilo=profilo, scrivi=False)['3']
+    esito('antiia.py', 'capitolo inventato «da IA»: misure accese', A['ia_controlli'], sorted({k for k, _, _ in v}), sez)
+    m_b, _ = antiia.audit(L, dict(libro, anti_ia={'formule_sezione_b': True}), '3', profilo=profilo, scrivi=False)['3']
+    esito('antiia.py', 'capitolo «da IA»: aperture uguali sopra la soglia / formule del catalogo: la sezione B conta solo '
+          'con formule_sezione_b', A['ia_misure'],
+          f'{m["aperture_uguali"] > 20} / {m["formule_catalogo_per_mille"] < m_b["formule_catalogo_per_mille"]}', sez)
+    p = esegui(os.path.join(S, 'capitolo.py'), L, '3')
+    rep = os.path.join(L, '06-diagnostica', 'anti-ia', '03.md')
+    righe_audit = [r for r in open(rep, encoding='utf-8').read().splitlines() if r.startswith('| ') and 'formula' in r]
+    esito('capitolo.py', 'audit non distruttivo: report anti-ia scritto, capitolo intatto, avvisi non bloccanti', A['audit'],
+          f'{os.path.isfile(rep)} / {len(righe_audit) >= 5} / {comune.sha256_file(p3) == sha} / '
+          f'{"anti-ia:formule_catalogo | AVVISO" in open(os.path.join(L, "06-diagnostica", "capitoli", "03.md"), encoding="utf-8").read()}', sez)
+    ly = os.path.join(L, 'libro.yaml')
+    open(ly, 'a', encoding='utf-8').write('anti_ia: {modalita: blocco}\n')
+    p2 = esegui(os.path.join(S, 'capitolo.py'), L, '3')
+    esito('capitolo.py', 'anti_ia.modalita: blocco in libro.yaml: KO e codice 1', A['blocco'],
+          f'{p2.returncode} / {"anti-ia:aperture_uguali | KO" in open(os.path.join(L, "06-diagnostica", "capitoli", "03.md"), encoding="utf-8").read()}', sez)
+    R = copia_libro('mini-libro-romance')
+    _, lr, pr = comune.carica_libro(R)
+    gr = lambda lb: next((g for k, g, _ in antiia.audit(R, lb, '2', profilo=pr, scrivi=False)['2'][1]
+                          if k == 'chiusure_uguali'), '—')
+    esito('antiia.py', 'chiusure uguali di fila: soglia del profilo (P2 al secondo) / soglia 1 in libro.yaml (P0)',
+          A['chiusure'], f'{gr(lr)} / {gr(dict(lr, anti_ia={"chiusure_uguali_max": 1}))}', sez)
+
+
+def correttore(A):
+    """Lista di controllo dai criteri e LanguageTool (languagetool.py: installatore di motore, comando unico)."""
+    import ortografia
+    sez = 'correttore'
+    crit = os.path.join(M, 'editoriale', 'correttore', 'criteri-correttore.md')
+    puntati = sum(1 for r in open(crit, encoding='utf-8').read().split('## 7.')[0].splitlines() if r.startswith('- '))
+    voci = ortografia.checklist()
+    esito('ortografia.py', 'lista di controllo = punti delle sezioni 1-6 di criteri-correttore.md', 'sì',
+          'sì' if len(voci) == puntati and voci[0].startswith('Accenti e apostrofi:') else f'no ({len(voci)}/{puntati})', sez)
+    L = copia_libro('mini-libro')
+    p = esegui(os.path.join(S, 'ortografia.py'), L, '--schermo')
+    esito('ortografia.py', 'report: sezione (c) con le voci dei criteri', A['report'],
+          f'{"criteri-correttore.md" in p.stdout} / {sum(1 for v in voci if v.replace("|", "/") in p.stdout)}', sez)
+    d = os.path.join(M, 'prova-languagetool-vietata')
+    p = esegui(os.path.join(S, 'languagetool.py'), 'installa', '--cartella', d)
+    esito('languagetool.py', 'installazione dentro il repository: rifiutata, niente creato', A['dentro_repo'],
+          f'{p.returncode} / {os.path.exists(d)}', sez)
+    lt = os.environ.get('ZB_LANGUAGETOOL')
+    if not lt:
+        saltata('languagetool.py', 'verifica: frase di prova segnalata', 'LanguageTool assente (ZB_LANGUAGETOOL non impostata)', sez)
+        saltata('languagetool.py', 'installazione già pronta', 'LanguageTool assente (ZB_LANGUAGETOOL non impostata)', sez)
+        return
+    p = esegui(os.path.join(S, 'languagetool.py'), 'verifica')
+    esito('languagetool.py', 'verifica: frase di prova segnalata con una regola grammaticale italiana', A['verifica'],
+          f'{p.returncode} / {"GR_04_001" in p.stdout}', sez)
+    p = esegui(os.path.join(S, 'languagetool.py'), 'installa', '--cartella', os.path.dirname(os.path.realpath(lt)))
+    esito('languagetool.py', 'installazione già pronta: niente riscaricato', A['gia_pronto'],
+          f'{p.returncode} / {"già pronto" in p.stdout} / {"export ZB_LANGUAGETOOL=" in p.stdout}', sez)
+
+
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore}
 
 
 def main(argv):
