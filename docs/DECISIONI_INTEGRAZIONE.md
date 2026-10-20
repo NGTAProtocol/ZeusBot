@@ -319,3 +319,22 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
   indicato come «lavoro sul motore», come dice PROCEDURA.
 - Lunghezza: 30 righe (prima 29), il massimo della prova; righe più lunghe per restare nel limite.
 - `docs/DA_VERIFICARE_AUTORE.md`: la voce su `CLAUDE.md` si segna risolta nel commit di D18 (ordine dei commit chiesto).
+
+## D18. Subagenti e lunghezza della capsula nei file del pacchetto (modifiche autorizzate dall'autore)
+- A, subagenti. Conteggio sui file veri: `editoriale/agenti/` 10 file (architetto-struttura, capsula,
+  correttore-bozze, correttore-italiano, diagnosta, direttore-editoriale, editor-strutturale, lettore-cieco,
+  line-editor, scrittore-voce) e `editoriale/lingue/agenti/` 2 (revisore-fedelta, traduttore): 12, gli stessi che
+  `script/agenti.py` legge dalle due cartelle e che `zb agenti stato` elenca (16 installabili con i 4 comandi). Numero
+  atteso dall'autore: 12, confermato. Corretto `editoriale/LEGGIMI.md` riga 13 («nove subagenti» → «dodici
+  subagenti», con le due cartelle). Altre occorrenze di «nove» riferite agli agenti nei file del motore: nessuna
+  (ricerca su `.md`, `.yaml`, `.py`); restano le citazioni storiche in questo file e nell'elenco in
+  `docs/DA_VERIFICARE_AUTORE.md`, ora aggiornato.
+- B, capsula. Codice: `script/capsula.py`, `MINIMO, MASSIMO = 120, 250`; conta le parole delle sezioni
+  (`conta.conta_testo`) e segnala fuori da `MINIMO <= parole <= MASSIMO` con «atteso 120-250, circa 180». Intervallo
+  atteso dall'autore: 120-250, confermato. Testo allineato a «120-250 parole (circa 180)», come il messaggio dello
+  script: `editoriale/agenti/capsula.md` («massimo 180»), `editoriale/risparmio-token.md` («circa 150-180»), e fuori
+  dai 28 file `editoriale/lingue/it/glossario-editoriale.md`, `editoriale/lingue/en/glossario-editoriale.md` e
+  `dati/struttura-libro.yaml` («circa 180»). Codice e prove non cambiano.
+- Non cambiati: `script/capsula.py` (codice; dice già «circa 180» come indicazione dentro 120-250);
+  `docs/PROMPT_NUOVA_CHAT.md` 5.3 («circa 180 parole»), che è il testo del compito di allora, non una descrizione del
+  motore; le righe storiche di questo file (D9, D14).

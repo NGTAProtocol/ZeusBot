@@ -5,7 +5,7 @@ Non si promettono percentuali: il risparmio si misura (vedi "Misura").
 
 ## 1. Cosa costa meno
 1. **Gli script fanno tutto ciò che è meccanico** (conteggi, continuità, ortografia, compilazione, PDF, KDP): zero token di ragionamento. Niente LLM per ciò che uno script sa fare.
-2. **Capsule di continuità** (`07-capsule/NN.md`, circa 150-180 parole per capitolo): chi scrive o revisiona legge le capsule dei capitoli precedenti, non i capitoli interi. È il risparmio più grande su libri lunghi.
+2. **Capsule di continuità** (`07-capsule/NN.md`, 120-250 parole per capitolo, circa 180): chi scrive o revisiona legge le capsule dei capitoli precedenti, non i capitoli interi. È il risparmio più grande su libri lunghi.
 3. **Un ruolo = un subagente con contesto proprio**: legge solo i suoi file, lavora, restituisce al chiamante al massimo 10 righe. Il contesto principale non si riempie di testo dei capitoli.
 4. **Modelli per compito**: modello forte solo dove serve giudizio (struttura, editing strutturale); modello medio per scrittura e revisione di frase; modello leggero per capsule e lavori di riassunto. Scelta scritta in un solo file di dati, `motore/dati/modelli-ruoli.yaml`, che `zb agenti attiva` riporta nel campo `model` di ciascun agente; tarata con la prova (vedi "Misura").
 5. **Modifiche puntuali**: i revisori applicano correzioni con modifiche mirate (str_replace/Edit), non riscrivono il capitolo intero.

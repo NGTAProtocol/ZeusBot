@@ -10,7 +10,7 @@ stanno solo in `libri/<slug>/` del ramo del libro).
 - `struttura/modelli/`: i documenti vuoti della fase struttura.
 - `ruoli/`: otto ruoli editoriali, uno per file (diagnosta compreso).
 - `diagnosi/`: principi, contratto del libro, passaggi di analisi, gravità e rapporto.
-- `agenti/`: nove subagenti di Claude Code (fonte unica; `zb agenti attiva` li installa sui rami dei libri).
+- `agenti/` e `lingue/agenti/`: dodici subagenti di Claude Code (10 + 2 per la traduzione; fonte unica; `zb agenti attiva` li installa sui rami dei libri).
 - `risparmio-token.md`: subagenti, capsule e regole per pochi token.
 - `anti-ia/catalogo-it.md`: schemi da IA in italiano e regole di ritmo.
 - `correttore/criteri-correttore.md`: criteri del correttore di italiano.

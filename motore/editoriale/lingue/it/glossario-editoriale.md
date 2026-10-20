@@ -10,7 +10,7 @@ Termini del mestiere usati da ruoli, rapporti e comandi. Un termine, un signific
 | scheda del capitolo | il blocco del capitolo in `05-scaletta.md` |
 | codex | schede di personaggi e luoghi con i tag `@char` e `@loc` |
 | canone | fatti bloccati in `stato.yaml`; cambiano solo con il gate `canone` |
-| capsula | sintesi di continuità di un capitolo, circa 180 parole |
+| capsula | sintesi di continuità di un capitolo, 120-250 parole (circa 180) |
 | stato compatto | 15-20 righe da leggere all'inizio di una sessione |
 | diagnosi | lettura che descrive e misura, senza riscrivere |
 | piano di revisione | interventi decisi dall'editor strutturale, approvati al gate |

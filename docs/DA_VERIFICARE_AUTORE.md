@@ -29,15 +29,14 @@ perché, stanno in `docs/DECISIONI_INTEGRAZIONE.md`.
 - I 28 file descrivono fermate con l'«ok» dell'autore (`00-percorso.md`, `struttura/01-fase-struttura.md`,
   «solo dopo il mio ok» nei ruoli). Dal 2026-10-20 il motore scrive in automatico, con una sola pausa di lettura
   (decisione D4). Se vuoi, aggiorna il pacchetto.
-- `CLAUDE.md` (non toccato: è il tuo foglio delle regole): dice ancora «Metodo: proponi → l'autore approva → applica» e
-  la riga di avvio non ha `--ruolo` (un ruolo per sessione, D8). Il motore segue il modo automatico; se vuoi, aggiorna
-  `CLAUDE.md` (massimo 30 righe, lo controlla una prova).
+- `CLAUDE.md`: risolto (D17). Ora descrive `--ruolo` (un ruolo per sessione) e il modo automatico con la pausa di
+  lettura; il «Metodo» resta, come la regola 3 di PROCEDURA.
 
-## Incoerenze nei 28 file del pacchetto (segnalate, non corrette)
-- `editoriale/LEGGIMI.md` riga 13: «nove subagenti»; in `editoriale/agenti/` i file sono 10 (con `lettore-cieco`,
-  aggiunto da `motore`), più 2 in `lingue/agenti/`; `zb agenti stato` ne conta 12.
-- Lunghezza della capsula: `agenti/capsula.md` dice «massimo 180 parole», `risparmio-token.md` «circa 150-180»; il
-  motore (`script/capsula.py`) accetta 120-250 (D9). Il glossario aggiunto da `motore` ora dice 120-250.
+## Incoerenze nei 28 file del pacchetto: risolte (D18, con la tua autorizzazione)
+- `editoriale/LEGGIMI.md` riga 13: ora «dodici subagenti» in `agenti/` (10) e `lingue/agenti/` (2), come
+  `zb agenti stato`.
+- Lunghezza della capsula: `agenti/capsula.md` e `risparmio-token.md` ora dicono 120-250 parole (circa 180), come
+  `script/capsula.py`; allineati anche i due glossari di `lingue/` e `dati/struttura-libro.yaml`.
 
 ## Decisioni tue ancora aperte (non toccate)
 - Coppia «avvenire/avvenire» in `correttore/criteri-correttore.md`, sezione 5.

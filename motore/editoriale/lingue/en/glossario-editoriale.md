@@ -11,7 +11,7 @@ file and command names stay in Italian; this table gives the English meaning.
 | scheda del capitolo | chapter card | the chapter's block in `05-scaletta.md` |
 | codex | codex | character and place cards tagged `@char` / `@loc` |
 | canone | canon | locked facts; changed only through the `canone` gate |
-| capsula | continuity capsule | about 180 words per chapter |
+| capsula | continuity capsule | 120-250 words per chapter (about 180) |
 | stato compatto | compact state | 15-20 lines read at the start of a session |
 | diagnosi | diagnostic read | describes and measures; does not rewrite |
 | piano di revisione | revision plan | structural editor's interventions, approved at the gate |
