@@ -173,9 +173,17 @@ def percorso(sez='percorso editoriale'):
           sum('@char:' in open(os.path.join(L, '02-bibbia', 'codex', f), encoding='utf-8').read()
               for f in os.listdir(os.path.join(L, '02-bibbia', 'codex'))), sez)
     salva(r, 'struttura e documenti')
+    # nota di direzione del direttore editoriale tra i documenti (editoriale/ruoli/01; prova di motore adattata)
     p = zb(L, 'pronto', '.')
-    esito('fase.py', 'documenti (bibbia, codex, cronologia, manuale): pronto senza fermata', '0 / pagina_campione',
-          f'{p.returncode} / {stato(L)["fase"]}', sez)
+    esito('fase.py', 'documenti con la nota di direzione: senza la nota pronto si ferma', '2 / True / documenti',
+          f'{p.returncode} / {"06-diagnostica/nota-direzione.md" in p.stderr} / {stato(L)["fase"]}', sez)
+    open(os.path.join(L, '06-diagnostica', 'nota-direzione.md'), 'w').write(
+        '# Nota di direzione\n\nLettore: chi legge gialli di mare. Rischio: un finale troppo spiegato.\n')
+    salva(r, 'direttore editoriale: nota di direzione')
+    p = zb(L, 'pronto', '.')
+    esito('fase.py', 'documenti (bibbia, codex, cronologia, manuale, nota di direzione): pronto senza fermata',
+          '0 / pagina_campione / True', f'{p.returncode} / {stato(L)["fase"]} / '
+          f'{"06-diagnostica/nota-direzione.md" in stato(L)["documenti_approvati"]}', sez)
     open(os.path.join(L, '05-revisioni', 'pagina-campione.md'), 'w').write(
         '# Pagina campione\n\nIl molo era grigio. Nives contò i colpi della catena fino a dieci.\n')
     salva(r, 'pagina campione')
@@ -194,6 +202,10 @@ def percorso(sez='percorso editoriale'):
     salva(r, 'scrittore: capitolo 1')
     p = zb(L, 'esito', '.', '1')
     esito('fase.py', 'esito 1: controlli OK', 0, p.returncode, sez)
+    rep1 = os.path.join(L, '06-diagnostica', 'capitoli', '01.md')
+    esito('fase.py', 'conta.py resta dentro zb esito: parole del capitolo nel report (prova di motore adattata: il '
+          'comando zb conta resta, come in ccr)', True,
+          os.path.isfile(rep1) and 'Parole (metodo unico):' in open(rep1, encoding='utf-8').read(), sez)
     salva(r, 'esito 1')
     p = zb(L, 'prepara', '.', '2')
     esito('prepara.py', 'prepara 2 senza la capsula 1: FERMO', '2 / True', f'{p.returncode} / {"Capsula" in p.stderr}', sez)
@@ -256,11 +268,15 @@ def percorso(sez='percorso editoriale'):
     esito('capsula.py', 'registro: nessuna promessa aperta dopo il capitolo 3', True, 'promesse aperte: nessuna' in p.stdout, sez)
     salva(r, 'capsula 3')
     # revisioni
+    catena = [stato(L)['fase']]
     for fs, rap in (('struttura_manoscritto', [('rapporto-manoscritto.md', 'diagnosta', None),
                                               ('piano-revisione-manoscritto.md', 'editor-strutturale', None)]),
                     ('line', [(f'line/0{n}.md', 'line-editor', n) for n in (1, 2, 3)]),
                     ('copy', [(f'copy/0{n}.md', 'correttore-italiano', n) for n in (1, 2, 3)])):
         if fs == 'line':
+            p = zb(L, 'pronto', '.')
+            esito('percorso.py', 'line senza rapporti: fermo, un rapporto mancante per capitolo (prova di motore '
+                  'adattata)', '2 / 3', f'{p.returncode} / {p.stderr.count("06-diagnostica/line/0")}', sez)
             # separazione: un rapporto di line editing nello stesso commit di una modifica al capitolo
             intesta(L, os.path.join(F, 'rapporti', 'line', '01.md'), '06-diagnostica/line/01.md', 'line-editor', 1)
             open(os.path.join(m, '01-il-molo.md'), 'a').write('\n')
@@ -291,6 +307,7 @@ def percorso(sez='percorso editoriale'):
         salva(r, f'{fs} applicato')
         zb(L, 'pronto', '.')
         salva(r, f'fine {fs}')
+        catena.append(stato(L)['fase'])
     esito('fase.py', 'dopo copy: fase bozze', 'bozze', stato(L)['fase'], sez)
     p = zb(L, 'pronto', '.')
     esito('percorso.py', 'bozze senza PDF: FERMO', '2 / True', f'{p.returncode} / {"PDF" in p.stderr}', sez)
@@ -315,8 +332,13 @@ def percorso(sez='percorso editoriale'):
         salva(r, 'bozze registrate')
         zb(L, 'pronto', '.')
         esito('fase.py', 'bozze: proposte senza fermata, applicazione, poi chiusura', 'chiusura', stato(L)['fase'], sez)
+        catena.append(stato(L)['fase'])
     else:
         saltata('fase.py', 'bozze: proposte senza fermata, applicazione, poi chiusura', 'node assente', sez)
+    esito('fase.py', 'dopo la stesura: struttura_manoscritto → line → copy → bozze (→ chiusura con node; prova di '
+          'motore con i nomi del pacchetto)', ' → '.join(['struttura_manoscritto', 'line', 'copy', 'bozze'] +
+                                                        (['chiusura'] if shutil.which('node') else [])),
+          ' → '.join(catena), sez)
     return r, L
 
 

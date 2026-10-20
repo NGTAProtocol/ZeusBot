@@ -32,6 +32,7 @@ GATE = ['struttura', 'documenti', 'pagina_campione', 'primi_capitoli', 'lotto', 
         'line', 'copy', 'bozze', 'canone', 'guida', 'fedelta']
 INTESTAZIONE = re.compile(r'^<!--\s*zb:\s*ruolo=([\w\-]+);\s*su=([0-9a-f]{12})\s*-->')
 CANONE = '06-diagnostica/canone-proposte.md'
+NOTA_DIREZIONE = '06-diagnostica/nota-direzione.md'
 # ruolo -> fasi in cui può lavorare (zb ruolo lo controlla: la scrittura non include revisione)
 FASI_RUOLO = {'architetto-struttura': ['struttura'], 'diagnosta': ['struttura', 'struttura_manoscritto'],
               'editor-strutturale': ['struttura', 'struttura_manoscritto'], 'direttore-editoriale': ['documenti'],
@@ -153,7 +154,8 @@ def documenti_gate(cartella, libro, stato, gate):
         return file_struttura() + [r for r, _, _ in rapporti(cartella, libro, 'struttura')]
     if gate == 'documenti':
         import codex
-        d = ['libro.yaml', '02-bibbia/bibbia.md', 'cronologia.yaml', '03-architettura/manuale-di-stile.md']
+        # più la nota di direzione del direttore editoriale (editoriale/ruoli/01-direttore-editoriale.md; da motore)
+        d = ['libro.yaml', '02-bibbia/bibbia.md', 'cronologia.yaml', '03-architettura/manuale-di-stile.md', NOTA_DIREZIONE]
         return d + [v['file'] for v in codex.schede(cartella).values()]
     if gate in REVISIONI:
         return [r for r, _, _ in rapporti(cartella, libro, gate)]

@@ -195,3 +195,39 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
 - Prove nuove (5, in `prove_editoriale.py`, percorso completo sul mini-libro): pausa dopo 3 capitoli con i tre file
   elencati; `zb esito` rifiutato durante la pausa; «ok» continua; «correggi <note>» (su una copia del repository alla
   stessa pausa) scrive le note e riparte; `pausa_lettura: 6` rifiutato, 5 accettato.
+
+## D12. Punto 9: prove
+- Totale reale dopo il punto 9: **632 prove, 632 OK, 0 saltate** (`zb prove`, con LanguageTool 6.8 da
+  `ZB_LANGUAGETOOL`, senza `ZB_BANCA_VOCI`). Partenza: ccr 560 (d2b8814), `motore` 520 (971b6df).
+- Conteggio per sezione (tabella completa di `zb prove`): ogni sezione ha almeno le prove del ramo che ne aveva di più;
+  le 65 prove che esistevano solo in `motore` sono tutte presenti:
+
+| Sezione | motore | ccr | ora |
+|---|---|---|---|
+| fase struttura | 18 | 0 | 18 |
+| cartella unica | 13 | 0 | 13 |
+| ruoli | 9 | 0 | 9 |
+| agenti e capsule | 10 | 0 | 10 |
+| anti-IA | 7 | 0 | 7 |
+| correttore | 5 | 0 | 5 |
+| passo 5 | 97 | 96 | 96 (le 3 di `motore` in più sono nel percorso editoriale, sotto) |
+| passo 6 | 6 | 12 | 12 (le prove di `zb pulizia` di ccr restano) |
+| percorso editoriale | 0 | 43 | 53 |
+| tutte le altre sezioni | come ccr | | uguali |
+
+- Le prove di ccr con un nome cambiato (14) sono quelle del percorso completo adattate al modo automatico (D6) e il
+  conteggio degli agenti (D5): stessa prova, atteso nuovo.
+- Le 3 prove di `passo 5` di `motore` portate nel percorso editoriale, con i nomi del pacchetto:
+  - «avanti fino all'ultimo blocco (con la nota di direzione)» → la nota di direzione del direttore editoriale
+    (`06-diagnostica/nota-direzione.md`, prevista da `editoriale/ruoli/01-direttore-editoriale.md:14`) è tra i
+    documenti del percorso editoriale: senza la nota `zb pronto` si ferma; con la nota la registra (+1 prova);
+  - «dopo la stesura: revisione_manoscritto → line → copy → bozze → chiusura» → catena delle fasi
+    `struttura_manoscritto → line → copy → bozze → chiusura` e «line senza rapporti: fermo, un rapporto mancante per
+    capitolo» (+1 prova);
+  - «zb conta <libro>: comando ritirato» → non può valere insieme alla prova di ccr «conta <libro> --schermo» (codice
+    0): restano i comandi di ccr (`conta`, `stile`, `riciclo`, `capitolo`, `pulizia`, che le prove di ccr usano); la
+    parte che si può tenere, «conta.py resta dentro zb esito», diventa «parole del capitolo nel report di zb esito».
+- In più: 5 prove nuove della pausa di lettura (D11) e 2 nate dalla divisione di prove esistenti (codex contato alla
+  chiusura della struttura, D6; «ok» rifiutato dopo la struttura automatica, D6).
+- `prove.py`: `--solo` (ccr) e `--sezione` (motore, anche più volte) scelgono le sezioni; l'impronta per `zb push` si
+  scrive solo con la suite intera tutta OK.

@@ -1,9 +1,14 @@
 """Prove ripetibili del motore (comando «zb prove»).
 
-Uso: python3 -B prove.py [--radice <cartella motore>]
-Copia i due mini-libri inventati di prove/ in cartelle temporanee, esegue le prove
+Uso: python3 -B prove.py [--radice <cartella motore>] [--solo <sezione>] [--sezione <sezione>]… [--tutto]
+Copia i mini-libri inventati di prove/ in cartelle temporanee, esegue le prove
 di ogni passo presente in prove/attesi.yaml (passo_1, passo_2, …), confronta gli
 esiti e stampa la tabella script | controllo | atteso | ottenuto | OK/KO.
+Integrazione (ramo integrazione-editoriale): tutte le prove dei due rami, quelle di ccr (sezioni di questo file e
+prove_editoriale.py) e quelle di motore (971b6df: fase struttura, cartella unica, ruoli, agenti e capsule, anti-IA,
+correttore), adattate ai nomi del pacchetto e al modo automatico (docs/DECISIONI_INTEGRAZIONE.md), più la pausa di
+lettura. Con --solo o --sezione (anche più volte) solo quelle sezioni di questo file: per lavorare; prima di un
+commit sempre la suite intera (l'impronta per zb push si scrive solo con la suite intera tutta OK).
 Alla fine rilancia separazione.py e recinto.py su motore/.
 Codice d'uscita 0 solo se tutto è OK.
 """
@@ -3037,10 +3042,11 @@ SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4'
 
 def main(argv):
     A = comune.leggi_yaml(os.path.join(M, 'prove', 'attesi.yaml'))
-    solo = argv[argv.index('--solo') + 1] if '--solo' in argv else None
+    scelte = [argv[i + 1] for i, a in enumerate(argv) if a in ('--solo', '--sezione') and i + 1 < len(argv)]
+    solo = scelte or None
     try:
         for chiave, funz in SEZIONI.items():
-            if chiave in A and (not solo or solo == chiave):
+            if chiave in A and (not solo or chiave in solo):
                 funz(A[chiave])
         import prove_editoriale
         prove_editoriale.TMP = tempfile.mkdtemp(dir=TMP)
