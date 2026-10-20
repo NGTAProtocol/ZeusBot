@@ -4,7 +4,7 @@ Si legge solo quando serve: il line editor per la diagnosi, lo scrittore se l'au
 schema. Completa `catalogo-it.md` (sezioni A-I, che restano la fonte principale). Schemi ricostruiti per
 l'italiano, non tradotti; esempi inventati. Tra parentesi la provenienza dell'idea (repository elencati in
 `docs/ATTRIBUZIONI.md`); «nostro» = nessun repository. Conta il grappolo e la densità, mai l'occorrenza singola.
-Le formule misurabili stanno in `formule.yaml` e le conta `zb esito` (script/antiia.py, misura `formule_per_mille`).
+Le formule misurabili stanno in `formule.yaml` e le conta `zb esito` (script/antiia.py, misura `formule_catalogo_per_mille`).
 
 ## J. Soggetto e pronomi
 - **Pronome soggetto ripetuto** (blader, aperture ripetute; adattato). Si riconosce: tre o più frasi di seguito che aprono con «Lui», «Lei», «Egli», o con il nome proprio, dove l'italiano sottintenderebbe il soggetto. Es.: «Lei aprì la porta. Lei guardò il corridoio. Lei non vide nessuno.» Fare: sottintendere il soggetto, unire le frasi («Aprì la porta e guardò il corridoio: nessuno»), aprire con l'azione o con l'oggetto.

@@ -1,52 +1,114 @@
 # Passaggio di consegne: motore
 
-Frase di apertura per la nuova chat: «Leggi motore/passaggio-di-consegne.md e docs/AVANZAMENTO_LAVORO.md e riprendi da lì».
+Frase di apertura per la nuova chat: «Leggi motore/passaggio-di-consegne.md e docs/DECISIONI_INTEGRAZIONE.md e
+riprendi da lì».
 
 ## Stato
 
-- Lavoro sul motore del 2026-10-15 (casa editrice), sul ramo della sessione `ccr-d1e12273-izx78k`, partito da
-  `origin/motore` @ `dce3774`. L'unione nel ramo `motore` la decide l'autore. Avanzamento per sezione:
-  `docs/AVANZAMENTO_LAVORO.md`.
-- Suite: tutte OK con LanguageTool (560 prove al 2026-10-15), rilanciata da `zb salva` prima del push. Comando: `ZB_LANGUAGETOOL=<dir>/lib python3 -B motore/zb prove` dalla radice; tabella completa
-  nel report indicato a fine output.
-- Livello editoriale: 28 file ricreati esatti da `editoriale_tutto.md` più le integrazioni; estensioni `lingue/`
-  (it, en, traduzione) e `comandi/` (4 comandi di Claude Code).
-- Banca-voci: repository separato, fuori dal motore; i nomi delle voci stanno solo lì.
+- Lavoro sul motore del 2026-10-20: integrazione nel ramo `integrazione-editoriale` (repository
+  `NGTAProtocol/ZeusBot`, D1). Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore`
+  (`origin/motore`, 971b6df). I rami `motore` e `main` non sono toccati (`main` in questo repository non esiste, D2).
+  Ultimo commit: `git log -1` (prima del commit del punto 11: 06cbb70, allineato a origin).
+- Punti dell'integrazione: 1-10 e 8b fatti e su origin; 11 (documentazione rigenerata, D14) nel commit che porta
+  questo file; 12 (`avvio_motore()` con la riga «Letto:», D15) da fare.
+- Suite: **633/633 OK** al punto 8b (06cbb70), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+  dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
+  tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
+- Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
+  nessuna approvazione intermedia; una sola fermata, la PAUSA DI LETTURA ogni 3 capitoli (`pausa_lettura` 3-5 in
+  `libro.yaml`) e a fine stesura. Restano le fermate `controllo_fallito` e `canone`.
+- Livello editoriale in `motore/editoriale/`: pacchetto da 28 file non toccato, più le 14 aggiunte da `motore`
+  adattate ai nomi del pacchetto (`docs/DA_VERIFICARE_AUTORE.md`).
+- Banca-voci: repository separato, letto in sola lettura da `ZB_BANCA_VOCI`; i nomi delle voci stanno solo lì.
+- Documenti per l'autore: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D13), `docs/DA_VERIFICARE_AUTORE.md`,
+  `docs/ATTRIBUZIONI.md`, `docs/ANALISI_REPOSITORY.md`. Stato del motore per esteso: `motore/report-motore.md`.
 
 ## Decisioni prese
 
-- Percorso editoriale per i libri nuovi (`percorso: editoriale`); i libri vecchi restano sul percorso breve.
-- Nomi della base editoriale adottati nel codice (`struttura_manoscritto`, `06-sottotrame-temi.md`,
-  `rapporto-<ambito>.md`); piani di revisione separati per struttura e manoscritto.
-- Modelli per ruolo in un solo file: `dati/modelli-ruoli.yaml` (sostituisce il `model:` dei file degli agenti).
-- Recinto su tre livelli: hook (anche Bash), pre-commit di git, `zb avvio`/`zb salva`.
-- Comandi da una sola fonte: `dati/comandi.yaml` (`zb aiuto`).
-- Vocabolario anti-IA italiano vuoto fino ai dati; inglese con elenco esterno MIT, gravità massima P2.
-- `docs/` senza esportazioni né copie della banca-voci (archivio verificato fuori dal repository).
+- Nomi del pacchetto da 28 file ovunque (`struttura_manoscritto`, `rapporto-struttura.md` /
+  `rapporto-manoscritto.md`, `piano-revisione-struttura.md` / `piano-revisione-manoscritto.md`,
+  `06-sottotrame-temi.md`); il nome `revisione_manoscritto` di `motore` non entra (D6).
+- Libri nuovi del percorso editoriale: `gate: [lettura]`, `pausa_lettura: 3`; nessun documento prima della
+  struttura (bibbia, codex, cronologia e manuale nascono alla sua chiusura). Libri senza il campo `percorso`: percorso
+  breve, come prima (D6, D11).
+- Pausa di lettura: `zb ok <libro>` = capitoli letti, si riparte; `zb correggi <libro> <note>` = note in
+  `06-diagnostica/note-lettura.md`, si riparte (D11).
+- Contrasto tra i 28 file (fermate con l'«ok») e il modo automatico: segnalato, non corretto nei 28 file (D4).
+- Recinto di ccr più, da `motore`: libro attivo in `<git-dir>/zb-libro-attivo`, cartella unica (`zb cartella`),
+  impronta di una `zb prove` intera e tutta OK per `zb push` sul motore (D7).
+- Ruoli: un solo comando, `zb ruolo` (controllo per fase di ccr e un ruolo per sessione di `motore`);
+  `separazione_ruoli: blocco` (D8).
+- Agenti: modelli solo da `dati/modelli-ruoli.yaml`; `zb agenti prossimo` con `dati/orchestrazione.yaml`; capsule
+  di ccr (120-250 parole) con il campo `capsule` di `motore`; `zb consumo` con l'hook PostToolUse; output compatto
+  (D9).
+- Anti-IA: `antiia.py` di ccr con soglie per profilo e `libro.yaml`, `formule.yaml`, modalità `blocco`; sezione B
+  non contata (`formule_sezione_b: false`). Un solo comando LanguageTool: `zb languagetool` (D10).
+- Prove: tutte quelle dei due rami (632) più 1 del punto 8b (633); `prove.py` con `--solo` e `--sezione` (D12).
+- Licenze Apache-2.0: solo idee, nessun testo (D13).
 
 ## Regole da non violare
 
-- Il ramo `motore` non contiene mai un libro, né nomi di libri, rami di libri o autori reali (anche in `docs/`).
-- Agenti, comandi e hook spenti sul ramo `motore`; si accendono solo sui rami dei libri con l'«ok» dell'autore.
+- Regola madre: il motore resta sempre pulito; il ramo `motore` non contiene mai un libro.
+- Nessun nome reale (autori, titoli, personaggi, luoghi, frasi, nomi dei rami dei libri) in codice, prove,
+  commenti, esiti, report e documenti, anche in `docs/`. Controllo: `zb separazione`.
+- Non toccare i rami dei libri, né `motore` e `main`: l'unione nel ramo `motore` la decide l'autore.
+- I 28 file del pacchetto non si cambiano senza l'autore.
+- `dati/kdp.yaml`: `ultima_verifica` resta `null` finché l'autore non registra la sua verifica
+  (`zb verifica KDP fatta AAAA-MM-GG`); il motore non la scrive.
+- Agenti, comandi e hook spenti sul ramo del motore (`zb avvio` senza libro si ferma se ci sono); si accendono solo
+  sui rami dei libri con l'«ok» dell'autore.
 - Chi scrive non rivede: rapporti in commit separati dal testo, ruoli solo nella loro fase.
-- Non toccare i rami dei libri vecchi.
+- Lavoro sul motore solo dopo «lavoro sul motore» dell'autore (`zb lavoro motore`).
+- Salvataggio con `zb salva`; non dire «fatto» se non è su origin. Nessun push forzato, nessuna riscrittura della
+  storia.
+- Report di sessione ogni 5 scambi o a «passaggio», con le sezioni fisse.
 
-## Fatto in questa sessione
+## Fatto in questa sessione (2026-10-20)
 
-- Stato attuale, avanzamento, prompt (docs/). Livello editoriale ricreato e integrato.
-- Fasi e gate editoriali, struttura, codex, canone, capsule, stato compatto, prepara, ruolo, agenti, consumo.
-- Recinto su Bash, pre-commit, salva, avvio del motore. Anti-IA, correttore it/en, LanguageTool, traduzione.
-- Analisi di 25 repository, attribuzioni. Pulizia di docs/, CLAUDE.md, README, PROCEDURA, modello libro.yaml,
-  requirements, separazione estesa. Prove: mini-libro editoriale con traduzione in inglese.
+Commit su `integrazione-editoriale` (tra parentesi le prove della suite a quel commit):
+- 5ae0bda (560) punto 1: pacchetto da 28 file verificato, nessuna modifica (D3);
+- 2787ade (560) punto 2: aggiunte da `motore` adattate ai nomi del pacchetto (D5);
+- 1b1717c (579) punto 3: macchina degli stati, struttura automatica, nessun documento prima (D6);
+- 820a4e1 (592) punto 4: recinto, hook e cartella unica (D7);
+- 3070050 (601) punto 5: ruoli, controllo per fase e un ruolo per sessione (D8);
+- 0c74646 (611) punto 6: agenti, capsule, consumo, output compatto (D9);
+- 12dd48a (623) punto 7: anti-IA e correttore (D10);
+- 3270e84 (628) punto 8: pausa di lettura (D11);
+- 7770e6c (632) punto 9: prove dei due rami unite (D12);
+- 078b9b3 (632) punto 10: attribuzioni e analisi dei repository (D13);
+- 06cbb70 (633) punto 8b: le note della pausa di lettura arrivano allo scrittore con `zb prepara` (D16).
+Punto 11 (D14), nel commit che porta questo file: `docs/INFRASTRUTTURA_COMPLETA.md` dal generatore, guida (md e pdf),
+README, PROCEDURA, STATO_ATTUALE, AVANZAMENTO_LAVORO, questo file e `motore/report-motore.md`; nomi
+`formule_catalogo_per_mille` corretti; `[--ruolo R]` nell'uso di `zb avvio`. Da fare: punto 12 (D15: sezione di
+prove `avvio motore`).
 
 ## Punti aperti
 
-- `docs/DA_FORNIRE.md`: verifica KDP, corpus anti-IA italiano, licenze, confronto 8.4, unione nel ramo `motore`.
+1. Punto 11: documentazione rigenerata (D14), salvato con questo file.
+2. Punto 12: `avvio_motore()` con la riga «Letto:» (da fare, D15); il totale delle prove con la sezione
+   `avvio motore` si legge alla suite di `zb salva`.
+3. Poi `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
+4. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
+   anti-IA; coppia «avvenire/avvenire» nei criteri del correttore; licenza di APODICTIC; verifica dei dati KDP
+   (`ultima_verifica: null`, non verificati dall'autore); `CLAUDE.md` ancora con «proponi → l'autore approva →
+   applica» e senza `--ruolo` nella riga di avvio (D14); unione nel ramo `motore`.
+5. Soglie anti-IA uguali per ogni genere, tarate sui mini-libri; vocabolario italiano vuoto finché non c'è un corpus
+   (`docs/DA_FORNIRE.md`).
+6. Divergenza lasciata visibile in `docs/ANALISI_REPOSITORY.md`: kindle-book-agency (D13).
 
 ## Prossimo passo
 
-- L'autore rivede e unisce il ramo nel `motore`; poi, su un ramo di libro, `zb agenti attiva --ok`.
+Chiudere i punti 11 e 12, poi `zb salva` e controllo con `git status -sb` e `git log -1`. Dopo, l'autore legge
+`docs/DA_VERIFICARE_AUTORE.md` e decide se unire il ramo nel `motore`.
 
 ## Ripartenza
 
-- `python3 motore/zb lavoro motore`, `python3 motore/zb avvio` (riga «Letto»), poi `docs/AVANZAMENTO_LAVORO.md`.
+```
+pip install -r motore/requirements.txt
+apt-get install -y hunspell hunspell-it hunspell-en-us poppler-utils
+python3 motore/zb languagetool installa        # poi l'export di ZB_LANGUAGETOOL che stampa
+python3 motore/zb lavoro motore                # solo se l'autore ha scritto «lavoro sul motore»
+python3 -B motore/zb avvio                     # riga «Letto»
+ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove
+```
+Frase di apertura: «Leggi motore/passaggio-di-consegne.md e docs/DECISIONI_INTEGRAZIONE.md e riprendi da lì».

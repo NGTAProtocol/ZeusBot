@@ -264,3 +264,28 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
 - Prova nuova (percorso editoriale, alla stessa pausa con le note): `zb prepara` del capitolo 3 (il mini-libro ha 3
   capitoli) elenca le note tra i file da leggere. Commit a parte, prima della documentazione, perché i documenti del
   punto 11 descrivano il motore com'è.
+
+## D14. Punto 11: documentazione rigenerata
+- `docs/INFRASTRUTTURA_COMPLETA.md`: in ccr era una mappa (un file per riga, senza generatore nel repository); in
+  `motore` una copia integrale con verifica, generata da `docs/genera_infrastruttura.py`. Il compito chiede di rileggere
+  e confrontare ogni file: scelgo il generatore di `motore`, portato in `docs/` e adattato (ramo letto da git, flusso
+  del §3 con la scrittura automatica, la pausa di lettura, i nomi del pacchetto, nessun nome di ramo d'archivio). Copia
+  ogni file tracciato fuori da `docs/`, poi riestrae ogni blocco dal documento e lo confronta con il file: l'esito è
+  nella sezione «Verifica di completezza».
+- `docs/GUIDA_AL_SISTEMA.pdf`: rigenerato dal suo sorgente `.md` con il programma scritto nel sorgente stesso (pandoc e
+  Chromium di Playwright); i numeri di pagina dell'indice sono ricontrollati sul PDF con `pdftotext`.
+- README, PROCEDURA, report del motore, passaggio di consegne del motore, guida (sorgente), STATO_ATTUALE e
+  AVANZAMENTO_LAVORO: testi aggiornati al motore integrato, con ogni affermazione presa da `zb aiuto`, dagli script, dai
+  dati o da questo file; le parti ancora vere restano com'erano.
+- `CLAUDE.md` non è nell'elenco del punto 11 e non cambia: il contrasto con il modo automatico («Metodo: proponi →
+  l'autore approva → applica») e l'assenza di `--ruolo` nella riga di avvio sono segnalati in
+  `docs/DA_VERIFICARE_AUTORE.md`.
+- Ambiente: dopo il riavvio del processo della sessione mancava il dizionario Hunspell `en_US` (una prova del
+  correttore inglese falliva). Reinstallato con `apt-get install hunspell-en-us`, come indica `motore/README.md`; nessun
+  file del repository cambia per questo.
+- Dalla rilettura per la guida: `modelli/briefing.md` diceva «Gate vuoto = tutti quelli del percorso» senza `lettura`;
+  ora dice cosa fa davvero `nuovo.py` (editoriale: solo `lettura`; breve: documenti, pagina_campione, primi_capitoli).
+  `editoriale/glossario.md` (aggiunto da `motore`) diceva capsula «massimo 180 parole»: ora 120-250, come
+  `script/capsula.py`. Le stesse incoerenze dentro i 28 file (subagenti «nove», capsula 180 / 150-180) sono elencate in
+  `docs/DA_VERIFICARE_AUTORE.md`, non corrette. PROCEDURA e guida dicono che `zb prepara` passa le note della
+  pausa allo scrittore (D16).

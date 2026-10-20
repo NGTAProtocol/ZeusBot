@@ -34,7 +34,7 @@ termini nel motore sta in `lingue/it/glossario-editoriale.md` (e `lingue/en/` pe
 | word budget | piano parole, budget | `08-piano-parole.md` |
 | scene / sequel | scena / reazione | azione e conseguenze emotive |
 | sagging middle | centro che cede | tre capitoli senza movimento |
-| chapter summary / recap | capsula di continuità | `07-capsule/NN.md`, massimo 180 parole |
+| chapter summary / recap | capsula di continuità | `07-capsule/NN.md`, 120-250 parole (`script/capsula.py`) |
 | gate / checkpoint | fermata (gate) | si apre con `zb pronto` |
 | approve / request changes | ok / correggi | risposte dell'autore |
 | subagent | subagente (agente) | `editoriale/agenti/` |

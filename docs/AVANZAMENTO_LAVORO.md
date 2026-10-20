@@ -42,3 +42,32 @@ assegnato alla sessione; l'unione nel ramo `motore` la decide l'autore).
 - Codice: fasi editoriali, struttura, codex, canone, capsule, compatto, prepara, ruolo, agenti, consumo,
   recinto Bash e pre-commit, salva, anti-IA, traduci. Prove editoriali: 70/70 OK.
 - Suite finale: 560/560 OK con LanguageTool (zb salva, commit della documentazione).
+
+## Integrazione editoriale (ramo `integrazione-editoriale`, 2026-10-20)
+
+Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte da `origin/motore` (971b6df). Scelte e motivi in
+`docs/DECISIONI_INTEGRAZIONE.md` (D1-D13); file da leggere dall'autore in `docs/DA_VERIFICARE_AUTORE.md`.
+Fotografia del motore integrato: `docs/STATO_ATTUALE.md`.
+
+| # | Punto | Stato | Commit | Prove |
+|---|---|---|---|---|
+| 0 | Verifica degli hash di partenza, ramo creato | fatto | — | 560 |
+| 1 | Pacchetto (28 file) | fatto | 5ae0bda | 560 |
+| 2 | Aggiunte da motore | fatto | 2787ade | 560 |
+| 3 | Macchina degli stati | fatto | 1b1717c | 579 |
+| 4 | Recinto, hook, cartella unica | fatto | 820a4e1 | 592 |
+| 5 | Ruoli | fatto | 3070050 | 601 |
+| 6 | Agenti, capsule, consumo | fatto | 0c74646 | 611 |
+| 7 | Anti-IA e correttore | fatto | 12dd48a | 623 |
+| 8 | Pausa di lettura | fatto | 3270e84 | 628 |
+| 9 | Prove | fatto | 7770e6c | 632 |
+| 10 | Attribuzioni e analisi dei repository | fatto | 078b9b3 | 632 |
+| 8b | Note della pausa di lettura passate allo scrittore (D16) | fatto | 06cbb70 | 633 |
+| 11 | Documentazione rigenerata | fatto (commit dopo 06cbb70: `git log`) | — | 633 |
+| 12 | `avvio_motore()` con la riga «Letto:» | da fare | — | — |
+
+Dopo il punto 12: `zb salva`.
+
+Ripartenza: apri una nuova chat e scrivi «riprendi da docs/AVANZAMENTO_LAVORO.md, sezione Integrazione
+editoriale»; si legge `docs/DECISIONI_INTEGRAZIONE.md`, si controlla il ramo (`git branch --show-current`:
+`integrazione-editoriale`) e si continua dal primo punto non «fatto».

@@ -404,7 +404,7 @@ def genera_manuale(b, libro, profilo, n_cap):
               '- Nomi dei file: NN-<slug>.md in 04-manoscritto/.', '',
               '## 8. Scene obbligatorie del genere', '']
     righe += [f'- {s}' for s in profilo['scene_obbligatorie']]
-    righe += ['', '## 9. Override rispetto al profilo (da approvare al gate «documenti»)', '']
+    righe += ['', '## 9. Override rispetto al profilo (da approvare al gate «documenti», se libro.yaml lo elenca)', '']
     fuori = libro['parole'].get('motivo_fuori_profilo')
     ov_righe = ([f'- parole.target_totale: {libro["parole"]["target_totale"]} — motivo: {fuori}'] if fuori else [])
     ov_righe += [f'- {o["campo"]}: {o["valore"]} — motivo: {o["motivo"]}' for o in libro['override']]

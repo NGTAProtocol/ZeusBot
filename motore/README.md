@@ -1,11 +1,13 @@
 # Motore editoriale
 
-Fabbrica generica per romanzi di qualsiasi genere: procedura, script, modelli vuoti,
-profili di genere e dati KDP. Non contiene libri reali. Il progetto completo è in
-`proposta-motore.md` (approvata). Come si lavora su un libro: `PROCEDURA.md`.
-Questo file raccoglie le regole d'uso e i comandi. Copia integrale di tutta l'infrastruttura
+Fabbrica generica per romanzi di qualsiasi genere: procedura, script, modelli vuoti, profili di genere,
+dati KDP e il livello editoriale (`editoriale/`: percorso, ruoli, agenti, anti-IA, correttore). Non contiene
+libri reali. Il progetto iniziale è in `proposta-motore.md` (approvata). Come si lavora su un libro: `PROCEDURA.md`.
+Percorso e ruoli: `editoriale/00-percorso.md` e `editoriale/LEGGIMI.md` (che ha anche l'unica scala di precedenza).
+Questo file raccoglie le regole d'uso, l'ambiente e gli hook. Copia integrale di tutta l'infrastruttura
 (motore, regole, voci, hook), con mappa e guida alla modifica: `docs/INFRASTRUTTURA_COMPLETA.md`.
 Guida di lettura per l'autore (organigramma, percorso di un libro, regole), in PDF per telefono: `docs/GUIDA_AL_SISTEMA.pdf` (sorgente `docs/GUIDA_AL_SISTEMA.md`).
+I documenti di `docs/` non si leggono nelle sessioni di lavoro.
 
 ## Regole d'uso
 
@@ -29,12 +31,22 @@ Un file con un nome diverso ferma il motore.
 
 ## Dal briefing al PDF (percorso da casa editrice)
 
+I libri nuovi seguono il percorso editoriale (`percorso: editoriale` in `libro.yaml`) in **modo automatico**: il
+motore fa i controlli e passa da una fase all'altra senza approvazioni intermedie; l'unica fermata è la **pausa di
+lettura** ogni 3 capitoli (`pausa_lettura`: 3, 4 o 5 in `libro.yaml`). `editoriale/00-percorso.md` e i ruoli
+descrivono ancora le fermate con l'«ok» dell'autore: il contrasto è segnalato in `docs/DA_VERIFICARE_AUTORE.md`.
+
 1. L'autore compila `modelli/briefing.md` in `libri/<slug>/briefing.md`; `zb nuovo` apre la cartella unica del libro
-   (per un libro già avviato: `zb adotta <cartella>`).
-2. A ogni sessione: `zb avvio <libro>` e la riga «Letto: …»; nelle sessioni nuove lo stato compatto.
-3. Struttura (nove file di `03-struttura/`), diagnosi e piano di revisione in sessioni separate; gate `struttura`.
-4. Documenti (bibbia, codex, cronologia, manuale); pagina campione; stesura capitolo per capitolo con capsule.
-5. Revisione strutturale del manoscritto, line editing, copyediting, bozze: proposte → gate → applicazione.
+   (per un libro già avviato: `zb adotta <cartella>`). «Percorso: breve» nel briefing sceglie il percorso breve.
+2. A ogni sessione: `zb avvio <libro> [--ruolo R]` e la riga «Letto: …»; un ruolo per sessione; nelle sessioni
+   nuove lo stato compatto.
+3. Struttura (nove file di `03-struttura/`), poi rapporto del diagnosta e piano dell'editor strutturale in sessioni
+   e commit separati; `zb pronto` verifica la struttura (gate `struttura` automatico) e, se regge, crea bibbia,
+   codex, cronologia e manuale e passa ai documenti; se no si ferma e scrive il motivo.
+4. Documenti (bibbia, codex, cronologia, manuale, nota di direzione); pagina campione; stesura capitolo per capitolo
+   con `zb esito` e capsule; pausa di lettura ogni `pausa_lettura` capitoli e a fine stesura.
+5. Revisione strutturale del manoscritto, line editing, copyediting, bozze: rapporti → `zb pronto` → applicazione
+   → `zb pronto`. Un gate dell'autore solo se il briefing lo chiede («Gate: …»).
 6. Chiusura: `continuita`, `ortografia`, `compila`, `impagina`, `pdf`, `pacchetto`, `kdp`; `zb pronto`.
 7. Traduzione facoltativa: `zb traduci <libro> --a en inizia`.
 8. A ogni passo: `zb salva` (recinto, commit, push), `git status -sb`, `git log -1`.
@@ -43,15 +55,28 @@ Dettagli: `PROCEDURA.md`; ruoli e regole editoriali: `editoriale/`.
 ## Comandi
 
 Unica fonte: `dati/comandi.yaml`. `python3 motore/zb aiuto` li elenca per gruppo, `zb aiuto <comando>` dà l'uso.
+Il libro è sempre un percorso (oppure `ZB_LIBRO`). Ogni comando stampa al massimo 40 righe (`dati/output.yaml`,
+`righe_max`) e mette l'output intero in `<libro>/.zb/ultimo-output.txt` (o nella cartella temporanea); le righe con
+KO, FERMO o ERRORE restano sempre a schermo. I comandi che mostrano testo da leggere per intero (`esenti` nello
+stesso file) non si tagliano; con `ZB_OUTPUT_COMPLETO=1` niente taglio.
 
-## Hook, recinto, agenti
+## Hook di Claude Code
 
-- Recinto in **blocco** (`script/hook_recinto.py`) su Write, Edit, MultiEdit, NotebookEdit e Bash, più il
-  controllo pre-commit di git (`script/precommit.py`, installato da `zb lavoro`) e i controlli di `zb avvio` e
-  `zb salva` (`PROCEDURA.md`, sezione 10).
-- Hook del manoscritto in modalità avviso; hook di sessione. Configurazione di esempio:
-  `dati/hook-settings.esempio.json`; sui rami dei libri `zb hook attiva --ok`. Sul ramo `motore` restano spenti.
-- Subagenti e comandi di Claude Code: `zb agenti attiva --ok`, solo sui rami dei libri.
+Si attivano solo sul ramo di un libro, con l'ok dell'autore: `zb hook attiva --ok` copia
+`dati/hook-settings.esempio.json` in `.claude/settings.json`. Sul ramo `motore` restano spenti. Sono una
+protezione in più, non una garanzia: i controlli che contano sono quelli che guardano git (controllo pre-commit,
+`zb avvio`, `zb salva`, `zb push`; `PROCEDURA.md`, sezione 10).
+
+| Hook | Script | Cosa fa | Modalità |
+|---|---|---|---|
+| SessionStart | `hook_sessione.py` | registra il session_id; dopo una compattazione chiede un nuovo `zb avvio` | mai blocca |
+| PreToolUse Write, Edit, MultiEdit, NotebookEdit, Bash | `hook_manoscritto.py` | scrittura nel manoscritto senza `zb avvio` della sessione | `dati/hook.yaml`, `modalita` (oggi avviso) |
+| PreToolUse Write, Edit, MultiEdit, NotebookEdit, Bash | `hook_recinto.py` | recinto sul libro attivo (anche redirezioni, tee, sed -i, cp, mv, rm), cartella unica prima di `git commit` e `git push`, nessuna riscrittura intera di un capitolo da parte di un revisore, annota chi scrive (separazione dei ruoli) | blocco |
+| PostToolUse Read, Agent, Task | `consumo.py` | file e righe letti, subagenti chiamati, per `zb consumo` | mai blocca |
+
+Separazione dei ruoli: `dati/hook.yaml`, `separazione_ruoli` (oggi `blocco`). Controllo pre-commit di git:
+`script/precommit.py`, installato da `zb lavoro`. Subagenti e comandi di Claude Code: `zb agenti attiva --ok`, solo
+sui rami dei libri, come gli hook.
 
 ## Ambiente
 
@@ -101,15 +126,28 @@ ogni parola (0,125″ in basso su tutte le pagine, 0,125″ a destra solo sulle 
 
 ### LanguageTool
 
-Il motore lancia la riga di comando di LanguageTool con `java -cp <cartella>/*`; la cartella dei `.jar` la legge da
-`ZB_LANGUAGETOOL`. Senza, `zb ortografia` salta il livello (b) e lo dice nel report.
+Il motore lancia la riga di comando di LanguageTool (`org.languagetool.commandline.Main`) con
+`java -cp <cartella>/*`; la cartella dei `.jar` la legge da `ZB_LANGUAGETOOL`. Senza, `zb ortografia` salta il
+livello (b) e lo dice nel report, e `zb prove` salta le prove di LanguageTool con il motivo «LanguageTool assente».
 
-Installazione stabile (Java e Maven presenti): `python3 motore/zb languagetool installa [--cartella <dir>]`. Scrive
-in una cartella fuori dal repository un `pom.xml` con `languagetool-commandline`, `language-it` e `language-en` 6.8,
-scarica da Maven Central (mai da languagetool.org), prova una frase con un refuso e stampa la riga
-`export ZB_LANGUAGETOOL=<dir>/lib`. `zb languagetool stato` dice se il livello (b) gira davvero. Se Maven Central
-risponde 403 o 429 non insiste. Verificato il 2026-10-15: 143 `.jar`, il refuso della frase di prova è segnalato;
-«e» al posto di «è» NON è segnalato (resta alla lettura mirata del correttore).
+Un solo comando, `zb languagetool` (Java e Maven presenti):
+
+```
+python3 motore/zb languagetool installa [--cartella <dir>] [--versione X]   # mai dentro il repository
+export ZB_LANGUAGETOOL=<dir>/lib      # la riga esatta la stampa il comando
+python3 motore/zb languagetool verifica   # OK solo se la frase di prova «Qual'è il problema?» è segnalata (regola GR_…)
+python3 motore/zb languagetool stato      # variabile, numero di .jar, se il livello (b) gira davvero
+```
+
+- Cartella predefinita: `$ZB_LANGUAGETOOL/..` se impostata, altrimenti `~/.cache/zb-languagetool`. Il `pom.xml`
+  ha `languagetool-commandline`, `language-it` e `language-en` della stessa versione: 6.8, poi 6.7.
+- Prima prova la cache locale di Maven (`~/.m2`, senza rete), poi Maven Central (mai languagetool.org). Scarica in
+  `lib.nuova` e sostituisce `lib` solo dopo la verifica: una cartella che funziona non si perde.
+- Già pronta e verificata: non riscarica niente, quindi si può lanciare a ogni sessione nuova.
+- Se Maven Central risponde 403 o 429 il comando si ferma: non insistere, si resta con Hunspell e la lista di
+  controllo del correttore (livelli a e c).
+- Verificato il 2026-10-15 e di nuovo il 2026-10-20 (versione 6.8): 143 `.jar`; «e» al posto di «è» NON è segnalato (resta alla lettura mirata del
+  correttore).
 
 ### Banca-voci
 

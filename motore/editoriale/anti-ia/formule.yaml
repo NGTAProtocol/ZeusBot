@@ -1,6 +1,6 @@
 # Formule misurabili del catalogo anti-IA (catalogo-it.md, sezioni A-C, J-N), lette da script/antiia.py.
 # Espressioni regolari Python, senza distinzione di maiuscole; \x27 è l'apostrofo dritto, ’ quello tipografico.
-# tipo «formula»: conta per mille parole (soglia formule_per_mille_max: blocco anti_ia del profilo di genere, altrimenti dati/antiia.yaml);
+# tipo «formula»: conta per mille parole (soglia formule_catalogo_per_mille_max: blocco anti_ia del profilo di genere, altrimenti dati/antiia.yaml);
 # (tolta la formula sulle virgolette alte “ ”: in italiano sono ammesse, se sono il sistema del libro)
 # tipo «coerenza»: va confrontata con il sistema di dialogo del libro (09-scelte-fisse.md), si segnala a parte.
 # Le formule si contano solo fuori dalle righe di dialogo (il parlato può usarle per scelta della voce).

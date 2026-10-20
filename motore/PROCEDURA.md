@@ -1,12 +1,14 @@
 # Procedura del motore
 
 Regole di lavoro per qualsiasi libro. Comandi: `python3 motore/zb <comando> <libro> …`
-(qui sotto abbreviato in `zb`). Il progetto completo è in `proposta-motore.md`.
+(qui sotto abbreviato in `zb`; l'elenco unico è `zb aiuto`). Percorso e ruoli: `editoriale/00-percorso.md`;
+ruoli editoriali: `editoriale/ruoli/`. Il progetto iniziale è in `proposta-motore.md`.
 
 ## 1. Regole fisse
 
-1. **Il libro è un percorso** indicato dall'autore (oppure `ZB_LIBRO`). Il motore legge solo
-   `motore/` e la cartella di quel libro, e scrive solo dentro quella cartella.
+1. **Il libro è un percorso** indicato dall'autore (oppure `ZB_LIBRO`): `libri/<slug>/` sul ramo del libro
+   (cartella unica, sezione 10). Il motore legge solo `motore/` e la cartella di quel libro, e scrive solo dentro
+   quella cartella. `docs/` non si legge nelle sessioni di lavoro.
 2. **Precedenza:** una sola scala, quella di `editoriale/LEGGIMI.md` (manuale del libro e
    `libro.yaml` > briefing e scheda della voce > profilo di genere > ruoli editoriali > questa
    procedura). Ogni contrasto si segnala.
@@ -18,27 +20,50 @@ Regole di lavoro per qualsiasi libro. Comandi: `python3 motore/zb <comando> <lib
 6. **Metodo unico di conteggio** delle parole (vedi `README.md`).
 7. **Prima di scrivere in `04-manoscritto/`** si riporta la riga «Letto: …» di `zb avvio`
    (file, righe, sha256, ultimo commit).
+8. **Un ruolo per sessione** (`zb avvio <libro> --ruolo R`); chi scrive un testo non lo revisiona
+   (`dati/hook.yaml`, `separazione_ruoli`).
+9. **La sessione principale non scrive prosa**: chiama l'agente del passo (`zb agenti prossimo <libro>`) e
+   legge solo la sua risposta breve (`editoriale/risparmio-token.md`).
+10. **Modo automatico** (decisione dell'autore del 2026-10-20): sul percorso editoriale il motore fa i
+   controlli e passa da una fase all'altra senza approvazioni intermedie; l'unica fermata prevista è la pausa di
+   lettura (sezione 6). `editoriale/00-percorso.md` e i ruoli descrivono ancora le fermate con l'«ok»: il
+   contrasto è segnalato in `docs/DA_VERIFICARE_AUTORE.md`.
 
 ## 1b. Percorso da casa editrice (libri con `percorso: editoriale`)
 
 Il percorso e i ruoli sono in `editoriale/` (fonte di verità; questa procedura ne descrive la meccanica).
+È il percorso predefinito di `zb nuovo`; «Percorso: breve» nel briefing (`percorso: breve` in `libro.yaml`) sceglie
+il percorso breve (sezione 5). Un `libro.yaml` senza il campo `percorso` (libri nati prima) resta sul percorso breve.
 
-| Fase in `stato.yaml` | Lavoro (agente) | Gate | Controlli di `zb pronto` |
+| Fase in `stato.yaml` | Lavoro (agente) | Gate (solo se elencato in `libro.yaml`) | Controlli di `zb pronto` |
 |---|---|---|---|
-| `struttura` | architetto-struttura: i nove file di `03-struttura/`; poi diagnosta e editor-strutturale | `struttura` | nove file senza `<!-- zb: modello -->`, macrostruttura dichiarata e motivata, schede complete, budget non tutti uguali; `rapporto-struttura.md` e `piano-revisione-struttura.md` sulla struttura attuale, in commit che non la toccano |
-| `documenti` | direttore-editoriale: bibbia, codex, cronologia, manuale | `documenti` | `zb codex verifica` |
+| `struttura` | architetto-struttura: i nove file di `03-struttura/`; poi diagnosta e editor-strutturale | `struttura`: sempre automatico, nessuna fermata | nove file senza `<!-- zb: modello -->`, nessun campo «- Campo:» vuoto in 01, 02, 03, 09, macrostruttura dichiarata e motivata, schede complete, budget non tutti uguali, almeno una promessa o sottotrama e nessuna senza «Si chiude» in 06; `rapporto-struttura.md` e `piano-revisione-struttura.md` sulla struttura attuale, in commit che non la toccano |
+| `documenti` | direttore-editoriale: bibbia, codex, cronologia, manuale, nota di direzione | `documenti` | `zb codex verifica`; presenti libro.yaml, bibbia, cronologia, manuale e `06-diagnostica/nota-direzione.md` |
 | `pagina_campione` | scrittore-voce | `pagina_campione` | pagina non vuota |
-| `stesura` | scrittore-voce (un capitolo, in sequenza), poi capsula | `primi_capitoli`, `lotto`, `controllo_fallito` | `zb esito`: capitolo, audit anti-IA, lunghezze quasi uguali, capsula N-1 presente, nessun rapporto di line o copy |
+| `stesura` | scrittore-voce (un capitolo, in sequenza), poi capsula | `lettura` (pausa di lettura), `primi_capitoli`, `lotto`; `controllo_fallito` sempre | `zb esito`: capitolo, audit anti-IA, lunghezze quasi uguali, capsula N-1 presente, nessun rapporto di line o copy |
 | `struttura_manoscritto` | diagnosta, editor-strutturale | `struttura_manoscritto` | rapporto e piano sul manoscritto attuale |
 | `line` | line-editor per capitolo (fino a 3 in parallelo) | `line` | un rapporto per capitolo, intestato e separato |
 | `copy` | correttore-italiano per capitolo | `copy` | come sopra |
 | `bozze` | `zb compila` e `zb impagina`, poi correttore-bozze | `bozze` | PDF presente, rapporto |
 | `chiusura` | motore | — | sezione 7 |
 
-**Fasi di revisione in due tempi** (`sottofase`): «proposte» (rapporti → `zb pronto` apre il gate) e
-«applicazione» (dopo l'«ok» si applicano solo le proposte approvate; `zb esito N` rimisura; `zb pronto` passa
-alla fase successiva e registra di nuovo i capitoli cambiati). Ogni rapporto comincia con la riga data da
-`zb ruolo <libro> <ruolo> [N]`, che si rifiuta per un ruolo fuori dalla sua fase.
+**Struttura automatica.** In fase «struttura» `zb pronto` verifica i nove file e i rapporti (`zb struttura
+<libro> verifica` più impronta e commit separato dei rapporti). Se tutto regge registra i nove file e i rapporti
+senza fermata, crea bibbia, codex, cronologia e manuale dal briefing (senza sovrascrivere nulla; scaletta e piano
+parole restano in `03-struttura/`) e passa a «documenti»; se no si ferma e scrive il motivo. Il gate «struttura»
+non ferma mai, anche se `libro.yaml` lo elenca.
+
+**Gate attivi.** I libri nuovi del percorso editoriale nascono con `gate: [lettura]` e `pausa_lettura: 3`. Un
+briefing può chiedere altri gate («Gate: …»); i libri già esistenti tengono i loro. Un gate non elencato non
+ferma: i documenti si registrano con `senza_gate: true` e si passa oltre. Restano sempre due fermate che non sono
+approvazioni del lavoro: `controllo_fallito` (sezione 6) e `canone` (sotto).
+
+**Fasi di revisione in due tempi** (`sottofase`): «proposte» (i rapporti; `zb pronto` li controlla e, se il gate
+della fase è in `libro.yaml`, lo apre; altrimenti li registra senza fermata) e «applicazione» (si applicano le
+proposte con modifiche puntuali, con il gate solo quelle approvate; `zb esito N` rimisura; `zb pronto` passa alla
+fase successiva e registra di nuovo i capitoli cambiati). Ogni rapporto comincia con la riga data da
+`zb ruolo <libro> <ruolo> [N]`, che si rifiuta per un ruolo fuori dalla sua fase. Un revisore non riscrive per
+intero un capitolo esistente (l'hook rifiuta il Write; si corregge con Edit).
 
 **Capsule, codex, canone, stato compatto.** Dopo ogni capitolo accettato: `zb capsula <libro> N` e l'agente
 capsula (`07-capsule/NN.md`, registro delle promesse `@prom:`). `zb prepara <libro> N` dà allo scrittore la
@@ -47,7 +72,22 @@ scheda, il codex filtrato per i tag `@char`/`@loc`, il canone e le capsule. Il c
 scrive `stato-compatto.md` (15-20 righe); `zb salva` lo rigenera.
 
 **Agenti e comandi di Claude Code**: `zb agenti attiva --ok` (solo sui rami dei libri) installa i subagenti e
-i comandi `/scrivi-capitolo`, `/revisiona`, `/diagnosi`, `/handover`. Modelli per ruolo: `dati/modelli-ruoli.yaml`.
+i comandi `/scrivi-capitolo`, `/revisiona`, `/diagnosi`, `/handover`. Modelli per ruolo: `dati/modelli-ruoli.yaml`
+(unica fonte; un «model:» diverso nel file dell'agente è un avviso di `zb agenti stato`, che controlla anche il
+formato degli agenti). `zb agenti prossimo <libro>` dice chi chiamare ora: scrittura in sequenza, un capitolo per
+volta; line, copy e capsule a gruppi di al massimo `parallelo_massimo` (`dati/modelli-ruoli.yaml`); regole in
+`dati/orchestrazione.yaml`.
+
+**Ruoli e sessioni.** `zb avvio <libro> --ruolo R` registra il ruolo della sessione in `<libro>/.zb/ruoli.yaml`
+(senza `--ruolo`, quello della fase) e mette il file del ruolo nella riga «Letto». L'hook del recinto e `zb esito`
+annotano chi scrive in `<libro>/.zb/scritture.log`. Al «pronto» delle fasi con rapporti e all'avvio di un ruolo di
+revisione, chi ha scritto il testo non può aver scritto la revisione (`separazione_ruoli: blocco` in
+`dati/hook.yaml`). `zb ruolo <libro> stato` mostra modalità, ruoli delle sessioni e scritture.
+
+**Consumo.** `zb consumo <libro> [sessione] [--sessione S] [--registra]` riassume, per una sessione, capitoli,
+parole, file e righe letti e subagenti chiamati, dalle righe che l'hook PostToolUse (Read, Agent, Task) scrive in
+`<libro>/.zb/letture.log`; con `--registra` aggiunge il riassunto a `<libro>/.zb/consumo.log`. Restano anche
+`zb consumo <libro> registra|mostra|confronto <N>` (confronto con e senza capsule).
 
 **Traduzione**: `zb traduci <libro> --a <lingua> inizia`, poi il libro di traduzione `08-traduzione-<lingua>/`
 segue guida → stesura → line → copy → fedelta → chiusura (`editoriale/lingue/traduzione.md`).
@@ -69,11 +109,14 @@ segue guida → stesura → line → copy → fedelta → chiusura (`editoriale/
 2. `zb nuovo <percorso-briefing>`:
    - se il briefing è incompleto elenca cosa manca (al massimo 5 voci) e **non crea nulla**;
    - se c'è già un `libro.yaml` si ferma;
-   - altrimenti sposta il briefing in `00-progetto/briefing.md` e crea solo dentro la cartella:
-     solo le cartelle che hanno già un file (`00-progetto`, `02-bibbia`, `03-architettura`; in
-     riscrittura anche `01-originale`, preparata dall'autore); `libro.yaml`, `stato.yaml`, `LEGGIMI.md`,
-     `cronologia.yaml`, `nomi_propri.txt`, `.gitignore`; bibbia, manuale di stile, scaletta e
-     piano parole.
+   - si ferma anche se la cartella è dentro `motore/`, è la radice del repository o il ramo è «motore»: il
+     libro nasce solo in `libri/<slug>/`, e diventa il libro attivo;
+   - altrimenti sposta il briefing in `00-progetto/briefing.md` e crea solo dentro la cartella
+     `libro.yaml`, `stato.yaml`, `LEGGIMI.md`, `nomi_propri.txt`, `.gitignore`, più:
+     - percorso editoriale (predefinito): i nove file di `03-struttura/` (modelli di
+       `editoriale/struttura/modelli/`), fase «struttura». Nessun documento prima della struttura: bibbia, codex,
+       cronologia e manuale nascono quando il motore chiude la struttura (sezione 1b);
+     - percorso breve: `cronologia.yaml`, bibbia, manuale di stile, scaletta e piano parole, fase «documenti».
 3. Le regole della sezione «Direttive» del briefing (genere, lunghezza, voce, tetti, vietati,
    vincoli, gate) vanno in `libro.yaml` e nel manuale **senza riscriverle a mano**.
 
@@ -81,7 +124,7 @@ segue guida → stesura → line → copy → fedelta → chiusura (`editoriale/
 minimo | media | massimo») e, se indicati, «Frase media: a-b» e «Dialogo: a-b» devono stare nei
 valori del profilo. Un valore diverso è accettato solo con «Motivo override:» non vuoto nel
 briefing; allora va in `libro.yaml` come override con il motivo, il manuale lo elenca (sezione
-«Override», da approvare al gate «documenti») e il numero di capitoli si calcola con i valori nuovi.
+«Override»; con il gate «documenti» attivo la approva l'autore) e il numero di capitoli si calcola con i valori nuovi.
 Senza motivo `zb nuovo` elenca i campi e si ferma. Con una lunghezza fuori dai formati del profilo
 serve anche «Capitoli:». Sotto 1.000 parole il motore si ferma comunque.
 Esempio neutro: `Lunghezza: 9000`, `Motivo override: racconto lungo`, `Capitoli: 800 | 1000-1300 | 1800`
@@ -160,21 +203,30 @@ Si ferma (codice 2) **senza scrivere nulla da nessuna parte** se:
   formato del motore, cioè senza «Titolo di lavoro:»: un libro adottato parte dai suoi documenti);
 - un documento approvato è cambiato fuori procedura (sha256 diverso da quello registrato).
   Se la modifica è autorizzata dall'autore: commit, poi `zb riapprova <libro> <documento> <motivo>`
-  (nuovo sha256 e commit; in `stato.yaml` restano data, motivo e sha256 precedente).
+  (nuovo sha256 e commit; in `stato.yaml` restano data, motivo e sha256 precedente);
+- file modificati fuori da `libri/<slug>/` (anche da Bash), un altro libro attivo (un solo libro per sessione;
+  per cambiare `zb lavoro libro <slug>` e nuovo avvio), o la cartella unica violata (sezione 10);
+- la sessione ha già un altro ruolo, o chiede un ruolo di revisione dopo aver scritto il testo (con
+  `separazione_ruoli: blocco`);
+- percorso editoriale, fase «stesura»: mancano capsule dei capitoli scritti e `libro.yaml` ha
+  `capsule: obbligatorie` (senza il campo, o con `avviso`, è un avviso).
 
 Se tutto va bene stampa:
 `Letto: <file> (N righe, sha256 …, commit …), …; libro @ <commit>; motore @ <commit>; fase, gate`,
 poi passo, capitoli, parole, revisione in corso, correzioni e avvisi aperti, e scrive solo il
-marker `<libro>/.zb/letto-<session_id>` (la cartella `.zb/` ignora sé stessa in git).
+marker `<libro>/.zb/letto-<session_id>` e il ruolo in `<libro>/.zb/ruoli.yaml` (la cartella `.zb/` ignora sé
+stessa in git). Sul percorso editoriale la riga «Letto» ha lo stato compatto e i file della fase (in stesura
+`09-scelte-fisse.md` e il registro delle capsule, non il capitolo precedente) e il file del ruolo.
 
-Controlli in più: file modificati fuori da `libri/<slug>/` (anche da Bash) → si ferma; un altro libro attivo →
-si ferma (un solo libro per sessione; per cambiare `zb lavoro libro <slug>` e nuovo avvio); commit del ramo che
-cambiano file fuori dai libri rispetto a origin/motore → avviso; percorso editoriale: capsule mancanti → avviso,
-report di sessione non aggiornato da più di 10 salvataggi → avviso.
+Avvisi: commit del ramo che cambiano file fuori dai libri rispetto a origin/motore; altri libri sullo stesso
+ramo; percorso editoriale: report di sessione non aggiornato da più di 10 salvataggi.
 `zb avvio` senza libro (solo con «lavoro sul motore»): controlli del ramo del motore (nessun `libri/`, nessun
 `.claude/`, controllo pre-commit) e riga «Letto» con CLAUDE.md, PROCEDURA, passaggio di consegne e livello editoriale.
 
 ## 5. Fasi e gate
+
+Questa tabella è il percorso breve; il percorso editoriale è nella sezione 1b. Il meccanismo dei gate (blocchi,
+`ok`, `avanti`, `correggi`) è lo stesso per i gate chiesti nel briefing, per `canone` e per `controllo_fallito`.
 
 | Fase | Lavoro | Gate (se attivo) | Documenti mostrati |
 |---|---|---|---|
@@ -184,19 +236,19 @@ report di sessione non aggiornato da più di 10 salvataggi → avviso.
 | chiusura | continuità, ortografia, manoscritto completo, PDF, pacchetto, controllo KDP | — | — |
 | chiuso | — | — | — |
 
-**Gate attivi:** campo `gate` di `libro.yaml` (dal briefing, «Gate:»). Predefiniti:
-`documenti, pagina_campione, primi_capitoli`. Possibili: anche `lotto`. Un gate non attivo non
-ferma: i documenti si registrano con `senza_gate: true` e si passa oltre.
-`controllo_fallito` è sempre attivo.
+**Gate attivi:** campo `gate` di `libro.yaml` (dal briefing, «Gate:»). Predefiniti del percorso breve (e di un
+`libro.yaml` senza il campo): `documenti, pagina_campione, primi_capitoli`. Possibili: anche `lotto` e `lettura`.
+Percorso editoriale: `lettura` (sezione 1b). Un gate non attivo non ferma: i documenti si registrano con
+`senza_gate: true` e si passa oltre. `controllo_fallito` è sempre attivo.
 
 **Risposte dell'autore**
 
 | Risposta | Comando | Effetto |
 |---|---|---|
-| `ok` | `zb ok <libro>` | Approva il gate aperto: registra sha256 e commit dei documenti, chiude il gate, passa oltre. Rifiutato se i blocchi non sono stati mostrati tutti, se i documenti sono cambiati dall'ultima lettura, se hanno modifiche non salvate, o se una correzione registrata non è stata applicata. |
+| `ok` | `zb ok <libro>` | Approva il gate aperto: registra sha256 e commit dei documenti, chiude il gate, passa oltre. Rifiutato se i blocchi non sono stati mostrati tutti, se i documenti sono cambiati dall'ultima lettura, se hanno modifiche non salvate, o se una correzione registrata non è stata applicata. Alla pausa di lettura non servono blocchi: registra i capitoli come letti e la scrittura riparte. |
 | `ok, lotti da N` | `zb ok <libro> lotti da N` | Come `ok`, e fissa la dimensione dei lotti successivi. |
 | `avanti` | `zb avanti <libro>` | Blocco successivo (circa 120 righe, tagliato a fine paragrafo). Non approva nulla. Se i documenti cambiano, riparte dal blocco 1. |
-| `correggi: …` | `zb correggi <libro> <istruzione>` | Registra la correzione; il gate resta aperto. Applico solo quella, rieseguo i controlli, mostro le righe cambiate (prima e dopo), salvo; poi `avanti` riparte dal blocco 1. |
+| `correggi: …` | `zb correggi <libro> <istruzione>` | Registra la correzione; il gate resta aperto. Applico solo quella, rieseguo i controlli, mostro le righe cambiate (prima e dopo), salvo; poi `avanti` riparte dal blocco 1. Alla pausa di lettura invece le note vanno in `06-diagnostica/note-lettura.md` e in `stato.yaml` (`note_lettura`) e la scrittura riparte. |
 | correzione fuori dal gate | `zb correggi <libro> <unità>: <motivo>` (con `--commit <hash>` per una correzione già salvata) | Registra data, file, motivo, sha256 precedente e corretto in `stato.yaml` (`correzioni_registrate`); non apre e non chiude gate. Segue i file rinominati (sha256 precedente sotto il nome vecchio). |
 | ritorno alla stesura | `zb fase <libro> stesura --motivo "<testo>"` | Solo da «chiusura» e solo se nel piano parole mancano unità: registra data, fase precedente, motivo e unità mancanti (`cambi_fase`). La fase passa a «chiusura» da sola soltanto quando tutte le unità del piano (prologo, capitoli, interludi, epilogo) sono scritte e accettate. |
 | `riapprova` | `zb riapprova <libro> <documento> <motivo>` | Modifica autorizzata a un documento già approvato (già salvata in un commit): registra il nuovo sha256 e commit, con data, motivo e sha256 precedente. Rifiutato se il documento non è approvato, non è cambiato o ha modifiche non salvate. |
@@ -213,12 +265,26 @@ aver scritto il capitolo N.
 Procedura uguale per ogni capitolo, senza fermate tranne i gate:
 
 1. Rileggo `LEGGIMI.md`, il manuale di stile, le direttive del briefing, la riga del capitolo in
-   scaletta e piano parole, le voci di cronologia che tocca e il capitolo precedente.
+   scaletta e piano parole, le voci di cronologia che tocca e il capitolo precedente. Sul percorso editoriale
+   scrive l'agente `scrittore-voce`, chiamato dalla sessione principale (mai due capitoli in parallelo);
+   `zb prepara <libro> N` gli dà la scheda del capitolo, il codex filtrato, il canone, le capsule e, dopo una
+   pausa di lettura con note, `06-diagnostica/note-lettura.md`.
 2. Riporto la riga «Letto: …» di `zb avvio` (se non l'ho già fatto in questa sessione).
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
-4. `zb esito <libro> N`: esegue `capitolo.py` (report in `06-diagnostica/capitoli/NN.md`) e
+4. `zb esito <libro> N`: esegue `capitolo.py` (report in `06-diagnostica/capitoli/NN.md`, con le righe
+   `anti-ia:<misura>` e l'indice Gulpease informativo; audit in `06-diagnostica/anti-ia/NN.md`) e
    aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto).
-5. Blocco di salvataggio (sezione 8).
+5. Percorso editoriale: `zb capsula <libro> N` prepara `07-capsule/NN.md`, l'agente `capsula` la compila (otto
+   sezioni, 120-250 parole), `zb capsula <libro> N --verifica` la controlla e riscrive il registro.
+6. Blocco di salvataggio (sezione 8).
+
+**Anti-IA (audit).** `script/antiia.py` (anche `zb antiia <libro> [N]`) misura senza toccare il testo:
+variazione delle frasi, aperture uguali, formule per mille parole, lineette nella narrazione, varietà lessicale,
+chiusure uguali di fila (P0 oltre `chiusure_uguali_max`); in più, P2, le formule di
+`editoriale/anti-ia/formule.yaml` (`formule_catalogo_per_mille`; la sezione B solo con
+`formule_sezione_b: true`), i segni tipografici all'inglese e le ripetizioni ravvicinate (solo italiano). Soglie:
+`dati/antiia.yaml`, poi la lingua, poi il blocco `anti_ia` del profilo di genere, poi `anti_ia` di `libro.yaml`.
+Sono avvisi; con `anti_ia: {modalita: blocco}` ogni segnalazione è un KO in `capitolo.py`.
 
 **Titoli interni al capitolo.** Il capitolo comincia con il suo titolo («# N — Titolo»), che `zb compila`
 riscrive («N. Titolo») e porta nel sommario. Dentro il capitolo sono ammessi titoli di secondo livello
@@ -244,10 +310,17 @@ danno un AVVISO con il budget residuo proposto per le unità rimanenti (in propo
 È una proposta: il motore non accorcia né allunga un capitolo per far sparire l'avviso, e non tiene
 i capitoli sotto una soglia; a libro finito, fuori tolleranza, decide l'autore.
 
-**Lotti.** Dopo il capitolo 3 si apre `primi_capitoli`; con l'«ok» l'autore sceglie i lotti
-(`ok, lotti da N`). Poi i capitoli si scrivono in lotti di N **senza fermate** (salvo gate
-`lotto` attivo o controllo fallito due volte). Scritto l'ultimo capitolo del piano parole, la
-fase passa a «chiusura».
+**Pausa di lettura** (gate `lettura`, percorso editoriale). Dopo `pausa_lettura` capitoli accettati da
+`zb esito` (`libro.yaml`: 3, 4 o 5, predefinito 3; un altro valore ferma ogni comando) e a fine stesura il motore
+si ferma, stampa «PAUSA DI LETTURA» con l'elenco dei file da leggere e non accetta altri `zb esito`. L'autore
+risponde `ok` (continua) oppure `correggi <note>` (le note valgono per il blocco successivo: `zb prepara` mette
+`06-diagnostica/note-lettura.md` tra i file che lo scrittore legge; un capitolo già
+scritto si corregge con `zb correggi <libro> <unità>: <motivo>`).
+
+**Lotti** (percorso breve, o gate chiesti nel briefing). Dopo il capitolo 3 si apre `primi_capitoli`; con
+l'«ok» l'autore sceglie i lotti (`ok, lotti da N`). Poi i capitoli si scrivono in lotti di N **senza fermate**
+(salvo gate `lotto` attivo o controllo fallito due volte). Scritte e accettate tutte le unità del piano parole,
+la fase passa a «chiusura» (percorso editoriale: a «struttura_manoscritto»).
 
 ## 7. Chiusura
 
@@ -275,16 +348,13 @@ perché la frase può parlare d'altro («tre settimane di lavoro»).
 - (a) Hunspell it_IT, sempre. Parole ammesse: quelle del libro (`nomi_propri.txt`) e quelle generiche
   del motore (`dati/parole-ammesse-it.txt`: forme italiane valide che il dizionario non conosce, mai
   nomi di personaggi o luoghi). Le elisioni (l', dell', anch') non si controllano.
-- (b) LanguageTool, solo se `ZB_LANGUAGETOOL` indica la cartella dei suoi `.jar`. Non va nel
-  repository e non si scarica mai da languagetool.org. Si scarica da Maven Central (serve Java e
-  Maven) in una cartella temporanea:
-  1. in una cartella temporanea, un `pom.xml` con le dipendenze `org.languagetool:languagetool-commandline`
-     e `org.languagetool:language-it` (stessa versione, per esempio 6.8);
-  2. `mvn -q -B dependency:copy-dependencies -DoutputDirectory=lib` (circa 140 file, 240 MB);
-  3. `export ZB_LANGUAGETOOL=<cartella temporanea>/lib`.
-  Se Maven Central risponde 403 o 429, non insistere: si resta con Hunspell e la checklist.
-- (c) Checklist per la lettura umana, sempre, in fondo al report: i correttori automatici non
-  rilevano «e» per «è», gli accordi sbagliati, le parole vere usate al posto di altre.
+- (b) LanguageTool, solo se `ZB_LANGUAGETOOL` indica la cartella dei suoi `.jar`, mai nel repository e mai
+  scaricati da languagetool.org. Installazione e verifica: `zb languagetool installa` (stampa la riga
+  `export ZB_LANGUAGETOOL=…`), `zb languagetool verifica`, `zb languagetool stato` (README, «LanguageTool»).
+  Se Maven Central risponde 403 o 429, non insistere: si resta con Hunspell e la lista di controllo.
+- (c) Lista di controllo per la lettura umana, sempre, in fondo al report: per l'italiano le voci delle sezioni
+  1-6 di `editoriale/correttore/criteri-correttore.md` (fonte unica). I correttori automatici non rilevano «e»
+  per «è», gli accordi sbagliati, le parole vere usate al posto di altre.
 - Il report (`06-diagnostica/controllo-ortografico.md`) dice quali livelli sono stati eseguiti.
 
 **Appendici.** Materiali che stanno dopo l'ultima unità del libro (epilogo compreso): soluzioni di enigmi,
@@ -322,6 +392,9 @@ sul motore lancia prima `zb prove`; poi commit e push con ripiego), `git status 
 l'errore esatto; mai dire «fatto» se non è su origin; niente altri rami, tag o push forzati.
 Resoconto: hash, file, parole o pagine, «branch allineato a origin: sì/no».
 Nessun comando del motore fa commit o push da solo, tranne `zb salva` e `zb push` quando li si lancia.
+`zb push`, prima del push: sul ramo di un libro controlla la cartella unica; sul lavoro del motore vuole
+l'impronta di una `zb prove` intera e tutta OK sullo stato attuale di `motore/` (`<git-dir>/zb-prove-ok`; con
+`--solo` o `--sezione` l'impronta non si scrive). Se il controllo fallisce non fa niente ed esce con 2.
 
 ## 9. Ripresa dopo un'interruzione
 
@@ -331,8 +404,17 @@ riprende dal blocco registrato (o dal blocco 1 se i documenti sono cambiati).
 
 ## 10. Recinto e hook
 
+**Cartella unica.** Tutto ciò che riguarda un libro vive solo in `libri/<slug>/`, sul ramo del libro; il libro
+attivo sta in `<git-dir>/zb-libro-attivo`, fuori dai file tracciati (`libri/libro-attivo.md` dei rami creati
+prima si legge ancora). `zb cartella <libro> [--commit]`, e da soli `zb avvio`, `zb push` e l'hook del recinto
+prima di `git commit`/`git push`, controllano su git: file modificati fuori dal libro, commit «misti» che
+toccano il libro e file fuori da `libri/`, titolo o percorso del libro in file fuori da `libri/` scritti sul
+ramo. Esclusi, in `dati/cartella-unica.yaml`: i file ammessi fuori (`CLAUDE.md`, `.gitignore`,
+`libri/libro-attivo.md`, `.claude/settings.json`, `.claude/agents/`, `.claude/commands/`), i merge del motore e
+i commit misti già fatti che l'autore dichiara con il motivo (`commit_dichiarati`: la storia non si riscrive).
+
 **Recinto (blocco).** `script/hook_recinto.py` (PreToolUse su Write, Edit, MultiEdit, NotebookEdit e Bash):
-con un libro attivo (`libri/libro-attivo.md`) consente solo `libri/<slug>/`; con «lavoro sul motore»
+con un libro attivo consente solo `libri/<slug>/`; con «lavoro sul motore»
 (`zb lavoro motore`) consente il repository tranne `libri/`. Per Bash controlla i percorsi che il comando
 probabilmente scrive (stessa euristica dell'hook del manoscritto: redirezioni, tee, sed -i, cp, mv, rm, touch,
 mkdir…), solo dentro il repository. Limiti residui (falsi permessi): script che scrivono senza nominare il
@@ -355,8 +437,13 @@ Sul ramo `motore` hook, agenti e comandi restano spenti (nessun `.claude/`); `zb
   libro senza il marker di avvio della sessione, in modalità **avviso** stampa «ATTENZIONE: …»,
   lo annota in `<x>/.zb/avvisi-hook.log` e **lascia passare**; in modalità **blocco** ferma lo
   strumento (codice 2).
-- Modalità in `dati/hook.yaml` (oggi: `avviso`). Il passaggio a `blocco` è un commit a parte,
-  dopo l'«ok» dell'autore.
+- `script/hook_recinto.py`, oltre al recinto: rifiuta il Write di un revisore su un capitolo già esistente e
+  annota chi scrive in `<libro>/.zb/scritture.log` (separazione dei ruoli).
+- `script/consumo.py` (PostToolUse su Read, Agent, Task): letture e subagenti in `<libro>/.zb/letture.log`,
+  per `zb consumo`. Non blocca mai.
+- Modalità in `dati/hook.yaml`: `modalita` dell'hook del manoscritto (oggi: `avviso`; il passaggio a `blocco` è
+  un commit a parte, dopo l'«ok» dell'autore) e `separazione_ruoli` (oggi: `blocco`; l'autore può tornare ad
+  `avviso` con un commit a parte).
 - Configurazione di esempio, **non attiva**: `dati/hook-settings.esempio.json`.
   `zb hook attiva` mostra cosa scriverebbe; `zb hook attiva --ok` (solo dopo l'«ok»
   dell'autore) crea `.claude/settings.json` alla radice del repository; `zb hook disattiva` lo
@@ -397,4 +484,5 @@ ancora approvato a un gate, non la rileva nessuno dei due: resta visibile solo n
 ## 11. Comandi
 
 `python3 motore/zb aiuto` elenca tutti i comandi, `zb aiuto <comando>` ne dà l'uso: unica fonte
-`dati/comandi.yaml` (README e guide non ripetono l'elenco).
+`dati/comandi.yaml` (README e guide non ripetono l'elenco). Prima di ogni push sul lavoro del motore:
+`zb prove` intera, tutta OK; `zb push` lo controlla.

@@ -14,7 +14,7 @@ Canone: «fatti_bloccati» in stato.yaml; cambia solo con «zb canone <libro> pr
 Modo automatico (decisione dell'autore del 2026-10-20): la struttura la verifica il motore, sempre, senza fermata
 dell'autore (gate «struttura» automatico anche se elencato in libro.yaml): se i controlli passano registra i nove
 file, crea bibbia, codex, cronologia e manuale (nuovo.genera_documenti) e passa a «documenti»; se no si ferma e
-scrive il motivo. Gli altri gate valgono solo se libro.yaml li elenca (i libri nuovi nascono con gate: []).
+scrive il motivo. Gli altri gate valgono solo se libro.yaml li elenca (i libri nuovi nascono con gate: [lettura], la pausa di lettura).
 """
 import datetime
 import os
