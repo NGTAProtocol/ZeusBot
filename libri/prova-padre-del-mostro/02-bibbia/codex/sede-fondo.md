@@ -7,5 +7,5 @@
 - Ruolo: capp. 2, 9, 17, 27, 33: dove Giorgi decide, nomina, aspetta e affronta Bertola.
 - Fissi (sempre): luogo del potere che decide a bassa voce; registro freddo.
 - Variabili (quasi sempre): luogo preciso, città e aspetto non indicati nel briefing.
-- Mai cambiare: è la sede del fondo di Giorgi.
+- Mai cambiare: è la sede del fondo di Giorgi. Nel cap. 2 Giorgi riceve Bertola nella sala piccola; sul tavolo restano i due bicchieri con i loro aloni (canone confermato dall'autore).
 - Stato:

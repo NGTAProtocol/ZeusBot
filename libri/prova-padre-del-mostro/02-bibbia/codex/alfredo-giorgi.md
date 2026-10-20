@@ -10,4 +10,5 @@
 - Come parla: understatement, frasi di cortesia, lessico finanziario al posto dei fatti («volatilità attesa», «per completezza»). Nessun esclamativo.
 - Da solo: non indicato nel briefing.
 - Mai cambiare: 13 anni di rapporto con Bertola; il progetto di controllare le due organizzazioni tramite Kurgan; l'intervento presso i servizi militari.
+- Da confermare dall'autore: Giorgi sa a chi Bertola riferisce oltre a lui (cap. 2).
 - Stato: vivo per tutto il libro.

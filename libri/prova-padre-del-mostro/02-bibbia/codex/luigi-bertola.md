@@ -10,4 +10,5 @@
 - Come parla: italiano medio parlato, le linee guida come scudo. Nessun dialetto.
 - Da solo: dal cap. 20 scrive per sé in un quaderno (proposta dell'architetto).
 - Mai cambiare: 13 anni di fiducia con Giorgi; informatore dell'élite da sempre; subentra a Kurgan.
+- Da confermare dall'autore: le buste lasciate in portineria per Bertola (cap. 2).
 - Stato: vivo per tutto il libro (proposta di finale, da confermare).
