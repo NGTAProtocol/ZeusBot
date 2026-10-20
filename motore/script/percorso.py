@@ -11,6 +11,10 @@ Fasi di revisione (struttura_manoscritto, line, copy, bozze) in due tempi, in st
 - «applicazione»: dopo l'«ok» si applicano solo le proposte approvate (modifiche puntuali); «zb esito N»
   rimisura un capitolo; «zb pronto» passa alla fase successiva senza un secondo gate.
 Canone: «fatti_bloccati» in stato.yaml; cambia solo con «zb canone <libro> proponi|togli …» e il gate «canone».
+Modo automatico (decisione dell'autore del 2026-10-20): la struttura la verifica il motore, sempre, senza fermata
+dell'autore (gate «struttura» automatico anche se elencato in libro.yaml): se i controlli passano registra i nove
+file, crea bibbia, codex, cronologia e manuale (nuovo.genera_documenti) e passa a «documenti»; se no si ferma e
+scrive il motivo. Gli altri gate valgono solo se libro.yaml li elenca (i libri nuovi nascono con gate: []).
 """
 import datetime
 import os
@@ -186,12 +190,13 @@ def pronto(cartella, libro, stato, f):
         p = struttura.verifica(cartella) + problemi_fase(cartella, libro, 'struttura')
         if p:
             raise comune.ErroreMotore('Struttura non pronta:\n- ' + '\n- '.join(p[:30]))
-        if 'struttura' in F.gate_attivi(libro):
-            F.apri_gate(cartella, libro, stato, 'struttura', passo='in revisione')
-        else:
-            F.registra(cartella, stato, documenti_gate(cartella, libro, stato, 'struttura'), senza_gate=True)
-            chiudi_struttura(stato)
-            print('Gate «struttura» non previsto: struttura registrata senza fermata; fase «documenti».')
+        # gate automatico: lo verifica il motore, mai l'autore (anche se «struttura» è in libro.yaml)
+        F.registra(cartella, stato, documenti_gate(cartella, libro, stato, 'struttura'), senza_gate=True)
+        chiudi_struttura(stato)
+        import nuovo
+        creati = nuovo.genera_documenti(cartella)
+        print('Struttura verificata dal motore (gate automatico): nove file e rapporti registrati, nessuna fermata; '
+              f'fase «documenti». Documenti creati: {", ".join(creati) if creati else "nessuno (già presenti)"}.')
         return True
     if fs == 'documenti':
         import codex
@@ -307,7 +312,7 @@ def prossimo(stato):
         return 'Traduzione: guida e glossario (un termine = una traduzione); poi «zb pronto <traduzione>».'
     if fs == 'struttura':
         return ('Architetto: i nove file di 03-struttura/; poi diagnosta ed editor-strutturale (commit separati); '
-                'poi «zb pronto <libro>».')
+                'poi «zb pronto <libro>» (il motore verifica la struttura, senza fermata).')
     if fs in REVISIONI:
         chi = {'struttura_manoscritto': 'diagnosta, poi editor-strutturale', 'line': 'line-editor per ogni capitolo',
                'copy': 'correttore-italiano per ogni capitolo', 'bozze': 'zb compila, zb impagina, poi correttore-bozze',

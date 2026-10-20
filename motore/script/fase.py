@@ -87,7 +87,9 @@ def salva_stato(cartella, stato):
 
 
 def gate_attivi(libro):
-    return libro['gate'] if libro.get('gate') is not None else GATE_PREDEFINITI
+    """Gate con la fermata dell'autore. «struttura» non c'è mai sul percorso editoriale: lo verifica il motore."""
+    g = libro['gate'] if libro.get('gate') is not None else GATE_PREDEFINITI
+    return [x for x in g if not (x == 'struttura' and percorso.attivo(libro))]
 
 
 def capitoli_previsti(cartella):

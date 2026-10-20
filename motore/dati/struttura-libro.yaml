@@ -14,9 +14,9 @@ cartelle:
     modalita: [riscrittura]
     creazione: l'autore, prima di zb nuovo (il briefing lo indica in «Testo precedente:»)
   02-bibbia:
-    scopo: bibbia (personaggi, luoghi, fatti canonici)
+    scopo: bibbia (personaggi, luoghi, fatti canonici) e codex
     modalita: [nuovo, riscrittura]
-    creazione: zb nuovo (bibbia.md)
+    creazione: chiusura automatica della fase struttura (percorso editoriale); zb nuovo (percorso breve)
   03-struttura:
     scopo: i nove file della fase struttura (percorso editoriale), tra cui scaletta e piano parole
     modalita: [nuovo, riscrittura, traduzione]
@@ -24,7 +24,7 @@ cartelle:
   03-architettura:
     scopo: manuale di stile; nel percorso breve anche scaletta e piano parole
     modalita: [nuovo, riscrittura, traduzione]
-    creazione: zb nuovo
+    creazione: chiusura automatica della fase struttura (percorso editoriale); zb nuovo (percorso breve)
   04-manoscritto:
     scopo: capitoli (NN-slug.md, prologo, interludi, epilogo)
     modalita: [nuovo, riscrittura, traduzione]

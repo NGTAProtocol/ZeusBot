@@ -118,9 +118,13 @@ def percorso(sez='percorso editoriale'):
           '0 / struttura / 9', f'{p.returncode} / {stato(L)["fase"]} / '
           f'{sum(comune.MODELLO in open(os.path.join(L, "03-struttura", f)).read() for f in comune.FILE_STRUTTURA)}', sez)
     lb = comune.leggi_yaml(os.path.join(L, 'libro.yaml'))
-    esito('nuovo.py', 'libro.yaml: percorso, lingua, lingue_target, gate', "editoriale / it / ['en'] / 8",
+    esito('nuovo.py', 'libro.yaml: percorso, lingua, lingue_target, gate (modo automatico: nessuno)',
+          "editoriale / it / ['en'] / 0",
           f'{lb.get("percorso")} / {lb["lingua_originale"]} / {lb["lingue_target"]} / {len(lb["gate"])}', sez)
-    esito('nuovo.py', 'codex dal briefing (schede @char)', 3, len(os.listdir(os.path.join(L, '02-bibbia', 'codex'))), sez)
+    esito('nuovo.py', 'nessun documento prima della struttura: bibbia / codex / cronologia / manuale',
+          'False / False / False / False',
+          ' / '.join(str(os.path.exists(os.path.join(L, x))) for x in
+                     ('02-bibbia/bibbia.md', '02-bibbia/codex', 'cronologia.yaml', '03-architettura/manuale-di-stile.md')), sez)
     esito('nuovo.py', 'canone iniziale dai fatti canonici', 1, len(stato(L)['fatti_bloccati']), sez)
     salva(r, 'nascita')
     p = zb(L, 'pronto', '.')
@@ -157,25 +161,25 @@ def percorso(sez='percorso editoriale'):
             'editor-strutturale')
     salva(r, 'editor strutturale')
     p = zb(L, 'pronto', '.')
-    esito('fase.py', 'pronto: gate struttura aperto', '0 / struttura', f'{p.returncode} / {stato(L)["gate_in_attesa"]}', sez)
+    esito('fase.py', 'pronto: struttura verificata dal motore, nessuna fermata dell\'autore: fase documenti',
+          '0 / None / documenti', f'{p.returncode} / {stato(L)["gate_in_attesa"]} / {stato(L)["fase"]}', sez)
     p = zb(L, 'ok', '.')
-    esito('fase.py', 'ok prima di aver mostrato tutto: rifiutato', 2, p.returncode, sez)
-    fino_alla_fine(L)
-    p = zb(L, 'ok', '.')
-    esito('fase.py', 'ok al gate struttura: fase documenti', '0 / documenti', f'{p.returncode} / {stato(L)["fase"]}', sez)
-    salva(r, 'gate struttura')
+    esito('fase.py', 'ok dopo la struttura automatica: rifiutato (nessun gate aperto)', 2, p.returncode, sez)
+    esito('nuovo.py', 'documenti nati alla chiusura della struttura: bibbia / cronologia / manuale', 'True / True / True',
+          ' / '.join(str(os.path.isfile(os.path.join(L, x))) for x in
+                     ('02-bibbia/bibbia.md', 'cronologia.yaml', '03-architettura/manuale-di-stile.md')), sez)
+    esito('nuovo.py', 'codex dal briefing (schede @char)', 3,
+          sum('@char:' in open(os.path.join(L, '02-bibbia', 'codex', f), encoding='utf-8').read()
+              for f in os.listdir(os.path.join(L, '02-bibbia', 'codex'))), sez)
+    salva(r, 'struttura e documenti')
     p = zb(L, 'pronto', '.')
-    fino_alla_fine(L)
-    p = zb(L, 'ok', '.')
-    esito('fase.py', 'gate documenti (bibbia, codex, cronologia, manuale): ok', '0 / pagina_campione',
+    esito('fase.py', 'documenti (bibbia, codex, cronologia, manuale): pronto senza fermata', '0 / pagina_campione',
           f'{p.returncode} / {stato(L)["fase"]}', sez)
     open(os.path.join(L, '05-revisioni', 'pagina-campione.md'), 'w').write(
         '# Pagina campione\n\nIl molo era grigio. Nives contò i colpi della catena fino a dieci.\n')
     salva(r, 'pagina campione')
     zb(L, 'pronto', '.')
-    fino_alla_fine(L)
-    zb(L, 'ok', '.')
-    salva(r, 'gate pagina campione')
+    salva(r, 'pagina campione registrata')
     esito('fase.py', 'dopo la pagina campione: stesura', 'stesura', stato(L)['fase'], sez)
     # stesura con capsule
     p = zb(L, 'prepara', '.', '1')
@@ -213,7 +217,8 @@ def percorso(sez='percorso editoriale'):
             if n == 3:
                 esito('fase.py', 'esito 3: avviso capitoli di lunghezza quasi uguale', True,
                       'lunghezze_uguali' in p.stdout, sez)
-                esito('fase.py', 'esito 3: gate primi_capitoli', 'primi_capitoli', stato(L)['gate_in_attesa'], sez)
+                esito('fase.py', 'esito 3: nessuna fermata (gate primi_capitoli non in libro.yaml)', 'None',
+                      str(stato(L)['gate_in_attesa']), sez)
                 salva(r, 'esito 3')
                 break
             zb(L, 'capsula', '.', str(n))
@@ -228,9 +233,7 @@ def percorso(sez='percorso editoriale'):
     if os.environ.get('ZB_DEBUG'):
         print('DEBUG compatto', p.stdout, p.stderr, open(os.path.join(L, 'stato-compatto.md')).read())
     esito('compatto.py', 'stato compatto: 15-20 righe', True, 15 <= n_righe <= 20, sez)
-    fino_alla_fine(L)
-    zb(L, 'ok', '.')
-    salva(r, 'gate primi capitoli')
+    salva(r, 'stesura')
     esito('fase.py', 'stesura finita: struttura_manoscritto', 'struttura_manoscritto', stato(L)['fase'], sez)
     # capsula 3 e registro: promesse tutte chiuse
     zb(L, 'capsula', '.', '3')
@@ -265,10 +268,9 @@ def percorso(sez='percorso editoriale'):
             intesta(L, os.path.join(F, 'rapporti', x), f'06-diagnostica/{x}', ru, n)
             salva(r, ru)
         p = zb(L, 'pronto', '.')
-        esito('fase.py', f'{fs}: pronto apre il gate', f'0 / {fs}', f'{p.returncode} / {stato(L)["gate_in_attesa"]}', sez)
-        fino_alla_fine(L)
-        zb(L, 'ok', '.')
-        esito('fase.py', f'{fs}: ok → applicazione', 'applicazione', stato(L).get('sottofase'), sez)
+        esito('fase.py', f'{fs}: pronto controlla i rapporti e li registra senza fermata', '0 / None',
+              f'{p.returncode} / {stato(L)["gate_in_attesa"]}', sez)
+        esito('fase.py', f'{fs}: proposte registrate → applicazione', 'applicazione', stato(L).get('sottofase'), sez)
         p = zb(L, 'esito', '.', '1')
         esito('fase.py', f'{fs}: esito rimisura un capitolo senza cambiare fase', f'True / {fs}',
               f'{"ricontrollata" in p.stdout} / {stato(L)["fase"]}', sez)
@@ -296,13 +298,11 @@ def percorso(sez='percorso editoriale'):
         intesta(L, os.path.join(F, 'rapporti', 'bozze.md'), '06-diagnostica/bozze.md', 'correttore-bozze')
         salva(r, 'correttore bozze')
         p = zb(L, 'pronto', '.')
-        fino_alla_fine(L)
-        zb(L, 'ok', '.')
-        salva(r, 'gate bozze')
+        salva(r, 'bozze registrate')
         zb(L, 'pronto', '.')
-        esito('fase.py', 'bozze: gate, applicazione, poi chiusura', 'chiusura', stato(L)['fase'], sez)
+        esito('fase.py', 'bozze: proposte senza fermata, applicazione, poi chiusura', 'chiusura', stato(L)['fase'], sez)
     else:
-        saltata('fase.py', 'bozze: gate, applicazione, poi chiusura', 'node assente', sez)
+        saltata('fase.py', 'bozze: proposte senza fermata, applicazione, poi chiusura', 'node assente', sez)
     return r, L
 
 
@@ -360,10 +360,10 @@ def cartella_unica(sez='cartella unica e recinto'):
     esito('salva.py', 'zb salva con un file fuori dal recinto: rifiutato', '2 / True',
           f'{p.returncode} / {"fuori dal recinto" in p.stderr}', sez)
     os.remove(os.path.join(r, 'libri', 'secondo', 'scritto-da-script.md'))
-    open(os.path.join(r, 'libri', 'primo', '02-bibbia', 'nota.md'), 'w').write('nota del primo libro\n')
+    open(os.path.join(r, 'libri', 'primo', '00-progetto', 'nota.md'), 'w').write('nota del primo libro\n')
     p = zbr('salva', 'libri/primo', 'nota')
     esito('salva.py', 'zb salva dentro il libro: commit e push', '0 / True',
-          f'{p.returncode} / {"libri/primo/02-bibbia/nota.md" in git(r, "show", "--name-only", "--format=").stdout}', sez)
+          f'{p.returncode} / {"libri/primo/00-progetto/nota.md" in git(r, "show", "--name-only", "--format=").stdout}', sez)
     dopo = {f: open(os.path.join(dp, f), 'rb').read() for dp, _, fs in os.walk(os.path.join(r, 'libri', 'secondo'))
             for f in fs}
     esito('recinto', 'il secondo libro è identico dopo il lavoro sul primo', True, prima == dopo, sez)

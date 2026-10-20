@@ -48,3 +48,33 @@ regole del compito; qui la scelta e il perché, con il riferimento da cui viene.
 - `ruoli/riferimenti/critica-manoscritto.md`: nel pacchetto la diagnosi la fa il diagnosta e le proposte l'editor
   strutturale; il riferimento ora indica `rapporto-manoscritto.md` e `piano-revisione-manoscritto.md`, e la colonna
   «Proposta» del rapporto diventa «Classe di intervento» (`diagnosi/00-principi.md`: la diagnosi non scrive soluzioni).
+
+## D6. Punto 3: macchina degli stati
+- Nomi del pacchetto (ccr) ovunque: fase e gate `struttura_manoscritto`, `rapporto-struttura.md` /
+  `rapporto-manoscritto.md` (diagnosta), `piano-revisione-struttura.md` / `piano-revisione-manoscritto.md` (editor
+  strutturale), `06-sottotrame-temi.md`. Il nome di `motore` `revisione_manoscritto` non entra.
+- Gate «struttura» automatico e sempre presente: `percorso.pronto` verifica (struttura.py più i rapporti con impronta e
+  commit separato) e, se tutto regge, registra i nove file e i rapporti senza fermata e passa a «documenti»; se no si
+  ferma e scrive il motivo. `fase.gate_attivi` toglie «struttura» anche se libro.yaml lo elenca (un libro di prima con
+  i gate di un tempo non si ferma più lì).
+- Modo automatico: i libri nuovi del percorso editoriale nascono con `gate: []` (`nuovo.GATE_EDITORIALI`). Il
+  meccanismo dei gate resta per chi li chiede nel briefing («Gate: …») o nei libri già esistenti. Restano due
+  fermate che non sono approvazioni del lavoro: `controllo_fallito` (stesso controllo fallito due volte: il motore
+  blocca e scrive il motivo) e `canone` (cambiare i fatti bloccati è una richiesta dell'autore, non una pausa della
+  scrittura).
+- Percorso breve: resta solo come opzione (`Percorso: breve` nel briefing, `percorso: breve` in libro.yaml); un
+  libro.yaml senza il campo `percorso` (libri nati prima) resta sul percorso breve, come in ccr, per non cambiare i
+  libri già in lavorazione.
+- «Nessun documento prima della struttura» (`editoriale/struttura/01-fase-struttura.md:3`): in ccr `zb nuovo` creava
+  già bibbia, manuale, cronologia e codex. Ora sul percorso editoriale nascono alla chiusura della struttura
+  (`nuovo.genera_documenti`, da `motore`, senza sovrascrivere nulla); scaletta e piano parole restano in
+  `03-struttura/` (una sola fonte, `comune.rel_piano`).
+- Modelli della struttura in italiano: vengono dai file di `editoriale/struttura/modelli/` (fonte unica, come la scheda
+  di capitolo già faceva in ccr); l'inglese resta nei modelli interni di `struttura.py`.
+- Controlli in più da `motore` in `struttura.verifica`: campi «- Campo:» vuoti in 01, 02, 03, 09; almeno una promessa
+  o sottotrama e nessuna senza «Si chiude» in 06.
+- Prove: la sezione `fase struttura` di `motore` (18 prove, giallo e romance) è portata in `prove.py` con gli attesi del
+  modo automatico; il giallo, che in ccr usa il percorso breve, è portato sul percorso editoriale solo in questa prova.
+  Nel percorso completo di `prove_editoriale.py` le prove dei gate (struttura, documenti, pagina campione,
+  primi capitoli, revisioni) restano una per una con gli attesi senza fermata; la prova del codex alla nascita
+  diventa «nessun documento prima della struttura» e il conteggio del codex si fa alla chiusura della struttura.

@@ -5,8 +5,10 @@ Uso: python3 -B struttura.py <libro> verifica      (comando «zb struttura <libr
 - in 05-scaletta.md una scheda per ogni capitolo del piano parole, con tutti i campi pieni;
 - in 04-atti-svolte.md una macrostruttura dichiarata tra quelle ammesse e il suo motivo;
 - nessuna etichetta automatica «Atto 1/2/3» nei titoli della scaletta;
-- budget del piano parole non tutti uguali (capitoli che nascono dal contenuto).
-I modelli li usa nuovo.py; i campi della scheda li controlla anche prepara.py prima di ogni capitolo.
+- budget del piano parole non tutti uguali (capitoli che nascono dal contenuto);
+- nessun campo «- Campo:» vuoto in 01, 02, 03 e 09; in 06-sottotrame-temi.md almeno una promessa o sottotrama e
+  nessuna senza «Si chiude» (controlli della fase struttura di motore, 971b6df, con i nomi del pacchetto).
+I modelli in italiano vengono da motore/editoriale/struttura/modelli/ (fonte unica); li usa nuovo.py; i campi della scheda li controlla anche prepara.py prima di ogni capitolo.
 """
 import os
 import re
@@ -88,6 +90,17 @@ def scheda_vuota(n, lingua='it'):
     return '\n'.join(righe)
 
 
+def guida_editoriale(f):
+    """Corpo del modello del livello editoriale (editoriale/struttura/modelli/<f>) senza il titolo; None se manca."""
+    m = os.path.join(comune.radice_motore(), 'editoriale', 'struttura', 'modelli', f)
+    if not os.path.isfile(m):
+        return None
+    righe = open(m, encoding='utf-8').read().splitlines()
+    if righe and righe[0].startswith('# '):
+        righe = righe[1:]
+    return '\n'.join(righe).strip('\n') + '\n'
+
+
 def modelli(libro, n_cap, sigla, budget):
     """{nome file: testo} dei nove file di 03-struttura/, con la riga MODELLO."""
     l = lingua_doc(libro)
@@ -106,7 +119,7 @@ def modelli(libro, n_cap, sigla, budget):
             testo += ['', f'Totale: {budget * n_cap}.',
                       '<!-- I budget vanno resi diversi secondo la funzione di ogni capitolo. -->']
         else:
-            testo.append(GUIDA[l][f])
+            testo.append((guida_editoriale(f) if l == 'it' else None) or GUIDA[l][f])
         out[f] = '\n'.join(testo).rstrip('\n') + '\n'
     return out
 
@@ -207,6 +220,7 @@ def verifica(cartella):
             out.append(f'05-scaletta.md, capitolo {n}: campi vuoti: {", ".join(manca)}')
         if re.search(r'(?i)\b(atto|act)\s+(\d|i{1,3}|iv|v)\b', sk[n].get('_titolo', '')):
             out.append(f'05-scaletta.md, capitolo {n}: etichetta automatica di atto nel titolo')
+    out += campi_vuoti(cartella) + promesse_senza_chiusura(cartella)
     budget = []
     for r in comune.tabella_md(os.path.join(cartella, comune.rel_piano(cartella))):
         b = re.sub(r'[^\d]', '', r.get('Budget capitolo', ''))
@@ -214,6 +228,42 @@ def verifica(cartella):
             budget.append(int(b))
     if len(budget) >= 3 and len(set(budget)) == 1:
         out.append('08-piano-parole.md: tutti i capitoli hanno lo stesso budget; i budget nascono dalla funzione')
+    return out
+
+
+CON_CAMPI = ('01-premessa.md', '02-logline-tema.md', '03-personaggi-chiave.md', '09-scelte-fisse.md')
+
+
+def campi_vuoti(cartella):
+    """Righe «- Campo:» senza valore nei file a campi (fuori dai commenti HTML)."""
+    out = []
+    for f in CON_CAMPI:
+        p = os.path.join(cartella, comune.STRUTTURA, f)
+        if not os.path.isfile(p):
+            continue
+        t = re.sub(r'<!--.*?-->', '', open(p, encoding='utf-8').read(), flags=re.S)
+        for r in t.splitlines():
+            m = re.match(r'^\s*-\s+([^:\n]{2,}):\s*$', r)
+            if m:
+                out.append(f'{f}: campo vuoto «{m.group(1).strip()}»')
+    return out
+
+
+def promesse_senza_chiusura(cartella):
+    """06-sottotrame-temi.md: almeno una promessa o sottotrama; ognuna con il capitolo in cui si chiude."""
+    p = os.path.join(cartella, comune.STRUTTURA, '06-sottotrame-temi.md')
+    if not os.path.isfile(p):
+        return []
+    righe = [r for r in comune.tabella_md(p) if (r.get('Sottotrama o promessa') or r.get('Promessa o sottotrama') or
+                                                 r.get('Subplot or promise') or '').strip()]
+    if not righe:
+        return ['06-sottotrame-temi.md: nessuna promessa o sottotrama']
+    out = []
+    for r in righe:
+        nome = (r.get('Sottotrama o promessa') or r.get('Promessa o sottotrama') or r.get('Subplot or promise')).strip()
+        chiude = (r.get('Si chiude') or r.get('Si paga') or r.get('Closes') or '').strip()
+        if not chiude:
+            out.append(f'06-sottotrame-temi.md: «{nome}» senza chiusura (pagamento)')
     return out
 
 

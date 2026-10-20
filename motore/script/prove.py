@@ -2453,7 +2453,163 @@ def appendici(A):
     esito('compila.py', 'appendice dichiarata e assente: FERMO', A['fermo_assente'], ottenuto, sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici}
+# ---------------------------------------------------------------- sezioni portate da motore (971b6df)
+
+class Banco:
+    """repo git temporaneo con remoto, comandi zb e salvataggio (da motore, 971b6df)."""
+
+    def __init__(self, sessione=None):
+        self.E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
+        self.E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+                      GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+        if sessione:
+            self.E['ZB_SESSIONE'] = sessione
+        d = tempfile.mkdtemp(dir=TMP)
+        self.git(d, 'init', '-q', '--bare', 'remoto.git')
+        self.r = os.path.join(d, 'repo')
+        os.makedirs(self.r)
+        self.git(self.r, 'init', '-q')
+        self.git(self.r, 'checkout', '-q', '-b', 'prova')
+        self.git(self.r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git'))
+
+    def git(self, cwd, *a):
+        return subprocess.run(['git', *a], cwd=cwd, env=self.E, capture_output=True, text=True)
+
+    def zb(self, *a, sessione=None, env=None):
+        e = dict(env or self.E)
+        if sessione:
+            e['ZB_SESSIONE'] = sessione
+        return subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), *a], cwd=self.r, env=e,
+                              capture_output=True, text=True)
+
+    def salva(self, msg='prova'):
+        self.git(self.r, 'add', '-A')
+        self.git(self.r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', msg)
+        return self.git(self.r, 'push', '-q', '-u', 'origin', 'prova').returncode
+
+    def stato(self, nome):
+        return comune.leggi_yaml(os.path.join(self.r, nome, 'stato.yaml'))
+
+    def nuovo(self, briefing, nome, editoriale=True):
+        L = os.path.join(self.r, nome)
+        os.makedirs(L)
+        t = open(os.path.join(M, 'prove', 'briefing', briefing), encoding='utf-8').read()
+        if editoriale:
+            t = t.replace('Percorso: breve\n', 'Percorso: editoriale\n')
+        open(os.path.join(L, 'briefing.md'), 'w', encoding='utf-8').write(t)
+        p = self.zb('nuovo', f'{nome}/briefing.md')
+        self.salva('nuovo')
+        return L, p
+
+    def fino_alla_fine(self, nome, p, **kw):
+        for _ in range(80):
+            if 'Fine dei documenti' in p.stdout or p.returncode:
+                break
+            p = self.zb('avanti', nome, **kw)
+        return p
+
+    def rapporto(self, nome, ruolo, rel, testo='DIAGNOSI: struttura di prova coerente.\n', n=None):
+        """Rapporto con la prima riga data da «zb ruolo» (impronta del testo rivisto), in un commit a parte."""
+        p = self.zb('ruolo', nome, ruolo, *([str(n)] if n else []))
+        riga = next((x.split('Prima riga: ', 1)[1] for x in p.stdout.splitlines() if x.startswith('Prima riga: ')), '')
+        dest = os.path.join(self.r, nome, rel)
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        open(dest, 'w', encoding='utf-8').write(f'{riga}\n# {ruolo}\n\n{testo}')
+        return self.salva(ruolo)
+
+
+def compila_struttura_ed(L):
+    """Riempie 03-struttura/ con testo di prova che passa i controlli di struttura.py (modelli tolti, campi pieni,
+    macrostruttura, schede dei capitoli, una promessa chiusa, budget diversi). Adattata da motore (971b6df)."""
+    import fase
+    d = os.path.join(L, comune.STRUTTURA)
+    for f in sorted(os.listdir(d)):
+        p = os.path.join(d, f)
+        t = open(p, encoding='utf-8').read().replace(comune.MODELLO + '\n', '')
+        t = re.sub(r'(?m)^(\s*- [^:\n]+:)\s*$', r'\1 valore di prova', t)
+        t = re.sub(r'(?m)^(\s*- [^:\n]+:)\s*<[^>\n]*>\s*$', r'\1 valore di prova', t)
+        t = t.replace('@char:<id> @loc:<id>', '@char:prova')
+        if f == '04-atti-svolte.md':
+            t = re.sub(r'(?m)^Macrostruttura:.*$', 'Macrostruttura: 3 atti', t)
+            t = re.sub(r'(?m)^Motivo:.*$', 'Motivo: storia di prova con una sola svolta forte', t)
+        if f == '06-sottotrame-temi.md':
+            t = t.replace('|  |  |  |  |', '| La promessa di prova | 1 | 1 | 2 |')
+        if f == '08-piano-parole.md':
+            k = [0]
+
+            def diverso(m):
+                k[0] += 1
+                return f'| {m.group(1)} |  |  |  | {int(m.group(2)) + 37 * k[0]} |'
+            t = re.sub(r'\| (\d+) \|  \|  \|  \| (\d+) \|', diverso, t)
+        open(p, 'w', encoding='utf-8').write(t)
+    caps = [u for u in fase.unita_del_piano(L) if u.isdigit()]
+    p = os.path.join(d, '07-tensione-ritmo.md')
+    t = open(p, encoding='utf-8').read()
+    open(p, 'w', encoding='utf-8').write(t.replace('|  |  |  |  |', '\n'.join(
+        f'| {u} | {3 + int(u) % 5} | azione | prova |' for u in caps)))
+
+
+def fase_struttura(A):
+    """Fase struttura con il gate automatico (modo automatico del 2026-10-20), da motore (971b6df): giallo portato
+    sul percorso editoriale, romance con tutti i gate di un tempo in libro.yaml (anche lì la struttura non si ferma)."""
+    sez = 'fase struttura'
+    import fase
+    for briefing, nome in (('briefing-giallo.md', 'giallo'), ('briefing-romance.md', 'romance')):
+        a = A[nome]
+        b = Banco()
+        L, p = b.nuovo(briefing, nome)
+        presenti = sorted(d for d in os.listdir(L) if os.path.isdir(os.path.join(L, d)))
+        scaletta = open(os.path.join(L, '03-struttura', '05-scaletta.md'), encoding='utf-8').read()
+        esito('nuovo.py', f'{nome}: cartelle dopo zb nuovo / fase / blocchi di scaletta = capitoli del piano', a['nascita'],
+              f'{presenti} / {b.stato(nome)["fase"]} / '
+              f'{len(re.findall(r"(?m)^## Capitolo \d+", scaletta)) == fase.capitoli_previsti(L)}', sez)
+        p = b.zb('pronto', nome)
+        esito('fase.py', f'{nome}: pronto con la struttura ancora modello: fermo, file e rapporti elencati, nessun gate',
+              a['vuota'], f'{p.returncode} / {"ancora modello" in p.stderr} / {"rapporto-struttura.md" in p.stderr} / '
+                          f'{b.stato(nome)["gate_in_attesa"]}', sez)
+        q = [b.zb('ok', nome).returncode, b.zb('avanti', nome).returncode, b.zb('esito', nome, '1').returncode]
+        esito('fase.py', f'{nome}: ok / avanti / esito durante la fase struttura: rifiutati', a['prima_del_gate'], q, sez)
+        compila_struttura_ed(L)
+        st = os.path.join(L, '03-struttura', '06-sottotrame-temi.md')
+        open(st, 'a', encoding='utf-8').write('| Promessa senza pagamento | 2 | 3 |  |\n')
+        sf = os.path.join(L, '03-struttura', '09-scelte-fisse.md')
+        t9 = open(sf, encoding='utf-8').read()
+        open(sf, 'w', encoding='utf-8').write(re.sub(r'(?m)^(- Tempo verbale[^:\n]*:).*$', r'\1', t9))
+        b.salva('struttura incompleta')
+        p = b.zb('pronto', nome)
+        esito('fase.py', f'{nome}: senza rapporto del diagnosta, un campo vuoto e una promessa senza chiusura: fermo',
+              a['incompleta'], f'{p.returncode} / {"rapporto-struttura.md" in p.stderr} / {"senza chiusura" in p.stderr} / '
+                               f'{"campo vuoto" in p.stderr}', sez)
+        t = open(st, encoding='utf-8').read().replace('| Promessa senza pagamento | 2 | 3 |  |\n', '')
+        open(st, 'w', encoding='utf-8').write(t)
+        open(sf, 'w', encoding='utf-8').write(t9)
+        b.salva('struttura completa')
+        b.rapporto(nome, 'diagnosta', '06-diagnostica/rapporto-struttura.md')
+        b.rapporto(nome, 'editor-strutturale', '06-diagnostica/piano-revisione-struttura.md', 'Piano: nessun lavoro.\n')
+        p = b.zb('pronto', nome)
+        s = b.stato(nome)
+        esito('fase.py', f'{nome}: pronto: struttura verificata dal motore, nessuna fermata dell\'autore', a['gate'],
+              f'{p.returncode} / {s["gate_in_attesa"]} / {s["fase"]} / {"nessuna fermata" in p.stdout}', sez)
+        p = b.zb('ok', nome)
+        esito('fase.py', f'{nome}: ok dopo la struttura automatica: rifiutato (nessun gate aperto)', a['ok_presto'],
+              p.returncode, sez)
+        creati = [x for x in ('02-bibbia/bibbia.md', 'cronologia.yaml', '03-architettura/manuale-di-stile.md')
+                  if os.path.isfile(os.path.join(L, x))]
+        esito('fase.py', f'{nome}: fase documenti, documenti creati solo ora, struttura registrata', a['ok'],
+              f'{s["fase"]} / {len(creati)} / '
+              f'{sum(1 for k in s["documenti_approvati"] if k.startswith("03-struttura/"))}', sez)
+        esito('comune.py', f'{nome}: piano parole: una sola fonte (03-struttura/08-piano-parole.md)', 'sì',
+              'sì' if comune.rel_piano(L) == os.path.join('03-struttura', '08-piano-parole.md')
+              and not os.path.exists(os.path.join(L, '03-architettura', 'piano-parole.md')) else 'no', sez)
+        b.salva('dopo struttura')
+        open(sf, 'a', encoding='utf-8').write('- Cambio di punto di vista fuori procedura\n')
+        b.salva('scelte fisse cambiate')
+        p = b.zb('avvio', nome)
+        esito('avvio.py', f'{nome}: scelte fisse cambiate dopo la struttura: avvio fermo', a['scelte_cambiate'],
+              f'{p.returncode} / {"09-scelte-fisse.md" in p.stderr}', sez)
+
+
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura}
 
 
 def main(argv):

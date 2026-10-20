@@ -731,3 +731,18 @@ appendici:
   avviso_non_dichiarato: ["AVVISO: 05-appendici/nota-in-piu.md non è dichiarato in libro.yaml (appendici): non entra nel libro."]
   immagine: "True / True"
   fermo_assente: "Appendice dichiarata in libro.yaml ma assente: 05-appendici/non-esiste.md"
+
+fase_struttura:
+  # da motore (971b6df), adattata al modo automatico del 2026-10-20: il gate «struttura» lo verifica il motore,
+  # nessun documento nasce prima della chiusura della struttura; giallo portato sul percorso editoriale,
+  # romance con tutti i gate di un tempo in libro.yaml
+  giallo: &struttura
+    nascita: "['00-progetto', '03-struttura'] / struttura / True"
+    vuota: "2 / True / True / None"
+    prima_del_gate: [2, 2, 2]
+    incompleta: "2 / True / True / True"
+    gate: "0 / None / documenti / True"
+    ok_presto: 2
+    ok: "documenti / 3 / 9"
+    scelte_cambiate: "2 / True"
+  romance: *struttura

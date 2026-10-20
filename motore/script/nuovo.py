@@ -6,10 +6,17 @@ Uso: python3 -B nuovo.py <percorso-briefing>
 - Si ferma se c'è già un libro.yaml, o se il briefing è incompleto (elenca cosa manca, al massimo
   5 domande): in quel caso non crea nulla.
 - Dal briefing (sezione «Direttive») e dal profilo di genere genera: libro.yaml, stato.yaml,
-  LEGGIMI.md, cronologia.yaml, nomi_propri.txt, 02-bibbia/bibbia.md,
-  03-architettura/manuale-di-stile.md, scaletta.md, piano-parole.md, e le cartelle standard.
+  LEGGIMI.md, nomi_propri.txt e le cartelle standard.
+  Percorso editoriale (predefinito): solo i nove file di 03-struttura/ (modelli del livello editoriale);
+  nessun documento prima della struttura (editoriale/struttura/01-fase-struttura.md). Bibbia, codex,
+  cronologia e manuale di stile li crea genera_documenti() quando il motore chiude la fase struttura.
+  Percorso breve («Percorso: breve»): cronologia.yaml, 02-bibbia/bibbia.md, 03-architettura/manuale-di-stile.md,
+  scaletta.md e piano-parole.md subito.
   Le regole (tetti, vietati, vincoli, lunghezze, chiusure) vanno in libro.yaml e nel manuale
-  senza riscriverle a mano; i contenuti narrativi li scrive Claude Code al gate «documenti».
+  senza riscriverle a mano; i contenuti narrativi li scrive Claude Code nella fase «documenti».
+Gate: i libri del percorso editoriale nascono senza fermate dell'autore (gate: []): i controlli li fa il motore;
+la sola pausa è quella di lettura (fase.py). Un briefing può ancora chiedere dei gate («Gate: …»); il gate
+«struttura» resta comunque automatico.
 Il libro nasce solo in <repo>/libri/<slug>/ su un ramo di libro: rifiutato (prima di creare
 qualsiasi cosa) se la cartella è dentro motore/, è la radice del repository, o il ramo è «motore».
 Unica eccezione: le prove della suite (ZB_PROVE=1) usano cartelle temporanee fuori da libri/, ma
@@ -140,8 +147,8 @@ def percorso_di(c):
     return (c.get('percorso') or 'editoriale').strip()
 
 
-GATE_EDITORIALI = ['struttura', 'documenti', 'pagina_campione', 'primi_capitoli', 'struttura_manoscritto',
-                   'line', 'copy', 'bozze']
+# modo automatico (decisione dell'autore del 2026-10-20): nessuna fermata predefinita sul percorso editoriale
+GATE_EDITORIALI = []
 
 
 def cartella_dal_briefing(percorso):
@@ -435,6 +442,29 @@ def genera_piano(libro, n_cap):
     return '\n'.join(righe) + '\n'
 
 
+def genera_documenti(cartella):
+    """Documenti della fase «documenti» del percorso editoriale, alla chiusura (automatica) della struttura:
+    bibbia, cronologia, manuale di stile e codex dal briefing. Scaletta e piano parole restano in 03-struttura/
+    (una sola fonte, comune.rel_piano). Non sovrascrive un file esistente. Restituisce i percorsi creati.
+    (Da motore, 971b6df, adattata: lì i documenti nascevano all'«ok» del gate struttura.)"""
+    import codex
+    import fase
+    cartella, libro, profilo = comune.carica_libro(cartella)
+    b = leggi_briefing(os.path.join(cartella, '00-progetto', 'briefing.md'))
+    n_cap = len([u for u in fase.unita_del_piano(cartella) if u.isdigit()]) or numero_capitoli(libro, profilo)
+    m = os.path.join(comune.radice_motore(), 'modelli')
+    testi = {'02-bibbia/bibbia.md': genera_bibbia(b, libro),
+             'cronologia.yaml': open(os.path.join(m, 'cronologia.yaml'), encoding='utf-8').read(),
+             '03-architettura/manuale-di-stile.md': genera_manuale(b, libro, profilo, n_cap)}
+    testi.update(codex.dal_briefing(b))
+    creati = []
+    for rel, testo in testi.items():
+        if not os.path.exists(os.path.join(cartella, rel)):
+            comune.scrivi(cartella, rel, testo)
+            creati.append(rel)
+    return creati
+
+
 def crea(percorso_briefing):
     cartella = cartella_dal_briefing(percorso_briefing)
     rad = controlla_posizione(cartella)
@@ -461,22 +491,19 @@ def crea(percorso_briefing):
     if comune.editoriale(libro):
         stato.update({'sottofase': None, 'fatti_bloccati': list(b['fatti'])})
     comune.scrivi(cartella, 'stato.yaml', yaml.safe_dump(stato, sort_keys=False, allow_unicode=True))
-    comune.scrivi(cartella, 'cronologia.yaml', open(os.path.join(m, 'cronologia.yaml'), encoding='utf-8').read())
     nomi = sorted({w for p in b['personaggi'] for w in p.split('—')[0].split() if w[:1].isupper()})
     comune.scrivi(cartella, 'nomi_propri.txt', '\n'.join(nomi) + '\n')
-    comune.scrivi(cartella, '02-bibbia/bibbia.md', genera_bibbia(b, libro))
-    comune.scrivi(cartella, '03-architettura/manuale-di-stile.md', genera_manuale(b, libro, profilo, n_cap))
     sigla = libro['dichiarazioni']['chiusura']['sigle'][0]
     fase_iniziale = 'documenti'
     if comune.editoriale(libro):
-        import codex
         import struttura
         fase_iniziale = 'struttura'
         for f, testo in struttura.modelli(libro, n_cap, sigla, round(libro['parole']['target_totale'] / n_cap)).items():
             comune.scrivi(cartella, f'{comune.STRUTTURA}/{f}', testo)
-        for rel, testo in codex.dal_briefing(b).items():
-            comune.scrivi(cartella, rel, testo)
     else:
+        comune.scrivi(cartella, 'cronologia.yaml', open(os.path.join(m, 'cronologia.yaml'), encoding='utf-8').read())
+        comune.scrivi(cartella, '02-bibbia/bibbia.md', genera_bibbia(b, libro))
+        comune.scrivi(cartella, '03-architettura/manuale-di-stile.md', genera_manuale(b, libro, profilo, n_cap))
         comune.scrivi(cartella, '03-architettura/scaletta.md', genera_scaletta(libro, n_cap, sigla))
         comune.scrivi(cartella, '03-architettura/piano-parole.md', genera_piano(libro, n_cap))
     decisioni = '\n'.join(f'- {f}' for f in b['fatti'] + b['non_cambiare']) or '- nessuna'
@@ -502,7 +529,8 @@ def main(argv):
     if comune.editoriale(libro):
         print(f'libro creato in {cartella} ({n_cap} capitoli previsti, da rivedere nella struttura); fase «struttura».')
         print('Prossimo passo: architetto-struttura scrive i nove file di 03-struttura/; poi diagnosta ed '
-              'editor-strutturale (agenti separati); poi «zb pronto <libro>», che apre il gate «struttura».')
+              'editor-strutturale (agenti separati); poi «zb pronto <libro>»: il motore verifica la struttura e, se '
+              'regge, crea bibbia, codex, cronologia e manuale (nessuna fermata dell\'autore).')
     else:
         print(f'libro creato in {cartella} ({n_cap} capitoli previsti); fase «documenti».')
         print('Prossimo passo: completare bibbia, cronologia, scaletta e piano parole; poi «zb pronto <libro>»,'
