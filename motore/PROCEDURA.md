@@ -40,7 +40,7 @@ il percorso breve (sezione 5). Un `libro.yaml` senza il campo `percorso` (libri 
 | `struttura` | architetto-struttura: i nove file di `03-struttura/`; poi diagnosta e editor-strutturale | `struttura`: sempre automatico, nessuna fermata | nove file senza `<!-- zb: modello -->`, nessun campo «- Campo:» vuoto in 01, 02, 03, 09, macrostruttura dichiarata e motivata, schede complete, budget non tutti uguali, almeno una promessa o sottotrama e nessuna senza «Si chiude» in 06; `rapporto-struttura.md` e `piano-revisione-struttura.md` sulla struttura attuale, in commit che non la toccano |
 | `documenti` | direttore-editoriale: bibbia, codex, cronologia, manuale, nota di direzione | `documenti` | `zb codex verifica`; presenti libro.yaml, bibbia, cronologia, manuale e `06-diagnostica/nota-direzione.md` |
 | `pagina_campione` | scrittore-voce | `pagina_campione` | pagina non vuota |
-| `stesura` | scrittore-voce (un capitolo, in sequenza), poi capsula | `lettura` (pausa di lettura), `primi_capitoli`, `lotto`; `controllo_fallito` sempre | `zb esito`: capitolo, audit anti-IA, lunghezze quasi uguali, capsula N-1 presente, nessun rapporto di line o copy |
+| `stesura` | scrittore-voce (un capitolo, in sequenza), revisione del diagnosta sul capitolo (`audit/NN.md`), poi capsula | `lettura` (pausa di lettura), `primi_capitoli`, `lotto`; `controllo_fallito` sempre | `zb esito`: capitolo, audit anti-IA, lunghezze quasi uguali, capsula N-1 presente, nessun rapporto di line o copy; con `revisione_capitolo: obbligatoria` anche `audit/NN.md` sul testo attuale con «passa» |
 | `struttura_manoscritto` | diagnosta, editor-strutturale | `struttura_manoscritto` | rapporto e piano sul manoscritto attuale |
 | `line` | line-editor per capitolo (fino a 3 in parallelo) | `line` | un rapporto per capitolo, intestato e separato |
 | `copy` | correttore-italiano per capitolo | `copy` | come sopra |
@@ -271,6 +271,12 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    pausa di lettura con note, `06-diagnostica/note-lettura.md`.
 2. Riporto la riga «Letto: …» di `zb avvio` (se non l'ho già fatto in questa sessione).
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
+3b. Revisione del capitolo (percorso editoriale): il diagnosta, in una sessione separata da chi ha scritto, prende
+   la prima riga con `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N) e scrive
+   `06-diagnostica/audit/NN.md` con la checklist del capitolo singolo (`editoriale/ruoli/00-diagnosta.md`); ultima
+   riga «passa» o «non passa». Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` si ferma se il
+   rapporto manca, è scritto su un'altra versione del capitolo (impronta della prima riga) o chiude con «non
+   passa»; senza il campo la revisione resta consigliata e `zb esito` non la legge.
 4. `zb esito <libro> N`: esegue `capitolo.py` (report in `06-diagnostica/capitoli/NN.md`, con le righe
    `anti-ia:<misura>` e l'indice Gulpease informativo; audit in `06-diagnostica/anti-ia/NN.md`) e
    aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto).

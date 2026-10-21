@@ -192,6 +192,13 @@ def main(argv):
         return 0
     attesi = [r for r in percorso.rapporti(cartella, libro, fs)
               if r[1] == ruolo] if fs in ('struttura', *percorso.REVISIONI) else []
+    if fs == 'stesura' and ruolo == 'diagnosta':     # revisione del capitolo singolo (06-diagnostica/audit/NN.md)
+        if not n:
+            raise comune.ErroreMotore('Uso: ruolo <libro> diagnosta <N>: in fase «stesura» il diagnosta rivede un '
+                                      'capitolo alla volta')
+        attesi = [percorso.rapporto_capitolo(cartella, libro, n)]
+        print('Ultima riga del rapporto: «passa» oppure «non passa» (con revisione_capitolo: obbligatoria la legge '
+              'zb esito).')
     if fs in ('line', 'copy'):
         if not n:
             raise comune.ErroreMotore(f'Uso: ruolo <libro> {ruolo} <N> (un capitolo alla volta)')

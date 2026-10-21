@@ -200,6 +200,7 @@ def percorso(sez='percorso editoriale'):
     os.makedirs(m)
     shutil.copyfile(os.path.join(F, 'capitoli', '01-il-molo.md'), os.path.join(m, '01-il-molo.md'))
     salva(r, 'scrittore: capitolo 1')
+    revisione_in_stesura(r, L, m, sez)
     p = zb(L, 'esito', '.', '1')
     esito('fase.py', 'esito 1: controlli OK', 0, p.returncode, sez)
     rep1 = os.path.join(L, '06-diagnostica', 'capitoli', '01.md')
@@ -340,6 +341,49 @@ def percorso(sez='percorso editoriale'):
                                                         (['chiusura'] if shutil.which('node') else [])),
           ' → '.join(catena), sez)
     return r, L
+
+
+def revisione_in_stesura(r, L, m, sez):
+    """Diagnosta in fase «stesura» sul capitolo singolo e «revisione_capitolo: obbligatoria» in zb esito (P2).
+    Alla fine libro.yaml e il capitolo tornano come prima; il rapporto resta in 06-diagnostica/audit/."""
+    p = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    esito('ruolo.py', 'diagnosta in fase stesura sul capitolo 1: ammesso, rapporto audit/01.md con la prima riga',
+          '0 / True / True', f'{p.returncode} / {"Rapporto: 06-diagnostica/audit/01.md" in p.stdout} / '
+          f'{"Prima riga: <!-- zb: ruolo=diagnosta; su=" in p.stdout}', sez)
+    p = zb(L, 'ruolo', '.', 'diagnosta')
+    esito('ruolo.py', 'diagnosta in fase stesura senza numero di capitolo: rifiutato', '2 / True',
+          f'{p.returncode} / {"un capitolo alla volta" in p.stderr}', sez)
+    py = os.path.join(L, 'libro.yaml')
+    lb = open(py, encoding='utf-8').read()
+    cap = os.path.join(m, '01-il-molo.md')
+    testo_cap = open(cap, encoding='utf-8').read()
+    open(py, 'w', encoding='utf-8').write(lb.rstrip('\n') + '\nrevisione_capitolo: obbligatoria\n')
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'revisione_capitolo obbligatoria, rapporto assente: esito fermo, capitolo non accettato',
+          '2 / True / None', f'{p.returncode} / {"audit/01.md" in p.stderr and "mancante" in p.stderr} / '
+          f'{stato(L)["ultimo_capitolo_scritto"]}', sez)
+    sorgente = os.path.join(F, 'rapporti', 'audit-01.md')
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+    pa = os.path.join(L, '06-diagnostica', 'audit', '01.md')
+    open(pa, 'w', encoding='utf-8').write(open(pa, encoding='utf-8').read().replace('\npassa\n', '\nnon passa\n'))
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'revisione con «non passa»: esito fermo', '2 / True', f'{p.returncode} / {"«non passa»" in p.stderr}', sez)
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+    open(cap, 'a', encoding='utf-8').write('\n')
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'revisione su un\'altra versione del capitolo: esito fermo', '2 / True',
+          f'{p.returncode} / {"altra versione" in p.stderr}', sez)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+    import percorso   # il caso valido si prova senza zb esito, che accetterebbe il capitolo prima delle prove successive
+    try:
+        cartella, libro, _ = comune.carica_libro(L)
+        percorso.controlla_revisione_capitolo(cartella, libro, '1')
+        ottenuto = 'nessun fermo'
+    except comune.ErroreMotore as e:
+        ottenuto = str(e)
+    open(py, 'w', encoding='utf-8').write(lb)
+    esito('fase.py', 'revisione sulla versione attuale con «passa»: la revisione non ferma', 'nessun fermo', ottenuto, sez)
 
 
 def pausa_note(r, L, sez):

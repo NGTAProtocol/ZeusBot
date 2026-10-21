@@ -34,7 +34,8 @@ INTESTAZIONE = re.compile(r'^<!--\s*zb:\s*ruolo=([\w\-]+);\s*su=([0-9a-f]{12})\s
 CANONE = '06-diagnostica/canone-proposte.md'
 NOTA_DIREZIONE = '06-diagnostica/nota-direzione.md'
 # ruolo -> fasi in cui può lavorare (zb ruolo lo controlla: la scrittura non include revisione)
-FASI_RUOLO = {'architetto-struttura': ['struttura'], 'diagnosta': ['struttura', 'struttura_manoscritto'],
+# il diagnosta lavora anche in «stesura», solo sul capitolo singolo (06-diagnostica/audit/NN.md, rapporto_capitolo)
+FASI_RUOLO = {'architetto-struttura': ['struttura'], 'diagnosta': ['struttura', 'stesura', 'struttura_manoscritto'],
               'editor-strutturale': ['struttura', 'struttura_manoscritto'], 'direttore-editoriale': ['documenti'],
               'scrittore-voce': ['pagina_campione', 'stesura', 'struttura_manoscritto'],
               'capsula': ['stesura', 'struttura_manoscritto'], 'line-editor': ['line'],
@@ -86,6 +87,43 @@ def rapporti(cartella, libro, fase):
     if fase == 'fedelta':
         return [('06-diagnostica/fedelta.md', 'revisore-fedelta', tutti)]
     raise comune.ErroreMotore(f'Fase senza rapporti: {fase}')
+
+
+def rapporto_capitolo(cartella, libro, n):
+    """(rapporto, ruolo, [capitolo]) della revisione del capitolo singolo in fase «stesura» (diagnosta)."""
+    trovati = dict(capitoli(cartella, libro))
+    if str(n) not in trovati:
+        raise comune.ErroreMotore(f'Capitolo «{n}» assente in 04-manoscritto')
+    return (f'06-diagnostica/audit/{nn(n)}.md', 'diagnosta', [trovati[str(n)]])
+
+
+def controlla_revisione_capitolo(cartella, libro, n):
+    """Con «revisione_capitolo: obbligatoria» in libro.yaml (fase «stesura»): il rapporto del diagnosta sul capitolo
+    N deve esistere, essere scritto sulla versione attuale del capitolo e chiudere con la riga «passa».
+    Si ferma con ErroreMotore e il motivo; senza il campo non fa nulla."""
+    if libro.get('revisione_capitolo') != 'obbligatoria' or not str(n).isdigit():
+        return
+    rel, ruolo, testi = rapporto_capitolo(cartella, libro, n)
+    p = os.path.join(cartella, rel)
+    aiuto = (f'«zb ruolo <libro> diagnosta {n}» dà la prima riga; il diagnosta scrive il rapporto in una sessione '
+             'separata da chi ha scritto il capitolo e chiude con la riga «passa» o «non passa».')
+    if not os.path.isfile(p):
+        raise comune.ErroreMotore(f'Revisione del capitolo {n} mancante: {rel} (libro.yaml: revisione_capitolo: '
+                                  f'obbligatoria). {aiuto}')
+    righe = [r.strip() for r in open(p, encoding='utf-8').read().splitlines()]
+    m = INTESTAZIONE.match(righe[0] if righe else '')
+    attuale = impronta(cartella, testi)
+    if not m or m.group(1) != ruolo:
+        raise comune.ErroreMotore(f'{rel}: prima riga senza l\'intestazione del diagnosta. {aiuto}')
+    if m.group(2) != attuale:
+        raise comune.ErroreMotore(f'{rel}: revisione scritta su un\'altra versione del capitolo {n} (impronta '
+                                  f'{m.group(2)}, attuale {attuale}). Serve una nuova revisione del testo attuale.')
+    ultima = next((r for r in reversed(righe) if r), '').lower()
+    if ultima == 'non passa':
+        raise comune.ErroreMotore(f'{rel}: il capitolo {n} «non passa» la revisione. Correzione unica di chi scrive, '
+                                  'poi nuova revisione.')
+    if ultima != 'passa':
+        raise comune.ErroreMotore(f'{rel}: l\'ultima riga deve essere «passa» o «non passa» (trovato «{ultima[:40]}»).')
 
 
 def impronta(cartella, testi):
