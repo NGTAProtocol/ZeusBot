@@ -284,13 +284,15 @@ Sono 7, nella cartella `motore/profili/`: fantascienza, fantasy, giallo, narrati
 
 Un valore del briefing fuori dal profilo è accettato solo con un «Motivo override:» scritto nel briefing. Senza motivo, `zb nuovo` si ferma (<span class="fonte">motore/PROCEDURA.md §3</span>).
 
+Nel thriller la frase media la dà la voce: con `frase_media_voce: true` ogni capitolo si misura sull'intervallo del suo registro nella scheda della voce (corto, freddo, base), dichiarato nella scaletta. Un override in `libro.yaml` resta sopra (<span class="fonte">motore/profili/thriller.yaml; motore/PROCEDURA.md §6</span>).
+
 ## Voci narranti
 
 Una voce dice **come** si racconta. Il **cosa** lo decide l'autore nel briefing (<span class="fonte">motore/README.md, «Banca-voci»</span>).
 
 Le voci stanno in un repository separato, la banca-voci, mai dentro il motore. Il motore le legge in sola lettura dalla cartella indicata da `ZB_BANCA_VOCI`. I nomi delle voci stanno solo lì: questa guida non li scrive (<span class="fonte">motore/passaggio-di-consegne.md, «Stato»</span>).
 
-Ogni voce ha una scheda in 7 sezioni e un elenco di espressioni vietate, `divieti.yaml`. `zb voce lista`, `zb voce mostra <slug>` e `zb voce verifica <slug>` le leggono (<span class="fonte">motore/README.md, «Banca-voci»</span>).
+Ogni voce ha una scheda in 7 sezioni e un elenco di espressioni vietate, `divieti.yaml`. `zb voce lista`, `zb voce mostra <slug>` e `zb voce verifica <slug>` le leggono (<span class="fonte">motore/README.md, «Banca-voci»</span>). Un divieto può avere `massimo: N`: l'avviso scatta solo oltre N volte nel capitolo. La sezione 6 della scheda può avere esempi «versione debole → versione forte»; `zb prepara` dice allo scrittore di leggerli (<span class="fonte">motore/README.md; motore/script/prepara.py</span>).
 
 Un libro sceglie la voce nel briefing («Voce dalla banca:», «Ambientazione:»); `zb nuovo` la scrive in `libro.yaml`. Se il briefing contrasta con la voce, vince il briefing, e il contrasto si segnala (<span class="fonte">motore/README.md, «Banca-voci»; motore/editoriale/LEGGIMI.md</span>).
 
@@ -414,11 +416,12 @@ Poi, in sessioni separate: il diagnosta scrive `06-diagnostica/rapporto-struttur
 
 Per ogni capitolo, la sessione principale chiama l'agente scrittore, mai due capitoli in parallelo (<span class="fonte">motore/editoriale/agenti/scrittore-voce.md; motore/PROCEDURA.md §1b e §6</span>):
 
-1. `zb prepara <libro> N`: scheda, schede del codex della scena, canone, capsule e, dopo una pausa di lettura con note, le tue note;
+1. `zb prepara <libro> N`: scheda, schede del codex della scena, canone, capsule, le sezioni da leggere della voce e, dopo una pausa di lettura con note, le tue note;
 2. lo scrittore scrive `04-manoscritto/NN-<slug>.md`;
-3. `zb esito <libro> N`: parole, stile, continuità, audit anti-IA, lunghezze quasi uguali, capsula precedente;
-4. `zb capsula <libro> N`, l'agente capsula, poi `--verifica`;
-5. salvataggio con `zb salva`.
+3. revisione del capitolo: `zb stile <libro> N` elenca le frasi finali dei paragrafi (`06-diagnostica/frasi-finali/NN.md`); il diagnosta, in un'altra sessione, prende la prima riga da `zb ruolo <libro> diagnosta N` e scrive `06-diagnostica/audit/NN.md`, che chiude con «passa» o «non passa». Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` non accetta il capitolo senza un «passa» sul testo attuale (<span class="fonte">motore/PROCEDURA.md §6; motore/editoriale/ruoli/00-diagnosta.md</span>);
+4. `zb esito <libro> N`: parole, stile, continuità, audit anti-IA, lunghezze quasi uguali, capsula precedente;
+5. `zb capsula <libro> N`, l'agente capsula, poi `--verifica`;
+6. salvataggio con `zb salva`.
 
 Il comando `/scrivi-capitolo N` fa questo giro e si ferma dopo il salvataggio (<span class="fonte">motore/editoriale/comandi/scrivi-capitolo.md</span>).
 
@@ -620,6 +623,8 @@ Quando due regole si contraddicono, vince quella più in alto. Una sola scala (<
 3. profilo di genere;
 4. `motore/editoriale/` (ruoli);
 5. procedura del motore.
+
+Un'eccezione decisa da te: con `frase_media_voce: true` nel profilo (thriller), per la frase media vale la voce, non il manuale (<span class="fonte">motore/editoriale/LEGGIMI.md</span>).
 
 Il catalogo anti-IA e i criteri del correttore sono filtri: non stanno sopra il manuale. **Ogni contrasto si segnala** (<span class="fonte">motore/editoriale/LEGGIMI.md; CLAUDE.md</span>).
 

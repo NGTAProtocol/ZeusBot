@@ -14,6 +14,11 @@ riprendi da lì».
 - Suite: **637/637 OK** (dal punto 12; invariata con D17 e D18), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
+- Lavoro del 2026-10-21 (problema di stile della prova): P1 campo `massimo` dei divieti della voce (1e11337); P2
+  diagnosta in fase «stesura» sul capitolo singolo e `revisione_capitolo: obbligatoria` in `zb esito` (5d19661);
+  P3 frasi finali in `zb stile` (03f12c6); frase media per registro della voce con `frase_media_voce` nel thriller
+  (4d21449); ruoli e `zb prepara` con la voce (6371041). Suite dopo l'ultimo commit di codice: 655/655 OK, 0
+  saltate. Dettaglio, realizzato e non realizzato: `docs/PROPOSTE_MOTORE.md`.
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
   nessuna approvazione intermedia; una sola fermata, la PAUSA DI LETTURA ogni 3 capitoli (`pausa_lettura` 3-5 in
   `libro.yaml`) e a fine stesura. Restano le fermate `controllo_fallito` e `canone`.
