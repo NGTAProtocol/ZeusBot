@@ -266,7 +266,7 @@ Il più alto si inginocchia, non vicino a Kurgan ma vicino alla sedia rovesciata
 
 Li tiene sul palmo e li conta con il pollice: sono tre.
 
-Dove Kurgan è cresciuto, nessuno si china a raccogliere i bossoli. Quel gesto viene da un'altra parte: ogni colpo reso, contato, firmato. Kurgan lo faceva per anni. Lo faceva dopo ogni esercitazione, prima che il sergente desse il rompete le righe.
+Dove Kurgan è cresciuto, nessuno si china a raccogliere i bossoli. Quel gesto viene da un'altra parte: ogni colpo va contato e firmato. Kurgan lo faceva per anni. Lo faceva dopo ogni esercitazione, prima che il sergente desse il rompete le righe.
 
 Il più alto si alza. Mette i tre bossoli nella tasca sul petto, poi tira la cerniera fino in fondo. Si volta verso il compagno e alza la mano sinistra, chiusa a pugno.
 
