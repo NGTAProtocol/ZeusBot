@@ -97,6 +97,67 @@ def rapporto_capitolo(cartella, libro, n):
     return (f'06-diagnostica/audit/{nn(n)}.md', 'diagnosta', [trovati[str(n)]])
 
 
+def misure_rel(n):
+    return f'06-diagnostica/misure/{nn(n)}.md'
+
+
+def bloccanti_prima_della_revisione(risultati, libro):
+    """Esiti che fermano la chiamata al diagnosta: ogni KO; gli avvisi della frase media, dei divieti della voce
+    (controlli «voce:<slug>:…») e delle ripetizioni ravvicinate. Gli altri avvisi passano al diagnosta come righe
+    misurate."""
+    slug = (libro.get('voce') or {}).get('slug')
+    out = []
+    for r in risultati:
+        c = r['controllo']
+        if r['esito'] == 'KO' or (r['esito'] == 'AVVISO' and (
+                c == 'frase_media' or c == 'anti-ia:ripetizioni_ravvicinate'
+                or (slug and c.startswith(f'voce:{slug}:')))):
+            out.append(r)
+    return out
+
+
+def misure_prima_della_revisione(cartella, libro, profilo, n):
+    """Misure del motore sul capitolo N prima del diagnosta (capitolo.py senza scrivere il report, audit anti-IA,
+    frasi finali di zb stile). Con un esito bloccante: ErroreMotore, niente diagnosta. Altrimenti scrive
+    06-diagnostica/frasi-finali/NN.md e 06-diagnostica/misure/NN.md (prima riga con l'impronta del capitolo):
+    le righe misurate che la sessione principale passa al diagnosta. Restituisce il percorso del file delle misure."""
+    import capitolo
+    import stile
+    import revisione
+    n = str(n)
+    met, out = capitolo.controlla(cartella, libro, profilo, n)
+    met_ia, ia = capitolo.anti_ia(cartella, libro, profilo, n, scrivi=False)
+    tutti = out + comune.applica_eccezioni(ia, libro)
+    blocca = bloccanti_prima_della_revisione(tutti, libro)
+    if blocca:
+        elenco = '; '.join(f'{r["controllo"]} {r["esito"]}' + (f' (riga {r["riga"]})' if r['riga'] else '')
+                           + (f': {r["dettaglio"]}' if r['dettaglio'] else '') for r in blocca[:8])
+        raise comune.ErroreMotore(f'Capitolo {n}: misure del motore non superate ({len(blocca)}): {elenco}. '
+                                  'Non chiamare il diagnosta: prima una correzione mirata di chi scrive, poi di nuovo '
+                                  f'«zb ruolo <libro> diagnosta {n}».')
+    _, _, testi = rapporto_capitolo(cartella, libro, n)
+    p = dict(comune.unita(cartella, libro))[n]
+    ff = stile.frasi_finali(open(p, encoding='utf-8').read(), comune.lingue()[libro['lingua']])
+    comune.scrivi(cartella, f'06-diagnostica/frasi-finali/{nn(n)}.md', stile.tabella_frasi_finali(n, ff))
+    righe = [f'<!-- zb: misure; su={revisione.impronta(cartella, testi)} -->',
+             f'# Misure del capitolo {n} per il diagnosta', '',
+             'Scritte da «zb ruolo <libro> diagnosta N» prima della revisione: il capitolo ha superato le misure del '
+             'motore (nessun KO; frase media, divieti della voce e ripetizioni ravvicinate senza avvisi). Il diagnosta '
+             'non rifà queste misure.', '',
+             '| Misura | Valore |', '|---|---|',
+             f'| Parole | {met.get("parole")} |',
+             f'| Frase media | {met.get("frase_media")} (intervallo {met.get("frase_media_intervallo", "—")}) |',
+             f'| Dialogo | {met.get("dialogo_percento")}% |',
+             f'| Ripetizioni ravvicinate | {met_ia.get("ripetizioni_per_mille")} per mille |',
+             f'| Aperture uguali | {met_ia.get("aperture_uguali")}% |',
+             f'| Frasi finali | {len(ff)}, in 06-diagnostica/frasi-finali/{nn(n)}.md |', '',
+             '## Righe misurate (avvisi che restano, con la riga)', '']
+    righe += stile.tabella(tutti) if tutti else ['Nessun avviso.']
+    rel = misure_rel(n)
+    comune.scrivi(cartella, rel, '\n'.join(righe) + '\n')
+    return rel
+
+
 def controlla_revisione_capitolo(cartella, libro, n):
     """Con «revisione_capitolo: obbligatoria» in libro.yaml (fase «stesura»): il rapporto del diagnosta sul capitolo
     N deve esistere, essere scritto sulla versione attuale del capitolo e chiudere con la riga «passa».
@@ -124,6 +185,11 @@ def controlla_revisione_capitolo(cartella, libro, n):
                                   'poi nuova revisione.')
     if ultima != 'passa':
         raise comune.ErroreMotore(f'{rel}: l\'ultima riga deve essere «passa» o «non passa» (trovato «{ultima[:40]}»).')
+    pm = os.path.join(cartella, misure_rel(n))     # le misure del motore vengono prima del diagnosta
+    prima = open(pm, encoding='utf-8').readline().strip() if os.path.isfile(pm) else ''
+    if prima != f'<!-- zb: misure; su={attuale} -->':
+        raise comune.ErroreMotore(f'{misure_rel(n)}: misure del motore assenti o scritte su un\'altra versione del '
+                                  f'capitolo {n}. Prima del diagnosta: «zb ruolo <libro> diagnosta {n}».')
 
 
 def impronta(cartella, testi):

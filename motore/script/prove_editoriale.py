@@ -346,17 +346,32 @@ def percorso(sez='percorso editoriale'):
 def revisione_in_stesura(r, L, m, sez):
     """Diagnosta in fase «stesura» sul capitolo singolo e «revisione_capitolo: obbligatoria» in zb esito (P2).
     Alla fine libro.yaml e il capitolo tornano come prima; il rapporto resta in 06-diagnostica/audit/."""
+    # misure del motore prima del revisore: un capitolo con un KO (frase vietata della lista nera) → non chiamare il diagnosta
+    cap = os.path.join(m, '01-il-molo.md')
+    testo_cap = open(cap, encoding='utf-8').read()
+    open(cap, 'w', encoding='utf-8').write(testo_cap + '\nTrattenne il respiro senza accorgersene.\n')
+    p = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    misure = os.path.join(L, '06-diagnostica', 'misure', '01.md')
+    esito('ruolo.py', 'misure prima del revisore: capitolo con un KO, «non chiamare il diagnosta», nessuna prima riga, '
+          'nessun file delle misure', '2 / True / False / False',
+          f'{p.returncode} / {"Non chiamare il diagnosta" in p.stderr and "voce:respiro_senza_accorgersene KO" in p.stderr} / '
+          f'{"Prima riga:" in p.stdout} / {os.path.isfile(misure)}', sez)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)
     p = zb(L, 'ruolo', '.', 'diagnosta', '1')
     esito('ruolo.py', 'diagnosta in fase stesura sul capitolo 1: ammesso, rapporto audit/01.md con la prima riga',
           '0 / True / True', f'{p.returncode} / {"Rapporto: 06-diagnostica/audit/01.md" in p.stdout} / '
           f'{"Prima riga: <!-- zb: ruolo=diagnosta; su=" in p.stdout}', sez)
+    tm = open(misure, encoding='utf-8').read() if os.path.isfile(misure) else ''
+    su = p.stdout.split('su=')[1][:12] if 'su=' in p.stdout else '?'
+    esito('ruolo.py', 'misure superate: misure/01.md con la stessa impronta della prima riga, righe misurate e frasi '
+          'finali scritte', 'True / True / True',
+          f'{tm.startswith(f"<!-- zb: misure; su={su} -->")} / {"## Righe misurate" in tm and "| Frase media |" in tm} / '
+          f'{os.path.isfile(os.path.join(L, "06-diagnostica", "frasi-finali", "01.md"))}', sez)
     p = zb(L, 'ruolo', '.', 'diagnosta')
     esito('ruolo.py', 'diagnosta in fase stesura senza numero di capitolo: rifiutato', '2 / True',
           f'{p.returncode} / {"un capitolo alla volta" in p.stderr}', sez)
     py = os.path.join(L, 'libro.yaml')
     lb = open(py, encoding='utf-8').read()
-    cap = os.path.join(m, '01-il-molo.md')
-    testo_cap = open(cap, encoding='utf-8').read()
     open(py, 'w', encoding='utf-8').write(lb.rstrip('\n') + '\nrevisione_capitolo: obbligatoria\n')
     p = zb(L, 'esito', '.', '1')
     esito('fase.py', 'revisione_capitolo obbligatoria, rapporto assente: esito fermo, capitolo non accettato',
@@ -382,8 +397,19 @@ def revisione_in_stesura(r, L, m, sez):
         ottenuto = 'nessun fermo'
     except comune.ErroreMotore as e:
         ottenuto = str(e)
+    os.rename(misure, misure + '.via')
+    try:
+        percorso.controlla_revisione_capitolo(cartella, libro, '1')
+        senza_misure = 'nessun fermo'
+    except comune.ErroreMotore as e:
+        senza_misure = 'fermo' if 'misure del motore assenti' in str(e) else str(e)
+    os.rename(misure + '.via', misure)
+    p = zb(L, 'agenti', 'prossimo', '.')
     open(py, 'w', encoding='utf-8').write(lb)
     esito('fase.py', 'revisione sulla versione attuale con «passa»: la revisione non ferma', 'nessun fermo', ottenuto, sez)
+    esito('fase.py', 'revisione con «passa» ma senza le misure del motore: esito fermo', 'fermo', senza_misure, sez)
+    esito('agenti.py', 'agenti prossimo con revisione_capitolo obbligatoria: zb ruolo diagnosta prima del revisore',
+          '0 / True', f'{p.returncode} / {"diagnosta N (misure del motore prima del revisore" in p.stdout}', sez)
 
 
 def pausa_note(r, L, sez):

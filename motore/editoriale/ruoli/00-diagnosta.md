@@ -13,9 +13,10 @@ capitolo fuori dai gate `audit/NN.md`) nel formato di `diagnosi/03-gravita-e-rap
 
 ## Capitolo singolo (`06-diagnostica/audit/NN.md`)
 Revisione di un capitolo appena scritto, prima che sia accettato, in sessione separata da chi lo ha scritto. Prima
-riga: `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N). Prima di leggere: `zb stile <libro> N`, che
-scrive `06-diagnostica/frasi-finali/NN.md`.
-Input: il capitolo, `06-diagnostica/frasi-finali/NN.md`, la scheda della voce (sezioni 2, 3 e 6: regole, misure ed
+riga: `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che prima misura il capitolo: con un KO, o un
+avviso di frase media, divieti della voce o ripetizioni ravvicinate, si ferma e la revisione non comincia; con le misure
+superate scrive `06-diagnostica/misure/NN.md` (righe misurate: non si rifanno) e `06-diagnostica/frasi-finali/NN.md`.
+Input: il capitolo, `06-diagnostica/misure/NN.md`, `06-diagnostica/frasi-finali/NN.md`, la scheda della voce (sezioni 2, 3 e 6: regole, misure ed
 esempi «debole → forte»), i file di `06-diagnostica/preparazione/NN.md` (codex filtrato, canone, capsule) e la
 capsula del capitolo precedente. Checklist, in quest'ordine; per ogni punto si elencano le frasi trovate (riga e
 testo) e il loro numero, anche quando è zero:
