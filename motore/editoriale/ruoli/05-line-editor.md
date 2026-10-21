@@ -15,6 +15,18 @@ Il capitolo, la scheda della voce, `anti-ia/catalogo-it.md`, i divieti della voc
 - sostituisce formule da IA con dettaglio concreto;
 - protegge la voce del libro e dei personaggi.
 
+## Controlli per funzione
+Le stesse regole della checklist del diagnosta per il capitolo singolo (`00-diagnosta.md`, «Capitolo
+singolo»), applicate frase per frase. Per ognuna il rapporto elenca le frasi trovate (riga e testo) e il loro
+numero, anche zero:
+- chiuse a sentenza definite per funzione (frase finale di paragrafo che commenta o riassume invece di
+  mostrare; tolta la frase, il paragrafo dice ancora tutto), entro il limite della voce;
+- eco: una battuta non riprende la parola piena dell'altro, nemmeno senza «ripeté»;
+- personaggi senza nome: una sola etichetta per scena, più al massimo una variante; niente giro di sinonimi;
+- chi fa cosa: con due persone dello stesso genere in scena, il nome al posto di «lui», «lo», «gli»;
+- registro corto: per alzare una media troppo bassa non si uniscono frasi corte con «e», «mentre» o
+  virgole; per abbassarne una troppo alta si tagliano parole e subordinate dentro la frase.
+
 ## Principio
 Intervento minimo efficace: se una frase funziona, non si tocca. Si corregge per sottrazione, non per sostituzione;
 si rilegge ciò che la correzione introduce; non si aggiungono dettagli che il testo non ha; ambiguità, omissioni e
