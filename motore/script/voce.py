@@ -108,6 +108,15 @@ def divieti_del_libro(libro):
         return []
 
 
+def esempi_debole_forte(b, slug):
+    """Numero di esempi «versione debole → versione forte» nella sezione 6 della scheda: righe «Debole: …»
+    (anche numerate, «1. Debole: …»), contate solo se la sezione ha anche almeno una riga «Forte: …»."""
+    corpo = sezioni(open(scheda(b, slug), encoding='utf-8').read()).get(6, ('', ''))[1]
+    deboli = len(re.findall(r'(?m)^\s*(?:\d+\.\s*)?Debole:', corpo))
+    forti = len(re.findall(r'(?m)^\s*(?:\d+\.\s*)?Forte:', corpo))
+    return deboli if forti else 0
+
+
 def registri(b, slug):
     """{registro: [a, b]} dalla riga «frase media» della tabella nella sezione 3 della scheda («Ritmo e sintassi»):
     il nome del registro è l'intestazione della colonna senza la parentesi e senza la parola «registro»

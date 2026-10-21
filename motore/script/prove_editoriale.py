@@ -403,11 +403,32 @@ def pausa_note(r, L, sez):
     ly = os.path.join(L2, 'libro.yaml')
     orig = open(ly, encoding='utf-8').read()
     open(ly, 'w', encoding='utf-8').write(orig.rstrip('\n') + '\nvoce: {slug: voce-di-prova, ambientazione: altro}\n')
-    pp = zb(L2, 'prepara', '.', '3')
-    t = open(prep, encoding='utf-8').read() if os.path.isfile(prep) else ''
-    esito('prepara.py', 'libro con voce: zb prepara dice di leggere le sezioni 2, 3 e 6 della scheda (esempi) e i divieti',
-          '0 / True / True', f'{pp.returncode} / {"## Voce (banca-voci, sola lettura)" in t} / '
-          f'{"sezione 6" in t and "voci/voce-di-prova/divieti.yaml" in t}', sez)
+    banca = os.path.join(M, 'prove', 'banca-voci-prova')
+
+    def prepara_con(b):
+        p = zb(L2, 'prepara', '.', '3', env=dict(E, ZB_BANCA_VOCI=b))
+        return p, (open(prep, encoding='utf-8').read() if os.path.isfile(prep) else '')
+    if os.path.isfile(prep):
+        os.remove(prep)
+    pp, t = prepara_con(banca)       # voce di prova: sezione 6 con il solo campione, nessun esempio «debole → forte»
+    esito('prepara.py', 'libro con voce senza esempi: sezioni 2, 3 e 6 e divieti, gli esempi «debole → forte» non nominati',
+          '0 / True / True / False', f'{pp.returncode} / {"## Voce (banca-voci, sola lettura)" in t} / '
+          f'{"sezione 6 (campione)" in t and "voci/voce-di-prova/divieti.yaml" in t} / {"debole" in t}', sez)
+    d = tempfile.mkdtemp(dir=TMP)
+    b2 = shutil.copytree(banca, os.path.join(d, 'banca'))
+    sc = os.path.join(b2, 'voci', 'voce-di-prova', 'scheda.md')
+    st = open(sc, encoding='utf-8').read()
+    i = st.index('## 7.')
+    open(sc, 'w', encoding='utf-8').write(st[:i] + '### 6.1 Esempi\n\n1. Debole: — Resto qui, perché da qui vedo la porta.\n'
+                                          '   Forte: — Resto qui.\n2. Debole: Chiuse. Certe cose finiscono così.\n'
+                                          '   Forte: Chiuse e girò la chiave.\n\n' + st[i:])
+    pp, t = prepara_con(b2)
+    esito('prepara.py', 'libro con voce con esempi: la sezione 6 nomina i 2 esempi «debole → forte»', '0 / True',
+          f'{pp.returncode} / {"2 esempi originali «versione debole → versione forte»" in t}', sez)
+    os.remove(sc)
+    pp, t = prepara_con(b2)
+    esito('prepara.py', 'scheda della voce assente: zb prepara si ferma con il percorso', '2 / True',
+          f'{pp.returncode} / {"Scheda della voce «voce-di-prova» assente" in pp.stderr}', sez)
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 6'))
     p6 = zb(L2, 'stato', '.')
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 5'))

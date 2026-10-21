@@ -269,7 +269,9 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    scrive l'agente `scrittore-voce`, chiamato dalla sessione principale (mai due capitoli in parallelo);
    `zb prepara <libro> N` gli dà la scheda del capitolo, il codex filtrato, il canone, le capsule e, dopo una
    pausa di lettura con note, `06-diagnostica/note-lettura.md`; con una voce della banca indica anche le sezioni
-   2, 3 e 6 della scheda della voce (esempi «debole → forte») e i divieti, da leggere prima di scrivere.
+   2, 3 e 6 della scheda della voce e i divieti, da leggere prima di scrivere. Gli esempi «versione debole →
+   versione forte» si nominano solo se la sezione 6 li ha (righe «Debole: …» e «Forte: …»); se la scheda o
+   `ZB_BANCA_VOCI` mancano, `zb prepara` si ferma con il motivo.
 2. Riporto la riga «Letto: …» di `zb avvio` (se non l'ho già fatto in questa sessione).
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
 3b. Revisione del capitolo (percorso editoriale): il diagnosta, in una sessione separata da chi ha scritto, prende
