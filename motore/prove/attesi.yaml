@@ -711,6 +711,14 @@ voce:
   divieti_senza_voce: "[]"
   divieti_senza_banca: "[]"
   divieti_con_voce: "['voce:voce-di-prova:dunque_dunque|AVVISO', 'voce:voce-di-prova:oltremodo|AVVISO', 'voce:voce-di-prova:vecchia_bottega|AVVISO']"
+  massimo_divieti: |-
+      - {id: stanca_uno, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic, massimo: 1}
+      - {id: stanca_due, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic, massimo: 2}
+      - {id: stanca_ogni, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic}
+  frase_massimo: "Irene era stanchissima, la sorella era stanchissima anche lei."
+  massimo_esiti: "['stanca_ogni|AVVISO|stanchissima', 'stanca_ogni|AVVISO|stanchissima', 'stanca_uno|AVVISO|2 occorrenze (massimo 1)']"
+  massimo_non_valido: "- {id: stanca_rotto, pattern: 'stanchissima', tipo: tic, massimo: uno}"
+  massimo_verifica: "1 / True / False"
 
 recinto_libro:
   messaggio_motore: "è dentro motore/, che resta sempre pulito"

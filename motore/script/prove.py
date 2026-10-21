@@ -2343,10 +2343,44 @@ def voce(A):
                 os.environ['ZB_BANCA_VOCI'] = prima
         return sorted(f'{r["controllo"]}|{r["esito"]}' for r in ris if r['controllo'].startswith('voce:voce-di-prova:'))
 
+    def divieti_dettagli(L, b, profilo_extra=None):
+        py = os.path.join(L, 'libro.yaml')
+        lb = yaml.safe_load(open(py, encoding='utf-8'))
+        lb['voce'] = {'slug': 'voce-di-prova', 'ambientazione': 'altro'}
+        open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+        prima = os.environ.pop('ZB_BANCA_VOCI', None)
+        os.environ['ZB_BANCA_VOCI'] = b
+        try:
+            cartella, libro, profilo = comune.carica_libro(L)
+            profilo.update(profilo_extra or {})
+            return stile.controlla_libro(cartella, libro, profilo)['1'][1]
+        finally:
+            os.environ.pop('ZB_BANCA_VOCI', None)
+            if prima is not None:
+                os.environ['ZB_BANCA_VOCI'] = prima
+
     esito('stile.py', '(g) divieti della voce: libro senza voce', A['divieti_senza_voce'], divieti_trovati(False, banca), sez)
     esito('stile.py', '(g) divieti della voce: libro con voce, senza ZB_BANCA_VOCI', A['divieti_senza_banca'],
           divieti_trovati(True, None), sez)
     esito('stile.py', '(g) divieti della voce: libro con voce e banca', A['divieti_con_voce'], divieti_trovati(True, banca), sez)
+    # (h) campo «massimo» dei divieti della voce (voce.py lo porta a stile.py): avviso solo oltre il massimo
+    d = tempfile.mkdtemp(dir=TMP)
+    bm = shutil.copytree(banca, os.path.join(d, 'banca'))
+    pdm = os.path.join(bm, 'voci', 'voce-di-prova', 'divieti.yaml')
+    base_d = open(pdm, encoding='utf-8').read()
+    open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + ''.join(f'  {x}\n' for x in A['massimo_divieti'].splitlines()))
+    Lm = copia_libro('mini-libro')
+    open(os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write('\n' + A['frase_massimo'] + '\n')
+    trovati = []
+    for r in divieti_dettagli(Lm, bm):
+        if r['controllo'].split(':')[-1] in ('stanca_uno', 'stanca_due', 'stanca_ogni'):
+            trovati.append(f'{r["controllo"].split(":")[-1]}|{r["esito"]}|{r["dettaglio"]}')
+    esito('stile.py', '(h) massimo dei divieti: 2 occorrenze con massimo 1 (un avviso), con massimo 2 (nessuno), senza '
+          'massimo (un avviso per occorrenza, come prima)', A['massimo_esiti'], sorted(trovati), sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n  ' + A['massimo_non_valido'] + '\n')
+    p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bm)
+    esito('voce.py', '(h) massimo non intero: verifica KO con il motivo', A['massimo_verifica'],
+          f'{p.returncode} / {"«massimo» non valido" in p.stdout} / {tb(p)}', sez)
     # (f) schema: voce senza slug rifiutata; zb aiuto; modello del briefing
     Lm = copia_libro('mini-libro')
     open(os.path.join(Lm, 'libro.yaml'), 'a', encoding='utf-8').write('voce: {ambientazione: altro}\n')

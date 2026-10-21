@@ -7,8 +7,10 @@ La banca-voci è un repository separato, fuori dal motore: il percorso si legge 
 ZB_BANCA_VOCI, mai scritto nel codice. Struttura attesa:
   indice.yaml                 voci: [{slug, nome, genere, stato: pronta | da_completare}]
   voci/<slug>/scheda.md       7 sezioni «## N. Titolo», nell'ordine di SEZIONI
-  voci/<slug>/divieti.yaml    divieti: [{id, espressione | pattern, tipo, nota}]: espressioni vietate
-                              della voce; stile.py le aggiunge alle voci del libro (modalità avviso)
+  voci/<slug>/divieti.yaml    divieti: [{id, espressione | pattern, tipo, nota, massimo}]: espressioni vietate
+                              della voce; stile.py le aggiunge alle voci del libro (modalità avviso). Con
+                              «massimo: N» (intero ≥ 0, facoltativo) l'avviso scatta solo oltre N occorrenze
+                              nell'unità; senza, ogni occorrenza è un avviso (come prima)
 - lista: le voci dell'indice, con genere e stato.
 - mostra: la scheda in blocchi di circa 120 righe (come revisione.py); N predefinito 1.
 - verifica: la voce è nell'indice, ha la scheda con le 7 sezioni e il campo «ambientazione:»
@@ -82,8 +84,15 @@ def divieti(b, slug):
             re.compile(pattern)
         except re.error as e:
             raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: pattern non valido in «{d["id"]}»: {e}')
-        out.append({'id': f'{slug}:{d["id"]}', 'espressione': d.get('espressione'), 'pattern': pattern,
-                    'modalita': 'avviso', 'nota': d.get('nota') or f'divieto della voce {slug}'})
+        voce = {'id': f'{slug}:{d["id"]}', 'espressione': d.get('espressione'), 'pattern': pattern,
+                'modalita': 'avviso', 'nota': d.get('nota') or f'divieto della voce {slug}'}
+        if 'massimo' in d:
+            m = d['massimo']
+            if isinstance(m, bool) or not isinstance(m, int) or m < 0:
+                raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «massimo» non valido in «{d["id"]}» '
+                                          f'({m!r}): serve un intero ≥ 0')
+            voce['massimo'] = m      # stile.py: AVVISO solo oltre il massimo di occorrenze nell'unità
+        out.append(voce)
     return out
 
 
