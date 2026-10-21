@@ -275,14 +275,22 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    `ZB_BANCA_VOCI` mancano, `zb prepara` si ferma con il motivo.
 2. Riporto la riga «Letto: …» di `zb avvio` (se non l'ho già fatto in questa sessione).
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
-3b. Revisione del capitolo (percorso editoriale): il diagnosta, in una sessione separata da chi ha scritto, prende
-   la prima riga con `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N) e scrive
-   `06-diagnostica/audit/NN.md` con la checklist del capitolo singolo (`editoriale/ruoli/00-diagnosta.md`); ultima
-   riga «passa» o «non passa». L'agente `diagnosta` installato non ha la shell (sola lettura): `zb stile <libro> N` e
-   `zb ruolo <libro> diagnosta N` li lancia la sessione principale, che gli passa la riga da copiare
-   (`docs/PROPOSTE_MOTORE.md`, P4). Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` si ferma se il
-   rapporto manca, è scritto su un'altra versione del capitolo (impronta della prima riga) o chiude con «non
-   passa»; senza il campo la revisione resta consigliata e `zb esito` non la legge.
+3b. Revisione del capitolo (percorso editoriale). Prima le misure del motore: la sessione principale lancia
+   `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che esegue i controlli di `capitolo.py` e l'audit
+   anti-IA senza scrivere il report. Con un KO, o un avviso di frase media, dei divieti della voce o delle ripetizioni
+   ravvicinate, si ferma (codice 2): il diagnosta non si chiama e chi scrive fa una correzione mirata. Con le misure
+   superate scrive `06-diagnostica/misure/NN.md` (prima riga con l'impronta del capitolo; misure, righe misurate con
+   gli avvisi restanti, elenco «File da leggere» e canone) e `06-diagnostica/frasi-finali/NN.md`, e stampa la prima
+   riga del rapporto. L'agente `diagnosta` installato non ha la shell (sola lettura): la sessione principale gli passa
+   la riga e il file delle misure. Il diagnosta, in una sessione separata da chi ha scritto, legge solo i file
+   elencati lì e scrive `06-diagnostica/audit/NN.md` con la checklist del capitolo singolo
+   (`editoriale/ruoli/00-diagnosta.md`), la sezione `## Da correggere` (riga, frase, motivo) e l'ultima riga «passa» o
+   «non passa». Un solo giro completo: dopo un «non passa» e la correzione, `zb ruolo` prepara il secondo giro con le
+   sole frasi del primo (che resta in `audit/NN-giro1.md`); dopo il secondo «non passa» si ferma e decide l'autore
+   (`--nuovo-giro`, dopo il suo «ok», riparte da un giro completo). Con `revisione_capitolo: obbligatoria` in
+   `libro.yaml`, `zb esito` si ferma se il rapporto manca, è scritto su un'altra versione del capitolo (impronta della
+   prima riga), chiude con «non passa» o mancano le misure del motore sul testo attuale; senza il campo la revisione
+   resta consigliata e `zb esito` non la legge.
 4. `zb esito <libro> N`: esegue `capitolo.py` (report in `06-diagnostica/capitoli/NN.md`, con le righe
    `anti-ia:<misura>` e l'indice Gulpease informativo; audit in `06-diagnostica/anti-ia/NN.md`) e
    aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto). `zb stile <libro> [N]` scrive anche

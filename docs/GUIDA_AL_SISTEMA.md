@@ -82,13 +82,13 @@ svg { width: 100%; height: auto; }
 <li><a href="#parole">0. Le parole da sapere</a><span>4</span></li>
 <li><a href="#cap1">1. A cosa serve il sistema</a><span>8</span></li>
 <li><a href="#cap2">2. Organigramma: chi fa cosa</a><span>10</span></li>
-<li><a href="#cap3">3. Il percorso di un libro</a><span>28</span></li>
-<li><a href="#cap4">4. Le regole</a><span>49</span></li>
-<li><a href="#cap5">5. I rami</a><span>58</span></li>
-<li><a href="#cap6">6. Cosa c'è e cosa non esiste</a><span>61</span></li>
-<li><a href="#cap7">7. Appendici e indice</a><span>65</span></li>
-<li><a href="#cap8">8. Punti deboli e decisioni aperte</a><span>67</span></li>
-<li><a href="#cap9">9. Dove trovare le cose</a><span>72</span></li>
+<li><a href="#cap3">3. Il percorso di un libro</a><span>29</span></li>
+<li><a href="#cap4">4. Le regole</a><span>51</span></li>
+<li><a href="#cap5">5. I rami</a><span>60</span></li>
+<li><a href="#cap6">6. Cosa c'è e cosa non esiste</a><span>63</span></li>
+<li><a href="#cap7">7. Appendici e indice</a><span>67</span></li>
+<li><a href="#cap8">8. Punti deboli e decisioni aperte</a><span>69</span></li>
+<li><a href="#cap9">9. Dove trovare le cose</a><span>74</span></li>
 </ol>
 </div>
 
@@ -215,7 +215,7 @@ Ogni ruolo ha un file in `motore/editoriale/ruoli/`. Legge solo i file del suo �
 
 | # | Ruolo | Lavoro | Fase |
 |---|---|---|---|
-| 0 | Diagnosta | dice cosa fa il testo e dove non funziona, senza riscrivere: `rapporto-struttura.md`, `rapporto-manoscritto.md` | `struttura`, `struttura_manoscritto` |
+| 0 | Diagnosta | dice cosa fa il testo e dove non funziona, senza riscrivere: `rapporto-struttura.md`, `rapporto-manoscritto.md`; in stesura `audit/NN.md`, un capitolo alla volta | `struttura`, `stesura` (solo con N), `struttura_manoscritto` |
 | 1 | Direttore editoriale | bibbia, schede del codex, cronologia, nota di direzione | `documenti` |
 | 2 | Architetto della struttura | i nove file di `03-struttura/` | `struttura` |
 | 3 | Scrittore con voce | pagina campione e capitoli | `pagina_campione`, `stesura` |
@@ -232,7 +232,7 @@ Ogni ruolo ha un file in `motore/editoriale/ruoli/`. Legge solo i file del suo �
 
 Gli agenti sono 12. In `motore/editoriale/agenti/` ce ne sono 10: uno per ruolo, più il **lettore cieco** (passo facoltativo) e la **capsula**. In `motore/editoriale/lingue/agenti/` ci sono i 2 della traduzione: traduttore e revisore di fedeltà (<span class="fonte">cartelle motore/editoriale/agenti/ e lingue/agenti/; zb agenti stato</span>).
 
-- **Modelli.** Forte (opus): architetto, editor strutturale, diagnosta. Medio (sonnet): direttore, scrittore, line editor, correttore di italiano, correttore di bozze, lettore cieco, traduttore, revisore di fedeltà. Leggero (haiku): capsula. Fonte unica: `motore/dati/modelli-ruoli.yaml` (<span class="fonte">motore/dati/modelli-ruoli.yaml</span>).
+- **Modelli.** Forte (opus): architetto, editor strutturale. Medio (sonnet): direttore, scrittore, line editor, correttore di italiano, correttore di bozze, lettore cieco, traduttore, revisore di fedeltà. Leggero (haiku): capsula e diagnosta (dal 2026-10-21, il più economico tra gli alias ammessi). Fonte unica: `motore/dati/modelli-ruoli.yaml` (<span class="fonte">motore/dati/modelli-ruoli.yaml</span>).
 - **In sequenza:** scrittore e traduttore, un capitolo per volta. **In parallelo:** line editor, correttore di italiano e capsula, al massimo 3 alla volta; con i limiti d'uso si scende a 2, poi a 1 (<span class="fonte">motore/dati/orchestrazione.yaml; motore/dati/modelli-ruoli.yaml</span>).
 - **Chi chiamare ora:** `zb agenti prossimo <libro>`. Non scrive nulla (<span class="fonte">motore/script/agenti.py</span>).
 - **Risposta breve:** ogni agente risponde con al massimo 10 righe e non fa commit né push (<span class="fonte">motore/dati/orchestrazione.yaml; motore/editoriale/agenti/</span>).
@@ -418,7 +418,7 @@ Per ogni capitolo, la sessione principale chiama l'agente scrittore, mai due cap
 
 1. `zb prepara <libro> N`: scheda e parole previste del capitolo (lo scrittore non rilegge la scaletta e il piano parole interi), schede del codex della scena, canone, capsule, le sezioni da leggere della voce e, dopo una pausa di lettura con note, le tue note;
 2. lo scrittore scrive `04-manoscritto/NN-<slug>.md`;
-3. revisione del capitolo: `zb stile <libro> N` elenca le frasi finali dei paragrafi (`06-diagnostica/frasi-finali/NN.md`); il diagnosta, in un'altra sessione, prende la prima riga da `zb ruolo <libro> diagnosta N` (l'agente installato non ha la shell: i due comandi li lancia la sessione principale e gli passa la riga) e scrive `06-diagnostica/audit/NN.md`, che chiude con «passa» o «non passa». Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` non accetta il capitolo senza un «passa» sul testo attuale (<span class="fonte">motore/PROCEDURA.md §6; motore/editoriale/ruoli/00-diagnosta.md</span>);
+3. revisione del capitolo: prima le misure del motore. `zb ruolo <libro> diagnosta N` controlla il capitolo (frase media, dialogo, divieti, ripetizioni, gli altri controlli di `zb esito`): con un KO, o un avviso di frase media, divieti della voce o ripetizioni, si ferma e il diagnosta non si chiama. Con le misure superate scrive `06-diagnostica/misure/NN.md` (misure, righe misurate, file da leggere, canone) e le frasi finali; la sessione principale passa al diagnosta la prima riga e quel file (l'agente non ha la shell). Il diagnosta, in un'altra sessione, scrive `06-diagnostica/audit/NN.md` con «## Da correggere» e chiude con «passa» o «non passa». Un solo giro completo: il secondo rivede solo le frasi segnalate dal primo; dopo il secondo «non passa» decidi tu. Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` non accetta il capitolo senza un «passa» e le misure sul testo attuale (<span class="fonte">motore/PROCEDURA.md §6; motore/editoriale/ruoli/00-diagnosta.md; motore/script/percorso.py</span>);
 4. `zb esito <libro> N`: parole, stile, continuità, audit anti-IA, lunghezze quasi uguali, capsula precedente;
 5. `zb capsula <libro> N`, l'agente capsula, poi `--verifica`;
 6. salvataggio con `zb salva`.
@@ -600,7 +600,7 @@ Le eccezioni sono in `motore/dati/cartella-unica.yaml`: `CLAUDE.md`, `.gitignore
 
 `zb push` fa il push del ramo corrente; se fallisce riprova, poi tenta un ramo alternativo, poi un `git bundle`. Sul ramo di un libro controlla prima la cartella unica. Sul **lavoro del motore** vuole una `zb prove` intera e tutta OK sullo stato attuale: le prove lasciano un'impronta, e senza quell'impronta il push non parte (<span class="fonte">motore/script/push.py; motore/script/prove.py</span>).
 
-Al punto 9 dell'integrazione le prove erano 632, tutte OK; al punto 8b, 633; al punto 12, 637 (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, D12, D15 e D16</span>). Oggi sono 663, tutte OK, nessuna saltata (<span class="fonte">motore/report-motore.md §13</span>).
+Al punto 9 dell'integrazione le prove erano 632, tutte OK; al punto 8b, 633; al punto 12, 637 (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, D12, D15 e D16</span>). Oggi sono 673, tutte OK, nessuna saltata (<span class="fonte">motore/report-motore.md §13</span>).
 
 ## Altre protezioni, senza hook
 

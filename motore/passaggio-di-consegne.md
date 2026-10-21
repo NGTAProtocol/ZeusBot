@@ -11,7 +11,7 @@ riprendi da lì».
   Ultimo commit: `git log -1` (prima del commit dei documenti derivati: 951a42c, allineato a origin).
 - Punti dell'integrazione: 1-12 e 8b fatti e su origin; dopo: `CLAUDE.md` allineato (D17, 05facce), subagenti e
   capsula nei file del pacchetto (D18, 951a42c); documenti derivati nel commit che porta questo file.
-- Suite al punto 12: 637/637 OK (invariata con D17 e D18); oggi **663/663 OK**, 0 saltate (2026-10-21), con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+- Suite al punto 12: 637/637 OK (invariata con D17 e D18); oggi **673/673 OK**, 0 saltate (2026-10-21), con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
 - Lavoro del 2026-10-21 (problema di stile della prova): P1 campo `massimo` dei divieti della voce (1e11337); P2
@@ -27,6 +27,10 @@ riprendi da lì».
   (c26fd23); diagnosta senza shell, proposta P4 non realizzata con il motivo (d3f9162); letture ridotte di scrittore e
   diagnosta (c55e940) e costo misurato, P5 (d73e926); incoerenze dei documenti e mappa dei rami
   (`docs/MAPPA_RAMI.md`). Suite: 663/663 OK, 0 saltate.
+- Costo della revisione (2026-10-21, quarta parte): `aperture_uguali` protetta dalle frasi senza parole (5306b38);
+  misure del motore prima del diagnosta, `misure/NN.md` (247bf0b); un solo giro completo (e8b5a06); diagnosta al
+  livello leggero, haiku (238b947); letture del diagnosta ridotte (02d7baf); P6 misura del costo, non realizzata
+  (775c006). Suite: 673/673 OK, 0 saltate.
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
   nessuna approvazione intermedia; una sola fermata, la PAUSA DI LETTURA ogni 3 capitoli (`pausa_lettura` 3-5 in
   `libro.yaml`) e a fine stesura. Restano le fermate `controllo_fallito` e `canone`.
@@ -78,7 +82,18 @@ riprendi da lì».
   storia.
 - Report di sessione ogni 5 scambi o a «passaggio», con le sezioni fisse.
 
-## Fatto in questa sessione (2026-10-21, terza parte; sotto, il 2026-10-20)
+## Fatto in questa sessione (2026-10-21, quarta parte; sotto, la terza e il 2026-10-20)
+
+- 5306b38 (664) `aperture_uguali`: una frase senza parole si salta (prima: IndexError se frasi() non la filtrasse).
+- 247bf0b (668) `zb ruolo <libro> diagnosta N`: misure del motore prima del revisore, `misure/NN.md`; `zb esito` le vuole.
+- e8b5a06 (671) un solo giro completo; il secondo solo sulle frasi di «## Da correggere»; poi decide l'autore.
+- 238b947 (672) diagnosta `leggero` (haiku) in `dati/modelli-ruoli.yaml`.
+- 02d7baf (673) letture del diagnosta per il capitolo singolo: solo «File da leggere» di `misure/NN.md`.
+- 775c006 (673) P6: misura del costo per agente, non realizzata.
+- Nel commit che porta questo file: PROCEDURA §6, guida (md e pdf), PROPOSTE, report, STATO_ATTUALE,
+  DA_VERIFICARE_AUTORE, `docs/INFRASTRUTTURA_COMPLETA.md` rigenerata.
+
+2026-10-21, terza parte:
 
 - c26fd23 (662) `antiia.aperture_uguali()`: una battuta di dialogo tra due frasi di narrazione interrompe la serie;
   prova `aperture_battuta` (sezione anti-IA); punto 4(b) del diagnosta allineato.
@@ -128,6 +143,8 @@ Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_L
    revisione, modello del diagnosta: proposte di P5, non realizzate.
 7. Scenari 5b e 15-18 della tabella dell'hook (PROCEDURA §10): descritti, senza prova (le prove coprono 1-14).
 8. `zb voce verifica` sulle voci della banca: non eseguito il 2026-10-21 (banca-voci non disponibile nella sessione).
+9. Diagnosta su haiku: da provare su un capitolo con esito noto (la prova della pagina era su opus); vale anche per la
+   diagnosi di struttura e manoscritto (`docs/DA_VERIFICARE_AUTORE.md`).
 
 ## Prossimo passo
 

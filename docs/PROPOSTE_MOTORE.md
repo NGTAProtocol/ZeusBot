@@ -63,7 +63,7 @@ realizzata, con il motivo; P5 misura il costo della revisione e dice cosa è sta
 `libro.yaml` accetta già `checklist_capitolo` (righe con casella nel report di `capitolo.py`). Resta possibile
 usarla come promemoria; è una modifica a un documento approvato (`zb riapprova`) e decisione dell'autore.
 
-## P4. Diagnosta senza shell: rapporti senza impronta — NON realizzata (motivo sotto)
+## P4. Diagnosta senza shell: rapporti senza impronta — Bash NON aggiunto (motivo sotto); alternativa in parte realizzata
 
 Problema (prova su una pagina, ottobre 2026): l'agente `diagnosta` installato ha `tools: Read, Write, Glob, Grep`
 (`editoriale/agenti/diagnosta.md`), quindi non può lanciare `zb ruolo <libro> diagnosta N` né `zb stile <libro> N`.
@@ -87,8 +87,9 @@ Soluzione alternativa proposta (non realizzata):
 - la sessione principale, che ha la shell, lancia prima della chiamata `zb stile <libro> N` e
   `zb ruolo <libro> diagnosta N` e passa al diagnosta la riga d'intestazione nel compito; il diagnosta la copia come
   prima riga di `06-diagnostica/audit/NN.md`;
-- in codice: `zb agenti prossimo <libro>` (agenti.py), quando il passo è la revisione di un capitolo, stampa questi
-  due comandi prima della chiamata al diagnosta, e `editoriale/agenti/diagnosta.md` dice di usare la riga ricevuta
+- in codice (realizzato in parte il 2026-10-21, commit 247bf0b): `zb ruolo <libro> diagnosta N` scrive anche le frasi
+  finali e le misure, e `zb agenti prossimo <libro>`, con `revisione_capitolo: obbligatoria`, lo nomina prima della
+  chiamata al diagnosta; resta da fare: e `editoriale/agenti/diagnosta.md` dice di usare la riga ricevuta
   (e di fermarsi se manca) invece di lanciare il comando.
 - Prove necessarie: `zb agenti prossimo` su un libro di prova con `revisione_capitolo: obbligatoria` stampa i due
   comandi; `zb esito` accetta il rapporto con la riga copiata e lo rifiuta senza; `zb agenti stato` controlla che
@@ -127,10 +128,10 @@ chiamata a un subagente, che il repository non misura.
 |---|---|---|---|
 | Scrittore: la preparazione al posto di `05-scaletta.md` e `08-piano-parole.md` interi (la scheda e le «Parole previste» sono già nella preparazione) | **fatta** (c55e940) | −8.310 parole a lettura nel libro di prova | `prove.py`, sezione agenti, `letture` |
 | Diagnosta: `diagnosi/` solo per struttura e manoscritto, non per il capitolo singolo (che ha il suo elenco di input) | **fatta** (c55e940) | −904 parole a lettura | `prove.py`, sezione agenti, `letture` |
-| Controlli deterministici prima del revisore: `zb stile`, `zb continuita`, divieti della voce e `zb antiia` su N; il diagnosta parte solo se sono OK | proposta | evita un giro del diagnosta quando un controllo meccanico basta | da fare: `zb esito` o `zb agenti prossimo` che non chiama il diagnosta con un KO meccanico |
-| Un solo giro di revisione: alla seconda «non passa» si ferma e decide l'autore | proposta | al massimo un giro per agente in meno | da fare: contatore dei rapporti in `06-diagnostica/audit/` |
-| Modello più economico per il diagnosta del capitolo singolo (oggi `forte` in `dati/modelli-ruoli.yaml`) | proposta, **non fatta** (regola: non cambiare i modelli) | non misurato | va provata su un capitolo con esito noto prima di cambiare la riga |
-| Letture del capitolo approvato intero per la continuità | proposta | fino a 2.048 parole nella prova | la continuità dovrebbe leggere codex e capsula del capitolo precedente, come dice il ruolo; serve una prova sul consumo (`zb consumo`) |
+| Controlli deterministici prima del revisore: i controlli di `zb esito` e l'audit anti-IA su N; il diagnosta parte solo se sono superati | **fatta** (247bf0b): `zb ruolo <libro> diagnosta N` si ferma con un KO o un avviso di frase media, divieti della voce, ripetizioni; scrive `misure/NN.md` | con un KO meccanico, 0 chiamate al diagnosta invece di 1 | `prove_editoriale.py`, percorso editoriale (misure prima del revisore, misure superate, senza le misure) |
+| Un solo giro di revisione: il secondo rivede solo le frasi di «## Da correggere» del primo; alla seconda «non passa» si ferma e decide l'autore | **fatta** (e8b5a06) | giri completi: 1 invece di 2; il secondo giro legge una sola sezione | `prove_editoriale.py`, percorso editoriale (giro di revisione, secondo giro, senza «Da correggere») |
+| Modello più economico per il diagnosta (era `forte`, opus) | **fatta** (238b947): `leggero`, haiku, il più economico tra gli alias ammessi | un agente, un modello: vale anche per la diagnosi di struttura e manoscritto (`docs/DA_VERIFICARE_AUTORE.md`) | `prove.py`, agenti (`modello_diagnosta`) |
+| Letture del diagnosta per il capitolo singolo: solo «File da leggere» di `misure/NN.md` (capitolo, misure, frasi finali, voce 2-3-6, codex filtrato, capsula precedente; canone scritto lì) | **fatta** (02d7baf) | nel libro di prova, capitolo 1: tolti preparazione (529 parole), manuale (482), scelte fisse (342), note di lettura (233); nessun capitolo approvato intero | `prove_editoriale.py`, percorso editoriale (letture del diagnosta) |
 
 ## P6. Misura del costo per agente — NON realizzata (manca il dato)
 

@@ -79,3 +79,15 @@ casa-editrice `main` @ becd0e2; i valori qui sotto non hanno una riga di quei ri
   [25, 45]; con `frase_media_voce: true` per la frase media vale la voce, per il dialogo resta il profilo
   (`script/stile.py`, KO fuori da [25, 45]). I valori della scheda della voce non sono stati letti (banca-voci non
   disponibile): il confronto è da fare.
+
+## Revisione del capitolo: scelte da confermare (2026-10-21, quarta parte)
+- Quali avvisi fermano la chiamata al diagnosta (`script/percorso.py`, `bloccanti_prima_della_revisione`). Oggi: ogni
+  KO, più gli avvisi di frase media, dei divieti della voce e delle ripetizioni ravvicinate. Gli avvisi della lista nera
+  di base, del budget di parole, delle scene e le altre misure anti-IA passano al diagnosta come righe misurate.
+  Le soglie delle ripetizioni (`ripetizioni_per_mille_max` 12,0) e l'intervallo della frase media del registro sono
+  segnati PROPOSTA o «non calibrato sull'autore»: con un falso positivo il capitolo torna a chi scrive senza revisione.
+  Le due scelte plausibili: fermare anche su questi avvisi (oggi) oppure solo sui KO.
+- Modello del diagnosta. `dati/modelli-ruoli.yaml` assegna un livello per agente, non per lavoro: `diagnosta: leggero`
+  (haiku) vale per il capitolo singolo e anche per la diagnosi della struttura e del manoscritto (`rapporto-*.md`), che
+  prima era su opus. Le due scelte: un solo diagnosta su haiku (oggi) oppure un secondo agente, solo per il capitolo
+  singolo, su haiku, e il diagnosta della struttura e del manoscritto di nuovo al livello forte.
