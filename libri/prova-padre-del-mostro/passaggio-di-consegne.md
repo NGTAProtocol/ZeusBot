@@ -14,6 +14,13 @@
 - Questo ramo ha in `motore/` la copia del motore 2df84b3: i ruoli e il codice nuovi (P1-P3, frase media per
   registro, `zb prepara` con la voce) stanno solo su `integrazione-editoriale`.
 
+- 2026-10-21, seconda parte: installati in `.claude/` (ee4eab7) i 12 agenti, i 4 comandi e gli hook, con
+  `zb agenti attiva --ok` e `zb hook attiva --ok` del motore di `integrazione-editoriale` (`--progetto`). Gli hook
+  valgono dalla prossima sessione aperta su questo ramo; in quella dell'installazione non registravano.
+- La pagina di prova con gli agenti NON è stata scritta: `zb avvio` si ferma («Documenti approvati cambiati
+  fuori procedura … 04-manoscritto/01-l-ultimo-appuntamento.md»), perché il capitolo 1 è la riscrittura aa5b2b6
+  non accettata. Serve la decisione dell'autore: `zb riapprova` di aa5b2b6 o ritorno al testo di a7e1c88.
+
 ## Decisioni prese
 - Nota di lettura del 2026-10-21 per il capitolo 1 (in `06-diagnostica/note-lettura.md`).
 - Frase media nel thriller: vale il registro della voce (corto 5-10, freddo 15-25, base 12-18), solo con il motore
