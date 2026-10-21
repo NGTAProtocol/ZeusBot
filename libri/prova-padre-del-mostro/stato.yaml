@@ -3,13 +3,10 @@ motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
 passo: pausa di lettura
-gate_in_attesa: lettura
+gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 1
-  - 2
-  - 3
+  capitoli: []
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 3
 tentativi: {}
@@ -194,31 +191,16 @@ documenti_approvati:
   04-manoscritto/01-l-ultimo-appuntamento.md:
     sha256: 7e92b8720b3167acaff19dbf2037ba70f45692208d60038e7d47e0f51bc03d50
     commit: 92047be
-    riapprovazioni:
-    - data: '2026-10-20'
-      motivo: riscrittura con la voce aggiornata, note di lettura dell'autore ai capitoli 1-3
-      sha256_precedente: a8c2d725bf8821701d32c63d71e397b5dc4033bd9af2e7b4ab7665c87d96f316
-      commit_precedente: 264c156
   04-manoscritto/02-la-nomina.md:
     sha256: 3706ef281bf082ceb03b822ed699ac518a4e5cdf8ae7581f786344328fa72a9f
     commit: 1c6904e
-    riapprovazioni:
-    - data: '2026-10-21'
-      motivo: riscrittura con la voce aggiornata, note di lettura dell'autore ai capitoli 1-3
-      sha256_precedente: 259fbb835a878a445ccab64d13b79680f0df8a7401596ee5ad75156a63276e15
-      commit_precedente: 919b891
   04-manoscritto/03-la-convocazione.md:
     sha256: 0649d6bb92a4f52bfb5a8566af9f6f459ccf88f26ffcf87540ab9dc7d2d3e360
     commit: 5c9637f
-    riapprovazioni:
-    - data: '2026-10-21'
-      motivo: riscrittura con la voce aggiornata, note di lettura dell'autore ai capitoli 1-3
-      sha256_precedente: 2875b5777693bb09326f3af049f8faeef731d7d5cdda6ee691b09c8f669ff0ab
-      commit_precedente: 3c06198
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-21T00:05:07Z'
+aggiornato: '2026-10-21T00:38:41Z'
 sottofase: null
 fatti_bloccati:
 - Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
@@ -246,6 +228,14 @@ note_lettura:
     le buste lasciate in portineria e il fatto che Giorgi sappia a chi Bertola riferisce oltre a lui. Continuità: nel capitolo
     1 Kurgan manda via il ragazzo; il capitolo 3 non deve dire che era fuori dal locale: dice che è stato rimandato a casa
     e che non sa niente.'
+- data: '2026-10-21'
+  capitoli:
+  - 1
+  - 2
+  - 3
+  testo: 'Stessi fatti e stesse scene, nessun fatto nuovo. Applica le regole nuove della voce. Continuità: Kurgan manda via
+    il ragazzo (capitolo 1); nel capitolo 3 si dice che il ragazzo è stato rimandato a casa da Kurgan, con il soggetto chiaro.
+    Canone da codex: telefoni ritirati (31), cinque linee guida, sala piccola, bicchieri e aloni.'
 correzioni_registrate:
 - data: '2026-10-20'
   file: 04-manoscritto/01-l-ultimo-appuntamento.md
