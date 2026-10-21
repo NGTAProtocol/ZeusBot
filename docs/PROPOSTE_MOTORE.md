@@ -61,3 +61,34 @@ ognuna con le sue prove; sotto, per ciascuna, cosa fa e cosa resta fuori.
 
 `libro.yaml` accetta già `checklist_capitolo` (righe con casella nel report di `capitolo.py`). Resta possibile
 usarla come promemoria; è una modifica a un documento approvato (`zb riapprova`) e decisione dell'autore.
+
+## P4. Diagnosta senza shell: rapporti senza impronta — NON realizzata (motivo sotto)
+
+Problema (prova su una pagina, ottobre 2026): l'agente `diagnosta` installato ha `tools: Read, Write, Glob, Grep`
+(`editoriale/agenti/diagnosta.md`), quindi non può lanciare `zb ruolo <libro> diagnosta N` né `zb stile <libro> N`.
+Il rapporto resta senza la prima riga `<!-- zb: ruolo=diagnosta; su=<impronta> -->` e, con
+`revisione_capitolo: obbligatoria`, `zb esito` lo rifiuta.
+
+Perché non si aggiunge Bash al diagnosta (verificato il 2026-10-21):
+- il campo `tools` dei subagenti accetta nomi di strumenti interi: un comando solo (`Bash(python3 motore/zb ruolo:*)`)
+  non si può esprimere lì; in `disallowedTools` una voce con specificatore toglie l'intero strumento
+  (documentazione ufficiale di Claude Code, pagina «Subagents»);
+- un hook PreToolUse nel frontmatter dell'agente che ammetta solo quei comandi esiste, ma Claude Code lo salta se la
+  cartella non è stata dichiarata attendibile («the subagent still runs, but Claude Code skips its frontmatter
+  hooks»): il diagnosta resterebbe con Bash libero;
+- il recinto (`script/hook_recinto.py`, PROCEDURA §10) su Bash blocca solo le scritture fuori dal libro attivo; il
+  divieto per i revisori di riscrivere un capitolo vale solo per Write (`riscrittura_da_revisore`). Con Bash il
+  diagnosta, che oggi è «in sola lettura» perché non ha Edit né Bash, potrebbe modificare `04-manoscritto/`
+  (`sed -i`, script) senza che nulla lo fermi. Nota: `correttore-italiano` e `correttore-bozze` hanno già Bash, ma
+  sono ruoli che correggono il testo; il diagnosta per ruolo non lo tocca (`00-diagnosta.md`, «Cosa NON fa»).
+
+Soluzione alternativa proposta (non realizzata):
+- la sessione principale, che ha la shell, lancia prima della chiamata `zb stile <libro> N` e
+  `zb ruolo <libro> diagnosta N` e passa al diagnosta la riga d'intestazione nel compito; il diagnosta la copia come
+  prima riga di `06-diagnostica/audit/NN.md`;
+- in codice: `zb agenti prossimo <libro>` (agenti.py), quando il passo è la revisione di un capitolo, stampa questi
+  due comandi prima della chiamata al diagnosta, e `editoriale/agenti/diagnosta.md` dice di usare la riga ricevuta
+  (e di fermarsi se manca) invece di lanciare il comando.
+- Prove necessarie: `zb agenti prossimo` su un libro di prova con `revisione_capitolo: obbligatoria` stampa i due
+  comandi; `zb esito` accetta il rapporto con la riga copiata e lo rifiuta senza; `zb agenti stato` controlla che
+  il diagnosta installato resti senza Bash ed Edit.
