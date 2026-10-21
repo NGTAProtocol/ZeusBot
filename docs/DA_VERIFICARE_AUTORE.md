@@ -44,3 +44,38 @@ perché, stanno in `docs/DECISIONI_INTEGRAZIONE.md`.
 - Licenza di APODICTIC (CC BY-NC-SA 4.0): nessun testo copiato.
 - Verifica dei dati KDP: `motore/dati/kdp.yaml`, `ultima_verifica: null`; la registri tu con
   `python3 motore/zb verifica KDP fatta AAAA-MM-GG`.
+
+## Profilo thriller: valori segnati PROPOSTA o senza fonte (2026-10-21, elencati, non cambiati)
+Righe di `motore/profili/thriller.yaml`. Fonte dichiarata in testa al file: righe dei riferimenti di
+casa-editrice `main` @ becd0e2; i valori qui sotto non hanno una riga di quei riferimenti.
+
+| Riga | Campo | Valore | Perché è proposta (dal commento del file) |
+|---|---|---|---|
+| 27 | `frase_media` | [9, 14] | il riferimento (03 r. 10) dà solo la regola «brevi nell'azione», non un intervallo |
+| 28 | `frase_media_voce` | true | decisione dell'autore del 2026-10-21, ma segnata ancora PROPOSTA (vedi sotto) |
+| 29 | `dialogo_percento` | [25, 45] | nessuna fonte |
+| 30 | `similitudini_max_per_parole` | 400 | nessuna fonte |
+| 31 | `parole_filtro.massimo_per_1000_parole` | 8 | l'elenco viene da 05 r. 21; il numero no |
+| 33 | `anti_ia.modalita` | avviso | uguale per tutti i generi |
+| 34 | `anti_ia.variazione_frasi_min` | 0.25 | come `dati/antiia.yaml`, tarato sui mini-libri |
+| 35 | `anti_ia.aperture_uguali_max` | 20 | come `dati/antiia.yaml` |
+| 36 | `anti_ia.formule_per_mille_max` | 1.0 | come `dati/antiia.yaml` |
+| 37 | `anti_ia.formule_catalogo_per_mille_max` | 3.0 | mini-libri 0,0-0,6 |
+| 38 | `anti_ia.ripetizioni_per_mille_max` | 12.0 | mini-libri 2,2-9,7 |
+| 39 | `anti_ia.chiusure_uguali_max` | 2 | nessuna fonte |
+| 41 | `parole_per_pagina` | 250 | il riferimento (12 r. 7) dà 250-300; scelto il minimo |
+| 48 | `scene_obbligatorie` | «confronto finale tra protagonista e antagonista» | nessuna fonte |
+| 49 | `scene_obbligatorie` | «scadenza o corsa contro il tempo» | nessuna fonte |
+
+## Scelte con due valori, da decidere (2026-10-21)
+- Significato di «PROPOSTA» nei profili. `motore/profili/thriller.yaml` riga 2: «PROPOSTA = valore approvato
+  dall'autore»; riga 28: «PROPOSTA (decisione dell'autore, 2026-10-21)»; `docs/GUIDA_AL_SISTEMA.md` («Le soglie
+  anti-IA dei profili sono una PROPOSTA»), dove vuol dire «valore da confermare». Due letture: valore proposto e già
+  approvato, oppure valore ancora da approvare.
+- Gruppi di divieti nella voce della prova. `docs/PROPOSTE_MOTORE.md` (P1): «La voce della prova non usa ancora i
+  gruppi»; resoconto dell'autore: la voce nuova ha il gruppo «chiuse». La banca-voci non era disponibile in questa
+  sessione: non verificato, frase non cambiata.
+- Frase media e dialogo del thriller contro quelli della voce. Profilo: `frase_media` [9, 14], `dialogo_percento`
+  [25, 45]; con `frase_media_voce: true` per la frase media vale la voce, per il dialogo resta il profilo
+  (`script/stile.py`, KO fuori da [25, 45]). I valori della scheda della voce non sono stati letti (banca-voci non
+  disponibile): il confronto è da fare.

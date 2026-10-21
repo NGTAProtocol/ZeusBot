@@ -2,7 +2,8 @@
 
 Nate dalla riscrittura di prova di tre capitoli di un libro di test con una voce della banca (ottobre 2026).
 Le prime tre proposte e la frase media per registro sono ora nel codice del ramo `integrazione-editoriale`,
-ognuna con le sue prove; sotto, per ciascuna, cosa fa e cosa resta fuori.
+ognuna con le sue prove; sotto, per ciascuna, cosa fa e cosa resta fuori. P4 (diagnosta senza shell) non è
+realizzata, con il motivo; P5 misura il costo della revisione e dice cosa è stato ridotto.
 
 ## P1. Limite per capitolo sui divieti della voce — realizzata (commit 1e11337)
 

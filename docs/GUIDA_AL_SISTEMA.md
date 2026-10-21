@@ -416,9 +416,9 @@ Poi, in sessioni separate: il diagnosta scrive `06-diagnostica/rapporto-struttur
 
 Per ogni capitolo, la sessione principale chiama l'agente scrittore, mai due capitoli in parallelo (<span class="fonte">motore/editoriale/agenti/scrittore-voce.md; motore/PROCEDURA.md §1b e §6</span>):
 
-1. `zb prepara <libro> N`: scheda, schede del codex della scena, canone, capsule, le sezioni da leggere della voce e, dopo una pausa di lettura con note, le tue note;
+1. `zb prepara <libro> N`: scheda e parole previste del capitolo (lo scrittore non rilegge la scaletta e il piano parole interi), schede del codex della scena, canone, capsule, le sezioni da leggere della voce e, dopo una pausa di lettura con note, le tue note;
 2. lo scrittore scrive `04-manoscritto/NN-<slug>.md`;
-3. revisione del capitolo: `zb stile <libro> N` elenca le frasi finali dei paragrafi (`06-diagnostica/frasi-finali/NN.md`); il diagnosta, in un'altra sessione, prende la prima riga da `zb ruolo <libro> diagnosta N` e scrive `06-diagnostica/audit/NN.md`, che chiude con «passa» o «non passa». Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` non accetta il capitolo senza un «passa» sul testo attuale (<span class="fonte">motore/PROCEDURA.md §6; motore/editoriale/ruoli/00-diagnosta.md</span>);
+3. revisione del capitolo: `zb stile <libro> N` elenca le frasi finali dei paragrafi (`06-diagnostica/frasi-finali/NN.md`); il diagnosta, in un'altra sessione, prende la prima riga da `zb ruolo <libro> diagnosta N` (l'agente installato non ha la shell: i due comandi li lancia la sessione principale e gli passa la riga) e scrive `06-diagnostica/audit/NN.md`, che chiude con «passa» o «non passa». Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` non accetta il capitolo senza un «passa» sul testo attuale (<span class="fonte">motore/PROCEDURA.md §6; motore/editoriale/ruoli/00-diagnosta.md</span>);
 4. `zb esito <libro> N`: parole, stile, continuità, audit anti-IA, lunghezze quasi uguali, capsula precedente;
 5. `zb capsula <libro> N`, l'agente capsula, poi `--verifica`;
 6. salvataggio con `zb salva`.
@@ -600,7 +600,7 @@ Le eccezioni sono in `motore/dati/cartella-unica.yaml`: `CLAUDE.md`, `.gitignore
 
 `zb push` fa il push del ramo corrente; se fallisce riprova, poi tenta un ramo alternativo, poi un `git bundle`. Sul ramo di un libro controlla prima la cartella unica. Sul **lavoro del motore** vuole una `zb prove` intera e tutta OK sullo stato attuale: le prove lasciano un'impronta, e senza quell'impronta il push non parte (<span class="fonte">motore/script/push.py; motore/script/prove.py</span>).
 
-Al punto 9 dell'integrazione le prove erano 632, tutte OK; al punto 8b, 633; al punto 12, 637 (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, D12, D15 e D16</span>).
+Al punto 9 dell'integrazione le prove erano 632, tutte OK; al punto 8b, 633; al punto 12, 637 (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, D12, D15 e D16</span>). Oggi sono 663, tutte OK, nessuna saltata (<span class="fonte">motore/report-motore.md §13</span>).
 
 ## Altre protezioni, senza hook
 

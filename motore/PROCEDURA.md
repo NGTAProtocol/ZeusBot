@@ -268,7 +268,8 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    scaletta e piano parole, le voci di cronologia che tocca e il capitolo precedente. Sul percorso editoriale
    scrive l'agente `scrittore-voce`, chiamato dalla sessione principale (mai due capitoli in parallelo);
    `zb prepara <libro> N` gli dà la scheda del capitolo, il codex filtrato, il canone, le capsule e, dopo una
-   pausa di lettura con note, `06-diagnostica/note-lettura.md`; con una voce della banca indica anche le sezioni
+   pausa di lettura con note, `06-diagnostica/note-lettura.md` (la scheda e le parole previste sostituiscono
+   `05-scaletta.md` e `08-piano-parole.md` interi, che l'agente non rilegge); con una voce della banca indica anche le sezioni
    2, 3 e 6 della scheda della voce e i divieti, da leggere prima di scrivere. Gli esempi «versione debole →
    versione forte» si nominano solo se la sezione 6 li ha (righe «Debole: …» e «Forte: …»); se la scheda o
    `ZB_BANCA_VOCI` mancano, `zb prepara` si ferma con il motivo.
@@ -277,7 +278,9 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
 3b. Revisione del capitolo (percorso editoriale): il diagnosta, in una sessione separata da chi ha scritto, prende
    la prima riga con `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N) e scrive
    `06-diagnostica/audit/NN.md` con la checklist del capitolo singolo (`editoriale/ruoli/00-diagnosta.md`); ultima
-   riga «passa» o «non passa». Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` si ferma se il
+   riga «passa» o «non passa». L'agente `diagnosta` installato non ha la shell (sola lettura): `zb stile <libro> N` e
+   `zb ruolo <libro> diagnosta N` li lancia la sessione principale, che gli passa la riga da copiare
+   (`docs/PROPOSTE_MOTORE.md`, P4). Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` si ferma se il
    rapporto manca, è scritto su un'altra versione del capitolo (impronta della prima riga) o chiude con «non
    passa»; senza il campo la revisione resta consigliata e `zb esito` non la legge.
 4. `zb esito <libro> N`: esegue `capitolo.py` (report in `06-diagnostica/capitoli/NN.md`, con le righe

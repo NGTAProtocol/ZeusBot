@@ -11,7 +11,7 @@ riprendi da lì».
   Ultimo commit: `git log -1` (prima del commit dei documenti derivati: 951a42c, allineato a origin).
 - Punti dell'integrazione: 1-12 e 8b fatti e su origin; dopo: `CLAUDE.md` allineato (D17, 05facce), subagenti e
   capsula nei file del pacchetto (D18, 951a42c); documenti derivati nel commit che porta questo file.
-- Suite: **637/637 OK** (dal punto 12; invariata con D17 e D18), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+- Suite al punto 12: 637/637 OK (invariata con D17 e D18); oggi **663/663 OK**, 0 saltate (2026-10-21), con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
 - Lavoro del 2026-10-21 (problema di stile della prova): P1 campo `massimo` dei divieti della voce (1e11337); P2
@@ -23,6 +23,10 @@ riprendi da lì».
   ha e si ferma se la scheda manca (dd93098); frase media del registro della voce: AVVISO «intervallo non
   calibrato sull'autore» (3990f86); gruppi di forme nei divieti della voce con un massimo complessivo (c79df0a).
   Suite: 661/661 OK, 0 saltate.
+- Correzioni del 2026-10-21 (terza parte): aperture uguali senza il falso positivo della battuta in mezzo
+  (c26fd23); diagnosta senza shell, proposta P4 non realizzata con il motivo (d3f9162); letture ridotte di scrittore e
+  diagnosta (c55e940) e costo misurato, P5 (d73e926); incoerenze dei documenti e mappa dei rami
+  (`docs/MAPPA_RAMI.md`). Suite: 663/663 OK, 0 saltate.
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
   nessuna approvazione intermedia; una sola fermata, la PAUSA DI LETTURA ogni 3 capitoli (`pausa_lettura` 3-5 in
   `libro.yaml`) e a fine stesura. Restano le fermate `controllo_fallito` e `canone`.
@@ -74,7 +78,20 @@ riprendi da lì».
   storia.
 - Report di sessione ogni 5 scambi o a «passaggio», con le sezioni fisse.
 
-## Fatto in questa sessione (2026-10-20)
+## Fatto in questa sessione (2026-10-21, terza parte; sotto, il 2026-10-20)
+
+- c26fd23 (662) `antiia.aperture_uguali()`: una battuta di dialogo tra due frasi di narrazione interrompe la serie;
+  prova `aperture_battuta` (sezione anti-IA); punto 4(b) del diagnosta allineato.
+- d3f9162 (662) P4 in `docs/PROPOSTE_MOTORE.md`: Bash al diagnosta non è coerente con il recinto; alternativa.
+- c55e940 (663) agenti: lo scrittore non rilegge scaletta e piano parole interi, il diagnosta non legge `diagnosi/`
+  per il capitolo singolo; prova `letture` (sezione agenti), che controlla anche il diagnosta senza Bash né Edit.
+- d73e926 (663) P5: costo della revisione misurato file per file.
+- Nel commit che porta questo file: incoerenze di numeri e documenti (report, STATO_ATTUALE, guida md e pdf,
+  PROCEDURA, README, PROPOSTE_MOTORE, DA_VERIFICARE_AUTORE), `docs/INFRASTRUTTURA_COMPLETA.md` rigenerata.
+- Poi: `docs/MAPPA_RAMI.md` (commit a parte).
+
+2026-10-20:
+
 
 Commit su `integrazione-editoriale` (tra parentesi le prove della suite a quel commit):
 - 5ae0bda (560) punto 1: pacchetto da 28 file verificato, nessuna modifica (D3);
@@ -107,17 +124,23 @@ Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_L
 4. Soglie anti-IA uguali per ogni genere, tarate sui mini-libri; vocabolario italiano vuoto finché non c'è un corpus
    (`docs/DA_FORNIRE.md`).
 5. Divergenza lasciata visibile in `docs/ANALISI_REPOSITORY.md`: kindle-book-agency (D13).
+6. Diagnosta senza shell (P4): proposta, non realizzata. Controlli deterministici prima del revisore, un solo giro di
+   revisione, modello del diagnosta: proposte di P5, non realizzate.
+7. Scenari 5b e 15-18 della tabella dell'hook (PROCEDURA §10): descritti, senza prova (le prove coprono 1-14).
+8. `zb voce verifica` sulle voci della banca: non eseguito il 2026-10-21 (banca-voci non disponibile nella sessione).
 
 ## Prossimo passo
 
-`zb salva` e controllo con `git status -sb` e `git log -1`. Dopo, l'autore legge
-`docs/DA_VERIFICARE_AUTORE.md` e decide se unire il ramo nel `motore`.
+L'autore legge `docs/DA_VERIFICARE_AUTORE.md` (profilo thriller, scelte con due valori), `docs/PROPOSTE_MOTORE.md`
+(P4, P5) e `docs/MAPPA_RAMI.md`, e decide come unire il ramo nel `motore`: un merge semplice con `origin/motore`
+(971b6df) dà 68 file in conflitto, perché le aggiunte di `motore` sono state copiate e rinominate (D5).
 
 ## Ripartenza
 
 ```
 pip install -r motore/requirements.txt
 apt-get install -y hunspell hunspell-it hunspell-en-us poppler-utils
+export ZB_BANCA_VOCI=<clone della banca-voci>   # solo lettura; serve a zb voce e zb prepara con una voce
 python3 motore/zb languagetool installa        # poi l'export di ZB_LANGUAGETOOL che stampa
 python3 motore/zb lavoro motore                # solo se l'autore ha scritto «lavoro sul motore»
 python3 -B motore/zb avvio                     # riga «Letto»

@@ -111,5 +111,6 @@ Note:
 
 ## 5. Prove
 
-Ultimo totale registrato: 637 prove, 637 OK, 0 saltate (punto 12: 632 del punto 9, D12, più 1 di D16 e 4 di D15).
+Totale alla data di questa fotografia: 637 prove, 637 OK, 0 saltate (punto 12: 632 del punto 9, D12, più 1 di D16 e 4
+di D15). Dopo: 661 (e264a01) e 663 (2026-10-21, d73e926), tutte OK, 0 saltate (`motore/report-motore.md` §13).
 Questa fotografia non ha lanciato `zb prove`.
