@@ -162,6 +162,35 @@ def passo_1(A):
     esito('separazione.py', 'libro.yaml fuori dai mini-libri',
           A['separazione']['libro_yaml_fuori_posto'], sep(yaml_fuori), sez)
 
+    # nomi vietati dai rami di origin: un ramo con solo motore/ non è un ramo di libro; uno con libri/<slug>/libro.yaml sì
+    import separazione
+    r = tempfile.mkdtemp(dir=TMP)
+    G = dict(ENV, GIT_AUTHOR_NAME='prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def g(*a):
+        return subprocess.run(['git', *a], cwd=os.path.join(r, 'lavoro'), env=G, capture_output=True, text=True)
+    subprocess.run(['git', 'init', '-q', '--bare', os.path.join(r, 'origine.git')], env=G, capture_output=True)
+    os.makedirs(os.path.join(r, 'lavoro'))
+    g('init', '-q', '-b', 'lavoro')
+    shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'lavoro', 'motore', 'prove', 'mini-libro'))
+    g('add', '-A')
+    g('commit', '-q', '-m', 'motore')
+    g('remote', 'add', 'origin', os.path.join(r, 'origine.git'))
+    g('push', '-q', 'origin', 'lavoro:solo-motore-di-prova')
+    libro = os.path.join(r, 'lavoro', 'libri', 'storia-inventata', 'libro.yaml')
+    os.makedirs(os.path.dirname(libro))
+    open(libro, 'w', encoding='utf-8').write('titolo: Storia inventata\n')
+    g('add', '-A')
+    g('commit', '-q', '-m', 'libro')
+    g('push', '-q', 'origin', 'lavoro:libro/storia-inventata-di-prova')
+    g('fetch', '-q', 'origin')
+    nomi = separazione.nomi_dinamici(os.path.join(r, 'lavoro', 'motore'))
+    esito('separazione.py', 'ramo di origin con solo motore/: nome vietato',
+          A['separazione']['ramo_solo_motore_vietato'], 'sì' if 'solo-motore-di-prova' in nomi else 'no', sez)
+    esito('separazione.py', 'ramo di origin con libri/<slug>/libro.yaml: nome vietato',
+          A['separazione']['ramo_di_libro_vietato'], 'sì' if 'storia-inventata-di-prova' in nomi else 'no', sez)
+
     c = copia_motore()
     viol = os.path.join(c, 'prove', 'esiti', '_violazione_di_prova.tmp')
     cmd = f"{sys.executable} -c \"open('{viol}','w').write('x')\""

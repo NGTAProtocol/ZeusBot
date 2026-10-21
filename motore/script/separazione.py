@@ -51,7 +51,9 @@ def font_ammessi(motore):
 
 def nomi_dinamici(motore):
     """Nomi da non scrivere mai, ricavati senza scriverli: rami di libro di origin (con libri/…/libro.yaml; ultima parte del nome,
-    senza il suffisso casuale, solo se di più parole) e slug della banca-voci (se ZB_BANCA_VOCI è impostata)."""
+    senza il suffisso casuale, solo se di più parole) e slug della banca-voci (se ZB_BANCA_VOCI è impostata).
+    L'albero di ogni ramo si legge dalla radice del repository (--full-tree): senza, git ls-tree lanciato dentro motore/
+    dà percorsi relativi (prove/mini-libro/libro.yaml) e ogni ramo che contiene il motore sembrava un ramo di libro."""
     out = set()
     c = subprocess.run(['git', '-C', motore, 'for-each-ref', '--format=%(refname:short)', 'refs/remotes/origin'],
                        capture_output=True, text=True)
@@ -60,7 +62,7 @@ def nomi_dinamici(motore):
         nome = r.split('/', 1)[1] if '/' in r else r
         if nome in ('HEAD', 'motore', attuale) or nome.startswith('ccr-'):
             continue
-        albero = subprocess.run(['git', '-C', motore, 'ls-tree', '-r', '--name-only', r], capture_output=True, text=True).stdout
+        albero = subprocess.run(['git', '-C', motore, 'ls-tree', '-r', '--full-tree', '--name-only', r], capture_output=True, text=True).stdout
         if not re.search(r'(?m)^libri/', albero) and not re.search(r'(?m)^(?!motore/).*libro\.yaml$', albero):
             continue                # non è un ramo di libro: il suo nome non è un nome di libro
         ultimo = re.sub(r'-[a-z0-9]{6}$', '', nome.split('/')[-1])

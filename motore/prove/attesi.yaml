@@ -52,6 +52,8 @@ passo_1:
     motore: 0                    # codice d'uscita su motore/
     nome_vietato_in_copia: 1     # copia di motore/ con una voce in nomi_vietati.txt presente in un file
     libro_yaml_fuori_posto: 1    # copia di motore/ con un libro.yaml fuori dai mini-libri
+    ramo_solo_motore_vietato: 'no'   # ramo di origin con motore/ e senza libri/: non è un ramo di libro
+    ramo_di_libro_vietato: 'sì'      # ramo di origin con libri/<slug>/libro.yaml: il suo nome è vietato
   recinto:
     comandi_del_motore: 0        # nessuna scrittura fuori dalla copia del mini-libro
     scrittura_messa_apposta: 1   # un comando di prova che scrive in motore/ viene rilevato
