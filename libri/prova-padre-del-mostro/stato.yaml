@@ -219,17 +219,21 @@ documenti_approvati:
       sha256_precedente: a148b0c81868b8839d1f7e6f2b7dd9ccd8f492d05a61cbe21b3e0ce89e520968
       commit_precedente: c8bdce1
   04-manoscritto/03-la-convocazione.md:
-    sha256: 2353d7d61fb82b2e3a8f3186ee3c9bfeadbc80e650ac2d253f64347c8445b742
-    commit: '5136531'
+    sha256: 63e3ac97a83725e59e0bc29acbbfa9a107a18c4927b3fc855bb789b3c141472f
+    commit: af7a3d4
     riapprovazioni:
     - data: '2026-10-21'
       motivo: seconda riscrittura con la voce f6ee79d, note di lettura dell'autore del 2026-10-21
       sha256_precedente: 0649d6bb92a4f52bfb5a8566af9f6f459ccf88f26ffcf87540ab9dc7d2d3e360
       commit_precedente: 5c9637f
+    - data: '2026-10-21'
+      motivo: correzione unica dopo la revisione del diagnosta
+      sha256_precedente: 2353d7d61fb82b2e3a8f3186ee3c9bfeadbc80e650ac2d253f64347c8445b742
+      commit_precedente: '5136531'
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-21T01:17:52Z'
+aggiornato: '2026-10-21T04:58:50Z'
 sottofase: null
 fatti_bloccati:
 - Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
