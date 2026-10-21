@@ -92,3 +92,41 @@ Soluzione alternativa proposta (non realizzata):
 - Prove necessarie: `zb agenti prossimo` su un libro di prova con `revisione_capitolo: obbligatoria` stampa i due
   comandi; `zb esito` accetta il rapporto con la riga copiata e lo rifiuta senza; `zb agenti stato` controlla che
   il diagnosta installato resti senza Bash ed Edit.
+
+## P5. Costo della revisione: cosa legge ogni agente (misurato il 2026-10-21)
+
+Misure in parole (`wc -w`) sui file del motore e, in sola lettura da git, su quelli del libro di prova (ramo del
+libro, commit 09d143e). La scheda della voce e `divieti.yaml` non sono misurati: la banca-voci non era disponibile
+in questa sessione. I token della prova (scrittore 59.696 + 70.660, diagnosta 73.249 + 71.734) vengono dal
+resoconto dell'autore e non sono ricalcolabili dal repository: `<libro>/.zb/letture.log` (`zb consumo`) è fuori
+da git.
+
+| Agente | File | Parole |
+|---|---|---|
+| scrittore-voce | `editoriale/agenti/scrittore-voce.md` (definizione) | 245 |
+| scrittore-voce | `editoriale/ruoli/03-scrittore-voce.md` | 298 |
+| scrittore-voce | `editoriale/anti-ia/catalogo-it.md` | 824 |
+| scrittore-voce | `06-diagnostica/preparazione/01.md` | 529 |
+| scrittore-voce | manuale di stile, scelte fisse, 2 codex, note di lettura (elencati dalla preparazione) | 1.376 |
+| scrittore-voce | `LEGGIMI.md`, `cronologia.yaml` | 481 |
+| scrittore-voce (prima di c55e940) | `03-struttura/05-scaletta.md` intero | 7.545 |
+| scrittore-voce (prima di c55e940) | `03-struttura/08-piano-parole.md` | 765 |
+| diagnosta | `editoriale/agenti/diagnosta.md` (definizione) | 165 |
+| diagnosta | `editoriale/ruoli/00-diagnosta.md` | 625 |
+| diagnosta (prima di c55e940, anche per il capitolo singolo) | `editoriale/diagnosi/` (4 file) | 904 |
+| diagnosta | `06-diagnostica/frasi-finali/01.md` | 876 |
+| diagnosta | capitolo rivisto (pagina di prova) | 321 |
+| diagnosta (prova) | capitolo approvato letto per la continuità | 2.048 |
+
+I file letti sono in tutto poche migliaia di parole per passo: il costo della prova (circa 275.000 token per 350
+parole) non viene soprattutto da quello che si legge, ma dai giri (due per agente) e dal contesto fisso di ogni
+chiamata a un subagente, che il repository non misura.
+
+| Misura | Stato | Effetto | Prova |
+|---|---|---|---|
+| Scrittore: la preparazione al posto di `05-scaletta.md` e `08-piano-parole.md` interi (la scheda e le «Parole previste» sono già nella preparazione) | **fatta** (c55e940) | −8.310 parole a lettura nel libro di prova | `prove.py`, sezione agenti, `letture` |
+| Diagnosta: `diagnosi/` solo per struttura e manoscritto, non per il capitolo singolo (che ha il suo elenco di input) | **fatta** (c55e940) | −904 parole a lettura | `prove.py`, sezione agenti, `letture` |
+| Controlli deterministici prima del revisore: `zb stile`, `zb continuita`, divieti della voce e `zb antiia` su N; il diagnosta parte solo se sono OK | proposta | evita un giro del diagnosta quando un controllo meccanico basta | da fare: `zb esito` o `zb agenti prossimo` che non chiama il diagnosta con un KO meccanico |
+| Un solo giro di revisione: alla seconda «non passa» si ferma e decide l'autore | proposta | al massimo un giro per agente in meno | da fare: contatore dei rapporti in `06-diagnostica/audit/` |
+| Modello più economico per il diagnosta del capitolo singolo (oggi `forte` in `dati/modelli-ruoli.yaml`) | proposta, **non fatta** (regola: non cambiare i modelli) | non misurato | va provata su un capitolo con esito noto prima di cambiare la riga |
+| Letture del capitolo approvato intero per la continuità | proposta | fino a 2.048 parole nella prova | la continuità dovrebbe leggere codex e capsula del capitolo precedente, come dice il ruolo; serve una prova sul consumo (`zb consumo`) |
