@@ -131,3 +131,23 @@ chiamata a un subagente, che il repository non misura.
 | Un solo giro di revisione: alla seconda «non passa» si ferma e decide l'autore | proposta | al massimo un giro per agente in meno | da fare: contatore dei rapporti in `06-diagnostica/audit/` |
 | Modello più economico per il diagnosta del capitolo singolo (oggi `forte` in `dati/modelli-ruoli.yaml`) | proposta, **non fatta** (regola: non cambiare i modelli) | non misurato | va provata su un capitolo con esito noto prima di cambiare la riga |
 | Letture del capitolo approvato intero per la continuità | proposta | fino a 2.048 parole nella prova | la continuità dovrebbe leggere codex e capsula del capitolo precedente, come dice il ruolo; serve una prova sul consumo (`zb consumo`) |
+
+## P6. Misura del costo per agente — NON realizzata (manca il dato)
+
+Cosa registra oggi il motore (`script/consumo.py`, hook PostToolUse su Read, Agent e Task, `<libro>/.zb/letture.log`):
+per ogni lettura il file, le righe e le parole; per ogni chiamata a un subagente il tipo di agente. `zb consumo`
+riassume per sessione: capitoli, file e righe letti, subagenti per tipo, durata. Non registra i token, né i passi
+(chiamate di strumenti) di ogni subagente.
+
+Perché non si cambia il codice: nella documentazione degli hook di Claude Code letta il 2026-10-21 i campi comuni
+dell'input sono `session_id`, `transcript_path`, `cwd`, `hook_event_name`, `agent_id` e `agent_type` (nei subagenti);
+nella parte letta non c'è un campo di token per PostToolUse su Agent né per SubagentStop. Senza un campo documentato,
+un conteggio dei token sarebbe una stima.
+
+Proposta:
+- passi per agente: `consumo.py` scrive in `letture.log` anche `agent_id` e `agent_type` di ogni chiamata (campi
+  documentati), e `zb consumo` conta le chiamate di strumenti per agente e per capitolo;
+- token: leggerli dal file indicato da `transcript_path` solo dopo aver verificato sulla documentazione che il file li
+  contiene e in quale formato;
+- prove necessarie: un JSON di hook di prova con `agent_id` → riga in `letture.log`; `zb consumo` con due agenti →
+  conteggi separati.
