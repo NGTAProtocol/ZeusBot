@@ -11,8 +11,12 @@ ognuna con le sue prove; sotto, per ciascuna, cosa fa e cosa resta fuori.
 - `script/stile.py`: nessuna modifica; il ramo «avviso con massimo» già esistente dà un solo AVVISO
   «N occorrenze (massimo M)» quando il capitolo supera il limite.
 - Prove: `prove.py`, sezione `voce`, punto (h): esiti con massimo 1, 2 e senza; `massimo: uno` → verifica KO.
-- **Non realizzato:** `escludi_pattern` per i divieti della voce e un limite di gruppo (tutte le forme di chiusa
-  contro un solo tetto). Il limite resta per singolo pattern.
+- Limite di gruppo — realizzato dopo (21 ottobre): `massimo` conta per singolo pattern, quindi cinque forme di
+  chiusa con `massimo: 1` lasciavano passare fino a cinque chiuse. Ora `gruppi: {nome: {massimo: N}}` e
+  `gruppo: nome` sui divieti danno un solo massimo complessivo per capitolo (prove (i) della sezione `voce`).
+  La voce della prova non usa ancora i gruppi: va aggiunto nel suo `divieti.yaml`, nella banca-voci.
+- **Non realizzato:** `escludi_pattern` per i divieti della voce. Due forme che prendono la stessa frase la
+  contano due volte nel gruppo.
 
 ## P2. Revisione del capitolo in fase «stesura» — realizzata (commit 5d19661)
 
@@ -31,7 +35,7 @@ ognuna con le sue prove; sotto, per ciascuna, cosa fa e cosa resta fuori.
 - Il motore elenca e non giudica: la tabella «chiusa sì/no» la scrive il diagnosta (`00-diagnosta.md`).
 - Prove: `prove.py`, sezione `frasi_finali` (due controlli).
 
-## Frase media per registro — realizzata (commit 4d21449)
+## Frase media per registro — realizzata (commit 4d21449; AVVISO invece di KO dal commit 3990f86)
 
 - Decisione dell'autore: nel thriller la voce prevale sul manuale per la frase media.
 - `profili/thriller.yaml`: `frase_media_voce: true` (campo nuovo dello schema, uso controllo).
@@ -41,14 +45,17 @@ ognuna con le sue prove; sotto, per ciascuna, cosa fa e cosa resta fuori.
 - Formulazione scelta: «il capitolo passa se la media complessiva è nell'intervallo del registro dominante
   dichiarato». **Non realizzato:** il controllo per scena («ogni registro nel proprio intervallo»), perché la
   scaletta dichiara il registro per capitolo e non per scena.
-- Prove: `prove.py`, sezione `frase_media_registro` (sette controlli).
+- Fuori intervallo del registro: AVVISO «intervallo non calibrato sull'autore» (l'intervallo è una scelta della
+  voce da calibrare sui testi dell'autore prima di bloccare); l'intervallo del profilo resta KO.
+- Prove: `prove.py`, sezione `frase_media_registro` (otto controlli).
 
 ## Ruoli
 
 - Diagnosta, capitolo singolo: tabella frase per frase delle chiuse costruita su `frasi-finali/NN.md`; eco,
   etichette, soggetto (anche nome ripetuto dove è ovvio), battute giustificative, registro corto, continuità.
-- Scrittore con voce: legge le sezioni 2, 3 e 6 della scheda della voce (esempi «debole → forte») e i divieti;
-  `zb prepara` lo scrive nella preparazione del capitolo (prova in `prove_editoriale.py`).
+- Scrittore con voce: legge le sezioni 2, 3 e 6 della scheda della voce e i divieti; `zb prepara` lo scrive nella
+  preparazione del capitolo e nomina gli esempi «debole → forte» solo se la scheda li ha; si ferma se la scheda
+  manca (commit dd93098; prove in `prove_editoriale.py`).
 
 ## Senza codice: checklist del capitolo per l'autore
 

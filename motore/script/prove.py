@@ -2381,6 +2381,25 @@ def voce(A):
     p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bm)
     esito('voce.py', '(h) massimo non intero: verifica KO con il motivo', A['massimo_verifica'],
           f'{p.returncode} / {"«massimo» non valido" in p.stdout} / {tb(p)}', sez)
+    # (i) gruppi di forme: un solo massimo complessivo su più divieti (per esempio tutte le chiuse a sentenza)
+    forme = ''.join(f'  {x}\n' for x in A['gruppo_divieti'].splitlines())
+    Lg = copia_libro('mini-libro')
+    open(os.path.join(Lg, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write('\n' + A['frase_gruppo'] + '\n')
+
+    def gruppo_esiti(con_gruppi):
+        open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + (forme if con_gruppi else forme.replace(', gruppo: chiuse', ''))
+                                               + ('gruppi:\n  chiuse: {massimo: 1}\n' if con_gruppi else ''))
+        return sorted(f'{r["controllo"].split(":", 1)[1]}|{r["esito"]}|{r["dettaglio"].split(":")[0]}'
+                      for r in divieti_dettagli(Lg, bm) if 'forma_' in r['controllo'] or ':chiuse:' in r['controllo'])
+    esito('stile.py', '(i) gruppo di forme: due forme con massimo 1 ciascuna, una occorrenza per forma: un avviso '
+          'per il gruppo (massimo 1 in tutto)', A['gruppo_esiti'], gruppo_esiti(True), sez)
+    esito('stile.py', '(i) senza gruppi (come prima): nessun avviso, ogni forma resta nel suo massimo', '[]',
+          str(gruppo_esiti(False)), sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + forme)
+    p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bm)
+    esito('voce.py', '(i) divieto in un gruppo non definito: verifica KO con il motivo', '1 / True / False',
+          f'{p.returncode} / {"che non è definito in «gruppi»" in p.stdout} / {tb(p)}', sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d)
     # (f) schema: voce senza slug rifiutata; zb aiuto; modello del briefing
     Lm = copia_libro('mini-libro')
     open(os.path.join(Lm, 'libro.yaml'), 'a', encoding='utf-8').write('voce: {ambientazione: altro}\n')

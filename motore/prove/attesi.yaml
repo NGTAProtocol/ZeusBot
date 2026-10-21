@@ -719,6 +719,12 @@ voce:
   massimo_esiti: "['stanca_ogni|AVVISO|stanchissima', 'stanca_ogni|AVVISO|stanchissima', 'stanca_uno|AVVISO|2 occorrenze (massimo 1)']"
   massimo_non_valido: "- {id: stanca_rotto, pattern: 'stanchissima', tipo: tic, massimo: uno}"
   massimo_verifica: "1 / True / False"
+  # (i) gruppi di forme: «gruppi: {chiuse: {massimo: 1}}» e «gruppo: chiuse» sui divieti; limite complessivo per unità
+  gruppo_divieti: |-
+      - {id: forma_uno, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic, massimo: 1, gruppo: chiuse}
+      - {id: forma_due, pattern: '(?i)(?<!\w)sfinita(?!\w)', tipo: tic, massimo: 1, gruppo: chiuse}
+  frase_gruppo: "Irene era stanchissima. La sorella era sfinita."
+  gruppo_esiti: "['voce-di-prova:chiuse:gruppo|AVVISO|2 occorrenze delle forme del gruppo (massimo 1 in tutto)']"
 
 recinto_libro:
   messaggio_motore: "è dentro motore/, che resta sempre pulito"

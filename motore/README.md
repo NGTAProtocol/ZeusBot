@@ -170,6 +170,9 @@ Struttura della banca: `indice.yaml` (`voci:` con `slug`, `nome`, `genere`, `sta
 (con il campo «ambientazione:») e `voci/<slug>/divieti.yaml`
 (`divieti:` con `id` ed `espressione` o `pattern`; facoltativo `massimo`, intero ≥ 0): le espressioni vietate
 della voce. Con `massimo: N` l'avviso scatta solo oltre N occorrenze nel capitolo; senza, a ogni occorrenza.
+Per un limite su più forme insieme: `gruppi: {chiuse: {massimo: 1}}` in cima al file e `gruppo: chiuse` sui divieti;
+`zb stile` somma le occorrenze di tutte le forme del gruppo nel capitolo e dà un AVVISO `voce:<slug>:<gruppo>:gruppo`
+oltre il massimo complessivo (il `massimo` di ogni forma resta). Un divieto in un gruppo non definito: FERMO.
 Nella sezione 3 della scheda, la riga «frase media» della tabella dei registri (intestazioni «Base», «Registro
 freddo», «Registro corto»…) dà l'intervallo di ogni registro: con `frase_media_voce: true` nel profilo `zb stile`
 e `zb esito` controllano ogni capitolo sull'intervallo del registro dichiarato nella scaletta.

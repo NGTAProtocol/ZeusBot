@@ -64,7 +64,9 @@ def scheda(b, slug):
 
 
 def divieti(b, slug):
-    """Voci di stile (modalità avviso) da voci/<slug>/divieti.yaml; FERMO se il file manca o non è valido."""
+    """Voci di stile (modalità avviso) da voci/<slug>/divieti.yaml; FERMO se il file manca o non è valido.
+    Facoltativi: «massimo» per divieto; «gruppi: {nome: {massimo: N}}» e «gruppo: nome» sul divieto per un limite
+    complessivo su più forme (per esempio tutte le chiuse a sentenza: una per capitolo in tutto)."""
     p = os.path.join(b, 'voci', slug, 'divieti.yaml')
     if not os.path.isfile(p):
         raise comune.ErroreMotore(f'divieti.yaml assente: voci/{slug}/divieti.yaml')
@@ -75,6 +77,13 @@ def divieti(b, slug):
     elenco = dati.get('divieti') if isinstance(dati, dict) else None
     if not isinstance(elenco, list) or not elenco:
         raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: serve «divieti:», una lista non vuota')
+    gruppi = dati.get('gruppi') or {}
+    if not isinstance(gruppi, dict):
+        raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «gruppi» deve essere una mappa nome: {{massimo: N}}')
+    for g, gv in gruppi.items():
+        m = gv.get('massimo') if isinstance(gv, dict) else None
+        if isinstance(m, bool) or not isinstance(m, int) or m < 0:
+            raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: gruppo «{g}» senza «massimo» intero ≥ 0 ({m!r})')
     out = []
     for i, d in enumerate(elenco):
         if not isinstance(d, dict) or not d.get('id') or not (d.get('espressione') or d.get('pattern')):
@@ -92,6 +101,13 @@ def divieti(b, slug):
                 raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «massimo» non valido in «{d["id"]}» '
                                           f'({m!r}): serve un intero ≥ 0')
             voce['massimo'] = m      # stile.py: AVVISO solo oltre il massimo di occorrenze nell'unità
+        if 'gruppo' in d:
+            if d['gruppo'] not in gruppi:
+                raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «{d["id"]}» nel gruppo «{d["gruppo"]}», che non è '
+                                          'definito in «gruppi»')
+            # stile.py: tutte le forme del gruppo contano insieme contro un solo massimo per unità
+            voce['gruppo'] = f'{slug}:{d["gruppo"]}'
+            voce['massimo_gruppo'] = gruppi[d['gruppo']]['massimo']
         out.append(voce)
     return out
 

@@ -189,6 +189,7 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervall
         a, b = profilo['frase_media']
         if not a <= met['frase_media'] <= b:
             out.append(risultato(nome, 'frase_media', 'AVVISO', None, f'{met["frase_media"]} fuori da {a}-{b}'))
+    gruppi = {}       # gruppo di forme dei divieti della voce: (massimo complessivo, occorrenze di tutte le forme)
     for v in voci:
         if v.get('ambito') == 'libro':
             continue
@@ -209,6 +210,8 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervall
             occ = [(n, t) for n, t in occ if n in dialogo]
             if not occ:
                 continue
+        if v.get('gruppo'):
+            gruppi.setdefault(v['gruppo'], (v['massimo_gruppo'], []))[1].extend(occ)
         mod = v['modalita']
         if mod == 'vieta':
             out += [risultato(nome, f'voce:{v["id"]}', 'KO', n, t) for n, t in occ]
@@ -223,6 +226,12 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervall
                                          f'{len(occ)} occorrenze (massimo {v["massimo"]})'))
             else:
                 out += [risultato(nome, f'voce:{v["id"]}', 'AVVISO', n, t) for n, t in occ]
+    for g, (m, occ) in sorted(gruppi.items()):
+        if len(occ) > m:
+            occ = sorted(occ)
+            out.append(risultato(nome, f'voce:{g}:gruppo', 'AVVISO', occ[m][0],
+                                 f'{len(occ)} occorrenze delle forme del gruppo (massimo {m} in tutto): righe '
+                                 + ', '.join(str(n) for n, _ in occ)))
     for vc in libro.get('vincoli_capitolo') or []:
         occ = occorrenze(prosa, vc['pattern'])
         if not occ:
