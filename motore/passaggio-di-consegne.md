@@ -19,6 +19,10 @@ riprendi da lì».
   P3 frasi finali in `zb stile` (03f12c6); frase media per registro della voce con `frase_media_voce` nel thriller
   (4d21449); ruoli e `zb prepara` con la voce (6371041). Suite dopo l'ultimo commit di codice: 655/655 OK, 0
   saltate. Dettaglio, realizzato e non realizzato: `docs/PROPOSTE_MOTORE.md`.
+- Correzioni del 2026-10-21 (seconda parte): `zb prepara` nomina gli esempi «debole → forte» solo se la scheda li
+  ha e si ferma se la scheda manca (dd93098); frase media del registro della voce: AVVISO «intervallo non
+  calibrato sull'autore» (3990f86); gruppi di forme nei divieti della voce con un massimo complessivo (c79df0a).
+  Suite: 661/661 OK, 0 saltate.
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
   nessuna approvazione intermedia; una sola fermata, la PAUSA DI LETTURA ogni 3 capitoli (`pausa_lettura` 3-5 in
   `libro.yaml`) e a fine stesura. Restano le fermate `controllo_fallito` e `canone`.

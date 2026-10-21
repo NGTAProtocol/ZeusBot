@@ -1,7 +1,7 @@
 # Infrastruttura completa del sistema casa editrice
 
 - **Data:** 2026-10-21
-- **Ramo:** `integrazione-editoriale`; **commit di partenza:** `6371041b279f52235bd84bcb5312568350b97fff «Ruoli: checklist del diagnosta con la tabella frase per frase delle chiuse, battute giustificative e soggetto; lo scrittore legge gli esempi della voce (zb prepara); proposte aggiornate»`: tutti i file sono copiati da questo stato.
+- **Ramo:** `integrazione-editoriale`; **commit di partenza:** `c79df0a9590b558235a6c41c276eae4dda673283 «Divieti della voce: gruppi di forme con un massimo complessivo per capitolo (retrocompatibile); prove»`: tutti i file sono copiati da questo stato.
 - **File inclusi:** 251 file tracciati (esclusa `docs/`); i binari sono descritti con dimensione e sha256.
 - **Esclusi per regola:** `libri/` e ogni manoscritto (mai sul ramo `motore`); la banca-voci (repository separato, contiene nomi reali: non si copia qui); le esportazioni precedenti, nella storia git e sul ramo d'archivio dei documenti.
 - **Rigenerazione:** `python3 -B docs/genera_infrastruttura.py`. Verifica in fondo.
@@ -684,7 +684,7 @@ fermati e riporta l'errore. Non dire «fatto» se non è su origin. Resoconto co
 <a id="file-motore-procedura-md"></a>
 #### FILE: motore/PROCEDURA.md
 
-503 righe, sha256 `f23d24684073bb335b54389a202053a49000de66ee9d7622f2e5de7dc3a3e36b`.
+508 righe, sha256 `e92ae3e5d2f654259eeab7bb49e6deb4c4fb21dfb7c0995a1dc4193ac5de1a72`.
 
 `````markdown
 # Procedura del motore
@@ -958,7 +958,9 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    scrive l'agente `scrittore-voce`, chiamato dalla sessione principale (mai due capitoli in parallelo);
    `zb prepara <libro> N` gli dà la scheda del capitolo, il codex filtrato, il canone, le capsule e, dopo una
    pausa di lettura con note, `06-diagnostica/note-lettura.md`; con una voce della banca indica anche le sezioni
-   2, 3 e 6 della scheda della voce (esempi «debole → forte») e i divieti, da leggere prima di scrivere.
+   2, 3 e 6 della scheda della voce e i divieti, da leggere prima di scrivere. Gli esempi «versione debole →
+   versione forte» si nominano solo se la sezione 6 li ha (righe «Debole: …» e «Forte: …»); se la scheda o
+   `ZB_BANCA_VOCI` mancano, `zb prepara` si ferma con il motivo.
 2. Riporto la riga «Letto: …» di `zb avvio` (se non l'ho già fatto in questa sessione).
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
 3b. Revisione del capitolo (percorso editoriale): il diagnosta, in una sessione separata da chi ha scritto, prende
@@ -977,7 +979,10 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    voce; il registro si dichiara nella scheda del capitolo in scaletta («registro corto», «registro freddo»…; se
    ce ne sono più d'uno vale il primo, il dominante); senza registro dichiarato vale «base». Un override di
    `frase_media` in `libro.yaml` resta sopra. Il motore misura il capitolo intero: registri diversi per scena
-   non si dichiarano e non si misurano separatamente.
+   non si dichiarano e non si misurano separatamente. L'intervallo del registro è una scelta della voce, non
+   ancora calibrata sui testi dell'autore: fuori intervallo il capitolo ha un AVVISO («intervallo non calibrato
+   sull'autore»), non un KO; diventerà un blocco solo dopo la calibrazione. L'intervallo del profilo o
+   dell'override resta un KO.
 5. Percorso editoriale: `zb capsula <libro> N` prepara `07-capsule/NN.md`, l'agente `capsula` la compila (otto
    sezioni, 120-250 parole), `zb capsula <libro> N --verifica` la controlla e riscrive il registro.
 6. Blocco di salvataggio (sezione 8).
@@ -1195,7 +1200,7 @@ ancora approvato a un gate, non la rileva nessuno dei due: resta visibile solo n
 <a id="file-motore-readme-md"></a>
 #### FILE: motore/README.md
 
-182 righe, sha256 `006961e05e5b01120ffc14ac23b6c52d8b1410276e2a1ab869aa22d52aaf5210`.
+185 righe, sha256 `afe427cc76fd10e891c0104d69da3df61eee97870ddc5487f2e0a288745095be`.
 
 `````markdown
 # Motore editoriale
@@ -1370,6 +1375,9 @@ Struttura della banca: `indice.yaml` (`voci:` con `slug`, `nome`, `genere`, `sta
 (con il campo «ambientazione:») e `voci/<slug>/divieti.yaml`
 (`divieti:` con `id` ed `espressione` o `pattern`; facoltativo `massimo`, intero ≥ 0): le espressioni vietate
 della voce. Con `massimo: N` l'avviso scatta solo oltre N occorrenze nel capitolo; senza, a ogni occorrenza.
+Per un limite su più forme insieme: `gruppi: {chiuse: {massimo: 1}}` in cima al file e `gruppo: chiuse` sui divieti;
+`zb stile` somma le occorrenze di tutte le forme del gruppo nel capitolo e dà un AVVISO `voce:<slug>:<gruppo>:gruppo`
+oltre il massimo complessivo (il `massimo` di ogni forma resta). Un divieto in un gruppo non definito: FERMO.
 Nella sezione 3 della scheda, la riga «frase media» della tabella dei registri (intestazioni «Base», «Registro
 freddo», «Registro corto»…) dà l'intervallo di ogni registro: con `frase_media_voce: true` nel profilo `zb stile`
 e `zb esito` controllano ogni capitolo sull'intervallo del registro dichiarato nella scaletta.
@@ -4488,7 +4496,7 @@ aggiornato: ""
 <a id="file-motore-passaggio-di-consegne-md"></a>
 #### FILE: motore/passaggio-di-consegne.md
 
-122 righe, sha256 `4d833055f5038d38eaaeb9d5c468401bcd2d2ba753bc3d7e92935baca2c64fb6`.
+126 righe, sha256 `7c24202149318aa447a2d443dad36e31b7468e0414ddafccb7a5a98c01a69319`.
 
 `````markdown
 # Passaggio di consegne: motore
@@ -4512,6 +4520,10 @@ riprendi da lì».
   P3 frasi finali in `zb stile` (03f12c6); frase media per registro della voce con `frase_media_voce` nel thriller
   (4d21449); ruoli e `zb prepara` con la voce (6371041). Suite dopo l'ultimo commit di codice: 655/655 OK, 0
   saltate. Dettaglio, realizzato e non realizzato: `docs/PROPOSTE_MOTORE.md`.
+- Correzioni del 2026-10-21 (seconda parte): `zb prepara` nomina gli esempi «debole → forte» solo se la scheda li
+  ha e si ferma se la scheda manca (dd93098); frase media del registro della voce: AVVISO «intervallo non
+  calibrato sull'autore» (3990f86); gruppi di forme nei divieti della voce con un massimo complessivo (c79df0a).
+  Suite: 661/661 OK, 0 saltate.
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
   nessuna approvazione intermedia; una sola fermata, la PAUSA DI LETTURA ogni 3 capitoli (`pausa_lettura` 3-5 in
   `libro.yaml`) e a fine stesura. Restano le fermate `controllo_fallito` e `canone`.
@@ -6522,7 +6534,7 @@ La chiave grande è quella del retro; la vetrina si apre con la chiave piccola.
 <a id="file-motore-prove-attesi-yaml"></a>
 #### FILE: motore/prove/attesi.yaml
 
-824 righe, sha256 `f52a4c72284504d79795c66e81d8894244c8281b4bd9d3dc6319f66efcd4a4d6`.
+830 righe, sha256 `180ebe7fa6c116d1de6ba475cbcb8f553cd80e63053089e2cddc4774da195e07`.
 
 `````yaml
 # Esiti attesi delle prove del motore sui due mini-libri inventati (proposta B.2.2, B.7).
@@ -7246,6 +7258,12 @@ voce:
   massimo_esiti: "['stanca_ogni|AVVISO|stanchissima', 'stanca_ogni|AVVISO|stanchissima', 'stanca_uno|AVVISO|2 occorrenze (massimo 1)']"
   massimo_non_valido: "- {id: stanca_rotto, pattern: 'stanchissima', tipo: tic, massimo: uno}"
   massimo_verifica: "1 / True / False"
+  # (i) gruppi di forme: «gruppi: {chiuse: {massimo: 1}}» e «gruppo: chiuse» sui divieti; limite complessivo per unità
+  gruppo_divieti: |-
+      - {id: forma_uno, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic, massimo: 1, gruppo: chiuse}
+      - {id: forma_due, pattern: '(?i)(?<!\w)sfinita(?!\w)', tipo: tic, massimo: 1, gruppo: chiuse}
+  frase_gruppo: "Irene era stanchissima. La sorella era sfinita."
+  gruppo_esiti: "['voce-di-prova:chiuse:gruppo|AVVISO|2 occorrenze delle forme del gruppo (massimo 1 in tutto)']"
 
 recinto_libro:
   messaggio_motore: "è dentro motore/, che resta sempre pulito"
@@ -7348,7 +7366,7 @@ frase_media_registro:
   registri: "[('base', [12, 18]), ('corto', [5, 10]), ('freddo', [15, 25])]"
   intervalli: ['5-10 registro corto, dalla voce', '15-25 registro freddo, dalla voce', '12-18 registro base, dalla voce', '9-14', '9-14', '12-18 registro base, dalla voce']
   senza_campo: ['1: 9-14 OK', '2: 9-14 OK', '3: 9-14 KO']
-  con_campo: ['1: 5-10 (registro corto, dalla voce) OK', '2: 15-25 (registro freddo, dalla voce) KO', '3: 12-18 (registro base, dalla voce) KO']
+  con_campo: ['1: 5-10 (registro corto, dalla voce) OK', '2: 15-25 (registro freddo, dalla voce) AVVISO', '3: 12-18 (registro base, dalla voce) AVVISO']
 `````
 
 <a id="file-motore-prove-banca-voci-prova-leggimi-md"></a>
@@ -18798,7 +18816,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-prepara-py"></a>
 #### FILE: motore/script/prepara.py
 
-105 righe, sha256 `2f0341af96a46ecf880a7bd170ec2b1bddf9c939beb7f8b84c85d7738e291c84`.
+118 righe, sha256 `ce70ad5922b933fd3eb861dc4bcadcb4eb856b4615fef99989b3a889b1f831ca`.
 
 `````python
 """Preparazione di un capitolo per lo scrittore (comando «zb prepara <libro> <N>»).
@@ -18809,7 +18827,8 @@ scrittore deve leggere, e nient'altro:
 - la scheda del capitolo N da 03-struttura/05-scaletta.md; si ferma (codice 2) se mancano funzione,
   conflitto, cambiamento, informazione data, gancio, polarità emotiva o sottotesto dei dialoghi;
 - i file del codex con i tag della scheda (@char, @loc), e gli avvisi per i tag senza scheda;
-- con una voce in libro.yaml, dove leggere la scheda della voce (sezioni 2, 3 e 6, con gli esempi) e i divieti;
+- con una voce in libro.yaml, dove leggere la scheda della voce (sezioni 2, 3 e 6; gli esempi «debole → forte» solo
+  se la scheda li ha) e i divieti; si ferma se la scheda manca;
 - il canone (fatti bloccati di stato.yaml);
 - le capsule dei capitoli precedenti e il registro delle promesse; si ferma se manca la capsula N-1;
 - le ultime righe del capitolo precedente (per la continuità del ritmo, al massimo 6 righe di prosa);
@@ -18822,6 +18841,7 @@ import sys
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
+import voce  # noqa: E402
 import capsula  # noqa: E402
 import codex  # noqa: E402
 import struttura  # noqa: E402
@@ -18872,12 +18892,7 @@ def prepara(cartella, libro, n):
     if note in leggere:
         out += ['', '## Note dell\'autore alla pausa di lettura', '', f'Valgono per questo capitolo: {note} (nei file da leggere).']
     if (libro.get('voce') or {}).get('slug'):
-        slug = libro['voce']['slug']
-        out += ['', '## Voce (banca-voci, sola lettura)', '',
-                f'Prima di scrivere: `zb voce mostra {slug}` (tutti i blocchi) oppure `$ZB_BANCA_VOCI/voci/{slug}/scheda.md`. '
-                'Da leggere sempre: sezione 2 (regole), sezione 3 (misure del registro del capitolo) e sezione 6 '
-                '(esempi originali «versione debole → versione forte» e campioni per registro), poi '
-                f'`voci/{slug}/divieti.yaml`. Gli esempi mostrano la funzione da imitare, non frasi da copiare.']
+        out += voce_da_leggere(libro['voce']['slug'])
     out += ['', '## File da leggere', ''] + [f'- {r}' for r in leggere]
     out += [f'- AVVISO {x}: nessuna scheda nel codex' for x in ignoti]
     if coda:
@@ -18886,6 +18901,22 @@ def prepara(cartella, libro, n):
     rel = f'06-diagnostica/preparazione/{n:02d}.md'
     comune.scrivi(cartella, rel, '\n'.join(out) + '\n')
     return rel, len(leggere), totale, ignoti
+
+
+def voce_da_leggere(slug):
+    """Righe della sezione «Voce» della preparazione. Si ferma se la banca o la scheda della voce mancano: lo
+    scrittore deve leggerla prima di scrivere. Gli esempi «debole → forte» si nominano solo se la scheda li ha."""
+    b = voce.banca()
+    p = voce.scheda(b, slug)
+    if not os.path.isfile(p):
+        raise comune.ErroreMotore(f'Scheda della voce «{slug}» assente: {p}. Lo scrittore non può leggerla: '
+                                  'controlla ZB_BANCA_VOCI e il campo voce di libro.yaml (zb voce verifica <slug>).')
+    n = voce.esempi_debole_forte(b, slug)
+    sez6 = (f'sezione 6 (campione e {n} esempi originali «versione debole → versione forte»: mostrano la funzione da '
+            'imitare, non frasi da copiare)' if n else 'sezione 6 (campione)')
+    return ['', '## Voce (banca-voci, sola lettura)', '',
+            f'Prima di scrivere: `zb voce mostra {slug}` (tutti i blocchi) oppure `{p}`. Da leggere sempre: '
+            f'sezione 2 (regole), sezione 3 (misure del registro del capitolo), {sez6}; poi `voci/{slug}/divieti.yaml`.']
 
 
 def main(argv):
@@ -18911,7 +18942,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-prove-py"></a>
 #### FILE: motore/script/prove.py
 
-3277 righe, sha256 `37ab91a2a375512dfebeb059912738669556eca933307aa1eb816645c1d8623e`.
+3299 righe, sha256 `89e4d85c9dbddef4b29761dfa58432d5b98f83c5643c8a59125f09cad15ab489`.
 
 `````python
 """Prove ripetibili del motore (comando «zb prove»).
@@ -21297,6 +21328,25 @@ def voce(A):
     p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bm)
     esito('voce.py', '(h) massimo non intero: verifica KO con il motivo', A['massimo_verifica'],
           f'{p.returncode} / {"«massimo» non valido" in p.stdout} / {tb(p)}', sez)
+    # (i) gruppi di forme: un solo massimo complessivo su più divieti (per esempio tutte le chiuse a sentenza)
+    forme = ''.join(f'  {x}\n' for x in A['gruppo_divieti'].splitlines())
+    Lg = copia_libro('mini-libro')
+    open(os.path.join(Lg, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write('\n' + A['frase_gruppo'] + '\n')
+
+    def gruppo_esiti(con_gruppi):
+        open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + (forme if con_gruppi else forme.replace(', gruppo: chiuse', ''))
+                                               + ('gruppi:\n  chiuse: {massimo: 1}\n' if con_gruppi else ''))
+        return sorted(f'{r["controllo"].split(":", 1)[1]}|{r["esito"]}|{r["dettaglio"].split(":")[0]}'
+                      for r in divieti_dettagli(Lg, bm) if 'forma_' in r['controllo'] or ':chiuse:' in r['controllo'])
+    esito('stile.py', '(i) gruppo di forme: due forme con massimo 1 ciascuna, una occorrenza per forma: un avviso '
+          'per il gruppo (massimo 1 in tutto)', A['gruppo_esiti'], gruppo_esiti(True), sez)
+    esito('stile.py', '(i) senza gruppi (come prima): nessun avviso, ogni forma resta nel suo massimo', '[]',
+          str(gruppo_esiti(False)), sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + forme)
+    p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bm)
+    esito('voce.py', '(i) divieto in un gruppo non definito: verifica KO con il motivo', '1 / True / False',
+          f'{p.returncode} / {"che non è definito in «gruppi»" in p.stdout} / {tb(p)}', sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d)
     # (f) schema: voce senza slug rifiutata; zb aiuto; modello del briefing
     Lm = copia_libro('mini-libro')
     open(os.path.join(Lm, 'libro.yaml'), 'a', encoding='utf-8').write('voce: {ambientazione: altro}\n')
@@ -22122,12 +22172,15 @@ def frase_media_registro(A):
             os.environ['ZB_BANCA_VOCI'] = prima
 
     def fm(es):
-        return [f'{n}: {m.get("frase_media_intervallo")} ' + ('KO' if any(r['controllo'] == 'frase_media' for r in o) else 'OK')
-                for n, (m, o) in es.items() if n.isdigit()]
+        return [f'{n}: {m.get("frase_media_intervallo")} ' +
+                next((r['esito'] for r in o if r['controllo'] == 'frase_media'), 'OK') for n, (m, o) in es.items() if n.isdigit()]
     esito('stile.py', 'mini-libro con voce e scaletta, profilo senza il campo: intervallo del profilo', A['senza_campo'],
           fm(senza), sez)
-    esito('stile.py', 'mini-libro con voce e scaletta, frase_media_voce: true: intervallo del registro di ogni capitolo',
-          A['con_campo'], fm(con), sez)
+    esito('stile.py', 'mini-libro con voce e scaletta, frase_media_voce: true: intervallo del registro di ogni capitolo, '
+          'fuori intervallo AVVISO (non KO)', A['con_campo'], fm(con), sez)
+    det = [r['dettaglio'] for r in con['2'][1] if r['controllo'] == 'frase_media']
+    esito('stile.py', 'avviso della frase media del registro: «intervallo non calibrato sull\'autore»', 'True',
+          str(bool(det) and det[0].endswith("intervallo non calibrato sull'autore")), sez)
     th = comune.carica_profilo('thriller')
     esito('profili/thriller.yaml', 'thriller: la voce prevale sulla frase media', 'True', str(th.get('frase_media_voce')), sez)
 
@@ -22196,7 +22249,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-prove-editoriale-py"></a>
 #### FILE: motore/script/prove_editoriale.py
 
-739 righe, sha256 `e78020eda34940452a0859ace470752a551d104f22059c93152040548b6618f4`.
+760 righe, sha256 `8553eacebf3607bf8648e549315b95f69f46ac2ad839f32a69a578d2a56c5113`.
 
 `````python
 """Prove del percorso da casa editrice (le lancia prove.py; da sola: python3 -B prove_editoriale.py).
@@ -22604,11 +22657,32 @@ def pausa_note(r, L, sez):
     ly = os.path.join(L2, 'libro.yaml')
     orig = open(ly, encoding='utf-8').read()
     open(ly, 'w', encoding='utf-8').write(orig.rstrip('\n') + '\nvoce: {slug: voce-di-prova, ambientazione: altro}\n')
-    pp = zb(L2, 'prepara', '.', '3')
-    t = open(prep, encoding='utf-8').read() if os.path.isfile(prep) else ''
-    esito('prepara.py', 'libro con voce: zb prepara dice di leggere le sezioni 2, 3 e 6 della scheda (esempi) e i divieti',
-          '0 / True / True', f'{pp.returncode} / {"## Voce (banca-voci, sola lettura)" in t} / '
-          f'{"sezione 6" in t and "voci/voce-di-prova/divieti.yaml" in t}', sez)
+    banca = os.path.join(M, 'prove', 'banca-voci-prova')
+
+    def prepara_con(b):
+        p = zb(L2, 'prepara', '.', '3', env=dict(E, ZB_BANCA_VOCI=b))
+        return p, (open(prep, encoding='utf-8').read() if os.path.isfile(prep) else '')
+    if os.path.isfile(prep):
+        os.remove(prep)
+    pp, t = prepara_con(banca)       # voce di prova: sezione 6 con il solo campione, nessun esempio «debole → forte»
+    esito('prepara.py', 'libro con voce senza esempi: sezioni 2, 3 e 6 e divieti, gli esempi «debole → forte» non nominati',
+          '0 / True / True / False', f'{pp.returncode} / {"## Voce (banca-voci, sola lettura)" in t} / '
+          f'{"sezione 6 (campione)" in t and "voci/voce-di-prova/divieti.yaml" in t} / {"debole" in t}', sez)
+    d = tempfile.mkdtemp(dir=TMP)
+    b2 = shutil.copytree(banca, os.path.join(d, 'banca'))
+    sc = os.path.join(b2, 'voci', 'voce-di-prova', 'scheda.md')
+    st = open(sc, encoding='utf-8').read()
+    i = st.index('## 7.')
+    open(sc, 'w', encoding='utf-8').write(st[:i] + '### 6.1 Esempi\n\n1. Debole: — Resto qui, perché da qui vedo la porta.\n'
+                                          '   Forte: — Resto qui.\n2. Debole: Chiuse. Certe cose finiscono così.\n'
+                                          '   Forte: Chiuse e girò la chiave.\n\n' + st[i:])
+    pp, t = prepara_con(b2)
+    esito('prepara.py', 'libro con voce con esempi: la sezione 6 nomina i 2 esempi «debole → forte»', '0 / True',
+          f'{pp.returncode} / {"2 esempi originali «versione debole → versione forte»" in t}', sez)
+    os.remove(sc)
+    pp, t = prepara_con(b2)
+    esito('prepara.py', 'scheda della voce assente: zb prepara si ferma con il percorso', '2 / True',
+          f'{pp.returncode} / {"Scheda della voce «voce-di-prova» assente" in pp.stderr}', sez)
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 6'))
     p6 = zb(L2, 'stato', '.')
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 5'))
@@ -24127,7 +24201,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-stile-py"></a>
 #### FILE: motore/script/stile.py
 
-320 righe, sha256 `f0bb2bdd6fed8a0e6defdaafa2d660932b45fa3e938d8aa9521cfe719c2f6443`.
+331 righe, sha256 `c2bd58f929c3bbb08ce472a1f4cb08399eba265917f29c92f776a0bafcfcbaeb`.
 
 `````python
 """Controlli di stile (proposta B.3, B.6, C.2).
@@ -24294,8 +24368,10 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervall
         a, b, nota = intervallo or (profilo['frase_media'][0], profilo['frase_media'][1], '')
         met['frase_media_intervallo'] = f'{a}-{b}' + (f' ({nota})' if nota else '')
         if not a <= met['frase_media'] <= b:
-            out.append(risultato(nome, 'frase_media', 'KO', None,
-                                 f'{met["frase_media"]} fuori da {a}-{b}' + (f' ({nota})' if nota else '')))
+            # l'intervallo della voce è una scelta della voce, non ancora calibrata sull'autore: avviso, non blocco
+            out.append(risultato(nome, 'frase_media', 'AVVISO' if nota else 'KO', None,
+                                 f'{met["frase_media"]} fuori da {a}-{b}' +
+                                 (f' ({nota}): intervallo non calibrato sull\'autore' if nota else '')))
         a, b = profilo['dialogo_percento']
         if not a <= met['dialogo_percento'] <= b:
             out.append(risultato(nome, 'dialogo', 'KO', None, f'{met["dialogo_percento"]}% fuori da {a}-{b}%'))
@@ -24319,6 +24395,7 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervall
         a, b = profilo['frase_media']
         if not a <= met['frase_media'] <= b:
             out.append(risultato(nome, 'frase_media', 'AVVISO', None, f'{met["frase_media"]} fuori da {a}-{b}'))
+    gruppi = {}       # gruppo di forme dei divieti della voce: (massimo complessivo, occorrenze di tutte le forme)
     for v in voci:
         if v.get('ambito') == 'libro':
             continue
@@ -24339,6 +24416,8 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervall
             occ = [(n, t) for n, t in occ if n in dialogo]
             if not occ:
                 continue
+        if v.get('gruppo'):
+            gruppi.setdefault(v['gruppo'], (v['massimo_gruppo'], []))[1].extend(occ)
         mod = v['modalita']
         if mod == 'vieta':
             out += [risultato(nome, f'voce:{v["id"]}', 'KO', n, t) for n, t in occ]
@@ -24353,6 +24432,12 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervall
                                          f'{len(occ)} occorrenze (massimo {v["massimo"]})'))
             else:
                 out += [risultato(nome, f'voce:{v["id"]}', 'AVVISO', n, t) for n, t in occ]
+    for g, (m, occ) in sorted(gruppi.items()):
+        if len(occ) > m:
+            occ = sorted(occ)
+            out.append(risultato(nome, f'voce:{g}:gruppo', 'AVVISO', occ[m][0],
+                                 f'{len(occ)} occorrenze delle forme del gruppo (massimo {m} in tutto): righe '
+                                 + ', '.join(str(n) for n, _ in occ)))
     for vc in libro.get('vincoli_capitolo') or []:
         occ = occorrenze(prosa, vc['pattern'])
         if not occ:
@@ -25406,7 +25491,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-voce-py"></a>
 #### FILE: motore/script/voce.py
 
-246 righe, sha256 `e8c42cf741bbbde7b1d54240af5205d94b808544296dfb18d169882bf4691e62`.
+271 righe, sha256 `312c08696e9db8809844d301b2ba5b1b6532d72add47383099cb284bba95aa32`.
 
 `````python
 """Voci narrative della banca-voci (comando «zb voce»). Sola lettura.
@@ -25475,7 +25560,9 @@ def scheda(b, slug):
 
 
 def divieti(b, slug):
-    """Voci di stile (modalità avviso) da voci/<slug>/divieti.yaml; FERMO se il file manca o non è valido."""
+    """Voci di stile (modalità avviso) da voci/<slug>/divieti.yaml; FERMO se il file manca o non è valido.
+    Facoltativi: «massimo» per divieto; «gruppi: {nome: {massimo: N}}» e «gruppo: nome» sul divieto per un limite
+    complessivo su più forme (per esempio tutte le chiuse a sentenza: una per capitolo in tutto)."""
     p = os.path.join(b, 'voci', slug, 'divieti.yaml')
     if not os.path.isfile(p):
         raise comune.ErroreMotore(f'divieti.yaml assente: voci/{slug}/divieti.yaml')
@@ -25486,6 +25573,13 @@ def divieti(b, slug):
     elenco = dati.get('divieti') if isinstance(dati, dict) else None
     if not isinstance(elenco, list) or not elenco:
         raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: serve «divieti:», una lista non vuota')
+    gruppi = dati.get('gruppi') or {}
+    if not isinstance(gruppi, dict):
+        raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «gruppi» deve essere una mappa nome: {{massimo: N}}')
+    for g, gv in gruppi.items():
+        m = gv.get('massimo') if isinstance(gv, dict) else None
+        if isinstance(m, bool) or not isinstance(m, int) or m < 0:
+            raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: gruppo «{g}» senza «massimo» intero ≥ 0 ({m!r})')
     out = []
     for i, d in enumerate(elenco):
         if not isinstance(d, dict) or not d.get('id') or not (d.get('espressione') or d.get('pattern')):
@@ -25503,6 +25597,13 @@ def divieti(b, slug):
                 raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «massimo» non valido in «{d["id"]}» '
                                           f'({m!r}): serve un intero ≥ 0')
             voce['massimo'] = m      # stile.py: AVVISO solo oltre il massimo di occorrenze nell'unità
+        if 'gruppo' in d:
+            if d['gruppo'] not in gruppi:
+                raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «{d["id"]}» nel gruppo «{d["gruppo"]}», che non è '
+                                          'definito in «gruppi»')
+            # stile.py: tutte le forme del gruppo contano insieme contro un solo massimo per unità
+            voce['gruppo'] = f'{slug}:{d["gruppo"]}'
+            voce['massimo_gruppo'] = gruppi[d['gruppo']]['massimo']
         out.append(voce)
     return out
 
@@ -25517,6 +25618,15 @@ def divieti_del_libro(libro):
         return divieti(banca(), v['slug'])
     except comune.ErroreMotore:
         return []
+
+
+def esempi_debole_forte(b, slug):
+    """Numero di esempi «versione debole → versione forte» nella sezione 6 della scheda: righe «Debole: …»
+    (anche numerate, «1. Debole: …»), contate solo se la sezione ha anche almeno una riga «Forte: …»."""
+    corpo = sezioni(open(scheda(b, slug), encoding='utf-8').read()).get(6, ('', ''))[1]
+    deboli = len(re.findall(r'(?m)^\s*(?:\d+\.\s*)?Debole:', corpo))
+    forti = len(re.findall(r'(?m)^\s*(?:\d+\.\s*)?Forte:', corpo))
+    return deboli if forti else 0
 
 
 def registri(b, slug):

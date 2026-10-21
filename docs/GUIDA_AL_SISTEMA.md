@@ -284,7 +284,7 @@ Sono 7, nella cartella `motore/profili/`: fantascienza, fantasy, giallo, narrati
 
 Un valore del briefing fuori dal profilo è accettato solo con un «Motivo override:» scritto nel briefing. Senza motivo, `zb nuovo` si ferma (<span class="fonte">motore/PROCEDURA.md §3</span>).
 
-Nel thriller la frase media la dà la voce: con `frase_media_voce: true` ogni capitolo si misura sull'intervallo del suo registro nella scheda della voce (corto, freddo, base), dichiarato nella scaletta. Un override in `libro.yaml` resta sopra (<span class="fonte">motore/profili/thriller.yaml; motore/PROCEDURA.md §6</span>).
+Nel thriller la frase media la dà la voce: con `frase_media_voce: true` ogni capitolo si misura sull'intervallo del suo registro nella scheda della voce (corto, freddo, base), dichiarato nella scaletta. Fuori intervallo è un AVVISO, non un blocco: l'intervallo è una scelta della voce, non ancora calibrata sui tuoi testi. Un override in `libro.yaml` resta sopra (<span class="fonte">motore/profili/thriller.yaml; motore/PROCEDURA.md §6</span>).
 
 ## Voci narranti
 
@@ -292,7 +292,7 @@ Una voce dice **come** si racconta. Il **cosa** lo decide l'autore nel briefing 
 
 Le voci stanno in un repository separato, la banca-voci, mai dentro il motore. Il motore le legge in sola lettura dalla cartella indicata da `ZB_BANCA_VOCI`. I nomi delle voci stanno solo lì: questa guida non li scrive (<span class="fonte">motore/passaggio-di-consegne.md, «Stato»</span>).
 
-Ogni voce ha una scheda in 7 sezioni e un elenco di espressioni vietate, `divieti.yaml`. `zb voce lista`, `zb voce mostra <slug>` e `zb voce verifica <slug>` le leggono (<span class="fonte">motore/README.md, «Banca-voci»</span>). Un divieto può avere `massimo: N`: l'avviso scatta solo oltre N volte nel capitolo. La sezione 6 della scheda può avere esempi «versione debole → versione forte»; `zb prepara` dice allo scrittore di leggerli (<span class="fonte">motore/README.md; motore/script/prepara.py</span>).
+Ogni voce ha una scheda in 7 sezioni e un elenco di espressioni vietate, `divieti.yaml`. `zb voce lista`, `zb voce mostra <slug>` e `zb voce verifica <slug>` le leggono (<span class="fonte">motore/README.md, «Banca-voci»</span>). Un divieto può avere `massimo: N`: l'avviso scatta solo oltre N volte nel capitolo; più divieti nello stesso `gruppo` contano insieme contro un solo massimo (per esempio tutte le forme di chiusa). La sezione 6 della scheda può avere esempi «versione debole → versione forte»; `zb prepara` li nomina allo scrittore solo se ci sono, e si ferma se la scheda della voce manca (<span class="fonte">motore/README.md; motore/script/prepara.py</span>).
 
 Un libro sceglie la voce nel briefing («Voce dalla banca:», «Ambientazione:»); `zb nuovo` la scrive in `libro.yaml`. Se il briefing contrasta con la voce, vince il briefing, e il contrasto si segnala (<span class="fonte">motore/README.md, «Banca-voci»; motore/editoriale/LEGGIMI.md</span>).
 
