@@ -3,13 +3,10 @@ motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
 passo: pausa di lettura
-gate_in_attesa: lettura
+gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 1
-  - 2
-  - 3
+  capitoli: []
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 3
 tentativi: {}
@@ -194,47 +191,16 @@ documenti_approvati:
   04-manoscritto/01-l-ultimo-appuntamento.md:
     sha256: 86cecb8307f92c618f0a9c6b4b4cc0c558d884e950fbae215a4567827f549eed
     commit: 6104f55
-    riapprovazioni:
-    - data: '2026-10-21'
-      motivo: seconda riscrittura con la voce f6ee79d, note di lettura dell'autore del 2026-10-21
-      sha256_precedente: 7e92b8720b3167acaff19dbf2037ba70f45692208d60038e7d47e0f51bc03d50
-      commit_precedente: 92047be
-    - data: '2026-10-21'
-      motivo: correzione unica dopo la revisione del diagnosta
-      sha256_precedente: a95623c65ad2a4abd78dcd443f0f52c201e104d2c7f50f4f1a4a1dcd1dabfb50
-      commit_precedente: ec7c12b
-    - data: '2026-10-21'
-      motivo: correzione della frase indicata dalla seconda revisione
-      sha256_precedente: ea2e4f57b1f80264e86aac0865fdda8e2e240843a4fb4503929355ece0c284cf
-      commit_precedente: dc97c93
   04-manoscritto/02-la-nomina.md:
     sha256: 10e8a569dafcd54c986533bd69bb811bc9963ae45b801b99ee5825d7521aee12
     commit: '0460627'
-    riapprovazioni:
-    - data: '2026-10-21'
-      motivo: seconda riscrittura con la voce f6ee79d, note di lettura dell'autore del 2026-10-21
-      sha256_precedente: 3706ef281bf082ceb03b822ed699ac518a4e5cdf8ae7581f786344328fa72a9f
-      commit_precedente: 1c6904e
-    - data: '2026-10-21'
-      motivo: correzione unica dopo la revisione del diagnosta
-      sha256_precedente: a148b0c81868b8839d1f7e6f2b7dd9ccd8f492d05a61cbe21b3e0ce89e520968
-      commit_precedente: c8bdce1
   04-manoscritto/03-la-convocazione.md:
     sha256: 63e3ac97a83725e59e0bc29acbbfa9a107a18c4927b3fc855bb789b3c141472f
     commit: af7a3d4
-    riapprovazioni:
-    - data: '2026-10-21'
-      motivo: seconda riscrittura con la voce f6ee79d, note di lettura dell'autore del 2026-10-21
-      sha256_precedente: 0649d6bb92a4f52bfb5a8566af9f6f459ccf88f26ffcf87540ab9dc7d2d3e360
-      commit_precedente: 5c9637f
-    - data: '2026-10-21'
-      motivo: correzione unica dopo la revisione del diagnosta
-      sha256_precedente: 2353d7d61fb82b2e3a8f3186ee3c9bfeadbc80e650ac2d253f64347c8445b742
-      commit_precedente: '5136531'
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-21T05:00:42Z'
+aggiornato: '2026-10-21T06:07:13Z'
 sottofase: null
 fatti_bloccati:
 - Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
@@ -270,6 +236,13 @@ note_lettura:
   testo: 'Stessi fatti e stesse scene, nessun fatto nuovo. Applica le regole nuove della voce. Continuità: Kurgan manda via
     il ragazzo (capitolo 1); nel capitolo 3 si dice che il ragazzo è stato rimandato a casa da Kurgan, con il soggetto chiaro.
     Canone da codex: telefoni ritirati (31), cinque linee guida, sala piccola, bicchieri e aloni.'
+- data: '2026-10-21'
+  capitoli:
+  - 1
+  - 2
+  - 3
+  testo: '1: Stessi fatti e stesse scene, nessun fatto nuovo. Applica la voce aggiornata e gli esempi. Battute secche. Soggetto
+    implicito dove è ovvio. Una sola chiusa a sentenza nel punto più forte.'
 correzioni_registrate:
 - data: '2026-10-20'
   file: 04-manoscritto/01-l-ultimo-appuntamento.md

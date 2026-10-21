@@ -7,3 +7,7 @@ Riscrivi i capitoli 1-3 con la voce aggiornata. Mantieni gli stessi fatti e le s
 ## 2026-10-21, capitoli 1, 2, 3
 
 Stessi fatti e stesse scene, nessun fatto nuovo. Applica le regole nuove della voce. Continuità: Kurgan manda via il ragazzo (capitolo 1); nel capitolo 3 si dice che il ragazzo è stato rimandato a casa da Kurgan, con il soggetto chiaro. Canone da codex: telefoni ritirati (31), cinque linee guida, sala piccola, bicchieri e aloni.
+
+## 2026-10-21, capitoli 1, 2, 3
+
+1: Stessi fatti e stesse scene, nessun fatto nuovo. Applica la voce aggiornata e gli esempi. Battute secche. Soggetto implicito dove è ovvio. Una sola chiusa a sentenza nel punto più forte.
