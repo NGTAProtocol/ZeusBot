@@ -30,7 +30,7 @@ testo) e il loro numero, anche quando è zero:
 4. **Soggetto:** (a) frasi in cui, con due persone dello stesso genere in scena, «lui», «lo», «gli» o un verbo
    senza soggetto possono riferirsi a tutte e due, anche nei fatti riferiti in un dialogo; (b) nome proprio
    ripetuto come soggetto dove il soggetto è ovvio (stessa persona della frase prima, nessun'altra persona dello
-   stesso genere in mezzo): righe e numero.
+   stesso genere in mezzo, nessuna battuta di dialogo in mezzo): righe e numero.
 5. **Battute giustificative:** battuta che spiega o giustifica ciò che il personaggio dice, fa o pensa (motivo
    dichiarato, «mi sembra chiaro», «se posso», «non si preoccupi», conferma di ciò che l'altro ha appena detto)
    invece di lasciarlo nel sottotesto. Conta la funzione: la versione forte è la battuta secca della sezione 6

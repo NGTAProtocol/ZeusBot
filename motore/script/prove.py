@@ -3086,6 +3086,15 @@ def anti_ia_prove(A):
     p2 = esegui(os.path.join(S, 'capitolo.py'), L, '3')
     esito('capitolo.py', 'anti_ia.modalita: blocco in libro.yaml: KO e codice 1', A['blocco'],
           f'{p2.returncode} / {"anti-ia:aperture_uguali | KO" in open(os.path.join(L, "06-diagnostica", "capitoli", "03.md"), encoding="utf-8").read()}', sez)
+    # aperture uguali: una battuta di dialogo tra due frasi con lo stesso soggetto interrompe la serie
+    con_battuta = 'Il ragazzo spegne il motore.\n\n— Lascialo acceso.\n\nIl ragazzo gira di nuovo la chiave.\n'
+    stessa_riga = 'Il ragazzo spegne il motore. — Lascialo acceso. Il ragazzo gira di nuovo la chiave.\n'
+    consecutive = 'Il ragazzo spegne il motore. Il ragazzo gira di nuovo la chiave.\n'
+    esito('antiia.py', 'aperture uguali: battuta in mezzo (riga a parte / stessa riga) non conta; due frasi consecutive '
+          'con lo stesso soggetto contano (coppie uguali; % della misura)', A['aperture_battuta'],
+          f'{antiia.aperture_uguali(con_battuta, "it")[0]} / {antiia.aperture_uguali(stessa_riga, "it")[0]} / '
+          f'{antiia.aperture_uguali(consecutive, "it")[0]} / {antiia.misure(con_battuta, "it", [])["aperture_uguali"]} / '
+          f'{antiia.misure(consecutive, "it", [])["aperture_uguali"]}', sez)
     R = copia_libro('mini-libro-romance')
     _, lr, pr = comune.carica_libro(R)
     gr = lambda lb: next((g for k, g, _ in antiia.audit(R, lb, '2', profilo=pr, scrivi=False)['2'][1]
