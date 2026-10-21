@@ -16,21 +16,21 @@ All'ingresso c'era un tavolo pieghevole, e dietro sedeva un caporale con una sca
 
 — Qui dentro non suona niente.
 
-Il caporale lo disse senza alzare gli occhi dal registro. Bertola infilò il numero nella tasca esterna della giacca, perché il cartoncino stava già in quella interna.
+Il caporale lo disse senza alzare gli occhi dal registro. Bertola infilò il numero nella tasca della giacca.
 
 Un militare lo accompagnò lungo un corridoio di linoleum verde. Le porte erano tutte chiuse e tutte uguali, ognuna con una targhetta di plastica senza scritte, e da dietro non veniva nessun rumore. In fondo c'era la sala: sedie di metallo grigio messe in file, una lavagna bianca e pulita, un tavolo con una brocca d'acqua. Bicchieri, nessuno. Le finestre avevano le grate e davano sul piazzale.
 
 Le prime file erano piene. Quando Bertola entrò, le teste si girarono tutte insieme e poi tornarono avanti, una alla volta. Bertola non salutò nessuno. Si sedette nell'ultima fila, vicino alla porta, con il cappotto sulle ginocchia.
 
-Li conosceva quasi tutti: alcuni di nome, altri di faccia, altri per quello che avevano fatto e che lui aveva riferito a chi di dovere. Tredici anni a guardare e a riportare. Adesso quella gente stava nella stessa stanza, in file, come a una riunione di condominio.
+Li conosceva quasi tutti: alcuni di nome, altri di faccia, altri per quello che avevano fatto e che lui aveva riferito a chi di dovere. Tredici anni a guardare e a riportare. Adesso quella gente stava nella stessa stanza, in file.
 
 I quattro erano in seconda fila, vicino alla finestra. Sotto Vito erano stati i più alti, quelli che parlavano con Vito senza aspettare il turno. Il più anziano teneva le mani sulle ginocchia. Accanto a lui sedeva un uomo con una cartella di pelle chiusa sulle gambe, l'unico in tutta la sala ad aver portato qualcosa. Il terzo e il quarto guardavano la lavagna vuota senza parlarsi.
 
 Un ragazzo dei magazzini si alzò dalla terza fila e venne a sedersi accanto a Bertola. Era uno di quelli che contano le casse e non chiedono dove vanno a finire, e aveva la faccia di chi ha dormito poco.
 
-— Pure te, — disse a bassa voce. — Ti hanno fatto aspettare tanto, fuori?
+— Pure te, — disse a bassa voce.
 
-— Il tempo di un caffè. Mi hanno dato un orario, le nove, sul cartoncino.
+— Mi hanno dato un orario. Le nove, sul cartoncino.
 
 — A me sono venuti sotto casa alle sei. In due, in divisa. Gentili. Mi hanno aspettato mentre mi facevo la barba. — Il ragazzo dei magazzini si passò la mano sulla guancia. — Ti pare normale? Gentili, con noi?
 
@@ -174,15 +174,15 @@ Nessuno disse niente. Dalla seconda fila arrivò soltanto il rumore di una scarp
 
 Un ufficiale aprì la seconda cartellina e porse un foglio a Bertola, non a De Biasi. Era un elenco battuto a macchina, con un numero a sinistra e un nome a destra. Il nome di Bertola non c'era. C'erano tutti gli altri, ognuno con la sua zona, in un ordine che non era quello che avrebbe scelto Vito e nemmeno quello che avrebbe scelto Bertola.
 
-— Lo legga.
+— Lo legga, — disse De Biasi.
 
 — Qui, davanti a tutti?
 
-— Ad alta voce. Così ognuno sente la sua.
+— Ad alta voce, — disse De Biasi. — Così ognuno sente la sua.
 
 Bertola guardò il foglio con attenzione e lesse il primo numero e il primo nome. La voce uscì più bassa del previsto e tornò indietro dalla parete di fondo.
 
-— Più forte, per cortesia. In fondo non sentono.
+— Più forte, per cortesia, — disse De Biasi. — In fondo non sentono.
 
 Bertola ricominciò da capo, più forte. A ogni nome l'uomo chiamato rispondeva sì oppure faceva un segno con la testa. Uno disse presente, come a militare. Qualcuno rise piano e smise subito. Il ragazzo dei magazzini era nel gruppo di una zona di periferia, sotto un capo che lo aveva sempre trattato male. Disse sì anche lui.
 
@@ -200,7 +200,7 @@ Gli altri due Bertola li lesse uno dopo l'altro, senza fermarsi. Il terzo rispos
 
 — Ci sono errori? — chiese Bertola a bassa voce, solo per De Biasi.
 
-— Nessuno. L'elenco va bene così, lo lasci com'è.
+— Nessuno. L'elenco va bene così, lo lasci com'è. Lei ha buona memoria, mi dicono. Ma la carta aiuta.
 
 De Biasi si rivolse alla sala.
 
@@ -228,4 +228,4 @@ Il vecchio lo disse alla stanza, con la stessa voce con cui aveva chiesto a Bert
 
 Bertola aspettò che qualcuno parlasse. Poi vide che il vecchio si era voltato, e che non guardava l'ufficiale, né i militari, né la porta laterale da dove era uscito De Biasi. Guardava Bertola, accanto al tavolo, con il foglio dei numeri in mano.
 
-Bertola mise il foglio nella tasca interna della giacca, dove teneva il cartoncino. Il vecchio aspettò ancora un poco. Poi uscì nel corridoio, dove la fila ricominciò a muoversi, e il caporale chiamò il numero successivo.
+Bertola mise il foglio nella tasca interna della giacca. Il vecchio aspettò ancora un poco. Poi uscì nel corridoio, dove la fila ricominciò a muoversi, e il caporale chiamò il numero successivo.
