@@ -5,7 +5,7 @@
 
 | Parte | Cap. | Titolo | Funzione | Scene | Budget capitolo | Budget per scena | Parole reali | Scarto |
 |---|---|---|---|---|---|---|---|---|
-| — | 1 | L'ultimo appuntamento | incidente scatenante (azione) | 2 | 2200 | 1100 | 2081 | -5,4% |
+| — | 1 | L'ultimo appuntamento | incidente scatenante (azione) | 2 | 2200 | 1100 | 2069 | -6,0% |
 | — | 2 | La nomina | nomina (potere) | 2 | 1800 | 900 | 1675 | -6,9% |
 | — | 3 | La convocazione | prima svolta: convocazione | 3 | 2600 | 870 | 2540 | -2,3% |
 | — | 4 | Il fascicolo orfano | apertura indagine, falsa pista | 2 | 2000 | 1000 |  |  |
