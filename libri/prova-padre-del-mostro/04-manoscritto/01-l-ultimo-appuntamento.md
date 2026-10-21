@@ -28,7 +28,7 @@ Il ragazzo alza il piede dall'acceleratore. Kurgan guarda il canale che scorre p
 
 Kurgan guarda lo specchietto, poi il telefono: sullo schermo non c'è niente. Di solito, un'ora prima di un incontro, a Kurgan scrive qualcuno. Il nome di un bar, un orario spostato, due parole per dire che va tutto bene. Stavolta il telefono tace da tre giorni, da quando hanno fissato l'appuntamento.
 
-Se volevano soltanto parlargli, avrebbero chiamato due volte per l'orario. Invece non ha chiamato nessuno.
+Se volevano soltanto parlargli, avrebbero chiamato due volte per l'orario.
 
 — Alla fine chi ci sarà, dentro? — chiede il ragazzo.
 
@@ -42,7 +42,7 @@ La convocazione è arrivata con le parole giuste. Una questione da chiarire, gen
 
 — Possiamo tornare indietro, dico che la macchina ha dato problemi.
 
-— Domani mi richiamano, dopodomani ancora, e poi non mi richiamano più.
+— Domani mi richiamano. Dopodomani ancora. Poi non mi richiamano più.
 
 — Allora entro con lei, almeno non è da solo.
 
@@ -82,7 +82,7 @@ Dalla porta esce un uomo in giacca, senza cravatta, con le mani in vista. Viene 
 
 — Il ragazzo resta qui, in macchina.
 
-— Come preferisce, ma può venire dentro anche chi l'accompagna, posto ce n'è.
+— Come preferisce. Può venire dentro anche chi l'accompagna. Posto ce n'è.
 
 Kurgan scende dalla macchina, e la ghiaia scricchiola sotto le sue scarpe. L'uomo in giacca non passa le mani sui fianchi di Kurgan e non gli chiede di aprire la giacca. Guarda per un secondo il punto dove la stoffa tira, sotto il braccio sinistro, poi guarda la porta.
 
@@ -98,11 +98,11 @@ Il ragazzo guarda Kurgan: ha capito, o ha capito abbastanza. Kurgan abbassa la v
 
 — Non tornare qui, vai a casa e domani non cercarmi.
 
-— E se mi chiedono dove sono andato?
+— E se mi chiedono di lei?
 
 — Dici che non sai niente, ed è la verità.
 
-Il ragazzo ingrana la prima e fa il giro del piazzale, piano, poi esce dal cancello. Kurgan segue la macchina con gli occhi finché la strada non la prende. Nessuna delle tre macchine si muove, e nessuno esce a seguirla.
+Il ragazzo ingrana la prima. Fa il giro del piazzale, piano. Poi esce dal cancello. Kurgan segue la macchina con gli occhi finché la strada non la prende. Nessuna delle tre macchine si muove. Nessuno esce a seguirla.
 
 Sulla soglia l'uomo in giacca aspetta senza fretta, con la pazienza di uno pagato a ore.
 
@@ -126,7 +126,7 @@ Sulla soglia l'uomo in giacca aspetta senza fretta, con la pazienza di uno pagat
 
 L'uomo in giacca sorride e si guarda le scarpe.
 
-Kurgan cammina verso la porta e conta i passi, senza volerlo: sono undici. Lo fa da sempre, conta le uscite, le finestre, le macchine, gli uomini. Gli uomini soprattutto.
+Kurgan cammina verso la porta e conta i passi, senza volerlo: sono undici. Lo fa da sempre, conta le uscite, le finestre, le macchine, gli uomini.
 
 Il padre era serbo e la madre del Vomero. A casa si parlavano due lingue, e Kurgan le capiva tutte e due. In Serbia a Kurgan hanno messo i gradi, perché sapeva contare gli uomini e riportarli indietro. Glieli hanno tolti per lo stesso motivo: tre ufficiali di grado alto mandavano i suoi dove non si torna. Kurgan ha fermato quei tre, e i suoi sono tornati a casa. Lui è tornato con un foglio di congedo. In fondo al foglio c'era la parola che toglie l'onore. Kurgan ha tenuto il foglio.
 
@@ -170,7 +170,7 @@ L'uomo al tavolo sorride appena, con le mani giunte e le dita intrecciate, senza
 
 — Chi comanda davvero si presenta di persona, non manda un sostituto.
 
-— Hanno altro da fare. Lei ha fatto una cosa grande, nessuno lo discute: prima c'erano due tavoli, adesso ce n'è uno. Prima ci si ammazzava per una strada, adesso le strade si dividono con la penna, ed è merito suo.
+— Hanno altro da fare. Lei ha fatto una cosa grande, nessuno lo discute. Prima c'erano due tavoli, adesso ce n'è uno. Prima ci si ammazzava per una strada, adesso le strade si dividono con la penna. È merito suo.
 
 — Non ci sono arrivato da solo.
 
@@ -178,9 +178,7 @@ L'uomo al tavolo sorride appena, con le mani giunte e le dita intrecciate, senza
 
 — Io sono sempre quello di prima.
 
-— Appunto.
-
-Kurgan non risponde. Una volta sola ha detto di no a quelli di sopra.
+Kurgan tace. Una volta sola ha detto di no a quelli di sopra.
 
 — Il debito di cui parlavate al telefono, che fine fa?
 
@@ -208,11 +206,11 @@ L'uomo al tavolo fa un gesto piccolo con la mano, come per scacciare una mosca.
 
 — Qui intorno c'è poco, il distributore è chiuso.
 
-— Allora ci metterà un po'.
+— Allora tarderà parecchio.
 
 Kurgan guarda le mani dell'uomo al tavolo, che restano ferme. Se il ragazzo gli interessasse, una mano andrebbe al telefono, gli occhi ai due contro il muro. Il ragazzo non lo vogliono, vogliono lui.
 
-Dietro si apre una porta, e arrivano dei passi. L'uomo in giacca torna con un vassoio e due tazzine, una per Kurgan e una per l'uomo al tavolo. Sono due, non quattro, perché i due contro il muro non bevono.
+Dietro si apre una porta, e arrivano dei passi. L'uomo in giacca torna con un vassoio e due tazzine, una per Kurgan e una per l'uomo al tavolo.
 
 — Vuole lo zucchero?
 
@@ -226,13 +224,11 @@ Kurgan prende la tazzina, che è calda, e la beve in due sorsi. Il caffè è dav
 
 — Io ne conosco che pensano il contrario.
 
-— Non quelli che contano.
-
 Kurgan posa la tazzina sul piattino, senza rumore, con il manico a destra, come l'ha trovata.
 
 — Quelli che decidono non sono venuti.
 
-— Hanno mandato me al loro posto.
+— Hanno mandato me al loro posto, — dice l'uomo al tavolo.
 
 — Lo so, per questo sono qui.
 
@@ -256,9 +252,9 @@ Il più alto dei due si stacca dal muro senza fretta. Dalla tasca della tuta tir
 
 Kurgan guarda le mani del più alto, ferme, senza nessuno spreco. Kurgan non dice niente.
 
-Il primo colpo lo prende sotto la clavicola, il secondo nel fianco. La sedia va indietro, Kurgan cade sulla schiena e la testa batte sul pavimento umido. Sopra di lui c'è il soffitto, con un neon spento e una macchia d'umidità a forma di niente.
+Il primo colpo lo prende sotto la clavicola, il secondo nel fianco. La sedia va indietro. Kurgan cade sulla schiena. La testa batte sul pavimento umido. Sopra di lui c'è il soffitto, con un neon spento e una macchia d'umidità a forma di niente.
 
-Kurgan respira, ma l'aria entra soltanto a metà e il resto non entra.
+Kurgan respira. L'aria entra soltanto a metà. Il resto non entra.
 
 Sul pavimento arrivano passi di scarpe nuove. Il più alto si avvicina, non abbastanza, e si ferma a un metro. Il terzo colpo arriva nel petto di Kurgan, che lo sente arrivare più che entrare.
 
@@ -266,11 +262,11 @@ Poi c'è il silenzio, rotto soltanto dal ronzio del frigo dietro il bancone.
 
 Kurgan gira gli occhi, soltanto gli occhi.
 
-Il più alto si inginocchia, non vicino a Kurgan ma vicino alla sedia rovesciata, dove sono caduti i bossoli. Li cerca con due dita sul pavimento, senza guardare Kurgan. Ne trova uno, poi un secondo, ma il terzo è rotolato sotto il tavolo. Il più alto si abbassa fino a terra per prenderlo, con la stessa pazienza.
+Il più alto si inginocchia, non vicino a Kurgan ma vicino alla sedia rovesciata, dove sono caduti i bossoli. Li cerca con due dita sul pavimento, senza guardare Kurgan. Ne trova uno, poi un secondo. Il terzo è rotolato sotto il tavolo. Il più alto si abbassa fino a terra per prenderlo, con la stessa pazienza.
 
 Li tiene sul palmo e li conta con il pollice: sono tre.
 
-Dove Kurgan è cresciuto, nessuno si china a raccogliere i bossoli. Quel gesto viene da un'altra parte: ogni colpo reso, contato, firmato. Kurgan lo ha fatto per anni, dopo ogni esercitazione, prima che il sergente desse il rompete le righe.
+Dove Kurgan è cresciuto, nessuno si china a raccogliere i bossoli. Quel gesto viene da un'altra parte: ogni colpo reso, contato, firmato. Kurgan lo faceva per anni. Lo faceva dopo ogni esercitazione, prima che il sergente desse il rompete le righe.
 
 Il più alto si alza. Mette i tre bossoli nella tasca sul petto, poi tira la cerniera fino in fondo. Si volta verso il compagno e alza la mano sinistra, chiusa a pugno.
 
