@@ -3,18 +3,19 @@ motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
 passo: pausa di lettura
-gate_in_attesa: null
+gate_in_attesa: lettura
 lotto:
   dimensione: 3
   capitoli:
   - 1
   - 2
+  - 3
 ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 3
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 6370
+  scritte: 6296
   obiettivo: 70000
   metodo: unico
 documenti_approvati:
@@ -212,7 +213,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-21T00:02:14Z'
+aggiornato: '2026-10-21T00:04:56Z'
 sottofase: null
 fatti_bloccati:
 - Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
@@ -261,3 +262,8 @@ correzioni_registrate:
   motivo: correzione unica dopo il KO (scena_minimo scena 2; cifra anni di fiducia)
   sha256_precedente: 1be4bf37248d805a2a7ee877e3fcffa178f86c04c7296e0224db93b717778d34
   sha256_corretto: 3706ef281bf082ceb03b822ed699ac518a4e5cdf8ae7581f786344328fa72a9f
+- data: '2026-10-21'
+  file: 04-manoscritto/03-la-convocazione.md
+  motivo: riscrittura con la voce aggiornata (note di lettura dell'autore ai capitoli 1-3)
+  sha256_precedente: 2875b5777693bb09326f3af049f8faeef731d7d5cdda6ee691b09c8f669ff0ab
+  sha256_corretto: 0649d6bb92a4f52bfb5a8566af9f6f459ccf88f26ffcf87540ab9dc7d2d3e360
