@@ -11,7 +11,7 @@ riprendi da lì».
   Ultimo commit: `git log -1` (prima del commit dei documenti derivati: 951a42c, allineato a origin).
 - Punti dell'integrazione: 1-12 e 8b fatti e su origin; dopo: `CLAUDE.md` allineato (D17, 05facce), subagenti e
   capsula nei file del pacchetto (D18, 951a42c); documenti derivati nel commit che porta questo file.
-- Suite al punto 12: 637/637 OK (invariata con D17 e D18); oggi **673/673 OK**, 0 saltate (2026-10-21), con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+- Suite al punto 12: 637/637 OK (invariata con D17 e D18); oggi **675/675 OK**, 0 saltate (2026-10-21), con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
 - Lavoro del 2026-10-21 (problema di stile della prova): P1 campo `massimo` dei divieti della voce (1e11337); P2
@@ -31,6 +31,8 @@ riprendi da lì».
   misure del motore prima del diagnosta, `misure/NN.md` (247bf0b); un solo giro completo (e8b5a06); diagnosta al
   livello leggero, haiku (238b947); letture del diagnosta ridotte (02d7baf); P6 misura del costo, non realizzata
   (775c006). Suite: 673/673 OK, 0 saltate.
+- Decisione dell'autore (2026-10-21): il diagnosta si ferma solo sui KO e sui divieti della voce; frase media e
+  ripetizioni ravvicinate restano avvisi tra le righe misurate. Suite: 675/675 OK, 0 saltate.
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
   nessuna approvazione intermedia; una sola fermata, la PAUSA DI LETTURA ogni 3 capitoli (`pausa_lettura` 3-5 in
   `libro.yaml`) e a fine stesura. Restano le fermate `controllo_fallito` e `canone`.
@@ -143,7 +145,7 @@ Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_L
    revisione, modello del diagnosta: proposte di P5, non realizzate.
 7. Scenari 5b e 15-18 della tabella dell'hook (PROCEDURA §10): descritti, senza prova (le prove coprono 1-14).
 8. `zb voce verifica` sulle voci della banca: non eseguito il 2026-10-21 (banca-voci non disponibile nella sessione).
-9. Diagnosta su haiku: da provare su un capitolo con esito noto (la prova della pagina era su opus); vale anche per la
+9. Diagnosta su haiku: da provare su una pagina; se la revisione risulta debole, tornare al modello medio; vale anche per la
    diagnosi di struttura e manoscritto (`docs/DA_VERIFICARE_AUTORE.md`).
 
 ## Prossimo passo

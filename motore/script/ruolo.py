@@ -10,8 +10,9 @@ meccanico di «la scrittura non include revisione» (line-editor solo in fase «
 «<!-- zb: ruolo=<ruolo>; su=<impronta> -->», con l'impronta del testo rivisto (struttura, capitolo N o
 manoscritto). «zb pronto» rifiuta un rapporto con un'impronta diversa da quella del testo attuale.
 Diagnosta in fase «stesura» (capitolo N): prima le misure del motore (percorso.misure_prima_della_revisione: capitolo.py,
-audit anti-IA, frasi finali); con un KO, o un avviso di frase media, divieti della voce o ripetizioni ravvicinate, si
-ferma (codice 2) e il diagnosta non si chiama; altrimenti scrive 06-diagnostica/misure/NN.md e frasi-finali/NN.md.
+audit anti-IA, frasi finali); con un KO o un avviso dei divieti della voce si ferma (codice 2) e il diagnosta non
+si chiama; altrimenti scrive 06-diagnostica/misure/NN.md e frasi-finali/NN.md. Frase media e ripetizioni ravvicinate
+restano avvisi: compaiono tra le righe misurate e non fermano.
 Un solo giro completo (percorso.giro_revisione): dopo un «non passa» e la correzione, il secondo giro rivede solo le
 voci di «## Da correggere» del primo (copiato in audit/NN-giro1.md); dopo il secondo «non passa» si ferma, decide
 l'autore («--nuovo-giro», dopo il suo ok, riparte da un giro completo).

@@ -277,8 +277,9 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
 3b. Revisione del capitolo (percorso editoriale). Prima le misure del motore: la sessione principale lancia
    `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che esegue i controlli di `capitolo.py` e l'audit
-   anti-IA senza scrivere il report. Con un KO, o un avviso di frase media, dei divieti della voce o delle ripetizioni
-   ravvicinate, si ferma (codice 2): il diagnosta non si chiama e chi scrive fa una correzione mirata. Con le misure
+   anti-IA senza scrivere il report. Con un KO o un avviso dei divieti della voce si ferma (codice 2): il diagnosta non
+   si chiama e chi scrive fa una correzione mirata. Frase media e ripetizioni ravvicinate restano avvisi (soglie ancora
+   PROPOSTA): non fermano e passano al diagnosta tra le righe misurate. Con le misure
    superate scrive `06-diagnostica/misure/NN.md` (prima riga con l'impronta del capitolo; misure, righe misurate con
    gli avvisi restanti, elenco «File da leggere» e canone) e `06-diagnostica/frasi-finali/NN.md`, e stampa la prima
    riga del rapporto. L'agente `diagnosta` installato non ha la shell (sola lettura): la sessione principale gli passa

@@ -1,7 +1,7 @@
 # Infrastruttura completa del sistema casa editrice
 
 - **Data:** 2026-10-21
-- **Ramo:** `integrazione-editoriale`; **commit di partenza:** `775c006a8a2a52f0091e36408db094096cf2977a «proposte: misura del costo per agente (P6), non realizzata: il motore registra letture e subagenti, non token né passi per agente»`: tutti i file sono copiati da questo stato.
+- **Ramo:** `integrazione-editoriale`; **commit di partenza:** `66aa928a557cd6db487eefd2738c416d408bb861 «documenti allineati alla revisione del capitolo (misure prima del diagnosta, un giro, haiku, letture): PROCEDURA §6, guida md e pdf con indice ricontrollato, PROPOSTE P4-P5, report, STATO_ATTUALE, passaggio di consegne, scelte in DA_VERIFICARE_AUTORE, infrastruttura rigenerata»`: tutti i file sono copiati da questo stato.
 - **File inclusi:** 251 file tracciati (esclusa `docs/`); i binari sono descritti con dimensione e sha256.
 - **Esclusi per regola:** `libri/` e ogni manoscritto (mai sul ramo `motore`); la banca-voci (repository separato, contiene nomi reali: non si copia qui); le esportazioni precedenti, nella storia git e sul ramo d'archivio dei documenti.
 - **Rigenerazione:** `python3 -B docs/genera_infrastruttura.py`. Verifica in fondo.
@@ -684,7 +684,7 @@ fermati e riporta l'errore. Non dire «fatto» se non è su origin. Resoconto co
 <a id="file-motore-procedura-md"></a>
 #### FILE: motore/PROCEDURA.md
 
-519 righe, sha256 `124f24e3cd782c9116730d17a019a2003d720035d0c4b1874accbf06c22d91b7`.
+520 righe, sha256 `01c919e4f3e887477936251cf87acba2924e605464b3189c4a14305a9e787dab`.
 
 `````markdown
 # Procedura del motore
@@ -966,8 +966,9 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
 3b. Revisione del capitolo (percorso editoriale). Prima le misure del motore: la sessione principale lancia
    `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che esegue i controlli di `capitolo.py` e l'audit
-   anti-IA senza scrivere il report. Con un KO, o un avviso di frase media, dei divieti della voce o delle ripetizioni
-   ravvicinate, si ferma (codice 2): il diagnosta non si chiama e chi scrive fa una correzione mirata. Con le misure
+   anti-IA senza scrivere il report. Con un KO o un avviso dei divieti della voce si ferma (codice 2): il diagnosta non
+   si chiama e chi scrive fa una correzione mirata. Frase media e ripetizioni ravvicinate restano avvisi (soglie ancora
+   PROPOSTA): non fermano e passano al diagnosta tra le righe misurate. Con le misure
    superate scrive `06-diagnostica/misure/NN.md` (prima riga con l'impronta del capitolo; misure, righe misurate con
    gli avvisi restanti, elenco «File da leggere» e canone) e `06-diagnostica/frasi-finali/NN.md`, e stampa la prima
    riga del rapporto. L'agente `diagnosta` installato non ha la shell (sola lettura): la sessione principale gli passa
@@ -3505,7 +3506,7 @@ Chiamante (sessione principale) = direttore d'orchestra, non scrive prosa:
 <a id="file-motore-editoriale-ruoli-00-diagnosta-md"></a>
 #### FILE: motore/editoriale/ruoli/00-diagnosta.md
 
-58 righe, sha256 `6e300e1b88b5488c91dd635d0df83420b25f7c2bb702cc8980407a9f101d08db`.
+59 righe, sha256 `92a6dfd4910bdde47c868a24774a66a54ce3c5a594586b2bed9485db48913e24`.
 
 `````markdown
 # Ruolo 0 - Diagnosta editoriale
@@ -3523,8 +3524,9 @@ capitolo fuori dai gate `audit/NN.md`) nel formato di `diagnosi/03-gravita-e-rap
 
 ## Capitolo singolo (`06-diagnostica/audit/NN.md`)
 Revisione di un capitolo appena scritto, prima che sia accettato, in sessione separata da chi lo ha scritto. Prima
-riga: `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che prima misura il capitolo: con un KO, o un
-avviso di frase media, divieti della voce o ripetizioni ravvicinate, si ferma e la revisione non comincia; con le misure
+riga: `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che prima misura il capitolo: con un KO o un
+avviso dei divieti della voce si ferma e la revisione non comincia (frase media e ripetizioni ravvicinate restano avvisi,
+tra le righe misurate); con le misure
 superate scrive `06-diagnostica/misure/NN.md` (righe misurate: non si rifanno) e `06-diagnostica/frasi-finali/NN.md`.
 Input: solo i file della sezione «File da leggere» di `06-diagnostica/misure/NN.md`: il capitolo, le misure, le frasi
 finali, la scheda della voce (sezioni 2, 3 e 6: regole, misure ed esempi «debole → forte»), il codex filtrato per i tag
@@ -4516,7 +4518,7 @@ aggiornato: ""
 <a id="file-motore-passaggio-di-consegne-md"></a>
 #### FILE: motore/passaggio-di-consegne.md
 
-166 righe, sha256 `d78683eee717dc8e6e2f6b0e1076ce00e61d0e604d3c9ad3775fcd530787abe3`.
+168 righe, sha256 `0571301bcd480e2da58a25a8b31ed6038cd3072e671ea01f0ee94d9b946f52e3`.
 
 `````markdown
 # Passaggio di consegne: motore
@@ -4532,7 +4534,7 @@ riprendi da lì».
   Ultimo commit: `git log -1` (prima del commit dei documenti derivati: 951a42c, allineato a origin).
 - Punti dell'integrazione: 1-12 e 8b fatti e su origin; dopo: `CLAUDE.md` allineato (D17, 05facce), subagenti e
   capsula nei file del pacchetto (D18, 951a42c); documenti derivati nel commit che porta questo file.
-- Suite al punto 12: 637/637 OK (invariata con D17 e D18); oggi **673/673 OK**, 0 saltate (2026-10-21), con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+- Suite al punto 12: 637/637 OK (invariata con D17 e D18); oggi **675/675 OK**, 0 saltate (2026-10-21), con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
 - Lavoro del 2026-10-21 (problema di stile della prova): P1 campo `massimo` dei divieti della voce (1e11337); P2
@@ -4552,6 +4554,8 @@ riprendi da lì».
   misure del motore prima del diagnosta, `misure/NN.md` (247bf0b); un solo giro completo (e8b5a06); diagnosta al
   livello leggero, haiku (238b947); letture del diagnosta ridotte (02d7baf); P6 misura del costo, non realizzata
   (775c006). Suite: 673/673 OK, 0 saltate.
+- Decisione dell'autore (2026-10-21): il diagnosta si ferma solo sui KO e sui divieti della voce; frase media e
+  ripetizioni ravvicinate restano avvisi tra le righe misurate. Suite: 675/675 OK, 0 saltate.
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
   nessuna approvazione intermedia; una sola fermata, la PAUSA DI LETTURA ogni 3 capitoli (`pausa_lettura` 3-5 in
   `libro.yaml`) e a fine stesura. Restano le fermate `controllo_fallito` e `canone`.
@@ -4664,7 +4668,7 @@ Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_L
    revisione, modello del diagnosta: proposte di P5, non realizzate.
 7. Scenari 5b e 15-18 della tabella dell'hook (PROCEDURA §10): descritti, senza prova (le prove coprono 1-14).
 8. `zb voce verifica` sulle voci della banca: non eseguito il 2026-10-21 (banca-voci non disponibile nella sessione).
-9. Diagnosta su haiku: da provare su un capitolo con esito noto (la prova della pagina era su opus); vale anche per la
+9. Diagnosta su haiku: da provare su una pagina; se la revisione risulta debole, tornare al modello medio; vale anche per la
    diagnosi di struttura e manoscritto (`docs/DA_VERIFICARE_AUTORE.md`).
 
 ## Prossimo passo
@@ -10986,7 +10990,7 @@ La pensione è chiusa, la proprietaria è in ospedale e ad aprire la porta c'è 
 <a id="file-motore-report-motore-md"></a>
 #### FILE: motore/report-motore.md
 
-329 righe, sha256 `0feeae1f44ab2f883e4d59c5b39bf2595936aed69e00bf35adc162eb8e65b56b`.
+329 righe, sha256 `8f22e6b68e91ca12e4f2a28331af68a20cdaa40f0bccdd3c755b6e37bf6d5029`.
 
 `````markdown
 # Report del motore editoriale
@@ -11134,7 +11138,7 @@ Mini-libri inventati in `prove/`: giallo (`mini-libro`, A5, 16 pagine), romance 
 inglese), più briefing e schede di pubblicazione inventati. Autori inventati («Autore di Prova», «Autrice di Prova»).
 
 Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella cartella temporanea, 2026-10-21,
-673 righe, commit 775c006):
+675 righe, 2026-10-21):
 
 | Sezione | Prove | Sezione | Prove |
 |---|---|---|---|
@@ -11151,13 +11155,13 @@ Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella c
 | manuale | 7 | correttore | 5 |
 | checklist | 3 | frasi_finali | 2 |
 | continuita | 8 | frase_media_registro | 8 |
-| correzioni | 20 | percorso editoriale | 71 |
+| correzioni | 20 | percorso editoriale | 73 |
 | adozione | 5 | cartella unica e recinto | 13 |
 | interludi e grafie | 10 | agenti e comandi | 11 |
 | correggi e passo | 4 | consumo e capsule | 3 |
 | unità consentite e interludi | 7 | traduzione in inglese | 17 |
 | fase e rinomine | 6 | correttore e anti-IA | 10 |
-| esclusioni e budget | 6 | **Totale** | **673** |
+| esclusioni e budget | 6 | **Totale** | **675** |
 | titoli, tempi, età, push | 23 | | |
 
 Da dove vengono (D12): ccr 560 prove (d2b8814), `motore` 520 (971b6df); le 65 prove che esistevano solo in
@@ -11312,12 +11316,12 @@ luoghi reali.
 
 ## 13. Esito della suite
 
-673 prove, 673 OK, 0 saltate (2026-10-21, commit 775c006), con LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza
+675 prove, 675 OK, 0 saltate (2026-10-21), con LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza
 `ZB_BANCA_VOCI`. Storia: 637 al punto 12 (le 632 del punto 9, D12, più 1 di D16 e 4 della sezione `avvio motore`,
 D15); 661 dopo le proposte P1-P3 e la frase media per registro (`docs/PROPOSTE_MOTORE.md`); 663 con le prove di
 `aperture_battuta` (anti-IA) e `letture` (agenti) del 2026-10-21; 673 con le prove di
 `aperture_senza_parole`, delle misure prima del revisore, del giro di revisione, del modello del diagnosta e delle sue
-letture.
+letture; 675 con il divieto della voce e gli avvisi che non fermano il diagnosta.
 `````
 
 <a id="file-motore-requirements-txt"></a>
@@ -18387,7 +18391,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-percorso-py"></a>
 #### FILE: motore/script/percorso.py
 
-557 righe, sha256 `06b39e022648a33070170413c450663c65754b4e7914f8e25b11ff5bcbb54597`.
+551 righe, sha256 `2e04d91a8def2bcf2f4ec4beee20ac3183a608f954962fc20c60e0e8721439bf`.
 
 `````python
 """Percorso da casa editrice (libri con «percorso: editoriale» in libro.yaml). Lo usa fase.py.
@@ -18498,18 +18502,12 @@ def misure_rel(n):
 
 
 def bloccanti_prima_della_revisione(risultati, libro):
-    """Esiti che fermano la chiamata al diagnosta: ogni KO; gli avvisi della frase media, dei divieti della voce
-    (controlli «voce:<slug>:…») e delle ripetizioni ravvicinate. Gli altri avvisi passano al diagnosta come righe
-    misurate."""
+    """Esiti che fermano la chiamata al diagnosta: ogni KO e gli avvisi dei divieti della voce (controlli
+    «voce:<slug>:…»). Decisione dell'autore del 2026-10-21: frase media e ripetizioni ravvicinate restano avvisi (soglie
+    ancora PROPOSTA): con gli altri avvisi passano al diagnosta come righe misurate e non fermano."""
     slug = (libro.get('voce') or {}).get('slug')
-    out = []
-    for r in risultati:
-        c = r['controllo']
-        if r['esito'] == 'KO' or (r['esito'] == 'AVVISO' and (
-                c == 'frase_media' or c == 'anti-ia:ripetizioni_ravvicinate'
-                or (slug and c.startswith(f'voce:{slug}:')))):
-            out.append(r)
-    return out
+    return [r for r in risultati if r['esito'] == 'KO' or (
+        r['esito'] == 'AVVISO' and slug and r['controllo'].startswith(f'voce:{slug}:'))]
 
 
 def da_correggere(testo):
@@ -18606,7 +18604,7 @@ def misure_prima_della_revisione(cartella, libro, profilo, n, giro=(1, [])):
     righe = [f'<!-- zb: misure; su={revisione.impronta(cartella, testi)} -->',
              f'# Misure del capitolo {n} per il diagnosta', '',
              'Scritte da «zb ruolo <libro> diagnosta N» prima della revisione: il capitolo ha superato le misure del '
-             'motore (nessun KO; frase media, divieti della voce e ripetizioni ravvicinate senza avvisi). Il diagnosta '
+             'motore (nessun KO e nessun avviso dei divieti della voce). Il diagnosta '
              'non rifà queste misure.', '',
              '| Misura | Valore |', '|---|---|',
              f'| Parole | {met.get("parole")} |',
@@ -22543,7 +22541,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-prove-editoriale-py"></a>
 #### FILE: motore/script/prove_editoriale.py
 
-834 righe, sha256 `d1489f9e74fad5ff5e44211c3c5e93572aa50e1ff842c9ef99183dc7d22c4476`.
+868 righe, sha256 `00255d1a6eea16179cc0646d81c51b545e4da3716fd48d04fbafb3914f46bc4e`.
 
 `````python
 """Prove del percorso da casa editrice (le lancia prove.py; da sola: python3 -B prove_editoriale.py).
@@ -22905,6 +22903,17 @@ def revisione_in_stesura(r, L, m, sez):
           f'{p.returncode} / {"Non chiamare il diagnosta" in p.stderr and "voce:respiro_senza_accorgersene KO" in p.stderr} / '
           f'{"Prima riga:" in p.stdout} / {os.path.isfile(misure)}', sez)
     open(cap, 'w', encoding='utf-8').write(testo_cap)
+    # un divieto della voce (voce di prova, «oltremodo»: AVVISO di stile.py) ferma anche lui la chiamata al diagnosta
+    ly = os.path.join(L, 'libro.yaml')
+    ly_orig = open(ly, encoding='utf-8').read()
+    open(ly, 'w', encoding='utf-8').write(ly_orig.rstrip('\n') + '\nvoce: {slug: voce-di-prova, ambientazione: altro}\n')
+    open(cap, 'w', encoding='utf-8').write(testo_cap + '\nEra oltremodo stanca.\n')
+    p = zb(L, 'ruolo', '.', 'diagnosta', '1', env=dict(E, ZB_BANCA_VOCI=os.path.join(M, 'prove', 'banca-voci-prova')))
+    esito('ruolo.py', 'misure prima del revisore: capitolo con un divieto della voce (avviso), «non chiamare il diagnosta»',
+          '2 / True / False', f'{p.returncode} / {"Non chiamare il diagnosta" in p.stderr and "voce:voce-di-prova:oltremodo AVVISO" in p.stderr} / '
+          f'{"Prima riga:" in p.stdout}', sez)
+    open(ly, 'w', encoding='utf-8').write(ly_orig)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)
     p = zb(L, 'ruolo', '.', 'diagnosta', '1')
     esito('ruolo.py', 'diagnosta in fase stesura sul capitolo 1: ammesso, rapporto audit/01.md con la prima riga',
           '0 / True / True', f'{p.returncode} / {"Rapporto: 06-diagnostica/audit/01.md" in p.stdout} / '
@@ -22926,6 +22935,29 @@ def revisione_in_stesura(r, L, m, sez):
           f'{sum(x.startswith("02-bibbia/codex/") for x in da_leggere)} / '
           f'{any("manuale-di-stile" in x or "09-scelte-fisse" in x or "preparazione/" in x for x in da_leggere)} / '
           f'{"## Canone (fatti bloccati)" in tm} / {len(da_leggere)} {len(da_prep)}', sez)
+    # frase media e ripetizioni ravvicinate restano avvisi: non fermano, finiscono tra le righe misurate. Con i libri di
+    # prova un avviso di frase media vero non nasce (serve una voce con la riga «frase media»): si aggiunge ai risultati
+    import capitolo
+    import percorso
+    cartella_p, libro_p, profilo_p = comune.carica_libro(L)
+    vero = capitolo.controlla
+    capitolo.controlla = lambda *a: (lambda m, o: (m, o + [
+        {'unita': '1', 'controllo': 'frase_media', 'esito': 'AVVISO', 'riga': None,
+         'dettaglio': '17.0 fuori da 9-14 (registro corto): intervallo non calibrato sull\'autore'},
+        {'unita': '1', 'controllo': 'anti-ia:ripetizioni_ravvicinate', 'esito': 'AVVISO', 'riga': None,
+         'dettaglio': 'P2 14.0 gruppi per mille sopra 12.0'}]))(*vero(*a))
+    try:
+        percorso.misure_prima_della_revisione(cartella_p, libro_p, profilo_p, '1')
+        avanti = 'avanti'
+    except comune.ErroreMotore as e:
+        avanti = f'fermo: {e}'
+    finally:
+        capitolo.controlla = vero
+    tm2 = open(misure, encoding='utf-8').read()
+    esito('percorso.py', 'misure prima del revisore: solo avvisi di frase media e ripetizioni ravvicinate, si va avanti '
+          'e restano tra le righe misurate', 'avanti / True / True',
+          f'{avanti} / {"frase_media" in tm2.split("## Righe misurate", 1)[1]} / '
+          f'{"anti-ia:ripetizioni_ravvicinate" in tm2.split("## Righe misurate", 1)[1]}', sez)
     p = zb(L, 'ruolo', '.', 'diagnosta')
     esito('ruolo.py', 'diagnosta in fase stesura senza numero di capitolo: rifiutato', '2 / True',
           f'{p.returncode} / {"un capitolo alla volta" in p.stderr}', sez)
@@ -24083,7 +24115,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-ruolo-py"></a>
 #### FILE: motore/script/ruolo.py
 
-237 righe, sha256 `ae7b4b15477ad71f0a48209ff8ec836043589544ab0b0fe31f2fe1ea3b2b7792`.
+238 righe, sha256 `e1f716473629f53046479ed144760f08e70b4e4161012879254e9d37ae83aece`.
 
 `````python
 """Ruoli del percorso editoriale: chi può lavorare in quale fase, la prima riga del suo rapporto, e la separazione
@@ -24098,8 +24130,9 @@ meccanico di «la scrittura non include revisione» (line-editor solo in fase «
 «<!-- zb: ruolo=<ruolo>; su=<impronta> -->», con l'impronta del testo rivisto (struttura, capitolo N o
 manoscritto). «zb pronto» rifiuta un rapporto con un'impronta diversa da quella del testo attuale.
 Diagnosta in fase «stesura» (capitolo N): prima le misure del motore (percorso.misure_prima_della_revisione: capitolo.py,
-audit anti-IA, frasi finali); con un KO, o un avviso di frase media, divieti della voce o ripetizioni ravvicinate, si
-ferma (codice 2) e il diagnosta non si chiama; altrimenti scrive 06-diagnostica/misure/NN.md e frasi-finali/NN.md.
+audit anti-IA, frasi finali); con un KO o un avviso dei divieti della voce si ferma (codice 2) e il diagnosta non
+si chiama; altrimenti scrive 06-diagnostica/misure/NN.md e frasi-finali/NN.md. Frase media e ripetizioni ravvicinate
+restano avvisi: compaiono tra le righe misurate e non fermano.
 Un solo giro completo (percorso.giro_revisione): dopo un «non passa» e la correzione, il secondo giro rivede solo le
 voci di «## Da correggere» del primo (copiato in audit/NN-giro1.md); dopo il secondo «non passa» si ferma, decide
 l'autore («--nuovo-giro», dopo il suo ok, riparte da un giro completo).

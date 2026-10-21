@@ -357,6 +357,17 @@ def revisione_in_stesura(r, L, m, sez):
           f'{p.returncode} / {"Non chiamare il diagnosta" in p.stderr and "voce:respiro_senza_accorgersene KO" in p.stderr} / '
           f'{"Prima riga:" in p.stdout} / {os.path.isfile(misure)}', sez)
     open(cap, 'w', encoding='utf-8').write(testo_cap)
+    # un divieto della voce (voce di prova, «oltremodo»: AVVISO di stile.py) ferma anche lui la chiamata al diagnosta
+    ly = os.path.join(L, 'libro.yaml')
+    ly_orig = open(ly, encoding='utf-8').read()
+    open(ly, 'w', encoding='utf-8').write(ly_orig.rstrip('\n') + '\nvoce: {slug: voce-di-prova, ambientazione: altro}\n')
+    open(cap, 'w', encoding='utf-8').write(testo_cap + '\nEra oltremodo stanca.\n')
+    p = zb(L, 'ruolo', '.', 'diagnosta', '1', env=dict(E, ZB_BANCA_VOCI=os.path.join(M, 'prove', 'banca-voci-prova')))
+    esito('ruolo.py', 'misure prima del revisore: capitolo con un divieto della voce (avviso), «non chiamare il diagnosta»',
+          '2 / True / False', f'{p.returncode} / {"Non chiamare il diagnosta" in p.stderr and "voce:voce-di-prova:oltremodo AVVISO" in p.stderr} / '
+          f'{"Prima riga:" in p.stdout}', sez)
+    open(ly, 'w', encoding='utf-8').write(ly_orig)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)
     p = zb(L, 'ruolo', '.', 'diagnosta', '1')
     esito('ruolo.py', 'diagnosta in fase stesura sul capitolo 1: ammesso, rapporto audit/01.md con la prima riga',
           '0 / True / True', f'{p.returncode} / {"Rapporto: 06-diagnostica/audit/01.md" in p.stdout} / '
@@ -378,6 +389,29 @@ def revisione_in_stesura(r, L, m, sez):
           f'{sum(x.startswith("02-bibbia/codex/") for x in da_leggere)} / '
           f'{any("manuale-di-stile" in x or "09-scelte-fisse" in x or "preparazione/" in x for x in da_leggere)} / '
           f'{"## Canone (fatti bloccati)" in tm} / {len(da_leggere)} {len(da_prep)}', sez)
+    # frase media e ripetizioni ravvicinate restano avvisi: non fermano, finiscono tra le righe misurate. Con i libri di
+    # prova un avviso di frase media vero non nasce (serve una voce con la riga «frase media»): si aggiunge ai risultati
+    import capitolo
+    import percorso
+    cartella_p, libro_p, profilo_p = comune.carica_libro(L)
+    vero = capitolo.controlla
+    capitolo.controlla = lambda *a: (lambda m, o: (m, o + [
+        {'unita': '1', 'controllo': 'frase_media', 'esito': 'AVVISO', 'riga': None,
+         'dettaglio': '17.0 fuori da 9-14 (registro corto): intervallo non calibrato sull\'autore'},
+        {'unita': '1', 'controllo': 'anti-ia:ripetizioni_ravvicinate', 'esito': 'AVVISO', 'riga': None,
+         'dettaglio': 'P2 14.0 gruppi per mille sopra 12.0'}]))(*vero(*a))
+    try:
+        percorso.misure_prima_della_revisione(cartella_p, libro_p, profilo_p, '1')
+        avanti = 'avanti'
+    except comune.ErroreMotore as e:
+        avanti = f'fermo: {e}'
+    finally:
+        capitolo.controlla = vero
+    tm2 = open(misure, encoding='utf-8').read()
+    esito('percorso.py', 'misure prima del revisore: solo avvisi di frase media e ripetizioni ravvicinate, si va avanti '
+          'e restano tra le righe misurate', 'avanti / True / True',
+          f'{avanti} / {"frase_media" in tm2.split("## Righe misurate", 1)[1]} / '
+          f'{"anti-ia:ripetizioni_ravvicinate" in tm2.split("## Righe misurate", 1)[1]}', sez)
     p = zb(L, 'ruolo', '.', 'diagnosta')
     esito('ruolo.py', 'diagnosta in fase stesura senza numero di capitolo: rifiutato', '2 / True',
           f'{p.returncode} / {"un capitolo alla volta" in p.stderr}', sez)

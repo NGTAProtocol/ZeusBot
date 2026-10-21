@@ -143,7 +143,7 @@ Mini-libri inventati in `prove/`: giallo (`mini-libro`, A5, 16 pagine), romance 
 inglese), più briefing e schede di pubblicazione inventati. Autori inventati («Autore di Prova», «Autrice di Prova»).
 
 Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella cartella temporanea, 2026-10-21,
-673 righe, commit 775c006):
+675 righe, 2026-10-21):
 
 | Sezione | Prove | Sezione | Prove |
 |---|---|---|---|
@@ -160,13 +160,13 @@ Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella c
 | manuale | 7 | correttore | 5 |
 | checklist | 3 | frasi_finali | 2 |
 | continuita | 8 | frase_media_registro | 8 |
-| correzioni | 20 | percorso editoriale | 71 |
+| correzioni | 20 | percorso editoriale | 73 |
 | adozione | 5 | cartella unica e recinto | 13 |
 | interludi e grafie | 10 | agenti e comandi | 11 |
 | correggi e passo | 4 | consumo e capsule | 3 |
 | unità consentite e interludi | 7 | traduzione in inglese | 17 |
 | fase e rinomine | 6 | correttore e anti-IA | 10 |
-| esclusioni e budget | 6 | **Totale** | **673** |
+| esclusioni e budget | 6 | **Totale** | **675** |
 | titoli, tempi, età, push | 23 | | |
 
 Da dove vengono (D12): ccr 560 prove (d2b8814), `motore` 520 (971b6df); le 65 prove che esistevano solo in
@@ -321,9 +321,9 @@ luoghi reali.
 
 ## 13. Esito della suite
 
-673 prove, 673 OK, 0 saltate (2026-10-21, commit 775c006), con LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza
+675 prove, 675 OK, 0 saltate (2026-10-21), con LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza
 `ZB_BANCA_VOCI`. Storia: 637 al punto 12 (le 632 del punto 9, D12, più 1 di D16 e 4 della sezione `avvio motore`,
 D15); 661 dopo le proposte P1-P3 e la frase media per registro (`docs/PROPOSTE_MOTORE.md`); 663 con le prove di
 `aperture_battuta` (anti-IA) e `letture` (agenti) del 2026-10-21; 673 con le prove di
 `aperture_senza_parole`, delle misure prima del revisore, del giro di revisione, del modello del diagnosta e delle sue
-letture.
+letture; 675 con il divieto della voce e gli avvisi che non fermano il diagnosta.

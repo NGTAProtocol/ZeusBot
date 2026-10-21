@@ -106,18 +106,12 @@ def misure_rel(n):
 
 
 def bloccanti_prima_della_revisione(risultati, libro):
-    """Esiti che fermano la chiamata al diagnosta: ogni KO; gli avvisi della frase media, dei divieti della voce
-    (controlli «voce:<slug>:…») e delle ripetizioni ravvicinate. Gli altri avvisi passano al diagnosta come righe
-    misurate."""
+    """Esiti che fermano la chiamata al diagnosta: ogni KO e gli avvisi dei divieti della voce (controlli
+    «voce:<slug>:…»). Decisione dell'autore del 2026-10-21: frase media e ripetizioni ravvicinate restano avvisi (soglie
+    ancora PROPOSTA): con gli altri avvisi passano al diagnosta come righe misurate e non fermano."""
     slug = (libro.get('voce') or {}).get('slug')
-    out = []
-    for r in risultati:
-        c = r['controllo']
-        if r['esito'] == 'KO' or (r['esito'] == 'AVVISO' and (
-                c == 'frase_media' or c == 'anti-ia:ripetizioni_ravvicinate'
-                or (slug and c.startswith(f'voce:{slug}:')))):
-            out.append(r)
-    return out
+    return [r for r in risultati if r['esito'] == 'KO' or (
+        r['esito'] == 'AVVISO' and slug and r['controllo'].startswith(f'voce:{slug}:'))]
 
 
 def da_correggere(testo):
@@ -214,7 +208,7 @@ def misure_prima_della_revisione(cartella, libro, profilo, n, giro=(1, [])):
     righe = [f'<!-- zb: misure; su={revisione.impronta(cartella, testi)} -->',
              f'# Misure del capitolo {n} per il diagnosta', '',
              'Scritte da «zb ruolo <libro> diagnosta N» prima della revisione: il capitolo ha superato le misure del '
-             'motore (nessun KO; frase media, divieti della voce e ripetizioni ravvicinate senza avvisi). Il diagnosta '
+             'motore (nessun KO e nessun avviso dei divieti della voce). Il diagnosta '
              'non rifà queste misure.', '',
              '| Misura | Valore |', '|---|---|',
              f'| Parole | {met.get("parole")} |',
