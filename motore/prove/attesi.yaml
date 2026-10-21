@@ -800,6 +800,8 @@ agenti_capsule:
   revisori: [2, 0, 0]
   consumo: "0 / True / True"
   compatto: "True / True / True"
+  # diagnosta senza Bash né Edit; letture ridotte del diagnosta (capitolo singolo) e dello scrittore
+  letture: "True / True / True"
 
 anti_ia:
   # da motore (971b6df), sull'audit di ccr (antiia.py): nomi delle misure di ccr; la sezione B conta solo con

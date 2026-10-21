@@ -2919,6 +2919,15 @@ def agenti_capsule_consumo(A):
     esito('agenti.py', 'attiva: ramo motore fermo / senza --ok niente / con --ok tutti gli agenti / modello capsula / disattiva',
           A['attiva'], f'{p1.returncode} / {p2.returncode} {senza_ok} / {p3.returncode} {len(attivi)} / '
           f'{"model: haiku" in cap} / {p4.returncode} {os.path.isdir(dest)}', sez)
+    # agenti come li installa il motore: diagnosta in sola lettura (niente Bash né Edit: P4 di docs/PROPOSTE_MOTORE.md);
+    # letture ridotte: diagnosi/ non per il capitolo singolo; lo scrittore non rilegge scaletta e piano parole interi
+    gen = {os.path.basename(x): t for x, t in agenti.piano(b.r, M)}
+    strumenti = re.search(r'(?m)^tools:(.*)$', gen['diagnosta.md']).group(1)
+    sv = gen['scrittore-voce.md']
+    esito('agenti.py', 'agenti installati: diagnosta senza Bash né Edit / diagnosi/ non per il capitolo singolo / '
+          'scrittore-voce senza 05-scaletta.md e 08-piano-parole.md interi (preparazione al loro posto)', A['letture'],
+          f'{"Bash" not in strumenti and "Edit" not in strumenti} / {"non per il capitolo singolo" in gen["diagnosta.md"]} / '
+          f'{"Non leggere 03-struttura/05-scaletta.md intero" in sv and "scaletta del capitolo, piano parole" not in sv}', sez)
     # modello centrale: si alza solo il ruolo indicato nel file di dati
     mc = copia_motore()
     pm = os.path.join(mc, 'dati', 'modelli-ruoli.yaml')
