@@ -29,3 +29,7 @@ stanno solo in `libri/<slug>/` del ramo del libro).
 3. profilo di genere
 4. questa cartella (ruoli)
 5. procedura del motore
+
+Unica eccezione, decisa dall'autore: la frase media dei capitoli. Con `frase_media_voce: true` nel profilo
+(oggi il thriller) vale l'intervallo del registro del capitolo nella scheda della voce (sezione 3; registro
+dichiarato nella scaletta), non quello del manuale; un override di `frase_media` in `libro.yaml` resta sopra.

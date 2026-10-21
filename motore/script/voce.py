@@ -108,6 +108,40 @@ def divieti_del_libro(libro):
         return []
 
 
+def registri(b, slug):
+    """{registro: [a, b]} dalla riga «frase media» della tabella nella sezione 3 della scheda («Ritmo e sintassi»):
+    il nome del registro è l'intestazione della colonna senza la parentesi e senza la parola «registro»
+    («Registro corto (Winslow)» → «corto»); l'intervallo è il primo «a-b» della cella. {} se la tabella manca."""
+    p = scheda(b, slug)
+    if not os.path.isfile(p):
+        return {}
+    corpo = sezioni(open(p, encoding='utf-8').read()).get(3, ('', ''))[1]
+    tabella = [[c.strip() for c in r.strip().strip('|').split('|')] for r in corpo.splitlines()
+               if r.strip().startswith('|') and not re.match(r'^\|[\s|:-]+\|?$', r.strip())]
+    riga = next((r for r in tabella[1:] if r and r[0].lower().startswith('frase media')), None)
+    if not tabella or not riga:
+        return {}
+    out = {}
+    for testa, cella in zip(tabella[0][1:], riga[1:]):
+        nome = re.sub(r'\(.*?\)', '', testa)
+        nome = re.sub(r'(?i)\bregistro\b', '', nome).strip().lower()
+        m = re.search(r'(\d+)\s*-\s*(\d+)', cella)
+        if nome and m and int(m.group(1)) <= int(m.group(2)):
+            out[nome] = [int(m.group(1)), int(m.group(2))]
+    return out
+
+
+def registri_del_libro(libro):
+    """Registri della voce scelta in libro.yaml; {} senza voce, senza ZB_BANCA_VOCI o con la voce non leggibile."""
+    v = libro.get('voce') or {}
+    if not v.get('slug'):
+        return {}
+    try:
+        return registri(banca(), v['slug'])
+    except comune.ErroreMotore:
+        return {}
+
+
 def sezioni(testo):
     """{numero: (titolo, corpo)} dei titoli «## N. Titolo»."""
     out, cur = {}, None

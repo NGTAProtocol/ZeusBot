@@ -3141,7 +3141,82 @@ def frasi_finali_prove(A):
           f'{"| Riga | Tipo | Frase finale |" in rep}', sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove}
+TABELLA_REGISTRI = """
+| Elemento | Base (autore A) | Registro freddo (autore B) | Registro corto (autore C) |
+|---|---|---|---|
+| frase media | 12-18 parole | 15-25 parole | 5-10 parole |
+| frase più lunga | 35 parole | 45 parole | 20 parole |
+"""
+
+
+def frase_media_registro(A):
+    """Frase media per registro: con «frase_media_voce: true» nel profilo l'intervallo del capitolo viene dal registro
+    dichiarato nella scaletta e dalla tabella della sezione 3 della scheda della voce (voce.registri,
+    stile.intervallo_frase_media); override del libro e profili senza il campo tengono l'intervallo del profilo."""
+    sez = 'frase_media_registro'
+    import stile
+    import voce as voce_mod
+    d = tempfile.mkdtemp(dir=TMP)
+    b = shutil.copytree(os.path.join(M, 'prove', 'banca-voci-prova'), os.path.join(d, 'banca'))
+    sc = os.path.join(b, 'voci', 'voce-di-prova', 'scheda.md')
+    t = open(sc, encoding='utf-8').read()
+    open(sc, 'w', encoding='utf-8').write(t.replace('## 3. Ritmo e sintassi\n', '## 3. Ritmo e sintassi\n' + TABELLA_REGISTRI, 1))
+    reg = voce_mod.registri(b, 'voce-di-prova')
+    esito('voce.py', 'registri della voce dalla riga «frase media» della sezione 3', A['registri'],
+          str(sorted(reg.items())), sez)
+    esito('voce.py', 'voce senza tabella nella sezione 3: nessun registro', '{}',
+          str(voce_mod.registri(os.path.join(M, 'prove', 'banca-voci-prova'), 'voce-di-prova')), sez)
+    prof = {'frase_media': [9, 14], 'frase_media_voce': True}
+    casi = [
+        (prof, {}, {'pov': 'Anna; registro corto, presente'}),
+        (prof, {}, {'pov': 'Anna; registro freddo e poi registro corto'}),
+        (prof, {}, {'pov': 'Anna; giorno 2'}),
+        (prof, {'override': [{'campo': 'frase_media', 'valore': [8, 12], 'motivo': 'prova'}]}, {'pov': 'registro corto'}),
+        ({'frase_media': [9, 14]}, {}, {'pov': 'registro corto'}),
+        (prof, {}, {'pov': 'registro lirico'}),
+    ]
+    ott = []
+    for pr, lb, scheda in casi:
+        x, y, nota = stile.intervallo_frase_media(pr, lb, reg, scheda)
+        ott.append(f'{x}-{y}' + (f' {nota}' if nota else ''))
+    esito('stile.py', 'intervallo della frase media: corto, primo registro dichiarato, senza registro (base), '
+          'override del libro, profilo senza campo, registro sconosciuto', A['intervalli'], ott, sez)
+    ott = [stile.intervallo_frase_media(prof, {}, {}, {'pov': 'registro corto'})[:2]]
+    esito('stile.py', 'voce senza registri: intervallo del profilo', '[(9, 14)]', str(ott), sez)
+    # integrazione: mini-libro con voce, scaletta con i registri dei capitoli 1 e 2, profilo con il campo acceso
+    c = copia_libro('mini-libro')
+    py = os.path.join(c, 'libro.yaml')
+    lb = yaml.safe_load(open(py, encoding='utf-8'))
+    lb['voce'] = {'slug': 'voce-di-prova', 'ambientazione': 'altro'}
+    open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+    os.makedirs(os.path.join(c, comune.STRUTTURA), exist_ok=True)
+    open(os.path.join(c, comune.STRUTTURA, '05-scaletta.md'), 'w', encoding='utf-8').write(
+        '# Scaletta\n\n## Capitolo 1 - Primo\n- Punto di vista, luogo e tempo: Anna; registro corto, presente\n\n'
+        '## Capitolo 2 - Secondo\n- Punto di vista, luogo e tempo: Anna; registro freddo\n')
+    prima = os.environ.pop('ZB_BANCA_VOCI', None)
+    os.environ['ZB_BANCA_VOCI'] = b
+    try:
+        cartella, libro, profilo = comune.carica_libro(c)
+        senza = stile.controlla_libro(cartella, libro, dict(profilo))
+        profilo['frase_media_voce'] = True
+        con = stile.controlla_libro(cartella, libro, profilo)
+    finally:
+        os.environ.pop('ZB_BANCA_VOCI', None)
+        if prima is not None:
+            os.environ['ZB_BANCA_VOCI'] = prima
+
+    def fm(es):
+        return [f'{n}: {m.get("frase_media_intervallo")} ' + ('KO' if any(r['controllo'] == 'frase_media' for r in o) else 'OK')
+                for n, (m, o) in es.items() if n.isdigit()]
+    esito('stile.py', 'mini-libro con voce e scaletta, profilo senza il campo: intervallo del profilo', A['senza_campo'],
+          fm(senza), sez)
+    esito('stile.py', 'mini-libro con voce e scaletta, frase_media_voce: true: intervallo del registro di ogni capitolo',
+          A['con_campo'], fm(con), sez)
+    th = comune.carica_profilo('thriller')
+    esito('profili/thriller.yaml', 'thriller: la voce prevale sulla frase media', 'True', str(th.get('frase_media_voce')), sez)
+
+
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro}
 
 
 def main(argv):

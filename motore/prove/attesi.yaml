@@ -454,7 +454,7 @@ scene:
   informativi: ['battiti', 'capitoli.coerenza', 'lista_nera', 'lunghezza_totale.consigliata', 'lunghezza_totale.parti_obbligatorie',
                 'lunghezza_totale.parti_sopra', 'parole_per_atto', 'parole_per_pagina', 'scene.budget_interno', 'scene.sequel']
   controllati: ['anti_ia', 'capitoli.minimo', 'capitoli.scene_per_capitolo', 'capitoli.tolleranza_budget', 'capitoli.tolleranza_totale',
-                'dialogo_percento', 'frase_media', 'parole_filtro', 'scene.lunghezza', 'similitudini_max_per_parole']
+                'dialogo_percento', 'frase_media', 'frase_media_voce', 'parole_filtro', 'scene.lunghezza', 'similitudini_max_per_parole']
 
 manuale_leggibile:
   # Manuale generato dal briefing inventato (giallo) e dalla sua variante con lunghezza fuori profilo.
@@ -814,3 +814,11 @@ frasi_finali:
   # ogni scambio (06-diagnostica/frasi-finali/NN.md); il giudizio resta a chi rivede
   elenco: ['3|narrazione|Seconda frase che chiude.', '7|battuta|— Davvero? — dice lui.', '9|narrazione, fine scena|Lui resta alla finestra.', '13|battuta, fine scena|— Ultima battuta.']
   report: "['01.md', '02.md', '03.md'] / True / True"
+
+frase_media_registro:
+  # decisione dell'autore (2026-10-21): nel thriller la voce prevale sulla frase media; intervallo per registro dalla
+  # sezione 3 della scheda della voce, registro del capitolo dalla scaletta («registro <nome>»; il primo è il dominante)
+  registri: "[('base', [12, 18]), ('corto', [5, 10]), ('freddo', [15, 25])]"
+  intervalli: ['5-10 registro corto, dalla voce', '15-25 registro freddo, dalla voce', '12-18 registro base, dalla voce', '9-14', '9-14', '12-18 registro base, dalla voce']
+  senza_campo: ['1: 9-14 OK', '2: 9-14 OK', '3: 9-14 KO']
+  con_campo: ['1: 5-10 (registro corto, dalla voce) OK', '2: 15-25 (registro freddo, dalla voce) KO', '3: 12-18 (registro base, dalla voce) KO']

@@ -282,6 +282,12 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto). `zb stile <libro> [N]` scrive anche
    `06-diagnostica/frasi-finali/NN.md`: la frase finale di ogni paragrafo di narrazione e dell'ultima battuta di
    ogni scambio, con il numero di riga; non dà esiti, è l'elenco da cui chi rivede giudica le chiuse frase per frase.
+   Frase media: con `frase_media_voce: true` nel profilo (thriller) e una voce in `libro.yaml`, l'intervallo del
+   capitolo è quello del suo registro nella riga «frase media» della tabella della sezione 3 della scheda della
+   voce; il registro si dichiara nella scheda del capitolo in scaletta («registro corto», «registro freddo»…; se
+   ce ne sono più d'uno vale il primo, il dominante); senza registro dichiarato vale «base». Un override di
+   `frase_media` in `libro.yaml` resta sopra. Il motore misura il capitolo intero: registri diversi per scena
+   non si dichiarano e non si misurano separatamente.
 5. Percorso editoriale: `zb capsula <libro> N` prepara `07-capsule/NN.md`, l'agente `capsula` la compila (otto
    sezioni, 120-250 parole), `zb capsula <libro> N --verifica` la controlla e riscrive il registro.
 6. Blocco di salvataggio (sezione 8).

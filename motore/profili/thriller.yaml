@@ -25,6 +25,7 @@ parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56 · informativo, non con
 battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46 · informativo, non controllato
 chiusura_preferita: gancio_domanda            # 03 r. 12; 02 r. 39 (domanda, rivelazione, pericolo, decisione)
 frase_media: [9, 14]                          # PROPOSTA (03 r. 10 dà solo la regola: brevi nell'azione)
+frase_media_voce: true                        # PROPOSTA (decisione dell'autore, 2026-10-21): con una voce della banca, la frase media del capitolo è quella del suo registro (sezione 3 della scheda)
 dialogo_percento: [25, 45]                    # PROPOSTA
 similitudini_max_per_parole: 400              # PROPOSTA (una ogni 400 parole)
 parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21 («ridurre»); il numero è PROPOSTA
