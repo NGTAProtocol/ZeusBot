@@ -21,6 +21,14 @@
   fuori procedura … 04-manoscritto/01-l-ultimo-appuntamento.md»), perché il capitolo 1 è la riscrittura aa5b2b6
   non accettata. Serve la decisione dell'autore: `zb riapprova` di aa5b2b6 o ritorno al testo di a7e1c88.
 
+- 2026-10-21, terza parte: capitolo 1 riportato al testo approvato a7e1c88 (7fb201a); `zb avvio` passa.
+  Merge di `origin/integrazione-editoriale` nel ramo tentato e ANNULLATO (non pushato): suite 658/661 e
+  `separazione.py` KO sul ramo del libro (`.claude/` presente, nomi del libro in `docs/`). Il ramo resta sul motore
+  2df84b3; il motore nuovo si usa per percorso dalla cartella di `integrazione-editoriale`.
+- Pagina di prova `prova-pagina/apertura.md` (scrittore-voce e diagnosta installati, due giri): giro 1 «non passa»
+  (2 chiuse, 2 fatti contraddetti), giro 2 «non passa» (r.27 «Il ragazzo non dice altro.» contraddice il
+  capitolo, rr. 47-63). Gli hook non registrano in questa sessione (`CLAUDE_PROJECT_DIR` vuota).
+
 ## Decisioni prese
 - Nota di lettura del 2026-10-21 per il capitolo 1 (in `06-diagnostica/note-lettura.md`).
 - Frase media nel thriller: vale il registro della voce (corto 5-10, freddo 15-25, base 12-18), solo con il motore
