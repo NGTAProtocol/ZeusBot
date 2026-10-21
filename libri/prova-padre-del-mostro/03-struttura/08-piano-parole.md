@@ -7,7 +7,7 @@
 |---|---|---|---|---|---|---|---|---|
 | — | 1 | L'ultimo appuntamento | incidente scatenante (azione) | 2 | 2200 | 1100 | 2069 | -6,0% |
 | — | 2 | La nomina | nomina (potere) | 2 | 1800 | 900 | 1787 | -0,7% |
-| — | 3 | La convocazione | prima svolta: convocazione | 3 | 2600 | 870 | 2540 | -2,3% |
+| — | 3 | La convocazione | prima svolta: convocazione | 3 | 2600 | 870 | 2557 | -1,7% |
 | — | 4 | Il fascicolo orfano | apertura indagine, falsa pista | 2 | 2000 | 1000 |  |  |
 | — | 5 | Le posizioni | apertura filo fondo | 2 | 1900 | 950 |  |  |
 | — | 6 | Territorio | limiti del comando | 2 | 2100 | 1050 |  |  |
