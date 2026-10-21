@@ -4,5 +4,5 @@ Generato da «zb capsula --verifica» dalle capsule: non si scrive a mano.
 
 | Promessa | Aperta nel cap. | Chiusa nel cap. | Stato |
 |---|---|---|---|
-| @prom:chi-ha-deciso | 2 | — | aperta |
-| @prom:perche-kurgan-sacrificato | 2 | — | aperta |
+| @prom:perche-kurgan-sacrificato | 1 | — | aperta |
+| @prom:chi-ha-deciso | 1 | — | aperta |
