@@ -181,7 +181,9 @@ def aperture_uguali(testo, lingua):
                 serie.append(cur)
                 cur = []
             else:
-                cur.append(PAROLA.findall(f)[0].lower())
+                p = PAROLA.findall(f)               # frasi() oggi scarta le frasi senza parole: protezione in più
+                if p:
+                    cur.append(p[0].lower())
         serie.append(cur)
     uguali = sum(1 for s in serie for a, b in zip(s, s[1:]) if a == b)
     return uguali, sum(max(len(s) - 1, 0) for s in serie)

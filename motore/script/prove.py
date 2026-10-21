@@ -3104,6 +3104,19 @@ def anti_ia_prove(A):
           f'{antiia.aperture_uguali(con_battuta, "it")[0]} / {antiia.aperture_uguali(stessa_riga, "it")[0]} / '
           f'{antiia.aperture_uguali(consecutive, "it")[0]} / {antiia.misure(con_battuta, "it", [])["aperture_uguali"]} / '
           f'{antiia.misure(consecutive, "it", [])["aperture_uguali"]}', sez)
+    # segmenti senza parole («* * *», «...», «1984.») tra frasi di narrazione: nessun errore; con frasi() che li
+    # lasciasse passare (simulato), la frase senza parole si salta
+    senza_parole = 'Il ragazzo esce.\n\n* * *\n\nIl ragazzo torna. ... 1984. Lei resta.\n'
+    originale = antiia.frasi
+    try:
+        antiia.frasi = lambda t: re.split(r'(?<=[.!?…])\s+', ' '.join(t.split()))
+        simulato = antiia.aperture_uguali(senza_parole, 'it')
+    except IndexError as e:
+        simulato = f'IndexError {e}'
+    finally:
+        antiia.frasi = originale
+    esito('antiia.py', 'aperture uguali: segmenti senza parole tra frasi di narrazione (reale / frasi() senza filtro)',
+          A['aperture_senza_parole'], f'{antiia.aperture_uguali(senza_parole, "it")} / {simulato}', sez)
     R = copia_libro('mini-libro-romance')
     _, lr, pr = comune.carica_libro(R)
     gr = lambda lb: next((g for k, g, _ in antiia.audit(R, lb, '2', profilo=pr, scrivi=False)['2'][1]

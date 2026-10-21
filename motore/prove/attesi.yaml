@@ -813,6 +813,8 @@ anti_ia:
   chiusure: "P2 / P0"
   # battuta in mezzo: riga a parte 0, stessa riga 0; frasi consecutive 1; misura 0.0% e 100.0%
   aperture_battuta: "0 / 0 / 1 / 0.0 / 100.0"
+  # «* * *», «...» e «1984.» non sono frasi: il ragazzo, il ragazzo, lei → 1 coppia uguale su 2; senza filtro, nessun errore
+  aperture_senza_parole: "(1, 2) / (1, 2)"
 correttore:
   report: "True / 25"
   dentro_repo: "2 / False"
