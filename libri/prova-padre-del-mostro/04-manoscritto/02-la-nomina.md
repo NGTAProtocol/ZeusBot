@@ -54,7 +54,7 @@ Tre giorni senza telefono, per un uomo come Kurgan, non erano un ritardo ma un'i
 
 — Qualche anno fa abbiamo fatto un investimento. Non soltanto in denaro: abbiamo investito su una persona. Lei ricorda le riunioni di quel periodo.
 
-— C'ero.
+— Le ho in mente.
 
 — Due società che non si parlavano da generazioni hanno cominciato a parlarsi. Una di qua e una di Calabria.
 
@@ -68,7 +68,7 @@ Bertola non disse i nomi delle due società. In quella sala non si pronunciavano
 
 Bertola smise di guardare il bicchiere e guardò Giorgi. Naturalmente aveva sentito il tempo del verbo. Era pagato da tredici anni per sentire i tempi dei verbi, e prima di Giorgi altri avevano pagato Bertola, più in alto ancora. Bertola non disse niente.
 
-— Negli ultimi mesi la sua posizione è cambiata, — disse Giorgi. — In che senso, non glielo dico. Le basti sapere che è cambiata e che non l'avevamo deciso noi.
+— Negli ultimi mesi la posizione di Kurgan è cambiata, — disse Giorgi. — In che senso, non glielo dico. Le basti sapere che è cambiata e che non l'avevamo deciso noi.
 
 — Capisco.
 
@@ -84,7 +84,7 @@ Bertola prese il bicchiere e bevve un sorso, uno solo, senza distogliere gli occ
 
 — Quello ce l'ho già.
 
-Il telefono della scrivania, di là, non suonò più. Giorgi aveva fatto staccare l'apparecchio alle sette, subito dopo l'unico squillo.
+Il telefono della scrivania, di là, non suonò più. Giorgi aveva fatto staccare l'apparecchio alle sette, dopo l'unico squillo.
 
 * * *
 
