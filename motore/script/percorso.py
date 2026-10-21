@@ -165,6 +165,29 @@ def giro_revisione(cartella, libro, n, nuovo=False):
     return 2, voci
 
 
+def letture_diagnosta(cartella, libro, n, rel_cap):
+    """Righe «File da leggere» e «Canone» del diagnosta per il capitolo singolo: solo ciò che serve alla checklist
+    (capitolo, misure, frasi finali, voce sezioni 2, 3 e 6, codex filtrato per i tag della scheda, capsula del
+    capitolo precedente; il canone è scritto qui). Non servono: la preparazione dello scrittore, il manuale di stile,
+    le scelte fisse, le note della pausa di lettura, le capsule più vecchie."""
+    import capsula
+    import codex
+    import struttura
+    n = int(n)
+    leggere = [rel_cap, misure_rel(n), f'06-diagnostica/frasi-finali/{nn(n)}.md']
+    sk = struttura.schede(cartella).get(str(n)) or {}
+    leggere += codex.filtra(cartella, struttura.tag_di(sk))[0]
+    if n > 1 and os.path.isfile(os.path.join(cartella, capsula.rel(n - 1))):
+        leggere.append(capsula.rel(n - 1))
+    out = ['## File da leggere (solo questi)', ''] + [f'- {r}' for r in leggere]
+    slug = (libro.get('voce') or {}).get('slug')
+    if slug:
+        out.append(f'- scheda della voce «{slug}» (banca-voci, sola lettura): sezioni 2, 3 e 6')
+    stato = comune.leggi_yaml(os.path.join(cartella, 'stato.yaml')) or {}
+    out += ['', '## Canone (fatti bloccati)', ''] + ([f'- {x}' for x in stato.get('fatti_bloccati') or []] or ['- nessuno'])
+    return out
+
+
 def misure_prima_della_revisione(cartella, libro, profilo, n, giro=(1, [])):
     """Misure del motore sul capitolo N prima del diagnosta (capitolo.py senza scrivere il report, audit anti-IA,
     frasi finali di zb stile). Con un esito bloccante: ErroreMotore, niente diagnosta. Altrimenti scrive
@@ -202,6 +225,7 @@ def misure_prima_della_revisione(cartella, libro, profilo, n, giro=(1, [])):
              f'| Frasi finali | {len(ff)}, in 06-diagnostica/frasi-finali/{nn(n)}.md |', '',
              '## Righe misurate (avvisi che restano, con la riga)', '']
     righe += stile.tabella(tutti) if tutti else ['Nessun avviso.']
+    righe += [''] + letture_diagnosta(cartella, libro, n, rel_cap=testi[0])
     if giro[0] == 2:
         import shutil
         shutil.copyfile(os.path.join(cartella, rel_audit(n)), os.path.join(cartella, f'06-diagnostica/audit/{nn(n)}-giro1.md'))

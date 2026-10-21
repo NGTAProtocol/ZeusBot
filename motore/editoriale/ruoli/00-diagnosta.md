@@ -16,9 +16,10 @@ Revisione di un capitolo appena scritto, prima che sia accettato, in sessione se
 riga: `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che prima misura il capitolo: con un KO, o un
 avviso di frase media, divieti della voce o ripetizioni ravvicinate, si ferma e la revisione non comincia; con le misure
 superate scrive `06-diagnostica/misure/NN.md` (righe misurate: non si rifanno) e `06-diagnostica/frasi-finali/NN.md`.
-Input: il capitolo, `06-diagnostica/misure/NN.md`, `06-diagnostica/frasi-finali/NN.md`, la scheda della voce (sezioni 2, 3 e 6: regole, misure ed
-esempi «debole → forte»), i file di `06-diagnostica/preparazione/NN.md` (codex filtrato, canone, capsule) e la
-capsula del capitolo precedente. Checklist, in quest'ordine; per ogni punto si elencano le frasi trovate (riga e
+Input: solo i file della sezione «File da leggere» di `06-diagnostica/misure/NN.md`: il capitolo, le misure, le frasi
+finali, la scheda della voce (sezioni 2, 3 e 6: regole, misure ed esempi «debole → forte»), il codex filtrato per i tag
+della scheda e la capsula del capitolo precedente; il canone è scritto nello stesso file. Non servono la preparazione
+dello scrittore, il manuale di stile, le scelte fisse, le note della pausa di lettura né le capsule più vecchie. Checklist, in quest'ordine; per ogni punto si elencano le frasi trovate (riga e
 testo) e il loro numero, anche quando è zero:
 1. **Chiuse a sentenza, per funzione — tabella frase per frase.** Una riga per ogni frase di
    `frasi-finali/NN.md`: `| Riga | Frase | Chiusa? (sì/no) | Perché |`. «Sì» quando la frase commenta o
