@@ -3206,12 +3206,15 @@ def frase_media_registro(A):
             os.environ['ZB_BANCA_VOCI'] = prima
 
     def fm(es):
-        return [f'{n}: {m.get("frase_media_intervallo")} ' + ('KO' if any(r['controllo'] == 'frase_media' for r in o) else 'OK')
-                for n, (m, o) in es.items() if n.isdigit()]
+        return [f'{n}: {m.get("frase_media_intervallo")} ' +
+                next((r['esito'] for r in o if r['controllo'] == 'frase_media'), 'OK') for n, (m, o) in es.items() if n.isdigit()]
     esito('stile.py', 'mini-libro con voce e scaletta, profilo senza il campo: intervallo del profilo', A['senza_campo'],
           fm(senza), sez)
-    esito('stile.py', 'mini-libro con voce e scaletta, frase_media_voce: true: intervallo del registro di ogni capitolo',
-          A['con_campo'], fm(con), sez)
+    esito('stile.py', 'mini-libro con voce e scaletta, frase_media_voce: true: intervallo del registro di ogni capitolo, '
+          'fuori intervallo AVVISO (non KO)', A['con_campo'], fm(con), sez)
+    det = [r['dettaglio'] for r in con['2'][1] if r['controllo'] == 'frase_media']
+    esito('stile.py', 'avviso della frase media del registro: «intervallo non calibrato sull\'autore»', 'True',
+          str(bool(det) and det[0].endswith("intervallo non calibrato sull'autore")), sez)
     th = comune.carica_profilo('thriller')
     esito('profili/thriller.yaml', 'thriller: la voce prevale sulla frase media', 'True', str(th.get('frase_media_voce')), sez)
 

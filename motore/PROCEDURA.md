@@ -290,7 +290,10 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    voce; il registro si dichiara nella scheda del capitolo in scaletta («registro corto», «registro freddo»…; se
    ce ne sono più d'uno vale il primo, il dominante); senza registro dichiarato vale «base». Un override di
    `frase_media` in `libro.yaml` resta sopra. Il motore misura il capitolo intero: registri diversi per scena
-   non si dichiarano e non si misurano separatamente.
+   non si dichiarano e non si misurano separatamente. L'intervallo del registro è una scelta della voce, non
+   ancora calibrata sui testi dell'autore: fuori intervallo il capitolo ha un AVVISO («intervallo non calibrato
+   sull'autore»), non un KO; diventerà un blocco solo dopo la calibrazione. L'intervallo del profilo o
+   dell'override resta un KO.
 5. Percorso editoriale: `zb capsula <libro> N` prepara `07-capsule/NN.md`, l'agente `capsula` la compila (otto
    sezioni, 120-250 parole), `zb capsula <libro> N --verifica` la controlla e riscrive il registro.
 6. Blocco di salvataggio (sezione 8).

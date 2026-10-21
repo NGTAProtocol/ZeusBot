@@ -162,8 +162,10 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervall
         a, b, nota = intervallo or (profilo['frase_media'][0], profilo['frase_media'][1], '')
         met['frase_media_intervallo'] = f'{a}-{b}' + (f' ({nota})' if nota else '')
         if not a <= met['frase_media'] <= b:
-            out.append(risultato(nome, 'frase_media', 'KO', None,
-                                 f'{met["frase_media"]} fuori da {a}-{b}' + (f' ({nota})' if nota else '')))
+            # l'intervallo della voce è una scelta della voce, non ancora calibrata sull'autore: avviso, non blocco
+            out.append(risultato(nome, 'frase_media', 'AVVISO' if nota else 'KO', None,
+                                 f'{met["frase_media"]} fuori da {a}-{b}' +
+                                 (f' ({nota}): intervallo non calibrato sull\'autore' if nota else '')))
         a, b = profilo['dialogo_percento']
         if not a <= met['dialogo_percento'] <= b:
             out.append(risultato(nome, 'dialogo', 'KO', None, f'{met["dialogo_percento"]}% fuori da {a}-{b}%'))

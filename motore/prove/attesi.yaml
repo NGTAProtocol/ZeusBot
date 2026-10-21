@@ -821,4 +821,4 @@ frase_media_registro:
   registri: "[('base', [12, 18]), ('corto', [5, 10]), ('freddo', [15, 25])]"
   intervalli: ['5-10 registro corto, dalla voce', '15-25 registro freddo, dalla voce', '12-18 registro base, dalla voce', '9-14', '9-14', '12-18 registro base, dalla voce']
   senza_campo: ['1: 9-14 OK', '2: 9-14 OK', '3: 9-14 KO']
-  con_campo: ['1: 5-10 (registro corto, dalla voce) OK', '2: 15-25 (registro freddo, dalla voce) KO', '3: 12-18 (registro base, dalla voce) KO']
+  con_campo: ['1: 5-10 (registro corto, dalla voce) OK', '2: 15-25 (registro freddo, dalla voce) AVVISO', '3: 12-18 (registro base, dalla voce) AVVISO']
