@@ -383,6 +383,7 @@ def revisione_in_stesura(r, L, m, sez):
     open(pa, 'w', encoding='utf-8').write(open(pa, encoding='utf-8').read().replace('\npassa\n', '\nnon passa\n'))
     p = zb(L, 'esito', '.', '1')
     esito('fase.py', 'revisione con «non passa»: esito fermo', '2 / True', f'{p.returncode} / {"«non passa»" in p.stderr}', sez)
+    os.remove(pa)       # dopo un «non passa» sullo stesso testo zb ruolo si ferma (giro di revisione): si riparte da capo
     intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
     open(cap, 'a', encoding='utf-8').write('\n')
     p = zb(L, 'esito', '.', '1')
@@ -410,6 +411,41 @@ def revisione_in_stesura(r, L, m, sez):
     esito('fase.py', 'revisione con «passa» ma senza le misure del motore: esito fermo', 'fermo', senza_misure, sez)
     esito('agenti.py', 'agenti prossimo con revisione_capitolo obbligatoria: zb ruolo diagnosta prima del revisore',
           '0 / True', f'{p.returncode} / {"diagnosta N (misure del motore prima del revisore" in p.stdout}', sez)
+    # un solo giro completo: il secondo rivede solo le frasi di «## Da correggere» del primo
+    g1 = os.path.join(L, '06-diagnostica', 'audit', '01-giro1.md')
+
+    def rapporto(corpo):
+        q = zb(L, 'ruolo', '.', 'diagnosta', '1')
+        riga = next((x.split('Prima riga: ', 1)[1] for x in q.stdout.splitlines() if x.startswith('Prima riga: ')), '')
+        open(pa, 'w', encoding='utf-8').write(riga + '\n# Revisione\n\n' + corpo)
+        return q
+    rapporto('## Da correggere\n\n- r.3 «Il molo era grigio.»: chiusa a sentenza\n\nnon passa\n')
+    p1 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    open(cap, 'a', encoding='utf-8').write('\nNives chiuse la porta del magazzino.\n')
+    p2 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    tm = open(misure, encoding='utf-8').read()
+    esito('ruolo.py', 'giro di revisione: «non passa» sul testo non corretto fermo / dopo la correzione giro 2 con le sole '
+          'frasi del primo, primo giro conservato', '2 True / 0 True True True',
+          f'{p1.returncode} {"sul testo attuale" in p1.stderr} / {p2.returncode} {"Giro di revisione: 2" in p2.stdout} '
+          f'{"## Giro 2: solo queste frasi" in tm and "- r.3 «Il molo era grigio.»: chiusa a sentenza" in tm} '
+          f'{os.path.isfile(g1)}', sez)
+    riga2 = next((x.split('Prima riga: ', 1)[1] for x in p2.stdout.splitlines() if x.startswith('Prima riga: ')), '')
+    open(pa, 'w', encoding='utf-8').write(riga2 + '\n# Revisione 2\n\n## Da correggere\n\n- r.3: non risolta\n\nnon passa\n')
+    open(cap, 'a', encoding='utf-8').write('\nNives spense la luce del magazzino.\n')
+    p3 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    p4 = zb(L, 'ruolo', '.', 'diagnosta', '1', '--nuovo-giro')
+    esito('ruolo.py', 'secondo giro con «non passa»: fermo, decide l\'autore / --nuovo-giro: di nuovo un giro completo',
+          '2 True / 0 True False', f'{p3.returncode} {"due giri di revisione fatti" in p3.stderr} / {p4.returncode} '
+          f'{"Giro di revisione: 1 (completo)" in p4.stdout} {os.path.isfile(g1)}', sez)
+    os.remove(pa)
+    rapporto('## Esito\n\nnon passa\n')
+    open(cap, 'a', encoding='utf-8').write('\nNives tornò sul molo.\n')
+    p5 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    esito('ruolo.py', '«non passa» senza la sezione «## Da correggere»: fermo', '2 / True',
+          f'{p5.returncode} / {"senza la sezione «## Da correggere»" in p5.stderr}', sez)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)      # come prima: capitolo originale, rapporto «passa»
+    os.remove(pa)
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
 
 
 def pausa_note(r, L, sez):

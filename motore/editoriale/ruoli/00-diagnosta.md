@@ -47,6 +47,10 @@ giustificativa; più di due etichette per la stessa persona nella stessa scena; 
 cambiare un fatto; una frase del registro corto oltre la misura o unita per alzare la media; un fatto
 contraddetto. Le soglie scritte nella scheda della voce prevalgono su queste (scala di precedenza). Si elencano le
 frasi, non si riscrivono: la correzione la fa chi scrive, con una sola correzione mirata, poi una nuova revisione.
+Prima dell'ultima riga, la sezione `## Da correggere`: una voce `- r.N «frase»: motivo` per ogni punto bloccante,
+oppure `- nessuna`. Un solo giro completo: il secondo giro (dopo la correzione) rivede solo le voci elencate nella
+sezione «Giro 2» di `06-diagnostica/misure/NN.md`, ognuna «risolta» o «non risolta» con il motivo, senza rifare la
+checklist; il primo rapporto resta in `audit/NN-giro1.md`. Dopo un secondo «non passa» decide l'autore.
 Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` legge l'ultima riga e l'impronta della prima.
 
 ## Cosa NON fa

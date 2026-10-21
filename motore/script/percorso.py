@@ -97,6 +97,10 @@ def rapporto_capitolo(cartella, libro, n):
     return (f'06-diagnostica/audit/{nn(n)}.md', 'diagnosta', [trovati[str(n)]])
 
 
+def rel_audit(n):
+    return f'06-diagnostica/audit/{nn(n)}.md'
+
+
 def misure_rel(n):
     return f'06-diagnostica/misure/{nn(n)}.md'
 
@@ -116,7 +120,52 @@ def bloccanti_prima_della_revisione(risultati, libro):
     return out
 
 
-def misure_prima_della_revisione(cartella, libro, profilo, n):
+def da_correggere(testo):
+    """Voci «- …» della sezione «## Da correggere» di un rapporto del diagnosta («- nessuna» esclusa)."""
+    out, dentro_sez = [], False
+    for r in testo.splitlines():
+        s = r.strip()
+        if s.startswith('## '):
+            dentro_sez = s[3:].strip().lower() == 'da correggere'
+            continue
+        if dentro_sez and s.startswith('- ') and s[2:].strip().lower().rstrip('.') != 'nessuna':
+            out.append(s[2:].strip())
+    return out
+
+
+def giro_revisione(cartella, libro, n, nuovo=False):
+    """(giro, voci) della revisione del capitolo N: un solo giro completo; dopo un «non passa» e la correzione di chi
+    scrive, il secondo giro rivede solo le voci di «## Da correggere» del primo (copiato in audit/NN-giro1.md da
+    misure_prima_della_revisione). Si ferma: capitolo non corretto dopo un «non passa»; primo rapporto senza
+    «## Da correggere»; due giri già fatti (decide l'autore; --nuovo-giro, dopo il suo ok, riparte da un giro completo)."""
+    rel, _, testi = rapporto_capitolo(cartella, libro, n)
+    p = os.path.join(cartella, rel)
+    g1 = os.path.join(cartella, f'06-diagnostica/audit/{nn(n)}-giro1.md')
+    testo = open(p, encoding='utf-8').read() if os.path.isfile(p) else ''
+    righe = [r.strip() for r in testo.splitlines()]
+    if next((r for r in reversed(righe) if r), '').lower() != 'non passa':
+        if os.path.isfile(g1):
+            os.remove(g1)   # primo giro di un ciclo chiuso prima: si riparte da un giro completo (la storia resta in git)
+        return 1, []
+    m = INTESTAZIONE.match(righe[0] if righe else '')
+    if m and m.group(2) == impronta(cartella, testi):
+        raise comune.ErroreMotore(f'{rel}: «non passa» sul testo attuale del capitolo {n}. Prima la correzione mirata di '
+                                  'chi scrive, poi la nuova revisione.')
+    if os.path.isfile(g1):
+        if not nuovo:
+            raise comune.ErroreMotore(f'Capitolo {n}: due giri di revisione fatti, il secondo chiude con «non passa». '
+                                      'Decide l\'autore; un nuovo giro completo solo dopo il suo ok: '
+                                      f'«zb ruolo <libro> diagnosta {n} --nuovo-giro».')
+        os.remove(g1)       # la storia resta in git
+        return 1, []
+    voci = da_correggere(testo)
+    if not voci:
+        raise comune.ErroreMotore(f'{rel}: «non passa» senza la sezione «## Da correggere» (una riga per frase: riga, '
+                                  'frase, motivo). Il secondo giro rivede solo quelle frasi.')
+    return 2, voci
+
+
+def misure_prima_della_revisione(cartella, libro, profilo, n, giro=(1, [])):
     """Misure del motore sul capitolo N prima del diagnosta (capitolo.py senza scrivere il report, audit anti-IA,
     frasi finali di zb stile). Con un esito bloccante: ErroreMotore, niente diagnosta. Altrimenti scrive
     06-diagnostica/frasi-finali/NN.md e 06-diagnostica/misure/NN.md (prima riga con l'impronta del capitolo):
@@ -153,6 +202,17 @@ def misure_prima_della_revisione(cartella, libro, profilo, n):
              f'| Frasi finali | {len(ff)}, in 06-diagnostica/frasi-finali/{nn(n)}.md |', '',
              '## Righe misurate (avvisi che restano, con la riga)', '']
     righe += stile.tabella(tutti) if tutti else ['Nessun avviso.']
+    if giro[0] == 2:
+        import shutil
+        shutil.copyfile(os.path.join(cartella, rel_audit(n)), os.path.join(cartella, f'06-diagnostica/audit/{nn(n)}-giro1.md'))
+        righe += ['', '## Giro 2: solo queste frasi', '',
+                  f'Il primo giro è in 06-diagnostica/audit/{nn(n)}-giro1.md. Rivedi solo queste voci sul testo corretto: '
+                  'per ognuna «risolta» o «non risolta» con il motivo; non rifare la checklist intera.', '']
+        righe += [f'- {v}' for v in giro[1]]
+    else:
+        righe += ['', '## Giro 1: revisione completa', '',
+                  'Checklist intera del ruolo; nel rapporto, prima dell\'ultima riga, la sezione «## Da correggere» (una '
+                  'voce «- r.N «frase»: motivo» per ogni punto bloccante, oppure «- nessuna»).']
     rel = misure_rel(n)
     comune.scrivi(cartella, rel, '\n'.join(righe) + '\n')
     return rel
