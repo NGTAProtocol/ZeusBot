@@ -125,11 +125,11 @@ def divieti_del_libro(libro):
 
 
 def esempi_debole_forte(b, slug):
-    """Numero di esempi «versione debole → versione forte» nella sezione 6 della scheda: righe «Debole: …»
-    (anche numerate, «1. Debole: …»), contate solo se la sezione ha anche almeno una riga «Forte: …»."""
+    """Numero di esempi «versione debole → versione forte» nella sezione 6 della scheda: ogni «Debole:» (a inizio
+    riga, numerato, o a metà riga dopo una frase di presentazione), contati solo se la sezione ha anche «Forte:»."""
     corpo = sezioni(open(scheda(b, slug), encoding='utf-8').read()).get(6, ('', ''))[1]
-    deboli = len(re.findall(r'(?m)^\s*(?:\d+\.\s*)?Debole:', corpo))
-    forti = len(re.findall(r'(?m)^\s*(?:\d+\.\s*)?Forte:', corpo))
+    deboli = len(re.findall(r'(?<!\w)Debole:', corpo))
+    forti = len(re.findall(r'(?<!\w)Forte:', corpo))
     return deboli if forti else 0
 
 

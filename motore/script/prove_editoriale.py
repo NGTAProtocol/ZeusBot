@@ -421,10 +421,11 @@ def pausa_note(r, L, sez):
     i = st.index('## 7.')
     open(sc, 'w', encoding='utf-8').write(st[:i] + '### 6.1 Esempi\n\n1. Debole: — Resto qui, perché da qui vedo la porta.\n'
                                           '   Forte: — Resto qui.\n2. Debole: Chiuse. Certe cose finiscono così.\n'
-                                          '   Forte: Chiuse e girò la chiave.\n\n' + st[i:])
+                                          '   Forte: Chiuse e girò la chiave.\n3. Il caso opposto, a metà riga. Debole: Lui annuì.\n'
+                                          '   Forte: Il socio annuì.\n\n' + st[i:])
     pp, t = prepara_con(b2)
-    esito('prepara.py', 'libro con voce con esempi: la sezione 6 nomina i 2 esempi «debole → forte»', '0 / True',
-          f'{pp.returncode} / {"2 esempi originali «versione debole → versione forte»" in t}', sez)
+    esito('prepara.py', 'libro con voce con esempi: la sezione 6 nomina i 3 esempi «debole → forte» (uno a metà riga)',
+          '0 / True', f'{pp.returncode} / {"3 esempi originali «versione debole → versione forte»" in t}', sez)
     os.remove(sc)
     pp, t = prepara_con(b2)
     esito('prepara.py', 'scheda della voce assente: zb prepara si ferma con il percorso', '2 / True',
