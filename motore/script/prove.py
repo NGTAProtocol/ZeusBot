@@ -2928,6 +2928,9 @@ def agenti_capsule_consumo(A):
           'scrittore-voce senza 05-scaletta.md e 08-piano-parole.md interi (preparazione al loro posto)', A['letture'],
           f'{"Bash" not in strumenti and "Edit" not in strumenti} / {"non per il capitolo singolo" in gen["diagnosta.md"]} / '
           f'{"Non leggere 03-struttura/05-scaletta.md intero" in sv and "scaletta del capitolo, piano parole" not in sv}', sez)
+    modello = lambda t: (re.search(r'(?m)^model:\s*(\S+)', t) or [None, None])[1]
+    esito('agenti.py', 'modello dichiarato negli agenti installati: diagnosta (il più economico) / scrittore-voce (invariato)',
+          A['modello_diagnosta'], f'{modello(gen["diagnosta.md"])} / {modello(sv)}', sez)
     # modello centrale: si alza solo il ruolo indicato nel file di dati
     mc = copia_motore()
     pm = os.path.join(mc, 'dati', 'modelli-ruoli.yaml')

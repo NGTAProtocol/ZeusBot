@@ -802,6 +802,8 @@ agenti_capsule:
   compatto: "True / True / True"
   # diagnosta senza Bash né Edit; letture ridotte del diagnosta (capitolo singolo) e dello scrittore
   letture: "True / True / True"
+  # diagnosta: livello leggero (haiku, il più economico tra gli alias ammessi); scrittore-voce: medio (sonnet)
+  modello_diagnosta: "haiku / sonnet"
 
 anti_ia:
   # da motore (971b6df), sull'audit di ccr (antiia.py): nomi delle misure di ccr; la sezione B conta solo con
