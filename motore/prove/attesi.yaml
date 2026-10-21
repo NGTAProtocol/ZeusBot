@@ -808,3 +808,9 @@ correttore:
   dentro_repo: "2 / False"
   verifica: "0 / True"
   gia_pronto: "0 / True / True"
+
+frasi_finali:
+  # P3: zb stile elenca, per ogni capitolo, la frase finale di ogni paragrafo di narrazione e dell'ultima battuta di
+  # ogni scambio (06-diagnostica/frasi-finali/NN.md); il giudizio resta a chi rivede
+  elenco: ['3|narrazione|Seconda frase che chiude.', '7|battuta|— Davvero? — dice lui.', '9|narrazione, fine scena|Lui resta alla finestra.', '13|battuta, fine scena|— Ultima battuta.']
+  report: "['01.md', '02.md', '03.md'] / True / True"

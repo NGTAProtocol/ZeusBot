@@ -33,7 +33,7 @@ gruppi:
     comandi:
       - {nome: capitolo, script: capitolo.py, uso: "capitolo <libro> <N>", aiuto: "tutti i controlli di un capitolo"}
       - {nome: conta, script: conta.py, uso: "conta <libro>", aiuto: "parole con il metodo unico"}
-      - {nome: stile, script: stile.py, uso: "stile <libro> [N]", aiuto: "frase media, dialogo, lista nera, tetti"}
+      - {nome: stile, script: stile.py, uso: "stile <libro> [N]", aiuto: "frase media, dialogo, lista nera, tetti; frasi finali di ogni capitolo per chi rivede"}
       - {nome: continuita, script: continuita.py, uso: "continuita <libro>", aiuto: "date, età, durate, cifre, grafie"}
       - {nome: riciclo, script: riciclo.py, uso: "riciclo <libro>", aiuto: "anti-riciclo a 7 parole (riscrittura)"}
       - {nome: ortografia, script: ortografia.py, uso: "ortografia <libro>", aiuto: "Hunspell, LanguageTool, checklist"}

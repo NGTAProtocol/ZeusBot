@@ -3105,7 +3105,43 @@ def correttore(A):
           f'{p.returncode} / {"già pronto" in p.stdout} / {"export ZB_LANGUAGETOOL=" in p.stdout}', sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore}
+FRASI_FINALI_TESTO = """# 1 — Prova
+
+Prima frase. Seconda frase che chiude.
+
+— Vieni? — chiede lei.
+
+— Davvero? — dice lui.
+
+Lui resta alla finestra.
+
+* * *
+
+— Ultima battuta.
+"""
+
+
+def frasi_finali_prove(A):
+    """P3: elenco delle frasi finali (stile.frasi_finali) e report 06-diagnostica/frasi-finali/NN.md di zb stile."""
+    sez = 'frasi_finali'
+    import stile
+    ff = stile.frasi_finali(FRASI_FINALI_TESTO, comune.lingue()['it'])
+    esito('stile.py', 'frasi finali: narrazione, ultima battuta di uno scambio, fine scena, attacco della battuta',
+          A['elenco'], [f'{v["riga"]}|{v["tipo"]}|{v["frase"]}' for v in ff], sez)
+    c = copia_libro('mini-libro')
+    esegui(os.path.join(S, 'stile.py'), c)
+    d = os.path.join(c, '06-diagnostica', 'frasi-finali')
+    cartella, libro, _ = comune.carica_libro(c)
+    testo = open(os.path.join(c, '04-manoscritto', '01-la-farmacia.md'), encoding='utf-8').read()
+    n = len(stile.frasi_finali(testo, comune.lingue()[libro['lingua']]))
+    rep = open(os.path.join(d, '01.md'), encoding='utf-8').read() if os.path.isfile(os.path.join(d, '01.md')) else ''
+    righe = [r for r in rep.splitlines() if re.match(r'^\| \d+ \|', r)]
+    esito('stile.py', 'zb stile: un report per capitolo numerato (non per l\'interludio), una riga per frase',
+          A['report'], f'{sorted(os.listdir(d)) if os.path.isdir(d) else []} / {n > 0 and len(righe) == n} / '
+          f'{"| Riga | Tipo | Frase finale |" in rep}', sez)
+
+
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove}
 
 
 def main(argv):

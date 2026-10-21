@@ -12,6 +12,8 @@ Voci ad ambito «libro»: contatore cumulato; non contano le unità in consentit
 con conta_per: unita il tetto è sul numero di unità in cui la voce compare.
 Ogni voce può avere escludi_pattern: le occorrenze che cadono dentro una sua corrispondenza non contano.
 Esiti: KO (blocca) o AVVISO (da guardare). Report: <libro>/06-diagnostica/stile.md.
+Per ogni capitolo anche 06-diagnostica/frasi-finali/NN.md: la frase finale di ogni paragrafo di narrazione e
+dell'ultima battuta di ogni scambio, con il numero di riga (elenco per chi rivede; nessun esito).
 """
 import os
 import re
@@ -62,6 +64,50 @@ def metriche(testo, lingua):
         'frase_media': round(tot / len(frasi), 1) if frasi else 0.0,
         'dialogo_percento': round(100 * dial / tot, 1) if tot else 0.0,
     }
+
+
+def frasi_finali(testo, lingua):
+    """Frase finale di ogni paragrafo di narrazione e dell'ultima battuta di ogni scambio (battuta seguita da
+    narrazione, da un separatore di scena o dalla fine): [{'riga', 'tipo', 'frase'}]. Paragrafo: righe di prosa
+    consecutive. Il motore elenca e non giudica: se la frase commenta o riassume lo decide chi rivede."""
+    righe = testo.splitlines()
+    paragrafi = []
+    for n, r in comune.righe_prosa(testo):
+        if paragrafi and n == paragrafi[-1][1] + 1:
+            paragrafi[-1] = (paragrafi[-1][0], n, paragrafi[-1][2] + ' ' + r.strip())
+        else:
+            paragrafi.append((n, n, r.strip()))
+    out = []
+    for i, (a, b, t) in enumerate(paragrafi):
+        dopo = paragrafi[i + 1] if i + 1 < len(paragrafi) else None
+        fine_scena = dopo is None or any(x.strip() and not any(c.isalnum() for c in x)
+                                         for x in righe[b:dopo[0] - 1])
+        battuta = t.startswith(_dialogo(lingua))
+        if battuta and not fine_scena and dopo[2].startswith(_dialogo(lingua)):
+            continue
+        frasi = []
+        for f in re.split(r'(?<=[.!?…])\s+', t):
+            # «— Davvero? — dice lui.»: l'attacco della battuta resta con la sua frase
+            if frasi and f.startswith(_dialogo(lingua)) and f.lstrip(''.join(_dialogo(lingua)) + ' ')[:1].islower():
+                frasi[-1] += ' ' + f
+            elif comune.parole(f):
+                frasi.append(f)
+        if not frasi:
+            continue
+        tipo = ('battuta' if battuta else 'narrazione') + (', fine scena' if fine_scena else '')
+        out.append({'riga': b, 'tipo': tipo, 'frase': frasi[-1]})
+    return out
+
+
+def tabella_frasi_finali(nome, voci):
+    """Report di 06-diagnostica/frasi-finali/NN.md: una riga per frase, colonna del giudizio vuota."""
+    righe = [f'# Frasi finali — unità {nome}', '',
+             'Elenco del motore (zb stile): frase finale di ogni paragrafo di narrazione e dell\'ultima battuta di '
+             'ogni scambio. Il giudizio (chiusa a sentenza o no: tolta la frase, il paragrafo dice ancora tutto?) '
+             'lo scrive chi rivede, frase per frase, nel proprio rapporto.', '',
+             f'Frasi: {len(voci)}.', '', '| Riga | Tipo | Frase finale |', '|---|---|---|']
+    righe += [f'| {v["riga"]} | {v["tipo"]} | {v["frase"].replace("|", "/")} |' for v in voci]
+    return '\n'.join(righe) + '\n'
 
 
 def occorrenze(prosa, pattern):
@@ -228,6 +274,12 @@ def main(argv):
         print(testo)
     else:
         print('scritto', comune.scrivi(cartella, '06-diagnostica/stile.md', testo))
+        lingua = comune.lingue()[libro['lingua']]
+        for nome, p in comune.unita(cartella, libro):
+            if nome in scelta and nome.isdigit():
+                ff = frasi_finali(open(p, encoding='utf-8').read(), lingua)
+                print('scritto', comune.scrivi(cartella, f'06-diagnostica/frasi-finali/{int(nome):02d}.md',
+                                               tabella_frasi_finali(nome, ff)))
     return 1 if any(r['esito'] == 'KO' for r in tutti) else 0
 
 
