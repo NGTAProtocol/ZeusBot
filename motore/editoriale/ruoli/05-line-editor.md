@@ -17,11 +17,13 @@ Il capitolo, la scheda della voce, `anti-ia/catalogo-it.md`, i divieti della voc
 
 ## Controlli per funzione
 Le stesse regole della checklist del diagnosta per il capitolo singolo (`00-diagnosta.md`, «Capitolo
-singolo»), applicate frase per frase. Per ognuna il rapporto elenca le frasi trovate (riga e testo) e il loro
+singolo»), applicate frase per frase; per le chiuse si parte da `06-diagnostica/frasi-finali/NN.md` (`zb stile`). Per ognuna il rapporto elenca le frasi trovate (riga e testo) e il loro
 numero, anche zero:
 - chiuse a sentenza definite per funzione (frase finale di paragrafo che commenta o riassume invece di
   mostrare; tolta la frase, il paragrafo dice ancora tutto), entro il limite della voce;
 - eco: una battuta non riprende la parola piena dell'altro, nemmeno senza «ripeté»;
+- battute giustificative: una battuta non spiega né giustifica ciò che il personaggio fa o pensa;
+- soggetto: il nome proprio non si ripete come soggetto dove è ovvio;
 - personaggi senza nome: una sola etichetta per scena, più al massimo una variante; niente giro di sinonimi;
 - chi fa cosa: con due persone dello stesso genere in scena, il nome al posto di «lui», «lo», «gli»;
 - registro corto: per alzare una media troppo bassa non si uniscono frasi corte con «e», «mentre» o

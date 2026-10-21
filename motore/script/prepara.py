@@ -6,6 +6,7 @@ scrittore deve leggere, e nient'altro:
 - la scheda del capitolo N da 03-struttura/05-scaletta.md; si ferma (codice 2) se mancano funzione,
   conflitto, cambiamento, informazione data, gancio, polarità emotiva o sottotesto dei dialoghi;
 - i file del codex con i tag della scheda (@char, @loc), e gli avvisi per i tag senza scheda;
+- con una voce in libro.yaml, dove leggere la scheda della voce (sezioni 2, 3 e 6, con gli esempi) e i divieti;
 - il canone (fatti bloccati di stato.yaml);
 - le capsule dei capitoli precedenti e il registro delle promesse; si ferma se manca la capsula N-1;
 - le ultime righe del capitolo precedente (per la continuità del ritmo, al massimo 6 righe di prosa);
@@ -67,6 +68,13 @@ def prepara(cartella, libro, n):
     out += [f'- {x}' for x in stato.get('fatti_bloccati') or []] or ['- nessuno']
     if note in leggere:
         out += ['', '## Note dell\'autore alla pausa di lettura', '', f'Valgono per questo capitolo: {note} (nei file da leggere).']
+    if (libro.get('voce') or {}).get('slug'):
+        slug = libro['voce']['slug']
+        out += ['', '## Voce (banca-voci, sola lettura)', '',
+                f'Prima di scrivere: `zb voce mostra {slug}` (tutti i blocchi) oppure `$ZB_BANCA_VOCI/voci/{slug}/scheda.md`. '
+                'Da leggere sempre: sezione 2 (regole), sezione 3 (misure del registro del capitolo) e sezione 6 '
+                '(esempi originali «versione debole → versione forte» e campioni per registro), poi '
+                f'`voci/{slug}/divieti.yaml`. Gli esempi mostrano la funzione da imitare, non frasi da copiare.']
     out += ['', '## File da leggere', ''] + [f'- {r}' for r in leggere]
     out += [f'- AVVISO {x}: nessuna scheda nel codex' for x in ignoti]
     if coda:

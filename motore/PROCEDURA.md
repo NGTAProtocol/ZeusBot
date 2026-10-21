@@ -268,7 +268,8 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    scaletta e piano parole, le voci di cronologia che tocca e il capitolo precedente. Sul percorso editoriale
    scrive l'agente `scrittore-voce`, chiamato dalla sessione principale (mai due capitoli in parallelo);
    `zb prepara <libro> N` gli dà la scheda del capitolo, il codex filtrato, il canone, le capsule e, dopo una
-   pausa di lettura con note, `06-diagnostica/note-lettura.md`.
+   pausa di lettura con note, `06-diagnostica/note-lettura.md`; con una voce della banca indica anche le sezioni
+   2, 3 e 6 della scheda della voce (esempi «debole → forte») e i divieti, da leggere prima di scrivere.
 2. Riporto la riga «Letto: …» di `zb avvio` (se non l'ho già fatto in questa sessione).
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
 3b. Revisione del capitolo (percorso editoriale): il diagnosta, in una sessione separata da chi ha scritto, prende

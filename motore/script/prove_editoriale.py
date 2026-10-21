@@ -402,6 +402,12 @@ def pausa_note(r, L, sez):
           f'{pp.returncode} / {os.path.isfile(prep) and "- 06-diagnostica/note-lettura.md" in open(prep).read()}', sez)
     ly = os.path.join(L2, 'libro.yaml')
     orig = open(ly, encoding='utf-8').read()
+    open(ly, 'w', encoding='utf-8').write(orig.rstrip('\n') + '\nvoce: {slug: voce-di-prova, ambientazione: altro}\n')
+    pp = zb(L2, 'prepara', '.', '3')
+    t = open(prep, encoding='utf-8').read() if os.path.isfile(prep) else ''
+    esito('prepara.py', 'libro con voce: zb prepara dice di leggere le sezioni 2, 3 e 6 della scheda (esempi) e i divieti',
+          '0 / True / True', f'{pp.returncode} / {"## Voce (banca-voci, sola lettura)" in t} / '
+          f'{"sezione 6" in t and "voci/voce-di-prova/divieti.yaml" in t}', sez)
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 6'))
     p6 = zb(L2, 'stato', '.')
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 5'))
