@@ -1,7 +1,7 @@
 # Stato compatto — Il padre del mostro
 
 - Fase: stesura; gate: lettura.
-- Ultimo capitolo salvato: 3 (commit 3c06198); parole 6296/70000.
+- Ultimo capitolo salvato: 3 (commit 5c9637f); parole 6296/70000.
 - Macrostruttura: mosaico.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): terza persona ravvicinata, un solo punto di vista per capitolo e per scena; il lib….
 - Gate attivi: lettura.
