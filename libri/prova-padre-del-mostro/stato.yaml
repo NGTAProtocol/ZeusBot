@@ -189,8 +189,8 @@ documenti_approvati:
     commit: 90c4ce2
     senza_gate: true
   04-manoscritto/01-l-ultimo-appuntamento.md:
-    sha256: ea2e4f57b1f80264e86aac0865fdda8e2e240843a4fb4503929355ece0c284cf
-    commit: dc97c93
+    sha256: 86cecb8307f92c618f0a9c6b4b4cc0c558d884e950fbae215a4567827f549eed
+    commit: 6104f55
     riapprovazioni:
     - data: '2026-10-21'
       motivo: seconda riscrittura con la voce f6ee79d, note di lettura dell'autore del 2026-10-21
@@ -200,6 +200,10 @@ documenti_approvati:
       motivo: correzione unica dopo la revisione del diagnosta
       sha256_precedente: a95623c65ad2a4abd78dcd443f0f52c201e104d2c7f50f4f1a4a1dcd1dabfb50
       commit_precedente: ec7c12b
+    - data: '2026-10-21'
+      motivo: correzione della frase indicata dalla seconda revisione
+      sha256_precedente: ea2e4f57b1f80264e86aac0865fdda8e2e240843a4fb4503929355ece0c284cf
+      commit_precedente: dc97c93
   04-manoscritto/02-la-nomina.md:
     sha256: 3706ef281bf082ceb03b822ed699ac518a4e5cdf8ae7581f786344328fa72a9f
     commit: 1c6904e
@@ -209,7 +213,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-21T00:54:57Z'
+aggiornato: '2026-10-21T00:57:24Z'
 sottofase: null
 fatti_bloccati:
 - Vito Kurgan è nato al Vomero da padre serbo e madre napoletana.
