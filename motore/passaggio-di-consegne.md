@@ -5,6 +5,11 @@ riprendi da lì».
 
 ## Stato
 
+- Unione del 2026-10-21: il ramo di lavoro è `motore`. `integrazione-editoriale` (9c54726) è entrato in `motore` con
+  `git merge -s ours origin/motore` (ec8fe47: la storia di `motore` resta come antenato, il contenuto è quello di
+  `integrazione-editoriale`), più la correzione di `script/separazione.py` (1092a89); push fast-forward di `motore`
+  971b6df → 1092a89. Copia di sicurezza del motore di prima: archivio (3) in `docs/MAPPA_RAMI.md` (971b6df).
+  Suite su 1092a89: 672/672 OK, 5 saltate (LanguageTool assente), senza `ZB_BANCA_VOCI`.
 - Lavoro sul motore del 2026-10-20: integrazione nel ramo `integrazione-editoriale` (repository
   `NGTAProtocol/ZeusBot`, D1). Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore`
   (`origin/motore`, 971b6df). I rami `motore` e `main` non sono toccati (`main` in questo repository non esiste, D2).
@@ -72,7 +77,8 @@ riprendi da lì».
 - Regola madre: il motore resta sempre pulito; il ramo `motore` non contiene mai un libro.
 - Nessun nome reale (autori, titoli, personaggi, luoghi, frasi, nomi dei rami dei libri) in codice, prove,
   commenti, esiti, report e documenti, anche in `docs/`. Controllo: `zb separazione`.
-- Non toccare i rami dei libri, né `motore` e `main`: l'unione nel ramo `motore` la decide l'autore.
+- Non toccare i rami dei libri. Si lavora su `motore` (fast-forward, mai push forzati); `integrazione-editoriale`
+  resta com'è.
 - I 28 file del pacchetto non si cambiano senza l'autore (eccezione autorizzata: D18).
 - `dati/kdp.yaml`: `ultima_verifica` resta `null` finché l'autore non registra la sua verifica
   (`zb verifica KDP fatta AAAA-MM-GG`); il motore non la scrive.
@@ -84,7 +90,19 @@ riprendi da lì».
   storia.
 - Report di sessione ogni 5 scambi o a «passaggio», con le sezioni fisse.
 
-## Fatto in questa sessione (2026-10-21, quarta parte; sotto, la terza e il 2026-10-20)
+## Fatto in questa sessione (2026-10-21, unione in `motore`; sotto, le sessioni precedenti)
+
+- Copia di sicurezza di `motore` (971b6df) sul ramo d'archivio (3).
+- ec8fe47 unione «ours» di `origin/motore` sopra `integrazione-editoriale`; `git diff` con `integrazione-editoriale`
+  vuoto; nessun doppione (`anti_ia.py`, `capsule.py`, `ruoli.py`, `installa_languagetool.py` non ci sono).
+- 1092a89 (672) `separazione.py`: `git ls-tree --full-tree` nei rami di origin. Prima, lanciato dentro `motore/`, dava
+  percorsi relativi: ogni ramo con il motore sembrava un ramo di libro (il nome di `integrazione-editoriale` e degli
+  archivi del motore risultava vietato; la suite era rossa su ogni ramo diverso da `integrazione-editoriale`) e i
+  rami di libro senza `motore/` sfuggivano. Prova nuova in passo 1 (2 controlli), che fallisce con il codice di prima.
+- Nel commit che porta questo file: `docs/MAPPA_RAMI.md`, `docs/DA_VERIFICARE_AUTORE.md` (pulizia.py attivo; D6, D9,
+  D10), `docs/INFRASTRUTTURA_COMPLETA.md` rigenerata con il generatore. Guida (md e pdf) non rigenerata: non cambia.
+
+2026-10-21, quarta parte:
 
 - 5306b38 (664) `aperture_uguali`: una frase senza parole si salta (prima: IndexError se frasi() non la filtrasse).
 - 247bf0b (668) `zb ruolo <libro> diagnosta N`: misure del motore prima del revisore, `misure/NN.md`; `zb esito` le vuole.
@@ -137,7 +155,7 @@ Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_L
 2. Dopo ogni passo `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
 3. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
    anti-IA; coppia «avvenire/avvenire» nei criteri del correttore; licenza di APODICTIC; verifica dei dati KDP
-   (`ultima_verifica: null`, non verificati dall'autore); unione nel ramo `motore`.
+   (`ultima_verifica: null`, non verificati dall'autore).
 4. Soglie anti-IA uguali per ogni genere, tarate sui mini-libri; vocabolario italiano vuoto finché non c'è un corpus
    (`docs/DA_FORNIRE.md`).
 5. Divergenza lasciata visibile in `docs/ANALISI_REPOSITORY.md`: kindle-book-agency (D13).
@@ -150,9 +168,9 @@ Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_L
 
 ## Prossimo passo
 
-L'autore legge `docs/DA_VERIFICARE_AUTORE.md` (profilo thriller, scelte con due valori), `docs/PROPOSTE_MOTORE.md`
-(P4, P5) e `docs/MAPPA_RAMI.md`, e decide come unire il ramo nel `motore`: un merge semplice con `origin/motore`
-(971b6df) dà 68 file in conflitto, perché le aggiunte di `motore` sono state copiate e rinominate (D5).
+L'autore legge `docs/DA_VERIFICARE_AUTORE.md` (unione in `motore`, pulizia.py, profilo thriller, scelte con due
+valori), `docs/PROPOSTE_MOTORE.md` (P4, P5) e `docs/MAPPA_RAMI.md`. I rami dei libri restano sul loro motore: si
+aggiornano solo con un merge di `origin/motore` deciso dall'autore, libro per libro.
 
 ## Ripartenza
 

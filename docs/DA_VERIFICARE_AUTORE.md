@@ -25,6 +25,17 @@ perché, stanno in `docs/DECISIONI_INTEGRAZIONE.md`.
 - I ruoli del pacchetto (28 file, non toccati) non rimandano ai tre file di `ruoli/riferimenti/`: li richiamano
   l'agente `lettore-cieco` e questo elenco. Se vuoi il rimando nei ruoli, va aggiunto ai tuoi file.
 
+## Unione in `motore` (2026-10-21)
+- `motore` ora contiene `integrazione-editoriale` (unione «ours», ec8fe47; correzione di `script/separazione.py`,
+  1092a89). Il motore di prima è salvato sul ramo d'archivio (3) di `docs/MAPPA_RAMI.md` (971b6df).
+- `script/pulizia.py` resta un comando attivo (`zb pulizia`), come in `integrazione-editoriale`. Su `motore` era
+  stato spostato in `motore/ritirati/` e poi tolto (05fc414, ff3b2e1); scelta presa: tenerlo attivo, perché il file è
+  identico a quello archiviato, è coperto dalle prove e cancella solo con `--applica` dopo il tuo «ok». Se lo vuoi
+  ritirato, è un commit a parte.
+- Le altre differenze tra le aggiunte di `motore` e il contenuto unito sono già registrate, con il motivo, in
+  `docs/DECISIONI_INTEGRAZIONE.md`: D6 (nomi del pacchetto, struttura automatica), D9 (agenti, capsule 120-250 parole,
+  `parallelo_massimo`), D10 (misure anti-IA con i nomi di ccr, soglie per profilo, `zb languagetool`).
+
 ## Contrasto tra il pacchetto e il modo automatico (segnalato, non corretto)
 - I 28 file descrivono fermate con l'«ok» dell'autore (`00-percorso.md`, `struttura/01-fase-struttura.md`,
   «solo dopo il mio ok» nei ruoli). Dal 2026-10-20 il motore scrive in automatico, con una sola pausa di lettura

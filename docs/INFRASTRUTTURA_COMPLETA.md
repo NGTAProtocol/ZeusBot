@@ -1,7 +1,7 @@
 # Infrastruttura completa del sistema casa editrice
 
-- **Data:** 2026-10-21
-- **Ramo:** `integrazione-editoriale`; **commit di partenza:** `66aa928a557cd6db487eefd2738c416d408bb861 «documenti allineati alla revisione del capitolo (misure prima del diagnosta, un giro, haiku, letture): PROCEDURA §6, guida md e pdf con indice ricontrollato, PROPOSTE P4-P5, report, STATO_ATTUALE, passaggio di consegne, scelte in DA_VERIFICARE_AUTORE, infrastruttura rigenerata»`: tutti i file sono copiati da questo stato.
+- **Data:** 2026-10-22
+- **Ramo:** `motore`; **commit di partenza:** `1092a897c7fb2eb84cb2670732f6b47867e2b60b «separazione: l'albero dei rami di origin si legge dalla radice (git ls-tree --full-tree), con prova»`: tutti i file sono copiati da questo stato.
 - **File inclusi:** 251 file tracciati (esclusa `docs/`); i binari sono descritti con dimensione e sha256.
 - **Esclusi per regola:** `libri/` e ogni manoscritto (mai sul ramo `motore`); la banca-voci (repository separato, contiene nomi reali: non si copia qui); le esportazioni precedenti, nella storia git e sul ramo d'archivio dei documenti.
 - **Rigenerazione:** `python3 -B docs/genera_infrastruttura.py`. Verifica in fondo.
@@ -4518,7 +4518,7 @@ aggiornato: ""
 <a id="file-motore-passaggio-di-consegne-md"></a>
 #### FILE: motore/passaggio-di-consegne.md
 
-168 righe, sha256 `0571301bcd480e2da58a25a8b31ed6038cd3072e671ea01f0ee94d9b946f52e3`.
+186 righe, sha256 `75c354818f8e4602fce21e2a940f9cdd00106c730a7097ba485a3b1d0fb99a98`.
 
 `````markdown
 # Passaggio di consegne: motore
@@ -4528,6 +4528,11 @@ riprendi da lì».
 
 ## Stato
 
+- Unione del 2026-10-21: il ramo di lavoro è `motore`. `integrazione-editoriale` (9c54726) è entrato in `motore` con
+  `git merge -s ours origin/motore` (ec8fe47: la storia di `motore` resta come antenato, il contenuto è quello di
+  `integrazione-editoriale`), più la correzione di `script/separazione.py` (1092a89); push fast-forward di `motore`
+  971b6df → 1092a89. Copia di sicurezza del motore di prima: archivio (3) in `docs/MAPPA_RAMI.md` (971b6df).
+  Suite su 1092a89: 672/672 OK, 5 saltate (LanguageTool assente), senza `ZB_BANCA_VOCI`.
 - Lavoro sul motore del 2026-10-20: integrazione nel ramo `integrazione-editoriale` (repository
   `NGTAProtocol/ZeusBot`, D1). Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore`
   (`origin/motore`, 971b6df). I rami `motore` e `main` non sono toccati (`main` in questo repository non esiste, D2).
@@ -4595,7 +4600,8 @@ riprendi da lì».
 - Regola madre: il motore resta sempre pulito; il ramo `motore` non contiene mai un libro.
 - Nessun nome reale (autori, titoli, personaggi, luoghi, frasi, nomi dei rami dei libri) in codice, prove,
   commenti, esiti, report e documenti, anche in `docs/`. Controllo: `zb separazione`.
-- Non toccare i rami dei libri, né `motore` e `main`: l'unione nel ramo `motore` la decide l'autore.
+- Non toccare i rami dei libri. Si lavora su `motore` (fast-forward, mai push forzati); `integrazione-editoriale`
+  resta com'è.
 - I 28 file del pacchetto non si cambiano senza l'autore (eccezione autorizzata: D18).
 - `dati/kdp.yaml`: `ultima_verifica` resta `null` finché l'autore non registra la sua verifica
   (`zb verifica KDP fatta AAAA-MM-GG`); il motore non la scrive.
@@ -4607,7 +4613,19 @@ riprendi da lì».
   storia.
 - Report di sessione ogni 5 scambi o a «passaggio», con le sezioni fisse.
 
-## Fatto in questa sessione (2026-10-21, quarta parte; sotto, la terza e il 2026-10-20)
+## Fatto in questa sessione (2026-10-21, unione in `motore`; sotto, le sessioni precedenti)
+
+- Copia di sicurezza di `motore` (971b6df) sul ramo d'archivio (3).
+- ec8fe47 unione «ours» di `origin/motore` sopra `integrazione-editoriale`; `git diff` con `integrazione-editoriale`
+  vuoto; nessun doppione (`anti_ia.py`, `capsule.py`, `ruoli.py`, `installa_languagetool.py` non ci sono).
+- 1092a89 (672) `separazione.py`: `git ls-tree --full-tree` nei rami di origin. Prima, lanciato dentro `motore/`, dava
+  percorsi relativi: ogni ramo con il motore sembrava un ramo di libro (il nome di `integrazione-editoriale` e degli
+  archivi del motore risultava vietato; la suite era rossa su ogni ramo diverso da `integrazione-editoriale`) e i
+  rami di libro senza `motore/` sfuggivano. Prova nuova in passo 1 (2 controlli), che fallisce con il codice di prima.
+- Nel commit che porta questo file: `docs/MAPPA_RAMI.md`, `docs/DA_VERIFICARE_AUTORE.md` (pulizia.py attivo; D6, D9,
+  D10), `docs/INFRASTRUTTURA_COMPLETA.md` rigenerata con il generatore. Guida (md e pdf) non rigenerata: non cambia.
+
+2026-10-21, quarta parte:
 
 - 5306b38 (664) `aperture_uguali`: una frase senza parole si salta (prima: IndexError se frasi() non la filtrasse).
 - 247bf0b (668) `zb ruolo <libro> diagnosta N`: misure del motore prima del revisore, `misure/NN.md`; `zb esito` le vuole.
@@ -4660,7 +4678,7 @@ Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_L
 2. Dopo ogni passo `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
 3. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
    anti-IA; coppia «avvenire/avvenire» nei criteri del correttore; licenza di APODICTIC; verifica dei dati KDP
-   (`ultima_verifica: null`, non verificati dall'autore); unione nel ramo `motore`.
+   (`ultima_verifica: null`, non verificati dall'autore).
 4. Soglie anti-IA uguali per ogni genere, tarate sui mini-libri; vocabolario italiano vuoto finché non c'è un corpus
    (`docs/DA_FORNIRE.md`).
 5. Divergenza lasciata visibile in `docs/ANALISI_REPOSITORY.md`: kindle-book-agency (D13).
@@ -4673,9 +4691,9 @@ Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_L
 
 ## Prossimo passo
 
-L'autore legge `docs/DA_VERIFICARE_AUTORE.md` (profilo thriller, scelte con due valori), `docs/PROPOSTE_MOTORE.md`
-(P4, P5) e `docs/MAPPA_RAMI.md`, e decide come unire il ramo nel `motore`: un merge semplice con `origin/motore`
-(971b6df) dà 68 file in conflitto, perché le aggiunte di `motore` sono state copiate e rinominate (D5).
+L'autore legge `docs/DA_VERIFICARE_AUTORE.md` (unione in `motore`, pulizia.py, profilo thriller, scelte con due
+valori), `docs/PROPOSTE_MOTORE.md` (P4, P5) e `docs/MAPPA_RAMI.md`. I rami dei libri restano sul loro motore: si
+aggiornano solo con un merge di `origin/motore` deciso dall'autore, libro per libro.
 
 ## Ripartenza
 
@@ -6598,7 +6616,7 @@ La chiave grande è quella del retro; la vetrina si apre con la chiave piccola.
 <a id="file-motore-prove-attesi-yaml"></a>
 #### FILE: motore/prove/attesi.yaml
 
-838 righe, sha256 `652d9688f11234bce6fea606bffdf6d6499db1a70193f0bb33396e1233c62387`.
+840 righe, sha256 `834d30fee8349e77688018ffbe9408b4d797763967c061283427c1e16ebbfb26`.
 
 `````yaml
 # Esiti attesi delle prove del motore sui due mini-libri inventati (proposta B.2.2, B.7).
@@ -6655,6 +6673,8 @@ passo_1:
     motore: 0                    # codice d'uscita su motore/
     nome_vietato_in_copia: 1     # copia di motore/ con una voce in nomi_vietati.txt presente in un file
     libro_yaml_fuori_posto: 1    # copia di motore/ con un libro.yaml fuori dai mini-libri
+    ramo_solo_motore_vietato: 'no'   # ramo di origin con motore/ e senza libri/: non è un ramo di libro
+    ramo_di_libro_vietato: 'sì'      # ramo di origin con libri/<slug>/libro.yaml: il suo nome è vietato
   recinto:
     comandi_del_motore: 0        # nessuna scrittura fuori dalla copia del mini-libro
     scrittura_messa_apposta: 1   # un comando di prova che scrive in motore/ viene rilevato
@@ -19200,7 +19220,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-prove-py"></a>
 #### FILE: motore/script/prove.py
 
-3333 righe, sha256 `622a77a29dd5e431d59c2b9ade01d8a145b9b0a4d6e63efe1b7b26124e439784`.
+3362 righe, sha256 `b21f9b29fb0b681880fb7366336addb9f4538c798fadc3e54e10e70f622bc45d`.
 
 `````python
 """Prove ripetibili del motore (comando «zb prove»).
@@ -19366,6 +19386,35 @@ def passo_1(A):
           A['separazione']['nome_vietato_in_copia'], sep(nome_vietato), sez)
     esito('separazione.py', 'libro.yaml fuori dai mini-libri',
           A['separazione']['libro_yaml_fuori_posto'], sep(yaml_fuori), sez)
+
+    # nomi vietati dai rami di origin: un ramo con solo motore/ non è un ramo di libro; uno con libri/<slug>/libro.yaml sì
+    import separazione
+    r = tempfile.mkdtemp(dir=TMP)
+    G = dict(ENV, GIT_AUTHOR_NAME='prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def g(*a):
+        return subprocess.run(['git', *a], cwd=os.path.join(r, 'lavoro'), env=G, capture_output=True, text=True)
+    subprocess.run(['git', 'init', '-q', '--bare', os.path.join(r, 'origine.git')], env=G, capture_output=True)
+    os.makedirs(os.path.join(r, 'lavoro'))
+    g('init', '-q', '-b', 'lavoro')
+    shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'lavoro', 'motore', 'prove', 'mini-libro'))
+    g('add', '-A')
+    g('commit', '-q', '-m', 'motore')
+    g('remote', 'add', 'origin', os.path.join(r, 'origine.git'))
+    g('push', '-q', 'origin', 'lavoro:solo-motore-di-prova')
+    libro = os.path.join(r, 'lavoro', 'libri', 'storia-inventata', 'libro.yaml')
+    os.makedirs(os.path.dirname(libro))
+    open(libro, 'w', encoding='utf-8').write('titolo: Storia inventata\n')
+    g('add', '-A')
+    g('commit', '-q', '-m', 'libro')
+    g('push', '-q', 'origin', 'lavoro:libro/storia-inventata-di-prova')
+    g('fetch', '-q', 'origin')
+    nomi = separazione.nomi_dinamici(os.path.join(r, 'lavoro', 'motore'))
+    esito('separazione.py', 'ramo di origin con solo motore/: nome vietato',
+          A['separazione']['ramo_solo_motore_vietato'], 'sì' if 'solo-motore-di-prova' in nomi else 'no', sez)
+    esito('separazione.py', 'ramo di origin con libri/<slug>/libro.yaml: nome vietato',
+          A['separazione']['ramo_di_libro_vietato'], 'sì' if 'storia-inventata-di-prova' in nomi else 'no', sez)
 
     c = copia_motore()
     viol = os.path.join(c, 'prove', 'esiti', '_violazione_di_prova.tmp')
@@ -24455,7 +24504,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-separazione-py"></a>
 #### FILE: motore/script/separazione.py
 
-153 righe, sha256 `0a30fdd0043f81392b3e45629ceb49f481422d53d10bc888f65b164e5e4d3ec1`.
+155 righe, sha256 `80335a433ce43fc2f58103ae3a414ed0e7cf4d3887d9cc2c8b8def048b3f9b76`.
 
 `````python
 """Controlla che il motore non contenga libri (proposta B.9).
@@ -24511,7 +24560,9 @@ def font_ammessi(motore):
 
 def nomi_dinamici(motore):
     """Nomi da non scrivere mai, ricavati senza scriverli: rami di libro di origin (con libri/…/libro.yaml; ultima parte del nome,
-    senza il suffisso casuale, solo se di più parole) e slug della banca-voci (se ZB_BANCA_VOCI è impostata)."""
+    senza il suffisso casuale, solo se di più parole) e slug della banca-voci (se ZB_BANCA_VOCI è impostata).
+    L'albero di ogni ramo si legge dalla radice del repository (--full-tree): senza, git ls-tree lanciato dentro motore/
+    dà percorsi relativi (prove/mini-libro/libro.yaml) e ogni ramo che contiene il motore sembrava un ramo di libro."""
     out = set()
     c = subprocess.run(['git', '-C', motore, 'for-each-ref', '--format=%(refname:short)', 'refs/remotes/origin'],
                        capture_output=True, text=True)
@@ -24520,7 +24571,7 @@ def nomi_dinamici(motore):
         nome = r.split('/', 1)[1] if '/' in r else r
         if nome in ('HEAD', 'motore', attuale) or nome.startswith('ccr-'):
             continue
-        albero = subprocess.run(['git', '-C', motore, 'ls-tree', '-r', '--name-only', r], capture_output=True, text=True).stdout
+        albero = subprocess.run(['git', '-C', motore, 'ls-tree', '-r', '--full-tree', '--name-only', r], capture_output=True, text=True).stdout
         if not re.search(r'(?m)^libri/', albero) and not re.search(r'(?m)^(?!motore/).*libro\.yaml$', albero):
             continue                # non è un ramo di libro: il suo nome non è un nome di libro
         ultimo = re.sub(r'-[a-z0-9]{6}$', '', nome.split('/')[-1])
