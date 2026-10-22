@@ -11,8 +11,12 @@
   26 parole, 9 soggetti ambigui di cui 2 su un fatto, battute dello zucchero senza attribuzione). La correzione
   dello scrittore è stata fermata prima di toccare il file.
 - `stato.yaml` dice ancora capitoli scritti e approvati fino a 3 (il capitolo 1 riscritto non è registrato).
-- Questo ramo ha in `motore/` la copia del motore 2df84b3: i ruoli e il codice nuovi (P1-P3, frase media per
-  registro, `zb prepara` con la voce) stanno solo su `integrazione-editoriale`.
+- 2026-10-22: merge di `origin/motore` (d575b87) nel ramo, commit a74412e: `motore/` ora è il motore unificato
+  (contenuto di `integrazione-editoriale` più la correzione di `separazione.py`), al posto della copia 2df84b3.
+  36 file, solo `motore/`, `docs/`; nessun conflitto; nessun file del libro né di `.claude/` toccato.
+  Verificato dopo il merge: i 12 agenti e i 4 comandi installati in `.claude/` sono identici a quelli che
+  `zb agenti attiva` scriverebbe oggi (nessun riallineamento); `dati/modelli-ruoli.yaml` dice diagnosta `leggero`
+  (haiku) come l'agente installato; `percorso.py` ha `misure_prima_della_revisione` e `giro_revisione`.
 
 - 2026-10-21, seconda parte: installati in `.claude/` (ee4eab7) i 12 agenti, i 4 comandi e gli hook, con
   `zb agenti attiva --ok` e `zb hook attiva --ok` del motore di `integrazione-editoriale` (`--progetto`). Gli hook
@@ -46,7 +50,8 @@
 ## Punti aperti
 - Capitolo 1: decidere se tornare alla versione a7e1c88 o riprendere da aa5b2b6 con il rapporto del giro 1.
 - Capsula 1 da correggere (dice che sparano due uomini; nel testo aa5b2b6 spara uno solo); capsula 3 non fatta.
-- Riallineare `motore/` di questo ramo: solo dopo l'integrazione in `motore` e il merge di `origin/motore`.
+- `motore/` di questo ramo riallineato a `origin/motore` (a74412e). Con il motore nuovo la frase media dei capitoli
+  2 e 3 risulta fuori dall'intervallo del registro (avviso, non blocco): da rivedere quando riprende il lavoro.
 
 ## Prossimo passo
 Nessuno finché l'autore non lo indica.
