@@ -7,8 +7,10 @@ La banca-voci è un repository separato, fuori dal motore: il percorso si legge 
 ZB_BANCA_VOCI, mai scritto nel codice. Struttura attesa:
   indice.yaml                 voci: [{slug, nome, genere, stato: pronta | da_completare}]
   voci/<slug>/scheda.md       7 sezioni «## N. Titolo», nell'ordine di SEZIONI
-  voci/<slug>/divieti.yaml    divieti: [{id, espressione | pattern, tipo, nota}]: espressioni vietate
-                              della voce; stile.py le aggiunge alle voci del libro (modalità avviso)
+  voci/<slug>/divieti.yaml    divieti: [{id, espressione | pattern, tipo, nota, massimo}]: espressioni vietate
+                              della voce; stile.py le aggiunge alle voci del libro (modalità avviso). Con
+                              «massimo: N» (intero ≥ 0, facoltativo) l'avviso scatta solo oltre N occorrenze
+                              nell'unità; senza, ogni occorrenza è un avviso (come prima)
 - lista: le voci dell'indice, con genere e stato.
 - mostra: la scheda in blocchi di circa 120 righe (come revisione.py); N predefinito 1.
 - verifica: la voce è nell'indice, ha la scheda con le 7 sezioni e il campo «ambientazione:»
@@ -62,7 +64,9 @@ def scheda(b, slug):
 
 
 def divieti(b, slug):
-    """Voci di stile (modalità avviso) da voci/<slug>/divieti.yaml; FERMO se il file manca o non è valido."""
+    """Voci di stile (modalità avviso) da voci/<slug>/divieti.yaml; FERMO se il file manca o non è valido.
+    Facoltativi: «massimo» per divieto; «gruppi: {nome: {massimo: N}}» e «gruppo: nome» sul divieto per un limite
+    complessivo su più forme (per esempio tutte le chiuse a sentenza: una per capitolo in tutto)."""
     p = os.path.join(b, 'voci', slug, 'divieti.yaml')
     if not os.path.isfile(p):
         raise comune.ErroreMotore(f'divieti.yaml assente: voci/{slug}/divieti.yaml')
@@ -73,6 +77,13 @@ def divieti(b, slug):
     elenco = dati.get('divieti') if isinstance(dati, dict) else None
     if not isinstance(elenco, list) or not elenco:
         raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: serve «divieti:», una lista non vuota')
+    gruppi = dati.get('gruppi') or {}
+    if not isinstance(gruppi, dict):
+        raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «gruppi» deve essere una mappa nome: {{massimo: N}}')
+    for g, gv in gruppi.items():
+        m = gv.get('massimo') if isinstance(gv, dict) else None
+        if isinstance(m, bool) or not isinstance(m, int) or m < 0:
+            raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: gruppo «{g}» senza «massimo» intero ≥ 0 ({m!r})')
     out = []
     for i, d in enumerate(elenco):
         if not isinstance(d, dict) or not d.get('id') or not (d.get('espressione') or d.get('pattern')):
@@ -82,8 +93,22 @@ def divieti(b, slug):
             re.compile(pattern)
         except re.error as e:
             raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: pattern non valido in «{d["id"]}»: {e}')
-        out.append({'id': f'{slug}:{d["id"]}', 'espressione': d.get('espressione'), 'pattern': pattern,
-                    'modalita': 'avviso', 'nota': d.get('nota') or f'divieto della voce {slug}'})
+        voce = {'id': f'{slug}:{d["id"]}', 'espressione': d.get('espressione'), 'pattern': pattern,
+                'modalita': 'avviso', 'nota': d.get('nota') or f'divieto della voce {slug}'}
+        if 'massimo' in d:
+            m = d['massimo']
+            if isinstance(m, bool) or not isinstance(m, int) or m < 0:
+                raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «massimo» non valido in «{d["id"]}» '
+                                          f'({m!r}): serve un intero ≥ 0')
+            voce['massimo'] = m      # stile.py: AVVISO solo oltre il massimo di occorrenze nell'unità
+        if 'gruppo' in d:
+            if d['gruppo'] not in gruppi:
+                raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «{d["id"]}» nel gruppo «{d["gruppo"]}», che non è '
+                                          'definito in «gruppi»')
+            # stile.py: tutte le forme del gruppo contano insieme contro un solo massimo per unità
+            voce['gruppo'] = f'{slug}:{d["gruppo"]}'
+            voce['massimo_gruppo'] = gruppi[d['gruppo']]['massimo']
+        out.append(voce)
     return out
 
 
@@ -97,6 +122,49 @@ def divieti_del_libro(libro):
         return divieti(banca(), v['slug'])
     except comune.ErroreMotore:
         return []
+
+
+def esempi_debole_forte(b, slug):
+    """Numero di esempi «versione debole → versione forte» nella sezione 6 della scheda: ogni «Debole:» (a inizio
+    riga, numerato, o a metà riga dopo una frase di presentazione), contati solo se la sezione ha anche «Forte:»."""
+    corpo = sezioni(open(scheda(b, slug), encoding='utf-8').read()).get(6, ('', ''))[1]
+    deboli = len(re.findall(r'(?<!\w)Debole:', corpo))
+    forti = len(re.findall(r'(?<!\w)Forte:', corpo))
+    return deboli if forti else 0
+
+
+def registri(b, slug):
+    """{registro: [a, b]} dalla riga «frase media» della tabella nella sezione 3 della scheda («Ritmo e sintassi»):
+    il nome del registro è l'intestazione della colonna senza la parentesi e senza la parola «registro»
+    («Registro corto (Winslow)» → «corto»); l'intervallo è il primo «a-b» della cella. {} se la tabella manca."""
+    p = scheda(b, slug)
+    if not os.path.isfile(p):
+        return {}
+    corpo = sezioni(open(p, encoding='utf-8').read()).get(3, ('', ''))[1]
+    tabella = [[c.strip() for c in r.strip().strip('|').split('|')] for r in corpo.splitlines()
+               if r.strip().startswith('|') and not re.match(r'^\|[\s|:-]+\|?$', r.strip())]
+    riga = next((r for r in tabella[1:] if r and r[0].lower().startswith('frase media')), None)
+    if not tabella or not riga:
+        return {}
+    out = {}
+    for testa, cella in zip(tabella[0][1:], riga[1:]):
+        nome = re.sub(r'\(.*?\)', '', testa)
+        nome = re.sub(r'(?i)\bregistro\b', '', nome).strip().lower()
+        m = re.search(r'(\d+)\s*-\s*(\d+)', cella)
+        if nome and m and int(m.group(1)) <= int(m.group(2)):
+            out[nome] = [int(m.group(1)), int(m.group(2))]
+    return out
+
+
+def registri_del_libro(libro):
+    """Registri della voce scelta in libro.yaml; {} senza voce, senza ZB_BANCA_VOCI o con la voce non leggibile."""
+    v = libro.get('voce') or {}
+    if not v.get('slug'):
+        return {}
+    try:
+        return registri(banca(), v['slug'])
+    except comune.ErroreMotore:
+        return {}
 
 
 def sezioni(testo):

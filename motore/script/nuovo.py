@@ -381,7 +381,10 @@ def genera_manuale(b, libro, profilo, n_cap):
               f'- Tolleranza: ±{cap["tolleranza_budget"]:.0%} sul budget del capitolo in piano-parole.md; '
               f'±{cap["tolleranza_totale"]:.0%} sul totale.', '',
               '## 3. Frase e dialogo', '',
-              f'- Frase media: {profilo["frase_media"][0]}-{profilo["frase_media"][1]} parole.',
+              f'- Frase media: {profilo["frase_media"][0]}-{profilo["frase_media"][1]} parole.' + (
+                  ' Con la voce della banca vale l\'intervallo del registro del capitolo (scheda della voce, sezione 3; '
+                  'registro dichiarato nella scaletta): frase_media_voce del profilo.'
+                  if libro.get('voce') and profilo.get('frase_media_voce') else ''),
               f'- Dialogo: {profilo["dialogo_percento"][0]}-{profilo["dialogo_percento"][1]}% delle parole del capitolo.',
               f'- Similitudini: al massimo una ogni {profilo["similitudini_max_per_parole"]} parole.', '',
               '## 4. Chiusure', '',

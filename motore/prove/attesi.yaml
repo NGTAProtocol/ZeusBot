@@ -52,6 +52,8 @@ passo_1:
     motore: 0                    # codice d'uscita su motore/
     nome_vietato_in_copia: 1     # copia di motore/ con una voce in nomi_vietati.txt presente in un file
     libro_yaml_fuori_posto: 1    # copia di motore/ con un libro.yaml fuori dai mini-libri
+    ramo_solo_motore_vietato: 'no'   # ramo di origin con motore/ e senza libri/: non è un ramo di libro
+    ramo_di_libro_vietato: 'sì'      # ramo di origin con libri/<slug>/libro.yaml: il suo nome è vietato
   recinto:
     comandi_del_motore: 0        # nessuna scrittura fuori dalla copia del mini-libro
     scrittura_messa_apposta: 1   # un comando di prova che scrive in motore/ viene rilevato
@@ -454,7 +456,7 @@ scene:
   informativi: ['battiti', 'capitoli.coerenza', 'lista_nera', 'lunghezza_totale.consigliata', 'lunghezza_totale.parti_obbligatorie',
                 'lunghezza_totale.parti_sopra', 'parole_per_atto', 'parole_per_pagina', 'scene.budget_interno', 'scene.sequel']
   controllati: ['anti_ia', 'capitoli.minimo', 'capitoli.scene_per_capitolo', 'capitoli.tolleranza_budget', 'capitoli.tolleranza_totale',
-                'dialogo_percento', 'frase_media', 'parole_filtro', 'scene.lunghezza', 'similitudini_max_per_parole']
+                'dialogo_percento', 'frase_media', 'frase_media_voce', 'parole_filtro', 'scene.lunghezza', 'similitudini_max_per_parole']
 
 manuale_leggibile:
   # Manuale generato dal briefing inventato (giallo) e dalla sua variante con lunghezza fuori profilo.
@@ -711,6 +713,20 @@ voce:
   divieti_senza_voce: "[]"
   divieti_senza_banca: "[]"
   divieti_con_voce: "['voce:voce-di-prova:dunque_dunque|AVVISO', 'voce:voce-di-prova:oltremodo|AVVISO', 'voce:voce-di-prova:vecchia_bottega|AVVISO']"
+  massimo_divieti: |-
+      - {id: stanca_uno, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic, massimo: 1}
+      - {id: stanca_due, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic, massimo: 2}
+      - {id: stanca_ogni, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic}
+  frase_massimo: "Irene era stanchissima, la sorella era stanchissima anche lei."
+  massimo_esiti: "['stanca_ogni|AVVISO|stanchissima', 'stanca_ogni|AVVISO|stanchissima', 'stanca_uno|AVVISO|2 occorrenze (massimo 1)']"
+  massimo_non_valido: "- {id: stanca_rotto, pattern: 'stanchissima', tipo: tic, massimo: uno}"
+  massimo_verifica: "1 / True / False"
+  # (i) gruppi di forme: «gruppi: {chiuse: {massimo: 1}}» e «gruppo: chiuse» sui divieti; limite complessivo per unità
+  gruppo_divieti: |-
+      - {id: forma_uno, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic, massimo: 1, gruppo: chiuse}
+      - {id: forma_due, pattern: '(?i)(?<!\w)sfinita(?!\w)', tipo: tic, massimo: 1, gruppo: chiuse}
+  frase_gruppo: "Irene era stanchissima. La sorella era sfinita."
+  gruppo_esiti: "['voce-di-prova:chiuse:gruppo|AVVISO|2 occorrenze delle forme del gruppo (massimo 1 in tutto)']"
 
 recinto_libro:
   messaggio_motore: "è dentro motore/, che resta sempre pulito"
@@ -786,6 +802,10 @@ agenti_capsule:
   revisori: [2, 0, 0]
   consumo: "0 / True / True"
   compatto: "True / True / True"
+  # diagnosta senza Bash né Edit; letture ridotte del diagnosta (capitolo singolo) e dello scrittore
+  letture: "True / True / True"
+  # diagnosta: livello leggero (haiku, il più economico tra gli alias ammessi); scrittore-voce: medio (sonnet)
+  modello_diagnosta: "haiku / sonnet"
 
 anti_ia:
   # da motore (971b6df), sull'audit di ccr (antiia.py): nomi delle misure di ccr; la sezione B conta solo con
@@ -795,8 +815,26 @@ anti_ia:
   audit: "True / True / True / True"
   blocco: "1 / True"
   chiusure: "P2 / P0"
+  # battuta in mezzo: riga a parte 0, stessa riga 0; frasi consecutive 1; misura 0.0% e 100.0%
+  aperture_battuta: "0 / 0 / 1 / 0.0 / 100.0"
+  # «* * *», «...» e «1984.» non sono frasi: il ragazzo, il ragazzo, lei → 1 coppia uguale su 2; senza filtro, nessun errore
+  aperture_senza_parole: "(1, 2) / (1, 2)"
 correttore:
   report: "True / 25"
   dentro_repo: "2 / False"
   verifica: "0 / True"
   gia_pronto: "0 / True / True"
+
+frasi_finali:
+  # P3: zb stile elenca, per ogni capitolo, la frase finale di ogni paragrafo di narrazione e dell'ultima battuta di
+  # ogni scambio (06-diagnostica/frasi-finali/NN.md); il giudizio resta a chi rivede
+  elenco: ['3|narrazione|Seconda frase che chiude.', '7|battuta|— Davvero? — dice lui.', '9|narrazione, fine scena|Lui resta alla finestra.', '13|battuta, fine scena|— Ultima battuta.']
+  report: "['01.md', '02.md', '03.md'] / True / True"
+
+frase_media_registro:
+  # decisione dell'autore (2026-10-21): nel thriller la voce prevale sulla frase media; intervallo per registro dalla
+  # sezione 3 della scheda della voce, registro del capitolo dalla scaletta («registro <nome>»; il primo è il dominante)
+  registri: "[('base', [12, 18]), ('corto', [5, 10]), ('freddo', [15, 25])]"
+  intervalli: ['5-10 registro corto, dalla voce', '15-25 registro freddo, dalla voce', '12-18 registro base, dalla voce', '9-14', '9-14', '12-18 registro base, dalla voce']
+  senza_campo: ['1: 9-14 OK', '2: 9-14 OK', '3: 9-14 KO']
+  con_campo: ['1: 5-10 (registro corto, dalla voce) OK', '2: 15-25 (registro freddo, dalla voce) AVVISO', '3: 12-18 (registro base, dalla voce) AVVISO']

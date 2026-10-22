@@ -40,7 +40,7 @@ il percorso breve (sezione 5). Un `libro.yaml` senza il campo `percorso` (libri 
 | `struttura` | architetto-struttura: i nove file di `03-struttura/`; poi diagnosta e editor-strutturale | `struttura`: sempre automatico, nessuna fermata | nove file senza `<!-- zb: modello -->`, nessun campo «- Campo:» vuoto in 01, 02, 03, 09, macrostruttura dichiarata e motivata, schede complete, budget non tutti uguali, almeno una promessa o sottotrama e nessuna senza «Si chiude» in 06; `rapporto-struttura.md` e `piano-revisione-struttura.md` sulla struttura attuale, in commit che non la toccano |
 | `documenti` | direttore-editoriale: bibbia, codex, cronologia, manuale, nota di direzione | `documenti` | `zb codex verifica`; presenti libro.yaml, bibbia, cronologia, manuale e `06-diagnostica/nota-direzione.md` |
 | `pagina_campione` | scrittore-voce | `pagina_campione` | pagina non vuota |
-| `stesura` | scrittore-voce (un capitolo, in sequenza), poi capsula | `lettura` (pausa di lettura), `primi_capitoli`, `lotto`; `controllo_fallito` sempre | `zb esito`: capitolo, audit anti-IA, lunghezze quasi uguali, capsula N-1 presente, nessun rapporto di line o copy |
+| `stesura` | scrittore-voce (un capitolo, in sequenza), revisione del diagnosta sul capitolo (`audit/NN.md`), poi capsula | `lettura` (pausa di lettura), `primi_capitoli`, `lotto`; `controllo_fallito` sempre | `zb esito`: capitolo, audit anti-IA, lunghezze quasi uguali, capsula N-1 presente, nessun rapporto di line o copy; con `revisione_capitolo: obbligatoria` anche `audit/NN.md` sul testo attuale con «passa» |
 | `struttura_manoscritto` | diagnosta, editor-strutturale | `struttura_manoscritto` | rapporto e piano sul manoscritto attuale |
 | `line` | line-editor per capitolo (fino a 3 in parallelo) | `line` | un rapporto per capitolo, intestato e separato |
 | `copy` | correttore-italiano per capitolo | `copy` | come sopra |
@@ -268,12 +268,44 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    scaletta e piano parole, le voci di cronologia che tocca e il capitolo precedente. Sul percorso editoriale
    scrive l'agente `scrittore-voce`, chiamato dalla sessione principale (mai due capitoli in parallelo);
    `zb prepara <libro> N` gli dà la scheda del capitolo, il codex filtrato, il canone, le capsule e, dopo una
-   pausa di lettura con note, `06-diagnostica/note-lettura.md`.
+   pausa di lettura con note, `06-diagnostica/note-lettura.md` (la scheda e le parole previste sostituiscono
+   `05-scaletta.md` e `08-piano-parole.md` interi, che l'agente non rilegge); con una voce della banca indica anche le sezioni
+   2, 3 e 6 della scheda della voce e i divieti, da leggere prima di scrivere. Gli esempi «versione debole →
+   versione forte» si nominano solo se la sezione 6 li ha (righe «Debole: …» e «Forte: …»); se la scheda o
+   `ZB_BANCA_VOCI` mancano, `zb prepara` si ferma con il motivo.
 2. Riporto la riga «Letto: …» di `zb avvio` (se non l'ho già fatto in questa sessione).
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
+3b. Revisione del capitolo (percorso editoriale). Prima le misure del motore: la sessione principale lancia
+   `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che esegue i controlli di `capitolo.py` e l'audit
+   anti-IA senza scrivere il report. Con un KO o un avviso dei divieti della voce si ferma (codice 2): il diagnosta non
+   si chiama e chi scrive fa una correzione mirata. Frase media e ripetizioni ravvicinate restano avvisi (soglie ancora
+   PROPOSTA): non fermano e passano al diagnosta tra le righe misurate. Con le misure
+   superate scrive `06-diagnostica/misure/NN.md` (prima riga con l'impronta del capitolo; misure, righe misurate con
+   gli avvisi restanti, elenco «File da leggere» e canone) e `06-diagnostica/frasi-finali/NN.md`, e stampa la prima
+   riga del rapporto. L'agente `diagnosta` installato non ha la shell (sola lettura): la sessione principale gli passa
+   la riga e il file delle misure. Il diagnosta, in una sessione separata da chi ha scritto, legge solo i file
+   elencati lì e scrive `06-diagnostica/audit/NN.md` con la checklist del capitolo singolo
+   (`editoriale/ruoli/00-diagnosta.md`), la sezione `## Da correggere` (riga, frase, motivo) e l'ultima riga «passa» o
+   «non passa». Un solo giro completo: dopo un «non passa» e la correzione, `zb ruolo` prepara il secondo giro con le
+   sole frasi del primo (che resta in `audit/NN-giro1.md`); dopo il secondo «non passa» si ferma e decide l'autore
+   (`--nuovo-giro`, dopo il suo «ok», riparte da un giro completo). Con `revisione_capitolo: obbligatoria` in
+   `libro.yaml`, `zb esito` si ferma se il rapporto manca, è scritto su un'altra versione del capitolo (impronta della
+   prima riga), chiude con «non passa» o mancano le misure del motore sul testo attuale; senza il campo la revisione
+   resta consigliata e `zb esito` non la legge.
 4. `zb esito <libro> N`: esegue `capitolo.py` (report in `06-diagnostica/capitoli/NN.md`, con le righe
    `anti-ia:<misura>` e l'indice Gulpease informativo; audit in `06-diagnostica/anti-ia/NN.md`) e
-   aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto).
+   aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto). `zb stile <libro> [N]` scrive anche
+   `06-diagnostica/frasi-finali/NN.md`: la frase finale di ogni paragrafo di narrazione e dell'ultima battuta di
+   ogni scambio, con il numero di riga; non dà esiti, è l'elenco da cui chi rivede giudica le chiuse frase per frase.
+   Frase media: con `frase_media_voce: true` nel profilo (thriller) e una voce in `libro.yaml`, l'intervallo del
+   capitolo è quello del suo registro nella riga «frase media» della tabella della sezione 3 della scheda della
+   voce; il registro si dichiara nella scheda del capitolo in scaletta («registro corto», «registro freddo»…; se
+   ce ne sono più d'uno vale il primo, il dominante); senza registro dichiarato vale «base». Un override di
+   `frase_media` in `libro.yaml` resta sopra. Il motore misura il capitolo intero: registri diversi per scena
+   non si dichiarano e non si misurano separatamente. L'intervallo del registro è una scelta della voce, non
+   ancora calibrata sui testi dell'autore: fuori intervallo il capitolo ha un AVVISO («intervallo non calibrato
+   sull'autore»), non un KO; diventerà un blocco solo dopo la calibrazione. L'intervallo del profilo o
+   dell'override resta un KO.
 5. Percorso editoriale: `zb capsula <libro> N` prepara `07-capsule/NN.md`, l'agente `capsula` la compila (otto
    sezioni, 120-250 parole), `zb capsula <libro> N --verifica` la controlla e riscrive il registro.
 6. Blocco di salvataggio (sezione 8).

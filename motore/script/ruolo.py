@@ -1,13 +1,21 @@
 """Ruoli del percorso editoriale: chi può lavorare in quale fase, la prima riga del suo rapporto, e la separazione
 tra chi scrive e chi revisiona (un ruolo per sessione). Unico comando: «zb ruolo».
 
-Uso: python3 -B ruolo.py <libro> <ruolo> [N]     (comando «zb ruolo»; non scrive nulla)
+Uso: python3 -B ruolo.py <libro> <ruolo> [N]     (comando «zb ruolo»; non scrive nulla, tranne il diagnosta in
+                                                   «stesura»: misure del capitolo prima della revisione, sotto)
      python3 -B ruolo.py <libro> stato             (modalità della separazione, ruoli delle sessioni, scritture)
 Controllo per fase (ccr): si ferma (codice 2) se il ruolo non lavora nella fase attuale del libro: è il controllo
 meccanico di «la scrittura non include revisione» (line-editor solo in fase «line», correttore-italiano solo in
 «copy»…). Per i ruoli di revisione stampa il percorso del rapporto e la prima riga da copiare:
 «<!-- zb: ruolo=<ruolo>; su=<impronta> -->», con l'impronta del testo rivisto (struttura, capitolo N o
 manoscritto). «zb pronto» rifiuta un rapporto con un'impronta diversa da quella del testo attuale.
+Diagnosta in fase «stesura» (capitolo N): prima le misure del motore (percorso.misure_prima_della_revisione: capitolo.py,
+audit anti-IA, frasi finali); con un KO o un avviso dei divieti della voce si ferma (codice 2) e il diagnosta non
+si chiama; altrimenti scrive 06-diagnostica/misure/NN.md e frasi-finali/NN.md. Frase media e ripetizioni ravvicinate
+restano avvisi: compaiono tra le righe misurate e non fermano.
+Un solo giro completo (percorso.giro_revisione): dopo un «non passa» e la correzione, il secondo giro rivede solo le
+voci di «## Da correggere» del primo (copiato in audit/NN-giro1.md); dopo il secondo «non passa» si ferma, decide
+l'autore («--nuovo-giro», dopo il suo ok, riparte da un giro completo).
 
 Un ruolo per sessione (da motore, 971b6df). Tutto sta in <libro>/.zb/ (ignorata da git):
 - ruoli.yaml      sessione → {ruolo, data}: lo scrive «zb avvio <libro> [--ruolo R]»;
@@ -175,7 +183,7 @@ def main(argv):
                                   + ', '.join(percorso.FASI_RUOLO))
     if args[1] == 'stato':
         return stato_ruoli(comune.trova_libro(args[0]))
-    cartella, libro, _ = comune.carica_libro(args[0])
+    cartella, libro, profilo = comune.carica_libro(args[0])
     ruolo, n = args[1], (args[2] if len(args) > 2 else None)
     if not percorso.attivo(libro):
         raise comune.ErroreMotore('Il libro non segue il percorso editoriale (manca «percorso: editoriale» in libro.yaml).')
@@ -192,6 +200,20 @@ def main(argv):
         return 0
     attesi = [r for r in percorso.rapporti(cartella, libro, fs)
               if r[1] == ruolo] if fs in ('struttura', *percorso.REVISIONI) else []
+    if fs == 'stesura' and ruolo == 'diagnosta':     # revisione del capitolo singolo (06-diagnostica/audit/NN.md)
+        if not n:
+            raise comune.ErroreMotore('Uso: ruolo <libro> diagnosta <N>: in fase «stesura» il diagnosta rivede un '
+                                      'capitolo alla volta')
+        attesi = [percorso.rapporto_capitolo(cartella, libro, n)]
+        # prima le misure del motore: con un esito bloccante si ferma e il diagnosta non si chiama
+        giro = percorso.giro_revisione(cartella, libro, n, nuovo='--nuovo-giro' in argv)
+        misure = percorso.misure_prima_della_revisione(cartella, libro, profilo, n, giro)
+        print(f'Giro di revisione: {giro[0]}' + (f' (solo le {len(giro[1])} frasi del primo giro, in {misure})'
+                                                  if giro[0] == 2 else ' (completo)'))
+        print(f'Misure del motore superate: {misure} (righe misurate) e 06-diagnostica/frasi-finali/{percorso.nn(n)}.md. '
+              'La sessione principale le passa al diagnosta con la prima riga qui sotto.')
+        print('Ultima riga del rapporto: «passa» oppure «non passa» (con revisione_capitolo: obbligatoria la legge '
+              'zb esito).')
     if fs in ('line', 'copy'):
         if not n:
             raise comune.ErroreMotore(f'Uso: ruolo <libro> {ruolo} <N> (un capitolo alla volta)')

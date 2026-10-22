@@ -6,6 +6,8 @@ scrittore deve leggere, e nient'altro:
 - la scheda del capitolo N da 03-struttura/05-scaletta.md; si ferma (codice 2) se mancano funzione,
   conflitto, cambiamento, informazione data, gancio, polarità emotiva o sottotesto dei dialoghi;
 - i file del codex con i tag della scheda (@char, @loc), e gli avvisi per i tag senza scheda;
+- con una voce in libro.yaml, dove leggere la scheda della voce (sezioni 2, 3 e 6; gli esempi «debole → forte» solo
+  se la scheda li ha) e i divieti; si ferma se la scheda manca;
 - il canone (fatti bloccati di stato.yaml);
 - le capsule dei capitoli precedenti e il registro delle promesse; si ferma se manca la capsula N-1;
 - le ultime righe del capitolo precedente (per la continuità del ritmo, al massimo 6 righe di prosa);
@@ -18,6 +20,7 @@ import sys
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
+import voce  # noqa: E402
 import capsula  # noqa: E402
 import codex  # noqa: E402
 import struttura  # noqa: E402
@@ -67,6 +70,8 @@ def prepara(cartella, libro, n):
     out += [f'- {x}' for x in stato.get('fatti_bloccati') or []] or ['- nessuno']
     if note in leggere:
         out += ['', '## Note dell\'autore alla pausa di lettura', '', f'Valgono per questo capitolo: {note} (nei file da leggere).']
+    if (libro.get('voce') or {}).get('slug'):
+        out += voce_da_leggere(libro['voce']['slug'])
     out += ['', '## File da leggere', ''] + [f'- {r}' for r in leggere]
     out += [f'- AVVISO {x}: nessuna scheda nel codex' for x in ignoti]
     if coda:
@@ -75,6 +80,22 @@ def prepara(cartella, libro, n):
     rel = f'06-diagnostica/preparazione/{n:02d}.md'
     comune.scrivi(cartella, rel, '\n'.join(out) + '\n')
     return rel, len(leggere), totale, ignoti
+
+
+def voce_da_leggere(slug):
+    """Righe della sezione «Voce» della preparazione. Si ferma se la banca o la scheda della voce mancano: lo
+    scrittore deve leggerla prima di scrivere. Gli esempi «debole → forte» si nominano solo se la scheda li ha."""
+    b = voce.banca()
+    p = voce.scheda(b, slug)
+    if not os.path.isfile(p):
+        raise comune.ErroreMotore(f'Scheda della voce «{slug}» assente: {p}. Lo scrittore non può leggerla: '
+                                  'controlla ZB_BANCA_VOCI e il campo voce di libro.yaml (zb voce verifica <slug>).')
+    n = voce.esempi_debole_forte(b, slug)
+    sez6 = (f'sezione 6 (campione e {n} esempi originali «versione debole → versione forte»: mostrano la funzione da '
+            'imitare, non frasi da copiare)' if n else 'sezione 6 (campione)')
+    return ['', '## Voce (banca-voci, sola lettura)', '',
+            f'Prima di scrivere: `zb voce mostra {slug}` (tutti i blocchi) oppure `{p}`. Da leggere sempre: '
+            f'sezione 2 (regole), sezione 3 (misure del registro del capitolo), {sez6}; poi `voci/{slug}/divieti.yaml`.']
 
 
 def main(argv):

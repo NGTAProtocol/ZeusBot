@@ -124,8 +124,14 @@ def prossimo(motore, argv):
         if mancano:
             righe.append(f'Prima le capsule (agente capsula, in parallelo a gruppi di {n}):')
             righe += ['  gruppo: ' + ', '.join(f'capsula {rel} capitolo {c}' for c in g) for g in a_gruppi(mancano, n)]
-        righe.append(f'Poi, in sequenza (mai in parallelo): zb prepara, scrittore-voce {rel} {st["passo"]}; dopo: '
-                     'zb esito, zb capsula.')
+        if libro.get('revisione_capitolo') == 'obbligatoria':
+            righe.append(f'Poi, in sequenza (mai in parallelo): zb prepara, scrittore-voce {rel} {st["passo"]}; poi '
+                         f'zb ruolo {rel} diagnosta N (misure del motore prima del revisore: se si ferma, non chiamare '
+                         'il diagnosta, prima la correzione di chi scrive); con le misure superate, diagnosta con la '
+                         'prima riga e 06-diagnostica/misure/NN.md; dopo: zb esito, zb capsula.')
+        else:
+            righe.append(f'Poi, in sequenza (mai in parallelo): zb prepara, scrittore-voce {rel} {st["passo"]}; dopo: '
+                         'zb esito, zb capsula.')
     elif st['fase'] in ('line', 'copy') and (st.get('sottofase') or 'proposte') == 'proposte':
         da_fare = [str(u) for u, r in percorso.capitoli(cartella, libro)
                    if not os.path.isfile(os.path.join(cartella, '06-diagnostica', st['fase'], f'{percorso.nn(u)}.md'))]

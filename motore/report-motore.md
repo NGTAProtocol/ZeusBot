@@ -1,6 +1,7 @@
 # Report del motore editoriale
 
-Stato al 2026-10-20, ramo `integrazione-editoriale` (lavoro sul motore: integrazione). Base: ramo ccr
+Stato al 2026-10-21, ramo `integrazione-editoriale` (lavoro sul motore: integrazione, poi le correzioni di
+`docs/PROPOSTE_MOTORE.md`). Base: ramo ccr
 (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore` (`origin/motore`, 971b6df). Scelte
 dell'integrazione: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D18). Esito della suite: sezione 13.
 Il motore è una casa editrice generica di romanzi in italiano e in inglese: procedura, script, modelli vuoti, profili
@@ -141,31 +142,32 @@ Mini-libri inventati in `prove/`: giallo (`mini-libro`, A5, 16 pagine), romance 
 5,5 × 8,5, 23 pagine), adozione (`mini-libro-adozione`), editoriale (`mini-libro-editoriale`, con traduzione in
 inglese), più briefing e schede di pubblicazione inventati. Autori inventati («Autore di Prova», «Autrice di Prova»).
 
-Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella cartella temporanea, al punto 12,
-637 righe):
+Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella cartella temporanea, 2026-10-21,
+675 righe, 2026-10-21):
 
 | Sezione | Prove | Sezione | Prove |
 |---|---|---|---|
-| passo 1 | 35 | titoli, tempi, età, push | 23 |
-| passo 2 | 52 | eccezioni e richiami | 3 |
-| passo 3 | 45 | voce | 25 |
-| passo 4 | 38 | recinto libro | 3 |
-| passo 5 | 96 | appendici | 6 |
-| passo 5b | 18 | fase struttura | 18 |
-| passo 6 | 12 | cartella unica | 13 |
+| passo 1 | 35 | eccezioni e richiami | 3 |
+| passo 2 | 52 | voce | 30 |
+| passo 3 | 45 | recinto libro | 3 |
+| passo 4 | 38 | appendici | 6 |
+| passo 5 | 96 | fase struttura | 18 |
+| passo 5b | 18 | cartella unica | 13 |
+| passo 6 | 12 | avvio motore | 4 |
 | passo 7 | 11 | ruoli | 9 |
-| override | 8 | agenti e capsule | 10 |
-| scene | 12 | anti-IA | 7 |
+| override | 8 | agenti e capsule | 12 |
+| scene | 12 | anti-IA | 9 |
 | manuale | 7 | correttore | 5 |
-| checklist | 3 | percorso editoriale | 54 |
-| continuita | 8 | cartella unica e recinto | 13 |
-| correzioni | 20 | agenti e comandi | 11 |
-| adozione | 5 | consumo e capsule | 3 |
-| interludi e grafie | 10 | traduzione in inglese | 17 |
-| correggi e passo | 4 | correttore e anti-IA | 10 |
-| unità consentite e interludi | 7 | | |
-| fase e rinomine | 6 | avvio motore | 4 |
-| esclusioni e budget | 6 | **Totale** | **637** |
+| checklist | 3 | frasi_finali | 2 |
+| continuita | 8 | frase_media_registro | 8 |
+| correzioni | 20 | percorso editoriale | 73 |
+| adozione | 5 | cartella unica e recinto | 13 |
+| interludi e grafie | 10 | agenti e comandi | 11 |
+| correggi e passo | 4 | consumo e capsule | 3 |
+| unità consentite e interludi | 7 | traduzione in inglese | 17 |
+| fase e rinomine | 6 | correttore e anti-IA | 10 |
+| esclusioni e budget | 6 | **Totale** | **675** |
+| titoli, tempi, età, push | 23 | | |
 
 Da dove vengono (D12): ccr 560 prove (d2b8814), `motore` 520 (971b6df); le 65 prove che esistevano solo in
 `motore` sono tutte presenti; in più 5 prove della pausa di lettura e 2 nate dalla divisione di prove esistenti.
@@ -319,5 +321,9 @@ luoghi reali.
 
 ## 13. Esito della suite
 
-637 prove, 637 OK, 0 saltate (punto 12: le 632 del punto 9, D12, più 1 di D16 e 4 della sezione `avvio motore`,
-D15), con LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza `ZB_BANCA_VOCI`.
+675 prove, 675 OK, 0 saltate (2026-10-21), con LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza
+`ZB_BANCA_VOCI`. Storia: 637 al punto 12 (le 632 del punto 9, D12, più 1 di D16 e 4 della sezione `avvio motore`,
+D15); 661 dopo le proposte P1-P3 e la frase media per registro (`docs/PROPOSTE_MOTORE.md`); 663 con le prove di
+`aperture_battuta` (anti-IA) e `letture` (agenti) del 2026-10-21; 673 con le prove di
+`aperture_senza_parole`, delle misure prima del revisore, del giro di revisione, del modello del diagnosta e delle sue
+letture; 675 con il divieto della voce e gli avvisi che non fermano il diagnosta.

@@ -66,6 +66,7 @@ campi:
       tutto_perduto: {tipo: intervallo, obbligatorio: true}
   chiusura_preferita: {tipo: scelta, valori: [gancio_domanda, gesto_oggetto, misto], obbligatorio: true, uso: generazione}
   frase_media: {tipo: intervallo, obbligatorio: true, uso: controllo}
+  frase_media_voce: {tipo: booleano, uso: controllo}   # stile.py: nei capitoli, intervallo del registro della voce (sezione 3 della scheda)
   dialogo_percento: {tipo: intervallo, obbligatorio: true, uso: controllo}
   similitudini_max_per_parole: {tipo: intero, obbligatorio: true, uso: controllo}
   parole_filtro:

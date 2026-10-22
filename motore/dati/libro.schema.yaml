@@ -30,6 +30,7 @@ campi:
   percorso: {tipo: scelta, valori: [editoriale, breve]}   # editoriale: motore/editoriale/00-percorso.md
   pausa_lettura: {tipo: scelta, valori: [3, 4, 5]}    # gate «lettura»: capitoli tra una pausa di lettura e l'altra (predefinito 3)
   capsule: {tipo: scelta, valori: [obbligatorie, avviso]}  # zb avvio: obbligatorie ferma, avviso (predefinito) avvisa
+  revisione_capitolo: {tipo: scelta, valori: [obbligatoria, facoltativa]}  # zb esito: obbligatoria vuole 06-diagnostica/audit/NN.md con «passa»
   anti_ia:                                       # facoltativo: soglie dell'audit anti-IA per questo libro (vince sul profilo)
     tipo: mappa
     campi:

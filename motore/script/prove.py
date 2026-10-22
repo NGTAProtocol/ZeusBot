@@ -162,6 +162,35 @@ def passo_1(A):
     esito('separazione.py', 'libro.yaml fuori dai mini-libri',
           A['separazione']['libro_yaml_fuori_posto'], sep(yaml_fuori), sez)
 
+    # nomi vietati dai rami di origin: un ramo con solo motore/ non è un ramo di libro; uno con libri/<slug>/libro.yaml sì
+    import separazione
+    r = tempfile.mkdtemp(dir=TMP)
+    G = dict(ENV, GIT_AUTHOR_NAME='prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def g(*a):
+        return subprocess.run(['git', *a], cwd=os.path.join(r, 'lavoro'), env=G, capture_output=True, text=True)
+    subprocess.run(['git', 'init', '-q', '--bare', os.path.join(r, 'origine.git')], env=G, capture_output=True)
+    os.makedirs(os.path.join(r, 'lavoro'))
+    g('init', '-q', '-b', 'lavoro')
+    shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'lavoro', 'motore', 'prove', 'mini-libro'))
+    g('add', '-A')
+    g('commit', '-q', '-m', 'motore')
+    g('remote', 'add', 'origin', os.path.join(r, 'origine.git'))
+    g('push', '-q', 'origin', 'lavoro:solo-motore-di-prova')
+    libro = os.path.join(r, 'lavoro', 'libri', 'storia-inventata', 'libro.yaml')
+    os.makedirs(os.path.dirname(libro))
+    open(libro, 'w', encoding='utf-8').write('titolo: Storia inventata\n')
+    g('add', '-A')
+    g('commit', '-q', '-m', 'libro')
+    g('push', '-q', 'origin', 'lavoro:libro/storia-inventata-di-prova')
+    g('fetch', '-q', 'origin')
+    nomi = separazione.nomi_dinamici(os.path.join(r, 'lavoro', 'motore'))
+    esito('separazione.py', 'ramo di origin con solo motore/: nome vietato',
+          A['separazione']['ramo_solo_motore_vietato'], 'sì' if 'solo-motore-di-prova' in nomi else 'no', sez)
+    esito('separazione.py', 'ramo di origin con libri/<slug>/libro.yaml: nome vietato',
+          A['separazione']['ramo_di_libro_vietato'], 'sì' if 'storia-inventata-di-prova' in nomi else 'no', sez)
+
     c = copia_motore()
     viol = os.path.join(c, 'prove', 'esiti', '_violazione_di_prova.tmp')
     cmd = f"{sys.executable} -c \"open('{viol}','w').write('x')\""
@@ -2343,10 +2372,63 @@ def voce(A):
                 os.environ['ZB_BANCA_VOCI'] = prima
         return sorted(f'{r["controllo"]}|{r["esito"]}' for r in ris if r['controllo'].startswith('voce:voce-di-prova:'))
 
+    def divieti_dettagli(L, b, profilo_extra=None):
+        py = os.path.join(L, 'libro.yaml')
+        lb = yaml.safe_load(open(py, encoding='utf-8'))
+        lb['voce'] = {'slug': 'voce-di-prova', 'ambientazione': 'altro'}
+        open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+        prima = os.environ.pop('ZB_BANCA_VOCI', None)
+        os.environ['ZB_BANCA_VOCI'] = b
+        try:
+            cartella, libro, profilo = comune.carica_libro(L)
+            profilo.update(profilo_extra or {})
+            return stile.controlla_libro(cartella, libro, profilo)['1'][1]
+        finally:
+            os.environ.pop('ZB_BANCA_VOCI', None)
+            if prima is not None:
+                os.environ['ZB_BANCA_VOCI'] = prima
+
     esito('stile.py', '(g) divieti della voce: libro senza voce', A['divieti_senza_voce'], divieti_trovati(False, banca), sez)
     esito('stile.py', '(g) divieti della voce: libro con voce, senza ZB_BANCA_VOCI', A['divieti_senza_banca'],
           divieti_trovati(True, None), sez)
     esito('stile.py', '(g) divieti della voce: libro con voce e banca', A['divieti_con_voce'], divieti_trovati(True, banca), sez)
+    # (h) campo «massimo» dei divieti della voce (voce.py lo porta a stile.py): avviso solo oltre il massimo
+    d = tempfile.mkdtemp(dir=TMP)
+    bm = shutil.copytree(banca, os.path.join(d, 'banca'))
+    pdm = os.path.join(bm, 'voci', 'voce-di-prova', 'divieti.yaml')
+    base_d = open(pdm, encoding='utf-8').read()
+    open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + ''.join(f'  {x}\n' for x in A['massimo_divieti'].splitlines()))
+    Lm = copia_libro('mini-libro')
+    open(os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write('\n' + A['frase_massimo'] + '\n')
+    trovati = []
+    for r in divieti_dettagli(Lm, bm):
+        if r['controllo'].split(':')[-1] in ('stanca_uno', 'stanca_due', 'stanca_ogni'):
+            trovati.append(f'{r["controllo"].split(":")[-1]}|{r["esito"]}|{r["dettaglio"]}')
+    esito('stile.py', '(h) massimo dei divieti: 2 occorrenze con massimo 1 (un avviso), con massimo 2 (nessuno), senza '
+          'massimo (un avviso per occorrenza, come prima)', A['massimo_esiti'], sorted(trovati), sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n  ' + A['massimo_non_valido'] + '\n')
+    p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bm)
+    esito('voce.py', '(h) massimo non intero: verifica KO con il motivo', A['massimo_verifica'],
+          f'{p.returncode} / {"«massimo» non valido" in p.stdout} / {tb(p)}', sez)
+    # (i) gruppi di forme: un solo massimo complessivo su più divieti (per esempio tutte le chiuse a sentenza)
+    forme = ''.join(f'  {x}\n' for x in A['gruppo_divieti'].splitlines())
+    Lg = copia_libro('mini-libro')
+    open(os.path.join(Lg, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write('\n' + A['frase_gruppo'] + '\n')
+
+    def gruppo_esiti(con_gruppi):
+        open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + (forme if con_gruppi else forme.replace(', gruppo: chiuse', ''))
+                                               + ('gruppi:\n  chiuse: {massimo: 1}\n' if con_gruppi else ''))
+        return sorted(f'{r["controllo"].split(":", 1)[1]}|{r["esito"]}|{r["dettaglio"].split(":")[0]}'
+                      for r in divieti_dettagli(Lg, bm) if 'forma_' in r['controllo'] or ':chiuse:' in r['controllo'])
+    esito('stile.py', '(i) gruppo di forme: due forme con massimo 1 ciascuna, una occorrenza per forma: un avviso '
+          'per il gruppo (massimo 1 in tutto)', A['gruppo_esiti'], gruppo_esiti(True), sez)
+    esito('stile.py', '(i) senza gruppi (come prima): nessun avviso, ogni forma resta nel suo massimo', '[]',
+          str(gruppo_esiti(False)), sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + forme)
+    p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bm)
+    esito('voce.py', '(i) divieto in un gruppo non definito: verifica KO con il motivo', '1 / True / False',
+          f'{p.returncode} / {"che non è definito in «gruppi»" in p.stdout} / {tb(p)}', sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d)
     # (f) schema: voce senza slug rifiutata; zb aiuto; modello del briefing
     Lm = copia_libro('mini-libro')
     open(os.path.join(Lm, 'libro.yaml'), 'a', encoding='utf-8').write('voce: {ambientazione: altro}\n')
@@ -2866,6 +2948,18 @@ def agenti_capsule_consumo(A):
     esito('agenti.py', 'attiva: ramo motore fermo / senza --ok niente / con --ok tutti gli agenti / modello capsula / disattiva',
           A['attiva'], f'{p1.returncode} / {p2.returncode} {senza_ok} / {p3.returncode} {len(attivi)} / '
           f'{"model: haiku" in cap} / {p4.returncode} {os.path.isdir(dest)}', sez)
+    # agenti come li installa il motore: diagnosta in sola lettura (niente Bash né Edit: P4 di docs/PROPOSTE_MOTORE.md);
+    # letture ridotte: diagnosi/ non per il capitolo singolo; lo scrittore non rilegge scaletta e piano parole interi
+    gen = {os.path.basename(x): t for x, t in agenti.piano(b.r, M)}
+    strumenti = re.search(r'(?m)^tools:(.*)$', gen['diagnosta.md']).group(1)
+    sv = gen['scrittore-voce.md']
+    esito('agenti.py', 'agenti installati: diagnosta senza Bash né Edit / diagnosi/ non per il capitolo singolo / '
+          'scrittore-voce senza 05-scaletta.md e 08-piano-parole.md interi (preparazione al loro posto)', A['letture'],
+          f'{"Bash" not in strumenti and "Edit" not in strumenti} / {"non per il capitolo singolo" in gen["diagnosta.md"]} / '
+          f'{"Non leggere 03-struttura/05-scaletta.md intero" in sv and "scaletta del capitolo, piano parole" not in sv}', sez)
+    modello = lambda t: (re.search(r'(?m)^model:\s*(\S+)', t) or [None, None])[1]
+    esito('agenti.py', 'modello dichiarato negli agenti installati: diagnosta (il più economico) / scrittore-voce (invariato)',
+          A['modello_diagnosta'], f'{modello(gen["diagnosta.md"])} / {modello(sv)}', sez)
     # modello centrale: si alza solo il ruolo indicato nel file di dati
     mc = copia_motore()
     pm = os.path.join(mc, 'dati', 'modelli-ruoli.yaml')
@@ -3033,6 +3127,28 @@ def anti_ia_prove(A):
     p2 = esegui(os.path.join(S, 'capitolo.py'), L, '3')
     esito('capitolo.py', 'anti_ia.modalita: blocco in libro.yaml: KO e codice 1', A['blocco'],
           f'{p2.returncode} / {"anti-ia:aperture_uguali | KO" in open(os.path.join(L, "06-diagnostica", "capitoli", "03.md"), encoding="utf-8").read()}', sez)
+    # aperture uguali: una battuta di dialogo tra due frasi con lo stesso soggetto interrompe la serie
+    con_battuta = 'Il ragazzo spegne il motore.\n\n— Lascialo acceso.\n\nIl ragazzo gira di nuovo la chiave.\n'
+    stessa_riga = 'Il ragazzo spegne il motore. — Lascialo acceso. Il ragazzo gira di nuovo la chiave.\n'
+    consecutive = 'Il ragazzo spegne il motore. Il ragazzo gira di nuovo la chiave.\n'
+    esito('antiia.py', 'aperture uguali: battuta in mezzo (riga a parte / stessa riga) non conta; due frasi consecutive '
+          'con lo stesso soggetto contano (coppie uguali; % della misura)', A['aperture_battuta'],
+          f'{antiia.aperture_uguali(con_battuta, "it")[0]} / {antiia.aperture_uguali(stessa_riga, "it")[0]} / '
+          f'{antiia.aperture_uguali(consecutive, "it")[0]} / {antiia.misure(con_battuta, "it", [])["aperture_uguali"]} / '
+          f'{antiia.misure(consecutive, "it", [])["aperture_uguali"]}', sez)
+    # segmenti senza parole («* * *», «...», «1984.») tra frasi di narrazione: nessun errore; con frasi() che li
+    # lasciasse passare (simulato), la frase senza parole si salta
+    senza_parole = 'Il ragazzo esce.\n\n* * *\n\nIl ragazzo torna. ... 1984. Lei resta.\n'
+    originale = antiia.frasi
+    try:
+        antiia.frasi = lambda t: re.split(r'(?<=[.!?…])\s+', ' '.join(t.split()))
+        simulato = antiia.aperture_uguali(senza_parole, 'it')
+    except IndexError as e:
+        simulato = f'IndexError {e}'
+    finally:
+        antiia.frasi = originale
+    esito('antiia.py', 'aperture uguali: segmenti senza parole tra frasi di narrazione (reale / frasi() senza filtro)',
+          A['aperture_senza_parole'], f'{antiia.aperture_uguali(senza_parole, "it")} / {simulato}', sez)
     R = copia_libro('mini-libro-romance')
     _, lr, pr = comune.carica_libro(R)
     gr = lambda lb: next((g for k, g, _ in antiia.audit(R, lb, '2', profilo=pr, scrivi=False)['2'][1]
@@ -3071,7 +3187,121 @@ def correttore(A):
           f'{p.returncode} / {"già pronto" in p.stdout} / {"export ZB_LANGUAGETOOL=" in p.stdout}', sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore}
+FRASI_FINALI_TESTO = """# 1 — Prova
+
+Prima frase. Seconda frase che chiude.
+
+— Vieni? — chiede lei.
+
+— Davvero? — dice lui.
+
+Lui resta alla finestra.
+
+* * *
+
+— Ultima battuta.
+"""
+
+
+def frasi_finali_prove(A):
+    """P3: elenco delle frasi finali (stile.frasi_finali) e report 06-diagnostica/frasi-finali/NN.md di zb stile."""
+    sez = 'frasi_finali'
+    import stile
+    ff = stile.frasi_finali(FRASI_FINALI_TESTO, comune.lingue()['it'])
+    esito('stile.py', 'frasi finali: narrazione, ultima battuta di uno scambio, fine scena, attacco della battuta',
+          A['elenco'], [f'{v["riga"]}|{v["tipo"]}|{v["frase"]}' for v in ff], sez)
+    c = copia_libro('mini-libro')
+    esegui(os.path.join(S, 'stile.py'), c)
+    d = os.path.join(c, '06-diagnostica', 'frasi-finali')
+    cartella, libro, _ = comune.carica_libro(c)
+    testo = open(os.path.join(c, '04-manoscritto', '01-la-farmacia.md'), encoding='utf-8').read()
+    n = len(stile.frasi_finali(testo, comune.lingue()[libro['lingua']]))
+    rep = open(os.path.join(d, '01.md'), encoding='utf-8').read() if os.path.isfile(os.path.join(d, '01.md')) else ''
+    righe = [r for r in rep.splitlines() if re.match(r'^\| \d+ \|', r)]
+    esito('stile.py', 'zb stile: un report per capitolo numerato (non per l\'interludio), una riga per frase',
+          A['report'], f'{sorted(os.listdir(d)) if os.path.isdir(d) else []} / {n > 0 and len(righe) == n} / '
+          f'{"| Riga | Tipo | Frase finale |" in rep}', sez)
+
+
+TABELLA_REGISTRI = """
+| Elemento | Base (autore A) | Registro freddo (autore B) | Registro corto (autore C) |
+|---|---|---|---|
+| frase media | 12-18 parole | 15-25 parole | 5-10 parole |
+| frase più lunga | 35 parole | 45 parole | 20 parole |
+"""
+
+
+def frase_media_registro(A):
+    """Frase media per registro: con «frase_media_voce: true» nel profilo l'intervallo del capitolo viene dal registro
+    dichiarato nella scaletta e dalla tabella della sezione 3 della scheda della voce (voce.registri,
+    stile.intervallo_frase_media); override del libro e profili senza il campo tengono l'intervallo del profilo."""
+    sez = 'frase_media_registro'
+    import stile
+    import voce as voce_mod
+    d = tempfile.mkdtemp(dir=TMP)
+    b = shutil.copytree(os.path.join(M, 'prove', 'banca-voci-prova'), os.path.join(d, 'banca'))
+    sc = os.path.join(b, 'voci', 'voce-di-prova', 'scheda.md')
+    t = open(sc, encoding='utf-8').read()
+    open(sc, 'w', encoding='utf-8').write(t.replace('## 3. Ritmo e sintassi\n', '## 3. Ritmo e sintassi\n' + TABELLA_REGISTRI, 1))
+    reg = voce_mod.registri(b, 'voce-di-prova')
+    esito('voce.py', 'registri della voce dalla riga «frase media» della sezione 3', A['registri'],
+          str(sorted(reg.items())), sez)
+    esito('voce.py', 'voce senza tabella nella sezione 3: nessun registro', '{}',
+          str(voce_mod.registri(os.path.join(M, 'prove', 'banca-voci-prova'), 'voce-di-prova')), sez)
+    prof = {'frase_media': [9, 14], 'frase_media_voce': True}
+    casi = [
+        (prof, {}, {'pov': 'Anna; registro corto, presente'}),
+        (prof, {}, {'pov': 'Anna; registro freddo e poi registro corto'}),
+        (prof, {}, {'pov': 'Anna; giorno 2'}),
+        (prof, {'override': [{'campo': 'frase_media', 'valore': [8, 12], 'motivo': 'prova'}]}, {'pov': 'registro corto'}),
+        ({'frase_media': [9, 14]}, {}, {'pov': 'registro corto'}),
+        (prof, {}, {'pov': 'registro lirico'}),
+    ]
+    ott = []
+    for pr, lb, scheda in casi:
+        x, y, nota = stile.intervallo_frase_media(pr, lb, reg, scheda)
+        ott.append(f'{x}-{y}' + (f' {nota}' if nota else ''))
+    esito('stile.py', 'intervallo della frase media: corto, primo registro dichiarato, senza registro (base), '
+          'override del libro, profilo senza campo, registro sconosciuto', A['intervalli'], ott, sez)
+    ott = [stile.intervallo_frase_media(prof, {}, {}, {'pov': 'registro corto'})[:2]]
+    esito('stile.py', 'voce senza registri: intervallo del profilo', '[(9, 14)]', str(ott), sez)
+    # integrazione: mini-libro con voce, scaletta con i registri dei capitoli 1 e 2, profilo con il campo acceso
+    c = copia_libro('mini-libro')
+    py = os.path.join(c, 'libro.yaml')
+    lb = yaml.safe_load(open(py, encoding='utf-8'))
+    lb['voce'] = {'slug': 'voce-di-prova', 'ambientazione': 'altro'}
+    open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+    os.makedirs(os.path.join(c, comune.STRUTTURA), exist_ok=True)
+    open(os.path.join(c, comune.STRUTTURA, '05-scaletta.md'), 'w', encoding='utf-8').write(
+        '# Scaletta\n\n## Capitolo 1 - Primo\n- Punto di vista, luogo e tempo: Anna; registro corto, presente\n\n'
+        '## Capitolo 2 - Secondo\n- Punto di vista, luogo e tempo: Anna; registro freddo\n')
+    prima = os.environ.pop('ZB_BANCA_VOCI', None)
+    os.environ['ZB_BANCA_VOCI'] = b
+    try:
+        cartella, libro, profilo = comune.carica_libro(c)
+        senza = stile.controlla_libro(cartella, libro, dict(profilo))
+        profilo['frase_media_voce'] = True
+        con = stile.controlla_libro(cartella, libro, profilo)
+    finally:
+        os.environ.pop('ZB_BANCA_VOCI', None)
+        if prima is not None:
+            os.environ['ZB_BANCA_VOCI'] = prima
+
+    def fm(es):
+        return [f'{n}: {m.get("frase_media_intervallo")} ' +
+                next((r['esito'] for r in o if r['controllo'] == 'frase_media'), 'OK') for n, (m, o) in es.items() if n.isdigit()]
+    esito('stile.py', 'mini-libro con voce e scaletta, profilo senza il campo: intervallo del profilo', A['senza_campo'],
+          fm(senza), sez)
+    esito('stile.py', 'mini-libro con voce e scaletta, frase_media_voce: true: intervallo del registro di ogni capitolo, '
+          'fuori intervallo AVVISO (non KO)', A['con_campo'], fm(con), sez)
+    det = [r['dettaglio'] for r in con['2'][1] if r['controllo'] == 'frase_media']
+    esito('stile.py', 'avviso della frase media del registro: «intervallo non calibrato sull\'autore»', 'True',
+          str(bool(det) and det[0].endswith("intervallo non calibrato sull'autore")), sez)
+    th = comune.carica_profilo('thriller')
+    esito('profili/thriller.yaml', 'thriller: la voce prevale sulla frase media', 'True', str(th.get('frase_media_voce')), sez)
+
+
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro}
 
 
 def main(argv):

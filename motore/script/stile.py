@@ -12,6 +12,10 @@ Voci ad ambito «libro»: contatore cumulato; non contano le unità in consentit
 con conta_per: unita il tetto è sul numero di unità in cui la voce compare.
 Ogni voce può avere escludi_pattern: le occorrenze che cadono dentro una sua corrispondenza non contano.
 Esiti: KO (blocca) o AVVISO (da guardare). Report: <libro>/06-diagnostica/stile.md.
+Frase media: con «frase_media_voce: true» nel profilo l'intervallo del capitolo viene dal registro dichiarato
+nella scaletta e dalla scheda della voce (intervallo_frase_media); senza, dal profilo o dall'override del libro.
+Per ogni capitolo anche 06-diagnostica/frasi-finali/NN.md: la frase finale di ogni paragrafo di narrazione e
+dell'ultima battuta di ogni scambio, con il numero di riga (elenco per chi rivede; nessun esito).
 """
 import os
 import re
@@ -20,6 +24,7 @@ import sys
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
+import struttura  # noqa: E402
 import voce  # noqa: E402
 
 # «come l'» seguito da un verbo («a come l'aveva lasciata») vuol dire «in che modo»: non è una similitudine
@@ -64,6 +69,71 @@ def metriche(testo, lingua):
     }
 
 
+def frasi_finali(testo, lingua):
+    """Frase finale di ogni paragrafo di narrazione e dell'ultima battuta di ogni scambio (battuta seguita da
+    narrazione, da un separatore di scena o dalla fine): [{'riga', 'tipo', 'frase'}]. Paragrafo: righe di prosa
+    consecutive. Il motore elenca e non giudica: se la frase commenta o riassume lo decide chi rivede."""
+    righe = testo.splitlines()
+    paragrafi = []
+    for n, r in comune.righe_prosa(testo):
+        if paragrafi and n == paragrafi[-1][1] + 1:
+            paragrafi[-1] = (paragrafi[-1][0], n, paragrafi[-1][2] + ' ' + r.strip())
+        else:
+            paragrafi.append((n, n, r.strip()))
+    out = []
+    for i, (a, b, t) in enumerate(paragrafi):
+        dopo = paragrafi[i + 1] if i + 1 < len(paragrafi) else None
+        fine_scena = dopo is None or any(x.strip() and not any(c.isalnum() for c in x)
+                                         for x in righe[b:dopo[0] - 1])
+        battuta = t.startswith(_dialogo(lingua))
+        if battuta and not fine_scena and dopo[2].startswith(_dialogo(lingua)):
+            continue
+        frasi = []
+        for f in re.split(r'(?<=[.!?…])\s+', t):
+            # «— Davvero? — dice lui.»: l'attacco della battuta resta con la sua frase
+            if frasi and f.startswith(_dialogo(lingua)) and f.lstrip(''.join(_dialogo(lingua)) + ' ')[:1].islower():
+                frasi[-1] += ' ' + f
+            elif comune.parole(f):
+                frasi.append(f)
+        if not frasi:
+            continue
+        tipo = ('battuta' if battuta else 'narrazione') + (', fine scena' if fine_scena else '')
+        out.append({'riga': b, 'tipo': tipo, 'frase': frasi[-1]})
+    return out
+
+
+def tabella_frasi_finali(nome, voci):
+    """Report di 06-diagnostica/frasi-finali/NN.md: una riga per frase, colonna del giudizio vuota."""
+    righe = [f'# Frasi finali — unità {nome}', '',
+             'Elenco del motore (zb stile): frase finale di ogni paragrafo di narrazione e dell\'ultima battuta di '
+             'ogni scambio. Il giudizio (chiusa a sentenza o no: tolta la frase, il paragrafo dice ancora tutto?) '
+             'lo scrive chi rivede, frase per frase, nel proprio rapporto.', '',
+             f'Frasi: {len(voci)}.', '', '| Riga | Tipo | Frase finale |', '|---|---|---|']
+    righe += [f'| {v["riga"]} | {v["tipo"]} | {v["frase"].replace("|", "/")} |' for v in voci]
+    return '\n'.join(righe) + '\n'
+
+
+def intervallo_frase_media(profilo, libro, registri, scheda):
+    """(a, b, nota) della frase media di un capitolo. Con «frase_media_voce: true» nel profilo la voce prevale:
+    il registro dichiarato nella scheda del capitolo (05-scaletta.md, «registro <nome>»; se ne dichiara più d'uno,
+    il primo, cioè il dominante) dà l'intervallo della riga «frase media» della scheda della voce (sezione 3);
+    senza registro dichiarato vale il registro «base» della voce, se c'è. Un override di frase_media in
+    libro.yaml (decisione dell'autore per quel libro) e i profili senza il campo tengono l'intervallo del profilo."""
+    a, b = profilo['frase_media']
+    override = any(isinstance(o, dict) and o.get('campo') == 'frase_media' for o in libro.get('override') or [])
+    if not profilo.get('frase_media_voce') or override or not registri:
+        return a, b, ''
+    testo = ' '.join(str(v) for k, v in (scheda or {}).items() if not k.startswith('_'))
+    for m in re.finditer(r'(?i)\bregistro\s+(\w+)', testo):
+        if m.group(1).lower() in registri:
+            x, y = registri[m.group(1).lower()]
+            return x, y, f'registro {m.group(1).lower()}, dalla voce'
+    if 'base' in registri:
+        x, y = registri['base']
+        return x, y, 'registro base, dalla voce'
+    return a, b, ''
+
+
 def occorrenze(prosa, pattern):
     rx = re.compile(pattern)
     return [(n, m.group(0)) for n, r in prosa for m in rx.finditer(r)]
@@ -83,15 +153,19 @@ def occorrenze_voce(prosa, v):
     return occ
 
 
-def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
+def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervallo=None):
     out = []
     prosa = comune.righe_prosa(testo)
     met = metriche(testo, lingua)
     capitolo = nome.isdigit()
     if capitolo:
-        a, b = profilo['frase_media']
+        a, b, nota = intervallo or (profilo['frase_media'][0], profilo['frase_media'][1], '')
+        met['frase_media_intervallo'] = f'{a}-{b}' + (f' ({nota})' if nota else '')
         if not a <= met['frase_media'] <= b:
-            out.append(risultato(nome, 'frase_media', 'KO', None, f'{met["frase_media"]} fuori da {a}-{b}'))
+            # l'intervallo della voce è una scelta della voce, non ancora calibrata sull'autore: avviso, non blocco
+            out.append(risultato(nome, 'frase_media', 'AVVISO' if nota else 'KO', None,
+                                 f'{met["frase_media"]} fuori da {a}-{b}' +
+                                 (f' ({nota}): intervallo non calibrato sull\'autore' if nota else '')))
         a, b = profilo['dialogo_percento']
         if not a <= met['dialogo_percento'] <= b:
             out.append(risultato(nome, 'dialogo', 'KO', None, f'{met["dialogo_percento"]}% fuori da {a}-{b}%'))
@@ -115,6 +189,7 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
         a, b = profilo['frase_media']
         if not a <= met['frase_media'] <= b:
             out.append(risultato(nome, 'frase_media', 'AVVISO', None, f'{met["frase_media"]} fuori da {a}-{b}'))
+    gruppi = {}       # gruppo di forme dei divieti della voce: (massimo complessivo, occorrenze di tutte le forme)
     for v in voci:
         if v.get('ambito') == 'libro':
             continue
@@ -135,6 +210,8 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
             occ = [(n, t) for n, t in occ if n in dialogo]
             if not occ:
                 continue
+        if v.get('gruppo'):
+            gruppi.setdefault(v['gruppo'], (v['massimo_gruppo'], []))[1].extend(occ)
         mod = v['modalita']
         if mod == 'vieta':
             out += [risultato(nome, f'voce:{v["id"]}', 'KO', n, t) for n, t in occ]
@@ -149,6 +226,12 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
                                          f'{len(occ)} occorrenze (massimo {v["massimo"]})'))
             else:
                 out += [risultato(nome, f'voce:{v["id"]}', 'AVVISO', n, t) for n, t in occ]
+    for g, (m, occ) in sorted(gruppi.items()):
+        if len(occ) > m:
+            occ = sorted(occ)
+            out.append(risultato(nome, f'voce:{g}:gruppo', 'AVVISO', occ[m][0],
+                                 f'{len(occ)} occorrenze delle forme del gruppo (massimo {m} in tutto): righe '
+                                 + ', '.join(str(n) for n, _ in occ)))
     for vc in libro.get('vincoli_capitolo') or []:
         occ = occorrenze(prosa, vc['pattern'])
         if not occ:
@@ -174,11 +257,14 @@ def controlla_libro(cartella, libro, profilo):
     """{unità: (metriche, risultati)} con le voci ad ambito «libro» cumulate in ordine di lettura."""
     lingua = comune.lingue()[libro['lingua']]
     voci, filtro = voci_del_libro(libro)
+    registri = voce.registri_del_libro(libro) if profilo.get('frase_media_voce') else {}
+    schede = struttura.schede(cartella) if registri else {}
     esiti = {}
     contatori = {}
     for nome, p in comune.unita(cartella, libro):
         testo = open(p, encoding='utf-8').read()
-        met, out = controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua)
+        intervallo = intervallo_frase_media(profilo, libro, registri, schede.get(nome)) if nome.isdigit() else None
+        met, out = controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervallo)
         prosa = comune.righe_prosa(testo)
         for v in voci:
             if v.get('ambito') != 'libro':
@@ -214,13 +300,14 @@ def main(argv):
     esiti = controlla_libro(cartella, libro, profilo)
     scelta = [args[1]] if len(args) > 1 else list(esiti)
     righe = ['# Controlli di stile', '', f'Libro: {libro["titolo"]} — profilo: {libro["profilo"]}.', '',
-             '| Unità | Parole | Frase media | Dialogo % |', '|---|---|---|---|']
+             '| Unità | Parole | Frase media | Intervallo | Dialogo % |', '|---|---|---|---|---|']
     tutti = []
     for u in scelta:
         if u not in esiti:
             raise comune.ErroreMotore(f'Unità «{u}» inesistente')
         met, out = esiti[u]
-        righe.append(f'| {u} | {met["parole"]} | {met["frase_media"]} | {met["dialogo_percento"]} |')
+        righe.append(f'| {u} | {met["parole"]} | {met["frase_media"]} | {met.get("frase_media_intervallo", "—")} | '
+                     f'{met["dialogo_percento"]} |')
         tutti += out
     righe += ['', '## Esiti', ''] + (tabella(tutti) if tutti else ['Nessun KO e nessun avviso.']) + ['']
     testo = '\n'.join(righe)
@@ -228,6 +315,12 @@ def main(argv):
         print(testo)
     else:
         print('scritto', comune.scrivi(cartella, '06-diagnostica/stile.md', testo))
+        lingua = comune.lingue()[libro['lingua']]
+        for nome, p in comune.unita(cartella, libro):
+            if nome in scelta and nome.isdigit():
+                ff = frasi_finali(open(p, encoding='utf-8').read(), lingua)
+                print('scritto', comune.scrivi(cartella, f'06-diagnostica/frasi-finali/{int(nome):02d}.md',
+                                               tabella_frasi_finali(nome, ff)))
     return 1 if any(r['esito'] == 'KO' for r in tutti) else 0
 
 

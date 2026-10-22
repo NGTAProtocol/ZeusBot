@@ -7,7 +7,8 @@ livelli: {forte: opus, medio: sonnet, leggero: haiku}
 ruoli:
   architetto-struttura: forte
   editor-strutturale: forte
-  diagnosta: forte
+  diagnosta: leggero        # 2026-10-21: il più economico tra gli alias ammessi (haiku = Haiku 5.5 sull'API Anthropic,
+                            # documentazione di Claude Code, «model-config»); vale per ogni lavoro del diagnosta
   direttore-editoriale: medio
   scrittore-voce: medio
   line-editor: medio

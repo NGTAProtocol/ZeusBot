@@ -718,6 +718,8 @@ def cmd_esito(cartella, libro, stato, resto, argv):
                   and any(c['gate'] == gate for c in stato['correzioni_aperte']))
     if gate and not correzione and not (gate == 'controllo_fallito' and str(stato['passo']) == f'capitolo {n}'):
         raise comune.ErroreMotore(f'Gate «{gate}» aperto: prima ok o correggi.')
+    if percorso.attivo(libro) and not percorso.traduzione(libro):
+        percorso.controlla_revisione_capitolo(cartella, libro, n)   # revisione_capitolo: obbligatoria (libro.yaml)
     extra = ['--radice', argv[argv.index('--radice') + 1]] if '--radice' in argv else []
     u = dict(comune.unita(cartella, libro)).get(n)
     if u:                       # chi ha scritto l'unità (separazione dei ruoli, ruolo.py; da motore)

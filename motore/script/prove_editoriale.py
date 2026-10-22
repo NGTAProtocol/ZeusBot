@@ -200,6 +200,7 @@ def percorso(sez='percorso editoriale'):
     os.makedirs(m)
     shutil.copyfile(os.path.join(F, 'capitoli', '01-il-molo.md'), os.path.join(m, '01-il-molo.md'))
     salva(r, 'scrittore: capitolo 1')
+    revisione_in_stesura(r, L, m, sez)
     p = zb(L, 'esito', '.', '1')
     esito('fase.py', 'esito 1: controlli OK', 0, p.returncode, sez)
     rep1 = os.path.join(L, '06-diagnostica', 'capitoli', '01.md')
@@ -342,6 +343,156 @@ def percorso(sez='percorso editoriale'):
     return r, L
 
 
+def revisione_in_stesura(r, L, m, sez):
+    """Diagnosta in fase «stesura» sul capitolo singolo e «revisione_capitolo: obbligatoria» in zb esito (P2).
+    Alla fine libro.yaml e il capitolo tornano come prima; il rapporto resta in 06-diagnostica/audit/."""
+    # misure del motore prima del revisore: un capitolo con un KO (frase vietata della lista nera) → non chiamare il diagnosta
+    cap = os.path.join(m, '01-il-molo.md')
+    testo_cap = open(cap, encoding='utf-8').read()
+    open(cap, 'w', encoding='utf-8').write(testo_cap + '\nTrattenne il respiro senza accorgersene.\n')
+    p = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    misure = os.path.join(L, '06-diagnostica', 'misure', '01.md')
+    esito('ruolo.py', 'misure prima del revisore: capitolo con un KO, «non chiamare il diagnosta», nessuna prima riga, '
+          'nessun file delle misure', '2 / True / False / False',
+          f'{p.returncode} / {"Non chiamare il diagnosta" in p.stderr and "voce:respiro_senza_accorgersene KO" in p.stderr} / '
+          f'{"Prima riga:" in p.stdout} / {os.path.isfile(misure)}', sez)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)
+    # un divieto della voce (voce di prova, «oltremodo»: AVVISO di stile.py) ferma anche lui la chiamata al diagnosta
+    ly = os.path.join(L, 'libro.yaml')
+    ly_orig = open(ly, encoding='utf-8').read()
+    open(ly, 'w', encoding='utf-8').write(ly_orig.rstrip('\n') + '\nvoce: {slug: voce-di-prova, ambientazione: altro}\n')
+    open(cap, 'w', encoding='utf-8').write(testo_cap + '\nEra oltremodo stanca.\n')
+    p = zb(L, 'ruolo', '.', 'diagnosta', '1', env=dict(E, ZB_BANCA_VOCI=os.path.join(M, 'prove', 'banca-voci-prova')))
+    esito('ruolo.py', 'misure prima del revisore: capitolo con un divieto della voce (avviso), «non chiamare il diagnosta»',
+          '2 / True / False', f'{p.returncode} / {"Non chiamare il diagnosta" in p.stderr and "voce:voce-di-prova:oltremodo AVVISO" in p.stderr} / '
+          f'{"Prima riga:" in p.stdout}', sez)
+    open(ly, 'w', encoding='utf-8').write(ly_orig)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)
+    p = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    esito('ruolo.py', 'diagnosta in fase stesura sul capitolo 1: ammesso, rapporto audit/01.md con la prima riga',
+          '0 / True / True', f'{p.returncode} / {"Rapporto: 06-diagnostica/audit/01.md" in p.stdout} / '
+          f'{"Prima riga: <!-- zb: ruolo=diagnosta; su=" in p.stdout}', sez)
+    tm = open(misure, encoding='utf-8').read() if os.path.isfile(misure) else ''
+    su = p.stdout.split('su=')[1][:12] if 'su=' in p.stdout else '?'
+    esito('ruolo.py', 'misure superate: misure/01.md con la stessa impronta della prima riga, righe misurate e frasi '
+          'finali scritte', 'True / True / True',
+          f'{tm.startswith(f"<!-- zb: misure; su={su} -->")} / {"## Righe misurate" in tm and "| Frase media |" in tm} / '
+          f'{os.path.isfile(os.path.join(L, "06-diagnostica", "frasi-finali", "01.md"))}', sez)
+    # letture del diagnosta per il capitolo singolo: solo la sezione «File da leggere» delle misure, con il canone dentro
+    sezione = tm.split('## File da leggere (solo questi)', 1)[1].split('\n## ', 1)[0] if '## File da leggere' in tm else ''
+    da_leggere = [x[2:] for x in sezione.splitlines() if x.startswith('- ')]
+    pr = open(os.path.join(L, '06-diagnostica', 'preparazione', '01.md'), encoding='utf-8').read()
+    da_prep = [x[2:] for x in pr.split('## File da leggere', 1)[1].splitlines() if x.startswith('- ') and 'AVVISO' not in x]
+    esito('percorso.py', 'letture del diagnosta (capitolo 1): capitolo, misure, frasi finali, codex filtrato; niente '
+          'preparazione, manuale, scelte fisse; canone nel file (file elencati: misure / preparazione dello scrittore)',
+          'True / 3 / False / True / 6 5', f'{"04-manoscritto/01-il-molo.md" in da_leggere and "06-diagnostica/frasi-finali/01.md" in da_leggere} / '
+          f'{sum(x.startswith("02-bibbia/codex/") for x in da_leggere)} / '
+          f'{any("manuale-di-stile" in x or "09-scelte-fisse" in x or "preparazione/" in x for x in da_leggere)} / '
+          f'{"## Canone (fatti bloccati)" in tm} / {len(da_leggere)} {len(da_prep)}', sez)
+    # frase media e ripetizioni ravvicinate restano avvisi: non fermano, finiscono tra le righe misurate. Con i libri di
+    # prova un avviso di frase media vero non nasce (serve una voce con la riga «frase media»): si aggiunge ai risultati
+    import capitolo
+    import percorso
+    cartella_p, libro_p, profilo_p = comune.carica_libro(L)
+    vero = capitolo.controlla
+    capitolo.controlla = lambda *a: (lambda m, o: (m, o + [
+        {'unita': '1', 'controllo': 'frase_media', 'esito': 'AVVISO', 'riga': None,
+         'dettaglio': '17.0 fuori da 9-14 (registro corto): intervallo non calibrato sull\'autore'},
+        {'unita': '1', 'controllo': 'anti-ia:ripetizioni_ravvicinate', 'esito': 'AVVISO', 'riga': None,
+         'dettaglio': 'P2 14.0 gruppi per mille sopra 12.0'}]))(*vero(*a))
+    try:
+        percorso.misure_prima_della_revisione(cartella_p, libro_p, profilo_p, '1')
+        avanti = 'avanti'
+    except comune.ErroreMotore as e:
+        avanti = f'fermo: {e}'
+    finally:
+        capitolo.controlla = vero
+    tm2 = open(misure, encoding='utf-8').read()
+    esito('percorso.py', 'misure prima del revisore: solo avvisi di frase media e ripetizioni ravvicinate, si va avanti '
+          'e restano tra le righe misurate', 'avanti / True / True',
+          f'{avanti} / {"frase_media" in tm2.split("## Righe misurate", 1)[1]} / '
+          f'{"anti-ia:ripetizioni_ravvicinate" in tm2.split("## Righe misurate", 1)[1]}', sez)
+    p = zb(L, 'ruolo', '.', 'diagnosta')
+    esito('ruolo.py', 'diagnosta in fase stesura senza numero di capitolo: rifiutato', '2 / True',
+          f'{p.returncode} / {"un capitolo alla volta" in p.stderr}', sez)
+    py = os.path.join(L, 'libro.yaml')
+    lb = open(py, encoding='utf-8').read()
+    open(py, 'w', encoding='utf-8').write(lb.rstrip('\n') + '\nrevisione_capitolo: obbligatoria\n')
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'revisione_capitolo obbligatoria, rapporto assente: esito fermo, capitolo non accettato',
+          '2 / True / None', f'{p.returncode} / {"audit/01.md" in p.stderr and "mancante" in p.stderr} / '
+          f'{stato(L)["ultimo_capitolo_scritto"]}', sez)
+    sorgente = os.path.join(F, 'rapporti', 'audit-01.md')
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+    pa = os.path.join(L, '06-diagnostica', 'audit', '01.md')
+    open(pa, 'w', encoding='utf-8').write(open(pa, encoding='utf-8').read().replace('\npassa\n', '\nnon passa\n'))
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'revisione con «non passa»: esito fermo', '2 / True', f'{p.returncode} / {"«non passa»" in p.stderr}', sez)
+    os.remove(pa)       # dopo un «non passa» sullo stesso testo zb ruolo si ferma (giro di revisione): si riparte da capo
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+    open(cap, 'a', encoding='utf-8').write('\n')
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'revisione su un\'altra versione del capitolo: esito fermo', '2 / True',
+          f'{p.returncode} / {"altra versione" in p.stderr}', sez)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+    import percorso   # il caso valido si prova senza zb esito, che accetterebbe il capitolo prima delle prove successive
+    try:
+        cartella, libro, _ = comune.carica_libro(L)
+        percorso.controlla_revisione_capitolo(cartella, libro, '1')
+        ottenuto = 'nessun fermo'
+    except comune.ErroreMotore as e:
+        ottenuto = str(e)
+    os.rename(misure, misure + '.via')
+    try:
+        percorso.controlla_revisione_capitolo(cartella, libro, '1')
+        senza_misure = 'nessun fermo'
+    except comune.ErroreMotore as e:
+        senza_misure = 'fermo' if 'misure del motore assenti' in str(e) else str(e)
+    os.rename(misure + '.via', misure)
+    p = zb(L, 'agenti', 'prossimo', '.')
+    open(py, 'w', encoding='utf-8').write(lb)
+    esito('fase.py', 'revisione sulla versione attuale con «passa»: la revisione non ferma', 'nessun fermo', ottenuto, sez)
+    esito('fase.py', 'revisione con «passa» ma senza le misure del motore: esito fermo', 'fermo', senza_misure, sez)
+    esito('agenti.py', 'agenti prossimo con revisione_capitolo obbligatoria: zb ruolo diagnosta prima del revisore',
+          '0 / True', f'{p.returncode} / {"diagnosta N (misure del motore prima del revisore" in p.stdout}', sez)
+    # un solo giro completo: il secondo rivede solo le frasi di «## Da correggere» del primo
+    g1 = os.path.join(L, '06-diagnostica', 'audit', '01-giro1.md')
+
+    def rapporto(corpo):
+        q = zb(L, 'ruolo', '.', 'diagnosta', '1')
+        riga = next((x.split('Prima riga: ', 1)[1] for x in q.stdout.splitlines() if x.startswith('Prima riga: ')), '')
+        open(pa, 'w', encoding='utf-8').write(riga + '\n# Revisione\n\n' + corpo)
+        return q
+    rapporto('## Da correggere\n\n- r.3 «Il molo era grigio.»: chiusa a sentenza\n\nnon passa\n')
+    p1 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    open(cap, 'a', encoding='utf-8').write('\nNives chiuse la porta del magazzino.\n')
+    p2 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    tm = open(misure, encoding='utf-8').read()
+    esito('ruolo.py', 'giro di revisione: «non passa» sul testo non corretto fermo / dopo la correzione giro 2 con le sole '
+          'frasi del primo, primo giro conservato', '2 True / 0 True True True',
+          f'{p1.returncode} {"sul testo attuale" in p1.stderr} / {p2.returncode} {"Giro di revisione: 2" in p2.stdout} '
+          f'{"## Giro 2: solo queste frasi" in tm and "- r.3 «Il molo era grigio.»: chiusa a sentenza" in tm} '
+          f'{os.path.isfile(g1)}', sez)
+    riga2 = next((x.split('Prima riga: ', 1)[1] for x in p2.stdout.splitlines() if x.startswith('Prima riga: ')), '')
+    open(pa, 'w', encoding='utf-8').write(riga2 + '\n# Revisione 2\n\n## Da correggere\n\n- r.3: non risolta\n\nnon passa\n')
+    open(cap, 'a', encoding='utf-8').write('\nNives spense la luce del magazzino.\n')
+    p3 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    p4 = zb(L, 'ruolo', '.', 'diagnosta', '1', '--nuovo-giro')
+    esito('ruolo.py', 'secondo giro con «non passa»: fermo, decide l\'autore / --nuovo-giro: di nuovo un giro completo',
+          '2 True / 0 True False', f'{p3.returncode} {"due giri di revisione fatti" in p3.stderr} / {p4.returncode} '
+          f'{"Giro di revisione: 1 (completo)" in p4.stdout} {os.path.isfile(g1)}', sez)
+    os.remove(pa)
+    rapporto('## Esito\n\nnon passa\n')
+    open(cap, 'a', encoding='utf-8').write('\nNives tornò sul molo.\n')
+    p5 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    esito('ruolo.py', '«non passa» senza la sezione «## Da correggere»: fermo', '2 / True',
+          f'{p5.returncode} / {"senza la sezione «## Da correggere»" in p5.stderr}', sez)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)      # come prima: capitolo originale, rapporto «passa»
+    os.remove(pa)
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+
+
 def pausa_note(r, L, sez):
     """Pausa di lettura con le note (su una copia del repository, alla stessa pausa) e valori di pausa_lettura."""
     d = tempfile.mkdtemp(dir=TMP)
@@ -358,6 +509,34 @@ def pausa_note(r, L, sez):
           f'{pp.returncode} / {os.path.isfile(prep) and "- 06-diagnostica/note-lettura.md" in open(prep).read()}', sez)
     ly = os.path.join(L2, 'libro.yaml')
     orig = open(ly, encoding='utf-8').read()
+    open(ly, 'w', encoding='utf-8').write(orig.rstrip('\n') + '\nvoce: {slug: voce-di-prova, ambientazione: altro}\n')
+    banca = os.path.join(M, 'prove', 'banca-voci-prova')
+
+    def prepara_con(b):
+        p = zb(L2, 'prepara', '.', '3', env=dict(E, ZB_BANCA_VOCI=b))
+        return p, (open(prep, encoding='utf-8').read() if os.path.isfile(prep) else '')
+    if os.path.isfile(prep):
+        os.remove(prep)
+    pp, t = prepara_con(banca)       # voce di prova: sezione 6 con il solo campione, nessun esempio «debole → forte»
+    esito('prepara.py', 'libro con voce senza esempi: sezioni 2, 3 e 6 e divieti, gli esempi «debole → forte» non nominati',
+          '0 / True / True / False', f'{pp.returncode} / {"## Voce (banca-voci, sola lettura)" in t} / '
+          f'{"sezione 6 (campione)" in t and "voci/voce-di-prova/divieti.yaml" in t} / {"debole" in t}', sez)
+    d = tempfile.mkdtemp(dir=TMP)
+    b2 = shutil.copytree(banca, os.path.join(d, 'banca'))
+    sc = os.path.join(b2, 'voci', 'voce-di-prova', 'scheda.md')
+    st = open(sc, encoding='utf-8').read()
+    i = st.index('## 7.')
+    open(sc, 'w', encoding='utf-8').write(st[:i] + '### 6.1 Esempi\n\n1. Debole: — Resto qui, perché da qui vedo la porta.\n'
+                                          '   Forte: — Resto qui.\n2. Debole: Chiuse. Certe cose finiscono così.\n'
+                                          '   Forte: Chiuse e girò la chiave.\n3. Il caso opposto, a metà riga. Debole: Lui annuì.\n'
+                                          '   Forte: Il socio annuì.\n\n' + st[i:])
+    pp, t = prepara_con(b2)
+    esito('prepara.py', 'libro con voce con esempi: la sezione 6 nomina i 3 esempi «debole → forte» (uno a metà riga)',
+          '0 / True', f'{pp.returncode} / {"3 esempi originali «versione debole → versione forte»" in t}', sez)
+    os.remove(sc)
+    pp, t = prepara_con(b2)
+    esito('prepara.py', 'scheda della voce assente: zb prepara si ferma con il percorso', '2 / True',
+          f'{pp.returncode} / {"Scheda della voce «voce-di-prova» assente" in pp.stderr}', sez)
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 6'))
     p6 = zb(L2, 'stato', '.')
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 5'))

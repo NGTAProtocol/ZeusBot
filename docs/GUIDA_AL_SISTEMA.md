@@ -82,13 +82,13 @@ svg { width: 100%; height: auto; }
 <li><a href="#parole">0. Le parole da sapere</a><span>4</span></li>
 <li><a href="#cap1">1. A cosa serve il sistema</a><span>8</span></li>
 <li><a href="#cap2">2. Organigramma: chi fa cosa</a><span>10</span></li>
-<li><a href="#cap3">3. Il percorso di un libro</a><span>28</span></li>
-<li><a href="#cap4">4. Le regole</a><span>49</span></li>
-<li><a href="#cap5">5. I rami</a><span>58</span></li>
-<li><a href="#cap6">6. Cosa c'è e cosa non esiste</a><span>61</span></li>
-<li><a href="#cap7">7. Appendici e indice</a><span>65</span></li>
-<li><a href="#cap8">8. Punti deboli e decisioni aperte</a><span>67</span></li>
-<li><a href="#cap9">9. Dove trovare le cose</a><span>72</span></li>
+<li><a href="#cap3">3. Il percorso di un libro</a><span>30</span></li>
+<li><a href="#cap4">4. Le regole</a><span>52</span></li>
+<li><a href="#cap5">5. I rami</a><span>61</span></li>
+<li><a href="#cap6">6. Cosa c'è e cosa non esiste</a><span>64</span></li>
+<li><a href="#cap7">7. Appendici e indice</a><span>68</span></li>
+<li><a href="#cap8">8. Punti deboli e decisioni aperte</a><span>70</span></li>
+<li><a href="#cap9">9. Dove trovare le cose</a><span>75</span></li>
 </ol>
 </div>
 
@@ -215,7 +215,7 @@ Ogni ruolo ha un file in `motore/editoriale/ruoli/`. Legge solo i file del suo �
 
 | # | Ruolo | Lavoro | Fase |
 |---|---|---|---|
-| 0 | Diagnosta | dice cosa fa il testo e dove non funziona, senza riscrivere: `rapporto-struttura.md`, `rapporto-manoscritto.md` | `struttura`, `struttura_manoscritto` |
+| 0 | Diagnosta | dice cosa fa il testo e dove non funziona, senza riscrivere: `rapporto-struttura.md`, `rapporto-manoscritto.md`; in stesura `audit/NN.md`, un capitolo alla volta | `struttura`, `stesura` (solo con N), `struttura_manoscritto` |
 | 1 | Direttore editoriale | bibbia, schede del codex, cronologia, nota di direzione | `documenti` |
 | 2 | Architetto della struttura | i nove file di `03-struttura/` | `struttura` |
 | 3 | Scrittore con voce | pagina campione e capitoli | `pagina_campione`, `stesura` |
@@ -232,7 +232,7 @@ Ogni ruolo ha un file in `motore/editoriale/ruoli/`. Legge solo i file del suo �
 
 Gli agenti sono 12. In `motore/editoriale/agenti/` ce ne sono 10: uno per ruolo, più il **lettore cieco** (passo facoltativo) e la **capsula**. In `motore/editoriale/lingue/agenti/` ci sono i 2 della traduzione: traduttore e revisore di fedeltà (<span class="fonte">cartelle motore/editoriale/agenti/ e lingue/agenti/; zb agenti stato</span>).
 
-- **Modelli.** Forte (opus): architetto, editor strutturale, diagnosta. Medio (sonnet): direttore, scrittore, line editor, correttore di italiano, correttore di bozze, lettore cieco, traduttore, revisore di fedeltà. Leggero (haiku): capsula. Fonte unica: `motore/dati/modelli-ruoli.yaml` (<span class="fonte">motore/dati/modelli-ruoli.yaml</span>).
+- **Modelli.** Forte (opus): architetto, editor strutturale. Medio (sonnet): direttore, scrittore, line editor, correttore di italiano, correttore di bozze, lettore cieco, traduttore, revisore di fedeltà. Leggero (haiku): capsula e diagnosta (dal 2026-10-21, il più economico tra gli alias ammessi; da provare su una pagina: se la revisione è debole, si torna al medio). Fonte unica: `motore/dati/modelli-ruoli.yaml` (<span class="fonte">motore/dati/modelli-ruoli.yaml</span>).
 - **In sequenza:** scrittore e traduttore, un capitolo per volta. **In parallelo:** line editor, correttore di italiano e capsula, al massimo 3 alla volta; con i limiti d'uso si scende a 2, poi a 1 (<span class="fonte">motore/dati/orchestrazione.yaml; motore/dati/modelli-ruoli.yaml</span>).
 - **Chi chiamare ora:** `zb agenti prossimo <libro>`. Non scrive nulla (<span class="fonte">motore/script/agenti.py</span>).
 - **Risposta breve:** ogni agente risponde con al massimo 10 righe e non fa commit né push (<span class="fonte">motore/dati/orchestrazione.yaml; motore/editoriale/agenti/</span>).
@@ -284,13 +284,15 @@ Sono 7, nella cartella `motore/profili/`: fantascienza, fantasy, giallo, narrati
 
 Un valore del briefing fuori dal profilo è accettato solo con un «Motivo override:» scritto nel briefing. Senza motivo, `zb nuovo` si ferma (<span class="fonte">motore/PROCEDURA.md §3</span>).
 
+Nel thriller la frase media la dà la voce: con `frase_media_voce: true` ogni capitolo si misura sull'intervallo del suo registro nella scheda della voce (corto, freddo, base), dichiarato nella scaletta. Fuori intervallo è un AVVISO, non un blocco: l'intervallo è una scelta della voce, non ancora calibrata sui tuoi testi. Un override in `libro.yaml` resta sopra (<span class="fonte">motore/profili/thriller.yaml; motore/PROCEDURA.md §6</span>).
+
 ## Voci narranti
 
 Una voce dice **come** si racconta. Il **cosa** lo decide l'autore nel briefing (<span class="fonte">motore/README.md, «Banca-voci»</span>).
 
 Le voci stanno in un repository separato, la banca-voci, mai dentro il motore. Il motore le legge in sola lettura dalla cartella indicata da `ZB_BANCA_VOCI`. I nomi delle voci stanno solo lì: questa guida non li scrive (<span class="fonte">motore/passaggio-di-consegne.md, «Stato»</span>).
 
-Ogni voce ha una scheda in 7 sezioni e un elenco di espressioni vietate, `divieti.yaml`. `zb voce lista`, `zb voce mostra <slug>` e `zb voce verifica <slug>` le leggono (<span class="fonte">motore/README.md, «Banca-voci»</span>).
+Ogni voce ha una scheda in 7 sezioni e un elenco di espressioni vietate, `divieti.yaml`. `zb voce lista`, `zb voce mostra <slug>` e `zb voce verifica <slug>` le leggono (<span class="fonte">motore/README.md, «Banca-voci»</span>). Un divieto può avere `massimo: N`: l'avviso scatta solo oltre N volte nel capitolo; più divieti nello stesso `gruppo` contano insieme contro un solo massimo (per esempio tutte le forme di chiusa). La sezione 6 della scheda può avere esempi «versione debole → versione forte»; `zb prepara` li nomina allo scrittore solo se ci sono, e si ferma se la scheda della voce manca (<span class="fonte">motore/README.md; motore/script/prepara.py</span>).
 
 Un libro sceglie la voce nel briefing («Voce dalla banca:», «Ambientazione:»); `zb nuovo` la scrive in `libro.yaml`. Se il briefing contrasta con la voce, vince il briefing, e il contrasto si segnala (<span class="fonte">motore/README.md, «Banca-voci»; motore/editoriale/LEGGIMI.md</span>).
 
@@ -414,11 +416,12 @@ Poi, in sessioni separate: il diagnosta scrive `06-diagnostica/rapporto-struttur
 
 Per ogni capitolo, la sessione principale chiama l'agente scrittore, mai due capitoli in parallelo (<span class="fonte">motore/editoriale/agenti/scrittore-voce.md; motore/PROCEDURA.md §1b e §6</span>):
 
-1. `zb prepara <libro> N`: scheda, schede del codex della scena, canone, capsule e, dopo una pausa di lettura con note, le tue note;
+1. `zb prepara <libro> N`: scheda e parole previste del capitolo (lo scrittore non rilegge la scaletta e il piano parole interi), schede del codex della scena, canone, capsule, le sezioni da leggere della voce e, dopo una pausa di lettura con note, le tue note;
 2. lo scrittore scrive `04-manoscritto/NN-<slug>.md`;
-3. `zb esito <libro> N`: parole, stile, continuità, audit anti-IA, lunghezze quasi uguali, capsula precedente;
-4. `zb capsula <libro> N`, l'agente capsula, poi `--verifica`;
-5. salvataggio con `zb salva`.
+3. revisione del capitolo: prima le misure del motore. `zb ruolo <libro> diagnosta N` controlla il capitolo (frase media, dialogo, divieti, ripetizioni, gli altri controlli di `zb esito`): con un KO o un avviso dei divieti della voce si ferma e il diagnosta non si chiama; frase media e ripetizioni restano avvisi (soglie ancora da confermare) e passano al diagnosta tra le righe misurate. Con le misure superate scrive `06-diagnostica/misure/NN.md` (misure, righe misurate, file da leggere, canone) e le frasi finali; la sessione principale passa al diagnosta la prima riga e quel file (l'agente non ha la shell). Il diagnosta, in un'altra sessione, scrive `06-diagnostica/audit/NN.md` con «## Da correggere» e chiude con «passa» o «non passa». Un solo giro completo: il secondo rivede solo le frasi segnalate dal primo; dopo il secondo «non passa» decidi tu. Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` non accetta il capitolo senza un «passa» e le misure sul testo attuale (<span class="fonte">motore/PROCEDURA.md §6; motore/editoriale/ruoli/00-diagnosta.md; motore/script/percorso.py</span>);
+4. `zb esito <libro> N`: parole, stile, continuità, audit anti-IA, lunghezze quasi uguali, capsula precedente;
+5. `zb capsula <libro> N`, l'agente capsula, poi `--verifica`;
+6. salvataggio con `zb salva`.
 
 Il comando `/scrivi-capitolo N` fa questo giro e si ferma dopo il salvataggio (<span class="fonte">motore/editoriale/comandi/scrivi-capitolo.md</span>).
 
@@ -597,7 +600,7 @@ Le eccezioni sono in `motore/dati/cartella-unica.yaml`: `CLAUDE.md`, `.gitignore
 
 `zb push` fa il push del ramo corrente; se fallisce riprova, poi tenta un ramo alternativo, poi un `git bundle`. Sul ramo di un libro controlla prima la cartella unica. Sul **lavoro del motore** vuole una `zb prove` intera e tutta OK sullo stato attuale: le prove lasciano un'impronta, e senza quell'impronta il push non parte (<span class="fonte">motore/script/push.py; motore/script/prove.py</span>).
 
-Al punto 9 dell'integrazione le prove erano 632, tutte OK; al punto 8b, 633; al punto 12, 637 (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, D12, D15 e D16</span>).
+Al punto 9 dell'integrazione le prove erano 632, tutte OK; al punto 8b, 633; al punto 12, 637 (<span class="fonte">docs/DECISIONI_INTEGRAZIONE.md, D12, D15 e D16</span>). Oggi sono 675, tutte OK, nessuna saltata (<span class="fonte">motore/report-motore.md §13</span>).
 
 ## Altre protezioni, senza hook
 
@@ -620,6 +623,8 @@ Quando due regole si contraddicono, vince quella più in alto. Una sola scala (<
 3. profilo di genere;
 4. `motore/editoriale/` (ruoli);
 5. procedura del motore.
+
+Un'eccezione decisa da te: con `frase_media_voce: true` nel profilo (thriller), per la frase media vale la voce, non il manuale (<span class="fonte">motore/editoriale/LEGGIMI.md</span>).
 
 Il catalogo anti-IA e i criteri del correttore sono filtri: non stanno sopra il manuale. **Ogni contrasto si segnala** (<span class="fonte">motore/editoriale/LEGGIMI.md; CLAUDE.md</span>).
 

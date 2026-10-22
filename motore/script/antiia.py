@@ -7,7 +7,8 @@ Audit: non tocca il testo. Scrive <libro>/06-diagnostica/anti-ia/NN.md con le mi
 del catalogo della lingua (motore/editoriale/anti-ia/catalogo-it.md; lingue/en/catalogo-anti-ia.md):
 - variazione_frasi: deviazione standard / media della lunghezza delle frasi di narrazione (profilo «narrativa»;
   il dialogo è escluso: il parlato è irregolare per natura);
-- aperture_uguali: percentuale di frasi di narrazione consecutive che cominciano con la stessa parola;
+- aperture_uguali: percentuale di frasi di narrazione consecutive che cominciano con la stessa parola (una battuta
+  di dialogo in mezzo interrompe la serie: tra le due frasi parla un altro);
 - formule_per_mille: voci della lista nera di base e del vocabolario L1-L3 (dati/antiia.yaml) per mille parole;
 - lineette_narrazione: lineette fuori dal dialogo per mille parole di narrazione, nelle lingue in cui la
   lineetta apre la battuta (idea di book-genesis-studio, MIT, riscritta: il segno del dialogo usato anche
@@ -158,6 +159,36 @@ def parti(testo, lingua):
     return '\n'.join(nar), '\n'.join(dia)
 
 
+def aperture_uguali(testo, lingua):
+    """(uguali, coppie): coppie di frasi di narrazione consecutive e quante cominciano con la stessa parola.
+    Una battuta di dialogo in mezzo (riga di dialogo o frase che apre con il segno della battuta) interrompe la
+    serie: «Il ragazzo spegne il motore. — Lascialo acceso. Il ragazzo gira la chiave.» non è una ripetizione,
+    perché tra le due frasi parla un altro."""
+    pre = dialogo_di(lingua) + ('«', '"', '“')
+    blocchi, cur = [], []                     # righe di narrazione consecutive, interrotte dalle righe di dialogo
+    for _, r in comune.righe_prosa(testo):
+        if r.lstrip().startswith(dialogo_di(lingua)):
+            blocchi.append(cur)
+            cur = []
+        else:
+            cur.append(r.strip())
+    blocchi.append(cur)
+    serie = []
+    for b in blocchi:
+        cur = []
+        for f in frasi('\n'.join(b)):
+            if f.lstrip().startswith(pre):      # battuta dentro la riga di narrazione
+                serie.append(cur)
+                cur = []
+            else:
+                p = PAROLA.findall(f)               # frasi() oggi scarta le frasi senza parole: protezione in più
+                if p:
+                    cur.append(p[0].lower())
+        serie.append(cur)
+    uguali = sum(1 for s in serie for a, b in zip(s, s[1:]) if a == b)
+    return uguali, sum(max(len(s) - 1, 0) for s in serie)
+
+
 def mattr(parole, finestra=100):
     if len(parole) < finestra:
         return len(set(parole)) / len(parole) if parole else 0.0
@@ -170,9 +201,8 @@ def misure(testo, lingua, voci_regex):
     fr = frasi(nar)
     lung = [len(PAROLA.findall(f)) for f in fr]
     cv = statistics.pstdev(lung) / statistics.mean(lung) if len(lung) > 2 and statistics.mean(lung) else None
-    prime = [PAROLA.findall(f)[0].lower() for f in fr if PAROLA.findall(f)]
-    uguali = sum(1 for a, b in zip(prime, prime[1:]) if a == b)
-    aperture = 100 * uguali / (len(prime) - 1) if len(prime) > 1 else 0.0
+    uguali, coppie = aperture_uguali(testo, lingua)
+    aperture = 100 * uguali / coppie if coppie else 0.0
     tutte = [p.lower() for _, r in comune.righe_prosa(testo) for p in PAROLA.findall(r)]
     formule = sum(len(re.findall(rx, ' '.join(r for _, r in comune.righe_prosa(testo)))) for rx in voci_regex)
     pn = len(PAROLA.findall(nar))

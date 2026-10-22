@@ -168,7 +168,15 @@ Struttura della banca: `indice.yaml` (`voci:` con `slug`, `nome`, `genere`, `sta
 `voci/<slug>/scheda.md` con le sezioni «## 1. Nome e ruolo», «## 2. Principi», «## 3. Ritmo e sintassi»,
 «## 4. Lessico…», «## 5. Adattamento per genere», «## 6. Campione…», «## 7. Istruzione di esecuzione»
 (con il campo «ambientazione:») e `voci/<slug>/divieti.yaml`
-(`divieti:` con `id` ed `espressione` o `pattern`): le espressioni vietate della voce.
+(`divieti:` con `id` ed `espressione` o `pattern`; facoltativo `massimo`, intero ≥ 0): le espressioni vietate
+della voce. Con `massimo: N` l'avviso scatta solo oltre N occorrenze nel capitolo; senza, a ogni occorrenza.
+Per un limite su più forme insieme: `gruppi: {chiuse: {massimo: 1}}` in cima al file e `gruppo: chiuse` sui divieti;
+`zb stile` somma le occorrenze di tutte le forme del gruppo nel capitolo e dà un AVVISO `voce:<slug>:<gruppo>:gruppo`
+oltre il massimo complessivo (il `massimo` di ogni forma resta). Un divieto in un gruppo non definito: FERMO.
+Nella sezione 3 della scheda, la riga «frase media» della tabella dei registri (intestazioni «Base», «Registro
+freddo», «Registro corto»…) dà l'intervallo di ogni registro: con `frase_media_voce: true` nel profilo `zb stile`
+e `zb esito` controllano ogni capitolo sull'intervallo del registro dichiarato nella scaletta (fuori intervallo: AVVISO
+«intervallo non calibrato sull'autore»; l'intervallo del profilo o dell'override resta un KO).
 
 Un libro sceglie la voce in `libro.yaml` con il blocco facoltativo `voce: {slug, ambientazione}` (dal
 briefing: «Voce dalla banca:» e «Ambientazione:»). Con il blocco, `zb avvio` aggiunge alla riga «Letto»

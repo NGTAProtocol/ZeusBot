@@ -1,8 +1,8 @@
 # Infrastruttura completa del sistema casa editrice
 
-- **Data:** 2026-10-20
-- **Ramo:** `integrazione-editoriale`; **commit di partenza:** `951a42c6bf04cb20959a4bb81fcea377ba1adb2c «Subagenti (12) e capsula (120-250 parole) allineati al motore (D18)»`: tutti i file sono copiati da questo stato.
-- **File inclusi:** 250 file tracciati (esclusa `docs/`); i binari sono descritti con dimensione e sha256.
+- **Data:** 2026-10-22
+- **Ramo:** `motore`; **commit di partenza:** `1092a897c7fb2eb84cb2670732f6b47867e2b60b «separazione: l'albero dei rami di origin si legge dalla radice (git ls-tree --full-tree), con prova»`: tutti i file sono copiati da questo stato.
+- **File inclusi:** 251 file tracciati (esclusa `docs/`); i binari sono descritti con dimensione e sha256.
 - **Esclusi per regola:** `libri/` e ogni manoscritto (mai sul ramo `motore`); la banca-voci (repository separato, contiene nomi reali: non si copia qui); le esportazioni precedenti, nella storia git e sul ramo d'archivio dei documenti.
 - **Rigenerazione:** `python3 -B docs/genera_infrastruttura.py`. Verifica in fondo.
 
@@ -192,6 +192,7 @@ motore/
                 molo.md
                 ufficio-porto.md
             rapporti/
+                audit-01.md
                 bozze.md
                 copy/
                     01.md
@@ -469,6 +470,7 @@ motore/
 - [`motore/prove/mini-libro-editoriale/capsule/03.md`](#file-motore-prove-mini-libro-editoriale-capsule-03-md): Capsula 3 — La lanterna del molo
 - [`motore/prove/mini-libro-editoriale/codex/molo.md`](#file-motore-prove-mini-libro-editoriale-codex-molo-md): Il molo
 - [`motore/prove/mini-libro-editoriale/codex/ufficio-porto.md`](#file-motore-prove-mini-libro-editoriale-codex-ufficio-porto-md): L'ufficio del porto
+- [`motore/prove/mini-libro-editoriale/rapporti/audit-01.md`](#file-motore-prove-mini-libro-editoriale-rapporti-audit-01-md): Revisione del capitolo 1 (prova inventata)
 - [`motore/prove/mini-libro-editoriale/rapporti/bozze.md`](#file-motore-prove-mini-libro-editoriale-rapporti-bozze-md): Bozze — La lanterna del molo
 - [`motore/prove/mini-libro-editoriale/rapporti/copy/01.md`](#file-motore-prove-mini-libro-editoriale-rapporti-copy-01-md): Copyediting, capitolo 1
 - [`motore/prove/mini-libro-editoriale/rapporti/copy/02.md`](#file-motore-prove-mini-libro-editoriale-rapporti-copy-02-md): Copyediting, capitolo 2
@@ -682,7 +684,7 @@ fermati e riporta l'errore. Non dire «fatto» se non è su origin. Resoconto co
 <a id="file-motore-procedura-md"></a>
 #### FILE: motore/PROCEDURA.md
 
-488 righe, sha256 `f84bf0581b4fcf645fed75df994c20d29d5d2961eccd4504b89d87b67118751a`.
+520 righe, sha256 `01c919e4f3e887477936251cf87acba2924e605464b3189c4a14305a9e787dab`.
 
 `````markdown
 # Procedura del motore
@@ -727,7 +729,7 @@ il percorso breve (sezione 5). Un `libro.yaml` senza il campo `percorso` (libri 
 | `struttura` | architetto-struttura: i nove file di `03-struttura/`; poi diagnosta e editor-strutturale | `struttura`: sempre automatico, nessuna fermata | nove file senza `<!-- zb: modello -->`, nessun campo «- Campo:» vuoto in 01, 02, 03, 09, macrostruttura dichiarata e motivata, schede complete, budget non tutti uguali, almeno una promessa o sottotrama e nessuna senza «Si chiude» in 06; `rapporto-struttura.md` e `piano-revisione-struttura.md` sulla struttura attuale, in commit che non la toccano |
 | `documenti` | direttore-editoriale: bibbia, codex, cronologia, manuale, nota di direzione | `documenti` | `zb codex verifica`; presenti libro.yaml, bibbia, cronologia, manuale e `06-diagnostica/nota-direzione.md` |
 | `pagina_campione` | scrittore-voce | `pagina_campione` | pagina non vuota |
-| `stesura` | scrittore-voce (un capitolo, in sequenza), poi capsula | `lettura` (pausa di lettura), `primi_capitoli`, `lotto`; `controllo_fallito` sempre | `zb esito`: capitolo, audit anti-IA, lunghezze quasi uguali, capsula N-1 presente, nessun rapporto di line o copy |
+| `stesura` | scrittore-voce (un capitolo, in sequenza), revisione del diagnosta sul capitolo (`audit/NN.md`), poi capsula | `lettura` (pausa di lettura), `primi_capitoli`, `lotto`; `controllo_fallito` sempre | `zb esito`: capitolo, audit anti-IA, lunghezze quasi uguali, capsula N-1 presente, nessun rapporto di line o copy; con `revisione_capitolo: obbligatoria` anche `audit/NN.md` sul testo attuale con «passa» |
 | `struttura_manoscritto` | diagnosta, editor-strutturale | `struttura_manoscritto` | rapporto e piano sul manoscritto attuale |
 | `line` | line-editor per capitolo (fino a 3 in parallelo) | `line` | un rapporto per capitolo, intestato e separato |
 | `copy` | correttore-italiano per capitolo | `copy` | come sopra |
@@ -955,12 +957,44 @@ Procedura uguale per ogni capitolo, senza fermate tranne i gate:
    scaletta e piano parole, le voci di cronologia che tocca e il capitolo precedente. Sul percorso editoriale
    scrive l'agente `scrittore-voce`, chiamato dalla sessione principale (mai due capitoli in parallelo);
    `zb prepara <libro> N` gli dà la scheda del capitolo, il codex filtrato, il canone, le capsule e, dopo una
-   pausa di lettura con note, `06-diagnostica/note-lettura.md`.
+   pausa di lettura con note, `06-diagnostica/note-lettura.md` (la scheda e le parole previste sostituiscono
+   `05-scaletta.md` e `08-piano-parole.md` interi, che l'agente non rilegge); con una voce della banca indica anche le sezioni
+   2, 3 e 6 della scheda della voce e i divieti, da leggere prima di scrivere. Gli esempi «versione debole →
+   versione forte» si nominano solo se la sezione 6 li ha (righe «Debole: …» e «Forte: …»); se la scheda o
+   `ZB_BANCA_VOCI` mancano, `zb prepara` si ferma con il motivo.
 2. Riporto la riga «Letto: …» di `zb avvio` (se non l'ho già fatto in questa sessione).
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
+3b. Revisione del capitolo (percorso editoriale). Prima le misure del motore: la sessione principale lancia
+   `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che esegue i controlli di `capitolo.py` e l'audit
+   anti-IA senza scrivere il report. Con un KO o un avviso dei divieti della voce si ferma (codice 2): il diagnosta non
+   si chiama e chi scrive fa una correzione mirata. Frase media e ripetizioni ravvicinate restano avvisi (soglie ancora
+   PROPOSTA): non fermano e passano al diagnosta tra le righe misurate. Con le misure
+   superate scrive `06-diagnostica/misure/NN.md` (prima riga con l'impronta del capitolo; misure, righe misurate con
+   gli avvisi restanti, elenco «File da leggere» e canone) e `06-diagnostica/frasi-finali/NN.md`, e stampa la prima
+   riga del rapporto. L'agente `diagnosta` installato non ha la shell (sola lettura): la sessione principale gli passa
+   la riga e il file delle misure. Il diagnosta, in una sessione separata da chi ha scritto, legge solo i file
+   elencati lì e scrive `06-diagnostica/audit/NN.md` con la checklist del capitolo singolo
+   (`editoriale/ruoli/00-diagnosta.md`), la sezione `## Da correggere` (riga, frase, motivo) e l'ultima riga «passa» o
+   «non passa». Un solo giro completo: dopo un «non passa» e la correzione, `zb ruolo` prepara il secondo giro con le
+   sole frasi del primo (che resta in `audit/NN-giro1.md`); dopo il secondo «non passa» si ferma e decide l'autore
+   (`--nuovo-giro`, dopo il suo «ok», riparte da un giro completo). Con `revisione_capitolo: obbligatoria` in
+   `libro.yaml`, `zb esito` si ferma se il rapporto manca, è scritto su un'altra versione del capitolo (impronta della
+   prima riga), chiude con «non passa» o mancano le misure del motore sul testo attuale; senza il campo la revisione
+   resta consigliata e `zb esito` non la legge.
 4. `zb esito <libro> N`: esegue `capitolo.py` (report in `06-diagnostica/capitoli/NN.md`, con le righe
    `anti-ia:<misura>` e l'indice Gulpease informativo; audit in `06-diagnostica/anti-ia/NN.md`) e
-   aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto).
+   aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto). `zb stile <libro> [N]` scrive anche
+   `06-diagnostica/frasi-finali/NN.md`: la frase finale di ogni paragrafo di narrazione e dell'ultima battuta di
+   ogni scambio, con il numero di riga; non dà esiti, è l'elenco da cui chi rivede giudica le chiuse frase per frase.
+   Frase media: con `frase_media_voce: true` nel profilo (thriller) e una voce in `libro.yaml`, l'intervallo del
+   capitolo è quello del suo registro nella riga «frase media» della tabella della sezione 3 della scheda della
+   voce; il registro si dichiara nella scheda del capitolo in scaletta («registro corto», «registro freddo»…; se
+   ce ne sono più d'uno vale il primo, il dominante); senza registro dichiarato vale «base». Un override di
+   `frase_media` in `libro.yaml` resta sopra. Il motore misura il capitolo intero: registri diversi per scena
+   non si dichiarano e non si misurano separatamente. L'intervallo del registro è una scelta della voce, non
+   ancora calibrata sui testi dell'autore: fuori intervallo il capitolo ha un AVVISO («intervallo non calibrato
+   sull'autore»), non un KO; diventerà un blocco solo dopo la calibrazione. L'intervallo del profilo o
+   dell'override resta un KO.
 5. Percorso editoriale: `zb capsula <libro> N` prepara `07-capsule/NN.md`, l'agente `capsula` la compila (otto
    sezioni, 120-250 parole), `zb capsula <libro> N --verifica` la controlla e riscrive il registro.
 6. Blocco di salvataggio (sezione 8).
@@ -1178,7 +1212,7 @@ ancora approvato a un gate, non la rileva nessuno dei due: resta visibile solo n
 <a id="file-motore-readme-md"></a>
 #### FILE: motore/README.md
 
-178 righe, sha256 `04ac6df191405240a06db48709ca294cba1052593c822d6571993ba6bea20931`.
+186 righe, sha256 `e93aea5c078d9fc12167a90cc5eef3aeed25c6464d93737213f49c803b67cbcd`.
 
 `````markdown
 # Motore editoriale
@@ -1351,7 +1385,15 @@ Struttura della banca: `indice.yaml` (`voci:` con `slug`, `nome`, `genere`, `sta
 `voci/<slug>/scheda.md` con le sezioni «## 1. Nome e ruolo», «## 2. Principi», «## 3. Ritmo e sintassi»,
 «## 4. Lessico…», «## 5. Adattamento per genere», «## 6. Campione…», «## 7. Istruzione di esecuzione»
 (con il campo «ambientazione:») e `voci/<slug>/divieti.yaml`
-(`divieti:` con `id` ed `espressione` o `pattern`): le espressioni vietate della voce.
+(`divieti:` con `id` ed `espressione` o `pattern`; facoltativo `massimo`, intero ≥ 0): le espressioni vietate
+della voce. Con `massimo: N` l'avviso scatta solo oltre N occorrenze nel capitolo; senza, a ogni occorrenza.
+Per un limite su più forme insieme: `gruppi: {chiuse: {massimo: 1}}` in cima al file e `gruppo: chiuse` sui divieti;
+`zb stile` somma le occorrenze di tutte le forme del gruppo nel capitolo e dà un AVVISO `voce:<slug>:<gruppo>:gruppo`
+oltre il massimo complessivo (il `massimo` di ogni forma resta). Un divieto in un gruppo non definito: FERMO.
+Nella sezione 3 della scheda, la riga «frase media» della tabella dei registri (intestazioni «Base», «Registro
+freddo», «Registro corto»…) dà l'intervallo di ogni registro: con `frase_media_voce: true` nel profilo `zb stile`
+e `zb esito` controllano ogni capitolo sull'intervallo del registro dichiarato nella scaletta (fuori intervallo: AVVISO
+«intervallo non calibrato sull'autore»; l'intervallo del profilo o dell'override resta un KO).
 
 Un libro sceglie la voce in `libro.yaml` con il blocco facoltativo `voce: {slug, ambientazione}` (dal
 briefing: «Voce dalla banca:» e «Ambientazione:»). Con il blocco, `zb avvio` aggiunge alla riga «Letto»
@@ -1429,7 +1471,7 @@ commit_dichiarati: []
 <a id="file-motore-dati-comandi-yaml"></a>
 #### FILE: motore/dati/comandi.yaml
 
-59 righe, sha256 `eef2594b94c394707e09501311acba8ffd174938762f8b21fb69c8cc16e266c3`.
+59 righe, sha256 `e0fa08870e7c34c78902247ce7b625faa0e17abf6f31025bbebda1e295972531`.
 
 `````yaml
 # Unica fonte dei comandi di zb: la leggono «zb aiuto» e «zb aiuto <comando>».
@@ -1467,7 +1509,7 @@ gruppi:
     comandi:
       - {nome: capitolo, script: capitolo.py, uso: "capitolo <libro> <N>", aiuto: "tutti i controlli di un capitolo"}
       - {nome: conta, script: conta.py, uso: "conta <libro>", aiuto: "parole con il metodo unico"}
-      - {nome: stile, script: stile.py, uso: "stile <libro> [N]", aiuto: "frase media, dialogo, lista nera, tetti"}
+      - {nome: stile, script: stile.py, uso: "stile <libro> [N]", aiuto: "frase media, dialogo, lista nera, tetti; frasi finali di ogni capitolo per chi rivede"}
       - {nome: continuita, script: continuita.py, uso: "continuita <libro>", aiuto: "date, età, durate, cifre, grafie"}
       - {nome: riciclo, script: riciclo.py, uso: "riciclo <libro>", aiuto: "anti-riciclo a 7 parole (riscrittura)"}
       - {nome: ortografia, script: ortografia.py, uso: "ortografia <libro>", aiuto: "Hunspell, LanguageTool, checklist"}
@@ -1655,7 +1697,7 @@ dichiarazione_ai:            # rr. 62-64
 <a id="file-motore-dati-libro-schema-yaml"></a>
 #### FILE: motore/dati/libro.schema.yaml
 
-194 righe, sha256 `c41c8c0d07113b70418c19dd592d3cffb51be2f4bab4526f6cef4e438a4dc7ce`.
+195 righe, sha256 `3ea9bab5b377d548ab43920541c5ba05b6cb29d53b677dc37dac6fa5ec1d4c0a`.
 
 `````yaml
 # Schema di libro.yaml (proposta B.3). Formato degli schemi: vedi profilo.schema.yaml.
@@ -1690,6 +1732,7 @@ campi:
   percorso: {tipo: scelta, valori: [editoriale, breve]}   # editoriale: motore/editoriale/00-percorso.md
   pausa_lettura: {tipo: scelta, valori: [3, 4, 5]}    # gate «lettura»: capitoli tra una pausa di lettura e l'altra (predefinito 3)
   capsule: {tipo: scelta, valori: [obbligatorie, avviso]}  # zb avvio: obbligatorie ferma, avviso (predefinito) avvisa
+  revisione_capitolo: {tipo: scelta, valori: [obbligatoria, facoltativa]}  # zb esito: obbligatoria vuole 06-diagnostica/audit/NN.md con «passa»
   anti_ia:                                       # facoltativo: soglie dell'audit anti-IA per questo libro (vince sul profilo)
     tipo: mappa
     campi:
@@ -1914,7 +1957,7 @@ parole_filtro: ['vide', 'sentì', 'notò', 'si accorse', 'pensò', 'sembrava', '
 <a id="file-motore-dati-modelli-ruoli-yaml"></a>
 #### FILE: motore/dati/modelli-ruoli.yaml
 
-19 righe, sha256 `ba8d8c649106e319d7e97280cc60de69552bd9b2a7bc1282933e8656735c09e8`.
+20 righe, sha256 `43028cdfb8d816ad7469e731075fc8ae6f9db0f0751d1e124aad224c87fb1b1f`.
 
 `````yaml
 # Modelli per ruolo: unica fonte (la legge «zb agenti attiva», che scrive «model:» negli agenti installati).
@@ -1926,7 +1969,8 @@ livelli: {forte: opus, medio: sonnet, leggero: haiku}
 ruoli:
   architetto-struttura: forte
   editor-strutturale: forte
-  diagnosta: forte
+  diagnosta: leggero        # 2026-10-21: il più economico tra gli alias ammessi (haiku = Haiku 5.5 sull'API Anthropic,
+                            # documentazione di Claude Code, «model-config»); vale per ogni lavoro del diagnosta
   direttore-editoriale: medio
   scrittore-voce: medio
   line-editor: medio
@@ -2101,7 +2145,7 @@ soprassederebbe
 <a id="file-motore-dati-profilo-schema-yaml"></a>
 #### FILE: motore/dati/profilo.schema.yaml
 
-91 righe, sha256 `77d5ad2f4fa92839327f805b9e9a1764a5839ce77dfbd685c47086836bcac918`.
+92 righe, sha256 `2f4204a2585097e75c4b00f56ac8b2aab2240c1df91617a1be2507e15c2e4b8b`.
 
 `````yaml
 # Schema dei profili di genere (proposta B.6). Formato degli schemi del motore:
@@ -2172,6 +2216,7 @@ campi:
       tutto_perduto: {tipo: intervallo, obbligatorio: true}
   chiusura_preferita: {tipo: scelta, valori: [gancio_domanda, gesto_oggetto, misto], obbligatorio: true, uso: generazione}
   frase_media: {tipo: intervallo, obbligatorio: true, uso: controllo}
+  frase_media_voce: {tipo: booleano, uso: controllo}   # stile.py: nei capitoli, intervallo del registro della voce (sezione 3 della scheda)
   dialogo_percento: {tipo: intervallo, obbligatorio: true, uso: controllo}
   similitudini_max_per_parole: {tipo: intero, obbligatorio: true, uso: controllo}
   parole_filtro:
@@ -2376,7 +2421,7 @@ Una sessione di Claude Code = un ruolo. Per cambiare ruolo: salvare, aprire sess
 <a id="file-motore-editoriale-leggimi-md"></a>
 #### FILE: motore/editoriale/LEGGIMI.md
 
-31 righe, sha256 `e39c05a28bfe24f698093aee5029d4dccea58b8851bbd6d9c34a1af73aa72377`.
+35 righe, sha256 `c0abb8a0e13e460cc21c5b6e7d027cb872d5651022720cbdf5dc34182f4281e8`.
 
 `````markdown
 # Livello editoriale del motore
@@ -2410,6 +2455,10 @@ stanno solo in `libri/<slug>/` del ramo del libro).
 3. profilo di genere
 4. questa cartella (ruoli)
 5. procedura del motore
+
+Unica eccezione, decisa dall'autore: la frase media dei capitoli. Con `frase_media_voce: true` nel profilo
+(oggi il thriller) vale l'intervallo del registro del capitolo nella scheda della voce (sezione 3; registro
+dichiarato nella scaletta), non quello del manuale; un override di `frase_media` in `libro.yaml` resta sopra.
 `````
 
 <a id="file-motore-editoriale-agenti-architetto-struttura-md"></a>
@@ -2475,16 +2524,16 @@ Sei il correttore di italiano. Segui motore/editoriale/ruoli/06-correttore-itali
 <a id="file-motore-editoriale-agenti-diagnosta-md"></a>
 #### FILE: motore/editoriale/agenti/diagnosta.md
 
-7 righe, sha256 `da3aefcce8856c6a354fde89edd1cba9e56fc9adee3e2adea96e829014ad6009`.
+7 righe, sha256 `761ea08c554123bce0a0631ebf4bb424f7618d122570f5d9ea94aa7e32dbd72d`.
 
 `````markdown
 ---
 name: diagnosta
 description: Diagnostica editoriale in sola lettura di una struttura, di un capitolo o di un manoscritto. Da usare in sessione separata da chi ha scritto.
 tools: Read, Write, Glob, Grep
-model: opus
+model: haiku
 ---
-Sei il diagnosta editoriale. Segui motore/editoriale/ruoli/00-diagnosta.md e i file di motore/editoriale/diagnosi/. Lavora solo in libri/<slug>/ del libro indicato; scrivi solo i rapporti in 06-diagnostica/ (contratto.md, rapporto-<ambito>.md con la prima riga data da python3 motore/zb ruolo <libro> diagnosta). Non riscrivere il testo. Leggi solo i file elencati nel ruolo; per il manoscritto usa le capsule e apri i capitoli solo dove serve. Rispondi al chiamante con al massimo 10 righe: ambito, dove sta il rapporto, problemi bloccanti. Non fare commit né push.
+Sei il diagnosta editoriale. Segui motore/editoriale/ruoli/00-diagnosta.md; per la struttura e il manoscritto anche i file di motore/editoriale/diagnosi/, non per il capitolo singolo (audit/NN.md), che ha il suo elenco di input nel ruolo. Lavora solo in libri/<slug>/ del libro indicato; scrivi solo i rapporti in 06-diagnostica/ (contratto.md, rapporto-<ambito>.md con la prima riga data da python3 motore/zb ruolo <libro> diagnosta; per un capitolo in fase stesura audit/NN.md con la prima riga di python3 motore/zb ruolo <libro> diagnosta N, che la sessione principale ti passa con 06-diagnostica/misure/NN.md (righe già misurate dal motore: non rifarle), la checklist «Capitolo singolo» del ruolo e la tabella frase per frase delle chiuse costruita su 06-diagnostica/frasi-finali/NN.md, prodotto da python3 motore/zb stile <libro> N; prima dell'ultima riga la sezione «## Da correggere» con «- r.N «frase»: motivo» per ogni punto bloccante o «- nessuna»; ultima riga «passa» o «non passa»; al secondo giro rivedi solo le voci della sezione «Giro 2» di misure/NN.md). Non riscrivere il testo. Leggi solo i file elencati nel ruolo (per il capitolo singolo, solo quelli di «File da leggere» in 06-diagnostica/misure/NN.md); per il manoscritto usa le capsule e apri i capitoli solo dove serve. Rispondi al chiamante con al massimo 10 righe: ambito, dove sta il rapporto, problemi bloccanti. Non fare commit né push.
 `````
 
 <a id="file-motore-editoriale-agenti-direttore-editoriale-md"></a>
@@ -2550,7 +2599,7 @@ Sei il line editor. Segui motore/editoriale/ruoli/05-line-editor.md e motore/edi
 <a id="file-motore-editoriale-agenti-scrittore-voce-md"></a>
 #### FILE: motore/editoriale/agenti/scrittore-voce.md
 
-7 righe, sha256 `af08723b9aace0d2f651d555674ddfa46b06bcd75fb8d58c5d15b368ed266b2f`.
+7 righe, sha256 `65c1c2e072bb2e66b6a9dcdb7374f0f4dc475cc112a0ef4e2f8eaacd76c722cc`.
 
 `````markdown
 ---
@@ -2559,7 +2608,7 @@ description: Scrive un capitolo seguendo scaletta, voce e manuale di stile. Da u
 tools: Read, Write, Edit, Glob, Grep, Bash
 model: sonnet
 ---
-Sei lo scrittore con voce. Segui motore/editoriale/ruoli/03-scrittore-voce.md e motore/editoriale/anti-ia/catalogo-it.md. Input: LEGGIMI del libro, manuale di stile, scheda della voce, scaletta del capitolo, piano parole, cronologia, le CAPSULE dei capitoli precedenti (07-capsule/) e solo l'ultima pagina del capitolo precedente. Scrivi 04-manoscritto/NN-<slug>.md. Non rileggere i capitoli precedenti interi. Regole comuni: lavora solo in libri/<slug>/ del libro indicato nel compito (mai altrove, mai in altri libri). Leggi SOLO i file elencati nel tuo ruolo; non rileggere capitoli interi se esiste la capsula. Scrivi il lavoro nei file del libro e rispondi al chiamante con al massimo 10 righe: cosa hai fatto, dove sta il report, eventuali problemi bloccanti. Non incollare testo lungo nella risposta. Non fare commit né push: li fa il chiamante con zb. Se manca un input, dillo e fermati. Non revisionare mai il capitolo che hai appena scritto. Prima di scrivere: python3 motore/zb prepara <libro> N, e leggi solo i file che indica (scheda, codex filtrato, canone, capsule).
+Sei lo scrittore con voce. Segui motore/editoriale/ruoli/03-scrittore-voce.md e motore/editoriale/anti-ia/catalogo-it.md. Input: LEGGIMI del libro, manuale di stile, scheda della voce, cronologia, il file di preparazione del capitolo (06-diagnostica/preparazione/NN.md: scheda del capitolo, parole previste, canone, ultime righe del capitolo precedente) e i file che elenca (codex filtrato, CAPSULE dei capitoli precedenti in 07-capsule/). Non leggere 03-struttura/05-scaletta.md intero né 03-struttura/08-piano-parole.md: la scheda del capitolo e le parole previste sono già nella preparazione. Scrivi 04-manoscritto/NN-<slug>.md. Non rileggere i capitoli precedenti interi. Regole comuni: lavora solo in libri/<slug>/ del libro indicato nel compito (mai altrove, mai in altri libri). Leggi SOLO i file elencati nel tuo ruolo; non rileggere capitoli interi se esiste la capsula. Scrivi il lavoro nei file del libro e rispondi al chiamante con al massimo 10 righe: cosa hai fatto, dove sta il report, eventuali problemi bloccanti. Non incollare testo lungo nella risposta. Non fare commit né push: li fa il chiamante con zb. Se manca un input, dillo e fermati. Non revisionare mai il capitolo che hai appena scritto. Prima di scrivere: python3 motore/zb prepara <libro> N, e leggi solo i file che indica (scheda, codex filtrato, canone, capsule) e, se il libro ha una voce della banca, le sezioni 2, 3 e 6 della scheda della voce (esempi «debole → forte» e campioni per registro) e divieti.yaml, come dice la sezione «Voce» della preparazione: imita la funzione degli esempi, non copiare frasi e non sostituire una formula vietata con un sinonimo.
 `````
 
 <a id="file-motore-editoriale-anti-ia-catalogo-it-esteso-md"></a>
@@ -3457,7 +3506,7 @@ Chiamante (sessione principale) = direttore d'orchestra, non scrive prosa:
 <a id="file-motore-editoriale-ruoli-00-diagnosta-md"></a>
 #### FILE: motore/editoriale/ruoli/00-diagnosta.md
 
-15 righe, sha256 `351c9295f9e9a1c93dea1871e1b6c9dd669170e58838cf958d642987a47ebd40`.
+59 righe, sha256 `92a6dfd4910bdde47c868a24774a66a54ce3c5a594586b2bed9485db48913e24`.
 
 `````markdown
 # Ruolo 0 - Diagnosta editoriale
@@ -3472,6 +3521,50 @@ Leggere un testo (struttura, capitolo o manoscritto) e dire cosa fa, cosa promet
 `06-diagnostica/contratto.md` e `06-diagnostica/rapporto-<ambito>.md` (ambito: `struttura`, `manoscritto`; per un
 capitolo fuori dai gate `audit/NN.md`) nel formato di `diagnosi/03-gravita-e-rapporto.md`, con la prima riga data da
 `zb ruolo <libro> diagnosta`.
+
+## Capitolo singolo (`06-diagnostica/audit/NN.md`)
+Revisione di un capitolo appena scritto, prima che sia accettato, in sessione separata da chi lo ha scritto. Prima
+riga: `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che prima misura il capitolo: con un KO o un
+avviso dei divieti della voce si ferma e la revisione non comincia (frase media e ripetizioni ravvicinate restano avvisi,
+tra le righe misurate); con le misure
+superate scrive `06-diagnostica/misure/NN.md` (righe misurate: non si rifanno) e `06-diagnostica/frasi-finali/NN.md`.
+Input: solo i file della sezione «File da leggere» di `06-diagnostica/misure/NN.md`: il capitolo, le misure, le frasi
+finali, la scheda della voce (sezioni 2, 3 e 6: regole, misure ed esempi «debole → forte»), il codex filtrato per i tag
+della scheda e la capsula del capitolo precedente; il canone è scritto nello stesso file. Non servono la preparazione
+dello scrittore, il manuale di stile, le scelte fisse, le note della pausa di lettura né le capsule più vecchie. Checklist, in quest'ordine; per ogni punto si elencano le frasi trovate (riga e
+testo) e il loro numero, anche quando è zero:
+1. **Chiuse a sentenza, per funzione — tabella frase per frase.** Una riga per ogni frase di
+   `frasi-finali/NN.md`: `| Riga | Frase | Chiusa? (sì/no) | Perché |`. «Sì» quando la frase commenta o
+   riassume la scena invece di mostrarla (massima, giudizio, bilancio, approvazione): tolta la frase, il paragrafo
+   dice ancora tutto. Un riassunto del narratore conta come chiusa. Conta la funzione, non le parole. Sotto la
+   tabella: numero dei «sì» e, se superano il limite, quali togliere.
+2. **Eco:** battuta che riprende una parola piena (nome, verbo, aggettivo, avverbio) dalla battuta precedente
+   dell'altro personaggio, anche senza «ripeté»; non contano i nomi propri usati per chiamare qualcuno.
+3. **Etichette dei personaggi senza nome:** per ogni scena e ogni persona, le etichette usate e quante volte.
+4. **Soggetto:** (a) frasi in cui, con due persone dello stesso genere in scena, «lui», «lo», «gli» o un verbo
+   senza soggetto possono riferirsi a tutte e due, anche nei fatti riferiti in un dialogo; (b) nome proprio
+   ripetuto come soggetto dove il soggetto è ovvio (stessa persona della frase prima, nessun'altra persona dello
+   stesso genere in mezzo, nessuna battuta di dialogo in mezzo): righe e numero.
+5. **Battute giustificative:** battuta che spiega o giustifica ciò che il personaggio dice, fa o pensa (motivo
+   dichiarato, «mi sembra chiaro», «se posso», «non si preoccupi», conferma di ciò che l'altro ha appena detto)
+   invece di lasciarlo nel sottotesto. Conta la funzione: la versione forte è la battuta secca della sezione 6
+   della voce.
+6. **Registro corto** (scene d'azione): frasi oltre la misura massima della voce; frasi corte unite con «e»,
+   «mentre» o virgole per alzare la media.
+7. **Continuità:** i fatti che il capitolo riprende, confrontati con il codex e con la capsula del capitolo
+   precedente (fatto, fonte, esito).
+
+Esito, nell'ultima riga: «passa» o «non passa». Non passa con: più chiuse a sentenza del limite della voce
+(una per capitolo se la voce non ne dà un altro), con l'elenco di quelle da togliere; un'eco; una battuta
+giustificativa; più di due etichette per la stessa persona nella stessa scena; un soggetto ambiguo che può
+cambiare un fatto; una frase del registro corto oltre la misura o unita per alzare la media; un fatto
+contraddetto. Le soglie scritte nella scheda della voce prevalgono su queste (scala di precedenza). Si elencano le
+frasi, non si riscrivono: la correzione la fa chi scrive, con una sola correzione mirata, poi una nuova revisione.
+Prima dell'ultima riga, la sezione `## Da correggere`: una voce `- r.N «frase»: motivo` per ogni punto bloccante,
+oppure `- nessuna`. Un solo giro completo: il secondo giro (dopo la correzione) rivede solo le voci elencate nella
+sezione «Giro 2» di `06-diagnostica/misure/NN.md`, ognuna «risolta» o «non risolta» con il motivo, senza rifare la
+checklist; il primo rapporto resta in `audit/NN-giro1.md`. Dopo un secondo «non passa» decide l'autore.
+Con `revisione_capitolo: obbligatoria` in `libro.yaml`, `zb esito` legge l'ultima riga e l'impronta della prima.
 
 ## Cosa NON fa
 Non riscrive, non propone frasi o scene, non lavora nella stessa sessione di chi ha scritto, non modifica i file del libro oltre ai suoi rapporti.
@@ -3552,7 +3645,7 @@ esiste e nessuna skill esterna è richiesta.
 <a id="file-motore-editoriale-ruoli-03-scrittore-voce-md"></a>
 #### FILE: motore/editoriale/ruoli/03-scrittore-voce.md
 
-26 righe, sha256 `d6c9c21483ffa9c8982f81812485447100c1953dd9a78ef4b0660973e6529f8d`.
+31 righe, sha256 `0a9f87689c173ec41a60278c90cd0038e08d8454a667879b84dfcc910cb94bd8`.
 
 `````markdown
 # Ruolo 3 - Scrittore con voce
@@ -3563,7 +3656,12 @@ Scrivere i capitoli seguendo struttura, voce e manuale di stile, con prosa viva 
 ## Input per ogni capitolo
 `LEGGIMI.md`, manuale di stile, scheda della voce, scaletta del capitolo, piano parole, cronologia, capitolo precedente. Poi `zb avvio` e riga "Letto".
 Nel percorso editoriale: `zb prepara <libro> N` raccoglie la scheda, le sole schede del codex con i tag della scena,
-il canone e le capsule; al posto del capitolo precedente intero si leggono le capsule e le sue ultime righe.
+il canone, le capsule e le parole previste; al posto del capitolo precedente intero si leggono le capsule e le sue
+ultime righe, al posto di `05-scaletta.md` e `08-piano-parole.md` interi la scheda e le parole della preparazione.
+Prima di ogni capitolo, con una voce della banca: sezioni 2, 3 e 6 della scheda della voce (regole, misure del
+registro del capitolo, esempi originali «versione debole → versione forte» e campioni per registro) e
+`divieti.yaml`; `zb prepara` lo ricorda. Gli esempi mostrano la funzione (battuta secca, chiusa su un gesto o un
+oggetto, soggetto implicito), non frasi da copiare; non si sostituisce una formula vietata con un sinonimo.
 
 ## Output
 `04-manoscritto/NN-<slug>.md`, poi `zb esito <libro> N`.
@@ -3607,7 +3705,7 @@ Non riscrive, non propone frasi o scene, non corregge la lingua. Non lavora nell
 <a id="file-motore-editoriale-ruoli-05-line-editor-md"></a>
 #### FILE: motore/editoriale/ruoli/05-line-editor.md
 
-26 righe, sha256 `58f1c88925d0758fca7429ce78083a44a046bb23692d713d31cb676bbdad1557`.
+40 righe, sha256 `78e92f8ebe443cd28bbd42b9f462621dd4163f05d74885e457eaef666f5a0bea`.
 
 `````markdown
 # Ruolo 5 - Line editor
@@ -3626,6 +3724,20 @@ Il capitolo, la scheda della voce, `anti-ia/catalogo-it.md`, i divieti della voc
 - spezza o unisce periodi dove il ritmo è monotono;
 - sostituisce formule da IA con dettaglio concreto;
 - protegge la voce del libro e dei personaggi.
+
+## Controlli per funzione
+Le stesse regole della checklist del diagnosta per il capitolo singolo (`00-diagnosta.md`, «Capitolo
+singolo»), applicate frase per frase; per le chiuse si parte da `06-diagnostica/frasi-finali/NN.md` (`zb stile`). Per ognuna il rapporto elenca le frasi trovate (riga e testo) e il loro
+numero, anche zero:
+- chiuse a sentenza definite per funzione (frase finale di paragrafo che commenta o riassume invece di
+  mostrare; tolta la frase, il paragrafo dice ancora tutto), entro il limite della voce;
+- eco: una battuta non riprende la parola piena dell'altro, nemmeno senza «ripeté»;
+- battute giustificative: una battuta non spiega né giustifica ciò che il personaggio fa o pensa;
+- soggetto: il nome proprio non si ripete come soggetto dove è ovvio;
+- personaggi senza nome: una sola etichetta per scena, più al massimo una variante; niente giro di sinonimi;
+- chi fa cosa: con due persone dello stesso genere in scena, il nome al posto di «lui», «lo», «gli»;
+- registro corto: per alzare una media troppo bassa non si uniscono frasi corte con «e», «mentre» o
+  virgole; per abbassarne una troppo alta si tagliano parole e subordinate dentro la frase.
 
 ## Principio
 Intervento minimo efficace: se una frase funziona, non si tocca. Si corregge per sottrazione, non per sostituzione;
@@ -4406,7 +4518,7 @@ aggiornato: ""
 <a id="file-motore-passaggio-di-consegne-md"></a>
 #### FILE: motore/passaggio-di-consegne.md
 
-117 righe, sha256 `d6b771024da99713b0822ea88d56266d88e3dfce0d218c6acc60844cf8b559a3`.
+186 righe, sha256 `75c354818f8e4602fce21e2a940f9cdd00106c730a7097ba485a3b1d0fb99a98`.
 
 `````markdown
 # Passaggio di consegne: motore
@@ -4416,15 +4528,39 @@ riprendi da lì».
 
 ## Stato
 
+- Unione del 2026-10-21: il ramo di lavoro è `motore`. `integrazione-editoriale` (9c54726) è entrato in `motore` con
+  `git merge -s ours origin/motore` (ec8fe47: la storia di `motore` resta come antenato, il contenuto è quello di
+  `integrazione-editoriale`), più la correzione di `script/separazione.py` (1092a89); push fast-forward di `motore`
+  971b6df → 1092a89. Copia di sicurezza del motore di prima: archivio (3) in `docs/MAPPA_RAMI.md` (971b6df).
+  Suite su 1092a89: 672/672 OK, 5 saltate (LanguageTool assente), senza `ZB_BANCA_VOCI`.
 - Lavoro sul motore del 2026-10-20: integrazione nel ramo `integrazione-editoriale` (repository
   `NGTAProtocol/ZeusBot`, D1). Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore`
   (`origin/motore`, 971b6df). I rami `motore` e `main` non sono toccati (`main` in questo repository non esiste, D2).
   Ultimo commit: `git log -1` (prima del commit dei documenti derivati: 951a42c, allineato a origin).
 - Punti dell'integrazione: 1-12 e 8b fatti e su origin; dopo: `CLAUDE.md` allineato (D17, 05facce), subagenti e
   capsula nei file del pacchetto (D18, 951a42c); documenti derivati nel commit che porta questo file.
-- Suite: **637/637 OK** (dal punto 12; invariata con D17 e D18), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+- Suite al punto 12: 637/637 OK (invariata con D17 e D18); oggi **675/675 OK**, 0 saltate (2026-10-21), con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
+- Lavoro del 2026-10-21 (problema di stile della prova): P1 campo `massimo` dei divieti della voce (1e11337); P2
+  diagnosta in fase «stesura» sul capitolo singolo e `revisione_capitolo: obbligatoria` in `zb esito` (5d19661);
+  P3 frasi finali in `zb stile` (03f12c6); frase media per registro della voce con `frase_media_voce` nel thriller
+  (4d21449); ruoli e `zb prepara` con la voce (6371041). Suite dopo l'ultimo commit di codice: 655/655 OK, 0
+  saltate. Dettaglio, realizzato e non realizzato: `docs/PROPOSTE_MOTORE.md`.
+- Correzioni del 2026-10-21 (seconda parte): `zb prepara` nomina gli esempi «debole → forte» solo se la scheda li
+  ha e si ferma se la scheda manca (dd93098); frase media del registro della voce: AVVISO «intervallo non
+  calibrato sull'autore» (3990f86); gruppi di forme nei divieti della voce con un massimo complessivo (c79df0a).
+  Suite: 661/661 OK, 0 saltate.
+- Correzioni del 2026-10-21 (terza parte): aperture uguali senza il falso positivo della battuta in mezzo
+  (c26fd23); diagnosta senza shell, proposta P4 non realizzata con il motivo (d3f9162); letture ridotte di scrittore e
+  diagnosta (c55e940) e costo misurato, P5 (d73e926); incoerenze dei documenti e mappa dei rami
+  (`docs/MAPPA_RAMI.md`). Suite: 663/663 OK, 0 saltate.
+- Costo della revisione (2026-10-21, quarta parte): `aperture_uguali` protetta dalle frasi senza parole (5306b38);
+  misure del motore prima del diagnosta, `misure/NN.md` (247bf0b); un solo giro completo (e8b5a06); diagnosta al
+  livello leggero, haiku (238b947); letture del diagnosta ridotte (02d7baf); P6 misura del costo, non realizzata
+  (775c006). Suite: 673/673 OK, 0 saltate.
+- Decisione dell'autore (2026-10-21): il diagnosta si ferma solo sui KO e sui divieti della voce; frase media e
+  ripetizioni ravvicinate restano avvisi tra le righe misurate. Suite: 675/675 OK, 0 saltate.
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
   nessuna approvazione intermedia; una sola fermata, la PAUSA DI LETTURA ogni 3 capitoli (`pausa_lettura` 3-5 in
   `libro.yaml`) e a fine stesura. Restano le fermate `controllo_fallito` e `canone`.
@@ -4464,7 +4600,8 @@ riprendi da lì».
 - Regola madre: il motore resta sempre pulito; il ramo `motore` non contiene mai un libro.
 - Nessun nome reale (autori, titoli, personaggi, luoghi, frasi, nomi dei rami dei libri) in codice, prove,
   commenti, esiti, report e documenti, anche in `docs/`. Controllo: `zb separazione`.
-- Non toccare i rami dei libri, né `motore` e `main`: l'unione nel ramo `motore` la decide l'autore.
+- Non toccare i rami dei libri. Si lavora su `motore` (fast-forward, mai push forzati); `integrazione-editoriale`
+  resta com'è.
 - I 28 file del pacchetto non si cambiano senza l'autore (eccezione autorizzata: D18).
 - `dati/kdp.yaml`: `ultima_verifica` resta `null` finché l'autore non registra la sua verifica
   (`zb verifica KDP fatta AAAA-MM-GG`); il motore non la scrive.
@@ -4476,7 +4613,43 @@ riprendi da lì».
   storia.
 - Report di sessione ogni 5 scambi o a «passaggio», con le sezioni fisse.
 
-## Fatto in questa sessione (2026-10-20)
+## Fatto in questa sessione (2026-10-21, unione in `motore`; sotto, le sessioni precedenti)
+
+- Copia di sicurezza di `motore` (971b6df) sul ramo d'archivio (3).
+- ec8fe47 unione «ours» di `origin/motore` sopra `integrazione-editoriale`; `git diff` con `integrazione-editoriale`
+  vuoto; nessun doppione (`anti_ia.py`, `capsule.py`, `ruoli.py`, `installa_languagetool.py` non ci sono).
+- 1092a89 (672) `separazione.py`: `git ls-tree --full-tree` nei rami di origin. Prima, lanciato dentro `motore/`, dava
+  percorsi relativi: ogni ramo con il motore sembrava un ramo di libro (il nome di `integrazione-editoriale` e degli
+  archivi del motore risultava vietato; la suite era rossa su ogni ramo diverso da `integrazione-editoriale`) e i
+  rami di libro senza `motore/` sfuggivano. Prova nuova in passo 1 (2 controlli), che fallisce con il codice di prima.
+- Nel commit che porta questo file: `docs/MAPPA_RAMI.md`, `docs/DA_VERIFICARE_AUTORE.md` (pulizia.py attivo; D6, D9,
+  D10), `docs/INFRASTRUTTURA_COMPLETA.md` rigenerata con il generatore. Guida (md e pdf) non rigenerata: non cambia.
+
+2026-10-21, quarta parte:
+
+- 5306b38 (664) `aperture_uguali`: una frase senza parole si salta (prima: IndexError se frasi() non la filtrasse).
+- 247bf0b (668) `zb ruolo <libro> diagnosta N`: misure del motore prima del revisore, `misure/NN.md`; `zb esito` le vuole.
+- e8b5a06 (671) un solo giro completo; il secondo solo sulle frasi di «## Da correggere»; poi decide l'autore.
+- 238b947 (672) diagnosta `leggero` (haiku) in `dati/modelli-ruoli.yaml`.
+- 02d7baf (673) letture del diagnosta per il capitolo singolo: solo «File da leggere» di `misure/NN.md`.
+- 775c006 (673) P6: misura del costo per agente, non realizzata.
+- Nel commit che porta questo file: PROCEDURA §6, guida (md e pdf), PROPOSTE, report, STATO_ATTUALE,
+  DA_VERIFICARE_AUTORE, `docs/INFRASTRUTTURA_COMPLETA.md` rigenerata.
+
+2026-10-21, terza parte:
+
+- c26fd23 (662) `antiia.aperture_uguali()`: una battuta di dialogo tra due frasi di narrazione interrompe la serie;
+  prova `aperture_battuta` (sezione anti-IA); punto 4(b) del diagnosta allineato.
+- d3f9162 (662) P4 in `docs/PROPOSTE_MOTORE.md`: Bash al diagnosta non è coerente con il recinto; alternativa.
+- c55e940 (663) agenti: lo scrittore non rilegge scaletta e piano parole interi, il diagnosta non legge `diagnosi/`
+  per il capitolo singolo; prova `letture` (sezione agenti), che controlla anche il diagnosta senza Bash né Edit.
+- d73e926 (663) P5: costo della revisione misurato file per file.
+- Nel commit che porta questo file: incoerenze di numeri e documenti (report, STATO_ATTUALE, guida md e pdf,
+  PROCEDURA, README, PROPOSTE_MOTORE, DA_VERIFICARE_AUTORE), `docs/INFRASTRUTTURA_COMPLETA.md` rigenerata.
+- Poi: `docs/MAPPA_RAMI.md` (commit a parte).
+
+2026-10-20:
+
 
 Commit su `integrazione-editoriale` (tra parentesi le prove della suite a quel commit):
 - 5ae0bda (560) punto 1: pacchetto da 28 file verificato, nessuna modifica (D3);
@@ -4505,21 +4678,29 @@ Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_L
 2. Dopo ogni passo `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
 3. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
    anti-IA; coppia «avvenire/avvenire» nei criteri del correttore; licenza di APODICTIC; verifica dei dati KDP
-   (`ultima_verifica: null`, non verificati dall'autore); unione nel ramo `motore`.
+   (`ultima_verifica: null`, non verificati dall'autore).
 4. Soglie anti-IA uguali per ogni genere, tarate sui mini-libri; vocabolario italiano vuoto finché non c'è un corpus
    (`docs/DA_FORNIRE.md`).
 5. Divergenza lasciata visibile in `docs/ANALISI_REPOSITORY.md`: kindle-book-agency (D13).
+6. Diagnosta senza shell (P4): proposta, non realizzata. Controlli deterministici prima del revisore, un solo giro di
+   revisione, modello del diagnosta: proposte di P5, non realizzate.
+7. Scenari 5b e 15-18 della tabella dell'hook (PROCEDURA §10): descritti, senza prova (le prove coprono 1-14).
+8. `zb voce verifica` sulle voci della banca: non eseguito il 2026-10-21 (banca-voci non disponibile nella sessione).
+9. Diagnosta su haiku: da provare su una pagina; se la revisione risulta debole, tornare al modello medio; vale anche per la
+   diagnosi di struttura e manoscritto (`docs/DA_VERIFICARE_AUTORE.md`).
 
 ## Prossimo passo
 
-`zb salva` e controllo con `git status -sb` e `git log -1`. Dopo, l'autore legge
-`docs/DA_VERIFICARE_AUTORE.md` e decide se unire il ramo nel `motore`.
+L'autore legge `docs/DA_VERIFICARE_AUTORE.md` (unione in `motore`, pulizia.py, profilo thriller, scelte con due
+valori), `docs/PROPOSTE_MOTORE.md` (P4, P5) e `docs/MAPPA_RAMI.md`. I rami dei libri restano sul loro motore: si
+aggiornano solo con un merge di `origin/motore` deciso dall'autore, libro per libro.
 
 ## Ripartenza
 
 ```
 pip install -r motore/requirements.txt
 apt-get install -y hunspell hunspell-it hunspell-en-us poppler-utils
+export ZB_BANCA_VOCI=<clone della banca-voci>   # solo lettura; serve a zb voce e zb prepara con una voce
 python3 motore/zb languagetool installa        # poi l'export di ZB_LANGUAGETOOL che stampa
 python3 motore/zb lavoro motore                # solo se l'autore ha scritto «lavoro sul motore»
 python3 -B motore/zb avvio                     # riga «Letto»
@@ -4797,7 +4978,7 @@ scene_obbligatorie:
 <a id="file-motore-profili-thriller-yaml"></a>
 #### FILE: motore/profili/thriller.yaml
 
-48 righe, sha256 `8b2ccc33dc977fb37edf87a19beb61b93507ea818658b358733ad0d4acf20cc3`.
+49 righe, sha256 `a04b61671e6e460443a8121f64f8b389b97f393768aab1868b373cced314acca`.
 
 `````yaml
 # Profilo di genere «thriller» — default per libro.yaml (proposta B.6).
@@ -4827,6 +5008,7 @@ parole_per_atto: [0.25, 0.50, 0.25]           # 12 r. 56 · informativo, non con
 battiti: {punto_centrale: [0.45, 0.55], tutto_perduto: [0.70, 0.80]}   # 02 r. 46 · informativo, non controllato
 chiusura_preferita: gancio_domanda            # 03 r. 12; 02 r. 39 (domanda, rivelazione, pericolo, decisione)
 frase_media: [9, 14]                          # PROPOSTA (03 r. 10 dà solo la regola: brevi nell'azione)
+frase_media_voce: true                        # PROPOSTA (decisione dell'autore, 2026-10-21): con una voce della banca, la frase media del capitolo è quella del suo registro (sezione 3 della scheda)
 dialogo_percento: [25, 45]                    # PROPOSTA
 similitudini_max_per_parole: 400              # PROPOSTA (una ogni 400 parole)
 parole_filtro: {modalita: avviso, massimo_per_1000_parole: 8}   # elenco 05 r. 21 («ridurre»); il numero è PROPOSTA
@@ -6434,7 +6616,7 @@ La chiave grande è quella del retro; la vetrina si apre con la chiave piccola.
 <a id="file-motore-prove-attesi-yaml"></a>
 #### FILE: motore/prove/attesi.yaml
 
-802 righe, sha256 `f5d5547aff6fbd1bccff1c759a96a1842644bbd1f40e89fa1ef5a85f62b06fd2`.
+840 righe, sha256 `834d30fee8349e77688018ffbe9408b4d797763967c061283427c1e16ebbfb26`.
 
 `````yaml
 # Esiti attesi delle prove del motore sui due mini-libri inventati (proposta B.2.2, B.7).
@@ -6491,6 +6673,8 @@ passo_1:
     motore: 0                    # codice d'uscita su motore/
     nome_vietato_in_copia: 1     # copia di motore/ con una voce in nomi_vietati.txt presente in un file
     libro_yaml_fuori_posto: 1    # copia di motore/ con un libro.yaml fuori dai mini-libri
+    ramo_solo_motore_vietato: 'no'   # ramo di origin con motore/ e senza libri/: non è un ramo di libro
+    ramo_di_libro_vietato: 'sì'      # ramo di origin con libri/<slug>/libro.yaml: il suo nome è vietato
   recinto:
     comandi_del_motore: 0        # nessuna scrittura fuori dalla copia del mini-libro
     scrittura_messa_apposta: 1   # un comando di prova che scrive in motore/ viene rilevato
@@ -6893,7 +7077,7 @@ scene:
   informativi: ['battiti', 'capitoli.coerenza', 'lista_nera', 'lunghezza_totale.consigliata', 'lunghezza_totale.parti_obbligatorie',
                 'lunghezza_totale.parti_sopra', 'parole_per_atto', 'parole_per_pagina', 'scene.budget_interno', 'scene.sequel']
   controllati: ['anti_ia', 'capitoli.minimo', 'capitoli.scene_per_capitolo', 'capitoli.tolleranza_budget', 'capitoli.tolleranza_totale',
-                'dialogo_percento', 'frase_media', 'parole_filtro', 'scene.lunghezza', 'similitudini_max_per_parole']
+                'dialogo_percento', 'frase_media', 'frase_media_voce', 'parole_filtro', 'scene.lunghezza', 'similitudini_max_per_parole']
 
 manuale_leggibile:
   # Manuale generato dal briefing inventato (giallo) e dalla sua variante con lunghezza fuori profilo.
@@ -7150,6 +7334,20 @@ voce:
   divieti_senza_voce: "[]"
   divieti_senza_banca: "[]"
   divieti_con_voce: "['voce:voce-di-prova:dunque_dunque|AVVISO', 'voce:voce-di-prova:oltremodo|AVVISO', 'voce:voce-di-prova:vecchia_bottega|AVVISO']"
+  massimo_divieti: |-
+      - {id: stanca_uno, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic, massimo: 1}
+      - {id: stanca_due, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic, massimo: 2}
+      - {id: stanca_ogni, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic}
+  frase_massimo: "Irene era stanchissima, la sorella era stanchissima anche lei."
+  massimo_esiti: "['stanca_ogni|AVVISO|stanchissima', 'stanca_ogni|AVVISO|stanchissima', 'stanca_uno|AVVISO|2 occorrenze (massimo 1)']"
+  massimo_non_valido: "- {id: stanca_rotto, pattern: 'stanchissima', tipo: tic, massimo: uno}"
+  massimo_verifica: "1 / True / False"
+  # (i) gruppi di forme: «gruppi: {chiuse: {massimo: 1}}» e «gruppo: chiuse» sui divieti; limite complessivo per unità
+  gruppo_divieti: |-
+      - {id: forma_uno, pattern: '(?i)(?<!\w)stanchissima(?!\w)', tipo: tic, massimo: 1, gruppo: chiuse}
+      - {id: forma_due, pattern: '(?i)(?<!\w)sfinita(?!\w)', tipo: tic, massimo: 1, gruppo: chiuse}
+  frase_gruppo: "Irene era stanchissima. La sorella era sfinita."
+  gruppo_esiti: "['voce-di-prova:chiuse:gruppo|AVVISO|2 occorrenze delle forme del gruppo (massimo 1 in tutto)']"
 
 recinto_libro:
   messaggio_motore: "è dentro motore/, che resta sempre pulito"
@@ -7225,6 +7423,10 @@ agenti_capsule:
   revisori: [2, 0, 0]
   consumo: "0 / True / True"
   compatto: "True / True / True"
+  # diagnosta senza Bash né Edit; letture ridotte del diagnosta (capitolo singolo) e dello scrittore
+  letture: "True / True / True"
+  # diagnosta: livello leggero (haiku, il più economico tra gli alias ammessi); scrittore-voce: medio (sonnet)
+  modello_diagnosta: "haiku / sonnet"
 
 anti_ia:
   # da motore (971b6df), sull'audit di ccr (antiia.py): nomi delle misure di ccr; la sezione B conta solo con
@@ -7234,11 +7436,29 @@ anti_ia:
   audit: "True / True / True / True"
   blocco: "1 / True"
   chiusure: "P2 / P0"
+  # battuta in mezzo: riga a parte 0, stessa riga 0; frasi consecutive 1; misura 0.0% e 100.0%
+  aperture_battuta: "0 / 0 / 1 / 0.0 / 100.0"
+  # «* * *», «...» e «1984.» non sono frasi: il ragazzo, il ragazzo, lei → 1 coppia uguale su 2; senza filtro, nessun errore
+  aperture_senza_parole: "(1, 2) / (1, 2)"
 correttore:
   report: "True / 25"
   dentro_repo: "2 / False"
   verifica: "0 / True"
   gia_pronto: "0 / True / True"
+
+frasi_finali:
+  # P3: zb stile elenca, per ogni capitolo, la frase finale di ogni paragrafo di narrazione e dell'ultima battuta di
+  # ogni scambio (06-diagnostica/frasi-finali/NN.md); il giudizio resta a chi rivede
+  elenco: ['3|narrazione|Seconda frase che chiude.', '7|battuta|— Davvero? — dice lui.', '9|narrazione, fine scena|Lui resta alla finestra.', '13|battuta, fine scena|— Ultima battuta.']
+  report: "['01.md', '02.md', '03.md'] / True / True"
+
+frase_media_registro:
+  # decisione dell'autore (2026-10-21): nel thriller la voce prevale sulla frase media; intervallo per registro dalla
+  # sezione 3 della scheda della voce, registro del capitolo dalla scaletta («registro <nome>»; il primo è il dominante)
+  registri: "[('base', [12, 18]), ('corto', [5, 10]), ('freddo', [15, 25])]"
+  intervalli: ['5-10 registro corto, dalla voce', '15-25 registro freddo, dalla voce', '12-18 registro base, dalla voce', '9-14', '9-14', '12-18 registro base, dalla voce']
+  senza_campo: ['1: 9-14 OK', '2: 9-14 OK', '3: 9-14 KO']
+  con_campo: ['1: 5-10 (registro corto, dalla voce) OK', '2: 15-25 (registro freddo, dalla voce) AVVISO', '3: 12-18 (registro base, dalla voce) AVVISO']
 `````
 
 <a id="file-motore-prove-banca-voci-prova-leggimi-md"></a>
@@ -8952,6 +9172,25 @@ Nives aprì il taccuino, tolse l'elastico e decise cosa scrivere.
 
 - In breve: due stanze sopra la pescheria, con i registri dei turni.
 - Fissi (sempre): una stufa a gas che fischia.
+`````
+
+<a id="file-motore-prove-mini-libro-editoriale-rapporti-audit-01-md"></a>
+#### FILE: motore/prove/mini-libro-editoriale/rapporti/audit-01.md
+
+11 righe, sha256 `9c9514388f64d067d1abb082a7ae3d3d6af104abb1070e0a9445146b26331aae`.
+
+`````markdown
+<!-- la prima riga la dà «zb ruolo <libro> diagnosta 1» -->
+# Revisione del capitolo 1 (prova inventata)
+
+1. Chiuse a sentenza: 0.
+2. Eco: 0.
+3. Personaggi senza nome: nessuna etichetta oltre il limite.
+4. Chi fa cosa: 0 frasi ambigue.
+5. Registro corto: non applicabile.
+6. Continuità: nessun fatto contraddetto.
+
+passa
 `````
 
 <a id="file-motore-prove-mini-libro-editoriale-rapporti-bozze-md"></a>
@@ -10771,12 +11010,13 @@ La pensione è chiusa, la proprietaria è in ospedale e ad aprire la porta c'è 
 <a id="file-motore-report-motore-md"></a>
 #### FILE: motore/report-motore.md
 
-323 righe, sha256 `8829ec4918c184730f5584dc32316e1b083f39fea54a670ee9ec8afaa94130b8`.
+329 righe, sha256 `8f22e6b68e91ca12e4f2a28331af68a20cdaa40f0bccdd3c755b6e37bf6d5029`.
 
 `````markdown
 # Report del motore editoriale
 
-Stato al 2026-10-20, ramo `integrazione-editoriale` (lavoro sul motore: integrazione). Base: ramo ccr
+Stato al 2026-10-21, ramo `integrazione-editoriale` (lavoro sul motore: integrazione, poi le correzioni di
+`docs/PROPOSTE_MOTORE.md`). Base: ramo ccr
 (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore` (`origin/motore`, 971b6df). Scelte
 dell'integrazione: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D18). Esito della suite: sezione 13.
 Il motore è una casa editrice generica di romanzi in italiano e in inglese: procedura, script, modelli vuoti, profili
@@ -10917,31 +11157,32 @@ Mini-libri inventati in `prove/`: giallo (`mini-libro`, A5, 16 pagine), romance 
 5,5 × 8,5, 23 pagine), adozione (`mini-libro-adozione`), editoriale (`mini-libro-editoriale`, con traduzione in
 inglese), più briefing e schede di pubblicazione inventati. Autori inventati («Autore di Prova», «Autrice di Prova»).
 
-Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella cartella temporanea, al punto 12,
-637 righe):
+Prove per sezione nell'ultima suite intera (tabella `zb-prove-ultimo.md` nella cartella temporanea, 2026-10-21,
+675 righe, 2026-10-21):
 
 | Sezione | Prove | Sezione | Prove |
 |---|---|---|---|
-| passo 1 | 35 | titoli, tempi, età, push | 23 |
-| passo 2 | 52 | eccezioni e richiami | 3 |
-| passo 3 | 45 | voce | 25 |
-| passo 4 | 38 | recinto libro | 3 |
-| passo 5 | 96 | appendici | 6 |
-| passo 5b | 18 | fase struttura | 18 |
-| passo 6 | 12 | cartella unica | 13 |
+| passo 1 | 35 | eccezioni e richiami | 3 |
+| passo 2 | 52 | voce | 30 |
+| passo 3 | 45 | recinto libro | 3 |
+| passo 4 | 38 | appendici | 6 |
+| passo 5 | 96 | fase struttura | 18 |
+| passo 5b | 18 | cartella unica | 13 |
+| passo 6 | 12 | avvio motore | 4 |
 | passo 7 | 11 | ruoli | 9 |
-| override | 8 | agenti e capsule | 10 |
-| scene | 12 | anti-IA | 7 |
+| override | 8 | agenti e capsule | 12 |
+| scene | 12 | anti-IA | 9 |
 | manuale | 7 | correttore | 5 |
-| checklist | 3 | percorso editoriale | 54 |
-| continuita | 8 | cartella unica e recinto | 13 |
-| correzioni | 20 | agenti e comandi | 11 |
-| adozione | 5 | consumo e capsule | 3 |
-| interludi e grafie | 10 | traduzione in inglese | 17 |
-| correggi e passo | 4 | correttore e anti-IA | 10 |
-| unità consentite e interludi | 7 | | |
-| fase e rinomine | 6 | avvio motore | 4 |
-| esclusioni e budget | 6 | **Totale** | **637** |
+| checklist | 3 | frasi_finali | 2 |
+| continuita | 8 | frase_media_registro | 8 |
+| correzioni | 20 | percorso editoriale | 73 |
+| adozione | 5 | cartella unica e recinto | 13 |
+| interludi e grafie | 10 | agenti e comandi | 11 |
+| correggi e passo | 4 | consumo e capsule | 3 |
+| unità consentite e interludi | 7 | traduzione in inglese | 17 |
+| fase e rinomine | 6 | correttore e anti-IA | 10 |
+| esclusioni e budget | 6 | **Totale** | **675** |
+| titoli, tempi, età, push | 23 | | |
 
 Da dove vengono (D12): ccr 560 prove (d2b8814), `motore` 520 (971b6df); le 65 prove che esistevano solo in
 `motore` sono tutte presenti; in più 5 prove della pausa di lettura e 2 nate dalla divisione di prove esistenti.
@@ -11095,8 +11336,12 @@ luoghi reali.
 
 ## 13. Esito della suite
 
-637 prove, 637 OK, 0 saltate (punto 12: le 632 del punto 9, D12, più 1 di D16 e 4 della sezione `avvio motore`,
-D15), con LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza `ZB_BANCA_VOCI`.
+675 prove, 675 OK, 0 saltate (2026-10-21), con LanguageTool 6.8 da `ZB_LANGUAGETOOL`, senza
+`ZB_BANCA_VOCI`. Storia: 637 al punto 12 (le 632 del punto 9, D12, più 1 di D16 e 4 della sezione `avvio motore`,
+D15); 661 dopo le proposte P1-P3 e la frase media per registro (`docs/PROPOSTE_MOTORE.md`); 663 con le prove di
+`aperture_battuta` (anti-IA) e `letture` (agenti) del 2026-10-21; 673 con le prove di
+`aperture_senza_parole`, delle misure prima del revisore, del giro di revisione, del modello del diagnosta e delle sue
+letture; 675 con il divieto della voce e gli avvisi che non fermano il diagnosta.
 `````
 
 <a id="file-motore-requirements-txt"></a>
@@ -11414,7 +11659,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-agenti-py"></a>
 #### FILE: motore/script/agenti.py
 
-216 righe, sha256 `a0e20c751daccd1e37be7e049ce2efdc62cd7988723af6eb2191b02f22134a7b`.
+222 righe, sha256 `f63d21469b2ef9b2f28ab00a79e1defb8ed38f7789512ef9bdb1f623940e8959`.
 
 `````python
 """Subagenti e comandi di Claude Code per i rami dei libri (comando «zb agenti»).
@@ -11543,8 +11788,14 @@ def prossimo(motore, argv):
         if mancano:
             righe.append(f'Prima le capsule (agente capsula, in parallelo a gruppi di {n}):')
             righe += ['  gruppo: ' + ', '.join(f'capsula {rel} capitolo {c}' for c in g) for g in a_gruppi(mancano, n)]
-        righe.append(f'Poi, in sequenza (mai in parallelo): zb prepara, scrittore-voce {rel} {st["passo"]}; dopo: '
-                     'zb esito, zb capsula.')
+        if libro.get('revisione_capitolo') == 'obbligatoria':
+            righe.append(f'Poi, in sequenza (mai in parallelo): zb prepara, scrittore-voce {rel} {st["passo"]}; poi '
+                         f'zb ruolo {rel} diagnosta N (misure del motore prima del revisore: se si ferma, non chiamare '
+                         'il diagnosta, prima la correzione di chi scrive); con le misure superate, diagnosta con la '
+                         'prima riga e 06-diagnostica/misure/NN.md; dopo: zb esito, zb capsula.')
+        else:
+            righe.append(f'Poi, in sequenza (mai in parallelo): zb prepara, scrittore-voce {rel} {st["passo"]}; dopo: '
+                         'zb esito, zb capsula.')
     elif st['fase'] in ('line', 'copy') and (st.get('sottofase') or 'proposte') == 'proposte':
         da_fare = [str(u) for u, r in percorso.capitoli(cartella, libro)
                    if not os.path.isfile(os.path.join(cartella, '06-diagnostica', st['fase'], f'{percorso.nn(u)}.md'))]
@@ -11638,7 +11889,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-antiia-py"></a>
 #### FILE: motore/script/antiia.py
 
-360 righe, sha256 `0f067a61a834f2b79ebd1d3bccdfd3e02655d8f85f8051b95a2ef8ed1de8393b`.
+390 righe, sha256 `b96eaca5cf4fd7caa77373a0b75b625df4129300e1e81b80c0c86c3b12737e2c`.
 
 `````python
 """Audit anti-IA non distruttivo e vocabolario dai dati (comando «zb antiia»).
@@ -11650,7 +11901,8 @@ Audit: non tocca il testo. Scrive <libro>/06-diagnostica/anti-ia/NN.md con le mi
 del catalogo della lingua (motore/editoriale/anti-ia/catalogo-it.md; lingue/en/catalogo-anti-ia.md):
 - variazione_frasi: deviazione standard / media della lunghezza delle frasi di narrazione (profilo «narrativa»;
   il dialogo è escluso: il parlato è irregolare per natura);
-- aperture_uguali: percentuale di frasi di narrazione consecutive che cominciano con la stessa parola;
+- aperture_uguali: percentuale di frasi di narrazione consecutive che cominciano con la stessa parola (una battuta
+  di dialogo in mezzo interrompe la serie: tra le due frasi parla un altro);
 - formule_per_mille: voci della lista nera di base e del vocabolario L1-L3 (dati/antiia.yaml) per mille parole;
 - lineette_narrazione: lineette fuori dal dialogo per mille parole di narrazione, nelle lingue in cui la
   lineetta apre la battuta (idea di book-genesis-studio, MIT, riscritta: il segno del dialogo usato anche
@@ -11801,6 +12053,36 @@ def parti(testo, lingua):
     return '\n'.join(nar), '\n'.join(dia)
 
 
+def aperture_uguali(testo, lingua):
+    """(uguali, coppie): coppie di frasi di narrazione consecutive e quante cominciano con la stessa parola.
+    Una battuta di dialogo in mezzo (riga di dialogo o frase che apre con il segno della battuta) interrompe la
+    serie: «Il ragazzo spegne il motore. — Lascialo acceso. Il ragazzo gira la chiave.» non è una ripetizione,
+    perché tra le due frasi parla un altro."""
+    pre = dialogo_di(lingua) + ('«', '"', '“')
+    blocchi, cur = [], []                     # righe di narrazione consecutive, interrotte dalle righe di dialogo
+    for _, r in comune.righe_prosa(testo):
+        if r.lstrip().startswith(dialogo_di(lingua)):
+            blocchi.append(cur)
+            cur = []
+        else:
+            cur.append(r.strip())
+    blocchi.append(cur)
+    serie = []
+    for b in blocchi:
+        cur = []
+        for f in frasi('\n'.join(b)):
+            if f.lstrip().startswith(pre):      # battuta dentro la riga di narrazione
+                serie.append(cur)
+                cur = []
+            else:
+                p = PAROLA.findall(f)               # frasi() oggi scarta le frasi senza parole: protezione in più
+                if p:
+                    cur.append(p[0].lower())
+        serie.append(cur)
+    uguali = sum(1 for s in serie for a, b in zip(s, s[1:]) if a == b)
+    return uguali, sum(max(len(s) - 1, 0) for s in serie)
+
+
 def mattr(parole, finestra=100):
     if len(parole) < finestra:
         return len(set(parole)) / len(parole) if parole else 0.0
@@ -11813,9 +12095,8 @@ def misure(testo, lingua, voci_regex):
     fr = frasi(nar)
     lung = [len(PAROLA.findall(f)) for f in fr]
     cv = statistics.pstdev(lung) / statistics.mean(lung) if len(lung) > 2 and statistics.mean(lung) else None
-    prime = [PAROLA.findall(f)[0].lower() for f in fr if PAROLA.findall(f)]
-    uguali = sum(1 for a, b in zip(prime, prime[1:]) if a == b)
-    aperture = 100 * uguali / (len(prime) - 1) if len(prime) > 1 else 0.0
+    uguali, coppie = aperture_uguali(testo, lingua)
+    aperture = 100 * uguali / coppie if coppie else 0.0
     tutte = [p.lower() for _, r in comune.righe_prosa(testo) for p in PAROLA.findall(r)]
     formule = sum(len(re.findall(rx, ' '.join(r for _, r in comune.righe_prosa(testo)))) for rx in voci_regex)
     pn = len(PAROLA.findall(nar))
@@ -15359,7 +15640,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-fase-py"></a>
 #### FILE: motore/script/fase.py
 
-816 righe, sha256 `4e017133fc7db04ff972e2cc6ae7fd93169d294f32d359b78af3250070e77fb1`.
+818 righe, sha256 `2adb25243651ddb3a6fef638cc46f50ef7124f4562a38547a416edc93216adaa`.
 
 `````python
 """Macchina a stati del libro (proposta C.1, adattata al processo del passo 5). Unico script che scrive stato.yaml.
@@ -16082,6 +16363,8 @@ def cmd_esito(cartella, libro, stato, resto, argv):
                   and any(c['gate'] == gate for c in stato['correzioni_aperte']))
     if gate and not correzione and not (gate == 'controllo_fallito' and str(stato['passo']) == f'capitolo {n}'):
         raise comune.ErroreMotore(f'Gate «{gate}» aperto: prima ok o correggi.')
+    if percorso.attivo(libro) and not percorso.traduzione(libro):
+        percorso.controlla_revisione_capitolo(cartella, libro, n)   # revisione_capitolo: obbligatoria (libro.yaml)
     extra = ['--radice', argv[argv.index('--radice') + 1]] if '--radice' in argv else []
     u = dict(comune.unita(cartella, libro)).get(n)
     if u:                       # chi ha scritto l'unità (separazione dei ruoli, ruolo.py; da motore)
@@ -17241,7 +17524,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-nuovo-py"></a>
 #### FILE: motore/script/nuovo.py
 
-549 righe, sha256 `cd973e924931c0189656124cd3d19f5d4f943414270b2ef8fafab828563d9216`.
+552 righe, sha256 `779d7618c3a9b6e8f2f0c2503c941a488c313777de98acbf802ce9a5e5bc8ac9`.
 
 `````python
 """Crea un libro dal briefing (proposta B.4, C.1 fase «documenti», C.3).
@@ -17627,7 +17910,10 @@ def genera_manuale(b, libro, profilo, n_cap):
               f'- Tolleranza: ±{cap["tolleranza_budget"]:.0%} sul budget del capitolo in piano-parole.md; '
               f'±{cap["tolleranza_totale"]:.0%} sul totale.', '',
               '## 3. Frase e dialogo', '',
-              f'- Frase media: {profilo["frase_media"][0]}-{profilo["frase_media"][1]} parole.',
+              f'- Frase media: {profilo["frase_media"][0]}-{profilo["frase_media"][1]} parole.' + (
+                  ' Con la voce della banca vale l\'intervallo del registro del capitolo (scheda della voce, sezione 3; '
+                  'registro dichiarato nella scaletta): frase_media_voce del profilo.'
+                  if libro.get('voce') and profilo.get('frase_media_voce') else ''),
               f'- Dialogo: {profilo["dialogo_percento"][0]}-{profilo["dialogo_percento"][1]}% delle parole del capitolo.',
               f'- Similitudini: al massimo una ogni {profilo["similitudini_max_per_parole"]} parole.', '',
               '## 4. Chiusure', '',
@@ -18125,7 +18411,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-percorso-py"></a>
 #### FILE: motore/script/percorso.py
 
-369 righe, sha256 `2fd6baa826c15f5596fad6d7018756fe5c59928073be68c5e6c0b6b393426c1b`.
+551 righe, sha256 `2e04d91a8def2bcf2f4ec4beee20ac3183a608f954962fc20c60e0e8721439bf`.
 
 `````python
 """Percorso da casa editrice (libri con «percorso: editoriale» in libro.yaml). Lo usa fase.py.
@@ -18164,7 +18450,8 @@ INTESTAZIONE = re.compile(r'^<!--\s*zb:\s*ruolo=([\w\-]+);\s*su=([0-9a-f]{12})\s
 CANONE = '06-diagnostica/canone-proposte.md'
 NOTA_DIREZIONE = '06-diagnostica/nota-direzione.md'
 # ruolo -> fasi in cui può lavorare (zb ruolo lo controlla: la scrittura non include revisione)
-FASI_RUOLO = {'architetto-struttura': ['struttura'], 'diagnosta': ['struttura', 'struttura_manoscritto'],
+# il diagnosta lavora anche in «stesura», solo sul capitolo singolo (06-diagnostica/audit/NN.md, rapporto_capitolo)
+FASI_RUOLO = {'architetto-struttura': ['struttura'], 'diagnosta': ['struttura', 'stesura', 'struttura_manoscritto'],
               'editor-strutturale': ['struttura', 'struttura_manoscritto'], 'direttore-editoriale': ['documenti'],
               'scrittore-voce': ['pagina_campione', 'stesura', 'struttura_manoscritto'],
               'capsula': ['stesura', 'struttura_manoscritto'], 'line-editor': ['line'],
@@ -18216,6 +18503,187 @@ def rapporti(cartella, libro, fase):
     if fase == 'fedelta':
         return [('06-diagnostica/fedelta.md', 'revisore-fedelta', tutti)]
     raise comune.ErroreMotore(f'Fase senza rapporti: {fase}')
+
+
+def rapporto_capitolo(cartella, libro, n):
+    """(rapporto, ruolo, [capitolo]) della revisione del capitolo singolo in fase «stesura» (diagnosta)."""
+    trovati = dict(capitoli(cartella, libro))
+    if str(n) not in trovati:
+        raise comune.ErroreMotore(f'Capitolo «{n}» assente in 04-manoscritto')
+    return (f'06-diagnostica/audit/{nn(n)}.md', 'diagnosta', [trovati[str(n)]])
+
+
+def rel_audit(n):
+    return f'06-diagnostica/audit/{nn(n)}.md'
+
+
+def misure_rel(n):
+    return f'06-diagnostica/misure/{nn(n)}.md'
+
+
+def bloccanti_prima_della_revisione(risultati, libro):
+    """Esiti che fermano la chiamata al diagnosta: ogni KO e gli avvisi dei divieti della voce (controlli
+    «voce:<slug>:…»). Decisione dell'autore del 2026-10-21: frase media e ripetizioni ravvicinate restano avvisi (soglie
+    ancora PROPOSTA): con gli altri avvisi passano al diagnosta come righe misurate e non fermano."""
+    slug = (libro.get('voce') or {}).get('slug')
+    return [r for r in risultati if r['esito'] == 'KO' or (
+        r['esito'] == 'AVVISO' and slug and r['controllo'].startswith(f'voce:{slug}:'))]
+
+
+def da_correggere(testo):
+    """Voci «- …» della sezione «## Da correggere» di un rapporto del diagnosta («- nessuna» esclusa)."""
+    out, dentro_sez = [], False
+    for r in testo.splitlines():
+        s = r.strip()
+        if s.startswith('## '):
+            dentro_sez = s[3:].strip().lower() == 'da correggere'
+            continue
+        if dentro_sez and s.startswith('- ') and s[2:].strip().lower().rstrip('.') != 'nessuna':
+            out.append(s[2:].strip())
+    return out
+
+
+def giro_revisione(cartella, libro, n, nuovo=False):
+    """(giro, voci) della revisione del capitolo N: un solo giro completo; dopo un «non passa» e la correzione di chi
+    scrive, il secondo giro rivede solo le voci di «## Da correggere» del primo (copiato in audit/NN-giro1.md da
+    misure_prima_della_revisione). Si ferma: capitolo non corretto dopo un «non passa»; primo rapporto senza
+    «## Da correggere»; due giri già fatti (decide l'autore; --nuovo-giro, dopo il suo ok, riparte da un giro completo)."""
+    rel, _, testi = rapporto_capitolo(cartella, libro, n)
+    p = os.path.join(cartella, rel)
+    g1 = os.path.join(cartella, f'06-diagnostica/audit/{nn(n)}-giro1.md')
+    testo = open(p, encoding='utf-8').read() if os.path.isfile(p) else ''
+    righe = [r.strip() for r in testo.splitlines()]
+    if next((r for r in reversed(righe) if r), '').lower() != 'non passa':
+        if os.path.isfile(g1):
+            os.remove(g1)   # primo giro di un ciclo chiuso prima: si riparte da un giro completo (la storia resta in git)
+        return 1, []
+    m = INTESTAZIONE.match(righe[0] if righe else '')
+    if m and m.group(2) == impronta(cartella, testi):
+        raise comune.ErroreMotore(f'{rel}: «non passa» sul testo attuale del capitolo {n}. Prima la correzione mirata di '
+                                  'chi scrive, poi la nuova revisione.')
+    if os.path.isfile(g1):
+        if not nuovo:
+            raise comune.ErroreMotore(f'Capitolo {n}: due giri di revisione fatti, il secondo chiude con «non passa». '
+                                      'Decide l\'autore; un nuovo giro completo solo dopo il suo ok: '
+                                      f'«zb ruolo <libro> diagnosta {n} --nuovo-giro».')
+        os.remove(g1)       # la storia resta in git
+        return 1, []
+    voci = da_correggere(testo)
+    if not voci:
+        raise comune.ErroreMotore(f'{rel}: «non passa» senza la sezione «## Da correggere» (una riga per frase: riga, '
+                                  'frase, motivo). Il secondo giro rivede solo quelle frasi.')
+    return 2, voci
+
+
+def letture_diagnosta(cartella, libro, n, rel_cap):
+    """Righe «File da leggere» e «Canone» del diagnosta per il capitolo singolo: solo ciò che serve alla checklist
+    (capitolo, misure, frasi finali, voce sezioni 2, 3 e 6, codex filtrato per i tag della scheda, capsula del
+    capitolo precedente; il canone è scritto qui). Non servono: la preparazione dello scrittore, il manuale di stile,
+    le scelte fisse, le note della pausa di lettura, le capsule più vecchie."""
+    import capsula
+    import codex
+    import struttura
+    n = int(n)
+    leggere = [rel_cap, misure_rel(n), f'06-diagnostica/frasi-finali/{nn(n)}.md']
+    sk = struttura.schede(cartella).get(str(n)) or {}
+    leggere += codex.filtra(cartella, struttura.tag_di(sk))[0]
+    if n > 1 and os.path.isfile(os.path.join(cartella, capsula.rel(n - 1))):
+        leggere.append(capsula.rel(n - 1))
+    out = ['## File da leggere (solo questi)', ''] + [f'- {r}' for r in leggere]
+    slug = (libro.get('voce') or {}).get('slug')
+    if slug:
+        out.append(f'- scheda della voce «{slug}» (banca-voci, sola lettura): sezioni 2, 3 e 6')
+    stato = comune.leggi_yaml(os.path.join(cartella, 'stato.yaml')) or {}
+    out += ['', '## Canone (fatti bloccati)', ''] + ([f'- {x}' for x in stato.get('fatti_bloccati') or []] or ['- nessuno'])
+    return out
+
+
+def misure_prima_della_revisione(cartella, libro, profilo, n, giro=(1, [])):
+    """Misure del motore sul capitolo N prima del diagnosta (capitolo.py senza scrivere il report, audit anti-IA,
+    frasi finali di zb stile). Con un esito bloccante: ErroreMotore, niente diagnosta. Altrimenti scrive
+    06-diagnostica/frasi-finali/NN.md e 06-diagnostica/misure/NN.md (prima riga con l'impronta del capitolo):
+    le righe misurate che la sessione principale passa al diagnosta. Restituisce il percorso del file delle misure."""
+    import capitolo
+    import stile
+    import revisione
+    n = str(n)
+    met, out = capitolo.controlla(cartella, libro, profilo, n)
+    met_ia, ia = capitolo.anti_ia(cartella, libro, profilo, n, scrivi=False)
+    tutti = out + comune.applica_eccezioni(ia, libro)
+    blocca = bloccanti_prima_della_revisione(tutti, libro)
+    if blocca:
+        elenco = '; '.join(f'{r["controllo"]} {r["esito"]}' + (f' (riga {r["riga"]})' if r['riga'] else '')
+                           + (f': {r["dettaglio"]}' if r['dettaglio'] else '') for r in blocca[:8])
+        raise comune.ErroreMotore(f'Capitolo {n}: misure del motore non superate ({len(blocca)}): {elenco}. '
+                                  'Non chiamare il diagnosta: prima una correzione mirata di chi scrive, poi di nuovo '
+                                  f'«zb ruolo <libro> diagnosta {n}».')
+    _, _, testi = rapporto_capitolo(cartella, libro, n)
+    p = dict(comune.unita(cartella, libro))[n]
+    ff = stile.frasi_finali(open(p, encoding='utf-8').read(), comune.lingue()[libro['lingua']])
+    comune.scrivi(cartella, f'06-diagnostica/frasi-finali/{nn(n)}.md', stile.tabella_frasi_finali(n, ff))
+    righe = [f'<!-- zb: misure; su={revisione.impronta(cartella, testi)} -->',
+             f'# Misure del capitolo {n} per il diagnosta', '',
+             'Scritte da «zb ruolo <libro> diagnosta N» prima della revisione: il capitolo ha superato le misure del '
+             'motore (nessun KO e nessun avviso dei divieti della voce). Il diagnosta '
+             'non rifà queste misure.', '',
+             '| Misura | Valore |', '|---|---|',
+             f'| Parole | {met.get("parole")} |',
+             f'| Frase media | {met.get("frase_media")} (intervallo {met.get("frase_media_intervallo", "—")}) |',
+             f'| Dialogo | {met.get("dialogo_percento")}% |',
+             f'| Ripetizioni ravvicinate | {met_ia.get("ripetizioni_per_mille")} per mille |',
+             f'| Aperture uguali | {met_ia.get("aperture_uguali")}% |',
+             f'| Frasi finali | {len(ff)}, in 06-diagnostica/frasi-finali/{nn(n)}.md |', '',
+             '## Righe misurate (avvisi che restano, con la riga)', '']
+    righe += stile.tabella(tutti) if tutti else ['Nessun avviso.']
+    righe += [''] + letture_diagnosta(cartella, libro, n, rel_cap=testi[0])
+    if giro[0] == 2:
+        import shutil
+        shutil.copyfile(os.path.join(cartella, rel_audit(n)), os.path.join(cartella, f'06-diagnostica/audit/{nn(n)}-giro1.md'))
+        righe += ['', '## Giro 2: solo queste frasi', '',
+                  f'Il primo giro è in 06-diagnostica/audit/{nn(n)}-giro1.md. Rivedi solo queste voci sul testo corretto: '
+                  'per ognuna «risolta» o «non risolta» con il motivo; non rifare la checklist intera.', '']
+        righe += [f'- {v}' for v in giro[1]]
+    else:
+        righe += ['', '## Giro 1: revisione completa', '',
+                  'Checklist intera del ruolo; nel rapporto, prima dell\'ultima riga, la sezione «## Da correggere» (una '
+                  'voce «- r.N «frase»: motivo» per ogni punto bloccante, oppure «- nessuna»).']
+    rel = misure_rel(n)
+    comune.scrivi(cartella, rel, '\n'.join(righe) + '\n')
+    return rel
+
+
+def controlla_revisione_capitolo(cartella, libro, n):
+    """Con «revisione_capitolo: obbligatoria» in libro.yaml (fase «stesura»): il rapporto del diagnosta sul capitolo
+    N deve esistere, essere scritto sulla versione attuale del capitolo e chiudere con la riga «passa».
+    Si ferma con ErroreMotore e il motivo; senza il campo non fa nulla."""
+    if libro.get('revisione_capitolo') != 'obbligatoria' or not str(n).isdigit():
+        return
+    rel, ruolo, testi = rapporto_capitolo(cartella, libro, n)
+    p = os.path.join(cartella, rel)
+    aiuto = (f'«zb ruolo <libro> diagnosta {n}» dà la prima riga; il diagnosta scrive il rapporto in una sessione '
+             'separata da chi ha scritto il capitolo e chiude con la riga «passa» o «non passa».')
+    if not os.path.isfile(p):
+        raise comune.ErroreMotore(f'Revisione del capitolo {n} mancante: {rel} (libro.yaml: revisione_capitolo: '
+                                  f'obbligatoria). {aiuto}')
+    righe = [r.strip() for r in open(p, encoding='utf-8').read().splitlines()]
+    m = INTESTAZIONE.match(righe[0] if righe else '')
+    attuale = impronta(cartella, testi)
+    if not m or m.group(1) != ruolo:
+        raise comune.ErroreMotore(f'{rel}: prima riga senza l\'intestazione del diagnosta. {aiuto}')
+    if m.group(2) != attuale:
+        raise comune.ErroreMotore(f'{rel}: revisione scritta su un\'altra versione del capitolo {n} (impronta '
+                                  f'{m.group(2)}, attuale {attuale}). Serve una nuova revisione del testo attuale.')
+    ultima = next((r for r in reversed(righe) if r), '').lower()
+    if ultima == 'non passa':
+        raise comune.ErroreMotore(f'{rel}: il capitolo {n} «non passa» la revisione. Correzione unica di chi scrive, '
+                                  'poi nuova revisione.')
+    if ultima != 'passa':
+        raise comune.ErroreMotore(f'{rel}: l\'ultima riga deve essere «passa» o «non passa» (trovato «{ultima[:40]}»).')
+    pm = os.path.join(cartella, misure_rel(n))     # le misure del motore vengono prima del diagnosta
+    prima = open(pm, encoding='utf-8').readline().strip() if os.path.isfile(pm) else ''
+    if prima != f'<!-- zb: misure; su={attuale} -->':
+        raise comune.ErroreMotore(f'{misure_rel(n)}: misure del motore assenti o scritte su un\'altra versione del '
+                                  f'capitolo {n}. Prima del diagnosta: «zb ruolo <libro> diagnosta {n}».')
 
 
 def impronta(cartella, testi):
@@ -18626,7 +19094,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-prepara-py"></a>
 #### FILE: motore/script/prepara.py
 
-97 righe, sha256 `f6bcb8ceb04228bb6cd67122f341dbcb55c6d91c86744324cc903b23912cb958`.
+118 righe, sha256 `ce70ad5922b933fd3eb861dc4bcadcb4eb856b4615fef99989b3a889b1f831ca`.
 
 `````python
 """Preparazione di un capitolo per lo scrittore (comando «zb prepara <libro> <N>»).
@@ -18637,6 +19105,8 @@ scrittore deve leggere, e nient'altro:
 - la scheda del capitolo N da 03-struttura/05-scaletta.md; si ferma (codice 2) se mancano funzione,
   conflitto, cambiamento, informazione data, gancio, polarità emotiva o sottotesto dei dialoghi;
 - i file del codex con i tag della scheda (@char, @loc), e gli avvisi per i tag senza scheda;
+- con una voce in libro.yaml, dove leggere la scheda della voce (sezioni 2, 3 e 6; gli esempi «debole → forte» solo
+  se la scheda li ha) e i divieti; si ferma se la scheda manca;
 - il canone (fatti bloccati di stato.yaml);
 - le capsule dei capitoli precedenti e il registro delle promesse; si ferma se manca la capsula N-1;
 - le ultime righe del capitolo precedente (per la continuità del ritmo, al massimo 6 righe di prosa);
@@ -18649,6 +19119,7 @@ import sys
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
+import voce  # noqa: E402
 import capsula  # noqa: E402
 import codex  # noqa: E402
 import struttura  # noqa: E402
@@ -18698,6 +19169,8 @@ def prepara(cartella, libro, n):
     out += [f'- {x}' for x in stato.get('fatti_bloccati') or []] or ['- nessuno']
     if note in leggere:
         out += ['', '## Note dell\'autore alla pausa di lettura', '', f'Valgono per questo capitolo: {note} (nei file da leggere).']
+    if (libro.get('voce') or {}).get('slug'):
+        out += voce_da_leggere(libro['voce']['slug'])
     out += ['', '## File da leggere', ''] + [f'- {r}' for r in leggere]
     out += [f'- AVVISO {x}: nessuna scheda nel codex' for x in ignoti]
     if coda:
@@ -18706,6 +19179,22 @@ def prepara(cartella, libro, n):
     rel = f'06-diagnostica/preparazione/{n:02d}.md'
     comune.scrivi(cartella, rel, '\n'.join(out) + '\n')
     return rel, len(leggere), totale, ignoti
+
+
+def voce_da_leggere(slug):
+    """Righe della sezione «Voce» della preparazione. Si ferma se la banca o la scheda della voce mancano: lo
+    scrittore deve leggerla prima di scrivere. Gli esempi «debole → forte» si nominano solo se la scheda li ha."""
+    b = voce.banca()
+    p = voce.scheda(b, slug)
+    if not os.path.isfile(p):
+        raise comune.ErroreMotore(f'Scheda della voce «{slug}» assente: {p}. Lo scrittore non può leggerla: '
+                                  'controlla ZB_BANCA_VOCI e il campo voce di libro.yaml (zb voce verifica <slug>).')
+    n = voce.esempi_debole_forte(b, slug)
+    sez6 = (f'sezione 6 (campione e {n} esempi originali «versione debole → versione forte»: mostrano la funzione da '
+            'imitare, non frasi da copiare)' if n else 'sezione 6 (campione)')
+    return ['', '## Voce (banca-voci, sola lettura)', '',
+            f'Prima di scrivere: `zb voce mostra {slug}` (tutti i blocchi) oppure `{p}`. Da leggere sempre: '
+            f'sezione 2 (regole), sezione 3 (misure del registro del capitolo), {sez6}; poi `voci/{slug}/divieti.yaml`.']
 
 
 def main(argv):
@@ -18731,7 +19220,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-prove-py"></a>
 #### FILE: motore/script/prove.py
 
-3132 righe, sha256 `9a7cd9ed252e51fdde9d1809333eb2a637269cbcbb5c932780dab1f80336d7bf`.
+3362 righe, sha256 `b21f9b29fb0b681880fb7366336addb9f4538c798fadc3e54e10e70f622bc45d`.
 
 `````python
 """Prove ripetibili del motore (comando «zb prove»).
@@ -18897,6 +19386,35 @@ def passo_1(A):
           A['separazione']['nome_vietato_in_copia'], sep(nome_vietato), sez)
     esito('separazione.py', 'libro.yaml fuori dai mini-libri',
           A['separazione']['libro_yaml_fuori_posto'], sep(yaml_fuori), sez)
+
+    # nomi vietati dai rami di origin: un ramo con solo motore/ non è un ramo di libro; uno con libri/<slug>/libro.yaml sì
+    import separazione
+    r = tempfile.mkdtemp(dir=TMP)
+    G = dict(ENV, GIT_AUTHOR_NAME='prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
+             GIT_COMMITTER_NAME='prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
+
+    def g(*a):
+        return subprocess.run(['git', *a], cwd=os.path.join(r, 'lavoro'), env=G, capture_output=True, text=True)
+    subprocess.run(['git', 'init', '-q', '--bare', os.path.join(r, 'origine.git')], env=G, capture_output=True)
+    os.makedirs(os.path.join(r, 'lavoro'))
+    g('init', '-q', '-b', 'lavoro')
+    shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'lavoro', 'motore', 'prove', 'mini-libro'))
+    g('add', '-A')
+    g('commit', '-q', '-m', 'motore')
+    g('remote', 'add', 'origin', os.path.join(r, 'origine.git'))
+    g('push', '-q', 'origin', 'lavoro:solo-motore-di-prova')
+    libro = os.path.join(r, 'lavoro', 'libri', 'storia-inventata', 'libro.yaml')
+    os.makedirs(os.path.dirname(libro))
+    open(libro, 'w', encoding='utf-8').write('titolo: Storia inventata\n')
+    g('add', '-A')
+    g('commit', '-q', '-m', 'libro')
+    g('push', '-q', 'origin', 'lavoro:libro/storia-inventata-di-prova')
+    g('fetch', '-q', 'origin')
+    nomi = separazione.nomi_dinamici(os.path.join(r, 'lavoro', 'motore'))
+    esito('separazione.py', 'ramo di origin con solo motore/: nome vietato',
+          A['separazione']['ramo_solo_motore_vietato'], 'sì' if 'solo-motore-di-prova' in nomi else 'no', sez)
+    esito('separazione.py', 'ramo di origin con libri/<slug>/libro.yaml: nome vietato',
+          A['separazione']['ramo_di_libro_vietato'], 'sì' if 'storia-inventata-di-prova' in nomi else 'no', sez)
 
     c = copia_motore()
     viol = os.path.join(c, 'prove', 'esiti', '_violazione_di_prova.tmp')
@@ -21079,10 +21597,63 @@ def voce(A):
                 os.environ['ZB_BANCA_VOCI'] = prima
         return sorted(f'{r["controllo"]}|{r["esito"]}' for r in ris if r['controllo'].startswith('voce:voce-di-prova:'))
 
+    def divieti_dettagli(L, b, profilo_extra=None):
+        py = os.path.join(L, 'libro.yaml')
+        lb = yaml.safe_load(open(py, encoding='utf-8'))
+        lb['voce'] = {'slug': 'voce-di-prova', 'ambientazione': 'altro'}
+        open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+        prima = os.environ.pop('ZB_BANCA_VOCI', None)
+        os.environ['ZB_BANCA_VOCI'] = b
+        try:
+            cartella, libro, profilo = comune.carica_libro(L)
+            profilo.update(profilo_extra or {})
+            return stile.controlla_libro(cartella, libro, profilo)['1'][1]
+        finally:
+            os.environ.pop('ZB_BANCA_VOCI', None)
+            if prima is not None:
+                os.environ['ZB_BANCA_VOCI'] = prima
+
     esito('stile.py', '(g) divieti della voce: libro senza voce', A['divieti_senza_voce'], divieti_trovati(False, banca), sez)
     esito('stile.py', '(g) divieti della voce: libro con voce, senza ZB_BANCA_VOCI', A['divieti_senza_banca'],
           divieti_trovati(True, None), sez)
     esito('stile.py', '(g) divieti della voce: libro con voce e banca', A['divieti_con_voce'], divieti_trovati(True, banca), sez)
+    # (h) campo «massimo» dei divieti della voce (voce.py lo porta a stile.py): avviso solo oltre il massimo
+    d = tempfile.mkdtemp(dir=TMP)
+    bm = shutil.copytree(banca, os.path.join(d, 'banca'))
+    pdm = os.path.join(bm, 'voci', 'voce-di-prova', 'divieti.yaml')
+    base_d = open(pdm, encoding='utf-8').read()
+    open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + ''.join(f'  {x}\n' for x in A['massimo_divieti'].splitlines()))
+    Lm = copia_libro('mini-libro')
+    open(os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write('\n' + A['frase_massimo'] + '\n')
+    trovati = []
+    for r in divieti_dettagli(Lm, bm):
+        if r['controllo'].split(':')[-1] in ('stanca_uno', 'stanca_due', 'stanca_ogni'):
+            trovati.append(f'{r["controllo"].split(":")[-1]}|{r["esito"]}|{r["dettaglio"]}')
+    esito('stile.py', '(h) massimo dei divieti: 2 occorrenze con massimo 1 (un avviso), con massimo 2 (nessuno), senza '
+          'massimo (un avviso per occorrenza, come prima)', A['massimo_esiti'], sorted(trovati), sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n  ' + A['massimo_non_valido'] + '\n')
+    p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bm)
+    esito('voce.py', '(h) massimo non intero: verifica KO con il motivo', A['massimo_verifica'],
+          f'{p.returncode} / {"«massimo» non valido" in p.stdout} / {tb(p)}', sez)
+    # (i) gruppi di forme: un solo massimo complessivo su più divieti (per esempio tutte le chiuse a sentenza)
+    forme = ''.join(f'  {x}\n' for x in A['gruppo_divieti'].splitlines())
+    Lg = copia_libro('mini-libro')
+    open(os.path.join(Lg, '04-manoscritto', '01-la-farmacia.md'), 'a', encoding='utf-8').write('\n' + A['frase_gruppo'] + '\n')
+
+    def gruppo_esiti(con_gruppi):
+        open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + (forme if con_gruppi else forme.replace(', gruppo: chiuse', ''))
+                                               + ('gruppi:\n  chiuse: {massimo: 1}\n' if con_gruppi else ''))
+        return sorted(f'{r["controllo"].split(":", 1)[1]}|{r["esito"]}|{r["dettaglio"].split(":")[0]}'
+                      for r in divieti_dettagli(Lg, bm) if 'forma_' in r['controllo'] or ':chiuse:' in r['controllo'])
+    esito('stile.py', '(i) gruppo di forme: due forme con massimo 1 ciascuna, una occorrenza per forma: un avviso '
+          'per il gruppo (massimo 1 in tutto)', A['gruppo_esiti'], gruppo_esiti(True), sez)
+    esito('stile.py', '(i) senza gruppi (come prima): nessun avviso, ogni forma resta nel suo massimo', '[]',
+          str(gruppo_esiti(False)), sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d.rstrip('\n') + '\n' + forme)
+    p = zb(M, 'voce', 'verifica', 'voce-di-prova', b=bm)
+    esito('voce.py', '(i) divieto in un gruppo non definito: verifica KO con il motivo', '1 / True / False',
+          f'{p.returncode} / {"che non è definito in «gruppi»" in p.stdout} / {tb(p)}', sez)
+    open(pdm, 'w', encoding='utf-8').write(base_d)
     # (f) schema: voce senza slug rifiutata; zb aiuto; modello del briefing
     Lm = copia_libro('mini-libro')
     open(os.path.join(Lm, 'libro.yaml'), 'a', encoding='utf-8').write('voce: {ambientazione: altro}\n')
@@ -21602,6 +22173,18 @@ def agenti_capsule_consumo(A):
     esito('agenti.py', 'attiva: ramo motore fermo / senza --ok niente / con --ok tutti gli agenti / modello capsula / disattiva',
           A['attiva'], f'{p1.returncode} / {p2.returncode} {senza_ok} / {p3.returncode} {len(attivi)} / '
           f'{"model: haiku" in cap} / {p4.returncode} {os.path.isdir(dest)}', sez)
+    # agenti come li installa il motore: diagnosta in sola lettura (niente Bash né Edit: P4 di docs/PROPOSTE_MOTORE.md);
+    # letture ridotte: diagnosi/ non per il capitolo singolo; lo scrittore non rilegge scaletta e piano parole interi
+    gen = {os.path.basename(x): t for x, t in agenti.piano(b.r, M)}
+    strumenti = re.search(r'(?m)^tools:(.*)$', gen['diagnosta.md']).group(1)
+    sv = gen['scrittore-voce.md']
+    esito('agenti.py', 'agenti installati: diagnosta senza Bash né Edit / diagnosi/ non per il capitolo singolo / '
+          'scrittore-voce senza 05-scaletta.md e 08-piano-parole.md interi (preparazione al loro posto)', A['letture'],
+          f'{"Bash" not in strumenti and "Edit" not in strumenti} / {"non per il capitolo singolo" in gen["diagnosta.md"]} / '
+          f'{"Non leggere 03-struttura/05-scaletta.md intero" in sv and "scaletta del capitolo, piano parole" not in sv}', sez)
+    modello = lambda t: (re.search(r'(?m)^model:\s*(\S+)', t) or [None, None])[1]
+    esito('agenti.py', 'modello dichiarato negli agenti installati: diagnosta (il più economico) / scrittore-voce (invariato)',
+          A['modello_diagnosta'], f'{modello(gen["diagnosta.md"])} / {modello(sv)}', sez)
     # modello centrale: si alza solo il ruolo indicato nel file di dati
     mc = copia_motore()
     pm = os.path.join(mc, 'dati', 'modelli-ruoli.yaml')
@@ -21769,6 +22352,28 @@ def anti_ia_prove(A):
     p2 = esegui(os.path.join(S, 'capitolo.py'), L, '3')
     esito('capitolo.py', 'anti_ia.modalita: blocco in libro.yaml: KO e codice 1', A['blocco'],
           f'{p2.returncode} / {"anti-ia:aperture_uguali | KO" in open(os.path.join(L, "06-diagnostica", "capitoli", "03.md"), encoding="utf-8").read()}', sez)
+    # aperture uguali: una battuta di dialogo tra due frasi con lo stesso soggetto interrompe la serie
+    con_battuta = 'Il ragazzo spegne il motore.\n\n— Lascialo acceso.\n\nIl ragazzo gira di nuovo la chiave.\n'
+    stessa_riga = 'Il ragazzo spegne il motore. — Lascialo acceso. Il ragazzo gira di nuovo la chiave.\n'
+    consecutive = 'Il ragazzo spegne il motore. Il ragazzo gira di nuovo la chiave.\n'
+    esito('antiia.py', 'aperture uguali: battuta in mezzo (riga a parte / stessa riga) non conta; due frasi consecutive '
+          'con lo stesso soggetto contano (coppie uguali; % della misura)', A['aperture_battuta'],
+          f'{antiia.aperture_uguali(con_battuta, "it")[0]} / {antiia.aperture_uguali(stessa_riga, "it")[0]} / '
+          f'{antiia.aperture_uguali(consecutive, "it")[0]} / {antiia.misure(con_battuta, "it", [])["aperture_uguali"]} / '
+          f'{antiia.misure(consecutive, "it", [])["aperture_uguali"]}', sez)
+    # segmenti senza parole («* * *», «...», «1984.») tra frasi di narrazione: nessun errore; con frasi() che li
+    # lasciasse passare (simulato), la frase senza parole si salta
+    senza_parole = 'Il ragazzo esce.\n\n* * *\n\nIl ragazzo torna. ... 1984. Lei resta.\n'
+    originale = antiia.frasi
+    try:
+        antiia.frasi = lambda t: re.split(r'(?<=[.!?…])\s+', ' '.join(t.split()))
+        simulato = antiia.aperture_uguali(senza_parole, 'it')
+    except IndexError as e:
+        simulato = f'IndexError {e}'
+    finally:
+        antiia.frasi = originale
+    esito('antiia.py', 'aperture uguali: segmenti senza parole tra frasi di narrazione (reale / frasi() senza filtro)',
+          A['aperture_senza_parole'], f'{antiia.aperture_uguali(senza_parole, "it")} / {simulato}', sez)
     R = copia_libro('mini-libro-romance')
     _, lr, pr = comune.carica_libro(R)
     gr = lambda lb: next((g for k, g, _ in antiia.audit(R, lb, '2', profilo=pr, scrivi=False)['2'][1]
@@ -21807,7 +22412,121 @@ def correttore(A):
           f'{p.returncode} / {"già pronto" in p.stdout} / {"export ZB_LANGUAGETOOL=" in p.stdout}', sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore}
+FRASI_FINALI_TESTO = """# 1 — Prova
+
+Prima frase. Seconda frase che chiude.
+
+— Vieni? — chiede lei.
+
+— Davvero? — dice lui.
+
+Lui resta alla finestra.
+
+* * *
+
+— Ultima battuta.
+"""
+
+
+def frasi_finali_prove(A):
+    """P3: elenco delle frasi finali (stile.frasi_finali) e report 06-diagnostica/frasi-finali/NN.md di zb stile."""
+    sez = 'frasi_finali'
+    import stile
+    ff = stile.frasi_finali(FRASI_FINALI_TESTO, comune.lingue()['it'])
+    esito('stile.py', 'frasi finali: narrazione, ultima battuta di uno scambio, fine scena, attacco della battuta',
+          A['elenco'], [f'{v["riga"]}|{v["tipo"]}|{v["frase"]}' for v in ff], sez)
+    c = copia_libro('mini-libro')
+    esegui(os.path.join(S, 'stile.py'), c)
+    d = os.path.join(c, '06-diagnostica', 'frasi-finali')
+    cartella, libro, _ = comune.carica_libro(c)
+    testo = open(os.path.join(c, '04-manoscritto', '01-la-farmacia.md'), encoding='utf-8').read()
+    n = len(stile.frasi_finali(testo, comune.lingue()[libro['lingua']]))
+    rep = open(os.path.join(d, '01.md'), encoding='utf-8').read() if os.path.isfile(os.path.join(d, '01.md')) else ''
+    righe = [r for r in rep.splitlines() if re.match(r'^\| \d+ \|', r)]
+    esito('stile.py', 'zb stile: un report per capitolo numerato (non per l\'interludio), una riga per frase',
+          A['report'], f'{sorted(os.listdir(d)) if os.path.isdir(d) else []} / {n > 0 and len(righe) == n} / '
+          f'{"| Riga | Tipo | Frase finale |" in rep}', sez)
+
+
+TABELLA_REGISTRI = """
+| Elemento | Base (autore A) | Registro freddo (autore B) | Registro corto (autore C) |
+|---|---|---|---|
+| frase media | 12-18 parole | 15-25 parole | 5-10 parole |
+| frase più lunga | 35 parole | 45 parole | 20 parole |
+"""
+
+
+def frase_media_registro(A):
+    """Frase media per registro: con «frase_media_voce: true» nel profilo l'intervallo del capitolo viene dal registro
+    dichiarato nella scaletta e dalla tabella della sezione 3 della scheda della voce (voce.registri,
+    stile.intervallo_frase_media); override del libro e profili senza il campo tengono l'intervallo del profilo."""
+    sez = 'frase_media_registro'
+    import stile
+    import voce as voce_mod
+    d = tempfile.mkdtemp(dir=TMP)
+    b = shutil.copytree(os.path.join(M, 'prove', 'banca-voci-prova'), os.path.join(d, 'banca'))
+    sc = os.path.join(b, 'voci', 'voce-di-prova', 'scheda.md')
+    t = open(sc, encoding='utf-8').read()
+    open(sc, 'w', encoding='utf-8').write(t.replace('## 3. Ritmo e sintassi\n', '## 3. Ritmo e sintassi\n' + TABELLA_REGISTRI, 1))
+    reg = voce_mod.registri(b, 'voce-di-prova')
+    esito('voce.py', 'registri della voce dalla riga «frase media» della sezione 3', A['registri'],
+          str(sorted(reg.items())), sez)
+    esito('voce.py', 'voce senza tabella nella sezione 3: nessun registro', '{}',
+          str(voce_mod.registri(os.path.join(M, 'prove', 'banca-voci-prova'), 'voce-di-prova')), sez)
+    prof = {'frase_media': [9, 14], 'frase_media_voce': True}
+    casi = [
+        (prof, {}, {'pov': 'Anna; registro corto, presente'}),
+        (prof, {}, {'pov': 'Anna; registro freddo e poi registro corto'}),
+        (prof, {}, {'pov': 'Anna; giorno 2'}),
+        (prof, {'override': [{'campo': 'frase_media', 'valore': [8, 12], 'motivo': 'prova'}]}, {'pov': 'registro corto'}),
+        ({'frase_media': [9, 14]}, {}, {'pov': 'registro corto'}),
+        (prof, {}, {'pov': 'registro lirico'}),
+    ]
+    ott = []
+    for pr, lb, scheda in casi:
+        x, y, nota = stile.intervallo_frase_media(pr, lb, reg, scheda)
+        ott.append(f'{x}-{y}' + (f' {nota}' if nota else ''))
+    esito('stile.py', 'intervallo della frase media: corto, primo registro dichiarato, senza registro (base), '
+          'override del libro, profilo senza campo, registro sconosciuto', A['intervalli'], ott, sez)
+    ott = [stile.intervallo_frase_media(prof, {}, {}, {'pov': 'registro corto'})[:2]]
+    esito('stile.py', 'voce senza registri: intervallo del profilo', '[(9, 14)]', str(ott), sez)
+    # integrazione: mini-libro con voce, scaletta con i registri dei capitoli 1 e 2, profilo con il campo acceso
+    c = copia_libro('mini-libro')
+    py = os.path.join(c, 'libro.yaml')
+    lb = yaml.safe_load(open(py, encoding='utf-8'))
+    lb['voce'] = {'slug': 'voce-di-prova', 'ambientazione': 'altro'}
+    open(py, 'w', encoding='utf-8').write(yaml.safe_dump(lb, allow_unicode=True, sort_keys=False))
+    os.makedirs(os.path.join(c, comune.STRUTTURA), exist_ok=True)
+    open(os.path.join(c, comune.STRUTTURA, '05-scaletta.md'), 'w', encoding='utf-8').write(
+        '# Scaletta\n\n## Capitolo 1 - Primo\n- Punto di vista, luogo e tempo: Anna; registro corto, presente\n\n'
+        '## Capitolo 2 - Secondo\n- Punto di vista, luogo e tempo: Anna; registro freddo\n')
+    prima = os.environ.pop('ZB_BANCA_VOCI', None)
+    os.environ['ZB_BANCA_VOCI'] = b
+    try:
+        cartella, libro, profilo = comune.carica_libro(c)
+        senza = stile.controlla_libro(cartella, libro, dict(profilo))
+        profilo['frase_media_voce'] = True
+        con = stile.controlla_libro(cartella, libro, profilo)
+    finally:
+        os.environ.pop('ZB_BANCA_VOCI', None)
+        if prima is not None:
+            os.environ['ZB_BANCA_VOCI'] = prima
+
+    def fm(es):
+        return [f'{n}: {m.get("frase_media_intervallo")} ' +
+                next((r['esito'] for r in o if r['controllo'] == 'frase_media'), 'OK') for n, (m, o) in es.items() if n.isdigit()]
+    esito('stile.py', 'mini-libro con voce e scaletta, profilo senza il campo: intervallo del profilo', A['senza_campo'],
+          fm(senza), sez)
+    esito('stile.py', 'mini-libro con voce e scaletta, frase_media_voce: true: intervallo del registro di ogni capitolo, '
+          'fuori intervallo AVVISO (non KO)', A['con_campo'], fm(con), sez)
+    det = [r['dettaglio'] for r in con['2'][1] if r['controllo'] == 'frase_media']
+    esito('stile.py', 'avviso della frase media del registro: «intervallo non calibrato sull\'autore»', 'True',
+          str(bool(det) and det[0].endswith("intervallo non calibrato sull'autore")), sez)
+    th = comune.carica_profilo('thriller')
+    esito('profili/thriller.yaml', 'thriller: la voce prevale sulla frase media', 'True', str(th.get('frase_media_voce')), sez)
+
+
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro}
 
 
 def main(argv):
@@ -21871,7 +22590,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-prove-editoriale-py"></a>
 #### FILE: motore/script/prove_editoriale.py
 
-689 righe, sha256 `83d681c61e9a69722139c97f9d51bd0c11ad019fac6466ca36f166d23bde1298`.
+868 righe, sha256 `00255d1a6eea16179cc0646d81c51b545e4da3716fd48d04fbafb3914f46bc4e`.
 
 `````python
 """Prove del percorso da casa editrice (le lancia prove.py; da sola: python3 -B prove_editoriale.py).
@@ -22076,6 +22795,7 @@ def percorso(sez='percorso editoriale'):
     os.makedirs(m)
     shutil.copyfile(os.path.join(F, 'capitoli', '01-il-molo.md'), os.path.join(m, '01-il-molo.md'))
     salva(r, 'scrittore: capitolo 1')
+    revisione_in_stesura(r, L, m, sez)
     p = zb(L, 'esito', '.', '1')
     esito('fase.py', 'esito 1: controlli OK', 0, p.returncode, sez)
     rep1 = os.path.join(L, '06-diagnostica', 'capitoli', '01.md')
@@ -22218,6 +22938,156 @@ def percorso(sez='percorso editoriale'):
     return r, L
 
 
+def revisione_in_stesura(r, L, m, sez):
+    """Diagnosta in fase «stesura» sul capitolo singolo e «revisione_capitolo: obbligatoria» in zb esito (P2).
+    Alla fine libro.yaml e il capitolo tornano come prima; il rapporto resta in 06-diagnostica/audit/."""
+    # misure del motore prima del revisore: un capitolo con un KO (frase vietata della lista nera) → non chiamare il diagnosta
+    cap = os.path.join(m, '01-il-molo.md')
+    testo_cap = open(cap, encoding='utf-8').read()
+    open(cap, 'w', encoding='utf-8').write(testo_cap + '\nTrattenne il respiro senza accorgersene.\n')
+    p = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    misure = os.path.join(L, '06-diagnostica', 'misure', '01.md')
+    esito('ruolo.py', 'misure prima del revisore: capitolo con un KO, «non chiamare il diagnosta», nessuna prima riga, '
+          'nessun file delle misure', '2 / True / False / False',
+          f'{p.returncode} / {"Non chiamare il diagnosta" in p.stderr and "voce:respiro_senza_accorgersene KO" in p.stderr} / '
+          f'{"Prima riga:" in p.stdout} / {os.path.isfile(misure)}', sez)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)
+    # un divieto della voce (voce di prova, «oltremodo»: AVVISO di stile.py) ferma anche lui la chiamata al diagnosta
+    ly = os.path.join(L, 'libro.yaml')
+    ly_orig = open(ly, encoding='utf-8').read()
+    open(ly, 'w', encoding='utf-8').write(ly_orig.rstrip('\n') + '\nvoce: {slug: voce-di-prova, ambientazione: altro}\n')
+    open(cap, 'w', encoding='utf-8').write(testo_cap + '\nEra oltremodo stanca.\n')
+    p = zb(L, 'ruolo', '.', 'diagnosta', '1', env=dict(E, ZB_BANCA_VOCI=os.path.join(M, 'prove', 'banca-voci-prova')))
+    esito('ruolo.py', 'misure prima del revisore: capitolo con un divieto della voce (avviso), «non chiamare il diagnosta»',
+          '2 / True / False', f'{p.returncode} / {"Non chiamare il diagnosta" in p.stderr and "voce:voce-di-prova:oltremodo AVVISO" in p.stderr} / '
+          f'{"Prima riga:" in p.stdout}', sez)
+    open(ly, 'w', encoding='utf-8').write(ly_orig)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)
+    p = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    esito('ruolo.py', 'diagnosta in fase stesura sul capitolo 1: ammesso, rapporto audit/01.md con la prima riga',
+          '0 / True / True', f'{p.returncode} / {"Rapporto: 06-diagnostica/audit/01.md" in p.stdout} / '
+          f'{"Prima riga: <!-- zb: ruolo=diagnosta; su=" in p.stdout}', sez)
+    tm = open(misure, encoding='utf-8').read() if os.path.isfile(misure) else ''
+    su = p.stdout.split('su=')[1][:12] if 'su=' in p.stdout else '?'
+    esito('ruolo.py', 'misure superate: misure/01.md con la stessa impronta della prima riga, righe misurate e frasi '
+          'finali scritte', 'True / True / True',
+          f'{tm.startswith(f"<!-- zb: misure; su={su} -->")} / {"## Righe misurate" in tm and "| Frase media |" in tm} / '
+          f'{os.path.isfile(os.path.join(L, "06-diagnostica", "frasi-finali", "01.md"))}', sez)
+    # letture del diagnosta per il capitolo singolo: solo la sezione «File da leggere» delle misure, con il canone dentro
+    sezione = tm.split('## File da leggere (solo questi)', 1)[1].split('\n## ', 1)[0] if '## File da leggere' in tm else ''
+    da_leggere = [x[2:] for x in sezione.splitlines() if x.startswith('- ')]
+    pr = open(os.path.join(L, '06-diagnostica', 'preparazione', '01.md'), encoding='utf-8').read()
+    da_prep = [x[2:] for x in pr.split('## File da leggere', 1)[1].splitlines() if x.startswith('- ') and 'AVVISO' not in x]
+    esito('percorso.py', 'letture del diagnosta (capitolo 1): capitolo, misure, frasi finali, codex filtrato; niente '
+          'preparazione, manuale, scelte fisse; canone nel file (file elencati: misure / preparazione dello scrittore)',
+          'True / 3 / False / True / 6 5', f'{"04-manoscritto/01-il-molo.md" in da_leggere and "06-diagnostica/frasi-finali/01.md" in da_leggere} / '
+          f'{sum(x.startswith("02-bibbia/codex/") for x in da_leggere)} / '
+          f'{any("manuale-di-stile" in x or "09-scelte-fisse" in x or "preparazione/" in x for x in da_leggere)} / '
+          f'{"## Canone (fatti bloccati)" in tm} / {len(da_leggere)} {len(da_prep)}', sez)
+    # frase media e ripetizioni ravvicinate restano avvisi: non fermano, finiscono tra le righe misurate. Con i libri di
+    # prova un avviso di frase media vero non nasce (serve una voce con la riga «frase media»): si aggiunge ai risultati
+    import capitolo
+    import percorso
+    cartella_p, libro_p, profilo_p = comune.carica_libro(L)
+    vero = capitolo.controlla
+    capitolo.controlla = lambda *a: (lambda m, o: (m, o + [
+        {'unita': '1', 'controllo': 'frase_media', 'esito': 'AVVISO', 'riga': None,
+         'dettaglio': '17.0 fuori da 9-14 (registro corto): intervallo non calibrato sull\'autore'},
+        {'unita': '1', 'controllo': 'anti-ia:ripetizioni_ravvicinate', 'esito': 'AVVISO', 'riga': None,
+         'dettaglio': 'P2 14.0 gruppi per mille sopra 12.0'}]))(*vero(*a))
+    try:
+        percorso.misure_prima_della_revisione(cartella_p, libro_p, profilo_p, '1')
+        avanti = 'avanti'
+    except comune.ErroreMotore as e:
+        avanti = f'fermo: {e}'
+    finally:
+        capitolo.controlla = vero
+    tm2 = open(misure, encoding='utf-8').read()
+    esito('percorso.py', 'misure prima del revisore: solo avvisi di frase media e ripetizioni ravvicinate, si va avanti '
+          'e restano tra le righe misurate', 'avanti / True / True',
+          f'{avanti} / {"frase_media" in tm2.split("## Righe misurate", 1)[1]} / '
+          f'{"anti-ia:ripetizioni_ravvicinate" in tm2.split("## Righe misurate", 1)[1]}', sez)
+    p = zb(L, 'ruolo', '.', 'diagnosta')
+    esito('ruolo.py', 'diagnosta in fase stesura senza numero di capitolo: rifiutato', '2 / True',
+          f'{p.returncode} / {"un capitolo alla volta" in p.stderr}', sez)
+    py = os.path.join(L, 'libro.yaml')
+    lb = open(py, encoding='utf-8').read()
+    open(py, 'w', encoding='utf-8').write(lb.rstrip('\n') + '\nrevisione_capitolo: obbligatoria\n')
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'revisione_capitolo obbligatoria, rapporto assente: esito fermo, capitolo non accettato',
+          '2 / True / None', f'{p.returncode} / {"audit/01.md" in p.stderr and "mancante" in p.stderr} / '
+          f'{stato(L)["ultimo_capitolo_scritto"]}', sez)
+    sorgente = os.path.join(F, 'rapporti', 'audit-01.md')
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+    pa = os.path.join(L, '06-diagnostica', 'audit', '01.md')
+    open(pa, 'w', encoding='utf-8').write(open(pa, encoding='utf-8').read().replace('\npassa\n', '\nnon passa\n'))
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'revisione con «non passa»: esito fermo', '2 / True', f'{p.returncode} / {"«non passa»" in p.stderr}', sez)
+    os.remove(pa)       # dopo un «non passa» sullo stesso testo zb ruolo si ferma (giro di revisione): si riparte da capo
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+    open(cap, 'a', encoding='utf-8').write('\n')
+    p = zb(L, 'esito', '.', '1')
+    esito('fase.py', 'revisione su un\'altra versione del capitolo: esito fermo', '2 / True',
+          f'{p.returncode} / {"altra versione" in p.stderr}', sez)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+    import percorso   # il caso valido si prova senza zb esito, che accetterebbe il capitolo prima delle prove successive
+    try:
+        cartella, libro, _ = comune.carica_libro(L)
+        percorso.controlla_revisione_capitolo(cartella, libro, '1')
+        ottenuto = 'nessun fermo'
+    except comune.ErroreMotore as e:
+        ottenuto = str(e)
+    os.rename(misure, misure + '.via')
+    try:
+        percorso.controlla_revisione_capitolo(cartella, libro, '1')
+        senza_misure = 'nessun fermo'
+    except comune.ErroreMotore as e:
+        senza_misure = 'fermo' if 'misure del motore assenti' in str(e) else str(e)
+    os.rename(misure + '.via', misure)
+    p = zb(L, 'agenti', 'prossimo', '.')
+    open(py, 'w', encoding='utf-8').write(lb)
+    esito('fase.py', 'revisione sulla versione attuale con «passa»: la revisione non ferma', 'nessun fermo', ottenuto, sez)
+    esito('fase.py', 'revisione con «passa» ma senza le misure del motore: esito fermo', 'fermo', senza_misure, sez)
+    esito('agenti.py', 'agenti prossimo con revisione_capitolo obbligatoria: zb ruolo diagnosta prima del revisore',
+          '0 / True', f'{p.returncode} / {"diagnosta N (misure del motore prima del revisore" in p.stdout}', sez)
+    # un solo giro completo: il secondo rivede solo le frasi di «## Da correggere» del primo
+    g1 = os.path.join(L, '06-diagnostica', 'audit', '01-giro1.md')
+
+    def rapporto(corpo):
+        q = zb(L, 'ruolo', '.', 'diagnosta', '1')
+        riga = next((x.split('Prima riga: ', 1)[1] for x in q.stdout.splitlines() if x.startswith('Prima riga: ')), '')
+        open(pa, 'w', encoding='utf-8').write(riga + '\n# Revisione\n\n' + corpo)
+        return q
+    rapporto('## Da correggere\n\n- r.3 «Il molo era grigio.»: chiusa a sentenza\n\nnon passa\n')
+    p1 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    open(cap, 'a', encoding='utf-8').write('\nNives chiuse la porta del magazzino.\n')
+    p2 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    tm = open(misure, encoding='utf-8').read()
+    esito('ruolo.py', 'giro di revisione: «non passa» sul testo non corretto fermo / dopo la correzione giro 2 con le sole '
+          'frasi del primo, primo giro conservato', '2 True / 0 True True True',
+          f'{p1.returncode} {"sul testo attuale" in p1.stderr} / {p2.returncode} {"Giro di revisione: 2" in p2.stdout} '
+          f'{"## Giro 2: solo queste frasi" in tm and "- r.3 «Il molo era grigio.»: chiusa a sentenza" in tm} '
+          f'{os.path.isfile(g1)}', sez)
+    riga2 = next((x.split('Prima riga: ', 1)[1] for x in p2.stdout.splitlines() if x.startswith('Prima riga: ')), '')
+    open(pa, 'w', encoding='utf-8').write(riga2 + '\n# Revisione 2\n\n## Da correggere\n\n- r.3: non risolta\n\nnon passa\n')
+    open(cap, 'a', encoding='utf-8').write('\nNives spense la luce del magazzino.\n')
+    p3 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    p4 = zb(L, 'ruolo', '.', 'diagnosta', '1', '--nuovo-giro')
+    esito('ruolo.py', 'secondo giro con «non passa»: fermo, decide l\'autore / --nuovo-giro: di nuovo un giro completo',
+          '2 True / 0 True False', f'{p3.returncode} {"due giri di revisione fatti" in p3.stderr} / {p4.returncode} '
+          f'{"Giro di revisione: 1 (completo)" in p4.stdout} {os.path.isfile(g1)}', sez)
+    os.remove(pa)
+    rapporto('## Esito\n\nnon passa\n')
+    open(cap, 'a', encoding='utf-8').write('\nNives tornò sul molo.\n')
+    p5 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    esito('ruolo.py', '«non passa» senza la sezione «## Da correggere»: fermo', '2 / True',
+          f'{p5.returncode} / {"senza la sezione «## Da correggere»" in p5.stderr}', sez)
+    open(cap, 'w', encoding='utf-8').write(testo_cap)      # come prima: capitolo originale, rapporto «passa»
+    os.remove(pa)
+    intesta(L, sorgente, '06-diagnostica/audit/01.md', 'diagnosta', 1)
+
+
 def pausa_note(r, L, sez):
     """Pausa di lettura con le note (su una copia del repository, alla stessa pausa) e valori di pausa_lettura."""
     d = tempfile.mkdtemp(dir=TMP)
@@ -22234,6 +23104,34 @@ def pausa_note(r, L, sez):
           f'{pp.returncode} / {os.path.isfile(prep) and "- 06-diagnostica/note-lettura.md" in open(prep).read()}', sez)
     ly = os.path.join(L2, 'libro.yaml')
     orig = open(ly, encoding='utf-8').read()
+    open(ly, 'w', encoding='utf-8').write(orig.rstrip('\n') + '\nvoce: {slug: voce-di-prova, ambientazione: altro}\n')
+    banca = os.path.join(M, 'prove', 'banca-voci-prova')
+
+    def prepara_con(b):
+        p = zb(L2, 'prepara', '.', '3', env=dict(E, ZB_BANCA_VOCI=b))
+        return p, (open(prep, encoding='utf-8').read() if os.path.isfile(prep) else '')
+    if os.path.isfile(prep):
+        os.remove(prep)
+    pp, t = prepara_con(banca)       # voce di prova: sezione 6 con il solo campione, nessun esempio «debole → forte»
+    esito('prepara.py', 'libro con voce senza esempi: sezioni 2, 3 e 6 e divieti, gli esempi «debole → forte» non nominati',
+          '0 / True / True / False', f'{pp.returncode} / {"## Voce (banca-voci, sola lettura)" in t} / '
+          f'{"sezione 6 (campione)" in t and "voci/voce-di-prova/divieti.yaml" in t} / {"debole" in t}', sez)
+    d = tempfile.mkdtemp(dir=TMP)
+    b2 = shutil.copytree(banca, os.path.join(d, 'banca'))
+    sc = os.path.join(b2, 'voci', 'voce-di-prova', 'scheda.md')
+    st = open(sc, encoding='utf-8').read()
+    i = st.index('## 7.')
+    open(sc, 'w', encoding='utf-8').write(st[:i] + '### 6.1 Esempi\n\n1. Debole: — Resto qui, perché da qui vedo la porta.\n'
+                                          '   Forte: — Resto qui.\n2. Debole: Chiuse. Certe cose finiscono così.\n'
+                                          '   Forte: Chiuse e girò la chiave.\n3. Il caso opposto, a metà riga. Debole: Lui annuì.\n'
+                                          '   Forte: Il socio annuì.\n\n' + st[i:])
+    pp, t = prepara_con(b2)
+    esito('prepara.py', 'libro con voce con esempi: la sezione 6 nomina i 3 esempi «debole → forte» (uno a metà riga)',
+          '0 / True', f'{pp.returncode} / {"3 esempi originali «versione debole → versione forte»" in t}', sez)
+    os.remove(sc)
+    pp, t = prepara_con(b2)
+    esito('prepara.py', 'scheda della voce assente: zb prepara si ferma con il percorso', '2 / True',
+          f'{pp.returncode} / {"Scheda della voce «voce-di-prova» assente" in pp.stderr}', sez)
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 6'))
     p6 = zb(L2, 'stato', '.')
     open(ly, 'w', encoding='utf-8').write(orig.replace('pausa_lettura: 3', 'pausa_lettura: 5'))
@@ -23266,19 +24164,27 @@ if __name__ == '__main__':
 <a id="file-motore-script-ruolo-py"></a>
 #### FILE: motore/script/ruolo.py
 
-216 righe, sha256 `8ed6f54fa512b266f2823c067bb0243a4f8b6038a22870f710b3036e98ae6d1f`.
+238 righe, sha256 `e1f716473629f53046479ed144760f08e70b4e4161012879254e9d37ae83aece`.
 
 `````python
 """Ruoli del percorso editoriale: chi può lavorare in quale fase, la prima riga del suo rapporto, e la separazione
 tra chi scrive e chi revisiona (un ruolo per sessione). Unico comando: «zb ruolo».
 
-Uso: python3 -B ruolo.py <libro> <ruolo> [N]     (comando «zb ruolo»; non scrive nulla)
+Uso: python3 -B ruolo.py <libro> <ruolo> [N]     (comando «zb ruolo»; non scrive nulla, tranne il diagnosta in
+                                                   «stesura»: misure del capitolo prima della revisione, sotto)
      python3 -B ruolo.py <libro> stato             (modalità della separazione, ruoli delle sessioni, scritture)
 Controllo per fase (ccr): si ferma (codice 2) se il ruolo non lavora nella fase attuale del libro: è il controllo
 meccanico di «la scrittura non include revisione» (line-editor solo in fase «line», correttore-italiano solo in
 «copy»…). Per i ruoli di revisione stampa il percorso del rapporto e la prima riga da copiare:
 «<!-- zb: ruolo=<ruolo>; su=<impronta> -->», con l'impronta del testo rivisto (struttura, capitolo N o
 manoscritto). «zb pronto» rifiuta un rapporto con un'impronta diversa da quella del testo attuale.
+Diagnosta in fase «stesura» (capitolo N): prima le misure del motore (percorso.misure_prima_della_revisione: capitolo.py,
+audit anti-IA, frasi finali); con un KO o un avviso dei divieti della voce si ferma (codice 2) e il diagnosta non
+si chiama; altrimenti scrive 06-diagnostica/misure/NN.md e frasi-finali/NN.md. Frase media e ripetizioni ravvicinate
+restano avvisi: compaiono tra le righe misurate e non fermano.
+Un solo giro completo (percorso.giro_revisione): dopo un «non passa» e la correzione, il secondo giro rivede solo le
+voci di «## Da correggere» del primo (copiato in audit/NN-giro1.md); dopo il secondo «non passa» si ferma, decide
+l'autore («--nuovo-giro», dopo il suo ok, riparte da un giro completo).
 
 Un ruolo per sessione (da motore, 971b6df). Tutto sta in <libro>/.zb/ (ignorata da git):
 - ruoli.yaml      sessione → {ruolo, data}: lo scrive «zb avvio <libro> [--ruolo R]»;
@@ -23446,7 +24352,7 @@ def main(argv):
                                   + ', '.join(percorso.FASI_RUOLO))
     if args[1] == 'stato':
         return stato_ruoli(comune.trova_libro(args[0]))
-    cartella, libro, _ = comune.carica_libro(args[0])
+    cartella, libro, profilo = comune.carica_libro(args[0])
     ruolo, n = args[1], (args[2] if len(args) > 2 else None)
     if not percorso.attivo(libro):
         raise comune.ErroreMotore('Il libro non segue il percorso editoriale (manca «percorso: editoriale» in libro.yaml).')
@@ -23463,6 +24369,20 @@ def main(argv):
         return 0
     attesi = [r for r in percorso.rapporti(cartella, libro, fs)
               if r[1] == ruolo] if fs in ('struttura', *percorso.REVISIONI) else []
+    if fs == 'stesura' and ruolo == 'diagnosta':     # revisione del capitolo singolo (06-diagnostica/audit/NN.md)
+        if not n:
+            raise comune.ErroreMotore('Uso: ruolo <libro> diagnosta <N>: in fase «stesura» il diagnosta rivede un '
+                                      'capitolo alla volta')
+        attesi = [percorso.rapporto_capitolo(cartella, libro, n)]
+        # prima le misure del motore: con un esito bloccante si ferma e il diagnosta non si chiama
+        giro = percorso.giro_revisione(cartella, libro, n, nuovo='--nuovo-giro' in argv)
+        misure = percorso.misure_prima_della_revisione(cartella, libro, profilo, n, giro)
+        print(f'Giro di revisione: {giro[0]}' + (f' (solo le {len(giro[1])} frasi del primo giro, in {misure})'
+                                                  if giro[0] == 2 else ' (completo)'))
+        print(f'Misure del motore superate: {misure} (righe misurate) e 06-diagnostica/frasi-finali/{percorso.nn(n)}.md. '
+              'La sessione principale le passa al diagnosta con la prima riga qui sotto.')
+        print('Ultima riga del rapporto: «passa» oppure «non passa» (con revisione_capitolo: obbligatoria la legge '
+              'zb esito).')
     if fs in ('line', 'copy'):
         if not n:
             raise comune.ErroreMotore(f'Uso: ruolo <libro> {ruolo} <N> (un capitolo alla volta)')
@@ -23584,7 +24504,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-separazione-py"></a>
 #### FILE: motore/script/separazione.py
 
-153 righe, sha256 `0a30fdd0043f81392b3e45629ceb49f481422d53d10bc888f65b164e5e4d3ec1`.
+155 righe, sha256 `80335a433ce43fc2f58103ae3a414ed0e7cf4d3887d9cc2c8b8def048b3f9b76`.
 
 `````python
 """Controlla che il motore non contenga libri (proposta B.9).
@@ -23640,7 +24560,9 @@ def font_ammessi(motore):
 
 def nomi_dinamici(motore):
     """Nomi da non scrivere mai, ricavati senza scriverli: rami di libro di origin (con libri/…/libro.yaml; ultima parte del nome,
-    senza il suffisso casuale, solo se di più parole) e slug della banca-voci (se ZB_BANCA_VOCI è impostata)."""
+    senza il suffisso casuale, solo se di più parole) e slug della banca-voci (se ZB_BANCA_VOCI è impostata).
+    L'albero di ogni ramo si legge dalla radice del repository (--full-tree): senza, git ls-tree lanciato dentro motore/
+    dà percorsi relativi (prove/mini-libro/libro.yaml) e ogni ramo che contiene il motore sembrava un ramo di libro."""
     out = set()
     c = subprocess.run(['git', '-C', motore, 'for-each-ref', '--format=%(refname:short)', 'refs/remotes/origin'],
                        capture_output=True, text=True)
@@ -23649,7 +24571,7 @@ def nomi_dinamici(motore):
         nome = r.split('/', 1)[1] if '/' in r else r
         if nome in ('HEAD', 'motore', attuale) or nome.startswith('ccr-'):
             continue
-        albero = subprocess.run(['git', '-C', motore, 'ls-tree', '-r', '--name-only', r], capture_output=True, text=True).stdout
+        albero = subprocess.run(['git', '-C', motore, 'ls-tree', '-r', '--full-tree', '--name-only', r], capture_output=True, text=True).stdout
         if not re.search(r'(?m)^libri/', albero) and not re.search(r'(?m)^(?!motore/).*libro\.yaml$', albero):
             continue                # non è un ramo di libro: il suo nome non è un nome di libro
         ultimo = re.sub(r'-[a-z0-9]{6}$', '', nome.split('/')[-1])
@@ -23745,7 +24667,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-stile-py"></a>
 #### FILE: motore/script/stile.py
 
-238 righe, sha256 `d3f99b28ed9546f109c6113b95aed8944d17ce6e1d1cb9482c48b5659b922616`.
+331 righe, sha256 `c2bd58f929c3bbb08ce472a1f4cb08399eba265917f29c92f776a0bafcfcbaeb`.
 
 `````python
 """Controlli di stile (proposta B.3, B.6, C.2).
@@ -23762,6 +24684,10 @@ Voci ad ambito «libro»: contatore cumulato; non contano le unità in consentit
 con conta_per: unita il tetto è sul numero di unità in cui la voce compare.
 Ogni voce può avere escludi_pattern: le occorrenze che cadono dentro una sua corrispondenza non contano.
 Esiti: KO (blocca) o AVVISO (da guardare). Report: <libro>/06-diagnostica/stile.md.
+Frase media: con «frase_media_voce: true» nel profilo l'intervallo del capitolo viene dal registro dichiarato
+nella scaletta e dalla scheda della voce (intervallo_frase_media); senza, dal profilo o dall'override del libro.
+Per ogni capitolo anche 06-diagnostica/frasi-finali/NN.md: la frase finale di ogni paragrafo di narrazione e
+dell'ultima battuta di ogni scambio, con il numero di riga (elenco per chi rivede; nessun esito).
 """
 import os
 import re
@@ -23770,6 +24696,7 @@ import sys
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
+import struttura  # noqa: E402
 import voce  # noqa: E402
 
 # «come l'» seguito da un verbo («a come l'aveva lasciata») vuol dire «in che modo»: non è una similitudine
@@ -23814,6 +24741,71 @@ def metriche(testo, lingua):
     }
 
 
+def frasi_finali(testo, lingua):
+    """Frase finale di ogni paragrafo di narrazione e dell'ultima battuta di ogni scambio (battuta seguita da
+    narrazione, da un separatore di scena o dalla fine): [{'riga', 'tipo', 'frase'}]. Paragrafo: righe di prosa
+    consecutive. Il motore elenca e non giudica: se la frase commenta o riassume lo decide chi rivede."""
+    righe = testo.splitlines()
+    paragrafi = []
+    for n, r in comune.righe_prosa(testo):
+        if paragrafi and n == paragrafi[-1][1] + 1:
+            paragrafi[-1] = (paragrafi[-1][0], n, paragrafi[-1][2] + ' ' + r.strip())
+        else:
+            paragrafi.append((n, n, r.strip()))
+    out = []
+    for i, (a, b, t) in enumerate(paragrafi):
+        dopo = paragrafi[i + 1] if i + 1 < len(paragrafi) else None
+        fine_scena = dopo is None or any(x.strip() and not any(c.isalnum() for c in x)
+                                         for x in righe[b:dopo[0] - 1])
+        battuta = t.startswith(_dialogo(lingua))
+        if battuta and not fine_scena and dopo[2].startswith(_dialogo(lingua)):
+            continue
+        frasi = []
+        for f in re.split(r'(?<=[.!?…])\s+', t):
+            # «— Davvero? — dice lui.»: l'attacco della battuta resta con la sua frase
+            if frasi and f.startswith(_dialogo(lingua)) and f.lstrip(''.join(_dialogo(lingua)) + ' ')[:1].islower():
+                frasi[-1] += ' ' + f
+            elif comune.parole(f):
+                frasi.append(f)
+        if not frasi:
+            continue
+        tipo = ('battuta' if battuta else 'narrazione') + (', fine scena' if fine_scena else '')
+        out.append({'riga': b, 'tipo': tipo, 'frase': frasi[-1]})
+    return out
+
+
+def tabella_frasi_finali(nome, voci):
+    """Report di 06-diagnostica/frasi-finali/NN.md: una riga per frase, colonna del giudizio vuota."""
+    righe = [f'# Frasi finali — unità {nome}', '',
+             'Elenco del motore (zb stile): frase finale di ogni paragrafo di narrazione e dell\'ultima battuta di '
+             'ogni scambio. Il giudizio (chiusa a sentenza o no: tolta la frase, il paragrafo dice ancora tutto?) '
+             'lo scrive chi rivede, frase per frase, nel proprio rapporto.', '',
+             f'Frasi: {len(voci)}.', '', '| Riga | Tipo | Frase finale |', '|---|---|---|']
+    righe += [f'| {v["riga"]} | {v["tipo"]} | {v["frase"].replace("|", "/")} |' for v in voci]
+    return '\n'.join(righe) + '\n'
+
+
+def intervallo_frase_media(profilo, libro, registri, scheda):
+    """(a, b, nota) della frase media di un capitolo. Con «frase_media_voce: true» nel profilo la voce prevale:
+    il registro dichiarato nella scheda del capitolo (05-scaletta.md, «registro <nome>»; se ne dichiara più d'uno,
+    il primo, cioè il dominante) dà l'intervallo della riga «frase media» della scheda della voce (sezione 3);
+    senza registro dichiarato vale il registro «base» della voce, se c'è. Un override di frase_media in
+    libro.yaml (decisione dell'autore per quel libro) e i profili senza il campo tengono l'intervallo del profilo."""
+    a, b = profilo['frase_media']
+    override = any(isinstance(o, dict) and o.get('campo') == 'frase_media' for o in libro.get('override') or [])
+    if not profilo.get('frase_media_voce') or override or not registri:
+        return a, b, ''
+    testo = ' '.join(str(v) for k, v in (scheda or {}).items() if not k.startswith('_'))
+    for m in re.finditer(r'(?i)\bregistro\s+(\w+)', testo):
+        if m.group(1).lower() in registri:
+            x, y = registri[m.group(1).lower()]
+            return x, y, f'registro {m.group(1).lower()}, dalla voce'
+    if 'base' in registri:
+        x, y = registri['base']
+        return x, y, 'registro base, dalla voce'
+    return a, b, ''
+
+
 def occorrenze(prosa, pattern):
     rx = re.compile(pattern)
     return [(n, m.group(0)) for n, r in prosa for m in rx.finditer(r)]
@@ -23833,15 +24825,19 @@ def occorrenze_voce(prosa, v):
     return occ
 
 
-def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
+def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervallo=None):
     out = []
     prosa = comune.righe_prosa(testo)
     met = metriche(testo, lingua)
     capitolo = nome.isdigit()
     if capitolo:
-        a, b = profilo['frase_media']
+        a, b, nota = intervallo or (profilo['frase_media'][0], profilo['frase_media'][1], '')
+        met['frase_media_intervallo'] = f'{a}-{b}' + (f' ({nota})' if nota else '')
         if not a <= met['frase_media'] <= b:
-            out.append(risultato(nome, 'frase_media', 'KO', None, f'{met["frase_media"]} fuori da {a}-{b}'))
+            # l'intervallo della voce è una scelta della voce, non ancora calibrata sull'autore: avviso, non blocco
+            out.append(risultato(nome, 'frase_media', 'AVVISO' if nota else 'KO', None,
+                                 f'{met["frase_media"]} fuori da {a}-{b}' +
+                                 (f' ({nota}): intervallo non calibrato sull\'autore' if nota else '')))
         a, b = profilo['dialogo_percento']
         if not a <= met['dialogo_percento'] <= b:
             out.append(risultato(nome, 'dialogo', 'KO', None, f'{met["dialogo_percento"]}% fuori da {a}-{b}%'))
@@ -23865,6 +24861,7 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
         a, b = profilo['frase_media']
         if not a <= met['frase_media'] <= b:
             out.append(risultato(nome, 'frase_media', 'AVVISO', None, f'{met["frase_media"]} fuori da {a}-{b}'))
+    gruppi = {}       # gruppo di forme dei divieti della voce: (massimo complessivo, occorrenze di tutte le forme)
     for v in voci:
         if v.get('ambito') == 'libro':
             continue
@@ -23885,6 +24882,8 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
             occ = [(n, t) for n, t in occ if n in dialogo]
             if not occ:
                 continue
+        if v.get('gruppo'):
+            gruppi.setdefault(v['gruppo'], (v['massimo_gruppo'], []))[1].extend(occ)
         mod = v['modalita']
         if mod == 'vieta':
             out += [risultato(nome, f'voce:{v["id"]}', 'KO', n, t) for n, t in occ]
@@ -23899,6 +24898,12 @@ def controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua):
                                          f'{len(occ)} occorrenze (massimo {v["massimo"]})'))
             else:
                 out += [risultato(nome, f'voce:{v["id"]}', 'AVVISO', n, t) for n, t in occ]
+    for g, (m, occ) in sorted(gruppi.items()):
+        if len(occ) > m:
+            occ = sorted(occ)
+            out.append(risultato(nome, f'voce:{g}:gruppo', 'AVVISO', occ[m][0],
+                                 f'{len(occ)} occorrenze delle forme del gruppo (massimo {m} in tutto): righe '
+                                 + ', '.join(str(n) for n, _ in occ)))
     for vc in libro.get('vincoli_capitolo') or []:
         occ = occorrenze(prosa, vc['pattern'])
         if not occ:
@@ -23924,11 +24929,14 @@ def controlla_libro(cartella, libro, profilo):
     """{unità: (metriche, risultati)} con le voci ad ambito «libro» cumulate in ordine di lettura."""
     lingua = comune.lingue()[libro['lingua']]
     voci, filtro = voci_del_libro(libro)
+    registri = voce.registri_del_libro(libro) if profilo.get('frase_media_voce') else {}
+    schede = struttura.schede(cartella) if registri else {}
     esiti = {}
     contatori = {}
     for nome, p in comune.unita(cartella, libro):
         testo = open(p, encoding='utf-8').read()
-        met, out = controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua)
+        intervallo = intervallo_frase_media(profilo, libro, registri, schede.get(nome)) if nome.isdigit() else None
+        met, out = controlla_unita(nome, testo, profilo, libro, voci, filtro, lingua, intervallo)
         prosa = comune.righe_prosa(testo)
         for v in voci:
             if v.get('ambito') != 'libro':
@@ -23964,13 +24972,14 @@ def main(argv):
     esiti = controlla_libro(cartella, libro, profilo)
     scelta = [args[1]] if len(args) > 1 else list(esiti)
     righe = ['# Controlli di stile', '', f'Libro: {libro["titolo"]} — profilo: {libro["profilo"]}.', '',
-             '| Unità | Parole | Frase media | Dialogo % |', '|---|---|---|---|']
+             '| Unità | Parole | Frase media | Intervallo | Dialogo % |', '|---|---|---|---|---|']
     tutti = []
     for u in scelta:
         if u not in esiti:
             raise comune.ErroreMotore(f'Unità «{u}» inesistente')
         met, out = esiti[u]
-        righe.append(f'| {u} | {met["parole"]} | {met["frase_media"]} | {met["dialogo_percento"]} |')
+        righe.append(f'| {u} | {met["parole"]} | {met["frase_media"]} | {met.get("frase_media_intervallo", "—")} | '
+                     f'{met["dialogo_percento"]} |')
         tutti += out
     righe += ['', '## Esiti', ''] + (tabella(tutti) if tutti else ['Nessun KO e nessun avviso.']) + ['']
     testo = '\n'.join(righe)
@@ -23978,6 +24987,12 @@ def main(argv):
         print(testo)
     else:
         print('scritto', comune.scrivi(cartella, '06-diagnostica/stile.md', testo))
+        lingua = comune.lingue()[libro['lingua']]
+        for nome, p in comune.unita(cartella, libro):
+            if nome in scelta and nome.isdigit():
+                ff = frasi_finali(open(p, encoding='utf-8').read(), lingua)
+                print('scritto', comune.scrivi(cartella, f'06-diagnostica/frasi-finali/{int(nome):02d}.md',
+                                               tabella_frasi_finali(nome, ff)))
     return 1 if any(r['esito'] == 'KO' for r in tutti) else 0
 
 
@@ -24942,7 +25957,7 @@ if __name__ == '__main__':
 <a id="file-motore-script-voce-py"></a>
 #### FILE: motore/script/voce.py
 
-203 righe, sha256 `ecc5d3a7737825f0e852cc28bb225731b98f253c16e755f7dc1f1190a25a3fe9`.
+271 righe, sha256 `0f0ea9d9be86111cb5e7243db851986c4a9838090f48d5d9b7f7a20fb873c55b`.
 
 `````python
 """Voci narrative della banca-voci (comando «zb voce»). Sola lettura.
@@ -24954,8 +25969,10 @@ La banca-voci è un repository separato, fuori dal motore: il percorso si legge 
 ZB_BANCA_VOCI, mai scritto nel codice. Struttura attesa:
   indice.yaml                 voci: [{slug, nome, genere, stato: pronta | da_completare}]
   voci/<slug>/scheda.md       7 sezioni «## N. Titolo», nell'ordine di SEZIONI
-  voci/<slug>/divieti.yaml    divieti: [{id, espressione | pattern, tipo, nota}]: espressioni vietate
-                              della voce; stile.py le aggiunge alle voci del libro (modalità avviso)
+  voci/<slug>/divieti.yaml    divieti: [{id, espressione | pattern, tipo, nota, massimo}]: espressioni vietate
+                              della voce; stile.py le aggiunge alle voci del libro (modalità avviso). Con
+                              «massimo: N» (intero ≥ 0, facoltativo) l'avviso scatta solo oltre N occorrenze
+                              nell'unità; senza, ogni occorrenza è un avviso (come prima)
 - lista: le voci dell'indice, con genere e stato.
 - mostra: la scheda in blocchi di circa 120 righe (come revisione.py); N predefinito 1.
 - verifica: la voce è nell'indice, ha la scheda con le 7 sezioni e il campo «ambientazione:»
@@ -25009,7 +26026,9 @@ def scheda(b, slug):
 
 
 def divieti(b, slug):
-    """Voci di stile (modalità avviso) da voci/<slug>/divieti.yaml; FERMO se il file manca o non è valido."""
+    """Voci di stile (modalità avviso) da voci/<slug>/divieti.yaml; FERMO se il file manca o non è valido.
+    Facoltativi: «massimo» per divieto; «gruppi: {nome: {massimo: N}}» e «gruppo: nome» sul divieto per un limite
+    complessivo su più forme (per esempio tutte le chiuse a sentenza: una per capitolo in tutto)."""
     p = os.path.join(b, 'voci', slug, 'divieti.yaml')
     if not os.path.isfile(p):
         raise comune.ErroreMotore(f'divieti.yaml assente: voci/{slug}/divieti.yaml')
@@ -25020,6 +26039,13 @@ def divieti(b, slug):
     elenco = dati.get('divieti') if isinstance(dati, dict) else None
     if not isinstance(elenco, list) or not elenco:
         raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: serve «divieti:», una lista non vuota')
+    gruppi = dati.get('gruppi') or {}
+    if not isinstance(gruppi, dict):
+        raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «gruppi» deve essere una mappa nome: {{massimo: N}}')
+    for g, gv in gruppi.items():
+        m = gv.get('massimo') if isinstance(gv, dict) else None
+        if isinstance(m, bool) or not isinstance(m, int) or m < 0:
+            raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: gruppo «{g}» senza «massimo» intero ≥ 0 ({m!r})')
     out = []
     for i, d in enumerate(elenco):
         if not isinstance(d, dict) or not d.get('id') or not (d.get('espressione') or d.get('pattern')):
@@ -25029,8 +26055,22 @@ def divieti(b, slug):
             re.compile(pattern)
         except re.error as e:
             raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: pattern non valido in «{d["id"]}»: {e}')
-        out.append({'id': f'{slug}:{d["id"]}', 'espressione': d.get('espressione'), 'pattern': pattern,
-                    'modalita': 'avviso', 'nota': d.get('nota') or f'divieto della voce {slug}'})
+        voce = {'id': f'{slug}:{d["id"]}', 'espressione': d.get('espressione'), 'pattern': pattern,
+                'modalita': 'avviso', 'nota': d.get('nota') or f'divieto della voce {slug}'}
+        if 'massimo' in d:
+            m = d['massimo']
+            if isinstance(m, bool) or not isinstance(m, int) or m < 0:
+                raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «massimo» non valido in «{d["id"]}» '
+                                          f'({m!r}): serve un intero ≥ 0')
+            voce['massimo'] = m      # stile.py: AVVISO solo oltre il massimo di occorrenze nell'unità
+        if 'gruppo' in d:
+            if d['gruppo'] not in gruppi:
+                raise comune.ErroreMotore(f'voci/{slug}/divieti.yaml: «{d["id"]}» nel gruppo «{d["gruppo"]}», che non è '
+                                          'definito in «gruppi»')
+            # stile.py: tutte le forme del gruppo contano insieme contro un solo massimo per unità
+            voce['gruppo'] = f'{slug}:{d["gruppo"]}'
+            voce['massimo_gruppo'] = gruppi[d['gruppo']]['massimo']
+        out.append(voce)
     return out
 
 
@@ -25044,6 +26084,49 @@ def divieti_del_libro(libro):
         return divieti(banca(), v['slug'])
     except comune.ErroreMotore:
         return []
+
+
+def esempi_debole_forte(b, slug):
+    """Numero di esempi «versione debole → versione forte» nella sezione 6 della scheda: ogni «Debole:» (a inizio
+    riga, numerato, o a metà riga dopo una frase di presentazione), contati solo se la sezione ha anche «Forte:»."""
+    corpo = sezioni(open(scheda(b, slug), encoding='utf-8').read()).get(6, ('', ''))[1]
+    deboli = len(re.findall(r'(?<!\w)Debole:', corpo))
+    forti = len(re.findall(r'(?<!\w)Forte:', corpo))
+    return deboli if forti else 0
+
+
+def registri(b, slug):
+    """{registro: [a, b]} dalla riga «frase media» della tabella nella sezione 3 della scheda («Ritmo e sintassi»):
+    il nome del registro è l'intestazione della colonna senza la parentesi e senza la parola «registro»
+    («Registro corto (Winslow)» → «corto»); l'intervallo è il primo «a-b» della cella. {} se la tabella manca."""
+    p = scheda(b, slug)
+    if not os.path.isfile(p):
+        return {}
+    corpo = sezioni(open(p, encoding='utf-8').read()).get(3, ('', ''))[1]
+    tabella = [[c.strip() for c in r.strip().strip('|').split('|')] for r in corpo.splitlines()
+               if r.strip().startswith('|') and not re.match(r'^\|[\s|:-]+\|?$', r.strip())]
+    riga = next((r for r in tabella[1:] if r and r[0].lower().startswith('frase media')), None)
+    if not tabella or not riga:
+        return {}
+    out = {}
+    for testa, cella in zip(tabella[0][1:], riga[1:]):
+        nome = re.sub(r'\(.*?\)', '', testa)
+        nome = re.sub(r'(?i)\bregistro\b', '', nome).strip().lower()
+        m = re.search(r'(\d+)\s*-\s*(\d+)', cella)
+        if nome and m and int(m.group(1)) <= int(m.group(2)):
+            out[nome] = [int(m.group(1)), int(m.group(2))]
+    return out
+
+
+def registri_del_libro(libro):
+    """Registri della voce scelta in libro.yaml; {} senza voce, senza ZB_BANCA_VOCI o con la voce non leggibile."""
+    v = libro.get('voce') or {}
+    if not v.get('slug'):
+        return {}
+    try:
+        return registri(banca(), v['slug'])
+    except comune.ErroreMotore:
+        return {}
 
 
 def sezioni(testo):
@@ -25602,4 +26685,4 @@ if __name__ == '__main__':
 
 ## 5. Verifica di completezza
 
-250 file su 250 riestratti da questo documento e uguali all'originale.
+251 file su 251 riestratti da questo documento e uguali all'originale.

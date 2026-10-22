@@ -5,15 +5,39 @@ riprendi da lì».
 
 ## Stato
 
+- Unione del 2026-10-21: il ramo di lavoro è `motore`. `integrazione-editoriale` (9c54726) è entrato in `motore` con
+  `git merge -s ours origin/motore` (ec8fe47: la storia di `motore` resta come antenato, il contenuto è quello di
+  `integrazione-editoriale`), più la correzione di `script/separazione.py` (1092a89); push fast-forward di `motore`
+  971b6df → 1092a89. Copia di sicurezza del motore di prima: archivio (3) in `docs/MAPPA_RAMI.md` (971b6df).
+  Suite su 1092a89: 672/672 OK, 5 saltate (LanguageTool assente), senza `ZB_BANCA_VOCI`.
 - Lavoro sul motore del 2026-10-20: integrazione nel ramo `integrazione-editoriale` (repository
   `NGTAProtocol/ZeusBot`, D1). Base: ramo ccr (`origin/ccr-d1e12273-izx78k`, d2b8814); aggiunte dal ramo `motore`
   (`origin/motore`, 971b6df). I rami `motore` e `main` non sono toccati (`main` in questo repository non esiste, D2).
   Ultimo commit: `git log -1` (prima del commit dei documenti derivati: 951a42c, allineato a origin).
 - Punti dell'integrazione: 1-12 e 8b fatti e su origin; dopo: `CLAUDE.md` allineato (D17, 05facce), subagenti e
   capsula nei file del pacchetto (D18, 951a42c); documenti derivati nel commit che porta questo file.
-- Suite: **637/637 OK** (dal punto 12; invariata con D17 e D18), 0 saltate, con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
+- Suite al punto 12: 637/637 OK (invariata con D17 e D18); oggi **675/675 OK**, 0 saltate (2026-10-21), con LanguageTool 6.8 (`ZB_LANGUAGETOOL`), senza `ZB_BANCA_VOCI` (D12). Comando,
   dalla radice: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (a schermo solo le righe non OK;
   tabella intera in `zb-prove-ultimo.md` nella cartella temporanea).
+- Lavoro del 2026-10-21 (problema di stile della prova): P1 campo `massimo` dei divieti della voce (1e11337); P2
+  diagnosta in fase «stesura» sul capitolo singolo e `revisione_capitolo: obbligatoria` in `zb esito` (5d19661);
+  P3 frasi finali in `zb stile` (03f12c6); frase media per registro della voce con `frase_media_voce` nel thriller
+  (4d21449); ruoli e `zb prepara` con la voce (6371041). Suite dopo l'ultimo commit di codice: 655/655 OK, 0
+  saltate. Dettaglio, realizzato e non realizzato: `docs/PROPOSTE_MOTORE.md`.
+- Correzioni del 2026-10-21 (seconda parte): `zb prepara` nomina gli esempi «debole → forte» solo se la scheda li
+  ha e si ferma se la scheda manca (dd93098); frase media del registro della voce: AVVISO «intervallo non
+  calibrato sull'autore» (3990f86); gruppi di forme nei divieti della voce con un massimo complessivo (c79df0a).
+  Suite: 661/661 OK, 0 saltate.
+- Correzioni del 2026-10-21 (terza parte): aperture uguali senza il falso positivo della battuta in mezzo
+  (c26fd23); diagnosta senza shell, proposta P4 non realizzata con il motivo (d3f9162); letture ridotte di scrittore e
+  diagnosta (c55e940) e costo misurato, P5 (d73e926); incoerenze dei documenti e mappa dei rami
+  (`docs/MAPPA_RAMI.md`). Suite: 663/663 OK, 0 saltate.
+- Costo della revisione (2026-10-21, quarta parte): `aperture_uguali` protetta dalle frasi senza parole (5306b38);
+  misure del motore prima del diagnosta, `misure/NN.md` (247bf0b); un solo giro completo (e8b5a06); diagnosta al
+  livello leggero, haiku (238b947); letture del diagnosta ridotte (02d7baf); P6 misura del costo, non realizzata
+  (775c006). Suite: 673/673 OK, 0 saltate.
+- Decisione dell'autore (2026-10-21): il diagnosta si ferma solo sui KO e sui divieti della voce; frase media e
+  ripetizioni ravvicinate restano avvisi tra le righe misurate. Suite: 675/675 OK, 0 saltate.
 - Modo automatico (decisione dell'autore del 2026-10-20): gate «struttura» verificato dal motore senza fermata;
   nessuna approvazione intermedia; una sola fermata, la PAUSA DI LETTURA ogni 3 capitoli (`pausa_lettura` 3-5 in
   `libro.yaml`) e a fine stesura. Restano le fermate `controllo_fallito` e `canone`.
@@ -53,7 +77,8 @@ riprendi da lì».
 - Regola madre: il motore resta sempre pulito; il ramo `motore` non contiene mai un libro.
 - Nessun nome reale (autori, titoli, personaggi, luoghi, frasi, nomi dei rami dei libri) in codice, prove,
   commenti, esiti, report e documenti, anche in `docs/`. Controllo: `zb separazione`.
-- Non toccare i rami dei libri, né `motore` e `main`: l'unione nel ramo `motore` la decide l'autore.
+- Non toccare i rami dei libri. Si lavora su `motore` (fast-forward, mai push forzati); `integrazione-editoriale`
+  resta com'è.
 - I 28 file del pacchetto non si cambiano senza l'autore (eccezione autorizzata: D18).
 - `dati/kdp.yaml`: `ultima_verifica` resta `null` finché l'autore non registra la sua verifica
   (`zb verifica KDP fatta AAAA-MM-GG`); il motore non la scrive.
@@ -65,7 +90,43 @@ riprendi da lì».
   storia.
 - Report di sessione ogni 5 scambi o a «passaggio», con le sezioni fisse.
 
-## Fatto in questa sessione (2026-10-20)
+## Fatto in questa sessione (2026-10-21, unione in `motore`; sotto, le sessioni precedenti)
+
+- Copia di sicurezza di `motore` (971b6df) sul ramo d'archivio (3).
+- ec8fe47 unione «ours» di `origin/motore` sopra `integrazione-editoriale`; `git diff` con `integrazione-editoriale`
+  vuoto; nessun doppione (`anti_ia.py`, `capsule.py`, `ruoli.py`, `installa_languagetool.py` non ci sono).
+- 1092a89 (672) `separazione.py`: `git ls-tree --full-tree` nei rami di origin. Prima, lanciato dentro `motore/`, dava
+  percorsi relativi: ogni ramo con il motore sembrava un ramo di libro (il nome di `integrazione-editoriale` e degli
+  archivi del motore risultava vietato; la suite era rossa su ogni ramo diverso da `integrazione-editoriale`) e i
+  rami di libro senza `motore/` sfuggivano. Prova nuova in passo 1 (2 controlli), che fallisce con il codice di prima.
+- Nel commit che porta questo file: `docs/MAPPA_RAMI.md`, `docs/DA_VERIFICARE_AUTORE.md` (pulizia.py attivo; D6, D9,
+  D10), `docs/INFRASTRUTTURA_COMPLETA.md` rigenerata con il generatore. Guida (md e pdf) non rigenerata: non cambia.
+
+2026-10-21, quarta parte:
+
+- 5306b38 (664) `aperture_uguali`: una frase senza parole si salta (prima: IndexError se frasi() non la filtrasse).
+- 247bf0b (668) `zb ruolo <libro> diagnosta N`: misure del motore prima del revisore, `misure/NN.md`; `zb esito` le vuole.
+- e8b5a06 (671) un solo giro completo; il secondo solo sulle frasi di «## Da correggere»; poi decide l'autore.
+- 238b947 (672) diagnosta `leggero` (haiku) in `dati/modelli-ruoli.yaml`.
+- 02d7baf (673) letture del diagnosta per il capitolo singolo: solo «File da leggere» di `misure/NN.md`.
+- 775c006 (673) P6: misura del costo per agente, non realizzata.
+- Nel commit che porta questo file: PROCEDURA §6, guida (md e pdf), PROPOSTE, report, STATO_ATTUALE,
+  DA_VERIFICARE_AUTORE, `docs/INFRASTRUTTURA_COMPLETA.md` rigenerata.
+
+2026-10-21, terza parte:
+
+- c26fd23 (662) `antiia.aperture_uguali()`: una battuta di dialogo tra due frasi di narrazione interrompe la serie;
+  prova `aperture_battuta` (sezione anti-IA); punto 4(b) del diagnosta allineato.
+- d3f9162 (662) P4 in `docs/PROPOSTE_MOTORE.md`: Bash al diagnosta non è coerente con il recinto; alternativa.
+- c55e940 (663) agenti: lo scrittore non rilegge scaletta e piano parole interi, il diagnosta non legge `diagnosi/`
+  per il capitolo singolo; prova `letture` (sezione agenti), che controlla anche il diagnosta senza Bash né Edit.
+- d73e926 (663) P5: costo della revisione misurato file per file.
+- Nel commit che porta questo file: incoerenze di numeri e documenti (report, STATO_ATTUALE, guida md e pdf,
+  PROCEDURA, README, PROPOSTE_MOTORE, DA_VERIFICARE_AUTORE), `docs/INFRASTRUTTURA_COMPLETA.md` rigenerata.
+- Poi: `docs/MAPPA_RAMI.md` (commit a parte).
+
+2026-10-20:
+
 
 Commit su `integrazione-editoriale` (tra parentesi le prove della suite a quel commit):
 - 5ae0bda (560) punto 1: pacchetto da 28 file verificato, nessuna modifica (D3);
@@ -94,21 +155,29 @@ Nel commit che porta questo file: guida (md e pdf), STATO_ATTUALE, AVANZAMENTO_L
 2. Dopo ogni passo `zb salva`: recinto, prove, commit e push; resoconto con hash, file e «branch allineato a origin».
 3. Per l'autore (`docs/DA_VERIFICARE_AUTORE.md`): contrasto pacchetto/modo automatico (D4); sezione B del catalogo
    anti-IA; coppia «avvenire/avvenire» nei criteri del correttore; licenza di APODICTIC; verifica dei dati KDP
-   (`ultima_verifica: null`, non verificati dall'autore); unione nel ramo `motore`.
+   (`ultima_verifica: null`, non verificati dall'autore).
 4. Soglie anti-IA uguali per ogni genere, tarate sui mini-libri; vocabolario italiano vuoto finché non c'è un corpus
    (`docs/DA_FORNIRE.md`).
 5. Divergenza lasciata visibile in `docs/ANALISI_REPOSITORY.md`: kindle-book-agency (D13).
+6. Diagnosta senza shell (P4): proposta, non realizzata. Controlli deterministici prima del revisore, un solo giro di
+   revisione, modello del diagnosta: proposte di P5, non realizzate.
+7. Scenari 5b e 15-18 della tabella dell'hook (PROCEDURA §10): descritti, senza prova (le prove coprono 1-14).
+8. `zb voce verifica` sulle voci della banca: non eseguito il 2026-10-21 (banca-voci non disponibile nella sessione).
+9. Diagnosta su haiku: da provare su una pagina; se la revisione risulta debole, tornare al modello medio; vale anche per la
+   diagnosi di struttura e manoscritto (`docs/DA_VERIFICARE_AUTORE.md`).
 
 ## Prossimo passo
 
-`zb salva` e controllo con `git status -sb` e `git log -1`. Dopo, l'autore legge
-`docs/DA_VERIFICARE_AUTORE.md` e decide se unire il ramo nel `motore`.
+L'autore legge `docs/DA_VERIFICARE_AUTORE.md` (unione in `motore`, pulizia.py, profilo thriller, scelte con due
+valori), `docs/PROPOSTE_MOTORE.md` (P4, P5) e `docs/MAPPA_RAMI.md`. I rami dei libri restano sul loro motore: si
+aggiornano solo con un merge di `origin/motore` deciso dall'autore, libro per libro.
 
 ## Ripartenza
 
 ```
 pip install -r motore/requirements.txt
 apt-get install -y hunspell hunspell-it hunspell-en-us poppler-utils
+export ZB_BANCA_VOCI=<clone della banca-voci>   # solo lettura; serve a zb voce e zb prepara con una voce
 python3 motore/zb languagetool installa        # poi l'export di ZB_LANGUAGETOOL che stampa
 python3 motore/zb lavoro motore                # solo se l'autore ha scritto «lavoro sul motore»
 python3 -B motore/zb avvio                     # riga «Letto»
