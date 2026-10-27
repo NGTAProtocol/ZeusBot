@@ -15,7 +15,7 @@ In testa c'è l'intestazione di un istituto di medicina legale. Sotto, un nome c
 
 «Oggetto: accertamenti medico-legali sul cadavere di Scotti Andrea.»
 
-Il cognome davanti, come nei registri delle presenze. Come sulle buste paga che ritirava il ventisette di ogni mese, borbottando in latino da sacrestia una massima sui servi e sulla mercede. Su questo foglio Andrea non ha il camice con le tasche sformate, né le matite, né gli occhiali da lavoro alzati sulla fronte. Ha un'altezza, centosettantaquattro centimetri. Ha un peso. Ha uno stato di nutrizione che qualcuno ha giudicato buono.
+Il cognome davanti, come nei registri delle presenze. Come sulle buste paga che ritirava il ventitré di ogni mese, borbottando in latino da sacrestia una massima sui servi e sulla mercede. Su questo foglio Andrea non ha il camice con le tasche sformate, né le matite, né gli occhiali da lavoro alzati sulla fronte. Ha un'altezza, centosettantaquattro centimetri. Ha un peso. Ha uno stato di nutrizione che qualcuno ha giudicato buono.
 
 Il resto non ho bisogno di leggerlo. L'hanno trovato all'alba del trenta novembre ai piedi della scala del chiostro, quella con il corrimano di ferro che nessuno ha mai fissato al muro. Il giorno dopo, nei corridoi, la parola era già pronta e passava di bocca in bocca con la discrezione di una colletta: gesto. Un gesto. Come se scendere trentadue gradini di piperno con la testa davanti fosse una forma di riguardo verso chi resta.
 
@@ -33,7 +33,7 @@ Fin qui è medicina. Una forbice di un'ora, onesta, larga quanto basta perché n
 
 Mi accorgo di non respirare solo quando la lente, che ho avvicinato al foglio senza deciderlo, si appanna.
 
-Osservo. L'orario del messaggio è al minuto, tratto da un tabulato, prodotto da una macchina che non ha amici in Procura né debiti con nessuno. Confronto. L'orario della morte è una forbice, e la forbice si chiude alle 23:00, non un minuto dopo. Concludo: quando il telefono ha vibrato, Andrea era morto da tre quarti d'ora almeno, forse da quasi due. Due minuti più tardi il messaggio risulta visualizzato, e visualizzato non vuol dire letto: può voler dire che qualcuno ha toccato quello schermo, o soltanto che l'app era già aperta e il testo ci è comparso sopra da solo. Le peso tutte e due. La prima chiede una mano viva sul telefono di un morto; la seconda chiede soltanto che nessuno l'abbia chiusa.
+Osservo. L'orario del messaggio è al minuto, tratto dalla copia forense del telefono, prodotto da una macchina che non ha amici in Procura né debiti con nessuno. Confronto. L'orario della morte è una forbice, e la forbice si chiude alle 23:00, non un minuto dopo. Concludo: quando il telefono ha vibrato, Andrea era morto da tre quarti d'ora almeno, forse da quasi due. Due minuti più tardi il messaggio risulta visualizzato, e visualizzato non vuol dire letto: può voler dire che qualcuno ha toccato quello schermo, o soltanto che l'app era già aperta e il testo ci è comparso sopra da solo. Le peso tutte e due. La prima chiede una mano viva sul telefono di un morto; la seconda chiede soltanto che nessuno l'abbia chiusa.
 
 Un'ora. Lo scarto è tutto lì, in una riga e mezza di carta da fotocopie.
 
@@ -53,9 +53,9 @@ Perché a me. Me lo chiedo e non rispondo. Non è il momento di fare l'elenco di
 
 Poi c'è la domanda che non voglio fare e che il foglio fa al posto mio. Da qualche parte esiste, o esisterà, la versione con il numero nella casella. Arriverà sulla scrivania di un magistrato, timbrata e firmata, insieme a una richiesta di chiudere tutto. Se dice le stesse cose di questa, qualcuno dovrà spiegare un'ora. Se dice altro, qualcuno quell'ora l'avrà già spiegata, a modo suo, con una correzione pulita, senza lasciare il cretto.
 
-Prendo una scheda d'intervento vuota dal cassetto e la giro sul lato bianco. Ricopio a mano, in colonna, con la matita che mi tiene su i capelli: 22:00. 23:00. 23:47. 23:49. Quattro numeri, e sotto una linea, come in una somma. La matita la rimetto tra i capelli. La scheda la piego in quattro e la infilo nella fodera del cappotto, dove la cucitura è aperta da un inverno.
+Prendo una scheda d'intervento vuota dal cassetto e la giro sul lato bianco. Ricopio a mano, in colonna, con la matita che mi tiene su i capelli: 22:00. 23:00. 23:47. 23:49. Quattro numeri, e sotto una linea, come in una somma. La matita la rimetto tra i capelli. La scheda la piego in quattro e la infilo nella fodera del cappotto, dove la cucitura ha ceduto da qualche settimana.
 
-Il foglio no. Il foglio lo rimetto nella busta, nelle sue tre pieghe, e la busta in mezzo a un fascicolo di fotografie di sezioni stratigrafiche che nessuno, in questo edificio, ha mai avuto voglia di sfogliare.
+Il foglio no. Il foglio lo rimetto nella busta, nelle sue tre pieghe, e la busta in mezzo a un fascicolo di fotografie di sezioni stratigrafiche che nessuno, in questo edificio, ha mai avuto voglia di sfogliare, e il fascicolo nella borsa, che stanotte viene a casa con me.
 
 Spengo la lampada radente. Il laboratorio si restringe al riquadro grigio della finestra e al rosso della spia sul fornello. Resto in piedi, la mano sul banco, il palmo sul legno che conserva ancora il caldo della lampada.
 

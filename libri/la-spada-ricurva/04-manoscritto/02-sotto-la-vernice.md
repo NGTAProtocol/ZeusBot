@@ -102,7 +102,7 @@ Il tampone sporco di bruno lo butto nel cestino di latta sotto il banco, insieme
 
 * * *
 
-La mattina dopo la pioggia non ha smesso. Ha solo cambiato angolo, e adesso entra di sbieco sotto il portico del cortile e bagna le prime file di gradini, quelle consumate al centro da tre secoli di studenti che salivano a farsi giudicare.
+La mattina dopo la pioggia non ha smesso. Ha solo cambiato angolo, e adesso entra di sbieco sotto il portico del cortile e bagna le prime file di gradini, quelle consumate al centro da un secolo e mezzo di studenti che salivano a farsi giudicare.
 
 Per arrivare al laboratorio attraverso la galleria. Non è la strada più breve. Nella seconda sala, dove la santa stava appesa fino a quattro giorni fa, il rettangolo chiaro sull'intonaco ha i due ganci ancora al loro posto e, sotto, un cartellino nuovo, battuto a macchina su cartoncino avorio: «Opera temporaneamente ritirata per motivi di conservazione». Ieri il cartellino non c'era. Lo tocco con la punta dell'unghia. La colla sul retro è ancora morbida.
 
@@ -149,6 +149,8 @@ Mi chino per prendere un paio di guanti dal cassetto sotto il banco, e il piede 
 Suona vuoto.
 
 Ieri sera, quando sono uscita, c'erano dentro quattordici tamponi della giornata. Quello color tabacco era in cima.
+
+Mi chino a guardarci dentro: il fondo è lucido, senza un alone, e sa di sapone.
 
 Il cestino è stato lavato.
 

@@ -14,7 +14,7 @@ La ragazza sulla panca di fronte mi guarda da quando sono arrivata. È piccola, 
 
 Non sorride. Apre il taccuino su una pagina fitta e lo gira verso di me, tenendolo per l'angolo con due dita nere di grafite.
 
-Due lame. Ricurve, incrociate all'altezza dell'elsa, e quella di sinistra si piega verso l'esterno a un terzo dalla punta, nel punto esatto in cui nessun fabbro piegherebbe una scimitarra, perché è lì che l'acciaio si spezza. Il tratto è ripassato tante volte che la carta è diventata lucida.
+Una lama. Ricurva, e si piega verso l'esterno a un terzo dalla punta, nel punto esatto in cui nessun fabbro piegherebbe una scimitarra, perché è lì che l'acciaio si spezza. Il tratto è ripassato tante volte che la carta è diventata lucida. È la sinistra delle due lame incrociate che ho visto sotto il drappo.
 
 Mi trovo la mano sulla tasca del cappotto, sopra il telefono svuotato. La tolgo.
 
@@ -102,7 +102,7 @@ E a un terzo dalla punta si piega.
 
 Tiro fuori la lente contafili e il telefono. Mina, senza che glielo chieda, prende il telefono e tiene la luce rasente alla superficie, il braccio fermo. Ha capito l'angolo prima di me.
 
-La piega della lama corre sotto un cretto continuo, a maglie larghe, lo stesso del manto di Giuditta, senza un'isola di colore più giovane. Sulla parete di fronte un San Giorgio stringe una spada dritta come un regolo, e il fabbro di quel pittore sapeva il fatto suo. La piega, quindi, non è un ritocco e non è un errore: il pittore l'ha voluta, e l'ha dipinta nello stesso giorno del manto.
+La piega della lama corre sotto un cretto continuo, a maglie larghe, lo stesso del manto di Giuditta, senza un'isola di colore più giovane. Sulla parete di fronte un San Giorgio stringe una spada dritta come un regolo, e il fabbro di quel pittore sapeva il fatto suo. La piega, quindi, non è un ritocco e non è un errore: il pittore l'ha voluta, e l'ha dipinta nella stessa stesura del manto.
 
 «Guardi la mano» dice Claudia.
 
@@ -136,13 +136,13 @@ Nessuno gli chiede sotto che cosa. Il tufo, dal pavimento, risale anche nelle ca
 
 Valli apre il catalogo. Ha l'inventario della galleria in fotocopia, ogni tela una scheda, e le schede sono piene della sua scrittura stretta: misure, cornici, passaggi di proprietà. Scorre con il pollice senza leggere, perché lo sa a memoria.
 
-«Lame, nella collezione. Una Giuditta, questa. Un Sacrificio di Isacco nella quinta sala, un San Michele nel corridoio delle scale. Il vostro Martirio. Le spade dritte le escludo.»
+«Lame, nella collezione. Una Giuditta, questa. Un Sacrificio di Isacco nella quinta sala, un San Michele nel corridoio delle scale. Il vostro Martirio, se è vero che ha una lama anche lui. Le spade dritte le escludo.»
 
 «Perché le esclude?»
 
 «Perché lei, Magnisi, ha guardato la piega prima di tutto il resto.»
 
-Andiamo nella quinta sala in fila, senza parlare, con il custode che ci passa accanto due volte e due volte non dice niente. Il Sacrificio di Isacco è più scuro, la vernice ingiallita a chiazze. Il coltello di Abramo è corto e ricurvo come una roncola, e a un terzo dalla punta si piega. L'angelo gli ferma il polso. Due dita dell'angelo, l'indice e il medio, sono stese e unite. Sotto la lente, sull'unghia del medio, un uno.
+Andiamo nella quinta sala in fila, senza parlare, con il custode che ci passa accanto due volte e due volte non dice niente. Nel Sacrificio di Isacco il coltello di Abramo, corto come una roncola, si piega a un terzo dalla punta; l'angelo gli ferma il polso con due dita stese, e sull'unghia del medio, sotto la lente, c'è un uno.
 
 Il San Michele è appeso dove la luce del corridoio non arriva mai. Mina alza il telefono sopra la testa. La spada dell'arcangelo è una scimitarra, cosa che nessuno, in tre secoli di inventari, ha trovato strano. Si piega. La mano libera del santo indica in basso, verso il drago, con due dita. Sull'unghia del medio, sotto la lente, solo polvere e vernice cotta. Mina abbassa il telefono e lo inclina finché la luce scivola di traverso sulla tela: il nove viene fuori in rilievo, non in colore, graffiato nella preparazione prima che qualcuno ci stendesse sopra la carne.
 
@@ -162,7 +162,7 @@ Claudia chiude il taccuino su un dito, per tenere il segno.
 
 «Lei da sola non entra qui dopo le sei» dice. «Noi da soli non entriamo da lei. È solo un conto.»
 
-È un conto, infatti. Lo faccio come mi ha insegnato mia madre con le stoffe: prima quello che manca, poi quello che avanza. Loro hanno l'Accademia in casa, un custode che risponde in dialetto, un permesso firmato dalla stessa mano che ha firmato il mio visto. La mia scheda, con il visto di settembre, e il foglio nel taschino di Valli portano la stessa firma larga, e se un giorno quello che cerchiamo finirà su una scrivania sarà la sua: non so ancora quale dei due fogli Arcamone sarà più disposto a riconoscere. Io ho una chiave, un tassello coperto e qualche anno più di loro, che qui dentro non valgono niente.
+Lo faccio come mi ha insegnato mia madre con le stoffe: prima quello che manca, poi quello che avanza. Loro hanno l'Accademia in casa e un custode che risponde in dialetto. Io ho una chiave e un tassello coperto; ho anche una borsa sospesa fino a giugno e un laboratorio dove di notte entra qualcuno con un'altra chiave. La mia scheda, con il visto di settembre, e il foglio nel taschino di Valli portano la stessa firma larga: se un giorno quello che cerchiamo finirà su una scrivania, sarà quella di Arcamone, e non so ancora quale dei due fogli sarà più disposto a riconoscere.
 
 «Tre condizioni. Niente fotografie sui vostri telefoni. Niente nomi, con nessuno, nemmeno tra di voi nei messaggi. Quello che vediamo lo disegna Rinaldi, e il taccuino non esce dall'Accademia.»
 
@@ -180,6 +180,6 @@ Il custode spegne le basse della quinta sala mentre usciamo, una per una, alle n
 
 Quattro, uno, nove.
 
-Lascia il quarto riquadro bianco. La quarta mano sta sotto la ridipintura, a un palmo dal tassello che ho richiuso io.
+Lascia il quarto riquadro bianco. La quarta mano, se c'è, sta sotto la ridipintura, a un palmo dal tassello che ho richiuso io.
 
 <!-- zb: chiusura=D -->
