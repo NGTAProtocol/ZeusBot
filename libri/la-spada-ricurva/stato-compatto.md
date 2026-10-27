@@ -1,7 +1,7 @@
 # Stato compatto — La Spada Ricurva
 
 - Fase: stesura; gate: nessuno.
-- Ultimo capitolo salvato: 3 (commit 9d3bd90); parole 5575/90000.
+- Ultimo capitolo salvato: 3 (commit 1ba2805); parole 5575/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elana; Tempo verbale della narrazione: presen….
 - Gate attivi: lettura.
