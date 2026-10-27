@@ -1,12 +1,12 @@
 # Stato compatto — La Spada Ricurva
 
 - Fase: stesura; gate: nessuno.
-- Ultimo capitolo salvato: 1 (commit 1c0862d); parole 1387/90000.
+- Ultimo capitolo salvato: 2 (commit 3f3e5e1); parole 3521/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elana; Tempo verbale della narrazione: presen….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
-- Personaggi (capsula 1): il narratore, in prima persona, senza nome nel capitolo. Sa dell'orario del messaggio e ne deduce uno scarto di circa un'ora; sa di chi è il nome sul…
+- Personaggi (capsula 2): —
 - Fatti bloccati: 9 (elenco in stato.yaml):
   - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei…
   - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India po…
@@ -14,6 +14,6 @@
   - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e…
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
 - Promesse aperte: nessuna.
-- Prossimo capitolo 2: incidente scatenante; presenta Elana nel suo mestiere e l'Accademia come arena.; cambiamento: con la luce radente e un tampone, Elana vede due lame piegate sotto u….
-- Prossimo passo: Prossimo: capitolo 2. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
-- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 2.
+- Prossimo capitolo 3: forma il gruppo; presenta i tre studenti dell'Accademia, Claudia, Lorenzo, Mina, e il pos…; cambiamento: Elana accetta un'alleanza a denti stretti con tre studenti che si con….
+- Prossimo passo: Prossimo: capitolo 3. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
+- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 3.

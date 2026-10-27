@@ -3,7 +3,7 @@
 | Parte | Cap. | Titolo | Funzione | Scene | Budget capitolo | Budget per scena | Parole reali | Scarto |
 |---|---|---|---|---|---|---|---|---|
 | La chiave | 1 | La perizia | apertura in medias res | 1 | 1400 | 1400 | 1387 | -0,9% |
-| La chiave | 2 | Sotto la vernice | incidente scatenante | 2 | 2200 | 1100 |  |  |
+| La chiave | 2 | Sotto la vernice | incidente scatenante | 2 | 2200 | 1100 | 2134 | -3,0% |
 | La chiave | 3 | Il dettaglio ripetuto | formazione del gruppo | 2 | 2200 | 1100 |  |  |
 | La chiave | 4 | La data della ridipintura | indagine tecnica | 1 | 1900 | 1900 |  |  |
 | La chiave | 5 | Palazzo Valli | mondo di Lorenzo, Dell'Aquila | 1 | 2200 | 2200 |  |  |
