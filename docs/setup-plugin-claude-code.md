@@ -1,7 +1,38 @@
 # Setup di 4 strumenti per Claude Code: audit di sicurezza
 
 Data: 2026-10-27. Ambiente: sessione Claude Code in un container cloud temporaneo (non il computer dell'autore).
-Esito in breve: **audit fatto su tutti e 4; nessuno strumento installato.** Motivi in fondo («Perché non ho installato»).
+Esito in breve: **audit fatto su tutti e 4.** Dopo l'ok dell'autore («installa quello che devi installare»):
+**installati Ponytail 5.3.2 e Agent Skills 0.6.13** (scope utente del container, vedi «Aggiornamento:
+installazione»); Graphify (DUBBIO) e OmniRoute (NON INSTALLARE) **non installati**, in attesa di conferma esplicita.
+
+## Aggiornamento: installazione (2026-10-27)
+
+Comandi eseguiti nel container (CLI `claude` 2.1.311, equivalenti ai comandi `/plugin`):
+```
+claude plugin marketplace add 'DietrichGebert/ponytail#v5.3.2' --scope user
+claude plugin install ponytail@ponytail --scope user
+claude plugin marketplace add 'addyosmani/agent-skills#0.6.13' --scope user
+claude plugin install agent-skills@addy-agent-skills --scope user
+```
+Verifica (`claude plugin list`): `ponytail@ponytail` 5.3.2 abilitato; `agent-skills@addy-agent-skills` 0.6.13
+abilitato; in cache i comandi build, code-simplify, constraints, plan, review, ship, spec, test, webperf.
+File modificati fuori dal repository: `/root/.claude/settings.json` (`enabledPlugins`, `extraKnownMarketplaces`),
+`/root/.claude/plugins/` (cache). Opzioni utente di Ponytail (webhook ecc.) lasciate vuote: nessun dato esce.
+
+**Limite**: è il `~/.claude` del container cloud, che sparisce a fine sessione; non è il tuo computer né le
+prossime sessioni. Per averli ovunque: digita i comandi `/plugin` delle sezioni 1 e 2 nel tuo Claude Code, oppure
+dichiararli nello scope «project» (`.claude/settings.json` del repo): è una modifica al motore, quindi solo dopo
+«lavoro sul motore», e per Ponytail con il limite sui subagenti descritto sotto.
+
+## Rete: sbloccare GitHub (sito e API)
+
+Il proxy di questo ambiente rifiuta `api.github.com` e `github.com` via HTTPS (HTTP 403); `git clone` invece passa.
+Non posso cambiarlo da dentro la sessione: lo cambi tu nelle impostazioni dell'ambiente cloud (menu dell'ambiente
+nella barra del titolo della sessione → Edit → Network access): scegli un livello più ampio, oppure aggiungi
+`api.github.com` e `github.com` (ed eventualmente `raw.githubusercontent.com`) agli «Allowed domains», lasciando
+spuntato «Allow package managers». Istruzioni: https://code.claude.com/docs/en/cloud-environments#network-access.
+Vale dalle sessioni nuove. Le operazioni GitHub del repository (PR, issue) passano comunque dagli strumenti GitHub
+integrati della sessione, limitati a `ngtaprotocol/zeusbot`.
 
 | Strumento | Verdetto | Versione bloccata |
 |---|---|---|
