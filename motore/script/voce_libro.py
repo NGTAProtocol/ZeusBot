@@ -137,7 +137,15 @@ def cmd_campioni(cartella, libro):
                                                                     'nessuna indicazione, fondi i tratti più forti di '
                                                                     'ciascun campione e dichiara in sezione 2 da dove '
                                                                     'viene ogni tratto.') if ibrido else ''), '']
+    import difetti   # i campioni sono dell'autore e non si toccano: i loro cliché si segnalano perché non si imitino
+    pats = difetti.pattern_cliche(cartella, libro)
+    cliche = [f'{r}: «{x.group(0)}»' for r in rel for riga in open(os.path.join(cartella, r), encoding='utf-8')
+              for _, rx in pats for x in [rx.search(riga)] if x]
+    if cliche:
+        tab += ['', '## Cliché nei campioni (da non imitare)', ''] + [f'- {c}' for c in cliche]
     comune.scrivi(cartella, MISURE, '\n'.join(testa + tab) + '\n')
+    for c in cliche:
+        print(f'AVVISO cliché nel campione (da non imitare): {c}')
     print(f'Misure della voce: {MISURE} ({len(rel)} campion{"i" if ibrido else "e"}; frase media '
           + ', '.join(str(x["frase_media"]) for x in m) + '; dialogo ' + ', '.join(f'{x["dialogo"]}%' for x in m) + ').')
     print(f'Prossimo: agente «voce» sul libro (scrive {SCHEDA}), poi «zb voce scheda <libro>».')

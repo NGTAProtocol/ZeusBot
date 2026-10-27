@@ -93,6 +93,9 @@ def controlli(cartella, libro):
     scaduta, msg = kdp_verifica.stato_verifica(comune.oggi([]))
     out.append(('conformità KDP', k + ([msg] if scaduta else [])))
     out.append(('copertina', copertina.coerente(cartella, libro)))
+    import difetti
+    out.append(('difetti', [f'cap. {n} {c} ({e}): ' + '; '.join(d[:2]) for n, _ in difetti.carica(cartella, libro)
+                            if str(n).isdigit() for c, _, e, d in difetti.blocchi(difetti.esiti_unita(cartella, libro, n))]))
     return out
 
 

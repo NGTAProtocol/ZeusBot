@@ -44,6 +44,12 @@ campi:
       ripetizioni_per_mille_max: {tipo: numero}
       chiusure_uguali_max: {tipo: intero}
       formule_sezione_b: {tipo: booleano}
+  difetti:                                       # sistema difetto→test (zb difetti, editoriale/difetti.md)
+    tipo: mappa
+    campi:
+      parole_firma: {tipo: lista, elementi: {tipo: testo}}   # radici (es. clausol): massimo per finestra di capitoli
+      cliche: {tipo: lista, elementi: {tipo: testo}}         # espressioni vietate in questo libro
+      parametri: {tipo: qualsiasi}                           # sostituisce i parametri di dati/difetti.yaml
   lingua_originale: {tipo: testo}                # non più usato (traduzione rimossa il 2026-10-27): ammesso per i libri esistenti
   lingue_target: {tipo: lista, elementi: {tipo: testo}}   # come sopra
   override:
