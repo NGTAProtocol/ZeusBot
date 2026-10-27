@@ -248,6 +248,9 @@ def hook():
     if not percorso:
         return 0
     percorso = os.path.realpath(os.path.join(cwd, percorso))
+    import tempfile
+    if not dentro(rad, percorso) and dentro(os.path.realpath(tempfile.gettempdir()), percorso):
+        return 0    # cartella temporanea (scratchpad della sessione): libera, come per Bash
     esito, msg = decidi(percorso, rad)
     if esito == 'blocca':
         print(msg, file=sys.stderr)

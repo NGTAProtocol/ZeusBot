@@ -106,6 +106,11 @@ def nasce(r):
     os.makedirs(L)
     shutil.copyfile(os.path.join(F, 'briefing.md'), os.path.join(L, 'briefing.md'))
     p = zb(r, 'nuovo', f'libri/{SLUG}/briefing.md')
+    py = os.path.join(L, 'libro.yaml')
+    if os.path.isfile(py):   # nasce con la revisione obbligatoria; le prove del percorso la attivano dove serve
+        t = open(py, encoding='utf-8').read()
+        nasce.obbligatoria = 'revisione_capitolo: obbligatoria' in t
+        open(py, 'w', encoding='utf-8').write(t.replace('revisione_capitolo: obbligatoria', 'revisione_capitolo: facoltativa'))
     return L, p
 
 
@@ -117,6 +122,8 @@ def percorso(sez='percorso editoriale'):
     esito('nuovo.py', 'nascita: codice / fase / file di 03-struttura con il modello',
           '0 / struttura / 9', f'{p.returncode} / {stato(L)["fase"]} / '
           f'{sum(comune.MODELLO in open(os.path.join(L, "03-struttura", f)).read() for f in comune.FILE_STRUTTURA)}', sez)
+    esito('nuovo.py', 'percorso editoriale: il libro nasce con revisione_capitolo: obbligatoria', True,
+          getattr(nasce, 'obbligatoria', False), sez)
     lb = comune.leggi_yaml(os.path.join(L, 'libro.yaml'))
     esito('nuovo.py', 'libro.yaml: percorso, lingua, gate (modo automatico: solo la pausa di lettura), pausa_lettura',
           "editoriale / it / ['lettura'] / 3",
@@ -397,9 +404,9 @@ def revisione_in_stesura(r, L, m, sez):
                if x.startswith('- ') and 'AVVISO' not in x]
     esito('prepara.py', 'preparazione: scheda del capitolo successivo (funzione e gancio) per la chiusura', True,
           '## Capitolo 2 (solo per la chiusura di questo)' in pr, sez)
-    esito('percorso.py', 'letture del diagnosta (capitolo 1): capitolo, misure, codex filtrato; niente frasi finali, '
+    esito('percorso.py', 'letture del diagnosta (capitolo 1): capitolo, misure, codex filtrato, ruolo del diagnosta; niente frasi finali, '
           'preparazione, manuale, scelte fisse; canone nel file (file elencati: misure / preparazione dello scrittore)',
-          'True / 3 / False / True / 5 5', f'{"04-manoscritto/01-il-molo.md" in da_leggere and "06-diagnostica/frasi-finali/01.md" not in da_leggere} / '
+          'True / 3 / False / True / 6 5', f'{"04-manoscritto/01-il-molo.md" in da_leggere and "06-diagnostica/frasi-finali/01.md" not in da_leggere} / '
           f'{sum(x.startswith("02-bibbia/codex/") for x in da_leggere)} / '
           f'{any("manuale-di-stile" in x or "09-scelte-fisse" in x or "preparazione/" in x for x in da_leggere)} / '
           f'{"## Canone (fatti bloccati)" in tm} / {len(da_leggere)} {len(da_prep)}', sez)
@@ -700,6 +707,15 @@ def cartella_unica(sez='cartella unica e recinto'):
     esito('salva.py', 'zb salva con un file già tolto (git rm) e uno nuovo: commit con entrambi', '0 / True / True',
           f'{p.returncode} / {"libri/primo/00-progetto/nota.md" in git(r, "show", "--name-only", "--format=").stdout} / '
           f'{"libri/primo/00-progetto/altra.md" in git(r, "show", "--name-only", "--format=").stdout}', sez)
+    # recinto: comandi che leggono soltanto non sono scritture; heredoc e python che scrivono sì
+    import hook_manoscritto as hm
+    casi = [("python3 -c \"print(open('libri/a/b.md').read())\"", []),
+            ("python3 -c \"open('libri/a/b.md','w').write('x')\"", ['/r/libri/a/b.md']),
+            ("cd /r && python3 - <<'PY'\np='libri/a/c.md'\nopen(p,'w').write(\"l'a\")\nPY", ['/r/libri/a/c.md']),
+            ("cat > libri/a/d.md <<'EOF'\nL'Accademia\nEOF\npython3 -B motore/zb voce campioni libri/a", ['/r/libri/a/d.md'])]
+    esito('hook_manoscritto.py', 'recinto: python che legge libero / python -c che scrive / heredoc python che scrive / '
+          'heredoc di testo con apostrofi', 'True True True True',
+          ' '.join(str(hm.bersagli_bash(c, '/r', solo=None) == att) for c, att in casi), sez)
     dopo = {f: open(os.path.join(dp, f), 'rb').read() for dp, _, fs in os.walk(os.path.join(r, 'libri', 'secondo'))
             for f in fs}
     esito('recinto', 'il secondo libro è identico dopo il lavoro sul primo', True, prima == dopo, sez)

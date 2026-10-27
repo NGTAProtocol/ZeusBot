@@ -69,6 +69,12 @@ def prepara(cartella, libro, n):
     righe = [comune.MODELLO, f'# Capsula {n} — {libro["titolo"]}', '',
              f'Dati meccanici: {conta.conta_testo(testo)} parole; intestazione: {intest}; codex nominato: '
              + (' '.join(nominati(cartella, testo)) or 'nessuno') + '.', '']
+    import struttura
+    prom = (struttura.schede(cartella).get(str(n)) or {}).get('promesse') or ''
+    ids = sorted({p.lower() for p in re.findall(r'\bP\d+\b', prom)}, key=lambda x: int(x[1:]))
+    if prom:   # le promesse della scaletta: l'agente le riporta con il tag, il registro le conta
+        righe += [f'Promesse della scheda del capitolo: {prom} — tag: ' + (' '.join(f'@prom:{i}' for i in ids) or '—')
+                  + ' (in «Promesse aperte» quelle che il capitolo apre, in «Promesse chiuse» quelle che chiude).', '']
     righe += [f'- {s}:' for s in SEZIONI[l]]
     comune.scrivi(cartella, rel(n), '\n'.join(righe) + '\n')
     print(f'Preparata {rel(n)}: l\'agente «capsula» compila le sezioni (circa 180 parole), poi '

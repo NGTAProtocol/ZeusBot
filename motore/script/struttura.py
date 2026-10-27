@@ -254,14 +254,15 @@ def promesse_senza_chiusura(cartella):
     p = os.path.join(cartella, comune.STRUTTURA, '06-sottotrame-temi.md')
     if not os.path.isfile(p):
         return []
-    righe = [r for r in comune.tabella_md(p) if (r.get('Sottotrama o promessa') or r.get('Promessa o sottotrama') or
-                                                 r.get('Subplot or promise') or '').strip()]
+    def campo(r, prefissi):     # varianti dell'intestazione («Promessa», «Si chiude (pagamento)»…)
+        return next((v.strip() for k, v in r.items() if k and k.strip().lower().startswith(prefissi) and v), '')
+    righe = [r for r in comune.tabella_md(p) if campo(r, ('sottotrama', 'promessa', 'subplot', 'promise'))]
     if not righe:
         return ['06-sottotrame-temi.md: nessuna promessa o sottotrama']
     out = []
     for r in righe:
-        nome = (r.get('Sottotrama o promessa') or r.get('Promessa o sottotrama') or r.get('Subplot or promise')).strip()
-        chiude = (r.get('Si chiude') or r.get('Si paga') or r.get('Closes') or '').strip()
+        nome = campo(r, ('sottotrama', 'promessa', 'subplot', 'promise'))
+        chiude = campo(r, ('si chiude', 'si paga', 'closes'))
         if not chiude:
             out.append(f'06-sottotrame-temi.md: «{nome}» senza chiusura (pagamento)')
     return out

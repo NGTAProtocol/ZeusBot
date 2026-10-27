@@ -93,6 +93,20 @@ usate archiviate, soglie di stile solo informative). Obiettivo: manoscritti di q
 - Gli agenti senza terminale (diagnosta, editor strutturale, line editor) ricevono la prima riga del rapporto già
   calcolata dal motore; se manca si fermano e la chiedono, non la inventano.
 
+## Quinta parte: difetti trovati scrivendo il primo libro
+
+- I libri del percorso editoriale nascono con `revisione_capitolo: obbligatoria` (sette voti a ogni capitolo).
+- Il diagnosta del capitolo legge anche la sezione «Capitolo singolo» del suo ruolo (voci e scala tarate).
+- La lezione del revisore si registra anche se scritta come riga semplice, non solo come voce di elenco.
+- La capsula riceve le promesse della scheda del capitolo con i tag @prom, così il registro delle promesse si riempie.
+- Le battute tra caporali «» contano come dialogo (misure della voce, stile, anti-IA).
+- Il controllo della struttura accetta le varianti dell'intestazione della tabella delle promesse.
+- Recinto: il codice Python che si limita a leggere non è una scrittura; il corpo degli heredoc è un dato (gli
+  apostrofi non fanno più scattare blocchi a caso), mentre un heredoc Python che scrive è controllato come `-c`; la
+  cartella temporanea della sessione è libera anche per Write ed Edit.
+- `zb salva` accetta i file già tolti con `git rm`.
+- Agenti senza terminale (capsula, voce, direttore editoriale): i comandi di verifica li esegue la sessione principale.
+
 ## Da fare con l'autore
 
 - Provare `/capitolo` sul libro di prova (capitolo 1) e confrontare con la versione di oggi.
