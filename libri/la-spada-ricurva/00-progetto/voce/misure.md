@@ -12,8 +12,8 @@ Campioni: 00-progetto/voce/campione-1.md, 00-progetto/voce/campione-2.md. Voce i
 | Frase lunga (90° percentile) | 37 | 22 | 29.5 |
 | Frasi corte, ≤ 8 parole (%) | 0 | 39 | 19.5 |
 | Frasi lunghe, ≥ 25 parole (%) | 36 | 4 | 20.0 |
-| Dialogo (% delle parole) | 0.0 | 0.0 | 0.0 |
-| Paragrafo di narrazione medio (parole) | 84.2 | 28.2 | 56.2 |
+| Dialogo (% delle parole) | 0.0 | 2.8 | 1.4 |
+| Paragrafo di narrazione medio (parole) | 84.2 | 34.2 | 59.2 |
 | Virgole per 1000 parole | 53.4 | 74.5 | 64.0 |
 | Punti e virgola per 1000 parole | 0.0 | 0.0 | 0.0 |
 | Due punti per 1000 parole | 8.9 | 7.1 | 8.0 |
@@ -31,3 +31,9 @@ Campioni: 00-progetto/voce/campione-1.md, 00-progetto/voce/campione-2.md. Voce i
 
 - campione-1: condanna, cercavo, avrebbero, accanto, bellezza, gratuito, contratto, sottosuolo, pagamento, contanti, l'accademia, parquet
 - campione-2: nessuno, ritocco, l'ultima, offerto, dettaglio, lampada, radente, nell'angolo, restauratore, preceduta, un'azzurrite, macinata
+
+## Cliché nei campioni (da non imitare)
+
+- 00-progetto/voce/campione-1.md: «metronomo rotto»
+- 00-progetto/voce/campione-1.md: «tamburo sordo»
+- 00-progetto/voce/campione-1.md: «caccia all'uomo»

@@ -6,15 +6,15 @@ difetti:
      stato: confermato,
      descrizione: "cap. 2: il 21 la tela è sul cavalletto «da tre giorni», il 22 il posto vuoto è «fino a tre giorni fa» (sono quattro)",
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
-  - {id: D02, classe: conoscenza_personaggio, gravita: bloccante, rilevamento: revisore, data: 2026-10-27, scena: "3",
+  - {id: D02, valutazione: "revisore cieco: rilevato (cap. 3 r.31; ha visto anche Valli r.155)", classe: conoscenza_personaggio, gravita: bloccante, rilevamento: revisore, data: 2026-10-27, scena: "3",
      stato: confermato,
      descrizione: "cap. 3: Claudia dice di aver visto il Martirio girato contro il muro, ma il laboratorio era chiuso a chiave",
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
-  - {id: D03, classe: fatto_da_verificare, gravita: bloccante, rilevamento: fonte, data: 2026-10-27, scena: "1",
+  - {id: D03, valutazione: "revisore cieco: rilevati tutti e due (forbice di un'ora, Warburg); verifica su fonte: F001 errato, F002 verificato", classe: fatto_da_verificare, gravita: bloccante, rilevamento: fonte, data: 2026-10-27, scena: "1",
      stato: confermato,
      descrizione: "cap. 1: finestra della morte di un'ora (22:00-23:00) da rigidità, ipostasi e temperatura rettale; cap. 3: «Le bon Dieu est dans le détail», attribuita a Warburg (fatti F001 e F002 in fatti.yaml)",
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
-  - {id: D04, classe: inferenza_come_fatto, gravita: bloccante, rilevamento: revisore, data: 2026-10-27, scena: "1",
+  - {id: D04, valutazione: "revisore cieco: rilevato (cap. 1 r.35)", classe: inferenza_come_fatto, gravita: bloccante, rilevamento: revisore, data: 2026-10-27, scena: "1",
      stato: confermato,
      descrizione: "cap. 1: «con il suo codice, sul suo schermo»: il foglio dice solo «visualizzato»",
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
@@ -54,11 +54,11 @@ difetti:
      stato: confermato,
      descrizione: "similitudini figurate oltre il tetto in 01 e 03 (il motore le contava ma solo come avviso)",
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
-  - {id: D14, classe: motivazione, gravita: avviso, rilevamento: revisore, data: 2026-10-27, scena: "3",
+  - {id: D14, valutazione: "revisore cieco: NON rilevato (motivazione OK nei tre capitoli): falso negativo", classe: motivazione, gravita: avviso, rilevamento: revisore, data: 2026-10-27, scena: "3",
      stato: confermato,
      descrizione: "cap. 3: Elana accetta il gruppo senza pesare che il permesso di Valli è firmato dal Direttore",
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
-  - {id: D15, classe: tratto_ricorrente, gravita: avviso, rilevamento: deterministico, data: 2026-10-27, scena: "3",
+  - {id: D15, atteso: {sbagliata: fallito, corretta: fallito}, nota: "avviso: il tratto resta, si tiene sotto controllo", classe: tratto_ricorrente, gravita: avviso, rilevamento: deterministico, data: 2026-10-27, scena: "3",
      stato: confermato,
      descrizione: "Elana conta (gradini, mandate, bulloni, biette, tamponi, cornici) in tutti e tre i capitoli: da tenere sotto controllo, non da eliminare",
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
