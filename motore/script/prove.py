@@ -3370,6 +3370,7 @@ def difetti_prove(A):
                                           '- inferenza_come_fatto: OK\n- motivazione: OK\n\n## Fatti da verificare\n\n'
                                           '- r.5 «l\'ora della morte»: medicina legale\n\npassa\n')
     con_ko, inf = stato_di('conoscenza_personaggio'), stato_di('inferenza_come_fatto')
+    inf = inf if stato_di('motivazione') == 'passato' else 'motivazione persa'   # una riga OK non mangia la seguente
     nuovi = difetti.registra_fatti(d, '1')
     aperto = stato_di('fatto_da_verificare')
     rif = difetti.cmd_fatto(d, ['F001', 'generico'], [])

@@ -767,6 +767,9 @@ def cmd_esito(cartella, libro, stato, resto, argv):
             if lz:
                 print(f'Lezione per i capitoli successivi: {lz} ({percorso.LEZIONI}).')
         accetta_capitolo(cartella, libro, stato, n)
+        if percorso.attivo(libro) and libro.get('revisione_capitolo') == 'obbligatoria':
+            import difetti
+            difetti.cmd_continuita(cartella, libro)      # registro di continuità aggiornato a ogni capitolo
         return 0
     stato['tentativi'][n] = stato['tentativi'].get(n, 0) + 1
     rep = f'06-diagnostica/capitoli/{revisione.nome_report(n)}.md'

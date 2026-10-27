@@ -426,7 +426,7 @@ def sezione_revisore(cartella, n):
         return None
     blocco = t.split(SEZIONE_REVISORE, 1)[1].split('\n## ', 1)[0]
     out = {}
-    for m in re.finditer(r'(?m)^-\s*(\w+):\s*(OK|KO)\b\s*(.*)$', blocco):
+    for m in re.finditer(r'(?m)^-[ \t]*(\w+):[ \t]*(OK|KO)\b[ \t]*(.*)$', blocco):   # mai oltre la riga
         out[m.group(1)] = (m.group(2), m.group(3).strip())
     return out
 
