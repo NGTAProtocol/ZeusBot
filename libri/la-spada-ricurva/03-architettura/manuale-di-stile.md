@@ -4,18 +4,29 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «thrill
 
 ## 1. Voce
 
-- Voce: da fissare con la pagina campione.
-- Voce «Gotico-Analitica»: l'atmosfera e la densità di Donna Tartt, la spietatezza e il cinismo di Leigh Bardugo, la
-- paranoia chirurgica di Alex Michaelides. Narra Elana in prima persona («io»; «noi» quando parla del gruppo), sempre
-- al tempo presente (decisione dell'autore).
-- - Tono: non ha fretta; si nutre del decadimento e della bellezza soffocante di Napoli (tufo bagnato, polvere degli
-- archivi, formalina, carta secolare); dettagli sensoriali descritti con rigore quasi ossessivo, il peso fisico della
-- storia e della pietra.
-- - Attitudine: nessun eroe puro; menti brillanti corrotte da ambizione, paura e superiorità; l'Accademia è un'arena
-- spietata, non un tempio. Lucidità clinica, nessun giudizio morale facile, crepe e zone d'ombra di ognuno.
-- - Tensione: ogni capitolo respira una minaccia sotterranea; un errore di traduzione, un dettaglio di un dipinto, una
-- perizia che non torna sono indizi letali; il lettore sente sempre che qualcuno osserva, manipola e stringe il cappio.
-- Voce d'autore: da completare dopo l'«ok» alla pagina campione.
+La voce è definita in `02-bibbia/voce.md` («Gotico-Analitica»): questo manuale la recepisce e non la riscrive. In
+caso di dubbio vale `voce.md`, sezioni 2 (principi), 3 (ritmo e sintassi), 4 (lessico) e 7 (istruzione di
+esecuzione). Le regole che non si discutono:
+
+- **Persona:** prima persona di Elana Magnisi, unico punto di vista per tutti i 45 capitoli; «io» per sé, «noi» solo
+  per il gruppo. Ciò che Elana non vede arriva solo da documenti, racconti altrui o ricostruzione dichiarata.
+- **Tempo:** sempre il presente (decisione dell'autore). Nessuna Elana «di dopo»: niente «ancora oggi», niente «allora
+  non sapevo». Passato prossimo e imperfetto solo per ricordi brevi e antefatti. I salti di tempo (cap. 1 a G51,
+  cap. 44 gennaio-marzo, cap. 45 di nuovo a G72) li regge l'intestazione, non la voce.
+- **Dialoghi:** tra caporali «», battute brevi e poche per scena; attribuzione con un gesto o niente, raramente
+  «dice». Pensieri senza virgolette. Le parole del modello di Pietro e i documenti citati (perizie, registro,
+  traduzioni, comunicati) vanno anch'essi tra caporali, senza grafie speciali.
+- **Tre registri:** gotico (frase media 20-26) per aperture, atmosfera e sommario; analitico (10-14) per scena e
+  indagine; lama (3-8) per svolte e chiuse. Mai tre frasi lunghe di fila.
+- **Attacco e chiusa:** il capitolo si apre con una sentenza concreta e chiude su un oggetto o un fatto non spiegato,
+  in una frase secca e isolata.
+- **Metodo:** osservo, confronto, concludo; in forma esplicita al massimo una volta per capitolo.
+- **Punteggiatura:** niente punto e virgola, esclamativi, puntini di sospensione.
+- **Lessico:** restauro, debito, legge; niente cliché napoletani, niente aggettivi vaghi, niente psicologia
+  dichiarata. Anglismi solo nel lessico tecnico di Pietro (file, codice, server, modello).
+- **Nomi provvisori:** «l'assistente», «il Professore», «la perita», «il PM», «il Rettore», «il Vicerettore» restano
+  senza nome finché l'autore non li dà; Pietro senza cognome. Nessuna età scritta finché l'autore non la conferma.
+- Voce d'autore: si fissa con l'«ok» alla pagina campione.
 
 ## 2. Lunghezze
 
@@ -26,7 +37,9 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «thrill
 
 ## 3. Frase e dialogo
 
-- Frase media: 9-14 parole.
+- Frase media: 9-14 parole (valore del profilo thriller). La voce del libro attende 15-19 parole di media, con almeno
+  un quinto di frasi ≤ 8 e un quinto ≥ 25 (`voce.md`, sez. 3). Contrasto segnalato nella nota di direzione: finché
+  l'autore non approva un override, la soglia del profilo informa e non blocca; in stesura prevale la voce.
 - Dialogo: 25-45% delle parole del capitolo.
 - Similitudini: al massimo una ogni 400 parole.
 
@@ -45,7 +58,8 @@ Generato da nuovo.py dal briefing (sezione «Direttive») e dal profilo «thrill
 
 ## 7. Struttura
 
-- Intestazione del capitolo: «Luogo — giorno e data».
+- Intestazione del capitolo: «Luogo — giorno e data». Giorno e mese, mai l'anno né il giorno della settimana finché
+  l'autore non fissa l'anno; il calendario interno (G1 = 21 ottobre … G72 = 31 dicembre) sta in `cronologia.yaml`.
 - Separatore di scena: «* * *».
 - Nomi dei file: NN-<slug>.md in 04-manoscritto/.
 

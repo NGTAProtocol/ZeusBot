@@ -1,6 +1,40 @@
-# Cronologia del libro (proposta B.2.1). Si compila nella fase dei documenti.
-nascite: []        # - {chi: <personaggio>, data: AAAA-MM-GG}
-eventi: []         # - {id: <id>, data: AAAA-MM-GG, capitolo: <N>, descrizione: <breve>}
-durate: []         # - {da: <id evento>, a: <id evento>, valore: "<N anni|mesi|settimane|giorni>", tolleranza_giorni: 3 (oppure tolleranza_mesi / tolleranza_anni)}
-cifre: []          # - {id: <id>, valore: <numero>, unita: <unità>, forme_ammesse: [<cifre>, <in lettere>], contesto: [<parole della frase>]}
+# Cronologia del libro — La Spada Ricurva.
+# Ancoraggio (03-struttura/09-scelte-fisse.md): G1 = fine ottobre; assedio nella notte del 30 dicembre = G71-G72.
+# Ne segue G1 = 21 ottobre (Gn = 21 ottobre + n-1).
+# ANNO CONVENZIONALE 2025 [DA CONFERMARE]: serve solo a calcolare distanze. Il testo non nomina l'anno né il giorno
+# della settimana finché l'autore non lo fissa (calendario.anni_ammessi vuoto in libro.yaml).
+# Nascite: nessuna, perché tutte le età del briefing sono [DA CONFERMARE]; si aggiungono quando l'autore le conferma.
+# Fatti storici (Trecento, Seicento, 1860-61) senza giorno: stanno in 02-bibbia/bibbia.md, «Regole del mondo».
+nascite: []
+eventi:
+  - {id: g1-tela, data: 2025-10-21, capitolo: 2, descrizione: "G1: le lame sotto la ridipintura; restauro sospeso"}
+  - {id: g6-pigmenti, data: 2025-10-26, capitolo: 4, descrizione: "G6: Mina data la ridipintura al 1860-61"}
+  - {id: g12-arena, data: 2025-11-01, capitolo: 6, descrizione: "G12: il Professore sequestra le schede (1 novembre, festivo: vedi nota di direzione)"}
+  - {id: g15-rebus, data: 2025-11-04, capitolo: 7, descrizione: "G15: Claudia ricompone il rebus"}
+  - {id: g19-apertura, data: 2025-11-08, capitolo: 9, descrizione: "G19 notte: Lorenzo apre la porta; l'archivio (cap. 10)"}
+  - {id: g20-nome, data: 2025-11-09, capitolo: 11, descrizione: "G20: l'assistente pronuncia il nome della loggia"}
+  - {id: g22-scelta, data: 2025-11-11, capitolo: 12, descrizione: "G22: non denunciare; IA e pubblicazione"}
+  - {id: g24-macchina, data: 2025-11-13, capitolo: 13, descrizione: "G24: la macchina nel basso; stima di Pietro: due mesi"}
+  - {id: g38-ispezione, data: 2025-11-27, capitolo: 18, descrizione: "G38: ispezione; borsa sospesa; archivio fermo una settimana"}
+  - {id: g40-messaggio, data: 2025-11-29, capitolo: 19, descrizione: "G40: ultima sera dell'assistente; messaggio minatorio alle 23:47"}
+  - {id: g41-morte, data: 2025-11-30, capitolo: 20, descrizione: "G41 alba: l'assistente trovato morto nel chiostro (la scaletta dice «dicembre»: vedi nota)"}
+  - {id: g44-pm, data: 2025-12-03, capitolo: 22, descrizione: "G44: il PM chiede della medicina legale; rettifica già in corso"}
+  - {id: g51-perizia, data: 2025-12-10, capitolo: 25, descrizione: "G51: bozza (cap. 1) e perizia ufficiale all'alba; richiesta di archiviazione"}
+  - {id: g54-muro, data: 2025-12-13, capitolo: 27, descrizione: "G54: cripta murata; metà del Fondo non digitalizzata"}
+  - {id: g56-ipogei, data: 2025-12-15, capitolo: 28, descrizione: "G56 notte: per gli ipogei all'archivio; impronte fresche"}
+  - {id: g57-registro, data: 2025-12-16, capitolo: 29, descrizione: "G57: il registro della loggia a Posillipo"}
+  - {id: g62-offerta, data: 2025-12-21, capitolo: 31, descrizione: "G62: Dell'Aquila conosce la data dell'upload"}
+  - {id: g66-aggressione, data: 2025-12-25, capitolo: 33, descrizione: "G66: aggressione a Claudia (Natale)"}
+  - {id: g67-protocollo, data: 2025-12-26, capitolo: 34, descrizione: "G67: il protocollo sul PM in Procura (Santo Stefano: vedi nota)"}
+  - {id: g69-cenere, data: 2025-12-28, capitolo: 35, descrizione: "G69: basso devastato, originali bruciati, Dell'Aquila si ritira"}
+  - {id: g70-decisione, data: 2025-12-29, capitolo: 36, descrizione: "G70: caricare tutto dall'Accademia, domani notte"}
+  - {id: g71-assedio, data: 2025-12-30, capitolo: 37, descrizione: "G71 sera: chiusura per le feste; portone chiuso da fuori"}
+  - {id: g72-alba, data: 2025-12-31, capitolo: 45, descrizione: "G72: upload al cento per cento verso l'alba (42); Elana sola all'alba (45)"}
+  - {id: comunicato, data: 2026-01-15, capitolo: 44, descrizione: "Inaugurazione dell'anno accademico; comunicato del Rettore"}
+durate:
+  - {da: g41-morte, a: g51-perizia, valore: "dieci giorni", tolleranza_giorni: 0}   # canone: perizia dieci giorni dopo la morte
+cifre:
+  - {id: manoscritti, valore: 500, unita: manoscritti, forme_ammesse: [500, cinquecento]}
+  - {id: sigillo, valore: 700, unita: anni, forme_ammesse: [700, settecento], contesto: [sigill, settecento]}
+  - {id: codici-notte, valore: 20, unita: codici, forme_ammesse: [20, venti], contesto: [a notte, per notte]}
 eta_per_capitolo: {calcolata: true}
