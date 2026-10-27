@@ -5,7 +5,7 @@ riprendi da lì».
 
 ## Stato
 
-- **2026-10-27 (lavoro sul motore, ramo `claude/audit-4-tools-claude-code-ho78x3`)**: catena automatica dei capitoli
+- **2026-10-27 (lavoro sul motore, fatto sul ramo di lavoro di un libro e portato qui)**: catena automatica dei capitoli
   `/capitolo` (ruolo `regia`, `zb agenti prossimo` → AZIONE/FERMO), Opus dove si scrive o si giudica, revisione con
   voti tarati, `Media`, soglia `soglia_qualita` (7.5) controllata da `zb esito`, lezioni in `06-diagnostica/lezioni.md`,
   soglie di stile informative (`soglie_stile`), taglio avversario nel line editing, letture ridotte (ultime 3 capsule,
