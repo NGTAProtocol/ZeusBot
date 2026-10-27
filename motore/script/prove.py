@@ -3390,6 +3390,18 @@ def difetti_prove(A):
           'generico / eccezione', 'non verificabile / non verificabile / fallito / passato / 1 / non verificabile / '
           '0 passato / accettato', f'{senza} / {vecchia} / {con_ko} / {inf} / {nuovi} / {aperto} / {rif} {chiuso} / '
           f'{accettato}', sez)
+    import agenti
+    lob = dict(libro, revisione_capitolo='obbligatoria')
+    sporco = [cap(1, 'Aula — 1 marzo', 'La pioggia batte come un tamburo sordo.')]   # cliché: KO deterministico
+    open(ve, 'w', encoding='utf-8').write(difetti.riga_verifica(sporco[0][1]) + '\n## Registro dei difetti\n\n'
+                                          '- conoscenza_personaggio: OK\n- inferenza_come_fatto: OK\n- motivazione: OK\n')
+    nuovo_ko = agenti.precedenti_ko(d, lob, '.', '2', sporco)
+    os.remove(ve)
+    senza_verifica = agenti.precedenti_ko(d, lob, '.', '2', sporco)
+    facoltativa = agenti.precedenti_ko(d, libro, '.', '2', sporco)
+    esito('agenti.py', 'prima di un capitolo nuovo, cancello KO su uno già scritto: KO del revisore → FERMO / verifica '
+          'assente → AZIONE verificatore / revisione facoltativa → nessun blocco', 'FERMO / AZIONE / []',
+          f'{nuovo_ko[0].split(":")[0]} / {senza_verifica[0].split(":")[0]} / {facoltativa}', sez)
     esito('fase.py', 'zb esito chiama il cancello dei difetti (revisione obbligatoria)', True,
           'difetti.cancello(cartella, libro, n)' in open(os.path.join(S, 'fase.py'), encoding='utf-8').read(), sez)
     # giro di controllo: dopo un «passa», una correzione piccola fa ricontrollare solo le righe cambiate

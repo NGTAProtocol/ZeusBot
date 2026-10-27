@@ -130,6 +130,29 @@ def stato_revisione(cartella, libro, n):
     return ('passa' if ultima == 'passa' else 'non passa'), giro2
 
 
+def precedenti_ko(cartella, libro, rel, u, unita=None):
+    """Prima di un capitolo nuovo: un capitolo già scritto con il cancello dei difetti KO chiede la verifica mancante
+    o ferma la catena (con revisione obbligatoria; i capitoli accettati prima del cancello non passano oltre)."""
+    if libro.get('revisione_capitolo') != 'obbligatoria' or not str(u).isdigit():
+        return []
+    import difetti
+    unita = unita if unita is not None else difetti.carica(cartella, libro)
+    for k, testo in unita:
+        if not k.isdigit() or int(k) >= int(u):
+            continue
+        b = difetti.blocchi(difetti.esiti_unita(cartella, libro, k, unita))
+        if not b:
+            continue
+        if difetti.sezione_revisore(cartella, k, testo) is None:
+            return [f'AZIONE: verifica del capitolo {k} (già scritto, cancello dei difetti KO): agente verificatore '
+                    f'({rel}, capitolo {k}), rapporto {difetti.rel_verifica(k)} con la prima riga esatta '
+                    f'{difetti.riga_verifica(testo)}.']
+        return [f'FERMO: capitolo {k}, cancello dei difetti KO prima del capitolo {u} («zb difetti {rel} {k}»): '
+                + '; '.join(f'{c} ({e})' for c, _, e, _ in b)
+                + '. Correzione mirata (scrittore-voce) o eccezione con il motivo: decide l\'autore.']
+    return []
+
+
 def azione_stesura(cartella, libro, st, rel):
     """Una sola azione per la catena del capitolo (comando /capitolo): capsule mancanti → preparazione e scrittore →
     misure e revisione (con «revisione_capitolo: obbligatoria») → correzione mirata → esito → capsula → salva."""
@@ -141,6 +164,9 @@ def azione_stesura(cartella, libro, st, rel):
                 f'poi «zb capsula {rel} {c} --verifica».']
     u = unita_in_corso(cartella, libro, st)
     if u not in dict(comune.unita(cartella, libro)):
+        ko = precedenti_ko(cartella, libro, rel, u)
+        if ko:
+            return ko
         return [f'AZIONE: scrivi il capitolo {u}: «zb prepara {rel} {u}», poi agente scrittore-voce ({rel}, capitolo '
                     f'{u}, 06-diagnostica/preparazione/{u.zfill(2) if u.isdigit() else u}.md).']
     if libro.get('revisione_capitolo') != 'obbligatoria' or not u.isdigit():
