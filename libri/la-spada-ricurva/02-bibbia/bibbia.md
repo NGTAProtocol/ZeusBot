@@ -8,22 +8,24 @@ Precedenza in caso di contrasto: briefing (fatti canonici e decisioni dell'autor
 
 ## Personaggi
 
-Età e aspetto sono tutti [DA CONFERMARE]: nel testo non si scrive un'età finché l'autore non la fissa.
+Età, aspetto, modo di parlare e nomi mancanti sono [proposta] nelle schede del codex, riassunti in
+`06-diagnostica/proposte-personaggi.md`: nel testo non si scrive un'età né un nome proposto finché l'autore non
+conferma.
 
 | Tag | Chi | Cosa serve sapere per non contraddirsi |
 |---|---|---|
-| @char:elana | Elana Magnisi | Voce narrante, prima persona, presente [canone]. Dottoranda in filologia e restauro, con un posto in laboratorio all'Accademia; più grande dei tre studenti, ha la chiave del laboratorio [proposta]. Età 28 [DA CONFERMARE]. Parla precisa, tagliente, filologica [canone]. Mai cambiare: scetticismo, rigore, bisogno di riscatto sociale [canone]. |
-| @char:claudia | Claudia Rinaldi | Secondo anno dell'Accademia, uno dei «tre studenti» [canone]. Decifra il rebus (cap. 7) [canone]. Impone i limiti e tiene l'inventario firmato dei file (dal 26) [proposta]. Età 21 [DA CONFERMARE]. |
-| @char:lorenzo | Lorenzo Valli | Borsista d'élite in storia dell'arte, rampollo aristocratico, uno dei tre [canone]. Apre l'archivio (cap. 9) [canone]. Debito di famiglia in mano alla setta; tradisce passando i dati nell'assedio; sparisce [canone]. Accesso notturno ai laboratori dal 18, credenziali di rete dal 36 [proposta]. Età 26 [DA CONFERMARE]. |
-| @char:mina | Marco «Mina» Minervini | Chimica dei pigmenti e culti popolari, dei vicoli; uno dei tre [canone]. Data la ridipintura al 1860-61 (cap. 4) [proposta]. Ferito sotto il crollo nella cripta (cap. 40), vivo (43) [proposta]. Età 25 [DA CONFERMARE]. |
-| @char:pietro | Pietro | Programmatore, studente di IA alla Federico II; crea il modello offline [canone]. Non è uno dei tre: entra dopo l'apertura [proposta]. Cognome non dato. Età 27 [DA CONFERMARE]. |
-| @char:dellaquila | Carlo Dell'Aquila | Critico internazionale, elegante, algido, ambiguo; ha il registro della loggia [canone]. Si ritira nel 35; cartolina con due lame dritte nel 44 [proposta]. Il libro non dice mai da che parte stia. Età 60 [DA CONFERMARE]. |
-| @char:professore | Il Professore di Arte Moderna | Titolare di cattedra, volto in scena della setta; freddo, formale, sferzante [canone]. Senza nome finché l'autore non lo dà. Età 60 [DA CONFERMARE]. |
-| @char:assistente | L'assistente | Mentore dei ragazzi in laboratorio; supplica di non denunciare; assassinato dalla setta [canone]. Muore nella notte G40-G41, trovato all'alba di G41 ai piedi della scala del chiostro (cap. 20) [proposta]. Dopo il 20 è solo ricordato, o «parla» attraverso il modello. Nome ed età [DA DEFINIRE]. |
-| @char:rettore | Il Rettore | Della setta [canone]; porta l'anello (cap. 11) [proposta]. Visto di riflesso. |
-| @char:vicerettore | Il Vicerettore | Della setta [canone]; conduce l'ispezione del 18 [proposta]. |
-| @char:pm | Il pubblico ministero | Cortese, preciso, colluso (cap. 22, 34, 43) [proposta]. |
-| @char:perita | La perita | Giovane medica legale dissidente. La busta del cap. 1 contiene solo la sua bozza; la perizia ufficiale la porta lei a Elana, all'alba, nel cap. 25 [canone]. Non testimonierà [proposta]. Nome [DA DEFINIRE]. |
+| @char:elana | Elana Magnisi | Voce narrante, prima persona, presente [canone]. Dottoranda in filologia e restauro, con un posto in laboratorio all'Accademia; più grande dei tre studenti, ha la chiave del laboratorio [proposta]. Viene dalla periferia di Napoli: il riscatto passa dalla città stessa [canone]; Ponticelli, stanza in affitto ai Quartieri Spagnoli [proposta]. Età 28 [proposta]. Parla precisa, tagliente, filologica [canone]. Mai cambiare: scetticismo, rigore, bisogno di riscatto sociale [canone]. |
+| @char:claudia | Claudia Rinaldi | Secondo anno dell'Accademia, uno dei «tre studenti» [canone]. Decifra il rebus (cap. 7) [canone]. Impone i limiti e tiene l'inventario firmato dei file (dal 26) [proposta]. Età 21, fuori sede da Avellino [proposta]. |
+| @char:lorenzo | Lorenzo Valli | Borsista d'élite in storia dell'arte, rampollo aristocratico, uno dei tre [canone]. Apre l'archivio (cap. 9) [canone]. Debito di famiglia in mano alla setta; tradisce passando i dati nell'assedio; sparisce [canone]. Accesso notturno ai laboratori dal 18, credenziali di rete dal 36 [proposta]. Età 26 [proposta]. |
+| @char:mina | Marco «Mina» Minervini | Chimica dei pigmenti e culti popolari, dei vicoli; uno dei tre [canone]. Data la ridipintura al 1860-61 (cap. 4) [proposta]. Ferito sotto il crollo nella cripta (cap. 40), vivo (43) [proposta]. Età 25 [proposta]. |
+| @char:pietro | Pietro | Programmatore, studente di IA alla Federico II; crea il modello offline [canone]. Non è uno dei tre: entra dopo l'apertura [proposta]. Cognome Amitrano, età 27 [proposta]. |
+| @char:dellaquila | Carlo Dell'Aquila | Critico internazionale, elegante, algido, ambiguo; ha il registro della loggia [canone]. Si ritira nel 35; cartolina con due lame dritte nel 44 [proposta]. Il libro non dice mai da che parte stia. Età 64 [proposta]. |
+| @char:professore | Ettore Sanfelice, il Professore di Arte Moderna | Titolare di cattedra, volto in scena della setta; freddo, formale, sferzante [canone]. Età 61 [proposta]. |
+| @char:assistente | Andrea Scotti, l'assistente | Mentore dei ragazzi in laboratorio; supplica di non denunciare; assassinato dalla setta [canone]. Muore nella notte G40-G41, trovato all'alba di G41 ai piedi della scala del chiostro (cap. 20) [proposta]. Dopo il 20 è solo ricordato, o «parla» attraverso il modello. Età 54 [proposta]. |
+| @char:rettore | Il Rettore | Della setta [canone]; porta l'anello (cap. 11) [proposta]. Visto di riflesso. Nome Ruggero Arcamone [proposta]. |
+| @char:vicerettore | Il Vicerettore | Della setta [canone]; conduce l'ispezione del 18 [proposta]. Nome Aurelio Cennamo [proposta]. |
+| @char:pm | Il pubblico ministero | Cortese, preciso, colluso (cap. 22, 34, 43) [proposta]. Nome Guido Ianniello [proposta]. |
+| @char:perita | La perita | Giovane medica legale dissidente. La busta del cap. 1 contiene solo la sua bozza; la perizia ufficiale la porta lei a Elana, all'alba, nel cap. 25 [canone]. Non testimonierà [proposta]. Nome Teresa Avallone, età 34 [proposta]. |
 
 ## Luoghi
 
@@ -67,6 +69,8 @@ che riguarda la setta sono invenzione. Ogni luogo ha la sua scheda nel codex.
 - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno fu anche una guerra occulta tra logge rivali.
 - I Borbone possedevano circa un terzo dei volumi, in copie tratte dagli originali; alcuni testi, tra i più importanti, esistono in copia unica solo nella cripta ritrovata (decisione dell'autore).
 - La Spada Ricurva esiste già nel Trecento ed è lei a sigillare l'archivio; la massoneria del Settecento è solo una delle sue maschere (decisione dell'autore).
+- L'assistente ucciso si chiama Andrea Scotti; il Professore di Arte Moderna si chiama Ettore Sanfelice (decisioni dell'autore).
+- Elana viene dalla periferia di Napoli: il riscatto passa dalla città stessa (decisione dell'autore).
 - Il registro della loggia, con i nomi dei Borbone e dei Valli, è nelle mani di Carlo Dell'Aquila; è dal registro che i ragazzi scoprono la guerra occulta del 1861 (decisioni dell'autore).
 - La busta del cap. 1 contiene solo la bozza della perizia; la perizia ufficiale la porta a Elana la perita dissidente, all'alba, nel cap. 25 (decisione dell'autore).
 - Dopo il sigillo del Trecento la porta non fu mai più aperta: la chiave dipinta nel Seicento tramanda solo la via; la loggia non la forza perché la volta può crollare (decisione dell'autore).
@@ -114,7 +118,7 @@ che riguarda la setta sono invenzione. Ogni luogo ha la sua scheda nel codex.
   questo nessuno della loggia sa più aprire la porta, e nessuno la forza.
 
 ### Le due perizie [canone, con dettagli proposti]
-- Messaggio minatorio sul telefono dell'assistente: ore 23:47 della sera di G40.
+- Messaggio minatorio sul telefono di Andrea Scotti, l'assistente: ore 23:47 della sera di G40.
 - **Bozza** (prima stesura della perita): ora del decesso circa un'ora prima delle 23:47. È l'unico foglio della busta
   senza mittente del cap. 1. [canone]
 - **Perizia ufficiale rettificata**: stesso protocollo, ora del decesso spostata dopo le 23:47; firmata dalla perita

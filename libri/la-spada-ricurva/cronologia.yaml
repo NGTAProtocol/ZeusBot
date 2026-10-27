@@ -3,21 +3,22 @@
 # Ne segue G1 = 21 ottobre (Gn = 21 ottobre + n-1).
 # ANNO CONVENZIONALE 2025 [DA CONFERMARE]: serve solo a calcolare distanze. Il testo non nomina l'anno né il giorno
 # della settimana finché l'autore non lo fissa (calendario.anni_ammessi vuoto in libro.yaml).
-# Nascite: nessuna, perché tutte le età del briefing sono [DA CONFERMARE]; si aggiungono quando l'autore le conferma.
+# Nascite: nessuna; le età sono [proposta] (06-diagnostica/proposte-personaggi.md); si aggiungono quando l'autore le conferma.
+# Nomi canonici: l'assistente è Andrea Scotti; il Professore è Ettore Sanfelice (decisioni dell'autore).
 # Fatti storici (Trecento, Seicento, 1860-61) senza giorno: stanno in 02-bibbia/bibbia.md, «Regole del mondo».
 nascite: []
 eventi:
   - {id: g1-tela, data: 2025-10-21, capitolo: 2, descrizione: "G1: le lame sotto la ridipintura; restauro sospeso"}
   - {id: g6-pigmenti, data: 2025-10-26, capitolo: 4, descrizione: "G6: Mina data la ridipintura al 1860-61"}
-  - {id: g12-arena, data: 2025-11-01, capitolo: 6, descrizione: "G12: il Professore sequestra le schede (1 novembre, festivo: vedi nota di direzione)"}
+  - {id: g12-arena, data: 2025-11-01, capitolo: 6, descrizione: "G12: Sanfelice sequestra le schede (1 novembre, festivo: vedi nota di direzione)"}
   - {id: g15-rebus, data: 2025-11-04, capitolo: 7, descrizione: "G15: Claudia ricompone il rebus"}
   - {id: g19-apertura, data: 2025-11-08, capitolo: 9, descrizione: "G19 notte: Lorenzo apre la porta; l'archivio (cap. 10)"}
-  - {id: g20-nome, data: 2025-11-09, capitolo: 11, descrizione: "G20: l'assistente pronuncia il nome della loggia"}
+  - {id: g20-nome, data: 2025-11-09, capitolo: 11, descrizione: "G20: Scotti pronuncia il nome della loggia"}
   - {id: g22-scelta, data: 2025-11-11, capitolo: 12, descrizione: "G22: non denunciare; IA e pubblicazione"}
   - {id: g24-macchina, data: 2025-11-13, capitolo: 13, descrizione: "G24: la macchina nel basso; stima di Pietro: due mesi"}
   - {id: g38-ispezione, data: 2025-11-27, capitolo: 18, descrizione: "G38: ispezione; borsa sospesa; archivio fermo una settimana"}
-  - {id: g40-messaggio, data: 2025-11-29, capitolo: 19, descrizione: "G40: ultima sera dell'assistente; messaggio minatorio alle 23:47"}
-  - {id: g41-morte, data: 2025-11-30, capitolo: 20, descrizione: "G41 alba: l'assistente trovato morto nel chiostro (la scaletta dice «dicembre»: vedi nota)"}
+  - {id: g40-messaggio, data: 2025-11-29, capitolo: 19, descrizione: "G40: ultima sera di Scotti; messaggio minatorio alle 23:47"}
+  - {id: g41-morte, data: 2025-11-30, capitolo: 20, descrizione: "G41 alba: Scotti trovato morto nel chiostro (la scaletta dice «dicembre»: vedi nota)"}
   - {id: g44-pm, data: 2025-12-03, capitolo: 22, descrizione: "G44: il PM chiede della medicina legale; rettifica già in corso"}
   - {id: g51-perizia, data: 2025-12-10, capitolo: 25, descrizione: "G51: bozza (cap. 1) e perizia ufficiale all'alba; richiesta di archiviazione"}
   - {id: g54-muro, data: 2025-12-13, capitolo: 27, descrizione: "G54: cripta murata; metà del Fondo non digitalizzata"}
