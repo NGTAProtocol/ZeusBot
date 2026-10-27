@@ -515,6 +515,10 @@ def registra_correzione(cartella, libro, stato, resto):
     if commit:
         voce['commit'] = commit
     stato.setdefault('correzioni_registrate', []).append(voce)
+    approvato = stato['documenti_approvati'].get(rel)
+    if approvato and dopo == attuale:   # la correzione registrata vale come nuova versione approvata (zb avvio)
+        approvato['sha256'] = comune.impronta_documento(os.path.join(cartella, rel))
+        approvato['commit'] = commit or comune.git(cartella, 'log', '-1', '--format=%h', '--', rel)[1].strip()
     print(f'Correzione registrata: {rel}; motivo: {motivo}; sha256 precedente {(prima or "—")[:12]}, '
           f'corretto {dopo[:12]}. Gate invariato ({stato["gate_in_attesa"] or "nessuno"}).')
 

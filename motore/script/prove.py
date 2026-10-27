@@ -1690,9 +1690,10 @@ def correzioni_e_passo(A):
     Lm = shutil.copytree(os.path.join(M, 'prove', 'mini-libro'), os.path.join(r, 'mini'))
     s = comune.leggi_yaml(os.path.join(M, 'modelli', 'stato.yaml'))
     s.update(libro='Prova di stampa', fase='stesura', passo='capitolo 1', aggiornato='prova', gate_in_attesa=None)
+    cap = os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md')
+    s['documenti_approvati'] = {'04-manoscritto/01-la-farmacia.md': {'sha256': comune.sha256_file(cap), 'commit': 'prima'}}
     open(os.path.join(Lm, 'stato.yaml'), 'w', encoding='utf-8').write(yaml.safe_dump(s, sort_keys=False, allow_unicode=True))
     salva(r)
-    cap = os.path.join(Lm, '04-manoscritto', '01-la-farmacia.md')
 
     def stato():
         return comune.leggi_yaml(os.path.join(Lm, 'stato.yaml'))
@@ -1712,7 +1713,8 @@ def correzioni_e_passo(A):
     v = stato()['correzioni_registrate'][-1]
     esito('fase.py', '(a) correggi --commit: sha256 prima e dopo il commit', A['a_commit'],
           f'{p2.returncode} / {v["sha256_precedente"] == salvato} / {v["sha256_corretto"] == comune.sha256_file(cap)} / '
-          f'{v["commit"] == h}', sez)
+          f'{v["commit"] == h} / '
+          f'{stato()["documenti_approvati"].get("04-manoscritto/01-la-farmacia.md", {}).get("sha256") == comune.sha256_file(cap)}', sez)
     p3 = zb(r, 'correggi', 'mini', 'capitolo 9: inesistente')
     p4 = zb(r, 'correggi', 'mini', 'senza due punti')
     esito('fase.py', '(a) unità inesistente / uso sbagliato: rifiutati', A['a_rifiuti'],
