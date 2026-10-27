@@ -566,7 +566,7 @@ correzioni_interludi_e_grafie:
 # zb correggi fuori dal gate (registra data, file, motivo, sha256 precedente) e passo che non scende.
 correzioni_e_passo:
   a_libera: "0 / 04-manoscritto/01-la-farmacia.md / una riga in più / True / True / None"
-  a_commit: "0 / True / True / True"
+  a_commit: "0 / True / True / True / True"
   a_rifiuti: "2 / 2 / 2"          # unità inesistente e istruzione senza «:» rifiutate; registrate restano 2
   b_passo: "0 / capitolo 3 / 2"   # prima della correzione il passo tornava a «capitolo 2»
 
