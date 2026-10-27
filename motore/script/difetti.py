@@ -523,8 +523,14 @@ def cmd_prova(cartella, libro):
     righe, male = ['| ID | Classe | Rilevamento | Sbagliata | Corretta | Esito |', '|---|---|---|---|---|---|'], 0
     for v in voci:
         s, c = prova_voce(cartella, libro, v)
-        ok = (s, c) == ('fallito', 'passato')
+        # atteso: un difetto confermato fallisce sulla sbagliata e passa sulla corretta; uno non confermato passa su
+        # tutte e due; il registro può dichiarare altro (un avviso che resta), sempre con la nota
+        att = v.get('atteso') or ({'sbagliata': 'passato', 'corretta': 'passato'} if v.get('stato') == 'non confermato'
+                                  else {'sbagliata': 'fallito', 'corretta': 'passato'})
+        ok = (s, c) == (att['sbagliata'], att['corretta'])
         nd = s == 'non deterministico'
+        if nd:
+            s = c = v.get('valutazione') or 'non deterministico'
         male += 0 if ok or nd else 1
         righe.append(f'| {v["id"]} | {v["classe"]} | {dati()["classi"][v["classe"]]["rilevamento"]} | {s} | {c} | '
                      f'{"OK" if ok else ("—" if nd else "KO")} |')
