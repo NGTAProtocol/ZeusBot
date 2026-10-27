@@ -19,6 +19,7 @@ scrive il motivo. Gli altri gate valgono solo se libro.yaml li elenca (i libri n
 import datetime
 import os
 import re
+import subprocess
 
 import comune
 
@@ -120,6 +121,38 @@ def da_correggere(testo):
     return out
 
 
+def righe_cambiate(cartella, rel_cap, su):
+    """Righe del capitolo cambiate dopo la versione su cui è stato scritto un rapporto «passa» (impronta `su`, cercata
+    nella storia git del file): [«r.N «testo»: cambiata dopo la revisione superata»], oppure None se quella versione
+    non si trova o se è cambiato più di un terzo delle righe (allora serve un giro completo)."""
+    import difflib
+    import hashlib
+    out = comune.git(cartella, 'log', '--format=%H', '--', rel_cap)[1].split()
+    radice = comune.radice_git(cartella)
+    pref = os.path.relpath(os.path.join(cartella, rel_cap), radice)
+    prima = None
+    for c in out[:30]:
+        r = subprocess.run(['git', '-C', radice, 'show', f'{c}:{pref}'], capture_output=True)
+        if r.returncode:
+            continue
+        h = hashlib.sha256()    # come revisione.impronta, sul contenuto di quella versione
+        h.update(rel_cap.encode() + b'\0' + hashlib.sha256(r.stdout).hexdigest().encode())
+        if h.hexdigest()[:12] == su:
+            prima = r.stdout.decode('utf-8').splitlines()
+            break
+    if prima is None:
+        return None
+    ora = open(os.path.join(cartella, rel_cap), encoding='utf-8').read().splitlines()
+    voci = []
+    for tag, _, _, j1, j2 in difflib.SequenceMatcher(None, prima, ora).get_opcodes():
+        if tag != 'equal':
+            voci += [f'r.{j + 1} «{ora[j].strip()[:120]}»: cambiata dopo la revisione superata'
+                     for j in range(j1, j2) if ora[j].strip() and not ora[j].strip().startswith('<!--')]
+    if not voci or len(voci) > max(3, len([r for r in ora if r.strip()]) // 3):
+        return None
+    return voci
+
+
 def giro_revisione(cartella, libro, n, nuovo=False):
     """(giro, voci) della revisione del capitolo N: un solo giro completo; dopo un «non passa» e la correzione di chi
     scrive, il secondo giro rivede solo le voci di «## Da correggere» del primo (copiato in audit/NN-giro1.md da
@@ -133,6 +166,10 @@ def giro_revisione(cartella, libro, n, nuovo=False):
     if next((r for r in reversed(righe) if r), '').lower() != 'non passa':
         if os.path.isfile(g1):
             os.remove(g1)   # primo giro di un ciclo chiuso prima: si riparte da un giro completo (la storia resta in git)
+        m = INTESTAZIONE.match(righe[0] if righe else '')
+        cambiate = righe_cambiate(cartella, testi[0], m.group(2)) if m and not nuovo else None
+        if cambiate:        # correzione dopo un «passa»: si controllano solo le righe cambiate (giro di controllo)
+            return 2, cambiate
         return 1, []
     m = INTESTAZIONE.match(righe[0] if righe else '')
     if m and m.group(2) == impronta(cartella, testi):
