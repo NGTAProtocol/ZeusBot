@@ -345,12 +345,12 @@ documenti_approvati:
     sha256: bcae2fd22c33a1eae52362d3822e7f6e81690422c27cc9a8cf17f150b0af3ca3
     commit: 9d3bd90
   04-manoscritto/03-il-dettaglio-ripetuto.md:
-    sha256: ed46d6c3b88866ed59ea9cf6761a02350fb12c1077fa9d5e1bcc6dd44d6f11dc
-    commit: 9d3bd90
+    sha256: a7453b6fc8c9e0dc00f28ee73f03902a4935fc31645a69a70b2da99fd74d99b5
+    commit: 1ba2805
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-27T23:55:46Z'
+aggiornato: '2026-10-27T23:55:56Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
@@ -444,3 +444,8 @@ correzioni_registrate:
   motivo: correzione mirata sul KO del verificatore (r.36, ultimo battito dato per certo)
   sha256_precedente: 0f971b09db57dce9bec7b81972632b37e0d8356ef45c48bbb8309fd093b26f94
   sha256_corretto: 761fdb640ed0b70b0eddfcbd2d48cae10b3d1a9b0362b1bd86625beca83a6c0f
+- data: '2026-10-27'
+  file: 04-manoscritto/03-il-dettaglio-ripetuto.md
+  motivo: correzione mirata sul KO del verificatore (finale, r.181-189)
+  sha256_precedente: ed46d6c3b88866ed59ea9cf6761a02350fb12c1077fa9d5e1bcc6dd44d6f11dc
+  sha256_corretto: a7453b6fc8c9e0dc00f28ee73f03902a4935fc31645a69a70b2da99fd74d99b5
