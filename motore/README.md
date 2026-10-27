@@ -5,7 +5,7 @@ dati KDP e il livello editoriale (`editoriale/`: percorso, ruoli, agenti, anti-I
 libri reali. Il progetto iniziale (`proposta-motore.md`) è sul ramo d'archivio `archivio/motore-prima-2026-10-27`. Come si lavora su un libro: `PROCEDURA.md`.
 Percorso e ruoli: `editoriale/00-percorso.md` e `editoriale/LEGGIMI.md` (che ha anche l'unica scala di precedenza).
 Questo file raccoglie le regole d'uso, l'ambiente e gli hook. Stato e scelte del 2026-10-27 (catena dei capitoli,
-qualità, token): `docs/report-motore-2026-10-27.md` e `docs/miglioramenti-2026-10-27.md`.
+qualità, token): `docs/report-motore-27-ottobre-2026.md` e `docs/miglioramenti-2026-10-27.md`.
 Guida di lettura per l'autore (organigramma, percorso di un libro, regole), in PDF per telefono: `docs/GUIDA_AL_SISTEMA.pdf` (sorgente `docs/GUIDA_AL_SISTEMA.md`).
 I documenti di `docs/` non si leggono nelle sessioni di lavoro.
 
