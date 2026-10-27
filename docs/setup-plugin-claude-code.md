@@ -1,7 +1,7 @@
 # Setup di 4 strumenti per Claude Code: audit di sicurezza
 
 Data: 2026-10-27. Ambiente: sessione Claude Code in un container cloud temporaneo (non il computer dell'autore).
-Esito in breve: **audit fatto su tutti e 4.** Dopo l'ok dell'autore («installa quello che devi installare»):
+Esito in breve: **audit fatto su tutti e 4.** Graphify installato dopo «installa Graphify» (sezione dedicata). Prima, dopo l'ok dell'autore («installa quello che devi installare»):
 **installati Ponytail 5.3.2 e Agent Skills 0.6.13** (scope utente del container, vedi «Aggiornamento:
 installazione»); Graphify (DUBBIO) e OmniRoute (NON INSTALLARE) **non installati**, in attesa di conferma esplicita.
 
@@ -23,6 +23,30 @@ File modificati fuori dal repository: `/root/.claude/settings.json` (`enabledPlu
 prossime sessioni. Per averli ovunque: digita i comandi `/plugin` delle sezioni 1 e 2 nel tuo Claude Code, oppure
 dichiararli nello scope «project» (`.claude/settings.json` del repo): è una modifica al motore, quindi solo dopo
 «lavoro sul motore», e per Ponytail con il limite sui subagenti descritto sotto.
+
+## Aggiornamento: Graphify installato (2026-10-27, dopo «installa Graphify»)
+
+Comandi eseguiti (da una cartella dello scratchpad, **non** dal repository):
+```
+cp -p ~/.claude/settings.json <scratchpad>/backup-claude/settings.json.bak-20261027   # ~/.claude/CLAUDE.md non esisteva
+uv tool install graphifyy==0.9.96
+graphify install
+```
+- Versione: `graphify 0.9.96`; i 233 file installati in `~/.local/share/uv/tools/graphifyy/` sono identici al
+  wheel esaminato (sha256 `bbef4c79…`).
+- Scritto da `graphify install`, esattamente come previsto dall'audit: `~/.claude/skills/graphify/SKILL.md`,
+  `~/.claude/skills/graphify/references/` (8 file), `~/.claude/skills/graphify/.graphify_version` (`0.9.96`) e
+  `~/.claude/CLAUDE.md` creato con la sola sezione `# graphify` (3 righe). `~/.claude/settings.json` **invariato**
+  (confrontato col backup); nessun hook installato.
+- **Non** eseguito `graphify claude install`: in ZeusBot modificherebbe `CLAUDE.md` e `.claude/settings.json` del motore.
+- Prova su una cartella di prova (`<scratchpad>/prova-graphify`, 3 file Python): `graphify update .` → «9 nodes,
+  14 edges, 2 communities», creati `graphify-out/graph.json`, `graph.html`, `GRAPH_REPORT.md`; `graphify query`
+  e `graphify path "main" "query"` (main → UserService → .get_user → query, 3 passi) rispondono correttamente.
+  Nessuna chiave API usata, nessun invio esterno (solo estrazione AST locale).
+- La skill `graphify` risulta caricata nella sessione. Il comando `/graphify` completo non l'ho lanciato da qui:
+  scrive `graphify-out/` nella cartella corrente, che in questa sessione è il repository ZeusBot (fuori dal
+  recinto). Va provato aprendo Claude Code in una cartella di prova.
+- Limite: anche questa installazione sta nel container cloud e sparisce a fine sessione.
 
 ## Rete: sbloccare GitHub (sito e API)
 
