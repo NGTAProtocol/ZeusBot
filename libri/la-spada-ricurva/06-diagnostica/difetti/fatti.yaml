@@ -36,7 +36,11 @@ fatti:
   unita: '1'
   affermazione: 'r.32 «visualizzato alle ore 23:49» con r.36 «tratto da un tabulato»:
     tecnica (i tabulati dell''operatore registrano la visualizzazione di un messaggio?)'
-  stato: da_verificare
+  stato: errato
+  data: '2026-10-27'
+  nota: 'i tabulati dell''operatore registrano chiamate, SMS e sessioni dati, non
+    la lettura dei messaggi: il «visualizzato» viene dall''estrazione forense del
+    telefono (fonti: cybersecurity360.it/?p=60555; Tavassi, Arch. pen. 2022, boa.unimib.it)'
 - id: F005
   unita: '1'
   affermazione: 'r.20 «trentadue gradini di piperno», scala del chiostro dell''Accademia
@@ -46,28 +50,47 @@ fatti:
   unita: '1'
   affermazione: 'r.18 «buste paga… il ventisette di ogni mese»: prassi amministrativa
     (stipendi pubblici)'
-  stato: da_verificare
+  stato: errato
+  data: '2026-10-27'
+  nota: 'NoiPA: esigibilità ordinaria il 23 di ogni mese, il 27 solo per il comparto
+    Sanità (orizzontescuola.it, tecnicadellascuola.it)'
 - id: F007
   unita: '2'
   affermazione: 'r.13 «cretto fitto … imprimitura rossa quando l''olio ha quattro
     secoli»: tecnica del restauro'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-27'
+  fonte: rehs.com/nl_archives_view.php?key=70; PMC9333328 (la craquelure registra
+    età e storia della tela)
 - id: F008
   unita: '2'
   affermazione: 'r.31 «Ottocentesca, a giudicare dal cretto»: datazione di una ridipintura
     dal cretto (tecnica)'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-27'
+  fonte: rehs.com/nl_archives_view.php?key=70 (il rapporto tra cretto e ridipintura
+    è la prova usata dai restauratori; datazione indicativa, da esperto)
 - id: F009
   unita: '2'
   affermazione: 'r.99 «vernice da ritocco reversibile»: tecnica del restauro'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-27'
+  fonte: cameo.mfa.org/wiki/Gamvar_Picture_Varnish; conservationsupportsystems.com
+    (colori e vernici da ritocco reversibili con solventi blandi)
 - id: F010
   unita: '2'
   affermazione: 'r.105 «tre secoli di studenti»: storia (l''Accademia di Napoli è
     del 1752, nella sede attuale dal 1864)'
-  stato: da_verificare
+  stato: errato
+  data: '2026-10-27'
+  nota: 'Accademia fondata nel 1752, nella sede di via Costantinopoli (ex convento
+    di San Giovanni Battista delle Monache) dal 1864: circa un secolo e mezzo di studenti,
+    non tre (en.wikipedia.org/wiki/Accademia_di_Belle_Arti_di_Napoli)'
 - id: F011
   unita: '2'
   affermazione: 'r.19 «sopra la ruota della santa»: iconografia di santa Caterina
     d''Alessandria'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-27'
+  fonte: sigecweb.beniculturali.it ICCD3503621, ICCD2831916 (la ruota dentata è l'attributo
+    tradizionale della santa)
