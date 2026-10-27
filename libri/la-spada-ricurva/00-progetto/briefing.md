@@ -1,7 +1,7 @@
 # Briefing
 
 Titolo di lavoro: La Spada Ricurva
-Autore: Pseudonimo da definire
+Autore: V. M. Barone
 Lettore: adulto, lettore di dark academia e thriller colti (Tartt, Bardugo, Michaelides); mercato italiano.
 
 ## Idea (massimo 5 righe)
