@@ -1,9 +1,10 @@
 # Logline e tema — La Spada Ricurva
 
 ## Logline
-Una dottoranda di restauro senza protezioni decifra un rebus nei dipinti barocchi dell'Accademia di Napoli, apre un
-archivio occulto sigillato da settecento anni e, contro una loggia che controlla l'Accademia, la Procura e la morte
-stessa del suo mentore, deve pubblicarlo nel mondo con un'intelligenza artificiale prima che il cappio si chiuda.
+Una dottoranda di restauro senza protezioni trova sotto una vernice barocca il segno di una loggia; con tre
+studenti dell'Accademia di Napoli, che decifrano il rebus nascosto nei dipinti e aprono un archivio occulto sigillato
+da settecento anni, deve pubblicarlo nel mondo con un'intelligenza artificiale, contro una loggia che controlla
+l'Accademia, la Procura e la morte stessa del suo mentore, prima che il cappio si chiuda.
 
 ## Tema centrale
 La conoscenza tenuta segreta è potere su qualcuno; liberarla ha un prezzo e non rende innocenti. Chi libera un sapere

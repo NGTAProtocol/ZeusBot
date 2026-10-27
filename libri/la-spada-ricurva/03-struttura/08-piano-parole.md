@@ -26,11 +26,11 @@
 | La traduzione | 22 | Il pubblico ministero | falsa pista ufficiale | 1 | 2100 | 2100 |  |  |
 | La traduzione | 23 | La voce | l'IA diventa voce | 1 | 2200 | 2200 |  |  |
 | La traduzione | 24 | La copia | Lorenzo a metà | 1 | 1700 | 1700 |  |  |
-| La traduzione | 25 | Lo scarto di un'ora | punto centrale | 2 | 2200 | 1100 |  |  |
+| La traduzione | 25 | Lo scarto di un'ora | punto centrale, le due perizie | 2 | 2200 | 1100 |  |  |
 | Il cappio | 26 | Il lungomare | reazione | 1 | 1500 | 1500 |  |  |
 | Il cappio | 27 | Il muro | accesso chiuso | 1 | 1700 | 1700 |  |  |
 | Il cappio | 28 | Gli ipogei | incursione | 1 | 2300 | 2300 |  |  |
-| Il cappio | 29 | Il registro | rivelazione e silenzio | 1 | 2000 | 2000 |  |  |
+| Il cappio | 29 | Il registro | il 1861, rivelazione e silenzio | 1 | 2000 | 2000 |  |  |
 | Il cappio | 30 | Schemi di controllo | anomalia dell'IA | 1 | 2100 | 2100 |  |  |
 | Il cappio | 31 | Il prezzo di Dell'Aquila | trattativa | 1 | 1800 | 1800 |  |  |
 | Il cappio | 32 | Il caffè di Lorenzo | indizio, difetto di Elana | 1 | 1600 | 1600 |  |  |
@@ -45,7 +45,7 @@
 | La notte di pioggia | 41 | Davanti alla tela | confronto finale | 1 | 2400 | 2400 |  |  |
 | La notte di pioggia | 42 | Cento per cento | climax | 2 | 2700 | 1350 |  |  |
 | La notte di pioggia | 43 | Le prime luci | dispersione | 1 | 1700 | 1700 |  |  |
-| La notte di pioggia | 44 | Come si ricucì | il sistema si ricuce | 3 | 1800 | 600 |  |  |
+| La notte di pioggia | 44 | Si ricuce | salto in avanti datato | 3 | 1800 | 600 |  |  |
 | La notte di pioggia | 45 | L'alba | finale | 1 | 1300 | 1300 |  |  |
 
 Totale: 90000.

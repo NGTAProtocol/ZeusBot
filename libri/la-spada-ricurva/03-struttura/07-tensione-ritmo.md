@@ -27,7 +27,7 @@
 | 23 | 7 | azione | no |
 | 24 | 6 | azione | no |
 | 25 | 9 | azione/decisione | no |
-| 26 | 4 | reazione | sì: dopo il punto centrale, il mare d'inverno; si fissano i limiti morali |
+| 26 | 4 | reazione/decisione | sì: dopo il punto centrale, il mare d'inverno; Claudia fissa i limiti e avvia l'inventario |
 | 27 | 6 | azione | no |
 | 28 | 8 | azione | no |
 | 29 | 7 | azione | no |
@@ -45,7 +45,7 @@
 | 41 | 9 | azione | no |
 | 42 | 10 | azione | no |
 | 43 | 5 | reazione | sì: svuotamento dopo il climax |
-| 44 | 3 | reazione | sì: il sistema si ricuce; distanza retrospettiva voluta |
+| 44 | 3 | reazione | sì: salto in avanti datato, tre scene brevi; il sistema si ricuce, mostrato e non elencato |
 | 45 | 4 | reazione | sì: finale contemplativo con una sola inquietudine che non si chiude |
 
 ## Curva

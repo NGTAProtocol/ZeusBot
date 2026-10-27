@@ -4,10 +4,12 @@
   Magnisi, per tutti i 45 capitoli. «Io» per sé, «noi» quando parla del gruppo. Nessun capitolo da altri punti di
   vista: ciò che Elana non vede si sa solo per documenti (perizia, registro, comunicati), racconti altrui o
   ricostruzione dichiarata.
-- Tempo verbale della narrazione: passato (passato remoto e imperfetto), narrazione a cose avvenute. Il presente è
-  ammesso solo per le riflessioni della Elana che racconta da dopo (aforismi, giudizi, «ancora oggi»), mai per
-  l'azione. Anticipazioni concesse con misura: il cap. 1 è un'anticipazione dichiarata; il cap. 44 racconta il dopo
-  e il 45 torna all'alba dell'assedio. Nessun'altra analessi lunga.
+- Tempo verbale della narrazione: presente, per tutto il libro (decisione dell'autore, briefing). Elana vive la scena
+  mentre accade: non c'è una Elana che racconta da dopo, quindi niente riflessioni del tipo «ancora oggi», niente
+  «allora non sapevo». Passato prossimo e imperfetto solo per ciò che precede il momento della scena (ricordi brevi,
+  antefatti). I salti di tempo li regge l'intestazione «Luogo — giorno e data», non la voce: il cap. 1 è
+  un'anticipazione datata (G51) e il racconto torna a G1 nel cap. 2; il cap. 44 è un salto in avanti datato
+  (gennaio-marzo), in scene con la propria intestazione; il 45 torna all'alba di G72. Nessun'altra analessi lunga.
 - Voce (registro, distanza, eventuale voce della banca-voci): ibrido «Gotico-Analitico» delle indicazioni
   dell'autore (`00-progetto/voce/indicazioni.md`): densità e atmosfera (Tartt), cinismo e spietatezza (Bardugo),
   paranoia chirurgica (Michaelides). Registro alto, preciso, filologico; Elana diffida delle parole vaghe. Distanza:
