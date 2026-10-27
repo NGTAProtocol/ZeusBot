@@ -1,7 +1,7 @@
 libro: La Spada Ricurva
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: documenti
+fase: pagina_campione
 passo: da completare
 gate_in_attesa: null
 lotto:
@@ -60,10 +60,174 @@ documenti_approvati:
     sha256: 228e89ca7c9cfbec7225a6e1c311e8a10252c1eca866ee8a005f44109ca3d2f4
     commit: 69b97ae
     senza_gate: true
+  libro.yaml:
+    sha256: dd270cfab9c049f54a8738b51587842393480c23ba7ee1483f072a9622687fa9
+    commit: '3040770'
+    senza_gate: true
+  02-bibbia/bibbia.md:
+    sha256: d130038228a93a5a015c452051206ebe14447e309ec6bcb780316afaf5ce6129
+    commit: 536a0df
+    senza_gate: true
+  cronologia.yaml:
+    sha256: 59e5127e4169d6d6562bd64efe7d12cc1daaa8411296cbf6af7e4d44b1c3292f
+    commit: 536a0df
+    senza_gate: true
+  03-architettura/manuale-di-stile.md:
+    sha256: 0d8150fd9195c6d003b83aded0c864a1f835e1a326d98157ac720bb27f1900aa
+    commit: 536a0df
+    senza_gate: true
+  06-diagnostica/nota-direzione.md:
+    sha256: 25383ada679e5351e7897e8e02a5d6a348c672817b292176a5e1739f1ea58dc7
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/accademia.md:
+    sha256: 036b36120caf4f252fcd090ce80d5268600af96f8300296d1dd92c19477662a8
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/archivio.md:
+    sha256: 6279cf1837809c7026ae6c05391c6f52618cb547ac7f612d4f9769e98e09381b
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/assistente.md:
+    sha256: ecc95e83860d49c2ca2e66485748f813dbcb00c53b0d4af1283910544bf41ec3
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/aula-moderna.md:
+    sha256: 08e30dc8a5f4bf3d3772776c0ec6732d84b6b973c32d6c562f0bd56e62a4fc9c
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/basso-sanita.md:
+    sha256: d29f8ee2964ff6a86f5e2d1de82cc754aa157fcceff369ae4b62e168d271fbf7
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/casa-mina.md:
+    sha256: 67f9b5da05deca0fec302513fb710e67e926b1c5da9b3159faf8175f1f9299d6
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/chiostro.md:
+    sha256: 73a03643f406d70a81bd8fea697fa7f4bdfa4cc26a47eeb28754b042b8f4269b
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/claudia.md:
+    sha256: bd05d6c740aff6e3fcd0f315a50bf1b0d253b8f85ecfc4b718edd9dbe5f6f7a0
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/cripta.md:
+    sha256: ad167059735e6b7d38f87aadfbb9cb266e21153a4948a188d8281414631af06b
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/dellaquila.md:
+    sha256: 2f25a3bc5d8c790bed537341a93f722471fdd12e7d37e3a784c30844873684a7
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/elana.md:
+    sha256: 212914fda12ab7b12a73ff783a8a17f425365cbca2d1d31ceb1a70ad3c76a5e7
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/fontanelle.md:
+    sha256: 1f98c32add060568ce75f37c239fd9da13b168dc4561c401d71e708ad74138f4
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/galleria-umberto.md:
+    sha256: 7824f92782d87a7cf6719e426413b2e4d58e6947f66cfc2da025c34089c418cc
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/galleria.md:
+    sha256: 0b63886af147f8199844bb9fd65aebcda1bf6de7bb1566f8e1d1402fa0235157
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/gesu-nuovo.md:
+    sha256: 96c8decf09c3826ff9193a0e722b538cdfd07b0594eb424dabd01523b4e2bd3e
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/ipogei.md:
+    sha256: 28179c3548cbf286f9d3b416b487e06ee9fa1cd9f553177a8bf7ad23e2ec4b79
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/laboratorio-restauro.md:
+    sha256: 1daf4354fd01534735391296f77132a0b207a652f510379b5cafffeb0f8cd111
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/lorenzo.md:
+    sha256: 1b8573621f37231b6bb907e1bc3280e38f4c22dbf891cf3b6900ab4cb6646f03
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/lungomare.md:
+    sha256: 5cf49a3ce374be3ca0f5a5acdf552fc4b4a11fc4c2fe7df00a184fcc1f5bd8cb
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/medicina-legale.md:
+    sha256: 563809262627054fbda42636dc7a4f7a484f7fc920c67ccaf0c7e8acf382c304
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/mina.md:
+    sha256: 0dec4bb1533e6381754bd984c44969c2d0e8b438ec6295967b0578c95e7f2337
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/ospedale.md:
+    sha256: cc3ac641b4252e2807bc2bcff4802218d6762ccc45a6740eadac748dca65d3ea
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/palazzo-valli.md:
+    sha256: 38872699d57ddb935ccf26bf6ae13fd86b289bd72beff8391327166558c103bb
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/perita.md:
+    sha256: 782dc590843bd9d5146ced750445b1dfae40c78a964aa367b02a2d68d56fccd1
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/pietro.md:
+    sha256: 4e7dbd572841457210b3ea88267712cdff11788c775e756dba9d41641d27fd39
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/pm.md:
+    sha256: cbb42ea26cc20dc093e156edfab4cee3a7175622951ce97f220f1247d5bfd053
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/procura.md:
+    sha256: 4cef01485a72cdd4e4a18b86180f50490d8d79cd03ba5f565d34edccdc9478c3
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/professore.md:
+    sha256: 16ad79cd1f25f3f63835a5948e63182fe1753b0b3acf5a1ca5f2cc1f77a74b17
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/rettorato.md:
+    sha256: b6976f1012479a190d1077f8275ddede740e08f30201a04ab1aeaa3b54c72ada
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/rettore.md:
+    sha256: 203c2c275e0b4f6b97c232b2d4903558c8650ff8f78910672ad9969e04370156
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/sanita.md:
+    sha256: 285721fd16325bc40fe1e408ba21fd3d39a2f33bc29370c8980a784d514d6028
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/stanza-elana.md:
+    sha256: cc7f7046741fd87245db26ffc67b87ecba89d0198d8e0866f3ba08faec9f3891
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/terrazzo-claudia.md:
+    sha256: 2823bf822329de6bcf839960b3d6bcd12423110e3b62416b6a91ccda19f6c5c6
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/venezia.md:
+    sha256: e6c2ce5620aa1dc9b309114ae71293ebb1cad013e9930645d61dd866c9be621b
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/vicerettore.md:
+    sha256: 68345b94121898674d4173b2bd331b229d493a1ff1d26a8015434292154e613e
+    commit: 536a0df
+    senza_gate: true
+  02-bibbia/codex/villa-posillipo.md:
+    sha256: 47a97734605daac29ab4abcd7479c0dc0224a27ec8bb231d4c09e7ef1846a495
+    commit: 536a0df
+    senza_gate: true
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-27T13:29:03Z'
+aggiornato: '2026-10-27T13:37:49Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
