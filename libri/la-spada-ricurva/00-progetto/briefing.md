@@ -15,8 +15,8 @@ loggia secolare annidata ai vertici dell'Accademia, è disposta a uccidere per i
 ## Tono e voce desiderati
 
 Voce «Gotico-Analitica»: l'atmosfera e la densità di Donna Tartt, la spietatezza e il cinismo di Leigh Bardugo, la
-paranoia chirurgica di Alex Michaelides. Narra Elana in prima persona («io»; «noi» quando parla del gruppo), a cose
-avvenute.
+paranoia chirurgica di Alex Michaelides. Narra Elana in prima persona («io»; «noi» quando parla del gruppo), sempre
+al tempo presente (decisione dell'autore).
 - Tono: non ha fretta; si nutre del decadimento e della bellezza soffocante di Napoli (tufo bagnato, polvere degli
   archivi, formalina, carta secolare); dettagli sensoriali descritti con rigore quasi ossessivo, il peso fisico della
   storia e della pietra.
@@ -41,6 +41,7 @@ avvenute.
 - I ragazzi non denunciano la scoperta: usano un'IA offline addestrata da Pietro per tradurre e indicizzare i testi, per renderli open-source e donarli ai musei internazionali.
 - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e correnti vediche e filosofiche; simbolo: due scimitarre incrociate e piegate.
 - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno fu anche una guerra occulta tra logge rivali.
+- I Borbone possedevano circa un terzo dei volumi, in copie tratte dagli originali; alcuni testi, tra i più importanti, esistono in copia unica solo nella cripta ritrovata (decisione dell'autore: risolve il contrasto con i settecento anni di sigillo).
 - Oggi il Rettore, il Vicerettore e i vertici dell'Accademia sono della setta.
 - La setta detiene i debiti e i titoli finanziari della famiglia di Lorenzo.
 - L'assistente viene assassinato dalla setta; dieci giorni dopo arriva la perizia medico-legale: l'ora del decesso è precedente al timestamp di un messaggio minatorio arrivato sul telefono della vittima. Prova che Procura e medicina legale sono colluse.

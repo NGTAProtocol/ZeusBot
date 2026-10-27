@@ -1,7 +1,7 @@
 # Indicazioni dell'autore sulla voce: l'ibrido «Gotico-Analitico»
 
 Fondere l'atmosfera e la densità di Donna Tartt, la spietatezza e il cinismo di Leigh Bardugo, la paranoia chirurgica
-di Alex Michaelides. Narra Elana in prima persona («io»; «noi» per il gruppo), a cose avvenute.
+di Alex Michaelides. Narra Elana in prima persona («io»; «noi» per il gruppo), sempre al presente (decisione dell'autore; il campione 1 è al passato: se ne prendono lessico e immagini, non il tempo).
 
 ## Il tono (atmosfera e solennità)
 Non ha fretta. Si nutre del decadimento e della bellezza soffocante di Napoli (il tufo bagnato, la polvere degli
