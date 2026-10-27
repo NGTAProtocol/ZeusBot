@@ -26,4 +26,4 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 - scena da r.3: 23/10/2025 — Chiostro
 - scena da r.85: 23/10/2025 — Galleria
 - r.27 «da due giorni» → 21/10
-- conoscenze: Magnisi sa della piega, dei tre numeri e del tassello richiuso. Claudia sa di aver copiato la Giuditta ad aprile e di aver visto il Martirio girato contro il muro. Valli sa del catalogo, del permesso e della chiave. Mina sa che il drappo sopra il Martirio è bruno e copre qualcosa.
+- conoscenze: Magnisi sa della piega, dei tre numeri e del tassello richiuso. Claudia sa di aver copiato la Giuditta ad aprile e di aver visto la mattina del 22 il cartellino «Opera temporaneamente ritirata per motivi di conservazione», comparso il giorno dopo le foto di Elana. Valli sa del catalogo, del permesso e della chiave. Mina sa che il drappo sopra il Martirio è bruno e copre qualcosa.
