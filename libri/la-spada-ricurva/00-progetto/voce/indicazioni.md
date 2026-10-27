@@ -29,3 +29,11 @@ Sapeva già che la Procura mentiva. Cercò solo lo scarto di un'ora. Quel piccol
 dimostrava come il suo telefono avesse continuato a vivere, a minacciarci, quando il suo cuore aveva smesso di battere
 da un pezzo. E in quel momento, mentre le ombre del chiostro si allungavano sulle tele barocche, capimmo che la Spada
 Ricurva non voleva semplicemente nascondere il passato: ci stava già insegnando a morire.»
+
+## Che cosa prendere dal campione 2 (indicazioni dell'autore)
+- Capitolo breve che chiude su un dettaglio non spiegato (l'etichetta).
+- Il dettaglio marginale piantato presto, da pagare più avanti (il blu).
+- L'analisi di Elana procede in tre passi: osservo, confronto, concludo.
+- Il professore seduce con la gentilezza; il seminario funziona come un rito.
+- Napoli entra con una sola immagine concreta (tufo, umidità, cantina, ferro), nessun cliché.
+- Frasi lunghe alternate a frasi secche; dialogo minimo.

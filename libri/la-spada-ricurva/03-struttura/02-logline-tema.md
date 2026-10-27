@@ -1,6 +1,23 @@
-<!-- zb: modello -->
 # Logline e tema — La Spada Ricurva
 
-- Logline (una frase: chi, vuole cosa, contro chi o cosa, con quale posta):
-- Tema centrale (una domanda, non una morale):
-- Controtema (la risposta opposta, che il libro prende sul serio):
+## Logline
+Una dottoranda di restauro senza protezioni decifra un rebus nei dipinti barocchi dell'Accademia di Napoli, apre un
+archivio occulto sigillato da settecento anni e, contro una loggia che controlla l'Accademia, la Procura e la morte
+stessa del suo mentore, deve pubblicarlo nel mondo con un'intelligenza artificiale prima che il cappio si chiuda.
+
+## Tema centrale
+La conoscenza tenuta segreta è potere su qualcuno; liberarla ha un prezzo e non rende innocenti. Chi libera un sapere
+di controllo deve prima resistere alla tentazione di usarlo.
+
+## Controtema
+Il segreto protegge: alcuni saperi (il mentalismo, gli schemi di persuasione) sono armi, e chi li apre a tutti arma
+anche i peggiori. La setta crede davvero di essere custode, non solo padrona. Il libro non dà ragione a nessuno dei
+due fino in fondo: Elana pubblica, ma la voce di quel sapere le resta in testa.
+
+## Temi secondari
+- Riscatto sociale contro appartenenza: Elana vuole entrare nel mondo che deve distruggere; Lorenzo appartiene a quel
+  mondo e ne è posseduto per debito.
+- Istituzione come arena e non come tempio: l'Accademia, la Procura, la medicina legale sono la stessa rete.
+- Voce e autorità: chi parla attraverso chi. Il mentore parla attraverso i suoi appunti, l'IA parla con la sua
+  cadenza, i guru parlano attraverso i traduttori eretici, la setta attraverso le istituzioni.
+- Restauro come metafora: togliere la vernice rivela, ma può anche distruggere l'opera.

@@ -2,8 +2,8 @@
 
 - Fase: struttura; gate: nessuno.
 - Ultimo capitolo salvato: —; parole 0/90000.
-- Macrostruttura: motivo:.
-- Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi):; Tempo verbale della narrazione:; Voce (registro, distanza, eventuale voce della b….
+- Macrostruttura: in medias res.
+- Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elana; Tempo verbale della narrazione: passat….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
 - Personaggi (capsula —): —
@@ -14,6 +14,6 @@
   - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e…
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
 - Promesse aperte: nessuna.
-- Prossimo capitolo 1: ; cambiamento: .
+- Prossimo capitolo 1: apertura in medias res; promessa del libro; fissa voce, minaccia e ironia drammatica.; cambiamento: il lettore sa che il mentore è morto e che la Procura mente; Elana tr….
 - Prossimo passo: Architetto: i nove file di 03-struttura/; poi diagnosta ed editor-strutturale (commit separati); poi «zb pronto <libro>» (il motore verifica la struttura, senz…
 - Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 1.

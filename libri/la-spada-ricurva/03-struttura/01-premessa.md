@@ -1,15 +1,29 @@
-<!-- zb: modello -->
-# Premessa e promessa al lettore — La Spada Ricurva
+# Premessa e promessa — La Spada Ricurva
 
-<!-- Una pagina. Ogni riga «- Campo:» va compilata prima di «zb pronto». -->
-- Premessa (situazione iniziale e scintilla, in tre righe):
-- Lettore ideale (in concreto: chi è, cosa ha letto di recente, cosa cerca):
-- Promessa al lettore (cosa avrà alla fine):
-- Perché lo finirà (la domanda che lo tiene dentro):
+## Premessa
+A Napoli, in un autunno di pioggia, Elana Magnisi, dottoranda in filologia e restauro arrivata in Accademia senza
+nome né protezioni, trova sotto la vernice di una tela barocca un dettaglio che qualcuno ha coperto apposta. Con
+Claudia, Mina e Lorenzo ricompone un rebus sparso nei dipinti dell'Accademia e apre un archivio di tufo sigillato da
+settecento anni: il Fondo Proibito, circa cinquecento manoscritti di magia pratica, mentalismo e teosofia, tra cui
+testi vedici giunti a Venezia con due guru e travestiti da un latino cifrato ed eretico. Non lo denunciano. Lo fanno
+tradurre all'intelligenza artificiale offline di Pietro per renderlo pubblico al mondo. La Spada Ricurva, loggia
+che governa l'Accademia dal Rettore in giù, uccide il loro mentore e mostra che Procura e medicina legale lavorano per
+lei. Elana porterà a termine l'upload in una notte d'assedio, perdendo quasi tutto e diventando qualcosa che non
+voleva essere.
 
-## Contratto della storia
-- Genere e sottogenere promessi:
-- Tono promesso (cosa il lettore non troverà mai):
-- Esperienza centrale (paura, tenerezza, enigma, meraviglia…):
-- Patto sul finale (chiuso, aperto, amaro, consolante):
-- Scene che il lettore si aspetta di sicuro (dal profilo di genere):
+## Il lettore
+Adulto, lettore di dark academia e di thriller colti (Tartt, Bardugo, Michaelides), mercato italiano. Ama la densità
+della pagina, il gruppo di giovani brillanti e colpevoli, l'occulto trattato con rigore e non con effetti speciali,
+la paranoia che cresce per dettagli.
+
+## La promessa
+- Una Napoli fisica e decadente, sentita col naso e con le dita: tufo bagnato, formalina, vernici, carta secolare.
+- Un enigma vero, risolto per gradi con strumenti veri: filologia, chimica dei pigmenti, storia dell'arte, codice.
+- Una minaccia che non si vede mai per intero e non si allenta mai: ogni capitolo ha qualcuno che osserva.
+- Nessun eroe puro: ognuno ha un motivo sporco accanto a quello nobile, Elana per prima.
+- Una vittoria amara e non consolatoria: la conoscenza esce libera, la setta resta in piedi, il prezzo è pagato.
+
+## Perché lo finirà
+Perché lo sa dalla prima pagina: il capitolo 1 mostra la perizia che non torna e l'assistente già morto. Ogni scena
+successiva con lui è letta sotto quell'ombra, e la domanda non è «se» ma «come» e «chi». Poi arriva la seconda
+domanda, più crudele: che cosa diventerà Elana per finire il lavoro, e chi del gruppo la tradirà.
