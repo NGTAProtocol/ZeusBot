@@ -3360,15 +3360,20 @@ def difetti_prove(A):
     # un'eccezione con il motivo = accettato
     pulito = [cap(1, 'Aula — 1 marzo', 'Entro.')]
     os.makedirs(os.path.join(d, '06-diagnostica', 'audit'))
+    os.makedirs(os.path.join(d, difetti.VERIFICA))
     au = os.path.join(d, '06-diagnostica', 'audit', '01.md')
+    ve = os.path.join(d, difetti.rel_verifica('1'))
     open(au, 'w', encoding='utf-8').write('Media: 8\n\npassa\n')
 
     def stato_di(classe):
         return next(e for c, _, e, _ in difetti.esiti_unita(d, libro, '1', pulito) if c == classe)
     senza = stato_di('conoscenza_personaggio')
-    open(au, 'w', encoding='utf-8').write('## Registro dei difetti\n\n- conoscenza_personaggio: KO r.3 «x»: porta chiusa\n'
-                                          '- inferenza_come_fatto: OK\n- motivazione: OK\n\n## Fatti da verificare\n\n'
-                                          '- r.5 «l\'ora della morte»: medicina legale\n\npassa\n')
+    registro = ('## Registro dei difetti\n\n- conoscenza_personaggio: KO r.3 «x»: porta chiusa\n'
+                '- inferenza_come_fatto: OK\n- motivazione: OK\n')
+    open(ve, 'w', encoding='utf-8').write('<!-- zb: ruolo=verificatore; su=000000000000 -->\n' + registro)
+    vecchia = stato_di('conoscenza_personaggio')      # verifica scritta su un'altra versione del capitolo
+    open(ve, 'w', encoding='utf-8').write(difetti.riga_verifica(pulito[0][1]) + '\n' + registro)
+    open(au, 'w', encoding='utf-8').write('## Fatti da verificare\n\n- r.5 «l\'ora della morte»: medicina legale\n\npassa\n')
     con_ko, inf = stato_di('conoscenza_personaggio'), stato_di('inferenza_come_fatto')
     inf = inf if stato_di('motivazione') == 'passato' else 'motivazione persa'   # una riga OK non mangia la seguente
     nuovi = difetti.registra_fatti(d, '1')
@@ -3379,9 +3384,10 @@ def difetti_prove(A):
     open(os.path.join(d, difetti.REGISTRO), 'w', encoding='utf-8').write(
         'eccezioni:\n  - {unita: "1", classe: conoscenza_personaggio, motivo: "la porta era aperta, detto al cap. 2"}\n')
     accettato = stato_di('conoscenza_personaggio')
-    esito('difetti.py', 'cancello: revisore assente / KO / OK / fatto registrato / aperto / reso generico / eccezione',
-          'non verificabile / fallito / passato / 1 / non verificabile / 0 passato / accettato',
-          f'{senza} / {con_ko} / {inf} / {nuovi} / {aperto} / {rif} {chiuso} / {accettato}', sez)
+    esito('difetti.py', 'cancello: verifica assente / su altra versione / KO / OK / fatto registrato / aperto / reso '
+          'generico / eccezione', 'non verificabile / non verificabile / fallito / passato / 1 / non verificabile / '
+          '0 passato / accettato', f'{senza} / {vecchia} / {con_ko} / {inf} / {nuovi} / {aperto} / {rif} {chiuso} / '
+          f'{accettato}', sez)
     esito('fase.py', 'zb esito chiama il cancello dei difetti (revisione obbligatoria)', True,
           'difetti.cancello(cartella, libro, n)' in open(os.path.join(S, 'fase.py'), encoding='utf-8').read(), sez)
 

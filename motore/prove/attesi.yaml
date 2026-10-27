@@ -795,7 +795,7 @@ agenti_capsule:
   # da motore (971b6df), sulla base ccr: agenti del livello editoriale, capsula.py di ccr
   # (prepara il modello con codice 0; 120-250 parole), stato degli agenti con codice 0 se il solo problema è un
   # «model:» diverso dal file di dati (vale il file di dati)
-  attiva: "2 / 0 False / 0 12 / True / 0 False"
+  attiva: "2 / 0 False / 0 13 / True / 0 False"
   modello_centrale: "0 True / True / 0 True"
   capsula: "0 True / 1 / 0 / 1 True"
   controllo: "fermo / True"

@@ -504,9 +504,9 @@ def revisione_in_stesura(r, L, m, sez):
     esito('fase.py', 'revisione sulla versione attuale con «passa»: la revisione non ferma', 'nessun fermo', ottenuto, sez)
     esito('fase.py', 'revisione con «passa» ma senza le misure del motore: esito fermo', 'fermo', senza_misure, sez)
     esito('agenti.py', 'agenti prossimo (catena del capitolo, revisione obbligatoria): revisione assente → zb ruolo e '
-          'diagnosta / «non passa» → correzione dello scrittore / «passa» → zb esito',
+          'diagnosta / «non passa» → correzione dello scrittore / «passa» → verificatore (poi zb esito)',
           'True / True / True', f'{"AZIONE: revisione del capitolo 1" in p_senza.stdout} / '
-          f'{"AZIONE: correzione del capitolo 1" in p_non.stdout} / {"AZIONE: «zb esito" in p.stdout and "(la revisione passa)" in p.stdout}', sez)
+          f'{"AZIONE: correzione del capitolo 1" in p_non.stdout} / {"AZIONE: verifica del capitolo 1: agente verificatore" in p.stdout}', sez)
     # giro della struttura guidato da «zb agenti prossimo», con la prima riga calcolata per gli agenti senza terminale
     import agenti
     import struttura as strutt
@@ -755,7 +755,7 @@ def agenti_e_comandi(sez='agenti e comandi'):
     p = zb(r, 'agenti', 'attiva', '--ok', '--progetto', r)
     ag = sorted(os.listdir(os.path.join(r, '.claude', 'agents')))
     co = sorted(os.listdir(os.path.join(r, '.claude', 'commands')))
-    esito('agenti.py', 'installati: agenti / comandi', '12 / [\'capitolo.md\', \'diagnosi.md\', \'handover.md\', \'revisiona.md\']',
+    esito('agenti.py', 'installati: agenti / comandi', '13 / [\'capitolo.md\', \'diagnosi.md\', \'handover.md\', \'revisiona.md\']',
           f'{len(ag)} / {co}', sez)
     fm = []
     for f in ag:

@@ -37,17 +37,11 @@ Rapporto breve (al massimo 400 parole), in quest'ordine:
 5. `## Lezione`: una sola riga, `- …`: il difetto di questo capitolo che lo scrittore non deve ripetere nei prossimi,
    detto come regola (es. «non spiegare dopo una battuta ciò che la battuta ha già detto»); `- nessuna` se non c'è.
    `zb esito` la aggiunge a `06-diagnostica/lezioni.md`, che lo scrittore legge prima di ogni capitolo.
-6. `## Registro dei difetti` (le classi del revisore di `motore/dati/difetti.yaml`; il cancello di `zb esito` le
-   legge, e una riga assente vale «non verificabile», che ferma il capitolo):
-   `- conoscenza_personaggio: OK` oppure `KO r.N «…»: chi sa o vede che cosa, e perché non poteva` (controlla per
-   ogni personaggio presente che cosa sa e da dove: capsule precedenti, porte chiuse, chi c'era);
-   `- inferenza_come_fatto: OK` oppure `KO r.N «…»: è una deduzione di chi narra, il documento non lo dice`;
-   `- motivazione: OK` oppure `KO r.N «…»: la scelta non è motivata dai fatti noti` (avviso, non blocca).
-7. `## Fatti da verificare`: ogni fatto controllabile che il capitolo afferma (medicina legale, chimica, tecnica,
+6. `## Fatti da verificare`: ogni fatto controllabile che il capitolo afferma (medicina legale, chimica, tecnica,
    storia, citazioni e attribuzioni, date reali), una riga `- r.N «…»: tipo`; oppure `- nessuno`. `zb esito` li
    registra in `06-diagnostica/difetti/fatti.yaml` e il capitolo resta non approvato finché ognuno non è verificato
    su fonte o riscritto in forma generica (`zb difetti <libro> fatto <id> verificato --fonte …`).
-8. Ultima riga: `passa` se la media è almeno la soglia di qualità (`soglia_qualita` in `libro.yaml`, predefinito 7.5)
+7. Ultima riga: `passa` se la media è almeno la soglia di qualità (`soglia_qualita` in `libro.yaml`, predefinito 7.5)
    e nessun fatto è contraddetto; altrimenti `non passa`. `zb esito` ricontrolla media e soglia.
 
 Le soglie scritte nella scheda della voce restano criteri di giudizio per la voce «pulizia», non conteggi da
