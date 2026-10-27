@@ -15,6 +15,8 @@ delle sessioni precedenti è in git (`git log`, ramo `archivio/motore-prima-2026
 - Grafica: stili dell'interno (`formato.stile`), agente `grafico` (quarta, brief), `zb copertina` (dati in
   `dati/kdp.yaml`, sezione «copertina», da verificare).
 - Soglie di stile informative (`soglie_stile`); bloccano fatti oggettivi e il voto sotto soglia.
+- `zb agenti prossimo` guida anche il giro di struttura e manoscritto e passa la prima riga agli agenti senza
+  terminale.
 - Libro da stampa: `zb tipografia`, `zb finale` (tutti i controlli a 0 KO, `zb pronto` in chiusura lo rifà),
   copertina dal PDF definitivo con l'immagine dell'autore (`00-progetto/copertina/prima|intera`) e modello KDP.
 - Tolti: traduzione (codice, agenti, prove), `zb adotta`, documenti superati di `docs/`, esiti storici delle prove.

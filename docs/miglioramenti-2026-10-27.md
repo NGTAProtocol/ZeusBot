@@ -86,6 +86,13 @@ usate archiviate, soglie di stile solo informative). Obiettivo: manoscritti di q
   fatta da altri in `00-progetto/copertina/` (`prima` o `intera`), controlli di risoluzione e proporzioni; modello KDP
   per il grafico (PDF e PNG a 300 DPI), anteprima con le guide, scheda di caricamento KDP; `--pagine` solo anteprima.
 
+## Quarta parte: giro della struttura senza intoppi
+
+- `zb agenti prossimo` guida da solo il giro della struttura e del manoscritto: controllo del motore → diagnosta →
+  editor strutturale → revisione con il piano → nuova diagnosi; al secondo «non passa» decide l'autore.
+- Gli agenti senza terminale (diagnosta, editor strutturale, line editor) ricevono la prima riga del rapporto già
+  calcolata dal motore; se manca si fermano e la chiedono, non la inventano.
+
 ## Da fare con l'autore
 
 - Provare `/capitolo` sul libro di prova (capitolo 1) e confrontare con la versione di oggi.

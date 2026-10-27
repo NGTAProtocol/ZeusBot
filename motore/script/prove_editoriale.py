@@ -500,6 +500,43 @@ def revisione_in_stesura(r, L, m, sez):
           'diagnosta / «non passa» → correzione dello scrittore / «passa» → zb esito',
           'True / True / True', f'{"AZIONE: revisione del capitolo 1" in p_senza.stdout} / '
           f'{"AZIONE: correzione del capitolo 1" in p_non.stdout} / {"AZIONE: «zb esito" in p.stdout and "(la revisione passa)" in p.stdout}', sez)
+    # giro della struttura guidato da «zb agenti prossimo», con la prima riga calcolata per gli agenti senza terminale
+    import agenti
+    import struttura as strutt
+    d = tempfile.mkdtemp(dir=TMP)
+    os.makedirs(os.path.join(d, '06-diagnostica'))
+    open(os.path.join(d, 't.md'), 'w').write('struttura v1\n')
+    rap, pia = '06-diagnostica/rapporto-struttura.md', '06-diagnostica/piano-revisione-struttura.md'
+    vecchi = percorso.rapporti, strutt.verifica
+    percorso.rapporti = lambda c, lb, f: [(rap, 'diagnosta', ['t.md']), (pia, 'editor-strutturale', ['t.md'])]
+    strutt.verifica = lambda c: []
+    def scrivi(f, ruolo, fine):
+        open(os.path.join(d, f), 'w').write(f'<!-- zb: ruolo={ruolo}; su={percorso.impronta(d, ["t.md"])} -->\n{fine}\n')
+    def passo():
+        return agenti.azione_revisione(d, {}, 'struttura', 'L')[0]
+    try:
+        p1 = passo()
+        su1 = percorso.impronta(d, ['t.md'])
+        scrivi(rap, 'diagnosta', 'Esito: non passa')
+        p2 = passo()
+        scrivi(pia, 'editor-strutturale', 'piano')
+        p3 = passo()
+        open(os.path.join(d, 't.md'), 'w').write('struttura v2\n')
+        p4 = passo()
+        scrivi(rap, 'diagnosta', 'non passa')
+        p5 = passo()
+        scrivi(rap, 'diagnosta', 'passa')
+        p6 = passo()
+        scrivi(pia, 'editor-strutturale', 'nessun intervento')
+        p7 = passo()
+    finally:
+        percorso.rapporti, strutt.verifica = vecchi
+    esito('agenti.py', 'giro della struttura: diagnosta con la prima riga / editor / architetto applica / nuova diagnosi / '
+          'secondo «non passa» FERMO / «passa» → piano → zb pronto',
+          'True True True True True True True', ' '.join(str(x) for x in (
+              'agente diagnosta' in p1 and f'su={su1}' in p1 and 'ruolo=diagnosta' in p1,
+              'agente editor-strutturale' in p2, 'architetto-struttura' in p3 and 'applica' in p3, 'agente diagnosta' in p4,
+              p5.startswith('FERMO'), 'agente editor-strutturale' in p6, '«zb pronto L»' in p7)), sez)
     # un solo giro completo: il secondo rivede solo le frasi di «## Da correggere» del primo
     g1 = os.path.join(L, '06-diagnostica', 'audit', '01-giro1.md')
 
