@@ -32,6 +32,11 @@ leggi alle pause e decidi.
 - Quando il motore scrive FERMO: leggi il motivo e decidi.
 - Per cambiare il motore stesso: scrivi «lavoro sul motore».
 
+## 3b. Quando trovi un errore
+- Dimmelo come lo hai visto: diventa una voce del registro dei difetti del libro e un test che il motore non lascia
+  più passare (`zb difetti`). I fatti reali (medicina, tecnica, citazioni) restano bloccati finché non sono verificati
+  su una fonte o resi generici.
+
 ## 4. Prima di pubblicare
 - «zb finale»: rifà tutti i controlli (ortografia, grammatica, tipografia, continuità, PDF, KDP, copertina). Il libro
   si chiude solo con 0 errori; un falso allarme si accetta per iscritto, con il motivo.

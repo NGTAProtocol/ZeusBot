@@ -107,6 +107,16 @@ usate archiviate, soglie di stile solo informative). Obiettivo: manoscritti di q
 - `zb salva` accetta i file già tolti con `git rm`.
 - Agenti senza terminale (capsula, voce, direttore editoriale): i comandi di verifica li esegue la sessione principale.
 
+## Sesta parte: sistema difetto → test
+
+- Ogni difetto trovato diventa un test permanente: registro del libro (`06-diagnostica/difetti/registro.yaml`), classi
+  in `motore/dati/difetti.yaml`, procedura in `motore/editoriale/difetti.md`, comando `zb difetti`.
+- Tre rilevamenti: deterministico (11 controlli con criteri generali), revisore (sezione «Registro dei difetti» del
+  diagnosta), fonte (fatti controllabili in `fatti.yaml`, bloccanti finché non verificati o resi generici).
+- Cancello in `zb esito` e in `zb finale`: passato, fallito, non verificabile; «non verificabile» non passa mai; unica
+  scorciatoia un'eccezione con il motivo scritto.
+- Prova sulle fixture (`zb difetti <libro> prova`) e registro di continuità rigenerato a ogni capitolo.
+
 ## Da fare con l'autore
 
 - Provare `/capitolo` sul libro di prova (capitolo 1) e confrontare con la versione di oggi.
