@@ -1,7 +1,7 @@
 # Sottotrame, promesse e temi — La Spada Ricurva
 
 ## Promesse e pagamenti
-| Promessa | Si apre | Si sviluppa | Si chiude (pagamento) |
+| Sottotrama o promessa | Si apre | Si sviluppa | Si chiude |
 |---|---|---|---|
 | P1 Chi ha ucciso l'assistente e come si dimostra | 1 | 19, 20, 22, 25 | 44: la verità è dimostrata (25), la giustizia no; 41: il Professore non nega |
 | P2 Che cosa custodivano le tele | 1 | 7, 9, 10, 28 | 44: il Fondo è nel mondo |
