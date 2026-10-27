@@ -98,3 +98,20 @@ fatti:
   data: '2026-10-27'
   fonte: sigecweb.beniculturali.it ICCD3503621, ICCD2831916 (la ruota dentata è l'attributo
     tradizionale della santa)
+- id: F012
+  unita: '2'
+  affermazione: 'r.137 «la iuta scura della foderatura»: tecnica del restauro (supporto
+    usato per la foderatura di una tela del Seicento)'
+  stato: da_verificare
+  data: '2026-10-27'
+  nota: 'nessuna fonte sulla iuta come tela da foderatura (di solito lino): rendere
+    generico «la tela della foderatura»'
+- id: F013
+  unita: '2'
+  affermazione: 'r.13 «la luce tira fuori un rilievo che non appartiene al drappo»:
+    tecnica (la luce radente rivela il rilievo di una pittura sottostante attraverso
+    una ridipintura a corpo)'
+  stato: verificato
+  data: '2026-10-27'
+  fonte: 'denverartmuseum.org/es/node/2643; slam.org (Grosz, Café: la luce radente
+    rivela il rilievo di una pittura sottostante)'
