@@ -1,12 +1,12 @@
 # Stato compatto — La Spada Ricurva
 
-- Fase: stesura; gate: nessuno.
-- Ultimo capitolo salvato: 2 (commit 3f3e5e1); parole 3521/90000.
+- Fase: stesura; gate: lettura.
+- Ultimo capitolo salvato: 3 (commit e2ea5ea); parole 5575/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elana; Tempo verbale della narrazione: presen….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
-- Personaggi (capsula 2): Elana, narratrice, sa che il drappo è una ridipintura ottocentesca. Scotti non spiega e dice di fare come dice il Professore. Il Professore va all'an…
+- Personaggi (capsula 3): —
 - Fatti bloccati: 9 (elenco in stato.yaml):
   - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei…
   - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India po…
@@ -14,6 +14,6 @@
   - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e…
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
 - Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p4, @prom:p5.
-- Prossimo capitolo 3: forma il gruppo; presenta i tre studenti dell'Accademia, Claudia, Lorenzo, Mina, e il pos…; cambiamento: Elana accetta un'alleanza a denti stretti con tre studenti che si con….
-- Prossimo passo: Prossimo: capitolo 3. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
-- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 3.
+- Prossimo capitolo 4: indagine tecnica; prima prova che qualcuno ha cancellato la chiave.; cambiamento: l'analisi dei pigmenti data la ridipintura agli anni 1860-61..
+- Prossimo passo: Pausa di lettura: l'autore legge i capitoli elencati, poi «ok» (continua) oppure «correggi <note>» (note al blocco successivo).
+- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 4.
