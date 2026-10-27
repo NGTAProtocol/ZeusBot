@@ -134,7 +134,7 @@ La luce del corridoio entra prima di me. Il cavalletto grande è vuoto. La trave
 
 La santa è contro il muro di fondo. Girata.
 
-Mi mostra il retro: la iuta scura della foderatura, i chiodi lungo il telaio, le otto biette di legno infilate negli angoli. Le conto lo stesso. Otto. Da questo lato non c'è niente da vedere, nessun martirio, nessuna ruota, nessun drappo bruno che non sta al suo posto. Solo la trama di una stoffa e un'etichetta d'inventario che conosco già.
+Mi mostra il retro: la tela scura della foderatura, i chiodi lungo il telaio, le otto biette di legno infilate negli angoli. Le conto lo stesso. Otto. Da questo lato non c'è niente da vedere, nessun martirio, nessuna ruota, nessun drappo bruno che non sta al suo posto. Solo la trama di una stoffa e un'etichetta d'inventario che conosco già.
 
 Non la tocco. La scheda dice «Sospeso», e una restauratrice che gira una tela sospesa senza testimoni ha appena firmato da sola la propria lettera di congedo. Chi l'ha messa così lo sa meglio di me. Per questo l'ha messa così.
 

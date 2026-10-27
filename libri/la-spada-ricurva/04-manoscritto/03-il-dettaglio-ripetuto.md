@@ -14,7 +14,7 @@ La ragazza sulla panca di fronte mi guarda da quando sono arrivata. È piccola, 
 
 Non sorride. Apre il taccuino su una pagina fitta e lo gira verso di me, tenendolo per l'angolo con due dita nere di grafite.
 
-Una lama. Ricurva, e si piega verso l'esterno a un terzo dalla punta, nel punto esatto in cui nessun fabbro piegherebbe una scimitarra, perché è lì che l'acciaio si spezza. Il tratto è ripassato tante volte che la carta è diventata lucida. È la sinistra delle due lame incrociate che ho visto sotto il drappo.
+Una lama. Ricurva, e si piega verso l'esterno a un terzo dalla punta, nel punto esatto in cui nessun fabbro piegherebbe una scimitarra. Il tratto è ripassato tante volte che la carta è diventata lucida. È la sinistra delle due lame incrociate che ho visto sotto il drappo.
 
 Mi trovo la mano sulla tasca del cappotto, sopra il telefono svuotato. La tolgo.
 
@@ -46,7 +46,7 @@ Ha ragione, e il fatto che abbia ragione non mi rende più gentile. Le restituis
 
 Non rispondo. Lei non ripete la domanda. Resta lì, con il taccuino contro il petto, finché dal portico non arrivano due ragazzi che la chiamano per cognome e lei, senza voltarsi, alza una mano per farli aspettare. Loro non aspettano.
 
-Il primo è alto e porta una giacca di taglio vecchio, buona, stretta sulle spalle di un uomo che non è lui. Tiene tra le dita una sigaretta spenta come si tiene una penna. Il secondo è massiccio, si muove piano, ha la tuta del laboratorio sotto il giubbotto e un'ombra blu sotto le unghie che conosco: azzurro di cobalto, quello che resta nella pelle anche dopo la pomice.
+Il primo è alto e porta una giacca di taglio vecchio, buona, stretta sulle spalle di un uomo che non è lui. Tiene tra le dita una sigaretta spenta come si tiene una penna. Il secondo è massiccio, si muove piano, ha la tuta del laboratorio sotto il giubbotto e un'ombra blu sotto le unghie che conosco: azzurro di cobalto.
 
 «Rinaldi, l'hai già spaventata?» L'alto si inchina appena, verso di me. «Valli. E questo è Minervini, che però risponde solo a Mina. Lei dev'essere Magnisi. In Accademia si parla di lei dall'altro ieri.»
 
@@ -108,7 +108,7 @@ La piega della lama corre sotto un cretto continuo, a maglie larghe, lo stesso d
 
 La mano della fantesca sul bordo del sacco. Tre dita tengono la tela, l'indice e il medio no: sono stesi e uniti, puntati verso il basso, verso un angolo del pavimento dipinto dove non c'è niente. Sull'unghia del medio, sotto la lente, una lacca rossa più densa disegna un segno minimo, che a occhio nudo sembra una sbavatura.
 
-Un quattro. Con la gamba lunga e l'asola aperta, come lo scrivevano i notai.
+Un quattro. Con la gamba lunga e l'asola aperta, alla maniera antica.
 
 «Ad aprile la mano l'avevo disegnata» dice Claudia. «Il numero no. Non si vede.»
 

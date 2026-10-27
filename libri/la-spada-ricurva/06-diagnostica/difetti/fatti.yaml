@@ -102,10 +102,9 @@ fatti:
   unita: '2'
   affermazione: 'r.137 «la iuta scura della foderatura»: tecnica del restauro (supporto
     usato per la foderatura di una tela del Seicento)'
-  stato: da_verificare
+  stato: generico
   data: '2026-10-27'
-  nota: 'nessuna fonte sulla iuta come tela da foderatura (di solito lino): rendere
-    generico «la tela della foderatura»'
+  nota: 'nessuna fonte trovata: riscritto in forma generica'
 - id: F013
   unita: '2'
   affermazione: 'r.13 «la luce tira fuori un rilievo che non appartiene al drappo»:
@@ -115,3 +114,40 @@ fatti:
   data: '2026-10-27'
   fonte: 'denverartmuseum.org/es/node/2643; slam.org (Grosz, Café: la luce radente
     rivela il rilievo di una pittura sottostante)'
+- id: F014
+  unita: '3'
+  affermazione: 'r.17 «nessun fabbro piegherebbe una scimitarra, perché è lì che l''acciaio
+    si spezza»: tecnica (forgiatura delle lame)'
+  stato: generico
+  data: '2026-10-27'
+  nota: 'nessuna fonte trovata: riscritto in forma generica'
+- id: F015
+  unita: '3'
+  affermazione: 'r.49 «azzurro di cobalto, quello che resta nella pelle anche dopo
+    la pomice»: chimica dei pigmenti'
+  stato: generico
+  data: '2026-10-27'
+  nota: 'nessuna fonte trovata: riscritto in forma generica'
+- id: F016
+  unita: '3'
+  affermazione: 'r.105 «cretto continuo… senza un''isola di colore più giovane… nella
+    stessa stesura»: tecnica di restauro'
+  stato: verificato
+  data: '2026-10-27'
+  fonte: 'rehs.com/nl_archives_view.php?key=70 (cretto continuo sotto e sopra: stessa
+    stesura)'
+- id: F017
+  unita: '3'
+  affermazione: 'r.111 «Un quattro. Con la gamba lunga e l''asola aperta, come lo
+    scrivevano i notai»: storia (paleografia)'
+  stato: generico
+  data: '2026-10-27'
+  nota: 'nessuna fonte trovata: riscritto in forma generica'
+- id: F018
+  unita: '3'
+  affermazione: 'r.147 «graffiato nella preparazione», visibile in luce radente: tecnica
+    pittorica'
+  stato: verificato
+  data: '2026-10-27'
+  fonte: 'Cardinali, De Ruggieri, Falcucci 2005 (iris.unicampania.it/handle/11591/432318):
+    incisioni nella preparazione nel metodo di Caravaggio'

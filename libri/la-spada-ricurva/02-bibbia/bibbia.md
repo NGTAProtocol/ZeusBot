@@ -22,8 +22,8 @@ conferma.
 | @char:dellaquila | Carlo Dell'Aquila | Critico internazionale, elegante, algido, ambiguo; ha il registro della loggia [canone]. Si ritira nel 35; cartolina con due lame dritte nel 44 [proposta]. Il libro non dice mai da che parte stia. Età 64 [proposta]. |
 | @char:professore | Ettore Sanfelice, il Professore di Arte Moderna | Titolare di cattedra, volto in scena della setta; freddo, formale, sferzante [canone]. Età 61 [proposta]. |
 | @char:assistente | Andrea Scotti, l'assistente | Mentore dei ragazzi in laboratorio; supplica di non denunciare; assassinato dalla setta [canone]. Muore nella notte G40-G41, trovato all'alba di G41 ai piedi della scala del chiostro (cap. 20) [proposta]. Dopo il 20 è solo ricordato, o «parla» attraverso il modello. Età 54 [proposta]. |
-| @char:rettore | Il Direttore | Della setta [canone]; porta l'anello (cap. 11) [proposta]. Visto di riflesso. Nome Ruggero Arcamone [proposta]. |
-| @char:vicerettore | Il Vicedirettore | Della setta [canone]; conduce l'ispezione del 18 [proposta]. Nome Aurelio Cennamo [proposta]. |
+| @char:rettore | Il Direttore | Della setta [canone]; porta l'anello (cap. 11) [proposta]. Visto di riflesso. Nome Ruggero Arcamone [canone]. |
+| @char:vicerettore | Il Vicedirettore | Della setta [canone]; conduce l'ispezione del 18 [proposta]. Nome Aurelio Cennamo [canone]. |
 | @char:pm | Il pubblico ministero | Cortese, preciso, colluso (cap. 22, 34, 43) [proposta]. Nome Guido Ianniello [proposta]. |
 | @char:perita | La perita | Giovane medica legale dissidente. La busta del cap. 1 contiene solo la sua bozza; la perizia ufficiale la porta lei a Elana, all'alba, nel cap. 25 [canone]. Non testimonierà [proposta]. Nome Teresa Avallone, età 34 [proposta]. |
 

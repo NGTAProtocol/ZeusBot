@@ -59,7 +59,7 @@ Il foglio no. Il foglio lo rimetto nella busta, nelle sue tre pieghe, e la busta
 
 Spengo la lampada radente. Il laboratorio si restringe al riquadro grigio della finestra e al rosso della spia sul fornello. Resto in piedi, la mano sul banco, il palmo sul legno che conserva ancora il caldo della lampada.
 
-Contro la parete di fondo c'è la tela. È girata verso il muro, e mi mostra il retro come una schiena: la iuta scura, i chiodi ossidati, le biette infilate negli angoli del telaio. Sul traverso alto, in un gesso che la polvere non ha ancora mangiato, c'è un nome. Lo conosco a memoria. Non lo leggo.
+Contro la parete di fondo c'è la tela. È girata verso il muro, e mi mostra il retro come una schiena: la tela scura, i chiodi ossidati, le biette infilate negli angoli del telaio. Sul traverso alto, in un gesso che la polvere non ha ancora mangiato, c'è un nome. Lo conosco a memoria. Non lo leggo.
 
 Nessuno, in tutto questo tempo, ha pensato di rigirarla.
 
