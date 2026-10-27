@@ -1,0 +1,19 @@
+# Stato compatto — La Spada Ricurva
+
+- Fase: struttura; gate: nessuno.
+- Ultimo capitolo salvato: —; parole 0/90000.
+- Macrostruttura: motivo:.
+- Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi):; Tempo verbale della narrazione:; Voce (registro, distanza, eventuale voce della b….
+- Gate attivi: lettura.
+- Libro: it, profilo thriller.
+- Personaggi (capsula —): —
+- Fatti bloccati: 9 (elenco in stato.yaml):
+  - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei…
+  - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India po…
+  - I ragazzi non denunciano la scoperta: usano un'IA offline addestrata da Pietro per tradurre e indicizzare i testi, per…
+  - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e…
+  - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
+- Promesse aperte: nessuna.
+- Prossimo capitolo 1: ; cambiamento: .
+- Prossimo passo: Architetto: i nove file di 03-struttura/; poi diagnosta ed editor-strutturale (commit separati); poi «zb pronto <libro>» (il motore verifica la struttura, senz…
+- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 1.
