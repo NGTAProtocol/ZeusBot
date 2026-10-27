@@ -37,6 +37,7 @@ al tempo presente (decisione dell'autore).
 
 ## Fatti canonici
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei dettagli di dipinti barocchi dell'Accademia.
+- Claudia decifra il rebus; Lorenzo apre l'archivio (decisione dell'autore).
 - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India portati a Venezia da due guru e tradotti clandestinamente in latino denso, cifrato ed eretico da alchimisti e dotti.
 - I ragazzi non denunciano la scoperta: usano un'IA offline addestrata da Pietro per tradurre e indicizzare i testi, per renderli open-source e donarli ai musei internazionali.
 - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e correnti vediche e filosofiche; simbolo: due scimitarre incrociate e piegate.
