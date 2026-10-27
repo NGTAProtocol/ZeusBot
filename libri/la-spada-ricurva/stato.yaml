@@ -240,7 +240,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-27T17:41:23Z'
+aggiornato: '2026-10-27T17:46:42Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
@@ -269,3 +269,19 @@ note_lettura:
     capitoli (apertura con aforisma più elenco di odori, Osservo-Confronto-Concludo identico, parole-firma come clausola ripetute),
     una sola similitudine forte per paragrafo, battute meno sentenziose, il tratto di Elana che conta va dosato, capitoli
     più corti dove la scheda lo consente.'
+correzioni_registrate:
+- data: '2026-10-27'
+  file: 04-manoscritto/01-la-perizia.md
+  motivo: correzioni puntuali dopo la lettura dell'autore (registro dei difetti D01-D15)
+  sha256_precedente: 43552f831d23cbbe38f5a5ee6f00c70fadfae0ca7e478373fcdfa789f46a2c22
+  sha256_corretto: e2440e41eaa2314b423650a3d58b19b713e8bf4f2c1b84627d5b34b0b5b88528
+- data: '2026-10-27'
+  file: 04-manoscritto/02-sotto-la-vernice.md
+  motivo: correzioni puntuali dopo la lettura dell'autore (registro dei difetti D01-D15)
+  sha256_precedente: 6631e068031ca6ee7943ebc31a6b39d03a148f2569643d720fe1c11216edd84d
+  sha256_corretto: e7685ac0cef52ff59914906e45ba01686a65e965076a3e06a589634094a72230
+- data: '2026-10-27'
+  file: 04-manoscritto/03-il-dettaglio-ripetuto.md
+  motivo: correzioni puntuali dopo la lettura dell'autore (registro dei difetti D01-D15)
+  sha256_precedente: 790c384ec518afba9f4aa19a64c9aad5ebf14ade24ac56d5b9889ebc8f65eacb
+  sha256_corretto: 48c38fe239916d4d79a5ecb4e157b6bea9331ecdfb71e827cfd32da5f90db644
