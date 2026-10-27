@@ -1,20 +1,20 @@
 # Modelli per ruolo: unica fonte (la legge «zb agenti attiva», che scrive «model:» negli agenti installati).
 # Alias verificati sulla documentazione ufficiale dei subagenti di Claude Code (2026-10-15):
 # sonnet, opus, haiku, fable, inherit, oppure un identificativo completo.
-# Regola: se il modello leggero sbaglia nel copyediting, si alza solo quel ruolo (qui, una riga).
+# Regola (autore, 2026-10-27): forte (Opus) dove si scrive o si giudica; medio (Sonnet) per i correttori;
+# leggero (Haiku) per le capsule. Il consumo si contiene con letture minime e risposte di 5 righe, non con modelli deboli.
 parallelo_massimo: 3          # line editing, copyediting e controlli per capitolo: al massimo 3 subagenti alla volta
 livelli: {forte: opus, medio: sonnet, leggero: haiku}
 ruoli:
   architetto-struttura: forte
   editor-strutturale: forte
-  diagnosta: leggero        # 2026-10-21: il più economico tra gli alias ammessi (haiku = Haiku 5.5 sull'API Anthropic,
-                            # documentazione di Claude Code, «model-config»); vale per ogni lavoro del diagnosta
-  direttore-editoriale: medio
-  scrittore-voce: medio
-  line-editor: medio
+  diagnosta: forte          # 2026-10-27 (autore): Opus dove si scrive o si giudica; il diagnosta dà il voto di qualità
+  direttore-editoriale: forte
+  scrittore-voce: forte
+  line-editor: forte
   correttore-italiano: medio
   correttore-bozze: medio
   capsula: leggero
-  lettore-cieco: medio      # passo opzionale (editoriale/agenti/lettore-cieco.md)
+  lettore-cieco: forte      # passo opzionale (editoriale/agenti/lettore-cieco.md)
   traduttore: medio
   revisore-fedelta: medio

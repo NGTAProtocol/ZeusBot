@@ -3,7 +3,7 @@
 # Nessuna cartella vuota e nessun .gitkeep: una cartella nasce con il suo primo file.
 radice:
   file: [libro.yaml, stato.yaml, LEGGIMI.md, cronologia.yaml, nomi_propri.txt, .gitignore]
-  creazione: zb nuovo (o zb adotta, in bozza)
+  creazione: zb nuovo
 cartelle:
   00-progetto:
     scopo: briefing e note dell'autore
@@ -44,7 +44,7 @@ cartelle:
   06-diagnostica:
     scopo: report dei controlli (capitoli, stile, continuità, ortografia, adozione)
     modalita: [nuovo, riscrittura, traduzione]
-    creazione: primo report (zb esito, zb adotta, …)
+    creazione: primo report (zb esito, …)
   06-pubblicazione:
     scopo: pacchetto KDP e conformità
     modalita: [nuovo, riscrittura, traduzione]

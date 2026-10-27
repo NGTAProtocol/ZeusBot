@@ -5,7 +5,6 @@ gruppi:
   - nome: Libro e fasi
     comandi:
       - {nome: nuovo, script: nuovo.py, uso: "nuovo <briefing>", aiuto: "crea il libro in libri/<slug>/ dal briefing"}
-      - {nome: adotta, script: adotta.py, uso: "adotta <cartella>", aiuto: "bozze di libro.yaml e stato da documenti esistenti"}
       - {nome: avvio, script: avvio.py, uso: "avvio [<libro>] [--ruolo R]", aiuto: "avvio obbligatorio e riga «Letto»; senza libro: lavoro sul motore"}
       - {nome: stato, script: fase, uso: "stato <libro>", aiuto: "fase, gate, capitoli, parole; non scrive"}
       - {nome: pronto, script: fase, uso: "pronto <libro>", aiuto: "fine del lavoro di una fase: apre il gate o passa oltre"}

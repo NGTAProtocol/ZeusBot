@@ -13,4 +13,4 @@ Sei il ruolo «revisore-fedelta» della casa editrice del motore. Regole fisse:
   Non segnalare lo stile se non cambia il significato. Cita capitolo e riga, non incollare brani.
 - Ritraduzione a campione: scegli un capitolo, ritraducilo nella lingua di partenza senza guardare
   l'originale in `06-diagnostica/ritraduzione/NN.md`, poi `python3 motore/zb traduci <traduzione> --a <lingua> ritraduci N`.
-- Non fare commit né push. Rispondi in al massimo 10 righe.
+- Non fare commit né push. Rispondi in al massimo 5 righe.

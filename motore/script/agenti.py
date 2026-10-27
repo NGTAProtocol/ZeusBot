@@ -34,10 +34,14 @@ FIRMA = '<!-- zb: installato da «zb agenti attiva»; fonte: motore/editoriale/ 
 MODELLI_AMMESSI = {'opus', 'sonnet', 'haiku', 'fable', 'inherit'}
 
 
-def sorgenti(motore):
+def sorgenti(motore, traduzione=True):
+    """File da installare. Gli agenti della traduzione (lingue/agenti/) solo con traduzione=True: ogni agente installato
+    porta la sua descrizione nel contesto di ogni sessione (token), e la traduzione è archiviata dal 2026-10-27."""
     e = os.path.join(motore, 'editoriale')
     out = []
-    for sub, dest in (('agenti', 'agents'), (os.path.join('lingue', 'agenti'), 'agents'), ('comandi', 'commands')):
+    cartelle = [('agenti', 'agents')] + ([(os.path.join('lingue', 'agenti'), 'agents')] if traduzione else []) + [
+        ('comandi', 'commands')]
+    for sub, dest in cartelle:
         d = os.path.join(e, sub)
         if os.path.isdir(d):
             out += [(os.path.join(d, f), dest, f) for f in sorted(os.listdir(d)) if f.endswith('.md')]
@@ -101,6 +105,64 @@ def a_gruppi(elenco, n):
     return [elenco[i:i + n] for i in range(0, len(elenco), n)]
 
 
+def unita_in_corso(cartella, libro, st):
+    """Unità da scrivere o rivedere adesso: «capitolo N» del passo, prologo/interludio/epilogo, oppure il capitolo dopo
+    l'ultimo scritto (il passo «pausa di lettura» non è un'unità)."""
+    passo = str(st.get('passo') or '')
+    if passo.startswith('capitolo ') and passo.split()[1].isdigit():
+        return passo.split()[1]
+    if passo and passo != 'pausa di lettura' and passo.lower() in {u.lower() for u, _ in comune.unita(cartella, libro)} | {
+            'prologo', 'epilogo'} or passo.lower().startswith('interludio'):
+        return passo
+    return str((st.get('ultimo_capitolo_scritto') or 0) + 1)
+
+
+def stato_revisione(cartella, libro, n):
+    """(«assente» | «vecchia» | «passa» | «non passa», giro2) del rapporto audit/NN.md sul testo attuale del capitolo N."""
+    import percorso
+    rel, _, testi = percorso.rapporto_capitolo(cartella, libro, n)
+    p = os.path.join(cartella, rel)
+    if not os.path.isfile(p):
+        return 'assente', False
+    righe = [r.strip() for r in open(p, encoding='utf-8').read().splitlines()]
+    m = percorso.INTESTAZIONE.match(righe[0] if righe else '')
+    giro2 = os.path.isfile(os.path.join(cartella, f'06-diagnostica/audit/{percorso.nn(n)}-giro1.md'))
+    if not m or m.group(2) != percorso.impronta(cartella, testi):
+        return 'vecchia', giro2
+    ultima = next((r for r in reversed(righe) if r), '').lower()
+    return ('passa' if ultima == 'passa' else 'non passa'), giro2
+
+
+def azione_stesura(cartella, libro, st, rel):
+    """Una sola azione per la catena del capitolo (comando /capitolo): capsule mancanti → preparazione e scrittore →
+    misure e revisione (con «revisione_capitolo: obbligatoria») → correzione mirata → esito → capsula → salva."""
+    import capsula
+    mancano = capsula.mancanti(cartella, libro, st)
+    if mancano:
+        c = mancano[0]
+        return [f'AZIONE: capsula del capitolo {c}: «zb capsula {rel} {c}», poi agente capsula ({rel}, capitolo {c}), '
+                f'poi «zb capsula {rel} {c} --verifica».']
+    u = unita_in_corso(cartella, libro, st)
+    if u not in dict(comune.unita(cartella, libro)):
+        return [f'AZIONE: scrivi il capitolo {u}: «zb prepara {rel} {u}», poi agente scrittore-voce ({rel}, capitolo '
+                    f'{u}, 06-diagnostica/preparazione/{u.zfill(2) if u.isdigit() else u}.md).']
+    if libro.get('revisione_capitolo') != 'obbligatoria' or not u.isdigit():
+        return [f'AZIONE: «zb esito {rel} {u}»; con un KO, agente scrittore-voce in correzione sul KO (una volta), poi di '
+                'nuovo zb esito; al secondo KO decide l\'autore.']
+    stato, giro2 = stato_revisione(cartella, libro, u)
+    if stato == 'passa':
+        return [f'AZIONE: «zb esito {rel} {u}» (la revisione passa); poi capsula e «zb salva {rel} "capitolo {u}"».']
+    if stato == 'non passa':
+        if giro2:
+            return [f'FERMO: capitolo {u}, secondo giro di revisione «non passa». Decide l\'autore (rapporto '
+                    f'06-diagnostica/audit/{u.zfill(2)}.md).']
+        return [f'AZIONE: correzione del capitolo {u}: agente scrittore-voce in correzione con 06-diagnostica/audit/'
+                f'{u.zfill(2)}.md (solo «## Da correggere»).']
+    return [f'AZIONE: revisione del capitolo {u}: «zb ruolo {rel} diagnosta {u}» (se si ferma su un KO: agente '
+            'scrittore-voce in correzione su quel KO), poi agente diagnosta con la «Prima riga» e '
+            f'06-diagnostica/misure/{u.zfill(2)}.md.']
+
+
 def prossimo(motore, argv):
     """Chi chiamare adesso (da motore, con i nomi del pacchetto). Non scrive nulla."""
     import capsula
@@ -117,21 +179,13 @@ def prossimo(motore, argv):
     rel = os.path.relpath(cartella, comune.radice_git(cartella))
     righe = [f'Fase {st["fase"]}; gate {st["gate_in_attesa"] or "nessuno"}. La sessione principale non scrive prosa: '
              f'chiama l\'agente, legge solo la risposta (massimo {o["righe_risposta"]} righe).']
-    if st['gate_in_attesa']:
-        righe.append(f'Gate «{st["gate_in_attesa"]}» aperto: prima la risposta dell\'autore.')
+    if st['gate_in_attesa'] == 'lettura':
+        righe.append('FERMO: pausa di lettura. L\'autore legge i capitoli, poi «zb ok <libro>» oppure «zb correggi <libro> '
+                     '<note>».')
+    elif st['gate_in_attesa']:
+        righe.append(f'FERMO: gate «{st["gate_in_attesa"]}» aperto: prima la risposta dell\'autore.')
     elif st['fase'] == 'stesura':
-        mancano = capsula.mancanti(cartella, libro, st)
-        if mancano:
-            righe.append(f'Prima le capsule (agente capsula, in parallelo a gruppi di {n}):')
-            righe += ['  gruppo: ' + ', '.join(f'capsula {rel} capitolo {c}' for c in g) for g in a_gruppi(mancano, n)]
-        if libro.get('revisione_capitolo') == 'obbligatoria':
-            righe.append(f'Poi, in sequenza (mai in parallelo): zb prepara, scrittore-voce {rel} {st["passo"]}; poi '
-                         f'zb ruolo {rel} diagnosta N (misure del motore prima del revisore: se si ferma, non chiamare '
-                         'il diagnosta, prima la correzione di chi scrive); con le misure superate, diagnosta con la '
-                         'prima riga e 06-diagnostica/misure/NN.md; dopo: zb esito, zb capsula.')
-        else:
-            righe.append(f'Poi, in sequenza (mai in parallelo): zb prepara, scrittore-voce {rel} {st["passo"]}; dopo: '
-                         'zb esito, zb capsula.')
+        righe += azione_stesura(cartella, libro, st, rel)
     elif st['fase'] in ('line', 'copy') and (st.get('sottofase') or 'proposte') == 'proposte':
         da_fare = [str(u) for u, r in percorso.capitoli(cartella, libro)
                    if not os.path.isfile(os.path.join(cartella, '06-diagnostica', st['fase'], f'{percorso.nn(u)}.md'))]
@@ -147,9 +201,13 @@ def prossimo(motore, argv):
     return 0
 
 
-def piano(rad, motore):
+def piano(rad, motore, traduzione=None):
+    """(destinazione, testo) di agenti e comandi. traduzione=None: gli agenti della traduzione solo se già installati."""
+    if traduzione is None:
+        traduzione = nostro(os.path.join(rad, '.claude', 'agents', 'traduttore.md'))
     mod, _ = modelli(motore)
-    return [(os.path.join(rad, '.claude', dest, f), generato(src, dest, mod)) for src, dest, f in sorgenti(motore)]
+    return [(os.path.join(rad, '.claude', dest, f), generato(src, dest, mod))
+            for src, dest, f in sorgenti(motore, traduzione)]
 
 
 def nostro(p):
@@ -162,7 +220,7 @@ def main(argv):
     pulito = [a for i, a in enumerate(argv) if a != '--progetto' and (i == 0 or argv[i - 1] != '--progetto')]
     args = comune.argomenti(pulito)
     azione = args[0] if args else 'stato'
-    voci = piano(rad, motore)
+    voci = piano(rad, motore, True if '--traduzione' in argv else None)
     installati = [p for p, _ in voci if nostro(p)]
     if azione == 'stato':
         mod, par = modelli(motore)

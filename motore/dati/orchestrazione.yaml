@@ -3,7 +3,7 @@
 # (parallelo_massimo): una sola fonte.
 # La sessione principale non scrive prosa: chiama l'agente del passo con slug e numero di capitolo e legge
 # solo la risposta breve (massimo righe_risposta righe).
-righe_risposta: 10
+righe_risposta: 5
 # con limiti d'uso o errori 429 si scende al valore successivo di «riduzione» (scriverlo qui, commit a parte)
 riduzione: [2, 1]
 # sempre in sequenza: ogni capitolo dipende dal precedente

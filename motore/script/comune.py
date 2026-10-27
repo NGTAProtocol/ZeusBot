@@ -453,9 +453,29 @@ def in_elenco(unita, elenco):
     return False
 
 
+# Controlli di stile misurati con soglie numeriche: con «soglie_stile: informative» (predefinito) non danno mai KO.
+# Decisione dell'autore del 2026-10-27: bloccano solo fatti oggettivi (continuità, canone, nomi, parole vietate,
+# lunghezza minima) e il voto del revisore sotto la soglia di qualità.
+CONTROLLI_STILE = ('frase_media', 'dialogo', 'parole_filtro', 'scene_numero', 'scena_minimo')
+
+
+def soglie_informative(libro):
+    return (libro or {}).get('soglie_stile', 'informative') != 'bloccanti'
+
+
+def controllo_di_stile(controllo):
+    return controllo in CONTROLLI_STILE or controllo.startswith('anti-ia:')
+
+
 def applica_eccezioni(risultati, libro):
-    """Gli AVVISO con un'eccezione motivata in libro.yaml (stile.eccezioni: {unita, controllo, motivo})
-    diventano esito ECCEZIONE, con il motivo nel dettaglio. I KO restano KO."""
+    """Con le soglie di stile informative (predefinito) i KO dei controlli di stile diventano AVVISO. Poi gli AVVISO
+    con un'eccezione motivata in libro.yaml (stile.eccezioni: {unita, controllo, motivo}) diventano ECCEZIONE, con il
+    motivo nel dettaglio. Gli altri KO restano KO."""
+    if soglie_informative(libro):
+        for r in risultati:
+            if r['esito'] == 'KO' and controllo_di_stile(r['controllo']):
+                r['esito'] = 'AVVISO'
+                r['dettaglio'] = f'{r["dettaglio"] or ""} (soglia informativa)'.strip()
     ecc = (libro.get('stile') or {}).get('eccezioni') or []
     for r in risultati:
         if r['esito'] != 'AVVISO':
@@ -638,8 +658,19 @@ def cartella_progetto():
     return os.environ.get('CLAUDE_PROJECT_DIR') or radice_git(os.getcwd())
 
 
+def repository_con_libro(radice):
+    """True se il repository (radice git) contiene un libro (libri/<slug>/libro.yaml): è il ramo di un libro, dove
+    agenti, comandi e hook installati in .claude/ sono legittimi. Le prove «solo motore» si saltano lì."""
+    d = os.path.join(radice, 'libri')
+    return os.path.isdir(d) and any(os.path.isfile(os.path.join(d, x, 'libro.yaml')) for x in os.listdir(d))
+
+
 def sessione_corrente():
-    """(session_id, fonte). Lo deposita hook_sessione.py; senza hook, identificativo locale."""
+    """(session_id, fonte). ZB_SESSIONE esplicita vince; poi il file di hook_sessione.py; altrimenti «locale».
+    (Prima vinceva il file dell'hook: in una sessione con l'hook, ZB_SESSIONE era ignorata e «zb pulizia --applica»
+    cancellava il marcatore della sessione indicata.)"""
+    if os.environ.get('ZB_SESSIONE'):
+        return os.environ['ZB_SESSIONE'], 'variabile ZB_SESSIONE'
     p = os.path.join(cartella_progetto(), '.zb', 'sessione-corrente')
     try:
         sid = open(p, encoding='utf-8').read().strip()
@@ -647,8 +678,6 @@ def sessione_corrente():
             return sid, 'hook SessionStart'
     except OSError:
         pass
-    if os.environ.get('ZB_SESSIONE'):
-        return os.environ['ZB_SESSIONE'], 'variabile ZB_SESSIONE'
     return 'locale', 'identificativo locale (nessun hook SessionStart)'
 
 

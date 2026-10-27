@@ -8,6 +8,7 @@ modalita: nuovo
 serie: {nome: "Prove del motore", numero: 1}
 ebook: true
 profilo: romance
+soglie_stile: bloccanti      # le prove storiche controllano i KO di stile (predefinito: informative)
 override: []
 
 parole:

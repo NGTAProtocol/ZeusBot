@@ -130,6 +130,9 @@ def chiudi_pausa(cartella, libro, stato, note=None):
     stato['ultimo_capitolo_approvato'] = max(numerici + [stato['ultimo_capitolo_approvato'] or 0])
     stato['lotto']['capitoli'] = []
     stato.update(gate_in_attesa=None, revisione_in_corso=None)
+    if str(stato.get('passo') or '') == 'pausa di lettura':
+        # prima il passo restava «pausa di lettura» anche a pausa chiusa (zb stato e zb agenti prossimo sbagliavano)
+        stato['passo'] = f'capitolo {(stato["ultimo_capitolo_scritto"] or 0) + 1}'
     print(f'Pausa di lettura chiusa: {len(docs)} capitoli letti; la scrittura riparte.')
     dopo_capitolo(cartella, libro, stato)
 
@@ -749,6 +752,10 @@ def cmd_esito(cartella, libro, stato, resto, argv):
     if r.returncode == 0:
         stato['tentativi'].pop(n, None)
         print(f'Capitolo {n}: controlli OK.')
+        if percorso.attivo(libro) and not percorso.traduzione(libro):
+            lz = percorso.registra_lezione(cartella, libro, n)
+            if lz:
+                print(f'Lezione per i capitoli successivi: {lz} ({percorso.LEZIONI}).')
         accetta_capitolo(cartella, libro, stato, n)
         return 0
     stato['tentativi'][n] = stato['tentativi'].get(n, 0) + 1

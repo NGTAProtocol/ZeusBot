@@ -55,6 +55,7 @@ RUOLI = {
     'traduttore': {'file': 'lingue/agenti/traduttore.md', 'tipo': 'scrive'},
     'revisore-fedelta': {'file': 'lingue/agenti/revisore-fedelta.md', 'tipo': 'revisiona'},
     'motore': {'file': None, 'tipo': 'meccanico'},     # chiusura meccanica, solo comandi zb
+    'regia': {'file': None, 'tipo': 'regia'},          # 2026-10-27: orchestra gli agenti (/capitolo), non scrive prosa
 }
 DA_FASE = {'struttura': 'architetto-struttura', 'documenti': 'direttore-editoriale',
            'pagina_campione': 'scrittore-voce', 'guida': 'traduttore', 'stesura': 'scrittore-voce',

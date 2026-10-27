@@ -182,7 +182,12 @@ def annota_scrittura(percorso, rad, dati):
         if not os.path.isfile(os.path.join(cartella, 'libro.yaml')):
             return
         import ruolo
-        ruolo.registra_scrittura(cartella, str(dati.get('session_id') or 'locale'), os.path.relpath(percorso, cartella))
+        sid = str(dati.get('session_id') or 'locale')
+        if dati.get('agent_type'):
+            # 2026-10-27: scrittura di un subagente → «sessione:agente». Con /capitolo scrittore e revisore sono
+            # subagenti della stessa sessione: la separazione dei ruoli li distingue per agente, non per sessione.
+            sid = f'{sid}:{dati["agent_type"]}'
+        ruolo.registra_scrittura(cartella, sid, os.path.relpath(percorso, cartella))
     except Exception:       # l'annotazione non deve mai fermare lo strumento
         pass
 

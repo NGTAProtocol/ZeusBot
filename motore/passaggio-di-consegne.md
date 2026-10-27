@@ -5,6 +5,14 @@ riprendi da lì».
 
 ## Stato
 
+- **2026-10-27 (lavoro sul motore, fatto sul ramo di lavoro di un libro e portato qui)**: catena automatica dei capitoli
+  `/capitolo` (ruolo `regia`, `zb agenti prossimo` → AZIONE/FERMO), Opus dove si scrive o si giudica, revisione con
+  voti tarati, `Media`, soglia `soglia_qualita` (7.5) controllata da `zb esito`, lezioni in `06-diagnostica/lezioni.md`,
+  soglie di stile informative (`soglie_stile`), taglio avversario nel line editing, letture ridotte (ultime 3 capsule,
+  niente frasi finali al diagnosta, `CLAUDE.md` senza obbligo di leggere PROCEDURA), scritture dei subagenti per
+  «sessione:agente», 5 difetti corretti. Archiviati su `archivio/motore-prima-2026-10-27`: `zb adotta`, l'infrastruttura
+  completa in `docs/`, `proposta-motore.md`, `report-motore.md`. Dettaglio: `docs/miglioramenti-2026-10-27.md`.
+  Da portare sul ramo `motore` (solo `motore/`, `docs/`, `CLAUDE.md`).
 - Unione del 2026-10-21: il ramo di lavoro è `motore`. `integrazione-editoriale` (9c54726) è entrato in `motore` con
   `git merge -s ours origin/motore` (ec8fe47: la storia di `motore` resta come antenato, il contenuto è quello di
   `integrazione-editoriale`), più la correzione di `script/separazione.py` (1092a89); push fast-forward di `motore`
@@ -45,7 +53,7 @@ riprendi da lì».
   adattate ai nomi del pacchetto (`docs/DA_VERIFICARE_AUTORE.md`).
 - Banca-voci: repository separato, letto in sola lettura da `ZB_BANCA_VOCI`; i nomi delle voci stanno solo lì.
 - Documenti per l'autore: `docs/DECISIONI_INTEGRAZIONE.md` (D1-D18), `docs/DA_VERIFICARE_AUTORE.md`,
-  `docs/ATTRIBUZIONI.md`, `docs/ANALISI_REPOSITORY.md`. Stato del motore per esteso: `motore/report-motore.md`.
+  `docs/ATTRIBUZIONI.md`, `docs/ANALISI_REPOSITORY.md`. Stato del motore: `docs/miglioramenti-2026-10-27.md`.
 
 ## Decisioni prese
 

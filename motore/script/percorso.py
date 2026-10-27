@@ -110,6 +110,8 @@ def bloccanti_prima_della_revisione(risultati, libro):
     «voce:<slug>:…»). Decisione dell'autore del 2026-10-21: frase media e ripetizioni ravvicinate restano avvisi (soglie
     ancora PROPOSTA): con gli altri avvisi passano al diagnosta come righe misurate e non fermano."""
     slug = (libro.get('voce') or {}).get('slug')
+    if comune.soglie_informative(libro):      # 2026-10-27: i divieti della voce informano il revisore, non fermano
+        return [r for r in risultati if r['esito'] == 'KO']
     return [r for r in risultati if r['esito'] == 'KO' or (
         r['esito'] == 'AVVISO' and slug and r['controllo'].startswith(f'voce:{slug}:'))]
 
@@ -168,7 +170,7 @@ def letture_diagnosta(cartella, libro, n, rel_cap):
     import codex
     import struttura
     n = int(n)
-    leggere = [rel_cap, misure_rel(n), f'06-diagnostica/frasi-finali/{nn(n)}.md']
+    leggere = [rel_cap, misure_rel(n)]     # 2026-10-27: niente più tabella delle frasi finali (revisione con voti)
     sk = struttura.schede(cartella).get(str(n)) or {}
     leggere += codex.filtra(cartella, struttura.tag_di(sk))[0]
     if n > 1 and os.path.isfile(os.path.join(cartella, capsula.rel(n - 1))):
@@ -207,9 +209,8 @@ def misure_prima_della_revisione(cartella, libro, profilo, n, giro=(1, [])):
     comune.scrivi(cartella, f'06-diagnostica/frasi-finali/{nn(n)}.md', stile.tabella_frasi_finali(n, ff))
     righe = [f'<!-- zb: misure; su={revisione.impronta(cartella, testi)} -->',
              f'# Misure del capitolo {n} per il diagnosta', '',
-             'Scritte da «zb ruolo <libro> diagnosta N» prima della revisione: il capitolo ha superato le misure del '
-             'motore (nessun KO e nessun avviso dei divieti della voce). Il diagnosta '
-             'non rifà queste misure.', '',
+             'Scritte da «zb ruolo <libro> diagnosta N» prima della revisione: nessun KO oggettivo. Le righe sotto '
+             'sono informazioni per il voto «pulizia», non conteggi da rifare.', '',
              '| Misura | Valore |', '|---|---|',
              f'| Parole | {met.get("parole")} |',
              f'| Frase media | {met.get("frase_media")} (intervallo {met.get("frase_media_intervallo", "—")}) |',
@@ -225,12 +226,15 @@ def misure_prima_della_revisione(cartella, libro, profilo, n, giro=(1, [])):
         shutil.copyfile(os.path.join(cartella, rel_audit(n)), os.path.join(cartella, f'06-diagnostica/audit/{nn(n)}-giro1.md'))
         righe += ['', '## Giro 2: solo queste frasi', '',
                   f'Il primo giro è in 06-diagnostica/audit/{nn(n)}-giro1.md. Rivedi solo queste voci sul testo corretto: '
-                  'per ognuna «risolta» o «non risolta» con il motivo; non rifare la checklist intera.', '']
+                  'per ognuna «risolta» o «non risolta» con il motivo; non rifare la revisione intera. Poi una nuova riga '
+                  '«Media: X.X» e l\'ultima riga «passa» o «non passa».', '']
         righe += [f'- {v}' for v in giro[1]]
     else:
         righe += ['', '## Giro 1: revisione completa', '',
-                  'Checklist intera del ruolo; nel rapporto, prima dell\'ultima riga, la sezione «## Da correggere» (una '
-                  'voce «- r.N «frase»: motivo» per ogni punto bloccante, oppure «- nessuna»).']
+                  f'Rapporto del ruolo (al massimo 400 parole): «## Voti» (sette voci 1-10), «Media: X.X», «## Continuità», '
+                  f'«## Da correggere» (al massimo 5 voci «- r.N «frase»: motivo → cosa ottenere», oppure «- nessuna»), '
+                  f'«## Lezione» (una riga: il difetto da non ripetere), '
+                  f'ultima riga «passa» (media almeno {soglia_qualita(libro)}, nessun fatto contraddetto) o «non passa».']
     rel = misure_rel(n)
     comune.scrivi(cartella, rel, '\n'.join(righe) + '\n')
     return rel
@@ -263,11 +267,71 @@ def controlla_revisione_capitolo(cartella, libro, n):
                                   'poi nuova revisione.')
     if ultima != 'passa':
         raise comune.ErroreMotore(f'{rel}: l\'ultima riga deve essere «passa» o «non passa» (trovato «{ultima[:40]}»).')
+    media, soglia = media_revisione(righe), soglia_qualita(libro)
+    if media is None:
+        raise comune.ErroreMotore(f'{rel}: manca la riga «Media: X.X» (media dei sette voti della revisione). {aiuto}')
+    if media < soglia:
+        raise comune.ErroreMotore(f'{rel}: «passa» con media {media} sotto la soglia di qualità {soglia} '
+                                  '(soglia_qualita in libro.yaml): il capitolo non passa. Correzione mirata, poi nuova revisione.')
     pm = os.path.join(cartella, misure_rel(n))     # le misure del motore vengono prima del diagnosta
     prima = open(pm, encoding='utf-8').readline().strip() if os.path.isfile(pm) else ''
     if prima != f'<!-- zb: misure; su={attuale} -->':
         raise comune.ErroreMotore(f'{misure_rel(n)}: misure del motore assenti o scritte su un\'altra versione del '
                                   f'capitolo {n}. Prima del diagnosta: «zb ruolo <libro> diagnosta {n}».')
+
+
+LEZIONI = '06-diagnostica/lezioni.md'
+LEZIONI_MAX = 12
+
+
+def registra_lezione(cartella, libro, n):
+    """Capitolo N accettato: la riga della sezione «## Lezione» del rapporto audit/NN.md (un difetto da non ripetere,
+    detto come regola) va in 06-diagnostica/lezioni.md, che zb prepara passa allo scrittore dei capitoli successivi.
+    Ultime LEZIONI_MAX, senza doppioni. Restituisce la lezione registrata o None."""
+    if not str(n).isdigit():
+        return None
+    p = os.path.join(cartella, rel_audit(n))
+    if not os.path.isfile(p):
+        return None
+    lezione, dentro_sez = None, False
+    for r in open(p, encoding='utf-8').read().splitlines():
+        t = r.strip()
+        if t.startswith('## '):
+            dentro_sez = t[3:].strip().lower().startswith('lezione')
+            continue
+        if dentro_sez and t.startswith('- ') and t[2:].strip().lower().rstrip('.') not in ('nessuna', 'nessuno'):
+            lezione = t[2:].strip()
+            break
+    if not lezione:
+        return None
+    pl = os.path.join(cartella, LEZIONI)
+    prima = [r[2:].split(' (cap. ')[0] for r in open(pl, encoding='utf-8').read().splitlines()
+             if r.startswith('- ')] if os.path.isfile(pl) else []
+    voci = [r for r in open(pl, encoding='utf-8').read().splitlines() if r.startswith('- ')] if os.path.isfile(pl) else []
+    if lezione in prima:
+        return None
+    voci = (voci + [f'- {lezione} (cap. {n})'])[-LEZIONI_MAX:]
+    comune.scrivi(cartella, LEZIONI, '# Lezioni dei capitoli già rivisti\n\nDifetti trovati dal revisore: non ripeterli. '
+                  'Le aggiunge «zb esito» dalla sezione «## Lezione» dei rapporti.\n\n' + '\n'.join(voci) + '\n')
+    return lezione
+
+
+MEDIA = re.compile(r'^\**media\**\s*:\s*\**\s*(\d+(?:[.,]\d+)?)', re.IGNORECASE)
+
+
+def media_revisione(righe):
+    """Ultima riga «Media: X.X» del rapporto (al secondo giro vale la nuova media); None se manca."""
+    for r in reversed(righe):
+        m = MEDIA.match(r.strip())
+        if m:
+            return float(m.group(1).replace(',', '.'))
+    return None
+
+
+def soglia_qualita(libro):
+    """Voto medio minimo per «passa» (libro.yaml soglia_qualita; predefinito 7.5 sulla scala tarata del ruolo, dove
+    6 è il mestiere e 8 «un editor lo terrebbe»: in stesura si avanza, la qualità finale sale nelle revisioni)."""
+    return float(libro.get('soglia_qualita') or 7.5)
 
 
 def impronta(cartella, testi):
