@@ -3283,7 +3283,109 @@ def pubblicazione(A):
           any('cambiato' in x for x in pubblicazione.aggiornati(cart, libro)), sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro, 'grafica': grafica, 'pubblicazione': pubblicazione}
+def difetti_prove(A):
+    """Sistema difetto→test (difetti.py, 2026-10-27): per ogni classe deterministica un testo inventato sbagliato
+    (deve fallire) e lo stesso testo corretto (deve passare); più il cancello e la prova sulle fixture."""
+    import difetti
+    sez = 'difetti'
+    d = tempfile.mkdtemp(dir=TMP)
+    os.makedirs(os.path.join(d, '02-bibbia', 'codex'))
+    os.makedirs(os.path.join(d, '03-struttura'))
+    open(os.path.join(d, '02-bibbia', 'codex', 'anna.md'), 'w', encoding='utf-8').write(
+        '# Anna Neri\n\n@char:anna\n\n- Alias: Anna\n- Ruolo: studentessa del primo anno.\n')
+    open(os.path.join(d, '03-struttura', '08-piano-parole.md'), 'w', encoding='utf-8').write(
+        '| Cap. | Budget capitolo |\n|---|---|\n| 1 | 40 |\n')
+    libro = {'titolo': 'Prova', 'genere': 'thriller', 'difetti': {'parole_firma': ['clausol'], 'cliche': ['tamburo sordo']}}
+    ctx = {'cartella': d, 'libro': libro, 'p': difetti.parametri(libro), 'anno': 2001}
+
+    def cap(n, testa, corpo, coda=''):
+        return (str(n), f'# Capitolo {n}\n\n{testa}\n\n{corpo}\n{coda}')
+    lungo = ' '.join(['parola'] * 60)
+    casi = {
+        'giorni_relativi': (
+            [cap(1, 'Aula — 21 ottobre', 'La tela è lì da tre giorni.\n\n* * *\n\nLa mattina dopo torno. Fino a tre giorni fa era appesa.')],
+            [cap(1, 'Aula — 21 ottobre', 'La tela è lì da tre giorni.\n\n* * *\n\nLa mattina dopo torno. Fino a quattro giorni fa era appesa.')]),
+        'ordine_tipo': (
+            [cap(1, 'Aula — 10 dicembre', 'Testo.'), cap(2, 'Aula — 21 ottobre', 'Testo.')],
+            [cap(1, 'Aula — 10 dicembre', 'Testo.', '<!-- zb: tipo=flash-forward -->'), cap(2, 'Aula — 21 ottobre', 'Testo.')]),
+        'apertura_ripetuta': (
+            [cap(1, 'Aula — 1 marzo', 'La stanza sa di cera, di polvere e di ferro.'),
+             cap(2, 'Aula — 2 marzo', 'Il corridoio sa di gesso e di caffè.')],
+            [cap(1, 'Aula — 1 marzo', 'La stanza sa di cera, di polvere e di ferro.'),
+             cap(2, 'Aula — 2 marzo', 'Entro senza bussare.')]),
+        'frase_firma': (
+            [cap(1, 'Aula — 1 marzo', 'Osservo. Il colore cambia.'), cap(2, 'Aula — 2 marzo', 'Osservo. La luce scende.')],
+            [cap(1, 'Aula — 1 marzo', 'Osservo. Il colore cambia.'), cap(2, 'Aula — 2 marzo', 'La luce scende sul bordo.')]),
+        'chiusure_uguali': (
+            [cap(n, f'Aula — {n} marzo', 'Testo.', '<!-- zb: chiusura=D -->') for n in (1, 2, 3)],
+            [cap(n, f'Aula — {n} marzo', 'Testo.', f'<!-- zb: chiusura={s} -->') for n, s in ((1, 'D'), (2, 'D'), (3, 'R'))]),
+        'lunghezza': ([cap(1, 'Aula — 1 marzo', lungo)], [cap(1, 'Aula — 1 marzo', 'Poche parole qui.')]),
+        'cliche': ([cap(1, 'Aula — 1 marzo', 'La pioggia batte come un tamburo sordo.')],
+                   [cap(1, 'Aula — 1 marzo', 'La pioggia batte sui vetri.')]),
+        'copia_capitoli': (
+            [cap(1, 'Aula — 1 marzo', 'Il custode chiude la porta grande della galleria alle sei.'),
+             cap(2, 'Aula — 2 marzo', 'Il custode chiude la porta grande della galleria alle sei.')],
+            [cap(1, 'Aula — 1 marzo', 'Il custode chiude la porta grande della galleria alle sei.'),
+             cap(2, 'Aula — 2 marzo', 'A sera la galleria resta aperta per noi.')]),
+        'similitudini': ([cap(1, 'Aula — 1 marzo', 'La carta è bianca come un osso, e il nome pesa come una pietra.')],
+                         [cap(1, 'Aula — 1 marzo', 'La carta è bianca come un osso, e il nome pesa.')]),
+        'tratto_ricorrente': (
+            [cap(n, f'Aula — {n} marzo', 'Le conto, le mandate.') for n in (1, 2, 3)],
+            [cap(n, f'Aula — {n} marzo', 'Le conto, le mandate.' if n < 3 else 'Apro.') for n in (1, 2, 3)]),
+        'etichetta_ruolo': ([cap(1, 'Aula — 1 marzo', 'Anna, dottoranda di pittura, entra.')],
+                            [cap(1, 'Aula — 1 marzo', 'Anna, studentessa di pittura, entra.')]),
+    }
+    righe = []
+    for classe, (sbagliata, corretta) in casi.items():
+        f = difetti.DETERMINISTICI[classe]
+        righe.append(f'{classe}:{bool(f(sbagliata, ctx))}/{bool(f(corretta, ctx))}')
+    esito('difetti.py', 'ogni classe deterministica fallisce sul testo sbagliato e passa sul corretto (classe:fallisce/'
+          'fallisce)', ' '.join(f'{c}:True/False' for c in casi), ' '.join(righe), sez)
+    esito('difetti.py', 'le classi deterministiche dei dati hanno tutte un controllo',
+          sorted(c for c, v in difetti.dati()['classi'].items() if v['rilevamento'] == 'deterministico'),
+          sorted(difetti.DETERMINISTICI), sez)
+    # fixture su cartella e prova del registro
+    for nome, unita in (('sbagliata', casi['giorni_relativi'][0]), ('corretta', casi['giorni_relativi'][1])):
+        os.makedirs(os.path.join(d, 'fx', nome))
+        for n, t in unita:
+            open(os.path.join(d, 'fx', nome, f'{int(n):02d}-x.md'), 'w', encoding='utf-8').write(t)
+    voce = {'id': 'D01', 'classe': 'giorni_relativi', 'scena': '1', 'fixture_sbagliata': 'fx/sbagliata',
+            'fixture_corretta': 'fx/corretta'}
+    esito('difetti.py', 'prova di una voce del registro sulle fixture: fallito sulla sbagliata, passato sulla corretta',
+          "('fallito', 'passato')", str(difetti.prova_voce(d, libro, voce)), sez)
+    esito('difetti.py', 'righe nascoste unite: tipo in testa e chiusura in fondo',
+          "{'tipo': 'flash-forward', 'chiusura': 'D'}",
+          str(comune.dichiarazioni_unita('<!-- zb: tipo=flash-forward -->\ntesto\n<!-- zb: chiusura=D -->')), sez)
+    # cancello: revisore assente = non verificabile; KO del revisore = fallito; fatti aperti = non verificabile;
+    # un'eccezione con il motivo = accettato
+    pulito = [cap(1, 'Aula — 1 marzo', 'Entro.')]
+    os.makedirs(os.path.join(d, '06-diagnostica', 'audit'))
+    au = os.path.join(d, '06-diagnostica', 'audit', '01.md')
+    open(au, 'w', encoding='utf-8').write('Media: 8\n\npassa\n')
+
+    def stato_di(classe):
+        return next(e for c, _, e, _ in difetti.esiti_unita(d, libro, '1', pulito) if c == classe)
+    senza = stato_di('conoscenza_personaggio')
+    open(au, 'w', encoding='utf-8').write('## Registro dei difetti\n\n- conoscenza_personaggio: KO r.3 «x»: porta chiusa\n'
+                                          '- inferenza_come_fatto: OK\n- motivazione: OK\n\n## Fatti da verificare\n\n'
+                                          '- r.5 «l\'ora della morte»: medicina legale\n\npassa\n')
+    con_ko, inf = stato_di('conoscenza_personaggio'), stato_di('inferenza_come_fatto')
+    nuovi = difetti.registra_fatti(d, '1')
+    aperto = stato_di('fatto_da_verificare')
+    rif = difetti.cmd_fatto(d, ['F001', 'generico'], [])
+    chiuso = stato_di('fatto_da_verificare')
+    os.makedirs(os.path.join(d, '06-diagnostica', 'difetti'), exist_ok=True)
+    open(os.path.join(d, difetti.REGISTRO), 'w', encoding='utf-8').write(
+        'eccezioni:\n  - {unita: "1", classe: conoscenza_personaggio, motivo: "la porta era aperta, detto al cap. 2"}\n')
+    accettato = stato_di('conoscenza_personaggio')
+    esito('difetti.py', 'cancello: revisore assente / KO / OK / fatto registrato / aperto / reso generico / eccezione',
+          'non verificabile / fallito / passato / 1 / non verificabile / 0 passato / accettato',
+          f'{senza} / {con_ko} / {inf} / {nuovi} / {aperto} / {rif} {chiuso} / {accettato}', sez)
+    esito('fase.py', 'zb esito chiama il cancello dei difetti (revisione obbligatoria)', True,
+          'difetti.cancello(cartella, libro, n)' in open(os.path.join(S, 'fase.py'), encoding='utf-8').read(), sez)
+
+
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro, 'grafica': grafica, 'pubblicazione': pubblicazione, 'difetti': difetti_prove}
 
 
 def main(argv):

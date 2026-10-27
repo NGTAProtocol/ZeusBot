@@ -840,3 +840,4 @@ frase_media_registro:
   con_campo: ['1: 5-10 (registro corto, dalla voce) OK', '2: 15-25 (registro freddo, dalla voce) AVVISO', '3: 12-18 (registro base, dalla voce) AVVISO']
 grafica: {}
 pubblicazione: {}
+difetti: {}

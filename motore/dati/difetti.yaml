@@ -1,0 +1,79 @@
+# Classi di difetto del sistema «difetto → test» (motore/script/difetti.py, procedura in editoriale/difetti.md).
+# Ogni difetto trovato in un libro si registra nel registro del libro (06-diagnostica/difetti/registro.yaml) con una
+# di queste classi; la classe dice come si rileva e quanto pesa. Un libro può cambiare i parametri in libro.yaml,
+# blocco «difetti: {parametri: {...}}». I parametri con «da_calibrare» sono proposte, non misure.
+#
+# gravita: bloccante (il cancello di «zb esito» rifiuta il capitolo) | avviso (si scrive, non ferma)
+# rilevamento: deterministico (script) | revisore (agente diagnosta: meno affidabile) | fonte (fatto da verificare)
+classi:
+  giorni_relativi:
+    descrizione: "«da N giorni», «N giorni fa», «N giorni prima» che danno date vicine ma diverse (scarto di 1-2 giorni)"
+    gravita: bloccante
+    rilevamento: deterministico
+  conoscenza_personaggio:
+    descrizione: "un personaggio sa o vede ciò che non poteva sapere o vedere"
+    gravita: bloccante
+    rilevamento: revisore
+  fatto_da_verificare:
+    descrizione: "fatto controllabile (medicina, scienza, tecnica, citazioni, attribuzioni, storia) non verificato su fonte"
+    gravita: bloccante
+    rilevamento: fonte
+  inferenza_come_fatto:
+    descrizione: "un'inferenza della narratrice presentata come fatto accertato"
+    gravita: bloccante
+    rilevamento: revisore
+  etichetta_ruolo:
+    descrizione: "etichetta di ruolo (dottoranda, studentessa, professore…) attribuita a un personaggio che non la ha nel codex"
+    gravita: bloccante
+    rilevamento: deterministico
+  ordine_tipo:
+    descrizione: "capitolo senza data in intestazione, o fuori ordine cronologico senza il tipo dichiarato (<!-- zb: tipo=… -->)"
+    gravita: bloccante
+    rilevamento: deterministico
+  apertura_ripetuta:
+    descrizione: "apertura formulaica ripetuta in capitoli consecutivi (elenco di odori «sa di X, di Y e di Z» nel primo paragrafo)"
+    gravita: bloccante
+    rilevamento: deterministico
+  frase_firma:
+    descrizione: "frase breve identica in capitoli vicini, o parola-firma oltre il massimo nella finestra di capitoli"
+    gravita: bloccante
+    rilevamento: deterministico
+  chiusure_uguali:
+    descrizione: "troppi capitoli consecutivi con la stessa sigla di chiusura"
+    gravita: bloccante
+    rilevamento: deterministico
+  lunghezza:
+    descrizione: "capitolo oltre il budget del piano parole (più la tolleranza) o oltre il massimo del libro"
+    gravita: bloccante
+    rilevamento: deterministico
+  cliche:
+    descrizione: "espressione della lista nera, dei divieti del libro o dei cliché registrati"
+    gravita: bloccante
+    rilevamento: deterministico
+  copia_capitoli:
+    descrizione: "7 o più parole consecutive uguali a un capitolo precedente"
+    gravita: bloccante
+    rilevamento: deterministico
+  similitudini:
+    descrizione: "più di una similitudine in un paragrafo, o oltre il tetto del capitolo"
+    gravita: bloccante
+    rilevamento: deterministico
+  motivazione:
+    descrizione: "scelta di un personaggio non motivata dai fatti già noti"
+    gravita: avviso
+    rilevamento: revisore
+  tratto_ricorrente:
+    descrizione: "tratto della narratrice ripetuto in troppi capitoli di fila (es. contare)"
+    gravita: avviso
+    rilevamento: deterministico
+
+parametri:
+  finestra_capitoli: {valore: 3, da_calibrare: true}          # capitoli vicini per frasi e parole-firma
+  giorni_scarto_sospetto: {valore: [1], da_calibrare: true}   # 2 giorni dà falsi allarmi (fatti diversi)
+  frase_firma_parole_max: {valore: 4, da_calibrare: true}      # frasi brevi fino a 4 parole
+  parole_firma_max_finestra: {valore: 1, da_calibrare: true}   # occorrenze di una parola-firma nella finestra
+  chiusure_max_consecutive: {valore: 2, da_calibrare: false}   # come anti-IA: al terzo capitolo uguale si ferma
+  similitudini_max_paragrafo: {valore: 1, da_calibrare: false}  # scheda della voce: un'immagine forte per paragrafo
+  similitudini_parole_per_una: {valore: 300, da_calibrare: true}
+  tratto_capitoli_consecutivi: {valore: 3, da_calibrare: true}
+  etichette_ruolo: {valore: [dottorand, studentess, matricol, professor, docent, assistent, borsist, restauratric, perit, custod, direttor, rettor], da_calibrare: false}

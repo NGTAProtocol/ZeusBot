@@ -729,6 +729,10 @@ def cmd_esito(cartella, libro, stato, resto, argv):
         raise comune.ErroreMotore(f'Gate «{gate}» aperto: prima ok o correggi.')
     if percorso.attivo(libro):
         percorso.controlla_revisione_capitolo(cartella, libro, n)   # revisione_capitolo: obbligatoria (libro.yaml)
+        if libro.get('revisione_capitolo') == 'obbligatoria' and str(n).isdigit():
+            import difetti    # cancello dei difetti: un bloccante fallito o non verificabile ferma il capitolo
+            difetti.registra_fatti(cartella, n)
+            difetti.cancello(cartella, libro, n)
     extra = ['--radice', argv[argv.index('--radice') + 1]] if '--radice' in argv else []
     u = dict(comune.unita(cartella, libro)).get(n)
     if u:                       # chi ha scritto l'unità (separazione dei ruoli, ruolo.py; da motore)

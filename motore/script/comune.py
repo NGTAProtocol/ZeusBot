@@ -432,12 +432,12 @@ def parole(s):
 
 
 def dichiarazioni_unita(testo):
-    """Coppie campo=valore della riga nascosta <!-- zb: … -->."""
+    """Coppie campo=valore delle righe nascoste <!-- zb: … --> (tutte, unite: tipo in testa, chiusura in fondo)."""
     import re
-    m = re.search(r'<!--\s*zb:(.*?)-->', testo, re.S)
-    if not m:
-        return {}
-    return dict(re.findall(r'(\w+)=([^\s()]+)', m.group(1)))
+    out = {}
+    for blocco in re.findall(r'<!--\s*zb:(.*?)-->', testo, re.S):
+        out.update(re.findall(r'(\w+)=([^\s()]+)', blocco))
+    return out
 
 
 def in_elenco(unita, elenco):
