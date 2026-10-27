@@ -1,34 +1,30 @@
 # Percorso di un libro
 
-| # | Fase | Chi lavora | Fermata |
-|---|------|-----------|---------|
-| 1 | Briefing | Autore | - |
-| 2 | Apertura cartella unica `libri/<slug>/` | motore (`zb nuovo`) | - |
-| 3 | Struttura | architetto della struttura | gate `struttura` |
-| 4 | Revisione della struttura | editor strutturale (sessione separata) | nel gate `struttura` |
-| 5 | Documenti (bibbia, cronologia, piano parole) | direttore editoriale | gate `documenti` |
-| 6 | Pagina campione | scrittore con voce | gate `pagina_campione` |
-| 7 | Stesura capitolo per capitolo | scrittore con voce | gate `primi_capitoli` |
-| 8 | Revisione strutturale del manoscritto | editor strutturale | gate `struttura_manoscritto` |
-| 9 | Line editing | line editor | gate `line` |
-| 10 | Copyediting | correttore di italiano | gate `copy` |
-| 11 | Bozze | correttore di bozze | gate `bozze` |
-| 12 | Chiusura meccanica | motore | - |
+Modo automatico (decisione dell'autore del 2026-10-20, confermata il 2026-10-27): il motore controlla e passa da una
+fase all'altra da solo; le fermate sono la **pausa di lettura** (ogni `pausa_lettura` capitoli e a fine stesura), un
+**FERMO** del motore (controllo fallito, secondo «non passa» della revisione) e il **canone**. Un gate di fase si
+ferma solo se è elencato in `gate` di `libro.yaml` (lo decide il briefing).
 
-Chiusura meccanica, in ordine: continuita, ortografia, compila, impagina, pdf, pacchetto, kdp, pronto.
+| # | Fase | Chi lavora | Strumento |
+|---|------|-----------|-----------|
+| 1 | Briefing e pagine campione della voce | autore | `modelli/briefing.md`, `00-progetto/voce/` |
+| 2 | Apertura della cartella unica `libri/<slug>/` | motore | `zb nuovo` |
+| 3 | Struttura | architetto della struttura | nove file di `03-struttura/` |
+| 4 | Revisione della struttura | diagnosta, poi editor strutturale (agenti diversi) | `zb pronto` la verifica |
+| 5 | Documenti (bibbia, codex, cronologia, manuale, nota di direzione) e voce del libro | direttore editoriale, agente voce | `zb voce campioni`, `zb voce scheda` |
+| 6 | Pagina campione | scrittore con voce | `zb pronto` |
+| 7 | Stesura | scrittore → misure → diagnosta → correzione → esito → capsula | `/capitolo` |
+| 8 | Revisione del manoscritto | diagnosta (critico, professore, panel), editor strutturale | `zb pronto` |
+| 9 | Line editing | line editor (taglio avversario) | `/revisiona` |
+| 10 | Copyediting | correttore di italiano | `/revisiona` |
+| 11 | Grafica e bozze | grafico, correttore di bozze | `zb impagina`, `zb copertina` |
+| 12 | Chiusura meccanica | motore | continuita, ortografia, compila, impagina, pdf, pacchetto, kdp, pronto |
 
-## Regole di fermata
-- La fermata si apre con `zb pronto`; risposte dell'autore: `avanti`, `ok`, `correggi`, `stato`.
-- Non si passa alla fase successiva senza `ok`.
-- Se un ruolo trova un problema grave (continuità, struttura rotta), si ferma e lo segnala; non lo risolve da solo.
-
-## Separazione dei ruoli
-Una sessione di Claude Code = un ruolo. Per cambiare ruolo: salvare, aprire sessione nuova, `zb avvio`, riga "Letto".
-
-## Note per il motore
-- Vale per i libri con `percorso: editoriale` in `libro.yaml` (lo scrive `zb nuovo`); i libri nati prima seguono il
-  percorso breve (documenti, pagina campione, stesura, chiusura).
-- Revisione della struttura: prima il diagnosta (`rapporto-struttura.md`), poi l'editor strutturale
-  (`piano-revisione-struttura.md`), in commit che non toccano `03-struttura/`; `zb pronto` lo controlla.
-- Fasi 8-11 in due tempi: rapporti (proposte) → gate → applicazione delle sole proposte approvate → `zb pronto`.
-- Il canone (fatti bloccati) cambia solo con il gate `canone`. Traduzione: `lingue/traduzione.md`.
+## Regole
+- Risposte dell'autore alla pausa di lettura: `zb ok <libro>` oppure `zb correggi <libro> <note>`.
+- Un problema grave (continuità, struttura rotta, canone) ferma la catena e si segnala: non si risolve da soli.
+- Chi scrive non rivede: scrittore e revisori sono agenti diversi (le scritture si registrano per agente).
+- Fasi 8-10 in due tempi: rapporti (proposte) → applicazione delle proposte → `zb pronto`.
+- Il canone (fatti bloccati) cambia solo con il gate `canone`.
+- Vale per i libri con `percorso: editoriale` in `libro.yaml`; i libri nati prima seguono il percorso breve
+  (documenti, pagina campione, stesura, chiusura).

@@ -7,7 +7,7 @@ Rendere il testo corretto e coerente: grammatica, ortografia, punteggiatura, coe
 Capitolo dopo il line editing, `correttore/criteri-correttore.md` (per un libro in inglese `lingue/en/criteri-correttore.md`), `nomi_propri.txt`, output di `zb ortografia`. Prima riga del rapporto: `zb ruolo <libro> correttore-italiano N`; il ruolo lavora solo in fase `copy`.
 
 ## Output
-`06-diagnostica/copy/NN.md`: correzioni proposte con motivo. Applicazione dopo `ok`.
+`06-diagnostica/copy/NN.md`: correzioni proposte con motivo. Si applicano dopo l'approvazione: il gate «copy» se è attivo in `libro.yaml`, altrimenti subito (modo automatico).
 
 ## Cosa NON fa
 Non cambia lo stile scelto, non "migliora" le frasi, non tocca i dialoghi per normalizzarli se la voce lo richiede (le deviazioni volute vanno segnate nel manuale di stile).

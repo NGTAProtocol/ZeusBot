@@ -27,7 +27,6 @@ gruppi:
       - {nome: agenti, script: agenti.py, uso: "agenti stato | attiva [--ok] | disattiva | prossimo <libro>", aiuto: "subagenti e comandi di Claude Code (solo rami dei libri); prossimo: chi chiamare ora, in sequenza o a gruppi"}
       - {nome: consumo, script: consumo.py, uso: "consumo <libro> [sessione] [--sessione S] [--registra] | registra|mostra|confronto <N>", aiuto: "misura per sessione: capitoli, parole, righe lette (hook PostToolUse), subagenti, durata; confronto con e senza capsule"}
       - {nome: antiia, script: antiia.py, uso: "antiia <libro> [N] | estrai --ia <dir> --umano <dir> | taratura --umano <dir>", aiuto: "audit anti-IA non distruttivo e vocabolario dai dati"}
-      - {nome: traduci, script: traduci.py, uso: "traduci <libro> --a <lingua> [inizia|stato|prepara N|controlla N|ritraduci N]", aiuto: "traduzione in 08-traduzione-<lingua>/"}
   - nome: Controlli e chiusura
     comandi:
       - {nome: capitolo, script: capitolo.py, uso: "capitolo <libro> <N>", aiuto: "tutti i controlli di un capitolo"}
@@ -40,6 +39,7 @@ gruppi:
       - {nome: compila, script: compila.py, uso: "compila <libro>", aiuto: "manoscritto completo in 05-output/"}
       - {nome: impagina, script: impagina.py, uso: "impagina <libro>", aiuto: "PDF di stampa"}
       - {nome: pdf, script: verifica_pdf.py, uso: "pdf <libro>", aiuto: "verifica del PDF"}
+      - {nome: copertina, script: copertina.py, uso: "copertina <libro> [--pagine N]", aiuto: "copertina intera KDP (quarta, costola, prima) in PDF e misure"}
       - {nome: pacchetto, script: pacchetto.py, uso: "pacchetto <libro>", aiuto: "06-pubblicazione/ per KDP"}
       - {nome: kdp, script: conformita_kdp.py, uso: "kdp <libro>", aiuto: "conformità KDP, sezioni 1-15"}
       - {nome: verifica, script: speciale, uso: "verifica KDP fatta [AAAA-MM-GG] | stato | controlla", aiuto: "verifica dei dati KDP da parte dell'autore"}
@@ -51,7 +51,7 @@ gruppi:
       - {nome: cartella, script: cartella_unica.py, uso: "cartella <libro> [--commit]", aiuto: "cartella unica: niente fuori da libri/<slug>/, commit misti, titolo fuori dal libro (lo fanno anche avvio e push)"}
       - {nome: hook, script: speciale, uso: "hook stato | attiva [--ok] | disattiva", aiuto: "hook di Claude Code (rami dei libri)"}
       - {nome: pulizia, script: pulizia.py, uso: "pulizia <libro> [--applica]", aiuto: "temporanei, vuote, copie; cancella solo con --applica"}
-      - {nome: voce, script: voce.py, uso: "voce lista | mostra <slug> [N] | verifica <slug>", aiuto: "banca-voci in sola lettura (ZB_BANCA_VOCI)"}
+      - {nome: voce, script: voce.py, uso: "voce campioni <libro> | scheda <libro> | lista | mostra <slug> [N] | verifica <slug>", aiuto: "voce del libro dalle pagine campione (00-progetto/voce/); banca-voci in sola lettura (ZB_BANCA_VOCI)"}
       - {nome: prove, script: prove.py, uso: "prove", aiuto: "tutte le prove; tabella completa nel report"}
       - {nome: separazione, script: separazione.py, uso: "separazione", aiuto: "il ramo motore non contiene libri né nomi vietati"}
       - {nome: recinto, script: recinto.py, uso: "recinto", aiuto: "gli script scrivono solo nel libro"}

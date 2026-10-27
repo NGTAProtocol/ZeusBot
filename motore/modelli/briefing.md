@@ -86,7 +86,12 @@ Lettore:
 
 ## Voce scelta e ambientazione
 
-<!-- Voce dalla banca: lo slug di una voce PRONTA della banca-voci (zb voce lista; zb voce verifica <slug>).
+<!-- Voce dalle tue pagine (consigliata): dopo «zb nuovo» metti una pagina di prosa (almeno 250 parole) in
+     00-progetto/voce/campione-1.md; per una voce ibrida una seconda pagina in campione-2.md e, se vuoi, in
+     00-progetto/voce/indicazioni.md che cosa prendere da ciascuna (per esempio «ritmo e dialoghi dal campione 1,
+     lessico e immagini dal campione 2»). Il motore la misura, l'agente «voce» scrive 02-bibbia/voce.md e lo
+     scrittore la segue: si imita il modo, mai il testo (7 parole uguali a un campione sono un KO).
+     Voce dalla banca: lo slug di una voce PRONTA della banca-voci (zb voce lista; zb voce verifica <slug>).
      Ambientazione: regola solo il dialetto della voce (una città o una regione, oppure «altro»), senza
      toccare il resto della voce. Con questi due campi «zb nuovo» scrive in libro.yaml il blocco
      «voce: {slug, ambientazione}». Lasciali vuoti per un libro senza voce della banca. -->
@@ -98,7 +103,7 @@ Ambientazione:
 <!-- Regole che il motore trasforma da solo in libro.yaml e nel manuale di stile.
      Genere = nome di un profilo di motore/profili/. Tetti: «espressione | massimo | capitolo o libro».
      Vietati: un'espressione per riga. Vincoli: «Nome | vietato prima del N».
-     Lingua: it oppure en (lingua in cui si scrive il libro). Lingue target: traduzioni previste, separate da virgole.
+     Lingua: it oppure en (lingua in cui si scrive il libro).
      Percorso: editoriale (struttura, revisioni, line, copy, bozze; motore/editoriale/00-percorso.md) oppure breve.
      Gate (facoltativo): struttura, documenti, pagina_campione, primi_capitoli, lotto, struttura_manoscritto, line,
      copy, bozze, lettura. Vuoto: percorso editoriale = solo «lettura» (pausa di lettura, modo automatico); percorso
@@ -110,7 +115,6 @@ Ambientazione:
 
 Genere:
 Lingua: it
-Lingue target:
 Percorso: editoriale
 Modalità: nuovo
 Testo precedente:

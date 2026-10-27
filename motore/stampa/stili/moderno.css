@@ -1,0 +1,9 @@
+/* Stile «moderno» dell'interno (formato.stile: moderno): titoli a sinistra con un filetto, primo paragrafo senza
+   rientro, punto centrato tra le scene. */
+.capitolo h2, .prologo h2, .epilogo h2 { text-align: left; font-weight: 400; font-size: 19pt; margin-top: 30mm;
+  padding-bottom: 3mm; border-bottom: .6pt solid #111; }
+.capitolo h2 + p, .prologo h2 + p, .epilogo h2 + p { text-align: left; }
+p.primo { text-indent: 0; }
+p.scena { letter-spacing: 0; }
+p.scena { font-size: 0; }
+p.scena::after { content: '\2022'; font-size: 11pt; }

@@ -54,8 +54,24 @@ usate archiviate, soglie di stile solo informative). Obiettivo: manoscritti di q
 ## Archiviato (ramo `archivio/motore-prima-2026-10-27`)
 
 `zb adotta` con le sue prove e il mini-libro d'adozione; `docs/INFRASTRUTTURA_COMPLETA.md` e il suo generatore;
-`motore/proposta-motore.md`; `motore/report-motore.md`. La traduzione resta nel codice ma è spenta: toglierla
-tocca una ventina di file (anche KDP) senza risparmio di token; i suoi agenti non si installano più.
+`motore/proposta-motore.md`; `motore/report-motore.md`.
+
+## Seconda parte (stesso giorno): voce, agenti, grafica, pulizia
+
+- **Voce dalle pagine campione**, anche ibrida: `00-progetto/voce/campione-N.md` → `zb voce campioni` (misure senza
+  modelli) → agente `voce` (Opus) → `02-bibbia/voce.md` → `zb voce scheda`. Lo scrittore legge scheda e campioni; il
+  diagnosta vota la voce su quella scheda; 7 parole uguali a un campione sono un KO.
+- **Agenti più capaci**: ruolo dello scrittore riscritto come manuale di mestiere (motore della scena, mostrare una
+  volta, dettaglio scelto, dialogo come azione, scena più che sommario, ritmo, tensione, sorpresa); diagnosta del
+  manoscritto con critico, professore e panel di quattro lettori con le priorità di consenso; editor strutturale con
+  classi di intervento (taglia, espandi, drammatizza, approfondisci, continuità).
+- **Grafica**: stili dell'interno `classico` e `moderno` (capolettera, maiuscoletto, fleuron ❧ di EB Garamond);
+  `zb copertina` (copertina intera in PDF con quarta, costola e prima, misura esatta, font incorporati); agente
+  `grafico` (quarta di copertina e brief con tre concept e prompt per l'illustrazione).
+- **Pulizia**: traduzione tolta per intero; documenti superati di `docs/` (analisi, avanzamento, decisioni
+  dell'integrazione, proposte, guida vecchia) tolti, al loro posto `docs/GUIDA.md`; esiti storici delle prove tolti;
+  il contrasto «ok dell'autore / modo automatico» chiuso allineando i testi del pacchetto editoriale.
+- Corretta una prova che passava per caso (scriveva un file vuoto invece di «non passa»).
 
 ## Da fare con l'autore
 

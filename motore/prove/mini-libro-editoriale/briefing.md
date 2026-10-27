@@ -38,7 +38,6 @@ Sobrio, frasi brevi, mare d'autunno.
 
 Genere: giallo
 Lingua: it
-Lingue target: en
 Percorso: editoriale
 Modalità: nuovo
 Lunghezza: 1300

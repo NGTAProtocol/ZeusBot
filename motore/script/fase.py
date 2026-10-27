@@ -643,10 +643,8 @@ def aggiorna_piano(cartella, libro, n):
 
 
 def comando_controlli(cartella, libro, n, extra):
-    """capitolo.py; per un libro di traduzione i controlli meccanici della traduzione (traduci.py controlla)."""
+    """Comando dei controlli dell'unità n (capitolo.py)."""
     d = os.path.dirname(os.path.abspath(__file__))
-    if percorso.traduzione(libro):
-        return [sys.executable, '-B', os.path.join(d, 'traduci.py'), cartella, '--a', libro['lingua'], 'controlla', n, *extra]
     return [sys.executable, '-B', os.path.join(d, 'capitolo.py'), cartella, *n.split(), *extra]
 
 
@@ -707,7 +705,7 @@ def cmd_esito(cartella, libro, stato, resto, argv):
         return esito_in_chiusura(cartella, libro, stato, n, argv)
     if percorso.attivo(libro) and stato['fase'] in percorso.REVISIONI and n.lower() in scritte:
         return esito_in_chiusura(cartella, libro, stato, n, argv)
-    if percorso.attivo(libro) and stato['fase'] == 'stesura' and not percorso.traduzione(libro):
+    if percorso.attivo(libro) and stato['fase'] == 'stesura':
         controlli_editoriali_stesura(cartella, stato, n)
     if stato['fase'] != 'stesura':
         mancanti = unita_mancanti(cartella, libro, stato) if stato['fase'] == 'chiusura' else []
@@ -721,7 +719,7 @@ def cmd_esito(cartella, libro, stato, resto, argv):
                   and any(c['gate'] == gate for c in stato['correzioni_aperte']))
     if gate and not correzione and not (gate == 'controllo_fallito' and str(stato['passo']) == f'capitolo {n}'):
         raise comune.ErroreMotore(f'Gate «{gate}» aperto: prima ok o correggi.')
-    if percorso.attivo(libro) and not percorso.traduzione(libro):
+    if percorso.attivo(libro):
         percorso.controlla_revisione_capitolo(cartella, libro, n)   # revisione_capitolo: obbligatoria (libro.yaml)
     extra = ['--radice', argv[argv.index('--radice') + 1]] if '--radice' in argv else []
     u = dict(comune.unita(cartella, libro)).get(n)
@@ -734,7 +732,7 @@ def cmd_esito(cartella, libro, stato, resto, argv):
     riga_piano = aggiorna_piano(cartella, libro, n)
     if riga_piano:
         print(f'Piano parole aggiornato (misure, senza riapprovazione): {riga_piano}')
-    if percorso.attivo(libro) and not percorso.traduzione(libro):
+    if percorso.attivo(libro):
         a = avviso_lunghezze(cartella, libro)
         if a:
             print(a)
@@ -752,7 +750,7 @@ def cmd_esito(cartella, libro, stato, resto, argv):
     if r.returncode == 0:
         stato['tentativi'].pop(n, None)
         print(f'Capitolo {n}: controlli OK.')
-        if percorso.attivo(libro) and not percorso.traduzione(libro):
+        if percorso.attivo(libro):
             lz = percorso.registra_lezione(cartella, libro, n)
             if lz:
                 print(f'Lezione per i capitoli successivi: {lz} ({percorso.LEZIONI}).')

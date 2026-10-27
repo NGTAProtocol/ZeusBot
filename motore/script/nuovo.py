@@ -118,9 +118,6 @@ def mancanze(b, cartella_libro):
     lingua = (c.get('lingua') or 'it').strip()
     if lingua not in comune.lingue():
         out.append(f'Lingua: «{lingua}» non supportata (ammesse: {", ".join(comune.lingue())})')
-    for t in lingue_target(c):
-        if t not in comune.lingue() or t == lingua:
-            out.append(f'Lingue target: «{t}» non ammessa (una lingua di dati/lingue.yaml diversa da {lingua})')
     if (c.get('percorso') or 'editoriale').strip() not in ('editoriale', 'breve'):
         out.append(f'Percorso: «{c.get("percorso")}» non ammesso (editoriale | breve)')
     mod = c.get('modalità', 'nuovo') or 'nuovo'
@@ -137,10 +134,6 @@ def mancanze(b, cartella_libro):
     elif os.path.isdir(os.path.join(cartella_libro, '01-originale')):
         out.append('Modalità: 01-originale/ esiste solo in riscrittura (scrivi «Modalità: riscrittura» o togli la cartella)')
     return out[:5] if len(out) > 5 else out
-
-
-def lingue_target(c):
-    return [x.strip() for x in (c.get('lingue target') or '').split(',') if x.strip()]
 
 
 def percorso_di(c):
@@ -309,7 +302,7 @@ def genera_libro_yaml(b, profilo):
         'lingua': (c.get('lingua') or 'it').strip(), 'modalita': c.get('modalità') or 'nuovo',
     }
     if percorso_di(c) == 'editoriale':
-        libro.update({'percorso': 'editoriale', 'lingua_originale': libro['lingua'], 'lingue_target': lingue_target(c)})
+        libro.update({'percorso': 'editoriale'})
         if 'lettura' in gate:
             libro['pausa_lettura'] = PAUSA_LETTURA
     if libro['modalita'] == 'riscrittura':

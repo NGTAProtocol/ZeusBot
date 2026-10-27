@@ -3,7 +3,8 @@
 Uso: python3 -B riciclo.py <libro> [--schermo]
 Per ogni unità cerca le sequenze di 7 parole uguali:
 - al testo precedente del libro (testo_precedente, solo con modalita: riscrittura) → KO;
-- alle unità precedenti dello stesso libro → AVVISO (una ripetizione può essere voluta).
+- alle unità precedenti dello stesso libro → AVVISO (una ripetizione può essere voluta);
+- alle pagine campione della voce (00-progetto/voce/campione-N.md) → KO: si imita il modo, mai il testo.
 Le parole si confrontano in minuscolo, senza la punteggiatura ai bordi. Le finestre
 consecutive che combaciano formano un solo segmento, riportato con la riga d'inizio.
 Le battute canoniche del manuale (03-architettura/manuale-di-stile.md, voce «Battute canoniche»:
@@ -106,12 +107,18 @@ def controlla_libro(cartella, libro):
                                                    encoding='utf-8').read()), canoniche))
     richiami = [[w for w in (t.strip(BORDI).lower() for t in comune.parole(f)) if w]
                 for f in (libro.get('stile') or {}).get('richiami_ammessi') or []]
+    import voce_libro
+    campioni = set()          # pagine campione della voce del libro: si imita il modo, mai il testo (KO)
+    for r in voce_libro.campioni(cartella):
+        campioni |= ngrammi(gettoni(open(os.path.join(cartella, r), encoding='utf-8').read()))
     gia_scritti = set()
     for nome, p in comune.unita(cartella, libro):
         gt = gettoni(open(p, encoding='utf-8').read())
         tok = maschera(gt, canoniche)
         for riga, testo in segmenti(tok, precedente):
             risultati.append(risultato(nome, 'riciclo:testo_precedente', 'KO', riga, testo))
+        for riga, testo in segmenti(gt, campioni):
+            risultati.append(risultato(nome, 'copia:campione_voce', 'KO', riga, testo))
         # i richiami ammessi valgono solo tra unità dello stesso libro, non contro il testo precedente
         tok_int = maschera(gt, canoniche + richiami)
         for riga, testo in segmenti(tok_int, gia_scritti):

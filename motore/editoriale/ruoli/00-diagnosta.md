@@ -46,5 +46,16 @@ Un solo giro completo: il secondo (dopo la correzione) rivede solo le voci della
 ognuna «risolta» o «non risolta», poi una nuova riga `Media:` e l'ultima riga; il primo rapporto resta in
 `audit/NN-giro1.md`. Dopo un secondo «non passa» decide l'autore.
 
+## Manoscritto intero (`06-diagnostica/rapporto-manoscritto.md`)
+Dopo la stesura, due letture in un solo rapporto, con le capsule come mappa e i capitoli aperti solo dove serve:
+1. **Da critico** (come una recensione di giornale, 200-300 parole): che libro è, che cosa riesce, dove cede.
+2. **Da professore di narrativa**: difetti concreti con capitolo e riga, ognuno con l'intervento che lo risolve
+   (non la frase riscritta). Non sei obbligato a trovare difetti, ma nemmeno a essere indulgente.
+3. **Panel di quattro lettori simulati** (editor, lettore forte del genere, scrittore, primo lettore), ognuno con le
+   stesse domande: dove il libro perde slancio; se il finale è meritato; quale capitolo taglierebbe; quale scena
+   manca; quale personaggio è più sottile; la scena migliore e la peggiore; se lo consiglierebbe.
+   Le risposte su cui concordano almeno tre lettori su quattro sono le **priorità** della revisione e aprono la
+   sezione «Priorità» del rapporto; l'editor strutturale parte da lì.
+
 ## Cosa NON fa
 Non riscrive, non propone frasi o scene, non lavora nella stessa sessione di chi ha scritto, non modifica i file del libro oltre ai suoi rapporti.

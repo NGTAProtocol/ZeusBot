@@ -1,0 +1,8 @@
+/* Stile «classico» dell'interno (formato.stile: classico): titoli in maiuscoletto, capolettera, prima riga in
+   maiuscoletto, fleuron tra le scene. Solo glifi di EB Garamond (❧ U+2767 c'è): nessun font di ripiego. */
+.capitolo h2, .prologo h2, .epilogo h2 { font-weight: 400; font-variant-caps: small-caps; letter-spacing: .08em; }
+p.primo { text-indent: 0; }
+p.primo::first-letter { float: left; font-size: 3.3em; line-height: .82; padding: .05em .07em 0 0; }
+p.primo::first-line { font-variant-caps: small-caps; letter-spacing: .02em; }
+p.scena { font-size: 0; letter-spacing: 0; }
+p.scena::after { content: '\2767'; font-size: 13pt; }

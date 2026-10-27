@@ -18,4 +18,4 @@ Termini del mestiere usati da ruoli, rapporti e comandi. Un termine, un signific
 | copyediting | correzione di lingua e coerenza |
 | bozze | controllo del libro impaginato |
 | gate | fermata con l'approvazione dell'autore (`avanti`, `ok`, `correggi`) |
-| proposta | intervento scritto in un rapporto; si applica solo dopo l'«ok» |
+| proposta | intervento scritto in un rapporto; si applica dopo l'approvazione (gate della fase se attivo, altrimenti in modo automatico) |

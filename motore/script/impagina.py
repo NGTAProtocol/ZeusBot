@@ -47,7 +47,20 @@ def sezioni(md):
 def html_sezione(tipo, testo):
     import markdown
     corpo = markdown.markdown(testo, extensions=['md_in_html'])
+    if tipo in ('capitolo', 'prologo', 'epilogo', 'interludio'):
+        corpo = marca_primo(corpo)
     return f'<section class="{tipo}">\n{corpo}\n</section>'
+
+
+def marca_primo(corpo):
+    """Classe «primo» sul primo paragrafo di testo dopo il titolo (non la riga del sottotitolo tutta in corsivo né
+    il separatore di scena): lo usano gli stili con il capolettera (stampa/stili/)."""
+    for m in re.finditer(r'<p(?: class="[^"]*")?>(.*?)</p>', corpo, re.S):
+        dentro = m.group(1).strip()
+        if 'class="scena"' in m.group(0) or re.fullmatch(r'<em>.*</em>', dentro, re.S) or not dentro:
+            continue
+        return corpo[:m.start()] + '<p class="primo">' + dentro + '</p>' + corpo[m.end():]
+    return corpo
 
 
 def css(libro, interno_mm):
@@ -62,6 +75,10 @@ def css(libro, interno_mm):
         'corpo': font.get('corpo_pt', 11), 'interlinea': font.get('interlinea', 1.45),
     }
     t = open(os.path.join(comune.radice_motore(), 'stampa', 'modello.css'), encoding='utf-8').read()
+    stile = f.get('stile') or 'essenziale'
+    ps = os.path.join(comune.radice_motore(), 'stampa', 'stili', f'{stile}.css')
+    if stile != 'essenziale' and os.path.isfile(ps):        # stili dell'interno (2026-10-27)
+        t += '\n' + open(ps, encoding='utf-8').read()
     for k, v in valori.items():
         t = t.replace('{{' + k + '}}', str(v))
     return t

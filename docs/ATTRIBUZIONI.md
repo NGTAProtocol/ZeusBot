@@ -2,7 +2,7 @@
 
 Unione delle due versioni: ramo `ccr-d1e12273-izx78k` (d2b8814, 13 voci) e ramo `motore` (971b6df, 13 voci adattate,
 8 «solo idee», 1 non accessibile). Nessuna voce tolta: dove i due rami dicono cose diverse sullo stesso repository,
-la riga riporta entrambe le letture. Le schede complete sono in `docs/ANALISI_REPOSITORY.md`.
+la riga riporta entrambe le letture. Le schede complete erano in `docs/ANALISI_REPOSITORY.md` (ramo `archivio/motore-prima-2026-10-27`).
 
 ## Provenienza del materiale non esterno
 
@@ -21,7 +21,7 @@ la riga riporta entrambe le letture. Le schede complete sono in `docs/ANALISI_RE
 - MIT: adattamento con attribuzione in questo file.
 - Apache-2.0: i due rami differivano (ccr: adattamento con attribuzione; `motore`: solo idea). L'integrazione segue la
   regola più stretta, quella di `motore`: solo idee, nessun testo; per Apache-2.0 resta l'indicazione che i file del
-  motore sono riscritture, non copie (decisione D13 in `docs/DECISIONI_INTEGRAZIONE.md`).
+  motore sono riscritture, non copie (decisione D13, ramo `archivio/motore-prima-2026-10-27`).
 - Licenza non dichiarata, CC BY-SA, CC BY-NC-SA, GPL, LGPL, AGPL: solo idee, mai testo né codice.
 - Colonna «Fonte della licenza»: «LICENSE letto» = file di licenza aperto da chi ha scritto la scheda; «solo
   README/metadati» = file di licenza assente o non aperto; «non verificato» = nessuno dei due rami dice di averlo aperto.
