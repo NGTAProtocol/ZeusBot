@@ -240,7 +240,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-27T17:46:42Z'
+aggiornato: '2026-10-27T23:04:13Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
@@ -285,3 +285,18 @@ correzioni_registrate:
   motivo: correzioni puntuali dopo la lettura dell'autore (registro dei difetti D01-D15)
   sha256_precedente: 790c384ec518afba9f4aa19a64c9aad5ebf14ade24ac56d5b9889ebc8f65eacb
   sha256_corretto: 48c38fe239916d4d79a5ecb4e157b6bea9331ecdfb71e827cfd32da5f90db644
+- data: '2026-10-27'
+  file: 04-manoscritto/01-la-perizia.md
+  motivo: correzione mirata dopo la verifica (difetti/verifica/01.md) e le verifiche su fonte
+  sha256_precedente: e2440e41eaa2314b423650a3d58b19b713e8bf4f2c1b84627d5b34b0b5b88528
+  sha256_corretto: 34cb60d8f535a26f1276123c0d5ee73bbeaab2842973da77a3d310945d12fede
+- data: '2026-10-27'
+  file: 04-manoscritto/02-sotto-la-vernice.md
+  motivo: correzione mirata dopo la verifica (difetti/verifica/02.md) e le verifiche su fonte
+  sha256_precedente: e7685ac0cef52ff59914906e45ba01686a65e965076a3e06a589634094a72230
+  sha256_corretto: 0fa70e88563bdbdc03a58f1816dbddf2472fbef7ee44418518826bffa0e7ee10
+- data: '2026-10-27'
+  file: 04-manoscritto/03-il-dettaglio-ripetuto.md
+  motivo: correzione mirata dopo la verifica (difetti/verifica/03.md) e le verifiche su fonte
+  sha256_precedente: 48c38fe239916d4d79a5ecb4e157b6bea9331ecdfb71e827cfd32da5f90db644
+  sha256_corretto: a64765075d2728cbe4b0e11e63089501a07166b83011384ccc05040f2a0b2737

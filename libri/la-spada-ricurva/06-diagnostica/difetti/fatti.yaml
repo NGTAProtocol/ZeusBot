@@ -36,11 +36,13 @@ fatti:
   unita: '1'
   affermazione: 'r.32 «visualizzato alle ore 23:49» con r.36 «tratto da un tabulato»:
     tecnica (i tabulati dell''operatore registrano la visualizzazione di un messaggio?)'
-  stato: errato
+  stato: verificato
   data: '2026-10-27'
   nota: 'i tabulati dell''operatore registrano chiamate, SMS e sessioni dati, non
     la lettura dei messaggi: il «visualizzato» viene dall''estrazione forense del
     telefono (fonti: cybersecurity360.it/?p=60555; Tavassi, Arch. pen. 2022, boa.unimib.it)'
+  fonte: 'testo corretto: l''orario e il «visualizzato» vengono dalla copia forense
+    del telefono, non dal tabulato (cybersecurity360.it/?p=60555)'
 - id: F005
   unita: '1'
   affermazione: 'r.20 «trentadue gradini di piperno», scala del chiostro dell''Accademia
@@ -50,10 +52,11 @@ fatti:
   unita: '1'
   affermazione: 'r.18 «buste paga… il ventisette di ogni mese»: prassi amministrativa
     (stipendi pubblici)'
-  stato: errato
+  stato: verificato
   data: '2026-10-27'
   nota: 'NoiPA: esigibilità ordinaria il 23 di ogni mese, il 27 solo per il comparto
     Sanità (orizzontescuola.it, tecnicadellascuola.it)'
+  fonte: 'testo corretto: «il ventitré», esigibilità ordinaria NoiPA (orizzontescuola.it)'
 - id: F007
   unita: '2'
   affermazione: 'r.13 «cretto fitto … imprimitura rossa quando l''olio ha quattro
@@ -81,11 +84,12 @@ fatti:
   unita: '2'
   affermazione: 'r.105 «tre secoli di studenti»: storia (l''Accademia di Napoli è
     del 1752, nella sede attuale dal 1864)'
-  stato: errato
+  stato: verificato
   data: '2026-10-27'
   nota: 'Accademia fondata nel 1752, nella sede di via Costantinopoli (ex convento
     di San Giovanni Battista delle Monache) dal 1864: circa un secolo e mezzo di studenti,
     non tre (en.wikipedia.org/wiki/Accademia_di_Belle_Arti_di_Napoli)'
+  fonte: 'testo corretto: «un secolo e mezzo di studenti», sede dal 1864 (en.wikipedia.org/wiki/Accademia_di_Belle_Arti_di_Napoli)'
 - id: F011
   unita: '2'
   affermazione: 'r.19 «sopra la ruota della santa»: iconografia di santa Caterina
