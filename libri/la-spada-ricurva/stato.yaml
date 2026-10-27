@@ -17,25 +17,40 @@ parole:
   metodo: unico
 documenti_approvati:
   03-struttura/01-premessa.md:
-    sha256: 2b30f8b99426d222feb41f16b86544571b3f818325dc857b29c2d8a82f953dda
-    commit: 2b098ea
+    sha256: d8acdaa22f3cc0c7c9d8161b52a04672f066ed954fe8a0f1b3a8b594d5d595d6
+    commit: e2d216a
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
+      sha256_precedente: 2b30f8b99426d222feb41f16b86544571b3f818325dc857b29c2d8a82f953dda
+      commit_precedente: 2b098ea
   03-struttura/02-logline-tema.md:
     sha256: bcf74eed3ef1d7d3ad4c5f236922679c457c08c19fc5e74e4ef9bc564ad93174
     commit: 2b098ea
     senza_gate: true
   03-struttura/03-personaggi-chiave.md:
-    sha256: 732ec835716ef22db179f457015a1bfbf45010c70eddbba2ab7f30d5dab6c161
-    commit: e5e8820
+    sha256: 6baa875ace5e2ee2432f0f2799250a017c5c1c7e6ff98f673c7c0a0eb8bca8d5
+    commit: e2d216a
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
+      sha256_precedente: 732ec835716ef22db179f457015a1bfbf45010c70eddbba2ab7f30d5dab6c161
+      commit_precedente: e5e8820
   03-struttura/04-atti-svolte.md:
     sha256: 08b6347c839ef8a7f2ba34df1d5800f53280bb9f92687b645528261cfc794b2d
     commit: e5e8820
     senza_gate: true
   03-struttura/05-scaletta.md:
-    sha256: 9ceeb46617421e2f5ec38017e5ca0a4f62ff067a3046496f7160a630c2e8bf30
-    commit: e5e8820
+    sha256: e2d0cd23113f75859cbc47514a249462a675528fcc57b9480cbf8e57512b7441
+    commit: e2d216a
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
+      sha256_precedente: 9ceeb46617421e2f5ec38017e5ca0a4f62ff067a3046496f7160a630c2e8bf30
+      commit_precedente: e5e8820
   03-struttura/06-sottotrame-temi.md:
     sha256: becafc4f4ae49d22ae8d00258e719dd2f0addcebbd45175b68211c8b9f125054
     commit: e5e8820
@@ -61,37 +76,72 @@ documenti_approvati:
     commit: 69b97ae
     senza_gate: true
   libro.yaml:
-    sha256: dd270cfab9c049f54a8738b51587842393480c23ba7ee1483f072a9622687fa9
-    commit: '3040770'
+    sha256: 8398a81123d9db3af79ce6b56ae51c0a91723c954c0f59f931d62b5183a4c3a5
+    commit: 0f73a4d
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: revisione dei capitoli obbligatoria; parole-firma e cliché del registro dei difetti'
+      sha256_precedente: dd270cfab9c049f54a8738b51587842393480c23ba7ee1483f072a9622687fa9
+      commit_precedente: '3040770'
   02-bibbia/bibbia.md:
-    sha256: d130038228a93a5a015c452051206ebe14447e309ec6bcb780316afaf5ce6129
-    commit: 536a0df
+    sha256: c7c33910799bf4025a1fea0715c19742c6e44eb735a7d1c21b57b2e5bd0908e3
+    commit: 9d3bd90
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisioni dell''autore: nomi canonici, Direttore e Vicedirettore; fatti non verificabili resi generici'
+      sha256_precedente: d130038228a93a5a015c452051206ebe14447e309ec6bcb780316afaf5ce6129
+      commit_precedente: 536a0df
   cronologia.yaml:
-    sha256: 59e5127e4169d6d6562bd64efe7d12cc1daaa8411296cbf6af7e4d44b1c3292f
-    commit: 536a0df
+    sha256: b0f933e7954fcb849e9c040b3d1ef601a4cf337fb4538ae6e0575218193fb234
+    commit: e2d216a
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: 59e5127e4169d6d6562bd64efe7d12cc1daaa8411296cbf6af7e4d44b1c3292f
+      commit_precedente: 536a0df
   03-architettura/manuale-di-stile.md:
-    sha256: 0d8150fd9195c6d003b83aded0c864a1f835e1a326d98157ac720bb27f1900aa
-    commit: 536a0df
+    sha256: 4cc7a9c17a6a165f5682d4f96c3b3cb5d7c757acea789067776a4c4eabc0ef3e
+    commit: e2d216a
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
+      sha256_precedente: 0d8150fd9195c6d003b83aded0c864a1f835e1a326d98157ac720bb27f1900aa
+      commit_precedente: 536a0df
   06-diagnostica/nota-direzione.md:
-    sha256: 25383ada679e5351e7897e8e02a5d6a348c672817b292176a5e1739f1ea58dc7
-    commit: 536a0df
+    sha256: f3dac3244d745ea24d060e367fddbf8b66b427ae22ce25fc3cadb824c221b95a
+    commit: e2d216a
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
+      sha256_precedente: 25383ada679e5351e7897e8e02a5d6a348c672817b292176a5e1739f1ea58dc7
+      commit_precedente: 536a0df
   02-bibbia/codex/accademia.md:
-    sha256: 036b36120caf4f252fcd090ce80d5268600af96f8300296d1dd92c19477662a8
-    commit: 536a0df
+    sha256: 79573aba07f8783806c8e708c4a31f1b65cac537280dfd115ed53c32a69f3085
+    commit: e2d216a
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
+      sha256_precedente: 036b36120caf4f252fcd090ce80d5268600af96f8300296d1dd92c19477662a8
+      commit_precedente: 536a0df
   02-bibbia/codex/archivio.md:
     sha256: 6279cf1837809c7026ae6c05391c6f52618cb547ac7f612d4f9769e98e09381b
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/assistente.md:
-    sha256: ecc95e83860d49c2ca2e66485748f813dbcb00c53b0d4af1283910544bf41ec3
-    commit: 536a0df
+    sha256: b8ee3cfb892589110491e1f2b9968969947def64bb5ffe04d810f3f8f80a5385
+    commit: 686cfc3
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: ecc95e83860d49c2ca2e66485748f813dbcb00c53b0d4af1283910544bf41ec3
+      commit_precedente: 536a0df
   02-bibbia/codex/aula-moderna.md:
     sha256: 08e30dc8a5f4bf3d3772776c0ec6732d84b6b973c32d6c562f0bd56e62a4fc9c
     commit: 536a0df
@@ -109,21 +159,36 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/claudia.md:
-    sha256: bd05d6c740aff6e3fcd0f315a50bf1b0d253b8f85ecfc4b718edd9dbe5f6f7a0
-    commit: 536a0df
+    sha256: f21d39998304655c7edf7a3594e4b64f1c30314af5c47b2c547cf102951262bc
+    commit: 686cfc3
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: bd05d6c740aff6e3fcd0f315a50bf1b0d253b8f85ecfc4b718edd9dbe5f6f7a0
+      commit_precedente: 536a0df
   02-bibbia/codex/cripta.md:
     sha256: ad167059735e6b7d38f87aadfbb9cb266e21153a4948a188d8281414631af06b
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/dellaquila.md:
-    sha256: 2f25a3bc5d8c790bed537341a93f722471fdd12e7d37e3a784c30844873684a7
-    commit: 536a0df
+    sha256: abf8fa0dc9b67d6ba6393def54a9e951c96d9840015acef6788c6ee8ced61466
+    commit: 686cfc3
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: 2f25a3bc5d8c790bed537341a93f722471fdd12e7d37e3a784c30844873684a7
+      commit_precedente: 536a0df
   02-bibbia/codex/elana.md:
-    sha256: 212914fda12ab7b12a73ff783a8a17f425365cbca2d1d31ceb1a70ad3c76a5e7
-    commit: 536a0df
+    sha256: 5e1d7b86d86f04c9966f444d9301cef3dc260eb0f076ca3bde3ca2845be5fd7e
+    commit: 686cfc3
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: 212914fda12ab7b12a73ff783a8a17f425365cbca2d1d31ceb1a70ad3c76a5e7
+      commit_precedente: 536a0df
   02-bibbia/codex/fontanelle.md:
     sha256: 1f98c32add060568ce75f37c239fd9da13b168dc4561c401d71e708ad74138f4
     commit: 536a0df
@@ -149,9 +214,14 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/lorenzo.md:
-    sha256: 1b8573621f37231b6bb907e1bc3280e38f4c22dbf891cf3b6900ab4cb6646f03
-    commit: 536a0df
+    sha256: 240fb5eb984f870a0f2fcae5d11870287a00d8fc24e7266a0ea3ef93bde2ad25
+    commit: 686cfc3
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: 1b8573621f37231b6bb907e1bc3280e38f4c22dbf891cf3b6900ab4cb6646f03
+      commit_precedente: 536a0df
   02-bibbia/codex/lungomare.md:
     sha256: 5cf49a3ce374be3ca0f5a5acdf552fc4b4a11fc4c2fe7df00a184fcc1f5bd8cb
     commit: 536a0df
@@ -161,9 +231,14 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/mina.md:
-    sha256: 0dec4bb1533e6381754bd984c44969c2d0e8b438ec6295967b0578c95e7f2337
-    commit: 536a0df
+    sha256: b7683bcae4b34094a3b4d0d724d91de6bfdf8ede1fb81bc8c908b68d3aa3365b
+    commit: 686cfc3
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: 0dec4bb1533e6381754bd984c44969c2d0e8b438ec6295967b0578c95e7f2337
+      commit_precedente: 536a0df
   02-bibbia/codex/ospedale.md:
     sha256: cc3ac641b4252e2807bc2bcff4802218d6762ccc45a6740eadac748dca65d3ea
     commit: 536a0df
@@ -173,33 +248,63 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/perita.md:
-    sha256: 782dc590843bd9d5146ced750445b1dfae40c78a964aa367b02a2d68d56fccd1
-    commit: 536a0df
+    sha256: e5b9c34dc287ca7297673c426e69d637931dec941cea6ce16833abc02848511f
+    commit: 686cfc3
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: 782dc590843bd9d5146ced750445b1dfae40c78a964aa367b02a2d68d56fccd1
+      commit_precedente: 536a0df
   02-bibbia/codex/pietro.md:
-    sha256: 4e7dbd572841457210b3ea88267712cdff11788c775e756dba9d41641d27fd39
-    commit: 536a0df
+    sha256: 7d70afb1ca19afebdd4319e90eb96c899bfbc4dfa54a2df4b44a129df9b3f88c
+    commit: 686cfc3
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: 4e7dbd572841457210b3ea88267712cdff11788c775e756dba9d41641d27fd39
+      commit_precedente: 536a0df
   02-bibbia/codex/pm.md:
-    sha256: cbb42ea26cc20dc093e156edfab4cee3a7175622951ce97f220f1247d5bfd053
-    commit: 536a0df
+    sha256: 3024a44ba2056d1b8cba68c37562c3995f3f27af94b616acaeb640eacc2cbed5
+    commit: 686cfc3
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: cbb42ea26cc20dc093e156edfab4cee3a7175622951ce97f220f1247d5bfd053
+      commit_precedente: 536a0df
   02-bibbia/codex/procura.md:
     sha256: 4cef01485a72cdd4e4a18b86180f50490d8d79cd03ba5f565d34edccdc9478c3
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/professore.md:
-    sha256: 16ad79cd1f25f3f63835a5948e63182fe1753b0b3acf5a1ca5f2cc1f77a74b17
-    commit: 536a0df
+    sha256: c45bb3f9f12111e43458b8e6c44d8a596a72f8a48185e387144adf68df472eab
+    commit: 686cfc3
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
+      sha256_precedente: 16ad79cd1f25f3f63835a5948e63182fe1753b0b3acf5a1ca5f2cc1f77a74b17
+      commit_precedente: 536a0df
   02-bibbia/codex/rettorato.md:
-    sha256: b6976f1012479a190d1077f8275ddede740e08f30201a04ab1aeaa3b54c72ada
-    commit: 536a0df
+    sha256: 04436a53dff6298bc09074245ea4feadf0bfede0f4785a86459c78f184ac5c5f
+    commit: e2d216a
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
+      sha256_precedente: b6976f1012479a190d1077f8275ddede740e08f30201a04ab1aeaa3b54c72ada
+      commit_precedente: 536a0df
   02-bibbia/codex/rettore.md:
-    sha256: 203c2c275e0b4f6b97c232b2d4903558c8650ff8f78910672ad9969e04370156
-    commit: 536a0df
+    sha256: b31b99b46a3e41c065a8c0078b58119459c95e00c1c86d08804547022f70dd36
+    commit: 9d3bd90
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisioni dell''autore: nomi canonici, Direttore e Vicedirettore; fatti non verificabili resi generici'
+      sha256_precedente: 203c2c275e0b4f6b97c232b2d4903558c8650ff8f78910672ad9969e04370156
+      commit_precedente: 536a0df
   02-bibbia/codex/sanita.md:
     sha256: 285721fd16325bc40fe1e408ba21fd3d39a2f33bc29370c8980a784d514d6028
     commit: 536a0df
@@ -217,9 +322,14 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/vicerettore.md:
-    sha256: 68345b94121898674d4173b2bd331b229d493a1ff1d26a8015434292154e613e
-    commit: 536a0df
+    sha256: d19b008c7862da9ce22f81095cb0e5c7667addc6eba684ec306c37776d56d7de
+    commit: 9d3bd90
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-27'
+      motivo: 'decisioni dell''autore: nomi canonici, Direttore e Vicedirettore; fatti non verificabili resi generici'
+      sha256_precedente: 68345b94121898674d4173b2bd331b229d493a1ff1d26a8015434292154e613e
+      commit_precedente: 536a0df
   02-bibbia/codex/villa-posillipo.md:
     sha256: 47a97734605daac29ab4abcd7479c0dc0224a27ec8bb231d4c09e7ef1846a495
     commit: 536a0df
@@ -229,18 +339,18 @@ documenti_approvati:
     commit: 942f648
     senza_gate: true
   04-manoscritto/01-la-perizia.md:
-    sha256: 43552f831d23cbbe38f5a5ee6f00c70fadfae0ca7e478373fcdfa789f46a2c22
-    commit: 1c0862d
+    sha256: f0132239e79b4392927452ee492440ac94db6cf13bee3c06e8d2962e79de25d4
+    commit: 9d3bd90
   04-manoscritto/02-sotto-la-vernice.md:
-    sha256: 6631e068031ca6ee7943ebc31a6b39d03a148f2569643d720fe1c11216edd84d
-    commit: 3f3e5e1
+    sha256: bcae2fd22c33a1eae52362d3822e7f6e81690422c27cc9a8cf17f150b0af3ca3
+    commit: 9d3bd90
   04-manoscritto/03-il-dettaglio-ripetuto.md:
-    sha256: 790c384ec518afba9f4aa19a64c9aad5ebf14ade24ac56d5b9889ebc8f65eacb
-    commit: e2ea5ea
+    sha256: f91ca0c8703f7066046c6a64f5668647e57727790e39e9e6f65372e6e545265d
+    commit: 9d3bd90
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-27T23:04:13Z'
+aggiornato: '2026-10-27T23:36:42Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
@@ -300,3 +410,21 @@ correzioni_registrate:
   motivo: correzione mirata dopo la verifica (difetti/verifica/03.md) e le verifiche su fonte
   sha256_precedente: 48c38fe239916d4d79a5ecb4e157b6bea9331ecdfb71e827cfd32da5f90db644
   sha256_corretto: a64765075d2728cbe4b0e11e63089501a07166b83011384ccc05040f2a0b2737
+- data: '2026-10-27'
+  file: 04-manoscritto/01-la-perizia.md
+  motivo: fatti non verificabili resi generici (procedura dei fatti, fatti.yaml)
+  sha256_precedente: 34cb60d8f535a26f1276123c0d5ee73bbeaab2842973da77a3d310945d12fede
+  sha256_corretto: f0132239e79b4392927452ee492440ac94db6cf13bee3c06e8d2962e79de25d4
+  commit: 9d3bd90
+- data: '2026-10-27'
+  file: 04-manoscritto/02-sotto-la-vernice.md
+  motivo: fatti non verificabili resi generici (procedura dei fatti, fatti.yaml)
+  sha256_precedente: 0fa70e88563bdbdc03a58f1816dbddf2472fbef7ee44418518826bffa0e7ee10
+  sha256_corretto: bcae2fd22c33a1eae52362d3822e7f6e81690422c27cc9a8cf17f150b0af3ca3
+  commit: 9d3bd90
+- data: '2026-10-27'
+  file: 04-manoscritto/03-il-dettaglio-ripetuto.md
+  motivo: fatti non verificabili resi generici (procedura dei fatti, fatti.yaml)
+  sha256_precedente: a64765075d2728cbe4b0e11e63089501a07166b83011384ccc05040f2a0b2737
+  sha256_corretto: f91ca0c8703f7066046c6a64f5668647e57727790e39e9e6f65372e6e545265d
+  commit: 9d3bd90
