@@ -2,7 +2,7 @@
 
 Laboratorio di restauro — 21 ottobre
 
-In Accademia un nome si guadagna a centimetri quadrati: quelli che ti lasciano pulire, e quelli che ti lasciano firmare. Il laboratorio, di pomeriggio, sa di acqua ragia e di cera d'api sciolta per le foderature, e sotto tutto, più tenace dei solventi, c'è il tufo del muro di fondo, che con la pioggia di ottobre ricomincia a sudare.
+In Accademia un nome si guadagna a centimetri quadrati: quelli che ti lasciano pulire, e quelli che ti lasciano firmare. Di pomeriggio, nel laboratorio, il tufo del muro di fondo ricomincia a sudare con la pioggia di ottobre.
 
 La tela sta sul cavalletto grande da tre giorni. Olio su tela, un metro e sessanta per uno e venti, scuola napoletana del Seicento, «Martirio di santa Caterina, ignoto». L'hanno staccata dalla seconda sala della galleria con due custodi e un carrello, e da allora il suo posto sul muro è un rettangolo più chiaro dell'intonaco intorno. Sulla scheda d'intervento, alla voce esecutore, c'è il mio nome a stampatello, Magnisi Elana. Per la prima volta in quattro anni, sotto il nome non c'è scritto «con la supervisione di».
 
@@ -10,7 +10,7 @@ Ho cominciato dall'alto. Il viso della santa è tornato fuori ieri, un tampone d
 
 Abbasso la lampada a luce radente fino a sfiorare la tela, e il drappo cambia.
 
-Osservo. Le pennellate del bruno scendono in verticale, larghe, cariche, date con un pennello piatto e una certa fretta. Sotto quelle, la luce tira fuori un rilievo che non appartiene al drappo: due archi sottili che si incrociano in diagonale e terminano curvi, nello stesso verso. Confronto. Su tutto il resto della tela il cretto è fitto, a maglie piccole e regolari, quello che lascia l'imprimitura rossa quando l'olio ha quattro secoli. Sul drappo il cretto è largo, a isole, e si interrompe lungo un margine dritto che nessun pittore del Seicento avrebbe tirato con il righello. Concludo: il drappo è venuto dopo. Qualcuno ha coperto un pezzo del quadro e si è preso la pena di farlo sembrare vecchio.
+Le pennellate del bruno scendono in verticale, larghe, cariche, date con un pennello piatto e una certa fretta. Sotto quelle, la luce tira fuori un rilievo che non appartiene al drappo: due archi sottili che si incrociano in diagonale e terminano curvi, nello stesso verso. Poi sposto la lente sul resto della tela, e lì il cretto è fitto, a maglie piccole e regolari, quello che lascia l'imprimitura rossa quando l'olio ha quattro secoli. Sul drappo, invece, il cretto è largo, a isole, e si interrompe lungo un margine dritto che nessun pittore del Seicento avrebbe tirato con il righello. Il drappo, allora, è venuto dopo. Qualcuno ha coperto un pezzo del quadro e si è preso la pena di farlo sembrare vecchio.
 
 La scheda prevede i test di solubilità. Arrotolo un ciuffo di cotone su un bastoncino di bambù, lo intingo nella miscela più blanda che ho e scelgo un punto dove il danno, se c'è, resti invisibile da tre metri. Un centimetro quadrato. Il bruno cede quasi subito, senza resistenza, e lascia sul cotone una macchia color tabacco.
 
@@ -70,7 +70,7 @@ Scrive sotto il mio nome, in verde, una parola sola e la data, e firma. La sua f
 
 «La ragione è il protocollo. Il protocollo è la sola tecnica che questa casa riconosca.» Mi restituisce la scheda. «Le borse di laboratorio si rinnovano a giugno, dottoressa. In commissione, per sua fortuna, siedo anch'io.»
 
-La fortuna, in bocca a lui, è una clausola scritta in corpo sei.
+La fortuna, in bocca a lui, è un debito che scade a giugno, con gli interessi già calcolati.
 
 «Copra il tassello», aggiunge sulla porta. «Con vernice da ritocco reversibile. Non con altro.»
 
@@ -104,7 +104,7 @@ Il tampone sporco di bruno lo butto nel cestino di latta sotto il banco, insieme
 
 La mattina dopo la pioggia non ha smesso. Ha solo cambiato angolo, e adesso entra di sbieco sotto il portico del cortile e bagna le prime file di gradini, quelle consumate al centro da tre secoli di studenti che salivano a farsi giudicare.
 
-Per arrivare al laboratorio attraverso la galleria. Non è la strada più breve. Nella seconda sala, dove la santa stava appesa fino a tre giorni fa, il rettangolo chiaro sull'intonaco ha i due ganci ancora al loro posto e, sotto, un cartellino nuovo, battuto a macchina su cartoncino avorio: «Opera temporaneamente ritirata per motivi di conservazione». Ieri il cartellino non c'era. Lo tocco con la punta dell'unghia. La colla sul retro è ancora morbida.
+Per arrivare al laboratorio attraverso la galleria. Non è la strada più breve. Nella seconda sala, dove la santa stava appesa fino a quattro giorni fa, il rettangolo chiaro sull'intonaco ha i due ganci ancora al loro posto e, sotto, un cartellino nuovo, battuto a macchina su cartoncino avorio: «Opera temporaneamente ritirata per motivi di conservazione». Ieri il cartellino non c'era. Lo tocco con la punta dell'unghia. La colla sul retro è ancora morbida.
 
 Ai lati del rettangolo, le altre tele della sala restano dove sono sempre state, nelle loro cornici dorate e scrostate, con i loro santi e i loro carnefici. Le guardo una per una dal centro della stanza. Non vedo niente. Non sono abbastanza vicina per vedere niente, e lo so. Per avvicinarmi dovrei scavalcare il cordone rosso, e il custode è a quattro passi da me, e un cordone scavalcato in galleria finisce su un verbale prima di sera.
 

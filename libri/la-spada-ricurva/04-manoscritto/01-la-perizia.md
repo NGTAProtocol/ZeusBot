@@ -1,6 +1,7 @@
 # La perizia
 
 Laboratorio di restauro — 10 dicembre
+<!-- zb: tipo=flash-forward -->
 
 A Napoli la verità non arriva mai per raccomandata: viaggia senza mittente, e la tassa la paga chi apre la busta. Il laboratorio, a quest'ora, sa di trementina dimenticata nei barattoli, di colla di pesce rappresa sul fornello spento e del ferro delle inferriate, che la pioggia batte da dopo cena senza cambiare passo.
 
@@ -8,7 +9,7 @@ La busta è gialla, formato commerciale, chiusa con la saliva di qualcuno. Nessu
 
 Adesso è sul banco, sotto la luce radente. Ho spento le altre lampade. Ho chiuso dall'interno e ho lasciato la chiave nella toppa, girata a metà, perché nessuno possa infilarne un'altra da fuori.
 
-Taglio il lembo con il bisturi del dieci, quello delle velature. Dentro c'è un solo foglio, piegato in tre. Nessun biglietto, nessuna lettera di accompagnamento. Lo distendo tenendolo per i margini con le pinzette, come una carta che potrebbe sfaldarsi, anche se è carta da fotocopiatrice da ottanta grammi, ancora rigida, e non si sfalda niente.
+Taglio il lembo con il bisturi del dieci, quello delle velature. Dentro c'è un solo foglio, piegato in tre. Nessun biglietto, nessuna lettera di accompagnamento. Lo distendo tenendolo per i margini con le pinzette, per abitudine, anche se è carta da fotocopiatrice da ottanta grammi, ancora rigida, e non si sfalda niente.
 
 In testa c'è l'intestazione di un istituto di medicina legale. Sotto, un nome che conosco.
 
@@ -26,13 +27,13 @@ A metà pagina comincia la sezione sui tempi.
 
 «Sulla base dei fenomeni cadaverici rilevati in sede di sopralluogo (rigidità, ipostasi, temperatura rettale), l'epoca della morte è da collocarsi tra le ore 22:00 e le ore 23:00 del giorno 29 novembre.»
 
-Fin qui è medicina. Una forbice di un'ora, onesta come un termometro, larga quanto basta perché nessuno debba giurare su un minuto. Ma la frase che segue non è medicina. È cronaca, e qualcuno ha scelto di metterla lì, nello stesso capoverso, con la stessa interlinea e la stessa calma.
+Fin qui è medicina. Una forbice di un'ora, onesta, larga quanto basta perché nessuno debba giurare su un minuto. Ma la frase che segue non è medicina. È cronaca, e qualcuno ha scelto di metterla lì, nello stesso capoverso, con la stessa interlinea e la stessa calma.
 
 «Si dà atto che sull'utenza mobile in uso alla vittima risulta pervenuto, alle ore 23:47 del medesimo giorno, un messaggio di testo dal contenuto intimidatorio, visualizzato alle ore 23:49.»
 
 Mi accorgo di non respirare solo quando la lente, che ho avvicinato al foglio senza deciderlo, si appanna.
 
-Osservo. L'orario del messaggio è al minuto, tratto da un tabulato, prodotto da una macchina che non ha amici in Procura né debiti con nessuno. Confronto. L'orario della morte è una forbice, e la forbice si chiude alle 23:00, non un minuto dopo. Concludo: quando il telefono ha vibrato, Andrea era morto da tre quarti d'ora almeno, forse da quasi due. E due minuti più tardi qualcuno ha aperto quel messaggio, con il suo codice, sul suo schermo.
+Osservo. L'orario del messaggio è al minuto, tratto da un tabulato, prodotto da una macchina che non ha amici in Procura né debiti con nessuno. Confronto. L'orario della morte è una forbice, e la forbice si chiude alle 23:00, non un minuto dopo. Concludo: quando il telefono ha vibrato, Andrea era morto da tre quarti d'ora almeno, forse da quasi due. Due minuti più tardi il messaggio risulta visualizzato, e visualizzato non vuol dire letto: può voler dire che qualcuno ha toccato quello schermo, o soltanto che l'app era già aperta e il testo ci è comparso sopra da solo. Le peso tutte e due. La prima chiede una mano viva sul telefono di un morto; la seconda chiede soltanto che nessuno l'abbia chiusa.
 
 Un'ora. Lo scarto è tutto lì, in una riga e mezza di carta da fotocopie.
 
@@ -44,7 +45,7 @@ Mi alzo e vado alla finestra. Nel cortile la pioggia riempie i solchi tra le bas
 
 Torno al banco. Le cose che so, le so da dieci giorni. Le cose che posso dimostrare stanno in questo foglio, e il foglio non vale niente.
 
-Lo esamino come esaminerei un'etichetta sul retro di un quadro che qualcuno vuole vendermi. Non c'è firma, solo uno spazio in fondo, con sotto il ruolo stampato e sopra il vuoto. Non c'è timbro. In alto a destra c'è la griglia del protocollo, con la casella del numero e quella della data, e tutte e due sono bianche. Non cancellate. Bianche, come una cornice che aspetta il quadro.
+Lo esamino come esaminerei un'etichetta sul retro di un quadro che qualcuno vuole vendermi. Non c'è firma, solo uno spazio in fondo, con sotto il ruolo stampato e sopra il vuoto. Non c'è timbro. In alto a destra c'è la griglia del protocollo, con la casella del numero e quella della data, e tutte e due sono bianche. Non cancellate. Bianche.
 
 Una carta senza protocollo è un'opinione stampata bene. In tribunale non entra. Chiunque abbia una stampante e un'intestazione scaricata può fabbricarla in mezz'ora, e chiunque voglia smentirla avrà bisogno di molto meno. Lo sa chi l'ha messa sotto la mia porta. Lo sa meglio di me, probabilmente, perché ha scelto di non firmare la busta e di non spiegare niente, e ha lasciato a me il conto di tutto quello che viene dopo. È la generosità di chi presta senza interessi: la clausola sta scritta altrove.
 

@@ -3,8 +3,8 @@
 Libro: /home/user/ZeusBot/libri/la-spada-ricurva
 Ramo: letto da git all'avvio (non scritto qui)
 Modalità: nuovo
-Fase: stesura; gate in attesa: lettura
-Ultimo capitolo approvato: —
+Fase: stesura; gate in attesa: nessuno
+Ultimo capitolo approvato: 3
 
 Da leggere a ogni avvio, in quest'ordine:
 1. libro.yaml

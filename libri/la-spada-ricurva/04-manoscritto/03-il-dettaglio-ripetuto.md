@@ -28,11 +28,11 @@ Mi trovo la mano sulla tasca del cappotto, sopra il telefono svuotato. La tolgo.
 
 Si chiama Claudia Rinaldi, secondo anno di pittura, e lo dice come si compila un cartellino d'inventario: nome, corso, nient'altro. Ad aprile, per l'esame di disegno dal vero, ha copiato la Giuditta della terza sala. La scimitarra di Giuditta ha la stessa piega. Lei l'ha disegnata storta, il docente gliel'ha segnata in rosso, lei l'ha ridisegnata storta.
 
-«L'altro ieri aspettavo Scotti per una firma, in corridoio. Lei aveva la luce radente accesa e fotografava. Il giorno dopo il Martirio era girato contro il muro.»
+«L'altro ieri aspettavo Scotti per una firma, in corridoio. Lei aveva la luce radente accesa e fotografava. Ieri mattina, in galleria, sotto il posto vuoto del Martirio c'era un cartellino nuovo. “Opera temporaneamente ritirata per motivi di conservazione”.»
 
-«Era girato perché è sospeso.»
+«È la formula di quando un'opera va in restauro.»
 
-«Le tele sospese restano sul cavalletto. Le ho viste, le altre.»
+«Il Martirio era in laboratorio da giorni, e quel muro è rimasto vuoto senza una parola. Il cartellino l'hanno incollato la mattina dopo le sue foto.»
 
 Ha ragione, e il fatto che abbia ragione non mi rende più gentile. Le restituisco il taccuino chiuso.
 
@@ -100,9 +100,9 @@ La Giuditta è un olio del primo Seicento, scuola napoletana, attribuzione incer
 
 E a un terzo dalla punta si piega.
 
-Tiro fuori la lente contafili e il telefono. Mina, senza che glielo chieda, prende il telefono e tiene la luce rasente alla superficie, il braccio fermo come un treppiede. Ha capito l'angolo prima di me.
+Tiro fuori la lente contafili e il telefono. Mina, senza che glielo chieda, prende il telefono e tiene la luce rasente alla superficie, il braccio fermo. Ha capito l'angolo prima di me.
 
-Osservo. La piega della lama corre sotto un cretto continuo, a maglie larghe, lo stesso del manto di Giuditta, senza un'isola di colore più giovane. Confronto. Sulla parete di fronte un San Giorgio stringe una spada dritta come un regolo, e il fabbro di quel pittore sapeva il fatto suo. Concludo: la piega non è un ritocco e non è un errore. Il pittore l'ha voluta, e l'ha dipinta nello stesso giorno del manto.
+La piega della lama corre sotto un cretto continuo, a maglie larghe, lo stesso del manto di Giuditta, senza un'isola di colore più giovane. Sulla parete di fronte un San Giorgio stringe una spada dritta come un regolo, e il fabbro di quel pittore sapeva il fatto suo. La piega, quindi, non è un ritocco e non è un errore: il pittore l'ha voluta, e l'ha dipinta nello stesso giorno del manto.
 
 «Guardi la mano» dice Claudia.
 
@@ -152,7 +152,7 @@ Valli legge da sopra la sua spalla. Mina tiene ancora la luce accesa, puntata su
 
 Io conto le cornici del corridoio, sette, e non serve.
 
-«Bene» dice Valli. «Quattro tele. Tre sono appese, e la galleria ce l'ho io fino a Natale. La quarta è nel suo laboratorio, contro il muro. La chiave ce l'ha lei.»
+«Bene» dice Valli. «Quattro tele. Tre sono appese, e la galleria ce l'ho io fino a Natale. La quarta è nel suo laboratorio. La chiave ce l'ha lei.»
 
 «La chiave è dell'Accademia.»
 
@@ -162,7 +162,7 @@ Claudia chiude il taccuino su un dito, per tenere il segno.
 
 «Lei da sola non entra qui dopo le sei» dice. «Noi da soli non entriamo da lei. È solo un conto.»
 
-È un conto, infatti. Lo faccio come mi ha insegnato mia madre con le stoffe: prima quello che manca, poi quello che avanza. Loro hanno l'Accademia in casa, un custode che risponde in dialetto, un permesso firmato dalla stessa mano che ha firmato il mio visto. Io ho una chiave, un tassello coperto e qualche anno più di loro, che qui dentro non valgono niente.
+È un conto, infatti. Lo faccio come mi ha insegnato mia madre con le stoffe: prima quello che manca, poi quello che avanza. Loro hanno l'Accademia in casa, un custode che risponde in dialetto, un permesso firmato dalla stessa mano che ha firmato il mio visto. La mia scheda, con il visto di settembre, e il foglio nel taschino di Valli portano la stessa firma larga, e se un giorno quello che cerchiamo finirà su una scrivania sarà la sua: non so ancora quale dei due fogli Arcamone sarà più disposto a riconoscere. Io ho una chiave, un tassello coperto e qualche anno più di loro, che qui dentro non valgono niente.
 
 «Tre condizioni. Niente fotografie sui vostri telefoni. Niente nomi, con nessuno, nemmeno tra di voi nei messaggi. Quello che vediamo lo disegna Rinaldi, e il taccuino non esce dall'Accademia.»
 
