@@ -176,10 +176,16 @@ Mina ride piano, dal petto. Claudia no. Mi guarda come stamattina, con la stessa
 
 «Domani alle sette» dico. «Entrate dalla porta del chiostro. Bussate due volte.»
 
-Il custode spegne le basse della quinta sala mentre usciamo, una per una, alle nostre spalle. Nel corridoio Claudia riapre il taccuino sotto l'ultima lampada accesa e traccia un quarto riquadro accanto agli altri tre, usando come righello il bordo del pollice.
+Il custode spegne le basse della quinta sala mentre usciamo, una per una, alle nostre spalle. Nel corridoio Claudia riapre il taccuino sotto l'ultima lampada accesa e traccia un quarto riquadro accanto agli altri tre. Quattro, uno, nove. Il quarto lo lascia bianco e me lo tiene davanti finché non lo guardo.
 
-Quattro, uno, nove.
+«La quarta mano è sotto la ridipintura» dice. «A un palmo dal tassello che ha richiuso lei.»
 
-Lascia il quarto riquadro bianco. La quarta mano, se c'è, sta sotto la ridipintura, a un palmo dal tassello che ho richiuso io.
+«Il Professore ha fermato il restauro.»
 
-<!-- zb: chiusura=D -->
+«Allora?»
+
+Le prendo la matita e scrivo un sette nel riquadro vuoto.
+
+«Allora domani il tassello lo riapro. E se Arcamone lo viene a sapere, la chiave me l'avete rubata voi.»
+
+<!-- zb: chiusura=X -->

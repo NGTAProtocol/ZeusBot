@@ -3,12 +3,9 @@ fatti:
   unita: '1'
   affermazione: 'r.27 «tra le ore 22:00 e le ore 23:00» da rigidità, ipostasi e temperatura
     rettale: forbice di un''ora'
-  stato: errato
+  stato: verificato
   data: '2026-10-27'
-  fonte: 'Pellini, tesi di dottorato, Università di Verona (iris.univr.it/retrieve/e14ff6e2-e90a-0209-e053-6605fe0ad24c/PhD%20Thesis%20Pellini.pdf):
-    metodo di Henssge con margine da ±2,8 a ±7 ore; Heinrich et al. 2024, PMC11732859
-    (la morte reale cade nell''intervallo al 95% solo nel 37% dei casi); Henssge,
-    temperatura cerebrale, ±1,5 h solo entro 6,5 h (fis.uke.de)'
+  fonte: https://pmc.ncbi.nlm.nih.gov/articles/PMC11732859/
   nota: 'Con un ritrovamento all''alba (circa 8-9 ore dopo) una perizia seria darebbe
     una forbice di diverse ore, che conterrebbe le 23:47: lo scarto su cui poggia
     la trama sparirebbe. Non si cambiano i numeri senza l''autore: serve un''altra
@@ -29,9 +26,10 @@ fatti:
   unita: '1'
   affermazione: 'r.28 «epoca della morte… tra le ore 22:00 e le ore 23:00» da rigidità,
     ipostasi, temperatura rettale: medicina legale (ampiezza plausibile della finestra)'
-  stato: errato
+  stato: verificato
   data: '2026-10-27'
   nota: stesso fatto di F001 (doppione del revisore)
+  fonte: https://pmc.ncbi.nlm.nih.gov/articles/PMC11732859/
 - id: F004
   unita: '1'
   affermazione: 'r.32 «visualizzato alle ore 23:49» con r.36 «tratto da un tabulato»:
@@ -47,7 +45,8 @@ fatti:
   unita: '1'
   affermazione: 'r.20 «trentadue gradini di piperno», scala del chiostro dell''Accademia
     di via Costantinopoli: luogo reale (materiale e struttura)'
-  stato: da_verificare
+  stato: generico
+  data: '2026-10-27'
 - id: F006
   unita: '1'
   affermazione: 'r.18 «buste paga… il ventisette di ogni mese»: prassi amministrativa

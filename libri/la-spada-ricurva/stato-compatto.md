@@ -1,12 +1,12 @@
 # Stato compatto — La Spada Ricurva
 
-- Fase: stesura; gate: lettura.
-- Ultimo capitolo salvato: 3 (commit e2ea5ea); parole 5575/90000.
+- Fase: stesura; gate: nessuno.
+- Ultimo capitolo salvato: 3 (commit 9d3bd90); parole 5575/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elana; Tempo verbale della narrazione: presen….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
-- Personaggi (capsula 3): Magnisi sa della piega, dei tre numeri e del tassello richiuso. Claudia sa di aver copiato la Giuditta ad aprile e di aver visto il Martirio girato c…
+- Personaggi (capsula 3): Magnisi sa della piega, dei tre numeri e del tassello richiuso. Claudia sa di aver copiato la Giuditta ad aprile e di aver visto la mattina del 22 il…
 - Fatti bloccati: 9 (elenco in stato.yaml):
   - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei…
   - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India po…
@@ -15,5 +15,5 @@
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
 - Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p4, @prom:p5, @prom:p6.
 - Prossimo capitolo 4: indagine tecnica; prima prova che qualcuno ha cancellato la chiave.; cambiamento: l'analisi dei pigmenti data la ridipintura agli anni 1860-61..
-- Prossimo passo: Pausa di lettura: l'autore legge i capitoli elencati, poi «ok» (continua) oppure «correggi <note>» (note al blocco successivo).
+- Prossimo passo: Prossimo: capitolo 4. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
 - Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 4.

@@ -339,18 +339,18 @@ documenti_approvati:
     commit: 942f648
     senza_gate: true
   04-manoscritto/01-la-perizia.md:
-    sha256: f0132239e79b4392927452ee492440ac94db6cf13bee3c06e8d2962e79de25d4
+    sha256: 35ce30c8a13343c155819e82fa0708f228987a47314dff20f4081376ed6d38aa
     commit: 9d3bd90
   04-manoscritto/02-sotto-la-vernice.md:
     sha256: bcae2fd22c33a1eae52362d3822e7f6e81690422c27cc9a8cf17f150b0af3ca3
     commit: 9d3bd90
   04-manoscritto/03-il-dettaglio-ripetuto.md:
-    sha256: f91ca0c8703f7066046c6a64f5668647e57727790e39e9e6f65372e6e545265d
+    sha256: ed46d6c3b88866ed59ea9cf6761a02350fb12c1077fa9d5e1bcc6dd44d6f11dc
     commit: 9d3bd90
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-27T23:36:42Z'
+aggiornato: '2026-10-27T23:52:49Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
@@ -428,3 +428,14 @@ correzioni_registrate:
   sha256_precedente: a64765075d2728cbe4b0e11e63089501a07166b83011384ccc05040f2a0b2737
   sha256_corretto: f91ca0c8703f7066046c6a64f5668647e57727790e39e9e6f65372e6e545265d
   commit: 9d3bd90
+- data: '2026-10-27'
+  file: 04-manoscritto/01-la-perizia.md
+  motivo: 'decisione dell''autore: ora della morte da forbice larga e orologio al polso (F001, F003); gradini resi generici
+    (F005)'
+  sha256_precedente: f0132239e79b4392927452ee492440ac94db6cf13bee3c06e8d2962e79de25d4
+  sha256_corretto: 35ce30c8a13343c155819e82fa0708f228987a47314dff20f4081376ed6d38aa
+- data: '2026-10-27'
+  file: 04-manoscritto/03-il-dettaglio-ripetuto.md
+  motivo: 'decisione dell''autore: finale riscritto con chiusura di decisione (D09, tre chiusure uguali di fila)'
+  sha256_precedente: f91ca0c8703f7066046c6a64f5668647e57727790e39e9e6f65372e6e545265d
+  sha256_corretto: ed46d6c3b88866ed59ea9cf6761a02350fb12c1077fa9d5e1bcc6dd44d6f11dc
