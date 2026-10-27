@@ -694,6 +694,12 @@ def cartella_unica(sez='cartella unica e recinto'):
     p = zbr('salva', 'libri/primo', 'nota')
     esito('salva.py', 'zb salva dentro il libro: commit e push', '0 / True',
           f'{p.returncode} / {"libri/primo/00-progetto/nota.md" in git(r, "show", "--name-only", "--format=").stdout}', sez)
+    git(r, 'rm', '-q', 'libri/primo/00-progetto/nota.md')
+    open(os.path.join(r, 'libri', 'primo', '00-progetto', 'altra.md'), 'w').write('altra\n')
+    p = zbr('salva', 'libri/primo', 'via la nota')
+    esito('salva.py', 'zb salva con un file già tolto (git rm) e uno nuovo: commit con entrambi', '0 / True / True',
+          f'{p.returncode} / {"libri/primo/00-progetto/nota.md" in git(r, "show", "--name-only", "--format=").stdout} / '
+          f'{"libri/primo/00-progetto/altra.md" in git(r, "show", "--name-only", "--format=").stdout}', sez)
     dopo = {f: open(os.path.join(dp, f), 'rb').read() for dp, _, fs in os.walk(os.path.join(r, 'libri', 'secondo'))
             for f in fs}
     esito('recinto', 'il secondo libro è identico dopo il lavoro sul primo', True, prima == dopo, sez)

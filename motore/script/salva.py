@@ -63,7 +63,10 @@ def main(argv):
             print('\n'.join(fine[-8:]))
             if p.returncode != 0:
                 raise comune.ErroreMotore('Prove con KO: niente commit né push. Correggi e rilancia zb salva.')
-    r = git(rad, 'add', '--', *cambiati)
+    # una cancellazione già nell'indice (git rm) non ha più il file né la voce: git add la rifiuterebbe
+    indice = set(git(rad, 'ls-files', '-z', '--', *cambiati).stdout.split('\0'))
+    da_aggiungere = [c for c in cambiati if c in indice or os.path.lexists(os.path.join(rad, c))]
+    r = git(rad, 'add', '-A', '--', *da_aggiungere) if da_aggiungere else subprocess.CompletedProcess([], 0, '', '')
     if r.returncode:
         raise comune.ErroreMotore(f'git add non riuscito: {r.stderr.strip()}')
     r = git(rad, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', msg)
