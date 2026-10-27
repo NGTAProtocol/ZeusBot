@@ -36,7 +36,7 @@ Si chiama Claudia Rinaldi, secondo anno di pittura, e lo dice come si compila un
 
 Ha ragione, e il fatto che abbia ragione non mi rende più gentile. Le restituisco il taccuino chiuso.
 
-«Senta, Rinaldi. Ho un dottorato, una borsa che scade a giugno e un visto del Direttore che mi è stato tolto con una parola a penna. Non ho bisogno di una ragazza che disegna scimitarre.»
+«Senta, Rinaldi. Non ho bisogno di una ragazza che disegna scimitarre.»
 
 «Perché lo nasconde?»
 
@@ -90,7 +90,9 @@ Sono venuta da sola. Mi ripeto che sono venuta a vedere una Giuditta.
 
 Il custode mi ferma sulla soglia della terza sala e indica l'orologio. Prima che io parli, dietro di me, Valli gli mostra un foglio piegato in quattro. Carta intestata, timbro a secco, la firma larga di Ruggero Arcamone in fondo.
 
-«Il catalogo della quadreria» dice Valli, a me più che al custode. «Il Direttore mi concede le sere. Non mi ha chiesto niente in cambio, ed è la cosa che mi preoccupa di più.»
+«Il catalogo della quadreria» dice Valli, a me più che al custode. «Il Direttore mi concede le sere.»
+
+Ripiega il foglio lungo le pieghe vecchie e lo infila nel taschino interno, non in quello della giacca dove tiene tutto il resto.
 
 Il custode annuisce e se ne va. Mina gli dice qualcosa in dialetto, una domanda sulla madre, e il custode risponde senza voltarsi. Claudia è già davanti alla tela.
 
@@ -142,7 +144,7 @@ Valli apre il catalogo. Ha l'inventario della galleria in fotocopia, ogni tela u
 
 Andiamo nella quinta sala in fila, senza parlare, con il custode che ci passa accanto due volte e due volte non dice niente. Il Sacrificio di Isacco è più scuro, la vernice ingiallita a chiazze. Il coltello di Abramo è corto e ricurvo come una roncola, e a un terzo dalla punta si piega. L'angelo gli ferma il polso. Due dita dell'angelo, l'indice e il medio, sono stese e unite. Sotto la lente, sull'unghia del medio, un uno.
 
-Il San Michele è appeso dove la luce del corridoio non arriva mai. Mina alza il telefono sopra la testa. La spada dell'arcangelo è una scimitarra, cosa che nessuno, in tre secoli di inventari, ha trovato strano. Si piega. La mano libera del santo indica in basso, verso il drago, con due dita. Sull'unghia del medio c'è un nove.
+Il San Michele è appeso dove la luce del corridoio non arriva mai. Mina alza il telefono sopra la testa. La spada dell'arcangelo è una scimitarra, cosa che nessuno, in tre secoli di inventari, ha trovato strano. Si piega. La mano libera del santo indica in basso, verso il drago, con due dita. Sull'unghia del medio, sotto la lente, solo polvere e vernice cotta. Mina abbassa il telefono e lo inclina finché la luce scivola di traverso sulla tela: il nove viene fuori in rilievo, non in colore, graffiato nella preparazione prima che qualcuno ci stendesse sopra la carne.
 
 Claudia disegna in piedi, il taccuino appoggiato all'avambraccio. Tre riquadri a quadretti, uno per tela: la lama, la mano, la cifra. Il tratto è rapido e non sbaglia una curva.
 
@@ -160,7 +162,7 @@ Claudia chiude il taccuino su un dito, per tenere il segno.
 
 «Lei da sola non entra qui dopo le sei» dice. «Noi da soli non entriamo da lei. È solo un conto.»
 
-È un conto, infatti. Lo faccio come mi ha insegnato mia madre con le stoffe: prima quello che manca, poi quello che avanza. Loro hanno l'Accademia in casa, un custode che risponde in dialetto, un permesso firmato da un uomo che mi ha tolto il visto con la stessa penna. Io ho una chiave, un tassello coperto e qualche anno più di loro, che qui dentro non valgono niente.
+È un conto, infatti. Lo faccio come mi ha insegnato mia madre con le stoffe: prima quello che manca, poi quello che avanza. Loro hanno l'Accademia in casa, un custode che risponde in dialetto, un permesso firmato dalla stessa mano che ha firmato il mio visto. Io ho una chiave, un tassello coperto e qualche anno più di loro, che qui dentro non valgono niente.
 
 «Tre condizioni. Niente fotografie sui vostri telefoni. Niente nomi, con nessuno, nemmeno tra di voi nei messaggi. Quello che vediamo lo disegna Rinaldi, e il taccuino non esce dall'Accademia.»
 
@@ -178,6 +180,6 @@ Il custode spegne le basse della quinta sala mentre usciamo, una per una, alle n
 
 Quattro, uno, nove.
 
-Lascia il quarto riquadro bianco. La quarta mano sta sotto una vernice che ho steso io.
+Lascia il quarto riquadro bianco. La quarta mano sta sotto la ridipintura, a un palmo dal tassello che ho richiuso io.
 
 <!-- zb: chiusura=D -->
