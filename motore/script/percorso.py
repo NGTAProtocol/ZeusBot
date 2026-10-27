@@ -22,14 +22,12 @@ import re
 
 import comune
 
-FASI = ['struttura', 'documenti', 'pagina_campione', 'guida', 'stesura', 'struttura_manoscritto', 'line', 'copy',
-        'bozze', 'fedelta', 'chiusura', 'chiuso']
-REVISIONI = ['struttura_manoscritto', 'line', 'copy', 'bozze', 'fedelta']
+FASI = ['struttura', 'documenti', 'pagina_campione', 'stesura', 'struttura_manoscritto', 'line', 'copy',
+        'bozze', 'chiusura', 'chiuso']
+REVISIONI = ['struttura_manoscritto', 'line', 'copy', 'bozze']
 SUCCESSIVA = {'struttura_manoscritto': 'line', 'line': 'copy', 'copy': 'bozze', 'bozze': 'chiusura'}
-# libro di traduzione (modalita: traduzione, 08-traduzione-<lingua>/): guida → stesura → line → copy → fedelta
-SUCCESSIVA_TRADUZIONE = {'line': 'copy', 'copy': 'fedelta', 'fedelta': 'chiusura'}
 GATE = ['struttura', 'documenti', 'pagina_campione', 'primi_capitoli', 'lotto', 'struttura_manoscritto',
-        'line', 'copy', 'bozze', 'canone', 'guida', 'fedelta']
+        'line', 'copy', 'bozze', 'canone']
 INTESTAZIONE = re.compile(r'^<!--\s*zb:\s*ruolo=([\w\-]+);\s*su=([0-9a-f]{12})\s*-->')
 CANONE = '06-diagnostica/canone-proposte.md'
 NOTA_DIREZIONE = '06-diagnostica/nota-direzione.md'
@@ -39,16 +37,11 @@ FASI_RUOLO = {'architetto-struttura': ['struttura'], 'diagnosta': ['struttura', 
               'editor-strutturale': ['struttura', 'struttura_manoscritto'], 'direttore-editoriale': ['documenti'],
               'scrittore-voce': ['pagina_campione', 'stesura', 'struttura_manoscritto'],
               'capsula': ['stesura', 'struttura_manoscritto'], 'line-editor': ['line'],
-              'correttore-italiano': ['copy'], 'correttore-bozze': ['bozze'],
-              'traduttore': ['stesura'], 'revisore-fedelta': ['fedelta']}
-
-
-def traduzione(libro):
-    return (libro or {}).get('modalita') == 'traduzione'
+              'correttore-italiano': ['copy'], 'correttore-bozze': ['bozze']}
 
 
 def successiva(libro, fs):
-    return (SUCCESSIVA_TRADUZIONE if traduzione(libro) else SUCCESSIVA)[fs]
+    return SUCCESSIVA[fs]
 
 
 def attivo(libro):
@@ -84,8 +77,6 @@ def rapporti(cartella, libro, fase):
         return [(f'06-diagnostica/{fase}/{nn(n)}.md', ruolo, [r]) for n, r in capitoli(cartella, libro)]
     if fase == 'bozze':
         return [('06-diagnostica/bozze.md', 'correttore-bozze', tutti)]
-    if fase == 'fedelta':
-        return [('06-diagnostica/fedelta.md', 'revisore-fedelta', tutti)]
     raise comune.ErroreMotore(f'Fase senza rapporti: {fase}')
 
 
@@ -175,6 +166,9 @@ def letture_diagnosta(cartella, libro, n, rel_cap):
     leggere += codex.filtra(cartella, struttura.tag_di(sk))[0]
     if n > 1 and os.path.isfile(os.path.join(cartella, capsula.rel(n - 1))):
         leggere.append(capsula.rel(n - 1))
+    import voce_libro
+    if os.path.isfile(os.path.join(cartella, voce_libro.SCHEDA)):
+        leggere.append(voce_libro.SCHEDA)      # la voce del libro: misura per il voto «voce»
     out = ['## File da leggere (solo questi)', ''] + [f'- {r}' for r in leggere]
     slug = (libro.get('voce') or {}).get('slug')
     if slug:
@@ -407,8 +401,6 @@ def documenti_gate(cartella, libro, stato, gate):
         return [r for r, _, _ in rapporti(cartella, libro, gate)]
     if gate == 'canone':
         return [CANONE]
-    if gate == 'guida':
-        return ['00-progetto/guida-traduzione.md', '00-progetto/glossario.yaml']
     raise comune.ErroreMotore(f'Gate sconosciuto: {gate}')
 
 
@@ -419,21 +411,6 @@ def pronto(cartella, libro, stato, f):
     import fase as F
     import struttura
     fs = stato['fase']
-    if fs == 'guida':
-        import traduci
-        p = []
-        g = os.path.join(cartella, '00-progetto', 'guida-traduzione.md')
-        if not os.path.isfile(g) or comune.MODELLO in open(g, encoding='utf-8').read():
-            p.append('00-progetto/guida-traduzione.md: ancora modello')
-        p += traduci.problemi_glossario(cartella)
-        if p:
-            raise comune.ErroreMotore('Guida e glossario non pronti:\n- ' + '\n- '.join(p[:30]))
-        if 'guida' in F.gate_attivi(libro):
-            F.apri_gate(cartella, libro, stato, 'guida', passo='guida in revisione')
-        else:
-            F.registra(cartella, stato, documenti_gate(cartella, libro, stato, 'guida'), senza_gate=True)
-            stato.update(fase='stesura', passo='capitolo 1', gate_in_attesa=None)
-        return True
     if fs in ('struttura', *REVISIONI) and (fs == 'struttura' or (stato.get('sottofase') or 'proposte') == 'proposte'):
         import ruolo
         ruolo.controlla_separazione_gate(cartella, fs)      # un ruolo per sessione (da motore)
@@ -514,11 +491,6 @@ def chiudi_struttura(stato):
 
 def dopo_ok(cartella, libro, stato, gate):
     """Effetti dell'«ok» sui gate del percorso editoriale. True se ha gestito il gate."""
-    if gate == 'guida':
-        stato.update(fase='stesura', passo='capitolo 1', gate_in_attesa=None)
-        stato['revisione_in_corso'] = None
-        print('Guida e glossario approvati: traduzione del capitolo 1 (agente traduttore, in sequenza).')
-        return True
     if gate == 'struttura':
         chiudi_struttura(stato)
         print('Struttura approvata: fase «documenti» (direttore-editoriale: bibbia, codex, cronologia, manuale).')
@@ -545,12 +517,7 @@ def dopo_ok(cartella, libro, stato, gate):
 
 
 def dopo_stesura(stato, libro=None):
-    """Tutte le unità scritte: nel percorso editoriale si passa alla revisione strutturale del manoscritto;
-    in una traduzione al line editing nella lingua di arrivo."""
-    if traduzione(libro):
-        stato.update(fase='line', sottofase='proposte', passo='line editing nella lingua di arrivo', gate_in_attesa=None)
-        print('Tutti i capitoli tradotti e controllati: fase «line» (line-editor nella lingua di arrivo).')
-        return
+    """Tutte le unità scritte: nel percorso editoriale si passa alla revisione strutturale del manoscritto."""
     stato.update(fase='struttura_manoscritto', sottofase='proposte', passo='diagnosi e piano di revisione',
                  gate_in_attesa=None)
     print('Tutte le unità del piano sono scritte e accettate: fase «struttura_manoscritto» '
@@ -559,15 +526,12 @@ def dopo_stesura(stato, libro=None):
 
 def prossimo(stato):
     fs, sotto = stato['fase'], stato.get('sottofase') or 'proposte'
-    if fs == 'guida':
-        return 'Traduzione: guida e glossario (un termine = una traduzione); poi «zb pronto <traduzione>».'
     if fs == 'struttura':
         return ('Architetto: i nove file di 03-struttura/; poi diagnosta ed editor-strutturale (commit separati); '
                 'poi «zb pronto <libro>» (il motore verifica la struttura, senza fermata).')
     if fs in REVISIONI:
         chi = {'struttura_manoscritto': 'diagnosta, poi editor-strutturale', 'line': 'line-editor per ogni capitolo',
-               'copy': 'correttore-italiano per ogni capitolo', 'bozze': 'zb compila, zb impagina, poi correttore-bozze',
-               'fedelta': 'revisore-fedelta (affiancata e ritraduzione a campione, sessione nuova)'}[fs]
+               'copy': 'correttore-italiano per ogni capitolo', 'bozze': 'zb compila, zb impagina, poi correttore-bozze'}[fs]
         if sotto == 'proposte':
             return f'Fase «{fs}»: rapporti di {chi} (commit separati dal testo); poi «zb pronto <libro>».'
         return f'Fase «{fs}»: applica solo le proposte approvate, «zb esito <libro> N»; poi «zb pronto <libro>».'

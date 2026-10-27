@@ -4,8 +4,6 @@ titolo: ""
 sottotitolo: null
 autore: ""
 lingua: it                 # it | en: lingua in cui si scrive il libro
-lingua_originale: it       # percorso editoriale: uguale a lingua
-lingue_target: []          # traduzioni previste (zb traduci <libro> --a <lingua>)
 percorso: editoriale       # editoriale (motore/editoriale/00-percorso.md) | breve
 modalita: nuovo            # nuovo | riscrittura (con testo_precedente)
 serie: null

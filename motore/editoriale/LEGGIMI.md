@@ -10,17 +10,17 @@ stanno solo in `libri/<slug>/` del ramo del libro).
 - `struttura/modelli/`: i documenti vuoti della fase struttura.
 - `ruoli/`: otto ruoli editoriali, uno per file (diagnosta compreso).
 - `diagnosi/`: principi, contratto del libro, passaggi di analisi, gravità e rapporto.
-- `agenti/` e `lingue/agenti/`: dodici subagenti di Claude Code (10 + 2 per la traduzione; fonte unica; `zb agenti attiva` li installa sui rami dei libri).
+- `agenti/`: i subagenti di Claude Code (fonte unica; `zb agenti attiva` li installa sui rami dei libri).
 - `risparmio-token.md`: subagenti, capsule e regole per pochi token.
 - `anti-ia/catalogo-it.md`: schemi da IA in italiano e regole di ritmo.
 - `correttore/criteri-correttore.md`: criteri del correttore di italiano.
-- Estensioni: `lingue/` (profili it/en, traduzione, agenti di traduzione), `comandi/` (comandi di Claude Code).
+- Estensioni: `lingue/` (profili it/en), `comandi/` (comandi di Claude Code).
 
 ## Regole
 1. Una fonte di verità: queste regole sostituiscono ogni skill citata ma assente.
 2. Chi scrive non revisiona mai il proprio testo nella stessa sessione.
 3. Ogni ruolo lavora in contesto pulito: legge solo i file elencati nel suo "Input".
-4. Ogni ruolo produce un report in `06-diagnostica/` del libro e non modifica il manoscritto, salvo il ruolo di correzione, solo dopo il mio ok.
+4. Ogni ruolo produce un report in `06-diagnostica/` del libro e non modifica il manoscritto, salvo il ruolo di correzione, dopo l'approvazione (gate della fase se attivo in `libro.yaml`; altrimenti modo automatico, con la sola pausa di lettura).
 5. Tutto vive nella cartella del libro (`libri/<slug>/`). Questa cartella resta nel motore in sola lettura.
 
 ## Precedenza (una sola scala)

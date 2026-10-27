@@ -26,8 +26,7 @@ ruoli editoriali: `editoriale/ruoli/`. Il progetto iniziale (`proposta-motore.md
    legge solo la sua risposta breve (`editoriale/risparmio-token.md`).
 10. **Modo automatico** (decisione dell'autore del 2026-10-20): sul percorso editoriale il motore fa i
    controlli e passa da una fase all'altra senza approvazioni intermedie; l'unica fermata prevista è la pausa di
-   lettura (sezione 6). `editoriale/00-percorso.md` e i ruoli descrivono ancora le fermate con l'«ok»: il
-   contrasto è segnalato in `docs/DA_VERIFICARE_AUTORE.md`.
+   lettura (sezione 6). `editoriale/00-percorso.md` descrive lo stesso modo automatico.
 
 ## 1b. Percorso da casa editrice (libri con `percorso: editoriale`)
 
@@ -89,8 +88,23 @@ parole, file e righe letti e subagenti chiamati, dalle righe che l'hook PostTool
 `<libro>/.zb/letture.log`; con `--registra` aggiunge il riassunto a `<libro>/.zb/consumo.log`. Restano anche
 `zb consumo <libro> registra|mostra|confronto <N>` (confronto con e senza capsule).
 
-**Traduzione**: `zb traduci <libro> --a <lingua> inizia`, poi il libro di traduzione `08-traduzione-<lingua>/`
-segue guida → stesura → line → copy → fedelta → chiusura (`editoriale/lingue/traduzione.md`).
+**Voce del libro dalle pagine campione** (2026-10-27): l'autore mette una pagina di prosa (almeno 250 parole) in
+`00-progetto/voce/campione-1.md`; per una voce ibrida una seconda in `campione-2.md` e, se vuole, in
+`00-progetto/voce/indicazioni.md` che cosa prendere da ciascuna. `zb voce campioni <libro>` misura lo stile senza
+modelli (`00-progetto/voce/misure.md`: frase media, mediana e lunga, quota di frasi corte e lunghe, dialogo,
+paragrafi, punteggiatura, aperture, lessico); l'agente `voce` scrive `02-bibbia/voce.md` (sette sezioni, come la
+banca-voci, con un campione e gli esempi «debole → forte» inventati); `zb voce scheda <libro>` la verifica. Poi
+`zb prepara` passa scheda e campioni allo scrittore e il diagnosta vota la voce su quella scheda. Si imita il modo,
+mai il testo: 7 parole consecutive uguali a un campione sono un KO (`copia:campione_voce`, nel capitolo e nella
+scheda). `zb agenti prossimo` chiede la voce in fase documenti se ci sono campioni senza scheda.
+
+**Grafica** (2026-10-27): `formato.stile` in `libro.yaml` sceglie lo stile dell'interno (`essenziale`, predefinito;
+`classico`: titoli in maiuscoletto, capolettera, prima riga in maiuscoletto, fleuron ❧ tra le scene; `moderno`:
+titoli a sinistra con filetto, punto tra le scene), da `stampa/stili/`. L'agente `grafico` scrive la quarta
+(`06-pubblicazione/quarta.md`) e il brief della copertina con tre concept e il prompt per l'illustrazione.
+`zb copertina <libro> [--pagine N]` genera `06-pubblicazione/copertina/copertina.pdf` (quarta, costola, prima; misura
+esatta; testo sulla costola oltre 79 pagine; riquadro del codice a barre libero; immagine `00-progetto/copertina.jpg|png`
+sulla prima se c'è) e `misure.md`, con i valori di `dati/kdp.yaml` («copertina», da verificare con il calcolatore KDP).
 
 **Lingua**: «Lingua: it|en» nel briefing; per l'inglese le stesse fasi e gli stessi ruoli, con i profili di
 `editoriale/lingue/en/` (catalogo, criteri, glossario) e Hunspell/LanguageTool in inglese.

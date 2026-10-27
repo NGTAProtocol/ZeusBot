@@ -11,7 +11,7 @@ campi:
   sottotitolo: {tipo: testo, nullo: true}
   autore: {tipo: testo, obbligatorio: true}
   lingua: {tipo: testo, obbligatorio: true}
-  modalita: {tipo: scelta, valori: [nuovo, riscrittura, traduzione], obbligatorio: true}
+  modalita: {tipo: scelta, valori: [nuovo, riscrittura], obbligatorio: true}
   serie:
     tipo: mappa
     nullo: true
@@ -26,7 +26,7 @@ campi:
       ambientazione: {tipo: testo}             # regola il dialetto della voce; «altro» se non serve
   profilo: {tipo: testo, obbligatorio: true}
   gate: {tipo: lista, elementi: {tipo: scelta, valori: [struttura, documenti, pagina_campione, primi_capitoli, lotto, lettura,
-                                                        struttura_manoscritto, line, copy, bozze, guida, fedelta]}}
+                                                        struttura_manoscritto, line, copy, bozze]}}
   percorso: {tipo: scelta, valori: [editoriale, breve]}   # editoriale: motore/editoriale/00-percorso.md
   pausa_lettura: {tipo: scelta, valori: [3, 4, 5]}    # gate «lettura»: capitoli tra una pausa di lettura e l'altra (predefinito 3)
   capsule: {tipo: scelta, valori: [obbligatorie, avviso]}  # zb avvio: obbligatorie ferma, avviso (predefinito) avvisa
@@ -44,13 +44,8 @@ campi:
       ripetizioni_per_mille_max: {tipo: numero}
       chiusure_uguali_max: {tipo: intero}
       formule_sezione_b: {tipo: booleano}
-  lingua_originale: {tipo: testo}
-  lingue_target: {tipo: lista, elementi: {tipo: testo}}
-  traduzione:                                    # solo nel libro della traduzione, 08-traduzione-<lingua>/libro.yaml
-    tipo: mappa
-    campi:
-      da: {tipo: testo, obbligatorio: true}      # cartella del libro originale, relativa (di solito «..»)
-      lingua_originale: {tipo: testo, obbligatorio: true}
+  lingua_originale: {tipo: testo}                # non più usato (traduzione rimossa il 2026-10-27): ammesso per i libri esistenti
+  lingue_target: {tipo: lista, elementi: {tipo: testo}}   # come sopra
   override:
     tipo: lista
     elementi:
@@ -75,6 +70,7 @@ campi:
       carta: {tipo: scelta, valori: [crema, bianca]}
       bleed: {tipo: booleano}
       formato_confermato_kdp: {tipo: booleano}   # facoltativo, predefinito false: conformita_kdp.py sezione 11, AVVISO se false
+      stile: {tipo: scelta, valori: [essenziale, classico, moderno]}   # interno (stampa/stili/); predefinito essenziale
       margini_mm:
         tipo: mappa
         campi:

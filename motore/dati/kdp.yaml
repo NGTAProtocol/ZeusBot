@@ -66,6 +66,15 @@ cartaceo:
   margine_esterno_consigliato_narrativa: [0.6, 0.75]   # r. 54, solo consiglio
   font_incorporati: obbligatorio                        # r. 56
 
+copertina:                   # copertina intera del cartaceo (quarta + costola + prima), zb copertina (2026-10-27)
+  stato: da_verificare_sulla_pagina_ufficiale   # valori del KDP Help Center («Paperback cover»), non riletti oggi
+  spessore_pagina_pollici: {bianca: 0.002252, crema: 0.0025}   # costola = pagine × spessore
+  bleed_pollici: 0.125                          # abbondanza su ogni lato esterno della copertina intera
+  margine_sicurezza_pollici: 0.125              # testo e elementi importanti dentro il trim di almeno tanto
+  testo_costola_pagine_min: 80                  # testo sulla costola solo oltre 79 pagine
+  margine_costola_pollici: 0.0625               # distanza minima del testo dai bordi della costola
+  codice_a_barre_pollici: [2, 1.2]              # riquadro libero in basso a destra della quarta
+
 isbn:
   modalita_predefinita: kdp_gratuito
   editore_risultante: "Independently published"

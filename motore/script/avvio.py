@@ -47,7 +47,6 @@ DA_LEGGERE_EDITORIALE = {
     'pagina_campione': ['03-struttura/09-scelte-fisse.md', '05-revisioni/pagina-campione.md'],
     'stesura': ['03-struttura/09-scelte-fisse.md', '07-capsule/registro.md'],
     'struttura_manoscritto': ['07-capsule/registro.md'], 'line': [], 'copy': [], 'bozze': [],
-    'guida': ['00-progetto/guida-traduzione.md', '00-progetto/glossario.yaml'], 'fedelta': [],
     'chiusura': [], 'chiuso': [],
 }
 

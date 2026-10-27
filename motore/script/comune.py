@@ -711,12 +711,10 @@ def controlla_struttura(cartella, modalita):
         if chiave is None:
             errori.append(f'{d}/: cartella non prevista')
             continue
-        if chiave != d:
-            continue        # cartella di traduzione: ha la sua struttura (libro di traduzione)
-        elif modalita not in s[d]['modalita']:
+        if modalita not in s[d]['modalita']:
             errori.append(f'{d}/: prevista solo in {", ".join(s[d]["modalita"])}')
     for radice, dirs, files in os.walk(cartella):
-        dirs[:] = [x for x in dirs if x != '.git' and not x.startswith('08-traduzione-')]
+        dirs[:] = [x for x in dirs if x != '.git']
         rel = os.path.relpath(radice, cartella)
         if '.gitkeep' in files:
             errori.append(f'{os.path.join(rel, ".gitkeep")}: .gitkeep non ammesso')

@@ -1,7 +1,7 @@
 """Subagenti e comandi di Claude Code per i rami dei libri (comando «zb agenti»).
 
 Uso: python3 -B agenti.py stato | attiva [--ok] | disattiva [--progetto <radice>] | prossimo <libro>
-Fonte unica: motore/editoriale/agenti/*.md (più motore/editoriale/lingue/agenti/*.md, traduzione) e
+Fonte unica: motore/editoriale/agenti/*.md e
 motore/editoriale/comandi/*.md. «attiva» li copia in <radice>/.claude/agents/ e <radice>/.claude/commands/,
 scrivendo negli agenti il campo «model:» preso da motore/dati/modelli-ruoli.yaml (unica fonte dei modelli).
 - Solo sui rami dei libri: rifiutato sul ramo «motore» e con il lavoro sul motore in corso
@@ -34,14 +34,11 @@ FIRMA = '<!-- zb: installato da «zb agenti attiva»; fonte: motore/editoriale/ 
 MODELLI_AMMESSI = {'opus', 'sonnet', 'haiku', 'fable', 'inherit'}
 
 
-def sorgenti(motore, traduzione=True):
-    """File da installare. Gli agenti della traduzione (lingue/agenti/) solo con traduzione=True: ogni agente installato
-    porta la sua descrizione nel contesto di ogni sessione (token), e la traduzione è archiviata dal 2026-10-27."""
+def sorgenti(motore):
+    """File da installare: agenti (editoriale/agenti/) e comandi (editoriale/comandi/)."""
     e = os.path.join(motore, 'editoriale')
     out = []
-    cartelle = [('agenti', 'agents')] + ([(os.path.join('lingue', 'agenti'), 'agents')] if traduzione else []) + [
-        ('comandi', 'commands')]
-    for sub, dest in cartelle:
+    for sub, dest in (('agenti', 'agents'), ('comandi', 'commands')):
         d = os.path.join(e, sub)
         if os.path.isdir(d):
             out += [(os.path.join(d, f), dest, f) for f in sorted(os.listdir(d)) if f.endswith('.md')]
@@ -163,6 +160,12 @@ def azione_stesura(cartella, libro, st, rel):
             f'06-diagnostica/misure/{u.zfill(2)}.md.']
 
 
+def voce_da_fare(cartella):
+    """True se ci sono pagine campione della voce ma non ancora la scheda 02-bibbia/voce.md."""
+    import voce_libro
+    return bool(voce_libro.campioni(cartella)) and not os.path.isfile(os.path.join(cartella, voce_libro.SCHEDA))
+
+
 def prossimo(motore, argv):
     """Chi chiamare adesso (da motore, con i nomi del pacchetto). Non scrive nulla."""
     import capsula
@@ -192,6 +195,9 @@ def prossimo(motore, argv):
         righe.append(f'{agente}, in parallelo a gruppi di al massimo {n} (con limiti o errori 429: '
                      f'{" poi ".join(map(str, o["riduzione"]))}):')
         righe += ['  gruppo: ' + ', '.join(f'{agente} {rel} {u}' for u in g) for g in a_gruppi(da_fare, n)] or ['  niente da fare']
+    elif st['fase'] in ('documenti', 'pagina_campione') and voce_da_fare(cartella):
+        righe.append(f'AZIONE: voce del libro dai campioni: «zb voce campioni {rel}», poi agente voce ({rel}), poi '
+                     f'«zb voce scheda {rel}» (con un KO, una correzione dell\'agente voce).')
     elif agente:
         righe.append(f'{agente} {rel} (un solo agente; rapporti in 06-diagnostica/).')
     else:
@@ -201,13 +207,10 @@ def prossimo(motore, argv):
     return 0
 
 
-def piano(rad, motore, traduzione=None):
-    """(destinazione, testo) di agenti e comandi. traduzione=None: gli agenti della traduzione solo se già installati."""
-    if traduzione is None:
-        traduzione = nostro(os.path.join(rad, '.claude', 'agents', 'traduttore.md'))
+def piano(rad, motore):
+    """(destinazione, testo) di agenti e comandi."""
     mod, _ = modelli(motore)
-    return [(os.path.join(rad, '.claude', dest, f), generato(src, dest, mod))
-            for src, dest, f in sorgenti(motore, traduzione)]
+    return [(os.path.join(rad, '.claude', dest, f), generato(src, dest, mod)) for src, dest, f in sorgenti(motore)]
 
 
 def nostro(p):
@@ -220,7 +223,7 @@ def main(argv):
     pulito = [a for i, a in enumerate(argv) if a != '--progetto' and (i == 0 or argv[i - 1] != '--progetto')]
     args = comune.argomenti(pulito)
     azione = args[0] if args else 'stato'
-    voci = piano(rad, motore, True if '--traduzione' in argv else None)
+    voci = piano(rad, motore)
     installati = [p for p, _ in voci if nostro(p)]
     if azione == 'stato':
         mod, par = modelli(motore)

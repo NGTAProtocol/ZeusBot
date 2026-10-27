@@ -251,7 +251,11 @@ def verifica(b, slug):
 
 def main(argv):
     args = comune.argomenti(argv)
-    uso = 'Uso: zb voce lista | zb voce mostra <slug> [N] | zb voce verifica <slug>'
+    if args and args[0] in ('campioni', 'scheda'):      # voce del libro dalle pagine campione (voce_libro.py)
+        import voce_libro
+        return voce_libro.main(argv)
+    uso = ('Uso: zb voce lista | zb voce mostra <slug> [N] | zb voce verifica <slug> | zb voce campioni <libro> | '
+           'zb voce scheda <libro>')
     if not args or args[0] not in ('lista', 'mostra', 'verifica'):
         raise comune.ErroreMotore(uso)
     if args[0] != 'lista' and len(args) < 2:

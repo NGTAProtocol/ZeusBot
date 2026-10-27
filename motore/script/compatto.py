@@ -43,8 +43,7 @@ def genera(cartella, libro):
         righe.append(f'- Macrostruttura: {nome or "—"}.')
         righe.append(f'- Scelte fisse: {taglia("; ".join(scelte[:3]), 150) or "—"}.')
     righe.append(f'- Gate attivi: {", ".join(fase.gate_attivi(libro))}.')
-    righe.append(f'- Libro: {libro.get("lingua")}, profilo {libro["profilo"]}'
-                 + (f', traduzioni previste: {", ".join(libro["lingue_target"])}' if libro.get('lingue_target') else '') + '.')
+    righe.append(f'- Libro: {libro.get("lingua")}, profilo {libro["profilo"]}.')
     pers = '—'
     if ultimo and os.path.isfile(os.path.join(cartella, capsula.rel(ultimo))):
         sez = capsula.sezioni_di(open(os.path.join(cartella, capsula.rel(ultimo)), encoding='utf-8').read(),

@@ -385,7 +385,7 @@ passo_5b:
 passo_6:
   struttura:
     cartelle: ['00-progetto', '01-originale', '02-bibbia', '03-struttura', '03-architettura', '04-manoscritto', '05-revisioni',
-               '05-appendici', '05-output', '06-diagnostica', '06-pubblicazione', '07-capsule', '08-traduzione-*', '.zb']
+               '05-appendici', '05-output', '06-diagnostica', '06-pubblicazione', '07-capsule', '.zb']
     nuovo: ['00-progetto', '02-bibbia', '03-architettura']
     riscrittura: "0 / ['00-progetto', '01-originale', '02-bibbia', '03-architettura']"
     nuovo_con_originale: "2 / True / False"
@@ -792,10 +792,10 @@ ruoli:
   stato: "0 / True / True"
 
 agenti_capsule:
-  # da motore (971b6df), sulla base ccr: 12 agenti (10 del livello editoriale e 2 di traduzione), capsula.py di ccr
+  # da motore (971b6df), sulla base ccr: agenti del livello editoriale, capsula.py di ccr
   # (prepara il modello con codice 0; 120-250 parole), stato degli agenti con codice 0 se il solo problema è un
   # «model:» diverso dal file di dati (vale il file di dati)
-  attiva: "2 / 0 False / 0 10 / True / 0 False"
+  attiva: "2 / 0 False / 0 12 / True / 0 False"
   modello_centrale: "0 True / True / 0 True"
   capsula: "0 True / 1 / 0 / 1 True"
   controllo: "fermo / True"
@@ -838,3 +838,4 @@ frase_media_registro:
   intervalli: ['5-10 registro corto, dalla voce', '15-25 registro freddo, dalla voce', '12-18 registro base, dalla voce', '9-14', '9-14', '12-18 registro base, dalla voce']
   senza_campo: ['1: 9-14 OK', '2: 9-14 OK', '3: 9-14 KO']
   con_campo: ['1: 5-10 (registro corto, dalla voce) OK', '2: 15-25 (registro freddo, dalla voce) AVVISO', '3: 12-18 (registro base, dalla voce) AVVISO']
+grafica: {}

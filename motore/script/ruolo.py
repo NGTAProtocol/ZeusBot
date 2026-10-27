@@ -52,15 +52,15 @@ RUOLI = {
     'correttore-italiano': {'file': 'ruoli/06-correttore-italiano.md', 'tipo': 'revisiona'},
     'correttore-bozze': {'file': 'ruoli/07-correttore-bozze.md', 'tipo': 'revisiona'},
     'capsula': {'file': 'agenti/capsula.md', 'tipo': 'scrive'},
-    'traduttore': {'file': 'lingue/agenti/traduttore.md', 'tipo': 'scrive'},
-    'revisore-fedelta': {'file': 'lingue/agenti/revisore-fedelta.md', 'tipo': 'revisiona'},
+    'voce': {'file': 'agenti/voce.md', 'tipo': 'scrive'},
+    'grafico': {'file': 'agenti/grafico.md', 'tipo': 'scrive'},     # quarta e brief della copertina
     'motore': {'file': None, 'tipo': 'meccanico'},     # chiusura meccanica, solo comandi zb
     'regia': {'file': None, 'tipo': 'regia'},          # 2026-10-27: orchestra gli agenti (/capitolo), non scrive prosa
 }
 DA_FASE = {'struttura': 'architetto-struttura', 'documenti': 'direttore-editoriale',
-           'pagina_campione': 'scrittore-voce', 'guida': 'traduttore', 'stesura': 'scrittore-voce',
+           'pagina_campione': 'scrittore-voce', 'stesura': 'scrittore-voce',
            'struttura_manoscritto': 'diagnosta', 'line': 'line-editor', 'copy': 'correttore-italiano',
-           'bozze': 'correttore-bozze', 'fedelta': 'revisore-fedelta', 'chiusura': 'motore', 'chiuso': 'motore'}
+           'bozze': 'correttore-bozze', 'chiusura': 'motore', 'chiuso': 'motore'}
 TRACCIATE = ('03-struttura/', '04-manoscritto/', '06-diagnostica/', '07-capsule/')
 # fase con rapporti → (testo scritto, revisioni che non possono nascere nella stessa sessione)
 REVISIONI = {'struttura': ('03-struttura/', ('06-diagnostica/rapporto-struttura.md',

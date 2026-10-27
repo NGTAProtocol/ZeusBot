@@ -1,6 +1,6 @@
 ---
 name: direttore-editoriale
-description: Scrive bibbia, cronologia e nota di direzione dopo l'ok alla struttura. Da usare per la fase documenti.
+description: Scrive bibbia, cronologia e nota di direzione dopo la chiusura della struttura. Da usare per la fase documenti.
 tools: Read, Write, Edit, Glob, Grep
 model: opus
 ---

@@ -7,7 +7,7 @@ righe_risposta: 5
 # con limiti d'uso o errori 429 si scende al valore successivo di «riduzione» (scriverlo qui, commit a parte)
 riduzione: [2, 1]
 # sempre in sequenza: ogni capitolo dipende dal precedente
-in_sequenza: [scrittore-voce, traduttore]
+in_sequenza: [scrittore-voce]
 # per capitolo, in parallelo
 in_parallelo: [line-editor, correttore-italiano, capsula]
 # dipendenze (da cosa dipende ogni lavoro): si lancia in parallelo solo ciò che ha le stesse dipendenze già
@@ -27,10 +27,8 @@ agente_di_fase:
   struttura: architetto-struttura
   documenti: direttore-editoriale
   pagina_campione: scrittore-voce
-  guida: traduttore
   stesura: scrittore-voce
   struttura_manoscritto: diagnosta
   line: line-editor
   copy: correttore-italiano
   bozze: correttore-bozze
-  fedelta: revisore-fedelta

@@ -5,8 +5,7 @@ dati KDP e il livello editoriale (`editoriale/`: percorso, ruoli, agenti, anti-I
 libri reali. Il progetto iniziale (`proposta-motore.md`) è sul ramo d'archivio `archivio/motore-prima-2026-10-27`. Come si lavora su un libro: `PROCEDURA.md`.
 Percorso e ruoli: `editoriale/00-percorso.md` e `editoriale/LEGGIMI.md` (che ha anche l'unica scala di precedenza).
 Questo file raccoglie le regole d'uso, l'ambiente e gli hook. Stato e scelte del 2026-10-27 (catena dei capitoli,
-qualità, token): `docs/report-motore-27-ottobre-2026.md` e `docs/miglioramenti-2026-10-27.md`.
-Guida di lettura per l'autore (organigramma, percorso di un libro, regole), in PDF per telefono: `docs/GUIDA_AL_SISTEMA.pdf` (sorgente `docs/GUIDA_AL_SISTEMA.md`).
+qualità, voce, grafica, token): `docs/miglioramenti-2026-10-27.md`. Guida breve per l'autore: `docs/GUIDA.md`.
 I documenti di `docs/` non si leggono nelle sessioni di lavoro.
 
 ## Regole d'uso
@@ -33,8 +32,8 @@ Un file con un nome diverso ferma il motore.
 
 I libri nuovi seguono il percorso editoriale (`percorso: editoriale` in `libro.yaml`) in **modo automatico**: il
 motore fa i controlli e passa da una fase all'altra senza approvazioni intermedie; l'unica fermata è la **pausa di
-lettura** ogni 3 capitoli (`pausa_lettura`: 3, 4 o 5 in `libro.yaml`). `editoriale/00-percorso.md` e i ruoli
-descrivono ancora le fermate con l'«ok» dell'autore: il contrasto è segnalato in `docs/DA_VERIFICARE_AUTORE.md`.
+lettura** ogni 3 capitoli (`pausa_lettura`: 3, 4 o 5 in `libro.yaml`). `editoriale/00-percorso.md` descrive lo stesso
+modo automatico (allineato il 2026-10-27).
 
 1. L'autore compila `modelli/briefing.md` in `libri/<slug>/briefing.md`; `zb nuovo` apre la cartella unica del libro
    «Percorso: breve» nel briefing sceglie il percorso breve. (`zb adotta` è archiviato.)
@@ -43,13 +42,16 @@ descrivono ancora le fermate con l'«ok» dell'autore: il contrasto è segnalato
 3. Struttura (nove file di `03-struttura/`), poi rapporto del diagnosta e piano dell'editor strutturale in sessioni
    e commit separati; `zb pronto` verifica la struttura (gate `struttura` automatico) e, se regge, crea bibbia,
    codex, cronologia e manuale e passa ai documenti; se no si ferma e scrive il motivo.
-4. Documenti (bibbia, codex, cronologia, manuale, nota di direzione); pagina campione; stesura con `/capitolo`
+4. Documenti (bibbia, codex, cronologia, manuale, nota di direzione) e **voce del libro** dalle pagine campione
+   dell'autore (`00-progetto/voce/campione-1.md`, `campione-2.md` per un ibrido; `zb voce campioni`, agente voce,
+   `zb voce scheda`); pagina campione; stesura con `/capitolo`
    (scrittore Opus → misure → revisione con voti tarati e soglia di qualità → correzione mirata → `zb esito` →
    capsula → `zb salva`, in automatico); pausa di lettura ogni `pausa_lettura` capitoli e a fine stesura.
 5. Revisione strutturale del manoscritto, line editing, copyediting, bozze: rapporti → `zb pronto` → applicazione
    → `zb pronto`. Un gate dell'autore solo se il briefing lo chiede («Gate: …»).
-6. Chiusura: `continuita`, `ortografia`, `compila`, `impagina`, `pdf`, `pacchetto`, `kdp`; `zb pronto`.
-7. Traduzione facoltativa: `zb traduci <libro> --a en inizia`.
+6. Grafica: stile dell'interno (`formato.stile`: essenziale, classico, moderno), agente grafico (quarta e brief della
+   copertina), `zb copertina` (copertina intera KDP in PDF, misure della costola dal PDF di stampa).
+7. Chiusura: `continuita`, `ortografia`, `compila`, `impagina`, `pdf`, `pacchetto`, `kdp`; `zb pronto`.
 8. A ogni passo: `zb salva` (recinto, commit, push), `git status -sb`, `git log -1`.
 Dettagli: `PROCEDURA.md`; ruoli e regole editoriali: `editoriale/`.
 
@@ -77,8 +79,7 @@ protezione in più, non una garanzia: i controlli che contano sono quelli che gu
 
 Separazione dei ruoli: `dati/hook.yaml`, `separazione_ruoli` (oggi `blocco`). Controllo pre-commit di git:
 `script/precommit.py`, installato da `zb lavoro`. Subagenti e comandi di Claude Code: `zb agenti attiva --ok`, solo
-sui rami dei libri, come gli hook. Gli agenti della traduzione
-(archiviata) solo con `zb agenti attiva --ok --traduzione`: ogni agente installato costa token in ogni sessione.
+sui rami dei libri, come gli hook.
 
 ## Ambiente
 

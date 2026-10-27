@@ -21,6 +21,7 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 import voce  # noqa: E402
+import voce_libro  # noqa: E402
 import capsula  # noqa: E402
 import codex  # noqa: E402
 import struttura  # noqa: E402
@@ -69,6 +70,8 @@ def prepara(cartella, libro, n):
         leggere.append(note)
     if os.path.isfile(os.path.join(cartella, LEZIONI)):  # difetti già trovati dal revisore: non ripeterli
         leggere.append(LEZIONI)
+    if os.path.isfile(os.path.join(cartella, voce_libro.SCHEDA)):  # voce del libro dai campioni (voce_libro.py)
+        leggere += [voce_libro.SCHEDA] + voce_libro.campioni(cartella)
     dopo = struttura.schede(cartella).get(str(n + 1)) or {}
     totale = sum(righe(cartella, r) for r in leggere) + len(sk) + len(coda)
     out = [f'# Preparazione del capitolo {n} — {libro["titolo"]}', '',
@@ -80,6 +83,11 @@ def prepara(cartella, libro, n):
     out += [f'- {x}' for x in stato.get('fatti_bloccati') or []] or ['- nessuno']
     if note in leggere:
         out += ['', '## Note dell\'autore alla pausa di lettura', '', f'Valgono per questo capitolo: {note} (nei file da leggere).']
+    if os.path.isfile(os.path.join(cartella, voce_libro.SCHEDA)):
+        out += ['', '## Voce del libro (dalle pagine campione dell\'autore)', '',
+                f'Leggi {voce_libro.SCHEDA} (tutta) e i campioni: {", ".join(voce_libro.campioni(cartella)) or "—"}. '
+                'Imita ritmo, sintassi, lessico e modo di guardare; mai frasi: 7 parole consecutive uguali a un campione '
+                'sono un KO del motore (copia:campione_voce).']
     if (libro.get('voce') or {}).get('slug'):
         out += voce_da_leggere(libro['voce']['slug'])
     out += ['', '## File da leggere', ''] + [f'- {r}' for r in leggere]

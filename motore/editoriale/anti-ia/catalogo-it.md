@@ -56,7 +56,7 @@ Tetto: un'imperfezione voluta ogni 800-1000 parole circa, mai più di tre per pa
 Le soglie vanno tarate sui mini-libri di prova e scritte nel profilo di genere.
 
 ## I. Modalità audit
-Il controllo non riscrive: produce un elenco (posizione, schema, proposta) in `06-diagnostica/`. Le correzioni si applicano dopo `ok`.
+Il controllo non riscrive: produce un elenco (posizione, schema, proposta) in `06-diagnostica/`. Le correzioni le applica chi scrive (o il line editor nella sua fase), non il controllo.
 
 ## Note per il motore (integrazioni)
 - **Gravità della prosa**: P0 rompe la lettura o la voce (terzo capitolo di fila con la stessa chiusura; dialogo che

@@ -7,7 +7,7 @@ Lavorare frase per frase: ritmo, voce, chiarezza, ripetizioni, tic da IA.
 Il capitolo, la scheda della voce, `anti-ia/catalogo-it.md`, i divieti della voce.
 
 ## Output
-`06-diagnostica/line/NN.md`: elenco di interventi proposti (originale, proposta, motivo). Applicazione solo dopo `ok`.
+`06-diagnostica/line/NN.md`: elenco di interventi proposti (originale, proposta, motivo). Si applicano dopo l'approvazione: il gate «line» se è attivo in `libro.yaml`, altrimenti subito (modo automatico).
 
 ## Cosa fa
 - taglia ripetizioni e spiegazioni di ciò che la scena mostra;

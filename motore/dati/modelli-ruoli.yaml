@@ -15,6 +15,6 @@ ruoli:
   correttore-italiano: medio
   correttore-bozze: medio
   capsula: leggero
+  grafico: forte            # 2026-10-27: quarta, brief della copertina, stile dell'interno
+  voce: forte               # 2026-10-27: scheda della voce dalle pagine campione dell'autore
   lettore-cieco: forte      # passo opzionale (editoriale/agenti/lettore-cieco.md)
-  traduttore: medio
-  revisore-fedelta: medio
