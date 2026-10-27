@@ -56,7 +56,7 @@ gate; le domande aperte del briefing sono elencate in fondo e non sono fatti can
 - **Lorenzo Valli** (@char:lorenzo), borsista d'élite, uno dei tre studenti, rampollo aristocratico, splendido e
   cinico; apre l'archivio (cap. 9) [canone]: è lui, che ha più da perdere e più bisogno del valore della scoperta, a
   mettere le mani sul sigillo. La setta detiene i debiti della famiglia; il nome dei Valli è nel registro della
-  loggia; tradisce passando i dati nell'assedio; alla fine sparisce. [canone] Chi apre le porte le apre anche al
+  loggia, nella pagina di un antenato: il debito è un'eredità; tradisce passando i dati nell'assedio; alla fine sparisce. [canone] Chi apre le porte le apre anche al
   nemico: dal 18 ha l'accesso notturno ai laboratori, nel 36 riceve da Pietro le credenziali della linea
   dell'Accademia, nel 39 si scopre che le ha usate per la setta. [proposta] Mai cambiare: ambizione smisurata,
   l'onore della casata prima di tutto. Arco: dal brillante cinico che gioca con tutti al prigioniero che sceglie il
@@ -81,7 +81,7 @@ gate; le domande aperte del briefing sono elencate in fondo e non sono fatti can
   addestrano il modello di Pietro: per questo l'IA parla con la sua cadenza (la voce «umana e artificiale»). [proposta]
 - **Il pubblico ministero** (@char:pm), figura minore: cortese, preciso, colluso (cap. 22, 34). [proposta]
 - **La perita** (@char:perita), figura minore: giovane medica legale dell'istituto, scrive nella prima stesura della
-  perizia l'ora vera del decesso; costretta a firmare una rettifica, manda a Elana la bozza con la rettifica. Per
+  perizia l'ora vera del decesso; costretta a firmare una rettifica, manda a Elana solo la bozza (la busta del cap. 1); la perizia rettificata gliela porta lei, all'alba del 25. Per
   questo il dato vero esiste: non nel documento ufficiale, ma nella carta che lei ha salvato (cap. 1, 25). Non
   testimonierà. [proposta]
 
@@ -98,5 +98,5 @@ gate; le domande aperte del briefing sono elencate in fondo e non sono fatti can
    la seconda ipotesi solo come sfondo; non cambia nessuna scena.
 7. Epoca: autunno-inverno con pioggia [DA CONFERMARE]; anno esatto non fissato (anni ammessi vuoti in libro.yaml).
 8. Provenienza di Elana (città, famiglia, classe) non data: serve per il riscatto sociale.
-9. Dono ai musei internazionali (canone come intenzione del gruppo): la struttura lo fa cadere con il ritiro di
-   Dell'Aquila (35), in una riga. La formula va confermata dall'autore.
+9. Dono ai musei internazionali: risolta (decisione dell'autore). Salta con il ritiro di Dell'Aquila (35); il Fondo
+   vive solo open-source in rete (42, 44).

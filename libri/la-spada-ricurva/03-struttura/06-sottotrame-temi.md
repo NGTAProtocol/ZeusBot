@@ -42,7 +42,8 @@ altre restano invariati per non confondere i rimandi.
   vederli.
 - **D. L'IA di Pietro**: 8, 13, 14, 23, 30, 36, 38, 39, 40, 42. Dalla macchina razionale all'«intelligenza» ambigua;
   ogni anomalia ha una spiegazione tecnica plausibile detta da Pietro (nel 38-39 anche la causa dell'uscita in rete),
-  e un residuo che la spiegazione non copre.
+  e un residuo che la spiegazione non copre (gli accessi delle quattro di notte del 30, con l'utente di Pietro, che lui
+  non ricorda: residuo dichiarato, non pagato dalla porta di rete del 39).
 - **E. Dell'Aquila e la porta sul mondo**: 5, 16, 29, 31, 35, 44. Custode del registro, falsa pista sul traditore;
   ambiguità mai sciolta.
 - **F. Claudia, la colonna morale**: 3, 7, 12, 21, 25, 26, 29, 30, 33, 36, 39, 40, 42, 43, 44. Legge la chiave (7) e

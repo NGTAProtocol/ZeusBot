@@ -54,11 +54,11 @@
 - Personaggi e luoghi (tag del codex): @char:elana @char:assistente (nominato, morto) @loc:laboratorio-restauro @loc:accademia
 - Conflitto (chi vuole cosa, chi si oppone): Elana vuole la prova che la morte non è un suicidio; la carta che ha in mano gliela dà, ma una carta anonima non prova niente.
 - Cosa cambia alla fine (situazione, conoscenza, relazione): il lettore sa che il mentore è morto e che una perizia indica un'ora impossibile; Elana trova lo scarto.
-- Informazione data al lettore (e cosa viene taciuto): data: secondo questa carta la morte precede il messaggio minatorio; taciuti: chi ha mandato la busta, se quella carta è il documento ufficiale (non lo è: è una bozza, cap. 25), chi era l'assistente, che cosa è il Fondo, chi è «noi». Il cap. 1 non dice che la Procura mente: lo lascia solo temere.
+- Informazione data al lettore (e cosa viene taciuto): data: la busta contiene un solo foglio; secondo questa carta la morte precede il messaggio minatorio; taciuti: chi ha mandato la busta, se quella carta è il documento ufficiale (non lo è: è la bozza, l'unica carta della busta; l'ufficiale arriva nel cap. 25), chi era l'assistente, che cosa è il Fondo, chi è «noi». Il cap. 1 non dice che la Procura mente: lo lascia solo temere.
 - Promesse aperte / chiuse: apre P1 (chi lo ha ucciso e come si dimostra), P2 (che cosa custodivano), P3 (la Spada Ricurva).
 - Emozione dominante: lucidità gelida sopra il lutto.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da attesa sospesa a certezza minacciosa.
-- Sottotesto dei dialoghi principali: nessun dialogo; il testo della perizia letto a frammenti fa da voce di un'istituzione precisa, troppo precisa; la busta senza mittente è l'unico altro segno.
+- Sottotesto dei dialoghi principali: nessun dialogo; il testo della perizia letto a frammenti fa da voce di un'istituzione precisa, troppo precisa; la busta senza mittente, con dentro quel solo foglio, è l'unico altro segno.
 - Gancio finale: lo scarto di un'ora; Elana guarda la tela girata verso il muro e il capitolo si chiude su di lei. Il cap. 2 riparte, con la sua intestazione, da G1.
 - Parole previste: 1400
 
@@ -166,7 +166,7 @@
 - Personaggi e luoghi (tag del codex): @char:elana @char:claudia @char:mina @char:lorenzo @loc:cripta
 - Conflitto (chi vuole cosa, chi si oppone): il gruppo contro la pietra, l'acqua, la paura; la sequenza di Claudia è nota, ma il sigillo va forzato su una volta che può cedere e nessuno vuole toccarlo per primo.
 - Cosa cambia alla fine (situazione, conoscenza, relazione): trovano una porta con le due scimitarre incrociate e piegate; Lorenzo, che fino a un attimo prima scherzava sul tornare indietro, mette le mani sul sigillo ed esegue la sequenza: apre lui. Ha più da perdere di tutti e più bisogno che la scoperta valga qualcosa.
-- Informazione data al lettore (e cosa viene taciuto): data: settecento anni di silenzio; Lorenzo sa muovere un meccanismo antico (gli scrigni di casa, dice); taciuto: se qualcuno sa che sono lì; perché Lorenzo ha tanta fretta di entrare.
+- Informazione data al lettore (e cosa viene taciuto): data: settecento anni di silenzio (la porta non è più stata aperta dal sigillo); Lorenzo sa muovere un meccanismo antico (gli scrigni di casa, dice); la volta che può cedere è il rischio dei ragazzi e, si saprà nel 29, la ragione per cui la loggia non l'ha mai forzata; taciuto: se qualcuno sa che sono lì; perché Lorenzo ha tanta fretta di entrare.
 - Promesse aperte / chiuse: sviluppa P2, P3 (il simbolo), P8 (il prezzo che Lorenzo cerca).
 - Emozione dominante: claustrofobia e desiderio.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da paura a soglia.
@@ -353,7 +353,7 @@
 - Emozione dominante: paranoia controllata.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da fiducia residua a sospetto.
 - Sottotesto dei dialoghi principali: domande cortesi che sono avvertimenti; Elana risponde con esattezza filologica per non dire nulla.
-- Gancio finale: sulla porta il PM, cortese, le chiede se le è arrivato qualcosa dall'istituto di medicina legale; e, se arrivasse, di portarlo a lui. Non le è arrivato niente. Perché glielo chiede?
+- Gancio finale: sulla porta il PM, cortese, le chiede se le è arrivato qualcosa dall'istituto di medicina legale; e, se arrivasse, di portarlo a lui. Non le è arrivato niente. Perché glielo chiede? (Si paga nel 25: la rettifica era già in corso; il PM teme che dall'istituto esca una carta.)
 - Parole previste: 2100
 
 ## Capitolo 23 - La voce
@@ -389,8 +389,8 @@
 - Punto di vista, luogo e tempo: Elana; scena 1: laboratorio di notte (riprende il cap. 1); scena 2: all'alba, il cortile posteriore dell'istituto di medicina legale, poi il gruppo nel laboratorio; G51, notte e mattina.
 - Personaggi e luoghi (tag del codex): @char:elana @char:perita @char:claudia @char:mina @char:pietro @char:lorenzo @loc:laboratorio-restauro @loc:medicina-legale
 - Conflitto (chi vuole cosa, chi si oppone): Elana vuole usare la perizia come prova; la perita che gliel'ha mandata non testimonierà; la Procura archivia lo stesso.
-- Cosa cambia alla fine (situazione, conoscenza, relazione): nella busta del cap. 1 c'è un secondo foglio che Elana non aveva visto: la perizia ufficiale, con lo stesso protocollo e l'ora del decesso spostata dopo il messaggio, e una riga a penna: «La prima è la mia». All'alba la perita, una giovane medica legale, le dice di aver scritto l'ora vera ed essere stata costretta a firmare la rettifica; ha salvato la bozza perché era l'unica cosa che poteva fare. In mattinata la Procura chiede l'archiviazione sulla perizia rettificata. Procura e medicina legale sono colluse, e ora il lettore vede come. Il piano cambia: pubblicare tutto, presto, senza aspettare nessuno.
-- Informazione data al lettore (e cosa viene taciuto): data: chi ha mandato la carta e perché il dato vero esiste (non nel documento ufficiale, ma nella bozza di una dissidente); il meccanismo della collusione (due perizie, una vera e una firmata). Taciuto: chi ha ordinato la rettifica; chi ha ucciso.
+- Cosa cambia alla fine (situazione, conoscenza, relazione): nella notte Elana rilegge l'unico foglio della busta del cap. 1 e va all'istituto; all'alba, nel cortile, la perita, una giovane medica legale, le porta la perizia ufficiale: stesso protocollo, ora del decesso spostata dopo il messaggio, e sul margine una riga a penna: «La prima è la mia». Le dice di aver scritto l'ora vera ed essere stata costretta a firmare la rettifica, già in lavorazione quando il PM ne chiedeva a Elana (cap. 22, G44); ha salvato la bozza e l'ha spedita perché era l'unica cosa che poteva fare. In mattinata la Procura chiede l'archiviazione sulla perizia rettificata. Procura e medicina legale sono colluse, e ora il lettore vede come. Il piano cambia: pubblicare tutto, presto, senza aspettare nessuno.
+- Informazione data al lettore (e cosa viene taciuto): data: chi ha mandato la carta, che la carta del cap. 1 era la bozza, e perché il dato vero esiste (non nel documento ufficiale, che Elana vede solo ora, ma nella bozza di una dissidente); il seme del PM nel 22 (la rettifica era già in corso); il meccanismo della collusione (due perizie, una vera e una firmata). Taciuto: chi ha ordinato la rettifica; chi ha ucciso.
 - Promesse aperte / chiuse: chiude P17; sviluppa P1 (dimostrato, non punibile); rilancia P14.
 - Emozione dominante: furia gelida.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da speranza di prova a certezza dell'impunità.
@@ -432,7 +432,7 @@
 - Personaggi e luoghi (tag del codex): @char:elana @char:mina @char:claudia @char:pietro @loc:ipogei @loc:archivio
 - Conflitto (chi vuole cosa, chi si oppone): il gruppo contro il sottosuolo e il tempo; il rischio di crolli.
 - Cosa cambia alla fine (situazione, conoscenza, relazione): arrivano all'archivio dal retro e fotografano; scoprono che alcuni codici mancano e ci sono impronte fresche.
-- Informazione data al lettore (e cosa viene taciuto): data: la setta è entrata prima di loro; taciuto: che cosa ha preso.
+- Informazione data al lettore (e cosa viene taciuto): data: la setta è entrata prima di loro, per la porta che Lorenzo ha aperto nel 9 (non l'ha forzata: era già aperta); nella polvere di settecento anni ci sono solo le impronte del gruppo e quelle nuove; taciuto: che cosa ha preso.
 - Promesse aperte / chiuse: sviluppa P2, P14.
 - Emozione dominante: terrore sotterraneo.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da audacia a violazione.
@@ -445,8 +445,8 @@
 - Punto di vista, luogo e tempo: Elana; villa di Dell'Aquila a Posillipo, la biblioteca chiusa a chiave; G57.
 - Personaggi e luoghi (tag del codex): @char:elana @char:claudia @char:dellaquila @loc:villa-posillipo
 - Conflitto (chi vuole cosa, chi si oppone): dopo le impronte del 28 Elana vuole sapere chi è la setta e chiama l'unico che sembra saperlo; Dell'Aquila concede il registro della loggia per un'ora, non un minuto di più, e li lascia soli; ciò che c'è dentro può spaccare il gruppo.
-- Cosa cambia alla fine (situazione, conoscenza, relazione): il registro (Sette-Ottocento, gli anni della maschera massonica) porta nomi attraverso le generazioni: i Borbone, custodi delle copie, famiglie dell'Accademia, e i Valli. Claudia legge le pagine del 1860-61 e collega: la guerra tra logge mentre cade il regno, l'ordine di ridipingere i dettagli delle tele (la data di Mina, cap. 4), gli iniziati morti, la porta che nessuno sa più aprire. Elana, nello stesso tempo, legge i nomi.
-- Informazione data al lettore (e cosa viene taciuto): data: la guerra occulta del 1861 e perché la chiave fu coperta; i Borbone tenevano le copie; la casata di Lorenzo era nella loggia; taciuto al gruppo, perché Elana non lo dice; taciuto a tutti: come il registro sia arrivato a Dell'Aquila.
+- Cosa cambia alla fine (situazione, conoscenza, relazione): il registro (Sette-Ottocento, gli anni della maschera massonica) porta nomi attraverso le generazioni: i Borbone, custodi delle copie, famiglie dell'Accademia, e i Valli. Claudia legge le pagine del 1860-61 e collega: la guerra tra logge mentre cade il regno, l'ordine di ridipingere i dettagli delle tele (la data di Mina, cap. 4), gli iniziati morti, la porta che nessuno sa più aprire e che la loggia non forza perché la volta può crollare. Elana, nello stesso tempo, legge i nomi in un'altra generazione, lontano dalle pagine di Claudia: la pagina dei Valli riguarda un antenato di Lorenzo, affiliato e debitore della loggia; la famiglia è legata alla setta da generazioni, e il debito di Lorenzo è un'eredità.
+- Informazione data al lettore (e cosa viene taciuto): data: la guerra occulta del 1861 e perché la chiave fu coperta; i Borbone tenevano le copie; la casata di Lorenzo è nella loggia da generazioni e il debito le passa di padre in figlio; taciuto al gruppo, perché Elana non lo dice; taciuto a tutti: come il registro sia arrivato a Dell'Aquila.
 - Promesse aperte / chiuse: chiude P7; sviluppa P3, P8, P9, P16; apre P20 (che farà Elana della pagina dei Valli).
 - Emozione dominante: potere segreto.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da scoperta a complicità col silenzio.
@@ -460,7 +460,7 @@
 - Personaggi e luoghi (tag del codex): @char:elana @char:pietro @char:mina @loc:basso-sanita
 - Conflitto (chi vuole cosa, chi si oppone): Pietro vuole spegnere; Mina vuole ascoltare; Elana vuole capire se è allucinazione o sapere.
 - Cosa cambia alla fine (situazione, conoscenza, relazione): il modello genera schemi di controllo mentale che non sono nei testi, combinazioni di struttura dei mantra e tecniche di persuasione; Pietro scopre di aver lasciato acceso il modello per ore senza ricordare di averlo deciso.
-- Informazione data al lettore (e cosa viene taciuto): data: la spiegazione tecnica (sovradattamento, ricombinazione) e il fatto che funziona; taciuto: se l'IA ha influenzato Pietro.
+- Informazione data al lettore (e cosa viene taciuto): data: la spiegazione tecnica (sovradattamento, ricombinazione) e il fatto che funziona; gli accessi delle quattro di notte sono con l'utente di Pietro, dalla sua macchina, e lui non li ricorda (spiegazione tecnica: sessione lasciata aperta); taciuto: se l'IA ha influenzato Pietro. Residuo della sottotrama D lasciato aperto di proposito: non li paga il 39 (le credenziali passano a Lorenzo solo nel 36); ne fa eco il 40, quando Pietro è persuaso a non staccare.
 - Promesse aperte / chiuse: sviluppa P12, P15, P26 (gli schemi non sono nell'inventario di Claudia, ed è lei a notarlo); apre P21 (pubblicare anche gli schemi?).
 - Emozione dominante: orrore razionale.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da controllo a perdita di controllo.
@@ -529,7 +529,7 @@
 - Punto di vista, luogo e tempo: Elana; il basso devastato, l'archivio annerito, un messaggio di Dell'Aquila; G69.
 - Personaggi e luoghi (tag del codex): @char:elana @char:pietro @char:mina @char:claudia @char:lorenzo @char:dellaquila @loc:basso-sanita @loc:archivio
 - Conflitto (chi vuole cosa, chi si oppone): la setta colpisce su tutti i fronti; il gruppo prova a salvare ciò che resta.
-- Cosa cambia alla fine (situazione, conoscenza, relazione): il basso è perquisito e devastato; Pietro salva la macchina per pochi minuti; gli originali nell'archivio sono bruciati, e con loro i testi in copia unica: delle copie borboniche resta, chissà dove, un terzo; il resto esiste ormai solo sulla macchina di Pietro. Dell'Aquila si ritira con un messaggio di due righe; con lui cade il canale dei musei, e il dono ai musei internazionali non si farà [formula da confermare dall'autore]. La data dell'upload è nota alla setta.
+- Cosa cambia alla fine (situazione, conoscenza, relazione): il basso è perquisito e devastato; Pietro salva la macchina per pochi minuti; gli originali nell'archivio sono bruciati, e con loro i testi in copia unica: delle copie borboniche resta, chissà dove, un terzo; il resto esiste ormai solo sulla macchina di Pietro. Dell'Aquila si ritira con un messaggio di due righe; con lui cade il canale dei musei, e il dono ai musei internazionali salta: il Fondo potrà vivere solo open-source, in rete. La data dell'upload è nota alla setta.
 - Informazione data al lettore (e cosa viene taciuto): data: esiste solo la copia digitale, su una macchina; taciuto: chi ha passato la data (Dell'Aquila la conosceva dal 31; il lettore sospetta lui).
 - Promesse aperte / chiuse: sviluppa P2, P14 (al minimo), P9, P25.
 - Emozione dominante: disperazione.

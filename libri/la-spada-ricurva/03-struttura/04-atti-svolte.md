@@ -52,12 +52,15 @@ d'assedio è un'unica nottata e regge meglio serrata.
   Borbone. Alcuni dei testi più importanti esistono in copia unica, solo nella cripta. Il registro della loggia, con i
   nomi dei Borbone e dei Valli, è nelle mani di Carlo Dell'Aquila; è dal registro che i ragazzi scoprono la guerra
   occulta del 1861.
+- **[canone] La regola della porta:** dopo il sigillo del Trecento la porta non fu mai più aperta. La chiave dipinta
+  nel Seicento tramanda la via, non serve a usarla. La loggia non la forza perché la volta può crollare (cap. 9: il
+  sigillo «su una volta che può cedere»; cap. 28: la polvere intatta; cap. 29: il registro lo dice).
 - **Catena di struttura [proposta]:** nel Seicento pittori affiliati dipingono nelle tele la chiave della porta, per
-  gli iniziati. Nella guerra occulta del 1860-61, mentre il regno cade e le logge rivali si contendono copie e
+  tramandare la via agli iniziati. Nella guerra occulta del 1860-61, mentre il regno cade e le logge rivali si contendono copie e
   registro, la loggia fa ridipingere i dettagli per nascondere la via ai rivali (cap. 4: la data dei pigmenti), e
   perde gli iniziati che sapevano leggerli. La loggia rivale porta via il registro; per questa strada arriva a
-  Dell'Aquila (come, il libro non lo dice). Da allora la loggia custodisce una porta che non sa aprire e vieta i
-  restauri delle tele (cap. 2).
+  Dell'Aquila (come, il libro non lo dice). Da allora la loggia custodisce una porta che non sa aprire e non osa
+  forzare, e vieta i restauri delle tele (cap. 2).
 - **Dove entra nei capitoli:** il cap. 17 legge nel corpus solo ciò che un archivio chiuso nel Trecento può sapere
   (Venezia, i guru, i traduttori, il viaggio a Napoli, l'inventario della sigillatura con un terzo dei titoli segnati
   come copiati); il cap. 29 legge nel registro di Dell'Aquila i Borbone, i Valli e il 1861; il cap. 35 dà il peso
