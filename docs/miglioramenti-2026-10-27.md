@@ -117,6 +117,10 @@ usate archiviate, soglie di stile solo informative). Obiettivo: manoscritti di q
   scorciatoia un'eccezione con il motivo scritto.
 - Prova sulle fixture (`zb difetti <libro> prova`) e registro di continuità rigenerato a ogni capitolo.
 
+- Revisore dedicato (agente `verificatore`, Opus): tabelle di conoscenze, deduzioni e scelte, riga per riga. Prova
+  alla cieca sui capitoli originali: 3 difetti noti su 3 (il diagnosta ne trovava 2, mancava la motivazione), più
+  difetti veri nuovi. Il problema era il metodo, non il modello.
+
 ## Da fare con l'autore
 
 - Provare `/capitolo` sul libro di prova (capitolo 1) e confrontare con la versione di oggi.

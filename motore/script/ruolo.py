@@ -54,6 +54,7 @@ RUOLI = {
     'capsula': {'file': 'agenti/capsula.md', 'tipo': 'scrive'},
     'voce': {'file': 'agenti/voce.md', 'tipo': 'scrive'},
     'grafico': {'file': 'agenti/grafico.md', 'tipo': 'scrive'},     # quarta e brief della copertina
+    'verificatore': {'file': 'agenti/verificatore.md', 'tipo': 'revisiona'},   # conoscenze, deduzioni, scelte
     'motore': {'file': None, 'tipo': 'meccanico'},     # chiusura meccanica, solo comandi zb
     'regia': {'file': None, 'tipo': 'regia'},          # 2026-10-27: orchestra gli agenti (/capitolo), non scrive prosa
 }

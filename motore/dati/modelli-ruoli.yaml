@@ -17,4 +17,5 @@ ruoli:
   capsula: leggero
   grafico: forte            # 2026-10-27: quarta, brief della copertina, stile dell'interno
   voce: forte               # 2026-10-27: scheda della voce dalle pagine campione dell'autore
+  verificatore: forte       # 2026-10-27: verifica metodica (prova cieca: 3 difetti su 3 contro 2 del diagnosta)
   lettore-cieco: forte      # passo opzionale (editoriale/agenti/lettore-cieco.md)

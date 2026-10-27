@@ -148,6 +148,11 @@ def azione_stesura(cartella, libro, st, rel):
                 'nuovo zb esito; al secondo KO decide l\'autore.']
     stato, giro2 = stato_revisione(cartella, libro, u)
     if stato == 'passa':
+        import difetti
+        testo = open(dict(comune.unita(cartella, libro))[u], encoding='utf-8').read()
+        if difetti.sezione_revisore(cartella, u, testo) is None:
+            return [f'AZIONE: verifica del capitolo {u}: agente verificatore ({rel}, capitolo {u}), rapporto '
+                    f'{difetti.rel_verifica(u)} con la prima riga esatta {difetti.riga_verifica(testo)}.']
         return [f'AZIONE: «zb esito {rel} {u}» (la revisione passa); poi capsula e «zb salva {rel} "capitolo {u}"».']
     if stato == 'non passa':
         if giro2:

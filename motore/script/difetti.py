@@ -19,6 +19,7 @@ Uso:
 """
 import datetime
 import glob
+import hashlib
 import os
 import re
 import sys
@@ -34,6 +35,7 @@ CONTINUITA = os.path.join(CARTELLA, 'continuita.md')
 TIPI = ('capitolo', 'prologo', 'epilogo', 'interludio', 'flash-forward', 'flashback')
 IN_SEQUENZA = ('capitolo', 'interludio')
 SEZIONE_REVISORE = '## Registro dei difetti'
+VERIFICA = os.path.join(CARTELLA, 'verifica')    # rapporti dell'agente verificatore, uno per capitolo
 REVISORE = ('conoscenza_personaggio', 'inferenza_come_fatto', 'motivazione')
 
 
@@ -414,15 +416,24 @@ DETERMINISTICI = {'giorni_relativi': c_giorni_relativi, 'ordine_tipo': c_ordine_
 
 # ---------------------------------------------------------------- revisore e fonte
 
-def sezione_revisore(cartella, n):
-    """{classe: (esito, dettaglio)} dalla sezione «## Registro dei difetti» di audit/NN.md (None se assente).
-    Righe: «- conoscenza_personaggio: OK» oppure «- inferenza_come_fatto: KO r.35 «…»: motivo»."""
-    import percorso
-    p = os.path.join(cartella, percorso.rel_audit(n))
+def rel_verifica(n):
+    return os.path.join(VERIFICA, f'{int(n):02d}.md' if str(n).isdigit() else f'{n}.md')
+
+
+def riga_verifica(testo):
+    """Prima riga del rapporto del verificatore: vale solo per questa versione del capitolo."""
+    return f'<!-- zb: ruolo=verificatore; su={hashlib.sha256(testo.encode("utf-8")).hexdigest()[:12]} -->'
+
+
+def sezione_revisore(cartella, n, testo):
+    """{classe: (esito, dettaglio)} dalla sezione «## Registro dei difetti» di difetti/verifica/NN.md, se scritta
+    sul testo attuale del capitolo (None altrimenti). Righe: «- conoscenza_personaggio: OK» oppure
+    «- inferenza_come_fatto: KO r.35 «…»: motivo»."""
+    p = os.path.join(cartella, rel_verifica(n))
     if not os.path.isfile(p):
         return None
     t = open(p, encoding='utf-8').read()
-    if SEZIONE_REVISORE not in t:
+    if not t.startswith(riga_verifica(testo)) or SEZIONE_REVISORE not in t:
         return None
     blocco = t.split(SEZIONE_REVISORE, 1)[1].split('\n## ', 1)[0]
     out = {}
@@ -450,10 +461,11 @@ def esiti_unita(cartella, libro, n, unita=None):
                        for k in DETERMINISTICI[classe](fino, ctx) if k['unita'] == str(n)]
             esito = 'fallito' if trovati else 'passato'
         elif d['rilevamento'] == 'revisore':
-            sez = sezione_revisore(cartella, n)
+            sez = sezione_revisore(cartella, n, dict(unita).get(str(n), ''))
             voce = (sez or {}).get(classe)
             if voce is None:
-                esito, trovati = 'non verificabile', ['manca nel rapporto del diagnosta (sezione «Registro dei difetti»)']
+                esito, trovati = 'non verificabile', [f'manca la verifica sul testo attuale (agente verificatore, '
+                                                      f'{rel_verifica(n)})']
             else:
                 esito, trovati = ('fallito', [voce[1]]) if voce[0] == 'KO' else ('passato', [])
         else:
