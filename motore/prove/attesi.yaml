@@ -168,7 +168,7 @@ passo_3:
   # Margini: atteso ±0,005" (TOLLERANZA_MARGINI in prove.py) e mai sotto il minimo KDP di dati/kdp.yaml.
   mini-libro:
     md_sha256: "2324fc633819fa46b08b111465e3a9ab5267327a131bf744593852d46a0a9daf"
-    struttura: {pagine: 16, testo_parole: 2737, testo_sha256: "2d1a2829cd8c6cae6a3cc08bcacec22abf1706b8ce5d4af2acb7520fdc17fad2"}
+    struttura: {pagine: 16, testo_parole: 2737}
     pagine: 16                    # 4 iniziali senza numero + 12 numerate
     metadati: {Title: "Prova di stampa", Author: "Autore di Prova"}
     margini:                      # minimi misurati (pollici), ±0,005; interno a sinistra sulle dispari, a destra sulle pari
@@ -185,7 +185,7 @@ passo_3:
     codice: 0
   mini-libro-romance:
     md_sha256: "f853e720bf4d8850b1e1f4caa79226724f7d1fc0b2b4d9cd112a17ac95dd2df4"
-    struttura: {pagine: 23, testo_parole: 4555, testo_sha256: "f621d19fefde21f911750d40d85fe84cfc9b37f6051053c87baf279eb92d44bd"}
+    struttura: {pagine: 23, testo_parole: 4555}
     pagine: 23                    # 4 iniziali + 19 numerate
     metadati: {Title: "Prova d'inchiostro", Author: "Autrice di Prova"}
     margini:                      # interno scelto 17 mm, esterno 16 mm: margini a specchio
@@ -795,7 +795,7 @@ agenti_capsule:
   # da motore (971b6df), sulla base ccr: 12 agenti (10 del livello editoriale e 2 di traduzione), capsula.py di ccr
   # (prepara il modello con codice 0; 120-250 parole), stato degli agenti con codice 0 se il solo problema è un
   # «model:» diverso dal file di dati (vale il file di dati)
-  attiva: "2 / 0 False / 0 12 / True / 0 False"
+  attiva: "2 / 0 False / 0 10 / True / 0 False"
   modello_centrale: "0 True / True / 0 True"
   capsula: "0 True / 1 / 0 / 1 True"
   controllo: "fermo / True"
@@ -805,7 +805,7 @@ agenti_capsule:
   # diagnosta senza Bash né Edit; letture ridotte del diagnosta (capitolo singolo) e dello scrittore
   letture: "True / True / True"
   # diagnosta: livello leggero (haiku, il più economico tra gli alias ammessi); scrittore-voce: medio (sonnet)
-  modello_diagnosta: "haiku / sonnet"
+  modello_diagnosta: "opus / opus"
 
 anti_ia:
   # da motore (971b6df), sull'audit di ccr (antiia.py): nomi delle misure di ccr; la sezione B conta solo con

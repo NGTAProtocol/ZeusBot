@@ -325,7 +325,7 @@ def controllo_margine(atteso, misurato, minimo):
     return regola, regola if not difetti else '; '.join(difetti)
 
 
-def struttura_pdf(pdf, libro):
+def struttura_pdf(pdf, libro, parole_attese=None):
     """Struttura del PDF confrontabile tra container (al posto dello sha256 del file)."""
     import pymupdf
     import verifica_pdf
@@ -344,8 +344,10 @@ def struttura_pdf(pdf, libro):
             'font_non_incorporati': sum(1 for f in fonts if not f['incorporato']),
             'font_type3': sum(1 for f in fonts if f['tipo'] == 'Type 3'),
             'metadati_come_libro_yaml': meta == {'Title': libro['titolo'], 'Author': libro['autore']},
-            'testo_parole': len(testo.split()),
-            'testo_sha256': hashlib.sha256(testo.encode('utf-8')).hexdigest()}
+            # testo estratto: numero di parole entro ±2% dell'atteso. Prima si confrontava anche lo sha256 del testo,
+            # che cambia a ogni versione di Chromium/Playwright (sillabazione e spazi) anche con PDF corretti.
+            'testo_parole': ('entro ±2% dell\'atteso' if parole_attese and abs(len(testo.split()) - parole_attese)
+                             <= 0.02 * parole_attese else len(testo.split()))}
 
 
 def passo_3(A):
@@ -372,9 +374,8 @@ def passo_3(A):
         esito('impagina.py', f'{nome}: due generazioni, stesso sha256', 'sì', 'sì' if primo == secondo else 'no', sez)
         esito('impagina.py', f'{nome}: struttura del PDF (pagine, formato, font, metadati, testo)',
               {'pagine': att['struttura']['pagine'], 'formato_pollici': 'uguale al trim KDP', 'font_non_incorporati': 0,
-               'font_type3': 0, 'metadati_come_libro_yaml': True, 'testo_parole': att['struttura']['testo_parole'],
-               'testo_sha256': att['struttura']['testo_sha256']},
-              struttura_pdf(pdf, libro) if os.path.isfile(pdf) else 'assente', sez)
+               'font_type3': 0, 'metadati_come_libro_yaml': True, 'testo_parole': 'entro ±2% dell\'atteso'},
+              struttura_pdf(pdf, libro, att['struttura']['testo_parole']) if os.path.isfile(pdf) else 'assente', sez)
         misure, ris = verifica_pdf.verifica(cart, libro, pdf)
         esito('verifica_pdf.py', f'{nome}: pagine', att['pagine'], misure['pagine'], sez)
         esito('verifica_pdf.py', f'{nome}: metadati Title e Author', att['metadati'],
@@ -987,8 +988,11 @@ def passo_5(A):
     open(dest, 'w', encoding='utf-8').write('{}\n')
     esito('zb', 'hook disattiva su un settings.json non del motore: rifiutato', a['disattiva_altrui'],
           f'{zb(rh, "hook", "disattiva", motore=mz).returncode} / {"presente" if os.path.exists(dest) else "assente"}', sez)
-    esito('zb', '.claude/settings.json nel repository del motore', a['settings_nel_repo'],
-          'presente' if os.path.exists(os.path.join(os.path.dirname(M), '.claude', 'settings.json')) else 'assente', sez)
+    if comune.repository_con_libro(os.path.dirname(M)):
+        saltata('zb', '.claude/settings.json nel repository del motore', 'ramo di un libro: hook installati di proposito', sez)
+    else:
+        esito('zb', '.claude/settings.json nel repository del motore', a['settings_nel_repo'],
+              'presente' if os.path.exists(os.path.join(os.path.dirname(M), '.claude', 'settings.json')) else 'assente', sez)
 
     # --- revisione.py e zb
     a = A['revisione']
@@ -1010,75 +1014,6 @@ def passo_5(A):
 
 
 # ---------------------------------------------------------------- passo 5b
-
-def passo_5b(A):
-    import recinto
-    sez = 'passo 5b'
-    fx = os.path.join(M, 'prove', 'mini-libro-adozione')
-    sha_fx = recinto.foto(fx)
-    d = tempfile.mkdtemp(dir=TMP)
-    L = shutil.copytree(fx, os.path.join(d, 'adozione'))
-    prima_d, prima_m = recinto.foto(d), recinto.foto(M)
-    p = esegui(os.path.join(S, 'adotta.py'), L)
-    esito('adotta.py', "documenti parziali: codice d'uscita", A['codice'], p.returncode, sez)
-    esito('adotta.py', 'file scritti', A['scritti'], [r[9:] for r in p.stdout.splitlines() if r.startswith('scritto: ')], sez)
-    fuori = [x for x in recinto.differenze(prima_d, recinto.foto(d)) if not x.startswith('adozione/')]
-    esito('adotta.py', 'scritture fuori dalla cartella (e nel motore)', [], fuori + recinto.differenze(prima_m, recinto.foto(M)), sez)
-    esito('adotta.py', 'mini-libro di prova originale intatto', [], recinto.differenze(sha_fx, recinto.foto(fx)), sez)
-    rep = open(os.path.join(L, '06-diagnostica', 'adozione.md'), encoding='utf-8').read()
-    tab = [r for r in rep.splitlines() if r.startswith('| ') and not r.startswith('| Campo')]
-    esito('adotta.py', 'valori con fonte file:riga (o cartella)', 'tutti',
-          'tutti' if tab and all(re.search(r'\| ([^|]*:\d+|[^|]*\(cartella presente\)|predefinito[^|]*) \|$', r) for r in tab) else
-          [r for r in tab if not re.search(r':\d+ \|$', r)], sez)
-    esito('adotta.py', 'valori ricavati', A['ricavati'], len(tab), sez)
-    esito('adotta.py', 'non ricavati elencati', A['non_ricavati'],
-          [r[len('non ricavato: '):] for r in p.stdout.splitlines() if r.startswith('non ricavato: ')], sez)
-    lb = yaml.safe_load(open(os.path.join(L, 'libro.yaml'), encoding='utf-8'))
-    esito('adotta.py', 'override con motivo (campo e fonte)', A['override'],
-          [f'{o["campo"]} {o["valore"]} {o["motivo"].split(" dice ")[0]}' for o in lb['override']], sez)
-    esito('adotta.py', 'libro.yaml: titolo, profilo, parole, voci, vincoli', A['libro'],
-          f'{lb["titolo"]} / {lb["profilo"]} / {lb["parole"]["target_totale"]} / {[v["id"] for v in lb["voci"]]} / '
-          f'{[(n["nome"], n["vietato_in"]) for n in lb["nome_vietato_prima_di"]]}', sez)
-    esito('adotta.py', 'libro.yaml senza autore: non valido (segnalato)', A['valido'],
-          'no' if 'libro.yaml valido: no' in p.stdout else 'sì', sez)
-    cr = yaml.safe_load(open(os.path.join(L, 'cronologia.yaml'), encoding='utf-8'))
-    esito('adotta.py', 'cronologia: nascite / eventi', A['cronologia'], f'{len(cr["nascite"])} / {len(cr["eventi"])}', sez)
-    esito('adotta.py', 'nomi_propri.txt', A['nomi'], open(os.path.join(L, 'nomi_propri.txt'), encoding='utf-8').read().split(), sez)
-    st = yaml.safe_load(open(os.path.join(L, 'stato.yaml'), encoding='utf-8'))
-    esito('adotta.py', 'stato: fase / gate / ultimo capitolo scritto', A['stato_parziale'],
-          f'{st["fase"]} / {st["gate_in_attesa"] or "nessuno"} / {st["ultimo_capitolo_scritto"]}', sez)
-    foto1 = recinto.foto(L)
-    p = esegui(os.path.join(S, 'adotta.py'), L)
-    esito('adotta.py', 'seconda esecuzione: niente sovrascritto', A['seconda'],
-          f'{p.returncode} / {p.stdout.count("già presente, non toccato")} / {recinto.differenze(foto1, recinto.foto(L))}', sez)
-    # documenti completi: briefing con autore e piano parole
-    L2 = shutil.copytree(fx, os.path.join(tempfile.mkdtemp(dir=TMP), 'adozione'))
-    os.makedirs(os.path.join(L2, '00-progetto'))
-    open(os.path.join(L2, '00-progetto', 'briefing.md'), 'w', encoding='utf-8').write(
-        '# Briefing\n\nTitolo di lavoro: Il faro spento\nAutore: Autrice Inventata\nGenere: narrativa-letteraria\nLunghezza: 60000\n')
-    open(os.path.join(L2, '03-architettura', 'piano-parole.md'), 'w', encoding='utf-8').write(
-        ''.join(f'| — | {i} | x | | | 20000 | | | |\n' for i in (1, 2, 3)) + '\nTotale: 60000.\n')
-    p = esegui(os.path.join(S, 'adotta.py'), L2)
-    st = yaml.safe_load(open(os.path.join(L2, 'stato.yaml'), encoding='utf-8'))
-    esito('adotta.py', 'documenti completi: valido, gate «documenti» aperto', A['completo'],
-          f'{"libro.yaml valido: sì" in p.stdout} / {st["gate_in_attesa"]}', sez)
-    esito('adotta.py', 'autore: fonte nel briefing', A['fonte_autore'],
-          next((r.split('|')[3].strip() for r in open(os.path.join(L2, '06-diagnostica', 'adozione.md'), encoding='utf-8')
-                if r.startswith('| autore |')), 'assente'), sez)
-    # riscrittura: 01-originale presente
-    L3 = shutil.copytree(fx, os.path.join(tempfile.mkdtemp(dir=TMP), 'adozione'))
-    os.makedirs(os.path.join(L3, '01-originale'))
-    open(os.path.join(L3, '01-originale', 'vecchio-testo.md'), 'w', encoding='utf-8').write('# Testo precedente\n\nUna riga.\n')
-    esegui(os.path.join(S, 'adotta.py'), L3)
-    lb = yaml.safe_load(open(os.path.join(L3, 'libro.yaml'), encoding='utf-8'))
-    esito('adotta.py', 'con 01-originale: modalità e testo precedente', A['riscrittura'],
-          f'{lb["modalita"]} {lb.get("testo_precedente")}', sez)
-    vuota = tempfile.mkdtemp(dir=TMP)
-    p = esegui(os.path.join(S, 'adotta.py'), vuota)
-    esito('adotta.py', 'cartella senza documenti: fermo, niente scritto', A['vuota'], f'{p.returncode} / {os.listdir(vuota)}', sez)
-
-
-# ---------------------------------------------------------------- passo 6
 
 def passo_6(A):
     import recinto
@@ -1280,6 +1215,14 @@ def scene(A):
         L = con_override(nome, override) if override else copia_libro(nome)
         codice, righe = cap(L, n)
         esito('capitolo.py', f'scene: {chiave}', A[chiave], f'{codice} / {righe}', sez)
+    # soglie di stile informative (predefinito dal 2026-10-27): senza «soglie_stile: bloccanti» lo stesso capitolo dà avvisi
+    L = copia_libro('mini-libro-romance')
+    pl = os.path.join(L, 'libro.yaml')
+    t = ''.join(r for r in open(pl, encoding='utf-8') if not r.startswith('soglie_stile:'))
+    open(pl, 'w', encoding='utf-8').write(t)
+    codice, righe = cap(L, '1')
+    esito('capitolo.py', 'scene: romance 1 con le soglie di stile informative (predefinito): avviso, codice 0',
+          "0 / ['scene_numero|AVVISO']", f'{codice} / {righe}', sez)
     L = con_override('mini-libro-romance', [{'campo': 'capitoli.scene_per_capitolo', 'valore': [1, 3], 'motivo': ''}])
     p = esegui(os.path.join(S, 'capitolo.py'), L, '1', '--schermo')
     esito('capitolo.py', 'scene: override senza motivo rifiutato', A['override_senza_motivo'],
@@ -1590,78 +1533,6 @@ def correzioni_dopo_prova(A):
 
 
 # ---------------------------------------------------------------- adozione di libri esistenti
-
-def adozione_libri_esistenti(A):
-    sez = 'adozione'
-    E = {k: v for k, v in ENV.items() if k not in ('CLAUDE_PROJECT_DIR', 'ZB_LIBRO', 'ZB_RAMO', 'ZB_SESSIONE')}
-    E.update(GIT_AUTHOR_NAME='Prova', GIT_AUTHOR_EMAIL='prova@esempio.invalid',
-             GIT_COMMITTER_NAME='Prova', GIT_COMMITTER_EMAIL='prova@esempio.invalid')
-
-    def zb(cwd, *a):
-        return subprocess.run([sys.executable, '-B', os.path.join(M, 'zb'), *a], cwd=cwd, env=E, capture_output=True, text=True)
-
-    def git(cwd, *a):
-        return subprocess.run(['git', *a], cwd=cwd, env=E, capture_output=True, text=True)
-
-    def libro_adottabile(briefing, manuale=A['manuale']):
-        d = tempfile.mkdtemp(dir=TMP)
-        git(d, 'init', '-q', '--bare', 'remoto.git')
-        r = os.path.join(d, 'repo')
-        os.makedirs(r)
-        git(r, 'init', '-q')
-        git(r, 'checkout', '-q', '-b', 'prova')
-        git(r, 'remote', 'add', 'origin', os.path.join(d, 'remoto.git'))
-        L = os.path.join(r, 'torre')
-        for rel, testo in {'00-progetto/briefing.md': briefing, '01-originale/vecchio-testo.md': A['vecchio'],
-                           '02-bibbia/bibbia.md': A['bibbia'], '03-architettura/manuale-di-stile.md': manuale,
-                           '03-architettura/scaletta.md': A['scaletta'],
-                           '03-architettura/piano-parole.md': A['piano']}.items():
-            os.makedirs(os.path.dirname(os.path.join(L, rel)), exist_ok=True)
-            open(os.path.join(L, rel), 'w', encoding='utf-8').write(testo)
-        return r, L
-
-    def salva(r):
-        git(r, 'add', '-A')
-        git(r, '-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'prova')
-        git(r, 'push', '-q', '-u', 'origin', 'prova')
-
-    # (c) valori di frase non copiati tra i capitoli; (a) avvio senza briefing nel formato del motore
-    r, L = libro_adottabile(A['briefing_libero'])
-    p = zb(r, 'adotta', 'torre')
-    lb = yaml.safe_load(open(os.path.join(L, 'libro.yaml'), encoding='utf-8'))
-    rep = open(os.path.join(L, '06-diagnostica', 'adozione.md'), encoding='utf-8').read()
-    fonti_capitoli = re.findall(r'stile\.capitoli\.\w+', rep)
-    esito('adotta.py', '(c) override e fonti dei capitoli', A['capitoli'],
-          f'{[o["campo"] for o in lb["override"]]} / {fonti_capitoli}', sez)
-    open(os.path.join(L, '.gitignore'), 'w', encoding='utf-8').write('.zb/\n')
-    salva(r)
-    p = zb(r, 'avvio', 'torre')
-    esito('avvio.py', '(a) riscrittura senza briefing del motore: avvio non si ferma', A['avvio_libero'],
-          f'{p.returncode} / {"Letto: " in p.stdout}', sez)
-    r, L = libro_adottabile(A['briefing_motore_incompleto'])
-    zb(r, 'adotta', 'torre')
-    open(os.path.join(L, '.gitignore'), 'w', encoding='utf-8').write('.zb/\n')
-    salva(r)
-    p = zb(r, 'avvio', 'torre')
-    esito('avvio.py', '(a) briefing nel formato del motore, incompleto: avvio fermo', A['avvio_motore'],
-          f'{p.returncode} / {"Briefing incompleto" in p.stderr}', sez)
-    # (b) titolo non trovato: rifiuto senza scrivere; con --titolo va avanti
-    r, L = libro_adottabile(A['briefing_libero'], A['manuale_senza_titolo'])
-    for rel in ('02-bibbia/bibbia.md', '03-architettura/scaletta.md'):
-        pr = os.path.join(L, rel)
-        resto = open(pr, encoding='utf-8').read().split('\n', 1)[1]
-        open(pr, 'w', encoding='utf-8').write(resto)
-    prima = sorted(os.listdir(L))
-    p = zb(r, 'adotta', 'torre')
-    esito('adotta.py', '(b) titolo non trovato: rifiutato, niente scritto, titolo chiesto', A['senza_titolo'],
-          f'{p.returncode} / {sorted(os.listdir(L)) == prima} / {"--titolo" in p.stderr}', sez)
-    p = zb(r, 'adotta', 'torre', '--titolo', 'La torre di sale')
-    st = yaml.safe_load(open(os.path.join(L, 'stato.yaml'), encoding='utf-8'))
-    esito('adotta.py', '(b) con --titolo: libro.yaml e stato.yaml', A['con_titolo'],
-          f'{p.returncode} / {yaml.safe_load(open(os.path.join(L, "libro.yaml"), encoding="utf-8"))["titolo"]} / {st["libro"]}', sez)
-
-
-# ---------------------------------------------------------------- correzioni su interludi, impronte e grafie
 
 def correzioni_interludi_e_grafie(A):
     import continuita
@@ -2929,7 +2800,11 @@ def agenti_capsule_consumo(A):
     esito('agenti.py', 'formato degli agenti (name, description, model) e modelli = dati/modelli-ruoli.yaml',
           [], err, sez)
     tracciati = subprocess.run(['git', '-C', os.path.dirname(M), 'ls-files', '.claude'], capture_output=True, text=True).stdout.split()
-    esito('agenti.py', 'ramo del motore: nessun agente attivo (.claude/ non tracciato)', [], tracciati, sez)
+    if comune.repository_con_libro(os.path.dirname(M)):
+        saltata('agenti.py', 'ramo del motore: nessun agente attivo (.claude/ non tracciato)',
+                'ramo di un libro: agenti installati di proposito', sez)
+    else:
+        esito('agenti.py', 'ramo del motore: nessun agente attivo (.claude/ non tracciato)', [], tracciati, sez)
     # attiva solo sul ramo di un libro e con --ok
     b = Banco()
     os.makedirs(os.path.join(b.r, 'libri'))
@@ -2955,10 +2830,10 @@ def agenti_capsule_consumo(A):
     sv = gen['scrittore-voce.md']
     esito('agenti.py', 'agenti installati: diagnosta senza Bash né Edit / diagnosi/ non per il capitolo singolo / '
           'scrittore-voce senza 05-scaletta.md e 08-piano-parole.md interi (preparazione al loro posto)', A['letture'],
-          f'{"Bash" not in strumenti and "Edit" not in strumenti} / {"non per il capitolo singolo" in gen["diagnosta.md"]} / '
-          f'{"Non leggere 03-struttura/05-scaletta.md intero" in sv and "scaletta del capitolo, piano parole" not in sv}', sez)
+          f'{"Bash" not in strumenti and "Edit" not in strumenti} / {"per la struttura e il manoscritto anche motore/editoriale/diagnosi/" in gen["diagnosta.md"]} / '
+          f'{"Mai la scaletta intera, il piano parole" in sv and "scaletta del capitolo, piano parole" not in sv}', sez)
     modello = lambda t: (re.search(r'(?m)^model:\s*(\S+)', t) or [None, None])[1]
-    esito('agenti.py', 'modello dichiarato negli agenti installati: diagnosta (il più economico) / scrittore-voce (invariato)',
+    esito('agenti.py', 'modello dichiarato negli agenti installati: diagnosta (forte: dà il voto) / scrittore-voce (forte)',
           A['modello_diagnosta'], f'{modello(gen["diagnosta.md"])} / {modello(sv)}', sez)
     # modello centrale: si alza solo il ruolo indicato nel file di dati
     mc = copia_motore()
@@ -2970,7 +2845,7 @@ def agenti_capsule_consumo(A):
     lin = open(os.path.join(dest, 'line-editor.md'), encoding='utf-8').read()
     p6 = esegui(os.path.join(mc, 'script', 'agenti.py'), 'stato', '--progetto', b.r)
     esito('agenti.py', 'modello alzato solo per la capsula nel file di dati: copiato / altri invariati / stato segnala il file',
-          A['modello_centrale'], f'{p5.returncode} {"model: sonnet" in cap} / {"model: sonnet" in lin} / '
+          A['modello_centrale'], f'{p5.returncode} {"model: sonnet" in cap} / {"model: opus" in lin} / '
           f'{p6.returncode} {"diverso da dati/modelli-ruoli.yaml" in p6.stdout}', sez)
     esegui(os.path.join(mc, 'script', 'agenti.py'), 'disattiva', '--progetto', b.r)
     # capsule (capsula.py di ccr: modello, sezioni, 120-250 parole)
@@ -3301,7 +3176,7 @@ def frase_media_registro(A):
     esito('profili/thriller.yaml', 'thriller: la voce prevale sulla frase media', 'True', str(th.get('frase_media_voce')), sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_5b': passo_5b, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'adozione_libri_esistenti': adozione_libri_esistenti, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro}
 
 
 def main(argv):
@@ -3315,7 +3190,8 @@ def main(argv):
         import prove_editoriale
         prove_editoriale.TMP = tempfile.mkdtemp(dir=TMP)
         for f in prove_editoriale.SEZIONI:
-            prove_editoriale.esegui_sezione(f)
+            if not solo or f.__name__ in solo or 'editoriale' in solo:
+                prove_editoriale.esegui_sezione(f)
         righe.extend(prove_editoriale.righe)
         finali = []
         for nome in ('separazione.py', 'recinto.py'):

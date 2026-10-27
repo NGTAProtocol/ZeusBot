@@ -2,7 +2,7 @@
 
 Regole di lavoro per qualsiasi libro. Comandi: `python3 motore/zb <comando> <libro> …`
 (qui sotto abbreviato in `zb`; l'elenco unico è `zb aiuto`). Percorso e ruoli: `editoriale/00-percorso.md`;
-ruoli editoriali: `editoriale/ruoli/`. Il progetto iniziale è in `proposta-motore.md`.
+ruoli editoriali: `editoriale/ruoli/`. Il progetto iniziale (`proposta-motore.md`) è sul ramo d'archivio `archivio/motore-2026-10-27`.
 
 ## 1. Regole fisse
 
@@ -72,7 +72,7 @@ scheda, il codex filtrato per i tag `@char`/`@loc`, il canone e le capsule. Il c
 scrive `stato-compatto.md` (15-20 righe); `zb salva` lo rigenera.
 
 **Agenti e comandi di Claude Code**: `zb agenti attiva --ok` (solo sui rami dei libri) installa i subagenti e
-i comandi `/scrivi-capitolo`, `/revisiona`, `/diagnosi`, `/handover`. Modelli per ruolo: `dati/modelli-ruoli.yaml`
+i comandi `/capitolo` (catena automatica dei capitoli, sezione 6), `/revisiona`, `/diagnosi`, `/handover`. Modelli per ruolo: `dati/modelli-ruoli.yaml`
 (unica fonte; un «model:» diverso nel file dell'agente è un avviso di `zb agenti stato`, che controlla anche il
 formato degli agenti). `zb agenti prossimo <libro>` dice chi chiamare ora: scrittura in sequenza, un capitolo per
 volta; line, copy e capsule a gruppi di al massimo `parallelo_massimo` (`dati/modelli-ruoli.yaml`); regole in
@@ -158,35 +158,10 @@ ogni campo il suo uso; `zb profili` li elenca.
   `scene.sequel`, `scene.budget_interno`, `parole_per_atto`, `battiti`, `lista_nera` (la lista nera
   usata è sempre `dati/lista-nera.yaml`), `parole_per_pagina`.
 
-## 3b. Libro già avviato: `zb adotta <cartella>`
+## 3b. Libro già avviato
 
-Per un libro che ha già alcuni documenti (briefing, manuale di stile, bibbia, scaletta, piano
-parole, cronologia) ma non ancora `libro.yaml`.
-
-- Genera in **bozza** `libro.yaml`, `stato.yaml`, `cronologia.yaml`, `nomi_propri.txt` e
-  `06-diagnostica/adozione.md`. Ogni valore ha la sua fonte (file:riga) in `adozione.md`.
-- Se il manuale diverge dal profilo di genere, il valore entra come `override` con il motivo.
-- Non sovrascrive mai un file esistente; scrive solo nella cartella indicata.
-- Elenca in `adozione.md` ciò che non ha potuto ricavare (da completare a mano).
-- Se il titolo non si ricava dai documenti si ferma senza scrivere nulla e lo chiede:
-  `zb adotta <cartella> --titolo "<titolo>"`.
-- Media e massimo dei capitoli si leggono solo dalla riga «Capitolo:» del manuale: «frase media 10-13»
-  o «al massimo 150 parole» scritti altrove non diventano valori dei capitoli.
-- Si ferma alla fase «documenti»: apre il gate se ci sono tutti i documenti, altrimenti li elenca.
-
-Righe riconosciute (formato dei documenti del motore): `Titolo di lavoro:`, `Autore:`,
-`Genere:`, `Lunghezza:`, `Modalità:` nel briefing; nel manuale `# Manuale di stile — <titolo>`,
-`Genere:`, `Obiettivo: N parole`, `Capitolo: minimo …, media a-b, massimo … parole`,
-`Frase media: a-b`, `Dialogo: a-b%`, `una ogni N parole`, `Tetto: «…» al massimo N per capitolo|libro`,
-`Vietato: «…»`, `«Nome» non compare nei capitoli 1-3`, `Separatore di scena: «…»`,
-`Intestazione del capitolo: «…»`; nella bibbia `**Nome**` e `nato/nata il AAAA-MM-GG`; nella
-scaletta le righe `| N | AAAA-MM-GG | contenuto |`; `01-originale/` presente = riscrittura.
-
-Esempio neutro: una cartella con bibbia, manuale (con «Frase media: 8-12» e genere
-narrativa-letteraria) e scaletta, senza briefing né piano parole. `zb adotta` ricava titolo,
-profilo, obiettivo, tetti, vincoli, date e nomi; scrive un override `frase_media [8, 12]` con la
-riga del manuale come motivo; segnala «autore» e il piano parole come mancanti; resta in fase
-«documenti» senza gate aperto finché il piano parole non c'è.
+`zb adotta` è archiviato (2026-10-27, ramo d'archivio `archivio/motore-2026-10-27`): un libro già avviato si
+rifà con `zb nuovo` dal briefing, copiando i documenti esistenti nelle cartelle standard.
 
 ## 4. Avvio: `zb avvio <libro>`
 
@@ -262,36 +237,43 @@ aver scritto il capitolo N.
 
 ## 6. Stesura di un capitolo
 
-Procedura uguale per ogni capitolo, senza fermate tranne i gate:
+In automatico (percorso editoriale): `/capitolo [N]`. La sessione principale si avvia con `zb avvio <libro> --ruolo
+regia` (legge solo lo stato) e ripete `zb agenti prossimo <libro>`, che guarda lo stato reale (capsule mancanti,
+capitolo scritto o no, rapporto della revisione sul testo attuale) e stampa una sola riga: `AZIONE: …` (preparazione
+e scrittore, misure e diagnosta, correzione mirata, `zb esito`, capsula) oppure `FERMO: …` (pausa di lettura,
+secondo «non passa», gate aperto). Dopo ogni capitolo accettato: `zb compatto` e `zb salva`. Gli agenti rispondono
+in al massimo 5 righe; la sessione principale non legge capitoli né rapporti. Scrittore e revisore sono subagenti
+diversi: le scritture si registrano per «sessione:agente», così chi scrive non rivede anche nella stessa sessione.
+
+Procedura uguale per ogni capitolo, senza fermate tranne i gate (dettaglio dei passi):
 
 1. Rileggo `LEGGIMI.md`, il manuale di stile, le direttive del briefing, la riga del capitolo in
    scaletta e piano parole, le voci di cronologia che tocca e il capitolo precedente. Sul percorso editoriale
    scrive l'agente `scrittore-voce`, chiamato dalla sessione principale (mai due capitoli in parallelo);
-   `zb prepara <libro> N` gli dà la scheda del capitolo, il codex filtrato, il canone, le capsule e, dopo una
-   pausa di lettura con note, `06-diagnostica/note-lettura.md` (la scheda e le parole previste sostituiscono
+   `zb prepara <libro> N` gli dà la scheda del capitolo, funzione e gancio del capitolo successivo, il codex filtrato,
+   il canone, le ultime 3 capsule con il registro delle promesse, le lezioni dei capitoli già rivisti
+   (`06-diagnostica/lezioni.md`) e, dopo una pausa di lettura con note, `06-diagnostica/note-lettura.md` (la scheda e le parole previste sostituiscono
    `05-scaletta.md` e `08-piano-parole.md` interi, che l'agente non rilegge); con una voce della banca indica anche le sezioni
    2, 3 e 6 della scheda della voce e i divieti, da leggere prima di scrivere. Gli esempi «versione debole →
    versione forte» si nominano solo se la sezione 6 li ha (righe «Debole: …» e «Forte: …»); se la scheda o
    `ZB_BANCA_VOCI` mancano, `zb prepara` si ferma con il motivo.
 2. Riporto la riga «Letto: …» di `zb avvio` (se non l'ho già fatto in questa sessione).
 3. Scrivo `04-manoscritto/NN-<slug>.md` con la riga nascosta `<!-- zb: chiusura=X -->`.
-3b. Revisione del capitolo (percorso editoriale). Prima le misure del motore: la sessione principale lancia
-   `zb ruolo <libro> diagnosta N` (in fase «stesura» solo con N), che esegue i controlli di `capitolo.py` e l'audit
-   anti-IA senza scrivere il report. Con un KO o un avviso dei divieti della voce si ferma (codice 2): il diagnosta non
-   si chiama e chi scrive fa una correzione mirata. Frase media e ripetizioni ravvicinate restano avvisi (soglie ancora
-   PROPOSTA): non fermano e passano al diagnosta tra le righe misurate. Con le misure
-   superate scrive `06-diagnostica/misure/NN.md` (prima riga con l'impronta del capitolo; misure, righe misurate con
-   gli avvisi restanti, elenco «File da leggere» e canone) e `06-diagnostica/frasi-finali/NN.md`, e stampa la prima
-   riga del rapporto. L'agente `diagnosta` installato non ha la shell (sola lettura): la sessione principale gli passa
-   la riga e il file delle misure. Il diagnosta, in una sessione separata da chi ha scritto, legge solo i file
-   elencati lì e scrive `06-diagnostica/audit/NN.md` con la checklist del capitolo singolo
-   (`editoriale/ruoli/00-diagnosta.md`), la sezione `## Da correggere` (riga, frase, motivo) e l'ultima riga «passa» o
-   «non passa». Un solo giro completo: dopo un «non passa» e la correzione, `zb ruolo` prepara il secondo giro con le
-   sole frasi del primo (che resta in `audit/NN-giro1.md`); dopo il secondo «non passa» si ferma e decide l'autore
-   (`--nuovo-giro`, dopo il suo «ok», riparte da un giro completo). Con `revisione_capitolo: obbligatoria` in
-   `libro.yaml`, `zb esito` si ferma se il rapporto manca, è scritto su un'altra versione del capitolo (impronta della
-   prima riga), chiude con «non passa» o mancano le misure del motore sul testo attuale; senza il campo la revisione
-   resta consigliata e `zb esito` non la legge.
+3b. Revisione del capitolo (percorso editoriale; 2026-10-27). Prima le misure del motore: `zb ruolo <libro>
+   diagnosta N` esegue i controlli di `capitolo.py` e l'audit anti-IA senza scrivere il report. Si ferma (codice 2)
+   solo su un KO oggettivo (continuità, canone, nomi, parole vietate, lunghezza minima): con `soglie_stile:
+   informative` (predefinito) frase media, dialogo, scene, anti-IA e divieti della voce sono avvisi tra le righe
+   misurate. Con le misure superate scrive `06-diagnostica/misure/NN.md` (impronta del capitolo, misure, righe
+   misurate, «File da leggere», canone) e stampa la prima riga del rapporto. Il `diagnosta` (Opus, sola lettura)
+   legge solo quei file e scrive `06-diagnostica/audit/NN.md` (al massimo 400 parole) con la scala tarata del ruolo
+   (6 mestiere, 8 un editor lo terrebbe): sette voti con il momento più debole citato, `Media: X.X`, continuità,
+   `## Da correggere` (al massimo 5 interventi), `## Lezione` (un difetto da non ripetere) e l'ultima riga «passa»
+   (media almeno `soglia_qualita`, predefinito 7.5, e nessun fatto contraddetto) o «non passa». Un solo giro
+   completo: dopo un «non passa» lo scrittore corregge solo le voci di «Da correggere» (Edit), poi il secondo giro
+   rivede solo quelle e dà una nuova media; dopo il secondo «non passa» decide l'autore (`--nuovo-giro`). Con
+   `revisione_capitolo: obbligatoria`, `zb esito` si ferma se il rapporto manca, è su un'altra versione, chiude con
+   «non passa», non ha la riga `Media:` o ha la media sotto la soglia; accettato il capitolo, registra la lezione in
+   `06-diagnostica/lezioni.md`. Il tutto in automatico con `/capitolo` (sezione 6).
 4. `zb esito <libro> N`: esegue `capitolo.py` (report in `06-diagnostica/capitoli/NN.md`, con le righe
    `anti-ia:<misura>` e l'indice Gulpease informativo; audit in `06-diagnostica/anti-ia/NN.md`) e
    aggiorna `stato.yaml` (ultimo capitolo scritto, parole, lotto). `zb stile <libro> [N]` scrive anche

@@ -2,10 +2,10 @@
 
 Fabbrica generica per romanzi di qualsiasi genere: procedura, script, modelli vuoti, profili di genere,
 dati KDP e il livello editoriale (`editoriale/`: percorso, ruoli, agenti, anti-IA, correttore). Non contiene
-libri reali. Il progetto iniziale è in `proposta-motore.md` (approvata). Come si lavora su un libro: `PROCEDURA.md`.
+libri reali. Il progetto iniziale (`proposta-motore.md`) è sul ramo d'archivio `archivio/motore-2026-10-27`. Come si lavora su un libro: `PROCEDURA.md`.
 Percorso e ruoli: `editoriale/00-percorso.md` e `editoriale/LEGGIMI.md` (che ha anche l'unica scala di precedenza).
-Questo file raccoglie le regole d'uso, l'ambiente e gli hook. Copia integrale di tutta l'infrastruttura
-(motore, regole, voci, hook), con mappa e guida alla modifica: `docs/INFRASTRUTTURA_COMPLETA.md`.
+Questo file raccoglie le regole d'uso, l'ambiente e gli hook. Stato e scelte del 2026-10-27 (catena dei capitoli,
+qualità, token): `docs/report-motore-2026-10-27.md` e `docs/miglioramenti-2026-10-27.md`.
 Guida di lettura per l'autore (organigramma, percorso di un libro, regole), in PDF per telefono: `docs/GUIDA_AL_SISTEMA.pdf` (sorgente `docs/GUIDA_AL_SISTEMA.md`).
 I documenti di `docs/` non si leggono nelle sessioni di lavoro.
 
@@ -37,14 +37,15 @@ lettura** ogni 3 capitoli (`pausa_lettura`: 3, 4 o 5 in `libro.yaml`). `editoria
 descrivono ancora le fermate con l'«ok» dell'autore: il contrasto è segnalato in `docs/DA_VERIFICARE_AUTORE.md`.
 
 1. L'autore compila `modelli/briefing.md` in `libri/<slug>/briefing.md`; `zb nuovo` apre la cartella unica del libro
-   (per un libro già avviato: `zb adotta <cartella>`). «Percorso: breve» nel briefing sceglie il percorso breve.
+   «Percorso: breve» nel briefing sceglie il percorso breve. (`zb adotta` è archiviato.)
 2. A ogni sessione: `zb avvio <libro> [--ruolo R]` e la riga «Letto: …»; un ruolo per sessione; nelle sessioni
    nuove lo stato compatto.
 3. Struttura (nove file di `03-struttura/`), poi rapporto del diagnosta e piano dell'editor strutturale in sessioni
    e commit separati; `zb pronto` verifica la struttura (gate `struttura` automatico) e, se regge, crea bibbia,
    codex, cronologia e manuale e passa ai documenti; se no si ferma e scrive il motivo.
-4. Documenti (bibbia, codex, cronologia, manuale, nota di direzione); pagina campione; stesura capitolo per capitolo
-   con `zb esito` e capsule; pausa di lettura ogni `pausa_lettura` capitoli e a fine stesura.
+4. Documenti (bibbia, codex, cronologia, manuale, nota di direzione); pagina campione; stesura con `/capitolo`
+   (scrittore Opus → misure → revisione con voti tarati e soglia di qualità → correzione mirata → `zb esito` →
+   capsula → `zb salva`, in automatico); pausa di lettura ogni `pausa_lettura` capitoli e a fine stesura.
 5. Revisione strutturale del manoscritto, line editing, copyediting, bozze: rapporti → `zb pronto` → applicazione
    → `zb pronto`. Un gate dell'autore solo se il briefing lo chiede («Gate: …»).
 6. Chiusura: `continuita`, `ortografia`, `compila`, `impagina`, `pdf`, `pacchetto`, `kdp`; `zb pronto`.
@@ -76,7 +77,8 @@ protezione in più, non una garanzia: i controlli che contano sono quelli che gu
 
 Separazione dei ruoli: `dati/hook.yaml`, `separazione_ruoli` (oggi `blocco`). Controllo pre-commit di git:
 `script/precommit.py`, installato da `zb lavoro`. Subagenti e comandi di Claude Code: `zb agenti attiva --ok`, solo
-sui rami dei libri, come gli hook.
+sui rami dei libri, come gli hook. Gli agenti della traduzione
+(archiviata) solo con `zb agenti attiva --ok --traduzione`: ogni agente installato costa token in ogni sessione.
 
 ## Ambiente
 

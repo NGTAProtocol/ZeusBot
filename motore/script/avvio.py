@@ -295,6 +295,11 @@ def main(argv):
         ferma(f'Questa sessione ha già il ruolo «{precedente}»: un ruolo per sessione. Per fare «{ruolo}»: salva, '
               'apri una sessione nuova, zb avvio, riga «Letto».')
     R.controlla_avvio(cartella, sid, ruolo)
+    if ruolo == 'regia':
+        # chi orchestra legge solo lo stato: manuale, briefing, voce e struttura li leggono gli agenti (meno token)
+        tieni = ('libro.yaml', 'stato.yaml', 'stato-compatto.md', 'passaggio-di-consegne.md')
+        letti = [r for r in letti if r.split(' (')[0] in tieni]
+        sha = {k: v for k, v in sha.items() if k in tieni}
     if R.RUOLI[ruolo]['file']:
         p_ruolo = os.path.join(comune.radice_motore(), 'editoriale', R.RUOLI[ruolo]['file'])
         r, s = riga_file(os.path.dirname(p_ruolo), p_ruolo, f'ruolo {ruolo}')

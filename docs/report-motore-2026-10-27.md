@@ -2,7 +2,7 @@
 
 Data: 2026-10-27. Ramo: `claude/audit-4-tools-claude-code-ho78x3` (ramo di libro con il motore unificato `d575b87`).
 Base del giudizio: lettura di `motore/README.md`, `motore/report-motore.md`, `motore/passaggio-di-consegne.md`,
-`dati/modelli-ruoli.yaml`, agenti installati in `.claude/`, libro di prova `libri/prova-padre-del-mostro/`
+`dati/modelli-ruoli.yaml`, agenti installati in `.claude/`, libro di prova del ramo (cartella in `libri/`)
 (stato, passaggio di consegne, note di lettura, rapporti); suite di prove **eseguita davvero** oggi; comandi
 `zb stato`, `zb agenti stato`, `zb agenti prossimo`, `zb capitolo` provati sul libro di prova.
 Nota: «sfornatore di HTTP» l'ho inteso come «macchina che sforna manoscritti»; se intendevi altro, dimmelo.

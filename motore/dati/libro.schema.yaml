@@ -31,6 +31,8 @@ campi:
   pausa_lettura: {tipo: scelta, valori: [3, 4, 5]}    # gate «lettura»: capitoli tra una pausa di lettura e l'altra (predefinito 3)
   capsule: {tipo: scelta, valori: [obbligatorie, avviso]}  # zb avvio: obbligatorie ferma, avviso (predefinito) avvisa
   revisione_capitolo: {tipo: scelta, valori: [obbligatoria, facoltativa]}  # zb esito: obbligatoria vuole 06-diagnostica/audit/NN.md con «passa»
+  soglie_stile: {tipo: scelta, valori: [informative, bloccanti]}  # predefinito informative: frase media, dialogo, parole filtro, scene, anti-IA non danno KO
+  soglia_qualita: {tipo: scelta, valori: [6, 6.5, 7, 7.5, 8, 8.5, 9]}  # voto medio minimo del revisore per «passa» (predefinito 7.5; scala tarata: 6 mestiere, 8 un editor lo terrebbe)
   anti_ia:                                       # facoltativo: soglie dell'audit anti-IA per questo libro (vince sul profilo)
     tipo: mappa
     campi:

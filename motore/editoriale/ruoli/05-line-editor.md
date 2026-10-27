@@ -15,19 +15,19 @@ Il capitolo, la scheda della voce, `anti-ia/catalogo-it.md`, i divieti della voc
 - sostituisce formule da IA con dettaglio concreto;
 - protegge la voce del libro e dei personaggi.
 
-## Controlli per funzione
-Le stesse regole della checklist del diagnosta per il capitolo singolo (`00-diagnosta.md`, «Capitolo
-singolo»), applicate frase per frase; per le chiuse si parte da `06-diagnostica/frasi-finali/NN.md` (`zb stile`). Per ognuna il rapporto elenca le frasi trovate (riga e testo) e il loro
-numero, anche zero:
-- chiuse a sentenza definite per funzione (frase finale di paragrafo che commenta o riassume invece di
-  mostrare; tolta la frase, il paragrafo dice ancora tutto), entro il limite della voce;
-- eco: una battuta non riprende la parola piena dell'altro, nemmeno senza «ripeté»;
-- battute giustificative: una battuta non spiega né giustifica ciò che il personaggio fa o pensa;
-- soggetto: il nome proprio non si ripete come soggetto dove è ovvio;
-- personaggi senza nome: una sola etichetta per scena, più al massimo una variante; niente giro di sinonimi;
-- chi fa cosa: con due persone dello stesso genere in scena, il nome al posto di «lui», «lo», «gli»;
-- registro corto: per alzare una media troppo bassa non si uniscono frasi corte con «e», «mentre» o
-  virgole; per abbassarne una troppo alta si tagliano parole e subordinate dentro la frase.
+## Taglio avversario (metodo, 2026-10-27)
+Il compito è «togli almeno il 10% delle parole del capitolo senza perdere nulla di ciò che serve» (idea di
+nousresearch/autonovel, senza file di licenza: solo l'idea, riscritta): ciò che si può tagliare rivela ciò che è debole, e l'elenco dei tagli è il
+piano del line editing. Rapporto (al massimo 600 parole):
+1. Da 10 a 20 interventi, ognuno: citazione esatta (almeno 10 parole, per trovarla senza dubbi), classe, azione
+   (TAGLIA o RISCRIVI; per RISCRIVI la proposta), motivo in una riga. Classi: **spiega** (il narratore spiega ciò che
+   la scena ha già mostrato), **ridondante** (ripete una frase o una scena precedente), **superfluo** (non aggiunge
+   nulla), **generico** (potrebbe stare in qualunque romanzo), **dice** (nomina un'emozione invece di mostrarla),
+   **ritmo** (paragrafo che rompe il passo), **tic** (chiusa a sentenza, eco, battuta giustificativa, soggetto
+   ambiguo, elenco di tre).
+2. Parole tagliabili in tutto e percentuale.
+3. Il passaggio migliore (da non toccare) e il peggiore, citati.
+Si applica nell'ordine: prima **spiega** e **ridondante** (di solito più della metà dei tagli), poi il resto.
 
 ## Principio
 Intervento minimo efficace: se una frase funziona, non si tocca. Si corregge per sottrazione, non per sostituzione;

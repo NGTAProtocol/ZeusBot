@@ -31,6 +31,10 @@ def righe(cartella, rel):
     return len(open(p, encoding='utf-8').read().splitlines()) if os.path.isfile(p) else 0
 
 
+CAPSULE_SCRITTORE = 3          # capsule dei capitoli precedenti che lo scrittore legge (le più recenti)
+LEZIONI = '06-diagnostica/lezioni.md'   # righe «Lezione» dei rapporti del diagnosta (fase.registra_lezione)
+
+
 def prepara(cartella, libro, n):
     if not comune.editoriale(libro):
         raise comune.ErroreMotore('zb prepara vale per i libri del percorso editoriale.')
@@ -46,7 +50,10 @@ def prepara(cartella, libro, n):
         p = capsula.problemi_capsula(cartella, libro, n - 1)
         if p:
             raise comune.ErroreMotore('Capsula del capitolo precedente non pronta: ' + '; '.join(p))
-    capsule = [capsula.rel(i) for i in range(1, n) if os.path.isfile(os.path.join(cartella, capsula.rel(i)))]
+    # 2026-10-27 (token): solo le ultime CAPSULE_SCRITTORE capsule; il registro tiene le promesse aperte di tutto il libro,
+    # codex filtrato e canone tengono i fatti. Prima lo scrittore leggeva tutte le capsule (al cap. 30, 29 file).
+    capsule = [capsula.rel(i) for i in range(max(1, n - CAPSULE_SCRITTORE), n)
+               if os.path.isfile(os.path.join(cartella, capsula.rel(i)))]
     if capsule:
         capsula.registro(cartella, libro)
         capsule.append(f'{capsula.CARTELLA}/registro.md')
@@ -60,6 +67,9 @@ def prepara(cartella, libro, n):
     note = '06-diagnostica/note-lettura.md'           # note dell'autore alla pausa di lettura (fase.chiudi_pausa)
     if os.path.isfile(os.path.join(cartella, note)):
         leggere.append(note)
+    if os.path.isfile(os.path.join(cartella, LEZIONI)):  # difetti già trovati dal revisore: non ripeterli
+        leggere.append(LEZIONI)
+    dopo = struttura.schede(cartella).get(str(n + 1)) or {}
     totale = sum(righe(cartella, r) for r in leggere) + len(sk) + len(coda)
     out = [f'# Preparazione del capitolo {n} — {libro["titolo"]}', '',
            'Generata da «zb prepara»: lo scrittore legge solo questo file e i file elencati.', '',
@@ -74,6 +84,9 @@ def prepara(cartella, libro, n):
         out += voce_da_leggere(libro['voce']['slug'])
     out += ['', '## File da leggere', ''] + [f'- {r}' for r in leggere]
     out += [f'- AVVISO {x}: nessuna scheda nel codex' for x in ignoti]
+    if dopo:     # il capitolo deve chiudersi in modo che il successivo possa partire (funzione e gancio, non di più)
+        out += ['', f'## Capitolo {n + 1} (solo per la chiusura di questo)', '']
+        out += [f'- {etichette[k]}: {dopo[k]}' for k in ('funzione', 'gancio') if dopo.get(k)]
     if coda:
         out += ['', f'## Ultime righe del capitolo {n - 1}', ''] + coda
     out += ['', f'Righe da leggere in tutto: {totale}.']

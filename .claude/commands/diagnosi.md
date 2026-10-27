@@ -16,6 +16,6 @@ Oggetto: $ARGUMENTS. Libro: quello attivo, cartella `libri/<slug>/`.
 4. Nessuna modifica al testo, alla struttura o allo stato: se il diagnosta trova un problema G1, lo riporti
    all'autore e ti fermi.
 5. `python3 motore/zb salva libri/<slug> "diagnosi $ARGUMENTS"` (solo il rapporto).
-Rispondi con il riepilogo del rapporto in al massimo 10 righe.
+Rispondi con il riepilogo del rapporto in al massimo 5 righe.
 
 <!-- zb: installato da «zb agenti attiva»; fonte: motore/editoriale/ -->
