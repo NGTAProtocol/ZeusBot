@@ -170,6 +170,7 @@ def letture_diagnosta(cartella, libro, n, rel_cap):
     if os.path.isfile(os.path.join(cartella, voce_libro.SCHEDA)):
         leggere.append(voce_libro.SCHEDA)      # la voce del libro: misura per il voto «voce»
     out = ['## File da leggere (solo questi)', ''] + [f'- {r}' for r in leggere]
+    out.append('- motore/editoriale/ruoli/00-diagnosta.md: solo la sezione «Capitolo singolo» (voci e scala tarata)')
     slug = (libro.get('voce') or {}).get('slug')
     if slug:
         out.append(f'- scheda della voce «{slug}» (banca-voci, sola lettura): sezioni 2, 3 e 6')
@@ -293,8 +294,9 @@ def registra_lezione(cartella, libro, n):
         if t.startswith('## '):
             dentro_sez = t[3:].strip().lower().startswith('lezione')
             continue
-        if dentro_sez and t.startswith('- ') and t[2:].strip().lower().rstrip('.') not in ('nessuna', 'nessuno'):
-            lezione = t[2:].strip()
+        voce = t[2:].strip() if t.startswith('- ') else t   # voce di elenco o riga semplice
+        if dentro_sez and voce and voce.lower().rstrip('.') not in ('nessuna', 'nessuno'):
+            lezione = voce
             break
     if not lezione:
         return None

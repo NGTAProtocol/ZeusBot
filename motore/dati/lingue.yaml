@@ -3,7 +3,7 @@ it:
   ortografia: {hunspell: it_IT, opzioni: "-i utf-8", languagetool: it}
   mesi: [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre]
   giorni: [lunedì, martedì, mercoledì, giovedì, venerdì, sabato, domenica]
-  lineetta_dialogo: "—"
+  lineetta_dialogo: ["—", "«"]          # una battuta comincia con la lineetta o con i caporali
   virgolette: ["«", "»"]
 en:
   ortografia: {hunspell: en_US, opzioni: "-i utf-8", languagetool: en-US}

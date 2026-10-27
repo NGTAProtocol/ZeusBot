@@ -55,11 +55,48 @@ def espandi(t, variabili):
     return re.sub(r'\$\{?(\w+)\}?', lambda m: variabili.get(m.group(1), m.group(0)), t)
 
 
+# codice Python che scrive file: open in scrittura, write, cancellazioni e spostamenti, scrivi del motore, processi
+SCRIVE_PY = re.compile(r'''open\([^)]*['"][wax+]|\.write\(|write_(text|bytes)|os\.(remove|unlink|rename|replace|'''
+                       r'''makedirs|mkdir|rmdir|system)|shutil\.|\.(unlink|mkdir|rename|touch)\(|scrivi\w*\(|subprocess''')
+
+
+def separa_heredoc(comando):
+    """(comando senza i corpi degli heredoc, [(riga che li apre, corpo)]): il corpo è un dato, non un comando."""
+    righe, fuori, corpi, i = comando.split('\n'), [], [], 0
+    while i < len(righe):
+        r = righe[i]
+        fuori.append(r)
+        i += 1
+        for _, d in re.findall(r'''<<-?\s*(['"]?)(\w+)\1''', r):
+            corpo = []
+            while i < len(righe) and righe[i].strip() != d:
+                corpo.append(righe[i])
+                i += 1
+            i += 1
+            corpi.append((r, '\n'.join(corpo)))
+    return '\n'.join(fuori), corpi
+
+
+def percorsi_py(codice, base, solo):
+    """Percorsi nominati da codice Python che scrive (nessuno se il codice si limita a leggere)."""
+    if not SCRIVE_PY.search(codice):
+        return []
+    chiave = re.escape(solo) if solo else r'[\w.\-]*/'
+    return [risolvi(p, base) for p in re.findall(r'''[^\s'"`,()]*''' + chiave + r'''[^\s'"`,()]*''', codice)]
+
+
 def bersagli_bash(comando, cwd, solo=CARTELLA):
     """Percorsi che il comando Bash probabilmente scrive (con solo=None: tutti; altrimenti solo se il comando
     nomina quella cartella). Lo usa anche hook_recinto.py per il recinto sul libro attivo."""
     if solo and solo not in comando:
         return []
+    comando, corpi = separa_heredoc(comando)
+    extra = []
+    for r, corpo in corpi:
+        if re.search(r'\bpython', r):        # python - <<'PY': il corpo è codice, come con -c
+            m = re.search(r'\bcd\s+(\S+)', r)
+            extra += percorsi_py(corpo, risolvi(m.group(1), cwd) if m else cwd, solo)
+    comando = comando.replace('\n', ' ; ')
     try:
         lex = shlex.shlex(comando, posix=True, punctuation_chars=';&|()<>')
         lex.whitespace_split = True
@@ -67,7 +104,7 @@ def bersagli_bash(comando, cwd, solo=CARTELLA):
         token = list(lex)
     except ValueError:            # virgolette sbilanciate: ogni percorso col manoscritto (o con una barra)
         chiave = re.escape(solo) if solo else '/'
-        return [risolvi(p, cwd) for p in re.findall(r'[^\s\'"`;|&<>]*' + chiave + r'[^\s\'"`;|&<>]*', comando)]
+        return extra + [risolvi(p, cwd) for p in re.findall(r'[^\s\'"`;|&<>]*' + chiave + r'[^\s\'"`;|&<>]*', comando)]
     segmenti, cur = [], []
     for t in token:
         if t in SEPARATORI:
@@ -76,7 +113,7 @@ def bersagli_bash(comando, cwd, solo=CARTELLA):
         else:
             cur.append(t)
     segmenti.append(cur)
-    variabili, base, out = {}, cwd, []
+    variabili, base, out = {}, cwd, extra
     for seg in segmenti:
         seg = [espandi(t, variabili) for t in seg]
         args, i = [], 0
@@ -124,10 +161,8 @@ def bersagli_bash(comando, cwd, solo=CARTELLA):
             dopo = args[args.index('--') + 1:] if '--' in args else ([] if solo is None and args[1] == 'checkout' else args[2:])
             out += [risolvi(a, base) for a in dopo if not a.startswith('-')]
         elif prog.startswith('python'):
-            chiave = re.escape(solo) if solo else r'[\w.\-]*/'
             if '-c' in args and args.index('-c') + 1 < len(args):
-                codice = args[args.index('-c') + 1]
-                out += [risolvi(p, base) for p in re.findall(r'[^\s\'"`,()]*' + chiave + r'[^\s\'"`,()]*', codice)]
+                out += percorsi_py(args[args.index('-c') + 1], base, solo)
             elif solo:
                 out += [risolvi(a, base) for a in file_args if solo in a]
     return out

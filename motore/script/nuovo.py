@@ -302,7 +302,7 @@ def genera_libro_yaml(b, profilo):
         'lingua': (c.get('lingua') or 'it').strip(), 'modalita': c.get('modalità') or 'nuovo',
     }
     if percorso_di(c) == 'editoriale':
-        libro.update({'percorso': 'editoriale'})
+        libro.update({'percorso': 'editoriale', 'revisione_capitolo': 'obbligatoria'})  # sette voti a ogni capitolo
         if 'lettura' in gate:
             libro['pausa_lettura'] = PAUSA_LETTURA
     if libro['modalita'] == 'riscrittura':
