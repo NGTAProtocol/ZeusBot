@@ -1,7 +1,7 @@
 libro: La Spada Ricurva
 motore_commit: null
 ramo_ultimo_salvataggio: null
-fase: struttura
+fase: documenti
 passo: da completare
 gate_in_attesa: null
 lotto:
@@ -15,30 +15,70 @@ parole:
   scritte: 0
   obiettivo: 90000
   metodo: unico
-documenti_approvati: {}
+documenti_approvati:
+  03-struttura/01-premessa.md:
+    sha256: 2b30f8b99426d222feb41f16b86544571b3f818325dc857b29c2d8a82f953dda
+    commit: 2b098ea
+    senza_gate: true
+  03-struttura/02-logline-tema.md:
+    sha256: bcf74eed3ef1d7d3ad4c5f236922679c457c08c19fc5e74e4ef9bc564ad93174
+    commit: 2b098ea
+    senza_gate: true
+  03-struttura/03-personaggi-chiave.md:
+    sha256: 732ec835716ef22db179f457015a1bfbf45010c70eddbba2ab7f30d5dab6c161
+    commit: e5e8820
+    senza_gate: true
+  03-struttura/04-atti-svolte.md:
+    sha256: 08b6347c839ef8a7f2ba34df1d5800f53280bb9f92687b645528261cfc794b2d
+    commit: e5e8820
+    senza_gate: true
+  03-struttura/05-scaletta.md:
+    sha256: 9ceeb46617421e2f5ec38017e5ca0a4f62ff067a3046496f7160a630c2e8bf30
+    commit: e5e8820
+    senza_gate: true
+  03-struttura/06-sottotrame-temi.md:
+    sha256: becafc4f4ae49d22ae8d00258e719dd2f0addcebbd45175b68211c8b9f125054
+    commit: e5e8820
+    senza_gate: true
+  03-struttura/07-tensione-ritmo.md:
+    sha256: a7cffa91a6059b642f9a22e05ca70060e29bf020e99194df9cf9a855821e12f2
+    commit: 2b098ea
+    senza_gate: true
+  03-struttura/08-piano-parole.md:
+    sha256: 8c7e65d9a0bca84bd2bdfb095eacf8fd206365fe7296b0c63f5409e7853fb8d3
+    commit: 2b098ea
+    senza_gate: true
+  03-struttura/09-scelte-fisse.md:
+    sha256: 8032b27fcfb8a925f05bf861e36f982b82bebbf3c075c8097982d92c7d0b76be
+    commit: 2b098ea
+    senza_gate: true
+  06-diagnostica/rapporto-struttura.md:
+    sha256: 1e562fc3d79e72a4b638c14a19f33d8c46035fce5df6cde9fbd0ed6850a5b3dd
+    commit: 7483b5f
+    senza_gate: true
+  06-diagnostica/piano-revisione-struttura.md:
+    sha256: 228e89ca7c9cfbec7225a6e1c311e8a10252c1eca866ee8a005f44109ca3d2f4
+    commit: 69b97ae
+    senza_gate: true
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-27T12:23:35Z'
+aggiornato: '2026-10-27T13:29:03Z'
 sottofase: null
 fatti_bloccati:
-- L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si
-  accede decifrando un rebus visivo nei dettagli di dipinti barocchi dell'Accademia.
-- 'Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia;
-  tra questi testi vedici dall''India portati a Venezia da due guru e tradotti clandestinamente
-  in latino denso, cifrato ed eretico da alchimisti e dotti.'
-- 'I ragazzi non denunciano la scoperta: usano un''IA offline addestrata da Pietro
-  per tradurre e indicizzare i testi, per renderli open-source e donarli ai musei
-  internazionali.'
-- 'La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana,
-  traffici veneziani con l''Oriente e correnti vediche e filosofiche; simbolo: due
-  scimitarre incrociate e piegate.'
-- L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il
-  controllo politico; la caduta del regno fu anche una guerra occulta tra logge rivali.
+- L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
+  dettagli di dipinti barocchi dell'Accademia.
+- 'Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall''India portati
+  a Venezia da due guru e tradotti clandestinamente in latino denso, cifrato ed eretico da alchimisti e dotti.'
+- 'I ragazzi non denunciano la scoperta: usano un''IA offline addestrata da Pietro per tradurre e indicizzare i testi, per
+  renderli open-source e donarli ai musei internazionali.'
+- 'La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l''Oriente
+  e correnti vediche e filosofiche; simbolo: due scimitarre incrociate e piegate.'
+- L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno
+  fu anche una guerra occulta tra logge rivali.
 - Oggi il Rettore, il Vicerettore e i vertici dell'Accademia sono della setta.
 - La setta detiene i debiti e i titoli finanziari della famiglia di Lorenzo.
-- 'L''assistente viene assassinato dalla setta; dieci giorni dopo arriva la perizia
-  medico-legale: l''ora del decesso è precedente al timestamp di un messaggio minatorio
-  arrivato sul telefono della vittima. Prova che Procura e medicina legale sono colluse.'
-- 'Assedio: in una notte di pioggia la setta isola i ragazzi nell''Accademia; Lorenzo
-  passa i dati; l''IA di Pietro si comporta in modo anomalo e manipola i presenti.'
+- 'L''assistente viene assassinato dalla setta; dieci giorni dopo arriva la perizia medico-legale: l''ora del decesso è precedente
+  al timestamp di un messaggio minatorio arrivato sul telefono della vittima. Prova che Procura e medicina legale sono colluse.'
+- 'Assedio: in una notte di pioggia la setta isola i ragazzi nell''Accademia; Lorenzo passa i dati; l''IA di Pietro si comporta
+  in modo anomalo e manipola i presenti.'

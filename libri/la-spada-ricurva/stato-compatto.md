@@ -1,6 +1,6 @@
 # Stato compatto — La Spada Ricurva
 
-- Fase: struttura; gate: nessuno.
+- Fase: documenti; gate: nessuno.
 - Ultimo capitolo salvato: —; parole 0/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elana; Tempo verbale della narrazione: presen….
@@ -15,5 +15,5 @@
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
 - Promesse aperte: nessuna.
 - Prossimo capitolo 1: apertura in medias res; promessa del libro; fissa voce, minaccia e ironia drammatica.; cambiamento: il lettore sa che il mentore è morto e che una perizia indica un'ora….
-- Prossimo passo: Architetto: i nove file di 03-struttura/; poi diagnosta ed editor-strutturale (commit separati); poi «zb pronto <libro>» (il motore verifica la struttura, senz…
+- Prossimo passo: Completa bibbia, cronologia, scaletta e piano parole; poi «zb pronto <libro>».
 - Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 1.
