@@ -316,7 +316,7 @@ passo_5:
     ok_controllo: "0 / stesura / nessuno / capitolo 3 / {}"
     primi_capitoli: "stesura / primi_capitoli"
     ok_lotti: "0 / 5 / 3 / stesura / chiusura"   # chiusura solo dopo l'esito dell'interludio I
-    chiusura_incompleta: "2 / 7"
+    chiusura_incompleta: "2 / 10"
   modalita:
     senza_testo: "2 / ['Testo precedente']"
     libro_yaml: "riscrittura 01-originale/testo-precedente.md | nuovo assente"
@@ -525,7 +525,7 @@ correzioni_dopo_prova:
   a_attesi:
     giorni_41: []
     giorni_70: ['cronologia|durata|KO']
-  j_ordine: ['zb continuita', 'zb ortografia', 'zb compila', 'zb impagina', 'zb pdf', 'zb pacchetto', 'zb kdp']
+  j_ordine: ['zb continuita', 'zb ortografia', 'zb tipografia', 'zb compila', 'zb impagina', 'zb pdf', 'zb copertina', 'zb pacchetto', 'zb kdp', 'zb finale']
   k_esito: "2 / 0 / primi_capitoli / 2578"
   # scritte 1186 + 832 + 103 = 2121; capitolo 3 (budget 900) non scritto; previsto 3021 su 4000
   l_avviso: "totale previsto 3021 parole su 4000 (-24.5%, tolleranza ±5%); scritte 2121. Budget residuo proposto: 1879 parole per 1 unità (3: 1879); è una proposta, nessun capitolo si accorcia o si allunga per evitare l'avviso"
@@ -839,3 +839,4 @@ frase_media_registro:
   senza_campo: ['1: 9-14 OK', '2: 9-14 OK', '3: 9-14 KO']
   con_campo: ['1: 5-10 (registro corto, dalla voce) OK', '2: 15-25 (registro freddo, dalla voce) AVVISO', '3: 12-18 (registro base, dalla voce) AVVISO']
 grafica: {}
+pubblicazione: {}
