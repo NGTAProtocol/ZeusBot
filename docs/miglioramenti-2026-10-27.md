@@ -51,7 +51,7 @@ usate archiviate, soglie di stile solo informative). Obiettivo: manoscritti di q
   manoscritto; ora le scritture dei subagenti si registrano come «sessione:agente».
 - Prova del PDF fragile (sha256 del testo estratto) e prove «solo motore» che fallivano sui rami di libro.
 
-## Archiviato (ramo `archivio/motore-2026-10-27`)
+## Archiviato (ramo `archivio/motore-prima-2026-10-27`)
 
 `zb adotta` con le sue prove e il mini-libro d'adozione; `docs/INFRASTRUTTURA_COMPLETA.md` e il suo generatore;
 `motore/proposta-motore.md`; `motore/report-motore.md`. La traduzione resta nel codice ma è spenta: toglierla

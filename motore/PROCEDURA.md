@@ -2,7 +2,7 @@
 
 Regole di lavoro per qualsiasi libro. Comandi: `python3 motore/zb <comando> <libro> …`
 (qui sotto abbreviato in `zb`; l'elenco unico è `zb aiuto`). Percorso e ruoli: `editoriale/00-percorso.md`;
-ruoli editoriali: `editoriale/ruoli/`. Il progetto iniziale (`proposta-motore.md`) è sul ramo d'archivio `archivio/motore-2026-10-27`.
+ruoli editoriali: `editoriale/ruoli/`. Il progetto iniziale (`proposta-motore.md`) è sul ramo d'archivio `archivio/motore-prima-2026-10-27`.
 
 ## 1. Regole fisse
 
@@ -160,7 +160,7 @@ ogni campo il suo uso; `zb profili` li elenca.
 
 ## 3b. Libro già avviato
 
-`zb adotta` è archiviato (2026-10-27, ramo d'archivio `archivio/motore-2026-10-27`): un libro già avviato si
+`zb adotta` è archiviato (2026-10-27, ramo d'archivio `archivio/motore-prima-2026-10-27`): un libro già avviato si
 rifà con `zb nuovo` dal briefing, copiando i documenti esistenti nelle cartelle standard.
 
 ## 4. Avvio: `zb avvio <libro>`

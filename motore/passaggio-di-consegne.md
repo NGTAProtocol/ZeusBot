@@ -10,7 +10,7 @@ riprendi da lì».
   voti tarati, `Media`, soglia `soglia_qualita` (7.5) controllata da `zb esito`, lezioni in `06-diagnostica/lezioni.md`,
   soglie di stile informative (`soglie_stile`), taglio avversario nel line editing, letture ridotte (ultime 3 capsule,
   niente frasi finali al diagnosta, `CLAUDE.md` senza obbligo di leggere PROCEDURA), scritture dei subagenti per
-  «sessione:agente», 5 difetti corretti. Archiviati su `archivio/motore-2026-10-27`: `zb adotta`, l'infrastruttura
+  «sessione:agente», 5 difetti corretti. Archiviati su `archivio/motore-prima-2026-10-27`: `zb adotta`, l'infrastruttura
   completa in `docs/`, `proposta-motore.md`, `report-motore.md`. Dettaglio: `docs/miglioramenti-2026-10-27.md`.
   Da portare sul ramo `motore` (solo `motore/`, `docs/`, `CLAUDE.md`).
 - Unione del 2026-10-21: il ramo di lavoro è `motore`. `integrazione-editoriale` (9c54726) è entrato in `motore` con
