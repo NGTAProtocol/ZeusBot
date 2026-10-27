@@ -1,163 +1,119 @@
-<!-- zb: ruolo=editor-strutturale; su=f6f9d7ee126f -->
-# Piano di revisione della struttura — La Spada Ricurva
+<!-- zb: ruolo=editor-strutturale; su=d69b5968bc01 -->
+# Piano di revisione della struttura — La Spada Ricurva (secondo giro)
 
-Fonte: `06-diagnostica/rapporto-struttura.md` e `contratto.md`, più tre decisioni dell'autore già registrate nel
-briefing (`00-progetto/briefing.md`, righe 18-19, 40 e 45) ma non ancora nella struttura. È una **proposta**: si
-applica in `03-struttura/` solo dopo l'ok dell'autore al gate. Fase struttura: non ci sono capitoli scritti, quindi le
-stime riguardano le parole delle schede e dei file di struttura da riscrivere, non la prosa.
+Fonte: `06-diagnostica/rapporto-struttura.md` (secondo giro, esito «passa», 8/10) e `contratto.md`. Sostituisce il
+piano del primo giro: A1-A3 e S1-S7 sono chiusi o ridotti a minori (rapporto, §3). È una **proposta**: si applica in
+`03-struttura/` solo dopo l'ok dell'autore al gate. Fase struttura: le stime sono parole di schede e di file di
+struttura, non di prosa.
 
 ## Ordine dei lavori e dipendenze
 
 ```
-A1 presente ───────────────┐
-A2 copie borboniche ──► S3 (gancio 31) ──► 39 ──► S7 (44)
-        │                                     ▲
-        └──► P7 / cap. 4, 17                  │
-A3 Claudia rebus / Lorenzo apre ──► S6 (Claudia) ──► S4 (rete/audio, chiavi di Lorenzo)
-S1 + S2 (centro e perizia) ──► cap. 1, 22, 25
-minori, alla fine
+S8 secondo foglio (decisione autore) ──► scheda 1 ──► scheda 25 ──► minore 22
+S9 regola della porta (riga in 04)  ──► schede 2, 9, 28
+minori 29, 30, 35  ──► entro la scheda del capitolo, prima di scriverlo
+minore 44          ──► in stesura
 ```
-Prima le tre decisioni dell'autore (A1-A3): tutto il resto le cita. A2 precede S3, il 39 e il 44 perché sposta
-l'oggetto (il registro) su cui poggiano. A3 precede S6 e S4 perché cambia chi ha in mano il rebus e la porta.
+S8 e S9 vanno chiusi **nei documenti, prima del cap. 1**. S8 decide che cosa c'è nella busta del cap. 1. S9 fissa una
+regola del mondo che il cap. 2 (le tele) e il cap. 9 (la porta) già usano. Nessuno dei due tocca la collocazione delle
+svolte o il piano parole.
 
 ---
 
-## Priorità assolute (decisioni dell'autore)
+## 1. S8. Il secondo foglio «che Elana non aveva visto» — cap. 1, 25 (ricade su 22) — classe: spostare un'informazione
+**Quando:** prima della stesura (blocca il cap. 1). **Decisione dell'autore richiesta.**
+- **Il problema:** la scheda 25 (`05-scaletta.md`, r. 392) fa trovare nella busta del cap. 1 la perizia ufficiale,
+  sfuggita a Elana. Al presente, con un solo punto di vista e una protagonista dal rigore «quasi ossessivo» (09, voce),
+  questa è una distrazione impossibile. Il lettore la leggerebbe come un trucco.
+- **Che cosa cambia:** il **modo** in cui la perizia ufficiale arriva a Elana. Deve arrivarle dopo il cap. 1, non
+  esserle sfuggita. Restano invariati il contenuto (stesso protocollo, ora spostata, riga a penna o equivalente), la
+  rivelazione al 25, la perita dissidente all'alba, l'archiviazione e la decisione di «pubblicare tutto».
+- **Domanda per l'autore (scegliere un canale, non scrivere la scena):** da dove arriva la perizia ufficiale al 25?
+  Strade compatibili con la struttura: (a) la porta la perita stessa all'alba, insieme alla confessione; (b) arriva per
+  la via istituzionale, con la richiesta di archiviazione, e Elana la confronta con la bozza; (c) un secondo invio
+  della perita, separato dal primo. Qualunque sia la scelta, la busta del cap. 1 contiene **solo** la bozza.
+- **Punti da allineare:** scheda 1 (r. 55-57 e 61: la busta contiene un solo foglio, lo si può dire senza rivelare che è
+  una bozza); scheda 25 (r. 392-393: togliere «che Elana non aveva visto», inserire il canale scelto); scheda 22
+  (r. 356), vedi minore 3.
+- **Non toccare:** il cap. 1 tace mittente e natura della carta; il 25 al 55%; le due perizie come meccanismo della
+  collusione; «la perita non testimonierà».
+- **Stima:** 150-200 parole di struttura.
 
-### A1. Tutto il libro al presente — classe: continuità
-- **Fonte da correggere:** `09-scelte-fisse.md`, voce «Tempo verbale». Oggi dice: passato (remoto e imperfetto), a
-  cose avvenute, presente solo per le riflessioni «da dopo». Va scritto: presente per tutta la narrazione, coerente
-  con il briefing (riga 19) e con `00-progetto/voce/indicazioni.md` (riga 4, che già dice presente).
-- **Conseguenze da fissare nella stessa voce:** con il presente non c'è più una Elana che racconta da dopo. Vanno tolte
-  le riflessioni del tipo «ancora oggi». Il cap. 1 resta un'anticipazione, ma la regge l'intestazione «Luogo — giorno e
-  data» (G51), non una voce che ricorda. Lo stesso vale per il 44, che diventa un salto in avanti datato, non uno
-  «sguardo retrospettivo».
-- **Punti che citano la fonte:** `03-personaggi-chiave.md` r. 7 («a cose avvenute»); `04-atti-svolte.md` r. 4
-  («Elana racconta a cose avvenute»); `05-scaletta.md` cap. 1 r. 53 («io narrante a cose avvenute») e cap. 44 r. 655
-  («sguardo retrospettivo»); titolo del cap. 44 «Come si ricucì» (passato remoto) in scaletta e in `08-piano-parole.md`;
-  `07-tensione-ritmo.md` r. 48 («distanza retrospettiva voluta»).
-- **Fuori dal mio recinto, da segnalare:** `06-diagnostica/contratto.md` r. 9 dice «passato, a cose avvenute»; va
-  allineato dal diagnosta.
-- **Cosa resta:** apertura in medias res, ritorno all'alba nel 45, calendario. Cambia come arriva il salto temporale,
-  non dove sta.
-- **Stima:** circa 250 parole di struttura.
-
-### A2. Le copie borboniche e i testi in copia unica — scioglie B1 e B2 — classe: continuità + spostare un'informazione
-Decisione (briefing r. 45): i Borbone possedevano circa un terzo dei volumi in copie tratte dagli originali; alcuni
-dei testi più importanti esistono in copia unica solo nella cripta.
-- **Fonte da correggere:** `04-atti-svolte.md`, «Tensione canonica da sciogliere». L'ipotesi del «Breviario» (un
-  compendio unico) lascia il posto al canone: un terzo del Fondo è stato copiato prima della sigillatura e quelle copie
-  sono passate ai Borbone. La cripta conserva gli originali e i testi in copia unica. Va aggiornata anche la catena
-  della ridipintura (1860-61) e del divieto di restauro, che oggi poggia sul Breviario.
-- **B1, il registro (cap. 29; ricade su 31, 39, 44, P20):** il registro con il Borbone, le famiglie dell'Accademia e i
-  Valli va **spostato fuori dall'archivio sigillato**. Deve stare in un luogo accessibile dopo la sigillatura e legato
-  alle copie borboniche (fondo delle copie, carte della loggia dell'Ottocento, archivi dell'Accademia: la scelta spetta
-  all'autore). Il 29 cambia luogo e quindi i tag (`@loc:archivio`). Restano la funzione (rivelazione e silenzio di
-  Elana), la presenza della sola Claudia, la battuta «niente di utile» e la catena 15→29→32→39. Con il luogo cambia la
-  domanda del 31: chi altro ha accesso a quel luogo (vedi S3).
-- **B2, il 1861 (cap. 17, P7; preparato nel 4):** nel 17 la conoscenza del 1861 e della guerra occulta **non può
-  venire dal corpus della cripta**. Deve venire dalle copie borboniche (annotazioni di corte, glosse aggiunte dopo la
-  copiatura) o da una fonte esterna già in scena (Dell'Aquila nel 16 e nel 31). Il 17 tiene dalla cripta solo Venezia,
-  i guru, i traduttori e il viaggio a Napoli, e confronta gli originali con quello che le copie lasciano fuori: i testi
-  in copia unica. Si tolgono «la sigillatura e il Breviario [ipotesi]» (r. 280) e «chiude P7: il 1861» (r. 282). P7
-  passa alla nuova fonte. In `06-sottotrame-temi.md`, r. 12, va aggiornata la riga di chiusura di P7.
-- **Ricadute da verificare:** il cap. 16 (Dell'Aquila «cita i Borbone»), ora può pagare in modo naturale con le copie.
-  Nel cap. 35 la «perdita degli originali» pesa di più, perché i testi in copia unica esistono ormai solo nella copia
-  digitale: va scritto in scaletta. Poi i cap. 39 (la pagina dei Valli) e 44 (P20, il registro mai consegnato), e la
-  riga del registro in `03-personaggi-chiave.md` (r. 50).
-- **Dipendenza bloccante residua (domanda per l'autore):** la decisione non dice **chi sigillò** l'archivio nel
-  Trecento, mentre la loggia nasce nel Settecento dalla fusione con la massoneria napoletana (rapporto, B2). Serve una
-  riga di canone: per esempio predecessori di cui la loggia eredita il segreto. Serve anche il **luogo del registro**.
-  Senza queste due risposte il 17 e il 29 non si chiudono.
-- **Stima:** 600-800 parole di struttura (tensione canonica, schede 4, 16, 17, 29, 31, 35, 39, 44, tabella promesse).
-
-### A3. Claudia decifra il rebus, Lorenzo apre l'archivio — scioglie S5 («tre studenti» contro cinque) — classe: continuità + approfondisci
-Decisione (briefing r. 40). Nella lettura più economica i tre studenti sono Claudia, Lorenzo e Mina. Elana è
-dottoranda e Pietro viene dalla Federico II.
-- **Fonte da correggere:** `01-premessa.md` (r. 4-6) e `02-logline-tema.md` (r. 4). Oggi la logline dice che è la
-  dottoranda a decifrare il rebus, e questo contraddice il canone. Il soggetto della scoperta diventa il gruppo, con il
-  rebus a Claudia e la porta a Lorenzo. Elana resta protagonista per lo sguardo (il dettaglio sotto la vernice, cap.
-  2) e per la scelta del 12. In `03-personaggi-chiave.md`, r. 74, la domanda aperta su «i tre» va chiusa.
-- **Cap. 3:** il gruppo si forma con i tre studenti, non con quattro pari. Va dichiarato chi sono «i tre» e dove sta
-  Elana rispetto a loro.
-- **Cap. 7:** oggi la chiave è «filologica (Elana) e iconografica (Claudia)», e le due si contendono il merito. La
-  soluzione va a **Claudia**. Elana dà gli strumenti filologici, ma il passaggio decisivo è di Claudia. Il conflitto di
-  merito resta, rovesciato.
-- **Cap. 9-10:** **Lorenzo apre** la porta. Oggi nel 9 «vuole tornare indietro»: va deciso nella scheda perché è proprio
-  lui ad aprire (la casata, il prezzo, la sua ironia). Va tenuto il sottotesto «se ci scoprono io ho più da perdere».
-  Nel 10 restano invariati i ruoli (Elana cataloga, Mina tocca, Lorenzo stima, Claudia vuole richiudere).
-- **Cap. 12:** ritocco minimo. Chi ha aperto la porta e chi ha letto la chiave pesa nella trattativa sul piano.
-- **Effetti collaterali utili (da usare, non da aggiungere):** la porta aperta da Lorenzo dà un motivo strutturale alle
-  sue chiavi nel 39-40 (vedi S4). Il rebus di Claudia è il primo atto in cui una sua scelta cambia la trama (vedi S6),
-  ma non basta per il cappio.
-- **Stima:** 400-500 parole di struttura (premessa, logline, personaggi, schede 3, 7, 9, 10, 12).
+## 2. S9. La chiave del Seicento contro i settecento anni di sigillo — 04; cap. 2, 9, 28 — classe: chiarire una regola del mondo
+**Quando:** prima della stesura (il cap. 2 mostra già le tele, il 9 la porta). Riga di canone: va approvata
+dall'autore al gate.
+- **Il problema:** `04-atti-svolte.md`, r. 55-60 («Catena di struttura [proposta]»). Una chiave dipinta «per gli
+  iniziati» fa pensare a una porta che si apriva, mentre la «polvere di settecento anni» del 28 (scaletta r. 440) dice
+  il contrario. In più la loggia governa l'edificio, mura la cripta (27), entra dagli ipogei (28), eppure «non sa
+  aprire» la porta.
+- **Che cosa cambia:** in 04 si aggiunge una riga che fissa due fatti. Primo, dopo la sigillatura del Trecento la porta
+  non fu più aperta, e la chiave del Seicento serve a tramandare la via, non a usarla. Secondo, la loggia non la
+  forza, e il motivo va collegato a quello che c'è già nel cap. 9 (un sigillo «su una volta che può cedere»). La
+  formulazione esatta spetta all'architetto e poi all'autore.
+- **Punti da verificare dopo la riga:** scheda 2 (il divieto di restauro resta com'è); scheda 9 (il cedimento della
+  volta diventa la ragione esplicita della loggia, non solo un rischio per i ragazzi); scheda 28 (la polvere resta,
+  coerente); `01-premessa.md` r. 7 e `02-logline-tema.md` r. 6 («settecento anni») restano invariati.
+- **Non toccare:** la ridipintura del 1860-61 e la data dei pigmenti (cap. 4); il registro a Dell'Aquila; Lorenzo che
+  apre (9).
+- **Stima:** 80-120 parole (una riga in 04 più i ritocchi alle schede 9 e 28).
 
 ---
 
-## Lavori dal rapporto (dopo A1-A3)
+## Minori — classe: continuità (in ordine di capitolo)
 
-### 4. S1 + S2. Il centro è già speso; la perizia contro la collusione — cap. 1, 22, 25 — classe: drammatizza (preparare una svolta)
-- **Cap. 1:** decidere che cosa tace. Il lettore sa della morte e della perizia, ma il cap. 1 non deve dire chi l'ha
-  mandata né perché il dato vero c'è.
-- **Cap. 22:** togliere l'anticipazione del 25, cioè il fermacarte a due lame sulla scrivania del PM in chiusura. La
-  chiusura del 22 va cambiata, non la sua funzione.
-- **Cap. 25:** gli serve un'informazione nuova. Il rapporto indica quella già pronta: chi ha fatto arrivare la perizia
-  e perché il referto riporta l'ora vera (perito dissidente, errore o segnale: sceglie l'autore). Così si sciolgono
-  insieme S1 e S2. La decisione «pubblicare tutto» resta.
-- `06-sottotrame-temi.md`: P17 si chiude al 25 solo se il cap. 1 non l'ha già chiusa.
-- **Stima:** 250 parole. **Non toccare:** la collocazione del 25 al 55%.
+### 3. Cap. 22 (G44): il seme del PM — dipende da S8
+**Quando:** si può aspettare la scheda 25. Basta che, dopo S8, la scheda 25 dica che la rettifica era già in corso al
+G44, così la domanda del PM («se le è arrivato qualcosa dall'istituto di medicina legale») resta un seme pagato. Se
+l'autore sceglie il canale (b) di S8, il seme diventa ancora più forte: va verificato che non anticipi il 25.
+**Stima:** 30 parole. **Non toccare:** il gancio del 22.
 
-### 5. S3. Il gancio del 31 — cap. 31, 39 o 44 — classe: continuità (pagare la domanda)
-Dipende da A2: con il registro in un luogo accessibile, la risposta a «chi l'ha detto a lui?» può venire da chi ha
-accesso a quel luogo, o da Claudia, o restare dentro l'ambiguità di Dell'Aquila. In quest'ultimo caso va dichiarata
-nel 44 come domanda lasciata aperta di proposito, come nel 42. In scaletta va segnato dove si paga.
-**Stima:** 100 parole.
+### 4. Cap. 29: dove sta la pagina dei Valli
+**Quando:** può aspettare, ma va fissato nella scheda 29 prima di scrivere il cap. 29. Il registro è canone
+dell'autore, quindi la scelta va confermata. Claudia legge le pagine del 1860-61 mentre Elana nasconde quella dei
+Valli: va detto che il nome dei Valli sta in un'altra sezione del registro o in un'altra generazione. **Decisione
+dell'autore (breve):** sezione o generazione. **Non toccare:** la catena 15→29→32→39 e la battuta «niente di utile».
+**Stima:** 40 parole.
 
-### 6. S6. Claudia non guida — una scena tra 26 e 36 (il rapporto indica 26 o 33) — classe: approfondisci
-Dopo A3 Claudia ha la chiave del rebus (atto I), ma nel cappio continua a subire. Serve una sua scelta con
-conseguenze **in una scena esistente** (26 o 33), senza aggiungerne. La scelta deve ricadere su un capitolo successivo
-(per esempio la «chiave di Claudia» pagata nel 39). Restano invariati il soccorso del 40 e l'uscita del 43.
-**Stima:** 150 parole.
+### 5. Cap. 30: gli accessi delle quattro di notte
+**Quando:** prima di scrivere il cap. 30 (scaletta r. 468), perché la scelta ricade sulla scheda 39. Gli accessi sono
+al G60, prima delle credenziali del 36. Due strade: pagarli al 39, insieme alla porta di rete, oppure dichiararli nella
+scheda 30 come residuo della sottotrama D lasciato aperto di proposito. **Non toccare:** la catena 18→36→39.
+**Stima:** 40-60 parole.
 
-### 7. S4. Il modello in rete e sull'impianto audio — cap. 36, 38, 42 — classe: drammatizza (preparare una causa)
-Serve una causa dichiarata che superi le «regole ferree, niente rete» di Pietro (13). Il rapporto indica le chiavi di
-Lorenzo (39-40), che dopo A3 hanno anche una radice nell'apertura dell'archivio, oppure una necessità tecnica detta
-prima del 36. Pietro resta razionale. Il «copiato altrove» del 42 resta aperto, ma deve poggiare su questa causa.
-**Stima:** 200 parole.
+### 6. Cap. 35: la formula del dono ai musei (scarto 3 del contratto)
+**Quando:** al gate. È canone aperto. Non blocca il cap. 1, ma va chiuso prima di scrivere il cap. 35. **Decisione
+dell'autore richiesta:** la formula che sostituisce «[formula da confermare dall'autore]» (scaletta r. 532). Al piano
+basta sapere se il dono cade del tutto, se viene rinviato o se passa ad altro canale. Dopo la scelta si aggiornano la
+scheda 35 e, se il dono non cade del tutto, le schede 44-45. **Non toccare:** il ritiro di Dell'Aquila e la falsa
+pista 31→35→39.
+**Stima:** 30-60 parole.
 
-### 8. S7. Il 44 chiude per riassunto — cap. 30/34, 44 — classe: taglia o comprimi + spostare un'informazione
-Dipende da A1 (il 44 non è più retrospettivo), da A2 (P20) e da S3. P12 («che cosa dicono i testi») va anticipata al
-30 o al 34, dove è già drammatizzata. Il 44 tiene solo il ricucirsi del sistema e la cartolina, e resta breve (circa
-1.800 parole o meno), con le chiusure in scene datate e non in elenco. Il nuovo titolo del capitolo non deve essere al
-passato remoto.
-**Stima:** 200 parole.
-
-### 9. Minori — classe: continuità
-- P10 e P13: unificarle in `06-sottotrame-temi.md` (una sola promessa).
-- Dono ai musei (scarto 3): una riga nel 35 o nel 36 che registri la caduta del canale dei musei. È canone, quindi la
-  formula va concordata con l'autore.
-- Cap. 20: chiarire come Elana legge l'ora sul telefono sequestrato.
-- Cap. 27: fissare tra il 13 e il 18 il vincolo che lascia metà del Fondo non digitalizzata.
-- Cap. 43-44: «perché nessuno la porta via?» va segnata come ambiguità voluta oppure pagata.
-- Cap. 44-45: mostrare che il bisogno di riscatto di Elana resta e che cambia solo l'oggetto («mai cambiare»).
-**Stima:** 200 parole.
+### 7. Cap. 44: densità (nove fatti in tre scene, circa 1.800 parole)
+**Quando:** in stesura, al cap. 44. Non va toccato nei documenti adesso. Chi scrive sceglie che cosa resta implicito.
+Se serve, prima del capitolo l'autore indica i due o tre fatti che possono restare fuori scena. **Non toccare:** le tre
+scene datate, la cartolina con le lame dritte, la lunghezza breve.
+**Stima:** 0 parole di struttura ora.
 
 ---
+
+## Decisioni dell'autore (riepilogo)
+1. **S8, bloccante per il cap. 1:** da quale canale arriva a Elana la perizia ufficiale nel 25 (a, b, c o altro)?
+2. **S9, al gate:** approvare la regola «porta mai più aperta dopo il Trecento; la loggia non la forza per la volta».
+3. **Cap. 35, al gate:** la formula del dono ai musei.
+4. **Cap. 29, prima del 29:** il nome dei Valli sta in un'altra sezione o in un'altra generazione?
+5. **Cap. 30, prima del 30:** gli accessi delle quattro si pagano al 39 o restano residuo dichiarato?
 
 ## Stima complessiva
-Circa 2.300-2.700 parole di struttura da riscrivere. Nessun capitolo da aggiungere. Il piano parole (45 capitoli,
-circa 90.000 parole, centro al 55%) resta invariato, salvo un possibile accorciamento del 44.
+Circa 400-550 parole di struttura. Nessun capitolo da aggiungere o togliere. Il piano parole (45 capitoli, circa
+90.000 parole, centro al 55%) resta invariato.
 
 ## Cosa non toccare
-Apertura in medias res e ritorno all'alba (con A1 cambia solo il tempo verbale); calendario G1-G72; collocazione delle
-svolte (12, 25, 35, 41-42) e piano parole; i cap. 19-20; la catena silenzio-tradimento 15→29→32→39 (con A2 cambia il
-luogo del 29, non la catena); il protocollo 34→41; la scelta di cancellare gli schemi nel 42; la cartolina con le lame
-dritte nel 44; l'ironia drammatica del cap. 1 sulle scene con l'assistente (6, 11, 19).
-
-## Domande bloccanti per l'autore (prima di applicare A2)
-1. Chi sigillò l'archivio nel Trecento, se la loggia nasce nel Settecento?
-2. Dove sta il registro (luogo accessibile dopo la sigillatura)?
-3. Da quale fonte Elana ricava il 1861 nel 17 (copie borboniche annotate, Dell'Aquila, altro)?
+Tutto ciò che il rapporto protegge (§6): la perita e il meccanismo delle due perizie (25); la catena 18→36→39 della
+porta di rete; l'inventario 26→30→36→42; l'offerta di Dell'Aquila 31→39; le tre scene datate del 44. Restano anche
+le decisioni già applicate: il presente, le copie dei Borbone, Claudia che decifra e Lorenzo che apre, la loggia del
+Trecento che sigilla, il registro a Dell'Aquila. Restano infine la collocazione delle svolte (12, 25, 35, 41-42), il
+calendario e l'apertura in medias res con il ritorno all'alba.
 
 ## Dopo
-Dopo ogni lavoro applicato, il diagnosta rimisura i file toccati. Se due giri non portano miglioramento, ci si ferma.
+Si applicano S8 e S9, poi il diagnosta rimisura solo i file toccati (04, schede 1, 2, 9, 25, 28). Se due giri non
+portano miglioramento, ci si ferma.
