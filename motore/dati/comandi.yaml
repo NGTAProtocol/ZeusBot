@@ -35,13 +35,15 @@ gruppi:
       - {nome: continuita, script: continuita.py, uso: "continuita <libro>", aiuto: "date, età, durate, cifre, grafie"}
       - {nome: riciclo, script: riciclo.py, uso: "riciclo <libro>", aiuto: "anti-riciclo a 7 parole (riscrittura)"}
       - {nome: ortografia, script: ortografia.py, uso: "ortografia <libro>", aiuto: "Hunspell, LanguageTool, checklist"}
+      - {nome: tipografia, script: tipografia.py, uso: "tipografia <libro> [N]", aiuto: "accenti, refusi ripetuti, spazi, virgolette, lineette, sistema del dialogo: ogni riga è un KO"}
       - {nome: languagetool, script: languagetool.py, uso: "languagetool stato | installa [--cartella <dir>] [--versione X] | verifica", aiuto: "LanguageTool fuori dal repository (cache locale, poi Maven Central; sostituisce lib/ solo dopo la verifica); verifica: frase di prova con una regola grammaticale italiana"}
       - {nome: compila, script: compila.py, uso: "compila <libro>", aiuto: "manoscritto completo in 05-output/"}
       - {nome: impagina, script: impagina.py, uso: "impagina <libro>", aiuto: "PDF di stampa"}
       - {nome: pdf, script: verifica_pdf.py, uso: "pdf <libro>", aiuto: "verifica del PDF"}
-      - {nome: copertina, script: copertina.py, uso: "copertina <libro> [--pagine N]", aiuto: "copertina intera KDP (quarta, costola, prima) in PDF e misure"}
+      - {nome: copertina, script: copertina.py, uso: "copertina <libro> [--pagine N]", aiuto: "copertina del cartaceo dal PDF definitivo (anche dalla prima o dalla copertina intera dell'autore in 00-progetto/copertina/), modello KDP per il grafico, misure; --pagine: solo anteprima"}
       - {nome: pacchetto, script: pacchetto.py, uso: "pacchetto <libro>", aiuto: "06-pubblicazione/ per KDP"}
       - {nome: kdp, script: conformita_kdp.py, uso: "kdp <libro>", aiuto: "conformità KDP, sezioni 1-15"}
+      - {nome: finale, script: pubblicazione.py, uso: "finale <libro>", aiuto: "controllo finale prima della pubblicazione: testo, PDF, KDP e copertina a 0 KO"}
       - {nome: verifica, script: speciale, uso: "verifica KDP fatta [AAAA-MM-GG] | stato | controlla", aiuto: "verifica dei dati KDP da parte dell'autore"}
   - nome: Recinto, salvataggio, motore
     comandi:

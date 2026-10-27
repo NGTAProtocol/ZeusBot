@@ -1493,7 +1493,7 @@ def correzioni_dopo_prova(A):
     proc = open(os.path.join(M, 'PROCEDURA.md'), encoding='utf-8').read()
     esito('fase.py', '(j) ordine di chiusura (fase.py)', A['j_ordine'], [c for _, c in fase.CHIUSURA], sez)
     esito('PROCEDURA.md', '(j) zb pacchetto prima di zb kdp (sezione 7)', 'sì',
-          'sì' if '`zb pdf`, `zb pacchetto`, `zb kdp`; poi `zb pronto' in proc else 'no', sez)
+          'sì' if '`zb copertina`, `zb pacchetto`, `zb kdp`, `zb finale`; poi `zb pronto' in proc else 'no', sez)
 
     # (k) esito a un gate di capitoli dopo una correzione registrata
     r = repo()
@@ -3199,7 +3199,8 @@ def grafica(A):
     esito('impagina.py', 'stile classico: PDF, font tutti incorporati e nessun Type3, fleuron tra le scene', 'True / 0 / 0 / True',
           f'{os.path.isfile(pdf)} / {sum(1 for f in fonts if not f["incorporato"])} / '
           f'{sum(1 for f in fonts if f["tipo"] == "Type 3")} / {chr(0x2767) in testo}', sez)
-    cop = os.path.join(cart, '06-pubblicazione', 'copertina', 'copertina.pdf')
+    import copertina
+    cop = os.path.join(cart, '06-pubblicazione', 'copertina', 'anteprima', 'copertina.pdf')
     r1 = esegui(os.path.join(S, 'copertina.py'), c, '--pagine', '240')
     with pymupdf.open(cop) as d:
         w1, h1 = round(d[0].rect.width / 72, 4), round(d[0].rect.height / 72, 4)
@@ -3207,15 +3208,82 @@ def grafica(A):
     r2 = esegui(os.path.join(S, 'copertina.py'), c, '--pagine', '60')
     with pymupdf.open(cop) as d:
         w2 = round(d[0].rect.width / 72, 4)
-    esito('copertina.py', 'copertina intera: 240 pagine crema 5,5×8,5 = 11,85×8,75″ con testo sulla costola; 60 pagine = '
-          '11,4″ senza; font incorporati', '0 11.85 8.75 True / 0 11.4 False / 0',
+    esito('copertina.py', 'anteprima (--pagine, in copertina/anteprima/): 240 pagine crema 5,5×8,5 = 11,85×8,75″ con '
+          'testo sulla costola; 60 pagine = 11,4″ senza; font incorporati; nessun copertina.yaml',
+          '0 11.85 8.75 True / 0 11.4 False / 0 / False',
           f'{r1.returncode} {w1} {h1} {"costola: sì" in r1.stdout} / {r2.returncode} {w2} {"costola: sì" in r2.stdout} / '
-          f'{sum(1 for f in f1 if not f["incorporato"])}', sez)
+          f'{sum(1 for f in f1 if not f["incorporato"])} / '
+          f'{os.path.isfile(os.path.join(cart, "06-pubblicazione", "copertina", "copertina.yaml"))}', sez)
     r3 = esegui(os.path.join(S, 'copertina.py'), c)
-    esito('copertina.py', 'senza --pagine: legge il PDF di stampa', 0, r3.returncode, sez)
+    fatti = sorted(os.listdir(os.path.join(cart, '06-pubblicazione', 'copertina')))
+    esito('copertina.py', 'senza --pagine: pagine dal PDF di stampa, modello KDP, guide, misure, impronta; coerente', 
+          "0 ['anteprima', 'anteprima-con-guide.png', 'copertina.pdf', 'copertina.yaml', 'misure.md', 'modello-kdp.pdf', "
+          "'modello-kdp.png'] []", f'{r3.returncode} {fatti} {copertina.coerente(cart, libro)}', sez)
+    os.makedirs(os.path.join(cart, '00-progetto', 'copertina'))
+    with pymupdf.open() as d:
+        pg = d.new_page(width=5.625 * 72, height=8.75 * 72)
+        pg.draw_rect(pg.rect, color=None, fill=(.85, .75, .55))
+        pg.get_pixmap(dpi=300).save(os.path.join(cart, '00-progetto', 'copertina', 'prima.png'))
+        r4 = esegui(os.path.join(S, 'copertina.py'), c)
+        ok4 = copertina.coerente(cart, libro)
+        bordo = copertina.colore_bordo(os.path.join(cart, '00-progetto', 'copertina', 'prima.png'))
+        with pymupdf.open(os.path.join(cart, '06-pubblicazione', 'copertina', 'copertina.pdf')) as dc:
+            quarta = dc[0].get_pixmap(dpi=10).pixel(10, 40)
+        pg.get_pixmap(dpi=100).save(os.path.join(cart, '00-progetto', 'copertina', 'prima.png'))
+        r5 = esegui(os.path.join(S, 'copertina.py'), c)
+        os.remove(os.path.join(cart, '00-progetto', 'copertina', 'prima.png'))
+        pg.get_pixmap(dpi=300).save(os.path.join(cart, '00-progetto', 'copertina', 'intera.png'))
+        r6 = esegui(os.path.join(S, 'copertina.py'), c)
+    esito('copertina.py', 'prima dell\'autore a 300 DPI: OK, quarta del colore del bordo; a 100 DPI: KO; intera con proporzioni '
+          'sbagliate: KO; zb finale la vede', '0 [] True / 1 True / 1 True True',
+          f'{r4.returncode} {ok4} {max(abs(a - b) for a, b in zip(quarta, bordo)) <= 3} / '
+          f'{r5.returncode} {"100 DPI" in r5.stdout} / {r6.returncode} {"proporzioni" in r6.stdout} '
+          f'{any("proporzioni" in x for x in copertina.coerente(cart, libro))}', sez)
+    open(pdf, 'ab').write(b'\n%altro interno\n')
+    esito('copertina.py', 'interno cambiato dopo la copertina: coerente lo segnala', True,
+          any('altro PDF' in x for x in copertina.coerente(cart, libro)), sez)
+
+def pubblicazione(A):
+    """Tipografia (tipografia.py) e controllo finale (pubblicazione.py, «zb finale»), 2026-10-27."""
+    import tipografia
+    sez = 'pubblicazione'
+    t = ('Perchè non ne sa nulla, nè lui. Qual\'è il punto? Un po di più. Il il cane , dorme.Poi parte\n'
+         'Disse - piano - e rise.... "Sì" e «no.\nNo no, piano piano.')
+    trovati = sorted({c for c, _, _ in tipografia.controlla_testo('x.md', t, 'it')})
+    esito('tipografia.py', 'accenti, qual è, po’, parola ripetuta, spazi, lineetta, punti, virgolette dritte, caporali '
+          'spaiati; «No no» e «piano piano» non sono errori', "['tipografia:accento', 'tipografia:caporali', "
+          "'tipografia:lineetta', 'tipografia:punti', 'tipografia:ripetizione', 'tipografia:spazio', "
+          "'tipografia:virgolette'] 1", f'{trovati} '
+          f'{sum(1 for c, _, d in tipografia.controlla_testo("x.md", t, "it") if c == "tipografia:ripetizione")}', sez)
+    esito('tipografia.py', 'due sistemi di dialogo nello stesso libro', "{'—': 'a:1', '«': 'b:1'}",
+          str(tipografia.sistemi_dialogo([('a', '— Vieni.\n'), ('b', '«Vieni.»\n')])), sez)
+    if not shutil.which('node'):
+        saltata('pubblicazione.py', 'controllo finale', 'Node assente', sez)
+        return
+    import pubblicazione
+    c = copia_libro('mini-libro-romance')
+    cart, libro, pdf = pdf_di(c)
+    esegui(os.path.join(S, 'copertina.py'), c)
+    r = esegui(os.path.join(S, 'pubblicazione.py'), c)
+    esito('pubblicazione.py', 'zb finale: KO finché manca la scheda KDP; compilato, PDF, tipografia e copertina in '
+          'ordine; report scritto', '1 True True True True True',
+          f'{r.returncode} {"KO conformità KDP" in r.stdout} {"OK aggiornati" in r.stdout} {"OK tipografia" in r.stdout} '
+          f'{"OK copertina" in r.stdout} {os.path.isfile(os.path.join(cart, pubblicazione.REPORT))}', sez)
+    lt = [x for x in pubblicazione.ortografia(cart, libro, set()) if 'ER_01_001' in x]
+    if lt:
+        dove = lt[0].split(' ')[0]
+        open(os.path.join(cart, '06-diagnostica', 'correzioni-accettate.yaml'), 'w', encoding='utf-8').write(
+            f'accettate:\n  - {{controllo: "languagetool:ER_01_001", dove: "{dove}", motivo: "uso voluto"}}\n')
+        import tipografia as tp
+        esito('pubblicazione.py', 'falso allarme accettato per iscritto con il motivo: non conta più', [],
+              [x for x in pubblicazione.ortografia(cart, libro, tp.accettate(cart)) if x.startswith(dove)], sez)
+    u = os.path.join(cart, '04-manoscritto', sorted(os.listdir(os.path.join(cart, '04-manoscritto')))[0])
+    open(u, 'a', encoding='utf-8').write('\nUna riga aggiunta dopo la stampa.\n')
+    esito('pubblicazione.py', 'manoscritto cambiato dopo compila e impagina: KO «aggiornati»', True,
+          any('cambiato' in x for x in pubblicazione.aggiornati(cart, libro)), sez)
 
 
-SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro, 'grafica': grafica}
+SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro, 'grafica': grafica, 'pubblicazione': pubblicazione}
 
 
 def main(argv):

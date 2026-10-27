@@ -102,9 +102,15 @@ scheda). `zb agenti prossimo` chiede la voce in fase documenti se ci sono campio
 `classico`: titoli in maiuscoletto, capolettera, prima riga in maiuscoletto, fleuron ❧ tra le scene; `moderno`:
 titoli a sinistra con filetto, punto tra le scene), da `stampa/stili/`. L'agente `grafico` scrive la quarta
 (`06-pubblicazione/quarta.md`) e il brief della copertina con tre concept e il prompt per l'illustrazione.
-`zb copertina <libro> [--pagine N]` genera `06-pubblicazione/copertina/copertina.pdf` (quarta, costola, prima; misura
-esatta; testo sulla costola oltre 79 pagine; riquadro del codice a barre libero; immagine `00-progetto/copertina.jpg|png`
-sulla prima se c'è) e `misure.md`, con i valori di `dati/kdp.yaml` («copertina», da verificare con il calcolatore KDP).
+`zb copertina <libro>` prende le pagine SOLO dal PDF di stampa definitivo (impronta in `copertina.yaml`: se l'interno
+cambia, `zb finale` chiede di rifarla) e scrive in `06-pubblicazione/copertina/`: `copertina.pdf` (misura esatta, testo
+sulla costola oltre 79 pagine, riquadro del codice a barre libero), `modello-kdp.pdf|png` (abbondanza, taglio, costola,
+zona sicura, codice a barre, pixel a 300 DPI: da dare al grafico), `anteprima-con-guide.png`, `misure.md` con la scheda
+di caricamento KDP. Copertina fatta da altri in `00-progetto/copertina/`: `prima.jpg|png` (solo la prima, già con titolo
+e autore: il motore compone costola e quarta nel colore del bordo, con il testo di `quarta.md`; `quarta.jpg|png`
+facoltativa come fondo) oppure `intera.jpg|png` (usata così com'è). Controlli: ≥ 300 DPI alla misura di stampa (sotto
+150 KO), proporzioni dell'intera (scarto > 1,5% KO). `--pagine N`: solo anteprima in `copertina/anteprima/`, mai da
+caricare. Valori di `dati/kdp.yaml` («copertina», da verificare con il calcolatore KDP).
 
 **Lingua**: «Lingua: it|en» nel briefing; per l'inglese le stesse fasi e gli stessi ruoli, con i profili di
 `editoriale/lingue/en/` (catalogo, criteri, glossario) e Hunspell/LanguageTool in inglese.
@@ -222,7 +228,7 @@ Questa tabella è il percorso breve; il percorso editoriale è nella sezione 1b.
 | documenti | completare bibbia, cronologia, scaletta, piano parole | `documenti` | libro.yaml, bibbia, cronologia, manuale, scaletta, piano parole |
 | pagina_campione | scrivere `05-revisioni/pagina-campione.md` (creata vuota all'ingresso nella fase; `pronto` la rifiuta finché è vuota) | `pagina_campione` | pagina campione |
 | stesura | capitoli, uno dopo l'altro | `primi_capitoli` dopo il capitolo 3; `lotto` a ogni lotto (se attivo); `controllo_fallito` sempre | capitoli e report |
-| chiusura | continuità, ortografia, manoscritto completo, PDF, pacchetto, controllo KDP | — | — |
+| chiusura | continuità, ortografia, tipografia, manoscritto completo, PDF, copertina, pacchetto, controllo KDP, controllo finale a 0 KO | — | — |
 | chiuso | — | — | — |
 
 **Gate attivi:** campo `gate` di `libro.yaml` (dal briefing, «Gate:»). Predefiniti del percorso breve (e di un
@@ -352,9 +358,18 @@ la fase passa a «chiusura» (percorso editoriale: a «struttura_manoscritto»).
 
 ## 7. Chiusura
 
-In ordine: `zb continuita`, `zb ortografia`,
-`zb compila`, `zb impagina`, `zb pdf`, `zb pacchetto`, `zb kdp`; poi `zb pronto <libro>`, che
-controlla che ci siano tutti i report e chiude il libro. `zb pacchetto` va prima di `zb kdp`: il
+In ordine: `zb continuita`, `zb ortografia`, `zb tipografia`,
+`zb compila`, `zb impagina`, `zb pdf`, `zb copertina`, `zb pacchetto`, `zb kdp`, `zb finale`; poi `zb pronto <libro>`,
+che controlla che ci siano tutti i report, rifà il controllo finale e chiude il libro solo a 0 KO.
+
+**Controllo finale (`zb finale <libro>`).** Somma i controlli oggettivi: compilato uguale al manoscritto e PDF fatto da
+quel compilato (`05-output/impronta-pdf.yaml`); Hunspell e LanguageTool eseguiti davvero e a zero; tipografia (`zb
+tipografia`: accenti, «qual è», «po’», parola ripetuta, spazi, virgolette dritte, caporali spaiati, lineette, punti, un
+solo sistema di dialogo nel libro), continuità, riciclo e copia, verifica del PDF, conformità KDP (dati verificati
+compresi) a 0 KO; copertina fatta su questo PDF. Un falso allarme di LanguageTool o della tipografia si accetta solo per
+iscritto: `06-diagnostica/correzioni-accettate.yaml`, voci `{controllo: "languagetool:REGOLA" | "tipografia:…", dove:
+"file:riga", motivo}`. Report: `06-pubblicazione/controllo-finale.md`. Apostrofi e puntini tipografici (’ …) li mette
+l'impaginazione. `zb pacchetto` va prima di `zb kdp`: il
 controllo KDP legge la scheda del pacchetto (senza, dà KO anche sulle sezioni che la scheda copre).
 Il formato della pagina si conferma in `libro.yaml` con `formato.formato_confermato_kdp` (facoltativo,
 predefinito false): con false la sezione 11 del controllo KDP dà un AVVISO, con true è OK.

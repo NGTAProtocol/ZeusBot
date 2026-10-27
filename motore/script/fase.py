@@ -50,11 +50,14 @@ FASI = percorso.FASI          # il percorso breve usa documenti, pagina_campione
 GATE_PREDEFINITI = ['documenti', 'pagina_campione', 'primi_capitoli']
 CHIUSURA = [('06-diagnostica/continuita.md', 'zb continuita'),
             ('06-diagnostica/controllo-ortografico.md', 'zb ortografia'),
+            ('06-diagnostica/tipografia.md', 'zb tipografia'),
             ('05-output/{nome}-completo.md', 'zb compila'),
             ('05-output/{nome}.pdf', 'zb impagina'),
             ('06-diagnostica/verifica-pdf.md', 'zb pdf'),
+            ('06-pubblicazione/copertina/copertina.pdf', 'zb copertina'),
             ('06-pubblicazione/checklist.md', 'zb pacchetto'),
-            ('06-pubblicazione/conformita-kdp.md', 'zb kdp')]
+            ('06-pubblicazione/conformita-kdp.md', 'zb kdp'),
+            ('06-pubblicazione/controllo-finale.md', 'zb finale')]
 PAGINA_DA_SCRIVERE = ('# Pagina campione\n\n<!-- Da scrivere secondo 03-architettura/manuale-di-stile.md; '
                       'poi «zb pronto <libro>». -->\n')
 SALVA = 'Salva: git add, commit, push, git status -sb, git log -1.'
@@ -365,6 +368,11 @@ def cmd_pronto(cartella, libro, stato):
                  if not os.path.isfile(os.path.join(cartella, p.format(nome=nome)))]
         if manca:
             raise comune.ErroreMotore('Chiusura incompleta. Mancano:\n- ' + '\n- '.join(manca))
+        import pubblicazione  # il libro si chiude solo se il controllo finale, rifatto ora, dà 0 KO
+        tot = sum(len(v) for _, v in pubblicazione.esegui(cartella, libro))
+        if tot:
+            raise comune.ErroreMotore(f'Controllo finale: {tot} KO, il libro non si chiude. Elenco in '
+                                      f'{pubblicazione.REPORT}.')
         stato.update(fase='chiuso', passo=None)
         print('Chiusura completa: libro chiuso.')
     else:

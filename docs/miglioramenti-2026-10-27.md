@@ -73,6 +73,19 @@ usate archiviate, soglie di stile solo informative). Obiettivo: manoscritti di q
   il contrasto «ok dell'autore / modo automatico» chiuso allineando i testi del pacchetto editoriale.
 - Corretta una prova che passava per caso (scriveva un file vuoto invece di «non passa»).
 
+## Terza parte: libro pronto per la stampa, copertina KDP
+
+- **Tipografia** (`zb tipografia <libro> [N]`): errori che un libro pubblicato non può avere, trovati senza modelli
+  (accenti, «qual è», «po’», parola ripetuta, spazi, virgolette dritte, caporali spaiati, lineette, punti, due sistemi
+  di dialogo). Lo scrittore lo esegue prima di consegnare il capitolo, il correttore lo porta a zero.
+- **Impaginazione**: apostrofi e puntini tipografici (’ …) in stampa.
+- **Controllo finale** (`zb finale <libro>`): compilato e PDF aggiornati (impronta), ortografia e LanguageTool eseguiti
+  e a zero, tipografia, continuità, riciclo, PDF, KDP e copertina a 0 KO; falsi allarmi solo per iscritto con il motivo
+  (`06-diagnostica/correzioni-accettate.yaml`). `zb pronto` in chiusura lo rifà e chiude solo a 0 KO.
+- **Copertina**: pagine solo dal PDF definitivo (con impronta: se l'interno cambia la copertina va rifatta); copertina
+  fatta da altri in `00-progetto/copertina/` (`prima` o `intera`), controlli di risoluzione e proporzioni; modello KDP
+  per il grafico (PDF e PNG a 300 DPI), anteprima con le guide, scheda di caricamento KDP; `--pagine` solo anteprima.
+
 ## Da fare con l'autore
 
 - Provare `/capitolo` sul libro di prova (capitolo 1) e confrontare con la versione di oggi.

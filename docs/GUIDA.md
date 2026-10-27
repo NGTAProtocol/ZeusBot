@@ -20,8 +20,12 @@ leggi alle pause e decidi.
 - Dopo la stesura: revisione del manoscritto (critico, professore, panel di quattro lettori), line editing (taglio
   del superfluo), copyediting, bozze.
 - Grafica: stile dell'interno (essenziale, classico, moderno), quarta di copertina e brief della copertina
-  dall'agente grafico, copertina intera in PDF con le misure KDP («zb copertina»). Se hai un'immagine per la prima
-  di copertina, mettila in `00-progetto/copertina.jpg`.
+  dall'agente grafico, copertina del cartaceo in PDF con le misure KDP («zb copertina», sempre dopo l'impaginazione:
+  la costola dipende dalle pagine vere).
+- **Copertina fatta da altri**: dai al grafico `06-pubblicazione/copertina/modello-kdp.pdf` (misure esatte). Poi metti
+  la sua immagine in `00-progetto/copertina/prima.jpg` (solo la prima, con titolo e autore già scritti: costola e
+  quarta le compone il motore) oppure `intera.jpg` (quarta + costola + prima). Serve alta risoluzione (300 DPI alla
+  misura di stampa; il motore dice quanti pixel): uno screenshot di solito non basta per la stampa.
 
 ## 3. Le tue risposte
 - Alla pausa di lettura: «ok» oppure «correggi: …».
@@ -29,6 +33,8 @@ leggi alle pause e decidi.
 - Per cambiare il motore stesso: scrivi «lavoro sul motore».
 
 ## 4. Prima di pubblicare
+- «zb finale»: rifà tutti i controlli (ortografia, grammatica, tipografia, continuità, PDF, KDP, copertina). Il libro
+  si chiude solo con 0 errori; un falso allarme si accetta per iscritto, con il motivo.
 - Controlla i dati KDP (formati, margini, copertina) sulle pagine ufficiali e registra la verifica:
   «zb verifica KDP fatta AAAA-MM-GG».
 - Confronta le misure della copertina con il calcolatore di KDP.

@@ -12,9 +12,11 @@ delle sessioni precedenti è in git (`git log`, ramo `archivio/motore-prima-2026
   lettori; editor strutturale con classi di intervento; line editing con il taglio avversario.
 - Voce del libro dalle pagine campione (`00-progetto/voce/`, anche ibrida): `zb voce campioni`, agente `voce`,
   `zb voce scheda`; anti-copia a 7 parole (`copia:campione_voce`).
-- Grafica: stili dell'interno (`formato.stile`), agente `grafico` (quarta, brief), `zb copertina` (copertina intera
-  KDP in PDF, misura esatta; dati in `dati/kdp.yaml`, sezione «copertina», da verificare).
+- Grafica: stili dell'interno (`formato.stile`), agente `grafico` (quarta, brief), `zb copertina` (dati in
+  `dati/kdp.yaml`, sezione «copertina», da verificare).
 - Soglie di stile informative (`soglie_stile`); bloccano fatti oggettivi e il voto sotto soglia.
+- Libro da stampa: `zb tipografia`, `zb finale` (tutti i controlli a 0 KO, `zb pronto` in chiusura lo rifà),
+  copertina dal PDF definitivo con l'immagine dell'autore (`00-progetto/copertina/prima|intera`) e modello KDP.
 - Tolti: traduzione (codice, agenti, prove), `zb adotta`, documenti superati di `docs/`, esiti storici delle prove.
 - Suite: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (dalla radice); impronta per `zb push` sul
   motore solo con la suite intera tutta OK.

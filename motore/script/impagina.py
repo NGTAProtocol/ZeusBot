@@ -16,6 +16,7 @@ Legge <libro>/05-output/<titolo>-completo.md (prima: compila.py) e scrive
 - metadati Title, Author, Subject; font sottoinsiemi, senza date di creazione.
 I file di lavoro stanno in una cartella temporanea fuori dal repository.
 """
+import hashlib
 import os
 import re
 import shutil
@@ -44,9 +45,21 @@ def sezioni(md):
     return [(parti[i], parti[i + 1].strip()) for i in range(1, len(parti), 2)]
 
 
+def tipografia_di_stampa(testo):
+    """Apostrofi tipografici (’) e puntini (…) nella stampa, senza toccare il manoscritto. Le righe di markup
+    (commenti, tag, immagini e link) restano com'erano."""
+    out = []
+    for r in testo.splitlines():
+        if r.lstrip().startswith('<') or '](' in r:
+            out.append(r)
+            continue
+        out.append(re.sub(r'(?<!\.)\.\.\.(?!\.)', '…', r.replace("'", '’')))
+    return '\n'.join(out)
+
+
 def html_sezione(tipo, testo):
     import markdown
-    corpo = markdown.markdown(testo, extensions=['md_in_html'])
+    corpo = markdown.markdown(tipografia_di_stampa(testo), extensions=['md_in_html'])
     if tipo in ('capitolo', 'prologo', 'epilogo', 'interludio'):
         corpo = marca_primo(corpo)
     return f'<section class="{tipo}">\n{corpo}\n</section>'
@@ -205,6 +218,9 @@ def impagina(cartella, libro):
         uscita = comune.percorso_in_libro(cartella, f'05-output/{comune.nome_file(libro["titolo"])}.pdf')
         doc.save(uscita, garbage=4, deflate=True, no_new_id=True)
         doc.close()
+        # impronta del compilato usato: «zb finale» controlla che il PDF venga da questo testo
+        comune.scrivi(cartella, '05-output/impronta-pdf.yaml', 'completo_md_sha256: ' + hashlib.sha256(
+            open(md_path, encoding='utf-8').read().encode('utf-8')).hexdigest() + '\n')
         return uscita, n_iniz, interno
     finally:
         shutil.rmtree(tmp, ignore_errors=True)

@@ -18,7 +18,7 @@ ferma solo se è elencato in `gate` di `libro.yaml` (lo decide il briefing).
 | 9 | Line editing | line editor (taglio avversario) | `/revisiona` |
 | 10 | Copyediting | correttore di italiano | `/revisiona` |
 | 11 | Grafica e bozze | grafico, correttore di bozze | `zb impagina`, `zb copertina` |
-| 12 | Chiusura meccanica | motore | continuita, ortografia, compila, impagina, pdf, pacchetto, kdp, pronto |
+| 12 | Chiusura | motore | continuita, ortografia, tipografia, compila, impagina, pdf, copertina, pacchetto, kdp, `zb finale` (0 KO), pronto |
 
 ## Regole
 - Risposte dell'autore alla pausa di lettura: `zb ok <libro>` oppure `zb correggi <libro> <note>`.
