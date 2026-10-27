@@ -160,6 +160,48 @@ def azione_stesura(cartella, libro, st, rel):
             f'06-diagnostica/misure/{u.zfill(2)}.md.']
 
 
+def esito_rapporto(cartella, rel):
+    """«passa» | «non passa» dal testo del rapporto (ultima occorrenza)."""
+    t = open(os.path.join(cartella, rel), encoding='utf-8').read().lower()
+    m = re.findall(r'\b(non passa|passa)\b', t)
+    return m[-1] if m else 'non passa'
+
+
+def azione_revisione(cartella, libro, fase_, rel):
+    """Giro della struttura o del manoscritto, un\'azione alla volta: (struttura) controllo del motore → diagnosta →
+    editor strutturale → revisione del testo con il piano → di nuovo diagnosta; al secondo «non passa» decide l'autore.
+    Agli agenti senza terminale la sessione passa la prima riga già calcolata (qui)."""
+    import percorso
+    ambito = 'struttura' if fase_ == 'struttura' else 'manoscritto'
+    if fase_ == 'struttura':
+        import struttura
+        ko = struttura.verifica(cartella)
+        if ko:
+            return [f'AZIONE: architetto-struttura ({rel}) corregge i KO di «zb struttura {rel} verifica»: '
+                    + '; '.join(ko[:5]) + (f' (e altri {len(ko) - 5})' if len(ko) > 5 else '') + '.']
+    (rap, r1, testi), (piano, r2, _) = percorso.rapporti(cartella, libro, fase_)
+    su = percorso.impronta(cartella, testi)
+    attuale = lambda f: (percorso.intestazione(cartella, f) or (None, None))[1] == su  # noqa: E731
+    esiste = lambda f: os.path.isfile(os.path.join(cartella, f))  # noqa: E731
+
+    def chiama(agente, compito):
+        return [f'AZIONE: agente {agente} ({rel}): {compito}. Prima riga del file, esatta: '
+                f'<!-- zb: ruolo={agente}; su={su} -->. Poi «zb salva {rel} "{agente} {ambito}"» (commit a parte).']
+    if not esiste(rap) or not attuale(rap):
+        return chiama(r1, f'diagnosi della {ambito} in {rap}, ultima riga «passa» o «non passa»')
+    esito = esito_rapporto(cartella, rap)
+    giro2 = esiste(piano) and not attuale(piano)   # un piano su un testo precedente: il giro 1 è già stato applicato
+    if esito == 'non passa' and giro2:
+        return [f'FERMO: {ambito}, secondo giro di diagnosi «non passa». Decide l\'autore (rapporto {rap}).']
+    if not esiste(piano) or not attuale(piano):
+        return chiama(r2, f'piano di revisione in {piano} dal rapporto {rap}')
+    if esito == 'non passa':
+        autore = 'architetto-struttura' if fase_ == 'struttura' else 'scrittore-voce'
+        return [f'AZIONE: agente {autore} ({rel}) applica {piano} (priorità in ordine); poi «zb salva {rel} '
+                f'"revisione {ambito}"». Dopo, di nuovo «zb agenti prossimo» (nuova diagnosi).']
+    return [f'AZIONE: «zb pronto {rel}» (la {ambito} passa).']
+
+
 def voce_da_fare(cartella):
     """True se ci sono pagine campione della voce ma non ancora la scheda 02-bibbia/voce.md."""
     import voce_libro
@@ -195,9 +237,13 @@ def prossimo(motore, argv):
         righe.append(f'{agente}, in parallelo a gruppi di al massimo {n} (con limiti o errori 429: '
                      f'{" poi ".join(map(str, o["riduzione"]))}):')
         righe += ['  gruppo: ' + ', '.join(f'{agente} {rel} {u}' for u in g) for g in a_gruppi(da_fare, n)] or ['  niente da fare']
+        righe += [f'  prima riga per {u}: <!-- zb: ruolo={agente}; su={percorso.impronta(cartella, [dict(percorso.capitoli(cartella, libro))[u]])} -->'
+                  for u in da_fare]
     elif st['fase'] in ('documenti', 'pagina_campione') and voce_da_fare(cartella):
         righe.append(f'AZIONE: voce del libro dai campioni: «zb voce campioni {rel}», poi agente voce ({rel}), poi '
                      f'«zb voce scheda {rel}» (con un KO, una correzione dell\'agente voce).')
+    elif st['fase'] in ('struttura', 'struttura_manoscritto'):
+        righe += azione_revisione(cartella, libro, st['fase'], rel)
     elif agente:
         righe.append(f'{agente} {rel} (un solo agente; rapporti in 06-diagnostica/).')
     else:
