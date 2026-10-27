@@ -3390,6 +3390,26 @@ def difetti_prove(A):
           f'{accettato}', sez)
     esito('fase.py', 'zb esito chiama il cancello dei difetti (revisione obbligatoria)', True,
           'difetti.cancello(cartella, libro, n)' in open(os.path.join(S, 'fase.py'), encoding='utf-8').read(), sez)
+    # giro di controllo: dopo un «passa», una correzione piccola fa ricontrollare solo le righe cambiate
+    import percorso
+    import revisione
+    g = tempfile.mkdtemp(dir=TMP)
+    subprocess.run(['git', 'init', '-q', g], check=True)
+    os.makedirs(os.path.join(g, '04-manoscritto'))
+    cap_rel = '04-manoscritto/01-a.md'
+    corpo = [f'Riga {i} del capitolo, con abbastanza parole.' for i in range(1, 13)]
+    open(os.path.join(g, cap_rel), 'w', encoding='utf-8').write('\n\n'.join(corpo) + '\n')
+    subprocess.run(['git', '-C', g, 'add', '-A'], check=True)
+    subprocess.run(['git', '-C', g, '-c', 'user.name=p', '-c', 'user.email=p@p', '-c', 'commit.gpgsign=false', 'commit',
+                    '-q', '-m', 'v1'], check=True)
+    su = revisione.impronta(g, [cap_rel])
+    corpo[4] = 'Riga 5 corretta.'
+    open(os.path.join(g, cap_rel), 'w', encoding='utf-8').write('\n\n'.join(corpo) + '\n')
+    piccola = percorso.righe_cambiate(g, cap_rel, su)
+    open(os.path.join(g, cap_rel), 'w', encoding='utf-8').write('\n\n'.join(f'Tutto nuovo {i}.' for i in range(12)) + '\n')
+    grande = percorso.righe_cambiate(g, cap_rel, su)
+    esito('percorso.py', 'correzione dopo un «passa»: una riga cambiata → giro di controllo su quella riga / tutto '
+          'cambiato → giro completo', "1 r.9 / None", f'{len(piccola or [])} {(piccola or ["-"])[0][:3]} / {grande}', sez)
 
 
 SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro, 'grafica': grafica, 'pubblicazione': pubblicazione, 'difetti': difetti_prove}
