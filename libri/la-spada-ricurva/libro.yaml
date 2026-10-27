@@ -62,3 +62,6 @@ copyright:
     fittizio; ogni somiglianza con persone, vive o scomparse, o con fatti realmente accaduti è puramente casuale.
   nota_autore: null
 revisione_capitolo: obbligatoria
+difetti:   # sistema difetto-test (zb difetti): parole-firma della narratrice e cliché vietati in questo libro
+  parole_firma: [clausol, cambial]
+  cliche: [metronomo rotto, tamburo sordo, "caccia all'uomo"]

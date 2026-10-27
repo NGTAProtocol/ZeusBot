@@ -1,0 +1,65 @@
+# Registro dei difetti del libro (sistema difetto→test: motore/editoriale/difetti.md, zb difetti <libro> prova).
+# Fixture: originali = capitoli 1-3 come letti dall'autore alla prima pausa di lettura (commit e995d61);
+# corretti = gli stessi dopo le correzioni del 27 ottobre.
+difetti:
+  - {id: D01, classe: giorni_relativi, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27, scena: "2",
+     stato: confermato,
+     descrizione: "cap. 2: il 21 la tela è sul cavalletto «da tre giorni», il 22 il posto vuoto è «fino a tre giorni fa» (sono quattro)",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D02, classe: conoscenza_personaggio, gravita: bloccante, rilevamento: revisore, data: 2026-10-27, scena: "3",
+     stato: confermato,
+     descrizione: "cap. 3: Claudia dice di aver visto il Martirio girato contro il muro, ma il laboratorio era chiuso a chiave",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D03, classe: fatto_da_verificare, gravita: bloccante, rilevamento: fonte, data: 2026-10-27, scena: "1",
+     stato: confermato,
+     descrizione: "cap. 1: finestra della morte di un'ora (22:00-23:00) da rigidità, ipostasi e temperatura rettale; cap. 3: «Le bon Dieu est dans le détail», attribuita a Warburg (fatti F001 e F002 in fatti.yaml)",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D04, classe: inferenza_come_fatto, gravita: bloccante, rilevamento: revisore, data: 2026-10-27, scena: "1",
+     stato: confermato,
+     descrizione: "cap. 1: «con il suo codice, sul suo schermo»: il foglio dice solo «visualizzato»",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D05, classe: etichetta_ruolo, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27, scena: "3",
+     stato: non confermato,
+     descrizione: "cap. 3: «una dottoranda» sembrava riferito a Claudia; nel testo è Elana che parla di sé (Elana è dottoranda). Il controllo resta per i casi veri (etichetta vicina al nome di un personaggio che non ha quel ruolo)",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D06, classe: ordine_tipo, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27, scena: "2",
+     stato: confermato,
+     descrizione: "cap. 1 del 10 dicembre, capp. 2-3 di ottobre, senza il tipo dichiarato (la struttura lo dice anticipazione: 04-atti-svolte, scheda 1)",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D07, classe: apertura_ripetuta, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27, scena: "2",
+     stato: confermato,
+     descrizione: "aperture con aforisma più «sa di X, di Y e di Z» in tre capitoli consecutivi",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D08, classe: frase_firma, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27, scena: "2",
+     stato: confermato,
+     descrizione: "«Osservo. Confronto. Concludo» identico nei tre capitoli; «clausola» nei capitoli 1 e 2",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D09, classe: chiusure_uguali, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27, scena: "3",
+     stato: confermato,
+     descrizione: "chiusura=D nei tre capitoli: l'audit anti-IA lo segnalava (P0) ma solo come avviso (soglie di stile informative)",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D10, classe: lunghezza, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27, scena: "2",
+     stato: non confermato,
+     descrizione: "1372, 2110 e 2033 parole: dentro il piano parole (1400, 2200, 2200, ±15%). «Capitoli brevi» è nelle indicazioni dell'autore sul campione 2, non nel piano: contrasto da decidere",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D11, classe: cliche, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27,
+     stato: confermato,
+     descrizione: "«metronomo rotto», «tamburo sordo», «caccia all'uomo» stanno nel campione 1 dell'autore (non nei capitoli): il motore non controllava i campioni; ora li segnala e li vieta nei capitoli",
+     fixture_sbagliata: 00-progetto/voce, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D12, classe: copia_capitoli, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27,
+     stato: non confermato,
+     descrizione: "il blocco delle 7 parole confrontava già anche i capitoli precedenti, ma solo come avviso; ora è bloccante. Nei capitoli 1-3 nessuna copia di 7 parole",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D13, classe: similitudini, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27, scena: "1",
+     stato: confermato,
+     descrizione: "similitudini figurate oltre il tetto in 01 e 03 (il motore le contava ma solo come avviso)",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D14, classe: motivazione, gravita: avviso, rilevamento: revisore, data: 2026-10-27, scena: "3",
+     stato: confermato,
+     descrizione: "cap. 3: Elana accetta il gruppo senza pesare che il permesso di Valli è firmato dal Direttore",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+  - {id: D15, classe: tratto_ricorrente, gravita: avviso, rilevamento: deterministico, data: 2026-10-27, scena: "3",
+     stato: confermato,
+     descrizione: "Elana conta (gradini, mandate, bulloni, biette, tamponi, cornici) in tutti e tre i capitoli: da tenere sotto controllo, non da eliminare",
+     fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
+eccezioni: []

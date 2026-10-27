@@ -2,15 +2,12 @@ libro: La Spada Ricurva
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
-passo: pausa di lettura
-gate_in_attesa: lettura
+passo: capitolo 4
+gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 1
-  - 2
-  - 3
-ultimo_capitolo_approvato: null
+  capitoli: []
+ultimo_capitolo_approvato: 3
 ultimo_capitolo_scritto: 3
 tentativi: {}
 correzioni_aperte: []
@@ -231,10 +228,19 @@ documenti_approvati:
     sha256: 462d3bc85f26b44aee168eb2ca90f1e5976262f1c2a55241ee7cbf39271294f4
     commit: 942f648
     senza_gate: true
+  04-manoscritto/01-la-perizia.md:
+    sha256: 43552f831d23cbbe38f5a5ee6f00c70fadfae0ca7e478373fcdfa789f46a2c22
+    commit: 1c0862d
+  04-manoscritto/02-sotto-la-vernice.md:
+    sha256: 6631e068031ca6ee7943ebc31a6b39d03a148f2569643d720fe1c11216edd84d
+    commit: 3f3e5e1
+  04-manoscritto/03-il-dettaglio-ripetuto.md:
+    sha256: 790c384ec518afba9f4aa19a64c9aad5ebf14ade24ac56d5b9889ebc8f65eacb
+    commit: e2ea5ea
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-27T16:48:23Z'
+aggiornato: '2026-10-27T17:41:23Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
@@ -253,3 +259,13 @@ fatti_bloccati:
   al timestamp di un messaggio minatorio arrivato sul telefono della vittima. Prova che Procura e medicina legale sono colluse.'
 - 'Assedio: in una notte di pioggia la setta isola i ragazzi nell''Accademia; Lorenzo passa i dati; l''IA di Pietro si comporta
   in modo anomalo e manipola i presenti.'
+note_lettura:
+- data: '2026-10-27'
+  capitoli:
+  - 1
+  - 2
+  - 3
+  testo: 'Note dell''autore ai capitoli 1-3: la voce regge ed è sopra la pagina campione; evitare le formule regolari tra
+    capitoli (apertura con aforisma più elenco di odori, Osservo-Confronto-Concludo identico, parole-firma come clausola ripetute),
+    una sola similitudine forte per paragrafo, battute meno sentenziose, il tratto di Elana che conta va dosato, capitoli
+    più corti dove la scheda lo consente.'
