@@ -22,8 +22,8 @@ conferma.
 | @char:dellaquila | Carlo Dell'Aquila | Critico internazionale, elegante, algido, ambiguo; ha il registro della loggia [canone]. Si ritira nel 35; cartolina con due lame dritte nel 44 [proposta]. Il libro non dice mai da che parte stia. Età 64 [proposta]. |
 | @char:professore | Ettore Sanfelice, il Professore di Arte Moderna | Titolare di cattedra, volto in scena della setta; freddo, formale, sferzante [canone]. Età 61 [proposta]. |
 | @char:assistente | Andrea Scotti, l'assistente | Mentore dei ragazzi in laboratorio; supplica di non denunciare; assassinato dalla setta [canone]. Muore nella notte G40-G41, trovato all'alba di G41 ai piedi della scala del chiostro (cap. 20) [proposta]. Dopo il 20 è solo ricordato, o «parla» attraverso il modello. Età 54 [proposta]. |
-| @char:rettore | Il Rettore | Della setta [canone]; porta l'anello (cap. 11) [proposta]. Visto di riflesso. Nome Ruggero Arcamone [proposta]. |
-| @char:vicerettore | Il Vicerettore | Della setta [canone]; conduce l'ispezione del 18 [proposta]. Nome Aurelio Cennamo [proposta]. |
+| @char:rettore | Il Direttore | Della setta [canone]; porta l'anello (cap. 11) [proposta]. Visto di riflesso. Nome Ruggero Arcamone [proposta]. |
+| @char:vicerettore | Il Vicedirettore | Della setta [canone]; conduce l'ispezione del 18 [proposta]. Nome Aurelio Cennamo [proposta]. |
 | @char:pm | Il pubblico ministero | Cortese, preciso, colluso (cap. 22, 34, 43) [proposta]. Nome Guido Ianniello [proposta]. |
 | @char:perita | La perita | Giovane medica legale dissidente. La busta del cap. 1 contiene solo la sua bozza; la perizia ufficiale la porta lei a Elana, all'alba, nel cap. 25 [canone]. Non testimonierà [proposta]. Nome Teresa Avallone, età 34 [proposta]. |
 
@@ -39,7 +39,7 @@ che riguarda la setta sono invenzione. Ogni luogo ha la sua scheda nel codex.
 | @loc:galleria | Galleria dell'Accademia | Le quattro tele del rebus; la tela del cap. 2 torna nel 41. |
 | @loc:chiostro | Chiostro | Portico, scala dove muore l'assistente; sotto, l'accesso alla cripta. |
 | @loc:aula-moderna | Aula del seminario di arte moderna | Territorio del Professore (cap. 6). |
-| @loc:rettorato | Rettorato | Ufficio del Vicerettore (cap. 18). |
+| @loc:rettorato | Direzione | Ufficio del Vicedirettore (cap. 18). |
 | @loc:cripta | Cripta di tufo | Sotto il chiostro; volta che può cedere; murata per «consolidamento» nel 27; crollo nel 40. |
 | @loc:archivio | Archivio sigillato (il Fondo Proibito) | Dietro la porta con le due lame; polvere di settecento anni; originali bruciati nel 35. |
 | @loc:ipogei | Ipogei e cave della Sanità | Via sotterranea dalla Sanità alla cripta (cap. 28). |
@@ -76,7 +76,7 @@ che riguarda la setta sono invenzione. Ogni luogo ha la sua scheda nel codex.
 - Dopo il sigillo del Trecento la porta non fu mai più aperta: la chiave dipinta nel Seicento tramanda solo la via; la loggia non la forza perché la volta può crollare (decisione dell'autore).
 - Il dono ai musei internazionali salta con il ritiro di Dell'Aquila (cap. 35): il Fondo vive solo open-source in rete (decisione dell'autore).
 - La pagina dei Valli nel registro riguarda un antenato di Lorenzo: la famiglia è legata alla setta da generazioni, il debito è un'eredità (decisione dell'autore).
-- Oggi il Rettore, il Vicerettore e i vertici dell'Accademia sono della setta.
+- Oggi il Direttore, il Vicedirettore e i vertici dell'Accademia sono della setta.
 - La setta detiene i debiti e i titoli finanziari della famiglia di Lorenzo.
 - L'assistente viene assassinato dalla setta; dieci giorni dopo arriva la perizia medico-legale: l'ora del decesso è precedente al timestamp di un messaggio minatorio arrivato sul telefono della vittima. Prova che Procura e medicina legale sono colluse.
 - Assedio: in una notte di pioggia la setta isola i ragazzi nell'Accademia; Lorenzo passa i dati; l'IA di Pietro si comporta in modo anomalo e manipola i presenti.
@@ -160,4 +160,4 @@ Tre giorni da guardare in stesura (dettagli nella nota di direzione): G12 = 1 no
   Trecento (17), specchio a vapore (33), alba (45). Variante unica: due lame **dritte** nella cartolina di Dell'Aquila
   (44), mai spiegata.
 - La voce dell'intelligenza, umana e artificiale, fino all'ultima pagina [canone]: «una vernice alla volta» (19, 38).
-- Documenti che mentono con precisione: perizia (1, 25), comunicato del Rettore (44).
+- Documenti che mentono con precisione: perizia (1, 25), comunicato del Direttore (44).

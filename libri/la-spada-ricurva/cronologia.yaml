@@ -31,7 +31,7 @@ eventi:
   - {id: g70-decisione, data: 2025-12-29, capitolo: 36, descrizione: "G70: caricare tutto dall'Accademia, domani notte"}
   - {id: g71-assedio, data: 2025-12-30, capitolo: 37, descrizione: "G71 sera: chiusura per le feste; portone chiuso da fuori"}
   - {id: g72-alba, data: 2025-12-31, capitolo: 45, descrizione: "G72: upload al cento per cento verso l'alba (42); Elana sola all'alba (45)"}
-  - {id: comunicato, data: 2026-01-15, capitolo: 44, descrizione: "Inaugurazione dell'anno accademico; comunicato del Rettore"}
+  - {id: comunicato, data: 2026-01-15, capitolo: 44, descrizione: "Inaugurazione dell'anno accademico; comunicato del Direttore"}
 durate:
   - {da: g41-morte, a: g51-perizia, valore: "dieci giorni", tolleranza_giorni: 0}   # canone: perizia dieci giorni dopo la morte
 cifre:

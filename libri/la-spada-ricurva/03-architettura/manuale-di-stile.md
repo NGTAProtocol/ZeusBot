@@ -24,7 +24,7 @@ esecuzione). Le regole che non si discutono:
 - **Punteggiatura:** niente punto e virgola, esclamativi, puntini di sospensione.
 - **Lessico:** restauro, debito, legge; niente cliché napoletani, niente aggettivi vaghi, niente psicologia
   dichiarata. Anglismi solo nel lessico tecnico di Pietro (file, codice, server, modello).
-- **Nomi provvisori:** «l'assistente», «il Professore», «la perita», «il PM», «il Rettore», «il Vicerettore» restano
+- **Nomi provvisori:** «l'assistente», «il Professore», «la perita», «il PM», «il Direttore», «il Vicedirettore» restano
   senza nome finché l'autore non li dà; Pietro senza cognome. Nessuna età scritta finché l'autore non la conferma.
 - Voce d'autore: si fissa con l'«ok» alla pagina campione.
 
@@ -92,7 +92,7 @@ esecuzione). Le regole che non si discutono:
 - Dopo il sigillo del Trecento la porta non fu mai più aperta: la chiave dipinta nel Seicento tramanda solo la via; la loggia non la forza perché la volta può crollare (decisione dell'autore).
 - Il dono ai musei internazionali salta con il ritiro di Dell'Aquila (cap. 35): il Fondo vive solo open-source in rete (decisione dell'autore).
 - La pagina dei Valli nel registro riguarda un antenato di Lorenzo: la famiglia è legata alla setta da generazioni, il debito è un'eredità (decisione dell'autore).
-- Oggi il Rettore, il Vicerettore e i vertici dell'Accademia sono della setta.
+- Oggi il Direttore, il Vicedirettore e i vertici dell'Accademia sono della setta.
 - La setta detiene i debiti e i titoli finanziari della famiglia di Lorenzo.
 - L'assistente viene assassinato dalla setta; dieci giorni dopo arriva la perizia medico-legale: l'ora del decesso è precedente al timestamp di un messaggio minatorio arrivato sul telefono della vittima. Prova che Procura e medicina legale sono colluse.
 - Assedio: in una notte di pioggia la setta isola i ragazzi nell'Accademia; Lorenzo passa i dati; l'IA di Pietro si comporta in modo anomalo e manipola i presenti.

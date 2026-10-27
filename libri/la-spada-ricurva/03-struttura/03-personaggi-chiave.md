@@ -27,10 +27,10 @@ gate; le domande aperte del briefing sono elencate in fondo e non sono fatti can
   Settecento è solo una delle sue maschere; nasce dai traffici veneziani con l'Oriente e dalle correnti vediche e
   filosofiche. Simbolo: due scimitarre incrociate e piegate. I Borbone possedevano circa un terzo dei volumi, in copie
   tratte dagli originali; l'ultimo re Borbone ne era membro e usava i testi per il controllo politico; la caduta del
-  regno fu anche una guerra occulta tra logge rivali. Oggi Rettore, Vicerettore e vertici dell'Accademia ne fanno
+  regno fu anche una guerra occulta tra logge rivali. Oggi Direttore, Vicedirettore e vertici dell'Accademia ne fanno
   parte; detiene i debiti della famiglia Valli; uccide l'assistente; ha Procura e medicina legale. [canone]
 - Volto in scena: **il Professore di Arte Moderna** (@char:professore), freddo, formale, sferzante; sorveglia,
-  opprime, cerca di neutralizzare i ragazzi. [canone] Il Rettore (@char:rettore) e il Vicerettore
+  opprime, cerca di neutralizzare i ragazzi. [canone] Il Direttore (@char:rettore) e il Vicedirettore
   (@char:vicerettore) restano lontani, quasi sempre visti di riflesso. [proposta]
 - Cosa vuole: che il Fondo resti chiuso o torni nelle sue mani; che nessuno sappia. [canone] Da sola non sa più
   aprirlo: nella guerra occulta del 1861 ha fatto ridipingere la chiave e ha perso chi sapeva leggerla. I ragazzi le

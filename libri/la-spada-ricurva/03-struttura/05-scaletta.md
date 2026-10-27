@@ -194,12 +194,12 @@
 - Personaggi e luoghi (tag del codex): @char:elana @char:assistente @char:claudia @loc:laboratorio-restauro
 - Conflitto (chi vuole cosa, chi si oppone): l'assistente vuole che rimettano il codice e dimentichino; Elana vuole sapere che cosa lui sa.
 - Cosa cambia alla fine (situazione, conoscenza, relazione): l'assistente racconta un insabbiamento passato (un collega, una denuncia, una carriera finita) e pronuncia il nome della loggia.
-- Informazione data al lettore (e cosa viene taciuto): data: la Spada Ricurva esiste e ha il Rettore; taciuto: quanto lui ne fece parte o vi si piegò.
+- Informazione data al lettore (e cosa viene taciuto): data: la Spada Ricurva esiste e ha il Direttore; taciuto: quanto lui ne fece parte o vi si piegò.
 - Promesse aperte / chiuse: sviluppa P3, P10 (la paura e il passato dell'assistente).
 - Emozione dominante: paura che diventa rispetto.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da rimprovero a confessione.
 - Sottotesto dei dialoghi principali: lui dice «non denunciate» e intende «non fidatevi di nessuno, me compreso»; il lettore, che sa del cap. 1, sente il conto alla rovescia.
-- Gancio finale: «Si chiama Spada Ricurva. E il Rettore ne porta l'anello».
+- Gancio finale: «Si chiama Spada Ricurva. E il Direttore ne porta l'anello».
 - Parole previste: 2200
 
 ## Capitolo 12 - La scelta
@@ -288,15 +288,15 @@
 
 ## Capitolo 18 - L'ispezione
 - Funzione narrativa: la posta sale; l'istituzione colpisce in modo legale.
-- Punto di vista, luogo e tempo: Elana; laboratorio, ufficio del Vicerettore; G38.
+- Punto di vista, luogo e tempo: Elana; laboratorio, ufficio del Vicedirettore; G38.
 - Personaggi e luoghi (tag del codex): @char:elana @char:vicerettore @char:professore @char:claudia @loc:laboratorio-restauro @loc:rettorato
 - Conflitto (chi vuole cosa, chi si oppone): l'Accademia vuole i suoi appunti e le foto; Elana vuole salvare la borsa e il lavoro.
-- Cosa cambia alla fine (situazione, conoscenza, relazione): ispezione del laboratorio; borsa sospesa; Claudia minacciata d'espulsione per un pretesto; Lorenzo convocato dal Rettore, ne esce con un premio inspiegabile: l'accesso notturno ai laboratori «per la tesi». L'ispezione ferma anche le notti nell'archivio per una settimana.
-- Informazione data al lettore (e cosa viene taciuto): data: la setta usa i regolamenti come armi e premia chi vuole comprare; taciuto: che cosa si dicono Lorenzo e il Rettore.
+- Cosa cambia alla fine (situazione, conoscenza, relazione): ispezione del laboratorio; borsa sospesa; Claudia minacciata d'espulsione per un pretesto; Lorenzo convocato dal Direttore, ne esce con un premio inspiegabile: l'accesso notturno ai laboratori «per la tesi». L'ispezione ferma anche le notti nell'archivio per una settimana.
+- Informazione data al lettore (e cosa viene taciuto): data: la setta usa i regolamenti come armi e premia chi vuole comprare; taciuto: che cosa si dicono Lorenzo e il Direttore.
 - Promesse aperte / chiuse: sviluppa P5, P8.
 - Emozione dominante: umiliazione e ostinazione.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da difesa a contrattacco.
-- Sottotesto dei dialoghi principali: il Vicerettore parla di «tutela del patrimonio» e intende «restituisci»; Elana risponde con il regolamento a memoria.
+- Sottotesto dei dialoghi principali: il Vicedirettore parla di «tutela del patrimonio» e intende «restituisci»; Elana risponde con il regolamento a memoria.
 - Gancio finale: Elana decide di raddoppiare i turni sulla macchina: finire prima che chiudano tutto.
 - Parole previste: 1800
 
@@ -324,7 +324,7 @@
 - Promesse aperte / chiuse: sviluppa P1; apre P17 (la versione del suicidio corre prima di ogni indagine: la Procura è con loro?); il lettore ricollega il cap. 1.
 - Emozione dominante: shock lucido.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da attesa a perdita.
-- Sottotesto dei dialoghi principali: il Rettore parla di «tragedia della fragilità» e intende «è chiusa»; il Professore guarda Elana e non dice nulla.
+- Sottotesto dei dialoghi principali: il Direttore parla di «tragedia della fragilità» e intende «è chiusa»; il Professore guarda Elana e non dice nulla.
 - Gancio finale: il telefono dell'assistente, già chiuso in una busta trasparente sul banco della portineria, si illumina per una notifica; sulla schermata bloccata Elana legge l'anteprima del messaggio e l'ora: 23:47.
 - Parole previste: 2000
 
@@ -655,12 +655,12 @@
 - Punto di vista, luogo e tempo: Elana, al presente; tre scene, ognuna con la sua intestazione: «Accademia, aula magna — 15 gennaio»; «Palazzo Valli — febbraio»; «Stanza di Elana, Quartieri — marzo».
 - Personaggi e luoghi (tag del codex): @char:elana @char:claudia @char:professore @char:rettore @char:dellaquila (per cartolina) @loc:accademia @loc:palazzo-valli @loc:stanza-elana
 - Conflitto (chi vuole cosa, chi si oppone): l'istituzione vuole ridurre tutto a falsi digitali e bravata; Elana vuole che il suo nome resti attaccato al Fondo senza chiederlo a nessuno.
-- Cosa cambia alla fine (situazione, conoscenza, relazione): scena 1: all'inaugurazione dell'anno accademico il Rettore legge il comunicato; il Professore è premiato; tra le righe, la Procura ha chiuso ogni fascicolo; Pietro è nominato come «imputato di accesso abusivo». Claudia, in fondo all'aula, lascia l'Accademia e ha depositato il suo esposto. Scena 2: l'asta di palazzo Valli, le cornici vuote vendute a lotti, i debiti estinti da un acquirente senza nome; di Lorenzo nessuna traccia. Scena 3: nella sua stanza Elana lavora all'edizione aperta del Fondo, firmata con il suo nome; arriva una cartolina di Dell'Aquila con due lame dritte.
+- Cosa cambia alla fine (situazione, conoscenza, relazione): scena 1: all'inaugurazione dell'anno accademico il Direttore legge il comunicato; il Professore è premiato; tra le righe, la Procura ha chiuso ogni fascicolo; Pietro è nominato come «imputato di accesso abusivo». Claudia, in fondo all'aula, lascia l'Accademia e ha depositato il suo esposto. Scena 2: l'asta di palazzo Valli, le cornici vuote vendute a lotti, i debiti estinti da un acquirente senza nome; di Lorenzo nessuna traccia. Scena 3: nella sua stanza Elana lavora all'edizione aperta del Fondo, firmata con il suo nome; arriva una cartolina di Dell'Aquila con due lame dritte.
 - Informazione data al lettore (e cosa viene taciuto): data: il Fondo è online e copiato ovunque; perché nessuno l'ha portata via all'alba: il comunicato la chiama «una dottoranda esclusa» e i testi «falsi digitali»; arrestarla l'avrebbe resa una martire, lasciarla libera la rende una mitomane; il bisogno di riscatto di Elana resta, cambia l'oggetto: non più l'Accademia, ma il nome sull'edizione. Taciuto: chi ha pagato i debiti dei Valli; che cosa significano le lame dritte.
 - Promesse aperte / chiuse: chiude P1 (la verità c'è, la giustizia no: fascicoli chiusi), P9 (chiuso nell'ambiguità), P27; sviluppa P5 (il bisogno resta), P22.
 - Emozione dominante: amarezza lucida.
 - Polarità emotiva (da cosa a cosa cambia la carica della scena): da dispersione a consapevolezza.
-- Sottotesto dei dialoghi principali: pochi dialoghi; il comunicato letto dal Rettore come il testo della perizia nel cap. 1: istituzione che mente con precisione; Claudia, all'uscita, dice «ci vediamo in tribunale» ed è il primo scherzo tra loro da dicembre.
+- Sottotesto dei dialoghi principali: pochi dialoghi; il comunicato letto dal Direttore come il testo della perizia nel cap. 1: istituzione che mente con precisione; Claudia, all'uscita, dice «ci vediamo in tribunale» ed è il primo scherzo tra loro da dicembre.
 - Gancio finale: la cartolina sul tavolo, le due lame dritte. Il capitolo dopo torna, con la sua intestazione, all'alba di G72.
 - Parole previste: 1800
 

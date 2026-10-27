@@ -35,7 +35,7 @@ sentito dire, e vuole vederla da sotto.
   «osservo, confronto, concludo» è la sua firma.
 - Due scimitarre incrociate e piegate che tornano su tela, pietra, specchio, e una sola volta dritte.
 - Un'IA che parla con la cadenza di un morto: thriller tecnologico e gotico nello stesso oggetto.
-- Documenti che mentono con precisione: la perizia rettificata, il comunicato del Rettore.
+- Documenti che mentono con precisione: la perizia rettificata, il comunicato del Direttore.
 
 ## Rischi
 1. **Lentezza della voce gotica nell'apertura** (cap. 1-12, 28%): la densità sensoriale chiesta può soffocare il
@@ -90,7 +90,7 @@ freddi, nessun volto. Prezzo e formato: da decidere con l'autore.
 3. **Modo di parlare («Come parla»)** di Claudia, Lorenzo, Mina, Pietro e dell'assistente (Elana, Dell'Aquila e
    Professore ce l'hanno).
 4. **«Da solo»** (che cosa fa ciascuno quando nessuno lo guarda) di tutti i personaggi.
-5. **Nomi**: l'assistente, il Professore, la perita, il PM, il Rettore, il Vicerettore; cognome di Pietro.
+5. **Nomi**: l'assistente, il Professore, la perita, il PM, il Direttore, il Vicedirettore; cognome di Pietro.
 6. **Elana**: provenienza (città, famiglia, classe), che serve al riscatto sociale; dottoranda dell'Accademia o di
    un'altra sede con un posto in laboratorio all'Accademia.
 7. **Epoca**: autunno-inverno con pioggia [DA CONFERMARE]; anno esatto.

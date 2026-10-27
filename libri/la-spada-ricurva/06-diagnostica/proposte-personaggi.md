@@ -1,4 +1,4 @@
-# Proposte personaggi — da confermare
+# Proposte personaggi — confermate dall'autore (27 ottobre)
 
 Dettagli: `02-bibbia/codex/`. Rispondi ok | correggi <note>.
 
@@ -56,6 +56,6 @@ Dettagli: `02-bibbia/codex/`. Rispondi ok | correggi <note>.
 - Parla: tecnica, senza aggettivi.
 - Da sola: sigaretta nel cortile all'alba.
 
-**Nomi**: PM Guido Ianniello; Rettore Ruggero Arcamone; Vicerettore Aurelio Cennamo.
+**Nomi**: PM Guido Ianniello; Direttore Ruggero Arcamone; Vicedirettore Aurelio Cennamo.
 
-**Nota**: nelle Accademie italiane il vertice è il Direttore. «Rettore» resta scelta di finzione?
+**Nota**: l'autore sceglie «Direttore» e «Vicedirettore», come nelle Accademie italiane.

@@ -9,7 +9,7 @@ di tufo che la stessa loggia sigillò settecento anni fa, Mina sente per primo l
 giunti a Venezia con due guru e travestiti da un latino cifrato ed eretico. I Borbone ne ebbero solo un terzo, in
 copia; i testi più importanti esistono in copia unica, lì sotto. Il gruppo non lo denuncia: lo fa tradurre
 all'intelligenza artificiale offline di Pietro per renderlo pubblico al mondo. La Spada Ricurva, loggia che governa
-l'Accademia dal Rettore in giù, uccide il loro mentore e mostra che Procura e medicina legale lavorano per lei.
+l'Accademia dal Direttore in giù, uccide il loro mentore e mostra che Procura e medicina legale lavorano per lei.
 Elana porta a termine l'upload in una notte d'assedio, perde quasi tutto e diventa qualcosa che non voleva essere.
 
 ## Il lettore

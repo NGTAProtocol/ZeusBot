@@ -51,7 +51,9 @@ al tempo presente (decisione dell'autore).
 - La pagina dei Valli nel registro riguarda un antenato di Lorenzo: la famiglia è legata alla setta da generazioni, il debito è un'eredità (decisione dell'autore).
 - L'assistente ucciso si chiama Andrea Scotti; il Professore di Arte Moderna si chiama Ettore Sanfelice (decisioni dell'autore).
 - Elana viene dalla periferia di Napoli: il riscatto passa dalla città stessa (decisione dell'autore).
-- Oggi il Rettore, il Vicerettore e i vertici dell'Accademia sono della setta.
+- Oggi il Direttore, il Vicedirettore e i vertici dell'Accademia sono della setta.
+- Il vertice dell'Accademia è il Direttore (Ruggero Arcamone), con il Vicedirettore (Aurelio Cennamo), come nelle Accademie italiane (decisione dell'autore).
+- Tratti dei personaggi (età, aspetto, modo di parlare, abitudini) e nomi proposti il 27 ottobre: confermati dall'autore (06-diagnostica/proposte-personaggi.md; schede in 02-bibbia/codex/). Perita: Teresa Avallone; PM: Guido Ianniello; Pietro Amitrano.
 - La setta detiene i debiti e i titoli finanziari della famiglia di Lorenzo.
 - L'assistente viene assassinato dalla setta; dieci giorni dopo arriva la perizia medico-legale: l'ora del decesso è precedente al timestamp di un messaggio minatorio arrivato sul telefono della vittima. Prova che Procura e medicina legale sono colluse.
 - Assedio: in una notte di pioggia la setta isola i ragazzi nell'Accademia; Lorenzo passa i dati; l'IA di Pietro si comporta in modo anomalo e manipola i presenti.

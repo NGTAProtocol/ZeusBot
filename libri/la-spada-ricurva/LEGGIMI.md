@@ -18,7 +18,7 @@ Decisioni fisse (non si toccano senza richiesta esplicita):
 - I ragazzi non denunciano la scoperta: usano un'IA offline addestrata da Pietro per tradurre e indicizzare i testi, per renderli open-source e donarli ai musei internazionali.
 - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e correnti vediche e filosofiche; simbolo: due scimitarre incrociate e piegate.
 - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno fu anche una guerra occulta tra logge rivali.
-- Oggi il Rettore, il Vicerettore e i vertici dell'Accademia sono della setta.
+- Oggi il Direttore, il Vicedirettore e i vertici dell'Accademia sono della setta.
 - La setta detiene i debiti e i titoli finanziari della famiglia di Lorenzo.
 - L'assistente viene assassinato dalla setta; dieci giorni dopo arriva la perizia medico-legale: l'ora del decesso è precedente al timestamp di un messaggio minatorio arrivato sul telefono della vittima. Prova che Procura e medicina legale sono colluse.
 - Assedio: in una notte di pioggia la setta isola i ragazzi nell'Accademia; Lorenzo passa i dati; l'IA di Pietro si comporta in modo anomalo e manipola i presenti.
