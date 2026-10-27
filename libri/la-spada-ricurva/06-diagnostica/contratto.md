@@ -1,4 +1,4 @@
-<!-- zb: ruolo=diagnosta; su=d69b5968bc01 -->
+<!-- zb: ruolo=diagnosta; su=0f83f7d7bf06 -->
 # Contratto del libro — La Spada Ricurva (fase struttura)
 
 ## Dichiarato (briefing, libro.yaml)
@@ -17,16 +17,15 @@
   il riscatto della setta (41) e lo cerca altrove (44). È un romanzo sul prezzo, coerente con l'idea guida.
 - L'IA diventa coprotagonista (23, 30, 38, 40, 42): il registro «umano e artificiale» è mantenuto.
 
-## Scarti (stato al secondo giro)
+## Scarti (stato dopo i ritocchi finali)
 1. «Tre studenti»: chiuso. Sono Claudia, Lorenzo e Mina; Elana è la dottoranda, Pietro viene dalla Federico II.
-2. Sigillo di settecento anni contro Borbone, registro e 1861: chiuso con il canone dell'autore (copie borboniche,
-   loggia del Trecento che sigilla, registro in mano a Dell'Aquila). Resta da fissare la regola della porta tra
-   Seicento e oggi (rapporto, S9).
-3. «Donarli ai musei internazionali»: il canale cade nel 35 ed è registrato in scaletta; la formula aspetta
-   l'autore.
+2. Sigillo di settecento anni contro Borbone, registro e 1861: chiuso con il canone dell'autore, compresa la regola
+   della porta (mai più aperta dopo il Trecento; la loggia non la forza per la volta; 04, 9, 28, 29).
+3. «Donarli ai musei internazionali»: chiuso con decisione dell'autore. Il dono salta con il ritiro di Dell'Aquila
+   (35); il Fondo vive solo open-source in rete. La promessa del briefing è tradita di proposito, dentro la storia.
 4. Claudia «guida la resistenza etica»: chiuso (26 limiti e inventario, 36 condizione, 42 decisiva).
 5. IA «offline» e Pietro «razionale»: chiuso (filtro di Pietro per una notte, credenziali usate da Lorenzo, 36-39).
 
 ## Effetto sul lettore
-La logica del mondo ora regge. Restano il secondo foglio del 25 (S8), che il lettore potrebbe sentire come un
-trucco, e lo scarto 3, che indebolisce la promessa senza tradirla.
+La logica del mondo regge. La perizia ufficiale arriva a Elana dalla perita all'alba del 25 (S8 chiuso): il centro
+non poggia più su una distrazione della protagonista.
