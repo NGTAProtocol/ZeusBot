@@ -1,17 +1,73 @@
-# Fatti controllabili del libro: stato da_verificare | verificato (con fonte) | generico (riscritto) | errato.
-# Un capitolo con un fatto non verificato o errato resta non approvato (zb difetti, classe fatto_da_verificare).
 fatti:
-  - id: F001
-    unita: '1'
-    affermazione: "r.27 «tra le ore 22:00 e le ore 23:00» da rigidità, ipostasi e temperatura rettale: forbice di un'ora"
-    stato: errato
-    data: '2026-10-27'
-    fonte: "Pellini, tesi di dottorato, Università di Verona (iris.univr.it/retrieve/e14ff6e2-e90a-0209-e053-6605fe0ad24c/PhD%20Thesis%20Pellini.pdf): metodo di Henssge con margine da ±2,8 a ±7 ore; Heinrich et al. 2024, PMC11732859 (la morte reale cade nell'intervallo al 95% solo nel 37% dei casi); Henssge, temperatura cerebrale, ±1,5 h solo entro 6,5 h (fis.uke.de)"
-    nota: "Con un ritrovamento all'alba (circa 8-9 ore dopo) una perizia seria darebbe una forbice di diverse ore, che conterrebbe le 23:47: lo scarto su cui poggia la trama sparirebbe. Non si cambiano i numeri senza l'autore: serve un'altra prova che stringa la forbice (testimone, telecamera, accessi) o una forbice più larga con un altro elemento che resti incompatibile."
-  - id: F002
-    unita: '3'
-    affermazione: "r.55 «Le bon Dieu est dans le détail. Lo diceva Warburg, in tedesco»"
-    stato: verificato
-    data: '2026-10-27'
-    fonte: "Zöllner, «Aby Warburgs Detail-Paradigma», Marburger Jahrbuch 51 (arthist.net/archive/50405): la massima «Der liebe Gott steckt im Detail» è di uso documentato di Warburg (seminario di Amburgo 1925-26); l'origine resta incerta e la forma francese è attribuita a Flaubert senza prove"
-    nota: "Valli dice che Warburg la diceva in tedesco, non che l'abbia inventata: regge."
+- id: F001
+  unita: '1'
+  affermazione: 'r.27 «tra le ore 22:00 e le ore 23:00» da rigidità, ipostasi e temperatura
+    rettale: forbice di un''ora'
+  stato: errato
+  data: '2026-10-27'
+  fonte: 'Pellini, tesi di dottorato, Università di Verona (iris.univr.it/retrieve/e14ff6e2-e90a-0209-e053-6605fe0ad24c/PhD%20Thesis%20Pellini.pdf):
+    metodo di Henssge con margine da ±2,8 a ±7 ore; Heinrich et al. 2024, PMC11732859
+    (la morte reale cade nell''intervallo al 95% solo nel 37% dei casi); Henssge,
+    temperatura cerebrale, ±1,5 h solo entro 6,5 h (fis.uke.de)'
+  nota: 'Con un ritrovamento all''alba (circa 8-9 ore dopo) una perizia seria darebbe
+    una forbice di diverse ore, che conterrebbe le 23:47: lo scarto su cui poggia
+    la trama sparirebbe. Non si cambiano i numeri senza l''autore: serve un''altra
+    prova che stringa la forbice (testimone, telecamera, accessi) o una forbice più
+    larga con un altro elemento che resti incompatibile.'
+- id: F002
+  unita: '3'
+  affermazione: r.55 «Le bon Dieu est dans le détail. Lo diceva Warburg, in tedesco»
+  stato: verificato
+  data: '2026-10-27'
+  fonte: 'Zöllner, «Aby Warburgs Detail-Paradigma», Marburger Jahrbuch 51 (arthist.net/archive/50405):
+    la massima «Der liebe Gott steckt im Detail» è di uso documentato di Warburg (seminario
+    di Amburgo 1925-26); l''origine resta incerta e la forma francese è attribuita
+    a Flaubert senza prove'
+  nota: 'Valli dice che Warburg la diceva in tedesco, non che l''abbia inventata:
+    regge.'
+- id: F003
+  unita: '1'
+  affermazione: 'r.28 «epoca della morte… tra le ore 22:00 e le ore 23:00» da rigidità,
+    ipostasi, temperatura rettale: medicina legale (ampiezza plausibile della finestra)'
+  stato: errato
+  data: '2026-10-27'
+  nota: stesso fatto di F001 (doppione del revisore)
+- id: F004
+  unita: '1'
+  affermazione: 'r.32 «visualizzato alle ore 23:49» con r.36 «tratto da un tabulato»:
+    tecnica (i tabulati dell''operatore registrano la visualizzazione di un messaggio?)'
+  stato: da_verificare
+- id: F005
+  unita: '1'
+  affermazione: 'r.20 «trentadue gradini di piperno», scala del chiostro dell''Accademia
+    di via Costantinopoli: luogo reale (materiale e struttura)'
+  stato: da_verificare
+- id: F006
+  unita: '1'
+  affermazione: 'r.18 «buste paga… il ventisette di ogni mese»: prassi amministrativa
+    (stipendi pubblici)'
+  stato: da_verificare
+- id: F007
+  unita: '2'
+  affermazione: 'r.13 «cretto fitto … imprimitura rossa quando l''olio ha quattro
+    secoli»: tecnica del restauro'
+  stato: da_verificare
+- id: F008
+  unita: '2'
+  affermazione: 'r.31 «Ottocentesca, a giudicare dal cretto»: datazione di una ridipintura
+    dal cretto (tecnica)'
+  stato: da_verificare
+- id: F009
+  unita: '2'
+  affermazione: 'r.99 «vernice da ritocco reversibile»: tecnica del restauro'
+  stato: da_verificare
+- id: F010
+  unita: '2'
+  affermazione: 'r.105 «tre secoli di studenti»: storia (l''Accademia di Napoli è
+    del 1752, nella sede attuale dal 1864)'
+  stato: da_verificare
+- id: F011
+  unita: '2'
+  affermazione: 'r.19 «sopra la ruota della santa»: iconografia di santa Caterina
+    d''Alessandria'
+  stato: da_verificare
