@@ -1,6 +1,6 @@
 # Stato compatto — La Spada Ricurva
 
-- Fase: pagina_campione; gate: nessuno.
+- Fase: stesura; gate: nessuno.
 - Ultimo capitolo salvato: —; parole 0/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elana; Tempo verbale della narrazione: presen….
@@ -15,5 +15,5 @@
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
 - Promesse aperte: nessuna.
 - Prossimo capitolo 1: apertura in medias res; promessa del libro; fissa voce, minaccia e ironia drammatica.; cambiamento: il lettore sa che il mentore è morto e che una perizia indica un'ora….
-- Prossimo passo: Scrivi 05-revisioni/pagina-campione.md secondo il manuale; poi «zb pronto <libro>».
+- Prossimo passo: Prossimo: capitolo 1. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
 - Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 1.
