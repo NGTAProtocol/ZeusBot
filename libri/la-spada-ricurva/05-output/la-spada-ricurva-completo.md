@@ -14,22 +14,22 @@ Quest'opera è frutto di fantasia. Nomi, personaggi, luoghi e fatti sono invenzi
 
 ## Sommario
 
-- Capitolo 1
-- Capitolo 2
-- Capitolo 3
-- Capitolo 4
-- Capitolo 5
-- Capitolo 6
-- Capitolo 7
-- Capitolo 8
-- Capitolo 9
-- Capitolo 10
-- Capitolo 11
-- Capitolo 12
+- 1. La perizia
+- 2. Sotto la vernice
+- 3. Il dettaglio ripetuto
+- 4. La data della ridipintura
+- 5. Le cornici vuote
+- 6. L'arena
+- 7. Il rebus
+- 8. La stanza in affitto
+- 9. La cripta
+- 10. Il Fondo Proibito
+- 11. Il nome
+- 12. La scelta
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 1
+## 1. La perizia
 
 Laboratorio di restauro — 10 dicembre
 
@@ -97,7 +97,7 @@ Lo spazio tra il telaio e il muro è largo quanto una mano.
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 2
+## 2. Sotto la vernice
 
 Laboratorio di restauro — 21 ottobre
 
@@ -255,7 +255,7 @@ Il cestino è stato lavato.
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 3
+## 3. Il dettaglio ripetuto
 
 Chiostro — 23 ottobre
 
@@ -447,7 +447,7 @@ Le prendo la matita e, sotto il riquadro vuoto, scrivo l'ora: domani, alle sette
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 4
+## 4. La data della ridipintura
 
 Laboratorio di chimica — 26 ottobre
 
@@ -597,7 +597,7 @@ Un anno prima o un anno dopo, se la pietra non mente: qualcuno ha raschiato due 
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 5
+## 5. Le cornici vuote
 
 Palazzo Valli — 29 ottobre
 
@@ -713,7 +713,7 @@ Sulla mensola del camino è rimasto il bicchiere di Dell'Aquila, pieno fino al s
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 6
+## 6. L'arena
 
 Aula di arte moderna — 1 novembre
 
@@ -861,7 +861,7 @@ Dove ha firmato il Professore, la copia è bianca.
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 7
+## 7. Il rebus
 
 Galleria dell'Accademia — 4 novembre
 
@@ -1043,7 +1043,7 @@ Riguardo la lastra sotto la quarta arcata. È più larga delle vicine e più scu
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 8
+## 8. La stanza in affitto
 
 Quartieri Spagnoli — 6 novembre
 
@@ -1153,7 +1153,7 @@ Il manuale di paleografia, che scade domani, adesso sta in fondo, sotto tutti gl
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 9
+## 9. La cripta
 
 Cripta sotto il chiostro — 8 novembre
 
@@ -1327,7 +1327,7 @@ La fiamma si piega verso il buio, dentro.
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 10
+## 10. Il Fondo Proibito
 
 Archivio sotto l'Accademia — 8 novembre
 
@@ -1501,7 +1501,7 @@ Fuori, nella cripta, qualcosa di più pesante di una goccia cade nell'acqua.
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 11
+## 11. Il nome
 
 Laboratorio di restauro — 9 novembre
 
@@ -1655,7 +1655,7 @@ Scotti posa l'indice sul disegno. La mano gli trema di nuovo, adesso, e la lasci
 
 <!-- zb:sezione capitolo -->
 
-## Capitolo 12
+## 12. La scelta
 
 Terrazzo di Claudia — 11 novembre
 
@@ -1761,7 +1761,7 @@ Spiego il resto in ordine, perché il disordine qui sarebbe un'altra forma di bu
 
 Claudia ha abbassato la matita. Non scrive ancora, ma la punta adesso tocca la carta.
 
-«E il codice che hai nella borsa?» Abbassa la voce. «Ti hanno detto di rimetterlo giù la notte stessa. Sono passate due notti.»
+«E il codice che hai nella borsa?» Abbassa la voce. «Me l'hai detto tu, che Scotti lo voleva giù la notte stessa. Sono passate due notti.»
 
 «Torna giù» dico. «La prima notte che scendiamo insieme.»
 
