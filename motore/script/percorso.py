@@ -121,7 +121,7 @@ def da_correggere(testo):
     return out
 
 
-def righe_cambiate(cartella, rel_cap, su):
+def righe_cambiate(cartella, rel_cap, su, impronta=None):
     """Righe del capitolo cambiate dopo la versione su cui è stato scritto un rapporto «passa» (impronta `su`, cercata
     nella storia git del file): [«r.N «testo»: cambiata dopo la revisione superata»], oppure None se quella versione
     non si trova o se è cambiato più di un terzo delle righe (allora serve un giro completo)."""
@@ -135,9 +135,13 @@ def righe_cambiate(cartella, rel_cap, su):
         r = subprocess.run(['git', '-C', radice, 'show', f'{c}:{pref}'], capture_output=True)
         if r.returncode:
             continue
-        h = hashlib.sha256()    # come revisione.impronta, sul contenuto di quella versione
-        h.update(rel_cap.encode() + b'\0' + hashlib.sha256(r.stdout).hexdigest().encode())
-        if h.hexdigest()[:12] == su:
+        if impronta:            # impronta di un altro rapporto (verificatore: sha256 del testo)
+            uguale = impronta(r.stdout) == su
+        else:
+            h = hashlib.sha256()    # come revisione.impronta, sul contenuto di quella versione
+            h.update(rel_cap.encode() + b'\0' + hashlib.sha256(r.stdout).hexdigest().encode())
+            uguale = h.hexdigest()[:12] == su
+        if uguale:
             prima = r.stdout.decode('utf-8').splitlines()
             break
     if prima is None:

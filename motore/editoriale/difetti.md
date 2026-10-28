@@ -22,12 +22,14 @@ deve bastare a eluderlo. Un controllo con falsi allarmi si corregge nel criterio
 ## Tre rilevamenti
 
 - **Deterministico** (`motore/script/difetti.py`): date e giorni, ordine e tipo dei capitoli, aperture ripetute,
-  frasi-firma, chiusure, lunghezza, cliché, copia tra capitoli, similitudini, tratti ricorrenti, etichette di ruolo.
+  frasi-firma, chiusure (anche rispetto alla scaletta), lunghezza, cliché, copia tra capitoli, similitudini, tratti
+  ricorrenti, etichette di ruolo.
 - **Revisore** (agente `verificatore`, dopo il diagnosta: `06-diagnostica/difetti/verifica/NN.md`, tabelle di
   conoscenze, deduzioni e scelte, poi la sezione `## Registro dei difetti`): conoscenza dei personaggi, inferenze
   presentate come fatti, motivazioni. Il rapporto vale solo per la versione del capitolo su cui è scritto. È meno
   affidabile di uno script: i falsi negativi osservati si annotano nel registro.
-- **Fonte**: i fatti controllabili (sezione `## Fatti da verificare` del rapporto) vanno in
+- **Fonte**: i fatti controllabili (sezioni `## Fatti da verificare` del diagnosta e `## Fatti reali da verificare` del
+  verificatore) il motore li porta da solo in
   `06-diagnostica/difetti/fatti.yaml`; il capitolo resta non approvato finché ognuno non è `verificato` (con la fonte)
   o riscritto in forma `generico`. Mai scrivere un fatto a memoria.
 

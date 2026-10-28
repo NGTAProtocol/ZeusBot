@@ -42,6 +42,10 @@ classi:
     descrizione: "troppi capitoli consecutivi con la stessa sigla di chiusura"
     gravita: bloccante
     rilevamento: deterministico
+  chiusura_scaletta:
+    descrizione: "sigla di chiusura del capitolo diversa da quella della scaletta"
+    gravita: avviso
+    rilevamento: deterministico
   lunghezza:
     descrizione: "capitolo oltre il budget del piano parole (più la tolleranza) o oltre il massimo del libro"
     gravita: bloccante
