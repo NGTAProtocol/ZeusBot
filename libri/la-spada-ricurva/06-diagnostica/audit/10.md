@@ -1,41 +1,46 @@
-<!-- zb: ruolo=diagnosta; su=ce776e87021a -->
-# Audit capitolo 10 — Il Fondo Proibito (giro 1)
+<!-- zb: ruolo=diagnosta; su=4727d43b385b -->
+# Audit capitolo 10 — Il Fondo Proibito (giro 2)
+
+## Giro 2
+
+- r.17-23 meraviglia: risolta. Odore a strati, silenzio come peso, Elena perde il conto; «Torno al mestiere.» la riporta al metodo.
+- r.111 codice: risolta. Pergamena, rigatura, mano del copista; osservo-confronto-concludo una volta sola («pagato a carta, e pagato bene»).
+- r.5 sentenza: risolta. «Chi mura dei libri all'asciutto…» è concreta e regge il capitolo.
+- r.53 e r.119 doppia spiegazione: risolta. «Veda» resta nella testa di Elena, l'incipit non viene tradotto; a r.53 resta una glossa leggera ma detta una volta sola.
+- r.155-163 Claudia: risolta. «Non è a me che lo devi dire» e la pagina strappata mostrano il no e il suo prezzo.
 
 ## Voti
 
-| Voce | Voto 1-10 | Momento più debole |
+| Voce | Voto | Momento più debole |
 |---|---|---|
-| Tensione e ritmo | 7 | r.83 «Quattro minuti.»: il conto alla rovescia diventa un timbro, non una pressione |
-| Sottotesto e dialoghi | 7 | r.107 «Due maestri» dico. «Dall'India. A Venezia.»: la battuta traduce ciò che il lettore ha appena letto |
-| Voce | 6 | r.5 «Dentro non gocciola niente.»: manca la sentenza d'apertura, e in tutta la scena sotterranea il registro gotico non c'è mai |
-| Specificità e immagini | 8 | r.15 «Non c'è un volume caduto. Non c'è un dorso sfondato»: la meraviglia è detta per negazioni, senza odore |
-| Personaggi | 7 | r.145 «Claudia non scrive niente.»: la colonna morale assiste al furto senza dire il suo no |
-| Funzione | 6 | r.13-15 «Poi alzo la luce.»: il centro sensoriale del libro si risolve in un paragrafo di inventario |
-| Pulizia | 7 | r.43 «Le tre parole non hanno bisogno della lente.»: spiega le tre categorie, che i dorsi avevano già mostrato |
+| Tensione e ritmo | 7 | r.93 «Quattro minuti.»: il conto alla rovescia resta un timbro |
+| Sottotesto e dialoghi | 8 | r.53 «Il governo delle menti, un codice penale…»: chiosa che il lettore poteva fare da sé |
+| Voce | 7 | r.43 «il mio mestiere insegna a fare l'inventario»: dopo il gotico torna il registro da scheda |
+| Specificità e immagini | 8 | r.25 «Nessun volume caduto, nessuna coperta gonfia d'acqua»: ancora per negazione |
+| Personaggi | 8 | r.161 «questa volta non so per chi»: Mina chiude su una battuta d'autore |
+| Funzione | 8 | r.143 «né in sei notti da sei minuti»: il conto ripete la decisione invece di prepararla |
+| Pulizia | 7 | r.143 «quarantun minuti alla volta»: cifra non ancorata a nulla di detto prima |
 
-Media: 6.9
+Media: 7.6
 
 ## Continuità
 
-- nessun fatto contraddetto (circa 500 manoscritti, magia pratica, mentalismo e teosofia, i due maestri giunti a Venezia, latino cifrato con note alchemiche: tutto coerente con il canone; anche i dettagli fissi di Mina, Valli e Claudia sono coerenti).
-- Lieve: nel 9 la porta si scosta «di uno spessore di lama», qui è una fessura in cui si passa (r.7-9) senza che si veda allargarla; r.133 «quarantun minuti» non è ancorato a nulla di detto prima.
+- Nessun fatto del canone contraddetto (sigillo di settecento anni, circa 500 manoscritti, tre categorie, i due maestri e Venezia, latino cifrato con note alchemiche).
+- Restano i difetti lievi del giro 1: la fessura del 9 «di uno spessore di lama» qui si attraversa senza che si veda allargarla; «quarantun minuti» (r.143) non ha appiglio.
 
 ## Da correggere
 
-- r.13-15 «Poi alzo la luce.»: la rivelazione passa subito al conto → circa +200-250 parole in registro gotico prima dell'inventario: odore di carta secolare e di colla, il silenzio di settecento anni come peso fisico, un attimo in cui Elena smette di contare. Poi una frase corta che la riporta al metodo.
-- r.99-101 «Sollevo il piatto del primo.»: il contatto con il codice si chiude in una riga → circa +100-150 parole sul gesto della restauratrice (pergamena, rigatura, mano del copista), con osservo-confronto-concludo una sola volta.
-- r.5 «Dentro non gocciola niente.»: la scheda della voce chiede una sentenza → serve un aforisma concreto (sapere, debito, potere) prima del dettaglio.
-- r.43 e r.107-109 «I libri che loro chiamano Veda.»: c'è una doppia spiegazione → ogni traduzione deve arrivare una volta sola, lasciando il resto al lettore.
-- r.145 «Claudia non scrive niente.»: senza un segno di dissenso il personaggio sembra cambiare → un gesto o una battuta che faccia vedere il suo no, oppure il prezzo che si dà al suo silenzio.
+- r.143 «quarantun minuti alla volta»: cifra orfana → ancorarla al giro del custode già detto a r.35 o toglierla.
 
 ## Lezione
 
-- Nelle scene di scoperta non ridurre la meraviglia a un inventario: prima i sensi, in registro lungo, poi il conto.
+- Nelle scene di scoperta prima i sensi e il peso, poi il conto; ogni traduzione si dà una volta sola.
 
 ## Fatti da verificare
 
-- r.41 «Minio… Tetrossido di piombo»: chimica
-- r.113-115 «un cerchio con una croce sotto e una mezzaluna sopra… mercurio», «un triangolo che poggia su una croce… zolfo»: simboli alchemici
-- r.101 «gotica libraria» per un codice sigillato nel Trecento: paleografia
+- r.51 «Minio… Tetrossido di piombo»: chimica (corretto, Pb₃O₄)
+- r.123-125 cerchio con croce e mezzaluna = mercurio, triangolo su croce = zolfo: simboli alchemici (corretti)
+- r.111 «Righe a secco… sui codici universitari del Trecento»: codicologia (nel Trecento la rigatura è di norma a piombo o a inchiostro; quella a secco è più antica)
+- r.113 «gotica libraria» per un codice del Trecento: paleografia (plausibile)
 
-non passa
+passa
