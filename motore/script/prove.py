@@ -2812,6 +2812,15 @@ def agenti_capsule_consumo(A):
     import consumo
     import hook_recinto
     sez = 'agenti e capsule'
+    import struttura
+    with tempfile.TemporaryDirectory() as t:
+        os.makedirs(os.path.join(t, comune.STRUTTURA))
+        open(os.path.join(t, comune.STRUTTURA, '06-sottotrame-temi.md'), 'w', encoding='utf-8').write(
+            '| Promessa | Si apre | Si sviluppa | Si chiude |\n|---|---|---|---|\n'
+            '| P6 Il gruppo regge? | 3 | 5 | 40 |\n| **P11** Il modello di Pietro | 8 | 12 | 13 |\n')
+        esito('struttura.py', 'scheda con promesse per id: testo dalla tabella delle sottotrame (P9 senza riga: taciuta)',
+              'P6 = Il gruppo regge?; P11 = Il modello di Pietro',
+              struttura.legenda_promesse(t, 'sviluppa P11, P6; apre P9'), sez)
     err = agenti.controlla_formato(M)
     esito('agenti.py', 'formato degli agenti (name, description, model) e modelli = dati/modelli-ruoli.yaml',
           [], err, sez)
@@ -3353,7 +3362,7 @@ def difetti_prove(A):
         'chiusure_uguali': (
             [cap(n, f'Aula — {n} marzo', 'Testo.', '<!-- zb: chiusura=D -->') for n in (1, 2, 3)],
             [cap(n, f'Aula — {n} marzo', 'Testo.', f'<!-- zb: chiusura={s} -->') for n, s in ((1, 'D'), (2, 'D'), (3, 'R'))]),
-        'lunghezza': ([cap(1, 'Aula — 1 marzo', lungo)], [cap(1, 'Aula — 1 marzo', 'Poche parole qui.')]),
+        'lunghezza': ([cap(1, 'Aula — 1 marzo', lungo)], [cap(1, 'Aula — 1 marzo', ' '.join(['parola'] * 36))]),
         'cliche': ([cap(1, 'Aula — 1 marzo', 'La pioggia batte come un tamburo sordo.')],
                    [cap(1, 'Aula — 1 marzo', 'La pioggia batte sui vetri.')]),
         'copia_capitoli': (
@@ -3377,6 +3386,8 @@ def difetti_prove(A):
         righe.append(f'{classe}:{bool(f(sbagliata, ctx))}/{bool(f(corretta, ctx))}')
     esito('difetti.py', 'ogni classe deterministica fallisce sul testo sbagliato e passa sul corretto (classe:fallisce/'
           'fallisce)', ' '.join(f'{c}:True/False' for c in casi), ' '.join(righe), sez)
+    esito('difetti.py', 'lunghezza: capitolo sotto il budget meno la tolleranza (5 parole su 40): KO', True,
+          bool(difetti.c_lunghezza([cap(1, 'Aula — 1 marzo', 'Poche parole qui.')], ctx)), sez)
     esito('difetti.py', 'le classi deterministiche dei dati hanno tutte un controllo',
           sorted(c for c, v in difetti.dati()['classi'].items() if v['rilevamento'] == 'deterministico'),
           sorted(difetti.DETERMINISTICI), sez)
@@ -3436,6 +3447,13 @@ def difetti_prove(A):
           f'{difetti.gia_registrato(voci_f, "6", "r.5 «Il primo novembre l\'Accademia è chiusa»: festa nazionale")} / '
           f'{difetti.gia_registrato(voci_f, "6", "r.9 «la carta copiativa ricalca»: tecnica")} / '
           f'{difetti.gia_registrato(voci_f, "7", "r.5 «Il primo novembre l\'Accademia è chiusa»: festa")}', sez)
+    voci_r = [{'unita': '12', 'affermazione': 'r.65 «Il minio… Mercurio e zolfo»: chimica dei pigmenti'},
+              {'unita': '12', 'affermazione': 'r.89 «atto notarile del Cinquecento… aste tagliate»: paleografia'}]
+    esito('difetti.py', 'fatto riformulato senza citazione: stessa riga e tre parole chiave / stessa riga, altro '
+          'argomento / altra riga: già registrato?', 'True / False / False',
+          f'{difetti.gia_registrato(voci_r, "12", "r.65: minio (ossido di piombo) contro mercurio e zolfo: battuta")} / '
+          f'{difetti.gia_registrato(voci_r, "12", "r.89: lacune tra parentesi quadre nelle trascrizioni del latino")} / '
+          f'{difetti.gia_registrato(voci_r, "12", "r.70: minio, mercurio e zolfo nei ricettari")}', sez)
     open(au, 'w', encoding='utf-8').write('## Da correggere\n\n- r.3 «x»: spiega troppo\n\npassa\n')
     con_voci = (len(agenti.da_correggere(d, '1')), agenti.primo_giro(d, '1'))
     open(au, 'w', encoding='utf-8').write('## Da correggere\n\n- nessuna\n\npassa\n')

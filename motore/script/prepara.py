@@ -79,6 +79,9 @@ def prepara(cartella, libro, n):
            f'## Scheda (03-struttura/05-scaletta.md, Capitolo {n}{" - " + sk["_titolo"] if sk.get("_titolo") else ""})', '']
     etichette = {c[0]: c[1] for c in struttura.CAMPI_SCHEDA}
     out += [f'- {etichette[k]}: {v}' for k, v in sk.items() if k in etichette]
+    legenda = struttura.legenda_promesse(cartella, sk.get('promesse'))
+    if legenda:     # la scheda cita le promesse per id: il testo viene dalla tabella delle sottotrame
+        out.append(f'- Promesse citate (06-sottotrame-temi.md): {legenda}')
     out += ['', '## Canone (fatti bloccati: non si cambiano)', '']
     out += [f'- {x}' for x in stato.get('fatti_bloccati') or []] or ['- nessuno']
     if note in leggere:

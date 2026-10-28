@@ -47,7 +47,7 @@ classi:
     gravita: avviso
     rilevamento: deterministico
   lunghezza:
-    descrizione: "capitolo oltre il budget del piano parole (più la tolleranza) o oltre il massimo del libro"
+    descrizione: "capitolo fuori dal budget del piano parole (più o meno la tolleranza) o oltre il massimo del libro"
     gravita: bloccante
     rilevamento: deterministico
   cliche:

@@ -157,6 +157,16 @@ def righe_cambiate(cartella, rel_cap, su, impronta=None):
     return voci
 
 
+RITOCCO_RIGHE = 2
+
+
+def ritocco(cartella, rel_cap, su):
+    """Righe cambiate dopo la revisione «passa» (impronta `su`) se sono al più RITOCCO_RIGHE, altrimenti None.
+    Un ritocco così non rifà la revisione del diagnosta: lo ricontrolla il giro del verificatore sulle righe cambiate."""
+    c = righe_cambiate(cartella, rel_cap, su)
+    return c if c and len(c) <= RITOCCO_RIGHE else None
+
+
 def giro_revisione(cartella, libro, n, nuovo=False):
     """(giro, voci) della revisione del capitolo N: un solo giro completo; dopo un «non passa» e la correzione di chi
     scrive, il secondo giro rivede solo le voci di «## Da correggere» del primo (copiato in audit/NN-giro1.md da
@@ -296,10 +306,11 @@ def controlla_revisione_capitolo(cartella, libro, n):
     attuale = impronta(cartella, testi)
     if not m or m.group(1) != ruolo:
         raise comune.ErroreMotore(f'{rel}: prima riga senza l\'intestazione del diagnosta. {aiuto}')
-    if m.group(2) != attuale:
+    ultima = next((r for r in reversed(righe) if r), '').lower()
+    piccolo = m.group(2) != attuale and ultima == 'passa' and ritocco(cartella, testi[0], m.group(2))
+    if m.group(2) != attuale and not piccolo:
         raise comune.ErroreMotore(f'{rel}: revisione scritta su un\'altra versione del capitolo {n} (impronta '
                                   f'{m.group(2)}, attuale {attuale}). Serve una nuova revisione del testo attuale.')
-    ultima = next((r for r in reversed(righe) if r), '').lower()
     if ultima == 'non passa':
         raise comune.ErroreMotore(f'{rel}: il capitolo {n} «non passa» la revisione. Correzione unica di chi scrive, '
                                   'poi nuova revisione.')
@@ -313,7 +324,7 @@ def controlla_revisione_capitolo(cartella, libro, n):
                                   '(soglia_qualita in libro.yaml): il capitolo non passa. Correzione mirata, poi nuova revisione.')
     pm = os.path.join(cartella, misure_rel(n))     # le misure del motore vengono prima del diagnosta
     prima = open(pm, encoding='utf-8').readline().strip() if os.path.isfile(pm) else ''
-    if prima != f'<!-- zb: misure; su={attuale} -->':
+    if prima != f'<!-- zb: misure; su={m.group(2) if piccolo else attuale} -->':
         raise comune.ErroreMotore(f'{misure_rel(n)}: misure del motore assenti o scritte su un\'altra versione del '
                                   f'capitolo {n}. Prima del diagnosta: «zb ruolo <libro> diagnosta {n}».')
 

@@ -324,6 +324,8 @@ def c_lunghezza(unita, ctx):
         b = bud.get(str(nome))
         if b and parole > b * (1 + tol):
             out.append(ko('lunghezza', nome, None, f'{parole} parole: budget {b} più il {tol:.0%}'))
+        if b and parole < b * (1 - tol):
+            out.append(ko('lunghezza', nome, None, f'{parole} parole: budget {b} meno il {tol:.0%}'))
         if massimo and parole > massimo:
             out.append(ko('lunghezza', nome, None, f'{parole} parole: massimo del libro {massimo}'))
     return out
@@ -651,15 +653,36 @@ def righe_fatti(testo):
     return [x.strip() for x in re.findall(r'(?m)^(?:-|\d+\.)[ \t]*(r\.[ \t]*\d+.*)$', blocco)]
 
 
+PAROLE_DI_RAPPORTO = {'corre', 'plaus', 'gener', 'verif', 'contr', 'capit', 'conti', 'risol', 'diffe', 'rappo',
+                      'prece', 'fatto', 'ancor', 'anche', 'quell', 'quest', 'nessu', 'sempr'}
+
+
+def righe_citate(aff):
+    """Righe «r.N» o «r.N-M» all'inizio di un fatto (insieme vuoto se non ne cita)."""
+    out = set()
+    for a, b in re.findall(r'\br\.\s*(\d+)(?:\s*[-–]\s*(\d+))?', aff[:40]):
+        out.update(range(int(a), int(b or a) + 1))
+    return out
+
+
+def radici(aff):
+    """Prime cinque lettere delle parole lunghe, senza le parole di servizio dei rapporti."""
+    return {w[:5] for w in re.findall(r'[a-zà-ù]{5,}', aff.lower())} - PAROLE_DI_RAPPORTO
+
+
 def gia_registrato(voci, n, aff):
-    """Lo stesso fatto riscritto con altre parole: stessa unità e citazione «…» contenuta in quella di un fatto già
-    registrato, o che la contiene (il testo citato è lo stesso passo, magari accorciato dalla correzione)."""
+    """Lo stesso fatto riscritto con altre parole, nella stessa unità: citazione «…» contenuta in quella di un fatto
+    già registrato (o che la contiene), oppure stessa riga e almeno tre parole chiave in comune."""
     q = re.search(r'«([^»]{8,})»', aff)
-    if not q:
-        return False
+    righe, rad = righe_citate(aff), radici(aff)
     for v in voci:
-        w = re.search(r'«([^»]{8,})»', str(v.get('affermazione', '')))
-        if str(v.get('unita')) == str(n) and w and (q.group(1) in w.group(1) or w.group(1) in q.group(1)):
+        if str(v.get('unita')) != str(n):
+            continue
+        a = str(v.get('affermazione', ''))
+        w = re.search(r'«([^»]{8,})»', a)
+        if q and w and (q.group(1) in w.group(1) or w.group(1) in q.group(1)):
+            return True
+        if righe & righe_citate(a) and len(rad & radici(a)) >= 3:
             return True
     return False
 
