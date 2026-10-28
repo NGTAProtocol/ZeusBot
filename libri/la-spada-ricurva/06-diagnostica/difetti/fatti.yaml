@@ -348,3 +348,46 @@ fatti:
     notarile con molte abbreviazioni: plausibile.'
   stato: generico
   data: '2026-10-28'
+- id: F048
+  unita: '8'
+  affermazione: 'r.59 «abbreviazioni risolte tra parentesi tonde e, tra quadre, le
+    lettere che la fotocopia non dà più»: convenzione editoriale, ora corretta e coerente
+    con la r.75.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://edv.seai.uniroma1.it/it/texts/criteria.html
+- id: F049
+  unita: '8'
+  affermazione: 'r.61 «una "p" con l''asta tagliata, che vale "per", sciolta in "pro",
+    che vuole il ricciolo»: paleografia, ora corretta.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://archive.org/details/CappelliDizionarioDiAbbreviature
+- id: F050
+  unita: '8'
+  affermazione: 'r. 11: risolto. L''affitto scade il 5 ma la padrona «sale a ritirarlo
+    quando le comoda»: la busta chiusa sul tavolo il 6 (r. 99) torna. I «ventidue
+    giorni» dal 5 al 27 tornano.'
+  stato: generico
+  data: '2026-10-28'
+- id: F051
+  unita: '8'
+  affermazione: 'r. 23, 27: «quattro parole sbagliate ogni cento» (ieri sei) per un
+    modello amatoriale su corsive di buona qualità: plausibile. Coerente con r. 61
+    (un errore in venti righe, ~200 parole).'
+  stato: generico
+  data: '2026-10-28'
+- id: F052
+  unita: '8'
+  affermazione: 'r. 59, 77: sette integrazioni tra quadre in venti righe di fotocopia:
+    plausibile.'
+  stato: generico
+  data: '2026-10-28'
+- id: F053
+  unita: '8'
+  affermazione: 'r. 7: salnitro sul tufo umido; tufo giallo cavato da sotto i palazzi
+    napoletani con cave poi usate come cisterne e cunicoli: plausibile. «Per tre secoli»
+    è approssimativo (l''estrazione a Napoli è molto più antica; per i Quartieri,
+    dal Cinquecento in poi regge): lieve, si può lasciare.'
+  stato: generico
+  data: '2026-10-28'

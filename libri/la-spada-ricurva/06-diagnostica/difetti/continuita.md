@@ -54,3 +54,8 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 - scena da r.3: 04/11/2025 — Galleria dell'Accademia
 - scena da r.63: 04/11/2025 — (luogo della scena precedente)
 - r.115 conteggio: 2 cornici
+- conoscenze: Magnisi (narratore) sa il significato del motto e del «Sospeso» del Professore. Claudia sa che le linee portano alla campata 2. Mina conosce la «cripta» per sentito dire. Valli ha portato chiave e numero; due notti fa ha cronometrato il custode.
+
+## Unità 8 — tipo capitolo, chiusura P
+
+- scena da r.3: 06/11/2025 — Quartieri Spagnoli
