@@ -206,6 +206,7 @@ def percorso(sez='percorso editoriale'):
     os.makedirs(m)
     shutil.copyfile(os.path.join(F, 'capitoli', '01-il-molo.md'), os.path.join(m, '01-il-molo.md'))
     salva(r, 'scrittore: capitolo 1')
+    ciclo_dopo_accettazione(r)
     revisione_in_stesura(r, L, m, sez)
     p = zb(L, 'esito', '.', '1')
     esito('fase.py', 'esito 1: controlli OK', 0, p.returncode, sez)
@@ -927,6 +928,120 @@ def correttore(sez='correttore e anti-IA'):
 
 
 MISURE = {}
+def ciclo_dopo_accettazione(r, sez='ciclo del capitolo con i comandi veri'):
+    """Il ciclo del capitolo come lo fa la regia, con i comandi veri, su una copia del libro al capitolo 1 scritto:
+    revisione obbligatoria (riapprova di libro.yaml), diagnosta, verificatore, cancello dei difetti con un fatto,
+    esito, capsula, zb salva; poi una correzione dopo l'accettazione (salva la ferma, correggi la registra, avvio
+    passa), capsula superata e giro di controllo del verificatore prima del capitolo 2. Ogni FERMO ha un'uscita."""
+    import capsula
+    import difetti
+    d = tempfile.mkdtemp(dir=TMP)
+    shutil.copytree(os.path.dirname(r), os.path.join(d, 'c'), symlinks=True)
+    r2 = os.path.join(d, 'c', 'repo')
+    git(r2, 'remote', 'set-url', 'origin', os.path.join(d, 'c', 'remoto.git'))
+    L = os.path.join(r2, 'libri', SLUG)
+    Es = dict(E, ZB_SESSIONE='ciclo-prova')
+
+    def z(*a):
+        p = zb(L, *a, env=Es)
+        if os.environ.get('ZB_DEBUG'):
+            print('DEBUG', a, p.returncode, (p.stdout + p.stderr)[-600:])
+        return p
+
+    def prossimo():
+        p = z('agenti', 'prossimo', '.')
+        return next((x for x in p.stdout.splitlines() if x.startswith(('AZIONE', 'FERMO'))), p.stderr.strip()[-200:])
+
+    def passo(az, n=None):
+        x = az.split(':')[1].strip() if ':' in az else az
+        return x[:n] if n else x
+
+    def zsalva(msg):
+        p = zb(r2, 'salva', os.path.join('libri', SLUG), msg, env=Es)
+        if os.environ.get('ZB_DEBUG'):
+            print('DEBUG salva', msg, p.returncode, (p.stdout + p.stderr)[-600:])
+        return p
+
+    import hook_recinto
+    rad_m = hook_recinto.radice(M)
+    prima_m = (hook_recinto.lavoro(rad_m), hook_recinto.slug_attivo(rad_m))
+    zb(r2, 'lavoro', 'libro', SLUG, env=Es)
+    esito('hook_recinto.py', 'zb lavoro lanciato da un altro repository cambia il recinto di quello, non del motore',
+          f'{prima_m} / {SLUG}', f'{(hook_recinto.lavoro(rad_m), hook_recinto.slug_attivo(rad_m))} / '
+          f'{hook_recinto.slug_attivo(r2)}', sez)
+    passi = []
+    # 1. una decisione dell'autore su un documento approvato: salva la ferma, riapprova la registra
+    py = os.path.join(L, 'libro.yaml')
+    t_py = open(py, encoding='utf-8').read()
+    open(py, 'w', encoding='utf-8').write(t_py.replace('revisione_capitolo: facoltativa', 'revisione_capitolo: obbligatoria'))
+    p1 = zsalva('revisione obbligatoria')
+    z('riapprova', '.', 'libro.yaml', 'decisione dell\'autore: revisione obbligatoria')
+    p2 = zsalva('revisione obbligatoria, riapprovata')
+    passi.append(f'{p1.returncode != 0 and "zb riapprova" in p1.stderr} {p2.returncode}')
+    # 2. catena: revisione → verifica → esito (fermo sul fatto aperto, poi reso generico) → capsula
+    passi.append(passo(prossimo()))
+    intesta(L, os.path.join(F, 'rapporti', 'audit-01.md'), '06-diagnostica/audit/01.md', 'diagnosta', 1)
+    zsalva('diagnosta 1')
+    passi.append(passo(prossimo()))
+    cap1 = os.path.join(L, '04-manoscritto', '01-il-molo.md')
+    rv = os.path.join(L, difetti.rel_verifica(1))
+
+    def verifica(fatti=''):
+        os.makedirs(os.path.dirname(rv), exist_ok=True)
+        open(rv, 'w', encoding='utf-8').write(
+            difetti.riga_verifica(open(cap1, encoding='utf-8').read()) + '\n# Verifica\n\n' + fatti +
+            '## Registro dei difetti\n\n- conoscenza_personaggio: OK\n- inferenza_come_fatto: OK\n- motivazione: OK\n')
+    verifica('## Fatti reali da verificare\n\n1. r.3: la marea al molo sale di due metri\n\n')
+    zsalva('verificatore 1')
+    az = prossimo()          # il cancello fallirebbe: fatto aperto e similitudini del capitolo di prova
+    passi.append(f'{passo(az, 23)} {"F001" in az and "similitudini" in az}')
+    z('difetti', '.', 'fatto', 'F001', 'generico')
+    preg = os.path.join(L, difetti.REGISTRO)
+    reg = (comune.leggi_yaml(preg) if os.path.isfile(preg) else None) or {}
+    reg['eccezioni'] = [{'unita': '1', 'classe': 'similitudini', 'motivo': 'decisione dell\'autore (prova)'}]
+    os.makedirs(os.path.dirname(preg), exist_ok=True)
+    open(preg, 'w', encoding='utf-8').write(yaml.safe_dump(reg, allow_unicode=True, sort_keys=False))
+    passi.append(passo(prossimo(), 7))
+    passi.append(str(z('esito', '.', '1').returncode))
+    zsalva('capitolo 1 accettato')
+    passi.append(passo(prossimo()))
+    z('capsula', '.', '1')
+    pc = os.path.join(L, capsula.rel(1))
+    t = open(pc, encoding='utf-8').read().replace(comune.MODELLO + '\n', '')
+    for sez_c in capsula.SEZIONI['it']:
+        t = t.replace(f'- {sez_c}:', f'- {sez_c}: Nives scende al molo prima dell\'alba, conta i colpi della catena '
+                                     'e trova la lanterna spenta, che nessuno doveva toccare.', 1)
+    open(pc, 'w', encoding='utf-8').write(t)
+    passi.append(f'{z("capsula", ".", "1", "--verifica").returncode} {zsalva("capsula 1").returncode}')
+    passi.append(passo(prossimo()))
+    # 3. correzione dopo l'accettazione: salva la ferma, correggi la registra, avvio passa
+    open(cap1, 'a', encoding='utf-8').write('\nIl vento cambia.\n')
+    p3 = zsalva('ritocco')
+    z('correggi', '.', '1: un ritocco deciso dall\'autore')
+    p4 = zsalva('ritocco registrato')
+    p5 = z('avvio', '.')
+    passi.append(f'{p3.returncode != 0 and "zb correggi" in p3.stderr} {p4.returncode} {p5.returncode}')
+    # 4. prima del capitolo 2: capsula superata, poi giro di controllo del verificatore sulla riga cambiata
+    passi.append(passo(prossimo()))
+    z('capsula', '.', '1')
+    passi.append(f'{z("capsula", ".", "1", "--verifica").returncode} {zsalva("capsula 1 rinnovata").returncode}')
+    az = prossimo()
+    passi.append(f'{passo(az, 17)} {"Il vento cambia" in az}')
+    verifica()
+    zsalva('verificatore, giro di controllo')
+    passi.append(passo(prossimo()))
+    if os.environ.get('ZB_DEBUG'):
+        print('DEBUG passi', passi)
+    esito('ciclo', 'decisione su libro.yaml (salva ferma, riapprova) / revisione / verifica / cancello KO (fatto '
+          'aperto, similitudini) → azione / esito / capsula / salva / capitolo 2 / ritocco dopo l\'accettazione (prima della '
+          'pausa di lettura salva non lo ferma; correggi lo registra; avvio passa) / capsula superata / rinnovata / giro di controllo del verificatore / capitolo 2',
+          ' | '.join(['True 0', 'revisione del capitolo 1', 'verifica del capitolo 1', 'cancello dei difetti KO True',
+                      '«zb esi', '0',
+                      'capsula del capitolo 1', '0 0', 'scrivi il capitolo 2', 'False 0 0', 'capsula del capitolo 1',
+                      '0 0', 'giro di controllo True', 'scrivi il capitolo 2']),
+          ' | '.join(passi), sez)
+
+
 SEZIONI = [percorso, cartella_unica, agenti_e_comandi, consumo_capsule, voce_campioni, correttore]
 
 

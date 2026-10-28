@@ -3433,9 +3433,10 @@ def difetti_prove(A):
     os.remove(ve)
     senza_verifica = agenti.precedenti_ko(d, lob, '.', '2', sporco)
     facoltativa = agenti.precedenti_ko(d, libro, '.', '2', sporco)
-    esito('agenti.py', 'prima di un capitolo nuovo, cancello KO su uno già scritto: KO del revisore → FERMO / verifica '
-          'assente → AZIONE verificatore / revisione facoltativa → nessun blocco', 'FERMO / AZIONE / []',
-          f'{nuovo_ko[0].split(":")[0]} / {senza_verifica[0].split(":")[0]} / {facoltativa}', sez)
+    esito('agenti.py', 'prima di un capitolo nuovo, cancello KO su uno già scritto: KO deterministico → AZIONE di '
+          'correzione allo scrittore / verifica assente → AZIONE verificatore / revisione facoltativa → nessun blocco',
+          'True / True / []', f'{"cancello dei difetti KO" in nuovo_ko[0] and "scrittore-voce" in nuovo_ko[0]} / '
+          f'{"verifica del capitolo 1" in senza_verifica[0]} / {facoltativa}', sez)
     esito('fase.py', 'zb esito chiama il cancello dei difetti (revisione obbligatoria)', True,
           'difetti.cancello(cartella, libro, n)' in open(os.path.join(S, 'fase.py'), encoding='utf-8').read(), sez)
     # giro di controllo: dopo un «passa», una correzione piccola fa ricontrollare solo le righe cambiate

@@ -266,7 +266,8 @@ def hook():
 
 
 def comando(args):
-    rad = radice(os.path.dirname(os.path.abspath(__file__)))
+    # il repository da cui si lancia (un worktree, il repository di un libro), non quello che contiene il motore
+    rad = radice(os.getcwd()) or radice(os.path.dirname(os.path.abspath(__file__)))
     if not rad:
         print('FERMO: non sono in un repository git.', file=sys.stderr)
         return 2

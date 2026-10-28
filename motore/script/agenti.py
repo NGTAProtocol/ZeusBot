@@ -169,10 +169,23 @@ def precedenti_ko(cartella, libro, rel, u, unita=None):
             continue
         if difetti.sezione_revisore(cartella, k, testo) is None:
             return [azione_verifica(cartella, rel, k, testo, '(già scritto, cancello dei difetti KO)')]
-        return [f'FERMO: capitolo {k}, cancello dei difetti KO prima del capitolo {u} («zb difetti {rel} {k}»): '
-                + '; '.join(f'{c} ({e})' for c, _, e, _ in b)
-                + '. Correzione mirata (scrittore-voce) o eccezione con il motivo: decide l\'autore.']
+        return [azione_cancello(rel, k, b, f'(già scritto, prima del capitolo {u})')]
     return []
+
+
+def azione_cancello(rel, k, b, nota=''):
+    """AZIONE che sblocca il cancello dei difetti: fatti aperti alla verifica su fonte, gli altri KO allo scrittore."""
+    fatti = [d.split(':')[0] for c, _, _, ds in b if c == 'fatto_da_verificare' for d in ds]
+    altri = [f'{c} ({e})' for c, _, e, _ in b if c != 'fatto_da_verificare']
+    parti = []
+    if fatti:
+        parti.append(f'fatti {", ".join(fatti)}: verifica su fonte autorevole, poi «zb difetti {rel} fatto <id> '
+                     'verificato --fonte <url>», oppure riscrittura generica (scrittore-voce) e «… fatto <id> generico»')
+    if altri:
+        parti.append(f'{"; ".join(altri)}: agente scrittore-voce in correzione mirata (dettagli: «zb difetti {rel} {k}»)'
+                     ', poi «zb correggi» se il capitolo era già accettato; un\'eccezione nel registro solo se la '
+                     'decide l\'autore')
+    return f'AZIONE: cancello dei difetti KO sul capitolo {k} {nota}: '.replace('  ', ' ') + ' — '.join(parti) + '.'
 
 
 def azione_stesura(cartella, libro, st, rel):
@@ -200,6 +213,9 @@ def azione_stesura(cartella, libro, st, rel):
         testo = open(dict(comune.unita(cartella, libro))[u], encoding='utf-8').read()
         if difetti.sezione_revisore(cartella, u, testo) is None:
             return [azione_verifica(cartella, rel, u, testo)]
+        b = difetti.blocchi(difetti.esiti_unita(cartella, libro, u))
+        if b:
+            return [azione_cancello(rel, u, b)]
         return [f'AZIONE: «zb esito {rel} {u}» (la revisione passa); poi capsula e «zb salva {rel} "capitolo {u}"».']
     if stato == 'non passa':
         if giro2:
