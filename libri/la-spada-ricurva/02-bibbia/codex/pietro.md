@@ -4,7 +4,7 @@
 
 - In breve: amico programmatore, studente di IA alla Federico II; geniale e isolato; crea il modello offline che traduce i testi. [canone]
 - Alias: Pietro
-- Ruolo: il tecnologo [canone]. Non è uno dei tre studenti: entra dopo l'apertura (13) [proposta]. Cognome: Amitrano [proposta].
+- Ruolo: il tecnologo [canone]. Non è uno dei tre studenti: compare come amico di Elena, a casa sua (8); entra nella vicenda con la macchina nel basso di Mina (13) [scaletta]. Cognome: Amitrano [proposta].
 - Età: 27. [proposta: conferma del briefing]
 - Fissi (sempre): magro; cinque maglioni identici, uno per giorno; cuffie al collo, sempre spente. [proposta]
 - Variabili (quasi sempre): non toglie il giubbotto al chiuso; un thermos di caffè freddo. [proposta]

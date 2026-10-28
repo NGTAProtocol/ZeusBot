@@ -362,14 +362,18 @@ documenti_approvati:
       sha256_precedente: e5b9c34dc287ca7297673c426e69d637931dec941cea6ce16833abc02848511f
       commit_precedente: 686cfc3
   02-bibbia/codex/pietro.md:
-    sha256: 7d70afb1ca19afebdd4319e90eb96c899bfbc4dfa54a2df4b44a129df9b3f88c
-    commit: 686cfc3
+    sha256: 01fb8955079f60f067e8c1a7e2f7a680ce06e38670a1c674b59b0eb6ea6045e0
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
       sha256_precedente: 4e7dbd572841457210b3ea88267712cdff11788c775e756dba9d41641d27fd39
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'allineato alla scaletta approvata: Pietro compare al cap. 8 come amico, entra nella vicenda al 13'
+      sha256_precedente: 7d70afb1ca19afebdd4319e90eb96c899bfbc4dfa54a2df4b44a129df9b3f88c
+      commit_precedente: 686cfc3
   02-bibbia/codex/pm.md:
     sha256: 61b239dbec7e7893d0d9910ef4eed18bc873180022ab53a177e69faf069f94dc
     commit: da salvare
@@ -486,7 +490,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-28T07:37:53Z'
+aggiornato: '2026-10-28T09:34:00Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
