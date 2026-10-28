@@ -104,7 +104,7 @@ Spiego il resto in ordine, perché il disordine qui sarebbe un'altra forma di bu
 
 Claudia ha abbassato la matita. Non scrive ancora, ma la punta adesso tocca la carta.
 
-«E il codice che hai nella borsa?» Abbassa la voce. «Ti hanno detto di rimetterlo giù la notte stessa. Sono passate due notti.»
+«E il codice che hai nella borsa?» Abbassa la voce. «Me l'hai detto tu, che Scotti lo voleva giù la notte stessa. Sono passate due notti.»
 
 «Torna giù» dico. «La prima notte che scendiamo insieme.»
 
