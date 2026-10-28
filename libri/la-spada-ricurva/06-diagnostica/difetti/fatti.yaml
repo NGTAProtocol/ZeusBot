@@ -207,3 +207,21 @@ fatti:
   affermazione: 'r.24, r.48: formule della perizia («non incompatibile», «si dà atto»)
     e griglia del protocollo: generico.'
   stato: generico
+- id: F027
+  unita: '4'
+  affermazione: 'r.49 «pietra della macina che si stava consumando»: tecnica (residui
+    abrasivi come marcatore di bottega)'
+  stato: generico
+  data: '2026-10-28'
+- id: F028
+  unita: '4'
+  affermazione: 'r.133 «la cambia entro un anno, due al massimo»: tecnica'
+  stato: generico
+  data: '2026-10-28'
+- id: F029
+  unita: '4'
+  affermazione: 'r.143-147 «febbraio 1861» / «mentre il regno cadeva»: storia (resa
+    di Gaeta, 13 febbraio 1861)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://it.wikipedia.org/wiki/Assedio_di_Gaeta_(1860)
