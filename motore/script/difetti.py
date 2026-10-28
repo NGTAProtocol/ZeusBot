@@ -648,6 +648,19 @@ def righe_fatti(testo):
     return [x.strip() for x in re.findall(r'(?m)^(?:-|\d+\.)[ \t]*(r\.[ \t]*\d+.*)$', blocco)]
 
 
+def gia_registrato(voci, n, aff):
+    """Lo stesso fatto riscritto con altre parole: stessa unità e citazione «…» contenuta in quella di un fatto già
+    registrato, o che la contiene (il testo citato è lo stesso passo, magari accorciato dalla correzione)."""
+    q = re.search(r'«([^»]{8,})»', aff)
+    if not q:
+        return False
+    for v in voci:
+        w = re.search(r'«([^»]{8,})»', str(v.get('affermazione', '')))
+        if str(v.get('unita')) == str(n) and w and (q.group(1) in w.group(1) or w.group(1) in q.group(1)):
+            return True
+    return False
+
+
 def registra_fatti(cartella, n):
     """Fatti da verificare del diagnosta (audit/NN.md) e del verificatore (difetti/verifica/NN.md) nel registro dei
     fatti, stato «da_verificare» (solo i nuovi; «generico» se il rapporto lo dice già in fondo alla riga)."""
@@ -665,7 +678,7 @@ def registra_fatti(cartella, n):
     note = {(str(v.get('unita')), v.get('affermazione')) for v in voci}
     nuovi = 0
     for aff in righe:
-        if aff.lower().startswith('nessun') or (str(n), aff) in note:
+        if aff.lower().startswith('nessun') or (str(n), aff) in note or gia_registrato(voci, n, aff):
             continue
         stato = 'generico' if re.search(r'\bgeneric[oa]\.?$', aff, re.I) else 'da_verificare'
         voci.append({'id': f'F{len(voci) + 1:03d}', 'unita': str(n), 'affermazione': aff, 'stato': stato})

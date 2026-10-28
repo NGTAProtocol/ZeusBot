@@ -3425,6 +3425,19 @@ def difetti_prove(A):
     esito('difetti.py', 'fatti del verificatore (elenco numerato, sezione «Fatti reali da verificare») letti fino alla '
           'sezione dopo', "['r.28: forbice di cinque ore', 'r.12: bisturi: generico.']", str(rf), sez)
     import agenti
+    voci_f = [{'unita': '6', 'affermazione': 'r.5 «Il primo novembre l\'Accademia è chiusa per la festa»: calendario'}]
+    esito('difetti.py', 'fatto riscritto con altre parole (citazione accorciata) / passo diverso / altra unità: già '
+          'registrato?', 'True / False / False',
+          f'{difetti.gia_registrato(voci_f, "6", "r.5 «Il primo novembre l\'Accademia è chiusa»: festa nazionale")} / '
+          f'{difetti.gia_registrato(voci_f, "6", "r.9 «la carta copiativa ricalca»: tecnica")} / '
+          f'{difetti.gia_registrato(voci_f, "7", "r.5 «Il primo novembre l\'Accademia è chiusa»: festa")}', sez)
+    open(au, 'w', encoding='utf-8').write('## Da correggere\n\n- r.3 «x»: spiega troppo\n\npassa\n')
+    con_voci = (len(agenti.da_correggere(d, '1')), agenti.primo_giro(d, '1'))
+    open(au, 'w', encoding='utf-8').write('## Da correggere\n\n- nessuna\n\npassa\n')
+    esito('agenti.py', '«passa» con correzioni al primo giro: voci da correggere e primo giro / «nessuna»: nessuna voce',
+          '(1, True) / 0', f'{con_voci} / {len(agenti.da_correggere(d, "1"))}', sez)
+    esito('difetti.yaml', 'motivazione (verificatore) è bloccante: un errore di continuità ferma il capitolo',
+          'bloccante', difetti.dati()['classi']['motivazione']['gravita'], sez)
     lob = dict(libro, revisione_capitolo='obbligatoria')
     sporco = [cap(1, 'Aula — 1 marzo', 'La pioggia batte come un tamburo sordo.')]   # cliché: KO deterministico
     open(ve, 'w', encoding='utf-8').write(difetti.riga_verifica(sporco[0][1]) + '\n## Registro dei difetti\n\n'
