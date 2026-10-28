@@ -127,7 +127,7 @@ def stato_revisione(cartella, libro, n):
     ultima = next((r for r in reversed(righe) if r), '').lower()
     if m and m.group(2) != percorso.impronta(cartella, testi):
         if ultima == 'passa' and percorso.ritocco(cartella, testi[0], m.group(2)):
-            return 'ritocco', giro2     # «passa» e poi al più due righe cambiate: basta il giro del verificatore
+            return 'ritocco', giro2     # «passa» e poi al più RITOCCO_RIGHE righe cambiate: basta il giro del verificatore
         return 'vecchia', giro2
     if not m:
         return 'vecchia', giro2

@@ -29,7 +29,7 @@ delle sessioni precedenti è in git (`git log`, ramo `archivio/motore-prima-2026
   dopo l'accettazione (correggi, avvio), capsula superata, giro di controllo del verificatore, capitolo successivo.
 - Rapporti legati alla versione: verifica, revisione e capsula valgono solo per il testo su cui sono scritti; dopo una
   correzione piccola il diagnosta e il verificatore rivedono solo le righe cambiate; dopo un «passa», un ritocco di
-  al più due righe (`percorso.RITOCCO_RIGHE`) non rifà la revisione: basta il giro del verificatore su quelle righe.
+  al più tre righe (`percorso.RITOCCO_RIGHE`) non rifà la revisione: basta il giro del verificatore su quelle righe.
 - Scheda dello scrittore e capsula riportano il testo delle promesse citate per id (da `06-sottotrame-temi.md`).
 - Cancello `lunghezza`: KO anche sotto il budget del piano parole meno la tolleranza, non solo sopra.
 - Fatti doppi: riconosciuti anche senza citazione («stessa riga e tre parole chiave in comune»).

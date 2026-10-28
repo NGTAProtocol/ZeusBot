@@ -157,7 +157,7 @@ def righe_cambiate(cartella, rel_cap, su, impronta=None):
     return voci
 
 
-RITOCCO_RIGHE = 2
+RITOCCO_RIGHE = 3
 
 
 def ritocco(cartella, rel_cap, su):
