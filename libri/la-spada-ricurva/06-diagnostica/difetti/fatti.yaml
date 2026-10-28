@@ -444,23 +444,31 @@ fatti:
 - id: F061
   unita: '11'
   affermazione: 'r.29 «brachmanorum»: forma latina, citazione'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.academia.edu/38299238/IL_DIALOGO_TRA_ALESSANDRO_MAGNO_E_I_GIMNOSOFISTI_NEL_ROMANZO_DI_ALESSANDRO
 - id: F062
   unita: '11'
   affermazione: 'r.117 «inchiostro ferrogallico, carta da registro» (Ottocento): storia
     materiale'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://it.wikipedia.org/wiki/Inchiostro_ferrogallico
 - id: F063
   unita: '11'
   affermazione: 'r.27 «cinque nervi rilevati… rigatura a secco»: codicologia'
-  stato: da_verificare
+  stato: generico
+  data: '2026-10-28'
 - id: F064
   unita: '11'
   affermazione: 'r.65 bar in un vicolo verso piazza Bellini, vicino all''Accademia:
     geografia reale'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.napoliunplugged.com/piazza-bellini.html
 - id: F065
   unita: '11'
   affermazione: 'r.57 orologio a carica manuale: incompatibile con l''orologio con
     sensore cardiaco del cap. 1 (vedi A, KO).'
-  stato: da_verificare
+  stato: generico
+  data: '2026-10-28'
