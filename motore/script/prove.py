@@ -3454,6 +3454,11 @@ def difetti_prove(A):
     su = revisione.impronta(g, [cap_rel])
     import hashlib
     su_v = hashlib.sha256(open(os.path.join(g, cap_rel), 'rb').read()).hexdigest()[:12]   # impronta del verificatore
+    v1 = open(os.path.join(g, cap_rel), encoding='utf-8').read()
+    esito('difetti.py', 'verifica su una versione con solo un marcatore nascosto cambiato: ancora valida / con la prosa '
+          'cambiata: no', 'True / False',
+          f'{difetti.solo_marcatori(g, "1", su_v, v1 + "<!-- zb: chiusura=R -->" + chr(10))} / '
+          f'{difetti.solo_marcatori(g, "1", su_v, v1.replace("Riga 3", "Riga tre"))}', sez)
     corpo[4] = 'Riga 5 corretta.'
     open(os.path.join(g, cap_rel), 'w', encoding='utf-8').write('\n\n'.join(corpo) + '\n')
     piccola = percorso.righe_cambiate(g, cap_rel, su)

@@ -22,6 +22,7 @@ import glob
 import hashlib
 import os
 import re
+import subprocess
 import sys
 
 sys.dont_write_bytecode = True
@@ -451,6 +452,26 @@ def riga_verifica(testo):
     return f'<!-- zb: ruolo=verificatore; su={hashlib.sha256(testo.encode("utf-8")).hexdigest()[:12]} -->'
 
 
+def senza_marcatori(testo):
+    return [r for r in testo.splitlines() if not r.strip().startswith('<!-- zb:')]
+
+
+def solo_marcatori(cartella, n, su, testo):
+    """True se la versione del capitolo con impronta `su` (cercata nella storia git) differisce da quella attuale solo
+    nelle righe nascoste <!-- zb: … -->: i marcatori non sono prosa e non richiedono una nuova verifica."""
+    nn = f'{int(n):02d}' if str(n).isdigit() else str(n)
+    capi = glob.glob(os.path.join(cartella, '04-manoscritto', f'{nn}-*.md'))
+    if len(capi) != 1:
+        return False
+    radice = comune.radice_git(cartella)
+    pref = os.path.relpath(capi[0], radice)
+    for c in comune.git(cartella, 'log', '--format=%H', '--', capi[0])[1].split()[:30]:
+        r = subprocess.run(['git', '-C', radice, 'show', f'{c}:{pref}'], capture_output=True)
+        if not r.returncode and hashlib.sha256(r.stdout).hexdigest()[:12] == su:
+            return senza_marcatori(r.stdout.decode('utf-8')) == senza_marcatori(testo)
+    return False
+
+
 def sezione_revisore(cartella, n, testo):
     """{classe: (esito, dettaglio)} dalla sezione «## Registro dei difetti» di difetti/verifica/NN.md, se scritta
     sul testo attuale del capitolo (None altrimenti). Righe: «- conoscenza_personaggio: OK» oppure
@@ -459,7 +480,10 @@ def sezione_revisore(cartella, n, testo):
     if not os.path.isfile(p):
         return None
     t = open(p, encoding='utf-8').read()
-    if not t.startswith(riga_verifica(testo)) or SEZIONE_REVISORE not in t:
+    m = re.match(r'<!-- zb: ruolo=verificatore; su=(\w+) -->', t)
+    if not m or SEZIONE_REVISORE not in t:
+        return None
+    if not t.startswith(riga_verifica(testo)) and not solo_marcatori(cartella, n, m.group(1), testo):
         return None
     blocco = t.split(SEZIONE_REVISORE, 1)[1].split('\n## ', 1)[0]
     out = {}
