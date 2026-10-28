@@ -12,7 +12,7 @@
 | La chiave | 8 | La stanza in affitto | respiro, entra Pietro | 1 | 1500 | 1500 | 1403 | -6,5% |
 | La chiave | 9 | La cripta | discesa | 1 | 2300 | 2300 | 2313 | +0,6% |
 | La chiave | 10 | Il Fondo Proibito | meraviglia, furto | 1 | 2500 | 2500 | 2624 | +5,0% |
-| La chiave | 11 | Il nome | la loggia ha un nome | 1 | 2200 | 2200 |  |  |
+| La chiave | 11 | Il nome | la loggia ha un nome | 1 | 2200 | 2200 | 2109 | -4,1% |
 | La chiave | 12 | La scelta | prima svolta | 1 | 2200 | 2200 |  |  |
 | La traduzione | 13 | La macchina nel basso | entra l'IA | 1 | 2000 | 2000 |  |  |
 | La traduzione | 14 | Il cifrario | errore come indizio | 1 | 2300 | 2300 |  |  |

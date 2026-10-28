@@ -12,3 +12,4 @@ Difetti trovati dal revisore: non ripeterli. Le aggiunge «zb esito» dalla sezi
 - Non far spiegare alla narratrice un tratto che il gesto ha appena mostrato. (cap. 8)
 - non chiudere un momento d'azione con una sentenza: l'immagine basta. (cap. 9)
 - Nelle scene di scoperta prima i sensi e il peso, poi il conto; ogni traduzione si dà una volta sola. (cap. 10)
+- Quando un'informazione si anticipa per darle una fonte, le battute successive che la «scoprono» vanno riscritte come conferma. (cap. 11)

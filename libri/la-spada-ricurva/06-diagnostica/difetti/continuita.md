@@ -74,3 +74,11 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 - scena da r.43: 08/11/2025 — (luogo della scena precedente)
 - scena da r.77: 08/11/2025 — (luogo della scena precedente)
 - scena da r.139: 08/11/2025 — (luogo della scena precedente)
+- conoscenze: Elena legge solo l'incipit latino e tiene per sé l'ipotesi «Veda». Mina riconosce minio, mercurio e zolfo. Claudia tiene i tempi e le regole. Valli (Lorenzo) trova argento sotto il nero di un fermaglio; Claudia lo chiama per nome.
+
+## Unità 11 — tipo capitolo, chiusura R
+
+- scena da r.3: 09/11/2025 — Laboratorio di restauro
+- scena da r.65: 09/11/2025 — (luogo della scena precedente)
+- r.9 conteggio: 2 mandate
+- r.37 «da diciotto giorni» → 22/10
