@@ -1720,6 +1720,15 @@ def correzioni_e_passo(A):
     esito('fase.py', '(a) unità inesistente / uso sbagliato: rifiutati', A['a_rifiuti'],
           f'{p3.returncode} / {p4.returncode} / {len(stato()["correzioni_registrate"])}', sez)
 
+    # (a) un capitolo approvato cambiato senza correggi: zb salva lo rifiuta subito (non alla sessione dopo)
+    import avvio
+    open(cap, 'a', encoding='utf-8').write('\nUna riga non registrata.\n')
+    _, lb_m, _ = comune.carica_libro(Lm)
+    fuori_proc = avvio.approvati_cambiati(Lm, lb_m, stato())[0]
+    git(r, 'checkout', '--', '.')
+    esito('salva.py', '(a) documento approvato cambiato fuori procedura: trovato / zb salva usa lo stesso controllo',
+          "['04-manoscritto/01-la-farmacia.md'] / True", f'{fuori_proc} / '
+          f'{"avvio.approvati_cambiati" in open(os.path.join(S, "salva.py"), encoding="utf-8").read()}', sez)
     # (b) esito su un capitolo già scritto: misure aggiornate, passo invariato
     st = stato()
     st.update(ultimo_capitolo_scritto=2, passo='capitolo 3')      # capitoli 1-2 già scritti
@@ -2870,6 +2879,22 @@ def agenti_capsule_consumo(A):
     esito('capsula.py', 'zb capsula: prepara il modello / ancora modello KO / compilata OK / oltre 250 parole KO',
           A['capsula'], f'{q1.returncode} {os.path.isfile(os.path.join(L, "07-capsule", "01.md"))} / {q2.returncode} / '
           f'{q3.returncode} / {q4.returncode} {"parole" in q4.stdout}', sez)
+    # capsula legata alla versione del capitolo: un capitolo corretto la rende superata; zb capsula rinnova i dati
+    pc = dict(comune.unita(L, libro))['1']
+    tc = open(pc, encoding='utf-8').read()
+    scrivi_capsula(1)
+    pcap = os.path.join(L, capsula.rel(1))
+    corpo_cap = open(pcap, encoding='utf-8').read()
+    open(pcap, 'w', encoding='utf-8').write(f'Dati meccanici: 1 parole; versione: {capsula.versione(tc)}.\n' + corpo_cap)
+    fresca = capsula.problemi_capsula(L, libro, 1)
+    open(pc, 'a', encoding='utf-8').write('\nUna frase aggiunta dopo.\n')
+    vecchia = capsula.problemi_capsula(L, libro, 1)
+    esegui(cp, L, '1')
+    rinnovata = capsula.problemi_capsula(L, libro, 1)
+    open(pc, 'w', encoding='utf-8').write(tc)
+    scrivi_capsula(1)
+    esito('capsula.py', 'capsula sulla versione attuale OK / capitolo corretto dopo: superata / zb capsula rinnova i '
+          'dati meccanici', '[] / True / []', f'{fresca} / {any("altra versione" in x for x in vecchia)} / {rinnovata}', sez)
     stato_f = {'ultimo_capitolo_scritto': 3}
     try:
         capsula.controlla(L, dict(libro, capsule='obbligatorie'), stato_f)

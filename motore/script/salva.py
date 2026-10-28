@@ -50,6 +50,12 @@ def main(argv):
         if libro and os.path.isfile(os.path.join(libro, 'libro.yaml')):
             cartella, lb, _ = comune.carica_libro(libro)
             if comune.editoriale(lb) and os.path.isfile(os.path.join(cartella, 'stato.yaml')):
+                import avvio
+                fuori_proc = avvio.approvati_cambiati(cartella, lb, comune.leggi_yaml(os.path.join(cartella, 'stato.yaml')))[0]
+                if fuori_proc:   # scoperto ora, non alla prossima sessione
+                    raise comune.ErroreMotore('Salvataggio rifiutato: documenti approvati cambiati fuori procedura:\n- '
+                                              + '\n- '.join(fuori_proc) + '\nCapitolo: «zb correggi <libro> N: <motivo>»; '
+                                              'altro documento, se l\'autore l\'ha deciso: «zb riapprova <libro> <documento> <motivo>».')
                 import compatto
                 compatto.genera(cartella, lb)
                 cambiati = precommit.modificati(rad)
