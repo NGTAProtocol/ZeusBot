@@ -495,3 +495,29 @@ fatti:
     rigatura a piombo: plausibile.'
   stato: generico
   data: '2026-10-28'
+- id: F070
+  unita: '12'
+  affermazione: 'r.65 «Il minio… Mercurio e zolfo»: chimica dei pigmenti (errato:
+    il minio è Pb₃O₄)'
+  stato: da_verificare
+- id: F071
+  unita: '12'
+  affermazione: 'r.89 «atto notarile del Cinquecento… aste tagliate»: paleografia
+    (abbreviazioni per troncamento)'
+  stato: da_verificare
+- id: F072
+  unita: '12'
+  affermazione: 'r.89: modelli di trascrizione del latino che marcano le lacune tra
+    parentesi quadre: plausibile (convenzione di Leida); nessun nome reale citato.'
+  stato: da_verificare
+- id: F073
+  unita: '12'
+  affermazione: 'r.31: la prassi per cui un ufficio ministeriale chiede conferma all''ente
+    proprietario prima di agire: plausibile, generica.'
+  stato: generico
+- id: F074
+  unita: '12'
+  affermazione: 'r.65: minio (ossido di piombo) contro «mercurio e zolfo»: Mina parla
+    dei simboli alchemici del cap. 10, non della composizione del minio (il cinabro
+    è HgS); è una battuta del personaggio. Da controllare se si vuole un rigore chimico.'
+  stato: da_verificare

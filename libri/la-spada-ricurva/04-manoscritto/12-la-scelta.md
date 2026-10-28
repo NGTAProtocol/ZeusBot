@@ -2,11 +2,11 @@
 
 Terrazzo di Claudia — 11 novembre
 
-Il codice è nella borsa, e la borsa è tra le mie caviglie, con la cinghia girata due volte intorno allo stivale.
+Una cosa presa senza permesso non si posa mai su un tavolo. Il codice è nella borsa, e la borsa è tra le mie caviglie, con la cinghia girata due volte intorno allo stivale.
 
 Claudia abita all'ultimo piano di un palazzo senza ascensore, e il terrazzo è il tetto stesso: una guaina bituminosa che si scolla ai bordi in bolle grandi come un palmo, un parapetto di tufo intonacato che l'acqua ha già mangiato fino al vivo, quattro sedie di plastica di colori diversi e un tavolo che sta in piedi perché qualcuno gli ha messo un tappo di sughero sotto la gamba corta. Intorno, a perdita d'occhio, altre terrazze: cisterne, antenne storte, lamiere fermate con i mattoni. Nessuno ci guarda. Alle undici di sera, a novembre, i tetti di Napoli appartengono ai gatti e ai serbatoi.
 
-Ho raccontato tutto in otto minuti. Il nome, l'anello, il segretario di una commissione che oggi firma i nostri permessi. Non ho detto da chi l'ho saputo. Claudia c'era e tace anche lei, con il taccuino chiuso sulle ginocchia e il pollice infilato nel punto dove manca la pagina strappata.
+Ho raccontato tutto in otto minuti. Il nome, l'anello, il segretario di una commissione che oggi firma i nostri permessi. Non ho detto da chi l'ho saputo. L'anello l'ho detto per ultimo, e guardando Valli. Da settimane gli vedo sull'anulare il segno di un anello che non porta più, e lui al Direttore ci arriva in due telefonate. Potevo tacerlo. Ma se Valli sa già, tacere non ci protegge; se non sa, voglio vedere la sua faccia nel momento in cui lo sente. Claudia c'era e tace anche lei, con il taccuino chiuso sulle ginocchia e il pollice infilato nel punto dove manca la pagina strappata.
 
 Mina si è seduto sul bordo della sedia gialla, che sotto di lui si flette. Ha le mani giunte tra le cosce, il blu sotto le unghie, la medaglietta che gli gira intorno al polso ogni volta che scuote la testa. Valli è rimasto in piedi contro il parapetto. Ha una sigaretta spenta tra due dita e la fa rotolare, avanti e indietro, sul polpastrello del medio.
 
@@ -18,7 +18,7 @@ Mina si è seduto sul bordo della sedia gialla, che sotto di lui si flette. Ha l
 
 «E oggi ne parla uno.»
 
-Lui sorride, e smette di far rotolare la sigaretta. Con il pollice si tocca l'anulare, la fascia di pelle più chiara dove un anello è stato per anni e adesso non c'è.
+Lui sorride, e smette di far rotolare la sigaretta. Con il pollice si tocca l'anulare, la fascia di pelle più chiara dove un anello è stato per anni e adesso non c'è. Può essere un gesto che fa da sempre, anche quando parla di soldi. Può essere che quell'anello avesse uno stemma, e che lui l'abbia sfilato prima di conoscerci. Non lo so. Lo metto da parte, dove tengo le cose che non so.
 
 Claudia apre il taccuino. La pagina nuova è a quadretti, vuota, e lei ci scrive in alto un numero, l'uno, e lo cerchia.
 
@@ -50,7 +50,7 @@ Valli si stacca dal parapetto. Ha aspettato che il primo progetto cadesse per pr
 
 «Une chaire, par exemple.» Fa un gesto largo, verso di me, verso Mina. «Per chi la vuole. Una borsa, un laboratorio, una firma sotto un catalogo. Chi porta l'anello paga, Magnisi. È l'unica cosa sicura che sappiamo di lui.»
 
-È la frase più lucida che abbia detto da quando lo conosco. Anche la più pericolosa. Peso le due strade come peserei due solventi su un colore che non conosco. L'asta mette il codice in mano a qualcuno che non vedremo mai, e la prima cosa che quel qualcuno fa è far periziare l'oggetto da un esperto, e gli esperti di latino eretico veneziano in questa città si contano su una mano. Il Direttore, poi, paga: su questo Valli ha ragione. Ferrante è stato pagato con una sospensione in due settimane.
+È la frase più lucida che abbia detto da quando lo conosco. Anche la più pericolosa. Peso le due strade come peserei due solventi su un colore che non conosco. L'asta mette il codice in mano a qualcuno che non vedremo mai, e la prima cosa che quel qualcuno fa è far periziare l'oggetto da un esperto, e gli esperti capaci di dire da dove viene un latino così, veneziano forse, pieno di segni che nessun notaio userebbe, in questa città si contano su una mano. Il Direttore, poi, paga: su questo Valli ha ragione. Ferrante è stato pagato con una sospensione in due settimane.
 
 «Paga» dico. «E poi decide lui per quanto tempo.»
 
@@ -62,7 +62,7 @@ Mina alza la testa. Fino a ora ha guardato la guaina sotto i piedi, la bolla che
 
 «Nessuno sa cosa c'è scritto.»
 
-«E appunto, Elè. Quella roba nella cassa sta là sotto da settecento anni e nessuno l'ha letta. Il minio è ancora vivo, l'ho visto io. Mercurio e zolfo non si spengono. Quella carta aspetta.»
+«E appunto, Elè. Quella roba nella cassa sta là sotto da settecento anni e nessuno l'ha letta. Il rosso è ancora vivo, l'ho visto io. Cinabro: mercurio e zolfo, quello non si spegne. Quella carta aspetta.»
 
 Claudia si gira verso di lui. Lo guarda come guarda un dettaglio che non torna in una tela.
 
@@ -74,11 +74,11 @@ Restano tre voci e una matita sospesa, e il punto è che ognuno di loro ha un ti
 
 «La chiave l'ho letta io.»
 
-Non lo dice per vantarsi. Lo dice guardandomi, e capisco cosa intende: che non decido da sola, che il rebus non è passato per i miei occhi prima che per i suoi, che senza la sua pianta con le cifre noi saremmo ancora a contare campate in un chiostro.
+Non lo dice per vantarsi. Lo dice guardandomi, e non abbassa gli occhi finché non li abbasso io.
 
 «E la porta l'ho aperta io» dice Valli. Ha un tono leggero, quasi divertito, ma lo dice subito dopo di lei, e non è un caso.
 
-Io non ho letto la chiave e non ho aperto la porta. Ho portato fuori un codice, contro tutte le regole che avevamo scritto, e quella è una colpa, non un titolo. Lo sanno tutti e tre. Me lo dicono i loro silenzi, il modo in cui Claudia ha messo il pollice sul moncherino della pagina strappata.
+Io non ho letto la chiave e non ho aperto la porta. Ho portato fuori un codice, contro tutte le regole che avevamo scritto, e quella è una colpa, non un titolo. Erano in cripta con me, tutti e tre, quando l'ho fatto. E Scotti mi ha detto di rimetterlo giù la notte stessa, e non l'ho rimesso. Claudia ha rimesso il pollice sul moncherino della pagina strappata.
 
 Ho una cosa sola che loro non hanno.
 
@@ -94,17 +94,21 @@ L'ho visto io, una sera, alla Sanità. Ho visto il modello inciampare su un'abbr
 
 «No. Ma se gli diamo abbastanza pagine, forse impara anche quello. Forse. Non lo so e non ve lo prometto.»
 
-Spiego il resto in ordine, perché il disordine qui sarebbe un'altra forma di bugia. Una macchina che non vede la rete, chiusa in una stanza dove nessuno pensa di cercarla. Le pagine fotografate in cripta, una notte alla volta, senza portare fuori più niente. Il modello che trascrive e traduce, noi che controlliamo. E poi non si consegna niente a nessuno. Si pubblica tutto, testi e traduzioni, aperto, gratuito, nello stesso giorno, in modo che chiunque possa scaricarlo e nessuno possa archiviarlo. E le copie complete, rilegate, firmate da noi, vanno in dono ai musei fuori dall'Italia, a quelli che hanno i laboratori e gli avvocati per tenersele.
+Spiego il resto in ordine, perché il disordine qui sarebbe un'altra forma di bugia. Una macchina che non vede la rete, chiusa in una stanza dove nessuno pensa di cercarla. Le pagine fotografate in cripta, una notte alla volta, senza portare fuori più niente. Il custode passa ogni quarantun minuti, la lastra ne chiede tredici, la chiave di volta si è già mossa una volta: quindi poche pagine per notte, mai tutti e quattro giù insieme, e la prima notte che la volta si muove ancora si smette. Il modello che trascrive e traduce, noi che controlliamo. E poi non si consegna niente a nessuno. Si pubblica tutto, testi e traduzioni, aperto, gratuito, nello stesso giorno, in modo che chiunque possa scaricarlo e nessuno possa archiviarlo. E le copie complete, rilegate, firmate da noi, vanno in dono ai musei fuori dall'Italia, a quelli che hanno i laboratori e gli avvocati per tenersele.
+
+«Cinquecento volumi a quaranta minuti per volta» dice Valli. «Ci invecchiamo, là sotto.»
+
+«Là sotto fotografiamo e basta. Legge la macchina, fuori.»
 
 «Un ufficio a Roma lo chiama il Direttore» dico. «Cento musei non li chiama nessuno.»
 
 Claudia ha abbassato la matita. Non scrive ancora, ma la punta adesso tocca la carta.
 
-«E il codice che hai nella borsa?»
+«E il codice che hai nella borsa?» Abbassa la voce. «Ti hanno detto di rimetterlo giù la notte stessa. Sono passate due notti.»
 
-Non me l'aspettavo, e invece avrei dovuto. Lei la borsa l'ha vista quando sono arrivata, ha visto come la tengo.
+«Torna giù» dico. «La prima notte che scendiamo insieme.»
 
-«Torna giù» dico. «La prima notte che scendiamo.»
+Due notti fa non sono scesa. Da sola, sotto una chiave di volta che si muove, avrei rotto una seconda regola per rimediare alla prima.
 
 «Lo scrivo.»
 
@@ -136,7 +140,7 @@ Claudia scrive il suo nome sotto il quattro, poi gira il taccuino verso di lui. 
 
 Restiamo. Nessuno vuole essere il primo a scendere le scale, perché scendere vorrebbe dire che è vero. Claudia tira fuori una bottiglia di vino rosso senza etichetta, di suo padre, e quattro bicchieri che non sono uguali. Mina beve il suo in tre sorsi e comincia a parlare dei guru, di Venezia, di cose che ha sentito dire nei bassi da gente che non ha mai visto un manoscritto. Valli lo corregge in francese e lui lo manda a quel paese in napoletano, e ridiamo tutti e quattro, nello stesso momento, cosa che in tre settimane non era mai successa, con la bocca piena di freddo.
 
-È una festa sbagliata. Lo so mentre la vivo. Quattro persone su un tetto hanno appena deciso da soli di cinquecento volumi che appartengono a un'istituzione che ha sospeso un uomo per un esposto, e ci passiamo una bottiglia come se avessimo vinto qualcosa. Ma il vino è aspro, il tufo del parapetto è bagnato sotto i palmi, e da qualche parte, sotto quel tufo e sotto altri cento metri di città, una cassa di legno aspetta che qualcuno la riapra. La sensazione di essere in quattro contro un edificio intero non la conosco, e la tengo in bocca insieme al vino.
+Ci passiamo la bottiglia. Il vino è aspro, il tufo del parapetto è bagnato sotto i palmi, e dall'altra parte della città, sotto il cortile dell'Accademia, una cassa di legno aspetta che qualcuno la riapra. Tengo il vino in bocca finché non mi fa male ai denti.
 
 Mina se ne va per primo, verso l'una e mezza, perché alle sette lo aspettano in laboratorio. Valli poco dopo. Sulla porta del terrazzo si ferma e mi guarda.
 
