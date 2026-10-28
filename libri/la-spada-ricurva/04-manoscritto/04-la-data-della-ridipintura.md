@@ -56,7 +56,7 @@ Nel bruno, sparsi, ci sono granuli rossi. Spigolosi, di misure diverse, troppo d
 
 «In una scatola, a casa mia.»
 
-Lo guardo. Lui sostiene lo sguardo, il mento un poco alto, e capisco che aspetta da me la parola sbagliata, quella che gli direbbe che una scatola in un basso della Sanità non è un archivio.
+Alzo gli occhi su di lui e lui li regge, il mento un poco alto, e capisco che aspetta da me la parola sbagliata, quella che gli direbbe che una scatola in un basso della Sanità non è un archivio.
 
 «C'è un'altra cosa» dice, prima che io scelga la parola. «Le due lame. Io le conosco da quando ero creatura. Stanno su un'edicola, a cinquanta passi da casa mia.»
 
