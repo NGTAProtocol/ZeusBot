@@ -179,6 +179,8 @@ def giro_revisione(cartella, libro, n, nuovo=False):
     if m and m.group(2) == impronta(cartella, testi):
         raise comune.ErroreMotore(f'{rel}: «non passa» sul testo attuale del capitolo {n}. Prima la correzione mirata di '
                                   'chi scrive, poi la nuova revisione.')
+    if os.path.isfile(g1) and not nuovo and open(g1, encoding='utf-8').read() == testo:
+        return 2, da_correggere(testo)  # il secondo giro non è ancora scritto (zb ruolo rilanciato dopo un ritocco)
     if os.path.isfile(g1):
         if not nuovo:
             raise comune.ErroreMotore(f'Capitolo {n}: due giri di revisione fatti, il secondo chiude con «non passa». '
