@@ -1,19 +1,19 @@
 # Stato compatto — La Spada Ricurva
 
 - Fase: stesura; gate: nessuno.
-- Ultimo capitolo salvato: 6 (commit 80fea11); parole 11394/90000.
+- Ultimo capitolo salvato: 7 (commit 99f652f); parole 13922/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elena; Tempo verbale della narrazione: presen….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
-- Personaggi (capsula 6): Elena sa della sospensione del 21 ottobre e del visto del 28 settembre. Il Professore sa del tassello. Lorenzo sa il numero dei fogli. Scotti sa dell…
+- Personaggi (capsula 7): Magnisi (narratore) sa il significato del motto e del «Sospeso» del Professore. Claudia sa che le linee portano alla campata 2. Mina conosce la «crip…
 - Fatti bloccati: 9 (elenco in stato.yaml):
   - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei…
   - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India po…
   - I ragazzi non denunciano la scoperta: usano un'IA offline addestrata da Pietro per tradurre e indicizzare i testi, per…
   - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e…
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
-- Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p4, @prom:p5, @prom:p6, @prom:p7, @prom:p8, @prom:p9, @prom:p10.
-- Prossimo capitolo 7: enigma risolto con strumenti veri; prova la competenza del gruppo.; cambiamento: i quattro dettagli si leggono insieme: un motto latino, una sequenza….
-- Prossimo passo: Prossimo: capitolo 7. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
-- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 7.
+- Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p5, @prom:p6, @prom:p7, @prom:p8, @prom:p9, @prom:p10.
+- Prossimo capitolo 8: respiro voluto; Elena da sola; entra Pietro; la paranoia diventa domestica.; cambiamento: il lettore vede il prezzo del riscatto (soldi, solitudine); Pietro mo….
+- Prossimo passo: Prossimo: capitolo 8. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
+- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 8.
