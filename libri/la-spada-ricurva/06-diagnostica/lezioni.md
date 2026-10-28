@@ -8,3 +8,4 @@ Difetti trovati dal revisore: non ripeterli. Le aggiunge «zb esito» dalla sezi
 - non risolvere un dubbio con un'immagine da cartolina: il luogo va visto con l'occhio tecnico di Elena. (cap. 4)
 - Non commentare dopo una battuta ambigua ciò che la battuta ha già lasciato in sospeso. (cap. 5)
 - non tradurre in morale l'immagine o la battuta che ha appena funzionato da sola. (cap. 6)
+- Ogni deduzione detta da un personaggio deve tornare con i dati che la scena ha appena dato. (cap. 7)

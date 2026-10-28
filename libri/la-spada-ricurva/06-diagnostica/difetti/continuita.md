@@ -47,3 +47,10 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 
 - scena da r.3: 01/11/2025 — Aula di arte moderna
 - scena da r.95: 01/11/2025 — (luogo della scena precedente)
+- conoscenze: Elena sa della sospensione del 21 ottobre e del visto del 28 settembre. Il Professore sa del tassello. Lorenzo sa il numero dei fogli. Scotti sa delle fotografie del 21; Elena gli dice di averle cancellate dal telefono.
+
+## Unità 7 — tipo capitolo, chiusura R
+
+- scena da r.3: 04/11/2025 — Galleria dell'Accademia
+- scena da r.63: 04/11/2025 — (luogo della scena precedente)
+- r.115 conteggio: 2 cornici
