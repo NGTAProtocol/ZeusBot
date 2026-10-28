@@ -1,12 +1,12 @@
 # Stato compatto — La Spada Ricurva
 
 - Fase: stesura; gate: nessuno.
-- Ultimo capitolo salvato: 3 (commit 1ba2805); parole 5575/90000.
+- Ultimo capitolo salvato: 3 (commit 92945e8); parole 5575/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elana; Tempo verbale della narrazione: presen….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
-- Personaggi (capsula 3): Magnisi sa della piega, dei tre numeri e del tassello richiuso. Claudia sa di aver copiato la Giuditta ad aprile e di aver visto la mattina del 22 il…
+- Personaggi (capsula 3): Magnisi sa della piega, dei tre numeri e del tassello. Claudia sa di aver copiato la Giuditta ad aprile e del cartellino comparso dopo le foto di Ela…
 - Fatti bloccati: 9 (elenco in stato.yaml):
   - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei…
   - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India po…
