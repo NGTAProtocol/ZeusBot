@@ -2,7 +2,7 @@
 
 Palazzo Valli — 29 ottobre
 
-L'invito è in rilievo, ma non è inciso. Me ne accorgo con il polpastrello prima che con gli occhi, sotto l'androne, mentre il portiere scorre una lista battuta a macchina cercando il mio cognome: la lastra incisa spinge la carta da dietro e lascia sul retro l'impronta rovesciata delle lettere, la stampa a caldo gonfia soltanto l'inchiostro e il retro resta liscio. Il retro del mio è liscio.
+L'invito è in rilievo, ma non è inciso. Me ne accorgo con il polpastrello prima che con gli occhi, sotto l'androne, mentre il portiere scorre una lista battuta a macchina cercando il mio cognome: una lastra incisa spinge la carta e lascia sul retro l'impronta rovesciata delle lettere; qui il rilievo sta tutto nell'inchiostro, e il retro resta liscio. Il retro del mio è liscio.
 
 Lorenzo l'ha lasciato nella mia casella del laboratorio tre giorni fa, senza busta, con una riga a matita sotto lo stemma: «Porti Rinaldi, se vuole. Si mangia.»
 
@@ -38,7 +38,7 @@ Li vedo adesso. Lungo la parete lunga del salone, tra una finestra e l'altra, so
 
 Mi avvicino alla terza cornice con il bicchiere in mano, per avere un motivo per stare lì. La luce dei lampadari arriva radente da sinistra e fa il suo lavoro senza che nessuno glielo chieda.
 
-Il damasco fuori dalla cornice ha preso cinquanta, cento anni di sole dalle finestre e si è spento in un rosa sporco. Dentro il rettangolo il rosso è rimasto pieno, perché per tutto quel tempo una tela gli ha fatto ombra. Ai quattro angoli interni, dove la stoffa si incontra con la battuta della cornice, ci sono quattro forellini rotondi, i buchi delle viti che tenevano fermo il telaio. Il bordo della battuta, dove poggiava la tela, ha una riga di polvere più chiara, pulita di fresco da uno straccio che non è entrato negli angoli. Il quadro non c'è più. La cornice l'hanno rimessa al suo posto vuota, perché un rettangolo rosso acceso su un muro sbiadito si vede da tutto il salone e una cornice vuota, con la luce giusta, può sembrare una scelta.
+Il damasco fuori dalla cornice ha preso cinquanta, cento anni di sole dalle finestre e si è spento in un rosa sporco. Dentro il rettangolo il rosso è rimasto pieno, perché per tutto quel tempo una tela gli ha fatto ombra. Ai quattro angoli interni, dove la stoffa si incontra con la battuta della cornice, ci sono quattro forellini rotondi, i buchi delle viti che tenevano fermo il telaio. Il bordo della battuta, dove poggiava la tela, ha una riga di polvere più chiara, pulita di fresco da uno straccio che non è entrato negli angoli. Il quadro non c'è più. La cornice l'hanno lasciata al suo chiodo, e stamattina qualcuno ha passato il panno sull'oro della gola fino a dove arrivava la mano, senza salire sulla sedia.
 
 Sei cornici. Sei rettangoli. Mi volto e le pareti di fronte mi rispondono con altre quattro.
 
@@ -58,7 +58,7 @@ L'uomo sta in piedi vicino al camino spento, solo, con un bicchiere che non ha t
 
 «Carlo Dell'Aquila. Scrive dei quadri che noi non ci possiamo più permettere.» Lorenzo lo dice ridendo, e Dell'Aquila non ride. «Rinaldi, secondo anno, disegna meglio di tutti. E Magnisi, del laboratorio di restauro. Ha le mani sul Martirio di santa Caterina, quello col drappo. Le aveva: il Professore ha sospeso tutto. In Accademia non si parla d'altro.»
 
-Lo dice con leggerezza, tra un sorso e l'altro. In Accademia si parla di me da una settimana, è vero, e non c'è niente in quella frase che Lorenzo non abbia sentito nei corridoi. Ma la dice qui, davanti a quest'uomo, e la frase mi resta addosso più del bicchiere vuoto.
+Lo dice con leggerezza, tra un sorso e l'altro. In Accademia si parla di me da una settimana, è vero, e non c'è niente in quella frase che Lorenzo non abbia sentito nei corridoi. Ma la dice qui, davanti a quest'uomo. Bevo un sorso dal bicchiere che finora tenevo solo per avere qualcosa in mano, e mi va di traverso.
 
 «Sospeso» ripete Dell'Aquila. Ha una voce piana, senza accento, che non sale alla fine delle frasi. «Sarebbe un peccato. Il Martirio l'ho visto anni fa, quando era ancora in galleria. Una santa bellissima, e un drappo bruno che le sta addosso male, come un cappotto preso in prestito.»
 
@@ -70,7 +70,7 @@ Lo dice con leggerezza, tra un sorso e l'altro. In Accademia si parla di me da u
 
 «Ecco.» Sembra contento della risposta. «Sarebbe interessante sapere fin dove ha potuto sentire, prima che la fermassero.»
 
-Non è una domanda. Non ha il punto interrogativo, non ha neanche il tono. È una frase lasciata sul tavolo perché io la raccolga, e io non la raccolgo. Penso al tassello richiuso, alla vernice reversibile stesa sopra due lame che quest'uomo non ha mai visto. Non le ha viste. Era in galleria anni fa, ha detto, e il drappo era già lì.
+Dell'Aquila aspetta, il bicchiere fermo all'altezza del petto. È una frase lasciata sul tavolo perché io la raccolga, e io non la raccolgo. Penso al tassello richiuso, alla vernice reversibile stesa sopra due lame che quest'uomo non ha mai visto. Non le ha viste. Era in galleria anni fa, ha detto, e il drappo era già lì.
 
 «Al restauro l'ho tolto un centimetro» dico. «Poi è finito.»
 
@@ -92,7 +92,7 @@ Claudia, accanto a me, ha aperto il taccuino a quadretti e disegna. Non disegna 
 
 Claudia non risponde. Chiude il taccuino e se lo tiene contro il petto.
 
-Più tardi, tornando dal bagno, passo per un corridoio che non è per gli ospiti. Una porta socchiusa, una console di noce sotto uno specchio senza argento in due punti. Sopra c'è un foglio piegato a metà, con lo stemma dei Valli in alto e un indirizzo stampato che nessuno usa da anni. Sul retro, a matita, colonne di cifre senza nomi accanto, sottratte e risottratte, con un totale cancellato tre volte e riscritto più piccolo. Non lo tocco. Riconosco però la grafia del biglietto nella mia casella: le stesse sette chiuse in basso, la stessa matita morbida che sbava sul margine.
+Più tardi, tornando dal bagno, passo per un corridoio che non è per gli ospiti. Una porta socchiusa, una console di noce sotto uno specchio senza argento in due punti. Sopra c'è un foglio piegato a metà, con lo stemma dei Valli in alto e un indirizzo stampato che nessuno usa da anni. Sul retro, a matita, colonne di cifre senza nomi accanto, sottratte e risottratte, con un totale cancellato tre volte e riscritto più piccolo. Non lo tocco. Riconosco però la grafia del biglietto nella mia casella: lo stesso tratto inclinato all'indietro, la stessa matita morbida che sbava sul margine.
 
 Torno nel salone. Qualcuno ha aperto una finestra e l'aria della strada entra fredda, con un odore di pietra bagnata, e fa oscillare appena la cornice più vicina.
 
@@ -104,7 +104,7 @@ Dell'Aquila se ne va presto, prima del dolce. Lo incrocio sul pianerottolo, dove
 
 «Lo dubito anch'io.» Infila i guanti nella tasca interna della giacca. Poi, con l'aria di chi aggiunge un dettaglio di poco conto a una conversazione già finita: «Certe tele è meglio non restaurarle.»
 
-Lo dice con gentilezza, come un consiglio dato a una studentessa da chi ha visto molti restauri rovinare molti quadri. È una frase che un critico della sua età può aver ripetuto a cento restauratrici giovani, e niente di quello che ho visto stasera dice che a me l'abbia detta in un altro modo. Un uomo che conosce il Martirio da anni, che ha sentito «sospeso» da Lorenzo dieci minuti prima, che ha toccato una cornice con i guanti: non è una prova di niente. Ma la frase è arrivata dopo «sospeso», e io non so se mi ha consigliato di fermarmi o mi ha detto che sono già ferma.
+Lo dice con gentilezza, abbottonandosi il cappotto dal basso, come un consiglio dato a una studentessa sulla porta di un'aula. Il cameriere gli porge la sciarpa e lui la prende senza ringraziare. Io resto sul pianerottolo con le mani nelle tasche del cappotto grigio e con il pollice cerco la pelle screpolata delle nocche, la premo finché brucia, come faccio al banco quando non so se il solvente ha già lavorato abbastanza o se devo fermarmi un attimo prima. Non trovo niente da rispondergli. Lo guardo prendere il primo gradino.
 
 Scende lo scalone senza voltarsi. Il portiere gli apre il portone prima che arrivi in fondo.
 

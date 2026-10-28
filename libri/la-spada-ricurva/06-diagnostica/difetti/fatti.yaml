@@ -225,3 +225,10 @@ fatti:
   stato: verificato
   data: '2026-10-28'
   fonte: https://it.wikipedia.org/wiki/Assedio_di_Gaeta_(1860)
+- id: F030
+  unita: '5'
+  affermazione: 'r.5 «la lastra incisa spinge la carta da dietro… la stampa a caldo
+    gonfia soltanto l''inchiostro»: tecnica di stampa. In italiano «stampa a caldo»
+    indica di solito la stampa a lamina, che imprime la carta. Il rilievo del solo
+    inchiostro è la termografia. Va verificato su fonte o riscritto in forma generica.'
+  stato: generico
