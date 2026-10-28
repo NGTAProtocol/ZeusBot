@@ -2,7 +2,7 @@
 
 Laboratorio di chimica — 26 ottobre
 
-Mina tiene il mio campione sotto il microscopio da quaranta minuti e non mi ha ancora lasciato guardare.
+In questo istituto un campione di colore vale quanto la firma che ne autorizza il prelievo, e il mio non ne ha. Mina lo tiene sotto il microscopio da quaranta minuti e non mi ha ancora lasciato guardare.
 
 È una scaglia più piccola di un grano di riso. L'ho levata due giorni fa, alle sette e un quarto, con la punta del bisturi, dal bordo del tassello che il Professore mi aveva fatto richiudere. Claudia teneva la lampada, il corridoio era vuoto, il custode faceva il giro dall'altra parte del chiostro. Ho tolto la vernice reversibile, ho preso due frammenti dal margine, ho richiuso con la stessa vernice e ho annotato tutto su un foglio che non è la scheda d'intervento. Sotto il centimetro quadrato non c'era nessun numero: il bruno del drappo e, sotto, il filo grigio delle due lame. Il quarto riquadro di Claudia è rimasto bianco. I frammenti li ho dati a Mina, perché i pigmenti sono il suo mestiere e perché qui, al piano terra, una provetta non ha bisogno del visto di nessuno.
 
@@ -46,7 +46,7 @@ Mina riprende il posto al microscopio e sposta il vetrino verso il bruno. «Ades
 
 Nel bruno, sparsi, ci sono granuli rossi. Spigolosi, di misure diverse, troppo duri per essere pigmento.
 
-«Terra d'ombra, un poco di nero d'ossa, olio cotto» dice Mina, alle mie spalle. «Macinato a mano. E questi rossi non sono colore. È la pietra della macina che si stava consumando, e ogni volta che macinavano ne lasciava un poco dentro.»
+«Terra d'ombra, un poco di nero d'ossa, olio cotto» dice Mina, alle mie spalle. «Macinato a mano. E questi rossi, qua dentro, non sono colore. A me pare pietra della macina che si stava consumando: ogni volta che macinavano ne lasciava un poco.»
 
 «Ne ricavi un'età?»
 
@@ -76,7 +76,7 @@ Claudia chiude il taccuino con un colpo secco. Mina ride, dal petto, ma la risat
 
 * * *
 
-La Sanità, a quest'ora, è un fondo di pozzo: le case salgono così strette che il cielo resta una striscia sopra i panni stesi, e la luce arriva per ultima e se ne va per prima. Il tufo dei muri bassi è scuro d'acqua anche dove non piove da giorni. Dalle porte aperte dei bassi escono il rumore dei televisori e il ferro delle pentole. Mina cammina piano, con quel suo peso che non ha fretta, e saluta tutti per nome. Nessuno saluta me.
+La Sanità, a quest'ora, è un fondo di pozzo: le case salgono così strette che il cielo resta una striscia sopra i panni stesi, e la luce arriva per ultima e se ne va per prima. Il tufo dei muri bassi è scuro d'acqua anche dove non piove da giorni. Dalle porte aperte dei bassi escono il rumore dei televisori e il ferro delle pentole. Mina cammina piano, con quel suo peso che non ha fretta, e saluta tutti per nome. Nessuno saluta me. Claudia è rimasta in laboratorio, col riquadro bianco aperto sulle ginocchia.
 
 L'edicola sta all'angolo di un palazzo, all'altezza di una testa d'uomo, chiusa da un vetro rigato. Dentro, una Madonna di gesso, un mazzo di fiori di plastica, un lumino acceso. Dietro, sull'intonaco, le anime del Purgatorio dipinte tra le fiamme, le braccia alzate. Mina si tocca la medaglietta legata al polso con lo spago, senza guardarla. Lo fa come si allaccia una scarpa.
 
@@ -110,7 +110,13 @@ Il basso della sua famiglia è dieci metri più giù, una porta a due battenti c
 
 Dentro ci sono provette chiuse col tappo di sughero, ognuna con un cartellino legato al collo. Grafia stretta, inchiostro blu.
 
-«Le raccolgo da quando avevo quindici anni» dice. «Ogni volta che rifanno una cappella, una cornice, un soffitto qua intorno, vado dagli operai e mi faccio dare le scaglie che buttano. Poi vado in parrocchia, o dal notaio, o da chi tiene le carte, e mi faccio dire quando è stato fatto quel lavoro. Se non c'è una carta, la provetta non la tengo.»
+«Le raccolgo da quando avevo quindici anni» dice. «Ogni volta che rifanno una cappella, una cornice, un soffitto qua intorno, vado dagli operai e mi faccio dare le scaglie che buttano.»
+
+Ne prendo una e la giro sotto il lampione. Sul cartellino, il nome di una chiesa e un anno.
+
+«E l'anno chi te lo dà?»
+
+«La parrocchia, o il notaio, o chi tiene le carte. Se non c'è una carta, la provetta non la tengo.»
 
 «Quante ne hai tenute?»
 
@@ -118,17 +124,17 @@ Dentro ci sono provette chiuse col tappo di sughero, ognuna con un cartellino le
 
 Questo, nel suo modo, è un metodo. Non lo dico.
 
-Mina cerca con le dita, senza guardare, e ne tira fuori una. Dentro, una scaglia bruna. Poi prende il telefono e mi fa vedere due fotografie, una accanto all'altra: a sinistra la sezione di stamattina, a destra quella che ha fatto mesi fa da questa scaglia, quando ancora non sapeva a cosa gli sarebbe servita. Il lampione ronza. Allargo le immagini con due dita.
+Mina scorre i cartellini con il pollice. Ne tira fuori tre, ne rimette a posto due: un soffitto, un bruno troppo chiaro. «I rossi così li ho visti una volta sola, e me li sono disegnati.» Dalla giacca prende il quaderno del microscopio e lo apre su due pagine: a sinistra questa scaglia, disegnata mesi fa a matita colorata, a destra la sezione di stamattina. Il lampione ronza. Accosto la carta alla luce.
 
-Gli stessi granuli rossi. La stessa forma spigolosa, gli stessi frammenti più grossi verso il basso, dove il colore si è depositato. Lo stesso bruno intorno.
+Gli stessi granuli rossi, segnati uno per uno. La stessa forma spigolosa, gli stessi frammenti più grossi verso il basso, dove il colore si è depositato. Lo stesso bruno intorno.
 
 «La stessa pietra non è lo stesso pittore» dico.
 
-«No. È la stessa bottega, o lo stesso barattolo. Una macina che perde pietra così, dottorè, la cambiano entro un anno, due al massimo, o il colore diventa sabbia.»
+«No. È la stessa bottega, o lo stesso barattolo. E chi macina a mano, dottorè, una pietra che perde così la cambia entro un anno, due al massimo, o il colore diventa sabbia. Lo dice chiunque macini.»
 
 «Lo dici tu.»
 
-«Lo dice la pietra. Io la so leggere.»
+«E la pietra. Io la so leggere.»
 
 Lo guardo un momento più del necessario. Ha le mani ferme intorno alla provetta e il blu sotto le unghie, e aspetta. Penso che ha ragione su una cosa che conta: non è una prova, ma è l'ipotesi più forte che ho, e l'ha costruita lui, una scaglia buttata alla volta, prima che io sapessi che esisteva.
 
@@ -138,8 +144,6 @@ Prendo il foglio del tassello dalla tasca del cappotto. Sotto le note di due gio
 
 «Febbraio 1861» ripete Mina, piano, come si dice il nome di un morto del rione.
 
-Non c'è bisogno che glielo spieghi. Lo sa anche lui che cosa finisce quell'inverno, e lo sa chiunque sia cresciuto in queste strade.
-
-Qualcuno ha raschiato due lame mentre cadeva il regno.
+Un anno prima o un anno dopo, se la pietra non mente: qualcuno ha raschiato due lame mentre il regno cadeva, o quando era appena caduto.
 
 <!-- zb: chiusura=R -->
