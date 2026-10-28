@@ -150,3 +150,60 @@ fatti:
   data: '2026-10-27'
   fonte: 'Cardinali, De Ruggieri, Falcucci 2005 (iris.unicampania.it/handle/11591/432318):
     incisioni nella preparazione nel metodo di Caravaggio'
+- id: F019
+  unita: '1'
+  affermazione: 'r.12 «il bisturi del dieci, quello delle velature»: tecnica del restauro
+    (lama n.10 e il suo uso sulle velature)'
+  stato: generico
+  data: '2026-10-28'
+- id: F020
+  unita: '1'
+  affermazione: 'r.48 «la griglia del protocollo, con la casella del numero e quella
+    della data»: prassi (impaginazione di una relazione medico-legale)'
+  stato: generico
+  data: '2026-10-28'
+- id: F021
+  unita: '1'
+  affermazione: 'r.28, r.36: un orologio con sensore cardiaco registra un «ultimo
+    battito» al minuto. Molti modelli, a riposo, campionano a intervalli di alcuni
+    minuti (ora il testo lo nomina come alternativa). Precedenti giudiziari con i
+    dati di un dispositivo indossabile: Nilsson, Adelaide 2018; Dabate, Connecticut
+    2015-17.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.abc.net.au/news/2018-03-29/smart-watch-data-helps-police-find-suspect-in-murder-case-court/9602832
+- id: F022
+  unita: '1'
+  affermazione: 'r.28: una forbice di 5 ore (20:00-01:00) ricavata da rigidità, ipostasi
+    e temperatura rettale con sopralluogo all''alba. È plausibile con il nomogramma
+    di Henssge (±2,8 h): risolve F001.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://pmc.ncbi.nlm.nih.gov/articles/PMC11732859/
+- id: F023
+  unita: '1'
+  affermazione: 'r.32, r.36: «messaggio di testo… visualizzato alle 23:49». Per gli
+    SMS, iOS (sms.db) salva l''orario di lettura (date_read). Android, di norma, salva
+    solo un indicatore di lettura senza orario. Va verificato che la copia forense
+    possa dare un orario di visualizzazione per un SMS (vale per F004).'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.sherlockforensics.com/blog/0075-forensic-analysis-ios-imessage-sqlite-database-investigator-attribution.html
+- id: F024
+  unita: '1'
+  affermazione: 'r.36: «uno schermo sveglio per un''ora»: il blocco automatico (da
+    30 secondi a pochi minuti) rende la seconda ipotesi improbabile, e ora il testo
+    lo dice.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://support.apple.com/guide/iphone/keep-the-iphone-display-on-longer-iph7117338a8/ios
+- id: F025
+  unita: '1'
+  affermazione: 'r.12: «bisturi del dieci» (lama n.10) usato per le velature; carta
+    da fotocopie da 80 g: generico.'
+  stato: generico
+- id: F026
+  unita: '1'
+  affermazione: 'r.24, r.48: formule della perizia («non incompatibile», «si dà atto»)
+    e griglia del protocollo: generico.'
+  stato: generico
