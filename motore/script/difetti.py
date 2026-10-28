@@ -458,7 +458,7 @@ def senza_marcatori(testo):
 
 def solo_marcatori(cartella, n, su, testo):
     """True se la versione del capitolo con impronta `su` (cercata nella storia git) differisce da quella attuale solo
-    nelle righe nascoste <!-- zb: … -->: i marcatori non sono prosa e non richiedono una nuova verifica."""
+    nelle righe nascoste <!-- zb: … --> o per le rinomine registrate (zb rinomina): non richiedono una nuova verifica."""
     nn = f'{int(n):02d}' if str(n).isdigit() else str(n)
     capi = glob.glob(os.path.join(cartella, '04-manoscritto', f'{nn}-*.md'))
     if len(capi) != 1:
@@ -468,7 +468,10 @@ def solo_marcatori(cartella, n, su, testo):
     for c in comune.git(cartella, 'log', '--format=%H', '--', capi[0])[1].split()[:30]:
         r = subprocess.run(['git', '-C', radice, 'show', f'{c}:{pref}'], capture_output=True)
         if not r.returncode and hashlib.sha256(r.stdout).hexdigest()[:12] == su:
-            return senza_marcatori(r.stdout.decode('utf-8')) == senza_marcatori(testo)
+            prima = r.stdout.decode('utf-8')
+            for rn in leggi(cartella, 'stato.yaml', {}).get('rinomine') or []:     # nomi decisi dall'autore dopo
+                prima = re.sub(rf'\b{re.escape(rn["da"])}\b', rn['a'], prima)
+            return senza_marcatori(prima) == senza_marcatori(testo)
     return False
 
 

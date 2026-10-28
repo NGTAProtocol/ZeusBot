@@ -33,6 +33,8 @@ delle sessioni precedenti è in git (`git log`, ramo `archivio/motore-prima-2026
 - Catena fluida: un «passa» con correzioni al primo giro manda allo scrittore una sola correzione (revisione e
   verifica insieme); la motivazione del verificatore è bloccante; un fatto riscritto non si registra due volte; un
   marcatore nascosto cambiato non invalida la verifica.
+- `zb rinomina <libro> <vecchio> <nuovo>`: un nome deciso dall'autore cambia in tutto il libro con correzioni,
+  riapprovazioni e capsule; le verifiche restano valide (rinomine registrate in stato.yaml).
 
 ## Decisioni prese
 - Modo automatico: fermate solo alla pausa di lettura, a un FERMO del motore e al canone (`editoriale/00-percorso.md`).

@@ -1034,15 +1034,23 @@ def ciclo_dopo_accettazione(r, sez='ciclo del capitolo con i comandi veri'):
     verifica()
     zsalva('verificatore, giro di controllo')
     passi.append(passo(prossimo()))
+    # 5. l'autore rinomina un personaggio: un comando, salva e avvio passano, la verifica resta valida
+    pr = z('rinomina', '.', 'Nives', 'Nina')
+    ps = zsalva('rinomina')
+    pa = z('avvio', '.')
+    passi.append(f'{pr.returncode} {ps.returncode} {pa.returncode} {"Nives" in open(cap1, encoding="utf-8").read()}')
+    passi.append(passo(prossimo()))
     if os.environ.get('ZB_DEBUG'):
         print('DEBUG passi', passi)
     esito('ciclo', 'decisione su libro.yaml (salva ferma, riapprova) / revisione / verifica / cancello KO (fatto '
           'aperto, similitudini) → azione / esito / capsula / salva / capitolo 2 / ritocco dopo l\'accettazione (prima della '
-          'pausa di lettura salva non lo ferma; correggi lo registra; avvio passa) / capsula superata / rinnovata / giro di controllo del verificatore / capitolo 2',
+          'pausa di lettura salva non lo ferma; correggi lo registra; avvio passa) / rinomina di un personaggio (salva, '
+          'avvio, verifica ancora valida) / capsula superata / rinnovata / giro di controllo del verificatore / capitolo 2',
           ' | '.join(['True 0', 'revisione del capitolo 1', 'verifica del capitolo 1', 'cancello dei difetti KO True',
                       '«zb esi', '0',
                       'capsula del capitolo 1', '0 0', 'scrivi il capitolo 2', 'False 0 0', 'capsula del capitolo 1',
-                      '0 0', 'giro di controllo True', 'scrivi il capitolo 2']),
+                      '0 0', 'giro di controllo True', 'scrivi il capitolo 2', '0 0 0 False',
+                      'scrivi il capitolo 2']),
           ' | '.join(passi), sez)
 
 
