@@ -672,7 +672,8 @@ def radici(aff):
 
 def gia_registrato(voci, n, aff):
     """Lo stesso fatto riscritto con altre parole, nella stessa unità: citazione «…» contenuta in quella di un fatto
-    già registrato (o che la contiene), oppure stessa riga e almeno tre parole chiave in comune."""
+    già registrato (o che la contiene), oppure stessa riga e almeno tre parole chiave in comune (un fatto con due sole
+    parole chiave: tutte e due)."""
     q = re.search(r'«([^»]{8,})»', aff)
     righe, rad = righe_citate(aff), radici(aff)
     for v in voci:
@@ -682,7 +683,7 @@ def gia_registrato(voci, n, aff):
         w = re.search(r'«([^»]{8,})»', a)
         if q and w and (q.group(1) in w.group(1) or w.group(1) in q.group(1)):
             return True
-        if righe & righe_citate(a) and len(rad & radici(a)) >= 3:
+        if righe & righe_citate(a) and len(rad & radici(a)) >= max(2, min(3, len(rad))):   # fatto corto: tutte le sue
             return True
     return False
 

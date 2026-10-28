@@ -3454,6 +3454,11 @@ def difetti_prove(A):
           f'{difetti.gia_registrato(voci_r, "12", "r.65: minio (ossido di piombo) contro mercurio e zolfo: battuta")} / '
           f'{difetti.gia_registrato(voci_r, "12", "r.89: lacune tra parentesi quadre nelle trascrizioni del latino")} / '
           f'{difetti.gia_registrato(voci_r, "12", "r.70: minio, mercurio e zolfo nei ricettari")}', sez)
+    voci_m = [{'unita': '15', 'affermazione': 'r.73 «San Michele ne ha una»: l\'iconografia dell\'arcangelo ha una sola spada.'}]
+    esito('difetti.py', 'fatto corto riformulato (due parole chiave, tutte in comune) / stessa riga, una sola in comune: '
+          'già registrato?', 'True / False',
+          f'{difetti.gia_registrato(voci_m, "15", "r.73 San Michele ha una sola spada: corretto.")} / '
+          f'{difetti.gia_registrato(voci_m, "15", "r.73 Michele sul muro: tufo.")}', sez)
     open(au, 'w', encoding='utf-8').write('## Da correggere\n\n- r.3 «x»: spiega troppo\n\npassa\n')
     con_voci = (len(agenti.da_correggere(d, '1')), agenti.primo_giro(d, '1'))
     open(au, 'w', encoding='utf-8').write('## Da correggere\n\n- nessuna\n\npassa\n')
