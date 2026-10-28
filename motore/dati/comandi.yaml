@@ -13,6 +13,7 @@ gruppi:
       - {nome: correggi, script: fase, uso: "correggi <libro> <istruzione> | <unità>: <motivo> [--commit H]", aiuto: "correzione al gate o fuori dal gate"}
       - {nome: esito, script: fase, uso: "esito <libro> <N>", aiuto: "controlli del capitolo N, audit anti-IA, registrazione"}
       - {nome: riapprova, script: fase, uso: "riapprova <libro> <documento> <motivo>", aiuto: "modifica autorizzata a un documento approvato"}
+      - {nome: rinomina, script: fase, uso: "rinomina <libro> <vecchio> <nuovo> [motivo]", aiuto: "un nome deciso dall'autore cambia in tutto il libro, con le registrazioni"}
       - {nome: fase, script: fase, uso: "fase <libro> stesura --motivo <testo>", aiuto: "da chiusura a stesura se mancano unità"}
       - {nome: canone, script: fase, uso: "canone <libro> proponi|togli <fatto> | gate | mostra", aiuto: "fatti bloccati: cambiano solo con il gate «canone»"}
       - {nome: revisione, script: revisione.py, uso: "revisione <libro> <documento|gate> [N]", aiuto: "un documento in blocchi; non scrive"}

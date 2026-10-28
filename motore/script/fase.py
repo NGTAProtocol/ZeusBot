@@ -8,6 +8,7 @@ Comandi dell'autore:
   ok [lotti da N]          approva il gate aperto (solo dopo aver mostrato tutti i blocchi)
   correggi <istruzione>    registra una correzione; il gate resta aperto
   riapprova <documento> <motivo>   registra una modifica autorizzata a un documento già approvato
+  rinomina <vecchio> <nuovo>       un nome deciso dall'autore cambia in tutto il libro, con le registrazioni
   fase stesura --motivo <testo>    da «chiusura» torna a «stesura» se nel piano mancano unità (registra data,
                            motivo e fase precedente)
                            (nuovo sha256 e commit, con data, motivo e sha256 precedente)
@@ -561,6 +562,61 @@ def cmd_fase(cartella, libro, stato, resto):
     print(f'Fase «chiusura» → «stesura»; motivo: {motivo}. Mancano: {", ".join(mancanti)}.')
 
 
+RINOMINA_ESCLUSI = ('00-progetto/voce/', '06-diagnostica/difetti/fixture/', '.zb/', 'stato.yaml')
+
+
+def cmd_rinomina(cartella, libro, stato, resto):
+    """«rinomina <vecchio> <nuovo> [motivo]»: un nome deciso dall'autore cambia in tutto il libro (tranne campioni di
+    voce, fixture dei difetti e stato.yaml, che si aggiorna qui). Registra la rinomina, le correzioni dei capitoli, le
+    riapprovazioni dei documenti approvati e rinnova i dati delle capsule; le verifiche restano valide (difetti.py
+    confronta il testo con le rinomine registrate applicate)."""
+    if len(resto) < 2 or resto[0] == resto[1]:
+        raise comune.ErroreMotore('Uso: rinomina <libro> <vecchio> <nuovo> [motivo]')
+    vecchio, nuovo = resto[0], resto[1]
+    motivo = ' '.join(resto[2:]).strip() or f'decisione dell\'autore: {vecchio} diventa {nuovo}'
+    parola = re.compile(rf'\b{re.escape(vecchio)}\b')
+    cambiati = []
+    for dirpath, _, nomi in os.walk(cartella):
+        for nome in sorted(nomi):
+            pp = os.path.join(dirpath, nome)
+            rel = os.path.relpath(pp, cartella).replace(os.sep, '/')
+            if not nome.endswith(('.md', '.yaml', '.txt')) or rel.startswith(RINOMINA_ESCLUSI):
+                continue
+            t = open(pp, encoding='utf-8').read()
+            if parola.search(t):
+                comune.scrivi(cartella, rel, parola.sub(nuovo, t))
+                cambiati.append(rel)
+    if not cambiati:
+        raise comune.ErroreMotore(f'«{vecchio}» non compare nel libro: niente da rinominare')
+
+    def sostituisci(x):
+        if isinstance(x, str):
+            return parola.sub(nuovo, x)
+        if isinstance(x, list):
+            return [sostituisci(v) for v in x]
+        if isinstance(x, dict):
+            return {k: sostituisci(v) for k, v in x.items()}
+        return x
+    for k in ('fatti_bloccati', 'avvisi_aperti'):
+        if stato.get(k):
+            stato[k] = sostituisci(stato[k])
+    stato.setdefault('rinomine', []).append({'data': datetime.date.today().isoformat(), 'da': vecchio, 'a': nuovo,
+                                             'motivo': motivo})
+    capitoli = {os.path.relpath(p, cartella): n for n, p in comune.unita(cartella, libro)}
+    for rel in cambiati:
+        if rel in capitoli:
+            registra_correzione(cartella, libro, stato, [f'{rel}:', motivo])
+    import avvio
+    for rel in avvio.approvati_cambiati(cartella, libro, stato)[0]:
+        if rel in cambiati:
+            cmd_riapprova(cartella, stato, [rel, motivo])
+    import capsula
+    for rel, n in capitoli.items():
+        if rel in cambiati and str(n).isdigit() and os.path.isfile(os.path.join(cartella, capsula.rel(n))):
+            capsula.prepara(cartella, libro, n)
+    print(f'Rinomina registrata: {vecchio} → {nuovo} in {len(cambiati)} file; poi «zb salva».')
+
+
 def cmd_riapprova(cartella, stato, resto):
     if len(resto) < 2:
         raise comune.ErroreMotore('Uso: riapprova <documento> <motivo>')
@@ -791,7 +847,7 @@ def cmd_esito(cartella, libro, stato, resto, argv):
 def main(argv):
     args = [a for i, a in enumerate(argv) if a != '--radice' and (i == 0 or argv[i - 1] != '--radice')]
     if len(args) < 2:
-        raise comune.ErroreMotore('Uso: fase.py <libro> stato|avanti|ok|correggi|riapprova|pronto|esito|fase [argomenti]')
+        raise comune.ErroreMotore('Uso: fase.py <libro> stato|avanti|ok|correggi|riapprova|rinomina|pronto|esito|fase [argomenti]')
     cartella, libro, _ = comune.carica_libro(args[0])
     comando, resto = args[1], args[2:]
     stato = carica_stato(cartella)
@@ -814,6 +870,8 @@ def main(argv):
                 cmd_pronto(cartella, libro, stato)
             elif comando == 'riapprova':
                 cmd_riapprova(cartella, stato, resto)
+            elif comando == 'rinomina':
+                cmd_rinomina(cartella, libro, stato, resto)
             elif comando == 'esito':
                 codice = cmd_esito(cartella, libro, stato, resto, argv)
             elif comando == 'fase':
@@ -825,7 +883,7 @@ def main(argv):
                     percorso.canone(cartella, libro, stato, resto)
             else:
                 raise comune.ErroreMotore(f'Comando sconosciuto: {comando}. Comandi: stato, avanti, ok, correggi, '
-                                          'riapprova, pronto, esito, fase, canone.')
+                                          'riapprova, rinomina, pronto, esito, fase, canone.')
     except comune.ErroreMotore:
         sys.stdout.write(uscita.getvalue())
         raise

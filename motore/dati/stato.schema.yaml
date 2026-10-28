@@ -18,6 +18,7 @@ campi:
   tentativi: {tipo: mappa, altri_campi: true}
   correzioni_aperte: {tipo: lista}
   correzioni_registrate: {tipo: lista}        # correzioni fuori dal gate (zb correggi <unità>: <motivo>)
+  rinomine: {tipo: lista}                     # nomi cambiati dall'autore (zb rinomina): data, da, a, motivo
   unita_accettate: {tipo: lista}              # prologo, interludi, epilogo che hanno superato «esito»
   cambi_fase: {tipo: lista}
   sottofase: {tipo: scelta, valori: [proposte, applicazione], nullo: true}   # fasi di revisione del percorso editoriale
