@@ -280,19 +280,26 @@ fatti:
     verbali»: paleografia. Una lineetta con coda sulla P non è un segno noto per «-iciunt»;
     «se aspiciunt» vale «si guardano se stessi», il reciproco classico sarebbe «inter
     se».'
-  stato: da_verificare
+  stato: generico
+  data: '2026-10-28'
 - id: F038
   unita: '7'
   affermazione: 'r.55 «senza la J e con la U che fa da V»: storia dell''alfabeto,
     la frase sembra rovesciata (è la V che fa da U).'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://it.wikipedia.org/wiki/Scrittura_e_pronuncia_del_latino
 - id: F039
   unita: '7'
   affermazione: 'r.133 «la pronuncia sbagliata, con la C dura»: pronuncia latina,
     la C dura è quella classica restituita, non un errore.'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://it.wikipedia.org/wiki/Scrittura_e_pronuncia_del_latino
 - id: F040
   unita: '7'
   affermazione: 'r.49 «Nove sono i cori degli angeli… Quattro sono le cose dei morti»:
     dottrina (angelologia, i Novissimi).'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://it.wikipedia.org/wiki/Gerarchia_degli_angeli
