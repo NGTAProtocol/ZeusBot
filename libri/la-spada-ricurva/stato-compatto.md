@@ -1,19 +1,19 @@
 # Stato compatto — La Spada Ricurva
 
 - Fase: stesura; gate: nessuno.
-- Ultimo capitolo salvato: 12 (commit 835238b); parole 24609/90000.
+- Ultimo capitolo salvato: 13 (commit 32f7b0d); parole 26606/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elena; Tempo verbale della narrazione: presen….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
-- Personaggi (capsula 12): Claudia, Valli, Mina. Elena non dice da chi sa il nome; Valli sorride e non risponde. Pietro non sa niente.
+- Personaggi (capsula 13): Pietro sa del modello e non chiede chi altro lo sappia. Mina conosce il piano. Scotti sa della macchina da ieri.
 - Fatti bloccati: 9 (elenco in stato.yaml):
   - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei…
   - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India po…
   - I ragazzi non denunciano la scoperta: usano un'IA offline addestrata da Pietro per tradurre e indicizzare i testi, per…
   - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e…
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
-- Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p5, @prom:p6, @prom:p7, @prom:p8, @prom:p9, @prom:p10, @prom:p11, @prom:p12, @prom:p14.
-- Prossimo capitolo 13: entra la tecnologia; si pianta il seme della voce umana e artificiale.; cambiamento: la macchina isolata è montata; l'assistente consegna decenni di gloss….
-- Prossimo passo: Prossimo: capitolo 13. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
-- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 13.
+- Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p5, @prom:p6, @prom:p7, @prom:p8, @prom:p9, @prom:p10, @prom:p12, @prom:p14, @prom:p15.
+- Prossimo capitolo 14: prima traduzione; l'errore come indizio letale.; cambiamento: la prima pagina si apre; Elena trova un errore: il modello rende «obb….
+- Prossimo passo: Prossimo: capitolo 14. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
+- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 14.

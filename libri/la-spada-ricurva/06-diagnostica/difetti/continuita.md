@@ -87,3 +87,9 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 ## Unità 12 — tipo capitolo, chiusura X
 
 - scena da r.3: 11/11/2025 — Terrazzo di Claudia
+- conoscenze: Claudia, Valli, Mina. Elena non dice da chi sa il nome; Valli sorride e non risponde. Pietro non sa niente.
+
+## Unità 13 — tipo capitolo, chiusura D
+
+- scena da r.3: 13/11/2025 — Il basso di Mina, Sanità
+- scena da r.79: 13/11/2025 — (luogo della scena precedente)
