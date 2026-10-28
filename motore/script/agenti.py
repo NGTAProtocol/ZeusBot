@@ -130,6 +130,30 @@ def stato_revisione(cartella, libro, n):
     return ('passa' if ultima == 'passa' else 'non passa'), giro2
 
 
+def azione_verifica(cartella, rel, k, testo, nota=''):
+    """AZIONE per il verificatore: giro di controllo sulle righe cambiate se esiste un rapporto su una versione
+    vicina del capitolo (poche righe cambiate), altrimenti verifica completa."""
+    import difetti
+    import hashlib
+    import percorso
+    rv = difetti.rel_verifica(k)
+    riga = difetti.riga_verifica(testo)
+    p = os.path.join(cartella, rv)
+    vecchio = re.match(r'<!-- zb: ruolo=verificatore; su=(\w+) -->', open(p, encoding='utf-8').read()) \
+        if os.path.isfile(p) else None
+    if vecchio:
+        cap = dict(comune.unita(cartella, comune.leggi_yaml(os.path.join(cartella, 'libro.yaml'))))[str(k)]
+        cambiate = percorso.righe_cambiate(cartella, os.path.relpath(cap, cartella), vecchio.group(1),
+                                           impronta=lambda b: hashlib.sha256(b).hexdigest()[:12])
+        if cambiate:
+            return (f'AZIONE: giro di controllo del verificatore sul capitolo {k} {nota}: agente verificatore ({rel}, '
+                    f'capitolo {k}); il rapporto precedente è {rv}; ricontrolla solo queste righe e la loro coerenza '
+                    'con il contesto: ' + '; '.join(cambiate) + f'. Riscrivi {rv} con la prima riga esatta {riga}, '
+                    'tenendo le voci non toccate e la sezione «## Registro dei difetti» completa.').replace('  ', ' ')
+    return (f'AZIONE: verifica del capitolo {k} {nota}: agente verificatore ({rel}, capitolo {k}), rapporto {rv} con '
+            f'la prima riga esatta {riga}.').replace(' :', ':').replace('  ', ' ')
+
+
 def precedenti_ko(cartella, libro, rel, u, unita=None):
     """Prima di un capitolo nuovo: un capitolo già scritto con il cancello dei difetti KO chiede la verifica mancante
     o ferma la catena (con revisione obbligatoria; i capitoli accettati prima del cancello non passano oltre)."""
@@ -144,13 +168,24 @@ def precedenti_ko(cartella, libro, rel, u, unita=None):
         if not b:
             continue
         if difetti.sezione_revisore(cartella, k, testo) is None:
-            return [f'AZIONE: verifica del capitolo {k} (già scritto, cancello dei difetti KO): agente verificatore '
-                    f'({rel}, capitolo {k}), rapporto {difetti.rel_verifica(k)} con la prima riga esatta '
-                    f'{difetti.riga_verifica(testo)}.']
-        return [f'FERMO: capitolo {k}, cancello dei difetti KO prima del capitolo {u} («zb difetti {rel} {k}»): '
-                + '; '.join(f'{c} ({e})' for c, _, e, _ in b)
-                + '. Correzione mirata (scrittore-voce) o eccezione con il motivo: decide l\'autore.']
+            return [azione_verifica(cartella, rel, k, testo, '(già scritto, cancello dei difetti KO)')]
+        return [azione_cancello(rel, k, b, f'(già scritto, prima del capitolo {u})')]
     return []
+
+
+def azione_cancello(rel, k, b, nota=''):
+    """AZIONE che sblocca il cancello dei difetti: fatti aperti alla verifica su fonte, gli altri KO allo scrittore."""
+    fatti = [d.split(':')[0] for c, _, _, ds in b if c == 'fatto_da_verificare' for d in ds]
+    altri = [f'{c} ({e})' for c, _, e, _ in b if c != 'fatto_da_verificare']
+    parti = []
+    if fatti:
+        parti.append(f'fatti {", ".join(fatti)}: verifica su fonte autorevole, poi «zb difetti {rel} fatto <id> '
+                     'verificato --fonte <url>», oppure riscrittura generica (scrittore-voce) e «… fatto <id> generico»')
+    if altri:
+        parti.append(f'{"; ".join(altri)}: agente scrittore-voce in correzione mirata (dettagli: «zb difetti {rel} {k}»)'
+                     ', poi «zb correggi» se il capitolo era già accettato; un\'eccezione nel registro solo se la '
+                     'decide l\'autore')
+    return f'AZIONE: cancello dei difetti KO sul capitolo {k} {nota}: '.replace('  ', ' ') + ' — '.join(parti) + '.'
 
 
 def azione_stesura(cartella, libro, st, rel):
@@ -177,8 +212,10 @@ def azione_stesura(cartella, libro, st, rel):
         import difetti
         testo = open(dict(comune.unita(cartella, libro))[u], encoding='utf-8').read()
         if difetti.sezione_revisore(cartella, u, testo) is None:
-            return [f'AZIONE: verifica del capitolo {u}: agente verificatore ({rel}, capitolo {u}), rapporto '
-                    f'{difetti.rel_verifica(u)} con la prima riga esatta {difetti.riga_verifica(testo)}.']
+            return [azione_verifica(cartella, rel, u, testo)]
+        b = difetti.blocchi(difetti.esiti_unita(cartella, libro, u))
+        if b:
+            return [azione_cancello(rel, u, b)]
         return [f'AZIONE: «zb esito {rel} {u}» (la revisione passa); poi capsula e «zb salva {rel} "capitolo {u}"».']
     if stato == 'non passa':
         if giro2:

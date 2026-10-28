@@ -90,7 +90,9 @@ def installa(rad):
         return f'Controllo pre-commit: {p} esiste già e non è del motore; non lo tocco.'
     os.makedirs(os.path.dirname(p), exist_ok=True)
     with open(p, 'w', encoding='utf-8') as f:
-        f.write(f'#!/bin/sh\n{FIRMA}\nexec python3 -B "$(git rev-parse --show-toplevel)/motore/script/precommit.py"\n')
+        # il motore del repository (worktree compresi); se il repository non lo contiene, quello che ha installato l'hook
+        f.write(f'#!/bin/sh\n{FIRMA}\nP="$(git rev-parse --show-toplevel)/motore/script/precommit.py"\n'
+                f'[ -f "$P" ] || P="{os.path.abspath(__file__)}"\nexec python3 -B "$P"\n')
     os.chmod(p, 0o755)
     return f'Controllo pre-commit installato ({os.path.relpath(p, rad)}): rifiuta i commit fuori dal recinto.'
 

@@ -3322,6 +3322,8 @@ def difetti_prove(A):
         '# Anna Neri\n\n@char:anna\n\n- Alias: Anna\n- Ruolo: studentessa del primo anno.\n')
     open(os.path.join(d, '03-struttura', '08-piano-parole.md'), 'w', encoding='utf-8').write(
         '| Cap. | Budget capitolo |\n|---|---|\n| 1 | 40 |\n')
+    open(os.path.join(d, '03-struttura', '05-scaletta.md'), 'w', encoding='utf-8').write(
+        '# Scaletta\n\n| Unità | Data | Contenuto | Chiusura |\n|---|---|---|---|\n| 1 | G1 | x | R |\n')
     libro = {'titolo': 'Prova', 'genere': 'thriller', 'difetti': {'parole_firma': ['clausol'], 'cliche': ['tamburo sordo']}}
     ctx = {'cartella': d, 'libro': libro, 'p': difetti.parametri(libro), 'anno': 2001}
 
@@ -3359,6 +3361,8 @@ def difetti_prove(A):
         'tratto_ricorrente': (
             [cap(n, f'Aula — {n} marzo', 'Le conto, le mandate.') for n in (1, 2, 3)],
             [cap(n, f'Aula — {n} marzo', 'Le conto, le mandate.' if n < 3 else 'Apro.') for n in (1, 2, 3)]),
+        'chiusura_scaletta': ([cap(1, 'Aula — 1 marzo', 'Testo.', '<!-- zb: chiusura=D -->')],
+                              [cap(1, 'Aula — 1 marzo', 'Testo.', '<!-- zb: chiusura=R -->')]),
         'etichetta_ruolo': ([cap(1, 'Aula — 1 marzo', 'Anna, dottoranda di pittura, entra.')],
                             [cap(1, 'Aula — 1 marzo', 'Anna, studentessa di pittura, entra.')]),
     }
@@ -3403,7 +3407,8 @@ def difetti_prove(A):
     open(au, 'w', encoding='utf-8').write('## Fatti da verificare\n\n- r.5 «l\'ora della morte»: medicina legale\n\npassa\n')
     con_ko, inf = stato_di('conoscenza_personaggio'), stato_di('inferenza_come_fatto')
     inf = inf if stato_di('motivazione') == 'passato' else 'motivazione persa'   # una riga OK non mangia la seguente
-    nuovi = difetti.registra_fatti(d, '1')
+    difetti.registra_fatti(d, '1')
+    nuovi = len(difetti.fatti(d))
     aperto = stato_di('fatto_da_verificare')
     rif = difetti.cmd_fatto(d, ['F001', 'generico'], [])
     chiuso = stato_di('fatto_da_verificare')
@@ -3415,6 +3420,10 @@ def difetti_prove(A):
           'generico / eccezione', 'non verificabile / non verificabile / fallito / passato / 1 / non verificabile / '
           '0 passato / accettato', f'{senza} / {vecchia} / {con_ko} / {inf} / {nuovi} / {aperto} / {rif} {chiuso} / '
           f'{accettato}', sez)
+    rf = difetti.righe_fatti('## Fatti reali da verificare\n\n1. r.28: forbice di cinque ore\n2. r.12: bisturi: '
+                             'generico.\n\n## Registro dei difetti\n\n- r.3 non è un fatto\n')
+    esito('difetti.py', 'fatti del verificatore (elenco numerato, sezione «Fatti reali da verificare») letti fino alla '
+          'sezione dopo', "['r.28: forbice di cinque ore', 'r.12: bisturi: generico.']", str(rf), sez)
     import agenti
     lob = dict(libro, revisione_capitolo='obbligatoria')
     sporco = [cap(1, 'Aula — 1 marzo', 'La pioggia batte come un tamburo sordo.')]   # cliché: KO deterministico
@@ -3424,9 +3433,10 @@ def difetti_prove(A):
     os.remove(ve)
     senza_verifica = agenti.precedenti_ko(d, lob, '.', '2', sporco)
     facoltativa = agenti.precedenti_ko(d, libro, '.', '2', sporco)
-    esito('agenti.py', 'prima di un capitolo nuovo, cancello KO su uno già scritto: KO del revisore → FERMO / verifica '
-          'assente → AZIONE verificatore / revisione facoltativa → nessun blocco', 'FERMO / AZIONE / []',
-          f'{nuovo_ko[0].split(":")[0]} / {senza_verifica[0].split(":")[0]} / {facoltativa}', sez)
+    esito('agenti.py', 'prima di un capitolo nuovo, cancello KO su uno già scritto: KO deterministico → AZIONE di '
+          'correzione allo scrittore / verifica assente → AZIONE verificatore / revisione facoltativa → nessun blocco',
+          'True / True / []', f'{"cancello dei difetti KO" in nuovo_ko[0] and "scrittore-voce" in nuovo_ko[0]} / '
+          f'{"verifica del capitolo 1" in senza_verifica[0]} / {facoltativa}', sez)
     esito('fase.py', 'zb esito chiama il cancello dei difetti (revisione obbligatoria)', True,
           'difetti.cancello(cartella, libro, n)' in open(os.path.join(S, 'fase.py'), encoding='utf-8').read(), sez)
     # giro di controllo: dopo un «passa», una correzione piccola fa ricontrollare solo le righe cambiate
@@ -3442,13 +3452,17 @@ def difetti_prove(A):
     subprocess.run(['git', '-C', g, '-c', 'user.name=p', '-c', 'user.email=p@p', '-c', 'commit.gpgsign=false', 'commit',
                     '-q', '-m', 'v1'], check=True)
     su = revisione.impronta(g, [cap_rel])
+    import hashlib
+    su_v = hashlib.sha256(open(os.path.join(g, cap_rel), 'rb').read()).hexdigest()[:12]   # impronta del verificatore
     corpo[4] = 'Riga 5 corretta.'
     open(os.path.join(g, cap_rel), 'w', encoding='utf-8').write('\n\n'.join(corpo) + '\n')
     piccola = percorso.righe_cambiate(g, cap_rel, su)
+    piccola_v = percorso.righe_cambiate(g, cap_rel, su_v, impronta=lambda b: hashlib.sha256(b).hexdigest()[:12])
     open(os.path.join(g, cap_rel), 'w', encoding='utf-8').write('\n\n'.join(f'Tutto nuovo {i}.' for i in range(12)) + '\n')
     grande = percorso.righe_cambiate(g, cap_rel, su)
     esito('percorso.py', 'correzione dopo un «passa»: una riga cambiata → giro di controllo su quella riga / tutto '
-          'cambiato → giro completo', "1 r.9 / None", f'{len(piccola or [])} {(piccola or ["-"])[0][:3]} / {grande}', sez)
+          'cambiato → giro completo / anche con l\'impronta del verificatore', "1 r.9 / None / 1",
+          f'{len(piccola or [])} {(piccola or ["-"])[0][:3]} / {grande} / {len(piccola_v or [])}', sez)
 
 
 SEZIONI = {'passo_1': passo_1, 'passo_2': passo_2, 'passo_3': passo_3, 'passo_4': passo_4, 'passo_5': passo_5, 'passo_6': passo_6, 'passo_7': passo_7, 'override_lunghezza': override_lunghezza, 'scene': scene, 'manuale_leggibile': manuale_leggibile, 'checklist_capitolo': checklist_capitolo, 'continuita_eta_durate': continuita_eta_durate, 'correzioni_dopo_prova': correzioni_dopo_prova, 'correzioni_interludi_e_grafie': correzioni_interludi_e_grafie, 'correzioni_e_passo': correzioni_e_passo, 'unita_consentite_e_interludi': unita_consentite_e_interludi, 'fase_stesura_e_rinomine': fase_stesura_e_rinomine, 'correzioni_esclusioni_e_budget': correzioni_esclusioni_e_budget, 'titoli_tempi_eta_push': titoli_tempi_eta_push, 'eccezioni_e_richiami': eccezioni_e_richiami, 'voce': voce, 'recinto_libro': recinto_libro, 'appendici': appendici, 'fase_struttura': fase_struttura, 'cartella_unica': cartella_unica_prove, 'avvio_motore_letto': avvio_motore_letto, 'ruoli': ruoli_prove, 'agenti_capsule': agenti_capsule_consumo, 'anti_ia': anti_ia_prove, 'correttore': correttore, 'frasi_finali': frasi_finali_prove, 'frase_media_registro': frase_media_registro, 'grafica': grafica, 'pubblicazione': pubblicazione, 'difetti': difetti_prove}

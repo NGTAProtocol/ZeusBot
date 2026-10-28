@@ -82,7 +82,8 @@ def percorsi_py(codice, base, solo):
     if not SCRIVE_PY.search(codice):
         return []
     chiave = re.escape(solo) if solo else r'[\w.\-]*/'
-    return [risolvi(p, base) for p in re.findall(r'''[^\s'"`,()]*''' + chiave + r'''[^\s'"`,()]*''', codice)]
+    return [risolvi(p, base) for p in re.findall(r'''[^\s'"`,()]*''' + chiave + r'''[^\s'"`,()]*''', codice)
+            if '{' not in p and '}' not in p]     # «libri/{slug}» in un f-string è un modello, non un percorso
 
 
 def bersagli_bash(comando, cwd, solo=CARTELLA):

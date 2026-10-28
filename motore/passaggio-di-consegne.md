@@ -3,7 +3,7 @@
 Frase di apertura per la nuova chat: «Leggi motore/passaggio-di-consegne.md e riprendi da lì». La storia completa
 delle sessioni precedenti è in git (`git log`, ramo `archivio/motore-prima-2026-10-27` per i documenti di allora).
 
-## Stato (2026-10-27)
+## Stato (2026-10-28)
 - Catena automatica dei capitoli: `/capitolo` (ruolo `regia`; `zb agenti prossimo` dà una sola AZIONE o FERMO);
   scrittore, diagnosta, direttore editoriale, line editor, lettore cieco, voce e grafico su Opus; correttori su
   Sonnet; capsule su Haiku (`dati/modelli-ruoli.yaml`).
@@ -23,6 +23,13 @@ delle sessioni precedenti è in git (`git log`, ramo `archivio/motore-prima-2026
 - Tolti: traduzione (codice, agenti, prove), `zb adotta`, documenti superati di `docs/`, esiti storici delle prove.
 - Suite: `ZB_LANGUAGETOOL=<cartella>/lib python3 -B motore/zb prove` (dalla radice); impronta per `zb push` sul
   motore solo con la suite intera tutta OK.
+
+- Ciclo del capitolo provato con i comandi veri (`prove_editoriale.ciclo_dopo_accettazione`): decisione dell'autore
+  (salva ferma, riapprova), diagnosta, verificatore, cancello con l'azione che lo sblocca, esito, capsula, ritocco
+  dopo l'accettazione (correggi, avvio), capsula superata, giro di controllo del verificatore, capitolo successivo.
+- Rapporti legati alla versione: verifica, revisione e capsula valgono solo per il testo su cui sono scritti; dopo una
+  correzione piccola il diagnosta e il verificatore rivedono solo le righe cambiate.
+- `zb lavoro` agisce sul repository da cui si lancia (worktree, repository di prova), mai su quello del motore.
 
 ## Decisioni prese
 - Modo automatico: fermate solo alla pausa di lettura, a un FERMO del motore e al canone (`editoriale/00-percorso.md`).

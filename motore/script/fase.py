@@ -246,16 +246,17 @@ def avanti(cartella, libro, stato):
         print('Fine dei documenti. Scrivi ok o correggi: …')
 
 
-def registra(cartella, stato, documenti, senza_gate=False):
-    """Registra sha256 e commit dei documenti approvati; rifiuta documenti non salvati."""
+def registra(cartella, stato, documenti, senza_gate=False, non_salvati=False):
+    """Registra sha256 e commit dei documenti approvati; rifiuta documenti non salvati, tranne con non_salvati
+    (riapprova: zb salva rifiuta il documento finché non è riapprovato, quindi si registra prima del commit)."""
     codice, out, err = comune.git(cartella, 'status', '--porcelain', '--', *documenti)
     if codice != 0:
         raise comune.ErroreMotore(f'git status non riuscito: {err}')
-    if out:
+    if out and not non_salvati:
         raise comune.ErroreMotore('Documenti con modifiche non salvate:\n' + out +
                                   '\nSalva prima (git add, commit, push), poi ripeti.')
     for rel in documenti:
-        commit = comune.ultimo_commit(cartella, rel)
+        commit = 'da salvare' if out and rel in out else comune.ultimo_commit(cartella, rel)
         if not commit:
             raise comune.ErroreMotore(f'{rel} non è mai stato salvato in un commit')
         voce = {'sha256': comune.impronta_documento(os.path.join(cartella, rel)), 'commit': commit}
@@ -569,7 +570,7 @@ def cmd_riapprova(cartella, stato, resto):
         raise comune.ErroreMotore(f'«{rel}» non è tra i documenti approvati: ' + ', '.join(stato['documenti_approvati']))
     if comune.documento_invariato(os.path.join(cartella, rel), prima['sha256'], prima.get('commit')):
         raise comune.ErroreMotore(f'{rel} non è cambiato dall\'approvazione: niente da registrare.')
-    registra(cartella, stato, [rel])
+    registra(cartella, stato, [rel], non_salvati=True)
     voce = stato['documenti_approvati'][rel]
     voce.update({k: v for k, v in prima.items() if k not in ('sha256', 'commit', 'riapprovazioni')})
     voce['riapprovazioni'] = (prima.get('riapprovazioni') or []) + [

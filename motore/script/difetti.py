@@ -56,6 +56,10 @@ def leggi(cartella, rel, vuoto):
     return (comune.leggi_yaml(p) or vuoto) if os.path.isfile(p) else vuoto
 
 
+def leggi_testo(p):
+    return open(p, encoding='utf-8').read() if os.path.isfile(p) else ''
+
+
 def anno_di(cartella):
     """Anno della storia dalla cronologia (le intestazioni di solito non lo scrivono)."""
     for e in (leggi(cartella, 'cronologia.yaml', {}) or {}).get('eventi') or []:
@@ -277,6 +281,27 @@ def c_chiusure_uguali(unita, ctx):
     return out
 
 
+def chiusure_scaletta(cartella):
+    """{unità: sigla} dalla colonna «Chiusura» della tabella di 03-struttura/05-scaletta.md (se c'è)."""
+    t = leggi_testo(os.path.join(cartella, '03-struttura', '05-scaletta.md'))
+    righe = [[c.strip() for c in r.strip().strip('|').split('|')] for r in t.splitlines() if r.strip().startswith('|')]
+    if not righe or not any(c.lower() == 'chiusura' for c in righe[0]):
+        return {}
+    i = [c.lower() for c in righe[0]].index('chiusura')
+    return {r[0]: r[i] for r in righe[1:] if len(r) > i and r[i] and not set(r[0]) <= set('-: ')}
+
+
+def c_chiusura_scaletta(unita, ctx):
+    piano = chiusure_scaletta(ctx['cartella'])
+    out = []
+    for nome, testo in unita:
+        s = dichiarazioni(testo).get('chiusura')
+        if s and piano.get(str(nome)) and s != piano[str(nome)]:
+            out.append(ko('chiusura_scaletta', nome, None, f'chiusura {s} nel testo, {piano[str(nome)]} nella scaletta '
+                                                          '(si allinea il marcatore o la scaletta: decide l\'autore)'))
+    return out
+
+
 def budget(cartella):
     out = {}
     for r in comune.tabella_md(os.path.join(cartella, comune.rel_piano(cartella))) if os.path.isfile(
@@ -411,7 +436,8 @@ DETERMINISTICI = {'giorni_relativi': c_giorni_relativi, 'ordine_tipo': c_ordine_
                   'apertura_ripetuta': c_apertura_ripetuta, 'frase_firma': c_frase_firma,
                   'chiusure_uguali': c_chiusure_uguali, 'lunghezza': c_lunghezza, 'cliche': c_cliche,
                   'copia_capitoli': c_copia_capitoli, 'similitudini': c_similitudini,
-                  'tratto_ricorrente': c_tratto_ricorrente, 'etichetta_ruolo': c_etichetta_ruolo}
+                  'tratto_ricorrente': c_tratto_ricorrente, 'etichetta_ruolo': c_etichetta_ruolo,
+                  'chiusura_scaletta': c_chiusura_scaletta}
 
 
 # ---------------------------------------------------------------- revisore e fonte
@@ -469,6 +495,7 @@ def esiti_unita(cartella, libro, n, unita=None):
             else:
                 esito, trovati = ('fallito', [voce[1]]) if voce[0] == 'KO' else ('passato', [])
         else:
+            registra_fatti(cartella, n)     # anche quelli del verificatore, scritti dopo «zb esito»
             aperti = [f'{f["id"]}: {f.get("affermazione", "")} ({f.get("stato")})' for f in fatti(cartella)
                       if str(f.get('unita')) == str(n) and f.get('stato') not in ('verificato', 'generico')]
             esito, trovati = ('non verificabile', aperti) if aperti else ('passato', [])
@@ -587,27 +614,38 @@ def cmd_continuita(cartella, libro):
 
 # ---------------------------------------------------------------- fatti da verificare
 
+def righe_fatti(testo):
+    """Righe dei fatti da verificare di un rapporto: sezione «## Fatti da verificare» (diagnosta) o «## Fatti reali da
+    verificare» (verificatore), voci «- r.N …» o «1. r.N …»."""
+    m = re.search(r'(?m)^## Fatti (?:reali )?da verificare[ \t]*$', testo)
+    if not m:
+        return []
+    blocco = testo[m.end():].split('\n## ', 1)[0]
+    return [x.strip() for x in re.findall(r'(?m)^(?:-|\d+\.)[ \t]*(r\.[ \t]*\d+.*)$', blocco)]
+
+
 def registra_fatti(cartella, n):
-    """Fatti della sezione «## Fatti da verificare» di audit/NN.md (righe «- r.N «…»: tipo») nel registro dei fatti,
-    stato «da_verificare» (solo i nuovi)."""
+    """Fatti da verificare del diagnosta (audit/NN.md) e del verificatore (difetti/verifica/NN.md) nel registro dei
+    fatti, stato «da_verificare» (solo i nuovi; «generico» se il rapporto lo dice già in fondo alla riga)."""
     import percorso
     import yaml
-    p = os.path.join(cartella, percorso.rel_audit(n))
-    if not os.path.isfile(p):
+    righe = []
+    for rel_r in (percorso.rel_audit(n), rel_verifica(n)):
+        p = os.path.join(cartella, rel_r)
+        if os.path.isfile(p):
+            righe += righe_fatti(open(p, encoding='utf-8').read())
+    if not righe:
         return 0
-    t = open(p, encoding='utf-8').read()
-    if '## Fatti da verificare' not in t:
-        return 0
-    blocco = t.split('## Fatti da verificare', 1)[1].split('\n## ', 1)[0]
     dati_f = leggi(cartella, FATTI, {'fatti': []})
     voci = dati_f.setdefault('fatti', [])
     note = {(str(v.get('unita')), v.get('affermazione')) for v in voci}
     nuovi = 0
-    for m in re.finditer(r'(?m)^-\s*(r\.\d+.*)$', blocco):
-        aff = m.group(1).strip()
+    for aff in righe:
         if aff.lower().startswith('nessun') or (str(n), aff) in note:
             continue
-        voci.append({'id': f'F{len(voci) + 1:03d}', 'unita': str(n), 'affermazione': aff, 'stato': 'da_verificare'})
+        stato = 'generico' if re.search(r'\bgeneric[oa]\.?$', aff, re.I) else 'da_verificare'
+        voci.append({'id': f'F{len(voci) + 1:03d}', 'unita': str(n), 'affermazione': aff, 'stato': stato})
+        note.add((str(n), aff))
         nuovi += 1
     if nuovi:
         comune.scrivi(cartella, FATTI, yaml.safe_dump(dati_f, allow_unicode=True, sort_keys=False))
