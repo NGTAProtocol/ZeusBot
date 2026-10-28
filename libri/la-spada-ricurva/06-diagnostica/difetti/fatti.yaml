@@ -260,3 +260,17 @@ fatti:
   stato: verificato
   data: '2026-10-28'
   fonte: https://it.wikipedia.org/wiki/Carta_carbone
+- id: F035
+  unita: '6'
+  affermazione: 'r.25 «Con una condanna addosso»: storia (condanna romana di Caravaggio,
+    1606, e arrivo a Napoli)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://it.wikipedia.org/wiki/Caravaggio
+- id: F036
+  unita: '6'
+  affermazione: 'r.5 «Il primo novembre l''Accademia è chiusa»: calendario (Ognissanti,
+    festa nazionale)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.tuttocamere.it/files/diritto/1949_260.pdf

@@ -2,13 +2,13 @@
 
 Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si scrive a mano. Le conoscenze dei personaggi vengono dalle capsule («Personaggi presenti e cosa sanno»).
 
-## Unità 1 — tipo flash-forward, chiusura D
+## Unità 1 — tipo flash-forward, chiusura R
 
 - scena da r.3: 10/12/2025 — Laboratorio di restauro
 - r.46 «da dieci giorni» → 30/11
 - conoscenze: il narratore, in prima persona, senza nome nel capitolo. Ritiene che il polso fosse fermo circa un'ora prima dell'arrivo del messaggio: la considera l'ipotesi più forte, non una certezza. Sa di chi è il nome sul telaio, senza leggerlo. Elana non compare nel testo.
 
-## Unità 2 — tipo capitolo, chiusura D
+## Unità 2 — tipo capitolo, chiusura P
 
 - scena da r.3: 21/10/2025 — Laboratorio di restauro
 - scena da r.105: 22/10/2025 — (luogo della scena precedente)
@@ -41,3 +41,9 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 - r.7 «tre giorni fa» → 26/10
 - r.35 conteggio: 6 cornici
 - r.43 conteggio: 6 cornici
+- conoscenze: Magnisi sa che il drappo è una ridipintura ottocentesca e di aver tolto un centimetro di vernice. Claudia disegna le cornici sul taccuino. Lorenzo sa della sospensione del lavoro e conta le cornici. Dell'Aquila sa che il drappo c'era anni fa e cita una lettera ricevuta dal padre di Lorenzo.
+
+## Unità 6 — tipo capitolo, chiusura X
+
+- scena da r.3: 01/11/2025 — Aula di arte moderna
+- scena da r.95: 01/11/2025 — (luogo della scena precedente)
