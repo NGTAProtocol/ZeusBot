@@ -1,35 +1,43 @@
-<!-- zb: ruolo=diagnosta; su=1c658be09ad8 -->
-# Audit capitolo 15 — Le anime dei vicoli (giro 1)
+<!-- zb: ruolo=diagnosta; su=a578447f5cb1 -->
+# Audit capitolo 15 — Le anime dei vicoli (giro 2)
 
 ## Voti
 
 | Voce | Voto 1-10 | Momento più debole (r.N «citazione breve») |
 |---|---|---|
-| Tensione e ritmo | 7 | r.61 «Fuori la luce sta già andando via»: la salita è un paragrafo di cartolina che allenta prima dell'edicola |
-| Sottotesto e dialoghi | 8 | r.47 «Mina non vuole vincere la discussione. Vuole che io senta»: la narratrice dice il conflitto della scheda |
-| Voce (fedeltà alla scheda) | 8 | r.113 «Lo penso e non lo dico»: il sospetto viene detto invece di restare nel gesto |
-| Specificità e immagini | 8 | r.81 «Zeppoline, panzarotti, scagliuozzi»: elenco di colore napoletano, vicino al folclore che la voce esclude |
-| Personaggi | 8 | r.115 «Claudia dice sì senza giustificarsi»: il tic del codex è trascritto, non messo in scena |
-| Funzione | 8 | r.113 «Dà del lei a sua madre, allora»: P16 si apre per dichiarazione e non per omissione |
-| Pulizia | 7 | r.113 «Dà del lei a sua madre, allora»: spiega la menzogna che il «Lei» di r.103 ha già mostrato |
+| Tensione e ritmo | 7 | r.61 «motorini in seconda, una saracinesca che scende a metà»: la salita resta un elenco di rumori prima dell'edicola |
+| Sottotesto e dialoghi | 8 | r.111 «Vuole sapere se mangio abbastanza»: la bugia è giusta, ma la battuta è un po' prevedibile |
+| Voce (fedeltà alla scheda) | 8 | r.89 «come una velatura data troppo carica»: il paragone da restauratrice è un po' messo in posa |
+| Specificità e immagini | 8 | r.63 «le braccia alzate, i volti tutti uguali»: l'edicola è vista come in un catalogo |
+| Personaggi | 8 | r.77 «un secondo di meno di quanto serva»: lo sguardo evasivo di Lorenzo è dichiarato più che mostrato |
+| Funzione | 8 | r.121 «la sigaretta spenta è spezzata in due»: la chiusura segnala troppo apertamente |
+| Pulizia | 8 | r.67 «Lo smalto avrà pochi anni. Il solco ne ha molti di più.»: una coppia che ripete il concetto della frase prima |
 
-Media: 7.7
+Media: 7.9
+
+## Giro 2
+
+- r.47: risolta. Il commento sul conflitto è stato tolto e restano la coppia forza/temperatura e la mano ferma.
+- r.61: risolta in parte. Ora lo sguardo da perita («come guardo una tela, per strati») prepara le lame, ma l'elenco dei rumori in apertura rallenta ancora.
+- r.65: risolta. È precisa sul mestiere (stecca, smalto da ferramenta) e collega le due edicole.
+- r.71: risolta. Il ricordo di san Michele dà a Mina un passato senza bisogno di spiegarlo.
+- r.81: risolta. Il quaderno dei debiti sostituisce l'elenco dei fritti e porta il tema del debito.
+- r.83: risolta. La mano lasciata nella tasca, il conto già segnato e il segno dell'anello mostrano il debito senza dirlo.
+- r.99 e r.107: risolte. Il «venerdì» ripetuto è una scadenza che il lettore registra da solo.
+- r.113: risolta. Il sospetto resta nel corpo di Elena (la zeppolina fredda, gommosa), senza commento.
+- r.115: risolta. La fermezza di Claudia passa per il gesto di scrivere «sopra la curva».
 
 ## Continuità
 
-- nessun fatto contraddetto (Mina: unghie blu, tuta, teschio adottato, dialetto; Lorenzo: sigaretta spenta, giacca del padre, segno dell'anello, cognomi, francese; Claudia: taccuino, «la stessa curva»; Elena: lente, cappotto, unghia del pollice, dialetto solo con Mina; simbolo delle due lame conforme al canone; 20 novembre dopo il 17 della capsula 14)
+- nessun fatto contraddetto (anello, giacca del padre, sigaretta spenta, taccuino, lente e fiammiferi coerenti con codex e capsula 14; le due lame sono conformi al canone)
 
 ## Da correggere
 
-- r.113 «Dà del lei a sua madre, allora. Lo penso e non lo dico.»: commenta un indizio che il lettore ha già colto a r.103 e nomina il silenzio di Elena → il sospetto deve restare nel corpo di Elena (masticare, la zeppolina fredda), senza che lo dichiari.
-- r.47 «Mina non vuole vincere la discussione. Vuole che io senta il freddo che sente lui»: spiega il conflitto che la mano sul vetro mostra già → lasciare che sia il gesto a portare il conflitto; della riflessione basta la coppia forza/temperatura.
-- r.61 «L'intonaco dei palazzi è a calce, rappezzato con malte diverse»: è una descrizione che non arriva a nessuna minaccia → legarla allo sguardo da perita che poco dopo trova le lame, o accorciarla.
-- r.81 «Zeppoline, panzarotti, scagliuozzi, un cono di carta gialla a testa»: il cibo come colore locale → serve un dettaglio materiale del mestiere o del debito, non un elenco.
-- r.115 «Claudia dice sì senza giustificarsi»: è una formula presa dalla scheda del personaggio → la sua fermezza deve emergere da una battuta o da un gesto.
+- r.61 «motorini in seconda, una saracinesca che scende a metà, un televisore acceso»: elenco di ambiente → tenere una sola immagine sonora e arrivare prima ai muri.
 
 ## Lezione
 
-- non commentare con la voce narrante un indizio o un conflitto che la battuta o il gesto hanno già mostrato.
+- non aprire uno spostamento con un elenco di ambiente: entrare subito con lo sguardo del personaggio.
 
 ## Fatti da verificare
 
