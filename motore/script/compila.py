@@ -5,7 +5,7 @@ Scrive <libro>/05-output/<titolo>-completo.md: frontespizio, pagina di copyright
 (riga ©, dichiarazione di fantasia, nota dell'autore), sommario, parti e unità
 nell'ordine di lettura. Toglie le righe nascoste <!-- zb: … -->, sostituisce il
 separatore di scena del sorgente con quello di stampa e intitola le unità
-(«N. Titolo» dall'intestazione sorgente «# N — Titolo», «Prologo», «Epilogo», titolo
+(«N. Titolo» dall'intestazione sorgente «# N — Titolo» o «# Titolo», «Prologo», «Epilogo», titolo
 dell'interludio; un capitolo senza titolo resta «Capitolo N», con un avviso). Le sezioni sono
 delimitate da commenti <!-- zb:sezione … --> che impagina.py usa per le pagine.
 Titoli interni: nell'unità si scarta solo il primo titolo (l'intestazione «# N — Titolo», che il motore
@@ -29,11 +29,13 @@ import comune  # noqa: E402
 
 
 def titolo_capitolo(testo):
-    """Titolo dall'intestazione sorgente «# N — Titolo» (anche «## N - Titolo»); None se manca."""
+    """Titolo dall'intestazione sorgente «# N — Titolo» o «# Titolo»; None se è solo «# N» o «# Capitolo N»."""
     for r in testo.splitlines():
         if r.strip().startswith('#'):
-            m = re.match(r'^#+\s*\d+\s*[—–-]\s*(\S.*?)\s*$', r.strip())
-            return m.group(1) if m else None
+            m = re.match(r'^#+\s*(?:\d+\s*[—–-]\s*)?(\S.*?)\s*$', r.strip())
+            if not m or re.fullmatch(r'(?i)(capitolo\s+)?\d+', m.group(1)):
+                return None
+            return m.group(1)
     return None
 
 

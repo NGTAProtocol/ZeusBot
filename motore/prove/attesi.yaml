@@ -638,6 +638,7 @@ titoli_tempi_eta_push:
   a_atteso: "1. La farmacia"
   a_con_titolo: "True | True"                          # prima: «Capitolo 1»
   a_senza_titolo: ["AVVISO: capitolo 2", "AVVISO: capitolo 3"]
+  a_varianti: ["La cripta", null, null]               # prima: None per «# La cripta»
   b_prove:
     due giorni prima (cap. 1): {testi: [null, "Irene ci pensava da due giorni prima, dal martedì."], atteso: []}
     sei giorni prima (nessuna data): {testi: [null, "Gemma l'aveva visto sei giorni prima, al forno."], atteso: ['2|AVVISO']}
