@@ -6,7 +6,7 @@
 | La chiave | 2 | Sotto la vernice | incidente scatenante | 2 | 2200 | 1100 | 2134 | -3,0% |
 | La chiave | 3 | Il dettaglio ripetuto | formazione del gruppo | 2 | 2200 | 1100 | 2054 | -6,6% |
 | La chiave | 4 | La data della ridipintura | indagine tecnica | 1 | 1900 | 1900 | 1750 | -7,9% |
-| La chiave | 5 | Palazzo Valli | mondo di Lorenzo, Dell'Aquila | 1 | 2200 | 2200 |  |  |
+| La chiave | 5 | Palazzo Valli | mondo di Lorenzo, Dell'Aquila | 1 | 2200 | 2200 | 1955 | -11,1% |
 | La chiave | 6 | L'arena | pressione personale | 2 | 2100 | 1050 |  |  |
 | La chiave | 7 | Il rebus | enigma risolto | 1 | 2400 | 2400 |  |  |
 | La chiave | 8 | La stanza in affitto | respiro, entra Pietro | 1 | 1500 | 1500 |  |  |

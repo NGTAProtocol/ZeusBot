@@ -1,19 +1,19 @@
 # Stato compatto — La Spada Ricurva
 
 - Fase: stesura; gate: nessuno.
-- Ultimo capitolo salvato: 4 (commit 51ba3fa); parole 7552/90000.
+- Ultimo capitolo salvato: 5 (commit d8a3cd7); parole 9507/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elana; Tempo verbale della narrazione: presen….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
-- Personaggi (capsula 4): il narratore sa delle tacche e della pietra di macina, non sa chi ha raschiato. Mina riconosce la pietra da una provetta, sa che le lame dell'edicola…
+- Personaggi (capsula 5): Magnisi sa che il drappo è una ridipintura ottocentesca e di aver tolto un centimetro di vernice. Claudia disegna le cornici sul taccuino. Lorenzo sa…
 - Fatti bloccati: 9 (elenco in stato.yaml):
   - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei…
   - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India po…
   - I ragazzi non denunciano la scoperta: usano un'IA offline addestrata da Pietro per tradurre e indicizzare i testi, per…
   - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e…
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
-- Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p4, @prom:p5, @prom:p6, @prom:p7.
-- Prossimo capitolo 5: mondo di Lorenzo; entra Dell'Aquila; semina il debito.; cambiamento: Elana capisce che il palazzo è vuoto dentro (cornici senza quadri); D….
-- Prossimo passo: Prossimo: capitolo 5. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
-- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 5.
+- Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p4, @prom:p5, @prom:p6, @prom:p7, @prom:p8, @prom:p9.
+- Prossimo capitolo 6: l'Accademia mostra i denti; la pressione diventa personale.; cambiamento: le schede di restauro le vengono sequestrate; l'assistente, in privat….
+- Prossimo passo: Prossimo: capitolo 6. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
+- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 6.

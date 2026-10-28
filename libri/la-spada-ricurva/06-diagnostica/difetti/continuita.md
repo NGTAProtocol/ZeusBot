@@ -33,3 +33,11 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 - scena da r.79: 26/10/2025 — (luogo della scena precedente)
 - r.7 «due giorni fa» → 24/10
 - r.141 «due giorni fa» → 24/10
+- conoscenze: il narratore sa delle tacche e della pietra di macina, non sa chi ha raschiato. Mina riconosce la pietra da una provetta, sa che le lame dell'edicola vengono ripassate, ma non dice chi. Claudia ha visto le tacche e ha annotato «raschiato» accanto al riquadro bianco.
+
+## Unità 5 — tipo capitolo, chiusura D
+
+- scena da r.3: 29/10/2025 — Palazzo Valli
+- r.7 «tre giorni fa» → 26/10
+- r.35 conteggio: 6 cornici
+- r.43 conteggio: 6 cornici
