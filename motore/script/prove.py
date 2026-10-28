@@ -1991,6 +1991,8 @@ def titoli_tempi_eta_push(A):
           f'{("- " + A["a_atteso"]) in out.splitlines()} | {("## " + A["a_atteso"]) in out.splitlines()}', sez)
     esito('compila.py', '(a) capitoli senza titolo: avvisi', A['a_senza_titolo'],
           [a.split(' senza titolo')[0] for a in av], sez)
+    esito('compila.py', '(a) titolo senza numero | solo numero | «Capitolo N»', A['a_varianti'],
+          [compila.titolo_capitolo(t) for t in ('# La cripta\n', '## 2\n', '# Capitolo 3\n')], sez)
     # (b) tempi relativi: testo inventato aggiunto al capitolo 2 (venerdì 4 marzo 2021)
     for chiave, prova in A['b_prove'].items():
         Lm = mini(testi=prova.get('testi'), intestazioni=prova.get('intestazioni'))
