@@ -1,6 +1,6 @@
 # Stato compatto — La Spada Ricurva
 
-- Fase: stesura; gate: lettura.
+- Fase: stesura; gate: nessuno.
 - Ultimo capitolo salvato: 6 (commit 80fea11); parole 11394/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elena; Tempo verbale della narrazione: presen….
@@ -15,5 +15,5 @@
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
 - Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p4, @prom:p5, @prom:p6, @prom:p7, @prom:p8, @prom:p9, @prom:p10.
 - Prossimo capitolo 7: enigma risolto con strumenti veri; prova la competenza del gruppo.; cambiamento: i quattro dettagli si leggono insieme: un motto latino, una sequenza….
-- Prossimo passo: Pausa di lettura: l'autore legge i capitoli elencati, poi «ok» (continua) oppure «correggi <note>» (note al blocco successivo).
+- Prossimo passo: Prossimo: capitolo 7. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
 - Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 7.

@@ -2,15 +2,12 @@ libro: La Spada Ricurva
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
-passo: pausa di lettura
-gate_in_attesa: lettura
+passo: capitolo 7
+gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 4
-  - 5
-  - 6
-ultimo_capitolo_approvato: 3
+  capitoli: []
+ultimo_capitolo_approvato: 6
 ultimo_capitolo_scritto: 6
 tentativi: {}
 correzioni_aperte: []
@@ -476,10 +473,19 @@ documenti_approvati:
   04-manoscritto/03-il-dettaglio-ripetuto.md:
     sha256: a7453b6fc8c9e0dc00f28ee73f03902a4935fc31645a69a70b2da99fd74d99b5
     commit: 1ba2805
+  04-manoscritto/04-la-data-della-ridipintura.md:
+    sha256: 1c12a2681fb08bf13cae68777b6f661b3a79cf93c374240d1cd1871f658385c4
+    commit: 51ba3fa
+  04-manoscritto/05-le-cornici-vuote.md:
+    sha256: 30cdb8a3e9256511d8c07af6bf5ac0583c3b78da5b3d3ee21f0ff418517adb13
+    commit: d8a3cd7
+  04-manoscritto/06-l-arena.md:
+    sha256: f05b09d20c8d4e6d18b4b1a6aa0b8c45fa08b9796626bbd015d16ecb76704016
+    commit: 80fea11
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-28T07:05:51Z'
+aggiornato: '2026-10-28T07:24:54Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
