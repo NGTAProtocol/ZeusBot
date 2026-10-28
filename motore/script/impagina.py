@@ -113,15 +113,20 @@ def render(html_corpo, stile, tmp, nome, base=None):
     return p
 
 
+def piana(riga):
+    """Riga senza apostrofi tipografici: nel PDF «L'arena» esce come «L’arena»."""
+    return riga.strip().replace('\u2019', "'").replace('\u2018', "'")
+
+
 def pagine_inizio(pdf, titoli):
     """{titolo: indice di pagina (0-based)} della prima pagina con una riga uguale al titolo."""
     import pymupdf as fitz
     out = {}
     with fitz.open(pdf) as d:
         for i, pg in enumerate(d):
-            righe = [r.strip() for r in pg.get_text('text').splitlines()]
+            righe = [piana(r) for r in pg.get_text('text').splitlines()]
             for t in titoli:
-                if t not in out and t in righe:
+                if t not in out and piana(t) in righe:
                     out[t] = i
     return out
 
