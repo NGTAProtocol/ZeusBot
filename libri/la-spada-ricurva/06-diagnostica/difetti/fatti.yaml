@@ -232,3 +232,23 @@ fatti:
     indica di solito la stampa a lamina, che imprime la carta. Il rilievo del solo
     inchiostro è la termografia. Va verificato su fonte o riscritto in forma generica.'
   stato: generico
+- id: F031
+  unita: '6'
+  affermazione: 'r.25 «Con una condanna addosso»: storia (condanna romana di Caravaggio,
+    1606, arrivo a Napoli)'
+  stato: da_verificare
+- id: F032
+  unita: '6'
+  affermazione: 'r.45 «la ruota, e la spada del carnefice»: iconografia di santa Caterina
+    d''Alessandria'
+  stato: da_verificare
+- id: F033
+  unita: '6'
+  affermazione: 'r.5 «Il primo novembre l''Accademia è chiusa per la festa»: calendario
+    (Ognissanti, festa nazionale)'
+  stato: da_verificare
+- id: F034
+  unita: '6'
+  affermazione: 'r.145 «Dove ha firmato il Professore, la copia è bianca»: tecnica
+    (una stilografica usata senza pressione non ricalca sulla carta copiativa)'
+  stato: da_verificare

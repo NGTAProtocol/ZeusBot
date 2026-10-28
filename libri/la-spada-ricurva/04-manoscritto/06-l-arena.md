@@ -2,7 +2,7 @@
 
 Aula di arte moderna — 1 novembre
 
-Il primo novembre l'Accademia è chiusa per la festa, e il seminario del Professore no. Il portiere ha aperto il portone dodici volte, una per ciascuno di noi, e dodici volte l'ha richiuso a chiave dietro le nostre spalle, girandola con il palmo aperto, senza guardare in faccia nessuno: da via Costantinopoli, stamattina, non si capisce che qui dentro c'è qualcuno.
+Le feste comandate valgono per chi non comanda. Il primo novembre l'Accademia è chiusa, e il seminario del Professore no. Il portiere ha aperto il portone dodici volte, una per ciascuno di noi, e dodici volte l'ha richiuso a chiave dietro le nostre spalle, girandola con il palmo aperto, senza guardare in faccia nessuno: da via Costantinopoli, stamattina, non si capisce che qui dentro c'è qualcuno.
 
 Il biglietto l'ho trovato ieri sera infilato nello stipite del laboratorio, battuto a macchina dalla segreteria, con due iniziali in verde in fondo: la dottoressa Magnisi è pregata di intervenire al seminario del primo novembre con la documentazione completa dell'intervento sul Martirio di santa Caterina. Completa è sottolineata. La documentazione sta in una cartella di cartone grigio con l'elastico, sulle mie ginocchia. Nove fogli. Li ho contati stamattina alle otto, al banco, prima di chiudere il cassetto.
 
@@ -44,7 +44,7 @@ Il Professore torna a me. Non mi guarda in faccia, guarda la cartella, l'elastic
 
 «Il Martirio di santa Caterina. L'iconografia è nota anche ai restauratori: la ruota, e la spada del carnefice. Una spada.» Fa una pausa da insegnante, di quelle che lasciano agli altri il tempo di scrivere. «Lei sotto il drappo quante ne ha trovate, dottoressa? Una o due?»
 
-In prima fila la penna di una ragazza si ferma sul quaderno. Quasi nessuno, qui, sa che sotto quel drappo ci sia qualcosa. Chi ha fatto la domanda è tra quei pochi.
+In prima fila la penna di una ragazza si ferma sul quaderno e resta lì, a un dito dalla riga. Il Professore aspetta con la stilografica aperta.
 
 «Ho trovato una ridipintura ottocentesca su una pittura del Seicento. È in scheda, con la data del saggio.» Le parole mi escono lente, nella misura giusta, come se le stessi dettando. «E una mano di vernice reversibile, stesa il ventuno su sua richiesta. In scheda c'è anche quella.»
 
@@ -94,7 +94,7 @@ Torno al mio posto. Sono di nuovo undici passi.
 
 Esco per ultima, quando gli storici si sono già sparpagliati per lo scalone con i cappotti sul braccio. Lorenzo non c'è più: l'ho visto salire lo scalone dietro il Professore, con la cartella grigia sotto il braccio e la sigaretta dietro l'orecchio. Sulla soglia, passandomi accanto, ha mormorato qualcosa in francese, di cui ho capito soltanto la parola «désolé». Non mi sono voltata a chiedergli il resto.
 
-A metà della prima rampa mi fermo e guardo le mani. Sono ferme. Intorno ai tagli delle nocche, dove il solvente ha aperto la pelle, la carne è diventata bianca: ho stretto il cartone per quaranta minuti senza saperlo. A Ponticelli mia madre conserva in un barattolo di vetro le ricevute di tutte le rate, anche quelle saldate da dieci anni, e quando qualcuno bussa per un pagamento già fatto apre il barattolo e cerca, senza fretta, finché non trova il foglio con il timbro. Il mio barattolo stamattina l'ho consegnato io, in mano a Valli.
+A metà della prima rampa mi fermo e guardo le mani. Sono ferme. Intorno ai tagli delle nocche, dove il solvente ha aperto la pelle, la carne è diventata bianca: ho stretto il cartone per quaranta minuti senza saperlo. A Ponticelli mia madre conserva in un barattolo di vetro le ricevute di tutte le rate, anche quelle saldate da dieci anni, e quando qualcuno bussa per un pagamento già fatto apre il barattolo e cerca, senza fretta, finché non trova il foglio con il timbro.
 
 Il quindici il collegio vota. Senza la borsa, a gennaio, la stanza ai Quartieri non la pago, e a Ponticelli si torna con il treno delle sei e venti, la stessa carrozza di quando avevo diciannove anni e studiavo le dispense sulle ginocchia.
 
@@ -110,7 +110,7 @@ La carta copiativa ha passato tutto in un blu sbavato, leggermente doppio. Le ri
 
 «Il drappo. La santa. Tutto quanto.» Guarda su, per la tromba delle scale, dove il corrimano sparisce oltre la curva del secondo piano. Poi torna a me. «Non ne vale la pena.»
 
-«Il ventuno mi ha detto di coprire, scrivere in scheda e firmare. Ho coperto, ho scritto, ho firmato. Stamattina si è preso anche la firma.»
+«Il ventuno lei mi ha detto di coprire, scrivere in scheda e firmare. Ho coperto, ho scritto, ho firmato. Stamattina lui si è preso anche la firma.»
 
 «Lo so.»
 
@@ -136,9 +136,9 @@ Resto alla finestra. Sotto, il chiostro è vuoto per la festa, e il tufo dei pil
 
 Tiro fuori il telefono e apro la casella che uso per le bollette. Il messaggio del ventidue è al suo posto, tra il conto della luce e un sollecito del condominio, senza oggetto. Cinque allegati: tre a luce radente, uno a luce diffusa, uno con il righello per la scala. Non li apro. Non li inoltro a nessuno.
 
-Le schede le ha prese. Le tre tele della galleria sono ancora appese ai loro ganci, e nessuno ha messo a verbale i disegni di Claudia, né il foglio del tassello che porto nella tasca interna del cappotto, piegato a metà, con il cartellino ricopiato a mano. Lo tiro fuori. Tolgo la matita dai capelli e sotto l'ultima riga scrivo, piccolo: «1 nov. Schede acquisite. Restano: cinque foto, casella bollette». Poi lo ripiego e lo rimetto dov'era.
+Le schede le ha prese. Le tre tele della galleria sono ancora appese ai loro ganci, e nessuno ha messo a verbale i disegni di Claudia, né il foglio del tassello che porto nella tasca interna del cappotto, piegato a metà, con il cartellino ricopiato a mano. Lo tiro fuori. Tolgo la matita dai capelli, appoggio la punta sotto l'ultima riga e resto così. Stamattina qualcuno ha contato i miei fogli con l'elastico ancora chiuso. Scrivo soltanto, piccolo: «1 nov. 9 – 5». Poi lo ripiego e lo rimetto dov'era.
 
-Nessuno lo saprà. Né il collegio, né Scotti.
+Abbottono il cappotto fino al collo. Se Scotti torna giù adesso, mi trova alla finestra a guardare i pilastri.
 
 Riprendo in mano il verbale. Sotto la mia firma, il nome di Scotti è inciso a fondo nella carta.
 
