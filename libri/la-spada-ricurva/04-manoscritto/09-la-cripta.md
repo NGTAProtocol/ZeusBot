@@ -32,11 +32,11 @@ Dietro di me Mina respira dal naso, piano. Claudia ha la torcia del telefono pun
 
 La volta è fatta di blocchi squadrati, posati a secco o quasi. Li seguo con la torcia mentre cammino, giunto per giunto, e dopo una ventina di metri trovo quello che temevo di trovare. Una lesione attraversa la volta di traverso, da una spalla all'altra. Non è un capello: ci entra la punta di una matita. Lungo i bordi la calcite ha fatto una crosta bianca, vecchia, ma in un tratto la crosta è spezzata e il tufo sotto è giallo vivo, senza patina. Nell'acqua, proprio lì sotto, galleggiano due scaglie dello stesso giallo.
 
-Mi fermo. Claudia mi viene addosso, si scusa senza parole con una mano sulla mia schiena.
+Mi fermo. Claudia mi viene addosso e la sua mano resta piatta sulla mia schiena, un momento più del necessario.
 
 «Che c'è?»
 
-«Niente che si possa sistemare stanotte.» Passo la luce sulla crepa perché la vedano anche loro. «Questa si muove ancora.»
+«Niente che si possa sistemare stanotte.» Passo la luce sulla crepa perché la vedano anche loro. «Questa si è mossa da poco.»
 
 «Quanto?» dice Valli.
 
@@ -56,7 +56,9 @@ Restiamo fermi. Sento le gocce, una qui, una più avanti, ognuna con il suo temp
 
 Si tocca la medaglietta e riparte. L'acqua gli fa un'onda bassa intorno agli stivali di gomma. È l'unico di noi che sia venuto con gli stivali.
 
-Il corridoio scende ancora, di poco. Dopo un'altra trentina di metri le pareti si allargano e la volta si alza, e l'acqua finisce contro un gradino di pietra diversa: grigia, compatta, con granuli neri che sotto la torcia mandano un riflesso di vetro. Non è tufo. È stata portata qui da fuori, a spalla o su una slitta, e chi l'ha portata voleva che durasse più del tufo.
+Sopra di noi c'è il chiostro, e sopra il chiostro le aule e le scale dell'Accademia, e intorno le case del rione con i letti, le pentole, le lampade accese davanti ai santi, e tutto quel peso sta sospeso su pochi palmi di pietra che nessuno guarda da secoli, che suda nel buio e cede un granello alla volta, senza fretta, come chi ha tutto il tempo per riscuotere.
+
+Il corridoio scende ancora, di poco. Dopo un'altra trentina di metri le pareti si allargano e la volta si alza, e l'acqua finisce contro un gradino di pietra diversa: grigia, compatta, con granuli neri che sotto la torcia mandano un riflesso di vetro. Non è tufo. È stata portata qui da fuori, a spalla o su una slitta, e chi ha fatto quella fatica forse voleva che durasse più del tufo.
 
 Sopra il gradino c'è la porta.
 
@@ -64,7 +66,7 @@ Sopra il gradino c'è la porta.
 
 È una lastra della stessa pietra grigia, alta poco più di un uomo, incassata in un arco di blocchi di tufo. Non ha battenti, non ha cardini visibili, non ha serratura. Al centro, all'altezza della mia fronte, c'è un disco di bronzo grande quanto un piatto, verde di patina, e nel disco sono incise le due lame.
 
-Le riconosco prima di vederle bene. Sono incrociate all'altezza delle impugnature, e le punte, invece di correre dritte, si piegano entrambe verso il basso con la stessa curva che ho sgrassato centimetro per centimetro sotto il drappo del Martirio. La curva c'è anche qui. Qui nessuno l'ha mai coperta.
+Le riconosco prima di vederle bene. Sono incrociate all'altezza delle impugnature, e le punte, invece di correre dritte, si piegano entrambe verso il basso con la stessa curva che ho visto sotto il drappo del Martirio. La curva c'è anche qui. Qui nessuno l'ha mai coperta.
 
 «È lei» dice Claudia. Si avvicina con la torcia bassa, senza toccare. «È la stessa curva. Uguale. Anche lo spessore del dorso.»
 
@@ -76,7 +78,7 @@ Claudia ha già il taccuino aperto sulla pagina della pianta, quella con le quat
 
 «Quattro, uno, nove» dice. «E poi la due. Il Martirio. Era l'ultima linea.»
 
-Non dico niente, perché il conto torna e non ho niente da aggiungere. Dopo la I, verso destra, ci sono due borchie illeggibili, poi la IV, e la IX sta quasi a chiudere il giro. Se la corona procede in senso orario, la II è quella subito accanto alla I. Sulla II non c'è più segno. La indico col dito, a un palmo di distanza.
+Non dico niente. Dopo la I, verso destra, ci sono due borchie illeggibili, poi la IV, e la IX sta quasi a chiudere il giro. Se la corona procede in senso orario, la II è quella subito accanto alla I. Sulla II non c'è più segno. La indico col dito, a un palmo di distanza.
 
 Poi alzo la luce sull'arco.
 
@@ -98,7 +100,7 @@ Lo dice guardando il disco, non me. Ha la sigaretta spenta tra due dita, e con i
 
 Nessuno si avvicina.
 
-La sequenza ce l'abbiamo. Ce l'ha Claudia sul taccuino, ce l'ho io in testa, e la conosce anche Mina, che ha portato i numeri per primo, sulla panca della galleria. Le borchie sono a portata di mano per chiunque di noi tranne Claudia, che dovrebbe salire sul gradino e allungarsi. Ma per arrivarci bisogna stare sotto la chiave.
+Le borchie sono a portata di mano per chiunque di noi tranne Claudia, che dovrebbe salire sul gradino e allungarsi. Ma per arrivarci bisogna stare sotto la chiave.
 
 Alzo la mano. La tengo a un palmo dalla IV, e sento il freddo del bronzo sulla pelle prima di toccarlo. Una goccia si stacca dalla lesione e mi cade sul polso.
 
@@ -130,7 +132,7 @@ Si sfila l'orologio e me lo mette in mano, ancora caldo del suo polso. Poi appog
 
 «Come lo sa?»
 
-«Gli scrigni di casa.» Non si volta. «Mio nonno ne aveva tre, di ferro, con le borchie sul coperchio. Le chiudeva con una sequenza e a noi bambini toccava indovinarla. Se sbagliavi, il coperchio si bloccava fino al giorno dopo.» Una pausa. «Mio cugino una volta ci ha lasciato due dita. Non sotto il coperchio, nello sportello di sicurezza. Rinaldi, legga.»
+«Gli scrigni di casa.» Non si volta. «Mio nonno ne aveva tre, di ferro, con le borchie sul coperchio. Le chiudeva con una sequenza che non diceva a nessuno.» Una pausa. «Rinaldi, legga.»
 
 Claudia apre il taccuino. La voce le esce più alta di quanto vorrebbe e la abbassa subito.
 
