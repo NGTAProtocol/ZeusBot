@@ -10,3 +10,4 @@ Difetti trovati dal revisore: non ripeterli. Le aggiunge «zb esito» dalla sezi
 - non tradurre in morale l'immagine o la battuta che ha appena funzionato da sola. (cap. 6)
 - Ogni deduzione detta da un personaggio deve tornare con i dati che la scena ha appena dato. (cap. 7)
 - Non far spiegare alla narratrice un tratto che il gesto ha appena mostrato. (cap. 8)
+- non chiudere un momento d'azione con una sentenza: l'immagine basta. (cap. 9)

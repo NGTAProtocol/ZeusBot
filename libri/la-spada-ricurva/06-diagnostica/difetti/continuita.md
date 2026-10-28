@@ -59,3 +59,10 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 ## Unità 8 — tipo capitolo, chiusura P
 
 - scena da r.3: 06/11/2025 — Quartieri Spagnoli
+- conoscenze: Pietro intuisce che lei ha qualcosa da dire, ma non sa della lastra; il modello è allenato da tre mesi solo sul latino. La narratrice sa della lastra, degli anelli di ferro e del giro del custode, di quarantuno minuti. Claudia e Lorenzo sanno della lastra.
+
+## Unità 9 — tipo capitolo, chiusura D
+
+- scena da r.3: 08/11/2025 — Cripta sotto il chiostro
+- scena da r.29: 08/11/2025 — (luogo della scena precedente)
+- scena da r.67: 08/11/2025 — (luogo della scena precedente)
