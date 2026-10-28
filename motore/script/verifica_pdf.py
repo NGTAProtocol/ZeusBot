@@ -22,6 +22,7 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune  # noqa: E402
 import conta  # noqa: E402
+import impagina  # noqa: E402
 from stile import risultato, tabella  # noqa: E402
 
 PT = 72.0
@@ -98,14 +99,14 @@ def sommario(pdf, titoli):
             for c in cand:
                 riga = sorted([w for w in parole if abs(w[3] - c[3]) < 2], key=lambda w: w[0])
                 testo = ' '.join(w[4] for w in riga)
-                if testo.startswith(t) and riga[-1][4].isdigit():
+                if impagina.piana(testo).startswith(impagina.piana(t)) and riga[-1][4].isdigit():
                     nel_somm = int(riga[-1][4])
                     break
             reale = None
             for i, p in enumerate(d):
                 if p.number == pag_somm.number:
                     continue
-                if t in [r.strip() for r in p.get_text('text').splitlines()]:
+                if impagina.piana(t) in [impagina.piana(r) for r in p.get_text('text').splitlines()]:
                     reale = numero_al_piede(p)
                     break
             out[t] = (nel_somm, reale)
