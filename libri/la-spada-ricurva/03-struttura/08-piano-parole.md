@@ -15,7 +15,7 @@
 | La chiave | 11 | Il nome | la loggia ha un nome | 1 | 2200 | 2200 | 2109 | -4,1% |
 | La chiave | 12 | La scelta | prima svolta | 1 | 2200 | 2200 | 2238 | +1,7% |
 | La traduzione | 13 | La macchina nel basso | entra l'IA | 1 | 2000 | 2000 | 1997 | -0,1% |
-| La traduzione | 14 | Il cifrario | errore come indizio | 1 | 2300 | 2300 |  |  |
+| La traduzione | 14 | Il cifrario | errore come indizio | 1 | 2300 | 2300 | 2382 | +3,6% |
 | La traduzione | 15 | Le anime dei vicoli | respiro, primo indizio del traditore | 1 | 1600 | 1600 |  |  |
 | La traduzione | 16 | I musei del mondo | falsa pista Dell'Aquila | 1 | 2300 | 2300 |  |  |
 | La traduzione | 17 | Venezia | asse storico | 1 | 2200 | 2200 |  |  |

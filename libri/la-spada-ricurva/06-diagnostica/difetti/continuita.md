@@ -93,3 +93,9 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 
 - scena da r.3: 13/11/2025 — Il basso di Mina, Sanità
 - scena da r.79: 13/11/2025 — (luogo della scena precedente)
+- conoscenze: Pietro sa del modello e non chiede chi altro lo sappia. Mina conosce il piano. Scotti sa della macchina da ieri.
+
+## Unità 14 — tipo capitolo, chiusura R
+
+- scena da r.3: 17/11/2025 — Il basso di Mina, Sanità
+- scena da r.77: 17/11/2025 — (luogo della scena precedente)

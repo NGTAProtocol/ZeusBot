@@ -2,7 +2,6 @@
 
 Difetti trovati dal revisore: non ripeterli. Le aggiunge «zb esito» dalla sezione «## Lezione» dei rapporti.
 
-- Non chiudere un paragrafo con una frase che spiega il fatto appena mostrato: lascia l'ultima parola all'oggetto. (cap. 2)
 - Non far fare a un personaggio un atto che il canone o la capsula attribuisce a un altro: prima di scrivere chi ha firmato, chi ha tolto o chi ha ordinato, controlla la capsula. (cap. 3)
 - non risolvere un dubbio con un'immagine da cartolina: il luogo va visto con l'occhio tecnico di Elena. (cap. 4)
 - Non commentare dopo una battuta ambigua ciò che la battuta ha già lasciato in sospeso. (cap. 5)
@@ -14,3 +13,4 @@ Difetti trovati dal revisore: non ripeterli. Le aggiunge «zb esito» dalla sezi
 - Quando un'informazione si anticipa per darle una fonte, le battute successive che la «scoprono» vanno riscritte come conferma. (cap. 11)
 - Non glossare con la voce narrante una battuta o un gesto che la scena ha già reso chiari. (cap. 12)
 - non lasciare battute che rispondono a una domanda tolta, e non spiegare con la frase finale il dettaglio che la scena ha appena piantato. (cap. 13)
+- quando un meccanismo regge la scena (cifrario, prova), contarlo davvero prima di scriverlo: numeri e regole devono tornare a ogni passaggio. (cap. 14)
