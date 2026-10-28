@@ -14,7 +14,7 @@ Lui non alza la testa. Guarda le mie ginocchia.
 
 Abbasso gli occhi anch'io. Sui jeans, all'altezza della rotula, c'è un alone giallo chiaro, polveroso, che stanotte al buio non ho visto e stamattina, nella fretta, nemmeno. Tufo, impastato con l'acqua della cripta e poi asciugato. Lo strofino con il palmo. Si stende, non va via.
 
-«Questo colore» dice Scotti, «a Napoli lo fa un sacco di pietra. Qui dentro, al pianterreno, lo fa solo quella che non si tocca.»
+«Questo colore» dice Scotti, «a Napoli lo fa un sacco di pietra. Qui dentro, bagnato così, lo fa solo quella che sta sotto e non si tocca.»
 
 Poso la borsa sul mio banco, lontano dal suo. Mi tolgo il cappotto con calma, perché la calma è l'unica cosa che posso ancora decidere. Ho tre strade, e le guardo una per una mentre appendo il cappotto al gancio. Mentirgli: ha già visto la polvere, e una bugia smentita da una macchia sui jeans mi costerebbe più della verità. Dirgli tutto: è l'uomo che il primo novembre ha scritto sotto dettatura il verbale che mi ha tolto le schede, e che poi mi ha restituito la copia sulle scale. Tacere: lo sto già facendo, e lui sta già aspettando.
 
@@ -24,7 +24,7 @@ Scotti si alza. Viene al mio banco con i suoi passi corti, si ferma a un braccio
 
 «Aprilo.»
 
-Indosso i guanti, sciolgo lo spago, ribalto i lembi della tela. La pelle della coperta ha il colore del tabacco bagnato, i fermagli di ottone sono anneriti e il dorso ha cinque nervi rilevati. Apro alla prima carta. Il latino dell'incipit è leggibile per tre righe, poi il testo si rompe in gruppi di segni senza vocali, fitti, allineati sulla rigatura a secco.
+Indosso i guanti, sciolgo lo spago con cui l'ho legato stanotte, ribalto i lembi della tela. Le assi della coperta sono nude, senza cuoio, e la cucitura corre a vista sul dorso. Non c'è fermaglio a tenerlo chiuso: solo il peso del legno. Apro alla prima carta. Il latino dell'incipit è leggibile per tre righe, poi il testo si rompe in gruppi di segni senza vocali, fitti, allineati sulle righe a piombo.
 
 Scotti abbassa gli occhiali sul naso. Legge in silenzio. Le labbra si muovono appena sulla parola «brachmanorum», e si fermano lì.
 
@@ -34,7 +34,7 @@ Scotti abbassa gli occhiali sul naso. Legge in silenzio. Le labbra si muovono ap
 
 «Quanti ce ne sono, Elena. Non quanti ne hai presi.»
 
-Non rispondo, e lui non ripete la domanda. Si tira su gli occhiali e guarda la tela girata contro il muro, il Martirio, che da tre settimane mostra al laboratorio solo il telaio e le biette.
+Non rispondo, e lui non ripete la domanda. Si tira su gli occhiali e guarda la tela girata contro il muro, il Martirio, che da diciotto giorni mostra al laboratorio solo il telaio e le biette.
 
 «Stanotte lo rimettete dove l'avete preso» dice. «Tu e chi era con te. Rimettete la pietra come stava, buttate le scarpe e dimenticate.»
 
@@ -46,7 +46,7 @@ Non rispondo, e lui non ripete la domanda. Si tira su gli occhiali e guarda la t
 
 Lui chiude gli occhi un istante. Quando li riapre, guarda la porta.
 
-La maniglia si abbassa. Entra Claudia, con lo zaino su una spalla sola e la cinghia annodata che le batte sul fianco. Ci eravamo date appuntamento alle sette e mezza, per il microscopio. Vede Scotti, vede il codice aperto sul banco, e si ferma sulla soglia senza chiudere.
+La maniglia si abbassa. Entra Claudia, con lo zaino su una spalla sola e la cinghia annodata che le batte sul fianco. Ci eravamo date appuntamento alle sette e mezza, per il microscopio; ieri notte, sotto il portone, mi ha detto che sarebbe venuta a guardare, non a decidere. Vede Scotti, vede il codice aperto sul banco, e si ferma sulla soglia senza chiudere.
 
 «Chiudi» dice Scotti.
 
@@ -54,7 +54,7 @@ Claudia guarda me. Faccio sì con la testa. Lei chiude, ma non viene avanti.
 
 «Lei lo dice al Professore?» chiede.
 
-Scotti si sbottona il camice. Lo appende al suo gancio, accanto al mio cappotto, e prende dalla sedia la giacca di velluto liso che porta solo quando esce dall'Accademia. Dal taschino tira fuori l'orologio da polso, quello con il cinturino di cuoio crepato, e lo carica con il pollice, tre giri di corona, prima di allacciarlo.
+Scotti si sbottona il camice. Lo appende al suo gancio, accanto al mio cappotto, e prende dalla sedia la giacca di velluto liso che porta solo quando esce dall'Accademia. Dal taschino tira fuori l'orologio da polso, quello con il cinturino di cuoio crepato, preme il tasto sul fianco finché lo schermo si accende, e lo allaccia.
 
 «Qui dentro i muri hanno la stessa paga dei custodi» dice. «Andiamo fuori.»
 
@@ -106,7 +106,7 @@ Claudia si sporge in avanti. «Questo non risponde.»
 
 «No» dice Scotti. «Non risponde.»
 
-Stringo la cinghia della borsa. Ho portato in un bar, di mattina, un codice che nessuno ha toccato da secoli, per sentire un uomo che venticinque anni fa ha testimoniato in una commissione e non vuole dire da quale parte. Potrei alzarmi adesso. Potrei rimettere il codice nella cripta stanotte, come vuole lui, e da domani essere soltanto una dottoranda con il dottorato sospeso e un collegio da affrontare il quindici. Peso le due cose, e quella che pesa di più non è nessuna delle due: è che lui, finora, è l'unico che sa qualcosa e me lo sta dicendo.
+Stringo la cinghia della borsa. Ho portato in un bar, di mattina, un codice che nessuno ha toccato da secoli, per sentire un uomo che venticinque anni fa ha testimoniato in una commissione e non vuole dire da quale parte. Potrei alzarmi adesso. Potrei rimettere il codice nella cripta stanotte, come vuole lui, e da domani essere soltanto una dottoranda senza schede, con la borsa appesa a un collegio da affrontare il quindici. Resto seduta per una ragione sola: lui, finora, è l'unico che sa qualcosa e me lo sta dicendo.
 
 «Che cosa c'era nell'esposto di Ferrante» chiedo, «che non c'era nella sua scheda?»
 
@@ -114,7 +114,7 @@ Scotti fa un mezzo sorriso, il primo della mattina. «Tu correggi sempre la doma
 
 «La sto facendo più stretta.»
 
-«Un nome.» Lo dice piano, anche se il bar è vuoto. «Ferrante aveva trovato una lettera nel telaio della pala, infilata tra il legno e la tela, dietro una bietta. Ottocento, inchiostro ferrogallico, carta da registro. Me la fece leggere una sera, qui vicino, a un tavolo come questo. C'era un nome, e c'era lo stesso segno del tassello, tirato a penna in fondo, accanto alla firma.»
+«Un nome.» Lo dice piano, anche se il bar è vuoto. «Ferrante aveva trovato una lettera nel telaio della pala, infilata tra il legno e la tela, dietro una bietta. Ottocento, inchiostro ferrogallico, carta da registro. Me la fece leggere una sera, qui vicino, a un tavolo come questo. La firmava un canonico, e prima della firma c'era scritto per chi aveva fatto quel lavoro: per i fratelli della Spada Ricurva. Così, con le maiuscole. E c'era lo stesso segno del tassello, tirato a penna in fondo, accanto al nome.»
 
 «Dov'è adesso la lettera?»
 
@@ -126,25 +126,23 @@ Claudia mi guarda. Ha capito prima di me che è la domanda giusta, e lo capisco 
 
 Scotti respira. Il naso gli fischia appena.
 
-«La commissione si riunì al primo piano, nella sala con il soffitto a cassettoni. Tre membri. Il più giovane faceva il segretario e scriveva il verbale. Quando lo firmò, si sfilò l'anello per non macchiarlo d'inchiostro e lo posò sul tavolo, rovesciato, con il castone verso di me. Io ero seduto davanti. Era un sigillo d'oro, inciso in incavo, per stampare sulla ceralacca.» Alza la mano e incrocia l'indice e il medio, poi li piega tutti e due. «Questo. Al contrario, perché era un sigillo. Ma era questo.»
+«La commissione si riunì al primo piano, nella sala con il soffitto a cassettoni. Tre membri. Il più giovane faceva il segretario e scriveva il verbale. Aveva un anello all'anulare, e quando chiuse il fascicolo ci premette sopra la ceralacca, come si faceva una volta. Io non vidi niente, lì. Una settimana dopo venne in laboratorio, da me, con l'anello in una bustina di carta: il castone si era riempito di ceralacca e voleva che glielo pulissi a bisturi, senza graffiare l'oro. Lo tenni sotto la lente un'ora. Era un sigillo, inciso in incavo.» Alza la mano e incrocia l'indice e il medio, poi li piega tutti e due. «Questo. Al contrario, perché era un sigillo. Ma era questo.»
 
 «Il segretario» dico. «Chi era?»
 
 «Allora era un incaricato di storia dell'arte, con una borsa di cuoio nuova e le scarpe inglesi.» Scotti abbassa la mano sul tavolo, aperta. «Da allora ha fatto carriera. L'anello lo porta ancora. All'anulare destro. Quando stringe la mano a qualcuno, lo gira verso il palmo con il pollice, prima. Guardalo, la prossima volta.»
 
-Resto zitta. In tre anni ho stretto quella mano due volte, a due inaugurazioni, e non ho guardato il pollice. Posso solo dire che potrebbe essere vero.
+Resto zitta. In tre anni ho stretto le mani di tutti quelli che qui dentro hanno fatto carriera, a una inaugurazione o a un'altra, e non ho mai guardato un pollice. Posso solo dire che potrebbe essere vero.
 
-«Non denunciate» ripete Scotti, più piano. «E non raccontate a me più di quello che ho visto stamattina. Quanti volumi, dove li tenete, chi altro è venuto con voi. Non voglio saperlo.»
+«Non denunciate» ripete Scotti, più piano. «E non raccontate a me più di quello che ho visto stamattina. Quanti volumi, dove li tenete, chi altro è venuto con voi. Prima te l'ho chiesto io, quanti. Ho sbagliato. Non voglio saperlo.»
 
-«Perché non si fida di sé stesso» dice Claudia.
-
-Scotti guarda lei, e per la prima volta nella mattinata non sembra un assistente. Sembra un uomo che ha fatto un conto e lo ha trovato giusto.
+«Perché?» chiede Claudia.
 
 «Perché venticinque anni fa mi hanno fatto una domanda in una sala con il soffitto a cassettoni» dice. «E io ho risposto.»
 
 La donna del grembiule passa dietro il bancone con un secchio. Toglie il telo dalla macchina del caffè, lo piega in quattro e lo posa su una mensola. Dal retro arriva il clic di un interruttore. La macchina comincia a ronzare.
 
-Dalla tasca interna del cappotto prendo il foglio del tassello, quello che porto addosso dal ventuno ottobre, e lo stendo sul marmo, girato verso di lui. La piega del mezzo si è fatta morbida, quasi una lacerazione. In fondo, a matita, c'è il mio schizzo di quel giorno: due lame, una sull'altra, curve verso l'esterno, con la punta che torna indietro.
+Dalla tasca interna del cappotto prendo il foglio del tassello, quello che porto addosso dal ventuno ottobre. La regola l'ho messa io: i disegni restano in Accademia. Questo non è mai rientrato, e un foglio aperto su un tavolino di bar lo può vedere chiunque passi davanti alla vetrina. La vetrina è lontana, la saracinesca è ancora a metà. Lo stendo sul marmo, girato verso di lui. La piega del mezzo si è fatta morbida, quasi una lacerazione. In alto, a matita, sopra le note dei giorni dopo, c'è il mio schizzo del ventuno: due lame, una sull'altra, curve verso l'esterno, con la punta che torna indietro.
 
 «Ha un nome, questa cosa» dico. Non è una domanda, e non la faccio suonare come una domanda.
 

@@ -441,3 +441,26 @@ fatti:
     e medievale; per uniformità con «Indorum» sarebbe più comune la maiuscola.'
   stato: generico
   data: '2026-10-28'
+- id: F061
+  unita: '11'
+  affermazione: 'r.29 «brachmanorum»: forma latina, citazione'
+  stato: da_verificare
+- id: F062
+  unita: '11'
+  affermazione: 'r.117 «inchiostro ferrogallico, carta da registro» (Ottocento): storia
+    materiale'
+  stato: da_verificare
+- id: F063
+  unita: '11'
+  affermazione: 'r.27 «cinque nervi rilevati… rigatura a secco»: codicologia'
+  stato: da_verificare
+- id: F064
+  unita: '11'
+  affermazione: 'r.65 bar in un vicolo verso piazza Bellini, vicino all''Accademia:
+    geografia reale'
+  stato: da_verificare
+- id: F065
+  unita: '11'
+  affermazione: 'r.57 orologio a carica manuale: incompatibile con l''orologio con
+    sensore cardiaco del cap. 1 (vedi A, KO).'
+  stato: da_verificare
