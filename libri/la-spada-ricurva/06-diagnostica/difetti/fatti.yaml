@@ -410,3 +410,34 @@ fatti:
   stato: verificato
   data: '2026-10-28'
   fonte: https://it.wikipedia.org/wiki/Scrittura_gotica
+- id: F057
+  unita: '10'
+  affermazione: 'r.123-125 cerchio con croce e mezzaluna = mercurio, triangolo su
+    croce = zolfo: simboli alchemici (corretti)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://it.wikipedia.org/wiki/Simboli_alchemici
+- id: F058
+  unita: '10'
+  affermazione: 'r.111 «Righe a piombo… sui codici universitari del Trecento»: codicologia
+    (corretto)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.adrianapaolini.it/lezioni-semiserie-di-codicologia-3/
+- id: F059
+  unita: '10'
+  affermazione: 'r.111: rigatura a mina di piombo, grigia e poco visibile, per i codici
+    universitari del Trecento: corretta (il difetto del rapporto precedente è risolto).
+    Corretti anche i forellini di foratura fatti a punta sul margine esterno e non
+    rifilati, il lato carne più chiaro del lato pelo, i nervi in cuoio allumato.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.adrianapaolini.it/lezioni-semiserie-di-codicologia-3/
+- id: F060
+  unita: '10'
+  affermazione: 'r.115: «Incipit liber primus de sapientia Indorum, quam duo magistri
+    ex India Venetias attulerunt, ex libris antiquissimis brachmanorum»: latino corretto
+    («Venetias» accusativo di moto a luogo). «Brachmanorum» attestato nel latino tardo
+    e medievale; per uniformità con «Indorum» sarebbe più comune la maiuscola.'
+  stato: generico
+  data: '2026-10-28'

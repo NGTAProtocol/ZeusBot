@@ -11,3 +11,4 @@ Difetti trovati dal revisore: non ripeterli. Le aggiunge «zb esito» dalla sezi
 - Ogni deduzione detta da un personaggio deve tornare con i dati che la scena ha appena dato. (cap. 7)
 - Non far spiegare alla narratrice un tratto che il gesto ha appena mostrato. (cap. 8)
 - non chiudere un momento d'azione con una sentenza: l'immagine basta. (cap. 9)
+- Nelle scene di scoperta prima i sensi e il peso, poi il conto; ogni traduzione si dà una volta sola. (cap. 10)

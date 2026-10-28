@@ -66,3 +66,11 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 - scena da r.3: 08/11/2025 — Cripta sotto il chiostro
 - scena da r.29: 08/11/2025 — (luogo della scena precedente)
 - scena da r.67: 08/11/2025 — (luogo della scena precedente)
+- conoscenze: Lorenzo legge le cifre I, IV, IX e deduce la II. Claudia ha la pianta con le cifre dei dipinti. Valli riconosce il meccanismo dagli scrigni del nonno. Mina rifiuta di toccare il bronzo.
+
+## Unità 10 — tipo capitolo, chiusura X
+
+- scena da r.3: 08/11/2025 — Archivio sotto l'Accademia
+- scena da r.43: 08/11/2025 — (luogo della scena precedente)
+- scena da r.77: 08/11/2025 — (luogo della scena precedente)
+- scena da r.139: 08/11/2025 — (luogo della scena precedente)
