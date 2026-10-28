@@ -142,7 +142,7 @@ Resto zitta. In tre anni ho stretto le mani di tutti quelli che qui dentro hanno
 
 La donna del grembiule passa dietro il bancone con un secchio. Toglie il telo dalla macchina del caffè, lo piega in quattro e lo posa su una mensola. Dal retro arriva il clic di un interruttore. La macchina comincia a ronzare.
 
-Dalla tasca interna del cappotto prendo il foglio del tassello, quello che porto addosso dal primo novembre. La regola l'ho messa io: i disegni restano in Accademia. Questo non è mai rientrato, e un foglio aperto su un tavolino di bar lo può vedere chiunque passi davanti alla vetrina. La vetrina è lontana, la saracinesca è ancora a metà. Lo stendo sul marmo, girato verso di lui. La piega del mezzo si è fatta morbida, quasi una lacerazione. In alto, a matita, sopra le note, c'è il mio schizzo: due lame, una sull'altra, curve verso l'esterno, con la punta che torna indietro.
+Dalla tasca interna del cappotto prendo il foglio del tassello, quello che porto addosso da settimane. La regola l'ho messa io: i disegni restano in Accademia. Questo non è mai rientrato, e un foglio aperto su un tavolino di bar lo può vedere chiunque passi davanti alla vetrina. La vetrina è lontana, la saracinesca è ancora a metà. Lo stendo sul marmo, girato verso di lui. La piega del mezzo si è fatta morbida, quasi una lacerazione. In alto, a matita, sopra le note, c'è il mio schizzo: due lame, una sull'altra, curve verso l'esterno, con la punta che torna indietro.
 
 «Lei il nome lo sa» dico. Non è una domanda, e non la faccio suonare come una domanda.
 
