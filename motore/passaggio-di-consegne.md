@@ -28,7 +28,12 @@ delle sessioni precedenti è in git (`git log`, ramo `archivio/motore-prima-2026
   (salva ferma, riapprova), diagnosta, verificatore, cancello con l'azione che lo sblocca, esito, capsula, ritocco
   dopo l'accettazione (correggi, avvio), capsula superata, giro di controllo del verificatore, capitolo successivo.
 - Rapporti legati alla versione: verifica, revisione e capsula valgono solo per il testo su cui sono scritti; dopo una
-  correzione piccola il diagnosta e il verificatore rivedono solo le righe cambiate.
+  correzione piccola il diagnosta e il verificatore rivedono solo le righe cambiate; dopo un «passa», un ritocco di
+  al più due righe (`percorso.RITOCCO_RIGHE`) non rifà la revisione: basta il giro del verificatore su quelle righe.
+- Scheda dello scrittore e capsula riportano il testo delle promesse citate per id (da `06-sottotrame-temi.md`).
+- Cancello `lunghezza`: KO anche sotto il budget del piano parole meno la tolleranza, non solo sopra.
+- Fatti doppi: riconosciuti anche senza citazione («stessa riga e tre parole chiave in comune»).
+- PDF: titolo del capitolo anche da «# Titolo» senza numero; titoli con apostrofo tipografico riconosciuti.
 - `zb lavoro` agisce sul repository da cui si lancia (worktree, repository di prova), mai su quello del motore.
 - Catena fluida: un «passa» con correzioni al primo giro manda allo scrittore una sola correzione (revisione e
   verifica insieme); la motivazione del verificatore è bloccante; un fatto riscritto non si registra due volte; un

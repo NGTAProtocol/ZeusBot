@@ -115,7 +115,7 @@ def unita_in_corso(cartella, libro, st):
 
 
 def stato_revisione(cartella, libro, n):
-    """(«assente» | «vecchia» | «passa» | «non passa», giro2) del rapporto audit/NN.md sul testo attuale del capitolo N."""
+    """(«assente» | «vecchia» | «ritocco» | «passa» | «non passa», giro2) del rapporto audit/NN.md sul testo attuale del capitolo N."""
     import percorso
     rel, _, testi = percorso.rapporto_capitolo(cartella, libro, n)
     p = os.path.join(cartella, rel)
@@ -124,9 +124,13 @@ def stato_revisione(cartella, libro, n):
     righe = [r.strip() for r in open(p, encoding='utf-8').read().splitlines()]
     m = percorso.INTESTAZIONE.match(righe[0] if righe else '')
     giro2 = os.path.isfile(os.path.join(cartella, f'06-diagnostica/audit/{percorso.nn(n)}-giro1.md'))
-    if not m or m.group(2) != percorso.impronta(cartella, testi):
-        return 'vecchia', giro2
     ultima = next((r for r in reversed(righe) if r), '').lower()
+    if m and m.group(2) != percorso.impronta(cartella, testi):
+        if ultima == 'passa' and percorso.ritocco(cartella, testi[0], m.group(2)):
+            return 'ritocco', giro2     # «passa» e poi al più due righe cambiate: basta il giro del verificatore
+        return 'vecchia', giro2
+    if not m:
+        return 'vecchia', giro2
     return ('passa' if ultima == 'passa' else 'non passa'), giro2
 
 
@@ -224,12 +228,12 @@ def azione_stesura(cartella, libro, st, rel):
         return [f'AZIONE: «zb esito {rel} {u}»; con un KO, agente scrittore-voce in correzione sul KO (una volta), poi di '
                 'nuovo zb esito; al secondo KO decide l\'autore.']
     stato, giro2 = stato_revisione(cartella, libro, u)
-    if stato == 'passa':
+    if stato in ('passa', 'ritocco'):
         import difetti
         testo = open(dict(comune.unita(cartella, libro))[u], encoding='utf-8').read()
         if difetti.sezione_revisore(cartella, u, testo) is None:
             return [azione_verifica(cartella, rel, u, testo)]
-        if da_correggere(cartella, u) and primo_giro(cartella, u):
+        if stato == 'passa' and da_correggere(cartella, u) and primo_giro(cartella, u):
             nn = u.zfill(2)
             return [f'AZIONE: correzione mirata del capitolo {u} (la revisione passa con correzioni): agente '
                     f'scrittore-voce, una sola correzione con 06-diagnostica/audit/{nn}.md («## Da correggere», '

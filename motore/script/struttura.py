@@ -249,6 +249,17 @@ def campi_vuoti(cartella):
     return out
 
 
+def legenda_promesse(cartella, testo):
+    """«P6 = Il gruppo regge?; P11 = …» per gli id Pn citati in testo, dal nome nella tabella di 06-sottotrame-temi.md."""
+    nomi = {}
+    for r in comune.tabella_md(os.path.join(cartella, comune.STRUTTURA, '06-sottotrame-temi.md')):
+        m = re.match(r'^\*{0,2}(P\d+)\*{0,2}[\s.:—–-]*(.+)$', next(iter(r.values()), '') or '')
+        if m:
+            nomi[m.group(1).upper()] = m.group(2).strip()
+    ids = sorted({i.upper() for i in re.findall(r'\b[Pp]\d+\b', testo or '')}, key=lambda x: int(x[1:]))
+    return '; '.join(f'{i} = {nomi[i]}' for i in ids if i in nomi)
+
+
 def promesse_senza_chiusura(cartella):
     """06-sottotrame-temi.md: almeno una promessa o sottotrama; ognuna con il capitolo in cui si chiude."""
     p = os.path.join(cartella, comune.STRUTTURA, '06-sottotrame-temi.md')

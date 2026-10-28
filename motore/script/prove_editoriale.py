@@ -990,8 +990,10 @@ def ciclo_dopo_accettazione(r, sez='ciclo del capitolo con i comandi veri'):
     passi.append(passo(prossimo()))
     intesta(L, os.path.join(F, 'rapporti', 'audit-01.md'), '06-diagnostica/audit/01.md', 'diagnosta', 1)
     zsalva('diagnosta 1')
-    passi.append(passo(prossimo()))
     cap1 = os.path.join(L, '04-manoscritto', '01-il-molo.md')
+    open(cap1, 'a', encoding='utf-8').write('\nLa catena tace.\n')   # ritocco di una riga dopo il «passa»
+    zsalva('ritocco dopo la revisione')
+    passi.append(passo(prossimo()))
     rv = os.path.join(L, difetti.rel_verifica(1))
 
     def verifica(fatti=''):
@@ -1046,7 +1048,8 @@ def ciclo_dopo_accettazione(r, sez='ciclo del capitolo con i comandi veri'):
     passi.append(passo(prossimo()))
     if os.environ.get('ZB_DEBUG'):
         print('DEBUG passi', passi)
-    esito('ciclo', 'decisione su libro.yaml (salva ferma, riapprova) / revisione / verifica / cancello KO (fatto '
+    esito('ciclo', 'decisione su libro.yaml (salva ferma, riapprova) / revisione / ritocco di una riga dopo il «passa»: '
+          'solo verifica / cancello KO (fatto '
           'aperto, similitudini) → azione / esito / capsula / salva / capitolo 2 / ritocco dopo l\'accettazione (prima della '
           'pausa di lettura salva non lo ferma; correggi lo registra; avvio passa) / rinomina di un personaggio (salva, '
           'avvio, verifica ancora valida) / capsula superata / rinnovata / giro di controllo del verificatore / capitolo 2',
