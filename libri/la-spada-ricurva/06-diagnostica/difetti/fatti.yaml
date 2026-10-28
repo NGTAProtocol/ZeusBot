@@ -475,9 +475,12 @@ fatti:
 - id: F066
   unita: '11'
   affermazione: 'r.27 «assi nude, senza cuoio… righe a piombo»: codicologia'
-  stato: da_verificare
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.adrianapaolini.it/lezioni-semiserie-di-codicologia-3/
 - id: F067
   unita: '11'
   affermazione: 'r.27 codice con assi lignee senza coperta in cuoio, cucitura a vista,
     rigatura a piombo: plausibile per un codice medievale/prima età moderna.'
-  stato: da_verificare
+  stato: generico
+  data: '2026-10-28'
