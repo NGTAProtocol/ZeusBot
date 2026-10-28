@@ -34,11 +34,11 @@ Claudia mi prende quello vuoto e lo appoggia su una sedia a noleggio. Poi mi toc
 
 Li vedo adesso. Lungo la parete lunga del salone, tra una finestra e l'altra, sono appese sei cornici dorate, grandi, di quelle a cassetta con la gola intagliata. Dentro non c'è niente. C'è il damasco della parete, rosso, e il rosso dentro le cornici è più acceso di quello fuori.
 
-«È il riquadro bianco del suo foglio» dice Claudia, piano. «Il posto di una cosa che c'era.»
+«È il riquadro bianco del mio taccuino» dice Claudia, piano. «Il posto di una cosa che c'era.»
 
 Mi avvicino alla terza cornice con il bicchiere in mano, per avere un motivo per stare lì. La luce dei lampadari arriva radente da sinistra e fa il suo lavoro senza che nessuno glielo chieda.
 
-Il damasco fuori dalla cornice ha preso cinquanta, cento anni di sole dalle finestre e si è spento in un rosa sporco. Dentro il rettangolo il rosso è rimasto pieno, perché per tutto quel tempo una tela gli ha fatto ombra. Ai quattro angoli interni, dove la stoffa si incontra con la battuta della cornice, ci sono quattro forellini rotondi, i buchi delle viti che tenevano fermo il telaio. Il bordo della battuta, dove poggiava la tela, ha una riga di polvere più chiara, pulita di fresco da uno straccio che non è entrato negli angoli. Il quadro non c'è più. La cornice l'hanno lasciata al suo chiodo, e stamattina qualcuno ha passato il panno sull'oro della gola fino a dove arrivava la mano, senza salire sulla sedia.
+Il damasco fuori dalla cornice ha preso cinquanta, cento anni di sole dalle finestre e si è spento in un rosa sporco. Dentro il rettangolo il rosso è rimasto pieno, perché per tutto quel tempo una tela gli ha fatto ombra. Ai quattro angoli interni, dove la stoffa si incontra con la battuta della cornice, ci sono quattro forellini rotondi, i buchi delle viti che tenevano fermo il telaio. Il bordo della battuta, dove poggiava la tela, ha una riga di polvere più chiara, pulita di fresco da uno straccio che non è entrato negli angoli. Il quadro non c'è più. La cornice l'hanno lasciata al suo chiodo, e qualcuno, stamattina direi, ha passato il panno sull'oro della gola fino a dove arrivava la mano, senza salire sulla sedia, a giudicare dal bordo alto ancora grigio.
 
 Sei cornici. Sei rettangoli. Mi volto e le pareti di fronte mi rispondono con altre quattro.
 
@@ -70,7 +70,7 @@ Lo dice con leggerezza, tra un sorso e l'altro. In Accademia si parla di me da u
 
 «Ecco.» Sembra contento della risposta. «Sarebbe interessante sapere fin dove ha potuto sentire, prima che la fermassero.»
 
-Dell'Aquila aspetta, il bicchiere fermo all'altezza del petto. È una frase lasciata sul tavolo perché io la raccolga, e io non la raccolgo. Penso al tassello richiuso, alla vernice reversibile stesa sopra due lame che quest'uomo non ha mai visto. Non le ha viste. Era in galleria anni fa, ha detto, e il drappo era già lì.
+Dell'Aquila aspetta, il bicchiere fermo all'altezza del petto. È una frase lasciata sul tavolo perché io la raccolga, e io non la raccolgo. Penso al tassello richiuso, alla vernice reversibile stesa sopra due lame che quest'uomo non ha mai visto. Non può averle viste, mi dico. Era in galleria anni fa, ha detto, e il drappo era già lì.
 
 «Al restauro l'ho tolto un centimetro» dico. «Poi è finito.»
 
@@ -86,7 +86,7 @@ Si toglie dalla tasca un paio di guanti di cotone bianco, sottili, da archivio, 
 
 Lorenzo annuisce una volta. La sigaretta spenta gli si è piegata tra le dita.
 
-Claudia, accanto a me, ha aperto il taccuino a quadretti e disegna. Non disegna Dell'Aquila e non disegna Lorenzo: disegna la cornice vuota, con i quattro forellini agli angoli segnati come punti neri. Dell'Aquila abbassa gli occhi sul foglio per il tempo di un respiro.
+Claudia, accanto a me, ha aperto il taccuino a quadretti e disegna. È lo stesso delle lame, quello che doveva restare in Accademia: me ne accorgo tardi, e qualche pagina più indietro c'è tutto. Non disegna Dell'Aquila e non disegna Lorenzo: disegna la cornice vuota, con i quattro forellini agli angoli segnati come punti neri. Dell'Aquila abbassa gli occhi sul foglio per il tempo di un respiro.
 
 «Lei vede le cose» le dice. «Sarebbe un dono raro, se non costasse così caro.»
 
