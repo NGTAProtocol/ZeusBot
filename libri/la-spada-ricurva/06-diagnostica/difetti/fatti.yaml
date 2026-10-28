@@ -543,3 +543,91 @@ fatti:
   data: '2026-10-28'
   fonte: 04-manoscritto/11-il-nome.md r.39
   nota: continuità interna
+- id: F077
+  unita: '13'
+  affermazione: 'r.65 «il calore e il lampo sui pigmenti al mercurio»: tecnica di
+    conservazione (sensibilità del cinabro a luce e calore)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://it.wikipedia.org/wiki/Cinabro
+  nota: 'vermiglione: annerimento alla luce noto; fonte debole'
+- id: F078
+  unita: '13'
+  affermazione: 'r.65 «a non più di cento gradi»: tecnica di conservazione (apertura
+    massima dei codici sul cuneo)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://heritage-digitaltransitions.com/product-catalog/dt-v-cradle/
+  nota: culle a 90-120°, 100° come in sala di lettura
+- id: F079
+  unita: '13'
+  affermazione: 'r.5 «una scheda verde lunga quanto un dito… con l''antenna»: forma
+    e misure di una scheda wifi PCIe o M.2 per desktop.'
+  stato: generico
+  data: '2026-10-28'
+  nota: scheda di rete descritta a occhio
+- id: F080
+  unita: '13'
+  affermazione: 'r.9 «il salnitro ha disegnato una frangia bianca… si sbriciola in
+    sale»: efflorescenze saline sul tufo napoletano.'
+  stato: generico
+  data: '2026-10-28'
+  nota: come F045 (cap. 8)
+- id: F081
+  unita: '13'
+  affermazione: 'r.37 «un insieme di numeri, qualche miliardo, che sta tutto su questo
+    disco»: spazio su disco di un modello da qualche miliardo di parametri.'
+  stato: generico
+  data: '2026-10-28'
+  nota: affermazione del personaggio, plausibile
+- id: F082
+  unita: '13'
+  affermazione: 'r.41 «messali, bolle, atti notarili, Cicerone per i ragazzi»: disponibilità
+    di corpora latini digitalizzati.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://mlat.uzh.ch/
+  nota: Corpus Corporum, oltre 170 milioni di parole latine
+- id: F083
+  unita: '13'
+  affermazione: 'r.53 «I pesi di partenza sono pubblici»: modelli a pesi aperti con
+    latino nel corpus.'
+  stato: generico
+  data: '2026-10-28'
+  nota: 'modelli a pesi aperti: plausibile, senza nomi'
+- id: F084
+  unita: '13'
+  affermazione: 'r.71-73 «Cinquecento diviso sessanta… Otto settimane e qualcosa»:
+    500/60 = 8,33 (aritmetica corretta).'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: 'calcolo: 500/60 = 8,33 settimane'
+- id: F085
+  unita: '13'
+  affermazione: 'r.75 «Due mesi sono la metà di gennaio»: dal 13 novembre 2025, 8,33
+    settimane portano al 10 gennaio circa.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: 'calcolo: 13 novembre + 58 giorni = 10 gennaio'
+- id: F086
+  unita: '13'
+  affermazione: 'r.91 «venez., cancell. dogale»: se una cancelleria dogale veneziana
+    con corsivo latino abbreviato è plausibile.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://books.openedition.org/efr/8668
+- id: F087
+  unita: '13'
+  affermazione: 'r.119 «Se regge la temperatura, sono quattro giorni. Cinque, con
+    l''umidità»: durata di un fine-tuning su una sola macchina; effetto dell''umidità
+    sul raffreddamento.'
+  stato: generico
+  data: '2026-10-28'
+  nota: stima del personaggio
+- id: F088
+  unita: '13'
+  affermazione: 'r.131 «Gli errori, se sono costanti, li impara meglio delle cose
+    giuste»: come si comportano i modelli con etichette sbagliate in modo sistematico.'
+  stato: generico
+  data: '2026-10-28'
+  nota: affermazione del personaggio, plausibile

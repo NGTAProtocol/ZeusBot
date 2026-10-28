@@ -80,7 +80,7 @@ Scotti arriva alle undici e venti, con un trolley di quelli da scuola e la barba
 
 Mina gli prende il trolley e lo tira dentro. Le ruote lasciano due righe umide sul pavimento.
 
-«Allora è qui che dite messa» dice Scotti, e guarda il computer da lontano, con gli occhiali da lavoro alzati sulla fronte. «Il tabernacolo è piccolo.»
+«Allora è qui che dite messa» dice Scotti, e guarda il computer da lontano, senza abbassare gli occhiali, come si guarda una cosa che non si ha intenzione di studiare. «Il tabernacolo è piccolo.»
 
 Pietro si alza dallo sgabello. Non sa che cosa fare con le mani e alla fine le mette in tasca.
 
