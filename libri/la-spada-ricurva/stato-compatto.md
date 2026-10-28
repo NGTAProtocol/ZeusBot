@@ -1,19 +1,19 @@
 # Stato compatto — La Spada Ricurva
 
 - Fase: stesura; gate: nessuno.
-- Ultimo capitolo salvato: 3 (commit 92945e8); parole 5575/90000.
+- Ultimo capitolo salvato: 4 (commit 51ba3fa); parole 7552/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elana; Tempo verbale della narrazione: presen….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
-- Personaggi (capsula 3): Magnisi sa della piega, dei tre numeri e del tassello. Claudia sa di aver copiato la Giuditta ad aprile e del cartellino comparso dopo le foto di Ela…
+- Personaggi (capsula 4): il narratore sa delle tacche e della pietra di macina, non sa chi ha raschiato. Mina riconosce la pietra da una provetta, sa che le lame dell'edicola…
 - Fatti bloccati: 9 (elenco in stato.yaml):
   - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei…
   - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India po…
   - I ragazzi non denunciano la scoperta: usano un'IA offline addestrata da Pietro per tradurre e indicizzare i testi, per…
   - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e…
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
-- Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p4, @prom:p5, @prom:p6.
-- Prossimo capitolo 4: indagine tecnica; prima prova che qualcuno ha cancellato la chiave.; cambiamento: l'analisi dei pigmenti data la ridipintura agli anni 1860-61..
-- Prossimo passo: Prossimo: capitolo 4. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
-- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 4.
+- Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p4, @prom:p5, @prom:p6, @prom:p7.
+- Prossimo capitolo 5: mondo di Lorenzo; entra Dell'Aquila; semina il debito.; cambiamento: Elana capisce che il palazzo è vuoto dentro (cornici senza quadri); D….
+- Prossimo passo: Prossimo: capitolo 5. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
+- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 5.

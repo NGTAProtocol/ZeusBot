@@ -2,17 +2,18 @@ libro: La Spada Ricurva
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
-passo: capitolo 4
+passo: capitolo 5
 gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli: []
+  capitoli:
+  - 4
 ultimo_capitolo_approvato: 3
-ultimo_capitolo_scritto: 3
+ultimo_capitolo_scritto: 4
 tentativi: {}
 correzioni_aperte: []
 parole:
-  scritte: 5575
+  scritte: 7552
   obiettivo: 90000
   metodo: unico
 documenti_approvati:
@@ -350,7 +351,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-27T23:55:56Z'
+aggiornato: '2026-10-28T04:14:55Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
