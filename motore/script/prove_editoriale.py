@@ -563,6 +563,10 @@ def revisione_in_stesura(r, L, m, sez):
           f'{p1.returncode} {"sul testo attuale" in p1.stderr} / {p2.returncode} {"Giro di revisione: 2" in p2.stdout} '
           f'{"## Giro 2: solo queste frasi" in tm and "- r.3 «Il molo era grigio.»: chiusa a sentenza" in tm} '
           f'{os.path.isfile(g1)}', sez)
+    open(cap, 'a', encoding='utf-8').write('\nNives guardò il mare.\n')     # un ritocco prima del secondo rapporto
+    p2 = zb(L, 'ruolo', '.', 'diagnosta', '1')
+    esito('ruolo.py', 'ritocco dopo la preparazione del giro 2, rapporto del primo giro non ancora sostituito: ancora '
+          'giro 2, nessun fermo', '0 True', f'{p2.returncode} {"Giro di revisione: 2" in p2.stdout}', sez)
     riga2 = next((x.split('Prima riga: ', 1)[1] for x in p2.stdout.splitlines() if x.startswith('Prima riga: ')), '')
     open(pa, 'w', encoding='utf-8').write(riga2 + '\n# Revisione 2\n\n## Da correggere\n\n- r.3: non risolta\n\nnon passa\n')
     open(cap, 'a', encoding='utf-8').write('\nNives spense la luce del magazzino.\n')
