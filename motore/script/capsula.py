@@ -10,6 +10,7 @@ Le promesse si scrivono con il tag «@prom:<id>». Il registro (idea del RECORD.
 elenca le promesse aperte e chiuse capitolo per capitolo; una promessa chiusa prima di essere aperta è KO.
 Scrittore e revisori leggono le capsule, non i capitoli precedenti interi (motore/editoriale/risparmio-token.md).
 """
+import hashlib
 import os
 import re
 import sys
@@ -60,15 +61,21 @@ def prepara(cartella, libro, n):
     if int(n) > (stato.get('ultimo_capitolo_scritto') or 0):
         raise comune.ErroreMotore(f'Capitolo {n} non ancora accettato: prima «zb esito <libro> {n}».')
     p = os.path.join(cartella, rel(n))
-    if os.path.isfile(p):
-        print(f'{rel(n)} esiste già: non lo sovrascrivo. Verifica: zb capsula <libro> {n} --verifica')
-        return 0
     testo = open(unita[str(n)], encoding='utf-8').read()
     intest = next((r.strip('* ') for r in testo.splitlines()[1:4] if r.startswith('*')), '—')
+    meccanici = (f'Dati meccanici: {conta.conta_testo(testo)} parole; intestazione: {intest}; codex nominato: '
+                 + (' '.join(nominati(cartella, testo)) or 'nessuno') + f'; versione: {versione(testo)}.')
+    if os.path.isfile(p):
+        vecchia = open(p, encoding='utf-8').read()
+        if not superata(vecchia, testo):
+            print(f'{rel(n)} esiste già: non lo sovrascrivo. Verifica: zb capsula <libro> {n} --verifica')
+            return 0
+        comune.scrivi(cartella, rel(n), re.sub(r'(?m)^Dati meccanici:.*$', lambda _: meccanici, vecchia, count=1))
+        print(f'{rel(n)}: il capitolo è cambiato, dati meccanici aggiornati. L\'agente «capsula» aggiorna le sezioni '
+              f'sul testo attuale (solo ciò che cambia), poi «zb capsula <libro> {n} --verifica».')
+        return 0
     l = lingua(libro)
-    righe = [comune.MODELLO, f'# Capsula {n} — {libro["titolo"]}', '',
-             f'Dati meccanici: {conta.conta_testo(testo)} parole; intestazione: {intest}; codex nominato: '
-             + (' '.join(nominati(cartella, testo)) or 'nessuno') + '.', '']
+    righe = [comune.MODELLO, f'# Capsula {n} — {libro["titolo"]}', '', meccanici, '']
     import struttura
     prom = (struttura.schede(cartella).get(str(n)) or {}).get('promesse') or ''
     ids = sorted({p.lower() for p in re.findall(r'\bP\d+\b', prom)}, key=lambda x: int(x[1:]))
@@ -96,12 +103,28 @@ def sezioni_di(testo, l):
     return out
 
 
+def versione(testo):
+    return hashlib.sha256(testo.encode('utf-8')).hexdigest()[:12]
+
+
+def superata(capsula, testo):
+    """True se la capsula è stata scritta su un'altra versione del capitolo: impronta diversa o, per le capsule senza
+    impronta, numero di parole diverso."""
+    m = re.search(r'(?m)^Dati meccanici: (\d+) parole.*?(?:versione: (\w+))?\.?$', capsula)
+    if not m:
+        return False
+    return m.group(2) != versione(testo) if m.group(2) else int(m.group(1)) != conta.conta_testo(testo)
+
+
 def problemi_capsula(cartella, libro, n):
     p = os.path.join(cartella, rel(n))
     if not os.path.isfile(p):
         return [f'{rel(n)}: manca (zb capsula <libro> {n})']
     t = open(p, encoding='utf-8').read()
     out = []
+    cap = dict(comune.unita(cartella, libro)).get(str(n))
+    if cap and superata(t, open(cap, encoding='utf-8').read()):
+        out.append(f'{rel(n)}: scritta su un\'altra versione del capitolo (zb capsula <libro> {n}, poi agente capsula)')
     if comune.MODELLO in t:
         out.append(f'{rel(n)}: ancora modello (togli {comune.MODELLO} dopo averla compilata)')
     l = lingua(libro)

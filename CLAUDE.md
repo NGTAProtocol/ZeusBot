@@ -4,7 +4,7 @@ Regola madre: il motore resta sempre pulito; il ramo `motore` non contiene mai u
 (una sola cartella del libro); poi si scrive solo lì. Recinto: hook, controllo pre-commit e `zb avvio` rifiutano i file
 fuori dal libro attivo; solo se l'autore scrive «lavoro sul motore»: `zb lavoro motore` (consegne: `motore/passaggio-di-consegne.md`).
 
-Lavoro su un libro: il percorso del libro (se manca, chiedilo). Prima di scrivere `python3 -B motore/zb avvio <libro>
+Lavoro su un libro (sessione principale; gli agenti no): il libro (se manca, chiedilo). Prima di scrivere `python3 -B motore/zb avvio <libro>
 [--ruolo R]` e riporta la riga «Letto: …»; se si ferma, fermati e riporta il motivo. Il motore legge solo `motore/`,
 la cartella del libro indicato e la banca-voci (`ZB_BANCA_VOCI`, sola lettura). Leggi lo stato compatto e il
 `LEGGIMI.md` del libro; `motore/PROCEDURA.md` solo per un dubbio puntuale (cerca la sezione, non leggerla intera);

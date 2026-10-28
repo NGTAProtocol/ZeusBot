@@ -51,6 +51,18 @@ DA_LEGGERE_EDITORIALE = {
 }
 
 
+def approvati_cambiati(cartella, libro, stato):
+    """(cambiati fuori procedura, capitoli cambiati nella fase di revisione) tra i documenti approvati."""
+    cambiati = [rel for rel, v in stato['documenti_approvati'].items()
+                if not comune.documento_invariato(os.path.join(cartella, rel), v['sha256'], v.get('commit'))]
+    import percorso
+    in_revisione = []
+    if percorso.attivo(libro) and stato['fase'] in percorso.REVISIONI:
+        in_revisione = [rel for rel in cambiati if percorso.testo_in_revisione(rel)]
+        cambiati = [rel for rel in cambiati if rel not in in_revisione]
+    return cambiati, in_revisione
+
+
 def ferma(msg):
     raise comune.ErroreMotore(msg)
 
@@ -167,13 +179,7 @@ def controlla(percorso):
         manca = nuovo.mancanze(nuovo.leggi_briefing(os.path.join(cartella, '00-progetto', 'briefing.md')), cartella)
         if manca:
             ferma('Briefing incompleto. Mancano:\n- ' + '\n- '.join(manca))
-    cambiati = [rel for rel, v in stato['documenti_approvati'].items()
-                if not comune.documento_invariato(os.path.join(cartella, rel), v['sha256'], v.get('commit'))]
-    import percorso
-    in_revisione = []
-    if percorso.attivo(libro) and stato['fase'] in percorso.REVISIONI:
-        in_revisione = [rel for rel in cambiati if percorso.testo_in_revisione(rel)]
-        cambiati = [rel for rel in cambiati if rel not in in_revisione]
+    cambiati, in_revisione = approvati_cambiati(cartella, libro, stato)
     if in_revisione:
         print(f'AVVISO: {len(in_revisione)} capitoli cambiati nella fase «{stato["fase"]}» (li registra «zb pronto» '
               'a fine fase).')
