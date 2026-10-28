@@ -684,6 +684,10 @@ def cartella_unica(sez='cartella unica e recinto'):
           f'{hook_bash(r, "sed -i s/a/b/ libri/secondo/libro.yaml")} / {hook_bash(r, "cp libri/primo/libro.yaml libri/secondo/x.yaml")} / '
           f'{hook_bash(r, "mv libri/secondo/stato.yaml /tmp/s.yaml")} / {hook_bash(r, "rm -f motore/zb")} / '
           f'{hook_bash(r, "date | tee motore/dati/x.txt")}', sez)
+    py_modello = "python3 - <<'EOF'\nopen('libri/primo/x.md', 'w').write(f'libri/{s}/y')\nEOF"
+    py_fuori = "python3 - <<'EOF'\nopen('libri/secondo/x.md', 'w').write('y')\nEOF"
+    esito('hook_recinto.py', 'Python in heredoc: un percorso con segnaposto (libri/{s}) non è un bersaglio / una scrittura '
+          'vera fuori dal libro attivo sì', '0 / 2', f'{hook_bash(r, py_modello)} / {hook_bash(r, py_fuori)}', sez)
     # scrittura che il recinto non vede (script): la ferma il pre-commit e la vede zb avvio
     open(os.path.join(r, 'libri', 'secondo', 'scritto-da-script.md'), 'w').write('fuori\n')
     p = zbr('avvio', 'libri/primo')
