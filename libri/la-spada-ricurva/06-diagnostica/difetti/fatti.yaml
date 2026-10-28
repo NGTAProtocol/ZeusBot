@@ -274,3 +274,25 @@ fatti:
   stato: verificato
   data: '2026-10-28'
   fonte: https://www.tuttocamere.it/files/diritto/1949_260.pdf
+- id: F037
+  unita: '7'
+  affermazione: 'r.19 «ASP, con un tratto sopra la P… forma che si usa per le desinenze
+    verbali»: paleografia. Una lineetta con coda sulla P non è un segno noto per «-iciunt»;
+    «se aspiciunt» vale «si guardano se stessi», il reciproco classico sarebbe «inter
+    se».'
+  stato: da_verificare
+- id: F038
+  unita: '7'
+  affermazione: 'r.55 «senza la J e con la U che fa da V»: storia dell''alfabeto,
+    la frase sembra rovesciata (è la V che fa da U).'
+  stato: da_verificare
+- id: F039
+  unita: '7'
+  affermazione: 'r.133 «la pronuncia sbagliata, con la C dura»: pronuncia latina,
+    la C dura è quella classica restituita, non un errore.'
+  stato: da_verificare
+- id: F040
+  unita: '7'
+  affermazione: 'r.49 «Nove sono i cori degli angeli… Quattro sono le cose dei morti»:
+    dottrina (angelologia, i Novissimi).'
+  stato: da_verificare

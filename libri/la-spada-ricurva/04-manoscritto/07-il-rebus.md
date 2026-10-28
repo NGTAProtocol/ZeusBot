@@ -6,21 +6,21 @@ Il giro del custode dura quarantun minuti, e noi ne abbiamo già spesi diciotto 
 
 Il numero l'ha portato Valli, insieme alla chiave. Due notti fa, dice, era qui con l'orologio del padre girato verso l'interno del polso, seduto sul terzo gradino della scala di servizio, a cronometrare i passi di un uomo in divisa. Nessuno gli ha chiesto che cosa ci facesse, due notti fa, sulla scala di servizio di un'istituzione che gli paga la borsa. Ci ha aperto la porta, e una porta aperta si paga con il silenzio, a rate.
 
-La torcia la tengo io. Ho fasciato il vetro con due giri di nastro carta e ho lasciato una fessura larga un dito, così la luce esce in una lama sottile e posso tenerla quasi parallela alla superficie. A luce radente il San Michele smette di essere un'immagine e diventa un terreno: creste di biacca, valli di velatura, il cretto che corre a maglie larghe sull'ala sinistra e si stringe sul drago. Il cartiglio è sotto il piede dell'arcangelo, arrotolato alle due estremità, mezzo coperto da una zampa. Le lettere sono state dipinte in rilievo, con la punta del pennello carica, e sotto la mia lama di luce si alzano dal fondo.
+Il San Michele sta nel corridoio delle scale, e la torcia la tengo io. Ho fasciato il vetro con due giri di nastro carta e ho lasciato una fessura larga un dito, così la luce esce in un filo sottile e posso tenerla quasi parallela alla superficie. A luce radente il San Michele smette di essere un'immagine e diventa un terreno: creste di biacca, valli di velatura, il cretto che corre a maglie larghe sull'ala sinistra e si stringe sul drago. Il cartiglio è sotto il piede dell'arcangelo, arrotolato alle due estremità, mezzo coperto da una zampa. Le lettere sono state dipinte in rilievo, con la punta del pennello carica, e sotto il mio filo di luce si alzano dal fondo.
 
 «Lo legga ad alta voce» dice Claudia.
 
 È accovacciata al mio fianco con il taccuino aperto sulle ginocchia. Ha già ricopiato il cartiglio tre volte, e ogni volta le lettere vengono più piccole.
 
-«VBI, punto. SE, punto. ASP, con un tratto sopra la P. IBI. IAC, con un tratto sopra la C.»
+«VBI. INT. SE. ASP. IBI. IAC. Un punto dopo ogni parola.»
 
-«Il tratto cos'è?»
+«E i punti?»
 
-«Un segno di abbreviazione. Dice che mancano lettere. Il copista, o il pittore, le dà per scontate.» Sposto la luce di un millimetro. Il tratto sopra la P ha una piccola coda che scende a destra, e la coda è la parte che conta: è la forma che si usa per le desinenze verbali. «Ubi se aspiciunt, ibi iacet.»
+«Dicono che mancano lettere. Non è un'abbreviazione da manuale, nessun copista l'avrebbe scritta così: se l'è inventata il pittore, e le lettere che taglia le dà per scontate.» Sposto la luce di un millimetro. Dopo ASP il rilievo si interrompe netto, come se il pennello si fosse alzato a metà parola. «Ubi inter se aspiciunt, ibi iacet.»
 
 Mina, dietro di noi, schiocca la lingua. «Dottorè, per chi non è andato al classico.»
 
-«Dove si guardano, lì giace.»
+«Dove si guardano l'un l'altro, lì giace.»
 
 «E chi giace?»
 
@@ -52,7 +52,7 @@ Mina si è seduto sulla panca al centro della sala, con le mani sulle ginocchia.
 
 «La quarta sta sotto il vostro drappo.» Allarga le mani. «Io porto l'ipotesi. Le prove le portate voi.»
 
-Ha il tono di chi scherza e la faccia di chi no. Non gli rispondo, perché sto facendo la stessa cosa con un altro alfabeto. Quattro, uno, nove: IV, I, IX. Tre lettere sole, I, V, X, rimescolate in ogni ordine possibile, e nessun ordine dà una parola latina che abbia un senso dentro il motto. Provo con le lettere dell'alfabeto, la quarta, la prima, la nona: D, A, I. Provo con l'alfabeto antico, senza la J e con la U che fa da V. Ogni tentativo dà una sillaba, e nessuna sillaba porta da qualche parte.
+Ha il tono di chi scherza e la faccia di chi no. Non gli rispondo, perché sto facendo la stessa cosa con un altro alfabeto. Quattro, uno, nove: IV, I, IX. Tre lettere sole, I, V, X, rimescolate in ogni ordine possibile, e nessun ordine dà una parola latina che abbia un senso dentro il motto. Provo con le lettere dell'alfabeto, la quarta, la prima, la nona: D, A, I. Provo con l'alfabeto antico, senza la J e con la V che fa da U. Ogni tentativo dà una sillaba, e nessuna sillaba porta da qualche parte.
 
 Mi accorgo che sto mordendo l'interno della guancia solo quando sento il sapore del ferro.
 
@@ -60,23 +60,23 @@ Mi accorgo che sto mordendo l'interno della guancia solo quando sento il sapore 
 
 * * *
 
-Spengo la torcia. Il buio della galleria non è nero: dalle finestre alte che danno sul chiostro entra il riflesso arancione dei lampioni della strada, rimbalzato due volte sul tufo, e basta a disegnare il contorno delle cornici. Ci mettiamo contro la parete lunga, quella senza porte. Mina ha il respiro pesante di un uomo grosso che cerca di non farlo sentire. Claudia ha chiuso il taccuino con l'indice dentro, per non perdere la pagina.
+Spengo la torcia e passiamo nella terza sala, quella della Giuditta, perché il corridoio finisce sulla scala del custode. Il buio della galleria non è nero: dalle finestre alte che danno sul chiostro entra il riflesso arancione dei lampioni della strada, rimbalzato due volte sul tufo, e basta a disegnare il contorno delle cornici. Ci mettiamo contro la parete lunga, quella senza porte. Mina ha il respiro pesante di un uomo grosso che cerca di non farlo sentire. Claudia ha chiuso il taccuino con l'indice dentro, per non perdere la pagina.
 
-I passi arrivano dalla scala di servizio. Si fermano sul pianerottolo. Una lama di luce passa sotto la porta, si allarga, si restringe. Sento il ferro della maniglia muoversi di un niente, il gioco che hanno le maniglie vecchie anche quando nessuno le gira davvero. Poi i passi ripartono verso l'alto.
+I passi arrivano dalla scala di servizio. Si fermano sul pianerottolo. Una striscia di luce passa sotto la porta, si allarga, si restringe. Sento il ferro della maniglia muoversi di un niente, il gioco che hanno le maniglie vecchie anche quando nessuno le gira davvero. Poi i passi ripartono verso l'alto.
 
 Valli guarda l'orologio. Lo vedo solo perché il quadrante ha le lancette fosforescenti, due trattini verdi che si muovono nel buio all'altezza del suo petto.
 
 «Una e nove. In anticipo di due minuti.»
 
-«Lo era anche ieri?»
+«Lo era anche due notti fa?»
 
-«Ieri era in ritardo di tre.» Una pausa. «Gli uomini non sono orologi, Magnisi. È il loro unico difetto serio.»
+«Due notti fa era in ritardo di tre.» Una pausa. «Gli uomini non sono orologi, Magnisi. È il loro unico difetto serio.»
 
 Riaccendo la torcia verso il pavimento. Claudia non si è alzata. È rimasta seduta per terra, sotto la Giuditta, con la schiena contro lo zoccolo di marmo e il taccuino di nuovo aperto, e non sta guardando il quadro che ha sopra la testa. Sta guardando la parete di fronte.
 
 «Valli» dice. «Il catalogo ha una pianta?»
 
-Lui lo tira fuori dalla borsa di cuoio senza fare domande. È un volume rilegato in tela, con le pagine ingiallite ai margini e il timbro della biblioteca sul frontespizio. Lo apre verso la fine. La pianta della galleria occupa una pagina intera: il rettangolo lungo della sala, le finestre sul lato del chiostro, e lungo le pareti dieci piccoli riquadri numerati, uno per campata.
+Lui lo tira fuori dalla borsa di cuoio senza fare domande. È un volume rilegato in tela, con le pagine ingiallite ai margini e il timbro della biblioteca sul frontespizio. Lo apre verso la fine. La pianta occupa una pagina intera: la galleria com'era, una sala sola, questa, il rettangolo lungo, le finestre sul lato del chiostro, e lungo le pareti dieci piccoli riquadri numerati, uno per campata.
 
 Claudia ci passa sopra il dito sporco di grafite, senza toccare la carta.
 
@@ -124,7 +124,7 @@ Claudia disegna la quarta linea partendo dalla campata due, in basso a destra. P
 
 Nessuno parla. Mina si alza dalla panca e viene a guardare il taccuino da sopra la mia spalla, e sento il suo odore, olio di lino e sapone di Marsiglia, e sotto qualcosa di dolciastro che deve essere il cero delle anime.
 
-«Tre linee bastano per un punto» dice Claudia, senza alzare la testa. «La quarta serve a crederci.»
+«Il quattro e l'uno bastavano per il punto» dice Claudia, senza alzare la testa. «Il nove serviva a trovare la due.»
 
 «Le lame» dico. «Piegano tutte verso il basso. In tutte e quattro le tele.»
 
@@ -136,7 +136,7 @@ Lo dice con la pronuncia sbagliata, con la C dura, e non la correggo.
 
 Avrei voluto dirlo io. Lo dico meglio di lui, per rimediare.
 
-«Ha ricostruito la posizione originale di quattro tele senza un rilievo, senza una misura, partendo da un rettangolo d'intonaco e dalla pupilla di una serva. Ci ha messo undici minuti. L'abbreviazione sul cartiglio l'avrebbe sciolta chiunque con un manuale di paleografia aperto sulla pagina giusta. Questo no.»
+«La pupilla di una serva e un rettangolo d'intonaco. L'abbreviazione sul cartiglio l'avrebbe sciolta chiunque con un dizionario di latino aperto sulla pagina giusta. Questo no.»
 
 Claudia alza gli occhi dal taccuino. Ha la frangia storta, tagliata da sola, e sotto la frangia uno sguardo che non mi ringrazia.
 
@@ -154,11 +154,11 @@ Valli tira fuori di nuovo il telefono. Questa volta lo solleva all'altezza del t
 
 «No» dice Claudia, e mette la mano aperta sulla pagina.
 
-Lui resta così un secondo, con il telefono alzato sopra una mano piccola e sporca di grafite. Poi lo abbassa. Mina ride senza suono, con le spalle, e anche Valli ride, e per la durata di quella risata siamo quattro persone che hanno vinto qualcosa in una sala buia, senza sapere che cosa.
+Lui resta così un secondo, con il telefono alzato sopra una mano piccola e sporca di grafite. Poi lo abbassa. Mina ride senza suono, con le spalle, e anche Valli ride, guardando la mano di Claudia e non lei.
 
 Il rumore arriva mentre ridiamo ancora.
 
-Viene dall'alto, dal piano di sopra o dalla scala: un colpo secco e breve, metallico, seguito da niente. Una serratura che scatta, o un'imposta che batte contro il fermo, o una cosa caduta su un pavimento di cotto. Il custode non dovrebbe ripassare prima di mezz'ora. Spengo la torcia. Restiamo fermi nel riflesso arancione dei lampioni, e nessun passo segue il colpo, nessuna luce passa sotto la porta.
+Viene dall'alto, dal piano di sopra o dalla scala: un colpo secco e breve, metallico, come un mazzo di chiavi che cade sul cotto, e dopo il colpo nessuno che si chini a raccoglierlo. Il custode non dovrebbe ripassare prima di mezz'ora. Spengo la torcia. Restiamo fermi nel riflesso arancione dei lampioni, e nessun passo segue il colpo, nessuna luce passa sotto la porta.
 
 Guardo la mano destra di Valli. Tiene ancora il telefono, con lo schermo nero rivolto verso il palmo.
 
@@ -166,15 +166,15 @@ Dopo un minuto che sembra più lungo di tutto il giro del custode, Mina si muove
 
 Seguo le arcate dalla finestra con il dito sul vetro e riporto la distanza sulla pianta. Il punto cade sotto la quarta arcata del lato nord, tra due pilastri, dove il pavimento del porticato è fatto di lastre più grandi delle altre.
 
-«Lì sotto ci sta la cripta» dice Mina.
+«Lì sotto, dicevano, ci sta una cripta» dice Mina.
 
 «Quale cripta?»
 
-«Quella chiusa.» Non stacca la fronte dal vetro. «Quando ero ragazzo ci hanno lavorato quelli delle infiltrazioni. Mi davano le scaglie che toglievano dai muri. Uno di loro mi disse che sotto il porticato nord c'era una scala che scendeva, e che in fondo alla scala c'era una porta murata, e che il capocantiere aveva detto di non toccarla. Non per la storia. Per la volta. Diceva che se toglievi quella porta veniva giù il chiostro.»
+«Così la chiamavano.» Non stacca la fronte dal vetro. «Quando ero ragazzo ci lavoravano quelli delle infiltrazioni, e mi davano le scaglie che toglievano dai muri. Sotto il porticato nord non ci facevano passare. Uno diceva la cripta, un altro diceva la volta. Dove si entrava, nessuno lo diceva.»
 
 «L'hai mai vista?»
 
-«No.» Si stacca dal vetro. «Ma l'operaio non l'ho mai visto mentire per niente.»
+«No.» Si stacca dal vetro. «E quelli che la nominavano, neanche.»
 
 Riguardo la lastra sotto la quarta arcata. È più larga delle vicine e più scura, e ai due lati corti ha due anelli di ferro, annegati nella malta fino all'occhiello.
 
