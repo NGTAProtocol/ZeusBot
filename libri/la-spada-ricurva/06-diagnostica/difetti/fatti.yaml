@@ -303,3 +303,38 @@ fatti:
   stato: verificato
   data: '2026-10-28'
   fonte: https://it.wikipedia.org/wiki/Gerarchia_degli_angeli
+- id: F041
+  unita: '8'
+  affermazione: 'r.59 «con le abbreviazioni risolte tra parentesi quadre»: convenzione
+    editoriale (nelle edizioni lo scioglimento va di solito tra tonde, le quadre indicano
+    le integrazioni; vedi anche r.75).'
+  stato: da_verificare
+- id: F042
+  unita: '8'
+  affermazione: 'r.61 «una "p" tagliata letta come "per" dove è "pro"»: paleografia
+    (la p con l''asta tagliata vale di solito «per»; il «pro» ha un altro segno).'
+  stato: da_verificare
+- id: F043
+  unita: '8'
+  affermazione: 'r.11 «confonde ancora la "s" lunga con la "f"»: paleografia.'
+  stato: da_verificare
+- id: F044
+  unita: '8'
+  affermazione: 'r. 11: l''affitto «si paga il cinque», ma il 6 novembre la busta
+    è ancora sul tavolo, chiusa. O è in ritardo di un giorno (va detto), o la data
+    di pagamento va spostata. I «ventidue giorni» dal 5 al 27 tornano.'
+  stato: da_verificare
+- id: F045
+  unita: '8'
+  affermazione: 'r. 7: salnitro (efflorescenze saline) sul tufo umido nei bassi e
+    nei piani bassi napoletani: plausibile.'
+  stato: da_verificare
+- id: F046
+  unita: '8'
+  affermazione: 'r. 11: confusione tra «s» lunga e «f» per un principiante: plausibile.'
+  stato: da_verificare
+- id: F047
+  unita: '8'
+  affermazione: 'r. 53: compravendita di terra del Cinquecento in minuscola corsiva
+    notarile con molte abbreviazioni: plausibile.'
+  stato: da_verificare

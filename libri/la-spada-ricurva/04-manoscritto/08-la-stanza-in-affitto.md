@@ -4,31 +4,31 @@ Quartieri Spagnoli — 6 novembre
 
 Trecentottanta euro al mese comprano undici metri quadri, una finestra che guarda un muro a due braccia di distanza e il diritto di non spiegare a nessuno a che ora rientro.
 
-Il muro dietro la branda ha ricominciato a fiorire. Sono cristalli di salnitro, bianchi e farinosi, che spingono l'intonaco dall'interno finché la pittura si gonfia in vesciche e cade a scaglie sul cuscino. Ne gratto una con l'unghia del pollice, la stessa che tengo corta per sollevare la vernice, e sotto trovo il tufo giallo, umido al tatto, vivo. A un quadro farei una scheda. Qui pago e basta.
+Il muro dietro la branda ha ricominciato a fiorire. Sono cristalli di salnitro, bianchi e farinosi, che spingono l'intonaco dall'interno finché la pittura si gonfia in vesciche e cade a scaglie sul cuscino. Di notte, quando il vicolo tace, le sento staccarsi con un rumore di carta, è la casa che si spella sopra di me, e al mattino ne trovo la polvere tra i capelli. Ne gratto una con l'unghia del pollice, la stessa che tengo corta per sollevare la vernice, e sotto trovo il tufo giallo, umido al tatto, vivo: la pietra che per tre secoli hanno cavato da sotto questi palazzi, lasciando al posto delle fondamenta cisterne vuote e cunicoli dove l'acqua scende ancora e nessuno va. Il giallo mi resta sotto l'unghia fino a sera.
 
 Sul tavolo tengo la pila dei libri della biblioteca nel solo ordine che mi serve: in alto quello che scade per primo, in fondo quello che posso tenere fino a dicembre. Dalle pagine i cartellini di prestito sporgono di due dita, inclinati verso la finestra, così li leggo dal letto senza alzarmi. Il manuale di paleografia scade domani. Sta in cima.
 
-Accanto alla pila c'è la busta per la padrona di casa, già chiusa, con la cifra scritta a matita sull'angolo. La borsa arriva il ventisette, l'affitto si paga il cinque, e i ventidue giorni in mezzo li copro con due lezioni private a settimana a una matricola che confonde ancora la «s» lunga con la «f». Venti euro l'ora. La signora del primo piano ha una copia della mia chiave da prima che arrivassi io, e non me l'ha mai detto: l'ho capito dal cuscino, che un giorno di agosto ho trovato girato.
+Accanto alla pila c'è la busta per la padrona di casa, già chiusa, con la cifra scritta a matita sull'angolo. La borsa arriva il ventisette, l'affitto scade il cinque ma la padrona sale a ritirarlo quando le comoda, e i ventidue giorni in mezzo li copro con due lezioni private a settimana a una matricola che confonde ancora la «s» lunga con la «f». Venti euro l'ora.
 
 Il telefono vibra sul materasso. È un messaggio vocale di mia madre, cinquantadue secondi. Lo ascolto con il telefono lontano dall'orecchio. Mi chiede se scendo a Ponticelli questo mese, mi dice che ha ripreso l'orlo dei pantaloni di un vicino e che lui ha pagato con una cassetta di mandarini, mi chiede se mangio. Non chiede dell'Accademia. Non ha mai saputo che cosa chiedere, dell'Accademia.
 
 Scrivo «settimana prossima». Lo cancello. Scrivo «ti chiamo». Lo mando.
 
-Da due giorni ho in testa una lastra più scura delle altre, sotto la quarta arcata del porticato nord, con un anello di ferro per lato, murato fino all'occhiello. Non ho nessuno a cui dirlo che non sia già dentro. Claudia la sa. Lorenzo la sa. Mina ne sentiva parlare da ragazzo. Mia madre mi chiederebbe se è pericoloso, e io dovrei mentirle con la voce, che è la cosa che mi riesce peggio.
+Da due giorni ho in testa una lastra più scura delle altre, sotto la quarta arcata del porticato nord, con un anello di ferro per lato, murato fino all'occhiello. Non ho nessuno a cui dirlo che non sia già dentro. Claudia la sa. Lorenzo la sa. Mina ne sentiva parlare da ragazzo. Mia madre mi chiederebbe se è pericoloso.
 
 Prendo il cappotto e la fotocopia della lezione di domani.
 
-Il basso di Pietro alla Sanità ha la porta a livello della strada e la tenda di plastica al posto del vetro. Dentro fa freddo come fuori, e Pietro tiene il giubbotto chiuso fino al mento, le cuffie al collo, spente. Sta leggendo a mezza voce una colonna di righe verdi su uno schermo nero, e non si gira.
+Pietro abita alla Sanità, nella casa dove è cresciuto, e lavora nell'ultima stanza in fondo al corridoio, quella che era del padre. Dentro fa freddo come fuori, e Pietro tiene il giubbotto chiuso fino al mento, le cuffie al collo, spente. Sta leggendo a mezza voce una colonna di righe verdi su uno schermo nero, e non si gira.
 
-«Quarantadue per cento» dice. «Ieri era trentotto.»
+«Quattro» dice. «Ieri erano sei.»
 
-«Di cosa?»
+«Quattro cosa?»
 
-«Di quanto sbaglia.» Si gira. «Meno, cioè. Quanto sbaglia meno.»
+«Parole sbagliate ogni cento.» Si gira. «Sulle carte buone. Su quelle col tarlo non te lo dico.»
 
 Sul tavolo ci sono le radio del padre, tre, sventrate, con le valvole allineate su un panno come strumenti chirurgici. Sotto il tavolo, una cassa di metallo con una ventola che gira piano. Il cavo di rete è arrotolato in un cassetto aperto, con un elastico intorno.
 
-Ci conosciamo da sette anni, dalla mensa universitaria, dove mi ha aggiustato un telefono senza che glielo chiedessi e poi mi ha spiegato per un'ora perché si era rotto. Fuori dall'Accademia è la sola persona che chiamo per nome e non per bisogno.
+Ci conosciamo da sette anni, dalla mensa universitaria, dove mi ha aggiustato un telefono senza che glielo chiedessi e poi mi ha spiegato per un'ora perché si era rotto. Quel telefono ce l'ho ancora, in un cassetto.
 
 Mi siedo sullo sgabello. Mi passa il thermos. Il caffè è freddo, come sempre, e amaro come sempre.
 
@@ -58,7 +58,7 @@ Lo schermo resta bianco per undici secondi. Li conto, e me ne accorgo dopo.
 
 Poi le righe escono una per volta, prima in latino sciolto, con le abbreviazioni risolte tra parentesi quadre, poi in italiano. Il nome del notaio. Il nome del venditore. La terra, con i suoi confini: a oriente la via pubblica, a occidente il fondo degli eredi di un tale. Il prezzo. La formula di garanzia, che la matricola ha sbagliato tre volte e io una, il primo anno.
 
-Leggo tutto, con l'unghia sotto ogni riga. C'è un errore: una «p» tagliata letta come «per» dove è «pro». Uno. La matricola ne fa nove in una pagina.
+Leggo tutto, con l'unghia sotto ogni riga. C'è un errore: una «p» con l'asta tagliata, che vale «per», sciolta in «pro», che vuole il ricciolo. Uno. La matricola ne fa nove in una pagina.
 
 «Ha sbagliato la sedicesima» dico.
 
@@ -74,7 +74,7 @@ Lui. Prima diceva il modello.
 
 «Pure lui. Guarda.» Indica le parentesi quadre. «Tutto quello che non ha visto, lo dichiara.»
 
-Guardo le parentesi. Sono più oneste di molte schede d'intervento che ho firmato.
+Guardo le parentesi. Ne conto sette, in venti righe.
 
 Pietro beve dal thermos. «La sera ci parlo» dice, a voce più bassa, verso la ventola. «Gli faccio domande in latino e lui risponde in latino. È stupido. Lo so che è stupido.»
 
@@ -102,7 +102,7 @@ La pila no.
 
 I libri sono ancora lì, tutti. Ma adesso sono disposti per formato, il più grande sotto e il più piccolo sopra, con i dorsi allineati a filo verso la porta. I cartellini di prestito non sporgono più. Qualcuno li ha spinti dentro uno per uno, fino a farli sparire tra le pagine.
 
-Può essere stata la signora del primo piano. Ha la chiave, e una volta mi ha girato un cuscino. I libri non li ha mai toccati.
+Può essere stata la signora del primo piano. Credo che abbia una copia della chiave: un giorno di agosto ho trovato il cuscino girato, e lei non me ne ha mai parlato. Ma i libri, che io sappia, non li ha mai toccati.
 
 Il manuale di paleografia, che scade domani, adesso sta in fondo, sotto tutti gli altri.
 
