@@ -527,3 +527,19 @@ fatti:
     è HgS); è una battuta del personaggio. Da controllare se si vuole un rigore chimico.'
   stato: generico
   data: '2026-10-28'
+- id: F075
+  unita: '12'
+  affermazione: 'r.81 «Erano in cripta con me, tutti e tre»: continuità con il cap.
+    10'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: 04-manoscritto/10-il-fondo-proibito.md r.11
+  nota: continuità interna
+- id: F076
+  unita: '12'
+  affermazione: 'r.107 «Me l''hai detto tu, che Scotti lo voleva giù la notte stessa»:
+    continuità con il cap. 11 (quando andava riportato il codice)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: 04-manoscritto/11-il-nome.md r.39
+  nota: continuità interna

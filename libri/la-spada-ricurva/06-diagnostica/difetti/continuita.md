@@ -82,3 +82,8 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 - scena da r.65: 09/11/2025 — (luogo della scena precedente)
 - r.9 conteggio: 2 mandate
 - r.37 «da diciotto giorni» → 22/10
+- conoscenze: Elena sa del codice. Scotti sa dove si scende, ha visto il sigillo e conosce il nome, ma non ha più visto la lettera. Claudia ascolta Ferrante per la prima volta. Scotti non lo riferirà al Professore.
+
+## Unità 12 — tipo capitolo, chiusura X
+
+- scena da r.3: 11/11/2025 — Terrazzo di Claudia
