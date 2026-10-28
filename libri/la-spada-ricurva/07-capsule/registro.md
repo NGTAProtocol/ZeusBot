@@ -11,8 +11,8 @@ Generato da «zb capsula --verifica» dalle capsule: non si scrive a mano.
 | @prom:p5 | 2 | — | aperta |
 | @prom:p6 | 3 | — | aperta |
 | @prom:p7 | 4 | — | aperta |
-| @prom:p9 | 5 | — | aperta |
 | @prom:p8 | 5 | — | aperta |
+| @prom:p9 | 5 | — | aperta |
 | @prom:p10 | 6 | — | aperta |
 | @prom:p11 | 8 | 13 | chiusa |
 | @prom:p12 | 10 | — | aperta |

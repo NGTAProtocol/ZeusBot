@@ -4,7 +4,7 @@ Fontanelle, Sanità — 20 novembre
 
 Un morto senza nome non costa niente: chi gli accende un lumino se lo prende, e da quel momento ha qualcuno a cui chiedere.
 
-Mina entra per primo e non abbassa la voce. La cava sale sopra di noi fino a un buio che la lampada dell'ingresso non raggiunge, tufo giallo scavato a colpi larghi, e lungo le pareti le ossa lunghe stanno impilate per dritto, femori e tibie a contatto, con i crani allineati sopra in file che qualcuno ha rifatto molte volte. L'aria è più asciutta di quanto mi aspettassi. Sa di polvere minerale, di cera colata e di un dolciastro di fiori lasciati a seccare nei vasetti di plastica. Il tufo, qui, si è bevuto anche l'odore dei morti.
+Mina entra per primo e non abbassa la voce. La cava sale sopra di noi fino a un buio che la lampada dell'ingresso non raggiunge, tufo giallo scavato a colpi larghi, e lungo le pareti le ossa lunghe stanno impilate per dritto, femori e tibie a contatto, con i crani allineati sopra in file che qualcuno ha rifatto molte volte. L'aria è più asciutta di quanto mi aspettassi. Passo due dita sul tufo e mi resta addosso una polvere minerale, fine come farina; sotto le file la cera è colata a strati sui sassi, e i fiori lasciati a seccare nei vasetti di plastica mandano un dolciastro che arriva fino all'ingresso. Il tufo, qui, si è bevuto anche l'odore dei morti.
 
 Claudia si ferma al primo pilastro e apre il taccuino. Lorenzo resta indietro, sulla soglia, una sigaretta spenta tra due dita, il bavero della giacca alzato contro una corrente che non c'è.
 
