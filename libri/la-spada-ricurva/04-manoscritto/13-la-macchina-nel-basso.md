@@ -18,7 +18,7 @@ Mina sta sulla soglia con le braccia incrociate, perché nel vano in tre non ci 
 
 «Stasera vede un computer acceso.»
 
-Pietro ha lo stesso maglione grigio del giorno in cui l'ho chiamato, o uno identico, e il giubbotto addosso anche qui, dove il deumidificatore scalda l'aria di qualche grado. Le cuffie al collo sono spente. Ieri notte, al telefono, ha ascoltato quattro minuti senza interrompermi, poi ha chiesto solo due cose: quanti volumi e se la carta si poteva toccare. Non ha chiesto chi altro lo sapesse. L'ho notato, e non gliel'ho detto.
+Pietro ha un maglione grigio sfilacciato ai polsi e il giubbotto addosso anche qui, dove il deumidificatore scalda l'aria di qualche grado. Le cuffie al collo sono spente. L'altra notte, al telefono, ha ascoltato quattro minuti senza interrompermi, poi ha chiesto solo due cose: quanti volumi e se la carta si poteva toccare. Non ha chiesto chi altro lo sapesse. L'ho notato, e non gliel'ho detto.
 
 Quando la macchina parte, le ventole fanno un rumore d'aria compressa, poi si calmano. Sul monitor compare una finestra nera con poche righe bianche. Pietro si siede sullo sgabello, apre il thermos e beve caffè freddo come se fosse acqua.
 
@@ -30,29 +30,39 @@ Quando la macchina parte, le ventole fanno un rumore d'aria compressa, poi si ca
 
 «Pietro, mica stiamo in guerra.»
 
-«Se un file esce, statisticamente esce tutto. Non mi interessa la percentuale piccola.» Si gira verso di me. «Tu mi hai detto Accademia. Io la rete dell'Accademia l'ho vista: è una porta con la serratura disegnata.»
+«Se un file esce, statisticamente esce tutto. Non mi interessa la percentuale piccola.» Si gira verso di me. «Tu mi hai detto Accademia. Io le reti degli enti pubblici le ho viste: sono porte con la serratura disegnata.»
 
-Mina guarda me. Io non correggo niente, e Mina capisce che la regola è passata.
+Mina guarda me. Io non correggo niente, e Mina scioglie le braccia.
 
-Pietro spiega senza che nessuno glielo chieda, e lo fa a me, perché sono io che alzo le domande con la faccia. Il modello che allena da tre mesi è un insieme di numeri, qualche miliardo, che sta tutto su questo disco e non ha bisogno di nessuno per girare. Ha letto molto latino, quello che si trova, quello delle chiese e delle cancellerie: messali, bolle, atti notarili, Cicerone per i ragazzi. Da quel latino ha imparato a indovinare la parola dopo, e indovinandola ha imparato, più o meno, che cosa vuol dire.
+Pietro spiega senza che nessuno glielo chieda, e lo fa a me, perché sono io che alzo le domande con la faccia. Il modello che allena da tre mesi è un insieme di numeri, qualche miliardo, che sta tutto su questo disco e non ha bisogno di nessuno per girare.
+
+«Numeri che leggono il latino?»
+
+«Numeri che ne hanno visto tanto.» Tocca il disco con l'unghia, come si bussa a una porta. «Quello che si trova, quello delle chiese e delle cancellerie: messali, bolle, atti notarili, Cicerone per i ragazzi. Ha imparato a indovinare la parola dopo, e indovinandola ha imparato, più o meno, che cosa vuol dire.»
 
 «Capire è una parola grossa» dico.
 
-«Infatti non l'ho usata io.» Gira il monitor verso di me. «Non capisce. Calcola che cosa viene dopo, e lo calcola così bene che da fuori sembra la stessa cosa. Per noi basta che sembri la stessa cosa per un anno di lavoro di fila, senza stancarsi. Tutto quello che sa sta lì dentro. Se domani stacco la corrente e porto il disco in un'altra città, sa le stesse cose. Se nessuno lo collega a niente, nessuno può chiedergli niente.»
+«Infatti non l'ho usata io.» Gira il monitor verso di me. «Non capisce. Calcola che cosa viene dopo, così bene che da fuori sembra la stessa cosa.»
+
+«E se domani qualcuno se lo porta via?»
+
+«Sa le stesse cose in un'altra città. Ma se nessuno lo collega a niente, nessuno può chiedergli niente.»
 
 «Nemmeno chi te l'ha venduto.»
 
 «Non me l'ha venduto nessuno. I pesi di partenza sono pubblici, scaricati una volta, ad agosto, e controllati riga per riga. Il resto l'ho fatto io, qui sopra e a casa.» Si corregge subito. «A casa no. Da stasera, solo qui.»
 
-«Più o meno è la stima onesta» dice. «Il latino dei vostri codici, da quello che mi racconti, non è il latino che ha letto. Se gli diamo solo le immagini, sbaglia con molta sicurezza, che è il modo peggiore di sbagliare. Gli serve qualcuno che gli faccia vedere, accanto al testo strano, che cosa voleva dire il testo strano. Coppie. Tante. Scritte da una persona che sapeva.»
+«E sui nostri codici, quanto sbaglia?»
+
+«Molto. All'inizio, molto.» Si stringe nelle spalle. «È la stima onesta. Il latino dei vostri codici, da quello che mi racconti, non è il latino che ha letto. Se gli diamo solo le immagini, sbaglia con molta sicurezza, che è il modo peggiore di sbagliare. Gli serve qualcuno che gli faccia vedere, accanto al testo strano, che cosa voleva dire il testo strano. Coppie. Tante. Scritte da una persona che sapeva.»
 
 «Le coppie non ce le ha nessuno» dice Mina.
 
 «Le ha uno solo» dico io.
 
-Mina si toglie la medaglietta dal polso e la rigira tra le dita, senza togliere lo spago. Sa a chi penso. Non lo nomino.
+Mina prende tra due dita la medaglietta che porta legata al polso, la rigira, poi guarda verso la porta a vetri. Nessuno dei due lo nomina.
 
-Allora tocca a me, e lo dico ad alta voce perché resti detto. La carta del Fondo non regge la fretta. Ogni codice va aperto sul cuneo di gommapiuma, a non più di cento gradi, fotografato sotto due pannelli a luce fredda, mai il flash, perché il calore e il lampo sui pigmenti al mercurio sono un debito che si paga in polvere. Venti codici a notte, non di più, anche se ne restano cinque a portata di mano. Tre notti a settimana, perché il custode passa ogni quarantuno minuti e la lastra chiede tredici minuti per tornare al suo posto, e chi scende ogni notte prima o poi sbaglia un conto.
+Allora tocca a me, e lo dico ad alta voce perché resti detto. La carta del Fondo non regge la fretta. Ogni codice va aperto sul cuneo di gommapiuma, a non più di cento gradi, fotografato sotto due pannelli a luce fredda, mai il flash, perché il calore e il lampo sui pigmenti al mercurio sono un debito che si paga in polvere. Venti codici a notte, non di più, anche quando la cassa ne offre di più. Tre notti a settimana, perché il custode passa ogni quarantuno minuti e la lastra chiede tredici minuti per tornare al suo posto, e chi scende ogni notte prima o poi sbaglia un conto.
 
 «Venti è poco» dice Mina.
 
@@ -66,7 +76,7 @@ Mina fischia piano tra i denti. Io guardo il cartone. Due mesi sono la metà di 
 
 * * *
 
-Scotti arriva alle undici e venti, con un trolley di quelli da scuola e la barba di tre giorni. Si ferma sulla porta a vetri senza bussare, come chi aspetta di essere riconosciuto prima di entrare in una casa che non è sua. Ieri mattina gli ho detto della macchina in laboratorio, a voce bassa, mentre puliva un pennello. Non mi ha risposto. Ha finito il pennello, l'ha messo ad asciugare e se n'è andato.
+Scotti arriva alle undici e venti, con un trolley di quelli da scuola e la barba di tre giorni. Si ferma sulla porta a vetri senza bussare, come chi aspetta di essere riconosciuto prima di entrare in una casa che non è sua. Ieri mattina gli abbiamo parlato della macchina in laboratorio, io e Mina, in due, perché il punto quattro l'abbiamo firmato tutti e Scotti è l'Accademia più di chiunque: io parlavo a voce bassa, Mina teneva la porta. Lui puliva un pennello. Non ci ha risposto. Ha finito il pennello, l'ha messo ad asciugare, ha intascato senza leggerlo il foglietto con l'indirizzo che Mina gli lasciava sul banco e se n'è andato.
 
 Mina gli prende il trolley e lo tira dentro. Le ruote lasciano due righe umide sul pavimento.
 
@@ -94,7 +104,7 @@ Scotti si stringe nelle spalle. «Venticinque anni. Fai tu il conto, che sei que
 
 «Non c'è fretta che tornino.»
 
-Lo dice guardando il trolley vuoto. Ha le mani in tasca anche lui, adesso, e la stoffa del cappotto si muove appena, dove le dita tremano. Mina gli porge una sfogliatella e lui la prende, la tiene, non la mangia.
+Lo dice guardando il trolley vuoto. Ha le mani in tasca anche lui, adesso, e la stoffa del cappotto si muove appena, come se le dita, sotto, non stessero ferme. Mina gli porge una sfogliatella e lui la prende, la tiene, non la mangia.
 
 Mentre Pietro monta il cavalletto, metto i quaderni in ordine di data. Il primo è del Novantanove. Le date salgono regolari, un quaderno ogni otto, nove mesi. Al posto del diciannovesimo, tra il diciottesimo e il ventesimo, c'è uno spazio di quasi due anni. Il numero sul dorso del ventesimo è stato scritto sopra un altro numero, raschiato con la lama.
 
@@ -114,15 +124,13 @@ Alle tre e quaranta Pietro scrive qualcosa nella finestra nera. Le righe bianche
 
 Me ne accorgerei io, penso. E non ne sono sicura.
 
-Scotti ha sentito. Rientra nel vano per la prima volta da ore e si ferma davanti al monitor, a mezzo metro, con gli occhiali ancora sulla fronte. Le righe scendono e lui le segue con gli occhi come seguirebbe una colonna di conti scritta da un altro.
+Dalla stanza davanti, Scotti deve aver sentito. Rientra nel vano per la prima volta da ore e si ferma davanti al monitor, a mezzo metro, con gli occhiali ancora sulla fronte. Le righe scendono e lui le segue con gli occhi come seguirebbe una colonna di conti scritta da un altro.
 
 «Ci sono cose che ho scritto sbagliate e non ho mai corretto» dice. «La macchina le impara uguali?»
 
 «Impara quello che c'è» risponde Pietro. «Gli errori, se sono costanti, li impara meglio delle cose giuste.»
 
-Scotti annuisce, come a una diagnosi che conosceva già.
-
-Scotti si è alzato e sta sulla porta, il trolley vuoto per la maniglia. Fuori la strada è bagnata e senza nessuno. Si volta verso il vano, verso la macchina che soffia, e per un momento sembra voler dire qualcosa a Pietro, o a lei.
+Scotti annuisce, come a una diagnosi che conosceva già. Torna nella stanza davanti, prende il trolley vuoto per la maniglia e va alla porta a vetri. Fuori la strada è bagnata e senza nessuno. Sulla soglia si volta verso il vano, verso la macchina che soffia, e per un momento sembra voler dire qualcosa a Pietro, o alla macchina.
 
 «Buonanotte, ragazzi.»
 
@@ -132,8 +140,6 @@ Pietro torna allo sgabello. Guarda scendere le righe con la testa inclinata, com
 
 «Ha fame» dice. «Glieli ha dati tutti, e lui ne vuole ancora.»
 
-Nessuno di noi gli fa notare il pronome.
-
-Sul tavolo da giardino restano trentuno quaderni, e il numero raschiato sul dorso del ventesimo. Quanto ci metterà, lui, a leggere anche quello che è stato tolto?
+Sul tavolo da giardino restano trentuno quaderni in fila. Pietro ha fotografato anche i dorsi.
 
 <!-- zb: chiusura=D -->
