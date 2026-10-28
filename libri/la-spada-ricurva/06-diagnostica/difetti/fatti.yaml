@@ -684,3 +684,77 @@ fatti:
   stato: generico
   data: '2026-10-28'
   nota: 'scarto del rubricatore: invenzione plausibile'
+- id: F096
+  unita: '15'
+  affermazione: 'r.31 «Il culto è stato proibito […] Dalla Curia. Alla fine degli
+    anni Sessanta.»: storia (decreto della Curia di Napoli sul culto delle anime pezzentelle,
+    1969)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.comune.napoli.it/vivere-il-comune/luoghi/cimitero-delle-fontanelle/
+  nota: Ursi, 1969, chiusura dell'ossario
+- id: F097
+  unita: '15'
+  affermazione: 'r.99/107/115 «domani» / «fra tre giorni»: chiuso. I giorni della
+    settimana sono stati tolti, quindi il testo rispetta la cronologia (rr. 4-5, `calendario.anni_ammessi`
+    vuoto) e regge con qualunque anno. Domani = 21 novembre (G32), fra tre giorni
+    = 23 novembre (G34): nessun conflitto con la cronologia, e le due date non si
+    sovrappongono. Il fatto aperto sul «venerdì» è superato.'
+  stato: generico
+  data: '2026-10-28'
+  nota: nota di chiusura, non un fatto
+- id: F098
+  unita: '15'
+  affermazione: 'r.23 «gli dava un nome, se lo sognava… refrigerio… faceva le grazie»:
+    il rito dell''adozione (la «capuzzella»), il sogno, il refrigerio per l''anima
+    del Purgatorio, le grazie. Corretto.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://cimiterodellefontanelle.it/culto-anime/
+- id: F099
+  unita: '15'
+  affermazione: 'r.7 «tufo giallo scavato… ossa lunghe impilate… crani allineati»:
+    le Fontanelle sono un''antica cava di tufo giallo napoletano, con ossa ordinate
+    a cataste e teschi in fila. Corretto.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.comune.napoli.it/vivere-il-comune/luoghi/cimitero-delle-fontanelle/
+- id: F100
+  unita: '15'
+  affermazione: 'r.15 «cassetta di legno con il vetro davanti… lumino… moneta»: le
+    «scarabattole» o tabernacoli con il teschio adottato e le offerte. Corretto.'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://cimiterodellefontanelle.it/culto-anime/
+- id: F101
+  unita: '15'
+  affermazione: 'r.73 «San Michele ne ha una»: l''iconografia dell''arcangelo ha una
+    sola spada. Corretto.'
+  stato: generico
+  data: '2026-10-28'
+  nota: iconografia corrente
+- id: F102
+  unita: '15'
+  affermazione: 'r.63 «edicola… anime purganti nelle fiamme»: edicola votiva napoletana
+    tipica. Corretto.'
+  stato: generico
+  data: '2026-10-28'
+- id: F103
+  unita: '15'
+  affermazione: 'r.81 «Zeppoline, panzarotti, scagliuozzi, un cono di carta», il quaderno
+    del credito: il «cuoppo» delle friggitorie napoletane; il conto «a libretto» nel
+    rione è plausibile. Corretto.'
+  stato: generico
+  data: '2026-10-28'
+- id: F104
+  unita: '15'
+  affermazione: 'r.61 «la luce sta già andando via, alle cinque meno un quarto» (20
+    novembre): a Napoli il sole tramonta verso le 16:40. Plausibile.'
+  stato: generico
+  data: '2026-10-28'
+  nota: tramonto a Napoli a fine novembre verso le 16:40, plausibile
+- id: F105
+  unita: '15'
+  affermazione: 'r.49 «Nun ''o saccio»: napoletano corretto.'
+  stato: generico
+  data: '2026-10-28'
