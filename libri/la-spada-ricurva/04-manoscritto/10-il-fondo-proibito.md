@@ -108,7 +108,7 @@ Il coperchio si apre all'indietro fino ad appoggiarsi al muro. Dentro, una tela 
 
 Infilo di nuovo il guanto. Sollevo il piatto del primo.
 
-L'asse si alza senza resistenza e la cucitura non scricchiola. I nervi sono di cuoio allumato, ancora bianchi dove la luce li prende, e i fili stanno tesi nei loro fori come il giorno in cui qualcuno li ha tirati. La pergamena è spessa, il lato carne più chiaro del lato pelo, e radente al fascio si vedono lungo il margine esterno i forellini della rigatura, uno per riga, fatti con una punta e mai rifilati. Righe a secco, incise, non tracciate a piombo. Le ho viste uguali sui codici universitari del Trecento passati dal mio banco, con lo stesso vezzo di chiudere le aste con un trattino obliquo, un colpo di coda. Una mano di scuola, allenata, che non aveva fretta. Chi ha copiato questo libro era pagato a carta, e pagato bene.
+L'asse si alza senza resistenza e la cucitura non scricchiola. I nervi sono di cuoio allumato, ancora bianchi dove la luce li prende, e i fili stanno tesi nei loro fori come il giorno in cui qualcuno li ha tirati. La pergamena è spessa, il lato carne più chiaro del lato pelo, e radente al fascio si vedono lungo il margine esterno i forellini della rigatura, uno per riga, fatti con una punta e mai rifilati. Righe a piombo, un grigio sottile che sparisce appena la luce si sposta. Le ho viste uguali sui codici universitari del Trecento passati dal mio banco, con lo stesso vezzo di chiudere le aste con un trattino obliquo, un colpo di coda. Una mano di scuola, allenata, che non aveva fretta. Chi ha copiato questo libro era pagato a carta, e pagato bene.
 
 La prima carta è scritta in rosso, in una gotica libraria serrata, tutta angoli, che si legge come si legge un registro notarile: piano, lettera per lettera. L'incipit è latino, latino chiaro.
 
@@ -154,7 +154,7 @@ Ma chi ha messo da parte quella cassa sa che esiste, e chi ha una chiave per que
 
 «Non è a me che lo devi dire.»
 
-Stacco dalla tela cerata il quarto che si è spaccato lungo la piega e ci avvolgo il codice due volte, perché le assi restino chiuse e la pergamena non tocchi niente di mio. Lo stringo con l'altro guanto di nitrile, tirato intorno come un elastico. Mi sbottono il cappotto. Sotto ho il maglione di lana grossa, quello che non lavo da una settimana perché non asciuga. Metto il pacco contro il maglione, di piatto, sul lato sinistro, e lo stringo con il braccio. Riabbottono dal basso. Il bottone di mezzo tira e regge.
+Stacco dalla tela cerata il quarto che si è spaccato lungo la piega e ci avvolgo il codice due volte, perché le assi restino chiuse e la pergamena non tocchi niente di mio. Mi sfilo il guanto sinistro e lo tiro intorno al pacco come un elastico. Mi sbottono il cappotto. Sotto ho il maglione di lana grossa, quello che non lavo da una settimana perché non asciuga. Metto il pacco contro il maglione, di piatto, sul lato sinistro, e lo stringo con il braccio. Riabbottono dal basso. Il bottone di mezzo tira e regge.
 
 Valli mi guarda il petto. Apre la bocca, la richiude, e si toglie dalle dita la sigaretta che non ha.
 
