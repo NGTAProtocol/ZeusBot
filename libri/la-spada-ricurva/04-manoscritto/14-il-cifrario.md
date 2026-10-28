@@ -6,7 +6,7 @@ Alle due di notte il modello ha sbagliato la stessa pagina undici volte, e ogni 
 
 Il deumidificatore ha riempito la vaschetta due volte da mezzanotte. Nel vano senza finestre l'aria sa di plastica scaldata e di caffè rimasto nel thermos, e il salnitro sul muro di fondo ha guadagnato un dito dall'ultima notte. Pietro ha il giubbotto chiuso fino al mento e le cuffie spente al collo. Claudia sta seduta per terra, la schiena contro il tufo, e ricopia sul taccuino a quadretti i segni della pagina, uno per casella, con la grafite che le annerisce il bordo della mano.
 
-La pagina è sullo schermo di sinistra, così come l'ho fotografata due notti fa sotto i pannelli freddi: minuscola fitta, inchiostro ferrogallico che in tre punti ha mangiato la carta fino a bucarla, una rubrica in cinabro in testa, di due righe, ancora accesa. Lungo il margine esterno corre la fila dei fori di rigatura, regolari, uno per riga. Tra le parole, a ogni inizio di riga, un segno piccolo a forma di uncino.
+La pagina è sullo schermo di sinistra, così come l'ho fotografata due notti fa sotto i pannelli freddi: una scrittura fitta che da lontano sembra minuscola e da vicino non ha una lettera che si lasci leggere, inchiostro ferrogallico che in tre punti ha mangiato la carta fino a bucarla, una rubrica in cinabro in testa, di due righe, ancora accesa. Lungo il margine esterno corre la fila dei fori di rigatura, regolari, uno per riga. In quasi ogni parola torna un segno piccolo a forma di uncino.
 
 «Diciotto per cento» dice Pietro senza voltarsi. «Delle parole che produce, il diciotto per cento sta in un dizionario. Ieri era il nove.»
 
@@ -26,31 +26,31 @@ Claudia sbadiglia senza aprire la bocca, con le narici, e allunga una mano verso
 
 Lo lascia girare. Esce una dodicesima versione, più povera delle altre, con la parola «verbum» ripetuta sei volte in quattro righe.
 
-Pietro si gira sullo sgabello. Ha gli occhi rossi ai bordi, come chi ha passato quattro giorni a fotografare quaderni e tre notti a dare in pasto le coppie alla macchina. Le coppie dei quaderni di Scotti gli hanno insegnato le abbreviazioni dei notai e dei frati, i segni per «per» e per «pro», le desinenze tagliate con una lineetta. Su ogni altra pagina del Fondo il modello aveva già cominciato a balbettare qualcosa. Su questa no.
+Pietro si gira sullo sgabello. Ha gli occhi rossi ai bordi, come chi ha passato due giorni a fotografare quaderni e quattro notti a dare in pasto le coppie alla macchina. Le coppie dei quaderni di Scotti gli hanno insegnato le abbreviazioni dei notai e dei frati, i segni per «per» e per «pro», le desinenze tagliate con una lineetta. Su ogni altra pagina provata il modello aveva già cominciato a balbettare qualcosa. Su questa no.
 
 «Questa non abbrevia» dico. «Nasconde.»
 
-«Allora ha una statistica.» Tocca la tastiera e sullo schermo di destra compare una colonna di lettere con accanto una barra ciascuna. «In un testo latino qualunque la i e la e stanno in cima, la u subito sotto. Qui guarda. Piatte. Tutte alte uguali, o quasi.»
+«Allora ha una statistica.» Tocca la tastiera e sullo schermo di destra compare una colonna di segni, quelli che Claudia ha ricopiato, con accanto una barra ciascuno. «In un testo latino qualunque la i e la e stanno in cima, la u subito sotto. Qui guarda. Non sono lettere, ma le barre hanno la stessa forma: due in cima, una subito sotto.»
 
 «E cosa significa?»
 
-«Se le barre sono piatte, chi scriveva cambiava la chiave mentre scriveva. A ogni riga, o a ogni gruppo di lettere. Il modello non lo sa, e lui cerca parole dove ci sono solo spostamenti.» Rimette a posto la parola. «Il modello. Cerca parole.»
+«Che ogni segno è una lettera, e sempre la stessa. Chi scriveva ha cambiato il vestito alle lettere e le ha lasciate al loro posto. Il modello non lo sa, e lui cerca abbreviazioni dove ci sono solo lettere travestite.» Rimette a posto la parola. «Il modello. Cerca abbreviazioni.»
 
 Claudia alza la testa dal taccuino.
 
 «L'uncino gira.»
 
-Ci voltiamo tutti e due. Lei gira il taccuino verso di noi e batte la matita sulle caselle. Ha disegnato trentuno uncini, uno per riga, in colonna. Ciascuno è inclinato in modo diverso.
+Ci voltiamo tutti e due. Lei gira il taccuino verso di noi e batte la matita sulle caselle. Ha disegnato in colonna tutti gli uncini delle prime tre righe. Non sono inclinati tutti allo stesso modo.
 
-«È la stessa curva della lama nella tela del chiostro, quella sotto la ridipintura. Solo che qui non sta ferma. Prima riga, punta in alto. Seconda, un poco a destra. Poi più a destra. Come una lancetta.»
+«È la stessa curva della lama nella tela del chiostro, quella sotto la ridipintura. Solo che qui non sta ferma. Questo punta in alto. Questo un poco a destra. Questo più a destra. Come una lancetta.»
 
 «Quante posizioni?» chiede Pietro.
 
-Claudia conta con la punta della matita, senza fretta. «Dodici. Poi ricomincia.»
+Claudia conta con la punta della matita, senza fretta. «Dodici. Una tredicesima non la trovo.»
 
-Pietro si passa la mano sulla bocca. Ha capito prima di me, e lo vedo dal modo in cui smette di dondolarsi sullo sgabello. Dodici posizioni sono dodici spostamenti dell'alfabeto, e l'uncino a capo di ogni riga dice quale usare. Ma una lancetta senza numeri sul quadrante non dice da dove si parte.
+Pietro si passa la mano sulla bocca. Ha capito prima di me, e lo vedo dal modo in cui smette di dondolarsi sullo sgabello. Dodici posizioni sono dodici lettere: l'uncino non è un ornamento, è mezzo alfabeto scritto con un segno solo che gira. Ma una lancetta senza numeri sul quadrante non dice quale ora è quale lettera.
 
-«Se proviamo tutte le partenze sono dodici tentativi» dice. «Il problema è che dentro la riga cambia ancora. Il segno a capo è solo la prima mossa. Senza un pezzo di testo sicuro, una parola che sappiamo già, ci giriamo intorno fino a Natale.»
+«Con la statistica ne indovino cinque o sei» dice. «Le altre sono migliaia di combinazioni. Senza un pezzo di testo sicuro, una parola che sappiamo già, ci giriamo intorno fino a Natale.»
 
 Torno alla pagina. Sotto la rubrica la prima riga ha le parole staccate, e chi cifrava, per pigrizia o per orgoglio, ha lasciato gli spazi dove stavano. Un gruppo di otto lettere, una lettera sola, un gruppo di quattro. Otto, uno, quattro. Ho già letto questa misura. L'ho letta sul leggio di un monastero, durante un tirocinio, ricopiata da una mano del Duecento: la prima riga della Regola di Benedetto, che comincia ordinando di ascoltare.
 
@@ -60,11 +60,11 @@ Torno alla pagina. Sotto la rubrica la prima riga ha le parole staccate, e chi c
 
 «Perché un uomo che scrive un trattato per gente come lui comincia dalla frase che tutti sanno a memoria. Le cose proibite si travestono sempre da regola.»
 
-Pietro non discute. Scrive le tredici lettere in una riga sotto la prima riga cifrata, una sopra l'altra, e chiede alla macchina di calcolare la distanza fra ciascuna coppia. Escono tredici numeri. Li guardo e non mi dicono niente. Claudia si alza in ginocchio, guarda da sopra la mia spalla, e dice solo: «Si ripetono.»
+Pietro non discute. Scrive le tredici lettere sotto i primi tredici segni, ciascuna sotto il suo, e chiede alla macchina di metterli in tabella. Escono due colonne. Le guardo e non mi dicono niente. Claudia si alza in ginocchio, guarda da sopra la mia spalla, e dice solo: «Si ripetono.»
 
-Si ripetono. Tre, sette, uno, tre, sette, uno. Una chiave di tre numeri dentro la riga, e l'uncino che a ogni capo la sposta di una casella sul quadrante.
+Si ripetono. La o di obsculta e la o da sola hanno lo stesso uncino, punta in basso. La elle torna uguale in fili, e le due i di fili sono lo stesso segno. Un segno, una lettera, sempre la stessa.
 
-Pietro dà al modello la chiave, non come un'idea ma come una regola fissa, e lo lascia lavorare sulle trentuno righe. La ventola del computer sale di un tono. Il deumidificatore scatta, si ferma, riparte. Nessuno di noi tre parla.
+Pietro dà al modello le dieci lettere, non come un'idea ma come una regola fissa, e lo lascia cercare le altre sulle trentuno righe. La ventola del computer sale di un tono. Il deumidificatore scatta, si ferma, riparte. Nessuno di noi tre parla.
 
 Alle due e cinquantadue la pagina si apre.
 
@@ -94,7 +94,7 @@ Rileggo la riga cifrata sulla fotografia. Lo spazio c'è anche lì, prima della 
 
 Pietro si sporge. «Oboedire. Obbedire.»
 
-«Ob audire. Ascoltare. Porgere l'orecchio stando davanti a qualcuno. Obbedire viene da lì, ma ci è arrivato dopo, e chi ha scritto questa riga ha staccato le due parti perché si sentissero tutte e due.»
+«Ob audire. Ascoltare. Porgere l'orecchio stando davanti a qualcuno. La parola è nata così; quando i romani la scrivevano voleva già dire obbedire, ma chi ha scritto questa riga ha staccato le due parti perché si sentissero tutte e due.»
 
 «Oppure perché alla fine della riga non c'era spazio e ha fatto quello che poteva.»
 
@@ -124,21 +124,21 @@ Pietro non risponde. Sposta il cursore sulla riga ventisei, lo lascia lampeggiar
 
 «E sono settecento anni che quella riga aspetta qualcuno che la legga senza fretta.»
 
-Lo dico con la voce che uso con le matricole in laboratorio quando toccano una tela senza guanti. Me ne accorgo dopo, quando lui abbassa gli occhi sulla tastiera come una matricola. Pietro ha costruito quella macchina pezzo per pezzo, ha tolto la scheda di rete con le sue mani, e io gli ho appena dato un brutto voto davanti a Claudia.
+Lo dico con la voce che uso con le matricole in laboratorio quando toccano una tela senza guanti. Me ne accorgo dopo, quando lui abbassa gli occhi sulla tastiera come una matricola. Pietro ha costruito quella macchina pezzo per pezzo, ha tolto la scheda di rete con le sue mani. Adesso le tiene ferme sulle ginocchia.
 
 Claudia si mette in piedi. Le ginocchia le scricchiolano.
 
 «Tutte e due» dice. «La sua nel testo, la tua in nota, con le iniziali. Chi legge sceglie. E sul taccuino scrivo il numero di riga, così la prossima volta che lui sbaglia una parola sappiamo quante volte lo ha fatto prima.»
 
-«Lui» ripete Pietro, piano, come se lo sentisse per la prima volta.
+«Lui» ripete Pietro, piano. «L'ho detto anch'io. Stanotte l'ho detto almeno tre volte.»
 
 Nessuno lo corregge.
 
 Pietro scrive la nota sotto la riga ventisei, con le mie iniziali, «E. M.», e la parola «ascoltare» tra caporali. Poi apre un altro file, piccolo, e ci copia la coppia: la riga latina con lo spazio, la mia traduzione accanto. Me lo fa vedere senza dire niente. È una coppia nuova. Domani il modello la troverà insieme alle altre.
 
-Restano le due righe in cinabro in testa alla pagina. La rubrica non ha uncini, e la chiave della prima riga non l'ha aperta, perché il miniatore che stendeva il rosso lavorava dopo il copista e con altre regole. Chiedo a Pietro di provare la stessa chiave partendo dall'ultimo uncino della pagina, la trentunesima posizione, come se il titolo fosse stato scritto alla fine. È l'unica cosa che il mio mestiere sa per certo: le rubriche si aggiungono quando il libro è finito.
+Restano le due righe in cinabro in testa alla pagina. Hanno gli stessi segni, e le stesse lettere non le aprono. Ingrandisco la fotografia fino a sgranarla: gli uncini rossi sono tutti più coricati di quelli neri, tutti di una tacca. La rubrica non l'ha scritta il copista. L'ha stesa il rubricatore, dopo, con un'altra penna e un altro polso, e due polsi non piegano mai lo stesso tratto allo stesso modo. È una delle poche cose che il mio mestiere mi ha insegnato a vedere. Chiedo a Pietro di leggere ogni uncino rosso una posizione indietro sul quadrante, come se l'avesse tracciato la mano nera.
 
-La ventola sale. Claudia si è rimessa il taccuino contro il petto. Sono le quattro e un quarto e il deumidificatore ha smesso di scattare.
+La ventola sale. Sono le quattro e un quarto. Mina aveva detto le quattro. Dal vicolo arriva un passo di ciabatte e si ferma davanti alla porta di lamiera; Claudia si stringe il taccuino contro il petto, Pietro mette la mano sull'interruttore della ciabatta elettrica e non lo preme. Il passo riprende e va oltre. Nessuno propone di spegnere.
 
 Il latino della rubrica esce intero, in due righe, senza trattini.
 
@@ -148,7 +148,11 @@ Sotto, il modello scrive l'italiano. Ci mette meno di un secondo.
 
 «Della voce che piega la volontà, e del modo di condurre con essa chi ascolta.»
 
-Pietro si volta a guardarmi. Non sorride, e non c'è bisogno che dica che lui ha imparato. Claudia ricopia il titolo sul taccuino, in stampatello, sotto la colonna degli uncini.
+Pietro si volta a guardarmi. Non sorride.
+
+«La coppia nuova non l'ha ancora vista» dice. «È nel file piccolo. La legge domani.»
+
+Claudia ricopia il titolo sul taccuino, in stampatello, sotto la colonna degli uncini, e accanto scrive l'ora e la parola. Io guardo «chi ascolta» sullo schermo e non trovo da dove gli sia venuto. Pietro, senza aspettare che finiamo, comincia a staccare i cavi.
 
 Io prendo la matita che ho tra i capelli, la libero, e lo ricopio a mano sul retro della scheda d'intervento che mi porto dietro da una settimana, perché le frasi che non capisco le capisco meglio dopo averle scritte. Scrivo lentamente, tutto il latino, poi tutto l'italiano. Mi fa male il polso.
 
