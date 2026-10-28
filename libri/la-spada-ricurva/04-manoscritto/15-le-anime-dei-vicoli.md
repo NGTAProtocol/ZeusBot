@@ -44,7 +44,7 @@ Prende la mia mano destra e la appoggia sul vetro, la sua sopra, pesante e calda
 
 «E basta?»
 
-Lo dice senza insistere, e questo è peggio. Mina non vuole vincere la discussione. Vuole che io senta il freddo che sente lui, quello che gli arriva fino ai polsi quando sta qui sotto e che chiama forza, da quando ha messo le mani sui codici, e che io ho sempre chiamato temperatura. La sua mano non si sposta. Il lumino nuovo prende, la fiamma si alza e si abbassa due volte prima di stare ferma.
+Lo dice senza insistere, e questo è peggio. Lui lo chiamerebbe forza. Io lo chiamo temperatura. La sua mano non si sposta. Il lumino nuovo prende, la fiamma si alza e si abbassa due volte prima di stare ferma.
 
 «Nun 'o saccio, Mina.»
 
@@ -58,17 +58,17 @@ Mi esce così, nella lingua di mia madre, e lui sorride con la bocca chiusa, com
 
 Infilo la scatola nella tasca del cappotto, accanto alla lente. Pesa quasi niente. Dalla soglia, Lorenzo tossisce una volta, a vuoto, perché ci giriamo.
 
-Fuori la luce sta già andando via, alle cinque meno un quarto, e la salita restituisce il rumore che sotto non arrivava: motorini in seconda, una saracinesca che scende a metà, un televisore acceso a un piano basso con la porta aperta sulla strada. L'intonaco dei palazzi è a calce, rappezzato con malte diverse, grigie su rosa, e le crepe scendono in diagonale dagli spigoli delle finestre, il disegno di un edificio che si è assestato più di una volta e che nessuno ha mai consolidato davvero, solo stuccato. Mina cammina davanti con le mani in tasca. Claudia gli sta a fianco e gli fa domande che lui accoglie tutte, una per una, senza fretta.
+Fuori la luce sta già andando via, alle cinque meno un quarto, e la salita restituisce il rumore che sotto non arrivava: motorini in seconda, una saracinesca che scende a metà, un televisore acceso a un piano basso con la porta aperta sulla strada. Guardo i muri come guardo una tela, per strati, senza volerlo: calce, rappezzi di malta grigia sul rosa, stucco sopra le crepe. Mina cammina davanti con le mani in tasca. Claudia gli sta a fianco e gli fa domande che lui accoglie tutte, una per una, senza fretta.
 
 All'angolo con un vicolo più stretto c'è un'edicola. Una cornice di stucco murata nella facciata, un vetro unto, dentro una Madonna di gesso e sotto di lei una lastra dipinta con le anime purganti nelle fiamme, le braccia alzate, i volti tutti uguali. Due lumini elettrici rossi. Un mazzo di gerbere di plastica scolorite fino al rosa.
 
-Mi fermo perché la cornice non è quella che dovrebbe essere. Lo stucco è del Settecento, o lo imita bene: volute, una conchiglia in chiave, il gesso rifinito a stecca. Ai due lati della conchiglia, incise nello stucco, due lame ricurve si incrociano e si piegano verso il basso. Qualcuno le ha ripassate con uno smalto oro da ferramenta, spesso, colato in due punti.
+Mi fermo per la cornice. Lo stucco è del Settecento, o lo imita bene: volute, una conchiglia in chiave, il gesso rifinito a stecca. Ai due lati della conchiglia, incise nello stucco, due lame ricurve si incrociano e si piegano verso il basso, la punta che torna indietro. Le ho già viste con la lente, sull'edicola a cinquanta passi da casa di Mina. Lì erano dipinte sull'intonaco, piccole, grigie, in un angolo sotto le fiamme. Qui sono scavate nella cornice, e qualcuno le ha ripassate con uno smalto oro da ferramenta, spesso, colato in due punti.
 
 Prendo la lente. Sotto lo smalto il solco dell'incisione è stondato, consumato, pieno di sporco antico che la vernice ha sigillato invece di togliere. Lo smalto avrà pochi anni. Il solco ne ha molti di più. Nella conchiglia, dove la vernice non è arrivata, il gesso conserva una traccia di rosso che non è smalto e non è sporco: un pigmento in polvere, steso a secco, scurito dal fumo dei lumini. Lo gratto con l'unghia del pollice. Non viene via.
 
 «È la stessa curva» dice Claudia, accanto a me. Ha il taccuino aperto sulla pagina del quadro, quella che ha disegnato la prima settimana. «Stesso punto di piega. Stessa lunghezza dell'elsa rispetto alla lama.»
 
-«Stanno là da sempre» dice Mina. «Da quando ero piccolo. Pensavo fossero le spade di san Michele.»
+«Due» dice Mina. «Sotto casa mia e qua. Ci passo davanti da quando ero piccolo e pensavo fossero le spade di san Michele.»
 
 «San Michele ne ha una.»
 
@@ -78,9 +78,9 @@ Lorenzo arriva per ultimo e guarda la cornice un secondo di meno di quanto serva
 
 «Ho fame. Se devo rendere omaggio ai morti, voglio farlo con lo stomaco pieno.»
 
-La friggitoria è dieci passi più giù: un bancone d'acciaio, una vetrina appannata dall'interno, l'olio che frigge in una vasca larga e manda fuori un odore di farina bruciata e di strutto. Mina ordina per tutti senza chiedere, nomi che il ragazzo dietro il banco capisce prima che lui finisca di dirli. Zeppoline, panzarotti, scagliuozzi, un cono di carta gialla a testa.
+La friggitoria è dieci passi più giù: un bancone d'acciaio, una vetrina appannata dall'interno, l'olio che frigge in una vasca larga e manda fuori un odore di farina bruciata e di strutto. Mina ordina per tutti senza chiedere, nomi che il ragazzo dietro il banco capisce prima che lui finisca di dirli. Un cono di carta gialla a testa. Il ragazzo apre un quaderno a quadretti appeso a un chiodo, scorre una colonna di nomi con le cifre accanto, e aggiunge una riga sotto quello di Mina.
 
-Lorenzo mette la mano nella tasca interna della giacca, quella buona del padre, con le spalle un poco troppo larghe, e la lascia lì. Mina ha già pagato. Lorenzo toglie la mano vuota e la appoggia sul bancone, e l'anulare, sotto la luce al neon, mostra l'anello di pelle più chiara che non riesce mai a nascondere del tutto.
+Lorenzo mette la mano nella tasca interna della giacca, quella buona del padre, con le spalle un poco troppo larghe, e la lascia lì. Il conto di Mina è già sul quaderno. Lorenzo toglie la mano vuota e la appoggia sul bancone, e l'anulare, sotto la luce al neon, mostra l'anello di pelle più chiara che non riesce mai a nascondere del tutto.
 
 «Merci, Minervini.»
 
@@ -96,7 +96,7 @@ Io resto dove sono, a un metro dalla porta aperta. Il vicolo è stretto e la sua
 
 Una pausa lunga.
 
-«Non stasera. Le ho detto giovedì.»
+«Non stasera. Le ho detto venerdì.»
 
 Un'altra.
 
@@ -104,15 +104,15 @@ Un'altra.
 
 Mina ride di qualcosa che ha detto il ragazzo del banco. Claudia ha finalmente messo in bocca la sua zeppolina. Nessuno dei due guarda la porta. Io ho le dita lucide d'olio e tengo il cono fermo, a mezz'aria, perché ogni fruscio della carta copre una sillaba.
 
-«Sì. Giovedì.»
+«Sì. Venerdì.»
 
 Lorenzo abbassa il telefono, lo tiene un istante contro la coscia, poi rientra. Si siede sullo sgabello accanto al mio e prende uno scagliuozzo dal cono, con due dita, come se l'avesse lasciato lì un momento fa.
 
 «Mia madre» dice. «Vuole sapere se mangio abbastanza.»
 
-Dà del lei a sua madre, allora. Lo penso e non lo dico. Mastico. La zeppolina è fredda adesso, e la farina, raffreddandosi, si è fatta gommosa contro i denti.
+Mastico. La zeppolina è fredda adesso, e la farina, raffreddandosi, si è fatta gommosa contro i denti.
 
-Mina si volta verso di noi con la bocca piena e ci chiede se domenica torniamo su, alle Fontanelle, tutti e quattro. Claudia dice sì senza giustificarsi. Io sento la scatola di fiammiferi nella tasca, il suo spigolo contro l'anca.
+Mina si volta verso di noi con la bocca piena e ci chiede se domenica torniamo su, alle Fontanelle, tutti e quattro. «Sì» dice Claudia, e lo scrive in cima alla pagina del taccuino, sopra la curva. Io sento la scatola di fiammiferi nella tasca, il suo spigolo contro l'anca.
 
 «Torno» dico.
 
