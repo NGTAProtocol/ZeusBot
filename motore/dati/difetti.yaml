@@ -64,7 +64,7 @@ classi:
     rilevamento: deterministico
   motivazione:
     descrizione: "scelta di un personaggio non motivata dai fatti già noti"
-    gravita: avviso
+    gravita: bloccante
     rilevamento: revisore
   tratto_ricorrente:
     descrizione: "tratto della narratrice ripetuto in troppi capitoli di fila (es. contare)"

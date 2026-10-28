@@ -188,6 +188,22 @@ def azione_cancello(rel, k, b, nota=''):
     return f'AZIONE: cancello dei difetti KO sul capitolo {k} {nota}: '.replace('  ', ' ') + ' — '.join(parti) + '.'
 
 
+def da_correggere(cartella, u):
+    """Voci di «## Da correggere» del rapporto del diagnosta (vuoto se «nessuna»)."""
+    p = os.path.join(cartella, '06-diagnostica', 'audit', f'{u.zfill(2)}.md')
+    if not os.path.isfile(p):
+        return []
+    blocco = open(p, encoding='utf-8').read().split('## Da correggere', 1)[-1].split('\n## ', 1)[0]
+    return [r for r in re.findall(r'(?m)^-[ \t]*(.+)$', blocco) if not r.lower().startswith('nessun')]
+
+
+def primo_giro(cartella, u):
+    """True finché il rapporto del diagnosta ha al più una versione salvata: dopo la correzione e il giro di
+    controllo le voci rimaste sono facoltative e non chiedono un'altra correzione."""
+    rap = os.path.join('06-diagnostica', 'audit', f'{u.zfill(2)}.md')
+    return len(comune.git(cartella, 'log', '--format=%H', '--', rap)[1].split()) <= 1
+
+
 def azione_stesura(cartella, libro, st, rel):
     """Una sola azione per la catena del capitolo (comando /capitolo): capsule mancanti → preparazione e scrittore →
     misure e revisione (con «revisione_capitolo: obbligatoria») → correzione mirata → esito → capsula → salva."""
@@ -213,6 +229,11 @@ def azione_stesura(cartella, libro, st, rel):
         testo = open(dict(comune.unita(cartella, libro))[u], encoding='utf-8').read()
         if difetti.sezione_revisore(cartella, u, testo) is None:
             return [azione_verifica(cartella, rel, u, testo)]
+        if da_correggere(cartella, u) and primo_giro(cartella, u):
+            nn = u.zfill(2)
+            return [f'AZIONE: correzione mirata del capitolo {u} (la revisione passa con correzioni): agente '
+                    f'scrittore-voce, una sola correzione con 06-diagnostica/audit/{nn}.md («## Da correggere», '
+                    f'«## Lezione») e le note di {difetti.rel_verifica(u)}; poi i giri di controllo.']
         b = difetti.blocchi(difetti.esiti_unita(cartella, libro, u))
         if b:
             return [azione_cancello(rel, u, b)]

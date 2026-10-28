@@ -30,6 +30,9 @@ delle sessioni precedenti è in git (`git log`, ramo `archivio/motore-prima-2026
 - Rapporti legati alla versione: verifica, revisione e capsula valgono solo per il testo su cui sono scritti; dopo una
   correzione piccola il diagnosta e il verificatore rivedono solo le righe cambiate.
 - `zb lavoro` agisce sul repository da cui si lancia (worktree, repository di prova), mai su quello del motore.
+- Catena fluida: un «passa» con correzioni al primo giro manda allo scrittore una sola correzione (revisione e
+  verifica insieme); la motivazione del verificatore è bloccante; un fatto riscritto non si registra due volte; un
+  marcatore nascosto cambiato non invalida la verifica.
 
 ## Decisioni prese
 - Modo automatico: fermate solo alla pausa di lettura, a un FERMO del motore e al canone (`editoriale/00-percorso.md`).
