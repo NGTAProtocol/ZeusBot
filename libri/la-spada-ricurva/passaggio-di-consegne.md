@@ -1,10 +1,10 @@
 # Passaggio di consegne — La Spada Ricurva
 
 ## Stato (2026-10-28)
-- Fase stesura; capitoli 1-12 (prima parte «La chiave») scritti, rivisti, verificati e accettati; capsule 1-12.
-- PDF di lettura dei capitoli 1-12: `05-output/la-spada-ricurva.pdf` (103 pagine), mandato all'autore.
-- Fermo alla pausa di lettura sui capitoli 7-12: risposta dell'autore «ok» oppure «correggi <note>».
-- Fatti fino a F076 (verificati su fonte, generici o di continuità interna).
+- Fase stesura; capitoli 1-15 scritti, rivisti, verificati e accettati; capsule 1-15.
+- PDF di lettura dei capitoli 1-12 mandato all'autore; pausa sui capitoli 7-12 chiusa con «Continua».
+- Fermo alla pausa di lettura sui capitoli 13-15: risposta dell'autore «ok» oppure «correggi <note>».
+- Fatti fino a F106. Anno convenzionale 2025 non confermato: niente giorni della settimana nel testo.
 
 ## Decisioni dell'autore
 - Ora della morte (cap. 1): forbice larga della perizia (20:00-01:00) e ultimo battito all'orologio al polso alle
@@ -15,7 +15,7 @@
 - Fatti: verificati su fonte o resi generici in `06-diagnostica/difetti/fatti.yaml` (fonti nel registro).
 
 ## Prossimo passo
-- Dopo la risposta alla pausa: capitolo 13 (seconda parte) con `zb agenti prossimo libri/la-spada-ricurva`.
+- Dopo la risposta alla pausa: capitolo 16 con `zb agenti prossimo libri/la-spada-ricurva`.
 - Motore, da sistemare: promesse citate solo per id nella scheda; lunghezza minima dei capitoli non controllata;
   fatti doppi riformulati senza citazione; giri di controllo costosi per ritocchi di una riga.
 
