@@ -472,3 +472,12 @@ fatti:
     sensore cardiaco del cap. 1 (vedi A, KO).'
   stato: generico
   data: '2026-10-28'
+- id: F066
+  unita: '11'
+  affermazione: 'r.27 «assi nude, senza cuoio… righe a piombo»: codicologia'
+  stato: da_verificare
+- id: F067
+  unita: '11'
+  affermazione: 'r.27 codice con assi lignee senza coperta in cuoio, cucitura a vista,
+    rigatura a piombo: plausibile per un codice medievale/prima età moderna.'
+  stato: da_verificare

@@ -106,7 +106,7 @@ Claudia si sporge in avanti. «Questo non risponde.»
 
 «No» dice Scotti. «Non risponde.»
 
-Stringo la cinghia della borsa. Ho portato in un bar, di mattina, un codice che nessuno ha toccato da secoli, per sentire un uomo che venticinque anni fa ha testimoniato in una commissione e non vuole dire da quale parte. Potrei alzarmi adesso. Potrei rimettere il codice nella cripta stanotte, come vuole lui, e da domani essere soltanto una dottoranda senza schede, con la borsa appesa a un collegio da affrontare il quindici. Resto seduta per una ragione sola: lui, finora, è l'unico che sa qualcosa e me lo sta dicendo.
+Stringo la cinghia della borsa. Ho portato in un bar, di mattina, un codice che, se ho ragione, nessuno tocca da secoli, per sentire un uomo che venticinque anni fa ha testimoniato in una commissione e non vuole dire da quale parte. Potrei alzarmi adesso. Potrei rimettere il codice nella cripta stanotte, come vuole lui, e da domani essere soltanto una dottoranda senza schede, con la borsa appesa a un collegio da affrontare il quindici. Resto seduta per una ragione sola: lui, finora, è l'unico che sa qualcosa e me lo sta dicendo.
 
 «Che cosa c'era nell'esposto di Ferrante» chiedo, «che non c'era nella sua scheda?»
 
@@ -114,7 +114,7 @@ Scotti fa un mezzo sorriso, il primo della mattina. «Tu correggi sempre la doma
 
 «La sto facendo più stretta.»
 
-«Un nome.» Lo dice piano, anche se il bar è vuoto. «Ferrante aveva trovato una lettera nel telaio della pala, infilata tra il legno e la tela, dietro una bietta. Ottocento, inchiostro ferrogallico, carta da registro. Me la fece leggere una sera, qui vicino, a un tavolo come questo. La firmava un canonico, e prima della firma c'era scritto per chi aveva fatto quel lavoro: per i fratelli della Spada Ricurva. Così, con le maiuscole. E c'era lo stesso segno del tassello, tirato a penna in fondo, accanto al nome.»
+«Un nome.» Lo dice piano, anche se il bar è vuoto. «Ferrante aveva trovato una lettera nel telaio della pala, infilata tra il legno e la tela, dietro una bietta. Ottocento, inchiostro ferrogallico, carta da registro. Me la fece leggere una sera, qui vicino, a un tavolo come questo. La firmava un canonico, e prima della firma c'era scritto per chi aveva fatto quel lavoro: per i fratelli di…» Si ferma. Guarda la saracinesca a metà, e non dice di chi. «Con le maiuscole. E c'era lo stesso segno del tassello, tirato a penna in fondo, accanto al nome.»
 
 «Dov'è adesso la lettera?»
 
@@ -142,9 +142,9 @@ Resto zitta. In tre anni ho stretto le mani di tutti quelli che qui dentro hanno
 
 La donna del grembiule passa dietro il bancone con un secchio. Toglie il telo dalla macchina del caffè, lo piega in quattro e lo posa su una mensola. Dal retro arriva il clic di un interruttore. La macchina comincia a ronzare.
 
-Dalla tasca interna del cappotto prendo il foglio del tassello, quello che porto addosso dal ventuno ottobre. La regola l'ho messa io: i disegni restano in Accademia. Questo non è mai rientrato, e un foglio aperto su un tavolino di bar lo può vedere chiunque passi davanti alla vetrina. La vetrina è lontana, la saracinesca è ancora a metà. Lo stendo sul marmo, girato verso di lui. La piega del mezzo si è fatta morbida, quasi una lacerazione. In alto, a matita, sopra le note dei giorni dopo, c'è il mio schizzo del ventuno: due lame, una sull'altra, curve verso l'esterno, con la punta che torna indietro.
+Dalla tasca interna del cappotto prendo il foglio del tassello, quello che porto addosso dal primo novembre. La regola l'ho messa io: i disegni restano in Accademia. Questo non è mai rientrato, e un foglio aperto su un tavolino di bar lo può vedere chiunque passi davanti alla vetrina. La vetrina è lontana, la saracinesca è ancora a metà. Lo stendo sul marmo, girato verso di lui. La piega del mezzo si è fatta morbida, quasi una lacerazione. In alto, a matita, sopra le note, c'è il mio schizzo: due lame, una sull'altra, curve verso l'esterno, con la punta che torna indietro.
 
-«Ha un nome, questa cosa» dico. Non è una domanda, e non la faccio suonare come una domanda.
+«Lei il nome lo sa» dico. Non è una domanda, e non la faccio suonare come una domanda.
 
 Scotti posa l'indice sul disegno. La mano gli trema di nuovo, adesso, e la lascia tremare.
 
