@@ -64,7 +64,7 @@ Pietro non discute. Scrive le tredici lettere sotto i primi tredici segni, ciasc
 
 Si ripetono. La o di obsculta e la o da sola hanno lo stesso uncino, punta in basso. La elle torna uguale in fili, e le due i di fili sono lo stesso segno. Un segno, una lettera, sempre la stessa.
 
-Pietro dà al modello le dieci lettere, non come un'idea ma come una regola fissa, e lo lascia cercare le altre sulle trentuno righe. La ventola del computer sale di un tono. Il deumidificatore scatta, si ferma, riparte. Nessuno di noi tre parla.
+Pietro dà al modello le dieci lettere: non un'idea, una regola fissa. Lo lascia cercare le altre sulle trentuno righe. La ventola del computer sale di un tono. Il deumidificatore scatta, si ferma, riparte. Nessuno di noi tre parla.
 
 Alle due e cinquantadue la pagina si apre.
 

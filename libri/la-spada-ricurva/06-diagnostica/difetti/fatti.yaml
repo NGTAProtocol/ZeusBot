@@ -631,3 +631,56 @@ fatti:
   stato: generico
   data: '2026-10-28'
   nota: affermazione del personaggio, plausibile
+- id: F089
+  unita: '14'
+  affermazione: 'r.57 «Obsculta, o fili»: citazione (incipit della Regola di san Benedetto,
+    grafia «obsculta»)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://bkv.unifr.ch/works/cpl-1852/compare/regula-benedicti/1/la-regle-de-saint-benoit
+- id: F090
+  unita: '14'
+  affermazione: 'r.97 «Ob audire… voleva già dire obbedire»: etimologia (oboedire
+    da ob + audire)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.treccani.it/vocabolario/ubbidire/
+- id: F091
+  unita: '14'
+  affermazione: 'r.33 «la i e la e stanno in cima, la u subito sotto»: tecnica (frequenze
+    delle lettere in latino)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://www.sttmedia.com/characterfrequency-latin
+  nota: i 11,44%, e 11,38%, u 8,46%
+- id: F092
+  unita: '14'
+  affermazione: 'r.9 «inchiostro ferrogallico che in tre punti ha mangiato la carta»:
+    tecnica (corrosione ferrogallica)'
+  stato: verificato
+  data: '2026-10-28'
+  fonte: https://it.wikipedia.org/wiki/Inchiostro_ferrogallico
+- id: F093
+  unita: '14'
+  affermazione: 'r.33-37 profilo delle frequenze conservato → sostituzione semplice
+    (monoalfabetica). Principio corretto. Limite lieve: se l''uncino a dodici posizioni
+    è contato come un segno solo, il profilo si deforma (vedi A r.37).'
+  stato: generico
+  data: '2026-10-28'
+  nota: principio corretto; dettaglio di finzione
+- id: F094
+  unita: '14'
+  affermazione: 'r.53 «fino a Natale» senza parola nota: sottostima per una sostituzione
+    semplice di trentuno righe con gli spazi (lieve; vedi A r.53).'
+  stato: generico
+  data: '2026-10-28'
+  nota: stima del personaggio
+- id: F095
+  unita: '14'
+  affermazione: 'r.139 rubricatore che traccia i segni con uno scarto costante di
+    inclinazione: le rubriche sono spesso di un''altra mano e aggiunte dopo, quindi
+    è plausibile. Uno scarto sistematico di «una tacca» su tutti gli uncini è una
+    comodità narrativa, accettabile.'
+  stato: generico
+  data: '2026-10-28'
+  nota: 'scarto del rubricatore: invenzione plausibile'
