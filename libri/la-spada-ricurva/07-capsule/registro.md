@@ -7,8 +7,8 @@ Generato da «zb capsula --verifica» dalle capsule: non si scrive a mano.
 | @prom:p1 | 1 | — | aperta |
 | @prom:p2 | 1 | — | aperta |
 | @prom:p3 | 1 | — | aperta |
-| @prom:p4 | 2 | — | aperta |
 | @prom:p5 | 2 | — | aperta |
+| @prom:p4 | 2 | — | aperta |
 | @prom:p6 | 3 | — | aperta |
 | @prom:p7 | 4 | — | aperta |
 | @prom:p8 | 5 | — | aperta |
