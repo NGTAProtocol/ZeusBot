@@ -758,3 +758,9 @@ fatti:
   affermazione: 'r.49 «Nun ''o saccio»: napoletano corretto.'
   stato: generico
   data: '2026-10-28'
+- id: F106
+  unita: '15'
+  affermazione: 'r.73 San Michele ha una sola spada: corretto.'
+  stato: generico
+  data: '2026-10-28'
+  nota: doppione di F101

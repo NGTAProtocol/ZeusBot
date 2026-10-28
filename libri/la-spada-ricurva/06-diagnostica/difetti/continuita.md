@@ -99,3 +99,8 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 
 - scena da r.3: 17/11/2025 — Il basso di Mina, Sanità
 - scena da r.77: 17/11/2025 — (luogo della scena precedente)
+- conoscenze: Pietro, Claudia, E. M. Pietro ha le dieci lettere fisse. E. M. sa della tacca del rubricatore. Mina non è presente.
+
+## Unità 15 — tipo capitolo, chiusura P
+
+- scena da r.3: 20/11/2025 — Fontanelle, Sanità
