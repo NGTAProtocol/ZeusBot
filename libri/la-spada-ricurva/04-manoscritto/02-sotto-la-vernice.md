@@ -154,4 +154,4 @@ Mi chino a guardarci dentro: il fondo è lucido, senza un alone, e sa di sapone.
 
 Il cestino è stato lavato.
 
-<!-- zb: chiusura=D -->
+<!-- zb: chiusura=P -->

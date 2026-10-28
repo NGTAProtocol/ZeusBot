@@ -4,7 +4,7 @@
 |---|---|---|---|
 | 1 | G51 · dicembre | Elana legge una perizia arrivata per posta: lo scarto di un'ora | R |
 | 2 | G1 · fine ottobre | La tela in laboratorio; le lame sotto la ridipintura; il Professore ferma il restauro | P |
-| 3 | G3 · ottobre | Claudia vede lo stesso dettaglio in altre tele; i tre studenti ed Elana | D |
+| 3 | G3 · ottobre | Claudia vede lo stesso dettaglio in altre tele; i tre studenti ed Elana | X |
 | 4 | G6 · ottobre | Mina data la ridipintura: qualcuno coprì il simbolo nel 1861 | R |
 | 5 | G9 · ottobre | Palazzo Valli in rovina; Dell'Aquila e i debiti non detti | D |
 | 6 | G12 · novembre | Il Professore umilia Elana e sequestra gli appunti; lei sceglie di continuare | X |

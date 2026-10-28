@@ -65,4 +65,4 @@ Nessuno, in tutto questo tempo, ha pensato di rigirarla.
 
 Lo spazio tra il telaio e il muro è largo quanto una mano.
 
-<!-- zb: chiusura=D -->
+<!-- zb: chiusura=R -->

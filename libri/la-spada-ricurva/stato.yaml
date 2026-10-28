@@ -45,14 +45,18 @@ documenti_approvati:
     commit: e5e8820
     senza_gate: true
   03-struttura/05-scaletta.md:
-    sha256: e2d0cd23113f75859cbc47514a249462a675528fcc57b9480cbf8e57512b7441
-    commit: e2d216a
+    sha256: 0a7611d7b23b3c62d87ef6733dc2d0fecf85e0b43c1a8925a863db0b9dfc48de
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
       sha256_precedente: 9ceeb46617421e2f5ec38017e5ca0a4f62ff067a3046496f7160a630c2e8bf30
       commit_precedente: e5e8820
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: chiusura del capitolo 3 allineata al finale riscritto (decisione, X)'
+      sha256_precedente: e2d0cd23113f75859cbc47514a249462a675528fcc57b9480cbf8e57512b7441
+      commit_precedente: e2d216a
   03-struttura/06-sottotrame-temi.md:
     sha256: becafc4f4ae49d22ae8d00258e719dd2f0addcebbd45175b68211c8b9f125054
     commit: e5e8820
@@ -341,10 +345,10 @@ documenti_approvati:
     commit: 942f648
     senza_gate: true
   04-manoscritto/01-la-perizia.md:
-    sha256: 761fdb640ed0b70b0eddfcbd2d48cae10b3d1a9b0362b1bd86625beca83a6c0f
-    commit: 4fafdc3
+    sha256: 34c231ac0ef54bf148ed518b5d3912bb34e396958b9d61ee42ca2820d6f3a1df
+    commit: c0bd36d
   04-manoscritto/02-sotto-la-vernice.md:
-    sha256: bcae2fd22c33a1eae52362d3822e7f6e81690422c27cc9a8cf17f150b0af3ca3
+    sha256: 07ac1edd62d178eb51e448bf50f064066f904286482db2b7f2847f3242c7f453
     commit: 9d3bd90
   04-manoscritto/03-il-dettaglio-ripetuto.md:
     sha256: a7453b6fc8c9e0dc00f28ee73f03902a4935fc31645a69a70b2da99fd74d99b5
@@ -352,7 +356,7 @@ documenti_approvati:
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-28T04:25:58Z'
+aggiornato: '2026-10-28T04:45:24Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
@@ -451,3 +455,13 @@ correzioni_registrate:
   motivo: correzione mirata sul KO del verificatore (finale, r.181-189)
   sha256_precedente: ed46d6c3b88866ed59ea9cf6761a02350fb12c1077fa9d5e1bcc6dd44d6f11dc
   sha256_corretto: a7453b6fc8c9e0dc00f28ee73f03902a4935fc31645a69a70b2da99fd74d99b5
+- data: '2026-10-28'
+  file: 04-manoscritto/01-la-perizia.md
+  motivo: marcatore di chiusura allineato alla scaletta (R), decisione dell'autore
+  sha256_precedente: 761fdb640ed0b70b0eddfcbd2d48cae10b3d1a9b0362b1bd86625beca83a6c0f
+  sha256_corretto: 34c231ac0ef54bf148ed518b5d3912bb34e396958b9d61ee42ca2820d6f3a1df
+- data: '2026-10-28'
+  file: 04-manoscritto/02-sotto-la-vernice.md
+  motivo: marcatore di chiusura allineato alla scaletta (P), decisione dell'autore
+  sha256_precedente: bcae2fd22c33a1eae52362d3822e7f6e81690422c27cc9a8cf17f150b0af3ca3
+  sha256_corretto: 07ac1edd62d178eb51e448bf50f064066f904286482db2b7f2847f3242c7f453
