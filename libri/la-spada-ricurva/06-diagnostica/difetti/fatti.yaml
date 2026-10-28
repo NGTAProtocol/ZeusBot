@@ -391,3 +391,16 @@ fatti:
     dal Cinquecento in poi regge): lieve, si può lasciare.'
   stato: generico
   data: '2026-10-28'
+- id: F054
+  unita: '10'
+  affermazione: 'r.41 «Minio… Tetrossido di piombo»: chimica'
+  stato: da_verificare
+- id: F055
+  unita: '10'
+  affermazione: 'r.113-115 «un cerchio con una croce sotto e una mezzaluna sopra…
+    mercurio», «un triangolo che poggia su una croce… zolfo»: simboli alchemici'
+  stato: da_verificare
+- id: F056
+  unita: '10'
+  affermazione: 'r.101 «gotica libraria» per un codice sigillato nel Trecento: paleografia'
+  stato: da_verificare

@@ -2,6 +2,8 @@
 
 Archivio sotto l'Accademia — 8 novembre
 
+Chi mura dei libri all'asciutto non li ha buttati: li ha messi da parte per quando gli serviranno.
+
 Dentro non gocciola niente.
 
 Me ne accorgo al primo passo, quando la fessura è già alle mie spalle e l'acqua che cade dalla crepa resta di là, nella cripta, smorzata dalla pietra fino a diventare il rumore di un'altra stanza. Qui l'aria è asciutta. Al secondo respiro mi tira le labbra, e il tufo che fuori sudava sotto il palmo qui non c'è più: le pareti sono della stessa pietra grigia del gradino, in blocchi grandi, accostati così stretti che tra l'uno e l'altro non passerebbe una lama di bisturi.
@@ -12,7 +14,15 @@ Abbasso il fascio del mio, prima di tutto. Il pavimento è coperto da una polver
 
 Poi alzo la luce.
 
-Le pareti di destra e di sinistra sono scavate in nicchie, cinque per lato, più alte di me, e ogni nicchia è divisa in ripiani da lastre sottili della stessa pietra. Sui ripiani, in piedi, stretti l'uno contro l'altro, ci sono i libri. Dorsi di pelle scura, assi di legno nude, pergamena ripiegata su se stessa e ingiallita fino al colore del miele di castagno. Il fascio scorre su fermagli di ottone, borchie, lacci di cuoio che hanno perso la forma del nodo. Non c'è un volume caduto. Non c'è un dorso sfondato, una coperta gonfia d'acqua, una macchia di muffa. In fondo alla stanza, contro la parete di testa, un bancone di pietra regge una cassa di legno legata in ferro.
+Il fascio non trova subito un fondo. Va avanti nel buio e il buio gli cede a strati, e la prima cosa che arriva non è una forma ma un odore, in ritardo sulla luce: carta vecchia, quella dolciastra e polverosa delle biblioteche che non aprono mai le finestre, e sotto la carta la colla di pelle, animale, appena rancida, e sotto ancora una nota secca di cera che non so da dove venga. Muffa no. In nessun deposito in cui ho lavorato ho respirato un'aria così vecchia che non sapesse di muffa.
+
+Le pareti si aprono in nicchie alte e nere, e il fascio ci entra e ne esce, una bocca dopo l'altra. Dentro ogni bocca, file di dorsi. La luce del telefono è bianca e piatta, la luce sbagliata per qualsiasi cosa fatta prima dell'elettricità, eppure dove tocca il cuoio lo scalda di bruno, e dove tocca l'ottone accende un punto giallo che mi resta negli occhi anche dopo che il fascio è passato oltre. Le ombre dei fermagli si allungano sui ripiani e si accorciano quando muovo il polso, e la stanza respira con il mio braccio.
+
+Il silenzio qui non è quello della cripta, fatto di gocce e del nostro fiato. Ha un peso, compatto come la pietra, e mi sta sulle spalle. Sette secoli senza una voce. Mi accorgo che ho perso il filo dei minuti, che non so da quanto sono ferma con il braccio alzato, e che il braccio comincia a farmi male.
+
+Lo abbasso di un palmo. Torno al mestiere.
+
+Le pareti di destra e di sinistra sono scavate in nicchie, cinque per lato, più alte di me, e ogni nicchia è divisa in ripiani da lastre sottili della stessa pietra. Sui ripiani, in piedi, stretti l'uno contro l'altro, ci sono i libri. Dorsi di pelle scura, assi di legno nude, pergamena ripiegata su se stessa e ingiallita fino al colore del miele di castagno. Il fascio scorre su fermagli di ottone, borchie, lacci di cuoio che hanno perso la forma del nodo. Nessun volume caduto, nessuna coperta gonfia d'acqua. In fondo alla stanza, contro la parete di testa, un bancone di pietra regge una cassa di legno legata in ferro.
 
 Dietro la mia spalla sento il fiato di Mina, che è entrato. Poi non lo sento più.
 
@@ -40,7 +50,7 @@ Sul bordo di ogni ripiano, sulla costa della lastra, c'è una parola dipinta in 
 
 Mina ha la faccia a un palmo dal rosso. «Minio» dice. «Tetrossido di piombo, macinato fino e legato con la colla. Vide ca nun ha fatto manco 'na bolla.»
 
-Le tre parole non hanno bisogno della lente. Le operazioni sono la magia che pretende un risultato, quella con la ricetta, la dose e il giorno giusto. Il governo delle menti è ciò che un catalogo di oggi metterebbe sotto mentalismo e che un codice penale chiamerebbe in un altro modo. La teosofia è il resto: Dio, e la pretesa di saperne le regole.
+Le tre parole non hanno bisogno della lente. Il governo delle menti, un codice penale di oggi lo chiamerebbe in un altro modo.
 
 Valli intanto ha fatto il giro della stanza con il passo lento di chi visita una casa all'asta. Si ferma davanti alla quinta nicchia di destra, solleva la luce sui dorsi, inclina la testa per leggere un titolo impresso sul cuoio. Ha tirato fuori la sigaretta spenta e la tiene tra due dita, senza portarla alla bocca. Con l'altra mano raggiunge un fermaglio annerito, e con l'unghia del pollice ne gratta un angolo, appena, finché sotto il nero non affiora una riga chiara.
 
@@ -98,15 +108,15 @@ Il coperchio si apre all'indietro fino ad appoggiarsi al muro. Dentro, una tela 
 
 Infilo di nuovo il guanto. Sollevo il piatto del primo.
 
+L'asse si alza senza resistenza e la cucitura non scricchiola. I nervi sono di cuoio allumato, ancora bianchi dove la luce li prende, e i fili stanno tesi nei loro fori come il giorno in cui qualcuno li ha tirati. La pergamena è spessa, il lato carne più chiaro del lato pelo, e radente al fascio si vedono lungo il margine esterno i forellini della rigatura, uno per riga, fatti con una punta e mai rifilati. Righe a secco, incise, non tracciate a piombo. Le ho viste uguali sui codici universitari del Trecento passati dal mio banco, con lo stesso vezzo di chiudere le aste con un trattino obliquo, un colpo di coda. Una mano di scuola, allenata, che non aveva fretta. Chi ha copiato questo libro era pagato a carta, e pagato bene.
+
 La prima carta è scritta in rosso, in una gotica libraria serrata, tutta angoli, che si legge come si legge un registro notarile: piano, lettera per lettera. L'incipit è latino, latino chiaro.
 
-«Incipit liber primus de sapientia Indorum, quam duo magistri ex India Venetias attulerunt.»
+«Incipit liber primus de sapientia Indorum, quam duo magistri ex India Venetias attulerunt, ex libris antiquissimis brachmanorum.»
 
-Lo leggo a voce alta senza volerlo. Valli si è avvicinato. Mina anche.
+Lo leggo a voce alta senza volerlo. Valli si è avvicinato. Mina anche. Nessuno mi chiede di tradurre.
 
-«Due maestri» dico. «Dall'India. A Venezia. Questo è il primo libro della loro sapienza.»
-
-Sotto l'incipit, una riga più piccola. Il copista ha scritto una parola che non è latina, e l'ha sottolineata in rosso perché non la si scambiasse per un errore: Veda. Libri quos ipsi Veda appellant. I libri che loro chiamano Veda.
+Per un copista del Trecento l'India è Alessandro, il prete Gianni, i mostri sui margini delle mappe; i libri più antichi dei bramini non hanno un nome che lui sappia scrivere. Io un nome ce l'ho, e lo tengo per me, perché un'ipotesi detta ad alta voce in un posto così diventa subito un fatto: Veda.
 
 Volto la carta.
 
@@ -136,13 +146,21 @@ Lo chiudo. Il fermaglio non c'è, e le assi restano socchiuse di un filo sulla c
 
 «Elena.» Claudia mi guarda le mani prima che si muovano. «Uno.»
 
-Mi sbottono il cappotto. Sotto ho il maglione di lana grossa, quello che non lavo da una settimana perché non asciuga. Metto il codice contro il maglione, di piatto, sul lato sinistro, e lo stringo con il braccio. Riabbottono dal basso. Il bottone di mezzo tira e regge.
+Lo so, che cosa dice il suo uno. So anche il resto, e meglio di lei, perché è il mio mestiere. Un codice senza fermaglio, fuori dalla sua cassa, si apre a ogni passo e le assi lavorano sulla cucitura; la lana trattiene il sudore, e il sudore sulla pergamena è un'acqua che non va più via. So che cosa diventa una restauratrice che esce dall'Accademia con un bene dell'Accademia sotto il cappotto: niente borsa, niente Professore, una denuncia con il mio nome scritto per intero. E la regola dei disegni che restano in Accademia l'ho messa io, quando qui sotto non c'era niente da portare via.
+
+Ma chi ha messo da parte quella cassa sa che esiste, e chi ha una chiave per questa stanza può chiuderla meglio di noi. Domani la lastra può avere un lucchetto, la chiave di volta un'impalcatura con il cartello del cantiere, e io solo la mia parola contro un archivio che non c'è. Una carta fuori pesa più di cinquecento volumi qui sotto.
+
+«Lo riporto» dico.
+
+«Non è a me che lo devi dire.»
+
+Stacco dalla tela cerata il quarto che si è spaccato lungo la piega e ci avvolgo il codice due volte, perché le assi restino chiuse e la pergamena non tocchi niente di mio. Lo stringo con l'altro guanto di nitrile, tirato intorno come un elastico. Mi sbottono il cappotto. Sotto ho il maglione di lana grossa, quello che non lavo da una settimana perché non asciuga. Metto il pacco contro il maglione, di piatto, sul lato sinistro, e lo stringo con il braccio. Riabbottono dal basso. Il bottone di mezzo tira e regge.
 
 Valli mi guarda il petto. Apre la bocca, la richiude, e si toglie dalle dita la sigaretta che non ha.
 
 Mina si è fatto di nuovo il segno della croce, e questa volta non so per chi.
 
-Claudia non scrive niente. Prende il taccuino dal bancone, lo chiude e lo mette nello zaino, nella tasca davanti, quella con la cinghia annodata, e tira la zip fino in fondo. Poi mette le mani sotto il coperchio della cassa e aspetta che io metta le mie dall'altro lato.
+Claudia prende il taccuino dal bancone. Strappa la pagina con i tre numeri, lenta, lungo la cucitura, e la piega in quattro. «Le regole erano per tutti» dice, senza guardarmi. Mette la pagina nello zaino, nella tasca davanti, quella con la cinghia annodata, e tira la zip fino in fondo. Poi mette le mani sotto il coperchio della cassa e aspetta che io metta le mie dall'altro lato.
 
 «Tempo» dico.
 
