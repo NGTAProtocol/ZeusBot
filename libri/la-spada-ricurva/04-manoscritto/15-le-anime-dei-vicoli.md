@@ -96,7 +96,7 @@ Io resto dove sono, a un metro dalla porta aperta. Il vicolo è stretto e la sua
 
 Una pausa lunga.
 
-«Non stasera. Le ho detto venerdì.»
+«Non stasera. Le ho detto domani.»
 
 Un'altra.
 
@@ -104,7 +104,7 @@ Un'altra.
 
 Mina ride di qualcosa che ha detto il ragazzo del banco. Claudia ha finalmente messo in bocca la sua zeppolina. Nessuno dei due guarda la porta. Io ho le dita lucide d'olio e tengo il cono fermo, a mezz'aria, perché ogni fruscio della carta copre una sillaba.
 
-«Sì. Venerdì.»
+«Sì. Domani.»
 
 Lorenzo abbassa il telefono, lo tiene un istante contro la coscia, poi rientra. Si siede sullo sgabello accanto al mio e prende uno scagliuozzo dal cono, con due dita, come se l'avesse lasciato lì un momento fa.
 
@@ -112,7 +112,7 @@ Lorenzo abbassa il telefono, lo tiene un istante contro la coscia, poi rientra. 
 
 Mastico. La zeppolina è fredda adesso, e la farina, raffreddandosi, si è fatta gommosa contro i denti.
 
-Mina si volta verso di noi con la bocca piena e ci chiede se domenica torniamo su, alle Fontanelle, tutti e quattro. «Sì» dice Claudia, e lo scrive in cima alla pagina del taccuino, sopra la curva. Io sento la scatola di fiammiferi nella tasca, il suo spigolo contro l'anca.
+Mina si volta verso di noi con la bocca piena e ci chiede se fra tre giorni torniamo su, alle Fontanelle, tutti e quattro. «Sì» dice Claudia, e lo scrive in cima alla pagina del taccuino, sopra la curva. Io sento la scatola di fiammiferi nella tasca, il suo spigolo contro l'anca.
 
 «Torno» dico.
 
