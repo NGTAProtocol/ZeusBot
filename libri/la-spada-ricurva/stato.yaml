@@ -2,15 +2,12 @@ libro: La Spada Ricurva
 motore_commit: null
 ramo_ultimo_salvataggio: null
 fase: stesura
-passo: pausa di lettura
-gate_in_attesa: lettura
+passo: capitolo 13
+gate_in_attesa: null
 lotto:
   dimensione: 3
-  capitoli:
-  - 10
-  - 11
-  - 12
-ultimo_capitolo_approvato: 9
+  capitoli: []
+ultimo_capitolo_approvato: 12
 ultimo_capitolo_scritto: 12
 tentativi: {}
 correzioni_aperte: []
@@ -498,10 +495,19 @@ documenti_approvati:
   04-manoscritto/09-la-cripta.md:
     sha256: cedfe92171304d1a1e1c4d7fef4ce41e9b8c6eb743a6fc09c32f17be7504534b
     commit: acc35e0
+  04-manoscritto/10-il-fondo-proibito.md:
+    sha256: 6bbb4a1769071889a142582c1cc9506a04bf25e9068fdc0cf0cb1b7e149d34af
+    commit: 7feb89a
+  04-manoscritto/11-il-nome.md:
+    sha256: 0c14783b65497ddcc048c962ff44dc750ad7c71b74df08fabaeb23d3d533fc36
+    commit: ffd51f2
+  04-manoscritto/12-la-scelta.md:
+    sha256: 6d4b6748a3158e8ae229c2931267479e17ff28777668951509802f5e3f7cb60f
+    commit: 835238b
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-28T14:37:05Z'
+aggiornato: '2026-10-28T19:45:58Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
