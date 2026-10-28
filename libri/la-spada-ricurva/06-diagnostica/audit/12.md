@@ -1,39 +1,43 @@
-<!-- zb: ruolo=diagnosta; su=fc303ca86a52 -->
-# Audit capitolo 12 — La scelta (giro 1)
+<!-- zb: ruolo=diagnosta; su=490067fd3679 -->
+# Audit capitolo 12: La scelta (giro 2)
+
+## Giro 2
+
+- r.65 cinabro: risolta. «Cinabro: mercurio e zolfo» è chimicamente giusto, e Mina torna credibile.
+- r.5 attacco: risolta. «Una cosa presa senza permesso non si posa mai su un tavolo» è la sentenza che mancava e porta dritta all'oggetto.
+- r.139 chiusa: risolta. «Lo dico per chiudere, e nessuno lo ripete» lascia la colpa al silenzio; r.143 la passa al corpo («finché non mi fa male ai denti»). È sparita anche la geografia sbagliata.
+- r.77 e r.81 glosse: risolta. Il pollice sul moncherino resta senza commento. Resta un'ombra a r.79, «e non è un caso».
+- r.105-107 Scotti: risolta. Claudia nomina l'ordine e le due notti, e r.111 dà il motivo della disobbedienza senza scusarla.
 
 ## Voti
 
-| Voce | Voto 1-10 | Momento più debole (r.N «citazione breve») |
+| Voce | Voto | Momento più debole |
 |---|---|---|
-| Tensione e ritmo | 7 | r.137-139 «È una festa sbagliata»: la scena si siede proprio dopo la firma |
-| Sottotesto e dialoghi | 7 | r.77 «capisco cosa intende: che non decido da sola…»: spiega la battuta di Claudia |
-| Voce | 7 | r.5 «Il codice è nella borsa»: niente sentenza d'apertura, contro il principio 2 |
-| Specificità e immagini | 8 | r.139 «sotto altri cento metri di città»: geografia sbagliata, la cassa sta sotto l'Accademia, non sotto il terrazzo |
-| Personaggi | 8 | r.41 «un modo di entrare in una stanza che gli hanno insegnato da piccolo»: commento su Valli già mostrato dal gesto |
-| Funzione | 8 | r.97 «Spiego il resto in ordine»: il piano arriva come riassunto e passa quasi senza attrito |
-| Pulizia | 6 | r.127 «non chiede…, non chiede…, non chiede…»: tre elementi e la glossa sul denaro, poi r.139 la chiusa a sentenza |
+| Tensione e ritmo | 8 | r.97 «Spiego il resto in ordine»: il piano arriva come riassunto |
+| Sottotesto e dialoghi | 8 | r.79 «e non è un caso»: piccola glossa residua |
+| Voce | 8 | r.53 «Peso le due strade come peserei due solventi»: similitudine di mestiere un po' annunciata |
+| Specificità e immagini | 8 | r.7 il terrazzo descritto per elenco |
+| Personaggi | 8 | r.41 «un modo di entrare in una stanza che gli hanno insegnato da piccolo»: commento su un gesto già chiaro |
+| Funzione | 8 | r.97 il piano passa quasi senza attrito |
+| Pulizia | 7 | r.131 «che non nomina mai il denaro ma lo misura in ogni frase»: la glossa sul carattere resta |
 
-Media: 7.3
+Media: 7.9
 
 ## Continuità
 
-- nessun fatto contraddetto. Il punto «il codice torna nella cassa» è coerente con il cap. 10 (codice portato via) e con l'ordine di Scotti nel cap. 11. Il cap. 12 però non lo nomina: il rinvio di Elena («la prima notte che scendiamo») disobbedisce in silenzio. Il canone regge: 700 anni, cinquecento volumi, IA offline, pubblicazione aperta, dono ai musei. Che anche Mina e Valli sappiano del codice portato fuori (r.81 «Lo sanno tutti e tre») va confermato dal cap. 10.
+- Nessun fatto contraddetto. L'ordine di Scotti del cap. 11 adesso pesa nella scena (r.81, r.107-111). Ora r.81 afferma «Erano in cripta con me, tutti e tre»: va confermato dal cap. 10. Il canone regge: settecento anni, cinquecento volumi, macchina offline, pubblicazione aperta, dono ai musei.
 
 ## Da correggere
 
-- r.65 «Il minio è ancora vivo… Mercurio e zolfo»: il minio è ossido di piombo, mercurio e zolfo sono il cinabro/vermiglione. Detto da Mina, chimico dei pigmenti, è un errore che lo screditerebbe → pigmento e composizione coerenti.
-- r.5 «Il codice è nella borsa…»: chi apre la parte decisiva perde la sentenza gotica → un attacco aforistico prima dell'oggetto.
-- r.139 «È una festa sbagliata. Lo so mentre la vivo.»: dichiara la colpa che la scena del vino già mostra → lasciarla al corpo e agli oggetti.
-- r.77 e r.81 «capisco cosa intende…», «Me lo dicono i loro silenzi»: glossano battute e gesti chiari → fidarsi del pollice sul moncherino.
-- r.105-107 «Torna giù»: l'ordine di Scotti del cap. 11 non pesa sulla risposta → un attrito minimo (Claudia sa che Scotti l'ha già chiesto).
+- r.131 «che non nomina mai il denaro ma lo misura in ogni frase»: spiega Valli, che la battuta di r.135 mostra già → lasciare parlare la battuta (facoltativo).
 
 ## Lezione
 
-- non glossare con la voce narrante una battuta o un gesto che la scena ha già reso chiari.
+- Non glossare con la voce narrante una battuta o un gesto che la scena ha già reso chiari.
 
 ## Fatti da verificare
 
-- r.65 «Il minio… Mercurio e zolfo»: chimica dei pigmenti (errato: il minio è Pb₃O₄)
 - r.89 «atto notarile del Cinquecento… aste tagliate»: paleografia (abbreviazioni per troncamento)
+- r.81 «Erano in cripta con me, tutti e tre»: continuità con il cap. 10
 
-non passa
+passa
