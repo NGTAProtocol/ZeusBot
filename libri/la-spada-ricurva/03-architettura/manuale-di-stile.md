@@ -8,9 +8,9 @@ La voce è definita in `02-bibbia/voce.md` («Gotico-Analitica»): questo manual
 caso di dubbio vale `voce.md`, sezioni 2 (principi), 3 (ritmo e sintassi), 4 (lessico) e 7 (istruzione di
 esecuzione). Le regole che non si discutono:
 
-- **Persona:** prima persona di Elana Magnisi, unico punto di vista per tutti i 45 capitoli; «io» per sé, «noi» solo
-  per il gruppo. Ciò che Elana non vede arriva solo da documenti, racconti altrui o ricostruzione dichiarata.
-- **Tempo:** sempre il presente (decisione dell'autore). Nessuna Elana «di dopo»: niente «ancora oggi», niente «allora
+- **Persona:** prima persona di Elena Magnisi, unico punto di vista per tutti i 45 capitoli; «io» per sé, «noi» solo
+  per il gruppo. Ciò che Elena non vede arriva solo da documenti, racconti altrui o ricostruzione dichiarata.
+- **Tempo:** sempre il presente (decisione dell'autore). Nessuna Elena «di dopo»: niente «ancora oggi», niente «allora
   non sapevo». Passato prossimo e imperfetto solo per ricordi brevi e antefatti. I salti di tempo (cap. 1 a G51,
   cap. 44 gennaio-marzo, cap. 45 di nuovo a G72) li regge l'intestazione, non la voce.
 - **Dialoghi:** tra caporali «», battute brevi e poche per scena; attribuzione con un gesto o niente, raramente
@@ -88,7 +88,7 @@ esecuzione). Le regole che non si discutono:
 - I Borbone possedevano circa un terzo dei volumi, in copie tratte dagli originali; alcuni testi, tra i più importanti, esistono in copia unica solo nella cripta ritrovata (decisione dell'autore: risolve il contrasto con i settecento anni di sigillo).
 - La Spada Ricurva esiste già nel Trecento ed è lei a sigillare l'archivio; la massoneria del Settecento è solo una delle sue maschere (decisione dell'autore).
 - Il registro della loggia, con i nomi dei Borbone e dei Valli, è nelle mani di Carlo Dell'Aquila; è dal registro che i ragazzi scoprono la guerra occulta del 1861 (decisioni dell'autore).
-- La busta del cap. 1 contiene solo la bozza della perizia; la perizia ufficiale la porta a Elana la perita dissidente, all'alba, nel cap. 25 (decisione dell'autore).
+- La busta del cap. 1 contiene solo la bozza della perizia; la perizia ufficiale la porta a Elena la perita dissidente, all'alba, nel cap. 25 (decisione dell'autore).
 - Dopo il sigillo del Trecento la porta non fu mai più aperta: la chiave dipinta nel Seicento tramanda solo la via; la loggia non la forza perché la volta può crollare (decisione dell'autore).
 - Il dono ai musei internazionali salta con il ritiro di Dell'Aquila (cap. 35): il Fondo vive solo open-source in rete (decisione dell'autore).
 - La pagina dei Valli nel registro riguarda un antenato di Lorenzo: la famiglia è legata alla setta da generazioni, il debito è un'eredità (decisione dell'autore).
@@ -96,7 +96,7 @@ esecuzione). Le regole che non si discutono:
 - La setta detiene i debiti e i titoli finanziari della famiglia di Lorenzo.
 - L'assistente viene assassinato dalla setta; dieci giorni dopo arriva la perizia medico-legale: l'ora del decesso è precedente al timestamp di un messaggio minatorio arrivato sul telefono della vittima. Prova che Procura e medicina legale sono colluse.
 - Assedio: in una notte di pioggia la setta isola i ragazzi nell'Accademia; Lorenzo passa i dati; l'IA di Pietro si comporta in modo anomalo e manipola i presenti.
-- Elana completa l'upload globale: i manoscritti restano open-source sui server internazionali.
+- Elena completa l'upload globale: i manoscritti restano open-source sui server internazionali.
 - La setta non viene distrutta in superficie; il sistema si ricuce.
 - Lorenzo tradisce per debito e alla fine sparisce.
-- Il finale: Elana sola all'alba; la conoscenza è libera, ma la voce di quell'intelligenza, umana e artificiale, le resta nella mente.
+- Il finale: Elena sola all'alba; la conoscenza è libera, ma la voce di quell'intelligenza, umana e artificiale, le resta nella mente.

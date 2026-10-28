@@ -17,13 +17,13 @@ Media: 7.6
 
 - nessun fatto contraddetto
 - Codex rispettati: stilografica verde, fazzoletto di lino, cravatta, il «lei» (Professore); Scotti con le lenti sulla fronte e la mano che non trema mentre scrive (r.81); Lorenzo con la sigaretta spenta, la giacca del padre, il francese. Sequestro delle schede come da codex dell'aula; date coerenti con la capsula 5 (29 ottobre → 1 novembre; sospensione il 21).
-- Regola «niente fotografie sui telefoni» (cap. 3): rispettata alla lettera, perché le foto non sono più nella galleria. Il r.137 però le rende raggiungibili dal telefono, e il r.129 dichiara una verità solo formale. Va letto come colpa consapevole di Elana e la capsula deve registrarlo così. Foto del tassello (cap. 2): qui il tassello è solo il foglio con il cartellino ricopiato. Nei file che ho letto nessuna foto del tassello viene smentita. Se il cap. 2 le mette sul telefono, la sessione principale lo verifichi sulla capsula 2.
+- Regola «niente fotografie sui telefoni» (cap. 3): rispettata alla lettera, perché le foto non sono più nella galleria. Il r.137 però le rende raggiungibili dal telefono, e il r.129 dichiara una verità solo formale. Va letto come colpa consapevole di Elena e la capsula deve registrarlo così. Foto del tassello (cap. 2): qui il tassello è solo il foglio con il cartellino ricopiato. Nei file che ho letto nessuna foto del tassello viene smentita. Se il cap. 2 le mette sul telefono, la sessione principale lo verifichi sulla capsula 2.
 
 ## Da correggere
 
 - r.47 «Quasi nessuno, qui, sa… tra quei pochi»: spiega il sottotesto che la domanda «una o due?» ha già reso → lasciare che il silenzio dell'aula e la penna ferma bastino.
 - r.97 «Il mio barattolo… in mano a Valli»: l'immagine della madre viene tradotta in morale → chiudere sull'immagine, senza applicarla.
-- r.141 «Nessuno lo saprà»: è una previsione, quindi una Elana «di dopo», e chiude a sentenza → togliere la certezza e mantenere il segreto come rischio.
+- r.141 «Nessuno lo saprà»: è una previsione, quindi una Elena «di dopo», e chiude a sentenza → togliere la certezza e mantenere il segreto come rischio.
 - r.139 la nota scritta con il nascondiglio e tenuta in tasca: per una che conta tutto è un errore di metodo non segnalato → farlo pesare (lo nota lei, o resta come rischio visibile) oppure motivarlo.
 - r.5: l'attacco è una constatazione, non la sentenza sul potere che la voce richiede → aprire con un aforisma secco.
 

@@ -1,7 +1,7 @@
 # Macrostruttura e svolte — La Spada Ricurva
 
 Macrostruttura: in medias res
-Motivo: Elana narra al presente; il capitolo 1 si apre, con la sua intestazione datata (G51), sulla bozza di una
+Motivo: Elena narra al presente; il capitolo 1 si apre, con la sua intestazione datata (G51), sulla bozza di una
 perizia medico-legale con l'assistente già morto e lo scarto di un'ora; il capitolo 2 riparte da G1, a fine ottobre.
 Il salto lo regge il calendario, non una voce che ricorda. Il lettore sa fin da subito che il mentore morirà e che
 una carta dice un'ora impossibile: ogni scena con lui e ogni sportello pubblico è letto sotto quella luce (ironia
@@ -28,17 +28,17 @@ d'assedio è un'unica nottata e regge meglio serrata.
 ## Svolte
 | Svolta | Capitolo | Cosa la rende necessaria |
 |---|---|---|
-| Incidente scatenante | 2 | Restaurando la tela, Elana trova sotto una ridipintura le due lame piegate; il Professore ferma il restauro: qualcuno non vuole che quella vernice venga tolta. |
+| Incidente scatenante | 2 | Restaurando la tela, Elena trova sotto una ridipintura le due lame piegate; il Professore ferma il restauro: qualcuno non vuole che quella vernice venga tolta. |
 | Prima svolta | 12 | Archivio aperto (10) e nome della loggia (11): denunciare significa consegnare il Fondo ai suoi custodi; il gruppo sceglie l'IA offline e la pubblicazione. Da qui non si torna indietro. |
-| Punto centrale | 25 (55%) | La carta del cap. 1 è la bozza di una perita costretta a firmare una rettifica: l'ora vera esiste solo lì, e la Procura archivia sulla versione corretta. Il lettore vede per la prima volta il meccanismo della collusione. Non esiste giustizia istituzionale: Elana passa dal «donare con prudenza» al «pubblicare tutto, contro tutti». |
+| Punto centrale | 25 (55%) | La carta del cap. 1 è la bozza di una perita costretta a firmare una rettifica: l'ora vera esiste solo lì, e la Procura archivia sulla versione corretta. Il lettore vede per la prima volta il meccanismo della collusione. Non esiste giustizia istituzionale: Elena passa dal «donare con prudenza» al «pubblicare tutto, contro tutti». |
 | Tutto perduto | 35 (78%) | Il basso dove gira la macchina è scoperto, gli originali nell'archivio sono distrutti (i testi in copia unica ora esistono solo in digitale), Dell'Aquila si ritira e con lui il canale dei musei, la data dell'upload è trapelata: resta solo la copia digitale, su una macchina. |
-| Seconda svolta | 36 | Elana sceglie di caricare tutto da sola, senza consorzio né protettori, dall'unico luogo che ha la fibra: l'Accademia, la notte di chiusura per le feste. Pietro accetta la rete per una notte; Lorenzo ha le chiavi. |
+| Seconda svolta | 36 | Elena sceglie di caricare tutto da sola, senza consorzio né protettori, dall'unico luogo che ha la fibra: l'Accademia, la notte di chiusura per le feste. Pietro accetta la rete per una notte; Lorenzo ha le chiavi. |
 | Climax | 41-42 | Confronto col Professore davanti alla tela del capitolo 2 (rifiuta il riscatto offerto); upload completato mentre la setta taglia la rete e l'IA resiste; l'inventario di Claudia permette di separare i testi dagli schemi. |
-| Risoluzione | 43-45 | Il gruppo disperso, Lorenzo sparito, il sistema che si ricuce; Elana sola all'alba con la voce dell'intelligenza nella mente. |
+| Risoluzione | 43-45 | Il gruppo disperso, Lorenzo sparito, il sistema che si ricuce; Elena sola all'alba con la voce dell'intelligenza nella mente. |
 
 ## Scene obbligatorie del profilo thriller
 - Scoperta della minaccia: cap. 2 (la ridipintura), 11 (il nome della loggia), 20 (la morte).
-- Falsa pista: il suicidio per minacce (20-22); i sospetti di Elana su Dell'Aquila (16, 29, 31, 35) mentre il
+- Falsa pista: il suicidio per minacce (20-22); i sospetti di Elena su Dell'Aquila (16, 29, 31, 35) mentre il
   traditore è Lorenzo.
 - Smascheramento: cap. 39 (Lorenzo); cap. 25 (Procura e medicina legale).
 - Incidente scatenante che promette il climax: la tela del cap. 2 torna nel cap. 41.

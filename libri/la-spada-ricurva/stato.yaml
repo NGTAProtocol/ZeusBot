@@ -20,33 +20,51 @@ parole:
   metodo: unico
 documenti_approvati:
   03-struttura/01-premessa.md:
-    sha256: d8acdaa22f3cc0c7c9d8161b52a04672f066ed954fe8a0f1b3a8b594d5d595d6
-    commit: e2d216a
+    sha256: 9cb1823b3147b987bd51446bc5dfbf87f52b499e1fa3dbdcdaa82867ff55bd7c
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
       sha256_precedente: 2b30f8b99426d222feb41f16b86544571b3f818325dc857b29c2d8a82f953dda
       commit_precedente: 2b098ea
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: d8acdaa22f3cc0c7c9d8161b52a04672f066ed954fe8a0f1b3a8b594d5d595d6
+      commit_precedente: e2d216a
   03-struttura/02-logline-tema.md:
-    sha256: bcf74eed3ef1d7d3ad4c5f236922679c457c08c19fc5e74e4ef9bc564ad93174
-    commit: 2b098ea
+    sha256: baeac50bc5a56f66e47cf14c12f6863b068ce0b3630de6e79f3baa057c11b321
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: bcf74eed3ef1d7d3ad4c5f236922679c457c08c19fc5e74e4ef9bc564ad93174
+      commit_precedente: 2b098ea
   03-struttura/03-personaggi-chiave.md:
-    sha256: 6baa875ace5e2ee2432f0f2799250a017c5c1c7e6ff98f673c7c0a0eb8bca8d5
-    commit: e2d216a
+    sha256: b463f938c8f628e8622b1dc201d4c98cc56e74e1d9839989b11bf5b8a07a1089
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
       sha256_precedente: 732ec835716ef22db179f457015a1bfbf45010c70eddbba2ab7f30d5dab6c161
       commit_precedente: e5e8820
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 6baa875ace5e2ee2432f0f2799250a017c5c1c7e6ff98f673c7c0a0eb8bca8d5
+      commit_precedente: e2d216a
   03-struttura/04-atti-svolte.md:
-    sha256: 08b6347c839ef8a7f2ba34df1d5800f53280bb9f92687b645528261cfc794b2d
-    commit: e5e8820
+    sha256: e87d86b39ef183424d196ffff2596f5d45423ca7d478c33b836be2377870ea43
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 08b6347c839ef8a7f2ba34df1d5800f53280bb9f92687b645528261cfc794b2d
+      commit_precedente: e5e8820
   03-struttura/05-scaletta.md:
-    sha256: 0a7611d7b23b3c62d87ef6733dc2d0fecf85e0b43c1a8925a863db0b9dfc48de
+    sha256: 77500c42e972c0f2bd1f569715daae921a998b968581ec1970072736e2126205
     commit: da salvare
     senza_gate: true
     riapprovazioni:
@@ -58,30 +76,64 @@ documenti_approvati:
       motivo: 'decisione dell''autore: chiusura del capitolo 3 allineata al finale riscritto (decisione, X)'
       sha256_precedente: e2d0cd23113f75859cbc47514a249462a675528fcc57b9480cbf8e57512b7441
       commit_precedente: e2d216a
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 0a7611d7b23b3c62d87ef6733dc2d0fecf85e0b43c1a8925a863db0b9dfc48de
+      commit_precedente: da salvare
   03-struttura/06-sottotrame-temi.md:
-    sha256: becafc4f4ae49d22ae8d00258e719dd2f0addcebbd45175b68211c8b9f125054
-    commit: e5e8820
+    sha256: 97405ede0ba41c4218da2ccf72402be67cb6ee815d135ca4d190d322d0fda021
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: becafc4f4ae49d22ae8d00258e719dd2f0addcebbd45175b68211c8b9f125054
+      commit_precedente: e5e8820
   03-struttura/07-tensione-ritmo.md:
-    sha256: a7cffa91a6059b642f9a22e05ca70060e29bf020e99194df9cf9a855821e12f2
-    commit: 2b098ea
+    sha256: 8a7991f47404c804fa9722750c6e0b10907097e9d540605170687ed4790d05bd
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: a7cffa91a6059b642f9a22e05ca70060e29bf020e99194df9cf9a855821e12f2
+      commit_precedente: 2b098ea
   03-struttura/08-piano-parole.md:
-    sha256: 8c7e65d9a0bca84bd2bdfb095eacf8fd206365fe7296b0c63f5409e7853fb8d3
-    commit: 2b098ea
+    sha256: bee03975228ff4b72c2ac577c76c15fca9145876e17a33b3bc9ef308337a6041
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 8c7e65d9a0bca84bd2bdfb095eacf8fd206365fe7296b0c63f5409e7853fb8d3
+      commit_precedente: 2b098ea
   03-struttura/09-scelte-fisse.md:
-    sha256: 8032b27fcfb8a925f05bf861e36f982b82bebbf3c075c8097982d92c7d0b76be
-    commit: 2b098ea
+    sha256: cc8882cfc47906b3c98acf39d8c234c8e4e3faf0b497cf107c7e6084843eb7b9
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 8032b27fcfb8a925f05bf861e36f982b82bebbf3c075c8097982d92c7d0b76be
+      commit_precedente: 2b098ea
   06-diagnostica/rapporto-struttura.md:
-    sha256: 1e562fc3d79e72a4b638c14a19f33d8c46035fce5df6cde9fbd0ed6850a5b3dd
-    commit: 7483b5f
+    sha256: ed2f48116083198b98bb626d3f29c839185c70fa3dd43a43810e776ddfb06824
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 1e562fc3d79e72a4b638c14a19f33d8c46035fce5df6cde9fbd0ed6850a5b3dd
+      commit_precedente: 7483b5f
   06-diagnostica/piano-revisione-struttura.md:
-    sha256: 228e89ca7c9cfbec7225a6e1c311e8a10252c1eca866ee8a005f44109ca3d2f4
-    commit: 69b97ae
+    sha256: 87f338e8d2bdfe7406929630fca0b8ee0d0da10432ebb2ed29a0d4befeea698b
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 228e89ca7c9cfbec7225a6e1c311e8a10252c1eca866ee8a005f44109ca3d2f4
+      commit_precedente: 69b97ae
   libro.yaml:
     sha256: 8398a81123d9db3af79ce6b56ae51c0a91723c954c0f59f931d62b5183a4c3a5
     commit: 0f73a4d
@@ -92,41 +144,57 @@ documenti_approvati:
       sha256_precedente: dd270cfab9c049f54a8738b51587842393480c23ba7ee1483f072a9622687fa9
       commit_precedente: '3040770'
   02-bibbia/bibbia.md:
-    sha256: c7c33910799bf4025a1fea0715c19742c6e44eb735a7d1c21b57b2e5bd0908e3
-    commit: 9d3bd90
+    sha256: b2479d441f71be09c58d543332fe8f573bdb9be972497e99ac36539cfeded406
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisioni dell''autore: nomi canonici, Direttore e Vicedirettore; fatti non verificabili resi generici'
       sha256_precedente: d130038228a93a5a015c452051206ebe14447e309ec6bcb780316afaf5ce6129
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: c7c33910799bf4025a1fea0715c19742c6e44eb735a7d1c21b57b2e5bd0908e3
+      commit_precedente: 9d3bd90
   cronologia.yaml:
-    sha256: b0f933e7954fcb849e9c040b3d1ef601a4cf337fb4538ae6e0575218193fb234
-    commit: e2d216a
+    sha256: 0d0afb5185c0d8cf52ee797c4aca9b661378835147478ee29ebdc4dd54d11ffd
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
       sha256_precedente: 59e5127e4169d6d6562bd64efe7d12cc1daaa8411296cbf6af7e4d44b1c3292f
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: b0f933e7954fcb849e9c040b3d1ef601a4cf337fb4538ae6e0575218193fb234
+      commit_precedente: e2d216a
   03-architettura/manuale-di-stile.md:
-    sha256: 4cc7a9c17a6a165f5682d4f96c3b3cb5d7c757acea789067776a4c4eabc0ef3e
-    commit: e2d216a
+    sha256: f53db040558c4ef1778449897700e5da495a227469df542ce13380f1c798079e
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
       sha256_precedente: 0d8150fd9195c6d003b83aded0c864a1f835e1a326d98157ac720bb27f1900aa
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 4cc7a9c17a6a165f5682d4f96c3b3cb5d7c757acea789067776a4c4eabc0ef3e
+      commit_precedente: e2d216a
   06-diagnostica/nota-direzione.md:
-    sha256: f3dac3244d745ea24d060e367fddbf8b66b427ae22ce25fc3cadb824c221b95a
-    commit: e2d216a
+    sha256: 467903480598a2577df2bb268cc11ae08a775108d9e2cf81654498d21c0a7e2d
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: Direttore e Vicedirettore al posto di Rettore e Vicerettore'
       sha256_precedente: 25383ada679e5351e7897e8e02a5d6a348c672817b292176a5e1739f1ea58dc7
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: f3dac3244d745ea24d060e367fddbf8b66b427ae22ce25fc3cadb824c221b95a
+      commit_precedente: e2d216a
   02-bibbia/codex/accademia.md:
     sha256: 79573aba07f8783806c8e708c4a31f1b65cac537280dfd115ed53c32a69f3085
     commit: e2d216a
@@ -141,18 +209,27 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/assistente.md:
-    sha256: b8ee3cfb892589110491e1f2b9968969947def64bb5ffe04d810f3f8f80a5385
-    commit: 686cfc3
+    sha256: 5e89fae707ffa5f6fae7b07832e01e916efe5f4795dfccc07f2563f752d6eb6d
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
       sha256_precedente: ecc95e83860d49c2ca2e66485748f813dbcb00c53b0d4af1283910544bf41ec3
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: b8ee3cfb892589110491e1f2b9968969947def64bb5ffe04d810f3f8f80a5385
+      commit_precedente: 686cfc3
   02-bibbia/codex/aula-moderna.md:
-    sha256: 08e30dc8a5f4bf3d3772776c0ec6732d84b6b973c32d6c562f0bd56e62a4fc9c
-    commit: 536a0df
+    sha256: cab9bb85416bde5008cb4198b10cd5833478e5236c8669bf8b75e5924061c3c5
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 08e30dc8a5f4bf3d3772776c0ec6732d84b6b973c32d6c562f0bd56e62a4fc9c
+      commit_precedente: 536a0df
   02-bibbia/codex/basso-sanita.md:
     sha256: d29f8ee2964ff6a86f5e2d1de82cc754aa157fcceff369ae4b62e168d271fbf7
     commit: 536a0df
@@ -188,14 +265,18 @@ documenti_approvati:
       sha256_precedente: 2f25a3bc5d8c790bed537341a93f722471fdd12e7d37e3a784c30844873684a7
       commit_precedente: 536a0df
   02-bibbia/codex/elana.md:
-    sha256: 5e1d7b86d86f04c9966f444d9301cef3dc260eb0f076ca3bde3ca2845be5fd7e
-    commit: 686cfc3
+    sha256: 0ffbc017e5483069a7492bbdb55e28509985c0fc7d7695bcaa36719b335efd04
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
       sha256_precedente: 212914fda12ab7b12a73ff783a8a17f425365cbca2d1d31ceb1a70ad3c76a5e7
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 5e1d7b86d86f04c9966f444d9301cef3dc260eb0f076ca3bde3ca2845be5fd7e
+      commit_precedente: 686cfc3
   02-bibbia/codex/fontanelle.md:
     sha256: 1f98c32add060568ce75f37c239fd9da13b168dc4561c401d71e708ad74138f4
     commit: 536a0df
@@ -209,17 +290,27 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/gesu-nuovo.md:
-    sha256: 96c8decf09c3826ff9193a0e722b538cdfd07b0594eb424dabd01523b4e2bd3e
-    commit: 536a0df
+    sha256: bba3c27bc6ed863c7e5b488507998aa785847bc347f587212df79ef9e58b356f
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 96c8decf09c3826ff9193a0e722b538cdfd07b0594eb424dabd01523b4e2bd3e
+      commit_precedente: 536a0df
   02-bibbia/codex/ipogei.md:
     sha256: 28179c3548cbf286f9d3b416b487e06ee9fa1cd9f553177a8bf7ad23e2ec4b79
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/laboratorio-restauro.md:
-    sha256: 1daf4354fd01534735391296f77132a0b207a652f510379b5cafffeb0f8cd111
-    commit: 536a0df
+    sha256: 51c51e491d859b9b6ce4243423d488f1a93321e633f0c2a8e2d427f07ead2f1d
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 1daf4354fd01534735391296f77132a0b207a652f510379b5cafffeb0f8cd111
+      commit_precedente: 536a0df
   02-bibbia/codex/lorenzo.md:
     sha256: 240fb5eb984f870a0f2fcae5d11870287a00d8fc24e7266a0ea3ef93bde2ad25
     commit: 686cfc3
@@ -234,9 +325,14 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/medicina-legale.md:
-    sha256: 563809262627054fbda42636dc7a4f7a484f7fc920c67ccaf0c7e8acf382c304
-    commit: 536a0df
+    sha256: 452fa84494f356b189c75c95b9e82427f2f65c2bc9df279e8620e2b155be2455
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 563809262627054fbda42636dc7a4f7a484f7fc920c67ccaf0c7e8acf382c304
+      commit_precedente: 536a0df
   02-bibbia/codex/mina.md:
     sha256: b7683bcae4b34094a3b4d0d724d91de6bfdf8ede1fb81bc8c908b68d3aa3365b
     commit: 686cfc3
@@ -255,14 +351,18 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/perita.md:
-    sha256: e5b9c34dc287ca7297673c426e69d637931dec941cea6ce16833abc02848511f
-    commit: 686cfc3
+    sha256: 99945c8bf1f7b76735594884791b18736a9f861653b86044e6bc6c2abf43859e
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
       sha256_precedente: 782dc590843bd9d5146ced750445b1dfae40c78a964aa367b02a2d68d56fccd1
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: e5b9c34dc287ca7297673c426e69d637931dec941cea6ce16833abc02848511f
+      commit_precedente: 686cfc3
   02-bibbia/codex/pietro.md:
     sha256: 7d70afb1ca19afebdd4319e90eb96c899bfbc4dfa54a2df4b44a129df9b3f88c
     commit: 686cfc3
@@ -273,27 +373,35 @@ documenti_approvati:
       sha256_precedente: 4e7dbd572841457210b3ea88267712cdff11788c775e756dba9d41641d27fd39
       commit_precedente: 536a0df
   02-bibbia/codex/pm.md:
-    sha256: 3024a44ba2056d1b8cba68c37562c3995f3f27af94b616acaeb640eacc2cbed5
-    commit: 686cfc3
+    sha256: 61b239dbec7e7893d0d9910ef4eed18bc873180022ab53a177e69faf069f94dc
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
       sha256_precedente: cbb42ea26cc20dc093e156edfab4cee3a7175622951ce97f220f1247d5bfd053
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 3024a44ba2056d1b8cba68c37562c3995f3f27af94b616acaeb640eacc2cbed5
+      commit_precedente: 686cfc3
   02-bibbia/codex/procura.md:
     sha256: 4cef01485a72cdd4e4a18b86180f50490d8d79cd03ba5f565d34edccdc9478c3
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/professore.md:
-    sha256: c45bb3f9f12111e43458b8e6c44d8a596a72f8a48185e387144adf68df472eab
-    commit: 686cfc3
+    sha256: c9e529c7e3ec90bb565b35f5d912f60cd9b7b5b7c4fe0a3a847de8cbfdd1c81b
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisione dell''autore: nomi canonici e tratti dei personaggi confermati'
       sha256_precedente: 16ad79cd1f25f3f63835a5948e63182fe1753b0b3acf5a1ca5f2cc1f77a74b17
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: c45bb3f9f12111e43458b8e6c44d8a596a72f8a48185e387144adf68df472eab
+      commit_precedente: 686cfc3
   02-bibbia/codex/rettorato.md:
     sha256: 04436a53dff6298bc09074245ea4feadf0bfede0f4785a86459c78f184ac5c5f
     commit: e2d216a
@@ -317,9 +425,14 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/stanza-elana.md:
-    sha256: cc7f7046741fd87245db26ffc67b87ecba89d0198d8e0866f3ba08faec9f3891
-    commit: 536a0df
+    sha256: 716eb91c976176949ba47ca15d60dfc1aad2c120ea5e76030428038e2f9fd220
+    commit: da salvare
     senza_gate: true
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: cc7f7046741fd87245db26ffc67b87ecba89d0198d8e0866f3ba08faec9f3891
+      commit_precedente: 536a0df
   02-bibbia/codex/terrazzo-claudia.md:
     sha256: 2823bf822329de6bcf839960b3d6bcd12423110e3b62416b6a91ccda19f6c5c6
     commit: 536a0df
@@ -329,14 +442,18 @@ documenti_approvati:
     commit: 536a0df
     senza_gate: true
   02-bibbia/codex/vicerettore.md:
-    sha256: d19b008c7862da9ce22f81095cb0e5c7667addc6eba684ec306c37776d56d7de
-    commit: 9d3bd90
+    sha256: 3c5eb0f1012a09ddf61dee6ad435936d57b8ab6a5d2d8c645696fc2053539317
+    commit: da salvare
     senza_gate: true
     riapprovazioni:
     - data: '2026-10-27'
       motivo: 'decisioni dell''autore: nomi canonici, Direttore e Vicedirettore; fatti non verificabili resi generici'
       sha256_precedente: 68345b94121898674d4173b2bd331b229d493a1ff1d26a8015434292154e613e
       commit_precedente: 536a0df
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: d19b008c7862da9ce22f81095cb0e5c7667addc6eba684ec306c37776d56d7de
+      commit_precedente: 9d3bd90
   02-bibbia/codex/villa-posillipo.md:
     sha256: 47a97734605daac29ab4abcd7479c0dc0224a27ec8bb231d4c09e7ef1846a495
     commit: 536a0df
@@ -349,15 +466,20 @@ documenti_approvati:
     sha256: 34c231ac0ef54bf148ed518b5d3912bb34e396958b9d61ee42ca2820d6f3a1df
     commit: c0bd36d
   04-manoscritto/02-sotto-la-vernice.md:
-    sha256: 07ac1edd62d178eb51e448bf50f064066f904286482db2b7f2847f3242c7f453
-    commit: 9d3bd90
+    sha256: 05bc0c7621d22b5a8cc8c869589ef188cd71bb52193c9022ab0214298adf4aab
+    commit: da salvare
+    riapprovazioni:
+    - data: '2026-10-28'
+      motivo: 'decisione dell''autore: nome della narratrice Elena (non Elana)'
+      sha256_precedente: 07ac1edd62d178eb51e448bf50f064066f904286482db2b7f2847f3242c7f453
+      commit_precedente: 9d3bd90
   04-manoscritto/03-il-dettaglio-ripetuto.md:
     sha256: a7453b6fc8c9e0dc00f28ee73f03902a4935fc31645a69a70b2da99fd74d99b5
     commit: 1ba2805
 avvisi_aperti: []
 revisione_in_corso: null
 push_in_sospeso: false
-aggiornato: '2026-10-28T04:51:56Z'
+aggiornato: '2026-10-28T07:05:51Z'
 sottofase: null
 fatti_bloccati:
 - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei
@@ -384,7 +506,7 @@ note_lettura:
   - 3
   testo: 'Note dell''autore ai capitoli 1-3: la voce regge ed è sopra la pagina campione; evitare le formule regolari tra
     capitoli (apertura con aforisma più elenco di odori, Osservo-Confronto-Concludo identico, parole-firma come clausola ripetute),
-    una sola similitudine forte per paragrafo, battute meno sentenziose, il tratto di Elana che conta va dosato, capitoli
+    una sola similitudine forte per paragrafo, battute meno sentenziose, il tratto di Elena che conta va dosato, capitoli
     più corti dove la scheda lo consente.'
 correzioni_registrate:
 - data: '2026-10-27'

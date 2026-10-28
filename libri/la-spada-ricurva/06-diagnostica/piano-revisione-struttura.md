@@ -7,7 +7,7 @@ Proposta: si applica solo dopo l'ok dell'autore.
 
 ## Minori residui (in ordine di capitolo)
 
-1. **Scheda 25: come Elana e la perita si incontrano nel cortile all'alba.** **Da fare in stesura, nel capitolo 25.**
+1. **Scheda 25: come Elena e la perita si incontrano nel cortile all'alba.** **Da fare in stesura, nel capitolo 25.**
    Pista: un orario di turno, la domanda del PM al 22. Nei documenti non si tocca niente.
 2. **Scheda 28: «arrivano all'archivio dal retro».** **Nei documenti:** mezza riga nella scheda 28, prima di scrivere
    il capitolo 28. Gli ipogei aggirano il muro del 27 e portano alla cripta e alla stessa porta del 9. Non esiste una

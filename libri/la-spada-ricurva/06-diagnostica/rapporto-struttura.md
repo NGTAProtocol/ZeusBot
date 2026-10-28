@@ -24,7 +24,7 @@ quello del secondo giro (passa, 8/10) e non è stato riletto.
 - **29, «la porta che nessuno sa più aprire».** Il 04 dice invece che la chiave «tramanda la via». I due punti si
   conciliano solo se la ridipintura del 1860-61 e gli iniziati morti hanno interrotto la trasmissione. Conviene
   dirlo in una frase nella scheda 29 o nel 04.
-- **25: come si incontrano Elana e la perita nel cortile all'alba.** Va risolto in stesura (un orario di turno, la
+- **25: come si incontrano Elena e la perita nel cortile all'alba.** Va risolto in stesura (un orario di turno, la
   domanda del PM come pista). Non serve un ritocco ai documenti.
 - **03, perita, etichettata [proposta].** La parte su bozza e perizia ufficiale ora è canone (briefing r. 48) e va
   marcata [canone].

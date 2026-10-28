@@ -15,7 +15,7 @@ loggia secolare annidata ai vertici dell'Accademia, è disposta a uccidere per i
 ## Tono e voce desiderati
 
 Voce «Gotico-Analitica»: l'atmosfera e la densità di Donna Tartt, la spietatezza e il cinismo di Leigh Bardugo, la
-paranoia chirurgica di Alex Michaelides. Narra Elana in prima persona («io»; «noi» quando parla del gruppo), sempre
+paranoia chirurgica di Alex Michaelides. Narra Elena in prima persona («io»; «noi» quando parla del gruppo), sempre
 al tempo presente (decisione dell'autore).
 - Tono: non ha fretta; si nutre del decadimento e della bellezza soffocante di Napoli (tufo bagnato, polvere degli
   archivi, formalina, carta secolare); dettagli sensoriali descritti con rigore quasi ossessivo, il peso fisico della
@@ -26,7 +26,7 @@ al tempo presente (decisione dell'autore).
   perizia che non torna sono indizi letali; il lettore sente sempre che qualcuno osserva, manipola e stringe il cappio.
 
 ## Personaggi chiave
-- Elana Magnisi — protagonista e voce narrante, dottoranda in filologia e restauro — 28 [DA CONFERMARE] — outsider scettica e rigorosa, cerca il riscatto con lo studio; i testi la affascinano e la cambiano.
+- Elena Magnisi — protagonista e voce narrante, dottoranda in filologia e restauro — 28 [DA CONFERMARE] — outsider scettica e rigorosa, cerca il riscatto con lo studio; i testi la affascinano e la cambiano.
 - Claudia Rinaldi — studentessa del secondo anno dell'Accademia — 21 [DA CONFERMARE] — intuitiva, vede le connessioni tra epoche e simboli; colonna morale del gruppo.
 - Lorenzo Valli — borsista d'élite in storia dell'arte, rampollo aristocratico — 26 [DA CONFERMARE] — splendido e cinico; ricattato dalla setta, tradisce.
 - Marco «Mina» Minervini — chimica dei pigmenti e culti popolari — 25 [DA CONFERMARE] — dei vicoli di Napoli; primo a sentire la «forza viva» dei manoscritti.
@@ -45,12 +45,12 @@ al tempo presente (decisione dell'autore).
 - I Borbone possedevano circa un terzo dei volumi, in copie tratte dagli originali; alcuni testi, tra i più importanti, esistono in copia unica solo nella cripta ritrovata (decisione dell'autore: risolve il contrasto con i settecento anni di sigillo).
 - La Spada Ricurva esiste già nel Trecento ed è lei a sigillare l'archivio; la massoneria del Settecento è solo una delle sue maschere (decisione dell'autore).
 - Il registro della loggia, con i nomi dei Borbone e dei Valli, è nelle mani di Carlo Dell'Aquila; è dal registro che i ragazzi scoprono la guerra occulta del 1861 (decisioni dell'autore).
-- La busta del cap. 1 contiene solo la bozza della perizia; la perizia ufficiale la porta a Elana la perita dissidente, all'alba, nel cap. 25 (decisione dell'autore).
+- La busta del cap. 1 contiene solo la bozza della perizia; la perizia ufficiale la porta a Elena la perita dissidente, all'alba, nel cap. 25 (decisione dell'autore).
 - Dopo il sigillo del Trecento la porta non fu mai più aperta: la chiave dipinta nel Seicento tramanda solo la via; la loggia non la forza perché la volta può crollare (decisione dell'autore).
 - Il dono ai musei internazionali salta con il ritiro di Dell'Aquila (cap. 35): il Fondo vive solo open-source in rete (decisione dell'autore).
 - La pagina dei Valli nel registro riguarda un antenato di Lorenzo: la famiglia è legata alla setta da generazioni, il debito è un'eredità (decisione dell'autore).
 - L'assistente ucciso si chiama Andrea Scotti; il Professore di Arte Moderna si chiama Ettore Sanfelice (decisioni dell'autore).
-- Elana viene dalla periferia di Napoli: il riscatto passa dalla città stessa (decisione dell'autore).
+- Elena viene dalla periferia di Napoli: il riscatto passa dalla città stessa (decisione dell'autore).
 - Oggi il Direttore, il Vicedirettore e i vertici dell'Accademia sono della setta.
 - Il vertice dell'Accademia è il Direttore (Ruggero Arcamone), con il Vicedirettore (Aurelio Cennamo), come nelle Accademie italiane (decisione dell'autore).
 - Tratti dei personaggi (età, aspetto, modo di parlare, abitudini) e nomi proposti il 27 ottobre: confermati dall'autore (06-diagnostica/proposte-personaggi.md; schede in 02-bibbia/codex/). Perita: Teresa Avallone; PM: Guido Ianniello; Pietro Amitrano.
@@ -59,10 +59,10 @@ al tempo presente (decisione dell'autore).
 - Assedio: in una notte di pioggia la setta isola i ragazzi nell'Accademia; Lorenzo passa i dati; l'IA di Pietro si comporta in modo anomalo e manipola i presenti.
 
 ## Cose da non cambiare
-- Elana completa l'upload globale: i manoscritti restano open-source sui server internazionali.
+- Elena completa l'upload globale: i manoscritti restano open-source sui server internazionali.
 - La setta non viene distrutta in superficie; il sistema si ricuce.
 - Lorenzo tradisce per debito e alla fine sparisce.
-- Il finale: Elana sola all'alba; la conoscenza è libera, ma la voce di quell'intelligenza, umana e artificiale, le resta nella mente.
+- Il finale: Elena sola all'alba; la conoscenza è libera, ma la voce di quell'intelligenza, umana e artificiale, le resta nella mente.
 
 ## Riferimenti
 - Donna Tartt, «Dio di illusioni» (atmosfera, densità, gruppo di studenti brillanti e colpevoli).
@@ -73,12 +73,12 @@ al tempo presente (decisione dell'autore).
 
 - Premessa: tre studenti dell'Accademia di Belle Arti di Napoli aprono un archivio occulto sigillato da settecento anni e decidono di pubblicarlo nel mondo con un'IA, contro una setta che governa l'Accademia.
 - Svolta: l'assassinio dell'assistente e la perizia falsificata dimostrano che non esiste giustizia istituzionale: la setta controlla anche Procura e medicina legale.
-- Finale: assedio nella notte di pioggia, tradimento di Lorenzo, IA fuori controllo; Elana completa l'upload; vittoria amara, la setta sopravvive, Elana sola all'alba.
+- Finale: assedio nella notte di pioggia, tradimento di Lorenzo, IA fuori controllo; Elena completa l'upload; vittoria amara, la setta sopravvive, Elena sola all'alba.
 - Tono: gotico, analitico, paranoico.
 
 ## Schede dei personaggi
 
-### Elana Magnisi
+### Elena Magnisi
 - Ruolo: protagonista e voce narrante.
 - Fissi (sempre): [DA CONFERMARE].
 - Variabili (quasi sempre): [DA CONFERMARE].

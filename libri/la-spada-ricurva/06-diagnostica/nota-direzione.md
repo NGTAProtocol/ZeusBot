@@ -24,11 +24,11 @@ sentito dire, e vuole vederla da sotto.
    (sigle D/R/P/X della scaletta).
 2. **Il sapere è vero e costa**: ogni scoperta si paga (carriera 6, borsa 18, mentore 20, giustizia 25, originali 35,
    gruppo 43). Verifica: la «posta» di ogni capitolo sale o almeno non scende.
-3. **Nessuno è puro, Elana compresa**: ogni personaggio ha un movente sporco; Elana tace e usa il protocollo.
+3. **Nessuno è puro, Elena compresa**: ogni personaggio ha un movente sporco; Elena tace e usa il protocollo.
    Verifica: in ogni capitolo con il gruppo, almeno un gesto mosso da ambizione, paura o debito.
-4. **La voce non cede**: prima persona di Elana, presente, caporali, tre registri. Verifica: misure del motore e
+4. **La voce non cede**: prima persona di Elena, presente, caporali, tre registri. Verifica: misure del motore e
    `voce.md`.
-5. **Finale amaro e non pulito**: l'upload riesce, la setta resta, Elana è sola con una voce in testa (canone).
+5. **Finale amaro e non pulito**: l'upload riesce, la setta resta, Elena è sola con una voce in testa (canone).
 
 ## Cosa rende il libro riconoscibile
 - La protagonista guarda il mondo come una restauratrice guarda una tela: luce radente, vernice, ritocco. Il metodo
@@ -44,7 +44,7 @@ sentito dire, e vuole vederla da sotto.
    sempre con un dettaglio che non torna.
 3. **Ambiguità del soprannaturale**: se la «forza viva» o la voce vengono spiegate, il finale si sgonfia; se restano
    troppo vaghe, il lettore si sente imbrogliato. Rimedio: spiegazione razionale sempre presente, mai sufficiente.
-4. **Elana antipatica**: superiorità e silenzi possono allontanare. Rimedio: il prezzo del riscatto è visibile (8, 26)
+4. **Elena antipatica**: superiorità e silenzi possono allontanare. Rimedio: il prezzo del riscatto è visibile (8, 26)
    e la voce registra anche le sue colpe.
 5. **Napoli da cartolina**: vietata dal lessico della voce; da controllare in revisione.
 6. **Personaggi ancora senza tratti fissi**: aspetto, modo di parlare e abitudini quasi tutti [DA CONFERMARE] (sotto).
@@ -83,15 +83,15 @@ valutare: «Il Fondo Proibito». Copertina: le due lame piegate in un dettaglio 
 freddi, nessun volto. Prezzo e formato: da decidere con l'autore.
 
 ## Domande per l'autore ([DA CONFERMARE] del briefing: non sono canone)
-1. **Età** di Elana (28), Claudia (21), Lorenzo (26), Mina (25), Pietro (27), Dell'Aquila (60), Professore (60);
+1. **Età** di Elena (28), Claudia (21), Lorenzo (26), Mina (25), Pietro (27), Dell'Aquila (60), Professore (60);
    età dell'assistente da definire. Servono per `cronologia.yaml` (nascite).
 2. **Aspetto («Fissi» e «Variabili»)** di tutti i personaggi; per Dell'Aquila c'è solo «elegante», per il Professore
    solo «formale».
-3. **Modo di parlare («Come parla»)** di Claudia, Lorenzo, Mina, Pietro e dell'assistente (Elana, Dell'Aquila e
+3. **Modo di parlare («Come parla»)** di Claudia, Lorenzo, Mina, Pietro e dell'assistente (Elena, Dell'Aquila e
    Professore ce l'hanno).
 4. **«Da solo»** (che cosa fa ciascuno quando nessuno lo guarda) di tutti i personaggi.
 5. **Nomi**: l'assistente, il Professore, la perita, il PM, il Direttore, il Vicedirettore; cognome di Pietro.
-6. **Elana**: provenienza (città, famiglia, classe), che serve al riscatto sociale; dottoranda dell'Accademia o di
+6. **Elena**: provenienza (città, famiglia, classe), che serve al riscatto sociale; dottoranda dell'Accademia o di
    un'altra sede con un posto in laboratorio all'Accademia.
 7. **Epoca**: autunno-inverno con pioggia [DA CONFERMARE]; anno esatto.
 8. **Pseudonimo dell'autore** (indicato «da definire» in struttura; il briefing riporta V. M. Barone).

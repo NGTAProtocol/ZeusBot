@@ -1,9 +1,9 @@
-# Elana Magnisi
+# Elena Magnisi
 
 @char:elana
 
 - In breve: protagonista e voce narrante (prima persona, presente); dottoranda in filologia e restauro con un posto in laboratorio all'Accademia. [canone]
-- Alias: Elana Magnisi, Elana, Magnisi
+- Alias: Elena Magnisi, Elena, Magnisi
 - Ruolo: protagonista; protagonista per lo sguardo e per le scelte (12, 25, 36, 42). [proposta]
 - Provenienza: periferia di Napoli; il riscatto passa dalla città stessa. [canone] Ponticelli, periferia est; prima della famiglia a laurearsi; madre che fa riparazioni sartoriali in casa (da lei il gesto paziente del restauro); vive in una stanza in affitto ai Quartieri Spagnoli e torna a casa di rado. [proposta]
 - Età: 28. [proposta: conferma del briefing]

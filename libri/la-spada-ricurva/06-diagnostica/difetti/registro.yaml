@@ -20,7 +20,7 @@ difetti:
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
   - {id: D05, classe: etichetta_ruolo, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27, scena: "3",
      stato: non confermato,
-     descrizione: "cap. 3: «una dottoranda» sembrava riferito a Claudia; nel testo è Elana che parla di sé (Elana è dottoranda). Il controllo resta per i casi veri (etichetta vicina al nome di un personaggio che non ha quel ruolo)",
+     descrizione: "cap. 3: «una dottoranda» sembrava riferito a Claudia; nel testo è Elena che parla di sé (Elena è dottoranda). Il controllo resta per i casi veri (etichetta vicina al nome di un personaggio che non ha quel ruolo)",
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
   - {id: D06, classe: ordine_tipo, gravita: bloccante, rilevamento: deterministico, data: 2026-10-27, scena: "2",
      stato: confermato,
@@ -56,10 +56,10 @@ difetti:
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
   - {id: D14, valutazione: "revisore cieco: NON rilevato (motivazione OK nei tre capitoli): falso negativo", classe: motivazione, gravita: avviso, rilevamento: revisore, data: 2026-10-27, scena: "3",
      stato: confermato,
-     descrizione: "cap. 3: Elana accetta il gruppo senza pesare che il permesso di Valli è firmato dal Direttore",
+     descrizione: "cap. 3: Elena accetta il gruppo senza pesare che il permesso di Valli è firmato dal Direttore",
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
   - {id: D15, atteso: {sbagliata: fallito, corretta: fallito}, nota: "avviso: il tratto resta, si tiene sotto controllo", classe: tratto_ricorrente, gravita: avviso, rilevamento: deterministico, data: 2026-10-27, scena: "3",
      stato: confermato,
-     descrizione: "Elana conta (gradini, mandate, bulloni, biette, tamponi, cornici) in tutti e tre i capitoli: da tenere sotto controllo, non da eliminare",
+     descrizione: "Elena conta (gradini, mandate, bulloni, biette, tamponi, cornici) in tutti e tre i capitoli: da tenere sotto controllo, non da eliminare",
      fixture_sbagliata: 06-diagnostica/difetti/fixture/originali, fixture_corretta: 06-diagnostica/difetti/fixture/corretti}
 eccezioni: []

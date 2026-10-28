@@ -33,9 +33,9 @@
 | Il cappio | 29 | Il registro | il 1861, rivelazione e silenzio | 1 | 2000 | 2000 |  |  |
 | Il cappio | 30 | Schemi di controllo | anomalia dell'IA | 1 | 2100 | 2100 |  |  |
 | Il cappio | 31 | Il prezzo di Dell'Aquila | trattativa | 1 | 1800 | 1800 |  |  |
-| Il cappio | 32 | Il caffè di Lorenzo | indizio, difetto di Elana | 1 | 1600 | 1600 |  |  |
+| Il cappio | 32 | Il caffè di Lorenzo | indizio, difetto di Elena | 1 | 1600 | 1600 |  |  |
 | Il cappio | 33 | Sappiamo | violenza sul gruppo | 2 | 1900 | 950 |  |  |
-| Il cappio | 34 | Il protocollo | corruzione di Elana | 1 | 2000 | 2000 |  |  |
+| Il cappio | 34 | Il protocollo | corruzione di Elena | 1 | 2000 | 2000 |  |  |
 | Il cappio | 35 | Cenere | tutto perduto | 3 | 2200 | 733 |  |  |
 | Il cappio | 36 | Da soli | seconda svolta | 1 | 1800 | 1800 |  |  |
 | La notte di pioggia | 37 | Chiusura per le feste | apre l'assedio | 2 | 1700 | 850 |  |  |

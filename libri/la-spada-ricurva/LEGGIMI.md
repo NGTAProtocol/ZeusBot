@@ -22,10 +22,10 @@ Decisioni fisse (non si toccano senza richiesta esplicita):
 - La setta detiene i debiti e i titoli finanziari della famiglia di Lorenzo.
 - L'assistente viene assassinato dalla setta; dieci giorni dopo arriva la perizia medico-legale: l'ora del decesso è precedente al timestamp di un messaggio minatorio arrivato sul telefono della vittima. Prova che Procura e medicina legale sono colluse.
 - Assedio: in una notte di pioggia la setta isola i ragazzi nell'Accademia; Lorenzo passa i dati; l'IA di Pietro si comporta in modo anomalo e manipola i presenti.
-- Elana completa l'upload globale: i manoscritti restano open-source sui server internazionali.
+- Elena completa l'upload globale: i manoscritti restano open-source sui server internazionali.
 - La setta non viene distrutta in superficie; il sistema si ricuce.
 - Lorenzo tradisce per debito e alla fine sparisce.
-- Il finale: Elana sola all'alba; la conoscenza è libera, ma la voce di quell'intelligenza, umana e artificiale, le resta nella mente.
+- Il finale: Elena sola all'alba; la conoscenza è libera, ma la voce di quell'intelligenza, umana e artificiale, le resta nella mente.
 
 Non toccare: 00-progetto/briefing.md dopo l'«ok» ai documenti; i documenti approvati in stato.yaml.
 Avvisi aperti: vedi stato.yaml.

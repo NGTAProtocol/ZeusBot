@@ -5,7 +5,7 @@
 
 - r.95 «la stessa matita morbida che sbava sul margine»: risolta. Il riconoscimento ora poggia sulla matita e sul tratto, che ci sono davvero anche nel biglietto di r.7.
 - r.107 «con il pollice cerco la pelle screpolata delle nocche»: risolta. Al posto del ragionamento c'è una sola reazione fisica, legata al metodo del banco, e il dubbio resta aperto.
-- r.41 «La cornice l'hanno lasciata al suo chiodo»: risolta. Elana osserva senza spiegare, quindi la scusa del padre a r.45 arriva come menzogna.
+- r.41 «La cornice l'hanno lasciata al suo chiodo»: risolta. Elena osserva senza spiegare, quindi la scusa del padre a r.45 arriva come menzogna.
 - r.73 «È una frase lasciata sul tavolo perché io la raccolga»: risolta. La mossa di r.29 non si ripete più, anche se la frase resta un po' esplicativa.
 - r.61 «Bevo un sorso… e mi va di traverso»: risolta. L'effetto ora passa attraverso il corpo.
 

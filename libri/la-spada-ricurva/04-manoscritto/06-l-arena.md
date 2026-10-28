@@ -104,7 +104,7 @@ Scotti mi aspetta sul pianerottolo di sotto, davanti alla finestra che dà sul c
 
 La carta copiativa ha passato tutto in un blu sbavato, leggermente doppio. Le righe di Scotti sono profonde, la mia firma è un rilievo che si sente anche dal retro.
 
-«Lascia perdere, Elana.»
+«Lascia perdere, Elena.»
 
 «Che cosa, esattamente?»
 
@@ -116,7 +116,7 @@ La carta copiativa ha passato tutto in un blu sbavato, leggermente doppio. Le ri
 
 «E il quindici si prende il dottorato.»
 
-«Il quindici si vota. È diverso.» Si sfila gli occhiali dalla fronte e li pulisce con il lembo del camice, a lungo, anche se le lenti sono pulite. Le mani gli tremano, e non le nasconde. «Una tela aspetta cent'anni, Elana. Tu no.»
+«Il quindici si vota. È diverso.» Si sfila gli occhiali dalla fronte e li pulisce con il lembo del camice, a lungo, anche se le lenti sono pulite. Le mani gli tremano, e non le nasconde. «Una tela aspetta cent'anni, Elena. Tu no.»
 
 «Lei ha sentito che cosa mi ha chiesto.»
 
@@ -128,7 +128,7 @@ Non risponde. Rimette gli occhiali sulla fronte, li aggiusta con un dito.
 
 È vero, parola per parola. Mi guarda per il tempo che gli serve a decidere se crederci, e io lo lascio guardare.
 
-«Bene.» Fa un passo verso di me, abbassa la voce, anche se sul pianerottolo non c'è nessuno. «Fammi questo piacere, Elana. Uno solo. Smetti.»
+«Bene.» Fa un passo verso di me, abbassa la voce, anche se sul pianerottolo non c'è nessuno. «Fammi questo piacere, Elena. Uno solo. Smetti.»
 
 Mi tocca il gomito con due dita, appena, e se ne va. Non scende verso il laboratorio. Sale.
 

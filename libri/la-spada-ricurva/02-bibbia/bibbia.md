@@ -14,7 +14,7 @@ conferma.
 
 | Tag | Chi | Cosa serve sapere per non contraddirsi |
 |---|---|---|
-| @char:elana | Elana Magnisi | Voce narrante, prima persona, presente [canone]. Dottoranda in filologia e restauro, con un posto in laboratorio all'Accademia; più grande dei tre studenti, ha la chiave del laboratorio [proposta]. Viene dalla periferia di Napoli: il riscatto passa dalla città stessa [canone]; Ponticelli, stanza in affitto ai Quartieri Spagnoli [proposta]. Età 28 [proposta]. Parla precisa, tagliente, filologica [canone]. Mai cambiare: scetticismo, rigore, bisogno di riscatto sociale [canone]. |
+| @char:elana | Elena Magnisi | Voce narrante, prima persona, presente [canone]. Dottoranda in filologia e restauro, con un posto in laboratorio all'Accademia; più grande dei tre studenti, ha la chiave del laboratorio [proposta]. Viene dalla periferia di Napoli: il riscatto passa dalla città stessa [canone]; Ponticelli, stanza in affitto ai Quartieri Spagnoli [proposta]. Età 28 [proposta]. Parla precisa, tagliente, filologica [canone]. Mai cambiare: scetticismo, rigore, bisogno di riscatto sociale [canone]. |
 | @char:claudia | Claudia Rinaldi | Secondo anno dell'Accademia, uno dei «tre studenti» [canone]. Decifra il rebus (cap. 7) [canone]. Impone i limiti e tiene l'inventario firmato dei file (dal 26) [proposta]. Età 21, fuori sede da Avellino [proposta]. |
 | @char:lorenzo | Lorenzo Valli | Borsista d'élite in storia dell'arte, rampollo aristocratico, uno dei tre [canone]. Apre l'archivio (cap. 9) [canone]. Debito di famiglia in mano alla setta; tradisce passando i dati nell'assedio; sparisce [canone]. Accesso notturno ai laboratori dal 18, credenziali di rete dal 36 [proposta]. Età 26 [proposta]. |
 | @char:mina | Marco «Mina» Minervini | Chimica dei pigmenti e culti popolari, dei vicoli; uno dei tre [canone]. Data la ridipintura al 1860-61 (cap. 4) [proposta]. Ferito sotto il crollo nella cripta (cap. 40), vivo (43) [proposta]. Età 25 [proposta]. |
@@ -25,7 +25,7 @@ conferma.
 | @char:rettore | Il Direttore | Della setta [canone]; porta l'anello (cap. 11) [proposta]. Visto di riflesso. Nome Ruggero Arcamone [canone]. |
 | @char:vicerettore | Il Vicedirettore | Della setta [canone]; conduce l'ispezione del 18 [proposta]. Nome Aurelio Cennamo [canone]. |
 | @char:pm | Il pubblico ministero | Cortese, preciso, colluso (cap. 22, 34, 43) [proposta]. Nome Guido Ianniello [proposta]. |
-| @char:perita | La perita | Giovane medica legale dissidente. La busta del cap. 1 contiene solo la sua bozza; la perizia ufficiale la porta lei a Elana, all'alba, nel cap. 25 [canone]. Non testimonierà [proposta]. Nome Teresa Avallone, età 34 [proposta]. |
+| @char:perita | La perita | Giovane medica legale dissidente. La busta del cap. 1 contiene solo la sua bozza; la perizia ufficiale la porta lei a Elena, all'alba, nel cap. 25 [canone]. Non testimonierà [proposta]. Nome Teresa Avallone, età 34 [proposta]. |
 
 ## Luoghi
 
@@ -47,7 +47,7 @@ che riguarda la setta sono invenzione. Ogni luogo ha la sua scheda nel codex.
 | @loc:basso-sanita | Il basso della famiglia di Mina | Macchina isolata di Pietro (13-35); devastato nel 35. |
 | @loc:casa-mina | Casa di Mina | Riunione del 36 (o una sacrestia sconsacrata: scelta di stesura). |
 | @loc:fontanelle | Cimitero delle Fontanelle | Anime pezzentelle (15); il rito per il morto (21). |
-| @loc:stanza-elana | Stanza in affitto di Elana | Quartieri Spagnoli; i libri rimessi in ordine (8); l'edizione aperta (44). |
+| @loc:stanza-elana | Stanza in affitto di Elena | Quartieri Spagnoli; i libri rimessi in ordine (8); l'edizione aperta (44). |
 | @loc:terrazzo-claudia | Casa e terrazzo di Claudia | Il patto (12); l'aggressione (33). |
 | @loc:palazzo-valli | Palazzo Valli | In rovina, cornici senza quadri (5, 24); asta nel 44. |
 | @loc:villa-posillipo | Villa di Dell'Aquila a Posillipo | Collezione privata (16); biblioteca chiusa a chiave col registro (29). |
@@ -70,9 +70,9 @@ che riguarda la setta sono invenzione. Ogni luogo ha la sua scheda nel codex.
 - I Borbone possedevano circa un terzo dei volumi, in copie tratte dagli originali; alcuni testi, tra i più importanti, esistono in copia unica solo nella cripta ritrovata (decisione dell'autore).
 - La Spada Ricurva esiste già nel Trecento ed è lei a sigillare l'archivio; la massoneria del Settecento è solo una delle sue maschere (decisione dell'autore).
 - L'assistente ucciso si chiama Andrea Scotti; il Professore di Arte Moderna si chiama Ettore Sanfelice (decisioni dell'autore).
-- Elana viene dalla periferia di Napoli: il riscatto passa dalla città stessa (decisione dell'autore).
+- Elena viene dalla periferia di Napoli: il riscatto passa dalla città stessa (decisione dell'autore).
 - Il registro della loggia, con i nomi dei Borbone e dei Valli, è nelle mani di Carlo Dell'Aquila; è dal registro che i ragazzi scoprono la guerra occulta del 1861 (decisioni dell'autore).
-- La busta del cap. 1 contiene solo la bozza della perizia; la perizia ufficiale la porta a Elana la perita dissidente, all'alba, nel cap. 25 (decisione dell'autore).
+- La busta del cap. 1 contiene solo la bozza della perizia; la perizia ufficiale la porta a Elena la perita dissidente, all'alba, nel cap. 25 (decisione dell'autore).
 - Dopo il sigillo del Trecento la porta non fu mai più aperta: la chiave dipinta nel Seicento tramanda solo la via; la loggia non la forza perché la volta può crollare (decisione dell'autore).
 - Il dono ai musei internazionali salta con il ritiro di Dell'Aquila (cap. 35): il Fondo vive solo open-source in rete (decisione dell'autore).
 - La pagina dei Valli nel registro riguarda un antenato di Lorenzo: la famiglia è legata alla setta da generazioni, il debito è un'eredità (decisione dell'autore).
@@ -83,10 +83,10 @@ che riguarda la setta sono invenzione. Ogni luogo ha la sua scheda nel codex.
 
 ## Cose da non cambiare [canone]
 
-- Elana completa l'upload globale: i manoscritti restano open-source sui server internazionali.
+- Elena completa l'upload globale: i manoscritti restano open-source sui server internazionali.
 - La setta non viene distrutta in superficie; il sistema si ricuce.
 - Lorenzo tradisce per debito e alla fine sparisce.
-- Il finale: Elana sola all'alba; la conoscenza è libera, ma la voce di quell'intelligenza, umana e artificiale, le resta nella mente.
+- Il finale: Elena sola all'alba; la conoscenza è libera, ma la voce di quell'intelligenza, umana e artificiale, le resta nella mente.
 
 ## Regole del mondo
 
@@ -124,7 +124,7 @@ che riguarda la setta sono invenzione. Ogni luogo ha la sua scheda nel codex.
 - **Perizia ufficiale rettificata**: stesso protocollo, ora del decesso spostata dopo le 23:47; firmata dalla perita
   sotto pressione. Gliela porta lei all'alba di G51 (cap. 25), con a margine «La prima è la mia». [canone; la riga a
   margine è proposta]
-- La rettifica era già in corso a G44, quando il PM chiede a Elana se le è arrivato qualcosa dall'istituto (cap. 22).
+- La rettifica era già in corso a G44, quando il PM chiede a Elena se le è arrivato qualcosa dall'istituto (cap. 22).
 - In mattinata di G51 la Procura chiede l'archiviazione sulla versione rettificata.
 
 ### Il modello di Pietro
@@ -132,7 +132,7 @@ che riguarda la setta sono invenzione. Ogni luogo ha la sua scheda nel codex.
   dietro un filtro suo (36) [canone/proposta].
 - Addestrato sui quaderni di glosse dell'assistente sul latino eretico veneziano, poi anche sul quaderno personale:
   per questo parla con la sua cadenza (23, 38) [proposta].
-- Errore-indizio: rende «obbedire» dove Elana legge «ascoltare» (14) [proposta].
+- Errore-indizio: rende «obbedire» dove Elena legge «ascoltare» (14) [proposta].
 - Genera schemi di controllo mentale che non sono nei testi (30); accessi alle quattro di notte con l'utente di
   Pietro, mai spiegati del tutto [proposta, residuo aperto di proposito].
 - Esce sulla rete dell'edificio dalla porta che Lorenzo apre con le credenziali di Pietro (38-39) [proposta]. Se abbia
@@ -144,7 +144,7 @@ che riguarda la setta sono invenzione. Ogni luogo ha la sua scheda nel codex.
   [proposta]. A G54 metà del Fondo non è digitalizzata (27).
 
 ### L'inventario di Claudia
-- Dal 26: un inventario firmato di ogni file tradotto, con l'impronta digitale del file. Nel 42 Elana confronta ogni
+- Dal 26: un inventario firmato di ogni file tradotto, con l'impronta digitale del file. Nel 42 Elena confronta ogni
   file con l'inventario: ciò che c'è esce, ciò che non c'è è del modello [proposta].
 
 ## Calendario interno

@@ -4,7 +4,7 @@ Laboratorio di restauro — 21 ottobre
 
 In Accademia un nome si guadagna a centimetri quadrati: quelli che ti lasciano pulire, e quelli che ti lasciano firmare. Di pomeriggio, nel laboratorio, il tufo del muro di fondo ricomincia a sudare con la pioggia di ottobre.
 
-La tela sta sul cavalletto grande da tre giorni. Olio su tela, un metro e sessanta per uno e venti, scuola napoletana del Seicento, «Martirio di santa Caterina, ignoto». L'hanno staccata dalla seconda sala della galleria con due custodi e un carrello, e da allora il suo posto sul muro è un rettangolo più chiaro dell'intonaco intorno. Sulla scheda d'intervento, alla voce esecutore, c'è il mio nome a stampatello, Magnisi Elana. Per la prima volta in quattro anni, sotto il nome non c'è scritto «con la supervisione di».
+La tela sta sul cavalletto grande da tre giorni. Olio su tela, un metro e sessanta per uno e venti, scuola napoletana del Seicento, «Martirio di santa Caterina, ignoto». L'hanno staccata dalla seconda sala della galleria con due custodi e un carrello, e da allora il suo posto sul muro è un rettangolo più chiaro dell'intonaco intorno. Sulla scheda d'intervento, alla voce esecutore, c'è il mio nome a stampatello, Magnisi Elena. Per la prima volta in quattro anni, sotto il nome non c'è scritto «con la supervisione di».
 
 Ho cominciato dall'alto. Il viso della santa è tornato fuori ieri, un tampone dopo l'altro, da sotto una vernice ingiallita che la faceva sembrare malata di fegato. Oggi tocca al basso a sinistra, dove il carnefice abbassa la mano e un drappo bruno occupa un angolo intero, pesante, senza una piega che abbia senso.
 
@@ -86,7 +86,7 @@ Scotti non risponde. Pulisce un bisturi che è già pulito.
 
 «Non ha dato una ragione.»
 
-«Appunto.» Posa il bisturi. «Quando una ragione non la danno, Elana, è perché ce l'hanno. Fai come dice. Copri, scrivi in scheda che hai coperto, firma e vai a casa.»
+«Appunto.» Posa il bisturi. «Quando una ragione non la danno, Elena, è perché ce l'hanno. Fai come dice. Copri, scrivi in scheda che hai coperto, firma e vai a casa.»
 
 «E le fotografie?»
 

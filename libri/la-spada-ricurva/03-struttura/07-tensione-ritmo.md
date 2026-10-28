@@ -9,7 +9,7 @@
 | 5 | 5 | azione sociale | no |
 | 6 | 6 | azione | no |
 | 7 | 7 | azione | no |
-| 8 | 3 | reazione | sì: Elana da sola dopo il rebus; prezzo del riscatto; entra Pietro; chiude con un segnale |
+| 8 | 3 | reazione | sì: Elena da sola dopo il rebus; prezzo del riscatto; entra Pietro; chiude con un segnale |
 | 9 | 7 | azione | no |
 | 10 | 8 | azione | no |
 | 11 | 6 | reazione | no |

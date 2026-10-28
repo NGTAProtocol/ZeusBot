@@ -2,7 +2,7 @@
 
 Dettagli: `02-bibbia/codex/`. Rispondi ok | correggi <note>.
 
-**Elana** (28, Ponticelli)
+**Elena** (28, Ponticelli)
 - Fissi: nocche screpolate, unghia del pollice corta, matita nei capelli.
 - Variabili: contafili, cappotto grigio usato, odore di solvente.
 - Parla: corregge la parola altrui; dialetto solo sotto paura.

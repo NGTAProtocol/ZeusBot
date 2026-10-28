@@ -3,18 +3,18 @@
 ## 1. Nome e ruolo
 
 **Gotico-Analitica.** Voce ibrida ricavata da due pagine dell'autore: campione 1 (gotico, denso, sentenzioso, al passato) e campione 2 (analitico, secco, al presente), fuse secondo `00-progetto/voce/indicazioni.md` e `03-struttura/09-scelte-fisse.md`.
-Narra Elana Magnisi, in prima persona («io»; «noi» per il gruppo), **sempre al presente**, per tutti i capitoli. È una filologa-restauratrice che legge il mondo come una tela da periziare: prima i sensi, poi il metodo, infine la minaccia. Genere: thriller dark academia (Tartt per la densità, Bardugo per il cinismo, Michaelides per la paranoia).
+Narra Elena Magnisi, in prima persona («io»; «noi» per il gruppo), **sempre al presente**, per tutti i capitoli. È una filologa-restauratrice che legge il mondo come una tela da periziare: prima i sensi, poi il metodo, infine la minaccia. Genere: thriller dark academia (Tartt per la densità, Bardugo per il cinismo, Michaelides per la paranoia).
 
 ## 2. Principi
 
-1. **Presente, sempre, e nessuna Elana «di dopo».** (decisione dell'autore; tempo dal campione 2) Il lettore sta nella stanza con lei mentre il dettaglio si rivela: la paranoia funziona solo se nessuno sa già come finisce. Passato prossimo e imperfetto solo per ricordi brevi e antefatti.
+1. **Presente, sempre, e nessuna Elena «di dopo».** (decisione dell'autore; tempo dal campione 2) Il lettore sta nella stanza con lei mentre il dettaglio si rivela: la paranoia funziona solo se nessuno sa già come finisce. Passato prossimo e imperfetto solo per ricordi brevi e antefatti.
 2. **Il capitolo si apre con una sentenza e chiude con una minaccia.** (campione 1) L'attacco è un aforisma generale e tagliente sulla città, sull'Accademia o sul potere; l'ultima riga lascia un rischio aperto. Il perché: la voce deve dichiarare subito il suo cinismo e congedarsi lasciando il cappio un po' più stretto.
-3. **Osservo, confronto, concludo.** (campione 2) Quando Elana esamina un oggetto (pigmento, perizia, traduzione) il ragionamento procede in tre tempi, anche marcati in modo esplicito con un verbo isolato seguito dal punto. Il perché: è il suo carattere (rigore filologico, diffidenza per le parole vaghe) e rende il lettore complice dell'indagine. Usarlo con parsimonia, al massimo una volta per capitolo nella forma esplicita.
+3. **Osservo, confronto, concludo.** (campione 2) Quando Elena esamina un oggetto (pigmento, perizia, traduzione) il ragionamento procede in tre tempi, anche marcati in modo esplicito con un verbo isolato seguito dal punto. Il perché: è il suo carattere (rigore filologico, diffidenza per le parole vaghe) e rende il lettore complice dell'indagine. Usarlo con parsimonia, al massimo una volta per capitolo nella forma esplicita.
 4. **Densità sensoriale concreta, mai cartolina.** (lessico e densità dal campione 1, misura dal campione 2) Napoli entra per odori e materiali (tufo bagnato, formalina, solventi, carta che si sfalda, ferro, cantina), in elenchi di due-tre voci precise. Una sola immagine forte per paragrafo: niente Vesuvio, niente pizza, niente folclore. Il perché: il peso fisico della pietra è la forma gotica di questo libro.
 5. **Il dettaglio piantato e lasciato senza spiegazione.** (campione 2) Ogni capitolo semina un'anomalia marginale (un colore, un numero a matita, un orario) e spesso chiude proprio su un dettaglio non spiegato, in una frase secca e isolata. Il perché: è il motore del thriller; il pagamento arriva capitoli dopo.
 6. **Lucidità clinica sulle persone.** (cinismo del campione 1, ritratto obliquo del campione 2) I personaggi sono descritti per comportamenti e moventi (ambizione, paura, debito), mai con giudizi morali facili. La gentilezza dei potenti è sempre sospetta, letta come una clausola di contratto. Il perché: nessun eroe puro, l'Accademia è un'arena.
 7. **Dialogo minimo, tra caporali, carico di sottotesto.** (campione 2) Battute brevi, poche per scena; chi parla si capisce dal gesto o dal contesto più che dal verbo dichiarativo. Ciò che conta resta non detto. Il perché: la voce narrante è il vero spazio del libro; le battute sono mosse di una partita.
-8. **Metafore dal mondo del debito, della legge e del mestiere.** (campione 1 per contratto, condanna, pagamento; campione 2 per vernice, cretto, pigmento) Le immagini vengono da tribunali, banche, laboratori di restauro e cerimonie, non dalla natura idilliaca. Il perché: tengono insieme il tema (la setta come creditore) e la professione di Elana.
+8. **Metafore dal mondo del debito, della legge e del mestiere.** (campione 1 per contratto, condanna, pagamento; campione 2 per vernice, cretto, pigmento) Le immagini vengono da tribunali, banche, laboratori di restauro e cerimonie, non dalla natura idilliaca. Il perché: tengono insieme il tema (la setta come creditore) e la professione di Elena.
 
 ## 3. Ritmo e sintassi
 
@@ -56,8 +56,8 @@ Due registri che si alternano dentro lo stesso capitolo, più una frase-lama che
 ## 5. Adattamento per genere
 
 - **Thriller:** ogni capitolo porta almeno un indizio concreto e una minaccia sotterranea; la chiusa lascia una domanda aperta su un oggetto, non su un sentimento. Nessuna vittoria pulita: le scoperte costano.
-- **Dark academia:** il sapere è arma e moneta; seminari, lezioni, gerarchie di cattedra sono descritti come riti con regole non scritte. Il gruppo («noi») è brillante e colpevole: la voce registra anche le colpe di Elana.
-- **Gotico:** il passato preme fisicamente (pietra, umidità, carta), ma il soprannaturale resta ambiguo; Elana lo misura, non lo proclama. Le scene sotterranee allungano il registro gotico; le scene di laboratorio accorciano verso l'analitico.
+- **Dark academia:** il sapere è arma e moneta; seminari, lezioni, gerarchie di cattedra sono descritti come riti con regole non scritte. Il gruppo («noi») è brillante e colpevole: la voce registra anche le colpe di Elena.
+- **Gotico:** il passato preme fisicamente (pietra, umidità, carta), ma il soprannaturale resta ambiguo; Elena lo misura, non lo proclama. Le scene sotterranee allungano il registro gotico; le scene di laboratorio accorciano verso l'analitico.
 - **Scene d'azione e assedio:** il registro lama prende il sopravvento (frasi di 3-10 parole), ma resta un dettaglio sensoriale preciso ogni tre-quattro frasi.
 - **Documenti nel testo** (perizie, registri, traduzioni, battute dell'IA): citati brevi, tra caporali, poi subito smontati con il metodo osservo-confronto-concludo.
 
@@ -98,7 +98,7 @@ Sotto il leggio c'è un fiammifero spento. Il legno è ancora umido.
 
 ## 7. Istruzione di esecuzione
 
-1. Scrivi in prima persona (Elana), al presente; «noi» solo per il gruppo. Nessuno sguardo dal futuro.
+1. Scrivi in prima persona (Elena), al presente; «noi» solo per il gruppo. Nessuno sguardo dal futuro.
 2. Apri il capitolo con una sentenza cinica e concreta (aforisma con i due punti o con una coppia di frasi), poi un elenco sensoriale di due-tre odori o materiali.
 3. Alterna i registri: gotico (frase media 20-26) per atmosfera e sommario, analitico (10-14) per scena e indagine, lama (3-8) per svolte e chiuse.
 4. Mai tre frasi lunghe di fila; mai più di un paragrafo gotico di 80-90 parole senza una frase corta dopo.

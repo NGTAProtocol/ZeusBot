@@ -13,10 +13,10 @@ di controllo deve prima resistere alla tentazione di usarlo.
 ## Controtema
 Il segreto protegge: alcuni saperi (il mentalismo, gli schemi di persuasione) sono armi, e chi li apre a tutti arma
 anche i peggiori. La setta crede davvero di essere custode, non solo padrona. Il libro non dà ragione a nessuno dei
-due fino in fondo: Elana pubblica, ma la voce di quel sapere le resta in testa.
+due fino in fondo: Elena pubblica, ma la voce di quel sapere le resta in testa.
 
 ## Temi secondari
-- Riscatto sociale contro appartenenza: Elana vuole entrare nel mondo che deve distruggere; Lorenzo appartiene a quel
+- Riscatto sociale contro appartenenza: Elena vuole entrare nel mondo che deve distruggere; Lorenzo appartiene a quel
   mondo e ne è posseduto per debito.
 - Istituzione come arena e non come tempio: l'Accademia, la Procura, la medicina legale sono la stessa rete.
 - Voce e autorità: chi parla attraverso chi. Il mentore parla attraverso i suoi appunti, l'IA parla con la sua
