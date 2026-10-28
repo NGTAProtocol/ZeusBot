@@ -56,7 +56,7 @@ La tengo in mano un momento più del necessario. Poi la stendo sotto la lente de
 
 Lo schermo resta bianco per undici secondi. Li conto, e me ne accorgo dopo.
 
-Poi le righe escono una per volta, prima in latino sciolto, con le abbreviazioni risolte tra parentesi quadre, poi in italiano. Il nome del notaio. Il nome del venditore. La terra, con i suoi confini: a oriente la via pubblica, a occidente il fondo degli eredi di un tale. Il prezzo. La formula di garanzia, che la matricola ha sbagliato tre volte e io una, il primo anno.
+Poi le righe escono una per volta, prima in latino sciolto, con le abbreviazioni risolte tra parentesi tonde e, tra quadre, le lettere che la fotocopia non dà più, poi in italiano. Il nome del notaio. Il nome del venditore. La terra, con i suoi confini: a oriente la via pubblica, a occidente il fondo degli eredi di un tale. Il prezzo. La formula di garanzia, che la matricola ha sbagliato tre volte e io una, il primo anno.
 
 Leggo tutto, con l'unghia sotto ogni riga. C'è un errore: una «p» con l'asta tagliata, che vale «per», sciolta in «pro», che vuole il ricciolo. Uno. La matricola ne fa nove in una pagina.
 
