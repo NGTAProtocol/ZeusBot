@@ -1,39 +1,46 @@
-<!-- zb: ruolo=diagnosta; su=a0bcd67ce75a -->
-# Audit capitolo 18 — L'ispezione (giro 1)
+<!-- zb: ruolo=diagnosta; su=db79882b4e7c -->
+# Audit capitolo 18 — L'ispezione (giro 2)
+
+## Giro 2: frasi cambiate
+
+- r.27 «Il primo novembre il Professore si è portato via…»: risolta. Il motivo per cui oggi chiede anche quaderno e disco è chiaro; la ricerca nei cassetti lo mostra senza dirlo due volte.
+- r.97 «C'è un verbale con la mia sigla in margine: novantasei pagine, integre.»: risolta, ora torna con la scena del conteggio (r.57).
+- r.101 «Sul banco c'era tutto.»: risolta. Battuta secca, il non detto resta nello scambio.
+- r.103 «come due avvocati che si sono già messi d'accordo sul fatto di non fidarsi»: risolta. La spiegazione è sparita e resta un solo sommario.
+- r.115 «Porta me.»: risolta, ora c'è il tu del gruppo.
+- r.119 «Con i giri ogni diciannove minuti l'archivio è chiuso per una settimana»: risolta, perché ora la causa è giusta e i conti sono più corti. Resta un'ombra: «Raddoppiandoli ne bastano dieci» lascia sottinteso che si parla di notti.
+- r.121 (paragrafo nuovo) «qualcuno ha già abbassato la maniglia della lamiera»: riprende la maniglia della capsula 17 (basso alla Sanità, 03:38) e dà alla decisione un costo («diciannove notti di quella porta, invece di dieci»). Così il «Da stanotte due turni» si regge da solo. Difetti minori: «qualcuno ha già» torna due volte nello stesso paragrafo e «da stamattina so che…» lo spiega invece di mostrarlo.
 
 ## Voti
 
 | Voce | Voto 1-10 | Momento più debole (r.N «citazione breve») |
 |---|---|---|
-| Tensione e ritmo | 8 | r.119 «Con un solo turno ne verifichiamo un codice e mezzo»: un intero paragrafo di conti dopo il colpo frena l'uscita |
-| Sottotesto e dialoghi | 8 | r.103 «Lui non sa dove sia, quello che cerca. Sa che esiste, e sa che lo so»: spiega lo scambio appena fatto |
-| Voce | 7 | r.9-27: il laboratorio non ha un odore (né solventi né formalina) e il registro gotico sparisce dopo la sentenza d'apertura |
-| Specificità e immagini | 8 | r.109 «la scala, la cassa, la luce fredda, la risalita»: elenco generico in un capitolo altrimenti esatto (novantasei pagine, pollice umido) |
-| Personaggi | 7 | r.115 «Porti me.»: Elena dà del lei a Claudia; il Professore (r.25, r.51) scrive e basta, presenza senza funzione |
-| Funzione | 8 | r.119 «sono ferme da quando è cominciata l'ispezione»: il fermo dell'archivio viene dai giri ogni diciannove minuti, non dall'ispezione di stamattina |
-| Pulizia | 7 | r.81 «Non è la stessa cosa, e lo sappiamo tutte e due»: chiusa a sentenza che ripete la battuta |
+| Tensione e ritmo | 8 | r.119 «Un turno ne controlla un codice e mezzo»: il calcolo resta un piccolo freno nell'uscita |
+| Sottotesto e dialoghi | 8 | r.103 «sul fatto di non fidarsi»: il sommario chiude con una formula un po' sentenziosa |
+| Voce | 7 | r.9-27: il laboratorio senza odore e il registro dell'apertura che sparisce (invariato) |
+| Specificità e immagini | 8 | r.109 «la scala, la cassa, la luce fredda, la risalita»: elenco generico (invariato) |
+| Personaggi | 8 | r.25 «Il Professore scrive qualcosa»: è presente quasi solo come penna (la lente a r.31 lo salva in parte) |
+| Funzione | 8 | r.119 «Raddoppiandoli ne bastano dieci»: non si capisce subito che il conto è in notti |
+| Pulizia | 7 | r.121 «qualcuno ha già abbassato… qualcuno ha già provato»: ripetizione ravvicinata nel paragrafo nuovo |
 
-Media: 7.6
+Media: 7.7
 
 ## Continuità
 
-- nessun fatto contraddetto (Cennamo, Sanfelice con stilografica verde e cravatta, Claudia secondo anno con taccuino e cinghia annodata, Quartieri e Ponticelli, Direttore e Vicedirettore della setta: tutto coerente con codex e canone; la maniglia della capsula 17 non viene ripresa, ma non c'è contraddizione)
+- nessun fatto contraddetto: la maniglia e il basso tornano con la capsula 17 e la causa del fermo dell'archivio ora coincide con r.107.
 
 ## Da correggere
 
-- r.103 «Tra noi resta la parola che nessuno dei due pronuncia. Lui non sa dove sia…»: ripete r.27 e r.109 → il non detto deve restare nello scambio, detto una volta sola.
-- r.99 «C'è un verbale con la mia sigla a pagina novantasei»: a r.57 la sigla sta nel margine del verbale, non a pagina 96 del quaderno → la battuta deve tornare coerente con la scena del conteggio.
-- r.115 «Porti me.»: il lei tra Elena e Claudia stona (con Lorenzo c'è il tu) → il registro tra le due deve restare quello del gruppo, a meno che l'eco di Cennamo sia voluta e si capisca.
-- r.119 «Le fotografie in archivio… sono ferme da quando è cominciata l'ispezione»: causa sbagliata e conti in eccesso → il calcolo deve arrivare al «due turni» in meno passaggi e con la causa giusta.
-- r.81 «Non è la stessa cosa, e lo sappiamo tutte e due.»: tolta la frase, lo scambio dice già tutto → la scena deve chiudere sul loden o sulla battuta.
+- r.121 «una porta che qualcuno ha già provato»: ripete «qualcuno ha già» di poche righe sopra → una sola occorrenza.
+- r.119 «Raddoppiandoli ne bastano dieci»: soggetto implicito → dieci notti, detto senza ambiguità.
 
 ## Lezione
 
-- Non ripetere in narrazione ciò che i personaggi tacciono: il non detto si mostra una volta sola, poi si fida del lettore.
+- Quando un conto decide la scena, lo si dice in un passaggio solo e nell'unità che conta (le notti), non in turni.
 
 ## Fatti da verificare
 
-- r.53 «Rilievi non autorizzati di opere vincolate»: diritto dei beni culturali (il disegno di opere esposte è vietabile?)
-- r.87 «Ho dieci giorni per le controdeduzioni. Senza una delibera del collegio non può durare oltre trenta»: procedura amministrativa / regolamento dell'istituto
+- r.53 «Rilievi non autorizzati di opere vincolate»: diritto dei beni culturali (invariato dal giro 1)
+- r.85 «Ho dieci giorni per le controdeduzioni… oltre trenta»: procedura amministrativa / regolamento dell'istituto (invariato)
 
 passa
