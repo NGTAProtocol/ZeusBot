@@ -444,11 +444,12 @@ def controlla_libro(cartella, libro):
                         risultati.append(risultato(nome, 'durata', 'KO', n,
                                                    f'«{du["valore"]}»: dalle date risultano {calcolati} giorni '
                                                    f'({calcolati / 365.25:.1f} anni); tolleranza {tolleranza_giorni(du):.0f} giorni'))
-        # cifre: con «contesto» si controllano solo le righe che contengono una di quelle parole (KO);
+        # cifre: con «contesto» si controllano solo le frasi che contengono una di quelle parole (KO);
         # senza, un numero diverso vicino all'unità è solo un AVVISO (può parlare d'altro)
+        frasi = [(n, f) for n, r in prosa for f in re.split(r'(?<=[.!?;])\s+', r) if f.strip()]
         for ci in cron.get('cifre') or []:
             contesto = [c.lower() for c in ci.get('contesto') or []]
-            for n, r in prosa:
+            for n, r in frasi:
                 if contesto and not any(c in r.lower() for c in contesto):
                     continue
                 toks = r.split()
