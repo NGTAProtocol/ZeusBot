@@ -116,7 +116,7 @@ In corridoio Claudia apre il foglio solo a metà, lo legge e lo richiude.
 
 «Lo so.»
 
-Scendiamo nel chiostro. Piove fino, senza vento, e la pioggia sul tufo del colonnato non fa rumore. Faccio il conto mentre camminiamo, perché il conto è l'unica cosa che stamattina non mi hanno sequestrato. Nella macchina di Pietro ci sono ventotto codici fotografati e non ancora controllati. A un turno per notte ne verifichiamo un codice e mezzo: diciannove notti, se nessuno si ammala e nessuno sbaglia. Con due turni, tre codici a notte, ne bastano dieci. Dieci giorni sono il termine delle mie controdeduzioni, e fra trenta, senza delibera, potrei non avere più né borsa né laboratorio né una ragione per entrare da quel portone.
+Scendiamo nel chiostro. Piove fino, senza vento, e la pioggia sul tufo del colonnato non fa rumore. Faccio il conto mentre camminiamo, perché il conto è l'unica cosa che stamattina non mi hanno sequestrato. Le fotografie in archivio, venti codici a notte, sono ferme da quando è cominciata l'ispezione; i controlli sulla macchina vanno più piano. Nella macchina di Pietro ci sono ventotto codici fotografati e non ancora controllati. Con un solo turno ne verifichiamo un codice e mezzo: diciannove turni, se nessuno si ammala e nessuno sbaglia. Con due turni, tre al giorno, di giorni ne bastano dieci. Dieci giorni sono il termine delle mie controdeduzioni, e fra trenta, senza delibera, potrei non avere più né borsa né laboratorio né una ragione per entrare da quel portone.
 
 Scrivo a Pietro e a Mina insieme, perché anche questo è il punto quattro. «Da stanotte due turni. Il secondo lo faccio io.» Mina risponde con un pollice. Pietro con un orario: «23.»
 
