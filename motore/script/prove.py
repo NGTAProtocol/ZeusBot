@@ -2909,6 +2909,25 @@ def agenti_capsule_consumo(A):
     scrivi_capsula(1)
     esito('capsula.py', 'capsula sulla versione attuale OK / capitolo corretto dopo: superata / zb capsula rinnova i '
           'dati meccanici', '[] / True / []', f'{fresca} / {any("altra versione" in x for x in vecchia)} / {rinnovata}', sez)
+    # promessa chiusa in anticipo: la tabella delle sottotrame la chiude al 29, la capsula 1 la dà per chiusa
+    pst = os.path.join(L, comune.STRUTTURA, '06-sottotrame-temi.md')
+    t_st = open(pst, encoding='utf-8').read() if os.path.isfile(pst) else None
+    os.makedirs(os.path.dirname(pst), exist_ok=True)
+    open(pst, 'w', encoding='utf-8').write('| Promessa | Si apre | Si sviluppa | Si chiude |\n|---|---|---|---|\n'
+                                           '| P7 Chi coprì il simbolo | 1 | 17 | 29: il registro |\n')
+    vals = list(CAPSULE_PROVA[1])
+    vals[4] = '@prom:p7 chiusa per sottrazione, il testo non ha il nome.'
+    righe_c = [f'# Capsula 1 — prova', ''] + [f'- {s_}: {v}' for s_, v in zip(capsula.SEZIONI['it'], vals)]
+    open(pcap, 'w', encoding='utf-8').write(f'Dati meccanici: 1 parole; versione: {capsula.versione(tc)}.\n'
+                                            + '\n'.join(righe_c) + '\n')
+    presto = capsula.problemi_capsula(L, libro, 1)
+    if t_st is None:
+        os.remove(pst)
+    else:
+        open(pst, 'w', encoding='utf-8').write(t_st)
+    scrivi_capsula(1)
+    esito('capsula.py', 'promessa chiusa in una capsula prima del capitolo previsto dalle sottotrame: problema', True,
+          any('si chiude al 29' in x for x in presto), sez)
     stato_f = {'ultimo_capitolo_scritto': 3}
     try:
         capsula.controlla(L, dict(libro, capsule='obbligatorie'), stato_f)
