@@ -840,3 +840,129 @@ fatti:
     B).'
   stato: generico
   data: '2026-10-29'
+- id: F119
+  unita: '17'
+  affermazione: 'r.11 «inchiostro ferrogallico ha morso più a fondo»: tecnica (codicologia)'
+  stato: verificato
+  data: '2026-10-29'
+  fonte: https://it.wikipedia.org/wiki/Inchiostro_ferrogallico
+- id: F120
+  unita: '17'
+  affermazione: 'r.23 «bragmanni»: storia (latino medievale)'
+  stato: generico
+  data: '2026-10-29'
+- id: F121
+  unita: '17'
+  affermazione: 'r.31 «turcimanno»: storia (interpreti a Venezia)'
+  stato: generico
+  data: '2026-10-29'
+- id: F122
+  unita: '17'
+  affermazione: 'r.63 «la e sta in testa, poi la i»: tecnica (frequenze in latino)'
+  stato: verificato
+  data: '2026-10-29'
+  fonte: https://www.sttmedia.com/characterfrequency-latin
+  nota: e e i quasi pari in testa
+- id: F123
+  unita: '17'
+  affermazione: 'r.65 «ventitré lettere»: storia (alfabeto latino medievale; l''atbash
+    e→t, i→p torna)'
+  stato: generico
+  data: '2026-10-29'
+- id: F124
+  unita: '17'
+  affermazione: 'r.11 inchiostro ferrogallico che morde oltre la rasura, tracce recuperabili
+    col contrasto: corretto.'
+  stato: verificato
+  data: '2026-10-29'
+  fonte: https://it.wikipedia.org/wiki/Inchiostro_ferrogallico
+- id: F125
+  unita: '17'
+  affermazione: 'r.7 pergamena assottigliata che lascia trasparire il verso: plausibile.'
+  stato: generico
+  data: '2026-10-29'
+- id: F126
+  unita: '17'
+  affermazione: 'r.23 e r.31 «cum navi de Cypro» prima del 1325 circa: plausibile
+    e migliore della galea da Alessandria. Dopo il 1291 Cipro (Famagusta) è lo scalo
+    principale del commercio latino con il Levante, proprio mentre i divieti papali
+    colpiscono l''Egitto; Venezia vi ha consoli e privilegi, e le galere di mercato
+    per Cipro (con l''Armenia/Laiazzo) viaggiano già nel primo Trecento. «Navis» generico
+    va bene per una nave mercantile. «Ultimo tratto di un viaggio» copre l''arrivo
+    in Levante dall''India. Corretto.'
+  stato: generico
+  data: '2026-10-29'
+- id: F127
+  unita: '17'
+  affermazione: 'r.31 «artifices» per gli alchimisti; alchimia nel Veneto del primo
+    Trecento (Petrus Bonus, c. 1330): corretto.'
+  stato: generico
+  data: '2026-10-29'
+- id: F128
+  unita: '17'
+  affermazione: 'r.33 «più di settecento anni dopo»: torna con il sigillo del 1325
+    circa.'
+  stato: generico
+  data: '2026-10-29'
+- id: F129
+  unita: '17'
+  affermazione: 'r.35 0,9⁴ = 0,656: corretto.'
+  stato: verificato
+  data: '2026-10-29'
+  fonte: 'calcolo: 0,9^4 = 0,6561'
+- id: F130
+  unita: '17'
+  affermazione: 'r.65 alfabeto di 23 lettere: corretto; posizioni verificate. «La
+    k in mezzo» è approssimato (K 10ª, centro M 12ª).'
+  stato: generico
+  data: '2026-10-29'
+- id: F131
+  unita: '17'
+  affermazione: 'r.67 atbash latino nel Trecento: credibile per un dotto (Girolamo
+    su Ger 25,26), non pratica corrente. In un alfabeto di 23 lettere la M resta uguale
+    a sé stessa.'
+  stato: generico
+  data: '2026-10-29'
+- id: F132
+  unita: '17'
+  affermazione: 'r.69 abbreviazioni conservate sotto due cifrari: plausibile solo
+    se la tabella dei segni ha segni per i titoli. Dettaglio minore.'
+  stato: generico
+  data: '2026-10-29'
+- id: F133
+  unita: '17'
+  affermazione: 'r.77 «sepolti fuori dalla città, in terraferma»: sistema l''«extra
+    muros». Nota minore: nel primo Trecento la terraferma di fronte alla laguna (Mestre)
+    non è ancora veneziana (Treviso e Mestre passano a Venezia nel 1338-39). Una sepoltura
+    lì per due stranieri non cristiani è possibile ma meno ovvia del Lido. Accettabile;
+    si può lasciare.'
+  stato: generico
+  data: '2026-10-29'
+- id: F134
+  unita: '17'
+  affermazione: 'r.77 rotta Adriatico, punta della Calabria, Napoli; libbre; tela
+    cerata: plausibile.'
+  stato: generico
+  data: '2026-10-29'
+- id: F135
+  unita: '17'
+  affermazione: 'r.99 e r.101, latino dell''inventario: corretto.'
+  stato: generico
+  data: '2026-10-29'
+- id: F136
+  unita: '17'
+  affermazione: 'r.103 punta secca sulla pergamena (rigatura a secco): corretto.'
+  stato: generico
+  data: '2026-10-29'
+- id: F137
+  unita: '17'
+  affermazione: 'r.109 logge «quattro secoli dopo» (Napoli, 1728-1750 circa): corretto.'
+  stato: generico
+  data: '2026-10-29'
+- id: F138
+  unita: '17'
+  affermazione: 'r.115 «exemplatum» = copiato: corretto. Il «ricciolo sulla p» non
+    è un''abbreviazione standard di *-pla-* (sulla p segnala di solito *pre/pro/per*):
+    da rivedere o rendere generico. Ancora aperto.'
+  stato: generico
+  data: '2026-10-29'

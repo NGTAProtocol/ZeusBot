@@ -92,7 +92,7 @@ Digita. Il disco gratta per qualche secondo, poi tace.
 
 «Nessuna. L'ultima che lui legge sicuro è del Trecento. Dopo, niente.»
 
-Lo sapevo, e l'ho chiesto lo stesso, come si rifà una misura già presa. Il Fondo non ha visto passare né il Seicento né i Borbone né la mano che intorno al 1861, un anno prima o un anno dopo, ha steso il bruno sopra il grigio delle due lame. Dalla carta di quaggiù quella mano non avrà mai un nome.
+Lo sapevo, e l'ho chiesto lo stesso, come si rifà una misura già presa. Il Fondo non ha visto passare né il Seicento né i Borbone né la mano che intorno al 1861, con dodici mesi di scarto da una parte o dall'altra, ha steso il bruno sopra il grigio delle due lame. Dalla carta di quaggiù quella mano non avrà mai un nome.
 
 Il ventesimo codice è sottile, una decina di fogli legati a un dorso di cuoio senza titolo. L'abbiamo fotografato per ultimo, ieri notte, e me lo ricordo: era l'unico che si richiudeva da solo sul cuneo ogni volta che toglievo la mano.
 
@@ -112,7 +112,7 @@ Pietro si passa le cuffie spente da una parte all'altra del collo. Non risponde.
 
 Resto sull'ombra delle lame finché lo schermo, per risparmio, si abbassa di un grado.
 
-Accanto ad alcuni titoli, nel margine destro, la stessa mano ha aggiunto una parola sola, abbreviata con un ricciolo sulla p: «exemplatum», copiato. Conto sull'ultimo foglio con la punta della matita contro lo schermo: quarantuno titoli, quattordici note.
+Accanto ad alcuni titoli, nel margine destro, la stessa mano ha aggiunto una parola sola, scritta con il segno d'abbreviazione: «exemplatum», copiato. Conto sull'ultimo foglio con la punta della matita contro lo schermo: quarantuno titoli, quattordici note.
 
 «Su tutto l'inventario lui ne trova il trentadue per cento.» Pietro legge il numero senza alzare la voce. «Uno su tre, poco meno.»
 
