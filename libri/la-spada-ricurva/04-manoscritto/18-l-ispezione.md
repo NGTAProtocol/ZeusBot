@@ -24,7 +24,7 @@ Non tolgo il cappotto. Con la mano in tasca scrivo a Claudia due parole, «Labor
 
 Il Professore scrive qualcosa su un foglio appoggiato al ginocchio. L'inchiostro è verde, e lui non alza gli occhi.
 
-Cennamo apre la cartellina e legge l'elenco di ciò che vuole: il quaderno di cantiere, il disco esterno con le riprese della tela sospesa, «ogni appunto relativo all'intervento e ogni altra riproduzione di beni dell'istituto, su qualunque supporto». L'ultima formula è la sola che gli interessa. Il quaderno e il disco li conosce già, ne ha avuto copia il primo novembre, con il resto delle mie schede. Quello che cerca non sta su questo banco, e lui non lo sa con certezza. Lo capisco dal modo in cui uno dei vigilanti apre i cassetti: dal fondo, tastando la parete posteriore, come si cerca un doppiofondo.
+Cennamo apre la cartellina e legge l'elenco di ciò che vuole: il quaderno di cantiere, il disco esterno con le riprese della tela sospesa, «ogni appunto relativo all'intervento e ogni altra riproduzione di beni dell'istituto, su qualunque supporto». L'ultima formula è la sola che gli interessa. Il primo novembre il Professore si è portato via la mia scheda e nove fogli in originale, e il quaderno e il disco non li ha nemmeno chiesti. Oggi li chiede insieme a tutto il resto, perché quello che cerca non sta su questo banco e lui non ne è sicuro. Lo capisco dal modo in cui uno dei vigilanti apre i cassetti: dal fondo, tastando la parete posteriore, come si cerca un doppiofondo.
 
 «Anche la sua borsa, dottoressa.»
 
@@ -78,8 +78,6 @@ L'anticamera della direzione ha sei sedie imbottite e un orologio a muro che va 
 
 «Il Direttore. Non il Vicedirettore.»
 
-Non è la stessa cosa, e lo sappiamo tutte e due.
-
 Cennamo ci fa entrare alle dodici e un minuto dell'orologio a muro. L'ufficio è caldo, con un termosifone di ghisa sotto la finestra e una scrivania sgombra tranne per due fogli già stampati. Non ci invita a sederci. Ci sediamo lo stesso.
 
 Il primo foglio è per me. Lo legge ad alta voce, perché la lettura ad alta voce fa parte della procedura. Sospensione cautelativa dell'erogazione della borsa, in attesa di accertamenti sull'uso del laboratorio assegnato in orari non autorizzati e sulla custodia di materiali dell'istituto. Decorrenza: oggi. Il bonifico di stamattina, quindi, non era in ritardo.
@@ -96,11 +94,13 @@ Scrive. Lo fa di sua mano, a penna, in fondo al foglio, e la grafia è più ordi
 
 «Dottoressa, lei può chiudere tutto domattina. Restituisca all'istituto ciò che è dell'istituto.»
 
-«Ha preso tutto alle otto. C'è un verbale con la mia sigla a pagina novantasei.»
+«Ha preso tutto alle otto. C'è un verbale con la mia sigla in margine: novantasei pagine, integre.»
 
 «Il verbale elenca quello che c'era sul banco.»
 
-Tra noi resta la parola che nessuno dei due pronuncia. Lui non sa dove sia, quello che cerca. Sa che esiste, e sa che lo so. Per il resto della conversazione parliamo di orari e di articoli come due avvocati che si sono già messi d'accordo sul fatto di non fidarsi.
+«Sul banco c'era tutto.»
+
+Per il resto della conversazione parliamo di orari e di articoli come due avvocati che si sono già messi d'accordo sul fatto di non fidarsi.
 
 Il secondo foglio è per Claudia, e lui glielo consegna senza leggerlo. Lei lo piega in quattro, lo mette nella tasca del cappotto e lo chiude con la mano sopra.
 
@@ -112,11 +112,13 @@ In corridoio Claudia apre il foglio solo a metà, lo legge e lo richiude.
 
 «Audizione il nove. Posso portare qualcuno.»
 
-«Porti me.»
+«Porta me.»
 
 «Lo so.»
 
-Scendiamo nel chiostro. Piove fino, senza vento, e la pioggia sul tufo del colonnato non fa rumore. Faccio il conto mentre camminiamo, perché il conto è l'unica cosa che stamattina non mi hanno sequestrato. Le fotografie in archivio, venti codici a notte, sono ferme da quando è cominciata l'ispezione; i controlli sulla macchina vanno più piano. Nella macchina di Pietro ci sono ventotto codici fotografati e non ancora controllati. Con un solo turno ne verifichiamo un codice e mezzo: diciannove turni, se nessuno si ammala e nessuno sbaglia. Con due turni, tre al giorno, di giorni ne bastano dieci. Dieci giorni sono il termine delle mie controdeduzioni, e fra trenta, senza delibera, potrei non avere più né borsa né laboratorio né una ragione per entrare da quel portone.
+Scendiamo nel chiostro. Piove fino, senza vento, e la pioggia sul tufo del colonnato non fa rumore. Faccio il conto mentre camminiamo, perché il conto è l'unica cosa che stamattina non mi hanno sequestrato. Con i giri ogni diciannove minuti l'archivio è chiuso per una settimana, e restano i ventotto codici già fotografati nella macchina di Pietro, da controllare. Un turno ne controlla un codice e mezzo: diciannove turni, se nessuno si ammala e nessuno sbaglia. Raddoppiandoli ne bastano dieci, quanti i giorni delle mie controdeduzioni. Fra trenta, se il collegio delibera, potrei non avere più né borsa né laboratorio né una ragione per entrare da quel portone.
+
+Il basso di Pietro non è più il posto che era: qualcuno ha già abbassato la maniglia della lamiera e l'ha lasciata risalire, e da stamattina so che chi mi controlla non si ferma ai sotterranei. Mina alle quattro deve essere a casa, per la zia. Un secondo turno vuol dire Pietro e io soli, dopo, con una porta che qualcuno ha già provato. Ma un turno solo vuol dire diciannove notti di quella porta, invece di dieci.
 
 Scrivo a Pietro e a Mina insieme, perché anche questo è il punto quattro. «Da stanotte due turni. Il secondo lo faccio io.» Mina risponde con un pollice. Pietro con un orario: «23.»
 
