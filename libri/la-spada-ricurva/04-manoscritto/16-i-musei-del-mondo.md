@@ -4,7 +4,7 @@ Villa Dell'Aquila, Posillipo — 23 novembre
 
 Una collezione privata non si visita: ci si entra su invito, e l'invito si salda all'uscita con quello che si è lasciato vedere.
 
-Dell'Aquila ci aspetta sulla soglia alle undici, con i guanti di cotone già infilati, e non dà la mano a nessuno dei due. Lorenzo lo sapeva. Ha tenuto le sue in tasca per tutta la salita e le tira fuori solo adesso, per aggiustarsi il bavero di una giacca che è stata di suo padre e che un sarto ha ripreso alle spalle. L'invito era intestato a lui, su un cartoncino avorio scritto a mano. Il mio nome c'era in fondo, aggiunto con un'altra penna, un nero più freddo che non ha fatto in tempo ad asciugare prima che qualcuno piegasse il foglio: sul lato opposto ha lasciato una A rovesciata. Siamo in due perché la quarta regola lo vuole. Alle cinque Mina ci aspetta su, alle Fontanelle, e Claudia ha fatto il conto dei pullman sul taccuino prima di lasciarci partire.
+Dell'Aquila ci aspetta sulla soglia alle undici, con i guanti di cotone già infilati, e non dà la mano a nessuno dei due. Lorenzo doveva saperlo: ha tenuto le sue in tasca per tutta la salita e le tira fuori solo adesso, per aggiustarsi il bavero di una giacca che è stata di suo padre e che un sarto ha ripreso alle spalle. Sul suo invito il mio nome era in fondo, aggiunto con un'altra penna, un nero più freddo che non ha fatto in tempo ad asciugare prima che qualcuno piegasse il cartoncino: sul lato opposto ha lasciato una A rovesciata.
 
 «Magnisi è venuta per i quadri» dice Lorenzo. «Io per il caffè.»
 
@@ -36,9 +36,7 @@ Nello studio la luce è più alta, e c'è un tavolo di noce con sopra soltanto i
 
 Lorenzo si siede senza che nessuno lo inviti. Accavalla le gambe, si sfila dal taschino la sigaretta spenta e la fa girare tra indice e medio. Dell'Aquila torna con tre tazzine su un vassoio d'argento sottile e le posa senza rumore. Si toglie i guanti per versare, poi li rimette.
 
-Parla prima di sé, e questa è la prima mossa.
-
-Ci racconta di un'expertise firmata a Lugano tanti anni fa, per un collezionista che pagava in contanti e non lasciava il cognome. Il quadro era buono, la tela era del periodo giusto, la storia della tela no. Oggi è appeso in un museo dell'Ohio con un cartellino che porta il suo nome in corsivo, e lui ci va ogni tanto a guardarlo. «È l'unico posto al mondo dove nessuno lo ruberà più» dice. Poi ci parla di un direttore di Monaco che gli deve la carriera e di una fondazione di Amsterdam a cui ha impedito di comprare un falso, e lo fa con lo stesso tono, senza distinguere tra il merito e la colpa. La sincerità di un uomo così è un anticipo: la versa prima, perché chi l'ascolta si senta già in debito quando arriva la richiesta.
+Ci racconta di un'expertise firmata a Lugano tanti anni fa, per un collezionista che pagava in contanti e non lasciava il cognome. Il quadro era buono, la tela era del periodo giusto, la storia della tela no. Oggi è appeso in un museo dell'Ohio con un cartellino che porta il suo nome in corsivo, e lui ci va ogni tanto a guardarlo. «È l'unico posto al mondo dove nessuno lo ruberà più» dice. Poi ci parla di un direttore di Monaco che gli deve la carriera e di una fondazione di Amsterdam a cui ha impedito di comprare un falso, e lo fa con lo stesso tono, senza distinguere tra il merito e la colpa. Il caffè è buono. Lo bevo fino in fondo, e mi dispiace che lo sia.
 
 «In Accademia, mi raccontano, i laboratori restano accesi fino a tardi» dice. «Sarebbe una buona notizia, se ci fosse qualcosa da restaurare.»
 
@@ -56,7 +54,7 @@ Lorenzo soffia sulla sigaretta spenta, un gesto da ragazzo. «On ne prête qu'au
 
 Il pollice di Lorenzo scivola sull'anulare, sulla fascia di pelle più chiara dove l'anello non c'è. Ci resta il tempo di un respiro. Io guardo la mia tazzina.
 
-Nessuno di noi tre dice la parola. Ci giriamo intorno da dieci minuti, ognuno dal suo lato del tavolo, e chi la pronunciasse per primo avrebbe perso, perché dall'altra parte qualcuno annoterebbe l'ora.
+Dell'Aquila aspetta, il cucchiaino posato di traverso sul piattino.
 
 È il momento di chiedere quello per cui sono venuta, e lo chiedo come lui, al condizionale.
 
@@ -64,9 +62,9 @@ Nessuno di noi tre dice la parola. Ci giriamo intorno da dieci minuti, ognuno da
 
 «A chi glieli ha donati, prima. Poi a chi li reclama.» Gira il telefono di un quarto, sempre a faccia in giù. «Lei dice dono. Io, se sedessi dall'altra parte, sentirei la parola restituzione.»
 
-«Non restituzione. Non c'è nessuno a cui restituire.»
+«Non restituzione. Ho detto dono.»
 
-«C'è sempre qualcuno. Di solito ha un avvocato e una cappella di famiglia.»
+«C'è sempre qualcuno che sente l'altra parola. Di solito ha un avvocato e una cappella di famiglia.»
 
 Lorenzo ride, un soffio solo, guardando l'incisione.
 
@@ -118,7 +116,7 @@ L'ultimo re lasciò Napoli per mare e si chiuse a Gaeta, e a Gaeta resistette fi
 
 Del re non abbiamo parlato con nessuno. Non io, non Claudia, che ha disegnato la curva e basta. Non Mina, che di re non parla. Non Pietro, che sa di codici e non di dinastie.
 
-Resta Lorenzo. Tre giorni fa, in friggitoria, ha dato del Lei a qualcuno che poi è diventato sua madre, e io ho masticato una zeppolina fredda per non chiedere. Il cartellino lui non l'ha mai visto, non da me. Ma Dell'Aquila ha scritto a suo padre, e suo padre ha risposto con una lettera lunga, e un uomo che vende cornici vuote racconta anche quello che non gli chiedono, se pensa che alzi il prezzo. Metto le due cose una accanto all'altra e non combaciano. Il bordo è troppo pulito: come un ritocco che qualcuno ha voluto farmi trovare.
+Resta Lorenzo. Tre giorni fa, in friggitoria, ha dato del Lei a qualcuno che poi è diventato sua madre, e io ho masticato una zeppolina fredda per non chiedere. Il cartellino lui non l'ha mai visto, non da me. Ma gli ho dato nove fogli, e lui li ha contati uno per uno, e adesso non saprei giurare che fra quei nove non ci fosse la pagina dove avevo annotato le date. Suo padre ha scritto a Dell'Aquila una lettera lunga, per un uomo che scrive poco. Un uomo che vende cornici vuote racconta anche quello che non gli chiedono, se pensa che alzi il prezzo. Rifaccio il conto come davanti a una firma dubbia: chi ha avuto in mano il foglio, chi ha avuto in mano la penna. In tutte e due le colonne c'è un Valli.
 
 Lorenzo si ferma al parapetto e si volta ad aspettarmi. Sorride, il bavero della giacca ancora sollevato da un lato, dove l'ha toccato sulla soglia.
 
@@ -128,8 +126,8 @@ Lorenzo si ferma al parapetto e si volta ad aspettarmi. Sorride, il bavero della
 
 «Appunto, Magnisi.» Rimette la sigaretta nel taschino, dritta, con cura. «È quello che mi preoccupa di lui. Di te un po' meno.»
 
-Io annuisco. Nello studio, quando siamo usciti, la porta è rimasta accostata, e prima che il vestibolo me la togliesse dalla vista ho visto le sue mani nude salire verso la cornice nera e sganciarla dal chiodo nuovo.
+Io annuisco. Sulla soglia, quando ha piegato un guanto sull'altro, sul dorso di uno dei due c'era una riga di polvere bianca, la stessa che stava intorno al chiodo nuovo. La cornice era dritta, e lui l'ha raddrizzata lo stesso.
 
-È il secondo pezzo che sposta oggi.
+Se stasera la stacca, sarà il secondo pezzo che sposta oggi.
 
 <!-- zb: chiusura=D -->
