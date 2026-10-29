@@ -517,10 +517,12 @@ correzioni_dopo_prova:
     senza_contesto: [null, "Le pagine erano tre, disse il tipografo."]
     contesto_assente: [["registro"], "Le pagine erano tre, disse il tipografo."]
     contesto_presente: [["registro"], "Nel registro le pagine erano tre."]
+    contesto_in_altra_frase: [["registro"], "Nel registro le pagine sono trentadue. Sul tavolo ci sono tre pagine sciolte."]
   h_attesi:
     senza_contesto: ['cifra:pagine_registro|AVVISO']
     contesto_assente: []
     contesto_presente: ['cifra:pagine_registro|KO']
+    contesto_in_altra_frase: []                         # prima: KO (il contesto valeva per tutto il paragrafo)
   a_casi: {giorni_41: 41, giorni_70: 70}
   a_attesi:
     giorni_41: []
