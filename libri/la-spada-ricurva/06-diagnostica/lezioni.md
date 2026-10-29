@@ -2,7 +2,6 @@
 
 Difetti trovati dal revisore: non ripeterli. Le aggiunge «zb esito» dalla sezione «## Lezione» dei rapporti.
 
-- non tradurre in morale l'immagine o la battuta che ha appena funzionato da sola. (cap. 6)
 - Ogni deduzione detta da un personaggio deve tornare con i dati che la scena ha appena dato. (cap. 7)
 - Non far spiegare alla narratrice un tratto che il gesto ha appena mostrato. (cap. 8)
 - non chiudere un momento d'azione con una sentenza: l'immagine basta. (cap. 9)
@@ -14,3 +13,4 @@ Difetti trovati dal revisore: non ripeterli. Le aggiunge «zb esito» dalla sezi
 - non aprire uno spostamento con un elenco di ambiente: entrare subito con lo sguardo del personaggio. (cap. 15)
 - non chiudere un paragrafo con una sentenza che spiega la mossa che la scena ha appena mostrato. (cap. 16)
 - I tempi di una notte di lavoro vanno fissati con numeri che si possano ricontare fin dalla prima stesura. (cap. 17)
+- Quando un conto decide la scena, lo si dice in un passaggio solo e nell'unità che conta (le notti). (cap. 18)

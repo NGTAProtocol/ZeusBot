@@ -115,3 +115,9 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 ## Unità 17 — tipo capitolo, chiusura P
 
 - scena da r.3: 25/11/2025 — Il basso di Mina, Sanità
+- conoscenze: Elena (narrante), Pietro, Mina. Pietro sa della doppia cifra; Mina chiede delle copie senza risposta.
+
+## Unità 18 — tipo capitolo, chiusura X
+
+- scena da r.3: 27/11/2025 — Il laboratorio, Accademia
+- scena da r.75: 27/11/2025 — (luogo della scena precedente)
