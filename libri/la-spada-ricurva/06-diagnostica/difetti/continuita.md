@@ -110,3 +110,8 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 
 - scena da r.3: 23/11/2025 — Villa Dell'Aquila, Posillipo
 - r.119 «Tre giorni fa» → 20/11
+- conoscenze: Elena (narrante), Dell'Aquila, Lorenzo. Dell'Aquila sa del consorzio; Lorenzo sa della lettera del padre; Elena sospetta che Lorenzo abbia letto i nove fogli del Martirio.
+
+## Unità 17 — tipo capitolo, chiusura P
+
+- scena da r.3: 25/11/2025 — Il basso di Mina, Sanità
