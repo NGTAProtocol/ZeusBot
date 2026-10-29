@@ -764,3 +764,79 @@ fatti:
   stato: generico
   data: '2026-10-28'
   nota: doppione di F101
+- id: F107
+  unita: '16'
+  affermazione: 'r.13 «cinquanta lux, forse meno … per una carta del Seicento»: tecnica
+    (conservazione)'
+  stato: verificato
+  data: '2026-10-29'
+  fonte: https://unitesi.unive.it/retrieve/a087608d-d36b-43d8-bffd-4be6c6cb2d0a/862965-1221102.pdf
+  nota: 50 lux per i materiali sensibili
+- id: F108
+  unita: '16'
+  affermazione: 'r.73 «Il Rijksmuseum, il Getty, il Victoria and Albert … protocollo
+    comune»: attribuzione a istituzioni reali'
+  stato: generico
+  data: '2026-10-29'
+  nota: 'testo cambiato: musei senza nomi'
+- id: F109
+  unita: '16'
+  affermazione: 'r.97 «l''ultimo Borbone … abbia lasciato a palazzo l''argenteria
+    e si sia portato dietro i libri»: storia'
+  stato: generico
+  data: '2026-10-29'
+  nota: diceria riferita dal personaggio
+- id: F110
+  unita: '16'
+  affermazione: 'r.115 «lasciò Napoli per mare e si chiuse a Gaeta … fino a febbraio
+    del Sessantuno»: storia'
+  stato: verificato
+  data: '2026-10-29'
+  fonte: https://it.wikipedia.org/wiki/Assedio_di_Gaeta_(1860)
+  nota: resa il 13 febbraio 1861
+- id: F111
+  unita: '16'
+  affermazione: 'r.51 «On ne prête qu''aux riches»: citazione'
+  stato: verificato
+  data: '2026-10-29'
+  fonte: https://www.linternaute.fr/expression/langue-francaise/14449/on-ne-prete-qu-aux-riches/
+- id: F112
+  unita: '16'
+  affermazione: r.13 pellicola ambrata anti-UV per vetri — plausibile.
+  stato: generico
+  data: '2026-10-29'
+- id: F113
+  unita: '16'
+  affermazione: 'r.15 «das kleine Neapolitanische»: tedesco corretto.'
+  stato: generico
+  data: '2026-10-29'
+- id: F114
+  unita: '16'
+  affermazione: 'r.33 «Qualcuno ha brunito il rame prima della tiratura»: la zona
+    brunita stampa bianca e lucida — corretto; da controllare «battuta» per il segno
+    della lastra.'
+  stato: generico
+  data: '2026-10-29'
+- id: F115
+  unita: '16'
+  affermazione: 'r.39 expertise a Lugano, museo «dell''Ohio» non nominato, direttore
+    di Monaco, fondazione di Amsterdam: inventati e generici — nessun problema.'
+  stato: generico
+  data: '2026-10-29'
+- id: F116
+  unita: '16'
+  affermazione: 'r.73 «nessun tribunale ha più niente da sequestrare»: opinione giuridica
+    del personaggio.'
+  stato: generico
+  data: '2026-10-29'
+- id: F117
+  unita: '16'
+  affermazione: r.105 muro di tufo giallo a Posillipo — corretto.
+  stato: generico
+  data: '2026-10-29'
+- id: F118
+  unita: '16'
+  affermazione: 'r.115 «Sono gli stessi mesi»: si sovrappongono, non coincidono (vedi
+    B).'
+  stato: generico
+  data: '2026-10-29'

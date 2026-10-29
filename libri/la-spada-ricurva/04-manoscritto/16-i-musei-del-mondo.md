@@ -96,7 +96,7 @@ Ci accompagna fino al vestibolo. Il mare è sempre lì, nel suo rettangolo, e ne
 
 «A Napoli cercano tutti nelle cantine. Io avrei sempre cercato più in alto.» Il guanto sinistro è fuori, lo piega sul palmo. «Si racconta che l'ultimo Borbone, quando lasciò la città, abbia lasciato a palazzo l'argenteria e si sia portato dietro i libri. Una biblioteca di corte che nessuno ha mai catalogato. È la lacuna più elegante dell'Ottocento, mi è sempre sembrato.»
 
-Non aggiunge altro. Nessuna domanda, nessun condizionale. Piega il secondo guanto sul primo e mi guarda in faccia per la prima volta da quando siamo entrati.
+Non aggiunge altro. Nessuna domanda, nessun condizionale. Piega il secondo guanto sul primo e solo adesso, dopo tutto quel parlare, alza gli occhi e mi guarda in faccia.
 
 «Buon pomeriggio, Magnisi. Valli.»
 
