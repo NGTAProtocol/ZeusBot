@@ -104,3 +104,9 @@ Generato da «zb difetti <libro> continuita» (e a ogni «zb esito»): non si sc
 ## Unità 15 — tipo capitolo, chiusura P
 
 - scena da r.3: 20/11/2025 — Fontanelle, Sanità
+- conoscenze: Mina, Claudia, Lorenzo, Elena (narrante). Mina sa del cranio; Claudia ha disegnato la curva; Lorenzo sa della telefonata; Elena sente solo le sue risposte.
+
+## Unità 16 — tipo capitolo, chiusura D
+
+- scena da r.3: 23/11/2025 — Villa Dell'Aquila, Posillipo
+- r.119 «Tre giorni fa» → 20/11

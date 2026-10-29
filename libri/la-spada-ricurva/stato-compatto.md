@@ -1,12 +1,12 @@
 # Stato compatto — La Spada Ricurva
 
 - Fase: stesura; gate: nessuno.
-- Ultimo capitolo salvato: 15 (commit 54c671f); parole 30547/90000.
+- Ultimo capitolo salvato: 16 (commit f5a8765); parole 32739/90000.
 - Macrostruttura: in medias res.
 - Scelte fisse: Punto di vista (prima/terza persona; uno o più; quali personaggi): prima persona, unico punto di vista: Elena; Tempo verbale della narrazione: presen….
 - Gate attivi: lettura.
 - Libro: it, profilo thriller.
-- Personaggi (capsula 15): Mina, Claudia, Lorenzo, Elena (narrante). Mina sa del cranio; Claudia ha disegnato la curva; Lorenzo sa della telefonata; Elena sente solo le sue ris…
+- Personaggi (capsula 16): Elena (narrante), Dell'Aquila, Lorenzo. Dell'Aquila sa del consorzio; Lorenzo sa della lettera del padre; Elena sospetta che Lorenzo abbia letto i no…
 - Fatti bloccati: 9 (elenco in stato.yaml):
   - L'archivio sotto l'Accademia è rimasto sigillato per oltre settecento anni; vi si accede decifrando un rebus visivo nei…
   - Il Fondo Proibito: circa 500 manoscritti di magia pratica, mentalismo e teosofia; tra questi testi vedici dall'India po…
@@ -14,6 +14,6 @@
   - La Spada Ricurva: loggia plurisecolare nata dalla fusione tra massoneria napoletana, traffici veneziani con l'Oriente e…
   - L'ultimo re Borbone delle Due Sicilie era della setta, che usava i testi per il controllo politico; la caduta del regno…
 - Promesse aperte: @prom:p1, @prom:p2, @prom:p3, @prom:p5, @prom:p6, @prom:p7, @prom:p8, @prom:p9, @prom:p10, @prom:p12, @prom:p14, @prom:p15, @prom:p16.
-- Prossimo capitolo 16: Dell'Aquila diventa la porta e il dubbio; falsa pista.; cambiamento: Dell'Aquila offre un canale verso un consorzio di musei internazional….
-- Prossimo passo: Prossimo: capitolo 16. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
-- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 16.
+- Prossimo capitolo 17: l'asse storico dentro i testi; dà profondità alla loggia.; cambiamento: emergono i due guru a Venezia, gli alchimisti traduttori, il viaggio….
+- Prossimo passo: Prossimo: capitolo 17. Rileggi manuale e direttive, scrivi, poi «zb esito <libro> N».
+- Leggi anche: la riga «Letto» di zb avvio e, per scrivere, zb prepara <libro> 17.

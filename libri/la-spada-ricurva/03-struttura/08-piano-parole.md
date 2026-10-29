@@ -17,7 +17,7 @@
 | La traduzione | 13 | La macchina nel basso | entra l'IA | 1 | 2000 | 2000 | 1997 | -0,1% |
 | La traduzione | 14 | Il cifrario | errore come indizio | 1 | 2300 | 2300 | 2382 | +3,6% |
 | La traduzione | 15 | Le anime dei vicoli | respiro, primo indizio del traditore | 1 | 1600 | 1600 | 1559 | -2,6% |
-| La traduzione | 16 | I musei del mondo | falsa pista Dell'Aquila | 1 | 2300 | 2300 |  |  |
+| La traduzione | 16 | I musei del mondo | falsa pista Dell'Aquila | 1 | 2300 | 2300 | 2192 | -4,7% |
 | La traduzione | 17 | Venezia | asse storico | 1 | 2200 | 2200 |  |  |
 | La traduzione | 18 | L'ispezione | posta in gioco sale | 2 | 1800 | 900 |  |  |
 | La traduzione | 19 | L'ultima sera | congedo del mentore | 1 | 2200 | 2200 |  |  |
