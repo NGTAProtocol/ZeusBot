@@ -134,6 +134,12 @@ def problemi_capsula(cartella, libro, n):
     vuote = [s for s in SEZIONI[l] if not sez.get(s)]
     if vuote:
         out.append(f'{rel(n)}: sezioni vuote: {", ".join(vuote)}')
+    import struttura
+    fine = struttura.capitoli_di_chiusura(cartella)
+    presto = [i for i in PROM.findall(sez.get(SEZIONI[l][4]) or '') if fine.get(i) and fine[i] != n]
+    if presto:     # la tabella delle sottotrame dice dove si chiude ogni promessa: altrove è solo sviluppata
+        out.append(f'{rel(n)}: promesse chiuse fuori dal capitolo previsto da 06-sottotrame-temi.md: '
+                   + ', '.join(f'@prom:{i} (si chiude al {fine[i]})' for i in presto))
     parole = sum(conta.conta_testo(v) for v in sez.values())
     if not MINIMO <= parole <= MASSIMO:
         out.append(f'{rel(n)}: {parole} parole nelle sezioni (atteso {MINIMO}-{MASSIMO}, circa 180)')

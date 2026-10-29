@@ -260,6 +260,18 @@ def legenda_promesse(cartella, testo):
     return '; '.join(f'{i} = {nomi[i]}' for i in ids if i in nomi)
 
 
+def capitoli_di_chiusura(cartella):
+    """{'p7': 29}: capitolo in cui si chiude ogni promessa Pn, primo numero della colonna «Si chiude» di 06-sottotrame-temi.md."""
+    out = {}
+    for r in comune.tabella_md(os.path.join(cartella, comune.STRUTTURA, '06-sottotrame-temi.md')):
+        celle = list(r.values())
+        m = re.match(r'^\*{0,2}(P\d+)\b', celle[0] if celle else '')
+        n = re.match(r'^\D{0,3}(\d+)', celle[3] if len(celle) > 3 else '')
+        if m and n:
+            out[m.group(1).lower()] = int(n.group(1))
+    return out
+
+
 def promesse_senza_chiusura(cartella):
     """06-sottotrame-temi.md: almeno una promessa o sottotrama; ognuna con il capitolo in cui si chiude."""
     p = os.path.join(cartella, comune.STRUTTURA, '06-sottotrame-temi.md')
