@@ -14,7 +14,7 @@ Dentro ci sono quattro uomini e nessuno lavora. Il Vicedirettore sta in piedi ac
 
 «Della direzione.»
 
-Non tolgo il cappotto. Con la mano in tasca scrivo a Claudia due parole, «Laboratorio. Ora.», e premo invio senza guardare lo schermo. Il punto quattro l'abbiamo firmato tutti, e non prevede eccezioni per le otto del mattino: nessuno di noi parla da solo con l'Accademia. Stamattina l'Accademia è venuta a parlare con me, e ha portato le scatole.
+Non tolgo il cappotto. Con la mano in tasca scrivo a Claudia due parole, «Laboratorio. Ora.», e premo invio senza guardare lo schermo. Sotto il punto quattro c'è la firma di ciascuno di noi, e quel punto non prevede eccezioni per le otto del mattino: nessuno di noi parla da solo con l'Accademia. Stamattina l'Accademia è venuta a parlare con me, e ha portato le scatole.
 
 «Il regolamento dei laboratori prevede che l'ispezione di un banco assegnato si svolga alla presenza dell'assegnatario, che può farsi assistere da una persona di fiducia.» Lo recito senza fretta, articolo e comma. «La sto aspettando.»
 
@@ -30,7 +30,7 @@ Cennamo apre la cartellina e legge l'elenco di ciò che vuole: il quaderno di ca
 
 Il vigilante più anziano lo dice senza cattiveria, con la mano già tesa. Gli porgo la tracolla. La apre sul mio banco e ne tira fuori una cosa alla volta, nell'ordine in cui le trova: il portafoglio, la lente contafili, due matite, il pacchetto di fazzoletti, la busta con la cifra dell'affitto scritta sull'angolo. La busta la gira due volte. Legge la cifra, e io lo guardo leggerla. È una somma piccola, per un uomo che ha lo stipendio fisso, e lui ha la decenza di rimetterla giù senza commentare. Il Professore, intanto, ha smesso di scrivere. Guarda la lente contafili sul piano di lavoro come si guarda un attrezzo prestato e mai restituito.
 
-Claudia arriva in sette minuti, dall'aula di disegno del primo piano, con lo zaino su una spalla e la cinghia annodata che le batte sul fianco. Si ferma sulla soglia e guarda le scatole sul pavimento, poi me.
+Claudia arriva in sette minuti, dall'aula di disegno del primo piano, con lo zaino su una spalla e le dita ancora sporche di grafite. Si ferma sulla soglia e guarda le scatole sul pavimento, poi me.
 
 «La mia persona di fiducia» dico.
 
