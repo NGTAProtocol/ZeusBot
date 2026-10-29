@@ -966,3 +966,44 @@ fatti:
     da rivedere o rendere generico. Ancora aperto.'
   stato: generico
   data: '2026-10-29'
+- id: F139
+  unita: '18'
+  affermazione: 'r.53 «Rilievi non autorizzati di opere vincolate»: diritto dei beni
+    culturali (invariato dal giro 1)'
+  stato: generico
+  data: '2026-10-29'
+  nota: regolamento dell'istituto, generico
+- id: F140
+  unita: '18'
+  affermazione: 'r.85 «Ho dieci giorni per le controdeduzioni… oltre trenta»: procedura
+    amministrativa / regolamento dell''istituto (invariato)'
+  stato: generico
+  data: '2026-10-29'
+  nota: regolamento dell'istituto, generico
+- id: F141
+  unita: '18'
+  affermazione: 'r.19 regolamento dei laboratori e persona di fiducia: verosimiglianza
+    rispetto agli statuti AFAM (DPR 132/2003).'
+  stato: generico
+  data: '2026-10-29'
+  nota: regolamento dell'istituto, generico
+- id: F142
+  unita: '18'
+  affermazione: 'r.53 «allontanamento definitivo»: sanzione da verificare sui regolamenti
+    studenteschi AFAM.'
+  stato: generico
+  data: '2026-10-29'
+  nota: regolamento dell'istituto, generico
+- id: F143
+  unita: '18'
+  affermazione: r.87 treno per Ponticelli (Circumvesuviana).
+  stato: generico
+  data: '2026-10-29'
+  nota: Ponticelli servita dalla Circumvesuviana
+- id: F144
+  unita: '18'
+  affermazione: 'r.87, r.113, r.119 calendario: 27 nov + 10 = 7 dic; dieci notti da
+    stanotte finiscono il 6-7 dic; audizione il nove senza giorno della settimana.'
+  stato: verificato
+  data: '2026-10-29'
+  fonte: 'calcolo: 27 novembre + 10 giorni = 7 dicembre'
