@@ -4,7 +4,7 @@ Il basso di Mina, Sanità — 25 novembre
 
 Una glossa raschiata non sparisce: lascia un rettangolo di pelle più chiaro e più sottile, e chi ha tenuto la lama ci ha messo la sua firma.
 
-La trovo sul foglio nove del quarto codice di stanotte, nel margine esterno, all'altezza della riga in cui il testo nomina per la prima volta Venezia. La fotografia è piatta, presa sotto i due pannelli a luce fredda come tutte le altre, e la rasura si vede soltanto perché la pergamena, assottigliata dal raschietto, lascia trasparire l'ombra della scrittura del verso. Sei righe di note, tolte con pazienza, senza un buco. Il testo principale, a un dito di distanza, è intatto.
+La trovo sul foglio nove del quindicesimo codice di stanotte, nel margine esterno, all'altezza della riga in cui il testo nomina per la prima volta Venezia. La fotografia è piatta, presa sotto i due pannelli a luce fredda come tutte le altre, e la rasura si vede soltanto perché la pergamena, assottigliata dal raschietto, lascia trasparire l'ombra della scrittura del verso. Sei righe di note, tolte con pazienza, senza un buco. Il testo principale, a un dito di distanza, è intatto.
 
 «Riesci ad alzare il contrasto solo lì?»
 
@@ -16,11 +16,11 @@ Pietro non risponde. Disegna un rettangolo sulla rasura, apre una finestra di va
 
 Annoto sul taccuino codice e foglio, e lascio la rasura dov'è.
 
-Il lotto di stanotte è di venti codici, quelli fotografati ieri, e il modello li prende uno alla volta da un disco che non ha mai visto una rete. Pietro tiene il conto su un quaderno a quadretti, a matita, in quattro colonne: numero del codice, ora d'inizio, ora di fine, percentuale di parole riconosciute. Il quarto l'ha cominciato a mezzanotte e dieci. Sulla prima riga del quaderno, ripassata due volte, c'è scritto «04:00».
+Il lotto di stanotte è di venti codici, quelli fotografati ieri, e il modello li prende uno alla volta da un disco che non ha mai visto una rete. Pietro tiene il conto su un quaderno a quadretti, a matita, in quattro colonne: numero del codice, ora d'inizio, ora di fine, percentuale di parole riconosciute. I primi quattordici sono scesi a un quarto d'ora l'uno, le mani pulite; il quindicesimo l'ha cominciato a mezzanotte e dieci. Sulla prima riga del quaderno, ripassata due volte, c'è scritto «04:00».
 
-Mina è seduto su una cassetta da bottiglie rovesciata, accanto al deumidificatore, con il portatile di riserva sulle ginocchia. Sullo schermo piccolo scorre la trascrizione che il modello ha già sciolto dai segni, e lui la legge a voce alta, a mezzo tono, con la discesa in fondo a ogni frase che hanno le litanie per le anime. Tiene il dito sulla riga. Il blu sotto l'unghia lascia sul vetro un alone che lui pulisce con la manica della tuta.
+Il basso sa di tufo bagnato e di cera, e dal deumidificatore esce un filo d'aria tiepida che odora di polvere bruciata. Mina è seduto su una cassetta da bottiglie rovesciata, accanto al deumidificatore, con il portatile di riserva sulle ginocchia. Sullo schermo piccolo scorre la trascrizione che il modello ha già sciolto dai segni, e lui la legge a voce alta, a mezzo tono, con la discesa in fondo a ogni frase che hanno le litanie per le anime. Tiene il dito sulla riga. Il blu sotto l'unghia lascia sul vetro un alone che lui pulisce con la manica della tuta.
 
-«Venerunt autem duo bragmanni cum galea de Alexandria.» Alza gli occhi. «Bragmanni. Che so', Ele'?»
+«Venerunt autem duo bragmanni cum navi de Cypro.» Alza gli occhi. «Bragmanni. Che so', Ele'?»
 
 «Bramini. Sacerdoti indiani. Il latino di allora li chiama così.»
 
@@ -28,9 +28,9 @@ Mina è seduto su una cassetta da bottiglie rovesciata, accanto al deumidificato
 
 Indico lo schermo con il mento. Lui riprende.
 
-Il codice è una cronaca, non un trattato, e chi la tiene scrive come un notaio che non si fida del proprio committente: date, nomi di navi, prezzi, nessun aggettivo. Due uomini scendono da una galera arrivata da Alessandria senza bagagli che valga la pena registrare e senza un solo libro. I libri li portano in bocca. Recitano a memoria, in una lingua che in città nessuno capisce, versi che dicono tramandati da maestro a discepolo per un numero di generazioni che il cronista si rifiuta di mettere per iscritto. Un turcimanno, uno degli interpreti che i mercanti pagano a giornata, li volge in veneziano come può. Tre uomini che la cronaca chiama soltanto «artifices», con un medico e un prete senza chiesa, li riversano dal veneziano in latino, e il latino lo chiudono nei segni la sera stessa, prima di dormire.
+Il codice è una cronaca, non un trattato, e chi la tiene scrive come un notaio che non si fida del proprio committente: date, nomi di navi, prezzi, nessun aggettivo. Due uomini scendono da una nave arrivata da Cipro, ultimo tratto di un viaggio che la cronaca non racconta, senza bagagli che valga la pena registrare e senza un solo libro. I libri li portano in bocca. Recitano a memoria, in una lingua che in città nessuno capisce, versi che dicono tramandati da maestro a discepolo per un numero di generazioni che il cronista si rifiuta di mettere per iscritto. Un turcimanno, uno degli interpreti che i mercanti pagano a giornata, li volge in veneziano come può. Tre uomini che la cronaca chiama soltanto «artifices», con un medico e un prete senza chiesa, li riversano dal veneziano in latino, e il latino lo chiudono nei segni la sera stessa, prima di dormire.
 
-Ogni verso, prima di diventare inchiostro, passa per quattro bocche. Io lo leggo dalla quinta, quella del modello, in un basso della Sanità, più di settecento anni dopo, e la pelle su cui è scritto è la stessa che la mano del prete ha tenuto ferma con il palmo. Mi accorgo di stringere il bordo del tavolo solo quando le nocche screpolate cominciano a tirare.
+Ogni verso, prima di diventare inchiostro, passa per quattro bocche. Io lo leggo dalla quinta, quella del modello, in un basso della Sanità, più di settecento anni dopo, e la pelle su cui è scritto l'ha tenuta ferma il palmo del cronista, o di chi lo ha copiato. Mi accorgo di stringere il bordo del tavolo solo quando le nocche screpolate cominciano a tirare.
 
 «Se ogni passaggio perde un decimo» dice Pietro, che ha letto da sopra la mia spalla, «dopo quattro ne restano due terzi scarsi. E lui perde ancora qualcosa.»
 
@@ -52,7 +52,7 @@ Lui fa sì con la testa, piano, e torna alla sua colonna di numeri.
 
 Mina guarda me. Io guardo la trascrizione: la frase continua con «ab eo ducitur», e non la traduco per nessuno dei due. Mina rigira la medaglietta delle anime legata al polso con lo spago, poi abbassa la testa sul portatile e riprende senza voce. Le labbra si muovono lo stesso.
 
-All'una e quaranta il quarto codice smette di rispondere.
+All'una e quaranta il quindicesimo codice smette di rispondere.
 
 Non smette davvero. Dal foglio dieci in poi il modello restituisce lettere, righe intere, con gli spazi al loro posto, ma le lettere non fanno latino. Pietro scorre la pagina con la rotella, poi la successiva, poi tutte le altre fino al piatto posteriore. Sono tutte così.
 
@@ -74,7 +74,7 @@ Torno alla rasura del foglio nove. Adesso, con l'alfabeto scritto due volte sul 
 
 Le pagine cifrate due volte non raccontano i versi. Raccontano dove sono andati.
 
-I due bramini muoiono a Venezia a pochi mesi l'uno dall'altro, e la cronaca registra soltanto che vengono sepolti «extra muros», senza nome sulla pietra. Dopo, scrive il cronista, in città cominciano a contare le candele accese di notte nelle case degli artifices. Le traduzioni partono per mare in casse foderate di tela cerata, su una nave che scende l'Adriatico, gira la punta della Calabria e risale fino a Napoli, «ad fratres». Il cronista non dice fratelli di chi, né quanti viaggi servono. Annota il peso di ogni cassa in libbre, una per una, con la stessa cura con cui due fogli prima ha registrato il salario del turcimanno.
+I due bramini muoiono a Venezia a pochi mesi l'uno dall'altro, e la cronaca registra soltanto che vengono sepolti fuori dalla città, in terraferma, senza nome sulla pietra. Dopo, scrive il cronista, in città cominciano a contare le candele accese di notte nelle case degli artifices. Le traduzioni partono per mare in casse foderate di tela cerata, su una nave che scende l'Adriatico, gira la punta della Calabria e risale fino a Napoli, «ad fratres». Il cronista non dice fratelli di chi, né quanti viaggi servono. Annota il peso di ogni cassa in libbre, una per una, con la stessa cura con cui due fogli prima ha registrato il salario del turcimanno.
 
 «Ele'.» Mina ha smesso di muovere le labbra. «Addò so' gghiute?»
 
@@ -82,7 +82,7 @@ I due bramini muoiono a Venezia a pochi mesi l'uno dall'altro, e la cronaca regi
 
 Lui guarda il pavimento del basso, le mattonelle sbreccate, il tufo che spunta dove manca la malta, e non dice niente.
 
-Alle tre Pietro ha dato al modello diciannove codici su venti. Gli chiedo di cercare nell'indice, in quello di stanotte e in quelli delle notti passate, ogni data che il modello ha riconosciuto con sicurezza.
+Alle tre Pietro ha dato al modello diciannove codici su venti: sciolta la doppia cifra, gli altri quattro sono tornati al passo di prima. Gli chiedo di cercare nell'indice, in quello di stanotte e in quelli delle notti passate, ogni data che il modello ha riconosciuto con sicurezza.
 
 «Tutte?»
 
@@ -92,7 +92,7 @@ Digita. Il disco gratta per qualche secondo, poi tace.
 
 «Nessuna. L'ultima che lui legge sicuro è del Trecento. Dopo, niente.»
 
-Lo sapevo, e l'ho chiesto lo stesso, come si rifà una misura già presa. Il Fondo non ha visto passare né il Seicento né i Borbone né la mano che nel 1861 ha steso il grigio sulle due lame. Dalla carta di quaggiù quella mano non avrà mai un nome.
+Lo sapevo, e l'ho chiesto lo stesso, come si rifà una misura già presa. Il Fondo non ha visto passare né il Seicento né i Borbone né la mano che intorno al 1861, un anno prima o un anno dopo, ha steso il bruno sopra il grigio delle due lame. Dalla carta di quaggiù quella mano non avrà mai un nome.
 
 Il ventesimo codice è sottile, una decina di fogli legati a un dorso di cuoio senza titolo. L'abbiamo fotografato per ultimo, ieri notte, e me lo ricordo: era l'unico che si richiudeva da solo sul cuneo ogni volta che toglievo la mano.
 
@@ -100,27 +100,25 @@ Il ventesimo codice è sottile, una decina di fogli legati a un dorso di cuoio s
 
 Sotto l'ultima colonna c'è una riga di data, «anno Domini millesimo trecentesimo», poi un foro di tarlo che si è mangiato il resto. Sotto la data non c'è firma. C'è un'ombra.
 
-Ingrandisco. Nella fotografia a luce fredda l'ombra è quasi niente, una linea più scura dove il foglio, disteso male sul cuneo, fa una piega. Ma la linea non segue la piega. Curva, ne incrocia un'altra, e tutte e due si piegano verso l'esterno in punta. Non c'è inchiostro. Le hanno tracciate nella pergamena con una punta secca, a mano ferma, come si lavora una matrice. Due lame incrociate e ricurve. Le ho viste sotto il grigio di una ridipintura e ripassate in oro sulla pietra di un'edicola. Qui stanno sotto l'inventario di una chiusura, accanto a una data del Trecento, al posto del nome di chi ha chiuso.
+Ingrandisco. Nella fotografia a luce fredda l'ombra è quasi niente, una linea più scura dove il foglio, disteso male sul cuneo, fa una piega. Ma la linea non segue la piega. Curva, ne incrocia un'altra, e tutte e due si piegano verso l'esterno in punta. Non c'è inchiostro. Le hanno tracciate nella pergamena con una punta secca, a mano ferma, come si lavora una matrice. Due lame incrociate e ricurve. Le ho viste grigie sotto il bruno di una ridipintura e ripassate in oro sulla pietra di un'edicola. Qui stanno sotto l'inventario di una chiusura, accanto a una data del Trecento, al posto del nome di chi ha chiuso.
 
 «Pietro.»
 
 Lui guarda il mio schermo, poi il suo. Non chiede che cosa.
 
-«Allora la porta l'hanno chiusa loro.»
-
-«Loro c'erano già. Le logge sono arrivate dopo, quattro secoli dopo, e hanno trovato il segno inciso.»
+«La porta l'hanno chiusa loro» dico. «C'erano già. Le logge, se di logge si tratta, sono arrivate quattro secoli dopo, e il segno l'hanno trovato inciso.»
 
 Pietro si passa le cuffie spente da una parte all'altra del collo. Non risponde.
 
-Resto sull'ombra delle lame finché lo schermo, per risparmio, si abbassa di un grado. Ho passato cinque settimane a chiedermi chi avesse coperto il segno nel 1861, convinta di inseguire una società segreta dell'Ottocento, con i suoi grembiuli e i suoi giuramenti. Inseguivo la sua ultima vernice. Sotto ce n'erano altre, e sotto tutte c'era questa punta secca, sette secoli fa, a chiudere una porta.
+Resto sull'ombra delle lame finché lo schermo, per risparmio, si abbassa di un grado.
 
 Accanto ad alcuni titoli, nel margine destro, la stessa mano ha aggiunto una parola sola, abbreviata con un ricciolo sulla p: «exemplatum», copiato. Conto sull'ultimo foglio con la punta della matita contro lo schermo: quarantuno titoli, quattordici note.
 
 «Su tutto l'inventario lui ne trova il trentadue per cento.» Pietro legge il numero senza alzare la voce. «Uno su tre, poco meno.»
 
-Uno su tre copiato prima che la porta si chiudesse, e portato fuori. Gli altri due no. Scorro le righe senza nota e trovo quelle che speravo di non trovarci: «Carmina bragmannorum», in tre volumi, «Liber de voce», due titoli di seguito con la parola «memoria», e nessuno ha la parola in margine. I versi delle quattro bocche esistono in un posto solo, e quel posto ha una porta che abbiamo aperto noi.
+Uno su tre copiato prima che la porta si chiudesse, e portato fuori. Gli altri due no. Scorro le righe senza nota e trovo quelle che speravo di non trovarci: «Carmina bragmannorum», in tre volumi, «Liber de voce», due titoli di seguito con la parola «memoria», e nessuno ha la parola in margine. Se l'inventario è completo, e se a Venezia non è rimasta nemmeno una minuta, i versi delle quattro bocche esistono in un posto solo, e quel posto ha una porta che abbiamo aperto noi.
 
-La punta della matita si spezza contro il vetro. Non me n'ero accorta di premere.
+La punta della matita si spezza contro il vetro.
 
 «E 'e copie» dice Mina, «addò stanno?»
 
